@@ -9,12 +9,12 @@ replace (
 )
 
 require (
-	github.com/oracle/terraform-provider-oci v1.0.19-0.20230517153602-38c434cdff97 // indirect
+	github.com/oracle/terraform-provider-oci v1.0.19-0.20230524081114-82b2b1897286 // indirect
 	github.com/oracle/terraform-provider-oci/shim v0.0.0
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.47.2
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.47.3
 )
 
-require github.com/pulumi/pulumi/sdk/v3 v3.67.1
+require github.com/pulumi/pulumi/sdk/v3 v3.68.0
 
 require (
 	cloud.google.com/go v0.107.0 // indirect
@@ -178,7 +178,7 @@ require (
 	github.com/oklog/run v1.1.0 // indirect
 	github.com/opentracing/basictracer-go v1.1.0 // indirect
 	github.com/opentracing/opentracing-go v1.2.0 // indirect
-	github.com/oracle/oci-go-sdk/v65 v65.38.0 // indirect
+	github.com/oracle/oci-go-sdk/v65 v65.39.0 // indirect
 	github.com/pgavlin/goldmark v1.1.33-0.20200616210433-b5eb04559386 // indirect
 	github.com/pierrec/lz4 v2.6.1+incompatible // indirect
 	github.com/pjbgf/sha1cd v0.3.0 // indirect
@@ -190,7 +190,7 @@ require (
 	github.com/pulumi/pulumi-java/pkg v0.9.2 // indirect
 	github.com/pulumi/pulumi-terraform-bridge/x/muxer v0.0.3 // indirect
 	github.com/pulumi/pulumi-yaml v1.1.1 // indirect
-	github.com/pulumi/pulumi/pkg/v3 v3.67.1 // indirect
+	github.com/pulumi/pulumi/pkg/v3 v3.68.0 // indirect
 	github.com/pulumi/schema-tools v0.1.2 // indirect
 	github.com/pulumi/terraform-diff-reader v0.0.0-20201211191010-ad4715e9285e // indirect
 	github.com/rivo/uniseg v0.2.0 // indirect

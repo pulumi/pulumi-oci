@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Logging.Inputs
         private InputList<string>? _channels;
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Windows event log channels.
         /// </summary>
         public InputList<string> Channels
         {
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Logging.Inputs
         private InputList<string>? _paths;
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Absolute paths for log source files. Wildcard can be used.
         /// </summary>
         public InputList<string> Paths
         {

@@ -34,14 +34,14 @@ public final class GetLogGroupsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * Resource name
+     * Resource name.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return Resource name
+     * @return Resource name.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -119,7 +119,7 @@ public final class GetLogGroupsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param displayName Resource name
+         * @param displayName Resource name.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class GetLogGroupsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param displayName Resource name
+         * @param displayName Resource name.
          * 
          * @return builder
          * 

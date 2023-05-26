@@ -179,21 +179,6 @@ public final class SecurityZoneState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
-     * 
-     */
-    @Import(name="systemTags")
-    private @Nullable Output<Map<String,Object>> systemTags;
-
-    /**
-     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
-     * 
-     */
-    public Optional<Output<Map<String,Object>>> systemTags() {
-        return Optional.ofNullable(this.systemTags);
-    }
-
-    /**
      * The time the security zone was created. An RFC3339 formatted datetime string.
      * 
      */
@@ -236,7 +221,6 @@ public final class SecurityZoneState extends com.pulumi.resources.ResourceArgs {
         this.securityZoneRecipeId = $.securityZoneRecipeId;
         this.securityZoneTargetId = $.securityZoneTargetId;
         this.state = $.state;
-        this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
     }
@@ -487,27 +471,6 @@ public final class SecurityZoneState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder state(String state) {
             return state(Output.of(state));
-        }
-
-        /**
-         * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
-         * 
-         * @return builder
-         * 
-         */
-        public Builder systemTags(@Nullable Output<Map<String,Object>> systemTags) {
-            $.systemTags = systemTags;
-            return this;
-        }
-
-        /**
-         * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
-         * 
-         * @return builder
-         * 
-         */
-        public Builder systemTags(Map<String,Object> systemTags) {
-            return systemTags(Output.of(systemTags));
         }
 
         /**

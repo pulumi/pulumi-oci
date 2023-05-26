@@ -77,8 +77,6 @@ type LookupSecurityRecipeResult struct {
 	SecurityRecipeId string   `pulumi:"securityRecipeId"`
 	// The current state of the recipe
 	State string `pulumi:"state"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the recipe was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the recipe was last updated. An RFC3339 formatted datetime string.
@@ -175,11 +173,6 @@ func (o LookupSecurityRecipeResultOutput) SecurityRecipeId() pulumi.StringOutput
 // The current state of the recipe
 func (o LookupSecurityRecipeResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityRecipeResult) string { return v.State }).(pulumi.StringOutput)
-}
-
-// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupSecurityRecipeResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSecurityRecipeResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The time the recipe was created. An RFC3339 formatted datetime string.

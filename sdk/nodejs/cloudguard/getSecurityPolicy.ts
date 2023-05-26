@@ -92,10 +92,6 @@ export interface GetSecurityPolicyResult {
      */
     readonly state: string;
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-     */
-    readonly systemTags: {[key: string]: any};
-    /**
      * The time the security policy was created. An RFC3339 formatted datetime string.
      */
     readonly timeCreated: string;

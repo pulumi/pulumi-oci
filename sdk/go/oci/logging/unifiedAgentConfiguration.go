@@ -55,6 +55,7 @@ import (
 //								GrokNameKey:             pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_grok_name_key),
 //								IsEstimateCurrentEvent:  pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_is_estimate_current_event),
 //								IsKeepTimeKey:           pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_is_keep_time_key),
+//								IsMergeCriFields:        pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_is_merge_cri_fields),
 //								IsNullEmptyString:       pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_is_null_empty_string),
 //								IsSupportColonlessIdent: pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_is_support_colonless_ident),
 //								IsWithPriority:          pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_is_with_priority),
@@ -62,7 +63,12 @@ import (
 //								MessageFormat:           pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_message_format),
 //								MessageKey:              pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_message_key),
 //								MultiLineStartRegexp:    pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_multi_line_start_regexp),
-//								NullValuePattern:        pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_null_value_pattern),
+//								NestedParser: &logging.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs{
+//									TimeFormat:    pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_nested_parser_time_format),
+//									FieldTimeKey:  pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_nested_parser_field_time_key),
+//									IsKeepTimeKey: pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_nested_parser_is_keep_time_key),
+//								},
+//								NullValuePattern: pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_null_value_pattern),
 //								Patterns: logging.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray{
 //									&logging.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs{
 //										FieldTimeFormat: pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_format),

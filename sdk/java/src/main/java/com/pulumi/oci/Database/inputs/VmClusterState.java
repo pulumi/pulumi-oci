@@ -23,6 +23,21 @@ public final class VmClusterState extends com.pulumi.resources.ResourceArgs {
     public static final VmClusterState Empty = new VmClusterState();
 
     /**
+     * The name of the availability domain that the VM cluster is located in.
+     * 
+     */
+    @Import(name="availabilityDomain")
+    private @Nullable Output<String> availabilityDomain;
+
+    /**
+     * @return The name of the availability domain that the VM cluster is located in.
+     * 
+     */
+    public Optional<Output<String>> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -427,6 +442,7 @@ public final class VmClusterState extends com.pulumi.resources.ResourceArgs {
     private VmClusterState() {}
 
     private VmClusterState(VmClusterState $) {
+        this.availabilityDomain = $.availabilityDomain;
         this.compartmentId = $.compartmentId;
         this.cpuCoreCount = $.cpuCoreCount;
         this.cpusEnabled = $.cpusEnabled;
@@ -473,6 +489,27 @@ public final class VmClusterState extends com.pulumi.resources.ResourceArgs {
 
         public Builder(VmClusterState defaults) {
             $ = new VmClusterState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param availabilityDomain The name of the availability domain that the VM cluster is located in.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(@Nullable Output<String> availabilityDomain) {
+            $.availabilityDomain = availabilityDomain;
+            return this;
+        }
+
+        /**
+         * @param availabilityDomain The name of the availability domain that the VM cluster is located in.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            return availabilityDomain(Output.of(availabilityDomain));
         }
 
         /**

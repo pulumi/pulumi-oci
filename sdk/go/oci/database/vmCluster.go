@@ -76,6 +76,8 @@ import (
 type VmCluster struct {
 	pulumi.CustomResourceState
 
+	// The name of the availability domain that the VM cluster is located in.
+	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	CpuCoreCount  pulumi.IntOutput    `pulumi:"cpuCoreCount"`
@@ -184,6 +186,8 @@ func GetVmCluster(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering VmCluster resources.
 type vmClusterState struct {
+	// The name of the availability domain that the VM cluster is located in.
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	CpuCoreCount  *int    `pulumi:"cpuCoreCount"`
@@ -243,6 +247,8 @@ type vmClusterState struct {
 }
 
 type VmClusterState struct {
+	// The name of the availability domain that the VM cluster is located in.
+	AvailabilityDomain pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	CpuCoreCount  pulumi.IntPtrInput
@@ -479,6 +485,11 @@ func (o VmClusterOutput) ToVmClusterOutput() VmClusterOutput {
 
 func (o VmClusterOutput) ToVmClusterOutputWithContext(ctx context.Context) VmClusterOutput {
 	return o
+}
+
+// The name of the availability domain that the VM cluster is located in.
+func (o VmClusterOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

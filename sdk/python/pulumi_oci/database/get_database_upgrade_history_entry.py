@@ -148,7 +148,7 @@ class GetDatabaseUpgradeHistoryEntryResult:
     @pulumi.getter(name="targetDbVersion")
     def target_db_version(self) -> str:
         """
-        A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+        A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
         """
         return pulumi.get(self, "target_db_version")
 

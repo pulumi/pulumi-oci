@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Log Saved Searches in Oracle Cloud Infrastructure Logging service.
 //
-// Lists Logging Saved Searches for this compartment.
+// Lists LogSavedSearches for this compartment.
 //
 // ## Example Usage
 //
@@ -55,9 +55,9 @@ type GetLogSavedSearchesArgs struct {
 	// Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
 	CompartmentId string                      `pulumi:"compartmentId"`
 	Filters       []GetLogSavedSearchesFilter `pulumi:"filters"`
-	// OCID of the LogSavedSearch
+	// OCID of the LogSavedSearch.
 	LogSavedSearchId *string `pulumi:"logSavedSearchId"`
-	// Resource name
+	// Resource name.
 	Name *string `pulumi:"name"`
 }
 
@@ -93,9 +93,9 @@ type GetLogSavedSearchesOutputArgs struct {
 	// Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
 	CompartmentId pulumi.StringInput                  `pulumi:"compartmentId"`
 	Filters       GetLogSavedSearchesFilterArrayInput `pulumi:"filters"`
-	// OCID of the LogSavedSearch
+	// OCID of the LogSavedSearch.
 	LogSavedSearchId pulumi.StringPtrInput `pulumi:"logSavedSearchId"`
-	// Resource name
+	// Resource name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 

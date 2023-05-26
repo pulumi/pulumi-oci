@@ -10,6 +10,457 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type ActionCreateZoneFromZoneFileExternalDownstream struct {
+	// The server's IP address (IPv4 or IPv6).
+	Address *string `pulumi:"address"`
+	// The server's port.
+	Port *int `pulumi:"port"`
+	// The OCID of the TSIG key.
+	TsigKeyId *string `pulumi:"tsigKeyId"`
+}
+
+// ActionCreateZoneFromZoneFileExternalDownstreamInput is an input type that accepts ActionCreateZoneFromZoneFileExternalDownstreamArgs and ActionCreateZoneFromZoneFileExternalDownstreamOutput values.
+// You can construct a concrete instance of `ActionCreateZoneFromZoneFileExternalDownstreamInput` via:
+//
+//	ActionCreateZoneFromZoneFileExternalDownstreamArgs{...}
+type ActionCreateZoneFromZoneFileExternalDownstreamInput interface {
+	pulumi.Input
+
+	ToActionCreateZoneFromZoneFileExternalDownstreamOutput() ActionCreateZoneFromZoneFileExternalDownstreamOutput
+	ToActionCreateZoneFromZoneFileExternalDownstreamOutputWithContext(context.Context) ActionCreateZoneFromZoneFileExternalDownstreamOutput
+}
+
+type ActionCreateZoneFromZoneFileExternalDownstreamArgs struct {
+	// The server's IP address (IPv4 or IPv6).
+	Address pulumi.StringPtrInput `pulumi:"address"`
+	// The server's port.
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// The OCID of the TSIG key.
+	TsigKeyId pulumi.StringPtrInput `pulumi:"tsigKeyId"`
+}
+
+func (ActionCreateZoneFromZoneFileExternalDownstreamArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ActionCreateZoneFromZoneFileExternalDownstream)(nil)).Elem()
+}
+
+func (i ActionCreateZoneFromZoneFileExternalDownstreamArgs) ToActionCreateZoneFromZoneFileExternalDownstreamOutput() ActionCreateZoneFromZoneFileExternalDownstreamOutput {
+	return i.ToActionCreateZoneFromZoneFileExternalDownstreamOutputWithContext(context.Background())
+}
+
+func (i ActionCreateZoneFromZoneFileExternalDownstreamArgs) ToActionCreateZoneFromZoneFileExternalDownstreamOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileExternalDownstreamOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileExternalDownstreamOutput)
+}
+
+// ActionCreateZoneFromZoneFileExternalDownstreamArrayInput is an input type that accepts ActionCreateZoneFromZoneFileExternalDownstreamArray and ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput values.
+// You can construct a concrete instance of `ActionCreateZoneFromZoneFileExternalDownstreamArrayInput` via:
+//
+//	ActionCreateZoneFromZoneFileExternalDownstreamArray{ ActionCreateZoneFromZoneFileExternalDownstreamArgs{...} }
+type ActionCreateZoneFromZoneFileExternalDownstreamArrayInput interface {
+	pulumi.Input
+
+	ToActionCreateZoneFromZoneFileExternalDownstreamArrayOutput() ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput
+	ToActionCreateZoneFromZoneFileExternalDownstreamArrayOutputWithContext(context.Context) ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput
+}
+
+type ActionCreateZoneFromZoneFileExternalDownstreamArray []ActionCreateZoneFromZoneFileExternalDownstreamInput
+
+func (ActionCreateZoneFromZoneFileExternalDownstreamArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ActionCreateZoneFromZoneFileExternalDownstream)(nil)).Elem()
+}
+
+func (i ActionCreateZoneFromZoneFileExternalDownstreamArray) ToActionCreateZoneFromZoneFileExternalDownstreamArrayOutput() ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput {
+	return i.ToActionCreateZoneFromZoneFileExternalDownstreamArrayOutputWithContext(context.Background())
+}
+
+func (i ActionCreateZoneFromZoneFileExternalDownstreamArray) ToActionCreateZoneFromZoneFileExternalDownstreamArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput)
+}
+
+type ActionCreateZoneFromZoneFileExternalDownstreamOutput struct{ *pulumi.OutputState }
+
+func (ActionCreateZoneFromZoneFileExternalDownstreamOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ActionCreateZoneFromZoneFileExternalDownstream)(nil)).Elem()
+}
+
+func (o ActionCreateZoneFromZoneFileExternalDownstreamOutput) ToActionCreateZoneFromZoneFileExternalDownstreamOutput() ActionCreateZoneFromZoneFileExternalDownstreamOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileExternalDownstreamOutput) ToActionCreateZoneFromZoneFileExternalDownstreamOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileExternalDownstreamOutput {
+	return o
+}
+
+// The server's IP address (IPv4 or IPv6).
+func (o ActionCreateZoneFromZoneFileExternalDownstreamOutput) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileExternalDownstream) *string { return v.Address }).(pulumi.StringPtrOutput)
+}
+
+// The server's port.
+func (o ActionCreateZoneFromZoneFileExternalDownstreamOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileExternalDownstream) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// The OCID of the TSIG key.
+func (o ActionCreateZoneFromZoneFileExternalDownstreamOutput) TsigKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileExternalDownstream) *string { return v.TsigKeyId }).(pulumi.StringPtrOutput)
+}
+
+type ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput struct{ *pulumi.OutputState }
+
+func (ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ActionCreateZoneFromZoneFileExternalDownstream)(nil)).Elem()
+}
+
+func (o ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput) ToActionCreateZoneFromZoneFileExternalDownstreamArrayOutput() ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput) ToActionCreateZoneFromZoneFileExternalDownstreamArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput) Index(i pulumi.IntInput) ActionCreateZoneFromZoneFileExternalDownstreamOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ActionCreateZoneFromZoneFileExternalDownstream {
+		return vs[0].([]ActionCreateZoneFromZoneFileExternalDownstream)[vs[1].(int)]
+	}).(ActionCreateZoneFromZoneFileExternalDownstreamOutput)
+}
+
+type ActionCreateZoneFromZoneFileExternalMaster struct {
+	// The server's IP address (IPv4 or IPv6).
+	Address *string `pulumi:"address"`
+	// The server's port.
+	Port *int `pulumi:"port"`
+	// The OCID of the TSIG key.
+	TsigKeyId *string `pulumi:"tsigKeyId"`
+}
+
+// ActionCreateZoneFromZoneFileExternalMasterInput is an input type that accepts ActionCreateZoneFromZoneFileExternalMasterArgs and ActionCreateZoneFromZoneFileExternalMasterOutput values.
+// You can construct a concrete instance of `ActionCreateZoneFromZoneFileExternalMasterInput` via:
+//
+//	ActionCreateZoneFromZoneFileExternalMasterArgs{...}
+type ActionCreateZoneFromZoneFileExternalMasterInput interface {
+	pulumi.Input
+
+	ToActionCreateZoneFromZoneFileExternalMasterOutput() ActionCreateZoneFromZoneFileExternalMasterOutput
+	ToActionCreateZoneFromZoneFileExternalMasterOutputWithContext(context.Context) ActionCreateZoneFromZoneFileExternalMasterOutput
+}
+
+type ActionCreateZoneFromZoneFileExternalMasterArgs struct {
+	// The server's IP address (IPv4 or IPv6).
+	Address pulumi.StringPtrInput `pulumi:"address"`
+	// The server's port.
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// The OCID of the TSIG key.
+	TsigKeyId pulumi.StringPtrInput `pulumi:"tsigKeyId"`
+}
+
+func (ActionCreateZoneFromZoneFileExternalMasterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ActionCreateZoneFromZoneFileExternalMaster)(nil)).Elem()
+}
+
+func (i ActionCreateZoneFromZoneFileExternalMasterArgs) ToActionCreateZoneFromZoneFileExternalMasterOutput() ActionCreateZoneFromZoneFileExternalMasterOutput {
+	return i.ToActionCreateZoneFromZoneFileExternalMasterOutputWithContext(context.Background())
+}
+
+func (i ActionCreateZoneFromZoneFileExternalMasterArgs) ToActionCreateZoneFromZoneFileExternalMasterOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileExternalMasterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileExternalMasterOutput)
+}
+
+// ActionCreateZoneFromZoneFileExternalMasterArrayInput is an input type that accepts ActionCreateZoneFromZoneFileExternalMasterArray and ActionCreateZoneFromZoneFileExternalMasterArrayOutput values.
+// You can construct a concrete instance of `ActionCreateZoneFromZoneFileExternalMasterArrayInput` via:
+//
+//	ActionCreateZoneFromZoneFileExternalMasterArray{ ActionCreateZoneFromZoneFileExternalMasterArgs{...} }
+type ActionCreateZoneFromZoneFileExternalMasterArrayInput interface {
+	pulumi.Input
+
+	ToActionCreateZoneFromZoneFileExternalMasterArrayOutput() ActionCreateZoneFromZoneFileExternalMasterArrayOutput
+	ToActionCreateZoneFromZoneFileExternalMasterArrayOutputWithContext(context.Context) ActionCreateZoneFromZoneFileExternalMasterArrayOutput
+}
+
+type ActionCreateZoneFromZoneFileExternalMasterArray []ActionCreateZoneFromZoneFileExternalMasterInput
+
+func (ActionCreateZoneFromZoneFileExternalMasterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ActionCreateZoneFromZoneFileExternalMaster)(nil)).Elem()
+}
+
+func (i ActionCreateZoneFromZoneFileExternalMasterArray) ToActionCreateZoneFromZoneFileExternalMasterArrayOutput() ActionCreateZoneFromZoneFileExternalMasterArrayOutput {
+	return i.ToActionCreateZoneFromZoneFileExternalMasterArrayOutputWithContext(context.Background())
+}
+
+func (i ActionCreateZoneFromZoneFileExternalMasterArray) ToActionCreateZoneFromZoneFileExternalMasterArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileExternalMasterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileExternalMasterArrayOutput)
+}
+
+type ActionCreateZoneFromZoneFileExternalMasterOutput struct{ *pulumi.OutputState }
+
+func (ActionCreateZoneFromZoneFileExternalMasterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ActionCreateZoneFromZoneFileExternalMaster)(nil)).Elem()
+}
+
+func (o ActionCreateZoneFromZoneFileExternalMasterOutput) ToActionCreateZoneFromZoneFileExternalMasterOutput() ActionCreateZoneFromZoneFileExternalMasterOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileExternalMasterOutput) ToActionCreateZoneFromZoneFileExternalMasterOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileExternalMasterOutput {
+	return o
+}
+
+// The server's IP address (IPv4 or IPv6).
+func (o ActionCreateZoneFromZoneFileExternalMasterOutput) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileExternalMaster) *string { return v.Address }).(pulumi.StringPtrOutput)
+}
+
+// The server's port.
+func (o ActionCreateZoneFromZoneFileExternalMasterOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileExternalMaster) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// The OCID of the TSIG key.
+func (o ActionCreateZoneFromZoneFileExternalMasterOutput) TsigKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileExternalMaster) *string { return v.TsigKeyId }).(pulumi.StringPtrOutput)
+}
+
+type ActionCreateZoneFromZoneFileExternalMasterArrayOutput struct{ *pulumi.OutputState }
+
+func (ActionCreateZoneFromZoneFileExternalMasterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ActionCreateZoneFromZoneFileExternalMaster)(nil)).Elem()
+}
+
+func (o ActionCreateZoneFromZoneFileExternalMasterArrayOutput) ToActionCreateZoneFromZoneFileExternalMasterArrayOutput() ActionCreateZoneFromZoneFileExternalMasterArrayOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileExternalMasterArrayOutput) ToActionCreateZoneFromZoneFileExternalMasterArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileExternalMasterArrayOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileExternalMasterArrayOutput) Index(i pulumi.IntInput) ActionCreateZoneFromZoneFileExternalMasterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ActionCreateZoneFromZoneFileExternalMaster {
+		return vs[0].([]ActionCreateZoneFromZoneFileExternalMaster)[vs[1].(int)]
+	}).(ActionCreateZoneFromZoneFileExternalMasterOutput)
+}
+
+type ActionCreateZoneFromZoneFileNameserver struct {
+	// The hostname of the nameserver.
+	Hostname *string `pulumi:"hostname"`
+}
+
+// ActionCreateZoneFromZoneFileNameserverInput is an input type that accepts ActionCreateZoneFromZoneFileNameserverArgs and ActionCreateZoneFromZoneFileNameserverOutput values.
+// You can construct a concrete instance of `ActionCreateZoneFromZoneFileNameserverInput` via:
+//
+//	ActionCreateZoneFromZoneFileNameserverArgs{...}
+type ActionCreateZoneFromZoneFileNameserverInput interface {
+	pulumi.Input
+
+	ToActionCreateZoneFromZoneFileNameserverOutput() ActionCreateZoneFromZoneFileNameserverOutput
+	ToActionCreateZoneFromZoneFileNameserverOutputWithContext(context.Context) ActionCreateZoneFromZoneFileNameserverOutput
+}
+
+type ActionCreateZoneFromZoneFileNameserverArgs struct {
+	// The hostname of the nameserver.
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
+}
+
+func (ActionCreateZoneFromZoneFileNameserverArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ActionCreateZoneFromZoneFileNameserver)(nil)).Elem()
+}
+
+func (i ActionCreateZoneFromZoneFileNameserverArgs) ToActionCreateZoneFromZoneFileNameserverOutput() ActionCreateZoneFromZoneFileNameserverOutput {
+	return i.ToActionCreateZoneFromZoneFileNameserverOutputWithContext(context.Background())
+}
+
+func (i ActionCreateZoneFromZoneFileNameserverArgs) ToActionCreateZoneFromZoneFileNameserverOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileNameserverOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileNameserverOutput)
+}
+
+// ActionCreateZoneFromZoneFileNameserverArrayInput is an input type that accepts ActionCreateZoneFromZoneFileNameserverArray and ActionCreateZoneFromZoneFileNameserverArrayOutput values.
+// You can construct a concrete instance of `ActionCreateZoneFromZoneFileNameserverArrayInput` via:
+//
+//	ActionCreateZoneFromZoneFileNameserverArray{ ActionCreateZoneFromZoneFileNameserverArgs{...} }
+type ActionCreateZoneFromZoneFileNameserverArrayInput interface {
+	pulumi.Input
+
+	ToActionCreateZoneFromZoneFileNameserverArrayOutput() ActionCreateZoneFromZoneFileNameserverArrayOutput
+	ToActionCreateZoneFromZoneFileNameserverArrayOutputWithContext(context.Context) ActionCreateZoneFromZoneFileNameserverArrayOutput
+}
+
+type ActionCreateZoneFromZoneFileNameserverArray []ActionCreateZoneFromZoneFileNameserverInput
+
+func (ActionCreateZoneFromZoneFileNameserverArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ActionCreateZoneFromZoneFileNameserver)(nil)).Elem()
+}
+
+func (i ActionCreateZoneFromZoneFileNameserverArray) ToActionCreateZoneFromZoneFileNameserverArrayOutput() ActionCreateZoneFromZoneFileNameserverArrayOutput {
+	return i.ToActionCreateZoneFromZoneFileNameserverArrayOutputWithContext(context.Background())
+}
+
+func (i ActionCreateZoneFromZoneFileNameserverArray) ToActionCreateZoneFromZoneFileNameserverArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileNameserverArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileNameserverArrayOutput)
+}
+
+type ActionCreateZoneFromZoneFileNameserverOutput struct{ *pulumi.OutputState }
+
+func (ActionCreateZoneFromZoneFileNameserverOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ActionCreateZoneFromZoneFileNameserver)(nil)).Elem()
+}
+
+func (o ActionCreateZoneFromZoneFileNameserverOutput) ToActionCreateZoneFromZoneFileNameserverOutput() ActionCreateZoneFromZoneFileNameserverOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileNameserverOutput) ToActionCreateZoneFromZoneFileNameserverOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileNameserverOutput {
+	return o
+}
+
+// The hostname of the nameserver.
+func (o ActionCreateZoneFromZoneFileNameserverOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileNameserver) *string { return v.Hostname }).(pulumi.StringPtrOutput)
+}
+
+type ActionCreateZoneFromZoneFileNameserverArrayOutput struct{ *pulumi.OutputState }
+
+func (ActionCreateZoneFromZoneFileNameserverArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ActionCreateZoneFromZoneFileNameserver)(nil)).Elem()
+}
+
+func (o ActionCreateZoneFromZoneFileNameserverArrayOutput) ToActionCreateZoneFromZoneFileNameserverArrayOutput() ActionCreateZoneFromZoneFileNameserverArrayOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileNameserverArrayOutput) ToActionCreateZoneFromZoneFileNameserverArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileNameserverArrayOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileNameserverArrayOutput) Index(i pulumi.IntInput) ActionCreateZoneFromZoneFileNameserverOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ActionCreateZoneFromZoneFileNameserver {
+		return vs[0].([]ActionCreateZoneFromZoneFileNameserver)[vs[1].(int)]
+	}).(ActionCreateZoneFromZoneFileNameserverOutput)
+}
+
+type ActionCreateZoneFromZoneFileZoneTransferServer struct {
+	// The server's IP address (IPv4 or IPv6).
+	Address *string `pulumi:"address"`
+	// A Boolean flag indicating whether or not the server is a zone data transfer destination.
+	IsTransferDestination *bool `pulumi:"isTransferDestination"`
+	// A Boolean flag indicating whether or not the server is a zone data transfer source.
+	IsTransferSource *bool `pulumi:"isTransferSource"`
+	// The server's port.
+	Port *int `pulumi:"port"`
+}
+
+// ActionCreateZoneFromZoneFileZoneTransferServerInput is an input type that accepts ActionCreateZoneFromZoneFileZoneTransferServerArgs and ActionCreateZoneFromZoneFileZoneTransferServerOutput values.
+// You can construct a concrete instance of `ActionCreateZoneFromZoneFileZoneTransferServerInput` via:
+//
+//	ActionCreateZoneFromZoneFileZoneTransferServerArgs{...}
+type ActionCreateZoneFromZoneFileZoneTransferServerInput interface {
+	pulumi.Input
+
+	ToActionCreateZoneFromZoneFileZoneTransferServerOutput() ActionCreateZoneFromZoneFileZoneTransferServerOutput
+	ToActionCreateZoneFromZoneFileZoneTransferServerOutputWithContext(context.Context) ActionCreateZoneFromZoneFileZoneTransferServerOutput
+}
+
+type ActionCreateZoneFromZoneFileZoneTransferServerArgs struct {
+	// The server's IP address (IPv4 or IPv6).
+	Address pulumi.StringPtrInput `pulumi:"address"`
+	// A Boolean flag indicating whether or not the server is a zone data transfer destination.
+	IsTransferDestination pulumi.BoolPtrInput `pulumi:"isTransferDestination"`
+	// A Boolean flag indicating whether or not the server is a zone data transfer source.
+	IsTransferSource pulumi.BoolPtrInput `pulumi:"isTransferSource"`
+	// The server's port.
+	Port pulumi.IntPtrInput `pulumi:"port"`
+}
+
+func (ActionCreateZoneFromZoneFileZoneTransferServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ActionCreateZoneFromZoneFileZoneTransferServer)(nil)).Elem()
+}
+
+func (i ActionCreateZoneFromZoneFileZoneTransferServerArgs) ToActionCreateZoneFromZoneFileZoneTransferServerOutput() ActionCreateZoneFromZoneFileZoneTransferServerOutput {
+	return i.ToActionCreateZoneFromZoneFileZoneTransferServerOutputWithContext(context.Background())
+}
+
+func (i ActionCreateZoneFromZoneFileZoneTransferServerArgs) ToActionCreateZoneFromZoneFileZoneTransferServerOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileZoneTransferServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileZoneTransferServerOutput)
+}
+
+// ActionCreateZoneFromZoneFileZoneTransferServerArrayInput is an input type that accepts ActionCreateZoneFromZoneFileZoneTransferServerArray and ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput values.
+// You can construct a concrete instance of `ActionCreateZoneFromZoneFileZoneTransferServerArrayInput` via:
+//
+//	ActionCreateZoneFromZoneFileZoneTransferServerArray{ ActionCreateZoneFromZoneFileZoneTransferServerArgs{...} }
+type ActionCreateZoneFromZoneFileZoneTransferServerArrayInput interface {
+	pulumi.Input
+
+	ToActionCreateZoneFromZoneFileZoneTransferServerArrayOutput() ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput
+	ToActionCreateZoneFromZoneFileZoneTransferServerArrayOutputWithContext(context.Context) ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput
+}
+
+type ActionCreateZoneFromZoneFileZoneTransferServerArray []ActionCreateZoneFromZoneFileZoneTransferServerInput
+
+func (ActionCreateZoneFromZoneFileZoneTransferServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ActionCreateZoneFromZoneFileZoneTransferServer)(nil)).Elem()
+}
+
+func (i ActionCreateZoneFromZoneFileZoneTransferServerArray) ToActionCreateZoneFromZoneFileZoneTransferServerArrayOutput() ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput {
+	return i.ToActionCreateZoneFromZoneFileZoneTransferServerArrayOutputWithContext(context.Background())
+}
+
+func (i ActionCreateZoneFromZoneFileZoneTransferServerArray) ToActionCreateZoneFromZoneFileZoneTransferServerArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput)
+}
+
+type ActionCreateZoneFromZoneFileZoneTransferServerOutput struct{ *pulumi.OutputState }
+
+func (ActionCreateZoneFromZoneFileZoneTransferServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ActionCreateZoneFromZoneFileZoneTransferServer)(nil)).Elem()
+}
+
+func (o ActionCreateZoneFromZoneFileZoneTransferServerOutput) ToActionCreateZoneFromZoneFileZoneTransferServerOutput() ActionCreateZoneFromZoneFileZoneTransferServerOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileZoneTransferServerOutput) ToActionCreateZoneFromZoneFileZoneTransferServerOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileZoneTransferServerOutput {
+	return o
+}
+
+// The server's IP address (IPv4 or IPv6).
+func (o ActionCreateZoneFromZoneFileZoneTransferServerOutput) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileZoneTransferServer) *string { return v.Address }).(pulumi.StringPtrOutput)
+}
+
+// A Boolean flag indicating whether or not the server is a zone data transfer destination.
+func (o ActionCreateZoneFromZoneFileZoneTransferServerOutput) IsTransferDestination() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileZoneTransferServer) *bool { return v.IsTransferDestination }).(pulumi.BoolPtrOutput)
+}
+
+// A Boolean flag indicating whether or not the server is a zone data transfer source.
+func (o ActionCreateZoneFromZoneFileZoneTransferServerOutput) IsTransferSource() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileZoneTransferServer) *bool { return v.IsTransferSource }).(pulumi.BoolPtrOutput)
+}
+
+// The server's port.
+func (o ActionCreateZoneFromZoneFileZoneTransferServerOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileZoneTransferServer) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+type ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput struct{ *pulumi.OutputState }
+
+func (ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ActionCreateZoneFromZoneFileZoneTransferServer)(nil)).Elem()
+}
+
+func (o ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput) ToActionCreateZoneFromZoneFileZoneTransferServerArrayOutput() ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput) ToActionCreateZoneFromZoneFileZoneTransferServerArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput) Index(i pulumi.IntInput) ActionCreateZoneFromZoneFileZoneTransferServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ActionCreateZoneFromZoneFileZoneTransferServer {
+		return vs[0].([]ActionCreateZoneFromZoneFileZoneTransferServer)[vs[1].(int)]
+	}).(ActionCreateZoneFromZoneFileZoneTransferServerOutput)
+}
+
 type ResolverAttachedView struct {
 	// (Updatable) The OCID of the view.
 	ViewId string `pulumi:"viewId"`
@@ -1198,6 +1649,121 @@ func (o SteeringPolicyRuleDefaultAnswerDataArrayOutput) Index(i pulumi.IntInput)
 	}).(SteeringPolicyRuleDefaultAnswerDataOutput)
 }
 
+type ZoneExternalDownstream struct {
+	// (Updatable) The server's IP address (IPv4 or IPv6).
+	Address string `pulumi:"address"`
+	// (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+	Port *int `pulumi:"port"`
+	// (Updatable) The OCID of the TSIG key.
+	TsigKeyId *string `pulumi:"tsigKeyId"`
+}
+
+// ZoneExternalDownstreamInput is an input type that accepts ZoneExternalDownstreamArgs and ZoneExternalDownstreamOutput values.
+// You can construct a concrete instance of `ZoneExternalDownstreamInput` via:
+//
+//	ZoneExternalDownstreamArgs{...}
+type ZoneExternalDownstreamInput interface {
+	pulumi.Input
+
+	ToZoneExternalDownstreamOutput() ZoneExternalDownstreamOutput
+	ToZoneExternalDownstreamOutputWithContext(context.Context) ZoneExternalDownstreamOutput
+}
+
+type ZoneExternalDownstreamArgs struct {
+	// (Updatable) The server's IP address (IPv4 or IPv6).
+	Address pulumi.StringInput `pulumi:"address"`
+	// (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// (Updatable) The OCID of the TSIG key.
+	TsigKeyId pulumi.StringPtrInput `pulumi:"tsigKeyId"`
+}
+
+func (ZoneExternalDownstreamArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ZoneExternalDownstream)(nil)).Elem()
+}
+
+func (i ZoneExternalDownstreamArgs) ToZoneExternalDownstreamOutput() ZoneExternalDownstreamOutput {
+	return i.ToZoneExternalDownstreamOutputWithContext(context.Background())
+}
+
+func (i ZoneExternalDownstreamArgs) ToZoneExternalDownstreamOutputWithContext(ctx context.Context) ZoneExternalDownstreamOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ZoneExternalDownstreamOutput)
+}
+
+// ZoneExternalDownstreamArrayInput is an input type that accepts ZoneExternalDownstreamArray and ZoneExternalDownstreamArrayOutput values.
+// You can construct a concrete instance of `ZoneExternalDownstreamArrayInput` via:
+//
+//	ZoneExternalDownstreamArray{ ZoneExternalDownstreamArgs{...} }
+type ZoneExternalDownstreamArrayInput interface {
+	pulumi.Input
+
+	ToZoneExternalDownstreamArrayOutput() ZoneExternalDownstreamArrayOutput
+	ToZoneExternalDownstreamArrayOutputWithContext(context.Context) ZoneExternalDownstreamArrayOutput
+}
+
+type ZoneExternalDownstreamArray []ZoneExternalDownstreamInput
+
+func (ZoneExternalDownstreamArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ZoneExternalDownstream)(nil)).Elem()
+}
+
+func (i ZoneExternalDownstreamArray) ToZoneExternalDownstreamArrayOutput() ZoneExternalDownstreamArrayOutput {
+	return i.ToZoneExternalDownstreamArrayOutputWithContext(context.Background())
+}
+
+func (i ZoneExternalDownstreamArray) ToZoneExternalDownstreamArrayOutputWithContext(ctx context.Context) ZoneExternalDownstreamArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ZoneExternalDownstreamArrayOutput)
+}
+
+type ZoneExternalDownstreamOutput struct{ *pulumi.OutputState }
+
+func (ZoneExternalDownstreamOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ZoneExternalDownstream)(nil)).Elem()
+}
+
+func (o ZoneExternalDownstreamOutput) ToZoneExternalDownstreamOutput() ZoneExternalDownstreamOutput {
+	return o
+}
+
+func (o ZoneExternalDownstreamOutput) ToZoneExternalDownstreamOutputWithContext(ctx context.Context) ZoneExternalDownstreamOutput {
+	return o
+}
+
+// (Updatable) The server's IP address (IPv4 or IPv6).
+func (o ZoneExternalDownstreamOutput) Address() pulumi.StringOutput {
+	return o.ApplyT(func(v ZoneExternalDownstream) string { return v.Address }).(pulumi.StringOutput)
+}
+
+// (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+func (o ZoneExternalDownstreamOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ZoneExternalDownstream) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The OCID of the TSIG key.
+func (o ZoneExternalDownstreamOutput) TsigKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneExternalDownstream) *string { return v.TsigKeyId }).(pulumi.StringPtrOutput)
+}
+
+type ZoneExternalDownstreamArrayOutput struct{ *pulumi.OutputState }
+
+func (ZoneExternalDownstreamArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ZoneExternalDownstream)(nil)).Elem()
+}
+
+func (o ZoneExternalDownstreamArrayOutput) ToZoneExternalDownstreamArrayOutput() ZoneExternalDownstreamArrayOutput {
+	return o
+}
+
+func (o ZoneExternalDownstreamArrayOutput) ToZoneExternalDownstreamArrayOutputWithContext(ctx context.Context) ZoneExternalDownstreamArrayOutput {
+	return o
+}
+
+func (o ZoneExternalDownstreamArrayOutput) Index(i pulumi.IntInput) ZoneExternalDownstreamOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ZoneExternalDownstream {
+		return vs[0].([]ZoneExternalDownstream)[vs[1].(int)]
+	}).(ZoneExternalDownstreamOutput)
+}
+
 type ZoneExternalMaster struct {
 	// (Updatable) The server's IP address (IPv4 or IPv6).
 	Address string `pulumi:"address"`
@@ -1408,6 +1974,130 @@ func (o ZoneNameserverArrayOutput) Index(i pulumi.IntInput) ZoneNameserverOutput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ZoneNameserver {
 		return vs[0].([]ZoneNameserver)[vs[1].(int)]
 	}).(ZoneNameserverOutput)
+}
+
+type ZoneZoneTransferServer struct {
+	// (Updatable) The server's IP address (IPv4 or IPv6).
+	Address *string `pulumi:"address"`
+	// A Boolean flag indicating whether or not the server is a zone data transfer destination.
+	IsTransferDestination *bool `pulumi:"isTransferDestination"`
+	// A Boolean flag indicating whether or not the server is a zone data transfer source.
+	IsTransferSource *bool `pulumi:"isTransferSource"`
+	// (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+	Port *int `pulumi:"port"`
+}
+
+// ZoneZoneTransferServerInput is an input type that accepts ZoneZoneTransferServerArgs and ZoneZoneTransferServerOutput values.
+// You can construct a concrete instance of `ZoneZoneTransferServerInput` via:
+//
+//	ZoneZoneTransferServerArgs{...}
+type ZoneZoneTransferServerInput interface {
+	pulumi.Input
+
+	ToZoneZoneTransferServerOutput() ZoneZoneTransferServerOutput
+	ToZoneZoneTransferServerOutputWithContext(context.Context) ZoneZoneTransferServerOutput
+}
+
+type ZoneZoneTransferServerArgs struct {
+	// (Updatable) The server's IP address (IPv4 or IPv6).
+	Address pulumi.StringPtrInput `pulumi:"address"`
+	// A Boolean flag indicating whether or not the server is a zone data transfer destination.
+	IsTransferDestination pulumi.BoolPtrInput `pulumi:"isTransferDestination"`
+	// A Boolean flag indicating whether or not the server is a zone data transfer source.
+	IsTransferSource pulumi.BoolPtrInput `pulumi:"isTransferSource"`
+	// (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+	Port pulumi.IntPtrInput `pulumi:"port"`
+}
+
+func (ZoneZoneTransferServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ZoneZoneTransferServer)(nil)).Elem()
+}
+
+func (i ZoneZoneTransferServerArgs) ToZoneZoneTransferServerOutput() ZoneZoneTransferServerOutput {
+	return i.ToZoneZoneTransferServerOutputWithContext(context.Background())
+}
+
+func (i ZoneZoneTransferServerArgs) ToZoneZoneTransferServerOutputWithContext(ctx context.Context) ZoneZoneTransferServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ZoneZoneTransferServerOutput)
+}
+
+// ZoneZoneTransferServerArrayInput is an input type that accepts ZoneZoneTransferServerArray and ZoneZoneTransferServerArrayOutput values.
+// You can construct a concrete instance of `ZoneZoneTransferServerArrayInput` via:
+//
+//	ZoneZoneTransferServerArray{ ZoneZoneTransferServerArgs{...} }
+type ZoneZoneTransferServerArrayInput interface {
+	pulumi.Input
+
+	ToZoneZoneTransferServerArrayOutput() ZoneZoneTransferServerArrayOutput
+	ToZoneZoneTransferServerArrayOutputWithContext(context.Context) ZoneZoneTransferServerArrayOutput
+}
+
+type ZoneZoneTransferServerArray []ZoneZoneTransferServerInput
+
+func (ZoneZoneTransferServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ZoneZoneTransferServer)(nil)).Elem()
+}
+
+func (i ZoneZoneTransferServerArray) ToZoneZoneTransferServerArrayOutput() ZoneZoneTransferServerArrayOutput {
+	return i.ToZoneZoneTransferServerArrayOutputWithContext(context.Background())
+}
+
+func (i ZoneZoneTransferServerArray) ToZoneZoneTransferServerArrayOutputWithContext(ctx context.Context) ZoneZoneTransferServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ZoneZoneTransferServerArrayOutput)
+}
+
+type ZoneZoneTransferServerOutput struct{ *pulumi.OutputState }
+
+func (ZoneZoneTransferServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ZoneZoneTransferServer)(nil)).Elem()
+}
+
+func (o ZoneZoneTransferServerOutput) ToZoneZoneTransferServerOutput() ZoneZoneTransferServerOutput {
+	return o
+}
+
+func (o ZoneZoneTransferServerOutput) ToZoneZoneTransferServerOutputWithContext(ctx context.Context) ZoneZoneTransferServerOutput {
+	return o
+}
+
+// (Updatable) The server's IP address (IPv4 or IPv6).
+func (o ZoneZoneTransferServerOutput) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneZoneTransferServer) *string { return v.Address }).(pulumi.StringPtrOutput)
+}
+
+// A Boolean flag indicating whether or not the server is a zone data transfer destination.
+func (o ZoneZoneTransferServerOutput) IsTransferDestination() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ZoneZoneTransferServer) *bool { return v.IsTransferDestination }).(pulumi.BoolPtrOutput)
+}
+
+// A Boolean flag indicating whether or not the server is a zone data transfer source.
+func (o ZoneZoneTransferServerOutput) IsTransferSource() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ZoneZoneTransferServer) *bool { return v.IsTransferSource }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+func (o ZoneZoneTransferServerOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ZoneZoneTransferServer) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+type ZoneZoneTransferServerArrayOutput struct{ *pulumi.OutputState }
+
+func (ZoneZoneTransferServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ZoneZoneTransferServer)(nil)).Elem()
+}
+
+func (o ZoneZoneTransferServerArrayOutput) ToZoneZoneTransferServerArrayOutput() ZoneZoneTransferServerArrayOutput {
+	return o
+}
+
+func (o ZoneZoneTransferServerArrayOutput) ToZoneZoneTransferServerArrayOutputWithContext(ctx context.Context) ZoneZoneTransferServerArrayOutput {
+	return o
+}
+
+func (o ZoneZoneTransferServerArrayOutput) Index(i pulumi.IntInput) ZoneZoneTransferServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ZoneZoneTransferServer {
+		return vs[0].([]ZoneZoneTransferServer)[vs[1].(int)]
+	}).(ZoneZoneTransferServerOutput)
 }
 
 type GetRecordsFilter struct {
@@ -3332,6 +4022,375 @@ func (o GetRrsetItemArrayOutput) Index(i pulumi.IntInput) GetRrsetItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRrsetItem {
 		return vs[0].([]GetRrsetItem)[vs[1].(int)]
 	}).(GetRrsetItemOutput)
+}
+
+type GetRrsetsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRrsetsFilterInput is an input type that accepts GetRrsetsFilterArgs and GetRrsetsFilterOutput values.
+// You can construct a concrete instance of `GetRrsetsFilterInput` via:
+//
+//	GetRrsetsFilterArgs{...}
+type GetRrsetsFilterInput interface {
+	pulumi.Input
+
+	ToGetRrsetsFilterOutput() GetRrsetsFilterOutput
+	ToGetRrsetsFilterOutputWithContext(context.Context) GetRrsetsFilterOutput
+}
+
+type GetRrsetsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRrsetsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRrsetsFilter)(nil)).Elem()
+}
+
+func (i GetRrsetsFilterArgs) ToGetRrsetsFilterOutput() GetRrsetsFilterOutput {
+	return i.ToGetRrsetsFilterOutputWithContext(context.Background())
+}
+
+func (i GetRrsetsFilterArgs) ToGetRrsetsFilterOutputWithContext(ctx context.Context) GetRrsetsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRrsetsFilterOutput)
+}
+
+// GetRrsetsFilterArrayInput is an input type that accepts GetRrsetsFilterArray and GetRrsetsFilterArrayOutput values.
+// You can construct a concrete instance of `GetRrsetsFilterArrayInput` via:
+//
+//	GetRrsetsFilterArray{ GetRrsetsFilterArgs{...} }
+type GetRrsetsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRrsetsFilterArrayOutput() GetRrsetsFilterArrayOutput
+	ToGetRrsetsFilterArrayOutputWithContext(context.Context) GetRrsetsFilterArrayOutput
+}
+
+type GetRrsetsFilterArray []GetRrsetsFilterInput
+
+func (GetRrsetsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRrsetsFilter)(nil)).Elem()
+}
+
+func (i GetRrsetsFilterArray) ToGetRrsetsFilterArrayOutput() GetRrsetsFilterArrayOutput {
+	return i.ToGetRrsetsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRrsetsFilterArray) ToGetRrsetsFilterArrayOutputWithContext(ctx context.Context) GetRrsetsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRrsetsFilterArrayOutput)
+}
+
+type GetRrsetsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRrsetsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRrsetsFilter)(nil)).Elem()
+}
+
+func (o GetRrsetsFilterOutput) ToGetRrsetsFilterOutput() GetRrsetsFilterOutput {
+	return o
+}
+
+func (o GetRrsetsFilterOutput) ToGetRrsetsFilterOutputWithContext(ctx context.Context) GetRrsetsFilterOutput {
+	return o
+}
+
+func (o GetRrsetsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRrsetsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRrsetsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRrsetsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRrsetsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRrsetsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRrsetsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRrsetsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRrsetsFilter)(nil)).Elem()
+}
+
+func (o GetRrsetsFilterArrayOutput) ToGetRrsetsFilterArrayOutput() GetRrsetsFilterArrayOutput {
+	return o
+}
+
+func (o GetRrsetsFilterArrayOutput) ToGetRrsetsFilterArrayOutputWithContext(ctx context.Context) GetRrsetsFilterArrayOutput {
+	return o
+}
+
+func (o GetRrsetsFilterArrayOutput) Index(i pulumi.IntInput) GetRrsetsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRrsetsFilter {
+		return vs[0].([]GetRrsetsFilter)[vs[1].(int)]
+	}).(GetRrsetsFilterOutput)
+}
+
+type GetRrsetsRrset struct {
+	// The target fully-qualified domain name (FQDN) within the target zone.
+	Domain string               `pulumi:"domain"`
+	Items  []GetRrsetsRrsetItem `pulumi:"items"`
+	// Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
+	Rtype string `pulumi:"rtype"`
+}
+
+// GetRrsetsRrsetInput is an input type that accepts GetRrsetsRrsetArgs and GetRrsetsRrsetOutput values.
+// You can construct a concrete instance of `GetRrsetsRrsetInput` via:
+//
+//	GetRrsetsRrsetArgs{...}
+type GetRrsetsRrsetInput interface {
+	pulumi.Input
+
+	ToGetRrsetsRrsetOutput() GetRrsetsRrsetOutput
+	ToGetRrsetsRrsetOutputWithContext(context.Context) GetRrsetsRrsetOutput
+}
+
+type GetRrsetsRrsetArgs struct {
+	// The target fully-qualified domain name (FQDN) within the target zone.
+	Domain pulumi.StringInput           `pulumi:"domain"`
+	Items  GetRrsetsRrsetItemArrayInput `pulumi:"items"`
+	// Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
+	Rtype pulumi.StringInput `pulumi:"rtype"`
+}
+
+func (GetRrsetsRrsetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRrsetsRrset)(nil)).Elem()
+}
+
+func (i GetRrsetsRrsetArgs) ToGetRrsetsRrsetOutput() GetRrsetsRrsetOutput {
+	return i.ToGetRrsetsRrsetOutputWithContext(context.Background())
+}
+
+func (i GetRrsetsRrsetArgs) ToGetRrsetsRrsetOutputWithContext(ctx context.Context) GetRrsetsRrsetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRrsetsRrsetOutput)
+}
+
+// GetRrsetsRrsetArrayInput is an input type that accepts GetRrsetsRrsetArray and GetRrsetsRrsetArrayOutput values.
+// You can construct a concrete instance of `GetRrsetsRrsetArrayInput` via:
+//
+//	GetRrsetsRrsetArray{ GetRrsetsRrsetArgs{...} }
+type GetRrsetsRrsetArrayInput interface {
+	pulumi.Input
+
+	ToGetRrsetsRrsetArrayOutput() GetRrsetsRrsetArrayOutput
+	ToGetRrsetsRrsetArrayOutputWithContext(context.Context) GetRrsetsRrsetArrayOutput
+}
+
+type GetRrsetsRrsetArray []GetRrsetsRrsetInput
+
+func (GetRrsetsRrsetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRrsetsRrset)(nil)).Elem()
+}
+
+func (i GetRrsetsRrsetArray) ToGetRrsetsRrsetArrayOutput() GetRrsetsRrsetArrayOutput {
+	return i.ToGetRrsetsRrsetArrayOutputWithContext(context.Background())
+}
+
+func (i GetRrsetsRrsetArray) ToGetRrsetsRrsetArrayOutputWithContext(ctx context.Context) GetRrsetsRrsetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRrsetsRrsetArrayOutput)
+}
+
+type GetRrsetsRrsetOutput struct{ *pulumi.OutputState }
+
+func (GetRrsetsRrsetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRrsetsRrset)(nil)).Elem()
+}
+
+func (o GetRrsetsRrsetOutput) ToGetRrsetsRrsetOutput() GetRrsetsRrsetOutput {
+	return o
+}
+
+func (o GetRrsetsRrsetOutput) ToGetRrsetsRrsetOutputWithContext(ctx context.Context) GetRrsetsRrsetOutput {
+	return o
+}
+
+// The target fully-qualified domain name (FQDN) within the target zone.
+func (o GetRrsetsRrsetOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRrsetsRrset) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+func (o GetRrsetsRrsetOutput) Items() GetRrsetsRrsetItemArrayOutput {
+	return o.ApplyT(func(v GetRrsetsRrset) []GetRrsetsRrsetItem { return v.Items }).(GetRrsetsRrsetItemArrayOutput)
+}
+
+// Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
+func (o GetRrsetsRrsetOutput) Rtype() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRrsetsRrset) string { return v.Rtype }).(pulumi.StringOutput)
+}
+
+type GetRrsetsRrsetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRrsetsRrsetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRrsetsRrset)(nil)).Elem()
+}
+
+func (o GetRrsetsRrsetArrayOutput) ToGetRrsetsRrsetArrayOutput() GetRrsetsRrsetArrayOutput {
+	return o
+}
+
+func (o GetRrsetsRrsetArrayOutput) ToGetRrsetsRrsetArrayOutputWithContext(ctx context.Context) GetRrsetsRrsetArrayOutput {
+	return o
+}
+
+func (o GetRrsetsRrsetArrayOutput) Index(i pulumi.IntInput) GetRrsetsRrsetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRrsetsRrset {
+		return vs[0].([]GetRrsetsRrset)[vs[1].(int)]
+	}).(GetRrsetsRrsetOutput)
+}
+
+type GetRrsetsRrsetItem struct {
+	// The target fully-qualified domain name (FQDN) within the target zone.
+	Domain string `pulumi:"domain"`
+	// A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
+	IsProtected bool `pulumi:"isProtected"`
+	// The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+	Rdata string `pulumi:"rdata"`
+	// A unique identifier for the record within its zone.
+	RecordHash string `pulumi:"recordHash"`
+	// The latest version of the record's zone in which its RRSet differs from the preceding version.
+	RrsetVersion string `pulumi:"rrsetVersion"`
+	// Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
+	Rtype string `pulumi:"rtype"`
+	// The Time To Live for the record, in seconds.
+	Ttl int `pulumi:"ttl"`
+}
+
+// GetRrsetsRrsetItemInput is an input type that accepts GetRrsetsRrsetItemArgs and GetRrsetsRrsetItemOutput values.
+// You can construct a concrete instance of `GetRrsetsRrsetItemInput` via:
+//
+//	GetRrsetsRrsetItemArgs{...}
+type GetRrsetsRrsetItemInput interface {
+	pulumi.Input
+
+	ToGetRrsetsRrsetItemOutput() GetRrsetsRrsetItemOutput
+	ToGetRrsetsRrsetItemOutputWithContext(context.Context) GetRrsetsRrsetItemOutput
+}
+
+type GetRrsetsRrsetItemArgs struct {
+	// The target fully-qualified domain name (FQDN) within the target zone.
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
+	IsProtected pulumi.BoolInput `pulumi:"isProtected"`
+	// The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+	Rdata pulumi.StringInput `pulumi:"rdata"`
+	// A unique identifier for the record within its zone.
+	RecordHash pulumi.StringInput `pulumi:"recordHash"`
+	// The latest version of the record's zone in which its RRSet differs from the preceding version.
+	RrsetVersion pulumi.StringInput `pulumi:"rrsetVersion"`
+	// Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
+	Rtype pulumi.StringInput `pulumi:"rtype"`
+	// The Time To Live for the record, in seconds.
+	Ttl pulumi.IntInput `pulumi:"ttl"`
+}
+
+func (GetRrsetsRrsetItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRrsetsRrsetItem)(nil)).Elem()
+}
+
+func (i GetRrsetsRrsetItemArgs) ToGetRrsetsRrsetItemOutput() GetRrsetsRrsetItemOutput {
+	return i.ToGetRrsetsRrsetItemOutputWithContext(context.Background())
+}
+
+func (i GetRrsetsRrsetItemArgs) ToGetRrsetsRrsetItemOutputWithContext(ctx context.Context) GetRrsetsRrsetItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRrsetsRrsetItemOutput)
+}
+
+// GetRrsetsRrsetItemArrayInput is an input type that accepts GetRrsetsRrsetItemArray and GetRrsetsRrsetItemArrayOutput values.
+// You can construct a concrete instance of `GetRrsetsRrsetItemArrayInput` via:
+//
+//	GetRrsetsRrsetItemArray{ GetRrsetsRrsetItemArgs{...} }
+type GetRrsetsRrsetItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRrsetsRrsetItemArrayOutput() GetRrsetsRrsetItemArrayOutput
+	ToGetRrsetsRrsetItemArrayOutputWithContext(context.Context) GetRrsetsRrsetItemArrayOutput
+}
+
+type GetRrsetsRrsetItemArray []GetRrsetsRrsetItemInput
+
+func (GetRrsetsRrsetItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRrsetsRrsetItem)(nil)).Elem()
+}
+
+func (i GetRrsetsRrsetItemArray) ToGetRrsetsRrsetItemArrayOutput() GetRrsetsRrsetItemArrayOutput {
+	return i.ToGetRrsetsRrsetItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRrsetsRrsetItemArray) ToGetRrsetsRrsetItemArrayOutputWithContext(ctx context.Context) GetRrsetsRrsetItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRrsetsRrsetItemArrayOutput)
+}
+
+type GetRrsetsRrsetItemOutput struct{ *pulumi.OutputState }
+
+func (GetRrsetsRrsetItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRrsetsRrsetItem)(nil)).Elem()
+}
+
+func (o GetRrsetsRrsetItemOutput) ToGetRrsetsRrsetItemOutput() GetRrsetsRrsetItemOutput {
+	return o
+}
+
+func (o GetRrsetsRrsetItemOutput) ToGetRrsetsRrsetItemOutputWithContext(ctx context.Context) GetRrsetsRrsetItemOutput {
+	return o
+}
+
+// The target fully-qualified domain name (FQDN) within the target zone.
+func (o GetRrsetsRrsetItemOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRrsetsRrsetItem) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
+func (o GetRrsetsRrsetItemOutput) IsProtected() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetRrsetsRrsetItem) bool { return v.IsProtected }).(pulumi.BoolOutput)
+}
+
+// The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+func (o GetRrsetsRrsetItemOutput) Rdata() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRrsetsRrsetItem) string { return v.Rdata }).(pulumi.StringOutput)
+}
+
+// A unique identifier for the record within its zone.
+func (o GetRrsetsRrsetItemOutput) RecordHash() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRrsetsRrsetItem) string { return v.RecordHash }).(pulumi.StringOutput)
+}
+
+// The latest version of the record's zone in which its RRSet differs from the preceding version.
+func (o GetRrsetsRrsetItemOutput) RrsetVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRrsetsRrsetItem) string { return v.RrsetVersion }).(pulumi.StringOutput)
+}
+
+// Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
+func (o GetRrsetsRrsetItemOutput) Rtype() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRrsetsRrsetItem) string { return v.Rtype }).(pulumi.StringOutput)
+}
+
+// The Time To Live for the record, in seconds.
+func (o GetRrsetsRrsetItemOutput) Ttl() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRrsetsRrsetItem) int { return v.Ttl }).(pulumi.IntOutput)
+}
+
+type GetRrsetsRrsetItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRrsetsRrsetItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRrsetsRrsetItem)(nil)).Elem()
+}
+
+func (o GetRrsetsRrsetItemArrayOutput) ToGetRrsetsRrsetItemArrayOutput() GetRrsetsRrsetItemArrayOutput {
+	return o
+}
+
+func (o GetRrsetsRrsetItemArrayOutput) ToGetRrsetsRrsetItemArrayOutputWithContext(ctx context.Context) GetRrsetsRrsetItemArrayOutput {
+	return o
+}
+
+func (o GetRrsetsRrsetItemArrayOutput) Index(i pulumi.IntInput) GetRrsetsRrsetItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRrsetsRrsetItem {
+		return vs[0].([]GetRrsetsRrsetItem)[vs[1].(int)]
+	}).(GetRrsetsRrsetItemOutput)
 }
 
 type GetSteeringPoliciesFilter struct {
@@ -5863,6 +6922,8 @@ type GetZonesZone struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+	ExternalDownstreams []GetZonesZoneExternalDownstream `pulumi:"externalDownstreams"`
 	// External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
 	ExternalMasters []GetZonesZoneExternalMaster `pulumi:"externalMasters"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -5890,6 +6951,8 @@ type GetZonesZone struct {
 	Version string `pulumi:"version"`
 	// The OCID of the view the resource is associated with.
 	ViewId string `pulumi:"viewId"`
+	// The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+	ZoneTransferServers []GetZonesZoneZoneTransferServer `pulumi:"zoneTransferServers"`
 	// Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
 	ZoneType string `pulumi:"zoneType"`
 }
@@ -5910,6 +6973,8 @@ type GetZonesZoneArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+	ExternalDownstreams GetZonesZoneExternalDownstreamArrayInput `pulumi:"externalDownstreams"`
 	// External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
 	ExternalMasters GetZonesZoneExternalMasterArrayInput `pulumi:"externalMasters"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -5937,6 +7002,8 @@ type GetZonesZoneArgs struct {
 	Version pulumi.StringInput `pulumi:"version"`
 	// The OCID of the view the resource is associated with.
 	ViewId pulumi.StringInput `pulumi:"viewId"`
+	// The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+	ZoneTransferServers GetZonesZoneZoneTransferServerArrayInput `pulumi:"zoneTransferServers"`
 	// Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
 	ZoneType pulumi.StringInput `pulumi:"zoneType"`
 }
@@ -6000,6 +7067,11 @@ func (o GetZonesZoneOutput) CompartmentId() pulumi.StringOutput {
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 func (o GetZonesZoneOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetZonesZone) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+func (o GetZonesZoneOutput) ExternalDownstreams() GetZonesZoneExternalDownstreamArrayOutput {
+	return o.ApplyT(func(v GetZonesZone) []GetZonesZoneExternalDownstream { return v.ExternalDownstreams }).(GetZonesZoneExternalDownstreamArrayOutput)
 }
 
 // External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
@@ -6068,6 +7140,11 @@ func (o GetZonesZoneOutput) ViewId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZonesZone) string { return v.ViewId }).(pulumi.StringOutput)
 }
 
+// The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+func (o GetZonesZoneOutput) ZoneTransferServers() GetZonesZoneZoneTransferServerArrayOutput {
+	return o.ApplyT(func(v GetZonesZone) []GetZonesZoneZoneTransferServer { return v.ZoneTransferServers }).(GetZonesZoneZoneTransferServerArrayOutput)
+}
+
 // Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
 func (o GetZonesZoneOutput) ZoneType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZonesZone) string { return v.ZoneType }).(pulumi.StringOutput)
@@ -6091,6 +7168,121 @@ func (o GetZonesZoneArrayOutput) Index(i pulumi.IntInput) GetZonesZoneOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZonesZone {
 		return vs[0].([]GetZonesZone)[vs[1].(int)]
 	}).(GetZonesZoneOutput)
+}
+
+type GetZonesZoneExternalDownstream struct {
+	// The server's IP address (IPv4 or IPv6).
+	Address string `pulumi:"address"`
+	// The server's port. Port value must be a value of 53, otherwise omit the port value.
+	Port int `pulumi:"port"`
+	// Search for zones that are associated with a TSIG key.
+	TsigKeyId string `pulumi:"tsigKeyId"`
+}
+
+// GetZonesZoneExternalDownstreamInput is an input type that accepts GetZonesZoneExternalDownstreamArgs and GetZonesZoneExternalDownstreamOutput values.
+// You can construct a concrete instance of `GetZonesZoneExternalDownstreamInput` via:
+//
+//	GetZonesZoneExternalDownstreamArgs{...}
+type GetZonesZoneExternalDownstreamInput interface {
+	pulumi.Input
+
+	ToGetZonesZoneExternalDownstreamOutput() GetZonesZoneExternalDownstreamOutput
+	ToGetZonesZoneExternalDownstreamOutputWithContext(context.Context) GetZonesZoneExternalDownstreamOutput
+}
+
+type GetZonesZoneExternalDownstreamArgs struct {
+	// The server's IP address (IPv4 or IPv6).
+	Address pulumi.StringInput `pulumi:"address"`
+	// The server's port. Port value must be a value of 53, otherwise omit the port value.
+	Port pulumi.IntInput `pulumi:"port"`
+	// Search for zones that are associated with a TSIG key.
+	TsigKeyId pulumi.StringInput `pulumi:"tsigKeyId"`
+}
+
+func (GetZonesZoneExternalDownstreamArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZonesZoneExternalDownstream)(nil)).Elem()
+}
+
+func (i GetZonesZoneExternalDownstreamArgs) ToGetZonesZoneExternalDownstreamOutput() GetZonesZoneExternalDownstreamOutput {
+	return i.ToGetZonesZoneExternalDownstreamOutputWithContext(context.Background())
+}
+
+func (i GetZonesZoneExternalDownstreamArgs) ToGetZonesZoneExternalDownstreamOutputWithContext(ctx context.Context) GetZonesZoneExternalDownstreamOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneExternalDownstreamOutput)
+}
+
+// GetZonesZoneExternalDownstreamArrayInput is an input type that accepts GetZonesZoneExternalDownstreamArray and GetZonesZoneExternalDownstreamArrayOutput values.
+// You can construct a concrete instance of `GetZonesZoneExternalDownstreamArrayInput` via:
+//
+//	GetZonesZoneExternalDownstreamArray{ GetZonesZoneExternalDownstreamArgs{...} }
+type GetZonesZoneExternalDownstreamArrayInput interface {
+	pulumi.Input
+
+	ToGetZonesZoneExternalDownstreamArrayOutput() GetZonesZoneExternalDownstreamArrayOutput
+	ToGetZonesZoneExternalDownstreamArrayOutputWithContext(context.Context) GetZonesZoneExternalDownstreamArrayOutput
+}
+
+type GetZonesZoneExternalDownstreamArray []GetZonesZoneExternalDownstreamInput
+
+func (GetZonesZoneExternalDownstreamArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZonesZoneExternalDownstream)(nil)).Elem()
+}
+
+func (i GetZonesZoneExternalDownstreamArray) ToGetZonesZoneExternalDownstreamArrayOutput() GetZonesZoneExternalDownstreamArrayOutput {
+	return i.ToGetZonesZoneExternalDownstreamArrayOutputWithContext(context.Background())
+}
+
+func (i GetZonesZoneExternalDownstreamArray) ToGetZonesZoneExternalDownstreamArrayOutputWithContext(ctx context.Context) GetZonesZoneExternalDownstreamArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneExternalDownstreamArrayOutput)
+}
+
+type GetZonesZoneExternalDownstreamOutput struct{ *pulumi.OutputState }
+
+func (GetZonesZoneExternalDownstreamOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZonesZoneExternalDownstream)(nil)).Elem()
+}
+
+func (o GetZonesZoneExternalDownstreamOutput) ToGetZonesZoneExternalDownstreamOutput() GetZonesZoneExternalDownstreamOutput {
+	return o
+}
+
+func (o GetZonesZoneExternalDownstreamOutput) ToGetZonesZoneExternalDownstreamOutputWithContext(ctx context.Context) GetZonesZoneExternalDownstreamOutput {
+	return o
+}
+
+// The server's IP address (IPv4 or IPv6).
+func (o GetZonesZoneExternalDownstreamOutput) Address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneExternalDownstream) string { return v.Address }).(pulumi.StringOutput)
+}
+
+// The server's port. Port value must be a value of 53, otherwise omit the port value.
+func (o GetZonesZoneExternalDownstreamOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetZonesZoneExternalDownstream) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// Search for zones that are associated with a TSIG key.
+func (o GetZonesZoneExternalDownstreamOutput) TsigKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneExternalDownstream) string { return v.TsigKeyId }).(pulumi.StringOutput)
+}
+
+type GetZonesZoneExternalDownstreamArrayOutput struct{ *pulumi.OutputState }
+
+func (GetZonesZoneExternalDownstreamArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZonesZoneExternalDownstream)(nil)).Elem()
+}
+
+func (o GetZonesZoneExternalDownstreamArrayOutput) ToGetZonesZoneExternalDownstreamArrayOutput() GetZonesZoneExternalDownstreamArrayOutput {
+	return o
+}
+
+func (o GetZonesZoneExternalDownstreamArrayOutput) ToGetZonesZoneExternalDownstreamArrayOutputWithContext(ctx context.Context) GetZonesZoneExternalDownstreamArrayOutput {
+	return o
+}
+
+func (o GetZonesZoneExternalDownstreamArrayOutput) Index(i pulumi.IntInput) GetZonesZoneExternalDownstreamOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZonesZoneExternalDownstream {
+		return vs[0].([]GetZonesZoneExternalDownstream)[vs[1].(int)]
+	}).(GetZonesZoneExternalDownstreamOutput)
 }
 
 type GetZonesZoneExternalMaster struct {
@@ -6305,7 +7497,139 @@ func (o GetZonesZoneNameserverArrayOutput) Index(i pulumi.IntInput) GetZonesZone
 	}).(GetZonesZoneNameserverOutput)
 }
 
+type GetZonesZoneZoneTransferServer struct {
+	// The server's IP address (IPv4 or IPv6).
+	Address string `pulumi:"address"`
+	// A Boolean flag indicating whether or not the server is a zone data transfer destination.
+	IsTransferDestination bool `pulumi:"isTransferDestination"`
+	// A Boolean flag indicating whether or not the server is a zone data transfer source.
+	IsTransferSource bool `pulumi:"isTransferSource"`
+	// The server's port. Port value must be a value of 53, otherwise omit the port value.
+	Port int `pulumi:"port"`
+}
+
+// GetZonesZoneZoneTransferServerInput is an input type that accepts GetZonesZoneZoneTransferServerArgs and GetZonesZoneZoneTransferServerOutput values.
+// You can construct a concrete instance of `GetZonesZoneZoneTransferServerInput` via:
+//
+//	GetZonesZoneZoneTransferServerArgs{...}
+type GetZonesZoneZoneTransferServerInput interface {
+	pulumi.Input
+
+	ToGetZonesZoneZoneTransferServerOutput() GetZonesZoneZoneTransferServerOutput
+	ToGetZonesZoneZoneTransferServerOutputWithContext(context.Context) GetZonesZoneZoneTransferServerOutput
+}
+
+type GetZonesZoneZoneTransferServerArgs struct {
+	// The server's IP address (IPv4 or IPv6).
+	Address pulumi.StringInput `pulumi:"address"`
+	// A Boolean flag indicating whether or not the server is a zone data transfer destination.
+	IsTransferDestination pulumi.BoolInput `pulumi:"isTransferDestination"`
+	// A Boolean flag indicating whether or not the server is a zone data transfer source.
+	IsTransferSource pulumi.BoolInput `pulumi:"isTransferSource"`
+	// The server's port. Port value must be a value of 53, otherwise omit the port value.
+	Port pulumi.IntInput `pulumi:"port"`
+}
+
+func (GetZonesZoneZoneTransferServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZonesZoneZoneTransferServer)(nil)).Elem()
+}
+
+func (i GetZonesZoneZoneTransferServerArgs) ToGetZonesZoneZoneTransferServerOutput() GetZonesZoneZoneTransferServerOutput {
+	return i.ToGetZonesZoneZoneTransferServerOutputWithContext(context.Background())
+}
+
+func (i GetZonesZoneZoneTransferServerArgs) ToGetZonesZoneZoneTransferServerOutputWithContext(ctx context.Context) GetZonesZoneZoneTransferServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneZoneTransferServerOutput)
+}
+
+// GetZonesZoneZoneTransferServerArrayInput is an input type that accepts GetZonesZoneZoneTransferServerArray and GetZonesZoneZoneTransferServerArrayOutput values.
+// You can construct a concrete instance of `GetZonesZoneZoneTransferServerArrayInput` via:
+//
+//	GetZonesZoneZoneTransferServerArray{ GetZonesZoneZoneTransferServerArgs{...} }
+type GetZonesZoneZoneTransferServerArrayInput interface {
+	pulumi.Input
+
+	ToGetZonesZoneZoneTransferServerArrayOutput() GetZonesZoneZoneTransferServerArrayOutput
+	ToGetZonesZoneZoneTransferServerArrayOutputWithContext(context.Context) GetZonesZoneZoneTransferServerArrayOutput
+}
+
+type GetZonesZoneZoneTransferServerArray []GetZonesZoneZoneTransferServerInput
+
+func (GetZonesZoneZoneTransferServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZonesZoneZoneTransferServer)(nil)).Elem()
+}
+
+func (i GetZonesZoneZoneTransferServerArray) ToGetZonesZoneZoneTransferServerArrayOutput() GetZonesZoneZoneTransferServerArrayOutput {
+	return i.ToGetZonesZoneZoneTransferServerArrayOutputWithContext(context.Background())
+}
+
+func (i GetZonesZoneZoneTransferServerArray) ToGetZonesZoneZoneTransferServerArrayOutputWithContext(ctx context.Context) GetZonesZoneZoneTransferServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneZoneTransferServerArrayOutput)
+}
+
+type GetZonesZoneZoneTransferServerOutput struct{ *pulumi.OutputState }
+
+func (GetZonesZoneZoneTransferServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZonesZoneZoneTransferServer)(nil)).Elem()
+}
+
+func (o GetZonesZoneZoneTransferServerOutput) ToGetZonesZoneZoneTransferServerOutput() GetZonesZoneZoneTransferServerOutput {
+	return o
+}
+
+func (o GetZonesZoneZoneTransferServerOutput) ToGetZonesZoneZoneTransferServerOutputWithContext(ctx context.Context) GetZonesZoneZoneTransferServerOutput {
+	return o
+}
+
+// The server's IP address (IPv4 or IPv6).
+func (o GetZonesZoneZoneTransferServerOutput) Address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneZoneTransferServer) string { return v.Address }).(pulumi.StringOutput)
+}
+
+// A Boolean flag indicating whether or not the server is a zone data transfer destination.
+func (o GetZonesZoneZoneTransferServerOutput) IsTransferDestination() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetZonesZoneZoneTransferServer) bool { return v.IsTransferDestination }).(pulumi.BoolOutput)
+}
+
+// A Boolean flag indicating whether or not the server is a zone data transfer source.
+func (o GetZonesZoneZoneTransferServerOutput) IsTransferSource() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetZonesZoneZoneTransferServer) bool { return v.IsTransferSource }).(pulumi.BoolOutput)
+}
+
+// The server's port. Port value must be a value of 53, otherwise omit the port value.
+func (o GetZonesZoneZoneTransferServerOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetZonesZoneZoneTransferServer) int { return v.Port }).(pulumi.IntOutput)
+}
+
+type GetZonesZoneZoneTransferServerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetZonesZoneZoneTransferServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZonesZoneZoneTransferServer)(nil)).Elem()
+}
+
+func (o GetZonesZoneZoneTransferServerArrayOutput) ToGetZonesZoneZoneTransferServerArrayOutput() GetZonesZoneZoneTransferServerArrayOutput {
+	return o
+}
+
+func (o GetZonesZoneZoneTransferServerArrayOutput) ToGetZonesZoneZoneTransferServerArrayOutputWithContext(ctx context.Context) GetZonesZoneZoneTransferServerArrayOutput {
+	return o
+}
+
+func (o GetZonesZoneZoneTransferServerArrayOutput) Index(i pulumi.IntInput) GetZonesZoneZoneTransferServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZonesZoneZoneTransferServer {
+		return vs[0].([]GetZonesZoneZoneTransferServer)[vs[1].(int)]
+	}).(GetZonesZoneZoneTransferServerOutput)
+}
+
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ActionCreateZoneFromZoneFileExternalDownstreamInput)(nil)).Elem(), ActionCreateZoneFromZoneFileExternalDownstreamArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ActionCreateZoneFromZoneFileExternalDownstreamArrayInput)(nil)).Elem(), ActionCreateZoneFromZoneFileExternalDownstreamArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ActionCreateZoneFromZoneFileExternalMasterInput)(nil)).Elem(), ActionCreateZoneFromZoneFileExternalMasterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ActionCreateZoneFromZoneFileExternalMasterArrayInput)(nil)).Elem(), ActionCreateZoneFromZoneFileExternalMasterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ActionCreateZoneFromZoneFileNameserverInput)(nil)).Elem(), ActionCreateZoneFromZoneFileNameserverArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ActionCreateZoneFromZoneFileNameserverArrayInput)(nil)).Elem(), ActionCreateZoneFromZoneFileNameserverArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ActionCreateZoneFromZoneFileZoneTransferServerInput)(nil)).Elem(), ActionCreateZoneFromZoneFileZoneTransferServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ActionCreateZoneFromZoneFileZoneTransferServerArrayInput)(nil)).Elem(), ActionCreateZoneFromZoneFileZoneTransferServerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResolverAttachedViewInput)(nil)).Elem(), ResolverAttachedViewArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResolverAttachedViewArrayInput)(nil)).Elem(), ResolverAttachedViewArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResolverEndpointTypeInput)(nil)).Elem(), ResolverEndpointTypeArgs{})
@@ -6324,10 +7648,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SteeringPolicyRuleCaseAnswerDataArrayInput)(nil)).Elem(), SteeringPolicyRuleCaseAnswerDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SteeringPolicyRuleDefaultAnswerDataInput)(nil)).Elem(), SteeringPolicyRuleDefaultAnswerDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SteeringPolicyRuleDefaultAnswerDataArrayInput)(nil)).Elem(), SteeringPolicyRuleDefaultAnswerDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ZoneExternalDownstreamInput)(nil)).Elem(), ZoneExternalDownstreamArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ZoneExternalDownstreamArrayInput)(nil)).Elem(), ZoneExternalDownstreamArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ZoneExternalMasterInput)(nil)).Elem(), ZoneExternalMasterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ZoneExternalMasterArrayInput)(nil)).Elem(), ZoneExternalMasterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ZoneNameserverInput)(nil)).Elem(), ZoneNameserverArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ZoneNameserverArrayInput)(nil)).Elem(), ZoneNameserverArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ZoneZoneTransferServerInput)(nil)).Elem(), ZoneZoneTransferServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ZoneZoneTransferServerArrayInput)(nil)).Elem(), ZoneZoneTransferServerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRecordsFilterInput)(nil)).Elem(), GetRecordsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRecordsFilterArrayInput)(nil)).Elem(), GetRecordsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRecordsRecordInput)(nil)).Elem(), GetRecordsRecordArgs{})
@@ -6354,6 +7682,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResolversResolverRuleArrayInput)(nil)).Elem(), GetResolversResolverRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRrsetItemInput)(nil)).Elem(), GetRrsetItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRrsetItemArrayInput)(nil)).Elem(), GetRrsetItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRrsetsFilterInput)(nil)).Elem(), GetRrsetsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRrsetsFilterArrayInput)(nil)).Elem(), GetRrsetsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRrsetsRrsetInput)(nil)).Elem(), GetRrsetsRrsetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRrsetsRrsetArrayInput)(nil)).Elem(), GetRrsetsRrsetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRrsetsRrsetItemInput)(nil)).Elem(), GetRrsetsRrsetItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRrsetsRrsetItemArrayInput)(nil)).Elem(), GetRrsetsRrsetItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSteeringPoliciesFilterInput)(nil)).Elem(), GetSteeringPoliciesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSteeringPoliciesFilterArrayInput)(nil)).Elem(), GetSteeringPoliciesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSteeringPoliciesSteeringPolicyInput)(nil)).Elem(), GetSteeringPoliciesSteeringPolicyArgs{})
@@ -6394,10 +7728,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesFilterArrayInput)(nil)).Elem(), GetZonesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneInput)(nil)).Elem(), GetZonesZoneArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneArrayInput)(nil)).Elem(), GetZonesZoneArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneExternalDownstreamInput)(nil)).Elem(), GetZonesZoneExternalDownstreamArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneExternalDownstreamArrayInput)(nil)).Elem(), GetZonesZoneExternalDownstreamArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneExternalMasterInput)(nil)).Elem(), GetZonesZoneExternalMasterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneExternalMasterArrayInput)(nil)).Elem(), GetZonesZoneExternalMasterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneNameserverInput)(nil)).Elem(), GetZonesZoneNameserverArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneNameserverArrayInput)(nil)).Elem(), GetZonesZoneNameserverArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneZoneTransferServerInput)(nil)).Elem(), GetZonesZoneZoneTransferServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneZoneTransferServerArrayInput)(nil)).Elem(), GetZonesZoneZoneTransferServerArray{})
+	pulumi.RegisterOutputType(ActionCreateZoneFromZoneFileExternalDownstreamOutput{})
+	pulumi.RegisterOutputType(ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput{})
+	pulumi.RegisterOutputType(ActionCreateZoneFromZoneFileExternalMasterOutput{})
+	pulumi.RegisterOutputType(ActionCreateZoneFromZoneFileExternalMasterArrayOutput{})
+	pulumi.RegisterOutputType(ActionCreateZoneFromZoneFileNameserverOutput{})
+	pulumi.RegisterOutputType(ActionCreateZoneFromZoneFileNameserverArrayOutput{})
+	pulumi.RegisterOutputType(ActionCreateZoneFromZoneFileZoneTransferServerOutput{})
+	pulumi.RegisterOutputType(ActionCreateZoneFromZoneFileZoneTransferServerArrayOutput{})
 	pulumi.RegisterOutputType(ResolverAttachedViewOutput{})
 	pulumi.RegisterOutputType(ResolverAttachedViewArrayOutput{})
 	pulumi.RegisterOutputType(ResolverEndpointTypeOutput{})
@@ -6416,10 +7762,14 @@ func init() {
 	pulumi.RegisterOutputType(SteeringPolicyRuleCaseAnswerDataArrayOutput{})
 	pulumi.RegisterOutputType(SteeringPolicyRuleDefaultAnswerDataOutput{})
 	pulumi.RegisterOutputType(SteeringPolicyRuleDefaultAnswerDataArrayOutput{})
+	pulumi.RegisterOutputType(ZoneExternalDownstreamOutput{})
+	pulumi.RegisterOutputType(ZoneExternalDownstreamArrayOutput{})
 	pulumi.RegisterOutputType(ZoneExternalMasterOutput{})
 	pulumi.RegisterOutputType(ZoneExternalMasterArrayOutput{})
 	pulumi.RegisterOutputType(ZoneNameserverOutput{})
 	pulumi.RegisterOutputType(ZoneNameserverArrayOutput{})
+	pulumi.RegisterOutputType(ZoneZoneTransferServerOutput{})
+	pulumi.RegisterOutputType(ZoneZoneTransferServerArrayOutput{})
 	pulumi.RegisterOutputType(GetRecordsFilterOutput{})
 	pulumi.RegisterOutputType(GetRecordsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetRecordsRecordOutput{})
@@ -6446,6 +7796,12 @@ func init() {
 	pulumi.RegisterOutputType(GetResolversResolverRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetRrsetItemOutput{})
 	pulumi.RegisterOutputType(GetRrsetItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRrsetsFilterOutput{})
+	pulumi.RegisterOutputType(GetRrsetsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRrsetsRrsetOutput{})
+	pulumi.RegisterOutputType(GetRrsetsRrsetArrayOutput{})
+	pulumi.RegisterOutputType(GetRrsetsRrsetItemOutput{})
+	pulumi.RegisterOutputType(GetRrsetsRrsetItemArrayOutput{})
 	pulumi.RegisterOutputType(GetSteeringPoliciesFilterOutput{})
 	pulumi.RegisterOutputType(GetSteeringPoliciesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSteeringPoliciesSteeringPolicyOutput{})
@@ -6486,8 +7842,12 @@ func init() {
 	pulumi.RegisterOutputType(GetZonesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetZonesZoneOutput{})
 	pulumi.RegisterOutputType(GetZonesZoneArrayOutput{})
+	pulumi.RegisterOutputType(GetZonesZoneExternalDownstreamOutput{})
+	pulumi.RegisterOutputType(GetZonesZoneExternalDownstreamArrayOutput{})
 	pulumi.RegisterOutputType(GetZonesZoneExternalMasterOutput{})
 	pulumi.RegisterOutputType(GetZonesZoneExternalMasterArrayOutput{})
 	pulumi.RegisterOutputType(GetZonesZoneNameserverOutput{})
 	pulumi.RegisterOutputType(GetZonesZoneNameserverArrayOutput{})
+	pulumi.RegisterOutputType(GetZonesZoneZoneTransferServerOutput{})
+	pulumi.RegisterOutputType(GetZonesZoneZoneTransferServerArrayOutput{})
 }

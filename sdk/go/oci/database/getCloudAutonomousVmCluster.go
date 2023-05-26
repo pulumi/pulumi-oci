@@ -84,8 +84,9 @@ type LookupCloudAutonomousVmClusterResult struct {
 	// The total data storage allocated, in terabytes (TB).
 	DataStorageSizeInTbs float64 `pulumi:"dataStorageSizeInTbs"`
 	// The local node storage allocated in GBs.
-	DbNodeStorageSizeInGbs int      `pulumi:"dbNodeStorageSizeInGbs"`
-	DbServers              []string `pulumi:"dbServers"`
+	DbNodeStorageSizeInGbs int `pulumi:"dbNodeStorageSizeInGbs"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+	DbServers []string `pulumi:"dbServers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// User defined description of the cloud Autonomous VM cluster.
@@ -113,7 +114,7 @@ type LookupCloudAutonomousVmClusterResult struct {
 	MaintenanceWindowDetails []GetCloudAutonomousVmClusterMaintenanceWindowDetail `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows []GetCloudAutonomousVmClusterMaintenanceWindow `pulumi:"maintenanceWindows"`
-	// The amount of memory (in GBs) enabled per each CPU core.
+	// The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
@@ -260,6 +261,7 @@ func (o LookupCloudAutonomousVmClusterResultOutput) DbNodeStorageSizeInGbs() pul
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
 func (o LookupCloudAutonomousVmClusterResultOutput) DbServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) []string { return v.DbServers }).(pulumi.StringArrayOutput)
 }
@@ -337,7 +339,7 @@ func (o LookupCloudAutonomousVmClusterResultOutput) MaintenanceWindows() GetClou
 	}).(GetCloudAutonomousVmClusterMaintenanceWindowArrayOutput)
 }
 
-// The amount of memory (in GBs) enabled per each CPU core.
+// The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 func (o LookupCloudAutonomousVmClusterResultOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
 }

@@ -157,7 +157,7 @@ class GetAutonomousDatabasesResult:
     @pulumi.getter(name="isRefreshableClone")
     def is_refreshable_clone(self) -> Optional[bool]:
         """
-        Indicates whether the Autonomous Database is a refreshable clone.
+        Indicates if the Autonomous Database is a refreshable clone.
         """
         return pulumi.get(self, "is_refreshable_clone")
 

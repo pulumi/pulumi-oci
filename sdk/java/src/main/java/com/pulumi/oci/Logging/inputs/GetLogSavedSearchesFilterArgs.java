@@ -18,14 +18,14 @@ public final class GetLogSavedSearchesFilterArgs extends com.pulumi.resources.Re
     public static final GetLogSavedSearchesFilterArgs Empty = new GetLogSavedSearchesFilterArgs();
 
     /**
-     * Resource name
+     * Resource name.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return Resource name
+     * @return Resource name.
      * 
      */
     public Output<String> name() {
@@ -73,7 +73,7 @@ public final class GetLogSavedSearchesFilterArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param name Resource name
+         * @param name Resource name.
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class GetLogSavedSearchesFilterArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param name Resource name
+         * @param name Resource name.
          * 
          * @return builder
          * 

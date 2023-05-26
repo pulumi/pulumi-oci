@@ -246,7 +246,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Boolean isReconnectCloneEnabled;
     /**
-     * @return Indicates whether the Autonomous Database is a refreshable clone.
+     * @return Indicates if the Autonomous Database is a refreshable clone.
      * 
      */
     private Boolean isRefreshableClone;
@@ -316,7 +316,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Integer maxCpuCoreCount;
     /**
-     * @return The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+     * @return The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     private Integer memoryPerOracleComputeUnitInGbs;
@@ -342,7 +342,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Double ocpuCount;
     /**
-     * @return The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+     * @return Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      * 
      */
     private String openMode;
@@ -362,7 +362,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String privateEndpointIp;
     /**
-     * @return The private endpoint label for the resource. Setting this to an empty string, after the private endpoint database gets created, will change the same private endpoint database to the public endpoint database.
+     * @return The resource&#39;s private endpoint label. Setting this to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
      * 
      */
     private String privateEndpointLabel;
@@ -392,7 +392,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String role;
     /**
-     * @return list of scheduled operations
+     * @return The list of scheduled operations.
      * 
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperation> scheduledOperations;
@@ -839,7 +839,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.isReconnectCloneEnabled;
     }
     /**
-     * @return Indicates whether the Autonomous Database is a refreshable clone.
+     * @return Indicates if the Autonomous Database is a refreshable clone.
      * 
      */
     public Boolean isRefreshableClone() {
@@ -937,7 +937,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.maxCpuCoreCount;
     }
     /**
-     * @return The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+     * @return The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     public Integer memoryPerOracleComputeUnitInGbs() {
@@ -973,7 +973,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.ocpuCount;
     }
     /**
-     * @return The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+     * @return Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      * 
      */
     public String openMode() {
@@ -1001,7 +1001,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.privateEndpointIp;
     }
     /**
-     * @return The private endpoint label for the resource. Setting this to an empty string, after the private endpoint database gets created, will change the same private endpoint database to the public endpoint database.
+     * @return The resource&#39;s private endpoint label. Setting this to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
      * 
      */
     public String privateEndpointLabel() {
@@ -1043,7 +1043,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.role;
     }
     /**
-     * @return list of scheduled operations
+     * @return The list of scheduled operations.
      * 
      */
     public List<GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperation> scheduledOperations() {

@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testCloudExadataInfrastructureUnAllocatedResource = oci.Database.getCloudExadataInfrastructureUnAllocatedResource({
  *     cloudExadataInfrastructureId: oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure.id,
+ *     dbServers: _var.cloud_exadata_infrastructure_un_allocated_resource_db_servers,
  * });
  * ```
  */
@@ -27,6 +28,7 @@ export function getCloudExadataInfrastructureUnAllocatedResource(args: GetCloudE
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getCloudExadataInfrastructureUnAllocatedResource:getCloudExadataInfrastructureUnAllocatedResource", {
         "cloudExadataInfrastructureId": args.cloudExadataInfrastructureId,
+        "dbServers": args.dbServers,
     }, opts);
 }
 
@@ -38,6 +40,10 @@ export interface GetCloudExadataInfrastructureUnAllocatedResourceArgs {
      * The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     cloudExadataInfrastructureId: string;
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+     */
+    dbServers?: string[];
 }
 
 /**
@@ -56,6 +62,7 @@ export interface GetCloudExadataInfrastructureUnAllocatedResourceResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
      */
     readonly cloudExadataInfrastructureId: string;
+    readonly dbServers?: string[];
     /**
      * Total unallocated exadata storage in the infrastructure in TBs.
      */
@@ -90,6 +97,7 @@ export interface GetCloudExadataInfrastructureUnAllocatedResourceResult {
  *
  * const testCloudExadataInfrastructureUnAllocatedResource = oci.Database.getCloudExadataInfrastructureUnAllocatedResource({
  *     cloudExadataInfrastructureId: oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure.id,
+ *     dbServers: _var.cloud_exadata_infrastructure_un_allocated_resource_db_servers,
  * });
  * ```
  */
@@ -105,4 +113,8 @@ export interface GetCloudExadataInfrastructureUnAllocatedResourceOutputArgs {
      * The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     cloudExadataInfrastructureId: pulumi.Input<string>;
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+     */
+    dbServers?: pulumi.Input<pulumi.Input<string>[]>;
 }

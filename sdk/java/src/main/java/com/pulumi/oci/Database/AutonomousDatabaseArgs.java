@@ -360,7 +360,9 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
      * * OLTP - indicates an Autonomous Transaction Processing database
      * * DW - indicates an Autonomous Data Warehouse database
      * * AJD - indicates an Autonomous JSON Database
-     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * 
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
      * 
      */
     @Import(name="dbWorkload")
@@ -371,7 +373,9 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
      * * OLTP - indicates an Autonomous Transaction Processing database
      * * DW - indicates an Autonomous Data Warehouse database
      * * AJD - indicates an Autonomous JSON Database
-     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * 
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
      * 
      */
     public Optional<Output<String>> dbWorkload() {
@@ -707,14 +711,14 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+     * Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      * 
      */
     @Import(name="openMode")
     private @Nullable Output<String> openMode;
 
     /**
-     * @return The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+     * @return Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      * 
      */
     public Optional<Output<String>> openMode() {
@@ -737,14 +741,14 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The Autonomous Database permission level. Restricted mode allows access only to admin users.
+     * The Autonomous Database permission level. Restricted mode allows access only by admin users.
      * 
      */
     @Import(name="permissionLevel")
     private @Nullable Output<String> permissionLevel;
 
     /**
-     * @return The Autonomous Database permission level. Restricted mode allows access only to admin users.
+     * @return The Autonomous Database permission level. Restricted mode allows access only by admin users.
      * 
      */
     public Optional<Output<String>> permissionLevel() {
@@ -827,14 +831,18 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) list of scheduled operations
+     * (Updatable) The list of scheduled operations.
+     * 
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      * 
      */
     @Import(name="scheduledOperations")
     private @Nullable Output<List<AutonomousDatabaseScheduledOperationArgs>> scheduledOperations;
 
     /**
-     * @return (Updatable) list of scheduled operations
+     * @return (Updatable) The list of scheduled operations.
+     * 
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      * 
      */
     public Optional<Output<List<AutonomousDatabaseScheduledOperationArgs>>> scheduledOperations() {
@@ -1052,7 +1060,9 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
      * 
      * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
      * 
-     * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[&#34;&#34;]`.
+     * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+     * 
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[&#34;&#34;]`.
      * 
      */
     @Import(name="whitelistedIps")
@@ -1063,7 +1073,9 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
      * 
      * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
      * 
-     * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[&#34;&#34;]`.
+     * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+     * 
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[&#34;&#34;]`.
      * 
      */
     public Optional<Output<List<String>>> whitelistedIps() {
@@ -1623,7 +1635,9 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          * * OLTP - indicates an Autonomous Transaction Processing database
          * * DW - indicates an Autonomous Data Warehouse database
          * * AJD - indicates an Autonomous JSON Database
-         * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+         * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+         * 
+         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
          * 
          * @return builder
          * 
@@ -1638,7 +1652,9 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          * * OLTP - indicates an Autonomous Transaction Processing database
          * * DW - indicates an Autonomous Data Warehouse database
          * * AJD - indicates an Autonomous JSON Database
-         * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+         * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+         * 
+         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
          * 
          * @return builder
          * 
@@ -2107,7 +2123,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param openMode The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+         * @param openMode Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
          * 
          * @return builder
          * 
@@ -2118,7 +2134,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param openMode The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+         * @param openMode Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
          * 
          * @return builder
          * 
@@ -2149,7 +2165,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param permissionLevel The Autonomous Database permission level. Restricted mode allows access only to admin users.
+         * @param permissionLevel The Autonomous Database permission level. Restricted mode allows access only by admin users.
          * 
          * @return builder
          * 
@@ -2160,7 +2176,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param permissionLevel The Autonomous Database permission level. Restricted mode allows access only to admin users.
+         * @param permissionLevel The Autonomous Database permission level. Restricted mode allows access only by admin users.
          * 
          * @return builder
          * 
@@ -2275,7 +2291,9 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param scheduledOperations (Updatable) list of scheduled operations
+         * @param scheduledOperations (Updatable) The list of scheduled operations.
+         * 
+         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          * 
          * @return builder
          * 
@@ -2286,7 +2304,9 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param scheduledOperations (Updatable) list of scheduled operations
+         * @param scheduledOperations (Updatable) The list of scheduled operations.
+         * 
+         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          * 
          * @return builder
          * 
@@ -2296,7 +2316,9 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param scheduledOperations (Updatable) list of scheduled operations
+         * @param scheduledOperations (Updatable) The list of scheduled operations.
+         * 
+         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          * 
          * @return builder
          * 
@@ -2602,7 +2624,9 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          * 
          * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
          * 
-         * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[&#34;&#34;]`.
+         * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+         * 
+         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[&#34;&#34;]`.
          * 
          * @return builder
          * 
@@ -2617,7 +2641,9 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          * 
          * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
          * 
-         * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[&#34;&#34;]`.
+         * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+         * 
+         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[&#34;&#34;]`.
          * 
          * @return builder
          * 
@@ -2631,7 +2657,9 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          * 
          * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
          * 
-         * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[&#34;&#34;]`.
+         * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+         * 
+         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[&#34;&#34;]`.
          * 
          * @return builder
          * 

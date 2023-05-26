@@ -33,7 +33,7 @@ class LogArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this resource is currently enabled.
-        :param pulumi.Input[int] retention_duration: (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+        :param pulumi.Input[int] retention_duration: (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
                
                
                ** IMPORTANT **
@@ -141,7 +141,7 @@ class LogArgs:
     @pulumi.getter(name="retentionDuration")
     def retention_duration(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+        (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
 
 
         ** IMPORTANT **
@@ -180,7 +180,7 @@ class _LogState:
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this resource is currently enabled.
         :param pulumi.Input[str] log_group_id: (Updatable) OCID of a log group to work with.
         :param pulumi.Input[str] log_type: The logType that the log object is for, whether custom or service.
-        :param pulumi.Input[int] retention_duration: (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+        :param pulumi.Input[int] retention_duration: (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
                
                
                ** IMPORTANT **
@@ -317,7 +317,7 @@ class _LogState:
     @pulumi.getter(name="retentionDuration")
     def retention_duration(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+        (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
 
 
         ** IMPORTANT **
@@ -444,7 +444,7 @@ class Log(pulumi.CustomResource):
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this resource is currently enabled.
         :param pulumi.Input[str] log_group_id: (Updatable) OCID of a log group to work with.
         :param pulumi.Input[str] log_type: The logType that the log object is for, whether custom or service.
-        :param pulumi.Input[int] retention_duration: (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+        :param pulumi.Input[int] retention_duration: (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
                
                
                ** IMPORTANT **
@@ -588,7 +588,7 @@ class Log(pulumi.CustomResource):
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this resource is currently enabled.
         :param pulumi.Input[str] log_group_id: (Updatable) OCID of a log group to work with.
         :param pulumi.Input[str] log_type: The logType that the log object is for, whether custom or service.
-        :param pulumi.Input[int] retention_duration: (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+        :param pulumi.Input[int] retention_duration: (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
                
                
                ** IMPORTANT **
@@ -685,7 +685,7 @@ class Log(pulumi.CustomResource):
     @pulumi.getter(name="retentionDuration")
     def retention_duration(self) -> pulumi.Output[int]:
         """
-        (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+        (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
 
 
         ** IMPORTANT **

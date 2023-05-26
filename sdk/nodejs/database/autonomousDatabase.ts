@@ -184,7 +184,9 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * * OLTP - indicates an Autonomous Transaction Processing database
      * * DW - indicates an Autonomous Data Warehouse database
      * * AJD - indicates an Autonomous JSON Database
-     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     *
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
      */
     public readonly dbWorkload!: pulumi.Output<string>;
     /**
@@ -321,7 +323,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly maxCpuCoreCount!: pulumi.Output<number>;
     /**
-     * The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+     * The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
      */
     public /*out*/ readonly memoryPerOracleComputeUnitInGbs!: pulumi.Output<number>;
     /**
@@ -350,7 +352,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly ocpuCount!: pulumi.Output<number>;
     /**
-     * The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+     * Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      */
     public readonly openMode!: pulumi.Output<string>;
     /**
@@ -362,7 +364,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly peerDbIds!: pulumi.Output<string[]>;
     /**
-     * The Autonomous Database permission level. Restricted mode allows access only to admin users.
+     * The Autonomous Database permission level. Restricted mode allows access only by admin users.
      */
     public readonly permissionLevel!: pulumi.Output<string>;
     /**
@@ -406,7 +408,9 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly rotateKeyTrigger!: pulumi.Output<boolean | undefined>;
     /**
-     * (Updatable) list of scheduled operations
+     * (Updatable) The list of scheduled operations.
+     *
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      */
     public readonly scheduledOperations!: pulumi.Output<outputs.Database.AutonomousDatabaseScheduledOperation[]>;
     /**
@@ -559,7 +563,9 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      *
      * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
      *
-     * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
+     * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+     *
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
      */
     public readonly whitelistedIps!: pulumi.Output<string[] | undefined>;
 
@@ -965,7 +971,9 @@ export interface AutonomousDatabaseState {
      * * OLTP - indicates an Autonomous Transaction Processing database
      * * DW - indicates an Autonomous Data Warehouse database
      * * AJD - indicates an Autonomous JSON Database
-     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     *
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
      */
     dbWorkload?: pulumi.Input<string>;
     /**
@@ -1102,7 +1110,7 @@ export interface AutonomousDatabaseState {
      */
     maxCpuCoreCount?: pulumi.Input<number>;
     /**
-     * The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+     * The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number>;
     /**
@@ -1131,7 +1139,7 @@ export interface AutonomousDatabaseState {
      */
     ocpuCount?: pulumi.Input<number>;
     /**
-     * The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+     * Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      */
     openMode?: pulumi.Input<string>;
     /**
@@ -1143,7 +1151,7 @@ export interface AutonomousDatabaseState {
      */
     peerDbIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The Autonomous Database permission level. Restricted mode allows access only to admin users.
+     * The Autonomous Database permission level. Restricted mode allows access only by admin users.
      */
     permissionLevel?: pulumi.Input<string>;
     /**
@@ -1187,7 +1195,9 @@ export interface AutonomousDatabaseState {
      */
     rotateKeyTrigger?: pulumi.Input<boolean>;
     /**
-     * (Updatable) list of scheduled operations
+     * (Updatable) The list of scheduled operations.
+     *
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      */
     scheduledOperations?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseScheduledOperation>[]>;
     /**
@@ -1340,7 +1350,9 @@ export interface AutonomousDatabaseState {
      *
      * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
      *
-     * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
+     * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+     *
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
      */
     whitelistedIps?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -1450,7 +1462,9 @@ export interface AutonomousDatabaseArgs {
      * * OLTP - indicates an Autonomous Transaction Processing database
      * * DW - indicates an Autonomous Data Warehouse database
      * * AJD - indicates an Autonomous JSON Database
-     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     *
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
      */
     dbWorkload?: pulumi.Input<string>;
     /**
@@ -1548,7 +1562,7 @@ export interface AutonomousDatabaseArgs {
      */
     ocpuCount?: pulumi.Input<number>;
     /**
-     * The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+     * Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      */
     openMode?: pulumi.Input<string>;
     /**
@@ -1556,7 +1570,7 @@ export interface AutonomousDatabaseArgs {
      */
     operationsInsightsStatus?: pulumi.Input<string>;
     /**
-     * The Autonomous Database permission level. Restricted mode allows access only to admin users.
+     * The Autonomous Database permission level. Restricted mode allows access only by admin users.
      */
     permissionLevel?: pulumi.Input<string>;
     /**
@@ -1580,7 +1594,9 @@ export interface AutonomousDatabaseArgs {
      */
     rotateKeyTrigger?: pulumi.Input<boolean>;
     /**
-     * (Updatable) list of scheduled operations
+     * (Updatable) The list of scheduled operations.
+     *
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      */
     scheduledOperations?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseScheduledOperation>[]>;
     /**
@@ -1649,7 +1665,9 @@ export interface AutonomousDatabaseArgs {
      *
      * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
      *
-     * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
+     * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+     *
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
      */
     whitelistedIps?: pulumi.Input<pulumi.Input<string>[]>;
 }

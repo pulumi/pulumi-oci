@@ -111,7 +111,7 @@ export class Log extends pulumi.CustomResource {
      */
     public readonly logType!: pulumi.Output<string>;
     /**
-     * (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+     * (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
      *
      *
      * ** IMPORTANT **
@@ -228,7 +228,7 @@ export interface LogState {
      */
     logType?: pulumi.Input<string>;
     /**
-     * (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+     * (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
      *
      *
      * ** IMPORTANT **
@@ -286,7 +286,7 @@ export interface LogArgs {
      */
     logType: pulumi.Input<string>;
     /**
-     * (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+     * (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
      *
      *
      * ** IMPORTANT **

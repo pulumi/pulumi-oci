@@ -18,6 +18,7 @@ __all__ = [
     'UnifiedAgentConfigurationServiceConfigurationDestination',
     'UnifiedAgentConfigurationServiceConfigurationSource',
     'UnifiedAgentConfigurationServiceConfigurationSourceParser',
+    'UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser',
     'UnifiedAgentConfigurationServiceConfigurationSourceParserPattern',
     'GetLogConfigurationResult',
     'GetLogConfigurationSourceResult',
@@ -35,6 +36,7 @@ __all__ = [
     'GetUnifiedAgentConfigurationServiceConfigurationDestinationResult',
     'GetUnifiedAgentConfigurationServiceConfigurationSourceResult',
     'GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult',
+    'GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserResult',
     'GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternResult',
     'GetUnifiedAgentConfigurationsFilterResult',
     'GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionResult',
@@ -220,7 +222,7 @@ class UnifiedAgentConfigurationServiceConfiguration(dict):
         """
         :param str configuration_type: (Updatable) Type of Unified Agent service configuration.
         :param 'UnifiedAgentConfigurationServiceConfigurationDestinationArgs' destination: (Updatable) Logging destination object.
-        :param Sequence['UnifiedAgentConfigurationServiceConfigurationSourceArgs'] sources: (Updatable)
+        :param Sequence['UnifiedAgentConfigurationServiceConfigurationSourceArgs'] sources: (Updatable) Logging source object.
         """
         pulumi.set(__self__, "configuration_type", configuration_type)
         pulumi.set(__self__, "destination", destination)
@@ -246,7 +248,7 @@ class UnifiedAgentConfigurationServiceConfiguration(dict):
     @pulumi.getter
     def sources(self) -> Sequence['outputs.UnifiedAgentConfigurationServiceConfigurationSource']:
         """
-        (Updatable)
+        (Updatable) Logging source object.
         """
         return pulumi.get(self, "sources")
 
@@ -317,10 +319,10 @@ class UnifiedAgentConfigurationServiceConfigurationSource(dict):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param Sequence[str] channels: (Updatable)
+        :param Sequence[str] channels: (Updatable) Windows event log channels.
         :param str name: (Updatable) The name key to tag this grok pattern.
         :param 'UnifiedAgentConfigurationServiceConfigurationSourceParserArgs' parser: (Updatable) source parser object.
-        :param Sequence[str] paths: (Updatable)
+        :param Sequence[str] paths: (Updatable) Absolute paths for log source files. Wildcard can be used.
         """
         pulumi.set(__self__, "source_type", source_type)
         if channels is not None:
@@ -348,7 +350,7 @@ class UnifiedAgentConfigurationServiceConfigurationSource(dict):
     @pulumi.getter
     def channels(self) -> Optional[Sequence[str]]:
         """
-        (Updatable)
+        (Updatable) Windows event log channels.
         """
         return pulumi.get(self, "channels")
 
@@ -372,7 +374,7 @@ class UnifiedAgentConfigurationServiceConfigurationSource(dict):
     @pulumi.getter
     def paths(self) -> Optional[Sequence[str]]:
         """
-        (Updatable)
+        (Updatable) Absolute paths for log source files. Wildcard can be used.
         """
         return pulumi.get(self, "paths")
 
@@ -396,6 +398,8 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
             suggest = "is_estimate_current_event"
         elif key == "isKeepTimeKey":
             suggest = "is_keep_time_key"
+        elif key == "isMergeCriFields":
+            suggest = "is_merge_cri_fields"
         elif key == "isNullEmptyString":
             suggest = "is_null_empty_string"
         elif key == "isSupportColonlessIdent":
@@ -408,6 +412,8 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
             suggest = "message_key"
         elif key == "multiLineStartRegexp":
             suggest = "multi_line_start_regexp"
+        elif key == "nestedParser":
+            suggest = "nested_parser"
         elif key == "nullValuePattern":
             suggest = "null_value_pattern"
         elif key == "rfc5424timeFormat":
@@ -443,6 +449,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
                  grok_name_key: Optional[str] = None,
                  is_estimate_current_event: Optional[bool] = None,
                  is_keep_time_key: Optional[bool] = None,
+                 is_merge_cri_fields: Optional[bool] = None,
                  is_null_empty_string: Optional[bool] = None,
                  is_support_colonless_ident: Optional[bool] = None,
                  is_with_priority: Optional[bool] = None,
@@ -450,6 +457,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
                  message_format: Optional[str] = None,
                  message_key: Optional[str] = None,
                  multi_line_start_regexp: Optional[str] = None,
+                 nested_parser: Optional['outputs.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser'] = None,
                  null_value_pattern: Optional[str] = None,
                  patterns: Optional[Sequence['outputs.UnifiedAgentConfigurationServiceConfigurationSourceParserPattern']] = None,
                  rfc5424time_format: Optional[str] = None,
@@ -460,30 +468,38 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
                  types: Optional[Mapping[str, Any]] = None):
         """
         :param str parser_type: (Updatable) Type of fluent parser.
-        :param str delimiter: (Updatable)
-        :param str expression: (Updatable)
+        :param str delimiter: (Updatable) csv delimiter.
+        :param str expression: (Updatable) Regex pattern.
         :param str field_time_key: (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
-        :param str format_firstline: (Updatable)
-        :param Sequence[str] formats: (Updatable)
-        :param str grok_failure_key: (Updatable)
-        :param str grok_name_key: (Updatable)
+        :param str format_firstline: (Updatable) First line pattern format.
+        :param Sequence[str] formats: (Updatable) Mutiline pattern format.
+        :param str grok_failure_key: (Updatable) grok failure key.
+        :param str grok_name_key: (Updatable) grok name key.
         :param bool is_estimate_current_event: (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
         :param bool is_keep_time_key: (Updatable) If true, keep time field in the record.
+        :param bool is_merge_cri_fields: (Updatable) If you don't need stream/logtag fields, set this to false.
         :param bool is_null_empty_string: (Updatable) If true, an empty string field is replaced with nil.
-        :param bool is_support_colonless_ident: (Updatable)
-        :param bool is_with_priority: (Updatable)
-        :param Sequence[str] keys: (Updatable)
-        :param str message_format: (Updatable)
-        :param str message_key: (Updatable)
-        :param str multi_line_start_regexp: (Updatable)
+        :param bool is_support_colonless_ident: (Updatable) Support colonless ident or not.
+        :param bool is_with_priority: (Updatable) With priority or not.
+        :param Sequence[str] keys: (Updatable) csv keys.
+        :param str message_format: (Updatable) Message format of syslog.
+        :param str message_key: (Updatable) Specifies the field name to contain logs.
+        :param str multi_line_start_regexp: (Updatable) Multiline start regexp pattern.
+        :param 'UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs' nested_parser: (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
         :param str null_value_pattern: (Updatable) Specify the null value pattern.
-        :param Sequence['UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs'] patterns: (Updatable)
-        :param str rfc5424time_format: (Updatable)
-        :param str syslog_parser_type: (Updatable)
-        :param str time_format: (Updatable)
-        :param str time_type: (Updatable)
+        :param Sequence['UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs'] patterns: (Updatable) grok pattern object.
+        :param str rfc5424time_format: (Updatable) rfc5424 time format.
+        :param str syslog_parser_type: (Updatable) Syslog parser type.
+        :param str time_format: (Updatable) Process time value using the specified format.
+        :param str time_type: (Updatable) Time type of JSON parser.
         :param int timeout_in_milliseconds: (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
-        :param Mapping[str, Any] types: (Updatable) Specify types for converting a field into another type.
+        :param Mapping[str, Any] types: (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
+               
+               This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+               
+               is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+               
+               record: { "host"   : "192.168.0.1", "req_id" : "111", "user"   : "-" }
         """
         pulumi.set(__self__, "parser_type", parser_type)
         if delimiter is not None:
@@ -504,6 +520,8 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
             pulumi.set(__self__, "is_estimate_current_event", is_estimate_current_event)
         if is_keep_time_key is not None:
             pulumi.set(__self__, "is_keep_time_key", is_keep_time_key)
+        if is_merge_cri_fields is not None:
+            pulumi.set(__self__, "is_merge_cri_fields", is_merge_cri_fields)
         if is_null_empty_string is not None:
             pulumi.set(__self__, "is_null_empty_string", is_null_empty_string)
         if is_support_colonless_ident is not None:
@@ -518,6 +536,8 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
             pulumi.set(__self__, "message_key", message_key)
         if multi_line_start_regexp is not None:
             pulumi.set(__self__, "multi_line_start_regexp", multi_line_start_regexp)
+        if nested_parser is not None:
+            pulumi.set(__self__, "nested_parser", nested_parser)
         if null_value_pattern is not None:
             pulumi.set(__self__, "null_value_pattern", null_value_pattern)
         if patterns is not None:
@@ -547,7 +567,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
     @pulumi.getter
     def delimiter(self) -> Optional[str]:
         """
-        (Updatable)
+        (Updatable) csv delimiter.
         """
         return pulumi.get(self, "delimiter")
 
@@ -555,7 +575,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
     @pulumi.getter
     def expression(self) -> Optional[str]:
         """
-        (Updatable)
+        (Updatable) Regex pattern.
         """
         return pulumi.get(self, "expression")
 
@@ -571,7 +591,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
     @pulumi.getter(name="formatFirstline")
     def format_firstline(self) -> Optional[str]:
         """
-        (Updatable)
+        (Updatable) First line pattern format.
         """
         return pulumi.get(self, "format_firstline")
 
@@ -579,7 +599,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
     @pulumi.getter
     def formats(self) -> Optional[Sequence[str]]:
         """
-        (Updatable)
+        (Updatable) Mutiline pattern format.
         """
         return pulumi.get(self, "formats")
 
@@ -587,7 +607,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
     @pulumi.getter(name="grokFailureKey")
     def grok_failure_key(self) -> Optional[str]:
         """
-        (Updatable)
+        (Updatable) grok failure key.
         """
         return pulumi.get(self, "grok_failure_key")
 
@@ -595,7 +615,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
     @pulumi.getter(name="grokNameKey")
     def grok_name_key(self) -> Optional[str]:
         """
-        (Updatable)
+        (Updatable) grok name key.
         """
         return pulumi.get(self, "grok_name_key")
 
@@ -616,6 +636,14 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
         return pulumi.get(self, "is_keep_time_key")
 
     @property
+    @pulumi.getter(name="isMergeCriFields")
+    def is_merge_cri_fields(self) -> Optional[bool]:
+        """
+        (Updatable) If you don't need stream/logtag fields, set this to false.
+        """
+        return pulumi.get(self, "is_merge_cri_fields")
+
+    @property
     @pulumi.getter(name="isNullEmptyString")
     def is_null_empty_string(self) -> Optional[bool]:
         """
@@ -627,7 +655,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
     @pulumi.getter(name="isSupportColonlessIdent")
     def is_support_colonless_ident(self) -> Optional[bool]:
         """
-        (Updatable)
+        (Updatable) Support colonless ident or not.
         """
         return pulumi.get(self, "is_support_colonless_ident")
 
@@ -635,7 +663,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
     @pulumi.getter(name="isWithPriority")
     def is_with_priority(self) -> Optional[bool]:
         """
-        (Updatable)
+        (Updatable) With priority or not.
         """
         return pulumi.get(self, "is_with_priority")
 
@@ -643,7 +671,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
     @pulumi.getter
     def keys(self) -> Optional[Sequence[str]]:
         """
-        (Updatable)
+        (Updatable) csv keys.
         """
         return pulumi.get(self, "keys")
 
@@ -651,7 +679,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
     @pulumi.getter(name="messageFormat")
     def message_format(self) -> Optional[str]:
         """
-        (Updatable)
+        (Updatable) Message format of syslog.
         """
         return pulumi.get(self, "message_format")
 
@@ -659,7 +687,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
     @pulumi.getter(name="messageKey")
     def message_key(self) -> Optional[str]:
         """
-        (Updatable)
+        (Updatable) Specifies the field name to contain logs.
         """
         return pulumi.get(self, "message_key")
 
@@ -667,9 +695,17 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
     @pulumi.getter(name="multiLineStartRegexp")
     def multi_line_start_regexp(self) -> Optional[str]:
         """
-        (Updatable)
+        (Updatable) Multiline start regexp pattern.
         """
         return pulumi.get(self, "multi_line_start_regexp")
+
+    @property
+    @pulumi.getter(name="nestedParser")
+    def nested_parser(self) -> Optional['outputs.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser']:
+        """
+        (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+        """
+        return pulumi.get(self, "nested_parser")
 
     @property
     @pulumi.getter(name="nullValuePattern")
@@ -683,7 +719,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
     @pulumi.getter
     def patterns(self) -> Optional[Sequence['outputs.UnifiedAgentConfigurationServiceConfigurationSourceParserPattern']]:
         """
-        (Updatable)
+        (Updatable) grok pattern object.
         """
         return pulumi.get(self, "patterns")
 
@@ -691,7 +727,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
     @pulumi.getter(name="rfc5424timeFormat")
     def rfc5424time_format(self) -> Optional[str]:
         """
-        (Updatable)
+        (Updatable) rfc5424 time format.
         """
         return pulumi.get(self, "rfc5424time_format")
 
@@ -699,7 +735,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
     @pulumi.getter(name="syslogParserType")
     def syslog_parser_type(self) -> Optional[str]:
         """
-        (Updatable)
+        (Updatable) Syslog parser type.
         """
         return pulumi.get(self, "syslog_parser_type")
 
@@ -707,7 +743,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
     @pulumi.getter(name="timeFormat")
     def time_format(self) -> Optional[str]:
         """
-        (Updatable)
+        (Updatable) Process time value using the specified format.
         """
         return pulumi.get(self, "time_format")
 
@@ -715,7 +751,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
     @pulumi.getter(name="timeType")
     def time_type(self) -> Optional[str]:
         """
-        (Updatable)
+        (Updatable) Time type of JSON parser.
         """
         return pulumi.get(self, "time_type")
 
@@ -731,9 +767,93 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
     @pulumi.getter
     def types(self) -> Optional[Mapping[str, Any]]:
         """
-        (Updatable) Specify types for converting a field into another type.
+        (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
+
+        This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+
+        is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+
+        record: { "host"   : "192.168.0.1", "req_id" : "111", "user"   : "-" }
         """
         return pulumi.get(self, "types")
+
+
+@pulumi.output_type
+class UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "fieldTimeKey":
+            suggest = "field_time_key"
+        elif key == "isKeepTimeKey":
+            suggest = "is_keep_time_key"
+        elif key == "timeFormat":
+            suggest = "time_format"
+        elif key == "timeType":
+            suggest = "time_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 field_time_key: Optional[str] = None,
+                 is_keep_time_key: Optional[bool] = None,
+                 time_format: Optional[str] = None,
+                 time_type: Optional[str] = None):
+        """
+        :param str field_time_key: (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        :param bool is_keep_time_key: (Updatable) If true, keep time field in the record.
+        :param str time_format: (Updatable) Process time value using the specified format.
+        :param str time_type: (Updatable) Time type of JSON parser.
+        """
+        if field_time_key is not None:
+            pulumi.set(__self__, "field_time_key", field_time_key)
+        if is_keep_time_key is not None:
+            pulumi.set(__self__, "is_keep_time_key", is_keep_time_key)
+        if time_format is not None:
+            pulumi.set(__self__, "time_format", time_format)
+        if time_type is not None:
+            pulumi.set(__self__, "time_type", time_type)
+
+    @property
+    @pulumi.getter(name="fieldTimeKey")
+    def field_time_key(self) -> Optional[str]:
+        """
+        (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        """
+        return pulumi.get(self, "field_time_key")
+
+    @property
+    @pulumi.getter(name="isKeepTimeKey")
+    def is_keep_time_key(self) -> Optional[bool]:
+        """
+        (Updatable) If true, keep time field in the record.
+        """
+        return pulumi.get(self, "is_keep_time_key")
+
+    @property
+    @pulumi.getter(name="timeFormat")
+    def time_format(self) -> Optional[str]:
+        """
+        (Updatable) Process time value using the specified format.
+        """
+        return pulumi.get(self, "time_format")
+
+    @property
+    @pulumi.getter(name="timeType")
+    def time_type(self) -> Optional[str]:
+        """
+        (Updatable) Time type of JSON parser.
+        """
+        return pulumi.get(self, "time_type")
 
 
 @pulumi.output_type
@@ -949,7 +1069,7 @@ class GetLogGroupsLogGroupResult(dict):
         :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str description: Description for this resource.
-        :param str display_name: Resource name
+        :param str display_name: Resource name.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The OCID of the resource.
         :param str state: The log group object state.
@@ -994,7 +1114,7 @@ class GetLogGroupsLogGroupResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Resource name
+        Resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -1046,7 +1166,7 @@ class GetLogSavedSearchesFilterResult(dict):
                  values: Sequence[str],
                  regex: Optional[bool] = None):
         """
-        :param str name: Resource name
+        :param str name: Resource name.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -1057,7 +1177,7 @@ class GetLogSavedSearchesFilterResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Resource name
+        Resource name.
         """
         return pulumi.get(self, "name")
 
@@ -1103,7 +1223,7 @@ class GetLogSavedSearchesLogSavedSearchSummaryCollectionItemResult(dict):
         :param str description: Description for this resource.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The OCID of the resource.
-        :param str name: Resource name
+        :param str name: Resource name.
         :param str query: The search query that is saved.
         :param str state: The state of the LogSavedSearch
         :param str time_created: Time the resource was created.
@@ -1164,7 +1284,7 @@ class GetLogSavedSearchesLogSavedSearchSummaryCollectionItemResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Resource name
+        Resource name.
         """
         return pulumi.get(self, "name")
 
@@ -1249,13 +1369,13 @@ class GetLogsLogResult(dict):
         :param str compartment_id: The OCID of the compartment that the resource belongs to.
         :param Sequence['GetLogsLogConfigurationArgs'] configurations: Log object configuration.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: Resource name
+        :param str display_name: Resource name.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The OCID of the resource.
         :param bool is_enabled: Whether or not this resource is currently enabled.
         :param str log_group_id: OCID of a log group to work with.
         :param str log_type: The logType that the log object is for, whether custom or service.
-        :param int retention_duration: Log retention duration in 30-day increments (30, 60, 90 and so on).
+        :param int retention_duration: Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
         :param str state: Lifecycle state of the log object
         :param str tenancy_id: The OCID of the tenancy.
         :param str time_created: Time the resource was created.
@@ -1304,7 +1424,7 @@ class GetLogsLogResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Resource name
+        Resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -1352,7 +1472,7 @@ class GetLogsLogResult(dict):
     @pulumi.getter(name="retentionDuration")
     def retention_duration(self) -> int:
         """
-        Log retention duration in 30-day increments (30, 60, 90 and so on).
+        Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
         """
         return pulumi.get(self, "retention_duration")
 
@@ -1498,6 +1618,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationResult(dict):
         """
         :param str configuration_type: Type of Unified Agent service configuration.
         :param Sequence['GetUnifiedAgentConfigurationServiceConfigurationDestinationArgs'] destinations: Logging destination object.
+        :param Sequence['GetUnifiedAgentConfigurationServiceConfigurationSourceArgs'] sources: Logging source object.
         """
         pulumi.set(__self__, "configuration_type", configuration_type)
         pulumi.set(__self__, "destinations", destinations)
@@ -1522,6 +1643,9 @@ class GetUnifiedAgentConfigurationServiceConfigurationResult(dict):
     @property
     @pulumi.getter
     def sources(self) -> Sequence['outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceResult']:
+        """
+        Logging source object.
+        """
         return pulumi.get(self, "sources")
 
 
@@ -1552,8 +1676,10 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceResult(dict):
                  paths: Sequence[str],
                  source_type: str):
         """
+        :param Sequence[str] channels: Windows event log channels.
         :param str name: The name key to tag this grok pattern.
         :param Sequence['GetUnifiedAgentConfigurationServiceConfigurationSourceParserArgs'] parsers: source parser object.
+        :param Sequence[str] paths: Absolute paths for log source files. Wildcard can be used.
         :param str source_type: Unified schema logging source type.
         """
         pulumi.set(__self__, "channels", channels)
@@ -1565,6 +1691,9 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceResult(dict):
     @property
     @pulumi.getter
     def channels(self) -> Sequence[str]:
+        """
+        Windows event log channels.
+        """
         return pulumi.get(self, "channels")
 
     @property
@@ -1586,6 +1715,9 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceResult(dict):
     @property
     @pulumi.getter
     def paths(self) -> Sequence[str]:
+        """
+        Absolute paths for log source files. Wildcard can be used.
+        """
         return pulumi.get(self, "paths")
 
     @property
@@ -1609,6 +1741,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult(dict):
                  grok_name_key: str,
                  is_estimate_current_event: bool,
                  is_keep_time_key: bool,
+                 is_merge_cri_fields: bool,
                  is_null_empty_string: bool,
                  is_support_colonless_ident: bool,
                  is_with_priority: bool,
@@ -1616,6 +1749,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult(dict):
                  message_format: str,
                  message_key: str,
                  multi_line_start_regexp: str,
+                 nested_parsers: Sequence['outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserResult'],
                  null_value_pattern: str,
                  parser_type: str,
                  patterns: Sequence['outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternResult'],
@@ -1626,14 +1760,33 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult(dict):
                  timeout_in_milliseconds: int,
                  types: Mapping[str, Any]):
         """
+        :param str delimiter: csv delimiter.
+        :param str expression: Regex pattern.
         :param str field_time_key: Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        :param str format_firstline: First line pattern format.
+        :param Sequence[str] formats: Mutiline pattern format.
+        :param str grok_failure_key: grok failure key.
+        :param str grok_name_key: grok name key.
         :param bool is_estimate_current_event: If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
         :param bool is_keep_time_key: If true, keep time field in the record.
+        :param bool is_merge_cri_fields: If you don't need stream/logtag fields, set this to false for CRI parser.
         :param bool is_null_empty_string: If true, an empty string field is replaced with nil.
+        :param bool is_support_colonless_ident: Support colonless ident or not.
+        :param bool is_with_priority: With priority or not.
+        :param Sequence[str] keys: csv keys.
+        :param str message_format: Message format of syslog.
+        :param str message_key: Specifies the field name to contain logs.
+        :param str multi_line_start_regexp: Multiline start regexp pattern.
+        :param Sequence['GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs'] nested_parsers: Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
         :param str null_value_pattern: Specify the null value pattern.
         :param str parser_type: Type of fluent parser.
+        :param Sequence['GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs'] patterns: grok pattern object.
+        :param str rfc5424time_format: rfc5424 time format.
+        :param str syslog_parser_type: Syslog parser type.
+        :param str time_format: Process time value using the specified format.
+        :param str time_type: Time type of JSON parser.
         :param int timeout_in_milliseconds: Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
-        :param Mapping[str, Any] types: Specify types for converting a field into another type.
+        :param Mapping[str, Any] types: Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
         """
         pulumi.set(__self__, "delimiter", delimiter)
         pulumi.set(__self__, "expression", expression)
@@ -1644,6 +1797,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult(dict):
         pulumi.set(__self__, "grok_name_key", grok_name_key)
         pulumi.set(__self__, "is_estimate_current_event", is_estimate_current_event)
         pulumi.set(__self__, "is_keep_time_key", is_keep_time_key)
+        pulumi.set(__self__, "is_merge_cri_fields", is_merge_cri_fields)
         pulumi.set(__self__, "is_null_empty_string", is_null_empty_string)
         pulumi.set(__self__, "is_support_colonless_ident", is_support_colonless_ident)
         pulumi.set(__self__, "is_with_priority", is_with_priority)
@@ -1651,6 +1805,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult(dict):
         pulumi.set(__self__, "message_format", message_format)
         pulumi.set(__self__, "message_key", message_key)
         pulumi.set(__self__, "multi_line_start_regexp", multi_line_start_regexp)
+        pulumi.set(__self__, "nested_parsers", nested_parsers)
         pulumi.set(__self__, "null_value_pattern", null_value_pattern)
         pulumi.set(__self__, "parser_type", parser_type)
         pulumi.set(__self__, "patterns", patterns)
@@ -1664,11 +1819,17 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult(dict):
     @property
     @pulumi.getter
     def delimiter(self) -> str:
+        """
+        csv delimiter.
+        """
         return pulumi.get(self, "delimiter")
 
     @property
     @pulumi.getter
     def expression(self) -> str:
+        """
+        Regex pattern.
+        """
         return pulumi.get(self, "expression")
 
     @property
@@ -1682,21 +1843,33 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult(dict):
     @property
     @pulumi.getter(name="formatFirstline")
     def format_firstline(self) -> str:
+        """
+        First line pattern format.
+        """
         return pulumi.get(self, "format_firstline")
 
     @property
     @pulumi.getter
     def formats(self) -> Sequence[str]:
+        """
+        Mutiline pattern format.
+        """
         return pulumi.get(self, "formats")
 
     @property
     @pulumi.getter(name="grokFailureKey")
     def grok_failure_key(self) -> str:
+        """
+        grok failure key.
+        """
         return pulumi.get(self, "grok_failure_key")
 
     @property
     @pulumi.getter(name="grokNameKey")
     def grok_name_key(self) -> str:
+        """
+        grok name key.
+        """
         return pulumi.get(self, "grok_name_key")
 
     @property
@@ -1716,6 +1889,14 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult(dict):
         return pulumi.get(self, "is_keep_time_key")
 
     @property
+    @pulumi.getter(name="isMergeCriFields")
+    def is_merge_cri_fields(self) -> bool:
+        """
+        If you don't need stream/logtag fields, set this to false for CRI parser.
+        """
+        return pulumi.get(self, "is_merge_cri_fields")
+
+    @property
     @pulumi.getter(name="isNullEmptyString")
     def is_null_empty_string(self) -> bool:
         """
@@ -1726,32 +1907,58 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult(dict):
     @property
     @pulumi.getter(name="isSupportColonlessIdent")
     def is_support_colonless_ident(self) -> bool:
+        """
+        Support colonless ident or not.
+        """
         return pulumi.get(self, "is_support_colonless_ident")
 
     @property
     @pulumi.getter(name="isWithPriority")
     def is_with_priority(self) -> bool:
+        """
+        With priority or not.
+        """
         return pulumi.get(self, "is_with_priority")
 
     @property
     @pulumi.getter
     def keys(self) -> Sequence[str]:
+        """
+        csv keys.
+        """
         return pulumi.get(self, "keys")
 
     @property
     @pulumi.getter(name="messageFormat")
     def message_format(self) -> str:
+        """
+        Message format of syslog.
+        """
         return pulumi.get(self, "message_format")
 
     @property
     @pulumi.getter(name="messageKey")
     def message_key(self) -> str:
+        """
+        Specifies the field name to contain logs.
+        """
         return pulumi.get(self, "message_key")
 
     @property
     @pulumi.getter(name="multiLineStartRegexp")
     def multi_line_start_regexp(self) -> str:
+        """
+        Multiline start regexp pattern.
+        """
         return pulumi.get(self, "multi_line_start_regexp")
+
+    @property
+    @pulumi.getter(name="nestedParsers")
+    def nested_parsers(self) -> Sequence['outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserResult']:
+        """
+        Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+        """
+        return pulumi.get(self, "nested_parsers")
 
     @property
     @pulumi.getter(name="nullValuePattern")
@@ -1772,26 +1979,41 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult(dict):
     @property
     @pulumi.getter
     def patterns(self) -> Sequence['outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternResult']:
+        """
+        grok pattern object.
+        """
         return pulumi.get(self, "patterns")
 
     @property
     @pulumi.getter(name="rfc5424timeFormat")
     def rfc5424time_format(self) -> str:
+        """
+        rfc5424 time format.
+        """
         return pulumi.get(self, "rfc5424time_format")
 
     @property
     @pulumi.getter(name="syslogParserType")
     def syslog_parser_type(self) -> str:
+        """
+        Syslog parser type.
+        """
         return pulumi.get(self, "syslog_parser_type")
 
     @property
     @pulumi.getter(name="timeFormat")
     def time_format(self) -> str:
+        """
+        Process time value using the specified format.
+        """
         return pulumi.get(self, "time_format")
 
     @property
     @pulumi.getter(name="timeType")
     def time_type(self) -> str:
+        """
+        Time type of JSON parser.
+        """
         return pulumi.get(self, "time_type")
 
     @property
@@ -1806,9 +2028,60 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult(dict):
     @pulumi.getter
     def types(self) -> Mapping[str, Any]:
         """
-        Specify types for converting a field into another type.
+        Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
         """
         return pulumi.get(self, "types")
+
+
+@pulumi.output_type
+class GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserResult(dict):
+    def __init__(__self__, *,
+                 field_time_key: str,
+                 is_keep_time_key: bool,
+                 time_format: str,
+                 time_type: str):
+        """
+        :param str field_time_key: Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        :param bool is_keep_time_key: If true, keep time field in the record.
+        :param str time_format: Process time value using the specified format.
+        :param str time_type: Time type of JSON parser.
+        """
+        pulumi.set(__self__, "field_time_key", field_time_key)
+        pulumi.set(__self__, "is_keep_time_key", is_keep_time_key)
+        pulumi.set(__self__, "time_format", time_format)
+        pulumi.set(__self__, "time_type", time_type)
+
+    @property
+    @pulumi.getter(name="fieldTimeKey")
+    def field_time_key(self) -> str:
+        """
+        Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        """
+        return pulumi.get(self, "field_time_key")
+
+    @property
+    @pulumi.getter(name="isKeepTimeKey")
+    def is_keep_time_key(self) -> bool:
+        """
+        If true, keep time field in the record.
+        """
+        return pulumi.get(self, "is_keep_time_key")
+
+    @property
+    @pulumi.getter(name="timeFormat")
+    def time_format(self) -> str:
+        """
+        Process time value using the specified format.
+        """
+        return pulumi.get(self, "time_format")
+
+    @property
+    @pulumi.getter(name="timeType")
+    def time_type(self) -> str:
+        """
+        Time type of JSON parser.
+        """
+        return pulumi.get(self, "time_type")
 
 
 @pulumi.output_type
@@ -1939,7 +2212,7 @@ class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemResult
         :param str configuration_type: Type of Unified Agent service configuration.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str description: Description for this resource.
-        :param str display_name: Resource name
+        :param str display_name: Resource name.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The OCID of the resource.
         :param bool is_enabled: Whether or not this resource is currently enabled.
@@ -2004,7 +2277,7 @@ class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemResult
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Resource name
+        Resource name.
         """
         return pulumi.get(self, "display_name")
 

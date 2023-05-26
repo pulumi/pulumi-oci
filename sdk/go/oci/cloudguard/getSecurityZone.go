@@ -79,8 +79,6 @@ type LookupSecurityZoneResult struct {
 	SecurityZoneTargetId string `pulumi:"securityZoneTargetId"`
 	// The current state of the security zone
 	State string `pulumi:"state"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the security zone was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the security zone was last updated. An RFC3339 formatted datetime string.
@@ -182,11 +180,6 @@ func (o LookupSecurityZoneResultOutput) SecurityZoneTargetId() pulumi.StringOutp
 // The current state of the security zone
 func (o LookupSecurityZoneResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityZoneResult) string { return v.State }).(pulumi.StringOutput)
-}
-
-// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupSecurityZoneResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSecurityZoneResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The time the security zone was created. An RFC3339 formatted datetime string.

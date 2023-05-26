@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UnifiedAgentConfigurationServiceConfigurationSource {
     /**
-     * @return (Updatable)
+     * @return (Updatable) Windows event log channels.
      * 
      */
     private @Nullable List<String> channels;
@@ -29,7 +29,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSource {
      */
     private @Nullable UnifiedAgentConfigurationServiceConfigurationSourceParser parser;
     /**
-     * @return (Updatable)
+     * @return (Updatable) Absolute paths for log source files. Wildcard can be used.
      * 
      */
     private @Nullable List<String> paths;
@@ -44,7 +44,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSource {
 
     private UnifiedAgentConfigurationServiceConfigurationSource() {}
     /**
-     * @return (Updatable)
+     * @return (Updatable) Windows event log channels.
      * 
      */
     public List<String> channels() {
@@ -65,7 +65,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSource {
         return Optional.ofNullable(this.parser);
     }
     /**
-     * @return (Updatable)
+     * @return (Updatable) Absolute paths for log source files. Wildcard can be used.
      * 
      */
     public List<String> paths() {

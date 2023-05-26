@@ -24,6 +24,21 @@ public final class VmClusterRemoveVirtualMachineState extends com.pulumi.resourc
     public static final VmClusterRemoveVirtualMachineState Empty = new VmClusterRemoveVirtualMachineState();
 
     /**
+     * The name of the availability domain that the VM cluster is located in.
+     * 
+     */
+    @Import(name="availabilityDomain")
+    private @Nullable Output<String> availabilityDomain;
+
+    /**
+     * @return The name of the availability domain that the VM cluster is located in.
+     * 
+     */
+    public Optional<Output<String>> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -407,6 +422,7 @@ public final class VmClusterRemoveVirtualMachineState extends com.pulumi.resourc
     private VmClusterRemoveVirtualMachineState() {}
 
     private VmClusterRemoveVirtualMachineState(VmClusterRemoveVirtualMachineState $) {
+        this.availabilityDomain = $.availabilityDomain;
         this.compartmentId = $.compartmentId;
         this.cpusEnabled = $.cpusEnabled;
         this.dataCollectionOptions = $.dataCollectionOptions;
@@ -450,6 +466,27 @@ public final class VmClusterRemoveVirtualMachineState extends com.pulumi.resourc
 
         public Builder(VmClusterRemoveVirtualMachineState defaults) {
             $ = new VmClusterRemoveVirtualMachineState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param availabilityDomain The name of the availability domain that the VM cluster is located in.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(@Nullable Output<String> availabilityDomain) {
+            $.availabilityDomain = availabilityDomain;
+            return this;
+        }
+
+        /**
+         * @param availabilityDomain The name of the availability domain that the VM cluster is located in.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            return availabilityDomain(Output.of(availabilityDomain));
         }
 
         /**

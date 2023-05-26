@@ -148,6 +148,12 @@ namespace Pulumi.Oci.Database
         public Output<string> AdminNetworkCidr { get; private set; } = null!;
 
         /// <summary>
+        /// The name of the availability domain that the Exadata infrastructure is located in.
+        /// </summary>
+        [Output("availabilityDomain")]
+        public Output<string> AvailabilityDomain { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The IP address for the first control plane server.
         /// </summary>
         [Output("cloudControlPlaneServer1")]
@@ -656,6 +662,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("adminNetworkCidr")]
         public Input<string>? AdminNetworkCidr { get; set; }
+
+        /// <summary>
+        /// The name of the availability domain that the Exadata infrastructure is located in.
+        /// </summary>
+        [Input("availabilityDomain")]
+        public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
         /// (Updatable) The IP address for the first control plane server.

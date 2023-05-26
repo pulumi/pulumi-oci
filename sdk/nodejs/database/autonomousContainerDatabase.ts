@@ -56,11 +56,11 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public readonly autonomousVmClusterId!: pulumi.Output<string>;
     /**
-     * The availability domain of the Autonomous Container Database.
+     * The availability domain of the Autonomous Container Database
      */
     public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
     /**
-     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
+     * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     public /*out*/ readonly availableCpus!: pulumi.Output<number>;
     /**
@@ -80,7 +80,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly computeModel!: pulumi.Output<string>;
     /**
-     * The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+     * The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      */
     public readonly dbName!: pulumi.Output<string>;
     public readonly dbUniqueName!: pulumi.Output<string>;
@@ -379,11 +379,11 @@ export interface AutonomousContainerDatabaseState {
      */
     autonomousVmClusterId?: pulumi.Input<string>;
     /**
-     * The availability domain of the Autonomous Container Database.
+     * The availability domain of the Autonomous Container Database
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
-     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
+     * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     availableCpus?: pulumi.Input<number>;
     /**
@@ -403,7 +403,7 @@ export interface AutonomousContainerDatabaseState {
      */
     computeModel?: pulumi.Input<string>;
     /**
-     * The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+     * The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      */
     dbName?: pulumi.Input<string>;
     dbUniqueName?: pulumi.Input<string>;
@@ -590,7 +590,7 @@ export interface AutonomousContainerDatabaseArgs {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+     * The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      */
     dbName?: pulumi.Input<string>;
     dbUniqueName?: pulumi.Input<string>;

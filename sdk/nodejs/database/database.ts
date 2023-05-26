@@ -146,7 +146,9 @@ export class Database extends pulumi.CustomResource {
      */
     public /*out*/ readonly dbUniqueName!: pulumi.Output<string>;
     /**
-     * A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+     * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+     *
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      */
     public readonly dbVersion!: pulumi.Output<string>;
     /**
@@ -389,7 +391,9 @@ export interface DatabaseState {
      */
     dbUniqueName?: pulumi.Input<string>;
     /**
-     * A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+     * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+     *
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      */
     dbVersion?: pulumi.Input<string>;
     /**
@@ -499,7 +503,9 @@ export interface DatabaseArgs {
      */
     dbHomeId: pulumi.Input<string>;
     /**
-     * A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+     * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+     *
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      */
     dbVersion?: pulumi.Input<string>;
     /**

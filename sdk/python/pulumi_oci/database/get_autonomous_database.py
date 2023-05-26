@@ -752,7 +752,7 @@ class GetAutonomousDatabaseResult:
     @pulumi.getter(name="isRefreshableClone")
     def is_refreshable_clone(self) -> bool:
         """
-        Indicates whether the Autonomous Database is a refreshable clone.
+        Indicates if the Autonomous Database is a refreshable clone.
         """
         return pulumi.get(self, "is_refreshable_clone")
 
@@ -869,7 +869,7 @@ class GetAutonomousDatabaseResult:
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
-        The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+        The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -910,7 +910,7 @@ class GetAutonomousDatabaseResult:
     @pulumi.getter(name="openMode")
     def open_mode(self) -> str:
         """
-        The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         """
         return pulumi.get(self, "open_mode")
 
@@ -934,7 +934,7 @@ class GetAutonomousDatabaseResult:
     @pulumi.getter(name="permissionLevel")
     def permission_level(self) -> str:
         """
-        The Autonomous Database permission level. Restricted mode allows access only to admin users.
+        The Autonomous Database permission level. Restricted mode allows access only by admin users.
         """
         return pulumi.get(self, "permission_level")
 
@@ -1016,7 +1016,7 @@ class GetAutonomousDatabaseResult:
     @pulumi.getter(name="scheduledOperations")
     def scheduled_operations(self) -> Sequence['outputs.GetAutonomousDatabaseScheduledOperationResult']:
         """
-        list of scheduled operations
+        The list of scheduled operations.
         """
         return pulumi.get(self, "scheduled_operations")
 

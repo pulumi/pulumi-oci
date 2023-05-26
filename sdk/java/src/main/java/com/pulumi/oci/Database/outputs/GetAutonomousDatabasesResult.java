@@ -71,7 +71,7 @@ public final class GetAutonomousDatabasesResult {
      */
     private @Nullable Boolean isFreeTier;
     /**
-     * @return Indicates whether the Autonomous Database is a refreshable clone.
+     * @return Indicates if the Autonomous Database is a refreshable clone.
      * 
      */
     private @Nullable Boolean isRefreshableClone;
@@ -160,7 +160,7 @@ public final class GetAutonomousDatabasesResult {
         return Optional.ofNullable(this.isFreeTier);
     }
     /**
-     * @return Indicates whether the Autonomous Database is a refreshable clone.
+     * @return Indicates if the Autonomous Database is a refreshable clone.
      * 
      */
     public Optional<Boolean> isRefreshableClone() {

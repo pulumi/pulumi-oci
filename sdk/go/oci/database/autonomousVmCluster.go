@@ -138,7 +138,7 @@ type AutonomousVmCluster struct {
 	MaintenanceWindowDetails AutonomousVmClusterMaintenanceWindowDetailArrayOutput `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows AutonomousVmClusterMaintenanceWindowArrayOutput `pulumi:"maintenanceWindows"`
-	// The amount of memory (in GBs) to be enabled per each CPU core.
+	// The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntOutput `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs pulumi.IntOutput `pulumi:"memorySizeInGbs"`
@@ -259,7 +259,7 @@ type autonomousVmClusterState struct {
 	MaintenanceWindowDetails []AutonomousVmClusterMaintenanceWindowDetail `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows []AutonomousVmClusterMaintenanceWindow `pulumi:"maintenanceWindows"`
-	// The amount of memory (in GBs) to be enabled per each CPU core.
+	// The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	MemoryPerOracleComputeUnitInGbs *int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs *int `pulumi:"memorySizeInGbs"`
@@ -340,7 +340,7 @@ type AutonomousVmClusterState struct {
 	MaintenanceWindowDetails AutonomousVmClusterMaintenanceWindowDetailArrayInput
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows AutonomousVmClusterMaintenanceWindowArrayInput
-	// The amount of memory (in GBs) to be enabled per each CPU core.
+	// The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntPtrInput
 	// The memory allocated in GBs.
 	MemorySizeInGbs pulumi.IntPtrInput
@@ -404,7 +404,7 @@ type autonomousVmClusterArgs struct {
 	LicenseModel *string `pulumi:"licenseModel"`
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindowDetails []AutonomousVmClusterMaintenanceWindowDetail `pulumi:"maintenanceWindowDetails"`
-	// The amount of memory (in GBs) to be enabled per each CPU core.
+	// The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	MemoryPerOracleComputeUnitInGbs *int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The SCAN Listener Non TLS port number. Default value is 1521.
 	ScanListenerPortNonTls *int `pulumi:"scanListenerPortNonTls"`
@@ -449,7 +449,7 @@ type AutonomousVmClusterArgs struct {
 	LicenseModel pulumi.StringPtrInput
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindowDetails AutonomousVmClusterMaintenanceWindowDetailArrayInput
-	// The amount of memory (in GBs) to be enabled per each CPU core.
+	// The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntPtrInput
 	// The SCAN Listener Non TLS port number. Default value is 1521.
 	ScanListenerPortNonTls pulumi.IntPtrInput
@@ -676,7 +676,7 @@ func (o AutonomousVmClusterOutput) MaintenanceWindows() AutonomousVmClusterMaint
 	}).(AutonomousVmClusterMaintenanceWindowArrayOutput)
 }
 
-// The amount of memory (in GBs) to be enabled per each CPU core.
+// The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 func (o AutonomousVmClusterOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
 }

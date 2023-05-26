@@ -78,7 +78,7 @@ type LookupLogResult struct {
 	LogId      string `pulumi:"logId"`
 	// The logType that the log object is for, whether custom or service.
 	LogType string `pulumi:"logType"`
-	// Log retention duration in 30-day increments (30, 60, 90 and so on).
+	// Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
 	RetentionDuration int `pulumi:"retentionDuration"`
 	// The pipeline state.
 	State string `pulumi:"state"`
@@ -179,7 +179,7 @@ func (o LookupLogResultOutput) LogType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLogResult) string { return v.LogType }).(pulumi.StringOutput)
 }
 
-// Log retention duration in 30-day increments (30, 60, 90 and so on).
+// Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
 func (o LookupLogResultOutput) RetentionDuration() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupLogResult) int { return v.RetentionDuration }).(pulumi.IntOutput)
 }

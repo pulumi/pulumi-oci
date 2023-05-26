@@ -13863,7 +13863,6 @@ class GetSecurityPoliciesSecurityPolicyCollectionItemResult(dict):
                  owner: str,
                  services: Sequence[str],
                  state: str,
-                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str):
         """
@@ -13879,7 +13878,6 @@ class GetSecurityPoliciesSecurityPolicyCollectionItemResult(dict):
         :param str owner: The owner of the security policy
         :param Sequence[str] services: The list of services that the security policy protects
         :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the security policy was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the security policy was last updated. An RFC3339 formatted datetime string.
         """
@@ -13895,7 +13893,6 @@ class GetSecurityPoliciesSecurityPolicyCollectionItemResult(dict):
         pulumi.set(__self__, "owner", owner)
         pulumi.set(__self__, "services", services)
         pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -13996,14 +13993,6 @@ class GetSecurityPoliciesSecurityPolicyCollectionItemResult(dict):
         return pulumi.get(self, "state")
 
     @property
-    @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-        return pulumi.get(self, "system_tags")
-
-    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -14072,7 +14061,6 @@ class GetSecurityRecipesSecurityRecipeCollectionItemResult(dict):
                  owner: str,
                  security_policies: Sequence[str],
                  state: str,
-                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str):
         """
@@ -14086,7 +14074,6 @@ class GetSecurityRecipesSecurityRecipeCollectionItemResult(dict):
         :param str owner: The owner of the recipe
         :param Sequence[str] security_policies: The list of `SecurityPolicy` ids that are included in the recipe
         :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the recipe was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the recipe was last updated. An RFC3339 formatted datetime string.
         """
@@ -14100,7 +14087,6 @@ class GetSecurityRecipesSecurityRecipeCollectionItemResult(dict):
         pulumi.set(__self__, "owner", owner)
         pulumi.set(__self__, "security_policies", security_policies)
         pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -14185,14 +14171,6 @@ class GetSecurityRecipesSecurityRecipeCollectionItemResult(dict):
         return pulumi.get(self, "state")
 
     @property
-    @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-        return pulumi.get(self, "system_tags")
-
-    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -14262,7 +14240,6 @@ class GetSecurityZonesSecurityZoneCollectionItemResult(dict):
                  security_zone_recipe_id: str,
                  security_zone_target_id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str):
         """
@@ -14277,7 +14254,6 @@ class GetSecurityZonesSecurityZoneCollectionItemResult(dict):
         :param str security_zone_recipe_id: The OCID of the recipe (`SecurityRecipe`) for the security zone
         :param str security_zone_target_id: The OCID of the target associated with the security zone
         :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the security zone was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the security zone was last updated. An RFC3339 formatted datetime string.
         """
@@ -14292,7 +14268,6 @@ class GetSecurityZonesSecurityZoneCollectionItemResult(dict):
         pulumi.set(__self__, "security_zone_recipe_id", security_zone_recipe_id)
         pulumi.set(__self__, "security_zone_target_id", security_zone_target_id)
         pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -14383,14 +14358,6 @@ class GetSecurityZonesSecurityZoneCollectionItemResult(dict):
         The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         """
         return pulumi.get(self, "state")
-
-    @property
-    @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

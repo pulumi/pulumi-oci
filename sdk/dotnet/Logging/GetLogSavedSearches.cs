@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Logging
         /// <summary>
         /// This data source provides the list of Log Saved Searches in Oracle Cloud Infrastructure Logging service.
         /// 
-        /// Lists Logging Saved Searches for this compartment.
+        /// Lists LogSavedSearches for this compartment.
         /// 
         /// 
         /// {{% examples %}}
@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Logging
         /// <summary>
         /// This data source provides the list of Log Saved Searches in Oracle Cloud Infrastructure Logging service.
         /// 
-        /// Lists Logging Saved Searches for this compartment.
+        /// Lists LogSavedSearches for this compartment.
         /// 
         /// 
         /// {{% examples %}}
@@ -96,13 +96,13 @@ namespace Pulumi.Oci.Logging
         }
 
         /// <summary>
-        /// OCID of the LogSavedSearch
+        /// OCID of the LogSavedSearch.
         /// </summary>
         [Input("logSavedSearchId")]
         public string? LogSavedSearchId { get; set; }
 
         /// <summary>
-        /// Resource name
+        /// Resource name.
         /// </summary>
         [Input("name")]
         public string? Name { get; set; }
@@ -130,13 +130,13 @@ namespace Pulumi.Oci.Logging
         }
 
         /// <summary>
-        /// OCID of the LogSavedSearch
+        /// OCID of the LogSavedSearch.
         /// </summary>
         [Input("logSavedSearchId")]
         public Input<string>? LogSavedSearchId { get; set; }
 
         /// <summary>
-        /// Resource name
+        /// Resource name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

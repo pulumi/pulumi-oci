@@ -161,7 +161,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string TargetDbHomeId;
         /// <summary>
-        /// A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+        /// A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
         /// </summary>
         public readonly string TargetDbVersion;
         /// <summary>

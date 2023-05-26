@@ -143,7 +143,7 @@ export interface GetAutonomousVmClusterResult {
      */
     readonly maintenanceWindows: outputs.Database.GetAutonomousVmClusterMaintenanceWindow[];
     /**
-     * The amount of memory (in GBs) to be enabled per each CPU core.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     readonly memoryPerOracleComputeUnitInGbs: number;
     /**

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Logging
         /// <summary>
         /// This data source provides details about a specific Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
         /// 
-        /// Retrieves a log saved search.
+        /// Retrieves a LogSavedSearch.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Logging
         /// <summary>
         /// This data source provides details about a specific Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
         /// 
-        /// Retrieves a log saved search.
+        /// Retrieves a LogSavedSearch.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.Logging
     public sealed class GetLogSavedSearchArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// OCID of the logSavedSearch
+        /// OCID of the logSavedSearch.
         /// </summary>
         [Input("logSavedSearchId", required: true)]
         public string LogSavedSearchId { get; set; } = null!;
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.Logging
     public sealed class GetLogSavedSearchInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// OCID of the logSavedSearch
+        /// OCID of the logSavedSearch.
         /// </summary>
         [Input("logSavedSearchId", required: true)]
         public Input<string> LogSavedSearchId { get; set; } = null!;

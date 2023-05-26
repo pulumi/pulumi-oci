@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Logging.Inputs
     public sealed class GetLogSavedSearchesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Resource name
+        /// Resource name.
         /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;

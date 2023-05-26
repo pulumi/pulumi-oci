@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * **Deprecated. Use oci.Dns.Rrset instead.**
+ * **Deprecated. Use oci.Dns.getRrsets instead.**
  *
  * This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
  *
@@ -65,7 +65,7 @@ export interface GetRecordsArgs {
     /**
      * The name or OCID of the target zone.
      *
-     * @deprecated The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrset' instead.
+     * @deprecated The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead.
      */
     zoneNameOrId: string;
     /**
@@ -102,13 +102,13 @@ export interface GetRecordsResult {
     /**
      * The name or OCID of the target zone.
      *
-     * @deprecated The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrset' instead.
+     * @deprecated The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead.
      */
     readonly zoneNameOrId: string;
     readonly zoneVersion?: string;
 }
 /**
- * **Deprecated. Use oci.Dns.Rrset instead.**
+ * **Deprecated. Use oci.Dns.getRrsets instead.**
  *
  * This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
  *
@@ -154,7 +154,7 @@ export interface GetRecordsOutputArgs {
     /**
      * The name or OCID of the target zone.
      *
-     * @deprecated The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrset' instead.
+     * @deprecated The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead.
      */
     zoneNameOrId: pulumi.Input<string>;
     /**

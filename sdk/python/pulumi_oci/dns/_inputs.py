@@ -10,6 +10,10 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
+    'ActionCreateZoneFromZoneFileExternalDownstreamArgs',
+    'ActionCreateZoneFromZoneFileExternalMasterArgs',
+    'ActionCreateZoneFromZoneFileNameserverArgs',
+    'ActionCreateZoneFromZoneFileZoneTransferServerArgs',
     'ResolverAttachedViewArgs',
     'ResolverEndpointArgs',
     'ResolverRuleArgs',
@@ -19,17 +23,224 @@ __all__ = [
     'SteeringPolicyRuleCaseArgs',
     'SteeringPolicyRuleCaseAnswerDataArgs',
     'SteeringPolicyRuleDefaultAnswerDataArgs',
+    'ZoneExternalDownstreamArgs',
     'ZoneExternalMasterArgs',
     'ZoneNameserverArgs',
+    'ZoneZoneTransferServerArgs',
     'GetRecordsFilterArgs',
     'GetResolverEndpointsFilterArgs',
     'GetResolversFilterArgs',
+    'GetRrsetsFilterArgs',
     'GetSteeringPoliciesFilterArgs',
     'GetSteeringPolicyAttachmentsFilterArgs',
     'GetTsigKeysFilterArgs',
     'GetViewsFilterArgs',
     'GetZonesFilterArgs',
 ]
+
+@pulumi.input_type
+class ActionCreateZoneFromZoneFileExternalDownstreamArgs:
+    def __init__(__self__, *,
+                 address: Optional[pulumi.Input[str]] = None,
+                 port: Optional[pulumi.Input[int]] = None,
+                 tsig_key_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] address: The server's IP address (IPv4 or IPv6).
+        :param pulumi.Input[int] port: The server's port.
+        :param pulumi.Input[str] tsig_key_id: The OCID of the TSIG key.
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if tsig_key_id is not None:
+            pulumi.set(__self__, "tsig_key_id", tsig_key_id)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[pulumi.Input[str]]:
+        """
+        The server's IP address (IPv4 or IPv6).
+        """
+        return pulumi.get(self, "address")
+
+    @address.setter
+    def address(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "address", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[int]]:
+        """
+        The server's port.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter(name="tsigKeyId")
+    def tsig_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the TSIG key.
+        """
+        return pulumi.get(self, "tsig_key_id")
+
+    @tsig_key_id.setter
+    def tsig_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tsig_key_id", value)
+
+
+@pulumi.input_type
+class ActionCreateZoneFromZoneFileExternalMasterArgs:
+    def __init__(__self__, *,
+                 address: Optional[pulumi.Input[str]] = None,
+                 port: Optional[pulumi.Input[int]] = None,
+                 tsig_key_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] address: The server's IP address (IPv4 or IPv6).
+        :param pulumi.Input[int] port: The server's port.
+        :param pulumi.Input[str] tsig_key_id: The OCID of the TSIG key.
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if tsig_key_id is not None:
+            pulumi.set(__self__, "tsig_key_id", tsig_key_id)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[pulumi.Input[str]]:
+        """
+        The server's IP address (IPv4 or IPv6).
+        """
+        return pulumi.get(self, "address")
+
+    @address.setter
+    def address(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "address", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[int]]:
+        """
+        The server's port.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter(name="tsigKeyId")
+    def tsig_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the TSIG key.
+        """
+        return pulumi.get(self, "tsig_key_id")
+
+    @tsig_key_id.setter
+    def tsig_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tsig_key_id", value)
+
+
+@pulumi.input_type
+class ActionCreateZoneFromZoneFileNameserverArgs:
+    def __init__(__self__, *,
+                 hostname: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] hostname: The hostname of the nameserver.
+        """
+        if hostname is not None:
+            pulumi.set(__self__, "hostname", hostname)
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> Optional[pulumi.Input[str]]:
+        """
+        The hostname of the nameserver.
+        """
+        return pulumi.get(self, "hostname")
+
+    @hostname.setter
+    def hostname(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "hostname", value)
+
+
+@pulumi.input_type
+class ActionCreateZoneFromZoneFileZoneTransferServerArgs:
+    def __init__(__self__, *,
+                 address: Optional[pulumi.Input[str]] = None,
+                 is_transfer_destination: Optional[pulumi.Input[bool]] = None,
+                 is_transfer_source: Optional[pulumi.Input[bool]] = None,
+                 port: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] address: The server's IP address (IPv4 or IPv6).
+        :param pulumi.Input[bool] is_transfer_destination: A Boolean flag indicating whether or not the server is a zone data transfer destination.
+        :param pulumi.Input[bool] is_transfer_source: A Boolean flag indicating whether or not the server is a zone data transfer source.
+        :param pulumi.Input[int] port: The server's port.
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if is_transfer_destination is not None:
+            pulumi.set(__self__, "is_transfer_destination", is_transfer_destination)
+        if is_transfer_source is not None:
+            pulumi.set(__self__, "is_transfer_source", is_transfer_source)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[pulumi.Input[str]]:
+        """
+        The server's IP address (IPv4 or IPv6).
+        """
+        return pulumi.get(self, "address")
+
+    @address.setter
+    def address(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "address", value)
+
+    @property
+    @pulumi.getter(name="isTransferDestination")
+    def is_transfer_destination(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A Boolean flag indicating whether or not the server is a zone data transfer destination.
+        """
+        return pulumi.get(self, "is_transfer_destination")
+
+    @is_transfer_destination.setter
+    def is_transfer_destination(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_transfer_destination", value)
+
+    @property
+    @pulumi.getter(name="isTransferSource")
+    def is_transfer_source(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A Boolean flag indicating whether or not the server is a zone data transfer source.
+        """
+        return pulumi.get(self, "is_transfer_source")
+
+    @is_transfer_source.setter
+    def is_transfer_source(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_transfer_source", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[int]]:
+        """
+        The server's port.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "port", value)
+
 
 @pulumi.input_type
 class ResolverAttachedViewArgs:
@@ -787,6 +998,60 @@ class SteeringPolicyRuleDefaultAnswerDataArgs:
 
 
 @pulumi.input_type
+class ZoneExternalDownstreamArgs:
+    def __init__(__self__, *,
+                 address: pulumi.Input[str],
+                 port: Optional[pulumi.Input[int]] = None,
+                 tsig_key_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] address: (Updatable) The server's IP address (IPv4 or IPv6).
+        :param pulumi.Input[int] port: (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+        :param pulumi.Input[str] tsig_key_id: (Updatable) The OCID of the TSIG key.
+        """
+        pulumi.set(__self__, "address", address)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if tsig_key_id is not None:
+            pulumi.set(__self__, "tsig_key_id", tsig_key_id)
+
+    @property
+    @pulumi.getter
+    def address(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The server's IP address (IPv4 or IPv6).
+        """
+        return pulumi.get(self, "address")
+
+    @address.setter
+    def address(self, value: pulumi.Input[str]):
+        pulumi.set(self, "address", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter(name="tsigKeyId")
+    def tsig_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the TSIG key.
+        """
+        return pulumi.get(self, "tsig_key_id")
+
+    @tsig_key_id.setter
+    def tsig_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tsig_key_id", value)
+
+
+@pulumi.input_type
 class ZoneExternalMasterArgs:
     def __init__(__self__, *,
                  address: pulumi.Input[str],
@@ -861,6 +1126,77 @@ class ZoneNameserverArgs:
     @hostname.setter
     def hostname(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "hostname", value)
+
+
+@pulumi.input_type
+class ZoneZoneTransferServerArgs:
+    def __init__(__self__, *,
+                 address: Optional[pulumi.Input[str]] = None,
+                 is_transfer_destination: Optional[pulumi.Input[bool]] = None,
+                 is_transfer_source: Optional[pulumi.Input[bool]] = None,
+                 port: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] address: (Updatable) The server's IP address (IPv4 or IPv6).
+        :param pulumi.Input[bool] is_transfer_destination: A Boolean flag indicating whether or not the server is a zone data transfer destination.
+        :param pulumi.Input[bool] is_transfer_source: A Boolean flag indicating whether or not the server is a zone data transfer source.
+        :param pulumi.Input[int] port: (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if is_transfer_destination is not None:
+            pulumi.set(__self__, "is_transfer_destination", is_transfer_destination)
+        if is_transfer_source is not None:
+            pulumi.set(__self__, "is_transfer_source", is_transfer_source)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The server's IP address (IPv4 or IPv6).
+        """
+        return pulumi.get(self, "address")
+
+    @address.setter
+    def address(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "address", value)
+
+    @property
+    @pulumi.getter(name="isTransferDestination")
+    def is_transfer_destination(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A Boolean flag indicating whether or not the server is a zone data transfer destination.
+        """
+        return pulumi.get(self, "is_transfer_destination")
+
+    @is_transfer_destination.setter
+    def is_transfer_destination(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_transfer_destination", value)
+
+    @property
+    @pulumi.getter(name="isTransferSource")
+    def is_transfer_source(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A Boolean flag indicating whether or not the server is a zone data transfer source.
+        """
+        return pulumi.get(self, "is_transfer_source")
+
+    @is_transfer_source.setter
+    def is_transfer_source(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_transfer_source", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "port", value)
 
 
 @pulumi.input_type
@@ -949,6 +1285,45 @@ class GetResolverEndpointsFilterArgs:
 
 @pulumi.input_type
 class GetResolversFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetRrsetsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

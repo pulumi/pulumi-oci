@@ -55,16 +55,16 @@ func GetLogs(ctx *pulumi.Context, args *GetLogsArgs, opts ...pulumi.InvokeOption
 
 // A collection of arguments for invoking getLogs.
 type GetLogsArgs struct {
-	// Resource name
+	// Resource name.
 	DisplayName *string         `pulumi:"displayName"`
 	Filters     []GetLogsFilter `pulumi:"filters"`
 	// OCID of a log group to work with.
 	LogGroupId string `pulumi:"logGroupId"`
 	// The logType that the log object is for, whether custom or service.
 	LogType *string `pulumi:"logType"`
-	// Log object resource.
+	// Log object resource, which is a field of LogSummary.Configuration.Source.
 	SourceResource *string `pulumi:"sourceResource"`
-	// Service that created the log object.
+	// Service that created the log object, which is a field of LogSummary.Configuration.Source.
 	SourceService *string `pulumi:"sourceService"`
 	// Lifecycle state of the log object
 	State *string `pulumi:"state"`
@@ -104,16 +104,16 @@ func GetLogsOutput(ctx *pulumi.Context, args GetLogsOutputArgs, opts ...pulumi.I
 
 // A collection of arguments for invoking getLogs.
 type GetLogsOutputArgs struct {
-	// Resource name
+	// Resource name.
 	DisplayName pulumi.StringPtrInput   `pulumi:"displayName"`
 	Filters     GetLogsFilterArrayInput `pulumi:"filters"`
 	// OCID of a log group to work with.
 	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
 	// The logType that the log object is for, whether custom or service.
 	LogType pulumi.StringPtrInput `pulumi:"logType"`
-	// Log object resource.
+	// Log object resource, which is a field of LogSummary.Configuration.Source.
 	SourceResource pulumi.StringPtrInput `pulumi:"sourceResource"`
-	// Service that created the log object.
+	// Service that created the log object, which is a field of LogSummary.Configuration.Source.
 	SourceService pulumi.StringPtrInput `pulumi:"sourceService"`
 	// Lifecycle state of the log object
 	State pulumi.StringPtrInput `pulumi:"state"`

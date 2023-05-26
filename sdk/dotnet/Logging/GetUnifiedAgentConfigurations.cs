@@ -92,7 +92,7 @@ namespace Pulumi.Oci.Logging
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// Resource name
+        /// Resource name.
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -144,7 +144,7 @@ namespace Pulumi.Oci.Logging
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// Resource name
+        /// Resource name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

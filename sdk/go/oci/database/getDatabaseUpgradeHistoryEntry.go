@@ -80,7 +80,7 @@ type GetDatabaseUpgradeHistoryEntryResult struct {
 	TargetDatabaseSoftwareImageId string `pulumi:"targetDatabaseSoftwareImageId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
 	TargetDbHomeId string `pulumi:"targetDbHomeId"`
-	// A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+	// A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
 	TargetDbVersion string `pulumi:"targetDbVersion"`
 	// The date and time when the database upgrade ended.
 	TimeEnded string `pulumi:"timeEnded"`
@@ -180,7 +180,7 @@ func (o GetDatabaseUpgradeHistoryEntryResultOutput) TargetDbHomeId() pulumi.Stri
 	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) string { return v.TargetDbHomeId }).(pulumi.StringOutput)
 }
 
-// A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+// A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
 func (o GetDatabaseUpgradeHistoryEntryResultOutput) TargetDbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) string { return v.TargetDbVersion }).(pulumi.StringOutput)
 }

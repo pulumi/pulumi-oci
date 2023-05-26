@@ -155,6 +155,8 @@ import com.pulumi.oci.Database.inputs.GetExadataInfrastructureArgs;
 import com.pulumi.oci.Database.inputs.GetExadataInfrastructureDownloadConfigFileArgs;
 import com.pulumi.oci.Database.inputs.GetExadataInfrastructureDownloadConfigFilePlainArgs;
 import com.pulumi.oci.Database.inputs.GetExadataInfrastructurePlainArgs;
+import com.pulumi.oci.Database.inputs.GetExadataInfrastructureUnAllocatedResourceArgs;
+import com.pulumi.oci.Database.inputs.GetExadataInfrastructureUnAllocatedResourcePlainArgs;
 import com.pulumi.oci.Database.inputs.GetExadataInfrastructuresArgs;
 import com.pulumi.oci.Database.inputs.GetExadataInfrastructuresPlainArgs;
 import com.pulumi.oci.Database.inputs.GetExadataIormConfigArgs;
@@ -300,6 +302,7 @@ import com.pulumi.oci.Database.outputs.GetDbSystemsUpgradeHistoryEntryResult;
 import com.pulumi.oci.Database.outputs.GetDbVersionsResult;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructureDownloadConfigFileResult;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructureResult;
+import com.pulumi.oci.Database.outputs.GetExadataInfrastructureUnAllocatedResourceResult;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructuresResult;
 import com.pulumi.oci.Database.outputs.GetExadataIormConfigResult;
 import com.pulumi.oci.Database.outputs.GetExternalContainerDatabaseResult;
@@ -6663,6 +6666,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getCloudExadataInfrastructureUnAllocatedResource(GetCloudExadataInfrastructureUnAllocatedResourceArgs.builder()
      *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .dbServers(var_.cloud_exadata_infrastructure_un_allocated_resource_db_servers())
      *             .build());
      * 
      *     }
@@ -6702,6 +6706,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getCloudExadataInfrastructureUnAllocatedResource(GetCloudExadataInfrastructureUnAllocatedResourceArgs.builder()
      *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .dbServers(var_.cloud_exadata_infrastructure_un_allocated_resource_db_servers())
      *             .build());
      * 
      *     }
@@ -6741,6 +6746,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getCloudExadataInfrastructureUnAllocatedResource(GetCloudExadataInfrastructureUnAllocatedResourceArgs.builder()
      *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .dbServers(var_.cloud_exadata_infrastructure_un_allocated_resource_db_servers())
      *             .build());
      * 
      *     }
@@ -6780,6 +6786,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getCloudExadataInfrastructureUnAllocatedResource(GetCloudExadataInfrastructureUnAllocatedResourceArgs.builder()
      *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .dbServers(var_.cloud_exadata_infrastructure_un_allocated_resource_db_servers())
      *             .build());
      * 
      *     }
@@ -12759,6 +12766,166 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetExadataInfrastructureDownloadConfigFileResult> getExadataInfrastructureDownloadConfigFilePlain(GetExadataInfrastructureDownloadConfigFilePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getExadataInfrastructureDownloadConfigFile:getExadataInfrastructureDownloadConfigFile", TypeShape.of(GetExadataInfrastructureDownloadConfigFileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets un allocated resources information for the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureUnAllocatedResourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getExadataInfrastructureUnAllocatedResource(GetExadataInfrastructureUnAllocatedResourceArgs.builder()
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .dbServers(var_.exadata_infrastructure_un_allocated_resource_db_servers())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExadataInfrastructureUnAllocatedResourceResult> getExadataInfrastructureUnAllocatedResource(GetExadataInfrastructureUnAllocatedResourceArgs args) {
+        return getExadataInfrastructureUnAllocatedResource(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets un allocated resources information for the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureUnAllocatedResourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getExadataInfrastructureUnAllocatedResource(GetExadataInfrastructureUnAllocatedResourceArgs.builder()
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .dbServers(var_.exadata_infrastructure_un_allocated_resource_db_servers())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExadataInfrastructureUnAllocatedResourceResult> getExadataInfrastructureUnAllocatedResourcePlain(GetExadataInfrastructureUnAllocatedResourcePlainArgs args) {
+        return getExadataInfrastructureUnAllocatedResourcePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets un allocated resources information for the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureUnAllocatedResourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getExadataInfrastructureUnAllocatedResource(GetExadataInfrastructureUnAllocatedResourceArgs.builder()
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .dbServers(var_.exadata_infrastructure_un_allocated_resource_db_servers())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExadataInfrastructureUnAllocatedResourceResult> getExadataInfrastructureUnAllocatedResource(GetExadataInfrastructureUnAllocatedResourceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExadataInfrastructureUnAllocatedResource:getExadataInfrastructureUnAllocatedResource", TypeShape.of(GetExadataInfrastructureUnAllocatedResourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets un allocated resources information for the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureUnAllocatedResourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getExadataInfrastructureUnAllocatedResource(GetExadataInfrastructureUnAllocatedResourceArgs.builder()
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .dbServers(var_.exadata_infrastructure_un_allocated_resource_db_servers())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExadataInfrastructureUnAllocatedResourceResult> getExadataInfrastructureUnAllocatedResourcePlain(GetExadataInfrastructureUnAllocatedResourcePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getExadataInfrastructureUnAllocatedResource:getExadataInfrastructureUnAllocatedResource", TypeShape.of(GetExadataInfrastructureUnAllocatedResourceResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Exadata Infrastructures in Oracle Cloud Infrastructure Database service.

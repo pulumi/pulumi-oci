@@ -190,7 +190,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly bool IsReconnectCloneEnabled;
         /// <summary>
-        /// Indicates whether the Autonomous Database is a refreshable clone.
+        /// Indicates if the Autonomous Database is a refreshable clone.
         /// </summary>
         public readonly bool IsRefreshableClone;
         /// <summary>
@@ -246,7 +246,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int MaxCpuCoreCount;
         /// <summary>
-        /// The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+        /// The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         /// </summary>
         public readonly int MemoryPerOracleComputeUnitInGbs;
         /// <summary>
@@ -267,7 +267,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly double OcpuCount;
         /// <summary>
-        /// The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+        /// Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         /// </summary>
         public readonly string OpenMode;
         /// <summary>
@@ -283,7 +283,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string PrivateEndpointIp;
         /// <summary>
-        /// The private endpoint label for the resource. Setting this to an empty string, after the private endpoint database gets created, will change the same private endpoint database to the public endpoint database.
+        /// The resource's private endpoint label. Setting this to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
         /// </summary>
         public readonly string PrivateEndpointLabel;
         /// <summary>
@@ -307,7 +307,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string Role;
         /// <summary>
-        /// list of scheduled operations
+        /// The list of scheduled operations.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationResult> ScheduledOperations;
         /// <summary>

@@ -56,6 +56,8 @@ type LookupVmClusterArgs struct {
 
 // A collection of values returned by getVmCluster.
 type LookupVmClusterResult struct {
+	// The name of the availability domain that the VM cluster is located in.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	CpuCoreCount  int    `pulumi:"cpuCoreCount"`
@@ -150,6 +152,11 @@ func (o LookupVmClusterResultOutput) ToLookupVmClusterResultOutput() LookupVmClu
 
 func (o LookupVmClusterResultOutput) ToLookupVmClusterResultOutputWithContext(ctx context.Context) LookupVmClusterResultOutput {
 	return o
+}
+
+// The name of the availability domain that the VM cluster is located in.
+func (o LookupVmClusterResultOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupVmClusterResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

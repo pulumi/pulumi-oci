@@ -86,7 +86,7 @@ namespace Pulumi.Oci.Logging
     public sealed class GetLogsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Resource name
+        /// Resource name.
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -112,13 +112,13 @@ namespace Pulumi.Oci.Logging
         public string? LogType { get; set; }
 
         /// <summary>
-        /// Log object resource.
+        /// Log object resource, which is a field of LogSummary.Configuration.Source.
         /// </summary>
         [Input("sourceResource")]
         public string? SourceResource { get; set; }
 
         /// <summary>
-        /// Service that created the log object.
+        /// Service that created the log object, which is a field of LogSummary.Configuration.Source.
         /// </summary>
         [Input("sourceService")]
         public string? SourceService { get; set; }
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.Logging
     public sealed class GetLogsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Resource name
+        /// Resource name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -164,13 +164,13 @@ namespace Pulumi.Oci.Logging
         public Input<string>? LogType { get; set; }
 
         /// <summary>
-        /// Log object resource.
+        /// Log object resource, which is a field of LogSummary.Configuration.Source.
         /// </summary>
         [Input("sourceResource")]
         public Input<string>? SourceResource { get; set; }
 
         /// <summary>
-        /// Service that created the log object.
+        /// Service that created the log object, which is a field of LogSummary.Configuration.Source.
         /// </summary>
         [Input("sourceService")]
         public Input<string>? SourceService { get; set; }

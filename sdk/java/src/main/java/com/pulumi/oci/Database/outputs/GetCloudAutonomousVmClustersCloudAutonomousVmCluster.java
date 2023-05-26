@@ -87,6 +87,10 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
      * 
      */
     private Integer dbNodeStorageSizeInGbs;
+    /**
+     * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+     * 
+     */
     private List<String> dbServers;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -155,7 +159,7 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
      */
     private List<GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow> maintenanceWindows;
     /**
-     * @return The amount of memory (in GBs) enabled per each CPU core.
+     * @return The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     private Integer memoryPerOracleComputeUnitInGbs;
@@ -332,6 +336,10 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
     public Integer dbNodeStorageSizeInGbs() {
         return this.dbNodeStorageSizeInGbs;
     }
+    /**
+     * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+     * 
+     */
     public List<String> dbServers() {
         return this.dbServers;
     }
@@ -430,7 +438,7 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
         return this.maintenanceWindows;
     }
     /**
-     * @return The amount of memory (in GBs) enabled per each CPU core.
+     * @return The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     public Integer memoryPerOracleComputeUnitInGbs() {

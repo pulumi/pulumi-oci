@@ -413,6 +413,7 @@ __all__ = [
     'GetExadataInfrastructureMaintenanceWindowDaysOfWeekResult',
     'GetExadataInfrastructureMaintenanceWindowMonthResult',
     'GetExadataInfrastructureNetworkBondingModeDetailResult',
+    'GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterResult',
     'GetExadataInfrastructuresExadataInfrastructureResult',
     'GetExadataInfrastructuresExadataInfrastructureContactResult',
     'GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowResult',
@@ -5004,7 +5005,9 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetails(dict):
                  source: Optional[str] = None):
         """
         :param str database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
-        :param str db_version: A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+        :param str db_version: A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param str options: Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: "-upgradeTimezone false -keepEvents"
         :param str source: The source of the Oracle Database software to be used for the upgrade.
                * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
@@ -5035,7 +5038,9 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetails(dict):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[str]:
         """
-        A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+        A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         """
         return pulumi.get(self, "db_version")
 
@@ -6043,7 +6048,9 @@ class DbSystemDbHome(dict):
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         :param str database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to restore a database.
-        :param str db_version: A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+        :param str db_version: A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: The user-friendly name for the DB system. The name does not have to be unique.
         :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -6111,7 +6118,9 @@ class DbSystemDbHome(dict):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[str]:
         """
-        A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+        A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         """
         return pulumi.get(self, "db_version")
 
@@ -11562,7 +11571,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param str cloud_autonomous_vm_cluster_id: The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str compute_model: The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-        :param str db_name: The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        :param str db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         :param str db_version: Oracle Database version of the Autonomous Container Database.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -11713,7 +11722,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="dbName")
     def db_name(self) -> str:
         """
-        The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         """
         return pulumi.get(self, "db_name")
 
@@ -14189,16 +14198,16 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleArgs'] long_term_backup_schedules: Details for the long-term backup schedule.
         :param int max_cpu_core_count: The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
-        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param str ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param str next_long_term_backup_time_stamp: The date and time when the next long-term backup would be created.
         :param Sequence[str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param float ocpu_count: The number of OCPU cores to be made available to the database.
-        :param str open_mode: The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+        :param str open_mode: Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         :param str operations_insights_status: Status of Operations Insights for this Autonomous Database.
         :param Sequence[str] peer_db_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
-        :param str permission_level: The Autonomous Database permission level. Restricted mode allows access only to admin users.
+        :param str permission_level: The Autonomous Database permission level. Restricted mode allows access only by admin users.
         :param str private_endpoint: The private endpoint for the resource.
         :param str private_endpoint_ip: The private endpoint Ip address for the resource.
         :param str private_endpoint_label: The private endpoint label for the resource.
@@ -14207,7 +14216,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str refreshable_status: The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs'] remote_disaster_recovery_configurations: Configurations of a Disaster Recovery.
         :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArgs'] scheduled_operations: list of scheduled operations
+        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArgs'] scheduled_operations: The list of scheduled operations.
         :param str service_console_url: The URL of the Service Console for the Autonomous Database.
         :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseStandbyDbArgs'] standby_dbs: **Deprecated** Autonomous Data Guard standby database details.
@@ -14844,7 +14853,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
-        The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+        The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -14885,7 +14894,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="openMode")
     def open_mode(self) -> str:
         """
-        The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         """
         return pulumi.get(self, "open_mode")
 
@@ -14909,7 +14918,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="permissionLevel")
     def permission_level(self) -> str:
         """
-        The Autonomous Database permission level. Restricted mode allows access only to admin users.
+        The Autonomous Database permission level. Restricted mode allows access only by admin users.
         """
         return pulumi.get(self, "permission_level")
 
@@ -14991,7 +15000,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="scheduledOperations")
     def scheduled_operations(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseScheduledOperationResult']:
         """
-        list of scheduled operations
+        The list of scheduled operations.
         """
         return pulumi.get(self, "scheduled_operations")
 
@@ -15995,7 +16004,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param bool is_mtls_connection_required: Specifies if the Autonomous Database requires mTLS connections.
         :param bool is_preview: Indicates if the Autonomous Database version is a preview version.
         :param bool is_reconnect_clone_enabled: Indicates if the refreshable clone can be reconnected to its source database.
-        :param bool is_refreshable_clone: Indicates whether the Autonomous Database is a refreshable clone.
+        :param bool is_refreshable_clone: Indicates if the Autonomous Database is a refreshable clone.
         :param bool is_remote_data_guard_enabled: Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArgs'] key_history_entries: Key History Entry.
         :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -16009,23 +16018,23 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleArgs'] long_term_backup_schedules: Details for the long-term backup schedule.
         :param int max_cpu_core_count: The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
-        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param str ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param str next_long_term_backup_time_stamp: The date and time when the next long-term backup would be created.
         :param Sequence[str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param float ocpu_count: The number of OCPU cores to be made available to the database.
-        :param str open_mode: The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+        :param str open_mode: Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         :param Sequence[str] peer_db_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
         :param str private_endpoint: The private endpoint for the resource.
         :param str private_endpoint_ip: The private endpoint Ip address for the resource.
-        :param str private_endpoint_label: The private endpoint label for the resource. Setting this to an empty string, after the private endpoint database gets created, will change the same private endpoint database to the public endpoint database.
+        :param str private_endpoint_label: The resource's private endpoint label. Setting this to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
         :param Sequence[float] provisionable_cpuses: An array of CPU values that an Autonomous Database can be scaled to.
         :param str refreshable_mode: The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         :param str refreshable_status: The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs'] remote_disaster_recovery_configurations: Configurations of a Disaster Recovery.
         :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArgs'] scheduled_operations: list of scheduled operations
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArgs'] scheduled_operations: The list of scheduled operations.
         :param str service_console_url: The URL of the Service Console for the Autonomous Database.
         :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArgs'] standby_dbs: **Deprecated** Autonomous Data Guard standby database details.
@@ -16507,7 +16516,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isRefreshableClone")
     def is_refreshable_clone(self) -> bool:
         """
-        Indicates whether the Autonomous Database is a refreshable clone.
+        Indicates if the Autonomous Database is a refreshable clone.
         """
         return pulumi.get(self, "is_refreshable_clone")
 
@@ -16619,7 +16628,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
-        The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+        The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -16660,7 +16669,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="openMode")
     def open_mode(self) -> str:
         """
-        The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         """
         return pulumi.get(self, "open_mode")
 
@@ -16692,7 +16701,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="privateEndpointLabel")
     def private_endpoint_label(self) -> str:
         """
-        The private endpoint label for the resource. Setting this to an empty string, after the private endpoint database gets created, will change the same private endpoint database to the public endpoint database.
+        The resource's private endpoint label. Setting this to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
         """
         return pulumi.get(self, "private_endpoint_label")
 
@@ -16740,7 +16749,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="scheduledOperations")
     def scheduled_operations(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationResult']:
         """
-        list of scheduled operations
+        The list of scheduled operations.
         """
         return pulumi.get(self, "scheduled_operations")
 
@@ -19395,7 +19404,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param str license_model: The Oracle license model that applies to the Autonomous VM cluster. The default is LICENSE_INCLUDED.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param Sequence['GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per each CPU core.
+        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param int memory_size_in_gbs: The memory allocated in GBs.
         :param str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param int node_count: The number of nodes in the Autonomous VM Cluster.
@@ -19651,7 +19660,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
-        The amount of memory (in GBs) to be enabled per each CPU core.
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -21027,6 +21036,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param float data_storage_size_in_gb: The total data storage allocated, in gigabytes (GB).
         :param float data_storage_size_in_tbs: The total data storage allocated, in terabytes (TB).
         :param int db_node_storage_size_in_gbs: The local node storage allocated in GBs.
+        :param Sequence[str] db_servers: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str description: User defined description of the cloud Autonomous VM cluster.
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -21040,7 +21050,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param Sequence['GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per each CPU core.
+        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param int memory_size_in_gbs: The memory allocated in GBs.
         :param str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param int node_count: The number of database servers in the cloud VM cluster.
@@ -21219,6 +21229,9 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @property
     @pulumi.getter(name="dbServers")
     def db_servers(self) -> Sequence[str]:
+        """
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+        """
         return pulumi.get(self, "db_servers")
 
     @property
@@ -21334,7 +21347,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
-        The amount of memory (in GBs) enabled per each CPU core.
+        The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -25790,7 +25803,7 @@ class GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryResult(dict):
         :param str state: A filter to return only upgradeHistoryEntries that match the given lifecycle state exactly.
         :param str target_database_software_image_id: the database software image used for upgrading database.
         :param str target_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-        :param str target_db_version: A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+        :param str target_db_version: A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
         :param str time_ended: The date and time when the database upgrade ended.
         :param str time_started: The date and time when the database upgrade started.
         """
@@ -25885,7 +25898,7 @@ class GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryResult(dict):
     @pulumi.getter(name="targetDbVersion")
     def target_db_version(self) -> str:
         """
-        A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+        A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
         """
         return pulumi.get(self, "target_db_version")
 
@@ -31685,6 +31698,35 @@ class GetExadataInfrastructureNetworkBondingModeDetailResult(dict):
 
 
 @pulumi.output_type
+class GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterResult(dict):
+    def __init__(__self__, *,
+                 id: str,
+                 un_allocated_adb_storage_in_tbs: float):
+        """
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        :param float un_allocated_adb_storage_in_tbs: Total unallocated autonomous data storage in the AVM in TBs.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "un_allocated_adb_storage_in_tbs", un_allocated_adb_storage_in_tbs)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="unAllocatedAdbStorageInTbs")
+    def un_allocated_adb_storage_in_tbs(self) -> float:
+        """
+        Total unallocated autonomous data storage in the AVM in TBs.
+        """
+        return pulumi.get(self, "un_allocated_adb_storage_in_tbs")
+
+
+@pulumi.output_type
 class GetExadataInfrastructuresExadataInfrastructureResult(dict):
     def __init__(__self__, *,
                  activated_storage_count: int,
@@ -31693,6 +31735,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
                  additional_compute_system_model: str,
                  additional_storage_count: int,
                  admin_network_cidr: str,
+                 availability_domain: str,
                  cloud_control_plane_server1: str,
                  cloud_control_plane_server2: str,
                  compartment_id: str,
@@ -31739,6 +31782,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         :param str additional_compute_system_model: Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
         :param int additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
         :param str admin_network_cidr: The CIDR block for the Exadata administration network.
+        :param str availability_domain: The name of the availability domain that the Exadata infrastructure is located in.
         :param str cloud_control_plane_server1: The IP address for the first control plane server.
         :param str cloud_control_plane_server2: The IP address for the second control plane server.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -31785,6 +31829,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         pulumi.set(__self__, "additional_compute_system_model", additional_compute_system_model)
         pulumi.set(__self__, "additional_storage_count", additional_storage_count)
         pulumi.set(__self__, "admin_network_cidr", admin_network_cidr)
+        pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "cloud_control_plane_server1", cloud_control_plane_server1)
         pulumi.set(__self__, "cloud_control_plane_server2", cloud_control_plane_server2)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -31870,6 +31915,14 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         The CIDR block for the Exadata administration network.
         """
         return pulumi.get(self, "admin_network_cidr")
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The name of the availability domain that the Exadata infrastructure is located in.
+        """
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="cloudControlPlaneServer1")
@@ -37102,6 +37155,7 @@ class GetVmClustersFilterResult(dict):
 @pulumi.output_type
 class GetVmClustersVmClusterResult(dict):
     def __init__(__self__, *,
+                 availability_domain: str,
                  compartment_id: str,
                  cpu_core_count: int,
                  cpus_enabled: int,
@@ -37132,6 +37186,7 @@ class GetVmClustersVmClusterResult(dict):
                  time_zone: str,
                  vm_cluster_network_id: str):
         """
+        :param str availability_domain: The name of the availability domain that the VM cluster is located in.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param int cpus_enabled: The number of enabled CPU cores.
         :param Sequence['GetVmClustersVmClusterDataCollectionOptionArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -37159,6 +37214,7 @@ class GetVmClustersVmClusterResult(dict):
         :param str time_zone: The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param str vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         """
+        pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         pulumi.set(__self__, "cpus_enabled", cpus_enabled)
@@ -37188,6 +37244,14 @@ class GetVmClustersVmClusterResult(dict):
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_zone", time_zone)
         pulumi.set(__self__, "vm_cluster_network_id", vm_cluster_network_id)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The name of the availability domain that the VM cluster is located in.
+        """
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")

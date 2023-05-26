@@ -13,13 +13,13 @@ namespace Pulumi.Oci.Logging.Inputs
     public sealed class UnifiedAgentConfigurationServiceConfigurationSourceParserGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) csv delimiter.
         /// </summary>
         [Input("delimiter")]
         public Input<string>? Delimiter { get; set; }
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Regex pattern.
         /// </summary>
         [Input("expression")]
         public Input<string>? Expression { get; set; }
@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Logging.Inputs
         public Input<string>? FieldTimeKey { get; set; }
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) First line pattern format.
         /// </summary>
         [Input("formatFirstline")]
         public Input<string>? FormatFirstline { get; set; }
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Logging.Inputs
         private InputList<string>? _formats;
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Mutiline pattern format.
         /// </summary>
         public InputList<string> Formats
         {
@@ -49,13 +49,13 @@ namespace Pulumi.Oci.Logging.Inputs
         }
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) grok failure key.
         /// </summary>
         [Input("grokFailureKey")]
         public Input<string>? GrokFailureKey { get; set; }
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) grok name key.
         /// </summary>
         [Input("grokNameKey")]
         public Input<string>? GrokNameKey { get; set; }
@@ -73,19 +73,25 @@ namespace Pulumi.Oci.Logging.Inputs
         public Input<bool>? IsKeepTimeKey { get; set; }
 
         /// <summary>
+        /// (Updatable) If you don't need stream/logtag fields, set this to false.
+        /// </summary>
+        [Input("isMergeCriFields")]
+        public Input<bool>? IsMergeCriFields { get; set; }
+
+        /// <summary>
         /// (Updatable) If true, an empty string field is replaced with nil.
         /// </summary>
         [Input("isNullEmptyString")]
         public Input<bool>? IsNullEmptyString { get; set; }
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Support colonless ident or not.
         /// </summary>
         [Input("isSupportColonlessIdent")]
         public Input<bool>? IsSupportColonlessIdent { get; set; }
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) With priority or not.
         /// </summary>
         [Input("isWithPriority")]
         public Input<bool>? IsWithPriority { get; set; }
@@ -94,7 +100,7 @@ namespace Pulumi.Oci.Logging.Inputs
         private InputList<string>? _keys;
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) csv keys.
         /// </summary>
         public InputList<string> Keys
         {
@@ -103,22 +109,28 @@ namespace Pulumi.Oci.Logging.Inputs
         }
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Message format of syslog.
         /// </summary>
         [Input("messageFormat")]
         public Input<string>? MessageFormat { get; set; }
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Specifies the field name to contain logs.
         /// </summary>
         [Input("messageKey")]
         public Input<string>? MessageKey { get; set; }
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Multiline start regexp pattern.
         /// </summary>
         [Input("multiLineStartRegexp")]
         public Input<string>? MultiLineStartRegexp { get; set; }
+
+        /// <summary>
+        /// (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+        /// </summary>
+        [Input("nestedParser")]
+        public Input<Inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserGetArgs>? NestedParser { get; set; }
 
         /// <summary>
         /// (Updatable) Specify the null value pattern.
@@ -136,7 +148,7 @@ namespace Pulumi.Oci.Logging.Inputs
         private InputList<Inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternGetArgs>? _patterns;
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) grok pattern object.
         /// </summary>
         public InputList<Inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternGetArgs> Patterns
         {
@@ -145,25 +157,25 @@ namespace Pulumi.Oci.Logging.Inputs
         }
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) rfc5424 time format.
         /// </summary>
         [Input("rfc5424timeFormat")]
         public Input<string>? Rfc5424timeFormat { get; set; }
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Syslog parser type.
         /// </summary>
         [Input("syslogParserType")]
         public Input<string>? SyslogParserType { get; set; }
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Process time value using the specified format.
         /// </summary>
         [Input("timeFormat")]
         public Input<string>? TimeFormat { get; set; }
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Time type of JSON parser.
         /// </summary>
         [Input("timeType")]
         public Input<string>? TimeType { get; set; }
@@ -178,7 +190,13 @@ namespace Pulumi.Oci.Logging.Inputs
         private InputMap<object>? _types;
 
         /// <summary>
-        /// (Updatable) Specify types for converting a field into another type.
+        /// (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+        /// 
+        /// This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+        /// 
+        /// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+        /// 
+        /// record: { "host"   : "192.168.0.1", "req_id" : "111", "user"   : "-" }
         /// </summary>
         public InputMap<object> Types
         {

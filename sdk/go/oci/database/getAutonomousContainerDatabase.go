@@ -73,7 +73,7 @@ type LookupAutonomousContainerDatabaseResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	ComputeModel string `pulumi:"computeModel"`
-	// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
 	DbName       string `pulumi:"dbName"`
 	DbUniqueName string `pulumi:"dbUniqueName"`
 	// Oracle Database version of the Autonomous Container Database.
@@ -232,7 +232,7 @@ func (o LookupAutonomousContainerDatabaseResultOutput) ComputeModel() pulumi.Str
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.ComputeModel }).(pulumi.StringOutput)
 }
 
-// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
 func (o LookupAutonomousContainerDatabaseResultOutput) DbName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.DbName }).(pulumi.StringOutput)
 }

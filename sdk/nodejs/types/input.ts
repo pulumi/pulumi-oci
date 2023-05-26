@@ -17818,7 +17818,9 @@ export namespace Database {
          */
         databaseSoftwareImageId?: pulumi.Input<string>;
         /**
-         * A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+         * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+         *
+         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          */
         dbVersion?: pulumi.Input<string>;
         /**
@@ -18089,7 +18091,9 @@ export namespace Database {
         databaseSoftwareImageId?: pulumi.Input<string>;
         dbHomeLocation?: pulumi.Input<string>;
         /**
-         * A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+         * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+         *
+         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          */
         dbVersion?: pulumi.Input<string>;
         /**
@@ -24278,6 +24282,62 @@ export namespace DisasterRecovery {
 }
 
 export namespace Dns {
+    export interface ActionCreateZoneFromZoneFileExternalDownstream {
+        /**
+         * The server's IP address (IPv4 or IPv6).
+         */
+        address?: pulumi.Input<string>;
+        /**
+         * The server's port.
+         */
+        port?: pulumi.Input<number>;
+        /**
+         * The OCID of the TSIG key.
+         */
+        tsigKeyId?: pulumi.Input<string>;
+    }
+
+    export interface ActionCreateZoneFromZoneFileExternalMaster {
+        /**
+         * The server's IP address (IPv4 or IPv6).
+         */
+        address?: pulumi.Input<string>;
+        /**
+         * The server's port.
+         */
+        port?: pulumi.Input<number>;
+        /**
+         * The OCID of the TSIG key.
+         */
+        tsigKeyId?: pulumi.Input<string>;
+    }
+
+    export interface ActionCreateZoneFromZoneFileNameserver {
+        /**
+         * The hostname of the nameserver.
+         */
+        hostname?: pulumi.Input<string>;
+    }
+
+    export interface ActionCreateZoneFromZoneFileZoneTransferServer {
+        /**
+         * The server's IP address (IPv4 or IPv6).
+         */
+        address?: pulumi.Input<string>;
+        /**
+         * A Boolean flag indicating whether or not the server is a zone data transfer destination.
+         */
+        isTransferDestination?: pulumi.Input<boolean>;
+        /**
+         * A Boolean flag indicating whether or not the server is a zone data transfer source.
+         */
+        isTransferSource?: pulumi.Input<boolean>;
+        /**
+         * The server's port.
+         */
+        port?: pulumi.Input<number>;
+    }
+
     export interface GetRecordsFilter {
         name: string;
         regex?: boolean;
@@ -24315,6 +24375,18 @@ export namespace Dns {
     }
 
     export interface GetResolversFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetRrsetsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRrsetsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -24601,6 +24673,21 @@ export namespace Dns {
         value?: pulumi.Input<number>;
     }
 
+    export interface ZoneExternalDownstream {
+        /**
+         * (Updatable) The server's IP address (IPv4 or IPv6).
+         */
+        address: pulumi.Input<string>;
+        /**
+         * (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+         */
+        port?: pulumi.Input<number>;
+        /**
+         * (Updatable) The OCID of the TSIG key.
+         */
+        tsigKeyId?: pulumi.Input<string>;
+    }
+
     export interface ZoneExternalMaster {
         /**
          * (Updatable) The server's IP address (IPv4 or IPv6).
@@ -24621,6 +24708,25 @@ export namespace Dns {
          * The hostname of the nameserver.
          */
         hostname?: pulumi.Input<string>;
+    }
+
+    export interface ZoneZoneTransferServer {
+        /**
+         * (Updatable) The server's IP address (IPv4 or IPv6).
+         */
+        address?: pulumi.Input<string>;
+        /**
+         * A Boolean flag indicating whether or not the server is a zone data transfer destination.
+         */
+        isTransferDestination?: pulumi.Input<boolean>;
+        /**
+         * A Boolean flag indicating whether or not the server is a zone data transfer source.
+         */
+        isTransferSource?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+         */
+        port?: pulumi.Input<number>;
     }
 }
 
@@ -41521,7 +41627,7 @@ export namespace Logging {
 
     export interface GetLogSavedSearchesFilter {
         /**
-         * Resource name
+         * Resource name.
          */
         name: string;
         regex?: boolean;
@@ -41530,7 +41636,7 @@ export namespace Logging {
 
     export interface GetLogSavedSearchesFilterArgs {
         /**
-         * Resource name
+         * Resource name.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -41615,7 +41721,7 @@ export namespace Logging {
          */
         destination: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationDestination>;
         /**
-         * (Updatable)
+         * (Updatable) Logging source object.
          */
         sources: pulumi.Input<pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationSource>[]>;
     }
@@ -41629,7 +41735,7 @@ export namespace Logging {
 
     export interface UnifiedAgentConfigurationServiceConfigurationSource {
         /**
-         * (Updatable)
+         * (Updatable) Windows event log channels.
          */
         channels?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -41641,7 +41747,7 @@ export namespace Logging {
          */
         parser?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationSourceParser>;
         /**
-         * (Updatable)
+         * (Updatable) Absolute paths for log source files. Wildcard can be used.
          */
         paths?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -41656,11 +41762,11 @@ export namespace Logging {
 
     export interface UnifiedAgentConfigurationServiceConfigurationSourceParser {
         /**
-         * (Updatable)
+         * (Updatable) csv delimiter.
          */
         delimiter?: pulumi.Input<string>;
         /**
-         * (Updatable)
+         * (Updatable) Regex pattern.
          */
         expression?: pulumi.Input<string>;
         /**
@@ -41668,19 +41774,19 @@ export namespace Logging {
          */
         fieldTimeKey?: pulumi.Input<string>;
         /**
-         * (Updatable)
+         * (Updatable) First line pattern format.
          */
         formatFirstline?: pulumi.Input<string>;
         /**
-         * (Updatable)
+         * (Updatable) Mutiline pattern format.
          */
         formats?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable)
+         * (Updatable) grok failure key.
          */
         grokFailureKey?: pulumi.Input<string>;
         /**
-         * (Updatable)
+         * (Updatable) grok name key.
          */
         grokNameKey?: pulumi.Input<string>;
         /**
@@ -41692,33 +41798,41 @@ export namespace Logging {
          */
         isKeepTimeKey?: pulumi.Input<boolean>;
         /**
+         * (Updatable) If you don't need stream/logtag fields, set this to false.
+         */
+        isMergeCriFields?: pulumi.Input<boolean>;
+        /**
          * (Updatable) If true, an empty string field is replaced with nil.
          */
         isNullEmptyString?: pulumi.Input<boolean>;
         /**
-         * (Updatable)
+         * (Updatable) Support colonless ident or not.
          */
         isSupportColonlessIdent?: pulumi.Input<boolean>;
         /**
-         * (Updatable)
+         * (Updatable) With priority or not.
          */
         isWithPriority?: pulumi.Input<boolean>;
         /**
-         * (Updatable)
+         * (Updatable) csv keys.
          */
         keys?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable)
+         * (Updatable) Message format of syslog.
          */
         messageFormat?: pulumi.Input<string>;
         /**
-         * (Updatable)
+         * (Updatable) Specifies the field name to contain logs.
          */
         messageKey?: pulumi.Input<string>;
         /**
-         * (Updatable)
+         * (Updatable) Multiline start regexp pattern.
          */
         multiLineStartRegexp?: pulumi.Input<string>;
+        /**
+         * (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+         */
+        nestedParser?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser>;
         /**
          * (Updatable) Specify the null value pattern.
          */
@@ -41728,23 +41842,23 @@ export namespace Logging {
          */
         parserType: pulumi.Input<string>;
         /**
-         * (Updatable)
+         * (Updatable) grok pattern object.
          */
         patterns?: pulumi.Input<pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationSourceParserPattern>[]>;
         /**
-         * (Updatable)
+         * (Updatable) rfc5424 time format.
          */
         rfc5424timeFormat?: pulumi.Input<string>;
         /**
-         * (Updatable)
+         * (Updatable) Syslog parser type.
          */
         syslogParserType?: pulumi.Input<string>;
         /**
-         * (Updatable)
+         * (Updatable) Process time value using the specified format.
          */
         timeFormat?: pulumi.Input<string>;
         /**
-         * (Updatable)
+         * (Updatable) Time type of JSON parser.
          */
         timeType?: pulumi.Input<string>;
         /**
@@ -41752,9 +41866,34 @@ export namespace Logging {
          */
         timeoutInMilliseconds?: pulumi.Input<number>;
         /**
-         * (Updatable) Specify types for converting a field into another type.
+         * (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+         *
+         * This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+         *
+         * is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+         *
+         * record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
          */
         types?: pulumi.Input<{[key: string]: any}>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser {
+        /**
+         * (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+         */
+        fieldTimeKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, keep time field in the record.
+         */
+        isKeepTimeKey?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Process time value using the specified format.
+         */
+        timeFormat?: pulumi.Input<string>;
+        /**
+         * (Updatable) Time type of JSON parser.
+         */
+        timeType?: pulumi.Input<string>;
     }
 
     export interface UnifiedAgentConfigurationServiceConfigurationSourceParserPattern {

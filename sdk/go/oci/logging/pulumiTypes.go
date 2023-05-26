@@ -506,7 +506,7 @@ type UnifiedAgentConfigurationServiceConfiguration struct {
 	ConfigurationType string `pulumi:"configurationType"`
 	// (Updatable) Logging destination object.
 	Destination UnifiedAgentConfigurationServiceConfigurationDestination `pulumi:"destination"`
-	// (Updatable)
+	// (Updatable) Logging source object.
 	Sources []UnifiedAgentConfigurationServiceConfigurationSource `pulumi:"sources"`
 }
 
@@ -526,7 +526,7 @@ type UnifiedAgentConfigurationServiceConfigurationArgs struct {
 	ConfigurationType pulumi.StringInput `pulumi:"configurationType"`
 	// (Updatable) Logging destination object.
 	Destination UnifiedAgentConfigurationServiceConfigurationDestinationInput `pulumi:"destination"`
-	// (Updatable)
+	// (Updatable) Logging source object.
 	Sources UnifiedAgentConfigurationServiceConfigurationSourceArrayInput `pulumi:"sources"`
 }
 
@@ -619,7 +619,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationOutput) Destination() Unifi
 	}).(UnifiedAgentConfigurationServiceConfigurationDestinationOutput)
 }
 
-// (Updatable)
+// (Updatable) Logging source object.
 func (o UnifiedAgentConfigurationServiceConfigurationOutput) Sources() UnifiedAgentConfigurationServiceConfigurationSourceArrayOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfiguration) []UnifiedAgentConfigurationServiceConfigurationSource {
 		return v.Sources
@@ -670,7 +670,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationPtrOutput) Destination() Un
 	}).(UnifiedAgentConfigurationServiceConfigurationDestinationPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Logging source object.
 func (o UnifiedAgentConfigurationServiceConfigurationPtrOutput) Sources() UnifiedAgentConfigurationServiceConfigurationSourceArrayOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfiguration) []UnifiedAgentConfigurationServiceConfigurationSource {
 		if v == nil {
@@ -818,13 +818,13 @@ func (o UnifiedAgentConfigurationServiceConfigurationDestinationPtrOutput) LogOb
 }
 
 type UnifiedAgentConfigurationServiceConfigurationSource struct {
-	// (Updatable)
+	// (Updatable) Windows event log channels.
 	Channels []string `pulumi:"channels"`
 	// (Updatable) The name key to tag this grok pattern.
 	Name *string `pulumi:"name"`
 	// (Updatable) source parser object.
 	Parser *UnifiedAgentConfigurationServiceConfigurationSourceParser `pulumi:"parser"`
-	// (Updatable)
+	// (Updatable) Absolute paths for log source files. Wildcard can be used.
 	Paths []string `pulumi:"paths"`
 	// (Updatable) Unified schema logging source type.
 	//
@@ -845,13 +845,13 @@ type UnifiedAgentConfigurationServiceConfigurationSourceInput interface {
 }
 
 type UnifiedAgentConfigurationServiceConfigurationSourceArgs struct {
-	// (Updatable)
+	// (Updatable) Windows event log channels.
 	Channels pulumi.StringArrayInput `pulumi:"channels"`
 	// (Updatable) The name key to tag this grok pattern.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) source parser object.
 	Parser UnifiedAgentConfigurationServiceConfigurationSourceParserPtrInput `pulumi:"parser"`
-	// (Updatable)
+	// (Updatable) Absolute paths for log source files. Wildcard can be used.
 	Paths pulumi.StringArrayInput `pulumi:"paths"`
 	// (Updatable) Unified schema logging source type.
 	//
@@ -911,7 +911,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceOutput) ToUnifiedAgen
 	return o
 }
 
-// (Updatable)
+// (Updatable) Windows event log channels.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceOutput) Channels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSource) []string { return v.Channels }).(pulumi.StringArrayOutput)
 }
@@ -928,7 +928,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceOutput) Parser() Unif
 	}).(UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Absolute paths for log source files. Wildcard can be used.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceOutput) Paths() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSource) []string { return v.Paths }).(pulumi.StringArrayOutput)
 }
@@ -962,55 +962,65 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceArrayOutput) Index(i 
 }
 
 type UnifiedAgentConfigurationServiceConfigurationSourceParser struct {
-	// (Updatable)
+	// (Updatable) csv delimiter.
 	Delimiter *string `pulumi:"delimiter"`
-	// (Updatable)
+	// (Updatable) Regex pattern.
 	Expression *string `pulumi:"expression"`
 	// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
 	FieldTimeKey *string `pulumi:"fieldTimeKey"`
-	// (Updatable)
+	// (Updatable) First line pattern format.
 	FormatFirstline *string `pulumi:"formatFirstline"`
-	// (Updatable)
+	// (Updatable) Mutiline pattern format.
 	Formats []string `pulumi:"formats"`
-	// (Updatable)
+	// (Updatable) grok failure key.
 	GrokFailureKey *string `pulumi:"grokFailureKey"`
-	// (Updatable)
+	// (Updatable) grok name key.
 	GrokNameKey *string `pulumi:"grokNameKey"`
 	// (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when timeKey is specified.
 	IsEstimateCurrentEvent *bool `pulumi:"isEstimateCurrentEvent"`
 	// (Updatable) If true, keep time field in the record.
 	IsKeepTimeKey *bool `pulumi:"isKeepTimeKey"`
+	// (Updatable) If you don't need stream/logtag fields, set this to false.
+	IsMergeCriFields *bool `pulumi:"isMergeCriFields"`
 	// (Updatable) If true, an empty string field is replaced with nil.
 	IsNullEmptyString *bool `pulumi:"isNullEmptyString"`
-	// (Updatable)
+	// (Updatable) Support colonless ident or not.
 	IsSupportColonlessIdent *bool `pulumi:"isSupportColonlessIdent"`
-	// (Updatable)
+	// (Updatable) With priority or not.
 	IsWithPriority *bool `pulumi:"isWithPriority"`
-	// (Updatable)
+	// (Updatable) csv keys.
 	Keys []string `pulumi:"keys"`
-	// (Updatable)
+	// (Updatable) Message format of syslog.
 	MessageFormat *string `pulumi:"messageFormat"`
-	// (Updatable)
+	// (Updatable) Specifies the field name to contain logs.
 	MessageKey *string `pulumi:"messageKey"`
-	// (Updatable)
+	// (Updatable) Multiline start regexp pattern.
 	MultiLineStartRegexp *string `pulumi:"multiLineStartRegexp"`
+	// (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+	NestedParser *UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser `pulumi:"nestedParser"`
 	// (Updatable) Specify the null value pattern.
 	NullValuePattern *string `pulumi:"nullValuePattern"`
 	// (Updatable) Type of fluent parser.
 	ParserType string `pulumi:"parserType"`
-	// (Updatable)
+	// (Updatable) grok pattern object.
 	Patterns []UnifiedAgentConfigurationServiceConfigurationSourceParserPattern `pulumi:"patterns"`
-	// (Updatable)
+	// (Updatable) rfc5424 time format.
 	Rfc5424timeFormat *string `pulumi:"rfc5424timeFormat"`
-	// (Updatable)
+	// (Updatable) Syslog parser type.
 	SyslogParserType *string `pulumi:"syslogParserType"`
-	// (Updatable)
+	// (Updatable) Process time value using the specified format.
 	TimeFormat *string `pulumi:"timeFormat"`
-	// (Updatable)
+	// (Updatable) Time type of JSON parser.
 	TimeType *string `pulumi:"timeType"`
 	// (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
 	TimeoutInMilliseconds *int `pulumi:"timeoutInMilliseconds"`
-	// (Updatable) Specify types for converting a field into another type.
+	// (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+	//
+	// This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+	//
+	// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+	//
+	// record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
 	Types map[string]interface{} `pulumi:"types"`
 }
 
@@ -1026,55 +1036,65 @@ type UnifiedAgentConfigurationServiceConfigurationSourceParserInput interface {
 }
 
 type UnifiedAgentConfigurationServiceConfigurationSourceParserArgs struct {
-	// (Updatable)
+	// (Updatable) csv delimiter.
 	Delimiter pulumi.StringPtrInput `pulumi:"delimiter"`
-	// (Updatable)
+	// (Updatable) Regex pattern.
 	Expression pulumi.StringPtrInput `pulumi:"expression"`
 	// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
 	FieldTimeKey pulumi.StringPtrInput `pulumi:"fieldTimeKey"`
-	// (Updatable)
+	// (Updatable) First line pattern format.
 	FormatFirstline pulumi.StringPtrInput `pulumi:"formatFirstline"`
-	// (Updatable)
+	// (Updatable) Mutiline pattern format.
 	Formats pulumi.StringArrayInput `pulumi:"formats"`
-	// (Updatable)
+	// (Updatable) grok failure key.
 	GrokFailureKey pulumi.StringPtrInput `pulumi:"grokFailureKey"`
-	// (Updatable)
+	// (Updatable) grok name key.
 	GrokNameKey pulumi.StringPtrInput `pulumi:"grokNameKey"`
 	// (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when timeKey is specified.
 	IsEstimateCurrentEvent pulumi.BoolPtrInput `pulumi:"isEstimateCurrentEvent"`
 	// (Updatable) If true, keep time field in the record.
 	IsKeepTimeKey pulumi.BoolPtrInput `pulumi:"isKeepTimeKey"`
+	// (Updatable) If you don't need stream/logtag fields, set this to false.
+	IsMergeCriFields pulumi.BoolPtrInput `pulumi:"isMergeCriFields"`
 	// (Updatable) If true, an empty string field is replaced with nil.
 	IsNullEmptyString pulumi.BoolPtrInput `pulumi:"isNullEmptyString"`
-	// (Updatable)
+	// (Updatable) Support colonless ident or not.
 	IsSupportColonlessIdent pulumi.BoolPtrInput `pulumi:"isSupportColonlessIdent"`
-	// (Updatable)
+	// (Updatable) With priority or not.
 	IsWithPriority pulumi.BoolPtrInput `pulumi:"isWithPriority"`
-	// (Updatable)
+	// (Updatable) csv keys.
 	Keys pulumi.StringArrayInput `pulumi:"keys"`
-	// (Updatable)
+	// (Updatable) Message format of syslog.
 	MessageFormat pulumi.StringPtrInput `pulumi:"messageFormat"`
-	// (Updatable)
+	// (Updatable) Specifies the field name to contain logs.
 	MessageKey pulumi.StringPtrInput `pulumi:"messageKey"`
-	// (Updatable)
+	// (Updatable) Multiline start regexp pattern.
 	MultiLineStartRegexp pulumi.StringPtrInput `pulumi:"multiLineStartRegexp"`
+	// (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+	NestedParser UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrInput `pulumi:"nestedParser"`
 	// (Updatable) Specify the null value pattern.
 	NullValuePattern pulumi.StringPtrInput `pulumi:"nullValuePattern"`
 	// (Updatable) Type of fluent parser.
 	ParserType pulumi.StringInput `pulumi:"parserType"`
-	// (Updatable)
+	// (Updatable) grok pattern object.
 	Patterns UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayInput `pulumi:"patterns"`
-	// (Updatable)
+	// (Updatable) rfc5424 time format.
 	Rfc5424timeFormat pulumi.StringPtrInput `pulumi:"rfc5424timeFormat"`
-	// (Updatable)
+	// (Updatable) Syslog parser type.
 	SyslogParserType pulumi.StringPtrInput `pulumi:"syslogParserType"`
-	// (Updatable)
+	// (Updatable) Process time value using the specified format.
 	TimeFormat pulumi.StringPtrInput `pulumi:"timeFormat"`
-	// (Updatable)
+	// (Updatable) Time type of JSON parser.
 	TimeType pulumi.StringPtrInput `pulumi:"timeType"`
 	// (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
 	TimeoutInMilliseconds pulumi.IntPtrInput `pulumi:"timeoutInMilliseconds"`
-	// (Updatable) Specify types for converting a field into another type.
+	// (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+	//
+	// This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+	//
+	// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+	//
+	// record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
 	Types pulumi.MapInput `pulumi:"types"`
 }
 
@@ -1155,12 +1175,12 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) ToUnifi
 	}).(UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) csv delimiter.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Delimiter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *string { return v.Delimiter }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Regex pattern.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Expression() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *string { return v.Expression }).(pulumi.StringPtrOutput)
 }
@@ -1170,22 +1190,22 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) FieldTi
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *string { return v.FieldTimeKey }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) First line pattern format.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) FormatFirstline() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *string { return v.FormatFirstline }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Mutiline pattern format.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Formats() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) []string { return v.Formats }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable)
+// (Updatable) grok failure key.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) GrokFailureKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *string { return v.GrokFailureKey }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) grok name key.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) GrokNameKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *string { return v.GrokNameKey }).(pulumi.StringPtrOutput)
 }
@@ -1202,43 +1222,55 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) IsKeepT
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *bool { return v.IsKeepTimeKey }).(pulumi.BoolPtrOutput)
 }
 
+// (Updatable) If you don't need stream/logtag fields, set this to false.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) IsMergeCriFields() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *bool { return v.IsMergeCriFields }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) If true, an empty string field is replaced with nil.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) IsNullEmptyString() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *bool { return v.IsNullEmptyString }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Support colonless ident or not.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) IsSupportColonlessIdent() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *bool {
 		return v.IsSupportColonlessIdent
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) With priority or not.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) IsWithPriority() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *bool { return v.IsWithPriority }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) csv keys.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Keys() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) []string { return v.Keys }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable)
+// (Updatable) Message format of syslog.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) MessageFormat() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *string { return v.MessageFormat }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Specifies the field name to contain logs.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) MessageKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *string { return v.MessageKey }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Multiline start regexp pattern.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) MultiLineStartRegexp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *string {
 		return v.MultiLineStartRegexp
 	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) NestedParser() UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser {
+		return v.NestedParser
+	}).(UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput)
 }
 
 // (Updatable) Specify the null value pattern.
@@ -1251,29 +1283,29 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) ParserT
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) string { return v.ParserType }).(pulumi.StringOutput)
 }
 
-// (Updatable)
+// (Updatable) grok pattern object.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Patterns() UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) []UnifiedAgentConfigurationServiceConfigurationSourceParserPattern {
 		return v.Patterns
 	}).(UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput)
 }
 
-// (Updatable)
+// (Updatable) rfc5424 time format.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Rfc5424timeFormat() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *string { return v.Rfc5424timeFormat }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Syslog parser type.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) SyslogParserType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *string { return v.SyslogParserType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Process time value using the specified format.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) TimeFormat() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *string { return v.TimeFormat }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Time type of JSON parser.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) TimeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *string { return v.TimeType }).(pulumi.StringPtrOutput)
 }
@@ -1283,7 +1315,13 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Timeout
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *int { return v.TimeoutInMilliseconds }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Specify types for converting a field into another type.
+// (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+//
+// This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+//
+// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+//
+// record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Types() pulumi.MapOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) map[string]interface{} {
 		return v.Types
@@ -1314,7 +1352,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Elem
 	}).(UnifiedAgentConfigurationServiceConfigurationSourceParserOutput)
 }
 
-// (Updatable)
+// (Updatable) csv delimiter.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Delimiter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *string {
 		if v == nil {
@@ -1324,7 +1362,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Deli
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Regex pattern.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Expression() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *string {
 		if v == nil {
@@ -1344,7 +1382,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Fiel
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) First line pattern format.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) FormatFirstline() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *string {
 		if v == nil {
@@ -1354,7 +1392,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Form
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Mutiline pattern format.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Formats() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) []string {
 		if v == nil {
@@ -1364,7 +1402,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Form
 	}).(pulumi.StringArrayOutput)
 }
 
-// (Updatable)
+// (Updatable) grok failure key.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) GrokFailureKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *string {
 		if v == nil {
@@ -1374,7 +1412,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Grok
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) grok name key.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) GrokNameKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *string {
 		if v == nil {
@@ -1404,6 +1442,16 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) IsKe
 	}).(pulumi.BoolPtrOutput)
 }
 
+// (Updatable) If you don't need stream/logtag fields, set this to false.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) IsMergeCriFields() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsMergeCriFields
+	}).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) If true, an empty string field is replaced with nil.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) IsNullEmptyString() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *bool {
@@ -1414,7 +1462,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) IsNu
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Support colonless ident or not.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) IsSupportColonlessIdent() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *bool {
 		if v == nil {
@@ -1424,7 +1472,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) IsSu
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) With priority or not.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) IsWithPriority() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *bool {
 		if v == nil {
@@ -1434,7 +1482,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) IsWi
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) csv keys.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Keys() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) []string {
 		if v == nil {
@@ -1444,7 +1492,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Keys
 	}).(pulumi.StringArrayOutput)
 }
 
-// (Updatable)
+// (Updatable) Message format of syslog.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) MessageFormat() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *string {
 		if v == nil {
@@ -1454,7 +1502,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Mess
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Specifies the field name to contain logs.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) MessageKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *string {
 		if v == nil {
@@ -1464,7 +1512,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Mess
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Multiline start regexp pattern.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) MultiLineStartRegexp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *string {
 		if v == nil {
@@ -1472,6 +1520,16 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Mult
 		}
 		return v.MultiLineStartRegexp
 	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) NestedParser() UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser {
+		if v == nil {
+			return nil
+		}
+		return v.NestedParser
+	}).(UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput)
 }
 
 // (Updatable) Specify the null value pattern.
@@ -1494,7 +1552,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Pars
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) grok pattern object.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Patterns() UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) []UnifiedAgentConfigurationServiceConfigurationSourceParserPattern {
 		if v == nil {
@@ -1504,7 +1562,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Patt
 	}).(UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput)
 }
 
-// (Updatable)
+// (Updatable) rfc5424 time format.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Rfc5424timeFormat() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *string {
 		if v == nil {
@@ -1514,7 +1572,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Rfc5
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Syslog parser type.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) SyslogParserType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *string {
 		if v == nil {
@@ -1524,7 +1582,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Sysl
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Process time value using the specified format.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) TimeFormat() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *string {
 		if v == nil {
@@ -1534,7 +1592,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Time
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Time type of JSON parser.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) TimeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *string {
 		if v == nil {
@@ -1554,7 +1612,13 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Time
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Specify types for converting a field into another type.
+// (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+//
+// This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+//
+// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+//
+// record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Types() pulumi.MapOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) map[string]interface{} {
 		if v == nil {
@@ -1562,6 +1626,208 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Type
 		}
 		return v.Types
 	}).(pulumi.MapOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser struct {
+	// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey *string `pulumi:"fieldTimeKey"`
+	// (Updatable) If true, keep time field in the record.
+	IsKeepTimeKey *bool `pulumi:"isKeepTimeKey"`
+	// (Updatable) Process time value using the specified format.
+	TimeFormat *string `pulumi:"timeFormat"`
+	// (Updatable) Time type of JSON parser.
+	TimeType *string `pulumi:"timeType"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs and UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput() UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput
+	ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs struct {
+	// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey pulumi.StringPtrInput `pulumi:"fieldTimeKey"`
+	// (Updatable) If true, keep time field in the record.
+	IsKeepTimeKey pulumi.BoolPtrInput `pulumi:"isKeepTimeKey"`
+	// (Updatable) Process time value using the specified format.
+	TimeFormat pulumi.StringPtrInput `pulumi:"timeFormat"`
+	// (Updatable) Time type of JSON parser.
+	TimeType pulumi.StringPtrInput `pulumi:"timeType"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs) ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput() UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs) ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput)
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs) ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs) ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput).ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutputWithContext(ctx)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs, UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtr and UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrInput` via:
+//
+//	        UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs{...}
+//
+//	or:
+//
+//	        nil
+type UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput
+	ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput
+}
+
+type unifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrType UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs
+
+func UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtr(v *UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs) UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrInput {
+	return (*unifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrType)(v)
+}
+
+func (*unifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser)(nil)).Elem()
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrType) ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutputWithContext(context.Background())
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrType) ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput() UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput {
+	return o.ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutputWithContext(context.Background())
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) *UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser {
+		return &v
+	}).(UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput)
+}
+
+// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) FieldTimeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) *string {
+		return v.FieldTimeKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If true, keep time field in the record.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) IsKeepTimeKey() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) *bool {
+		return v.IsKeepTimeKey
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Process time value using the specified format.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) TimeFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) *string {
+		return v.TimeFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Time type of JSON parser.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) TimeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) *string {
+		return v.TimeType
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput) Elem() UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser {
+		if v != nil {
+			return *v
+		}
+		var ret UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser
+		return ret
+	}).(UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput)
+}
+
+// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput) FieldTimeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FieldTimeKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If true, keep time field in the record.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput) IsKeepTimeKey() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsKeepTimeKey
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Process time value using the specified format.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput) TimeFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Time type of JSON parser.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput) TimeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeType
+	}).(pulumi.StringPtrOutput)
 }
 
 type UnifiedAgentConfigurationServiceConfigurationSourceParserPattern struct {
@@ -2049,7 +2315,7 @@ type GetLogGroupsLogGroup struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description for this resource.
 	Description string `pulumi:"description"`
-	// Resource name
+	// Resource name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -2081,7 +2347,7 @@ type GetLogGroupsLogGroupArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description for this resource.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Resource name
+	// Resource name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
@@ -2161,7 +2427,7 @@ func (o GetLogGroupsLogGroupOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogGroupsLogGroup) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Resource name
+// Resource name.
 func (o GetLogGroupsLogGroupOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogGroupsLogGroup) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -2212,7 +2478,7 @@ func (o GetLogGroupsLogGroupArrayOutput) Index(i pulumi.IntInput) GetLogGroupsLo
 }
 
 type GetLogSavedSearchesFilter struct {
-	// Resource name
+	// Resource name.
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -2230,7 +2496,7 @@ type GetLogSavedSearchesFilterInput interface {
 }
 
 type GetLogSavedSearchesFilterArgs struct {
-	// Resource name
+	// Resource name.
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -2287,7 +2553,7 @@ func (o GetLogSavedSearchesFilterOutput) ToGetLogSavedSearchesFilterOutputWithCo
 	return o
 }
 
-// Resource name
+// Resource name.
 func (o GetLogSavedSearchesFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogSavedSearchesFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -2427,7 +2693,7 @@ type GetLogSavedSearchesLogSavedSearchSummaryCollectionItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the resource.
 	Id string `pulumi:"id"`
-	// Resource name
+	// Resource name.
 	Name string `pulumi:"name"`
 	// The search query that is saved.
 	Query string `pulumi:"query"`
@@ -2461,7 +2727,7 @@ type GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the resource.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Resource name
+	// Resource name.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The search query that is saved.
 	Query pulumi.StringInput `pulumi:"query"`
@@ -2553,7 +2819,7 @@ func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionItemOutput) Id() pulum
 	return o.ApplyT(func(v GetLogSavedSearchesLogSavedSearchSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Resource name
+// Resource name.
 func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogSavedSearchesLogSavedSearchSummaryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -2711,7 +2977,7 @@ type GetLogsLog struct {
 	Configurations []GetLogsLogConfiguration `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// Resource name
+	// Resource name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -2723,7 +2989,7 @@ type GetLogsLog struct {
 	LogGroupId string `pulumi:"logGroupId"`
 	// The logType that the log object is for, whether custom or service.
 	LogType string `pulumi:"logType"`
-	// Log retention duration in 30-day increments (30, 60, 90 and so on).
+	// Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
 	RetentionDuration int `pulumi:"retentionDuration"`
 	// Lifecycle state of the log object
 	State string `pulumi:"state"`
@@ -2753,7 +3019,7 @@ type GetLogsLogArgs struct {
 	Configurations GetLogsLogConfigurationArrayInput `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// Resource name
+	// Resource name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
@@ -2765,7 +3031,7 @@ type GetLogsLogArgs struct {
 	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
 	// The logType that the log object is for, whether custom or service.
 	LogType pulumi.StringInput `pulumi:"logType"`
-	// Log retention duration in 30-day increments (30, 60, 90 and so on).
+	// Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
 	RetentionDuration pulumi.IntInput `pulumi:"retentionDuration"`
 	// Lifecycle state of the log object
 	State pulumi.StringInput `pulumi:"state"`
@@ -2843,7 +3109,7 @@ func (o GetLogsLogOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetLogsLog) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// Resource name
+// Resource name.
 func (o GetLogsLogOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogsLog) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -2873,7 +3139,7 @@ func (o GetLogsLogOutput) LogType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogsLog) string { return v.LogType }).(pulumi.StringOutput)
 }
 
-// Log retention duration in 30-day increments (30, 60, 90 and so on).
+// Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
 func (o GetLogsLogOutput) RetentionDuration() pulumi.IntOutput {
 	return o.ApplyT(func(v GetLogsLog) int { return v.RetentionDuration }).(pulumi.IntOutput)
 }
@@ -3253,7 +3519,8 @@ type GetUnifiedAgentConfigurationServiceConfiguration struct {
 	ConfigurationType string `pulumi:"configurationType"`
 	// Logging destination object.
 	Destinations []GetUnifiedAgentConfigurationServiceConfigurationDestination `pulumi:"destinations"`
-	Sources      []GetUnifiedAgentConfigurationServiceConfigurationSource      `pulumi:"sources"`
+	// Logging source object.
+	Sources []GetUnifiedAgentConfigurationServiceConfigurationSource `pulumi:"sources"`
 }
 
 // GetUnifiedAgentConfigurationServiceConfigurationInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationArgs and GetUnifiedAgentConfigurationServiceConfigurationOutput values.
@@ -3272,7 +3539,8 @@ type GetUnifiedAgentConfigurationServiceConfigurationArgs struct {
 	ConfigurationType pulumi.StringInput `pulumi:"configurationType"`
 	// Logging destination object.
 	Destinations GetUnifiedAgentConfigurationServiceConfigurationDestinationArrayInput `pulumi:"destinations"`
-	Sources      GetUnifiedAgentConfigurationServiceConfigurationSourceArrayInput      `pulumi:"sources"`
+	// Logging source object.
+	Sources GetUnifiedAgentConfigurationServiceConfigurationSourceArrayInput `pulumi:"sources"`
 }
 
 func (GetUnifiedAgentConfigurationServiceConfigurationArgs) ElementType() reflect.Type {
@@ -3338,6 +3606,7 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationOutput) Destinations() G
 	}).(GetUnifiedAgentConfigurationServiceConfigurationDestinationArrayOutput)
 }
 
+// Logging source object.
 func (o GetUnifiedAgentConfigurationServiceConfigurationOutput) Sources() GetUnifiedAgentConfigurationServiceConfigurationSourceArrayOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfiguration) []GetUnifiedAgentConfigurationServiceConfigurationSource {
 		return v.Sources
@@ -3462,12 +3731,14 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationDestinationArrayOutput) 
 }
 
 type GetUnifiedAgentConfigurationServiceConfigurationSource struct {
+	// Windows event log channels.
 	Channels []string `pulumi:"channels"`
 	// The name key to tag this grok pattern.
 	Name string `pulumi:"name"`
 	// source parser object.
 	Parsers []GetUnifiedAgentConfigurationServiceConfigurationSourceParser `pulumi:"parsers"`
-	Paths   []string                                                       `pulumi:"paths"`
+	// Absolute paths for log source files. Wildcard can be used.
+	Paths []string `pulumi:"paths"`
 	// Unified schema logging source type.
 	SourceType string `pulumi:"sourceType"`
 }
@@ -3484,12 +3755,14 @@ type GetUnifiedAgentConfigurationServiceConfigurationSourceInput interface {
 }
 
 type GetUnifiedAgentConfigurationServiceConfigurationSourceArgs struct {
+	// Windows event log channels.
 	Channels pulumi.StringArrayInput `pulumi:"channels"`
 	// The name key to tag this grok pattern.
 	Name pulumi.StringInput `pulumi:"name"`
 	// source parser object.
 	Parsers GetUnifiedAgentConfigurationServiceConfigurationSourceParserArrayInput `pulumi:"parsers"`
-	Paths   pulumi.StringArrayInput                                                `pulumi:"paths"`
+	// Absolute paths for log source files. Wildcard can be used.
+	Paths pulumi.StringArrayInput `pulumi:"paths"`
 	// Unified schema logging source type.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
@@ -3545,6 +3818,7 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceOutput) ToGetUnifi
 	return o
 }
 
+// Windows event log channels.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceOutput) Channels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSource) []string { return v.Channels }).(pulumi.StringArrayOutput)
 }
@@ -3561,6 +3835,7 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceOutput) Parsers() 
 	}).(GetUnifiedAgentConfigurationServiceConfigurationSourceParserArrayOutput)
 }
 
+// Absolute paths for log source files. Wildcard can be used.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceOutput) Paths() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSource) []string { return v.Paths }).(pulumi.StringArrayOutput)
 }
@@ -3591,38 +3866,59 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceArrayOutput) Index
 }
 
 type GetUnifiedAgentConfigurationServiceConfigurationSourceParser struct {
-	Delimiter  string `pulumi:"delimiter"`
+	// csv delimiter.
+	Delimiter string `pulumi:"delimiter"`
+	// Regex pattern.
 	Expression string `pulumi:"expression"`
 	// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
-	FieldTimeKey    string   `pulumi:"fieldTimeKey"`
-	FormatFirstline string   `pulumi:"formatFirstline"`
-	Formats         []string `pulumi:"formats"`
-	GrokFailureKey  string   `pulumi:"grokFailureKey"`
-	GrokNameKey     string   `pulumi:"grokNameKey"`
+	FieldTimeKey string `pulumi:"fieldTimeKey"`
+	// First line pattern format.
+	FormatFirstline string `pulumi:"formatFirstline"`
+	// Mutiline pattern format.
+	Formats []string `pulumi:"formats"`
+	// grok failure key.
+	GrokFailureKey string `pulumi:"grokFailureKey"`
+	// grok name key.
+	GrokNameKey string `pulumi:"grokNameKey"`
 	// If true, use Fluent::EventTime.now(current time) as a timestamp when timeKey is specified.
 	IsEstimateCurrentEvent bool `pulumi:"isEstimateCurrentEvent"`
 	// If true, keep time field in the record.
 	IsKeepTimeKey bool `pulumi:"isKeepTimeKey"`
+	// If you don't need stream/logtag fields, set this to false for CRI parser.
+	IsMergeCriFields bool `pulumi:"isMergeCriFields"`
 	// If true, an empty string field is replaced with nil.
-	IsNullEmptyString       bool     `pulumi:"isNullEmptyString"`
-	IsSupportColonlessIdent bool     `pulumi:"isSupportColonlessIdent"`
-	IsWithPriority          bool     `pulumi:"isWithPriority"`
-	Keys                    []string `pulumi:"keys"`
-	MessageFormat           string   `pulumi:"messageFormat"`
-	MessageKey              string   `pulumi:"messageKey"`
-	MultiLineStartRegexp    string   `pulumi:"multiLineStartRegexp"`
+	IsNullEmptyString bool `pulumi:"isNullEmptyString"`
+	// Support colonless ident or not.
+	IsSupportColonlessIdent bool `pulumi:"isSupportColonlessIdent"`
+	// With priority or not.
+	IsWithPriority bool `pulumi:"isWithPriority"`
+	// csv keys.
+	Keys []string `pulumi:"keys"`
+	// Message format of syslog.
+	MessageFormat string `pulumi:"messageFormat"`
+	// Specifies the field name to contain logs.
+	MessageKey string `pulumi:"messageKey"`
+	// Multiline start regexp pattern.
+	MultiLineStartRegexp string `pulumi:"multiLineStartRegexp"`
+	// Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+	NestedParsers []GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser `pulumi:"nestedParsers"`
 	// Specify the null value pattern.
 	NullValuePattern string `pulumi:"nullValuePattern"`
 	// Type of fluent parser.
-	ParserType        string                                                                `pulumi:"parserType"`
-	Patterns          []GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern `pulumi:"patterns"`
-	Rfc5424timeFormat string                                                                `pulumi:"rfc5424timeFormat"`
-	SyslogParserType  string                                                                `pulumi:"syslogParserType"`
-	TimeFormat        string                                                                `pulumi:"timeFormat"`
-	TimeType          string                                                                `pulumi:"timeType"`
+	ParserType string `pulumi:"parserType"`
+	// grok pattern object.
+	Patterns []GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern `pulumi:"patterns"`
+	// rfc5424 time format.
+	Rfc5424timeFormat string `pulumi:"rfc5424timeFormat"`
+	// Syslog parser type.
+	SyslogParserType string `pulumi:"syslogParserType"`
+	// Process time value using the specified format.
+	TimeFormat string `pulumi:"timeFormat"`
+	// Time type of JSON parser.
+	TimeType string `pulumi:"timeType"`
 	// Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
 	TimeoutInMilliseconds int `pulumi:"timeoutInMilliseconds"`
-	// Specify types for converting a field into another type.
+	// Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
 	Types map[string]interface{} `pulumi:"types"`
 }
 
@@ -3638,38 +3934,59 @@ type GetUnifiedAgentConfigurationServiceConfigurationSourceParserInput interface
 }
 
 type GetUnifiedAgentConfigurationServiceConfigurationSourceParserArgs struct {
-	Delimiter  pulumi.StringInput `pulumi:"delimiter"`
+	// csv delimiter.
+	Delimiter pulumi.StringInput `pulumi:"delimiter"`
+	// Regex pattern.
 	Expression pulumi.StringInput `pulumi:"expression"`
 	// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
-	FieldTimeKey    pulumi.StringInput      `pulumi:"fieldTimeKey"`
-	FormatFirstline pulumi.StringInput      `pulumi:"formatFirstline"`
-	Formats         pulumi.StringArrayInput `pulumi:"formats"`
-	GrokFailureKey  pulumi.StringInput      `pulumi:"grokFailureKey"`
-	GrokNameKey     pulumi.StringInput      `pulumi:"grokNameKey"`
+	FieldTimeKey pulumi.StringInput `pulumi:"fieldTimeKey"`
+	// First line pattern format.
+	FormatFirstline pulumi.StringInput `pulumi:"formatFirstline"`
+	// Mutiline pattern format.
+	Formats pulumi.StringArrayInput `pulumi:"formats"`
+	// grok failure key.
+	GrokFailureKey pulumi.StringInput `pulumi:"grokFailureKey"`
+	// grok name key.
+	GrokNameKey pulumi.StringInput `pulumi:"grokNameKey"`
 	// If true, use Fluent::EventTime.now(current time) as a timestamp when timeKey is specified.
 	IsEstimateCurrentEvent pulumi.BoolInput `pulumi:"isEstimateCurrentEvent"`
 	// If true, keep time field in the record.
 	IsKeepTimeKey pulumi.BoolInput `pulumi:"isKeepTimeKey"`
+	// If you don't need stream/logtag fields, set this to false for CRI parser.
+	IsMergeCriFields pulumi.BoolInput `pulumi:"isMergeCriFields"`
 	// If true, an empty string field is replaced with nil.
-	IsNullEmptyString       pulumi.BoolInput        `pulumi:"isNullEmptyString"`
-	IsSupportColonlessIdent pulumi.BoolInput        `pulumi:"isSupportColonlessIdent"`
-	IsWithPriority          pulumi.BoolInput        `pulumi:"isWithPriority"`
-	Keys                    pulumi.StringArrayInput `pulumi:"keys"`
-	MessageFormat           pulumi.StringInput      `pulumi:"messageFormat"`
-	MessageKey              pulumi.StringInput      `pulumi:"messageKey"`
-	MultiLineStartRegexp    pulumi.StringInput      `pulumi:"multiLineStartRegexp"`
+	IsNullEmptyString pulumi.BoolInput `pulumi:"isNullEmptyString"`
+	// Support colonless ident or not.
+	IsSupportColonlessIdent pulumi.BoolInput `pulumi:"isSupportColonlessIdent"`
+	// With priority or not.
+	IsWithPriority pulumi.BoolInput `pulumi:"isWithPriority"`
+	// csv keys.
+	Keys pulumi.StringArrayInput `pulumi:"keys"`
+	// Message format of syslog.
+	MessageFormat pulumi.StringInput `pulumi:"messageFormat"`
+	// Specifies the field name to contain logs.
+	MessageKey pulumi.StringInput `pulumi:"messageKey"`
+	// Multiline start regexp pattern.
+	MultiLineStartRegexp pulumi.StringInput `pulumi:"multiLineStartRegexp"`
+	// Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+	NestedParsers GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayInput `pulumi:"nestedParsers"`
 	// Specify the null value pattern.
 	NullValuePattern pulumi.StringInput `pulumi:"nullValuePattern"`
 	// Type of fluent parser.
-	ParserType        pulumi.StringInput                                                            `pulumi:"parserType"`
-	Patterns          GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayInput `pulumi:"patterns"`
-	Rfc5424timeFormat pulumi.StringInput                                                            `pulumi:"rfc5424timeFormat"`
-	SyslogParserType  pulumi.StringInput                                                            `pulumi:"syslogParserType"`
-	TimeFormat        pulumi.StringInput                                                            `pulumi:"timeFormat"`
-	TimeType          pulumi.StringInput                                                            `pulumi:"timeType"`
+	ParserType pulumi.StringInput `pulumi:"parserType"`
+	// grok pattern object.
+	Patterns GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayInput `pulumi:"patterns"`
+	// rfc5424 time format.
+	Rfc5424timeFormat pulumi.StringInput `pulumi:"rfc5424timeFormat"`
+	// Syslog parser type.
+	SyslogParserType pulumi.StringInput `pulumi:"syslogParserType"`
+	// Process time value using the specified format.
+	TimeFormat pulumi.StringInput `pulumi:"timeFormat"`
+	// Time type of JSON parser.
+	TimeType pulumi.StringInput `pulumi:"timeType"`
 	// Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
 	TimeoutInMilliseconds pulumi.IntInput `pulumi:"timeoutInMilliseconds"`
-	// Specify types for converting a field into another type.
+	// Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
 	Types pulumi.MapInput `pulumi:"types"`
 }
 
@@ -3724,10 +4041,12 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) ToGe
 	return o
 }
 
+// csv delimiter.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Delimiter() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) string { return v.Delimiter }).(pulumi.StringOutput)
 }
 
+// Regex pattern.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Expression() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) string { return v.Expression }).(pulumi.StringOutput)
 }
@@ -3737,18 +4056,22 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Fiel
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) string { return v.FieldTimeKey }).(pulumi.StringOutput)
 }
 
+// First line pattern format.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) FormatFirstline() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) string { return v.FormatFirstline }).(pulumi.StringOutput)
 }
 
+// Mutiline pattern format.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Formats() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) []string { return v.Formats }).(pulumi.StringArrayOutput)
 }
 
+// grok failure key.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) GrokFailureKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) string { return v.GrokFailureKey }).(pulumi.StringOutput)
 }
 
+// grok name key.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) GrokNameKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) string { return v.GrokNameKey }).(pulumi.StringOutput)
 }
@@ -3765,37 +4088,55 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) IsKe
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) bool { return v.IsKeepTimeKey }).(pulumi.BoolOutput)
 }
 
+// If you don't need stream/logtag fields, set this to false for CRI parser.
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) IsMergeCriFields() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) bool { return v.IsMergeCriFields }).(pulumi.BoolOutput)
+}
+
 // If true, an empty string field is replaced with nil.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) IsNullEmptyString() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) bool { return v.IsNullEmptyString }).(pulumi.BoolOutput)
 }
 
+// Support colonless ident or not.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) IsSupportColonlessIdent() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) bool {
 		return v.IsSupportColonlessIdent
 	}).(pulumi.BoolOutput)
 }
 
+// With priority or not.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) IsWithPriority() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) bool { return v.IsWithPriority }).(pulumi.BoolOutput)
 }
 
+// csv keys.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Keys() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) []string { return v.Keys }).(pulumi.StringArrayOutput)
 }
 
+// Message format of syslog.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) MessageFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) string { return v.MessageFormat }).(pulumi.StringOutput)
 }
 
+// Specifies the field name to contain logs.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) MessageKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) string { return v.MessageKey }).(pulumi.StringOutput)
 }
 
+// Multiline start regexp pattern.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) MultiLineStartRegexp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) string {
 		return v.MultiLineStartRegexp
 	}).(pulumi.StringOutput)
+}
+
+// Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) NestedParsers() GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) []GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser {
+		return v.NestedParsers
+	}).(GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput)
 }
 
 // Specify the null value pattern.
@@ -3808,26 +4149,31 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Pars
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) string { return v.ParserType }).(pulumi.StringOutput)
 }
 
+// grok pattern object.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Patterns() GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) []GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern {
 		return v.Patterns
 	}).(GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput)
 }
 
+// rfc5424 time format.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Rfc5424timeFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) string {
 		return v.Rfc5424timeFormat
 	}).(pulumi.StringOutput)
 }
 
+// Syslog parser type.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) SyslogParserType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) string { return v.SyslogParserType }).(pulumi.StringOutput)
 }
 
+// Process time value using the specified format.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) TimeFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) string { return v.TimeFormat }).(pulumi.StringOutput)
 }
 
+// Time type of JSON parser.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) TimeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) string { return v.TimeType }).(pulumi.StringOutput)
 }
@@ -3839,7 +4185,7 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Time
 	}).(pulumi.IntOutput)
 }
 
-// Specify types for converting a field into another type.
+// Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Types() pulumi.MapOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) map[string]interface{} {
 		return v.Types
@@ -3864,6 +4210,138 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserArrayOutput)
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationSourceParser {
 		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationSourceParser)[vs[1].(int)]
 	}).(GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser struct {
+	// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey string `pulumi:"fieldTimeKey"`
+	// If true, keep time field in the record.
+	IsKeepTimeKey bool `pulumi:"isKeepTimeKey"`
+	// Process time value using the specified format.
+	TimeFormat string `pulumi:"timeFormat"`
+	// Time type of JSON parser.
+	TimeType string `pulumi:"timeType"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs and GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput() GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs struct {
+	// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey pulumi.StringInput `pulumi:"fieldTimeKey"`
+	// If true, keep time field in the record.
+	IsKeepTimeKey pulumi.BoolInput `pulumi:"isKeepTimeKey"`
+	// Process time value using the specified format.
+	TimeFormat pulumi.StringInput `pulumi:"timeFormat"`
+	// Time type of JSON parser.
+	TimeType pulumi.StringInput `pulumi:"timeType"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs) ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput() GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs) ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArray and GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArray{ GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArray []GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArray) ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArray) ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput() GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput {
+	return o
+}
+
+// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) FieldTimeKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) string {
+		return v.FieldTimeKey
+	}).(pulumi.StringOutput)
+}
+
+// If true, keep time field in the record.
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) IsKeepTimeKey() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) bool {
+		return v.IsKeepTimeKey
+	}).(pulumi.BoolOutput)
+}
+
+// Process time value using the specified format.
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) TimeFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) string {
+		return v.TimeFormat
+	}).(pulumi.StringOutput)
+}
+
+// Time type of JSON parser.
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) TimeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) string {
+		return v.TimeType
+	}).(pulumi.StringOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput)
 }
 
 type GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern struct {
@@ -4221,7 +4699,7 @@ type GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem struct
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description for this resource.
 	Description string `pulumi:"description"`
-	// Resource name
+	// Resource name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -4259,7 +4737,7 @@ type GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArgs st
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description for this resource.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Resource name
+	// Resource name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
@@ -4361,7 +4839,7 @@ func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemOutp
 	}).(pulumi.StringOutput)
 }
 
-// Resource name
+// Resource name.
 func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem) string {
 		return v.DisplayName
@@ -4439,6 +4917,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceArrayInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceParserInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationSourceParserArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceParserPtrInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationSourceParserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceParserPatternInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogConfigurationInput)(nil)).Elem(), GetLogConfigurationArgs{})
@@ -4473,6 +4953,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceParserInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationSourceParserArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceParserArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationSourceParserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationsFilterInput)(nil)).Elem(), GetUnifiedAgentConfigurationsFilterArgs{})
@@ -4495,6 +4977,8 @@ func init() {
 	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationSourceArrayOutput{})
 	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationSourceParserOutput{})
 	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput{})
 	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput{})
 	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput{})
 	pulumi.RegisterOutputType(GetLogConfigurationOutput{})
@@ -4529,6 +5013,8 @@ func init() {
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationSourceParserArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationsFilterOutput{})

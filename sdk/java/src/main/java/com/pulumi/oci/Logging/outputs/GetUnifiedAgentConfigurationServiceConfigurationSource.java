@@ -11,6 +11,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
+    /**
+     * @return Windows event log channels.
+     * 
+     */
     private List<String> channels;
     /**
      * @return The name key to tag this grok pattern.
@@ -22,6 +26,10 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
      * 
      */
     private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParser> parsers;
+    /**
+     * @return Absolute paths for log source files. Wildcard can be used.
+     * 
+     */
     private List<String> paths;
     /**
      * @return Unified schema logging source type.
@@ -30,6 +38,10 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
     private String sourceType;
 
     private GetUnifiedAgentConfigurationServiceConfigurationSource() {}
+    /**
+     * @return Windows event log channels.
+     * 
+     */
     public List<String> channels() {
         return this.channels;
     }
@@ -47,6 +59,10 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
     public List<GetUnifiedAgentConfigurationServiceConfigurationSourceParser> parsers() {
         return this.parsers;
     }
+    /**
+     * @return Absolute paths for log source files. Wildcard can be used.
+     * 
+     */
     public List<String> paths() {
         return this.paths;
     }

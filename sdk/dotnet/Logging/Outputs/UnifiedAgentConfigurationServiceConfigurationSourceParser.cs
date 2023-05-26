@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Logging.Outputs
     public sealed class UnifiedAgentConfigurationServiceConfigurationSourceParser
     {
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) csv delimiter.
         /// </summary>
         public readonly string? Delimiter;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Regex pattern.
         /// </summary>
         public readonly string? Expression;
         /// <summary>
@@ -26,19 +26,19 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string? FieldTimeKey;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) First line pattern format.
         /// </summary>
         public readonly string? FormatFirstline;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Mutiline pattern format.
         /// </summary>
         public readonly ImmutableArray<string> Formats;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) grok failure key.
         /// </summary>
         public readonly string? GrokFailureKey;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) grok name key.
         /// </summary>
         public readonly string? GrokNameKey;
         /// <summary>
@@ -50,33 +50,41 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly bool? IsKeepTimeKey;
         /// <summary>
+        /// (Updatable) If you don't need stream/logtag fields, set this to false.
+        /// </summary>
+        public readonly bool? IsMergeCriFields;
+        /// <summary>
         /// (Updatable) If true, an empty string field is replaced with nil.
         /// </summary>
         public readonly bool? IsNullEmptyString;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Support colonless ident or not.
         /// </summary>
         public readonly bool? IsSupportColonlessIdent;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) With priority or not.
         /// </summary>
         public readonly bool? IsWithPriority;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) csv keys.
         /// </summary>
         public readonly ImmutableArray<string> Keys;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Message format of syslog.
         /// </summary>
         public readonly string? MessageFormat;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Specifies the field name to contain logs.
         /// </summary>
         public readonly string? MessageKey;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Multiline start regexp pattern.
         /// </summary>
         public readonly string? MultiLineStartRegexp;
+        /// <summary>
+        /// (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+        /// </summary>
+        public readonly Outputs.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser? NestedParser;
         /// <summary>
         /// (Updatable) Specify the null value pattern.
         /// </summary>
@@ -86,23 +94,23 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string ParserType;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) grok pattern object.
         /// </summary>
         public readonly ImmutableArray<Outputs.UnifiedAgentConfigurationServiceConfigurationSourceParserPattern> Patterns;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) rfc5424 time format.
         /// </summary>
         public readonly string? Rfc5424timeFormat;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Syslog parser type.
         /// </summary>
         public readonly string? SyslogParserType;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Process time value using the specified format.
         /// </summary>
         public readonly string? TimeFormat;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Time type of JSON parser.
         /// </summary>
         public readonly string? TimeType;
         /// <summary>
@@ -110,7 +118,13 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly int? TimeoutInMilliseconds;
         /// <summary>
-        /// (Updatable) Specify types for converting a field into another type.
+        /// (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+        /// 
+        /// This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+        /// 
+        /// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+        /// 
+        /// record: { "host"   : "192.168.0.1", "req_id" : "111", "user"   : "-" }
         /// </summary>
         public readonly ImmutableDictionary<string, object>? Types;
 
@@ -134,6 +148,8 @@ namespace Pulumi.Oci.Logging.Outputs
 
             bool? isKeepTimeKey,
 
+            bool? isMergeCriFields,
+
             bool? isNullEmptyString,
 
             bool? isSupportColonlessIdent,
@@ -147,6 +163,8 @@ namespace Pulumi.Oci.Logging.Outputs
             string? messageKey,
 
             string? multiLineStartRegexp,
+
+            Outputs.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser? nestedParser,
 
             string? nullValuePattern,
 
@@ -175,6 +193,7 @@ namespace Pulumi.Oci.Logging.Outputs
             GrokNameKey = grokNameKey;
             IsEstimateCurrentEvent = isEstimateCurrentEvent;
             IsKeepTimeKey = isKeepTimeKey;
+            IsMergeCriFields = isMergeCriFields;
             IsNullEmptyString = isNullEmptyString;
             IsSupportColonlessIdent = isSupportColonlessIdent;
             IsWithPriority = isWithPriority;
@@ -182,6 +201,7 @@ namespace Pulumi.Oci.Logging.Outputs
             MessageFormat = messageFormat;
             MessageKey = messageKey;
             MultiLineStartRegexp = multiLineStartRegexp;
+            NestedParser = nestedParser;
             NullValuePattern = nullValuePattern;
             ParserType = parserType;
             Patterns = patterns;

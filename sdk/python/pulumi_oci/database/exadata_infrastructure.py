@@ -436,6 +436,7 @@ class _ExadataInfrastructureState:
                  additional_compute_system_model: Optional[pulumi.Input[str]] = None,
                  additional_storage_count: Optional[pulumi.Input[int]] = None,
                  admin_network_cidr: Optional[pulumi.Input[str]] = None,
+                 availability_domain: Optional[pulumi.Input[str]] = None,
                  cloud_control_plane_server1: Optional[pulumi.Input[str]] = None,
                  cloud_control_plane_server2: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -486,6 +487,7 @@ class _ExadataInfrastructureState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] admin_network_cidr: (Updatable) The CIDR block for the Exadata administration network.
+        :param pulumi.Input[str] availability_domain: The name of the availability domain that the Exadata infrastructure is located in.
         :param pulumi.Input[str] cloud_control_plane_server1: (Updatable) The IP address for the first control plane server.
         :param pulumi.Input[str] cloud_control_plane_server2: (Updatable) The IP address for the second control plane server.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -537,6 +539,8 @@ class _ExadataInfrastructureState:
             pulumi.set(__self__, "additional_storage_count", additional_storage_count)
         if admin_network_cidr is not None:
             pulumi.set(__self__, "admin_network_cidr", admin_network_cidr)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if cloud_control_plane_server1 is not None:
             pulumi.set(__self__, "cloud_control_plane_server1", cloud_control_plane_server1)
         if cloud_control_plane_server2 is not None:
@@ -690,6 +694,18 @@ class _ExadataInfrastructureState:
     @admin_network_cidr.setter
     def admin_network_cidr(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "admin_network_cidr", value)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the availability domain that the Exadata infrastructure is located in.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "availability_domain", value)
 
     @property
     @pulumi.getter(name="cloudControlPlaneServer1")
@@ -1475,6 +1491,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             __props__.__dict__["activated_storage_count"] = None
             __props__.__dict__["additional_compute_count"] = None
             __props__.__dict__["additional_compute_system_model"] = None
+            __props__.__dict__["availability_domain"] = None
             __props__.__dict__["cpus_enabled"] = None
             __props__.__dict__["csi_number"] = None
             __props__.__dict__["data_storage_size_in_tbs"] = None
@@ -1507,6 +1524,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             additional_compute_system_model: Optional[pulumi.Input[str]] = None,
             additional_storage_count: Optional[pulumi.Input[int]] = None,
             admin_network_cidr: Optional[pulumi.Input[str]] = None,
+            availability_domain: Optional[pulumi.Input[str]] = None,
             cloud_control_plane_server1: Optional[pulumi.Input[str]] = None,
             cloud_control_plane_server2: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
@@ -1562,6 +1580,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] admin_network_cidr: (Updatable) The CIDR block for the Exadata administration network.
+        :param pulumi.Input[str] availability_domain: The name of the availability domain that the Exadata infrastructure is located in.
         :param pulumi.Input[str] cloud_control_plane_server1: (Updatable) The IP address for the first control plane server.
         :param pulumi.Input[str] cloud_control_plane_server2: (Updatable) The IP address for the second control plane server.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -1611,6 +1630,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["additional_compute_system_model"] = additional_compute_system_model
         __props__.__dict__["additional_storage_count"] = additional_storage_count
         __props__.__dict__["admin_network_cidr"] = admin_network_cidr
+        __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["cloud_control_plane_server1"] = cloud_control_plane_server1
         __props__.__dict__["cloud_control_plane_server2"] = cloud_control_plane_server2
         __props__.__dict__["compartment_id"] = compartment_id
@@ -1702,6 +1722,14 @@ class ExadataInfrastructure(pulumi.CustomResource):
         (Updatable) The CIDR block for the Exadata administration network.
         """
         return pulumi.get(self, "admin_network_cidr")
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> pulumi.Output[str]:
+        """
+        The name of the availability domain that the Exadata infrastructure is located in.
+        """
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="cloudControlPlaneServer1")

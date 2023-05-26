@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
 //
-// Retrieves a log saved search.
+// Retrieves a LogSavedSearch.
 //
 // ## Example Usage
 //
@@ -50,7 +50,7 @@ func LookupLogSavedSearch(ctx *pulumi.Context, args *LookupLogSavedSearchArgs, o
 
 // A collection of arguments for invoking getLogSavedSearch.
 type LookupLogSavedSearchArgs struct {
-	// OCID of the logSavedSearch
+	// OCID of the logSavedSearch.
 	LogSavedSearchId string `pulumi:"logSavedSearchId"`
 }
 
@@ -94,7 +94,7 @@ func LookupLogSavedSearchOutput(ctx *pulumi.Context, args LookupLogSavedSearchOu
 
 // A collection of arguments for invoking getLogSavedSearch.
 type LookupLogSavedSearchOutputArgs struct {
-	// OCID of the logSavedSearch
+	// OCID of the logSavedSearch.
 	LogSavedSearchId pulumi.StringInput `pulumi:"logSavedSearchId"`
 }
 

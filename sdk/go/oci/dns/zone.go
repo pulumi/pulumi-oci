@@ -13,8 +13,11 @@ import (
 
 // This resource provides the Zone resource in Oracle Cloud Infrastructure DNS service.
 //
-// Creates a new zone in the specified compartment. Additionally, for Private DNS,
-// the `viewId` field is required when creating private zones.
+// Creates a new zone in the specified compartment. For global zones, if the `Content-Type` header for the request
+// is `text/dns`, the `compartmentId` query parameter is required. `text/dns` for the `Content-Type` header is
+// not supported for private zones. Query parameter scope with a value of `PRIVATE` is required when creating a
+// private zone. Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under
+// `oraclevcn.com` within the default protected view of a VCN-dedicated resolver is not permitted.
 //
 // ## Example Usage
 //
@@ -34,6 +37,13 @@ import (
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				ZoneType:      pulumi.Any(_var.Zone_zone_type),
 //				DefinedTags:   pulumi.Any(_var.Zone_defined_tags),
+//				ExternalDownstreams: dns.ZoneExternalDownstreamArray{
+//					&dns.ZoneExternalDownstreamArgs{
+//						Address:   pulumi.Any(_var.Zone_external_downstreams_address),
+//						Port:      pulumi.Any(_var.Zone_external_downstreams_port),
+//						TsigKeyId: pulumi.Any(oci_dns_tsig_key.Test_tsig_key.Id),
+//					},
+//				},
 //				ExternalMasters: dns.ZoneExternalMasterArray{
 //					&dns.ZoneExternalMasterArgs{
 //						Address:   pulumi.Any(_var.Zone_external_masters_address),
@@ -56,7 +66,7 @@ import (
 //
 // ## Import
 //
-// Zones can be imported using their OCID, e.g.
+// Zones can be imported using the `id`, e.g.
 //
 // ```sh
 //
@@ -70,8 +80,10 @@ type Zone struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
-	// **Example:** `{"Operations.CostCenter": "42"}`
+	// **Example:** `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+	ExternalDownstreams ZoneExternalDownstreamArrayOutput `pulumi:"externalDownstreams"`
 	// (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
 	ExternalMasters ZoneExternalMasterArrayOutput `pulumi:"externalMasters"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -99,6 +111,8 @@ type Zone struct {
 	Version pulumi.StringOutput `pulumi:"version"`
 	// The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
 	ViewId pulumi.StringPtrOutput `pulumi:"viewId"`
+	// The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+	ZoneTransferServers ZoneZoneTransferServerArrayOutput `pulumi:"zoneTransferServers"`
 	// The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
 	//
 	// ** IMPORTANT **
@@ -145,8 +159,10 @@ type zoneState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
-	// **Example:** `{"Operations.CostCenter": "42"}`
+	// **Example:** `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+	ExternalDownstreams []ZoneExternalDownstream `pulumi:"externalDownstreams"`
 	// (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
 	ExternalMasters []ZoneExternalMaster `pulumi:"externalMasters"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -174,6 +190,8 @@ type zoneState struct {
 	Version *string `pulumi:"version"`
 	// The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
 	ViewId *string `pulumi:"viewId"`
+	// The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+	ZoneTransferServers []ZoneZoneTransferServer `pulumi:"zoneTransferServers"`
 	// The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
 	//
 	// ** IMPORTANT **
@@ -186,8 +204,10 @@ type ZoneState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
-	// **Example:** `{"Operations.CostCenter": "42"}`
+	// **Example:** `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags pulumi.MapInput
+	// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+	ExternalDownstreams ZoneExternalDownstreamArrayInput
 	// (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
 	ExternalMasters ZoneExternalMasterArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -215,6 +235,8 @@ type ZoneState struct {
 	Version pulumi.StringPtrInput
 	// The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
 	ViewId pulumi.StringPtrInput
+	// The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+	ZoneTransferServers ZoneZoneTransferServerArrayInput
 	// The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
 	//
 	// ** IMPORTANT **
@@ -231,8 +253,10 @@ type zoneArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
-	// **Example:** `{"Operations.CostCenter": "42"}`
+	// **Example:** `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+	ExternalDownstreams []ZoneExternalDownstream `pulumi:"externalDownstreams"`
 	// (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
 	ExternalMasters []ZoneExternalMaster `pulumi:"externalMasters"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -259,8 +283,10 @@ type ZoneArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
-	// **Example:** `{"Operations.CostCenter": "42"}`
+	// **Example:** `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags pulumi.MapInput
+	// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+	ExternalDownstreams ZoneExternalDownstreamArrayInput
 	// (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
 	ExternalMasters ZoneExternalMasterArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -375,9 +401,14 @@ func (o ZoneOutput) CompartmentId() pulumi.StringOutput {
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 //
-// **Example:** `{"Operations.CostCenter": "42"}`
+// **Example:** `{"Operations": {"CostCenter": "42"}}`
 func (o ZoneOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Zone) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+func (o ZoneOutput) ExternalDownstreams() ZoneExternalDownstreamArrayOutput {
+	return o.ApplyT(func(v *Zone) ZoneExternalDownstreamArrayOutput { return v.ExternalDownstreams }).(ZoneExternalDownstreamArrayOutput)
 }
 
 // (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
@@ -441,6 +472,11 @@ func (o ZoneOutput) Version() pulumi.StringOutput {
 // The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
 func (o ZoneOutput) ViewId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Zone) pulumi.StringPtrOutput { return v.ViewId }).(pulumi.StringPtrOutput)
+}
+
+// The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+func (o ZoneOutput) ZoneTransferServers() ZoneZoneTransferServerArrayOutput {
+	return o.ApplyT(func(v *Zone) ZoneZoneTransferServerArrayOutput { return v.ZoneTransferServers }).(ZoneZoneTransferServerArrayOutput)
 }
 
 // The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.

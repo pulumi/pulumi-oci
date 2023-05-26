@@ -42,6 +42,8 @@ type LookupExadataInfrastructureResult struct {
 	AdditionalStorageCount int `pulumi:"additionalStorageCount"`
 	// The CIDR block for the Exadata administration network.
 	AdminNetworkCidr string `pulumi:"adminNetworkCidr"`
+	// The name of the availability domain that the Exadata infrastructure is located in.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The IP address for the first control plane server.
 	CloudControlPlaneServer1 string `pulumi:"cloudControlPlaneServer1"`
 	// The IP address for the second control plane server.
@@ -189,6 +191,11 @@ func (o LookupExadataInfrastructureResultOutput) AdditionalStorageCount() pulumi
 // The CIDR block for the Exadata administration network.
 func (o LookupExadataInfrastructureResultOutput) AdminNetworkCidr() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadataInfrastructureResult) string { return v.AdminNetworkCidr }).(pulumi.StringOutput)
+}
+
+// The name of the availability domain that the Exadata infrastructure is located in.
+func (o LookupExadataInfrastructureResultOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExadataInfrastructureResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
 // The IP address for the first control plane server.

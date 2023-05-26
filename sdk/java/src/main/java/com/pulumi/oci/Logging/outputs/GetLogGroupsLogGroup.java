@@ -27,7 +27,7 @@ public final class GetLogGroupsLogGroup {
      */
     private String description;
     /**
-     * @return Resource name
+     * @return Resource name.
      * 
      */
     private String displayName;
@@ -80,7 +80,7 @@ public final class GetLogGroupsLogGroup {
         return this.description;
     }
     /**
-     * @return Resource name
+     * @return Resource name.
      * 
      */
     public String displayName() {

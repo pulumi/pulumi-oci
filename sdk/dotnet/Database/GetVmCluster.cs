@@ -108,6 +108,10 @@ namespace Pulumi.Oci.Database
     public sealed class GetVmClusterResult
     {
         /// <summary>
+        /// The name of the availability domain that the VM cluster is located in.
+        /// </summary>
+        public readonly string AvailabilityDomain;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -218,6 +222,8 @@ namespace Pulumi.Oci.Database
 
         [OutputConstructor]
         private GetVmClusterResult(
+            string availabilityDomain,
+
             string compartmentId,
 
             int cpuCoreCount,
@@ -278,6 +284,7 @@ namespace Pulumi.Oci.Database
 
             string vmClusterNetworkId)
         {
+            AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;
             CpuCoreCount = cpuCoreCount;
             CpusEnabled = cpusEnabled;

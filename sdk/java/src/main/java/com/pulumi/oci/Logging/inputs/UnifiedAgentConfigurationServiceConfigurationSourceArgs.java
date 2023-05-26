@@ -18,14 +18,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
     public static final UnifiedAgentConfigurationServiceConfigurationSourceArgs Empty = new UnifiedAgentConfigurationServiceConfigurationSourceArgs();
 
     /**
-     * (Updatable)
+     * (Updatable) Windows event log channels.
      * 
      */
     @Import(name="channels")
     private @Nullable Output<List<String>> channels;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Windows event log channels.
      * 
      */
     public Optional<Output<List<String>>> channels() {
@@ -63,14 +63,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
     }
 
     /**
-     * (Updatable)
+     * (Updatable) Absolute paths for log source files. Wildcard can be used.
      * 
      */
     @Import(name="paths")
     private @Nullable Output<List<String>> paths;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Absolute paths for log source files. Wildcard can be used.
      * 
      */
     public Optional<Output<List<String>>> paths() {
@@ -127,7 +127,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
         }
 
         /**
-         * @param channels (Updatable)
+         * @param channels (Updatable) Windows event log channels.
          * 
          * @return builder
          * 
@@ -138,7 +138,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
         }
 
         /**
-         * @param channels (Updatable)
+         * @param channels (Updatable) Windows event log channels.
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
         }
 
         /**
-         * @param channels (Updatable)
+         * @param channels (Updatable) Windows event log channels.
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
         }
 
         /**
-         * @param paths (Updatable)
+         * @param paths (Updatable) Absolute paths for log source files. Wildcard can be used.
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
         }
 
         /**
-         * @param paths (Updatable)
+         * @param paths (Updatable) Absolute paths for log source files. Wildcard can be used.
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
         }
 
         /**
-         * @param paths (Updatable)
+         * @param paths (Updatable) Absolute paths for log source files. Wildcard can be used.
          * 
          * @return builder
          * 

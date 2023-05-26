@@ -5,6 +5,7 @@ package com.pulumi.oci.Logging.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs;
 import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -22,14 +23,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     public static final UnifiedAgentConfigurationServiceConfigurationSourceParserArgs Empty = new UnifiedAgentConfigurationServiceConfigurationSourceParserArgs();
 
     /**
-     * (Updatable)
+     * (Updatable) csv delimiter.
      * 
      */
     @Import(name="delimiter")
     private @Nullable Output<String> delimiter;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) csv delimiter.
      * 
      */
     public Optional<Output<String>> delimiter() {
@@ -37,14 +38,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable)
+     * (Updatable) Regex pattern.
      * 
      */
     @Import(name="expression")
     private @Nullable Output<String> expression;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Regex pattern.
      * 
      */
     public Optional<Output<String>> expression() {
@@ -67,14 +68,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable)
+     * (Updatable) First line pattern format.
      * 
      */
     @Import(name="formatFirstline")
     private @Nullable Output<String> formatFirstline;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) First line pattern format.
      * 
      */
     public Optional<Output<String>> formatFirstline() {
@@ -82,14 +83,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable)
+     * (Updatable) Mutiline pattern format.
      * 
      */
     @Import(name="formats")
     private @Nullable Output<List<String>> formats;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Mutiline pattern format.
      * 
      */
     public Optional<Output<List<String>>> formats() {
@@ -97,14 +98,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable)
+     * (Updatable) grok failure key.
      * 
      */
     @Import(name="grokFailureKey")
     private @Nullable Output<String> grokFailureKey;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) grok failure key.
      * 
      */
     public Optional<Output<String>> grokFailureKey() {
@@ -112,14 +113,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable)
+     * (Updatable) grok name key.
      * 
      */
     @Import(name="grokNameKey")
     private @Nullable Output<String> grokNameKey;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) grok name key.
      * 
      */
     public Optional<Output<String>> grokNameKey() {
@@ -157,6 +158,21 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
+     * (Updatable) If you don&#39;t need stream/logtag fields, set this to false.
+     * 
+     */
+    @Import(name="isMergeCriFields")
+    private @Nullable Output<Boolean> isMergeCriFields;
+
+    /**
+     * @return (Updatable) If you don&#39;t need stream/logtag fields, set this to false.
+     * 
+     */
+    public Optional<Output<Boolean>> isMergeCriFields() {
+        return Optional.ofNullable(this.isMergeCriFields);
+    }
+
+    /**
      * (Updatable) If true, an empty string field is replaced with nil.
      * 
      */
@@ -172,14 +188,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable)
+     * (Updatable) Support colonless ident or not.
      * 
      */
     @Import(name="isSupportColonlessIdent")
     private @Nullable Output<Boolean> isSupportColonlessIdent;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Support colonless ident or not.
      * 
      */
     public Optional<Output<Boolean>> isSupportColonlessIdent() {
@@ -187,14 +203,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable)
+     * (Updatable) With priority or not.
      * 
      */
     @Import(name="isWithPriority")
     private @Nullable Output<Boolean> isWithPriority;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) With priority or not.
      * 
      */
     public Optional<Output<Boolean>> isWithPriority() {
@@ -202,14 +218,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable)
+     * (Updatable) csv keys.
      * 
      */
     @Import(name="keys")
     private @Nullable Output<List<String>> keys;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) csv keys.
      * 
      */
     public Optional<Output<List<String>>> keys() {
@@ -217,14 +233,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable)
+     * (Updatable) Message format of syslog.
      * 
      */
     @Import(name="messageFormat")
     private @Nullable Output<String> messageFormat;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Message format of syslog.
      * 
      */
     public Optional<Output<String>> messageFormat() {
@@ -232,14 +248,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable)
+     * (Updatable) Specifies the field name to contain logs.
      * 
      */
     @Import(name="messageKey")
     private @Nullable Output<String> messageKey;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Specifies the field name to contain logs.
      * 
      */
     public Optional<Output<String>> messageKey() {
@@ -247,18 +263,33 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable)
+     * (Updatable) Multiline start regexp pattern.
      * 
      */
     @Import(name="multiLineStartRegexp")
     private @Nullable Output<String> multiLineStartRegexp;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Multiline start regexp pattern.
      * 
      */
     public Optional<Output<String>> multiLineStartRegexp() {
         return Optional.ofNullable(this.multiLineStartRegexp);
+    }
+
+    /**
+     * (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+     * 
+     */
+    @Import(name="nestedParser")
+    private @Nullable Output<UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs> nestedParser;
+
+    /**
+     * @return (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+     * 
+     */
+    public Optional<Output<UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs>> nestedParser() {
+        return Optional.ofNullable(this.nestedParser);
     }
 
     /**
@@ -292,14 +323,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable)
+     * (Updatable) grok pattern object.
      * 
      */
     @Import(name="patterns")
     private @Nullable Output<List<UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs>> patterns;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) grok pattern object.
      * 
      */
     public Optional<Output<List<UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs>>> patterns() {
@@ -307,14 +338,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable)
+     * (Updatable) rfc5424 time format.
      * 
      */
     @Import(name="rfc5424timeFormat")
     private @Nullable Output<String> rfc5424timeFormat;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) rfc5424 time format.
      * 
      */
     public Optional<Output<String>> rfc5424timeFormat() {
@@ -322,14 +353,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable)
+     * (Updatable) Syslog parser type.
      * 
      */
     @Import(name="syslogParserType")
     private @Nullable Output<String> syslogParserType;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Syslog parser type.
      * 
      */
     public Optional<Output<String>> syslogParserType() {
@@ -337,14 +368,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable)
+     * (Updatable) Process time value using the specified format.
      * 
      */
     @Import(name="timeFormat")
     private @Nullable Output<String> timeFormat;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Process time value using the specified format.
      * 
      */
     public Optional<Output<String>> timeFormat() {
@@ -352,14 +383,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable)
+     * (Updatable) Time type of JSON parser.
      * 
      */
     @Import(name="timeType")
     private @Nullable Output<String> timeType;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Time type of JSON parser.
      * 
      */
     public Optional<Output<String>> timeType() {
@@ -382,14 +413,26 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable) Specify types for converting a field into another type.
+     * (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+     * 
+     * This incoming event: &#34;2013/02/28 12:00:00,192.168.0.1,111,-&#34;
+     * 
+     * is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+     * 
+     * record: { &#34;host&#34;   : &#34;192.168.0.1&#34;, &#34;req_id&#34; : &#34;111&#34;, &#34;user&#34;   : &#34;-&#34; }
      * 
      */
     @Import(name="types")
     private @Nullable Output<Map<String,Object>> types;
 
     /**
-     * @return (Updatable) Specify types for converting a field into another type.
+     * @return (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+     * 
+     * This incoming event: &#34;2013/02/28 12:00:00,192.168.0.1,111,-&#34;
+     * 
+     * is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+     * 
+     * record: { &#34;host&#34;   : &#34;192.168.0.1&#34;, &#34;req_id&#34; : &#34;111&#34;, &#34;user&#34;   : &#34;-&#34; }
      * 
      */
     public Optional<Output<Map<String,Object>>> types() {
@@ -408,6 +451,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         this.grokNameKey = $.grokNameKey;
         this.isEstimateCurrentEvent = $.isEstimateCurrentEvent;
         this.isKeepTimeKey = $.isKeepTimeKey;
+        this.isMergeCriFields = $.isMergeCriFields;
         this.isNullEmptyString = $.isNullEmptyString;
         this.isSupportColonlessIdent = $.isSupportColonlessIdent;
         this.isWithPriority = $.isWithPriority;
@@ -415,6 +459,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         this.messageFormat = $.messageFormat;
         this.messageKey = $.messageKey;
         this.multiLineStartRegexp = $.multiLineStartRegexp;
+        this.nestedParser = $.nestedParser;
         this.nullValuePattern = $.nullValuePattern;
         this.parserType = $.parserType;
         this.patterns = $.patterns;
@@ -445,7 +490,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param delimiter (Updatable)
+         * @param delimiter (Updatable) csv delimiter.
          * 
          * @return builder
          * 
@@ -456,7 +501,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param delimiter (Updatable)
+         * @param delimiter (Updatable) csv delimiter.
          * 
          * @return builder
          * 
@@ -466,7 +511,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param expression (Updatable)
+         * @param expression (Updatable) Regex pattern.
          * 
          * @return builder
          * 
@@ -477,7 +522,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param expression (Updatable)
+         * @param expression (Updatable) Regex pattern.
          * 
          * @return builder
          * 
@@ -508,7 +553,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param formatFirstline (Updatable)
+         * @param formatFirstline (Updatable) First line pattern format.
          * 
          * @return builder
          * 
@@ -519,7 +564,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param formatFirstline (Updatable)
+         * @param formatFirstline (Updatable) First line pattern format.
          * 
          * @return builder
          * 
@@ -529,7 +574,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param formats (Updatable)
+         * @param formats (Updatable) Mutiline pattern format.
          * 
          * @return builder
          * 
@@ -540,7 +585,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param formats (Updatable)
+         * @param formats (Updatable) Mutiline pattern format.
          * 
          * @return builder
          * 
@@ -550,7 +595,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param formats (Updatable)
+         * @param formats (Updatable) Mutiline pattern format.
          * 
          * @return builder
          * 
@@ -560,7 +605,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param grokFailureKey (Updatable)
+         * @param grokFailureKey (Updatable) grok failure key.
          * 
          * @return builder
          * 
@@ -571,7 +616,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param grokFailureKey (Updatable)
+         * @param grokFailureKey (Updatable) grok failure key.
          * 
          * @return builder
          * 
@@ -581,7 +626,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param grokNameKey (Updatable)
+         * @param grokNameKey (Updatable) grok name key.
          * 
          * @return builder
          * 
@@ -592,7 +637,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param grokNameKey (Updatable)
+         * @param grokNameKey (Updatable) grok name key.
          * 
          * @return builder
          * 
@@ -644,6 +689,27 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
+         * @param isMergeCriFields (Updatable) If you don&#39;t need stream/logtag fields, set this to false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMergeCriFields(@Nullable Output<Boolean> isMergeCriFields) {
+            $.isMergeCriFields = isMergeCriFields;
+            return this;
+        }
+
+        /**
+         * @param isMergeCriFields (Updatable) If you don&#39;t need stream/logtag fields, set this to false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMergeCriFields(Boolean isMergeCriFields) {
+            return isMergeCriFields(Output.of(isMergeCriFields));
+        }
+
+        /**
          * @param isNullEmptyString (Updatable) If true, an empty string field is replaced with nil.
          * 
          * @return builder
@@ -665,7 +731,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isSupportColonlessIdent (Updatable)
+         * @param isSupportColonlessIdent (Updatable) Support colonless ident or not.
          * 
          * @return builder
          * 
@@ -676,7 +742,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isSupportColonlessIdent (Updatable)
+         * @param isSupportColonlessIdent (Updatable) Support colonless ident or not.
          * 
          * @return builder
          * 
@@ -686,7 +752,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isWithPriority (Updatable)
+         * @param isWithPriority (Updatable) With priority or not.
          * 
          * @return builder
          * 
@@ -697,7 +763,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isWithPriority (Updatable)
+         * @param isWithPriority (Updatable) With priority or not.
          * 
          * @return builder
          * 
@@ -707,7 +773,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param keys (Updatable)
+         * @param keys (Updatable) csv keys.
          * 
          * @return builder
          * 
@@ -718,7 +784,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param keys (Updatable)
+         * @param keys (Updatable) csv keys.
          * 
          * @return builder
          * 
@@ -728,7 +794,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param keys (Updatable)
+         * @param keys (Updatable) csv keys.
          * 
          * @return builder
          * 
@@ -738,7 +804,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param messageFormat (Updatable)
+         * @param messageFormat (Updatable) Message format of syslog.
          * 
          * @return builder
          * 
@@ -749,7 +815,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param messageFormat (Updatable)
+         * @param messageFormat (Updatable) Message format of syslog.
          * 
          * @return builder
          * 
@@ -759,7 +825,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param messageKey (Updatable)
+         * @param messageKey (Updatable) Specifies the field name to contain logs.
          * 
          * @return builder
          * 
@@ -770,7 +836,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param messageKey (Updatable)
+         * @param messageKey (Updatable) Specifies the field name to contain logs.
          * 
          * @return builder
          * 
@@ -780,7 +846,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param multiLineStartRegexp (Updatable)
+         * @param multiLineStartRegexp (Updatable) Multiline start regexp pattern.
          * 
          * @return builder
          * 
@@ -791,13 +857,34 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param multiLineStartRegexp (Updatable)
+         * @param multiLineStartRegexp (Updatable) Multiline start regexp pattern.
          * 
          * @return builder
          * 
          */
         public Builder multiLineStartRegexp(String multiLineStartRegexp) {
             return multiLineStartRegexp(Output.of(multiLineStartRegexp));
+        }
+
+        /**
+         * @param nestedParser (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nestedParser(@Nullable Output<UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs> nestedParser) {
+            $.nestedParser = nestedParser;
+            return this;
+        }
+
+        /**
+         * @param nestedParser (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nestedParser(UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs nestedParser) {
+            return nestedParser(Output.of(nestedParser));
         }
 
         /**
@@ -843,7 +930,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param patterns (Updatable)
+         * @param patterns (Updatable) grok pattern object.
          * 
          * @return builder
          * 
@@ -854,7 +941,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param patterns (Updatable)
+         * @param patterns (Updatable) grok pattern object.
          * 
          * @return builder
          * 
@@ -864,7 +951,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param patterns (Updatable)
+         * @param patterns (Updatable) grok pattern object.
          * 
          * @return builder
          * 
@@ -874,7 +961,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param rfc5424timeFormat (Updatable)
+         * @param rfc5424timeFormat (Updatable) rfc5424 time format.
          * 
          * @return builder
          * 
@@ -885,7 +972,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param rfc5424timeFormat (Updatable)
+         * @param rfc5424timeFormat (Updatable) rfc5424 time format.
          * 
          * @return builder
          * 
@@ -895,7 +982,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param syslogParserType (Updatable)
+         * @param syslogParserType (Updatable) Syslog parser type.
          * 
          * @return builder
          * 
@@ -906,7 +993,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param syslogParserType (Updatable)
+         * @param syslogParserType (Updatable) Syslog parser type.
          * 
          * @return builder
          * 
@@ -916,7 +1003,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param timeFormat (Updatable)
+         * @param timeFormat (Updatable) Process time value using the specified format.
          * 
          * @return builder
          * 
@@ -927,7 +1014,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param timeFormat (Updatable)
+         * @param timeFormat (Updatable) Process time value using the specified format.
          * 
          * @return builder
          * 
@@ -937,7 +1024,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param timeType (Updatable)
+         * @param timeType (Updatable) Time type of JSON parser.
          * 
          * @return builder
          * 
@@ -948,7 +1035,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param timeType (Updatable)
+         * @param timeType (Updatable) Time type of JSON parser.
          * 
          * @return builder
          * 
@@ -979,7 +1066,13 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param types (Updatable) Specify types for converting a field into another type.
+         * @param types (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+         * 
+         * This incoming event: &#34;2013/02/28 12:00:00,192.168.0.1,111,-&#34;
+         * 
+         * is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+         * 
+         * record: { &#34;host&#34;   : &#34;192.168.0.1&#34;, &#34;req_id&#34; : &#34;111&#34;, &#34;user&#34;   : &#34;-&#34; }
          * 
          * @return builder
          * 
@@ -990,7 +1083,13 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param types (Updatable) Specify types for converting a field into another type.
+         * @param types (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+         * 
+         * This incoming event: &#34;2013/02/28 12:00:00,192.168.0.1,111,-&#34;
+         * 
+         * is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+         * 
+         * record: { &#34;host&#34;   : &#34;192.168.0.1&#34;, &#34;req_id&#34; : &#34;111&#34;, &#34;user&#34;   : &#34;-&#34; }
          * 
          * @return builder
          * 

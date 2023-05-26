@@ -39,14 +39,14 @@ public final class GetLogSavedSearchesPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * OCID of the LogSavedSearch
+     * OCID of the LogSavedSearch.
      * 
      */
     @Import(name="logSavedSearchId")
     private @Nullable String logSavedSearchId;
 
     /**
-     * @return OCID of the LogSavedSearch
+     * @return OCID of the LogSavedSearch.
      * 
      */
     public Optional<String> logSavedSearchId() {
@@ -54,14 +54,14 @@ public final class GetLogSavedSearchesPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * Resource name
+     * Resource name.
      * 
      */
     @Import(name="name")
     private @Nullable String name;
 
     /**
-     * @return Resource name
+     * @return Resource name.
      * 
      */
     public Optional<String> name() {
@@ -116,7 +116,7 @@ public final class GetLogSavedSearchesPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param logSavedSearchId OCID of the LogSavedSearch
+         * @param logSavedSearchId OCID of the LogSavedSearch.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class GetLogSavedSearchesPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param name Resource name
+         * @param name Resource name.
          * 
          * @return builder
          * 

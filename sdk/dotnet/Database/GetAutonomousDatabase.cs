@@ -289,7 +289,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly bool IsReconnectCloneEnabled;
         /// <summary>
-        /// Indicates whether the Autonomous Database is a refreshable clone.
+        /// Indicates if the Autonomous Database is a refreshable clone.
         /// </summary>
         public readonly bool IsRefreshableClone;
         /// <summary>
@@ -346,7 +346,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int MaxCpuCoreCount;
         /// <summary>
-        /// The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+        /// The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         /// </summary>
         public readonly int MemoryPerOracleComputeUnitInGbs;
         /// <summary>
@@ -367,7 +367,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly double OcpuCount;
         /// <summary>
-        /// The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+        /// Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         /// </summary>
         public readonly string OpenMode;
         /// <summary>
@@ -379,7 +379,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<string> PeerDbIds;
         /// <summary>
-        /// The Autonomous Database permission level. Restricted mode allows access only to admin users.
+        /// The Autonomous Database permission level. Restricted mode allows access only by admin users.
         /// </summary>
         public readonly string PermissionLevel;
         /// <summary>
@@ -417,7 +417,7 @@ namespace Pulumi.Oci.Database
         public readonly string Role;
         public readonly bool RotateKeyTrigger;
         /// <summary>
-        /// list of scheduled operations
+        /// The list of scheduled operations.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabaseScheduledOperationResult> ScheduledOperations;
         public readonly string SecretId;

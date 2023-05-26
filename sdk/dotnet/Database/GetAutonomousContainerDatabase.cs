@@ -139,7 +139,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string ComputeModel;
         /// <summary>
-        /// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        /// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         /// </summary>
         public readonly string DbName;
         public readonly string DbUniqueName;

@@ -17,6 +17,11 @@ import java.util.Objects;
 @CustomType
 public final class GetVmClustersVmCluster {
     /**
+     * @return The name of the availability domain that the VM cluster is located in.
+     * 
+     */
+    private String availabilityDomain;
+    /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -151,6 +156,13 @@ public final class GetVmClustersVmCluster {
     private String vmClusterNetworkId;
 
     private GetVmClustersVmCluster() {}
+    /**
+     * @return The name of the availability domain that the VM cluster is located in.
+     * 
+     */
+    public String availabilityDomain() {
+        return this.availabilityDomain;
+    }
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -352,6 +364,7 @@ public final class GetVmClustersVmCluster {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String availabilityDomain;
         private String compartmentId;
         private Integer cpuCoreCount;
         private Integer cpusEnabled;
@@ -384,6 +397,7 @@ public final class GetVmClustersVmCluster {
         public Builder() {}
         public Builder(GetVmClustersVmCluster defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.compartmentId = defaults.compartmentId;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
     	      this.cpusEnabled = defaults.cpusEnabled;
@@ -415,6 +429,11 @@ public final class GetVmClustersVmCluster {
     	      this.vmClusterNetworkId = defaults.vmClusterNetworkId;
         }
 
+        @CustomType.Setter
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
@@ -571,6 +590,7 @@ public final class GetVmClustersVmCluster {
         }
         public GetVmClustersVmCluster build() {
             final var o = new GetVmClustersVmCluster();
+            o.availabilityDomain = availabilityDomain;
             o.compartmentId = compartmentId;
             o.cpuCoreCount = cpuCoreCount;
             o.cpusEnabled = cpusEnabled;

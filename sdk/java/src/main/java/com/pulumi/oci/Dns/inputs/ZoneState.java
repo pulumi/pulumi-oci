@@ -5,8 +5,10 @@ package com.pulumi.oci.Dns.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Dns.inputs.ZoneExternalDownstreamArgs;
 import com.pulumi.oci.Dns.inputs.ZoneExternalMasterArgs;
 import com.pulumi.oci.Dns.inputs.ZoneNameserverArgs;
+import com.pulumi.oci.Dns.inputs.ZoneZoneTransferServerArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -40,7 +42,7 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
-     * **Example:** `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
      * 
      */
     @Import(name="definedTags")
@@ -49,11 +51,26 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
-     * **Example:** `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
      * 
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
+    }
+
+    /**
+     * (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+     * 
+     */
+    @Import(name="externalDownstreams")
+    private @Nullable Output<List<ZoneExternalDownstreamArgs>> externalDownstreams;
+
+    /**
+     * @return (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+     * 
+     */
+    public Optional<Output<List<ZoneExternalDownstreamArgs>>> externalDownstreams() {
+        return Optional.ofNullable(this.externalDownstreams);
     }
 
     /**
@@ -243,6 +260,21 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+     * 
+     */
+    @Import(name="zoneTransferServers")
+    private @Nullable Output<List<ZoneZoneTransferServerArgs>> zoneTransferServers;
+
+    /**
+     * @return The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+     * 
+     */
+    public Optional<Output<List<ZoneZoneTransferServerArgs>>> zoneTransferServers() {
+        return Optional.ofNullable(this.zoneTransferServers);
+    }
+
+    /**
      * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
      * 
      * ** IMPORTANT **
@@ -268,6 +300,7 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
     private ZoneState(ZoneState $) {
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
+        this.externalDownstreams = $.externalDownstreams;
         this.externalMasters = $.externalMasters;
         this.freeformTags = $.freeformTags;
         this.isProtected = $.isProtected;
@@ -280,6 +313,7 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
         this.timeCreated = $.timeCreated;
         this.version = $.version;
         this.viewId = $.viewId;
+        this.zoneTransferServers = $.zoneTransferServers;
         this.zoneType = $.zoneType;
     }
 
@@ -325,7 +359,7 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * 
-         * **Example:** `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
          * 
          * @return builder
          * 
@@ -338,13 +372,44 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * 
-         * **Example:** `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
          * 
          * @return builder
          * 
          */
         public Builder definedTags(Map<String,Object> definedTags) {
             return definedTags(Output.of(definedTags));
+        }
+
+        /**
+         * @param externalDownstreams (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalDownstreams(@Nullable Output<List<ZoneExternalDownstreamArgs>> externalDownstreams) {
+            $.externalDownstreams = externalDownstreams;
+            return this;
+        }
+
+        /**
+         * @param externalDownstreams (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalDownstreams(List<ZoneExternalDownstreamArgs> externalDownstreams) {
+            return externalDownstreams(Output.of(externalDownstreams));
+        }
+
+        /**
+         * @param externalDownstreams (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalDownstreams(ZoneExternalDownstreamArgs... externalDownstreams) {
+            return externalDownstreams(List.of(externalDownstreams));
         }
 
         /**
@@ -623,6 +688,37 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder viewId(String viewId) {
             return viewId(Output.of(viewId));
+        }
+
+        /**
+         * @param zoneTransferServers The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder zoneTransferServers(@Nullable Output<List<ZoneZoneTransferServerArgs>> zoneTransferServers) {
+            $.zoneTransferServers = zoneTransferServers;
+            return this;
+        }
+
+        /**
+         * @param zoneTransferServers The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder zoneTransferServers(List<ZoneZoneTransferServerArgs> zoneTransferServers) {
+            return zoneTransferServers(Output.of(zoneTransferServers));
+        }
+
+        /**
+         * @param zoneTransferServers The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder zoneTransferServers(ZoneZoneTransferServerArgs... zoneTransferServers) {
+            return zoneTransferServers(List.of(zoneTransferServers));
         }
 
         /**

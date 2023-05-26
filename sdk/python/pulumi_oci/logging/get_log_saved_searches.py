@@ -108,7 +108,7 @@ def get_log_saved_searches(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Log Saved Searches in Oracle Cloud Infrastructure Logging service.
 
-    Lists Logging Saved Searches for this compartment.
+    Lists LogSavedSearches for this compartment.
 
     ## Example Usage
 
@@ -123,8 +123,8 @@ def get_log_saved_searches(compartment_id: Optional[str] = None,
 
 
     :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
-    :param str log_saved_search_id: OCID of the LogSavedSearch
-    :param str name: Resource name
+    :param str log_saved_search_id: OCID of the LogSavedSearch.
+    :param str name: Resource name.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -152,7 +152,7 @@ def get_log_saved_searches_output(compartment_id: Optional[pulumi.Input[str]] = 
     """
     This data source provides the list of Log Saved Searches in Oracle Cloud Infrastructure Logging service.
 
-    Lists Logging Saved Searches for this compartment.
+    Lists LogSavedSearches for this compartment.
 
     ## Example Usage
 
@@ -167,7 +167,7 @@ def get_log_saved_searches_output(compartment_id: Optional[pulumi.Input[str]] = 
 
 
     :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
-    :param str log_saved_search_id: OCID of the LogSavedSearch
-    :param str name: Resource name
+    :param str log_saved_search_id: OCID of the LogSavedSearch.
+    :param str name: Resource name.
     """
     ...

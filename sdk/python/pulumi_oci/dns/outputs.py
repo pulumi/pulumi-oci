@@ -11,6 +11,10 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'ActionCreateZoneFromZoneFileExternalDownstream',
+    'ActionCreateZoneFromZoneFileExternalMaster',
+    'ActionCreateZoneFromZoneFileNameserver',
+    'ActionCreateZoneFromZoneFileZoneTransferServer',
     'ResolverAttachedView',
     'ResolverEndpoint',
     'ResolverRule',
@@ -20,8 +24,10 @@ __all__ = [
     'SteeringPolicyRuleCase',
     'SteeringPolicyRuleCaseAnswerData',
     'SteeringPolicyRuleDefaultAnswerData',
+    'ZoneExternalDownstream',
     'ZoneExternalMaster',
     'ZoneNameserver',
+    'ZoneZoneTransferServer',
     'GetRecordsFilterResult',
     'GetRecordsRecordResult',
     'GetResolverAttachedViewResult',
@@ -35,6 +41,9 @@ __all__ = [
     'GetResolversResolverEndpointResult',
     'GetResolversResolverRuleResult',
     'GetRrsetItemResult',
+    'GetRrsetsFilterResult',
+    'GetRrsetsRrsetResult',
+    'GetRrsetsRrsetItemResult',
     'GetSteeringPoliciesFilterResult',
     'GetSteeringPoliciesSteeringPolicyResult',
     'GetSteeringPoliciesSteeringPolicyAnswerResult',
@@ -55,9 +64,224 @@ __all__ = [
     'GetViewsViewResult',
     'GetZonesFilterResult',
     'GetZonesZoneResult',
+    'GetZonesZoneExternalDownstreamResult',
     'GetZonesZoneExternalMasterResult',
     'GetZonesZoneNameserverResult',
+    'GetZonesZoneZoneTransferServerResult',
 ]
+
+@pulumi.output_type
+class ActionCreateZoneFromZoneFileExternalDownstream(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "tsigKeyId":
+            suggest = "tsig_key_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ActionCreateZoneFromZoneFileExternalDownstream. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ActionCreateZoneFromZoneFileExternalDownstream.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ActionCreateZoneFromZoneFileExternalDownstream.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 address: Optional[str] = None,
+                 port: Optional[int] = None,
+                 tsig_key_id: Optional[str] = None):
+        """
+        :param str address: The server's IP address (IPv4 or IPv6).
+        :param int port: The server's port.
+        :param str tsig_key_id: The OCID of the TSIG key.
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if tsig_key_id is not None:
+            pulumi.set(__self__, "tsig_key_id", tsig_key_id)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[str]:
+        """
+        The server's IP address (IPv4 or IPv6).
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[int]:
+        """
+        The server's port.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="tsigKeyId")
+    def tsig_key_id(self) -> Optional[str]:
+        """
+        The OCID of the TSIG key.
+        """
+        return pulumi.get(self, "tsig_key_id")
+
+
+@pulumi.output_type
+class ActionCreateZoneFromZoneFileExternalMaster(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "tsigKeyId":
+            suggest = "tsig_key_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ActionCreateZoneFromZoneFileExternalMaster. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ActionCreateZoneFromZoneFileExternalMaster.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ActionCreateZoneFromZoneFileExternalMaster.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 address: Optional[str] = None,
+                 port: Optional[int] = None,
+                 tsig_key_id: Optional[str] = None):
+        """
+        :param str address: The server's IP address (IPv4 or IPv6).
+        :param int port: The server's port.
+        :param str tsig_key_id: The OCID of the TSIG key.
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if tsig_key_id is not None:
+            pulumi.set(__self__, "tsig_key_id", tsig_key_id)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[str]:
+        """
+        The server's IP address (IPv4 or IPv6).
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[int]:
+        """
+        The server's port.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="tsigKeyId")
+    def tsig_key_id(self) -> Optional[str]:
+        """
+        The OCID of the TSIG key.
+        """
+        return pulumi.get(self, "tsig_key_id")
+
+
+@pulumi.output_type
+class ActionCreateZoneFromZoneFileNameserver(dict):
+    def __init__(__self__, *,
+                 hostname: Optional[str] = None):
+        """
+        :param str hostname: The hostname of the nameserver.
+        """
+        if hostname is not None:
+            pulumi.set(__self__, "hostname", hostname)
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> Optional[str]:
+        """
+        The hostname of the nameserver.
+        """
+        return pulumi.get(self, "hostname")
+
+
+@pulumi.output_type
+class ActionCreateZoneFromZoneFileZoneTransferServer(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isTransferDestination":
+            suggest = "is_transfer_destination"
+        elif key == "isTransferSource":
+            suggest = "is_transfer_source"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ActionCreateZoneFromZoneFileZoneTransferServer. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ActionCreateZoneFromZoneFileZoneTransferServer.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ActionCreateZoneFromZoneFileZoneTransferServer.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 address: Optional[str] = None,
+                 is_transfer_destination: Optional[bool] = None,
+                 is_transfer_source: Optional[bool] = None,
+                 port: Optional[int] = None):
+        """
+        :param str address: The server's IP address (IPv4 or IPv6).
+        :param bool is_transfer_destination: A Boolean flag indicating whether or not the server is a zone data transfer destination.
+        :param bool is_transfer_source: A Boolean flag indicating whether or not the server is a zone data transfer source.
+        :param int port: The server's port.
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if is_transfer_destination is not None:
+            pulumi.set(__self__, "is_transfer_destination", is_transfer_destination)
+        if is_transfer_source is not None:
+            pulumi.set(__self__, "is_transfer_source", is_transfer_source)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[str]:
+        """
+        The server's IP address (IPv4 or IPv6).
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter(name="isTransferDestination")
+    def is_transfer_destination(self) -> Optional[bool]:
+        """
+        A Boolean flag indicating whether or not the server is a zone data transfer destination.
+        """
+        return pulumi.get(self, "is_transfer_destination")
+
+    @property
+    @pulumi.getter(name="isTransferSource")
+    def is_transfer_source(self) -> Optional[bool]:
+        """
+        A Boolean flag indicating whether or not the server is a zone data transfer source.
+        """
+        return pulumi.get(self, "is_transfer_source")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[int]:
+        """
+        The server's port.
+        """
+        return pulumi.get(self, "port")
+
 
 @pulumi.output_type
 class ResolverAttachedView(dict):
@@ -828,6 +1052,65 @@ class SteeringPolicyRuleDefaultAnswerData(dict):
 
 
 @pulumi.output_type
+class ZoneExternalDownstream(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "tsigKeyId":
+            suggest = "tsig_key_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ZoneExternalDownstream. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ZoneExternalDownstream.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ZoneExternalDownstream.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 address: str,
+                 port: Optional[int] = None,
+                 tsig_key_id: Optional[str] = None):
+        """
+        :param str address: (Updatable) The server's IP address (IPv4 or IPv6).
+        :param int port: (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+        :param str tsig_key_id: (Updatable) The OCID of the TSIG key.
+        """
+        pulumi.set(__self__, "address", address)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if tsig_key_id is not None:
+            pulumi.set(__self__, "tsig_key_id", tsig_key_id)
+
+    @property
+    @pulumi.getter
+    def address(self) -> str:
+        """
+        (Updatable) The server's IP address (IPv4 or IPv6).
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[int]:
+        """
+        (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="tsigKeyId")
+    def tsig_key_id(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of the TSIG key.
+        """
+        return pulumi.get(self, "tsig_key_id")
+
+
+@pulumi.output_type
 class ZoneExternalMaster(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -903,6 +1186,80 @@ class ZoneNameserver(dict):
         The hostname of the nameserver.
         """
         return pulumi.get(self, "hostname")
+
+
+@pulumi.output_type
+class ZoneZoneTransferServer(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isTransferDestination":
+            suggest = "is_transfer_destination"
+        elif key == "isTransferSource":
+            suggest = "is_transfer_source"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ZoneZoneTransferServer. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ZoneZoneTransferServer.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ZoneZoneTransferServer.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 address: Optional[str] = None,
+                 is_transfer_destination: Optional[bool] = None,
+                 is_transfer_source: Optional[bool] = None,
+                 port: Optional[int] = None):
+        """
+        :param str address: (Updatable) The server's IP address (IPv4 or IPv6).
+        :param bool is_transfer_destination: A Boolean flag indicating whether or not the server is a zone data transfer destination.
+        :param bool is_transfer_source: A Boolean flag indicating whether or not the server is a zone data transfer source.
+        :param int port: (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if is_transfer_destination is not None:
+            pulumi.set(__self__, "is_transfer_destination", is_transfer_destination)
+        if is_transfer_source is not None:
+            pulumi.set(__self__, "is_transfer_source", is_transfer_source)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[str]:
+        """
+        (Updatable) The server's IP address (IPv4 or IPv6).
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter(name="isTransferDestination")
+    def is_transfer_destination(self) -> Optional[bool]:
+        """
+        A Boolean flag indicating whether or not the server is a zone data transfer destination.
+        """
+        return pulumi.get(self, "is_transfer_destination")
+
+    @property
+    @pulumi.getter(name="isTransferSource")
+    def is_transfer_source(self) -> Optional[bool]:
+        """
+        A Boolean flag indicating whether or not the server is a zone data transfer source.
+        """
+        return pulumi.get(self, "is_transfer_source")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[int]:
+        """
+        (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+        """
+        return pulumi.get(self, "port")
 
 
 @pulumi.output_type
@@ -1907,6 +2264,153 @@ class GetRrsetItemResult(dict):
     def rtype(self) -> str:
         """
         The type of the target RRSet within the target zone.
+        """
+        return pulumi.get(self, "rtype")
+
+    @property
+    @pulumi.getter
+    def ttl(self) -> int:
+        """
+        The Time To Live for the record, in seconds.
+        """
+        return pulumi.get(self, "ttl")
+
+
+@pulumi.output_type
+class GetRrsetsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetRrsetsRrsetResult(dict):
+    def __init__(__self__, *,
+                 domain: str,
+                 items: Sequence['outputs.GetRrsetsRrsetItemResult'],
+                 rtype: str):
+        """
+        :param str domain: The target fully-qualified domain name (FQDN) within the target zone.
+        :param str rtype: Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
+        """
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "rtype", rtype)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> str:
+        """
+        The target fully-qualified domain name (FQDN) within the target zone.
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetRrsetsRrsetItemResult']:
+        return pulumi.get(self, "items")
+
+    @property
+    @pulumi.getter
+    def rtype(self) -> str:
+        """
+        Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
+        """
+        return pulumi.get(self, "rtype")
+
+
+@pulumi.output_type
+class GetRrsetsRrsetItemResult(dict):
+    def __init__(__self__, *,
+                 domain: str,
+                 is_protected: bool,
+                 rdata: str,
+                 record_hash: str,
+                 rrset_version: str,
+                 rtype: str,
+                 ttl: int):
+        """
+        :param str domain: The target fully-qualified domain name (FQDN) within the target zone.
+        :param bool is_protected: A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
+        :param str rdata: The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+        :param str record_hash: A unique identifier for the record within its zone.
+        :param str rrset_version: The latest version of the record's zone in which its RRSet differs from the preceding version.
+        :param str rtype: Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
+        :param int ttl: The Time To Live for the record, in seconds.
+        """
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "is_protected", is_protected)
+        pulumi.set(__self__, "rdata", rdata)
+        pulumi.set(__self__, "record_hash", record_hash)
+        pulumi.set(__self__, "rrset_version", rrset_version)
+        pulumi.set(__self__, "rtype", rtype)
+        pulumi.set(__self__, "ttl", ttl)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> str:
+        """
+        The target fully-qualified domain name (FQDN) within the target zone.
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="isProtected")
+    def is_protected(self) -> bool:
+        """
+        A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
+        """
+        return pulumi.get(self, "is_protected")
+
+    @property
+    @pulumi.getter
+    def rdata(self) -> str:
+        """
+        The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+        """
+        return pulumi.get(self, "rdata")
+
+    @property
+    @pulumi.getter(name="recordHash")
+    def record_hash(self) -> str:
+        """
+        A unique identifier for the record within its zone.
+        """
+        return pulumi.get(self, "record_hash")
+
+    @property
+    @pulumi.getter(name="rrsetVersion")
+    def rrset_version(self) -> str:
+        """
+        The latest version of the record's zone in which its RRSet differs from the preceding version.
+        """
+        return pulumi.get(self, "rrset_version")
+
+    @property
+    @pulumi.getter
+    def rtype(self) -> str:
+        """
+        Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
         """
         return pulumi.get(self, "rtype")
 
@@ -3088,6 +3592,7 @@ class GetZonesZoneResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  defined_tags: Mapping[str, Any],
+                 external_downstreams: Sequence['outputs.GetZonesZoneExternalDownstreamResult'],
                  external_masters: Sequence['outputs.GetZonesZoneExternalMasterResult'],
                  freeform_tags: Mapping[str, Any],
                  id: str,
@@ -3101,10 +3606,12 @@ class GetZonesZoneResult(dict):
                  time_created: str,
                  version: str,
                  view_id: str,
+                 zone_transfer_servers: Sequence['outputs.GetZonesZoneZoneTransferServerResult'],
                  zone_type: str):
         """
         :param str compartment_id: The OCID of the compartment the resource belongs to.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Sequence['GetZonesZoneExternalDownstreamArgs'] external_downstreams: External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
         :param Sequence['GetZonesZoneExternalMasterArgs'] external_masters: External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str id: The OCID of the zone.
@@ -3119,10 +3626,12 @@ class GetZonesZoneResult(dict):
         :param str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         :param str version: Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
         :param str view_id: The OCID of the view the resource is associated with.
+        :param Sequence['GetZonesZoneZoneTransferServerArgs'] zone_transfer_servers: The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
         :param str zone_type: Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "external_downstreams", external_downstreams)
         pulumi.set(__self__, "external_masters", external_masters)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
@@ -3136,6 +3645,7 @@ class GetZonesZoneResult(dict):
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "version", version)
         pulumi.set(__self__, "view_id", view_id)
+        pulumi.set(__self__, "zone_transfer_servers", zone_transfer_servers)
         pulumi.set(__self__, "zone_type", zone_type)
 
     @property
@@ -3153,6 +3663,14 @@ class GetZonesZoneResult(dict):
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="externalDownstreams")
+    def external_downstreams(self) -> Sequence['outputs.GetZonesZoneExternalDownstreamResult']:
+        """
+        External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+        """
+        return pulumi.get(self, "external_downstreams")
 
     @property
     @pulumi.getter(name="externalMasters")
@@ -3260,12 +3778,60 @@ class GetZonesZoneResult(dict):
         return pulumi.get(self, "view_id")
 
     @property
+    @pulumi.getter(name="zoneTransferServers")
+    def zone_transfer_servers(self) -> Sequence['outputs.GetZonesZoneZoneTransferServerResult']:
+        """
+        The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+        """
+        return pulumi.get(self, "zone_transfer_servers")
+
+    @property
     @pulumi.getter(name="zoneType")
     def zone_type(self) -> str:
         """
         Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
         """
         return pulumi.get(self, "zone_type")
+
+
+@pulumi.output_type
+class GetZonesZoneExternalDownstreamResult(dict):
+    def __init__(__self__, *,
+                 address: str,
+                 port: int,
+                 tsig_key_id: str):
+        """
+        :param str address: The server's IP address (IPv4 or IPv6).
+        :param int port: The server's port. Port value must be a value of 53, otherwise omit the port value.
+        :param str tsig_key_id: Search for zones that are associated with a TSIG key.
+        """
+        pulumi.set(__self__, "address", address)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "tsig_key_id", tsig_key_id)
+
+    @property
+    @pulumi.getter
+    def address(self) -> str:
+        """
+        The server's IP address (IPv4 or IPv6).
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter
+    def port(self) -> int:
+        """
+        The server's port. Port value must be a value of 53, otherwise omit the port value.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="tsigKeyId")
+    def tsig_key_id(self) -> str:
+        """
+        Search for zones that are associated with a TSIG key.
+        """
+        return pulumi.get(self, "tsig_key_id")
 
 
 @pulumi.output_type
@@ -3324,5 +3890,56 @@ class GetZonesZoneNameserverResult(dict):
         The hostname of the nameserver.
         """
         return pulumi.get(self, "hostname")
+
+
+@pulumi.output_type
+class GetZonesZoneZoneTransferServerResult(dict):
+    def __init__(__self__, *,
+                 address: str,
+                 is_transfer_destination: bool,
+                 is_transfer_source: bool,
+                 port: int):
+        """
+        :param str address: The server's IP address (IPv4 or IPv6).
+        :param bool is_transfer_destination: A Boolean flag indicating whether or not the server is a zone data transfer destination.
+        :param bool is_transfer_source: A Boolean flag indicating whether or not the server is a zone data transfer source.
+        :param int port: The server's port. Port value must be a value of 53, otherwise omit the port value.
+        """
+        pulumi.set(__self__, "address", address)
+        pulumi.set(__self__, "is_transfer_destination", is_transfer_destination)
+        pulumi.set(__self__, "is_transfer_source", is_transfer_source)
+        pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter
+    def address(self) -> str:
+        """
+        The server's IP address (IPv4 or IPv6).
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter(name="isTransferDestination")
+    def is_transfer_destination(self) -> bool:
+        """
+        A Boolean flag indicating whether or not the server is a zone data transfer destination.
+        """
+        return pulumi.get(self, "is_transfer_destination")
+
+    @property
+    @pulumi.getter(name="isTransferSource")
+    def is_transfer_source(self) -> bool:
+        """
+        A Boolean flag indicating whether or not the server is a zone data transfer source.
+        """
+        return pulumi.get(self, "is_transfer_source")
+
+    @property
+    @pulumi.getter
+    def port(self) -> int:
+        """
+        The server's port. Port value must be a value of 53, otherwise omit the port value.
+        """
+        return pulumi.get(self, "port")
 
 

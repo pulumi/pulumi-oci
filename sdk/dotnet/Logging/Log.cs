@@ -116,7 +116,7 @@ namespace Pulumi.Oci.Logging
         public Output<string> LogType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+        /// (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
         /// 
         /// 
         /// ** IMPORTANT **
@@ -250,7 +250,7 @@ namespace Pulumi.Oci.Logging
         public Input<string> LogType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+        /// (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
         /// 
         /// 
         /// ** IMPORTANT **
@@ -328,7 +328,7 @@ namespace Pulumi.Oci.Logging
         public Input<string>? LogType { get; set; }
 
         /// <summary>
-        /// (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+        /// (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
         /// 
         /// 
         /// ** IMPORTANT **

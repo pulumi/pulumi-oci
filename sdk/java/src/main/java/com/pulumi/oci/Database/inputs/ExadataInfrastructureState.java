@@ -121,6 +121,21 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
     }
 
     /**
+     * The name of the availability domain that the Exadata infrastructure is located in.
+     * 
+     */
+    @Import(name="availabilityDomain")
+    private @Nullable Output<String> availabilityDomain;
+
+    /**
+     * @return The name of the availability domain that the Exadata infrastructure is located in.
+     * 
+     */
+    public Optional<Output<String>> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
+    }
+
+    /**
      * (Updatable) The IP address for the first control plane server.
      * 
      */
@@ -706,6 +721,7 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
         this.additionalComputeSystemModel = $.additionalComputeSystemModel;
         this.additionalStorageCount = $.additionalStorageCount;
         this.adminNetworkCidr = $.adminNetworkCidr;
+        this.availabilityDomain = $.availabilityDomain;
         this.cloudControlPlaneServer1 = $.cloudControlPlaneServer1;
         this.cloudControlPlaneServer2 = $.cloudControlPlaneServer2;
         this.compartmentId = $.compartmentId;
@@ -895,6 +911,27 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
          */
         public Builder adminNetworkCidr(String adminNetworkCidr) {
             return adminNetworkCidr(Output.of(adminNetworkCidr));
+        }
+
+        /**
+         * @param availabilityDomain The name of the availability domain that the Exadata infrastructure is located in.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(@Nullable Output<String> availabilityDomain) {
+            $.availabilityDomain = availabilityDomain;
+            return this;
+        }
+
+        /**
+         * @param availabilityDomain The name of the availability domain that the Exadata infrastructure is located in.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            return availabilityDomain(Output.of(availabilityDomain));
         }
 
         /**

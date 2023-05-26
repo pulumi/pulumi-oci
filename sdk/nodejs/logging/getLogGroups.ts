@@ -44,7 +44,7 @@ export interface GetLogGroupsArgs {
      */
     compartmentId: string;
     /**
-     * Resource name
+     * Resource name.
      */
     displayName?: string;
     filters?: inputs.Logging.GetLogGroupsFilter[];
@@ -108,7 +108,7 @@ export interface GetLogGroupsOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * Resource name
+     * Resource name.
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Logging.GetLogGroupsFilterArgs>[]>;

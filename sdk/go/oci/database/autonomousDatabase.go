@@ -105,7 +105,9 @@ type AutonomousDatabase struct {
 	// * OLTP - indicates an Autonomous Transaction Processing database
 	// * DW - indicates an Autonomous Data Warehouse database
 	// * AJD - indicates an Autonomous JSON Database
-	// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+	// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+	//
+	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
 	DbWorkload pulumi.StringOutput `pulumi:"dbWorkload"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
@@ -176,7 +178,7 @@ type AutonomousDatabase struct {
 	LongTermBackupSchedules AutonomousDatabaseLongTermBackupScheduleArrayOutput `pulumi:"longTermBackupSchedules"`
 	// (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
 	MaxCpuCoreCount pulumi.IntOutput `pulumi:"maxCpuCoreCount"`
-	// The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+	// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntOutput `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
 	NcharacterSet pulumi.StringOutput `pulumi:"ncharacterSet"`
@@ -195,13 +197,13 @@ type AutonomousDatabase struct {
 	//
 	// **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
 	OcpuCount pulumi.Float64Output `pulumi:"ocpuCount"`
-	// The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+	// Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
 	OpenMode pulumi.StringOutput `pulumi:"openMode"`
 	// (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
 	OperationsInsightsStatus pulumi.StringOutput `pulumi:"operationsInsightsStatus"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
 	PeerDbIds pulumi.StringArrayOutput `pulumi:"peerDbIds"`
-	// The Autonomous Database permission level. Restricted mode allows access only to admin users.
+	// The Autonomous Database permission level. Restricted mode allows access only by admin users.
 	PermissionLevel pulumi.StringOutput `pulumi:"permissionLevel"`
 	// The private endpoint for the resource.
 	PrivateEndpoint pulumi.StringOutput `pulumi:"privateEndpoint"`
@@ -223,7 +225,9 @@ type AutonomousDatabase struct {
 	Role pulumi.StringOutput `pulumi:"role"`
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
 	RotateKeyTrigger pulumi.BoolPtrOutput `pulumi:"rotateKeyTrigger"`
-	// (Updatable) list of scheduled operations
+	// (Updatable) The list of scheduled operations.
+	//
+	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 	ScheduledOperations AutonomousDatabaseScheduledOperationArrayOutput `pulumi:"scheduledOperations"`
 	// (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
 	SecretId pulumi.StringOutput `pulumi:"secretId"`
@@ -308,7 +312,9 @@ type AutonomousDatabase struct {
 	//
 	// For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
 	//
-	// For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
+	// For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+	//
+	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
 	WhitelistedIps pulumi.StringArrayOutput `pulumi:"whitelistedIps"`
 }
 
@@ -432,7 +438,9 @@ type autonomousDatabaseState struct {
 	// * OLTP - indicates an Autonomous Transaction Processing database
 	// * DW - indicates an Autonomous Data Warehouse database
 	// * AJD - indicates an Autonomous JSON Database
-	// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+	// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+	//
+	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
 	DbWorkload *string `pulumi:"dbWorkload"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -503,7 +511,7 @@ type autonomousDatabaseState struct {
 	LongTermBackupSchedules []AutonomousDatabaseLongTermBackupSchedule `pulumi:"longTermBackupSchedules"`
 	// (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
 	MaxCpuCoreCount *int `pulumi:"maxCpuCoreCount"`
-	// The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+	// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
 	MemoryPerOracleComputeUnitInGbs *int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
 	NcharacterSet *string `pulumi:"ncharacterSet"`
@@ -522,13 +530,13 @@ type autonomousDatabaseState struct {
 	//
 	// **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
 	OcpuCount *float64 `pulumi:"ocpuCount"`
-	// The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+	// Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
 	OpenMode *string `pulumi:"openMode"`
 	// (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
 	OperationsInsightsStatus *string `pulumi:"operationsInsightsStatus"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
 	PeerDbIds []string `pulumi:"peerDbIds"`
-	// The Autonomous Database permission level. Restricted mode allows access only to admin users.
+	// The Autonomous Database permission level. Restricted mode allows access only by admin users.
 	PermissionLevel *string `pulumi:"permissionLevel"`
 	// The private endpoint for the resource.
 	PrivateEndpoint *string `pulumi:"privateEndpoint"`
@@ -550,7 +558,9 @@ type autonomousDatabaseState struct {
 	Role *string `pulumi:"role"`
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
 	RotateKeyTrigger *bool `pulumi:"rotateKeyTrigger"`
-	// (Updatable) list of scheduled operations
+	// (Updatable) The list of scheduled operations.
+	//
+	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 	ScheduledOperations []AutonomousDatabaseScheduledOperation `pulumi:"scheduledOperations"`
 	// (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
 	SecretId *string `pulumi:"secretId"`
@@ -635,7 +645,9 @@ type autonomousDatabaseState struct {
 	//
 	// For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
 	//
-	// For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
+	// For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+	//
+	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
 }
 
@@ -718,7 +730,9 @@ type AutonomousDatabaseState struct {
 	// * OLTP - indicates an Autonomous Transaction Processing database
 	// * DW - indicates an Autonomous Data Warehouse database
 	// * AJD - indicates an Autonomous JSON Database
-	// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+	// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+	//
+	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
 	DbWorkload pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput
@@ -789,7 +803,7 @@ type AutonomousDatabaseState struct {
 	LongTermBackupSchedules AutonomousDatabaseLongTermBackupScheduleArrayInput
 	// (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
 	MaxCpuCoreCount pulumi.IntPtrInput
-	// The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+	// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntPtrInput
 	// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
 	NcharacterSet pulumi.StringPtrInput
@@ -808,13 +822,13 @@ type AutonomousDatabaseState struct {
 	//
 	// **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
 	OcpuCount pulumi.Float64PtrInput
-	// The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+	// Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
 	OpenMode pulumi.StringPtrInput
 	// (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
 	OperationsInsightsStatus pulumi.StringPtrInput
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
 	PeerDbIds pulumi.StringArrayInput
-	// The Autonomous Database permission level. Restricted mode allows access only to admin users.
+	// The Autonomous Database permission level. Restricted mode allows access only by admin users.
 	PermissionLevel pulumi.StringPtrInput
 	// The private endpoint for the resource.
 	PrivateEndpoint pulumi.StringPtrInput
@@ -836,7 +850,9 @@ type AutonomousDatabaseState struct {
 	Role pulumi.StringPtrInput
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
 	RotateKeyTrigger pulumi.BoolPtrInput
-	// (Updatable) list of scheduled operations
+	// (Updatable) The list of scheduled operations.
+	//
+	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 	ScheduledOperations AutonomousDatabaseScheduledOperationArrayInput
 	// (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
 	SecretId pulumi.StringPtrInput
@@ -921,7 +937,9 @@ type AutonomousDatabaseState struct {
 	//
 	// For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
 	//
-	// For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
+	// For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+	//
+	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
 	WhitelistedIps pulumi.StringArrayInput
 }
 
@@ -990,7 +1008,9 @@ type autonomousDatabaseArgs struct {
 	// * OLTP - indicates an Autonomous Transaction Processing database
 	// * DW - indicates an Autonomous Data Warehouse database
 	// * AJD - indicates an Autonomous JSON Database
-	// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+	// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+	//
+	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
 	DbWorkload *string `pulumi:"dbWorkload"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -1046,11 +1066,11 @@ type autonomousDatabaseArgs struct {
 	//
 	// **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
 	OcpuCount *float64 `pulumi:"ocpuCount"`
-	// The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+	// Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
 	OpenMode *string `pulumi:"openMode"`
 	// (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
 	OperationsInsightsStatus *string `pulumi:"operationsInsightsStatus"`
-	// The Autonomous Database permission level. Restricted mode allows access only to admin users.
+	// The Autonomous Database permission level. Restricted mode allows access only by admin users.
 	PermissionLevel *string `pulumi:"permissionLevel"`
 	// The private endpoint Ip address for the resource.
 	PrivateEndpointIp *string `pulumi:"privateEndpointIp"`
@@ -1062,7 +1082,9 @@ type autonomousDatabaseArgs struct {
 	RemoteDisasterRecoveryType *string `pulumi:"remoteDisasterRecoveryType"`
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
 	RotateKeyTrigger *bool `pulumi:"rotateKeyTrigger"`
-	// (Updatable) list of scheduled operations
+	// (Updatable) The list of scheduled operations.
+	//
+	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 	ScheduledOperations []AutonomousDatabaseScheduledOperation `pulumi:"scheduledOperations"`
 	// (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
 	SecretId *string `pulumi:"secretId"`
@@ -1105,7 +1127,9 @@ type autonomousDatabaseArgs struct {
 	//
 	// For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
 	//
-	// For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
+	// For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+	//
+	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
 }
 
@@ -1171,7 +1195,9 @@ type AutonomousDatabaseArgs struct {
 	// * OLTP - indicates an Autonomous Transaction Processing database
 	// * DW - indicates an Autonomous Data Warehouse database
 	// * AJD - indicates an Autonomous JSON Database
-	// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+	// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+	//
+	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
 	DbWorkload pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput
@@ -1227,11 +1253,11 @@ type AutonomousDatabaseArgs struct {
 	//
 	// **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
 	OcpuCount pulumi.Float64PtrInput
-	// The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+	// Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
 	OpenMode pulumi.StringPtrInput
 	// (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
 	OperationsInsightsStatus pulumi.StringPtrInput
-	// The Autonomous Database permission level. Restricted mode allows access only to admin users.
+	// The Autonomous Database permission level. Restricted mode allows access only by admin users.
 	PermissionLevel pulumi.StringPtrInput
 	// The private endpoint Ip address for the resource.
 	PrivateEndpointIp pulumi.StringPtrInput
@@ -1243,7 +1269,9 @@ type AutonomousDatabaseArgs struct {
 	RemoteDisasterRecoveryType pulumi.StringPtrInput
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
 	RotateKeyTrigger pulumi.BoolPtrInput
-	// (Updatable) list of scheduled operations
+	// (Updatable) The list of scheduled operations.
+	//
+	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 	ScheduledOperations AutonomousDatabaseScheduledOperationArrayInput
 	// (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
 	SecretId pulumi.StringPtrInput
@@ -1286,7 +1314,9 @@ type AutonomousDatabaseArgs struct {
 	//
 	// For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
 	//
-	// For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
+	// For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+	//
+	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
 	WhitelistedIps pulumi.StringArrayInput
 }
 
@@ -1542,7 +1572,9 @@ func (o AutonomousDatabaseOutput) DbVersion() pulumi.StringOutput {
 // * OLTP - indicates an Autonomous Transaction Processing database
 // * DW - indicates an Autonomous Data Warehouse database
 // * AJD - indicates an Autonomous JSON Database
-// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+//
+// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
 func (o AutonomousDatabaseOutput) DbWorkload() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.DbWorkload }).(pulumi.StringOutput)
 }
@@ -1714,7 +1746,7 @@ func (o AutonomousDatabaseOutput) MaxCpuCoreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.IntOutput { return v.MaxCpuCoreCount }).(pulumi.IntOutput)
 }
 
-// The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
 func (o AutonomousDatabaseOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.IntOutput { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
 }
@@ -1748,7 +1780,7 @@ func (o AutonomousDatabaseOutput) OcpuCount() pulumi.Float64Output {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.Float64Output { return v.OcpuCount }).(pulumi.Float64Output)
 }
 
-// The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+// Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
 func (o AutonomousDatabaseOutput) OpenMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.OpenMode }).(pulumi.StringOutput)
 }
@@ -1763,7 +1795,7 @@ func (o AutonomousDatabaseOutput) PeerDbIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringArrayOutput { return v.PeerDbIds }).(pulumi.StringArrayOutput)
 }
 
-// The Autonomous Database permission level. Restricted mode allows access only to admin users.
+// The Autonomous Database permission level. Restricted mode allows access only by admin users.
 func (o AutonomousDatabaseOutput) PermissionLevel() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.PermissionLevel }).(pulumi.StringOutput)
 }
@@ -1820,7 +1852,9 @@ func (o AutonomousDatabaseOutput) RotateKeyTrigger() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.BoolPtrOutput { return v.RotateKeyTrigger }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) list of scheduled operations
+// (Updatable) The list of scheduled operations.
+//
+// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 func (o AutonomousDatabaseOutput) ScheduledOperations() AutonomousDatabaseScheduledOperationArrayOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) AutonomousDatabaseScheduledOperationArrayOutput {
 		return v.ScheduledOperations
@@ -2009,7 +2043,9 @@ func (o AutonomousDatabaseOutput) VaultId() pulumi.StringOutput {
 //
 // For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
 //
-// For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
+// For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+//
+// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
 func (o AutonomousDatabaseOutput) WhitelistedIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringArrayOutput { return v.WhitelistedIps }).(pulumi.StringArrayOutput)
 }

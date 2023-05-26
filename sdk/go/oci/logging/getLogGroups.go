@@ -54,7 +54,7 @@ func GetLogGroups(ctx *pulumi.Context, args *GetLogGroupsArgs, opts ...pulumi.In
 type GetLogGroupsArgs struct {
 	// Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Resource name
+	// Resource name.
 	DisplayName *string              `pulumi:"displayName"`
 	Filters     []GetLogGroupsFilter `pulumi:"filters"`
 	// Specifies whether or not nested compartments should be traversed. Defaults to false.
@@ -92,7 +92,7 @@ func GetLogGroupsOutput(ctx *pulumi.Context, args GetLogGroupsOutputArgs, opts .
 type GetLogGroupsOutputArgs struct {
 	// Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Resource name
+	// Resource name.
 	DisplayName pulumi.StringPtrInput        `pulumi:"displayName"`
 	Filters     GetLogGroupsFilterArrayInput `pulumi:"filters"`
 	// Specifies whether or not nested compartments should be traversed. Defaults to false.

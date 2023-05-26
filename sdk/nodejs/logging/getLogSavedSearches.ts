@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Log Saved Searches in Oracle Cloud Infrastructure Logging service.
  *
- * Lists Logging Saved Searches for this compartment.
+ * Lists LogSavedSearches for this compartment.
  *
  * ## Example Usage
  *
@@ -45,11 +45,11 @@ export interface GetLogSavedSearchesArgs {
     compartmentId: string;
     filters?: inputs.Logging.GetLogSavedSearchesFilter[];
     /**
-     * OCID of the LogSavedSearch
+     * OCID of the LogSavedSearch.
      */
     logSavedSearchId?: string;
     /**
-     * Resource name
+     * Resource name.
      */
     name?: string;
 }
@@ -80,7 +80,7 @@ export interface GetLogSavedSearchesResult {
 /**
  * This data source provides the list of Log Saved Searches in Oracle Cloud Infrastructure Logging service.
  *
- * Lists Logging Saved Searches for this compartment.
+ * Lists LogSavedSearches for this compartment.
  *
  * ## Example Usage
  *
@@ -109,11 +109,11 @@ export interface GetLogSavedSearchesOutputArgs {
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Logging.GetLogSavedSearchesFilterArgs>[]>;
     /**
-     * OCID of the LogSavedSearch
+     * OCID of the LogSavedSearch.
      */
     logSavedSearchId?: pulumi.Input<string>;
     /**
-     * Resource name
+     * Resource name.
      */
     name?: pulumi.Input<string>;
 }

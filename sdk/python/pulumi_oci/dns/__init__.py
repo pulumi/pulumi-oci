@@ -5,12 +5,14 @@
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .action_create_zone_from_zone_file import *
 from .get_records import *
 from .get_resolver import *
 from .get_resolver_endpoint import *
 from .get_resolver_endpoints import *
 from .get_resolvers import *
 from .get_rrset import *
+from .get_rrsets import *
 from .get_steering_policies import *
 from .get_steering_policy import *
 from .get_steering_policy_attachment import *

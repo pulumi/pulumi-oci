@@ -42,7 +42,7 @@ public final class GetNodePoolsNodePool {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The OCID of the compute instance backing this node.
+     * @return The OCID of the node pool.
      * 
      */
     private String id;
@@ -52,12 +52,12 @@ public final class GetNodePoolsNodePool {
      */
     private List<GetNodePoolsNodePoolInitialNodeLabel> initialNodeLabels;
     /**
-     * @return The version of Kubernetes this node is running.
+     * @return The version of Kubernetes running on the nodes in the node pool.
      * 
      */
     private String kubernetesVersion;
     /**
-     * @return Details about the state of the node.
+     * @return Details about the state of the nodepool.
      * 
      */
     private String lifecycleDetails;
@@ -104,10 +104,6 @@ public final class GetNodePoolsNodePool {
      * 
      */
     private List<GetNodePoolsNodePoolNodePoolCyclingDetail> nodePoolCyclingDetails;
-    /**
-     * @return The OCID of the node pool to which this node belongs.
-     * 
-     */
     private String nodePoolId;
     /**
      * @return The name of the node shape of the nodes in the node pool.
@@ -129,10 +125,6 @@ public final class GetNodePoolsNodePool {
      * 
      */
     private List<GetNodePoolsNodePoolNodeSource> nodeSources;
-    /**
-     * @return The nodes in the node pool.
-     * 
-     */
     private List<GetNodePoolsNodePoolNode> nodes;
     /**
      * @return The number of nodes in each subnet.
@@ -185,7 +177,7 @@ public final class GetNodePoolsNodePool {
         return this.freeformTags;
     }
     /**
-     * @return The OCID of the compute instance backing this node.
+     * @return The OCID of the node pool.
      * 
      */
     public String id() {
@@ -199,14 +191,14 @@ public final class GetNodePoolsNodePool {
         return this.initialNodeLabels;
     }
     /**
-     * @return The version of Kubernetes this node is running.
+     * @return The version of Kubernetes running on the nodes in the node pool.
      * 
      */
     public String kubernetesVersion() {
         return this.kubernetesVersion;
     }
     /**
-     * @return Details about the state of the node.
+     * @return Details about the state of the nodepool.
      * 
      */
     public String lifecycleDetails() {
@@ -269,10 +261,6 @@ public final class GetNodePoolsNodePool {
     public List<GetNodePoolsNodePoolNodePoolCyclingDetail> nodePoolCyclingDetails() {
         return this.nodePoolCyclingDetails;
     }
-    /**
-     * @return The OCID of the node pool to which this node belongs.
-     * 
-     */
     public String nodePoolId() {
         return this.nodePoolId;
     }
@@ -304,10 +292,6 @@ public final class GetNodePoolsNodePool {
     public List<GetNodePoolsNodePoolNodeSource> nodeSources() {
         return this.nodeSources;
     }
-    /**
-     * @return The nodes in the node pool.
-     * 
-     */
     public List<GetNodePoolsNodePoolNode> nodes() {
         return this.nodes;
     }

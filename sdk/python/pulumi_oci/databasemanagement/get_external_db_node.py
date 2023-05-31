@@ -21,7 +21,7 @@ class GetExternalDbNodeResult:
     """
     A collection of values returned by getExternalDbNode.
     """
-    def __init__(__self__, additional_details=None, compartment_id=None, component_name=None, cpu_core_count=None, display_name=None, external_connector_id=None, external_db_node_id=None, external_db_system_id=None, host_name=None, id=None, lifecycle_details=None, memory_size_in_gbs=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, additional_details=None, compartment_id=None, component_name=None, cpu_core_count=None, display_name=None, domain_name=None, external_connector_id=None, external_db_node_id=None, external_db_system_id=None, host_name=None, id=None, lifecycle_details=None, memory_size_in_gbs=None, state=None, time_created=None, time_updated=None):
         if additional_details and not isinstance(additional_details, dict):
             raise TypeError("Expected argument 'additional_details' to be a dict")
         pulumi.set(__self__, "additional_details", additional_details)
@@ -37,6 +37,9 @@ class GetExternalDbNodeResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if domain_name and not isinstance(domain_name, str):
+            raise TypeError("Expected argument 'domain_name' to be a str")
+        pulumi.set(__self__, "domain_name", domain_name)
         if external_connector_id and not isinstance(external_connector_id, str):
             raise TypeError("Expected argument 'external_connector_id' to be a str")
         pulumi.set(__self__, "external_connector_id", external_connector_id)
@@ -107,6 +110,14 @@ class GetExternalDbNodeResult:
         The user-friendly name for the external DB node. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> str:
+        """
+        Name of the domain.
+        """
+        return pulumi.get(self, "domain_name")
 
     @property
     @pulumi.getter(name="externalConnectorId")
@@ -197,6 +208,7 @@ class AwaitableGetExternalDbNodeResult(GetExternalDbNodeResult):
             component_name=self.component_name,
             cpu_core_count=self.cpu_core_count,
             display_name=self.display_name,
+            domain_name=self.domain_name,
             external_connector_id=self.external_connector_id,
             external_db_node_id=self.external_db_node_id,
             external_db_system_id=self.external_db_system_id,
@@ -239,6 +251,7 @@ def get_external_db_node(external_db_node_id: Optional[str] = None,
         component_name=__ret__.component_name,
         cpu_core_count=__ret__.cpu_core_count,
         display_name=__ret__.display_name,
+        domain_name=__ret__.domain_name,
         external_connector_id=__ret__.external_connector_id,
         external_db_node_id=__ret__.external_db_node_id,
         external_db_system_id=__ret__.external_db_system_id,

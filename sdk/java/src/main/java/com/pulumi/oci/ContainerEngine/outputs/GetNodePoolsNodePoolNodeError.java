@@ -9,41 +9,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GetNodePoolsNodePoolNodeError {
-    /**
-     * @return A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-     * 
-     */
     private String code;
-    /**
-     * @return A human-readable error string of the upstream error.
-     * 
-     */
     private String message;
-    /**
-     * @return The status of the HTTP response encountered in the upstream error.
-     * 
-     */
     private String status;
 
     private GetNodePoolsNodePoolNodeError() {}
-    /**
-     * @return A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-     * 
-     */
     public String code() {
         return this.code;
     }
-    /**
-     * @return A human-readable error string of the upstream error.
-     * 
-     */
     public String message() {
         return this.message;
     }
-    /**
-     * @return The status of the HTTP response encountered in the upstream error.
-     * 
-     */
     public String status() {
         return this.status;
     }

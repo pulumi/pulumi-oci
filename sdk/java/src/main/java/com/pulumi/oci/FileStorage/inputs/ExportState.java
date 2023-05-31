@@ -19,8 +19,7 @@ public final class ExportState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * (Updatable) Export options for the new export. If left unspecified, defaults to:
-     * 
-     * []
+     * [ { &#34;source&#34; : &#34;0.0.0.0/0&#34;, &#34;requirePrivilegedSourcePort&#34; : false, &#34;access&#34;: &#34;READ_WRITE&#34;, &#34;identitySquash&#34;: &#34;NONE&#34;, &#34;anonymousUid&#34;: 65534, &#34;anonymousGid&#34;: 65534, &#34;isAnonymousAccessAllowed&#34;: false, &#34;allowedAuth&#34;: [&#34;SYS&#34;] } ]
      * 
      * **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
      * 
@@ -34,8 +33,7 @@ public final class ExportState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return (Updatable) Export options for the new export. If left unspecified, defaults to:
-     * 
-     * []
+     * [ { &#34;source&#34; : &#34;0.0.0.0/0&#34;, &#34;requirePrivilegedSourcePort&#34; : false, &#34;access&#34;: &#34;READ_WRITE&#34;, &#34;identitySquash&#34;: &#34;NONE&#34;, &#34;anonymousUid&#34;: 65534, &#34;anonymousGid&#34;: 65534, &#34;isAnonymousAccessAllowed&#34;: false, &#34;allowedAuth&#34;: [&#34;SYS&#34;] } ]
      * 
      * **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
      * 
@@ -168,8 +166,7 @@ public final class ExportState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param exportOptions (Updatable) Export options for the new export. If left unspecified, defaults to:
-         * 
-         * []
+         * [ { &#34;source&#34; : &#34;0.0.0.0/0&#34;, &#34;requirePrivilegedSourcePort&#34; : false, &#34;access&#34;: &#34;READ_WRITE&#34;, &#34;identitySquash&#34;: &#34;NONE&#34;, &#34;anonymousUid&#34;: 65534, &#34;anonymousGid&#34;: 65534, &#34;isAnonymousAccessAllowed&#34;: false, &#34;allowedAuth&#34;: [&#34;SYS&#34;] } ]
          * 
          * **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
          * 
@@ -187,8 +184,7 @@ public final class ExportState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param exportOptions (Updatable) Export options for the new export. If left unspecified, defaults to:
-         * 
-         * []
+         * [ { &#34;source&#34; : &#34;0.0.0.0/0&#34;, &#34;requirePrivilegedSourcePort&#34; : false, &#34;access&#34;: &#34;READ_WRITE&#34;, &#34;identitySquash&#34;: &#34;NONE&#34;, &#34;anonymousUid&#34;: 65534, &#34;anonymousGid&#34;: 65534, &#34;isAnonymousAccessAllowed&#34;: false, &#34;allowedAuth&#34;: [&#34;SYS&#34;] } ]
          * 
          * **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
          * 
@@ -205,8 +201,7 @@ public final class ExportState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param exportOptions (Updatable) Export options for the new export. If left unspecified, defaults to:
-         * 
-         * []
+         * [ { &#34;source&#34; : &#34;0.0.0.0/0&#34;, &#34;requirePrivilegedSourcePort&#34; : false, &#34;access&#34;: &#34;READ_WRITE&#34;, &#34;identitySquash&#34;: &#34;NONE&#34;, &#34;anonymousUid&#34;: 65534, &#34;anonymousGid&#34;: 65534, &#34;isAnonymousAccessAllowed&#34;: false, &#34;allowedAuth&#34;: [&#34;SYS&#34;] } ]
          * 
          * **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
          * 

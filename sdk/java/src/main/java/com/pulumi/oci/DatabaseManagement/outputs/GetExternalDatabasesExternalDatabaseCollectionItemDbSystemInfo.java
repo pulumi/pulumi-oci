@@ -4,7 +4,9 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -19,6 +21,11 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInf
      * 
      */
     private String displayName;
+    /**
+     * @return The basic information about an external Exadata Infrastructure.
+     * 
+     */
+    private List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo> exadataInfraInfos;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      * 
@@ -41,6 +48,13 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInf
         return this.displayName;
     }
     /**
+     * @return The basic information about an external Exadata Infrastructure.
+     * 
+     */
+    public List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo> exadataInfraInfos() {
+        return this.exadataInfraInfos;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      * 
      */
@@ -59,12 +73,14 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInf
     public static final class Builder {
         private String compartmentId;
         private String displayName;
+        private List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo> exadataInfraInfos;
         private String id;
         public Builder() {}
         public Builder(GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.displayName = defaults.displayName;
+    	      this.exadataInfraInfos = defaults.exadataInfraInfos;
     	      this.id = defaults.id;
         }
 
@@ -79,6 +95,14 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInf
             return this;
         }
         @CustomType.Setter
+        public Builder exadataInfraInfos(List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo> exadataInfraInfos) {
+            this.exadataInfraInfos = Objects.requireNonNull(exadataInfraInfos);
+            return this;
+        }
+        public Builder exadataInfraInfos(GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo... exadataInfraInfos) {
+            return exadataInfraInfos(List.of(exadataInfraInfos));
+        }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
@@ -87,6 +111,7 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInf
             final var o = new GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo();
             o.compartmentId = compartmentId;
             o.displayName = displayName;
+            o.exadataInfraInfos = exadataInfraInfos;
             o.id = id;
             return o;
         }

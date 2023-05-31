@@ -24,6 +24,7 @@ public final class GetManagedDatabasesResult {
      * 
      */
     private @Nullable String deploymentType;
+    private @Nullable String externalExadataInfrastructureId;
     private @Nullable List<GetManagedDatabasesFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
@@ -60,6 +61,9 @@ public final class GetManagedDatabasesResult {
      */
     public Optional<String> deploymentType() {
         return Optional.ofNullable(this.deploymentType);
+    }
+    public Optional<String> externalExadataInfrastructureId() {
+        return Optional.ofNullable(this.externalExadataInfrastructureId);
     }
     public List<GetManagedDatabasesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -104,6 +108,7 @@ public final class GetManagedDatabasesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable String deploymentType;
+        private @Nullable String externalExadataInfrastructureId;
         private @Nullable List<GetManagedDatabasesFilter> filters;
         private @Nullable String id;
         private List<GetManagedDatabasesManagedDatabaseCollection> managedDatabaseCollections;
@@ -114,6 +119,7 @@ public final class GetManagedDatabasesResult {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.deploymentType = defaults.deploymentType;
+    	      this.externalExadataInfrastructureId = defaults.externalExadataInfrastructureId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.managedDatabaseCollections = defaults.managedDatabaseCollections;
@@ -129,6 +135,11 @@ public final class GetManagedDatabasesResult {
         @CustomType.Setter
         public Builder deploymentType(@Nullable String deploymentType) {
             this.deploymentType = deploymentType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder externalExadataInfrastructureId(@Nullable String externalExadataInfrastructureId) {
+            this.externalExadataInfrastructureId = externalExadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
@@ -166,6 +177,7 @@ public final class GetManagedDatabasesResult {
             final var o = new GetManagedDatabasesResult();
             o.compartmentId = compartmentId;
             o.deploymentType = deploymentType;
+            o.externalExadataInfrastructureId = externalExadataInfrastructureId;
             o.filters = filters;
             o.id = id;
             o.managedDatabaseCollections = managedDatabaseCollections;

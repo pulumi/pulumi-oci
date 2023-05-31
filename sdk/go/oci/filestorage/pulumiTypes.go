@@ -11,7 +11,7 @@ import (
 )
 
 type ExportExportOption struct {
-	// (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+	// (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
 	Access *string `pulumi:"access"`
 	// (Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
 	AnonymousGid *string `pulumi:"anonymousGid"`
@@ -39,7 +39,7 @@ type ExportExportOptionInput interface {
 }
 
 type ExportExportOptionArgs struct {
-	// (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+	// (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
 	Access pulumi.StringPtrInput `pulumi:"access"`
 	// (Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
 	AnonymousGid pulumi.StringPtrInput `pulumi:"anonymousGid"`
@@ -106,7 +106,7 @@ func (o ExportExportOptionOutput) ToExportExportOptionOutputWithContext(ctx cont
 	return o
 }
 
-// (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+// (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
 func (o ExportExportOptionOutput) Access() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExportExportOption) *string { return v.Access }).(pulumi.StringPtrOutput)
 }
@@ -271,6 +271,175 @@ func (o FileSystemSourceDetailArrayOutput) Index(i pulumi.IntInput) FileSystemSo
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FileSystemSourceDetail {
 		return vs[0].([]FileSystemSourceDetail)[vs[1].(int)]
 	}).(FileSystemSourceDetailOutput)
+}
+
+type FilesystemSnapshotPolicySchedule struct {
+	// (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+	DayOfMonth *int `pulumi:"dayOfMonth"`
+	// (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+	DayOfWeek *string `pulumi:"dayOfWeek"`
+	// (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+	HourOfDay *int `pulumi:"hourOfDay"`
+	// (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+	Month *string `pulumi:"month"`
+	// (Updatable) The frequency of scheduled snapshots.
+	Period string `pulumi:"period"`
+	// (Updatable) The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
+	RetentionDurationInSeconds *string `pulumi:"retentionDurationInSeconds"`
+	// (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+	SchedulePrefix *string `pulumi:"schedulePrefix"`
+	// (Updatable) The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
+	TimeScheduleStart *string `pulumi:"timeScheduleStart"`
+	// (Updatable) Time zone used for scheduling the snapshot.
+	TimeZone string `pulumi:"timeZone"`
+}
+
+// FilesystemSnapshotPolicyScheduleInput is an input type that accepts FilesystemSnapshotPolicyScheduleArgs and FilesystemSnapshotPolicyScheduleOutput values.
+// You can construct a concrete instance of `FilesystemSnapshotPolicyScheduleInput` via:
+//
+//	FilesystemSnapshotPolicyScheduleArgs{...}
+type FilesystemSnapshotPolicyScheduleInput interface {
+	pulumi.Input
+
+	ToFilesystemSnapshotPolicyScheduleOutput() FilesystemSnapshotPolicyScheduleOutput
+	ToFilesystemSnapshotPolicyScheduleOutputWithContext(context.Context) FilesystemSnapshotPolicyScheduleOutput
+}
+
+type FilesystemSnapshotPolicyScheduleArgs struct {
+	// (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+	DayOfMonth pulumi.IntPtrInput `pulumi:"dayOfMonth"`
+	// (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+	DayOfWeek pulumi.StringPtrInput `pulumi:"dayOfWeek"`
+	// (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+	HourOfDay pulumi.IntPtrInput `pulumi:"hourOfDay"`
+	// (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+	Month pulumi.StringPtrInput `pulumi:"month"`
+	// (Updatable) The frequency of scheduled snapshots.
+	Period pulumi.StringInput `pulumi:"period"`
+	// (Updatable) The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
+	RetentionDurationInSeconds pulumi.StringPtrInput `pulumi:"retentionDurationInSeconds"`
+	// (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+	SchedulePrefix pulumi.StringPtrInput `pulumi:"schedulePrefix"`
+	// (Updatable) The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
+	TimeScheduleStart pulumi.StringPtrInput `pulumi:"timeScheduleStart"`
+	// (Updatable) Time zone used for scheduling the snapshot.
+	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+}
+
+func (FilesystemSnapshotPolicyScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FilesystemSnapshotPolicySchedule)(nil)).Elem()
+}
+
+func (i FilesystemSnapshotPolicyScheduleArgs) ToFilesystemSnapshotPolicyScheduleOutput() FilesystemSnapshotPolicyScheduleOutput {
+	return i.ToFilesystemSnapshotPolicyScheduleOutputWithContext(context.Background())
+}
+
+func (i FilesystemSnapshotPolicyScheduleArgs) ToFilesystemSnapshotPolicyScheduleOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FilesystemSnapshotPolicyScheduleOutput)
+}
+
+// FilesystemSnapshotPolicyScheduleArrayInput is an input type that accepts FilesystemSnapshotPolicyScheduleArray and FilesystemSnapshotPolicyScheduleArrayOutput values.
+// You can construct a concrete instance of `FilesystemSnapshotPolicyScheduleArrayInput` via:
+//
+//	FilesystemSnapshotPolicyScheduleArray{ FilesystemSnapshotPolicyScheduleArgs{...} }
+type FilesystemSnapshotPolicyScheduleArrayInput interface {
+	pulumi.Input
+
+	ToFilesystemSnapshotPolicyScheduleArrayOutput() FilesystemSnapshotPolicyScheduleArrayOutput
+	ToFilesystemSnapshotPolicyScheduleArrayOutputWithContext(context.Context) FilesystemSnapshotPolicyScheduleArrayOutput
+}
+
+type FilesystemSnapshotPolicyScheduleArray []FilesystemSnapshotPolicyScheduleInput
+
+func (FilesystemSnapshotPolicyScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FilesystemSnapshotPolicySchedule)(nil)).Elem()
+}
+
+func (i FilesystemSnapshotPolicyScheduleArray) ToFilesystemSnapshotPolicyScheduleArrayOutput() FilesystemSnapshotPolicyScheduleArrayOutput {
+	return i.ToFilesystemSnapshotPolicyScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i FilesystemSnapshotPolicyScheduleArray) ToFilesystemSnapshotPolicyScheduleArrayOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FilesystemSnapshotPolicyScheduleArrayOutput)
+}
+
+type FilesystemSnapshotPolicyScheduleOutput struct{ *pulumi.OutputState }
+
+func (FilesystemSnapshotPolicyScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FilesystemSnapshotPolicySchedule)(nil)).Elem()
+}
+
+func (o FilesystemSnapshotPolicyScheduleOutput) ToFilesystemSnapshotPolicyScheduleOutput() FilesystemSnapshotPolicyScheduleOutput {
+	return o
+}
+
+func (o FilesystemSnapshotPolicyScheduleOutput) ToFilesystemSnapshotPolicyScheduleOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyScheduleOutput {
+	return o
+}
+
+// (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+func (o FilesystemSnapshotPolicyScheduleOutput) DayOfMonth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v FilesystemSnapshotPolicySchedule) *int { return v.DayOfMonth }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+func (o FilesystemSnapshotPolicyScheduleOutput) DayOfWeek() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FilesystemSnapshotPolicySchedule) *string { return v.DayOfWeek }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+func (o FilesystemSnapshotPolicyScheduleOutput) HourOfDay() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v FilesystemSnapshotPolicySchedule) *int { return v.HourOfDay }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+func (o FilesystemSnapshotPolicyScheduleOutput) Month() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FilesystemSnapshotPolicySchedule) *string { return v.Month }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The frequency of scheduled snapshots.
+func (o FilesystemSnapshotPolicyScheduleOutput) Period() pulumi.StringOutput {
+	return o.ApplyT(func(v FilesystemSnapshotPolicySchedule) string { return v.Period }).(pulumi.StringOutput)
+}
+
+// (Updatable) The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
+func (o FilesystemSnapshotPolicyScheduleOutput) RetentionDurationInSeconds() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FilesystemSnapshotPolicySchedule) *string { return v.RetentionDurationInSeconds }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+func (o FilesystemSnapshotPolicyScheduleOutput) SchedulePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FilesystemSnapshotPolicySchedule) *string { return v.SchedulePrefix }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
+func (o FilesystemSnapshotPolicyScheduleOutput) TimeScheduleStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FilesystemSnapshotPolicySchedule) *string { return v.TimeScheduleStart }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Time zone used for scheduling the snapshot.
+func (o FilesystemSnapshotPolicyScheduleOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v FilesystemSnapshotPolicySchedule) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+type FilesystemSnapshotPolicyScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (FilesystemSnapshotPolicyScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FilesystemSnapshotPolicySchedule)(nil)).Elem()
+}
+
+func (o FilesystemSnapshotPolicyScheduleArrayOutput) ToFilesystemSnapshotPolicyScheduleArrayOutput() FilesystemSnapshotPolicyScheduleArrayOutput {
+	return o
+}
+
+func (o FilesystemSnapshotPolicyScheduleArrayOutput) ToFilesystemSnapshotPolicyScheduleArrayOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyScheduleArrayOutput {
+	return o
+}
+
+func (o FilesystemSnapshotPolicyScheduleArrayOutput) Index(i pulumi.IntInput) FilesystemSnapshotPolicyScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FilesystemSnapshotPolicySchedule {
+		return vs[0].([]FilesystemSnapshotPolicySchedule)[vs[1].(int)]
+	}).(FilesystemSnapshotPolicyScheduleOutput)
 }
 
 type GetExportSetsExportSet struct {
@@ -706,7 +875,7 @@ func (o GetExportsExportArrayOutput) Index(i pulumi.IntInput) GetExportsExportOu
 }
 
 type GetExportsExportExportOption struct {
-	// Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+	// Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
 	Access string `pulumi:"access"`
 	// GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
 	AnonymousGid string `pulumi:"anonymousGid"`
@@ -732,7 +901,7 @@ type GetExportsExportExportOptionInput interface {
 }
 
 type GetExportsExportExportOptionArgs struct {
-	// Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+	// Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
 	Access pulumi.StringInput `pulumi:"access"`
 	// GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
 	AnonymousGid pulumi.StringInput `pulumi:"anonymousGid"`
@@ -797,7 +966,7 @@ func (o GetExportsExportExportOptionOutput) ToGetExportsExportExportOptionOutput
 	return o
 }
 
-// Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+// Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
 func (o GetExportsExportExportOptionOutput) Access() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExportsExportExportOption) string { return v.Access }).(pulumi.StringOutput)
 }
@@ -962,6 +1131,8 @@ type GetFileSystemsFileSystem struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
 	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
+	FilesystemSnapshotPolicyId string `pulumi:"filesystemSnapshotPolicyId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
@@ -1010,6 +1181,8 @@ type GetFileSystemsFileSystemArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
+	FilesystemSnapshotPolicyId pulumi.StringInput `pulumi:"filesystemSnapshotPolicyId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
@@ -1107,6 +1280,11 @@ func (o GetFileSystemsFileSystemOutput) DefinedTags() pulumi.MapOutput {
 // A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
 func (o GetFileSystemsFileSystemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
+func (o GetFileSystemsFileSystemOutput) FilesystemSnapshotPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.FilesystemSnapshotPolicyId }).(pulumi.StringOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -1404,6 +1582,638 @@ func (o GetFileSystemsFilterArrayOutput) Index(i pulumi.IntInput) GetFileSystems
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileSystemsFilter {
 		return vs[0].([]GetFileSystemsFilter)[vs[1].(int)]
 	}).(GetFileSystemsFilterOutput)
+}
+
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy struct {
+	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
+	Id string `pulumi:"id"`
+	// The prefix to apply to all snapshots created by this policy.  Example: `acme`
+	PolicyPrefix string `pulumi:"policyPrefix"`
+	// The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
+	Schedules []GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule `pulumi:"schedules"`
+	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+	State string `pulumi:"state"`
+	// The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyInput is an input type that accepts GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArgs and GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput values.
+// You can construct a concrete instance of `GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyInput` via:
+//
+//	GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArgs{...}
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyInput interface {
+	pulumi.Input
+
+	ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput
+	ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutputWithContext(context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput
+}
+
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArgs struct {
+	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The prefix to apply to all snapshots created by this policy.  Example: `acme`
+	PolicyPrefix pulumi.StringInput `pulumi:"policyPrefix"`
+	// The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
+	Schedules GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayInput `pulumi:"schedules"`
+	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy)(nil)).Elem()
+}
+
+func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArgs) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput {
+	return i.ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutputWithContext(context.Background())
+}
+
+func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArgs) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput)
+}
+
+// GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayInput is an input type that accepts GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArray and GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput values.
+// You can construct a concrete instance of `GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayInput` via:
+//
+//	GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArray{ GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArgs{...} }
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput
+	ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutputWithContext(context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput
+}
+
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArray []GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyInput
+
+func (GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy)(nil)).Elem()
+}
+
+func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArray) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput {
+	return i.ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArray) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput)
+}
+
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy)(nil)).Elem()
+}
+
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput {
+	return o
+}
+
+// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The prefix to apply to all snapshots created by this policy.  Example: `acme`
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) PolicyPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) string { return v.PolicyPrefix }).(pulumi.StringOutput)
+}
+
+// The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) Schedules() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) []GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule {
+		return v.Schedules
+	}).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput)
+}
+
+// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy)(nil)).Elem()
+}
+
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput) Index(i pulumi.IntInput) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy {
+		return vs[0].([]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy)[vs[1].(int)]
+	}).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput)
+}
+
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule struct {
+	// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+	DayOfMonth int `pulumi:"dayOfMonth"`
+	// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+	DayOfWeek string `pulumi:"dayOfWeek"`
+	// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+	HourOfDay int `pulumi:"hourOfDay"`
+	// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+	Month string `pulumi:"month"`
+	// The frequency of scheduled snapshots.
+	Period string `pulumi:"period"`
+	// The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
+	RetentionDurationInSeconds string `pulumi:"retentionDurationInSeconds"`
+	// A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+	SchedulePrefix string `pulumi:"schedulePrefix"`
+	// The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
+	TimeScheduleStart string `pulumi:"timeScheduleStart"`
+	// Time zone used for scheduling the snapshot.
+	TimeZone string `pulumi:"timeZone"`
+}
+
+// GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleInput is an input type that accepts GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs and GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput values.
+// You can construct a concrete instance of `GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleInput` via:
+//
+//	GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs{...}
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleInput interface {
+	pulumi.Input
+
+	ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput
+	ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutputWithContext(context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput
+}
+
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs struct {
+	// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+	DayOfMonth pulumi.IntInput `pulumi:"dayOfMonth"`
+	// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+	DayOfWeek pulumi.StringInput `pulumi:"dayOfWeek"`
+	// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+	HourOfDay pulumi.IntInput `pulumi:"hourOfDay"`
+	// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+	Month pulumi.StringInput `pulumi:"month"`
+	// The frequency of scheduled snapshots.
+	Period pulumi.StringInput `pulumi:"period"`
+	// The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
+	RetentionDurationInSeconds pulumi.StringInput `pulumi:"retentionDurationInSeconds"`
+	// A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+	SchedulePrefix pulumi.StringInput `pulumi:"schedulePrefix"`
+	// The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
+	TimeScheduleStart pulumi.StringInput `pulumi:"timeScheduleStart"`
+	// Time zone used for scheduling the snapshot.
+	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+}
+
+func (GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule)(nil)).Elem()
+}
+
+func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput {
+	return i.ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutputWithContext(context.Background())
+}
+
+func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput)
+}
+
+// GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayInput is an input type that accepts GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArray and GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput values.
+// You can construct a concrete instance of `GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayInput` via:
+//
+//	GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArray{ GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs{...} }
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput
+	ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutputWithContext(context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput
+}
+
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArray []GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleInput
+
+func (GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule)(nil)).Elem()
+}
+
+func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArray) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput {
+	return i.ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArray) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput)
+}
+
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule)(nil)).Elem()
+}
+
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput {
+	return o
+}
+
+// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) DayOfMonth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) int { return v.DayOfMonth }).(pulumi.IntOutput)
+}
+
+// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) DayOfWeek() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) string { return v.DayOfWeek }).(pulumi.StringOutput)
+}
+
+// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) HourOfDay() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) int { return v.HourOfDay }).(pulumi.IntOutput)
+}
+
+// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) Month() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) string { return v.Month }).(pulumi.StringOutput)
+}
+
+// The frequency of scheduled snapshots.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) Period() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) string { return v.Period }).(pulumi.StringOutput)
+}
+
+// The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) RetentionDurationInSeconds() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) string {
+		return v.RetentionDurationInSeconds
+	}).(pulumi.StringOutput)
+}
+
+// A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) SchedulePrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) string { return v.SchedulePrefix }).(pulumi.StringOutput)
+}
+
+// The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) TimeScheduleStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) string {
+		return v.TimeScheduleStart
+	}).(pulumi.StringOutput)
+}
+
+// Time zone used for scheduling the snapshot.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule)(nil)).Elem()
+}
+
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput) Index(i pulumi.IntInput) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule {
+		return vs[0].([]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule)[vs[1].(int)]
+	}).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput)
+}
+
+type GetFilesystemSnapshotPoliciesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFilesystemSnapshotPoliciesFilterInput is an input type that accepts GetFilesystemSnapshotPoliciesFilterArgs and GetFilesystemSnapshotPoliciesFilterOutput values.
+// You can construct a concrete instance of `GetFilesystemSnapshotPoliciesFilterInput` via:
+//
+//	GetFilesystemSnapshotPoliciesFilterArgs{...}
+type GetFilesystemSnapshotPoliciesFilterInput interface {
+	pulumi.Input
+
+	ToGetFilesystemSnapshotPoliciesFilterOutput() GetFilesystemSnapshotPoliciesFilterOutput
+	ToGetFilesystemSnapshotPoliciesFilterOutputWithContext(context.Context) GetFilesystemSnapshotPoliciesFilterOutput
+}
+
+type GetFilesystemSnapshotPoliciesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFilesystemSnapshotPoliciesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetFilesystemSnapshotPoliciesFilterArgs) ToGetFilesystemSnapshotPoliciesFilterOutput() GetFilesystemSnapshotPoliciesFilterOutput {
+	return i.ToGetFilesystemSnapshotPoliciesFilterOutputWithContext(context.Background())
+}
+
+func (i GetFilesystemSnapshotPoliciesFilterArgs) ToGetFilesystemSnapshotPoliciesFilterOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPoliciesFilterOutput)
+}
+
+// GetFilesystemSnapshotPoliciesFilterArrayInput is an input type that accepts GetFilesystemSnapshotPoliciesFilterArray and GetFilesystemSnapshotPoliciesFilterArrayOutput values.
+// You can construct a concrete instance of `GetFilesystemSnapshotPoliciesFilterArrayInput` via:
+//
+//	GetFilesystemSnapshotPoliciesFilterArray{ GetFilesystemSnapshotPoliciesFilterArgs{...} }
+type GetFilesystemSnapshotPoliciesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFilesystemSnapshotPoliciesFilterArrayOutput() GetFilesystemSnapshotPoliciesFilterArrayOutput
+	ToGetFilesystemSnapshotPoliciesFilterArrayOutputWithContext(context.Context) GetFilesystemSnapshotPoliciesFilterArrayOutput
+}
+
+type GetFilesystemSnapshotPoliciesFilterArray []GetFilesystemSnapshotPoliciesFilterInput
+
+func (GetFilesystemSnapshotPoliciesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFilesystemSnapshotPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetFilesystemSnapshotPoliciesFilterArray) ToGetFilesystemSnapshotPoliciesFilterArrayOutput() GetFilesystemSnapshotPoliciesFilterArrayOutput {
+	return i.ToGetFilesystemSnapshotPoliciesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFilesystemSnapshotPoliciesFilterArray) ToGetFilesystemSnapshotPoliciesFilterArrayOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPoliciesFilterArrayOutput)
+}
+
+type GetFilesystemSnapshotPoliciesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFilesystemSnapshotPoliciesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetFilesystemSnapshotPoliciesFilterOutput) ToGetFilesystemSnapshotPoliciesFilterOutput() GetFilesystemSnapshotPoliciesFilterOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPoliciesFilterOutput) ToGetFilesystemSnapshotPoliciesFilterOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilterOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPoliciesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFilesystemSnapshotPoliciesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFilesystemSnapshotPoliciesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFilesystemSnapshotPoliciesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFilesystemSnapshotPoliciesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFilesystemSnapshotPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetFilesystemSnapshotPoliciesFilterArrayOutput) ToGetFilesystemSnapshotPoliciesFilterArrayOutput() GetFilesystemSnapshotPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPoliciesFilterArrayOutput) ToGetFilesystemSnapshotPoliciesFilterArrayOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetFilesystemSnapshotPoliciesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFilesystemSnapshotPoliciesFilter {
+		return vs[0].([]GetFilesystemSnapshotPoliciesFilter)[vs[1].(int)]
+	}).(GetFilesystemSnapshotPoliciesFilterOutput)
+}
+
+type GetFilesystemSnapshotPolicySchedule struct {
+	// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+	DayOfMonth int `pulumi:"dayOfMonth"`
+	// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+	DayOfWeek string `pulumi:"dayOfWeek"`
+	// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+	HourOfDay int `pulumi:"hourOfDay"`
+	// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+	Month string `pulumi:"month"`
+	// The frequency of scheduled snapshots.
+	Period string `pulumi:"period"`
+	// The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
+	RetentionDurationInSeconds string `pulumi:"retentionDurationInSeconds"`
+	// A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+	SchedulePrefix string `pulumi:"schedulePrefix"`
+	// The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
+	TimeScheduleStart string `pulumi:"timeScheduleStart"`
+	// Time zone used for scheduling the snapshot.
+	TimeZone string `pulumi:"timeZone"`
+}
+
+// GetFilesystemSnapshotPolicyScheduleInput is an input type that accepts GetFilesystemSnapshotPolicyScheduleArgs and GetFilesystemSnapshotPolicyScheduleOutput values.
+// You can construct a concrete instance of `GetFilesystemSnapshotPolicyScheduleInput` via:
+//
+//	GetFilesystemSnapshotPolicyScheduleArgs{...}
+type GetFilesystemSnapshotPolicyScheduleInput interface {
+	pulumi.Input
+
+	ToGetFilesystemSnapshotPolicyScheduleOutput() GetFilesystemSnapshotPolicyScheduleOutput
+	ToGetFilesystemSnapshotPolicyScheduleOutputWithContext(context.Context) GetFilesystemSnapshotPolicyScheduleOutput
+}
+
+type GetFilesystemSnapshotPolicyScheduleArgs struct {
+	// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+	DayOfMonth pulumi.IntInput `pulumi:"dayOfMonth"`
+	// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+	DayOfWeek pulumi.StringInput `pulumi:"dayOfWeek"`
+	// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+	HourOfDay pulumi.IntInput `pulumi:"hourOfDay"`
+	// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+	Month pulumi.StringInput `pulumi:"month"`
+	// The frequency of scheduled snapshots.
+	Period pulumi.StringInput `pulumi:"period"`
+	// The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
+	RetentionDurationInSeconds pulumi.StringInput `pulumi:"retentionDurationInSeconds"`
+	// A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+	SchedulePrefix pulumi.StringInput `pulumi:"schedulePrefix"`
+	// The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
+	TimeScheduleStart pulumi.StringInput `pulumi:"timeScheduleStart"`
+	// Time zone used for scheduling the snapshot.
+	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+}
+
+func (GetFilesystemSnapshotPolicyScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFilesystemSnapshotPolicySchedule)(nil)).Elem()
+}
+
+func (i GetFilesystemSnapshotPolicyScheduleArgs) ToGetFilesystemSnapshotPolicyScheduleOutput() GetFilesystemSnapshotPolicyScheduleOutput {
+	return i.ToGetFilesystemSnapshotPolicyScheduleOutputWithContext(context.Background())
+}
+
+func (i GetFilesystemSnapshotPolicyScheduleArgs) ToGetFilesystemSnapshotPolicyScheduleOutputWithContext(ctx context.Context) GetFilesystemSnapshotPolicyScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPolicyScheduleOutput)
+}
+
+// GetFilesystemSnapshotPolicyScheduleArrayInput is an input type that accepts GetFilesystemSnapshotPolicyScheduleArray and GetFilesystemSnapshotPolicyScheduleArrayOutput values.
+// You can construct a concrete instance of `GetFilesystemSnapshotPolicyScheduleArrayInput` via:
+//
+//	GetFilesystemSnapshotPolicyScheduleArray{ GetFilesystemSnapshotPolicyScheduleArgs{...} }
+type GetFilesystemSnapshotPolicyScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetFilesystemSnapshotPolicyScheduleArrayOutput() GetFilesystemSnapshotPolicyScheduleArrayOutput
+	ToGetFilesystemSnapshotPolicyScheduleArrayOutputWithContext(context.Context) GetFilesystemSnapshotPolicyScheduleArrayOutput
+}
+
+type GetFilesystemSnapshotPolicyScheduleArray []GetFilesystemSnapshotPolicyScheduleInput
+
+func (GetFilesystemSnapshotPolicyScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFilesystemSnapshotPolicySchedule)(nil)).Elem()
+}
+
+func (i GetFilesystemSnapshotPolicyScheduleArray) ToGetFilesystemSnapshotPolicyScheduleArrayOutput() GetFilesystemSnapshotPolicyScheduleArrayOutput {
+	return i.ToGetFilesystemSnapshotPolicyScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetFilesystemSnapshotPolicyScheduleArray) ToGetFilesystemSnapshotPolicyScheduleArrayOutputWithContext(ctx context.Context) GetFilesystemSnapshotPolicyScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPolicyScheduleArrayOutput)
+}
+
+type GetFilesystemSnapshotPolicyScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetFilesystemSnapshotPolicyScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFilesystemSnapshotPolicySchedule)(nil)).Elem()
+}
+
+func (o GetFilesystemSnapshotPolicyScheduleOutput) ToGetFilesystemSnapshotPolicyScheduleOutput() GetFilesystemSnapshotPolicyScheduleOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPolicyScheduleOutput) ToGetFilesystemSnapshotPolicyScheduleOutputWithContext(ctx context.Context) GetFilesystemSnapshotPolicyScheduleOutput {
+	return o
+}
+
+// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+func (o GetFilesystemSnapshotPolicyScheduleOutput) DayOfMonth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) int { return v.DayOfMonth }).(pulumi.IntOutput)
+}
+
+// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+func (o GetFilesystemSnapshotPolicyScheduleOutput) DayOfWeek() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) string { return v.DayOfWeek }).(pulumi.StringOutput)
+}
+
+// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+func (o GetFilesystemSnapshotPolicyScheduleOutput) HourOfDay() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) int { return v.HourOfDay }).(pulumi.IntOutput)
+}
+
+// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+func (o GetFilesystemSnapshotPolicyScheduleOutput) Month() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) string { return v.Month }).(pulumi.StringOutput)
+}
+
+// The frequency of scheduled snapshots.
+func (o GetFilesystemSnapshotPolicyScheduleOutput) Period() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) string { return v.Period }).(pulumi.StringOutput)
+}
+
+// The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
+func (o GetFilesystemSnapshotPolicyScheduleOutput) RetentionDurationInSeconds() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) string { return v.RetentionDurationInSeconds }).(pulumi.StringOutput)
+}
+
+// A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+func (o GetFilesystemSnapshotPolicyScheduleOutput) SchedulePrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) string { return v.SchedulePrefix }).(pulumi.StringOutput)
+}
+
+// The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
+func (o GetFilesystemSnapshotPolicyScheduleOutput) TimeScheduleStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) string { return v.TimeScheduleStart }).(pulumi.StringOutput)
+}
+
+// Time zone used for scheduling the snapshot.
+func (o GetFilesystemSnapshotPolicyScheduleOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+type GetFilesystemSnapshotPolicyScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFilesystemSnapshotPolicyScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFilesystemSnapshotPolicySchedule)(nil)).Elem()
+}
+
+func (o GetFilesystemSnapshotPolicyScheduleArrayOutput) ToGetFilesystemSnapshotPolicyScheduleArrayOutput() GetFilesystemSnapshotPolicyScheduleArrayOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPolicyScheduleArrayOutput) ToGetFilesystemSnapshotPolicyScheduleArrayOutputWithContext(ctx context.Context) GetFilesystemSnapshotPolicyScheduleArrayOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPolicyScheduleArrayOutput) Index(i pulumi.IntInput) GetFilesystemSnapshotPolicyScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFilesystemSnapshotPolicySchedule {
+		return vs[0].([]GetFilesystemSnapshotPolicySchedule)[vs[1].(int)]
+	}).(GetFilesystemSnapshotPolicyScheduleOutput)
 }
 
 type GetMountTargetsFilter struct {
@@ -2526,8 +3336,12 @@ func (o GetSnapshotsFilterArrayOutput) Index(i pulumi.IntInput) GetSnapshotsFilt
 type GetSnapshotsSnapshot struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The time when this snapshot will be deleted.
+	ExpirationTime string `pulumi:"expirationTime"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
 	FileSystemId string `pulumi:"fileSystemId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
+	FilesystemSnapshotPolicyId string `pulumi:"filesystemSnapshotPolicyId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
@@ -2567,8 +3381,12 @@ type GetSnapshotsSnapshotInput interface {
 type GetSnapshotsSnapshotArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The time when this snapshot will be deleted.
+	ExpirationTime pulumi.StringInput `pulumi:"expirationTime"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
 	FileSystemId pulumi.StringInput `pulumi:"fileSystemId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
+	FilesystemSnapshotPolicyId pulumi.StringInput `pulumi:"filesystemSnapshotPolicyId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
@@ -2650,9 +3468,19 @@ func (o GetSnapshotsSnapshotOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetSnapshotsSnapshot) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
+// The time when this snapshot will be deleted.
+func (o GetSnapshotsSnapshotOutput) ExpirationTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.ExpirationTime }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
 func (o GetSnapshotsSnapshotOutput) FileSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.FileSystemId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
+func (o GetSnapshotsSnapshotOutput) FilesystemSnapshotPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.FilesystemSnapshotPolicyId }).(pulumi.StringOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -2733,6 +3561,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ExportExportOptionArrayInput)(nil)).Elem(), ExportExportOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FileSystemSourceDetailInput)(nil)).Elem(), FileSystemSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FileSystemSourceDetailArrayInput)(nil)).Elem(), FileSystemSourceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FilesystemSnapshotPolicyScheduleInput)(nil)).Elem(), FilesystemSnapshotPolicyScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FilesystemSnapshotPolicyScheduleArrayInput)(nil)).Elem(), FilesystemSnapshotPolicyScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExportSetsExportSetInput)(nil)).Elem(), GetExportSetsExportSetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExportSetsExportSetArrayInput)(nil)).Elem(), GetExportSetsExportSetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExportSetsFilterInput)(nil)).Elem(), GetExportSetsFilterArgs{})
@@ -2749,6 +3579,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileSystemsFileSystemSourceDetailArrayInput)(nil)).Elem(), GetFileSystemsFileSystemSourceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileSystemsFilterInput)(nil)).Elem(), GetFileSystemsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileSystemsFilterArrayInput)(nil)).Elem(), GetFileSystemsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilterInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilterArrayInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPolicyScheduleInput)(nil)).Elem(), GetFilesystemSnapshotPolicyScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPolicyScheduleArrayInput)(nil)).Elem(), GetFilesystemSnapshotPolicyScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsFilterInput)(nil)).Elem(), GetMountTargetsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsFilterArrayInput)(nil)).Elem(), GetMountTargetsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsMountTargetInput)(nil)).Elem(), GetMountTargetsMountTargetArgs{})
@@ -2769,6 +3607,8 @@ func init() {
 	pulumi.RegisterOutputType(ExportExportOptionArrayOutput{})
 	pulumi.RegisterOutputType(FileSystemSourceDetailOutput{})
 	pulumi.RegisterOutputType(FileSystemSourceDetailArrayOutput{})
+	pulumi.RegisterOutputType(FilesystemSnapshotPolicyScheduleOutput{})
+	pulumi.RegisterOutputType(FilesystemSnapshotPolicyScheduleArrayOutput{})
 	pulumi.RegisterOutputType(GetExportSetsExportSetOutput{})
 	pulumi.RegisterOutputType(GetExportSetsExportSetArrayOutput{})
 	pulumi.RegisterOutputType(GetExportSetsFilterOutput{})
@@ -2785,6 +3625,14 @@ func init() {
 	pulumi.RegisterOutputType(GetFileSystemsFileSystemSourceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetFileSystemsFilterOutput{})
 	pulumi.RegisterOutputType(GetFileSystemsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput{})
+	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput{})
+	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilterOutput{})
+	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFilesystemSnapshotPolicyScheduleOutput{})
+	pulumi.RegisterOutputType(GetFilesystemSnapshotPolicyScheduleArrayOutput{})
 	pulumi.RegisterOutputType(GetMountTargetsFilterOutput{})
 	pulumi.RegisterOutputType(GetMountTargetsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMountTargetsMountTargetOutput{})

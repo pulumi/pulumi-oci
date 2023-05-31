@@ -66,6 +66,7 @@ class _ExternalDbNodeState:
                  component_name: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[float]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 domain_name: Optional[pulumi.Input[str]] = None,
                  external_connector_id: Optional[pulumi.Input[str]] = None,
                  external_db_node_id: Optional[pulumi.Input[str]] = None,
                  external_db_system_id: Optional[pulumi.Input[str]] = None,
@@ -82,6 +83,7 @@ class _ExternalDbNodeState:
         :param pulumi.Input[str] component_name: The name of the external DB node.
         :param pulumi.Input[float] cpu_core_count: The number of CPU cores available on the DB node.
         :param pulumi.Input[str] display_name: The user-friendly name for the external DB node. The name does not have to be unique.
+        :param pulumi.Input[str] domain_name: Name of the domain.
         :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         :param pulumi.Input[str] external_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
                
@@ -106,6 +108,8 @@ class _ExternalDbNodeState:
             pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if domain_name is not None:
+            pulumi.set(__self__, "domain_name", domain_name)
         if external_connector_id is not None:
             pulumi.set(__self__, "external_connector_id", external_connector_id)
         if external_db_node_id is not None:
@@ -184,6 +188,18 @@ class _ExternalDbNodeState:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the domain.
+        """
+        return pulumi.get(self, "domain_name")
+
+    @domain_name.setter
+    def domain_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain_name", value)
 
     @property
     @pulumi.getter(name="externalConnectorId")
@@ -382,6 +398,7 @@ class ExternalDbNode(pulumi.CustomResource):
             __props__.__dict__["component_name"] = None
             __props__.__dict__["cpu_core_count"] = None
             __props__.__dict__["display_name"] = None
+            __props__.__dict__["domain_name"] = None
             __props__.__dict__["external_db_system_id"] = None
             __props__.__dict__["host_name"] = None
             __props__.__dict__["lifecycle_details"] = None
@@ -404,6 +421,7 @@ class ExternalDbNode(pulumi.CustomResource):
             component_name: Optional[pulumi.Input[str]] = None,
             cpu_core_count: Optional[pulumi.Input[float]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            domain_name: Optional[pulumi.Input[str]] = None,
             external_connector_id: Optional[pulumi.Input[str]] = None,
             external_db_node_id: Optional[pulumi.Input[str]] = None,
             external_db_system_id: Optional[pulumi.Input[str]] = None,
@@ -425,6 +443,7 @@ class ExternalDbNode(pulumi.CustomResource):
         :param pulumi.Input[str] component_name: The name of the external DB node.
         :param pulumi.Input[float] cpu_core_count: The number of CPU cores available on the DB node.
         :param pulumi.Input[str] display_name: The user-friendly name for the external DB node. The name does not have to be unique.
+        :param pulumi.Input[str] domain_name: Name of the domain.
         :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         :param pulumi.Input[str] external_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
                
@@ -448,6 +467,7 @@ class ExternalDbNode(pulumi.CustomResource):
         __props__.__dict__["component_name"] = component_name
         __props__.__dict__["cpu_core_count"] = cpu_core_count
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["domain_name"] = domain_name
         __props__.__dict__["external_connector_id"] = external_connector_id
         __props__.__dict__["external_db_node_id"] = external_db_node_id
         __props__.__dict__["external_db_system_id"] = external_db_system_id
@@ -498,6 +518,14 @@ class ExternalDbNode(pulumi.CustomResource):
         The user-friendly name for the external DB node. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> pulumi.Output[str]:
+        """
+        Name of the domain.
+        """
+        return pulumi.get(self, "domain_name")
 
     @property
     @pulumi.getter(name="externalConnectorId")

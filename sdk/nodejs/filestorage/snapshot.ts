@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
+ *     expirationTime: _var.snapshot_expiration_time,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
@@ -68,9 +69,17 @@ export class Snapshot extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
+     * (Updatable) The time when this snapshot will be deleted.
+     */
+    public readonly expirationTime!: pulumi.Output<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
      */
     public readonly fileSystemId!: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
+     */
+    public /*out*/ readonly filesystemSnapshotPolicyId!: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
@@ -133,7 +142,9 @@ export class Snapshot extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as SnapshotState | undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
+            resourceInputs["expirationTime"] = state ? state.expirationTime : undefined;
             resourceInputs["fileSystemId"] = state ? state.fileSystemId : undefined;
+            resourceInputs["filesystemSnapshotPolicyId"] = state ? state.filesystemSnapshotPolicyId : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isCloneSource"] = state ? state.isCloneSource : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
@@ -149,9 +160,11 @@ export class Snapshot extends pulumi.CustomResource {
                 throw new Error("Missing required property 'fileSystemId'");
             }
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
+            resourceInputs["expirationTime"] = args ? args.expirationTime : undefined;
             resourceInputs["fileSystemId"] = args ? args.fileSystemId : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["filesystemSnapshotPolicyId"] = undefined /*out*/;
             resourceInputs["isCloneSource"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["provenanceId"] = undefined /*out*/;
@@ -174,9 +187,17 @@ export interface SnapshotState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
+     * (Updatable) The time when this snapshot will be deleted.
+     */
+    expirationTime?: pulumi.Input<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
      */
     fileSystemId?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
+     */
+    filesystemSnapshotPolicyId?: pulumi.Input<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
@@ -234,6 +255,10 @@ export interface SnapshotArgs {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) The time when this snapshot will be deleted.
+     */
+    expirationTime?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
      */

@@ -23,10 +23,16 @@ class GetSnapshotsResult:
     """
     A collection of values returned by getSnapshots.
     """
-    def __init__(__self__, file_system_id=None, filters=None, id=None, snapshots=None, state=None):
+    def __init__(__self__, compartment_id=None, file_system_id=None, filesystem_snapshot_policy_id=None, filters=None, id=None, snapshots=None, state=None):
+        if compartment_id and not isinstance(compartment_id, str):
+            raise TypeError("Expected argument 'compartment_id' to be a str")
+        pulumi.set(__self__, "compartment_id", compartment_id)
         if file_system_id and not isinstance(file_system_id, str):
             raise TypeError("Expected argument 'file_system_id' to be a str")
         pulumi.set(__self__, "file_system_id", file_system_id)
+        if filesystem_snapshot_policy_id and not isinstance(filesystem_snapshot_policy_id, str):
+            raise TypeError("Expected argument 'filesystem_snapshot_policy_id' to be a str")
+        pulumi.set(__self__, "filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -41,12 +47,25 @@ class GetSnapshotsResult:
         pulumi.set(__self__, "state", state)
 
     @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[str]:
+        return pulumi.get(self, "compartment_id")
+
+    @property
     @pulumi.getter(name="fileSystemId")
-    def file_system_id(self) -> str:
+    def file_system_id(self) -> Optional[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
         """
         return pulumi.get(self, "file_system_id")
+
+    @property
+    @pulumi.getter(name="filesystemSnapshotPolicyId")
+    def filesystem_snapshot_policy_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
+        """
+        return pulumi.get(self, "filesystem_snapshot_policy_id")
 
     @property
     @pulumi.getter
@@ -84,14 +103,18 @@ class AwaitableGetSnapshotsResult(GetSnapshotsResult):
         if False:
             yield self
         return GetSnapshotsResult(
+            compartment_id=self.compartment_id,
             file_system_id=self.file_system_id,
+            filesystem_snapshot_policy_id=self.filesystem_snapshot_policy_id,
             filters=self.filters,
             id=self.id,
             snapshots=self.snapshots,
             state=self.state)
 
 
-def get_snapshots(file_system_id: Optional[str] = None,
+def get_snapshots(compartment_id: Optional[str] = None,
+                  file_system_id: Optional[str] = None,
+                  filesystem_snapshot_policy_id: Optional[str] = None,
                   filters: Optional[Sequence[pulumi.InputType['GetSnapshotsFilterArgs']]] = None,
                   id: Optional[str] = None,
                   state: Optional[str] = None,
@@ -99,7 +122,10 @@ def get_snapshots(file_system_id: Optional[str] = None,
     """
     This data source provides the list of Snapshots in Oracle Cloud Infrastructure File Storage service.
 
-    Lists snapshots of the specified file system.
+    Lists snapshots of the specified file system, or by file system snapshot policy and compartment,
+    or by file system snapshot policy and file system.
+
+    If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
 
     ## Example Usage
 
@@ -107,18 +133,24 @@ def get_snapshots(file_system_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_snapshots = oci.FileStorage.get_snapshots(file_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_snapshots = oci.FileStorage.get_snapshots(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        file_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        filesystem_snapshot_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
+    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
+    :param str filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
     :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
     :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
     """
     __args__ = dict()
+    __args__['compartmentId'] = compartment_id
     __args__['fileSystemId'] = file_system_id
+    __args__['filesystemSnapshotPolicyId'] = filesystem_snapshot_policy_id
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
@@ -126,7 +158,9 @@ def get_snapshots(file_system_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:FileStorage/getSnapshots:getSnapshots', __args__, opts=opts, typ=GetSnapshotsResult).value
 
     return AwaitableGetSnapshotsResult(
+        compartment_id=__ret__.compartment_id,
         file_system_id=__ret__.file_system_id,
+        filesystem_snapshot_policy_id=__ret__.filesystem_snapshot_policy_id,
         filters=__ret__.filters,
         id=__ret__.id,
         snapshots=__ret__.snapshots,
@@ -134,7 +168,9 @@ def get_snapshots(file_system_id: Optional[str] = None,
 
 
 @_utilities.lift_output_func(get_snapshots)
-def get_snapshots_output(file_system_id: Optional[pulumi.Input[str]] = None,
+def get_snapshots_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
+                         file_system_id: Optional[pulumi.Input[Optional[str]]] = None,
+                         filesystem_snapshot_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSnapshotsFilterArgs']]]]] = None,
                          id: Optional[pulumi.Input[Optional[str]]] = None,
                          state: Optional[pulumi.Input[Optional[str]]] = None,
@@ -142,7 +178,10 @@ def get_snapshots_output(file_system_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides the list of Snapshots in Oracle Cloud Infrastructure File Storage service.
 
-    Lists snapshots of the specified file system.
+    Lists snapshots of the specified file system, or by file system snapshot policy and compartment,
+    or by file system snapshot policy and file system.
+
+    If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
 
     ## Example Usage
 
@@ -150,13 +189,17 @@ def get_snapshots_output(file_system_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_snapshots = oci.FileStorage.get_snapshots(file_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_snapshots = oci.FileStorage.get_snapshots(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        file_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        filesystem_snapshot_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
+    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
+    :param str filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
     :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
     :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
     """

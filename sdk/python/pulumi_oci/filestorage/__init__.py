@@ -8,9 +8,12 @@ import typing
 from .export import *
 from .export_set import *
 from .file_system import *
+from .filesystem_snapshot_policy import *
 from .get_export_sets import *
 from .get_exports import *
 from .get_file_systems import *
+from .get_filesystem_snapshot_policies import *
+from .get_filesystem_snapshot_policy import *
 from .get_mount_targets import *
 from .get_replication import *
 from .get_replication_target import *

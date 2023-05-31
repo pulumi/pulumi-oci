@@ -38,6 +38,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     {
         ///         CompartmentId = @var.Compartment_id,
         ///         DeploymentType = @var.Managed_database_deployment_type,
+        ///         ExternalExadataInfrastructureId = oci_database_management_external_exadata_infrastructure.Test_external_exadata_infrastructure.Id,
         ///         Id = @var.Managed_database_id,
         ///         ManagementOption = @var.Managed_database_management_option,
         ///         Name = @var.Managed_database_name,
@@ -78,6 +79,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     {
         ///         CompartmentId = @var.Compartment_id,
         ///         DeploymentType = @var.Managed_database_deployment_type,
+        ///         ExternalExadataInfrastructureId = oci_database_management_external_exadata_infrastructure.Test_external_exadata_infrastructure.Id,
         ///         Id = @var.Managed_database_id,
         ///         ManagementOption = @var.Managed_database_management_option,
         ///         Name = @var.Managed_database_name,
@@ -106,6 +108,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("deploymentType")]
         public string? DeploymentType { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        /// </summary>
+        [Input("externalExadataInfrastructureId")]
+        public string? ExternalExadataInfrastructureId { get; set; }
 
         [Input("filters")]
         private List<Inputs.GetManagedDatabasesFilterArgs>? _filters;
@@ -153,6 +161,12 @@ namespace Pulumi.Oci.DatabaseManagement
         [Input("deploymentType")]
         public Input<string>? DeploymentType { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        /// </summary>
+        [Input("externalExadataInfrastructureId")]
+        public Input<string>? ExternalExadataInfrastructureId { get; set; }
+
         [Input("filters")]
         private InputList<Inputs.GetManagedDatabasesFilterInputArgs>? _filters;
         public InputList<Inputs.GetManagedDatabasesFilterInputArgs> Filters
@@ -197,6 +211,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The infrastructure used to deploy the Oracle Database.
         /// </summary>
         public readonly string? DeploymentType;
+        public readonly string? ExternalExadataInfrastructureId;
         public readonly ImmutableArray<Outputs.GetManagedDatabasesFilterResult> Filters;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
@@ -221,6 +236,8 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string? deploymentType,
 
+            string? externalExadataInfrastructureId,
+
             ImmutableArray<Outputs.GetManagedDatabasesFilterResult> filters,
 
             string? id,
@@ -233,6 +250,7 @@ namespace Pulumi.Oci.DatabaseManagement
         {
             CompartmentId = compartmentId;
             DeploymentType = deploymentType;
+            ExternalExadataInfrastructureId = externalExadataInfrastructureId;
             Filters = filters;
             Id = id;
             ManagedDatabaseCollections = managedDatabaseCollections;

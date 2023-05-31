@@ -9,7 +9,8 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of File Systems in Oracle Cloud Infrastructure File Storage service.
  *
- * Lists the file system resources in the specified compartment.
+ * Lists the file system resources in the specified compartment, or by the specified compartment and
+ * file system snapshot policy.
  *
  * ## Example Usage
  *
@@ -21,6 +22,7 @@ import * as utilities from "../utilities";
  *     availabilityDomain: _var.file_system_availability_domain,
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.file_system_display_name,
+ *     filesystemSnapshotPolicyId: oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy.id,
  *     id: _var.file_system_id,
  *     parentFileSystemId: oci_file_storage_file_system.test_file_system.id,
  *     sourceSnapshotId: oci_file_storage_snapshot.test_snapshot.id,
@@ -35,6 +37,7 @@ export function getFileSystems(args: GetFileSystemsArgs, opts?: pulumi.InvokeOpt
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
+        "filesystemSnapshotPolicyId": args.filesystemSnapshotPolicyId,
         "filters": args.filters,
         "id": args.id,
         "parentFileSystemId": args.parentFileSystemId,
@@ -59,6 +62,10 @@ export interface GetFileSystemsArgs {
      * A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
      */
     displayName?: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
+     */
+    filesystemSnapshotPolicyId?: string;
     filters?: inputs.FileStorage.GetFileSystemsFilter[];
     /**
      * Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
@@ -98,6 +105,10 @@ export interface GetFileSystemsResult {
      * The list of file_systems.
      */
     readonly fileSystems: outputs.FileStorage.GetFileSystemsFileSystem[];
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+     */
+    readonly filesystemSnapshotPolicyId?: string;
     readonly filters?: outputs.FileStorage.GetFileSystemsFilter[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
@@ -119,7 +130,8 @@ export interface GetFileSystemsResult {
 /**
  * This data source provides the list of File Systems in Oracle Cloud Infrastructure File Storage service.
  *
- * Lists the file system resources in the specified compartment.
+ * Lists the file system resources in the specified compartment, or by the specified compartment and
+ * file system snapshot policy.
  *
  * ## Example Usage
  *
@@ -131,6 +143,7 @@ export interface GetFileSystemsResult {
  *     availabilityDomain: _var.file_system_availability_domain,
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.file_system_display_name,
+ *     filesystemSnapshotPolicyId: oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy.id,
  *     id: _var.file_system_id,
  *     parentFileSystemId: oci_file_storage_file_system.test_file_system.id,
  *     sourceSnapshotId: oci_file_storage_snapshot.test_snapshot.id,
@@ -158,6 +171,10 @@ export interface GetFileSystemsOutputArgs {
      * A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
+     */
+    filesystemSnapshotPolicyId?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.FileStorage.GetFileSystemsFilterArgs>[]>;
     /**
      * Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.

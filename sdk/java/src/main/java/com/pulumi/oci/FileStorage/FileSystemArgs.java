@@ -78,6 +78,25 @@ public final class FileSystemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+     * 
+     * May be unset as a blank value.
+     * 
+     */
+    @Import(name="filesystemSnapshotPolicyId")
+    private @Nullable Output<String> filesystemSnapshotPolicyId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+     * 
+     * May be unset as a blank value.
+     * 
+     */
+    public Optional<Output<String>> filesystemSnapshotPolicyId() {
+        return Optional.ofNullable(this.filesystemSnapshotPolicyId);
+    }
+
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -135,6 +154,7 @@ public final class FileSystemArgs extends com.pulumi.resources.ResourceArgs {
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
+        this.filesystemSnapshotPolicyId = $.filesystemSnapshotPolicyId;
         this.freeformTags = $.freeformTags;
         this.kmsKeyId = $.kmsKeyId;
         this.sourceSnapshotId = $.sourceSnapshotId;
@@ -240,6 +260,31 @@ public final class FileSystemArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param filesystemSnapshotPolicyId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+         * 
+         * May be unset as a blank value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filesystemSnapshotPolicyId(@Nullable Output<String> filesystemSnapshotPolicyId) {
+            $.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
+            return this;
+        }
+
+        /**
+         * @param filesystemSnapshotPolicyId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+         * 
+         * May be unset as a blank value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filesystemSnapshotPolicyId(String filesystemSnapshotPolicyId) {
+            return filesystemSnapshotPolicyId(Output.of(filesystemSnapshotPolicyId));
         }
 
         /**

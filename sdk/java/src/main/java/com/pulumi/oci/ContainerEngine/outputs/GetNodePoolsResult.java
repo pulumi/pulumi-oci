@@ -31,7 +31,7 @@ public final class GetNodePoolsResult {
      */
     private String id;
     /**
-     * @return The name of the node.
+     * @return The name of the node pool.
      * 
      */
     private @Nullable String name;
@@ -72,7 +72,7 @@ public final class GetNodePoolsResult {
         return this.id;
     }
     /**
-     * @return The name of the node.
+     * @return The name of the node pool.
      * 
      */
     public Optional<String> name() {

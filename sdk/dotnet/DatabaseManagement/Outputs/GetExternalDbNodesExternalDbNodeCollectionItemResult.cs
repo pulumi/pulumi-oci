@@ -34,6 +34,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
+        /// Name of the domain.
+        /// </summary>
+        public readonly string DomainName;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         /// </summary>
         public readonly string ExternalConnectorId;
@@ -83,6 +87,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string displayName,
 
+            string domainName,
+
             string externalConnectorId,
 
             string externalDbNodeId,
@@ -108,6 +114,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             ComponentName = componentName;
             CpuCoreCount = cpuCoreCount;
             DisplayName = displayName;
+            DomainName = domainName;
             ExternalConnectorId = externalConnectorId;
             ExternalDbNodeId = externalDbNodeId;
             ExternalDbSystemId = externalDbSystemId;

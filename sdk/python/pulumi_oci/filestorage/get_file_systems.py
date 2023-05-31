@@ -23,7 +23,7 @@ class GetFileSystemsResult:
     """
     A collection of values returned by getFileSystems.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, display_name=None, file_systems=None, filters=None, id=None, parent_file_system_id=None, source_snapshot_id=None, state=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, display_name=None, file_systems=None, filesystem_snapshot_policy_id=None, filters=None, id=None, parent_file_system_id=None, source_snapshot_id=None, state=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -36,6 +36,9 @@ class GetFileSystemsResult:
         if file_systems and not isinstance(file_systems, list):
             raise TypeError("Expected argument 'file_systems' to be a list")
         pulumi.set(__self__, "file_systems", file_systems)
+        if filesystem_snapshot_policy_id and not isinstance(filesystem_snapshot_policy_id, str):
+            raise TypeError("Expected argument 'filesystem_snapshot_policy_id' to be a str")
+        pulumi.set(__self__, "filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -85,6 +88,14 @@ class GetFileSystemsResult:
         return pulumi.get(self, "file_systems")
 
     @property
+    @pulumi.getter(name="filesystemSnapshotPolicyId")
+    def filesystem_snapshot_policy_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+        """
+        return pulumi.get(self, "filesystem_snapshot_policy_id")
+
+    @property
     @pulumi.getter
     def filters(self) -> Optional[Sequence['outputs.GetFileSystemsFilterResult']]:
         return pulumi.get(self, "filters")
@@ -132,6 +143,7 @@ class AwaitableGetFileSystemsResult(GetFileSystemsResult):
             compartment_id=self.compartment_id,
             display_name=self.display_name,
             file_systems=self.file_systems,
+            filesystem_snapshot_policy_id=self.filesystem_snapshot_policy_id,
             filters=self.filters,
             id=self.id,
             parent_file_system_id=self.parent_file_system_id,
@@ -142,6 +154,7 @@ class AwaitableGetFileSystemsResult(GetFileSystemsResult):
 def get_file_systems(availability_domain: Optional[str] = None,
                      compartment_id: Optional[str] = None,
                      display_name: Optional[str] = None,
+                     filesystem_snapshot_policy_id: Optional[str] = None,
                      filters: Optional[Sequence[pulumi.InputType['GetFileSystemsFilterArgs']]] = None,
                      id: Optional[str] = None,
                      parent_file_system_id: Optional[str] = None,
@@ -151,7 +164,8 @@ def get_file_systems(availability_domain: Optional[str] = None,
     """
     This data source provides the list of File Systems in Oracle Cloud Infrastructure File Storage service.
 
-    Lists the file system resources in the specified compartment.
+    Lists the file system resources in the specified compartment, or by the specified compartment and
+    file system snapshot policy.
 
     ## Example Usage
 
@@ -162,6 +176,7 @@ def get_file_systems(availability_domain: Optional[str] = None,
     test_file_systems = oci.FileStorage.get_file_systems(availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        filesystem_snapshot_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         parent_file_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         source_snapshot_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
@@ -172,6 +187,7 @@ def get_file_systems(availability_domain: Optional[str] = None,
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+    :param str filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
     :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
     :param str parent_file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
     :param str source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -181,6 +197,7 @@ def get_file_systems(availability_domain: Optional[str] = None,
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
+    __args__['filesystemSnapshotPolicyId'] = filesystem_snapshot_policy_id
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['parentFileSystemId'] = parent_file_system_id
@@ -194,6 +211,7 @@ def get_file_systems(availability_domain: Optional[str] = None,
         compartment_id=__ret__.compartment_id,
         display_name=__ret__.display_name,
         file_systems=__ret__.file_systems,
+        filesystem_snapshot_policy_id=__ret__.filesystem_snapshot_policy_id,
         filters=__ret__.filters,
         id=__ret__.id,
         parent_file_system_id=__ret__.parent_file_system_id,
@@ -205,6 +223,7 @@ def get_file_systems(availability_domain: Optional[str] = None,
 def get_file_systems_output(availability_domain: Optional[pulumi.Input[str]] = None,
                             compartment_id: Optional[pulumi.Input[str]] = None,
                             display_name: Optional[pulumi.Input[Optional[str]]] = None,
+                            filesystem_snapshot_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFileSystemsFilterArgs']]]]] = None,
                             id: Optional[pulumi.Input[Optional[str]]] = None,
                             parent_file_system_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -214,7 +233,8 @@ def get_file_systems_output(availability_domain: Optional[pulumi.Input[str]] = N
     """
     This data source provides the list of File Systems in Oracle Cloud Infrastructure File Storage service.
 
-    Lists the file system resources in the specified compartment.
+    Lists the file system resources in the specified compartment, or by the specified compartment and
+    file system snapshot policy.
 
     ## Example Usage
 
@@ -225,6 +245,7 @@ def get_file_systems_output(availability_domain: Optional[pulumi.Input[str]] = N
     test_file_systems = oci.FileStorage.get_file_systems(availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        filesystem_snapshot_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         parent_file_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         source_snapshot_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
@@ -235,6 +256,7 @@ def get_file_systems_output(availability_domain: Optional[pulumi.Input[str]] = N
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+    :param str filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
     :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
     :param str parent_file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
     :param str source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).

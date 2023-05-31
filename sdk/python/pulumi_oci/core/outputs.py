@@ -67,6 +67,7 @@ __all__ = [
     'InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails',
     'InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails',
     'InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy',
+    'InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas',
     'InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails',
     'InstanceConfigurationInstanceDetailsLaunchDetails',
     'InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig',
@@ -298,6 +299,7 @@ __all__ = [
     'GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailResult',
     'GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult',
     'GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyResult',
+    'GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaResult',
     'GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailResult',
     'GetInstanceConfigurationInstanceDetailLaunchDetailResult',
     'GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigResult',
@@ -320,6 +322,7 @@ __all__ = [
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeAttachDetailResult',
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult',
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyResult',
+    'GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaResult',
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailResult',
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailResult',
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigResult',
@@ -3706,7 +3709,7 @@ class InstanceAvailabilityConfig(dict):
                  is_live_migration_preferred: Optional[bool] = None,
                  recovery_action: Optional[str] = None):
         """
-        :param bool is_live_migration_preferred: (Updatable) Whether live migration is preferred for infrastructure maintenance.  If null preference is specified, live migration will be preferred for infrastructure maintenance for applicable instances.
+        :param bool is_live_migration_preferred: (Updatable) Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: (Updatable) The lifecycle state for an instance when it is recovered after infrastructure maintenance.
         """
         if is_live_migration_preferred is not None:
@@ -3718,7 +3721,7 @@ class InstanceAvailabilityConfig(dict):
     @pulumi.getter(name="isLiveMigrationPreferred")
     def is_live_migration_preferred(self) -> Optional[bool]:
         """
-        (Updatable) Whether live migration is preferred for infrastructure maintenance.  If null preference is specified, live migration will be preferred for infrastructure maintenance for applicable instances.
+        (Updatable) Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         """
         return pulumi.get(self, "is_live_migration_preferred")
 
@@ -4002,6 +4005,8 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
             suggest = "availability_domain"
         elif key == "backupPolicyId":
             suggest = "backup_policy_id"
+        elif key == "blockVolumeReplicas":
+            suggest = "block_volume_replicas"
         elif key == "compartmentId":
             suggest = "compartment_id"
         elif key == "definedTags":
@@ -4010,6 +4015,8 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
             suggest = "display_name"
         elif key == "freeformTags":
             suggest = "freeform_tags"
+        elif key == "isAutoTuneEnabled":
+            suggest = "is_auto_tune_enabled"
         elif key == "kmsKeyId":
             suggest = "kms_key_id"
         elif key == "sizeInGbs":
@@ -4034,10 +4041,12 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
                  autotune_policies: Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy']] = None,
                  availability_domain: Optional[str] = None,
                  backup_policy_id: Optional[str] = None,
+                 block_volume_replicas: Optional['outputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas'] = None,
                  compartment_id: Optional[str] = None,
                  defined_tags: Optional[Mapping[str, Any]] = None,
                  display_name: Optional[str] = None,
                  freeform_tags: Optional[Mapping[str, Any]] = None,
+                 is_auto_tune_enabled: Optional[bool] = None,
                  kms_key_id: Optional[str] = None,
                  size_in_gbs: Optional[str] = None,
                  source_details: Optional['outputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails'] = None,
@@ -4046,11 +4055,13 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
         :param Sequence['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs'] autotune_policies: The list of autotune policies enabled for this volume.
         :param str availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param str backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
+        :param 'InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs' block_volume_replicas: The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
         :param str compartment_id: The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
+        :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         :param str size_in_gbs: The size of the volume in GBs.
         :param str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
                
@@ -4062,6 +4073,8 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
             pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_policy_id is not None:
             pulumi.set(__self__, "backup_policy_id", backup_policy_id)
+        if block_volume_replicas is not None:
+            pulumi.set(__self__, "block_volume_replicas", block_volume_replicas)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -4070,6 +4083,8 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_auto_tune_enabled is not None:
+            pulumi.set(__self__, "is_auto_tune_enabled", is_auto_tune_enabled)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if size_in_gbs is not None:
@@ -4104,6 +4119,14 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
         return pulumi.get(self, "backup_policy_id")
 
     @property
+    @pulumi.getter(name="blockVolumeReplicas")
+    def block_volume_replicas(self) -> Optional['outputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas']:
+        """
+        The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
+        """
+        return pulumi.get(self, "block_volume_replicas")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
@@ -4136,10 +4159,18 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="isAutoTuneEnabled")
+    def is_auto_tune_enabled(self) -> Optional[bool]:
+        """
+        Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        """
+        return pulumi.get(self, "is_auto_tune_enabled")
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[str]:
         """
-        The OCID of the Vault service key to assign as the master encryption key for the volume.
+        The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         """
         return pulumi.get(self, "kms_key_id")
 
@@ -4214,6 +4245,55 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy
         This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
         """
         return pulumi.get(self, "max_vpus_per_gb")
+
+
+@pulumi.output_type
+class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "availabilityDomain":
+            suggest = "availability_domain"
+        elif key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 availability_domain: str,
+                 display_name: Optional[str] = None):
+        """
+        :param str availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
 
 
 @pulumi.output_type
@@ -4869,7 +4949,9 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfig(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "recoveryAction":
+        if key == "isLiveMigrationPreferred":
+            suggest = "is_live_migration_preferred"
+        elif key == "recoveryAction":
             suggest = "recovery_action"
 
         if suggest:
@@ -4884,12 +4966,24 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfig(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 is_live_migration_preferred: Optional[bool] = None,
                  recovery_action: Optional[str] = None):
         """
+        :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
         """
+        if is_live_migration_preferred is not None:
+            pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         if recovery_action is not None:
             pulumi.set(__self__, "recovery_action", recovery_action)
+
+    @property
+    @pulumi.getter(name="isLiveMigrationPreferred")
+    def is_live_migration_preferred(self) -> Optional[bool]:
+        """
+        Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+        """
+        return pulumi.get(self, "is_live_migration_preferred")
 
     @property
     @pulumi.getter(name="recoveryAction")
@@ -5558,6 +5652,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails(dict):
             suggest = "boot_volume_vpus_per_gb"
         elif key == "imageId":
             suggest = "image_id"
+        elif key == "kmsKeyId":
+            suggest = "kms_key_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails. Access the value via the '{suggest}' property getter instead.")
@@ -5575,7 +5671,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails(dict):
                  boot_volume_id: Optional[str] = None,
                  boot_volume_size_in_gbs: Optional[str] = None,
                  boot_volume_vpus_per_gb: Optional[str] = None,
-                 image_id: Optional[str] = None):
+                 image_id: Optional[str] = None,
+                 kms_key_id: Optional[str] = None):
         """
         :param str source_type: The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         :param str boot_volume_id: The OCID of the boot volume used to boot the instance.
@@ -5584,6 +5681,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails(dict):
                
                Allowed values:
         :param str image_id: The OCID of the image used to boot the instance.
+        :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         """
         pulumi.set(__self__, "source_type", source_type)
         if boot_volume_id is not None:
@@ -5594,6 +5692,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails(dict):
             pulumi.set(__self__, "boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
         if image_id is not None:
             pulumi.set(__self__, "image_id", image_id)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter(name="sourceType")
@@ -5636,6 +5736,14 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails(dict):
         The OCID of the image used to boot the instance.
         """
         return pulumi.get(self, "image_id")
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> Optional[str]:
+        """
+        The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        """
+        return pulumi.get(self, "kms_key_id")
 
 
 @pulumi.output_type
@@ -18794,7 +18902,7 @@ class GetInstanceAvailabilityConfigResult(dict):
                  is_live_migration_preferred: bool,
                  recovery_action: str):
         """
-        :param bool is_live_migration_preferred: Whether live migration is preferred for infrastructure maintenance.  If null preference is specified, live migration will be preferred for infrastructure maintenance for applicable instances.
+        :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
         """
         pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
@@ -18804,7 +18912,7 @@ class GetInstanceAvailabilityConfigResult(dict):
     @pulumi.getter(name="isLiveMigrationPreferred")
     def is_live_migration_preferred(self) -> bool:
         """
-        Whether live migration is preferred for infrastructure maintenance.  If null preference is specified, live migration will be preferred for infrastructure maintenance for applicable instances.
+        Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         """
         return pulumi.get(self, "is_live_migration_preferred")
 
@@ -18998,10 +19106,12 @@ class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult(dict):
                  autotune_policies: Sequence['outputs.GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyResult'],
                  availability_domain: str,
                  backup_policy_id: str,
+                 block_volume_replicas: Sequence['outputs.GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaResult'],
                  compartment_id: str,
                  defined_tags: Mapping[str, Any],
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
+                 is_auto_tune_enabled: bool,
                  kms_key_id: str,
                  size_in_gbs: str,
                  source_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailResult'],
@@ -19010,21 +19120,25 @@ class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult(dict):
         :param Sequence['GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArgs'] autotune_policies: The list of autotune policies enabled for this volume.
         :param str availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param str backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
+        :param Sequence['GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArgs'] block_volume_replicas: The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
         :param str compartment_id: The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
+        :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         :param str size_in_gbs: The size of the volume in GBs.
         :param str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         """
         pulumi.set(__self__, "autotune_policies", autotune_policies)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "backup_policy_id", backup_policy_id)
+        pulumi.set(__self__, "block_volume_replicas", block_volume_replicas)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "is_auto_tune_enabled", is_auto_tune_enabled)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "size_in_gbs", size_in_gbs)
         pulumi.set(__self__, "source_details", source_details)
@@ -19053,6 +19167,14 @@ class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult(dict):
         If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
         """
         return pulumi.get(self, "backup_policy_id")
+
+    @property
+    @pulumi.getter(name="blockVolumeReplicas")
+    def block_volume_replicas(self) -> Sequence['outputs.GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaResult']:
+        """
+        The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
+        """
+        return pulumi.get(self, "block_volume_replicas")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -19087,10 +19209,18 @@ class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult(dict):
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="isAutoTuneEnabled")
+    def is_auto_tune_enabled(self) -> bool:
+        """
+        Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        """
+        return pulumi.get(self, "is_auto_tune_enabled")
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> str:
         """
-        The OCID of the Vault service key to assign as the master encryption key for the volume.
+        The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         """
         return pulumi.get(self, "kms_key_id")
 
@@ -19143,6 +19273,35 @@ class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolic
         This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
         """
         return pulumi.get(self, "max_vpus_per_gb")
+
+
+@pulumi.output_type
+class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: str,
+                 display_name: str):
+        """
+        :param str availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
 
 
 @pulumi.output_type
@@ -19524,11 +19683,22 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig
 @pulumi.output_type
 class GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigResult(dict):
     def __init__(__self__, *,
+                 is_live_migration_preferred: bool,
                  recovery_action: str):
         """
+        :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
         """
+        pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         pulumi.set(__self__, "recovery_action", recovery_action)
+
+    @property
+    @pulumi.getter(name="isLiveMigrationPreferred")
+    def is_live_migration_preferred(self) -> bool:
+        """
+        Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+        """
+        return pulumi.get(self, "is_live_migration_preferred")
 
     @property
     @pulumi.getter(name="recoveryAction")
@@ -19980,18 +20150,21 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailResult(dict)
                  boot_volume_size_in_gbs: str,
                  boot_volume_vpus_per_gb: str,
                  image_id: str,
+                 kms_key_id: str,
                  source_type: str):
         """
         :param str boot_volume_id: The OCID of the boot volume used to boot the instance.
         :param str boot_volume_size_in_gbs: The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
         :param str boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         :param str image_id: The OCID of the image used to boot the instance.
+        :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         :param str source_type: The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         """
         pulumi.set(__self__, "boot_volume_id", boot_volume_id)
         pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
         pulumi.set(__self__, "boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
         pulumi.set(__self__, "image_id", image_id)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "source_type", source_type)
 
     @property
@@ -20025,6 +20198,14 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailResult(dict)
         The OCID of the image used to boot the instance.
         """
         return pulumi.get(self, "image_id")
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> str:
+        """
+        The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        """
+        return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="sourceType")
@@ -20511,10 +20692,12 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCre
                  autotune_policies: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyResult'],
                  availability_domain: str,
                  backup_policy_id: str,
+                 block_volume_replicas: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaResult'],
                  compartment_id: str,
                  defined_tags: Mapping[str, Any],
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
+                 is_auto_tune_enabled: bool,
                  kms_key_id: str,
                  size_in_gbs: str,
                  source_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailResult'],
@@ -20523,21 +20706,25 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCre
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArgs'] autotune_policies: The list of autotune policies enabled for this volume.
         :param str availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param str backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
+        :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArgs'] block_volume_replicas: The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
+        :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         :param str size_in_gbs: The size of the volume in GBs.
         :param str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         """
         pulumi.set(__self__, "autotune_policies", autotune_policies)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "backup_policy_id", backup_policy_id)
+        pulumi.set(__self__, "block_volume_replicas", block_volume_replicas)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "is_auto_tune_enabled", is_auto_tune_enabled)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "size_in_gbs", size_in_gbs)
         pulumi.set(__self__, "source_details", source_details)
@@ -20566,6 +20753,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCre
         If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
         """
         return pulumi.get(self, "backup_policy_id")
+
+    @property
+    @pulumi.getter(name="blockVolumeReplicas")
+    def block_volume_replicas(self) -> Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaResult']:
+        """
+        The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
+        """
+        return pulumi.get(self, "block_volume_replicas")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -20600,10 +20795,18 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCre
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="isAutoTuneEnabled")
+    def is_auto_tune_enabled(self) -> bool:
+        """
+        Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        """
+        return pulumi.get(self, "is_auto_tune_enabled")
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> str:
         """
-        The OCID of the Vault service key to assign as the master encryption key for the volume.
+        The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         """
         return pulumi.get(self, "kms_key_id")
 
@@ -20656,6 +20859,35 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCre
         This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
         """
         return pulumi.get(self, "max_vpus_per_gb")
+
+
+@pulumi.output_type
+class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: str,
+                 display_name: str):
+        """
+        :param str availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
 
 
 @pulumi.output_type
@@ -21037,11 +21269,22 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAg
 @pulumi.output_type
 class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigResult(dict):
     def __init__(__self__, *,
+                 is_live_migration_preferred: bool,
                  recovery_action: str):
         """
+        :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
         """
+        pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         pulumi.set(__self__, "recovery_action", recovery_action)
+
+    @property
+    @pulumi.getter(name="isLiveMigrationPreferred")
+    def is_live_migration_preferred(self) -> bool:
+        """
+        Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+        """
+        return pulumi.get(self, "is_live_migration_preferred")
 
     @property
     @pulumi.getter(name="recoveryAction")
@@ -21493,18 +21736,21 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSo
                  boot_volume_size_in_gbs: str,
                  boot_volume_vpus_per_gb: str,
                  image_id: str,
+                 kms_key_id: str,
                  source_type: str):
         """
         :param str boot_volume_id: The OCID of the boot volume used to boot the instance.
         :param str boot_volume_size_in_gbs: The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
         :param str boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         :param str image_id: The OCID of the image used to boot the instance.
+        :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         :param str source_type: The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         """
         pulumi.set(__self__, "boot_volume_id", boot_volume_id)
         pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
         pulumi.set(__self__, "boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
         pulumi.set(__self__, "image_id", image_id)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "source_type", source_type)
 
     @property
@@ -21538,6 +21784,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSo
         The OCID of the image used to boot the instance.
         """
         return pulumi.get(self, "image_id")
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> str:
+        """
+        The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        """
+        return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="sourceType")
@@ -23867,7 +24121,7 @@ class GetInstancesInstanceAvailabilityConfigResult(dict):
                  is_live_migration_preferred: bool,
                  recovery_action: str):
         """
-        :param bool is_live_migration_preferred: Whether live migration is preferred for infrastructure maintenance.  If null preference is specified, live migration will be preferred for infrastructure maintenance for applicable instances.
+        :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
         """
         pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
@@ -23877,7 +24131,7 @@ class GetInstancesInstanceAvailabilityConfigResult(dict):
     @pulumi.getter(name="isLiveMigrationPreferred")
     def is_live_migration_preferred(self) -> bool:
         """
-        Whether live migration is preferred for infrastructure maintenance.  If null preference is specified, live migration will be preferred for infrastructure maintenance for applicable instances.
+        Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         """
         return pulumi.get(self, "is_live_migration_preferred")
 
@@ -29667,7 +29921,7 @@ class GetShapesShapeResult(dict):
         :param int gpus: The number of GPUs available for this shape.
         :param bool is_billed_for_stopped_instance: Whether billing continues when the instances that use this shape are in the stopped state.
         :param bool is_flexible: Whether the shape supports creating flexible instances. A [flexible shape](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible) is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
-        :param bool is_live_migration_supported: Whether Live Migration is currently supported for this shape.
+        :param bool is_live_migration_supported: Whether live migration is supported for this shape.
         :param bool is_subcore: Whether the shape supports creating subcore or burstable instances. A [burstable instance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/burstable-instances.htm) is a virtual machine (VM) instance that provides a baseline level of CPU performance with the ability to burst to a higher level to support occasional spikes in usage.
         :param str local_disk_description: A short description of the local disks available for this shape.
         :param int local_disks: The number of local disks available for this shape.
@@ -29773,7 +30027,7 @@ class GetShapesShapeResult(dict):
     @pulumi.getter(name="isLiveMigrationSupported")
     def is_live_migration_supported(self) -> bool:
         """
-        Whether Live Migration is currently supported for this shape.
+        Whether live migration is supported for this shape.
         """
         return pulumi.get(self, "is_live_migration_supported")
 

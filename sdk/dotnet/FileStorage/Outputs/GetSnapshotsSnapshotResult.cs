@@ -18,9 +18,17 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
+        /// The time when this snapshot will be deleted.
+        /// </summary>
+        public readonly string ExpirationTime;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
         /// </summary>
         public readonly string FileSystemId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
+        /// </summary>
+        public readonly string FilesystemSnapshotPolicyId;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
@@ -69,7 +77,11 @@ namespace Pulumi.Oci.FileStorage.Outputs
         private GetSnapshotsSnapshotResult(
             ImmutableDictionary<string, object> definedTags,
 
+            string expirationTime,
+
             string fileSystemId,
+
+            string filesystemSnapshotPolicyId,
 
             ImmutableDictionary<string, object> freeformTags,
 
@@ -92,7 +104,9 @@ namespace Pulumi.Oci.FileStorage.Outputs
             string timeCreated)
         {
             DefinedTags = definedTags;
+            ExpirationTime = expirationTime;
             FileSystemId = fileSystemId;
+            FilesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             FreeformTags = freeformTags;
             Id = id;
             IsCloneSource = isCloneSource;

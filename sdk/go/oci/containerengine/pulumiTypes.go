@@ -11789,13 +11789,13 @@ type GetNodePoolsNodePool struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID of the compute instance backing this node.
+	// The OCID of the node pool.
 	Id string `pulumi:"id"`
 	// A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
 	InitialNodeLabels []GetNodePoolsNodePoolInitialNodeLabel `pulumi:"initialNodeLabels"`
-	// The version of Kubernetes this node is running.
+	// The version of Kubernetes running on the nodes in the node pool.
 	KubernetesVersion string `pulumi:"kubernetesVersion"`
-	// Details about the state of the node.
+	// Details about the state of the nodepool.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The name to filter on.
 	Name string `pulumi:"name"`
@@ -11815,8 +11815,7 @@ type GetNodePoolsNodePool struct {
 	NodeMetadata map[string]interface{} `pulumi:"nodeMetadata"`
 	// Node Pool Cycling Details
 	NodePoolCyclingDetails []GetNodePoolsNodePoolNodePoolCyclingDetail `pulumi:"nodePoolCyclingDetails"`
-	// The OCID of the node pool to which this node belongs.
-	NodePoolId string `pulumi:"nodePoolId"`
+	NodePoolId             string                                      `pulumi:"nodePoolId"`
 	// The name of the node shape of the nodes in the node pool.
 	NodeShape string `pulumi:"nodeShape"`
 	// The shape configuration of the nodes.
@@ -11825,8 +11824,7 @@ type GetNodePoolsNodePool struct {
 	NodeSourceDetails []GetNodePoolsNodePoolNodeSourceDetail `pulumi:"nodeSourceDetails"`
 	// Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
 	NodeSources []GetNodePoolsNodePoolNodeSource `pulumi:"nodeSources"`
-	// The nodes in the node pool.
-	Nodes []GetNodePoolsNodePoolNode `pulumi:"nodes"`
+	Nodes       []GetNodePoolsNodePoolNode       `pulumi:"nodes"`
 	// The number of nodes in each subnet.
 	QuantityPerSubnet int `pulumi:"quantityPerSubnet"`
 	// The SSH public key on each node in the node pool on launch.
@@ -11857,13 +11855,13 @@ type GetNodePoolsNodePoolArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// The OCID of the compute instance backing this node.
+	// The OCID of the node pool.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
 	InitialNodeLabels GetNodePoolsNodePoolInitialNodeLabelArrayInput `pulumi:"initialNodeLabels"`
-	// The version of Kubernetes this node is running.
+	// The version of Kubernetes running on the nodes in the node pool.
 	KubernetesVersion pulumi.StringInput `pulumi:"kubernetesVersion"`
-	// Details about the state of the node.
+	// Details about the state of the nodepool.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The name to filter on.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -11883,8 +11881,7 @@ type GetNodePoolsNodePoolArgs struct {
 	NodeMetadata pulumi.MapInput `pulumi:"nodeMetadata"`
 	// Node Pool Cycling Details
 	NodePoolCyclingDetails GetNodePoolsNodePoolNodePoolCyclingDetailArrayInput `pulumi:"nodePoolCyclingDetails"`
-	// The OCID of the node pool to which this node belongs.
-	NodePoolId pulumi.StringInput `pulumi:"nodePoolId"`
+	NodePoolId             pulumi.StringInput                                  `pulumi:"nodePoolId"`
 	// The name of the node shape of the nodes in the node pool.
 	NodeShape pulumi.StringInput `pulumi:"nodeShape"`
 	// The shape configuration of the nodes.
@@ -11893,8 +11890,7 @@ type GetNodePoolsNodePoolArgs struct {
 	NodeSourceDetails GetNodePoolsNodePoolNodeSourceDetailArrayInput `pulumi:"nodeSourceDetails"`
 	// Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
 	NodeSources GetNodePoolsNodePoolNodeSourceArrayInput `pulumi:"nodeSources"`
-	// The nodes in the node pool.
-	Nodes GetNodePoolsNodePoolNodeArrayInput `pulumi:"nodes"`
+	Nodes       GetNodePoolsNodePoolNodeArrayInput       `pulumi:"nodes"`
 	// The number of nodes in each subnet.
 	QuantityPerSubnet pulumi.IntInput `pulumi:"quantityPerSubnet"`
 	// The SSH public key on each node in the node pool on launch.
@@ -11976,7 +11972,7 @@ func (o GetNodePoolsNodePoolOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePool) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The OCID of the compute instance backing this node.
+// The OCID of the node pool.
 func (o GetNodePoolsNodePoolOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -11986,12 +11982,12 @@ func (o GetNodePoolsNodePoolOutput) InitialNodeLabels() GetNodePoolsNodePoolInit
 	return o.ApplyT(func(v GetNodePoolsNodePool) []GetNodePoolsNodePoolInitialNodeLabel { return v.InitialNodeLabels }).(GetNodePoolsNodePoolInitialNodeLabelArrayOutput)
 }
 
-// The version of Kubernetes this node is running.
+// The version of Kubernetes running on the nodes in the node pool.
 func (o GetNodePoolsNodePoolOutput) KubernetesVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.KubernetesVersion }).(pulumi.StringOutput)
 }
 
-// Details about the state of the node.
+// Details about the state of the nodepool.
 func (o GetNodePoolsNodePoolOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
@@ -12039,7 +12035,6 @@ func (o GetNodePoolsNodePoolOutput) NodePoolCyclingDetails() GetNodePoolsNodePoo
 	}).(GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput)
 }
 
-// The OCID of the node pool to which this node belongs.
 func (o GetNodePoolsNodePoolOutput) NodePoolId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.NodePoolId }).(pulumi.StringOutput)
 }
@@ -12064,7 +12059,6 @@ func (o GetNodePoolsNodePoolOutput) NodeSources() GetNodePoolsNodePoolNodeSource
 	return o.ApplyT(func(v GetNodePoolsNodePool) []GetNodePoolsNodePoolNodeSource { return v.NodeSources }).(GetNodePoolsNodePoolNodeSourceArrayOutput)
 }
 
-// The nodes in the node pool.
 func (o GetNodePoolsNodePoolOutput) Nodes() GetNodePoolsNodePoolNodeArrayOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePool) []GetNodePoolsNodePoolNode { return v.Nodes }).(GetNodePoolsNodePoolNodeArrayOutput)
 }
@@ -12216,33 +12210,28 @@ func (o GetNodePoolsNodePoolInitialNodeLabelArrayOutput) Index(i pulumi.IntInput
 }
 
 type GetNodePoolsNodePoolNode struct {
-	// The name of the availability domain in which this node is placed.
+	// The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// An error that may be associated with the node.
-	Errors []GetNodePoolsNodePoolNodeError `pulumi:"errors"`
-	// The fault domain of this node.
-	FaultDomain string `pulumi:"faultDomain"`
+	DefinedTags map[string]interface{}          `pulumi:"definedTags"`
+	Errors      []GetNodePoolsNodePoolNodeError `pulumi:"errors"`
+	FaultDomain string                          `pulumi:"faultDomain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID of the compute instance backing this node.
+	// The OCID of the node pool.
 	Id string `pulumi:"id"`
-	// The version of Kubernetes this node is running.
+	// The version of Kubernetes running on the nodes in the node pool.
 	KubernetesVersion string `pulumi:"kubernetesVersion"`
-	// Details about the state of the node.
+	// Details about the state of the nodepool.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The name to filter on.
-	Name string `pulumi:"name"`
-	// The OCID of the node pool to which this node belongs.
+	Name       string `pulumi:"name"`
 	NodePoolId string `pulumi:"nodePoolId"`
-	// The private IP address of this node.
-	PrivateIp string `pulumi:"privateIp"`
-	// The public IP address of this node.
-	PublicIp string `pulumi:"publicIp"`
+	PrivateIp  string `pulumi:"privateIp"`
+	PublicIp   string `pulumi:"publicIp"`
 	// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
 	State string `pulumi:"state"`
-	// The OCID of the subnet in which this node is placed.
+	// The OCID of the subnet in which to place nodes.
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -12258,33 +12247,28 @@ type GetNodePoolsNodePoolNodeInput interface {
 }
 
 type GetNodePoolsNodePoolNodeArgs struct {
-	// The name of the availability domain in which this node is placed.
+	// The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// An error that may be associated with the node.
-	Errors GetNodePoolsNodePoolNodeErrorArrayInput `pulumi:"errors"`
-	// The fault domain of this node.
-	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
+	DefinedTags pulumi.MapInput                         `pulumi:"definedTags"`
+	Errors      GetNodePoolsNodePoolNodeErrorArrayInput `pulumi:"errors"`
+	FaultDomain pulumi.StringInput                      `pulumi:"faultDomain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// The OCID of the compute instance backing this node.
+	// The OCID of the node pool.
 	Id pulumi.StringInput `pulumi:"id"`
-	// The version of Kubernetes this node is running.
+	// The version of Kubernetes running on the nodes in the node pool.
 	KubernetesVersion pulumi.StringInput `pulumi:"kubernetesVersion"`
-	// Details about the state of the node.
+	// Details about the state of the nodepool.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The name to filter on.
-	Name pulumi.StringInput `pulumi:"name"`
-	// The OCID of the node pool to which this node belongs.
+	Name       pulumi.StringInput `pulumi:"name"`
 	NodePoolId pulumi.StringInput `pulumi:"nodePoolId"`
-	// The private IP address of this node.
-	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
-	// The public IP address of this node.
-	PublicIp pulumi.StringInput `pulumi:"publicIp"`
+	PrivateIp  pulumi.StringInput `pulumi:"privateIp"`
+	PublicIp   pulumi.StringInput `pulumi:"publicIp"`
 	// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
 	State pulumi.StringInput `pulumi:"state"`
-	// The OCID of the subnet in which this node is placed.
+	// The OCID of the subnet in which to place nodes.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -12339,7 +12323,7 @@ func (o GetNodePoolsNodePoolNodeOutput) ToGetNodePoolsNodePoolNodeOutputWithCont
 	return o
 }
 
-// The name of the availability domain in which this node is placed.
+// The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
 func (o GetNodePoolsNodePoolNodeOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
@@ -12349,12 +12333,10 @@ func (o GetNodePoolsNodePoolNodeOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNode) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// An error that may be associated with the node.
 func (o GetNodePoolsNodePoolNodeOutput) Errors() GetNodePoolsNodePoolNodeErrorArrayOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNode) []GetNodePoolsNodePoolNodeError { return v.Errors }).(GetNodePoolsNodePoolNodeErrorArrayOutput)
 }
 
-// The fault domain of this node.
 func (o GetNodePoolsNodePoolNodeOutput) FaultDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.FaultDomain }).(pulumi.StringOutput)
 }
@@ -12364,17 +12346,17 @@ func (o GetNodePoolsNodePoolNodeOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNode) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The OCID of the compute instance backing this node.
+// The OCID of the node pool.
 func (o GetNodePoolsNodePoolNodeOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The version of Kubernetes this node is running.
+// The version of Kubernetes running on the nodes in the node pool.
 func (o GetNodePoolsNodePoolNodeOutput) KubernetesVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.KubernetesVersion }).(pulumi.StringOutput)
 }
 
-// Details about the state of the node.
+// Details about the state of the nodepool.
 func (o GetNodePoolsNodePoolNodeOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
@@ -12384,17 +12366,14 @@ func (o GetNodePoolsNodePoolNodeOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// The OCID of the node pool to which this node belongs.
 func (o GetNodePoolsNodePoolNodeOutput) NodePoolId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.NodePoolId }).(pulumi.StringOutput)
 }
 
-// The private IP address of this node.
 func (o GetNodePoolsNodePoolNodeOutput) PrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.PrivateIp }).(pulumi.StringOutput)
 }
 
-// The public IP address of this node.
 func (o GetNodePoolsNodePoolNodeOutput) PublicIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.PublicIp }).(pulumi.StringOutput)
 }
@@ -12404,7 +12383,7 @@ func (o GetNodePoolsNodePoolNodeOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The OCID of the subnet in which this node is placed.
+// The OCID of the subnet in which to place nodes.
 func (o GetNodePoolsNodePoolNodeOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -12724,7 +12703,7 @@ func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayO
 }
 
 type GetNodePoolsNodePoolNodeConfigDetailPlacementConfig struct {
-	// The name of the availability domain in which this node is placed.
+	// The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The OCID of the compute capacity reservation in which to place the compute instance.
 	CapacityReservationId string `pulumi:"capacityReservationId"`
@@ -12732,7 +12711,7 @@ type GetNodePoolsNodePoolNodeConfigDetailPlacementConfig struct {
 	FaultDomains []string `pulumi:"faultDomains"`
 	// Configuration options for preemptible nodes.
 	PreemptibleNodeConfigs []GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig `pulumi:"preemptibleNodeConfigs"`
-	// The OCID of the subnet in which this node is placed.
+	// The OCID of the subnet in which to place nodes.
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -12748,7 +12727,7 @@ type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigInput interface {
 }
 
 type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArgs struct {
-	// The name of the availability domain in which this node is placed.
+	// The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// The OCID of the compute capacity reservation in which to place the compute instance.
 	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
@@ -12756,7 +12735,7 @@ type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArgs struct {
 	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
 	// Configuration options for preemptible nodes.
 	PreemptibleNodeConfigs GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput `pulumi:"preemptibleNodeConfigs"`
-	// The OCID of the subnet in which this node is placed.
+	// The OCID of the subnet in which to place nodes.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -12811,7 +12790,7 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) ToGetNodePool
 	return o
 }
 
-// The name of the availability domain in which this node is placed.
+// The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
 func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfig) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
@@ -12833,7 +12812,7 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) PreemptibleNo
 	}).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput)
 }
 
-// The OCID of the subnet in which this node is placed.
+// The OCID of the subnet in which to place nodes.
 func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfig) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -13068,12 +13047,9 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig
 }
 
 type GetNodePoolsNodePoolNodeError struct {
-	// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-	Code string `pulumi:"code"`
-	// A human-readable error string of the upstream error.
+	Code    string `pulumi:"code"`
 	Message string `pulumi:"message"`
-	// The status of the HTTP response encountered in the upstream error.
-	Status string `pulumi:"status"`
+	Status  string `pulumi:"status"`
 }
 
 // GetNodePoolsNodePoolNodeErrorInput is an input type that accepts GetNodePoolsNodePoolNodeErrorArgs and GetNodePoolsNodePoolNodeErrorOutput values.
@@ -13088,12 +13064,9 @@ type GetNodePoolsNodePoolNodeErrorInput interface {
 }
 
 type GetNodePoolsNodePoolNodeErrorArgs struct {
-	// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-	Code pulumi.StringInput `pulumi:"code"`
-	// A human-readable error string of the upstream error.
+	Code    pulumi.StringInput `pulumi:"code"`
 	Message pulumi.StringInput `pulumi:"message"`
-	// The status of the HTTP response encountered in the upstream error.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status  pulumi.StringInput `pulumi:"status"`
 }
 
 func (GetNodePoolsNodePoolNodeErrorArgs) ElementType() reflect.Type {
@@ -13147,17 +13120,14 @@ func (o GetNodePoolsNodePoolNodeErrorOutput) ToGetNodePoolsNodePoolNodeErrorOutp
 	return o
 }
 
-// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
 func (o GetNodePoolsNodePoolNodeErrorOutput) Code() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNodeError) string { return v.Code }).(pulumi.StringOutput)
 }
 
-// A human-readable error string of the upstream error.
 func (o GetNodePoolsNodePoolNodeErrorOutput) Message() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNodeError) string { return v.Message }).(pulumi.StringOutput)
 }
 
-// The status of the HTTP response encountered in the upstream error.
 func (o GetNodePoolsNodePoolNodeErrorOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNodeError) string { return v.Status }).(pulumi.StringOutput)
 }

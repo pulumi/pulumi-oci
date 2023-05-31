@@ -30,6 +30,10 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
+        /// </summary>
+        public readonly string FilesystemSnapshotPolicyId;
+        /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
@@ -92,6 +96,8 @@ namespace Pulumi.Oci.FileStorage.Outputs
 
             string displayName,
 
+            string filesystemSnapshotPolicyId,
+
             ImmutableDictionary<string, object> freeformTags,
 
             string id,
@@ -122,6 +128,7 @@ namespace Pulumi.Oci.FileStorage.Outputs
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;
+            FilesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             FreeformTags = freeformTags;
             Id = id;
             IsCloneParent = isCloneParent;

@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolsNodePoolNodeConfigDetailPlacementConfig {
     /**
-     * @return The name of the availability domain in which this node is placed.
+     * @return The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
      * 
      */
     private String availabilityDomain;
@@ -32,14 +32,14 @@ public final class GetNodePoolsNodePoolNodeConfigDetailPlacementConfig {
      */
     private List<GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig> preemptibleNodeConfigs;
     /**
-     * @return The OCID of the subnet in which this node is placed.
+     * @return The OCID of the subnet in which to place nodes.
      * 
      */
     private String subnetId;
 
     private GetNodePoolsNodePoolNodeConfigDetailPlacementConfig() {}
     /**
-     * @return The name of the availability domain in which this node is placed.
+     * @return The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
      * 
      */
     public String availabilityDomain() {
@@ -67,7 +67,7 @@ public final class GetNodePoolsNodePoolNodeConfigDetailPlacementConfig {
         return this.preemptibleNodeConfigs;
     }
     /**
-     * @return The OCID of the subnet in which this node is placed.
+     * @return The OCID of the subnet in which to place nodes.
      * 
      */
     public String subnetId() {

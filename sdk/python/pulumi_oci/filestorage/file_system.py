@@ -20,6 +20,7 @@ class FileSystemArgs:
                  compartment_id: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 filesystem_snapshot_policy_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  source_snapshot_id: Optional[pulumi.Input[str]] = None):
@@ -29,6 +30,9 @@ class FileSystemArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
+        :param pulumi.Input[str] filesystem_snapshot_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+               
+               May be unset as a blank value.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
         :param pulumi.Input[str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm). 
@@ -43,6 +47,8 @@ class FileSystemArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if filesystem_snapshot_policy_id is not None:
+            pulumi.set(__self__, "filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if kms_key_id is not None:
@@ -99,6 +105,20 @@ class FileSystemArgs:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="filesystemSnapshotPolicyId")
+    def filesystem_snapshot_policy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+
+        May be unset as a blank value.
+        """
+        return pulumi.get(self, "filesystem_snapshot_policy_id")
+
+    @filesystem_snapshot_policy_id.setter
+    def filesystem_snapshot_policy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "filesystem_snapshot_policy_id", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -146,6 +166,7 @@ class _FileSystemState:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 filesystem_snapshot_policy_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_clone_parent: Optional[pulumi.Input[bool]] = None,
                  is_hydrated: Optional[pulumi.Input[bool]] = None,
@@ -164,6 +185,9 @@ class _FileSystemState:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
+        :param pulumi.Input[str] filesystem_snapshot_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+               
+               May be unset as a blank value.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_clone_parent: Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         :param pulumi.Input[bool] is_hydrated: Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
@@ -189,6 +213,8 @@ class _FileSystemState:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if filesystem_snapshot_policy_id is not None:
+            pulumi.set(__self__, "filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_clone_parent is not None:
@@ -261,6 +287,20 @@ class _FileSystemState:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="filesystemSnapshotPolicyId")
+    def filesystem_snapshot_policy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+
+        May be unset as a blank value.
+        """
+        return pulumi.get(self, "filesystem_snapshot_policy_id")
+
+    @filesystem_snapshot_policy_id.setter
+    def filesystem_snapshot_policy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "filesystem_snapshot_policy_id", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -420,6 +460,7 @@ class FileSystem(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 filesystem_snapshot_policy_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  source_snapshot_id: Optional[pulumi.Input[str]] = None,
@@ -470,6 +511,7 @@ class FileSystem(pulumi.CustomResource):
                 "Operations.CostCenter": "42",
             },
             display_name=var["file_system_display_name"],
+            filesystem_snapshot_policy_id=oci_file_storage_filesystem_snapshot_policy["test_filesystem_snapshot_policy"]["id"],
             freeform_tags={
                 "Department": "Finance",
             },
@@ -491,6 +533,9 @@ class FileSystem(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
+        :param pulumi.Input[str] filesystem_snapshot_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+               
+               May be unset as a blank value.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
         :param pulumi.Input[str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm). 
@@ -551,6 +596,7 @@ class FileSystem(pulumi.CustomResource):
                 "Operations.CostCenter": "42",
             },
             display_name=var["file_system_display_name"],
+            filesystem_snapshot_policy_id=oci_file_storage_filesystem_snapshot_policy["test_filesystem_snapshot_policy"]["id"],
             freeform_tags={
                 "Department": "Finance",
             },
@@ -585,6 +631,7 @@ class FileSystem(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 filesystem_snapshot_policy_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  source_snapshot_id: Optional[pulumi.Input[str]] = None,
@@ -605,6 +652,7 @@ class FileSystem(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["filesystem_snapshot_policy_id"] = filesystem_snapshot_policy_id
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["kms_key_id"] = kms_key_id
             __props__.__dict__["source_snapshot_id"] = source_snapshot_id
@@ -631,6 +679,7 @@ class FileSystem(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            filesystem_snapshot_policy_id: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_clone_parent: Optional[pulumi.Input[bool]] = None,
             is_hydrated: Optional[pulumi.Input[bool]] = None,
@@ -654,6 +703,9 @@ class FileSystem(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
+        :param pulumi.Input[str] filesystem_snapshot_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+               
+               May be unset as a blank value.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_clone_parent: Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         :param pulumi.Input[bool] is_hydrated: Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
@@ -679,6 +731,7 @@ class FileSystem(pulumi.CustomResource):
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["filesystem_snapshot_policy_id"] = filesystem_snapshot_policy_id
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_clone_parent"] = is_clone_parent
         __props__.__dict__["is_hydrated"] = is_hydrated
@@ -724,6 +777,16 @@ class FileSystem(pulumi.CustomResource):
         (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="filesystemSnapshotPolicyId")
+    def filesystem_snapshot_policy_id(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+
+        May be unset as a blank value.
+        """
+        return pulumi.get(self, "filesystem_snapshot_policy_id")
 
     @property
     @pulumi.getter(name="freeformTags")

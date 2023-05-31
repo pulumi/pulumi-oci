@@ -79,7 +79,7 @@ class GetNodePoolsResult:
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        The name of the node.
+        The name of the node pool.
         """
         return pulumi.get(self, "name")
 

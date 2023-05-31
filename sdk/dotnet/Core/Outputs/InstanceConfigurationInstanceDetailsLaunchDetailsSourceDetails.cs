@@ -32,6 +32,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? ImageId;
         /// <summary>
+        /// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        /// </summary>
+        public readonly string? KmsKeyId;
+        /// <summary>
         /// The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         /// </summary>
         public readonly string SourceType;
@@ -46,12 +50,15 @@ namespace Pulumi.Oci.Core.Outputs
 
             string? imageId,
 
+            string? kmsKeyId,
+
             string sourceType)
         {
             BootVolumeId = bootVolumeId;
             BootVolumeSizeInGbs = bootVolumeSizeInGbs;
             BootVolumeVpusPerGb = bootVolumeVpusPerGb;
             ImageId = imageId;
+            KmsKeyId = kmsKeyId;
             SourceType = sourceType;
         }
     }

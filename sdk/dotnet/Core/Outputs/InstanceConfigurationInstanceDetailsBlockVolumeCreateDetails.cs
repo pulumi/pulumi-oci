@@ -26,6 +26,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? BackupPolicyId;
         /// <summary>
+        /// The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
+        /// </summary>
+        public readonly Outputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas? BlockVolumeReplicas;
+        /// <summary>
         /// The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
         /// </summary>
         public readonly string? CompartmentId;
@@ -42,7 +46,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
-        /// The OCID of the Vault service key to assign as the master encryption key for the volume.
+        /// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        /// </summary>
+        public readonly bool? IsAutoTuneEnabled;
+        /// <summary>
+        /// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         /// </summary>
         public readonly string? KmsKeyId;
         /// <summary>
@@ -65,6 +73,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string? backupPolicyId,
 
+            Outputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas? blockVolumeReplicas,
+
             string? compartmentId,
 
             ImmutableDictionary<string, object>? definedTags,
@@ -72,6 +82,8 @@ namespace Pulumi.Oci.Core.Outputs
             string? displayName,
 
             ImmutableDictionary<string, object>? freeformTags,
+
+            bool? isAutoTuneEnabled,
 
             string? kmsKeyId,
 
@@ -84,10 +96,12 @@ namespace Pulumi.Oci.Core.Outputs
             AutotunePolicies = autotunePolicies;
             AvailabilityDomain = availabilityDomain;
             BackupPolicyId = backupPolicyId;
+            BlockVolumeReplicas = blockVolumeReplicas;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;
+            IsAutoTuneEnabled = isAutoTuneEnabled;
             KmsKeyId = kmsKeyId;
             SizeInGbs = sizeInGbs;
             SourceDetails = sourceDetails;

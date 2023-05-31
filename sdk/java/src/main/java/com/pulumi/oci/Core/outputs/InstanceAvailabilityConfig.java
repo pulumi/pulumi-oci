@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceAvailabilityConfig {
     /**
-     * @return (Updatable) Whether live migration is preferred for infrastructure maintenance.  If null preference is specified, live migration will be preferred for infrastructure maintenance for applicable instances.
+     * @return (Updatable) Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
      * 
      */
     private @Nullable Boolean isLiveMigrationPreferred;
@@ -25,7 +25,7 @@ public final class InstanceAvailabilityConfig {
 
     private InstanceAvailabilityConfig() {}
     /**
-     * @return (Updatable) Whether live migration is preferred for infrastructure maintenance.  If null preference is specified, live migration will be preferred for infrastructure maintenance for applicable instances.
+     * @return (Updatable) Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
      * 
      */
     public Optional<Boolean> isLiveMigrationPreferred() {

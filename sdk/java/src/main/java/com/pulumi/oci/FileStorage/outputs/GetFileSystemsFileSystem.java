@@ -35,6 +35,11 @@ public final class GetFileSystemsFileSystem {
      */
     private String displayName;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
+     * 
+     */
+    private String filesystemSnapshotPolicyId;
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -128,6 +133,13 @@ public final class GetFileSystemsFileSystem {
      */
     public String displayName() {
         return this.displayName;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
+     * 
+     */
+    public String filesystemSnapshotPolicyId() {
+        return this.filesystemSnapshotPolicyId;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -234,6 +246,7 @@ public final class GetFileSystemsFileSystem {
         private String compartmentId;
         private Map<String,Object> definedTags;
         private String displayName;
+        private String filesystemSnapshotPolicyId;
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isCloneParent;
@@ -254,6 +267,7 @@ public final class GetFileSystemsFileSystem {
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.filesystemSnapshotPolicyId = defaults.filesystemSnapshotPolicyId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isCloneParent = defaults.isCloneParent;
@@ -287,6 +301,11 @@ public final class GetFileSystemsFileSystem {
         @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder filesystemSnapshotPolicyId(String filesystemSnapshotPolicyId) {
+            this.filesystemSnapshotPolicyId = Objects.requireNonNull(filesystemSnapshotPolicyId);
             return this;
         }
         @CustomType.Setter
@@ -363,6 +382,7 @@ public final class GetFileSystemsFileSystem {
             o.compartmentId = compartmentId;
             o.definedTags = definedTags;
             o.displayName = displayName;
+            o.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             o.freeformTags = freeformTags;
             o.id = id;
             o.isCloneParent = isCloneParent;

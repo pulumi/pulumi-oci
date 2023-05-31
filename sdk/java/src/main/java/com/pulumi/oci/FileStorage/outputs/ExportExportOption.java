@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ExportExportOption {
     /**
-     * @return (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+     * @return (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
      * 
      */
     private @Nullable String access;
@@ -47,7 +47,7 @@ public final class ExportExportOption {
 
     private ExportExportOption() {}
     /**
-     * @return (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+     * @return (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
      * 
      */
     public Optional<String> access() {

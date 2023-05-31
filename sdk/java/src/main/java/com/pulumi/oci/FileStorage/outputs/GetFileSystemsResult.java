@@ -34,6 +34,11 @@ public final class GetFileSystemsResult {
      * 
      */
     private List<GetFileSystemsFileSystem> fileSystems;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+     * 
+     */
+    private @Nullable String filesystemSnapshotPolicyId;
     private @Nullable List<GetFileSystemsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
@@ -85,6 +90,13 @@ public final class GetFileSystemsResult {
     public List<GetFileSystemsFileSystem> fileSystems() {
         return this.fileSystems;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+     * 
+     */
+    public Optional<String> filesystemSnapshotPolicyId() {
+        return Optional.ofNullable(this.filesystemSnapshotPolicyId);
+    }
     public List<GetFileSystemsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -130,6 +142,7 @@ public final class GetFileSystemsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private List<GetFileSystemsFileSystem> fileSystems;
+        private @Nullable String filesystemSnapshotPolicyId;
         private @Nullable List<GetFileSystemsFilter> filters;
         private @Nullable String id;
         private @Nullable String parentFileSystemId;
@@ -142,6 +155,7 @@ public final class GetFileSystemsResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.displayName = defaults.displayName;
     	      this.fileSystems = defaults.fileSystems;
+    	      this.filesystemSnapshotPolicyId = defaults.filesystemSnapshotPolicyId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.parentFileSystemId = defaults.parentFileSystemId;
@@ -171,6 +185,11 @@ public final class GetFileSystemsResult {
         }
         public Builder fileSystems(GetFileSystemsFileSystem... fileSystems) {
             return fileSystems(List.of(fileSystems));
+        }
+        @CustomType.Setter
+        public Builder filesystemSnapshotPolicyId(@Nullable String filesystemSnapshotPolicyId) {
+            this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
+            return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetFileSystemsFilter> filters) {
@@ -206,6 +225,7 @@ public final class GetFileSystemsResult {
             o.compartmentId = compartmentId;
             o.displayName = displayName;
             o.fileSystems = fileSystems;
+            o.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             o.filters = filters;
             o.id = id;
             o.parentFileSystemId = parentFileSystemId;

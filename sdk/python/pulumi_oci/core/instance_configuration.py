@@ -361,6 +361,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                         )],
                         availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         backup_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        block_volume_replicas=oci.core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs(
+                            availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        ),
                         compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         defined_tags={
                             "Operations.CostCenter": "42",
@@ -369,6 +373,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                         freeform_tags={
                             "Department": "Finance",
                         },
+                        is_auto_tune_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         kms_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         size_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         source_details=oci.core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgs(
@@ -390,6 +395,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                         )],
                     ),
                     availability_config=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs(
+                        is_live_migration_preferred=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         recovery_action=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     ),
                     availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
@@ -469,6 +475,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                         boot_volume_size_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         boot_volume_vpus_per_gb=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         image_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        kms_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     ),
                 ),
                 secondary_vnics=[oci.core.InstanceConfigurationInstanceDetailsSecondaryVnicArgs(
@@ -567,6 +574,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                         )],
                         availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         backup_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        block_volume_replicas=oci.core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs(
+                            availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        ),
                         compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         defined_tags={
                             "Operations.CostCenter": "42",
@@ -575,6 +586,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                         freeform_tags={
                             "Department": "Finance",
                         },
+                        is_auto_tune_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         kms_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         size_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         source_details=oci.core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgs(
@@ -596,6 +608,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                         )],
                     ),
                     availability_config=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs(
+                        is_live_migration_preferred=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         recovery_action=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     ),
                     availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
@@ -675,6 +688,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                         boot_volume_size_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         boot_volume_vpus_per_gb=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         image_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        kms_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                     ),
                 ),
                 secondary_vnics=[oci.core.InstanceConfigurationInstanceDetailsSecondaryVnicArgs(

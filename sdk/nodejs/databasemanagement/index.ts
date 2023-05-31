@@ -50,6 +50,21 @@ export type ExternalDbSystemDiscovery = import("./externalDbSystemDiscovery").Ex
 export const ExternalDbSystemDiscovery: typeof import("./externalDbSystemDiscovery").ExternalDbSystemDiscovery = null as any;
 utilities.lazyLoad(exports, ["ExternalDbSystemDiscovery"], () => require("./externalDbSystemDiscovery"));
 
+export { ExternalExadataInfrastructureArgs, ExternalExadataInfrastructureState } from "./externalExadataInfrastructure";
+export type ExternalExadataInfrastructure = import("./externalExadataInfrastructure").ExternalExadataInfrastructure;
+export const ExternalExadataInfrastructure: typeof import("./externalExadataInfrastructure").ExternalExadataInfrastructure = null as any;
+utilities.lazyLoad(exports, ["ExternalExadataInfrastructure"], () => require("./externalExadataInfrastructure"));
+
+export { ExternalExadataInfrastructureExadataManagementArgs, ExternalExadataInfrastructureExadataManagementState } from "./externalExadataInfrastructureExadataManagement";
+export type ExternalExadataInfrastructureExadataManagement = import("./externalExadataInfrastructureExadataManagement").ExternalExadataInfrastructureExadataManagement;
+export const ExternalExadataInfrastructureExadataManagement: typeof import("./externalExadataInfrastructureExadataManagement").ExternalExadataInfrastructureExadataManagement = null as any;
+utilities.lazyLoad(exports, ["ExternalExadataInfrastructureExadataManagement"], () => require("./externalExadataInfrastructureExadataManagement"));
+
+export { ExternalExadataStorageConnectorArgs, ExternalExadataStorageConnectorState } from "./externalExadataStorageConnector";
+export type ExternalExadataStorageConnector = import("./externalExadataStorageConnector").ExternalExadataStorageConnector;
+export const ExternalExadataStorageConnector: typeof import("./externalExadataStorageConnector").ExternalExadataStorageConnector = null as any;
+utilities.lazyLoad(exports, ["ExternalExadataStorageConnector"], () => require("./externalExadataStorageConnector"));
+
 export { ExternalListenerArgs, ExternalListenerState } from "./externalListener";
 export type ExternalListener = import("./externalListener").ExternalListener;
 export const ExternalListener: typeof import("./externalListener").ExternalListener = null as any;
@@ -184,6 +199,56 @@ export { GetExternalDbSystemsArgs, GetExternalDbSystemsResult, GetExternalDbSyst
 export const getExternalDbSystems: typeof import("./getExternalDbSystems").getExternalDbSystems = null as any;
 export const getExternalDbSystemsOutput: typeof import("./getExternalDbSystems").getExternalDbSystemsOutput = null as any;
 utilities.lazyLoad(exports, ["getExternalDbSystems","getExternalDbSystemsOutput"], () => require("./getExternalDbSystems"));
+
+export { GetExternalExadataInfrastructureArgs, GetExternalExadataInfrastructureResult, GetExternalExadataInfrastructureOutputArgs } from "./getExternalExadataInfrastructure";
+export const getExternalExadataInfrastructure: typeof import("./getExternalExadataInfrastructure").getExternalExadataInfrastructure = null as any;
+export const getExternalExadataInfrastructureOutput: typeof import("./getExternalExadataInfrastructure").getExternalExadataInfrastructureOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalExadataInfrastructure","getExternalExadataInfrastructureOutput"], () => require("./getExternalExadataInfrastructure"));
+
+export { GetExternalExadataInfrastructuresArgs, GetExternalExadataInfrastructuresResult, GetExternalExadataInfrastructuresOutputArgs } from "./getExternalExadataInfrastructures";
+export const getExternalExadataInfrastructures: typeof import("./getExternalExadataInfrastructures").getExternalExadataInfrastructures = null as any;
+export const getExternalExadataInfrastructuresOutput: typeof import("./getExternalExadataInfrastructures").getExternalExadataInfrastructuresOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalExadataInfrastructures","getExternalExadataInfrastructuresOutput"], () => require("./getExternalExadataInfrastructures"));
+
+export { GetExternalExadataStorageConnectorArgs, GetExternalExadataStorageConnectorResult, GetExternalExadataStorageConnectorOutputArgs } from "./getExternalExadataStorageConnector";
+export const getExternalExadataStorageConnector: typeof import("./getExternalExadataStorageConnector").getExternalExadataStorageConnector = null as any;
+export const getExternalExadataStorageConnectorOutput: typeof import("./getExternalExadataStorageConnector").getExternalExadataStorageConnectorOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalExadataStorageConnector","getExternalExadataStorageConnectorOutput"], () => require("./getExternalExadataStorageConnector"));
+
+export { GetExternalExadataStorageConnectorsArgs, GetExternalExadataStorageConnectorsResult, GetExternalExadataStorageConnectorsOutputArgs } from "./getExternalExadataStorageConnectors";
+export const getExternalExadataStorageConnectors: typeof import("./getExternalExadataStorageConnectors").getExternalExadataStorageConnectors = null as any;
+export const getExternalExadataStorageConnectorsOutput: typeof import("./getExternalExadataStorageConnectors").getExternalExadataStorageConnectorsOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalExadataStorageConnectors","getExternalExadataStorageConnectorsOutput"], () => require("./getExternalExadataStorageConnectors"));
+
+export { GetExternalExadataStorageGridArgs, GetExternalExadataStorageGridResult, GetExternalExadataStorageGridOutputArgs } from "./getExternalExadataStorageGrid";
+export const getExternalExadataStorageGrid: typeof import("./getExternalExadataStorageGrid").getExternalExadataStorageGrid = null as any;
+export const getExternalExadataStorageGridOutput: typeof import("./getExternalExadataStorageGrid").getExternalExadataStorageGridOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalExadataStorageGrid","getExternalExadataStorageGridOutput"], () => require("./getExternalExadataStorageGrid"));
+
+export { GetExternalExadataStorageServerArgs, GetExternalExadataStorageServerResult, GetExternalExadataStorageServerOutputArgs } from "./getExternalExadataStorageServer";
+export const getExternalExadataStorageServer: typeof import("./getExternalExadataStorageServer").getExternalExadataStorageServer = null as any;
+export const getExternalExadataStorageServerOutput: typeof import("./getExternalExadataStorageServer").getExternalExadataStorageServerOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalExadataStorageServer","getExternalExadataStorageServerOutput"], () => require("./getExternalExadataStorageServer"));
+
+export { GetExternalExadataStorageServerIormPlanArgs, GetExternalExadataStorageServerIormPlanResult, GetExternalExadataStorageServerIormPlanOutputArgs } from "./getExternalExadataStorageServerIormPlan";
+export const getExternalExadataStorageServerIormPlan: typeof import("./getExternalExadataStorageServerIormPlan").getExternalExadataStorageServerIormPlan = null as any;
+export const getExternalExadataStorageServerIormPlanOutput: typeof import("./getExternalExadataStorageServerIormPlan").getExternalExadataStorageServerIormPlanOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalExadataStorageServerIormPlan","getExternalExadataStorageServerIormPlanOutput"], () => require("./getExternalExadataStorageServerIormPlan"));
+
+export { GetExternalExadataStorageServerOpenAlertHistoryArgs, GetExternalExadataStorageServerOpenAlertHistoryResult, GetExternalExadataStorageServerOpenAlertHistoryOutputArgs } from "./getExternalExadataStorageServerOpenAlertHistory";
+export const getExternalExadataStorageServerOpenAlertHistory: typeof import("./getExternalExadataStorageServerOpenAlertHistory").getExternalExadataStorageServerOpenAlertHistory = null as any;
+export const getExternalExadataStorageServerOpenAlertHistoryOutput: typeof import("./getExternalExadataStorageServerOpenAlertHistory").getExternalExadataStorageServerOpenAlertHistoryOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalExadataStorageServerOpenAlertHistory","getExternalExadataStorageServerOpenAlertHistoryOutput"], () => require("./getExternalExadataStorageServerOpenAlertHistory"));
+
+export { GetExternalExadataStorageServerTopSqlCpuActivityArgs, GetExternalExadataStorageServerTopSqlCpuActivityResult, GetExternalExadataStorageServerTopSqlCpuActivityOutputArgs } from "./getExternalExadataStorageServerTopSqlCpuActivity";
+export const getExternalExadataStorageServerTopSqlCpuActivity: typeof import("./getExternalExadataStorageServerTopSqlCpuActivity").getExternalExadataStorageServerTopSqlCpuActivity = null as any;
+export const getExternalExadataStorageServerTopSqlCpuActivityOutput: typeof import("./getExternalExadataStorageServerTopSqlCpuActivity").getExternalExadataStorageServerTopSqlCpuActivityOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalExadataStorageServerTopSqlCpuActivity","getExternalExadataStorageServerTopSqlCpuActivityOutput"], () => require("./getExternalExadataStorageServerTopSqlCpuActivity"));
+
+export { GetExternalExadataStorageServersArgs, GetExternalExadataStorageServersResult, GetExternalExadataStorageServersOutputArgs } from "./getExternalExadataStorageServers";
+export const getExternalExadataStorageServers: typeof import("./getExternalExadataStorageServers").getExternalExadataStorageServers = null as any;
+export const getExternalExadataStorageServersOutput: typeof import("./getExternalExadataStorageServers").getExternalExadataStorageServersOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalExadataStorageServers","getExternalExadataStorageServersOutput"], () => require("./getExternalExadataStorageServers"));
 
 export { GetExternalListenerArgs, GetExternalListenerResult, GetExternalListenerOutputArgs } from "./getExternalListener";
 export const getExternalListener: typeof import("./getExternalListener").getExternalListener = null as any;
@@ -488,6 +553,12 @@ const _module = {
                 return new ExternalDbSystemDatabaseManagementsManagement(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery":
                 return new ExternalDbSystemDiscovery(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalExadataInfrastructure:ExternalExadataInfrastructure":
+                return new ExternalExadataInfrastructure(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalExadataInfrastructureExadataManagement:ExternalExadataInfrastructureExadataManagement":
+                return new ExternalExadataInfrastructureExadataManagement(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector":
+                return new ExternalExadataStorageConnector(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/externalListener:ExternalListener":
                 return new ExternalListener(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup":
@@ -510,6 +581,9 @@ pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalDbSyste
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalDbSystemConnector", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalDbSystemDatabaseManagementsManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalDbSystemDiscovery", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalExadataInfrastructure", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalExadataInfrastructureExadataManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalExadataStorageConnector", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalListener", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/managedDatabaseGroup", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/managedDatabasesChangeDatabaseParameter", _module)

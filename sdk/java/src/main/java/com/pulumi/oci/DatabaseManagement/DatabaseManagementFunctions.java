@@ -59,6 +59,26 @@ import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemDiscoveryPlai
 import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemsArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetExternalDbSystemsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataInfrastructureArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataInfrastructurePlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataInfrastructuresArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataInfrastructuresPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageConnectorArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageConnectorPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageConnectorsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageConnectorsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageGridArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageGridPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerIormPlanArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerIormPlanPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerOpenAlertHistoryArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerOpenAlertHistoryPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerTopSqlCpuActivityArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerTopSqlCpuActivityPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServersArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServersPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenerArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenerPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetExternalListenerServicesArgs;
@@ -191,6 +211,16 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesR
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveryResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataInfrastructureResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataInfrastructuresResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageConnectorResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageConnectorsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageGridResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageServerIormPlanResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageServerOpenAlertHistoryResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageServerResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageServerTopSqlCpuActivityResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageServersResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalListenerResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalListenerServicesResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalListenersResult;
@@ -5055,6 +5085,1590 @@ public final class DatabaseManagementFunctions {
      */
     public static CompletableFuture<GetExternalDbSystemsResult> getExternalDbSystemsPlain(GetExternalDbSystemsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalDbSystems:getExternalDbSystems", TypeShape.of(GetExternalDbSystemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata infrastructure specified by externalExadataInfrastructureId. It includes the DB systems and storage grid within the
+     * Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataInfrastructure = DatabaseManagementFunctions.getExternalExadataInfrastructure(GetExternalExadataInfrastructureArgs.builder()
+     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalExadataInfrastructureResult> getExternalExadataInfrastructure(GetExternalExadataInfrastructureArgs args) {
+        return getExternalExadataInfrastructure(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata infrastructure specified by externalExadataInfrastructureId. It includes the DB systems and storage grid within the
+     * Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataInfrastructure = DatabaseManagementFunctions.getExternalExadataInfrastructure(GetExternalExadataInfrastructureArgs.builder()
+     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalExadataInfrastructureResult> getExternalExadataInfrastructurePlain(GetExternalExadataInfrastructurePlainArgs args) {
+        return getExternalExadataInfrastructurePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata infrastructure specified by externalExadataInfrastructureId. It includes the DB systems and storage grid within the
+     * Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataInfrastructure = DatabaseManagementFunctions.getExternalExadataInfrastructure(GetExternalExadataInfrastructureArgs.builder()
+     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalExadataInfrastructureResult> getExternalExadataInfrastructure(GetExternalExadataInfrastructureArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataInfrastructure:getExternalExadataInfrastructure", TypeShape.of(GetExternalExadataInfrastructureResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata infrastructure specified by externalExadataInfrastructureId. It includes the DB systems and storage grid within the
+     * Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataInfrastructure = DatabaseManagementFunctions.getExternalExadataInfrastructure(GetExternalExadataInfrastructureArgs.builder()
+     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalExadataInfrastructureResult> getExternalExadataInfrastructurePlain(GetExternalExadataInfrastructurePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalExadataInfrastructure:getExternalExadataInfrastructure", TypeShape.of(GetExternalExadataInfrastructureResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Exadata Infrastructures in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata infrastructure resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataInfrastructures = DatabaseManagementFunctions.getExternalExadataInfrastructures(GetExternalExadataInfrastructuresArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_exadata_infrastructure_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalExadataInfrastructuresResult> getExternalExadataInfrastructures(GetExternalExadataInfrastructuresArgs args) {
+        return getExternalExadataInfrastructures(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Exadata Infrastructures in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata infrastructure resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataInfrastructures = DatabaseManagementFunctions.getExternalExadataInfrastructures(GetExternalExadataInfrastructuresArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_exadata_infrastructure_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalExadataInfrastructuresResult> getExternalExadataInfrastructuresPlain(GetExternalExadataInfrastructuresPlainArgs args) {
+        return getExternalExadataInfrastructuresPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Exadata Infrastructures in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata infrastructure resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataInfrastructures = DatabaseManagementFunctions.getExternalExadataInfrastructures(GetExternalExadataInfrastructuresArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_exadata_infrastructure_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalExadataInfrastructuresResult> getExternalExadataInfrastructures(GetExternalExadataInfrastructuresArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataInfrastructures:getExternalExadataInfrastructures", TypeShape.of(GetExternalExadataInfrastructuresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Exadata Infrastructures in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata infrastructure resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataInfrastructures = DatabaseManagementFunctions.getExternalExadataInfrastructures(GetExternalExadataInfrastructuresArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_exadata_infrastructure_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalExadataInfrastructuresResult> getExternalExadataInfrastructuresPlain(GetExternalExadataInfrastructuresPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalExadataInfrastructures:getExternalExadataInfrastructures", TypeShape.of(GetExternalExadataInfrastructuresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata storage server connector specified by exadataStorageConnectorId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageConnector = DatabaseManagementFunctions.getExternalExadataStorageConnector(GetExternalExadataStorageConnectorArgs.builder()
+     *             .externalExadataStorageConnectorId(oci_database_management_external_exadata_storage_connector.test_external_exadata_storage_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalExadataStorageConnectorResult> getExternalExadataStorageConnector(GetExternalExadataStorageConnectorArgs args) {
+        return getExternalExadataStorageConnector(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata storage server connector specified by exadataStorageConnectorId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageConnector = DatabaseManagementFunctions.getExternalExadataStorageConnector(GetExternalExadataStorageConnectorArgs.builder()
+     *             .externalExadataStorageConnectorId(oci_database_management_external_exadata_storage_connector.test_external_exadata_storage_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalExadataStorageConnectorResult> getExternalExadataStorageConnectorPlain(GetExternalExadataStorageConnectorPlainArgs args) {
+        return getExternalExadataStorageConnectorPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata storage server connector specified by exadataStorageConnectorId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageConnector = DatabaseManagementFunctions.getExternalExadataStorageConnector(GetExternalExadataStorageConnectorArgs.builder()
+     *             .externalExadataStorageConnectorId(oci_database_management_external_exadata_storage_connector.test_external_exadata_storage_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalExadataStorageConnectorResult> getExternalExadataStorageConnector(GetExternalExadataStorageConnectorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataStorageConnector:getExternalExadataStorageConnector", TypeShape.of(GetExternalExadataStorageConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata storage server connector specified by exadataStorageConnectorId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageConnector = DatabaseManagementFunctions.getExternalExadataStorageConnector(GetExternalExadataStorageConnectorArgs.builder()
+     *             .externalExadataStorageConnectorId(oci_database_management_external_exadata_storage_connector.test_external_exadata_storage_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalExadataStorageConnectorResult> getExternalExadataStorageConnectorPlain(GetExternalExadataStorageConnectorPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalExadataStorageConnector:getExternalExadataStorageConnector", TypeShape.of(GetExternalExadataStorageConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Exadata Storage Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata storage server connectors for the specified Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageConnectors = DatabaseManagementFunctions.getExternalExadataStorageConnectors(GetExternalExadataStorageConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
+     *             .displayName(var_.external_exadata_storage_connector_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalExadataStorageConnectorsResult> getExternalExadataStorageConnectors(GetExternalExadataStorageConnectorsArgs args) {
+        return getExternalExadataStorageConnectors(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Exadata Storage Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata storage server connectors for the specified Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageConnectors = DatabaseManagementFunctions.getExternalExadataStorageConnectors(GetExternalExadataStorageConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
+     *             .displayName(var_.external_exadata_storage_connector_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalExadataStorageConnectorsResult> getExternalExadataStorageConnectorsPlain(GetExternalExadataStorageConnectorsPlainArgs args) {
+        return getExternalExadataStorageConnectorsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Exadata Storage Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata storage server connectors for the specified Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageConnectors = DatabaseManagementFunctions.getExternalExadataStorageConnectors(GetExternalExadataStorageConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
+     *             .displayName(var_.external_exadata_storage_connector_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalExadataStorageConnectorsResult> getExternalExadataStorageConnectors(GetExternalExadataStorageConnectorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataStorageConnectors:getExternalExadataStorageConnectors", TypeShape.of(GetExternalExadataStorageConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Exadata Storage Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata storage server connectors for the specified Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageConnectors = DatabaseManagementFunctions.getExternalExadataStorageConnectors(GetExternalExadataStorageConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
+     *             .displayName(var_.external_exadata_storage_connector_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalExadataStorageConnectorsResult> getExternalExadataStorageConnectorsPlain(GetExternalExadataStorageConnectorsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalExadataStorageConnectors:getExternalExadataStorageConnectors", TypeShape.of(GetExternalExadataStorageConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata storage server grid specified by exadataStorageGridId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageGridArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageGrid = DatabaseManagementFunctions.getExternalExadataStorageGrid(GetExternalExadataStorageGridArgs.builder()
+     *             .externalExadataStorageGridId(oci_database_management_external_exadata_storage_grid.test_external_exadata_storage_grid().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalExadataStorageGridResult> getExternalExadataStorageGrid(GetExternalExadataStorageGridArgs args) {
+        return getExternalExadataStorageGrid(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata storage server grid specified by exadataStorageGridId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageGridArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageGrid = DatabaseManagementFunctions.getExternalExadataStorageGrid(GetExternalExadataStorageGridArgs.builder()
+     *             .externalExadataStorageGridId(oci_database_management_external_exadata_storage_grid.test_external_exadata_storage_grid().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalExadataStorageGridResult> getExternalExadataStorageGridPlain(GetExternalExadataStorageGridPlainArgs args) {
+        return getExternalExadataStorageGridPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata storage server grid specified by exadataStorageGridId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageGridArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageGrid = DatabaseManagementFunctions.getExternalExadataStorageGrid(GetExternalExadataStorageGridArgs.builder()
+     *             .externalExadataStorageGridId(oci_database_management_external_exadata_storage_grid.test_external_exadata_storage_grid().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalExadataStorageGridResult> getExternalExadataStorageGrid(GetExternalExadataStorageGridArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataStorageGrid:getExternalExadataStorageGrid", TypeShape.of(GetExternalExadataStorageGridResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata storage server grid specified by exadataStorageGridId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageGridArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageGrid = DatabaseManagementFunctions.getExternalExadataStorageGrid(GetExternalExadataStorageGridArgs.builder()
+     *             .externalExadataStorageGridId(oci_database_management_external_exadata_storage_grid.test_external_exadata_storage_grid().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalExadataStorageGridResult> getExternalExadataStorageGridPlain(GetExternalExadataStorageGridPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalExadataStorageGrid:getExternalExadataStorageGrid", TypeShape.of(GetExternalExadataStorageGridResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the summary for the Exadata storage server specified by exadataStorageServerId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServer = DatabaseManagementFunctions.getExternalExadataStorageServer(GetExternalExadataStorageServerArgs.builder()
+     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalExadataStorageServerResult> getExternalExadataStorageServer(GetExternalExadataStorageServerArgs args) {
+        return getExternalExadataStorageServer(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the summary for the Exadata storage server specified by exadataStorageServerId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServer = DatabaseManagementFunctions.getExternalExadataStorageServer(GetExternalExadataStorageServerArgs.builder()
+     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalExadataStorageServerResult> getExternalExadataStorageServerPlain(GetExternalExadataStorageServerPlainArgs args) {
+        return getExternalExadataStorageServerPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the summary for the Exadata storage server specified by exadataStorageServerId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServer = DatabaseManagementFunctions.getExternalExadataStorageServer(GetExternalExadataStorageServerArgs.builder()
+     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalExadataStorageServerResult> getExternalExadataStorageServer(GetExternalExadataStorageServerArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataStorageServer:getExternalExadataStorageServer", TypeShape.of(GetExternalExadataStorageServerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the summary for the Exadata storage server specified by exadataStorageServerId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServer = DatabaseManagementFunctions.getExternalExadataStorageServer(GetExternalExadataStorageServerArgs.builder()
+     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalExadataStorageServerResult> getExternalExadataStorageServerPlain(GetExternalExadataStorageServerPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalExadataStorageServer:getExternalExadataStorageServer", TypeShape.of(GetExternalExadataStorageServerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Server Iorm Plan resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the IORM plan from the specific Exadata storage server.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerIormPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServerIormPlan = DatabaseManagementFunctions.getExternalExadataStorageServerIormPlan(GetExternalExadataStorageServerIormPlanArgs.builder()
+     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalExadataStorageServerIormPlanResult> getExternalExadataStorageServerIormPlan(GetExternalExadataStorageServerIormPlanArgs args) {
+        return getExternalExadataStorageServerIormPlan(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Server Iorm Plan resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the IORM plan from the specific Exadata storage server.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerIormPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServerIormPlan = DatabaseManagementFunctions.getExternalExadataStorageServerIormPlan(GetExternalExadataStorageServerIormPlanArgs.builder()
+     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalExadataStorageServerIormPlanResult> getExternalExadataStorageServerIormPlanPlain(GetExternalExadataStorageServerIormPlanPlainArgs args) {
+        return getExternalExadataStorageServerIormPlanPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Server Iorm Plan resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the IORM plan from the specific Exadata storage server.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerIormPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServerIormPlan = DatabaseManagementFunctions.getExternalExadataStorageServerIormPlan(GetExternalExadataStorageServerIormPlanArgs.builder()
+     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalExadataStorageServerIormPlanResult> getExternalExadataStorageServerIormPlan(GetExternalExadataStorageServerIormPlanArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataStorageServerIormPlan:getExternalExadataStorageServerIormPlan", TypeShape.of(GetExternalExadataStorageServerIormPlanResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Server Iorm Plan resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the IORM plan from the specific Exadata storage server.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerIormPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServerIormPlan = DatabaseManagementFunctions.getExternalExadataStorageServerIormPlan(GetExternalExadataStorageServerIormPlanArgs.builder()
+     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalExadataStorageServerIormPlanResult> getExternalExadataStorageServerIormPlanPlain(GetExternalExadataStorageServerIormPlanPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalExadataStorageServerIormPlan:getExternalExadataStorageServerIormPlan", TypeShape.of(GetExternalExadataStorageServerIormPlanResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Server Open Alert History resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the open alerts from the specified Exadata storage server.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerOpenAlertHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getExternalExadataStorageServerOpenAlertHistory(GetExternalExadataStorageServerOpenAlertHistoryArgs.builder()
+     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalExadataStorageServerOpenAlertHistoryResult> getExternalExadataStorageServerOpenAlertHistory(GetExternalExadataStorageServerOpenAlertHistoryArgs args) {
+        return getExternalExadataStorageServerOpenAlertHistory(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Server Open Alert History resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the open alerts from the specified Exadata storage server.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerOpenAlertHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getExternalExadataStorageServerOpenAlertHistory(GetExternalExadataStorageServerOpenAlertHistoryArgs.builder()
+     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalExadataStorageServerOpenAlertHistoryResult> getExternalExadataStorageServerOpenAlertHistoryPlain(GetExternalExadataStorageServerOpenAlertHistoryPlainArgs args) {
+        return getExternalExadataStorageServerOpenAlertHistoryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Server Open Alert History resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the open alerts from the specified Exadata storage server.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerOpenAlertHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getExternalExadataStorageServerOpenAlertHistory(GetExternalExadataStorageServerOpenAlertHistoryArgs.builder()
+     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalExadataStorageServerOpenAlertHistoryResult> getExternalExadataStorageServerOpenAlertHistory(GetExternalExadataStorageServerOpenAlertHistoryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataStorageServerOpenAlertHistory:getExternalExadataStorageServerOpenAlertHistory", TypeShape.of(GetExternalExadataStorageServerOpenAlertHistoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Server Open Alert History resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the open alerts from the specified Exadata storage server.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerOpenAlertHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getExternalExadataStorageServerOpenAlertHistory(GetExternalExadataStorageServerOpenAlertHistoryArgs.builder()
+     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalExadataStorageServerOpenAlertHistoryResult> getExternalExadataStorageServerOpenAlertHistoryPlain(GetExternalExadataStorageServerOpenAlertHistoryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalExadataStorageServerOpenAlertHistory:getExternalExadataStorageServerOpenAlertHistory", TypeShape.of(GetExternalExadataStorageServerOpenAlertHistoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Server Top Sql Cpu Activity resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the SQL IDs with the top CPU activity from the Exadata storage server.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerTopSqlCpuActivityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServerTopSqlCpuActivity = DatabaseManagementFunctions.getExternalExadataStorageServerTopSqlCpuActivity(GetExternalExadataStorageServerTopSqlCpuActivityArgs.builder()
+     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalExadataStorageServerTopSqlCpuActivityResult> getExternalExadataStorageServerTopSqlCpuActivity(GetExternalExadataStorageServerTopSqlCpuActivityArgs args) {
+        return getExternalExadataStorageServerTopSqlCpuActivity(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Server Top Sql Cpu Activity resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the SQL IDs with the top CPU activity from the Exadata storage server.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerTopSqlCpuActivityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServerTopSqlCpuActivity = DatabaseManagementFunctions.getExternalExadataStorageServerTopSqlCpuActivity(GetExternalExadataStorageServerTopSqlCpuActivityArgs.builder()
+     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalExadataStorageServerTopSqlCpuActivityResult> getExternalExadataStorageServerTopSqlCpuActivityPlain(GetExternalExadataStorageServerTopSqlCpuActivityPlainArgs args) {
+        return getExternalExadataStorageServerTopSqlCpuActivityPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Server Top Sql Cpu Activity resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the SQL IDs with the top CPU activity from the Exadata storage server.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerTopSqlCpuActivityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServerTopSqlCpuActivity = DatabaseManagementFunctions.getExternalExadataStorageServerTopSqlCpuActivity(GetExternalExadataStorageServerTopSqlCpuActivityArgs.builder()
+     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalExadataStorageServerTopSqlCpuActivityResult> getExternalExadataStorageServerTopSqlCpuActivity(GetExternalExadataStorageServerTopSqlCpuActivityArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataStorageServerTopSqlCpuActivity:getExternalExadataStorageServerTopSqlCpuActivity", TypeShape.of(GetExternalExadataStorageServerTopSqlCpuActivityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific External Exadata Storage Server Top Sql Cpu Activity resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the SQL IDs with the top CPU activity from the Exadata storage server.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServerTopSqlCpuActivityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServerTopSqlCpuActivity = DatabaseManagementFunctions.getExternalExadataStorageServerTopSqlCpuActivity(GetExternalExadataStorageServerTopSqlCpuActivityArgs.builder()
+     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalExadataStorageServerTopSqlCpuActivityResult> getExternalExadataStorageServerTopSqlCpuActivityPlain(GetExternalExadataStorageServerTopSqlCpuActivityPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalExadataStorageServerTopSqlCpuActivity:getExternalExadataStorageServerTopSqlCpuActivity", TypeShape.of(GetExternalExadataStorageServerTopSqlCpuActivityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Exadata Storage Servers in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata storage servers for the specified Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServers = DatabaseManagementFunctions.getExternalExadataStorageServers(GetExternalExadataStorageServersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
+     *             .displayName(var_.external_exadata_storage_server_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalExadataStorageServersResult> getExternalExadataStorageServers(GetExternalExadataStorageServersArgs args) {
+        return getExternalExadataStorageServers(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Exadata Storage Servers in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata storage servers for the specified Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServers = DatabaseManagementFunctions.getExternalExadataStorageServers(GetExternalExadataStorageServersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
+     *             .displayName(var_.external_exadata_storage_server_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalExadataStorageServersResult> getExternalExadataStorageServersPlain(GetExternalExadataStorageServersPlainArgs args) {
+        return getExternalExadataStorageServersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Exadata Storage Servers in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata storage servers for the specified Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServers = DatabaseManagementFunctions.getExternalExadataStorageServers(GetExternalExadataStorageServersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
+     *             .displayName(var_.external_exadata_storage_server_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetExternalExadataStorageServersResult> getExternalExadataStorageServers(GetExternalExadataStorageServersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExternalExadataStorageServers:getExternalExadataStorageServers", TypeShape.of(GetExternalExadataStorageServersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Exadata Storage Servers in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata storage servers for the specified Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalExadataStorageServers = DatabaseManagementFunctions.getExternalExadataStorageServers(GetExternalExadataStorageServersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
+     *             .displayName(var_.external_exadata_storage_server_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetExternalExadataStorageServersResult> getExternalExadataStorageServersPlain(GetExternalExadataStorageServersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExternalExadataStorageServers:getExternalExadataStorageServers", TypeShape.of(GetExternalExadataStorageServersResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific External Listener resource in Oracle Cloud Infrastructure Database Management service.
@@ -12661,6 +14275,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabases = DatabaseManagementFunctions.getManagedDatabases(GetManagedDatabasesArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .deploymentType(var_.managed_database_deployment_type())
+     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
      *             .id(var_.managed_database_id())
      *             .managementOption(var_.managed_database_management_option())
      *             .name(var_.managed_database_name())
@@ -12709,6 +14324,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabases = DatabaseManagementFunctions.getManagedDatabases(GetManagedDatabasesArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .deploymentType(var_.managed_database_deployment_type())
+     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
      *             .id(var_.managed_database_id())
      *             .managementOption(var_.managed_database_management_option())
      *             .name(var_.managed_database_name())
@@ -12757,6 +14373,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabases = DatabaseManagementFunctions.getManagedDatabases(GetManagedDatabasesArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .deploymentType(var_.managed_database_deployment_type())
+     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
      *             .id(var_.managed_database_id())
      *             .managementOption(var_.managed_database_management_option())
      *             .name(var_.managed_database_name())
@@ -12805,6 +14422,7 @@ public final class DatabaseManagementFunctions {
      *         final var testManagedDatabases = DatabaseManagementFunctions.getManagedDatabases(GetManagedDatabasesArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .deploymentType(var_.managed_database_deployment_type())
+     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
      *             .id(var_.managed_database_id())
      *             .managementOption(var_.managed_database_management_option())
      *             .name(var_.managed_database_name())

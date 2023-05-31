@@ -14,7 +14,8 @@ namespace Pulumi.Oci.FileStorage
         /// <summary>
         /// This data source provides the list of File Systems in Oracle Cloud Infrastructure File Storage service.
         /// 
-        /// Lists the file system resources in the specified compartment.
+        /// Lists the file system resources in the specified compartment, or by the specified compartment and
+        /// file system snapshot policy.
         /// 
         /// 
         /// {{% examples %}}
@@ -34,6 +35,7 @@ namespace Pulumi.Oci.FileStorage
         ///         AvailabilityDomain = @var.File_system_availability_domain,
         ///         CompartmentId = @var.Compartment_id,
         ///         DisplayName = @var.File_system_display_name,
+        ///         FilesystemSnapshotPolicyId = oci_file_storage_filesystem_snapshot_policy.Test_filesystem_snapshot_policy.Id,
         ///         Id = @var.File_system_id,
         ///         ParentFileSystemId = oci_file_storage_file_system.Test_file_system.Id,
         ///         SourceSnapshotId = oci_file_storage_snapshot.Test_snapshot.Id,
@@ -51,7 +53,8 @@ namespace Pulumi.Oci.FileStorage
         /// <summary>
         /// This data source provides the list of File Systems in Oracle Cloud Infrastructure File Storage service.
         /// 
-        /// Lists the file system resources in the specified compartment.
+        /// Lists the file system resources in the specified compartment, or by the specified compartment and
+        /// file system snapshot policy.
         /// 
         /// 
         /// {{% examples %}}
@@ -71,6 +74,7 @@ namespace Pulumi.Oci.FileStorage
         ///         AvailabilityDomain = @var.File_system_availability_domain,
         ///         CompartmentId = @var.Compartment_id,
         ///         DisplayName = @var.File_system_display_name,
+        ///         FilesystemSnapshotPolicyId = oci_file_storage_filesystem_snapshot_policy.Test_filesystem_snapshot_policy.Id,
         ///         Id = @var.File_system_id,
         ///         ParentFileSystemId = oci_file_storage_file_system.Test_file_system.Id,
         ///         SourceSnapshotId = oci_file_storage_snapshot.Test_snapshot.Id,
@@ -106,6 +110,12 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
+        /// </summary>
+        [Input("filesystemSnapshotPolicyId")]
+        public string? FilesystemSnapshotPolicyId { get; set; }
 
         [Input("filters")]
         private List<Inputs.GetFileSystemsFilterArgs>? _filters;
@@ -165,6 +175,12 @@ namespace Pulumi.Oci.FileStorage
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
+        /// </summary>
+        [Input("filesystemSnapshotPolicyId")]
+        public Input<string>? FilesystemSnapshotPolicyId { get; set; }
+
         [Input("filters")]
         private InputList<Inputs.GetFileSystemsFilterInputArgs>? _filters;
         public InputList<Inputs.GetFileSystemsFilterInputArgs> Filters
@@ -223,6 +239,10 @@ namespace Pulumi.Oci.FileStorage
         /// The list of file_systems.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFileSystemsFileSystemResult> FileSystems;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+        /// </summary>
+        public readonly string? FilesystemSnapshotPolicyId;
         public readonly ImmutableArray<Outputs.GetFileSystemsFilterResult> Filters;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
@@ -251,6 +271,8 @@ namespace Pulumi.Oci.FileStorage
 
             ImmutableArray<Outputs.GetFileSystemsFileSystemResult> fileSystems,
 
+            string? filesystemSnapshotPolicyId,
+
             ImmutableArray<Outputs.GetFileSystemsFilterResult> filters,
 
             string? id,
@@ -265,6 +287,7 @@ namespace Pulumi.Oci.FileStorage
             CompartmentId = compartmentId;
             DisplayName = displayName;
             FileSystems = fileSystems;
+            FilesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             Filters = filters;
             Id = id;
             ParentFileSystemId = parentFileSystemId;

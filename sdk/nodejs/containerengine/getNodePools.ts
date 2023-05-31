@@ -78,7 +78,7 @@ export interface GetNodePoolsResult {
      */
     readonly id: string;
     /**
-     * The name of the node.
+     * The name of the node pool.
      */
     readonly name?: string;
     /**

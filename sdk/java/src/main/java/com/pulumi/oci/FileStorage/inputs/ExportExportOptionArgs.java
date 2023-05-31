@@ -17,14 +17,14 @@ public final class ExportExportOptionArgs extends com.pulumi.resources.ResourceA
     public static final ExportExportOptionArgs Empty = new ExportExportOptionArgs();
 
     /**
-     * (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+     * (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
      * 
      */
     @Import(name="access")
     private @Nullable Output<String> access;
 
     /**
-     * @return (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+     * @return (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
      * 
      */
     public Optional<Output<String>> access() {
@@ -140,7 +140,7 @@ public final class ExportExportOptionArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param access (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+         * @param access (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class ExportExportOptionArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param access (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+         * @param access (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
          * 
          * @return builder
          * 

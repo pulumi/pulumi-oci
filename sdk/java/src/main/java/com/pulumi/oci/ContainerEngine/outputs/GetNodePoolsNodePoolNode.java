@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolsNodePoolNode {
     /**
-     * @return The name of the availability domain in which this node is placed.
+     * @return The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
      * 
      */
     private String availabilityDomain;
@@ -23,15 +23,7 @@ public final class GetNodePoolsNodePoolNode {
      * 
      */
     private Map<String,Object> definedTags;
-    /**
-     * @return An error that may be associated with the node.
-     * 
-     */
     private List<GetNodePoolsNodePoolNodeError> errors;
-    /**
-     * @return The fault domain of this node.
-     * 
-     */
     private String faultDomain;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -39,17 +31,17 @@ public final class GetNodePoolsNodePoolNode {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The OCID of the compute instance backing this node.
+     * @return The OCID of the node pool.
      * 
      */
     private String id;
     /**
-     * @return The version of Kubernetes this node is running.
+     * @return The version of Kubernetes running on the nodes in the node pool.
      * 
      */
     private String kubernetesVersion;
     /**
-     * @return Details about the state of the node.
+     * @return Details about the state of the nodepool.
      * 
      */
     private String lifecycleDetails;
@@ -58,20 +50,8 @@ public final class GetNodePoolsNodePoolNode {
      * 
      */
     private String name;
-    /**
-     * @return The OCID of the node pool to which this node belongs.
-     * 
-     */
     private String nodePoolId;
-    /**
-     * @return The private IP address of this node.
-     * 
-     */
     private String privateIp;
-    /**
-     * @return The public IP address of this node.
-     * 
-     */
     private String publicIp;
     /**
      * @return A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
@@ -79,14 +59,14 @@ public final class GetNodePoolsNodePoolNode {
      */
     private String state;
     /**
-     * @return The OCID of the subnet in which this node is placed.
+     * @return The OCID of the subnet in which to place nodes.
      * 
      */
     private String subnetId;
 
     private GetNodePoolsNodePoolNode() {}
     /**
-     * @return The name of the availability domain in which this node is placed.
+     * @return The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
      * 
      */
     public String availabilityDomain() {
@@ -99,17 +79,9 @@ public final class GetNodePoolsNodePoolNode {
     public Map<String,Object> definedTags() {
         return this.definedTags;
     }
-    /**
-     * @return An error that may be associated with the node.
-     * 
-     */
     public List<GetNodePoolsNodePoolNodeError> errors() {
         return this.errors;
     }
-    /**
-     * @return The fault domain of this node.
-     * 
-     */
     public String faultDomain() {
         return this.faultDomain;
     }
@@ -121,21 +93,21 @@ public final class GetNodePoolsNodePoolNode {
         return this.freeformTags;
     }
     /**
-     * @return The OCID of the compute instance backing this node.
+     * @return The OCID of the node pool.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return The version of Kubernetes this node is running.
+     * @return The version of Kubernetes running on the nodes in the node pool.
      * 
      */
     public String kubernetesVersion() {
         return this.kubernetesVersion;
     }
     /**
-     * @return Details about the state of the node.
+     * @return Details about the state of the nodepool.
      * 
      */
     public String lifecycleDetails() {
@@ -148,24 +120,12 @@ public final class GetNodePoolsNodePoolNode {
     public String name() {
         return this.name;
     }
-    /**
-     * @return The OCID of the node pool to which this node belongs.
-     * 
-     */
     public String nodePoolId() {
         return this.nodePoolId;
     }
-    /**
-     * @return The private IP address of this node.
-     * 
-     */
     public String privateIp() {
         return this.privateIp;
     }
-    /**
-     * @return The public IP address of this node.
-     * 
-     */
     public String publicIp() {
         return this.publicIp;
     }
@@ -177,7 +137,7 @@ public final class GetNodePoolsNodePoolNode {
         return this.state;
     }
     /**
-     * @return The OCID of the subnet in which this node is placed.
+     * @return The OCID of the subnet in which to place nodes.
      * 
      */
     public String subnetId() {

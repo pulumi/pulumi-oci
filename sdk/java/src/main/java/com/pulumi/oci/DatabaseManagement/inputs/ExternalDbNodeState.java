@@ -94,6 +94,21 @@ public final class ExternalDbNodeState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * Name of the domain.
+     * 
+     */
+    @Import(name="domainName")
+    private @Nullable Output<String> domainName;
+
+    /**
+     * @return Name of the domain.
+     * 
+     */
+    public Optional<Output<String>> domainName() {
+        return Optional.ofNullable(this.domainName);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      * 
      */
@@ -242,6 +257,7 @@ public final class ExternalDbNodeState extends com.pulumi.resources.ResourceArgs
         this.componentName = $.componentName;
         this.cpuCoreCount = $.cpuCoreCount;
         this.displayName = $.displayName;
+        this.domainName = $.domainName;
         this.externalConnectorId = $.externalConnectorId;
         this.externalDbNodeId = $.externalDbNodeId;
         this.externalDbSystemId = $.externalDbSystemId;
@@ -374,6 +390,27 @@ public final class ExternalDbNodeState extends com.pulumi.resources.ResourceArgs
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param domainName Name of the domain.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder domainName(@Nullable Output<String> domainName) {
+            $.domainName = domainName;
+            return this;
+        }
+
+        /**
+         * @param domainName Name of the domain.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder domainName(String domainName) {
+            return domainName(Output.of(domainName));
         }
 
         /**

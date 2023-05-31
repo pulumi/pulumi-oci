@@ -14,59 +14,44 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
     public sealed class GetNodePoolsNodePoolNodeResult
     {
         /// <summary>
-        /// The name of the availability domain in which this node is placed.
+        /// The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
-        /// <summary>
-        /// An error that may be associated with the node.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetNodePoolsNodePoolNodeErrorResult> Errors;
-        /// <summary>
-        /// The fault domain of this node.
-        /// </summary>
         public readonly string FaultDomain;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The OCID of the compute instance backing this node.
+        /// The OCID of the node pool.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The version of Kubernetes this node is running.
+        /// The version of Kubernetes running on the nodes in the node pool.
         /// </summary>
         public readonly string KubernetesVersion;
         /// <summary>
-        /// Details about the state of the node.
+        /// Details about the state of the nodepool.
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
         /// The name to filter on.
         /// </summary>
         public readonly string Name;
-        /// <summary>
-        /// The OCID of the node pool to which this node belongs.
-        /// </summary>
         public readonly string NodePoolId;
-        /// <summary>
-        /// The private IP address of this node.
-        /// </summary>
         public readonly string PrivateIp;
-        /// <summary>
-        /// The public IP address of this node.
-        /// </summary>
         public readonly string PublicIp;
         /// <summary>
         /// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// The OCID of the subnet in which this node is placed.
+        /// The OCID of the subnet in which to place nodes.
         /// </summary>
         public readonly string SubnetId;
 

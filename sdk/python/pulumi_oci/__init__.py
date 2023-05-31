@@ -2419,6 +2419,30 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DatabaseManagement/externalExadataInfrastructure",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalExadataInfrastructure:ExternalExadataInfrastructure": "ExternalExadataInfrastructure"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/externalExadataInfrastructureExadataManagement",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalExadataInfrastructureExadataManagement:ExternalExadataInfrastructureExadataManagement": "ExternalExadataInfrastructureExadataManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/externalExadataStorageConnector",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector": "ExternalExadataStorageConnector"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DatabaseManagement/externalListener",
   "fqn": "pulumi_oci.databasemanagement",
   "classes": {
@@ -2783,6 +2807,14 @@ _utilities.register(
   "fqn": "pulumi_oci.filestorage",
   "classes": {
    "oci:FileStorage/fileSystem:FileSystem": "FileSystem"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FileStorage/filesystemSnapshotPolicy",
+  "fqn": "pulumi_oci.filestorage",
+  "classes": {
+   "oci:FileStorage/filesystemSnapshotPolicy:FilesystemSnapshotPolicy": "FilesystemSnapshotPolicy"
   }
  },
  {

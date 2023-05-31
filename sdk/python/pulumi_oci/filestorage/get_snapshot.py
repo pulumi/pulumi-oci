@@ -21,13 +21,19 @@ class GetSnapshotResult:
     """
     A collection of values returned by getSnapshot.
     """
-    def __init__(__self__, defined_tags=None, file_system_id=None, freeform_tags=None, id=None, is_clone_source=None, lifecycle_details=None, name=None, provenance_id=None, snapshot_id=None, snapshot_time=None, snapshot_type=None, state=None, time_created=None):
+    def __init__(__self__, defined_tags=None, expiration_time=None, file_system_id=None, filesystem_snapshot_policy_id=None, freeform_tags=None, id=None, is_clone_source=None, lifecycle_details=None, name=None, provenance_id=None, snapshot_id=None, snapshot_time=None, snapshot_type=None, state=None, time_created=None):
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
+        if expiration_time and not isinstance(expiration_time, str):
+            raise TypeError("Expected argument 'expiration_time' to be a str")
+        pulumi.set(__self__, "expiration_time", expiration_time)
         if file_system_id and not isinstance(file_system_id, str):
             raise TypeError("Expected argument 'file_system_id' to be a str")
         pulumi.set(__self__, "file_system_id", file_system_id)
+        if filesystem_snapshot_policy_id and not isinstance(filesystem_snapshot_policy_id, str):
+            raise TypeError("Expected argument 'filesystem_snapshot_policy_id' to be a str")
+        pulumi.set(__self__, "filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -71,12 +77,28 @@ class GetSnapshotResult:
         return pulumi.get(self, "defined_tags")
 
     @property
+    @pulumi.getter(name="expirationTime")
+    def expiration_time(self) -> str:
+        """
+        The time when this snapshot will be deleted.
+        """
+        return pulumi.get(self, "expiration_time")
+
+    @property
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> str:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
         """
         return pulumi.get(self, "file_system_id")
+
+    @property
+    @pulumi.getter(name="filesystemSnapshotPolicyId")
+    def filesystem_snapshot_policy_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
+        """
+        return pulumi.get(self, "filesystem_snapshot_policy_id")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -174,7 +196,9 @@ class AwaitableGetSnapshotResult(GetSnapshotResult):
             yield self
         return GetSnapshotResult(
             defined_tags=self.defined_tags,
+            expiration_time=self.expiration_time,
             file_system_id=self.file_system_id,
+            filesystem_snapshot_policy_id=self.filesystem_snapshot_policy_id,
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_clone_source=self.is_clone_source,
@@ -214,7 +238,9 @@ def get_snapshot(snapshot_id: Optional[str] = None,
 
     return AwaitableGetSnapshotResult(
         defined_tags=__ret__.defined_tags,
+        expiration_time=__ret__.expiration_time,
         file_system_id=__ret__.file_system_id,
+        filesystem_snapshot_policy_id=__ret__.filesystem_snapshot_policy_id,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
         is_clone_source=__ret__.is_clone_source,

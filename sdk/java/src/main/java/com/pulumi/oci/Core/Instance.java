@@ -227,14 +227,14 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.async);
     }
     /**
-     * (Updatable) Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.  This also includes live migration preference for infrastructure maintenance.
+     * (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
      * 
      */
     @Export(name="availabilityConfig", type=InstanceAvailabilityConfig.class, parameters={})
     private Output<InstanceAvailabilityConfig> availabilityConfig;
 
     /**
-     * @return (Updatable) Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.  This also includes live migration preference for infrastructure maintenance.
+     * @return (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
      * 
      */
     public Output<InstanceAvailabilityConfig> availabilityConfig() {

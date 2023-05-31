@@ -9,7 +9,10 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Snapshots in Oracle Cloud Infrastructure File Storage service.
  *
- * Lists snapshots of the specified file system.
+ * Lists snapshots of the specified file system, or by file system snapshot policy and compartment,
+ * or by file system snapshot policy and file system.
+ *
+ * If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
  *
  * ## Example Usage
  *
@@ -18,17 +21,22 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSnapshots = oci.FileStorage.getSnapshots({
+ *     compartmentId: _var.compartment_id,
  *     fileSystemId: oci_file_storage_file_system.test_file_system.id,
+ *     filesystemSnapshotPolicyId: oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy.id,
  *     id: _var.snapshot_id,
  *     state: _var.snapshot_state,
  * });
  * ```
  */
-export function getSnapshots(args: GetSnapshotsArgs, opts?: pulumi.InvokeOptions): Promise<GetSnapshotsResult> {
+export function getSnapshots(args?: GetSnapshotsArgs, opts?: pulumi.InvokeOptions): Promise<GetSnapshotsResult> {
+    args = args || {};
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FileStorage/getSnapshots:getSnapshots", {
+        "compartmentId": args.compartmentId,
         "fileSystemId": args.fileSystemId,
+        "filesystemSnapshotPolicyId": args.filesystemSnapshotPolicyId,
         "filters": args.filters,
         "id": args.id,
         "state": args.state,
@@ -40,9 +48,17 @@ export function getSnapshots(args: GetSnapshotsArgs, opts?: pulumi.InvokeOptions
  */
 export interface GetSnapshotsArgs {
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
+    compartmentId?: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      */
-    fileSystemId: string;
+    fileSystemId?: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
+     */
+    filesystemSnapshotPolicyId?: string;
     filters?: inputs.FileStorage.GetSnapshotsFilter[];
     /**
      * Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
@@ -58,10 +74,15 @@ export interface GetSnapshotsArgs {
  * A collection of values returned by getSnapshots.
  */
 export interface GetSnapshotsResult {
+    readonly compartmentId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
      */
-    readonly fileSystemId: string;
+    readonly fileSystemId?: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
+     */
+    readonly filesystemSnapshotPolicyId?: string;
     readonly filters?: outputs.FileStorage.GetSnapshotsFilter[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot.
@@ -79,7 +100,10 @@ export interface GetSnapshotsResult {
 /**
  * This data source provides the list of Snapshots in Oracle Cloud Infrastructure File Storage service.
  *
- * Lists snapshots of the specified file system.
+ * Lists snapshots of the specified file system, or by file system snapshot policy and compartment,
+ * or by file system snapshot policy and file system.
+ *
+ * If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
  *
  * ## Example Usage
  *
@@ -88,13 +112,15 @@ export interface GetSnapshotsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSnapshots = oci.FileStorage.getSnapshots({
+ *     compartmentId: _var.compartment_id,
  *     fileSystemId: oci_file_storage_file_system.test_file_system.id,
+ *     filesystemSnapshotPolicyId: oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy.id,
  *     id: _var.snapshot_id,
  *     state: _var.snapshot_state,
  * });
  * ```
  */
-export function getSnapshotsOutput(args: GetSnapshotsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSnapshotsResult> {
+export function getSnapshotsOutput(args?: GetSnapshotsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSnapshotsResult> {
     return pulumi.output(args).apply((a: any) => getSnapshots(a, opts))
 }
 
@@ -103,9 +129,17 @@ export function getSnapshotsOutput(args: GetSnapshotsOutputArgs, opts?: pulumi.I
  */
 export interface GetSnapshotsOutputArgs {
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
+    compartmentId?: pulumi.Input<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      */
-    fileSystemId: pulumi.Input<string>;
+    fileSystemId?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
+     */
+    filesystemSnapshotPolicyId?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.FileStorage.GetSnapshotsFilterArgs>[]>;
     /**
      * Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.

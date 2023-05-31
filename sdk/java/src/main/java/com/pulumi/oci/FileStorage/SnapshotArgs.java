@@ -33,6 +33,21 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The time when this snapshot will be deleted.
+     * 
+     */
+    @Import(name="expirationTime")
+    private @Nullable Output<String> expirationTime;
+
+    /**
+     * @return (Updatable) The time when this snapshot will be deleted.
+     * 
+     */
+    public Optional<Output<String>> expirationTime() {
+        return Optional.ofNullable(this.expirationTime);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
      * 
      */
@@ -95,6 +110,7 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
 
     private SnapshotArgs(SnapshotArgs $) {
         this.definedTags = $.definedTags;
+        this.expirationTime = $.expirationTime;
         this.fileSystemId = $.fileSystemId;
         this.freeformTags = $.freeformTags;
         this.name = $.name;
@@ -137,6 +153,27 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder definedTags(Map<String,Object> definedTags) {
             return definedTags(Output.of(definedTags));
+        }
+
+        /**
+         * @param expirationTime (Updatable) The time when this snapshot will be deleted.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder expirationTime(@Nullable Output<String> expirationTime) {
+            $.expirationTime = expirationTime;
+            return this;
+        }
+
+        /**
+         * @param expirationTime (Updatable) The time when this snapshot will be deleted.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder expirationTime(String expirationTime) {
+            return expirationTime(Output.of(expirationTime));
         }
 
         /**

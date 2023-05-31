@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly bool IsFlexible;
         /// <summary>
-        /// Whether Live Migration is currently supported for this shape.
+        /// Whether live migration is supported for this shape.
         /// </summary>
         public readonly bool IsLiveMigrationSupported;
         /// <summary>

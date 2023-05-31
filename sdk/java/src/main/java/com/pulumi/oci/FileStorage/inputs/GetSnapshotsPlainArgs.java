@@ -17,18 +17,48 @@ public final class GetSnapshotsPlainArgs extends com.pulumi.resources.InvokeArgs
     public static final GetSnapshotsPlainArgs Empty = new GetSnapshotsPlainArgs();
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * 
+     */
+    @Import(name="compartmentId")
+    private @Nullable String compartmentId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * 
+     */
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      * 
      */
-    @Import(name="fileSystemId", required=true)
-    private String fileSystemId;
+    @Import(name="fileSystemId")
+    private @Nullable String fileSystemId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      * 
      */
-    public String fileSystemId() {
-        return this.fileSystemId;
+    public Optional<String> fileSystemId() {
+        return Optional.ofNullable(this.fileSystemId);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
+     * 
+     */
+    @Import(name="filesystemSnapshotPolicyId")
+    private @Nullable String filesystemSnapshotPolicyId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
+     * 
+     */
+    public Optional<String> filesystemSnapshotPolicyId() {
+        return Optional.ofNullable(this.filesystemSnapshotPolicyId);
     }
 
     @Import(name="filters")
@@ -71,7 +101,9 @@ public final class GetSnapshotsPlainArgs extends com.pulumi.resources.InvokeArgs
     private GetSnapshotsPlainArgs() {}
 
     private GetSnapshotsPlainArgs(GetSnapshotsPlainArgs $) {
+        this.compartmentId = $.compartmentId;
         this.fileSystemId = $.fileSystemId;
+        this.filesystemSnapshotPolicyId = $.filesystemSnapshotPolicyId;
         this.filters = $.filters;
         this.id = $.id;
         this.state = $.state;
@@ -96,13 +128,35 @@ public final class GetSnapshotsPlainArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(@Nullable String compartmentId) {
+            $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
          * @param fileSystemId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
          * 
          * @return builder
          * 
          */
-        public Builder fileSystemId(String fileSystemId) {
+        public Builder fileSystemId(@Nullable String fileSystemId) {
             $.fileSystemId = fileSystemId;
+            return this;
+        }
+
+        /**
+         * @param filesystemSnapshotPolicyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filesystemSnapshotPolicyId(@Nullable String filesystemSnapshotPolicyId) {
+            $.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             return this;
         }
 
@@ -138,7 +192,6 @@ public final class GetSnapshotsPlainArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetSnapshotsPlainArgs build() {
-            $.fileSystemId = Objects.requireNonNull($.fileSystemId, "expected parameter 'fileSystemId' to be non-null");
             return $;
         }
     }

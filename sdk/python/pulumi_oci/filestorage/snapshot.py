@@ -16,12 +16,14 @@ class SnapshotArgs:
     def __init__(__self__, *,
                  file_system_id: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 expiration_time: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Snapshot resource.
         :param pulumi.Input[str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] expiration_time: (Updatable) The time when this snapshot will be deleted.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] name: Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
                
@@ -36,6 +38,8 @@ class SnapshotArgs:
         pulumi.set(__self__, "file_system_id", file_system_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if expiration_time is not None:
+            pulumi.set(__self__, "expiration_time", expiration_time)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if name is not None:
@@ -64,6 +68,18 @@ class SnapshotArgs:
     @defined_tags.setter
     def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="expirationTime")
+    def expiration_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The time when this snapshot will be deleted.
+        """
+        return pulumi.get(self, "expiration_time")
+
+    @expiration_time.setter
+    def expiration_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "expiration_time", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -102,7 +118,9 @@ class SnapshotArgs:
 class _SnapshotState:
     def __init__(__self__, *,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 expiration_time: Optional[pulumi.Input[str]] = None,
                  file_system_id: Optional[pulumi.Input[str]] = None,
+                 filesystem_snapshot_policy_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_clone_source: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -115,7 +133,9 @@ class _SnapshotState:
         """
         Input properties used for looking up and filtering Snapshot resources.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] expiration_time: (Updatable) The time when this snapshot will be deleted.
         :param pulumi.Input[str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
+        :param pulumi.Input[str] filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_clone_source: Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         :param pulumi.Input[str] lifecycle_details: Additional information about the current `lifecycleState`.
@@ -139,8 +159,12 @@ class _SnapshotState:
         """
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if expiration_time is not None:
+            pulumi.set(__self__, "expiration_time", expiration_time)
         if file_system_id is not None:
             pulumi.set(__self__, "file_system_id", file_system_id)
+        if filesystem_snapshot_policy_id is not None:
+            pulumi.set(__self__, "filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_clone_source is not None:
@@ -173,6 +197,18 @@ class _SnapshotState:
         pulumi.set(self, "defined_tags", value)
 
     @property
+    @pulumi.getter(name="expirationTime")
+    def expiration_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The time when this snapshot will be deleted.
+        """
+        return pulumi.get(self, "expiration_time")
+
+    @expiration_time.setter
+    def expiration_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "expiration_time", value)
+
+    @property
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -183,6 +219,18 @@ class _SnapshotState:
     @file_system_id.setter
     def file_system_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "file_system_id", value)
+
+    @property
+    @pulumi.getter(name="filesystemSnapshotPolicyId")
+    def filesystem_snapshot_policy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
+        """
+        return pulumi.get(self, "filesystem_snapshot_policy_id")
+
+    @filesystem_snapshot_policy_id.setter
+    def filesystem_snapshot_policy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "filesystem_snapshot_policy_id", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -310,6 +358,7 @@ class Snapshot(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 expiration_time: Optional[pulumi.Input[str]] = None,
                  file_system_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -331,6 +380,7 @@ class Snapshot(pulumi.CustomResource):
             defined_tags={
                 "Operations.CostCenter": "42",
             },
+            expiration_time=var["snapshot_expiration_time"],
             freeform_tags={
                 "Department": "Finance",
             })
@@ -347,6 +397,7 @@ class Snapshot(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] expiration_time: (Updatable) The time when this snapshot will be deleted.
         :param pulumi.Input[str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] name: Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
@@ -382,6 +433,7 @@ class Snapshot(pulumi.CustomResource):
             defined_tags={
                 "Operations.CostCenter": "42",
             },
+            expiration_time=var["snapshot_expiration_time"],
             freeform_tags={
                 "Department": "Finance",
             })
@@ -411,6 +463,7 @@ class Snapshot(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 expiration_time: Optional[pulumi.Input[str]] = None,
                  file_system_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -424,11 +477,13 @@ class Snapshot(pulumi.CustomResource):
             __props__ = SnapshotArgs.__new__(SnapshotArgs)
 
             __props__.__dict__["defined_tags"] = defined_tags
+            __props__.__dict__["expiration_time"] = expiration_time
             if file_system_id is None and not opts.urn:
                 raise TypeError("Missing required property 'file_system_id'")
             __props__.__dict__["file_system_id"] = file_system_id
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["name"] = name
+            __props__.__dict__["filesystem_snapshot_policy_id"] = None
             __props__.__dict__["is_clone_source"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["provenance_id"] = None
@@ -447,7 +502,9 @@ class Snapshot(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            expiration_time: Optional[pulumi.Input[str]] = None,
             file_system_id: Optional[pulumi.Input[str]] = None,
+            filesystem_snapshot_policy_id: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_clone_source: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -465,7 +522,9 @@ class Snapshot(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] expiration_time: (Updatable) The time when this snapshot will be deleted.
         :param pulumi.Input[str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
+        :param pulumi.Input[str] filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_clone_source: Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         :param pulumi.Input[str] lifecycle_details: Additional information about the current `lifecycleState`.
@@ -492,7 +551,9 @@ class Snapshot(pulumi.CustomResource):
         __props__ = _SnapshotState.__new__(_SnapshotState)
 
         __props__.__dict__["defined_tags"] = defined_tags
+        __props__.__dict__["expiration_time"] = expiration_time
         __props__.__dict__["file_system_id"] = file_system_id
+        __props__.__dict__["filesystem_snapshot_policy_id"] = filesystem_snapshot_policy_id
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_clone_source"] = is_clone_source
         __props__.__dict__["lifecycle_details"] = lifecycle_details
@@ -513,12 +574,28 @@ class Snapshot(pulumi.CustomResource):
         return pulumi.get(self, "defined_tags")
 
     @property
+    @pulumi.getter(name="expirationTime")
+    def expiration_time(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The time when this snapshot will be deleted.
+        """
+        return pulumi.get(self, "expiration_time")
+
+    @property
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> pulumi.Output[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
         """
         return pulumi.get(self, "file_system_id")
+
+    @property
+    @pulumi.getter(name="filesystemSnapshotPolicyId")
+    def filesystem_snapshot_policy_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
+        """
+        return pulumi.get(self, "filesystem_snapshot_policy_id")
 
     @property
     @pulumi.getter(name="freeformTags")

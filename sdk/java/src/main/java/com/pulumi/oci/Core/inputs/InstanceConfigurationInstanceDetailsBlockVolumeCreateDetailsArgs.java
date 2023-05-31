@@ -6,7 +6,9 @@ package com.pulumi.oci.Core.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs;
+import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgs;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -63,6 +65,21 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
      */
     public Optional<Output<String>> backupPolicyId() {
         return Optional.ofNullable(this.backupPolicyId);
+    }
+
+    /**
+     * The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
+     * 
+     */
+    @Import(name="blockVolumeReplicas")
+    private @Nullable Output<InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs> blockVolumeReplicas;
+
+    /**
+     * @return The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
+     * 
+     */
+    public Optional<Output<InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs>> blockVolumeReplicas() {
+        return Optional.ofNullable(this.blockVolumeReplicas);
     }
 
     /**
@@ -126,14 +143,29 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
     }
 
     /**
-     * The OCID of the Vault service key to assign as the master encryption key for the volume.
+     * Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+     * 
+     */
+    @Import(name="isAutoTuneEnabled")
+    private @Nullable Output<Boolean> isAutoTuneEnabled;
+
+    /**
+     * @return Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+     * 
+     */
+    public Optional<Output<Boolean>> isAutoTuneEnabled() {
+        return Optional.ofNullable(this.isAutoTuneEnabled);
+    }
+
+    /**
+     * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     @Import(name="kmsKeyId")
     private @Nullable Output<String> kmsKeyId;
 
     /**
-     * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
+     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     public Optional<Output<String>> kmsKeyId() {
@@ -187,10 +219,12 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
         this.autotunePolicies = $.autotunePolicies;
         this.availabilityDomain = $.availabilityDomain;
         this.backupPolicyId = $.backupPolicyId;
+        this.blockVolumeReplicas = $.blockVolumeReplicas;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.isAutoTuneEnabled = $.isAutoTuneEnabled;
         this.kmsKeyId = $.kmsKeyId;
         this.sizeInGbs = $.sizeInGbs;
         this.sourceDetails = $.sourceDetails;
@@ -289,6 +323,27 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
         }
 
         /**
+         * @param blockVolumeReplicas The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder blockVolumeReplicas(@Nullable Output<InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs> blockVolumeReplicas) {
+            $.blockVolumeReplicas = blockVolumeReplicas;
+            return this;
+        }
+
+        /**
+         * @param blockVolumeReplicas The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder blockVolumeReplicas(InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs blockVolumeReplicas) {
+            return blockVolumeReplicas(Output.of(blockVolumeReplicas));
+        }
+
+        /**
          * @param compartmentId The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
          * 
          * @return builder
@@ -373,7 +428,28 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
         }
 
         /**
-         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the volume.
+         * @param isAutoTuneEnabled Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoTuneEnabled(@Nullable Output<Boolean> isAutoTuneEnabled) {
+            $.isAutoTuneEnabled = isAutoTuneEnabled;
+            return this;
+        }
+
+        /**
+         * @param isAutoTuneEnabled Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoTuneEnabled(Boolean isAutoTuneEnabled) {
+            return isAutoTuneEnabled(Output.of(isAutoTuneEnabled));
+        }
+
+        /**
+         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          * 
          * @return builder
          * 
@@ -384,7 +460,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
         }
 
         /**
-         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the volume.
+         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          * 
          * @return builder
          * 

@@ -46,6 +46,21 @@ public final class GetManagedDatabasesPlainArgs extends com.pulumi.resources.Inv
         return Optional.ofNullable(this.deploymentType);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     * 
+     */
+    @Import(name="externalExadataInfrastructureId")
+    private @Nullable String externalExadataInfrastructureId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     * 
+     */
+    public Optional<String> externalExadataInfrastructureId() {
+        return Optional.ofNullable(this.externalExadataInfrastructureId);
+    }
+
     @Import(name="filters")
     private @Nullable List<GetManagedDatabasesFilter> filters;
 
@@ -103,6 +118,7 @@ public final class GetManagedDatabasesPlainArgs extends com.pulumi.resources.Inv
     private GetManagedDatabasesPlainArgs(GetManagedDatabasesPlainArgs $) {
         this.compartmentId = $.compartmentId;
         this.deploymentType = $.deploymentType;
+        this.externalExadataInfrastructureId = $.externalExadataInfrastructureId;
         this.filters = $.filters;
         this.id = $.id;
         this.managementOption = $.managementOption;
@@ -146,6 +162,17 @@ public final class GetManagedDatabasesPlainArgs extends com.pulumi.resources.Inv
          */
         public Builder deploymentType(@Nullable String deploymentType) {
             $.deploymentType = deploymentType;
+            return this;
+        }
+
+        /**
+         * @param externalExadataInfrastructureId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalExadataInfrastructureId(@Nullable String externalExadataInfrastructureId) {
+            $.externalExadataInfrastructureId = externalExadataInfrastructureId;
             return this;
         }
 

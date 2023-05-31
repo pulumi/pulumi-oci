@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -14,6 +15,21 @@ import javax.annotation.Nullable;
 public final class InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs Empty = new InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs();
+
+    /**
+     * Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+     * 
+     */
+    @Import(name="isLiveMigrationPreferred")
+    private @Nullable Output<Boolean> isLiveMigrationPreferred;
+
+    /**
+     * @return Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+     * 
+     */
+    public Optional<Output<Boolean>> isLiveMigrationPreferred() {
+        return Optional.ofNullable(this.isLiveMigrationPreferred);
+    }
 
     /**
      * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
@@ -33,6 +49,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAvailability
     private InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs() {}
 
     private InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs(InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs $) {
+        this.isLiveMigrationPreferred = $.isLiveMigrationPreferred;
         this.recoveryAction = $.recoveryAction;
     }
 
@@ -52,6 +69,27 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAvailability
 
         public Builder(InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs defaults) {
             $ = new InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param isLiveMigrationPreferred Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLiveMigrationPreferred(@Nullable Output<Boolean> isLiveMigrationPreferred) {
+            $.isLiveMigrationPreferred = isLiveMigrationPreferred;
+            return this;
+        }
+
+        /**
+         * @param isLiveMigrationPreferred Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLiveMigrationPreferred(Boolean isLiveMigrationPreferred) {
+            return isLiveMigrationPreferred(Output.of(isLiveMigrationPreferred));
         }
 
         /**

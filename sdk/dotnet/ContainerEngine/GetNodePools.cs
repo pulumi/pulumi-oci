@@ -189,7 +189,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The name of the node.
+        /// The name of the node pool.
         /// </summary>
         public readonly string? Name;
         /// <summary>

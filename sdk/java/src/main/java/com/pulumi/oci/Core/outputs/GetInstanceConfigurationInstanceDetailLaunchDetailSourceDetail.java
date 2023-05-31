@@ -30,6 +30,11 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetai
      */
     private String imageId;
     /**
+     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * 
+     */
+    private String kmsKeyId;
+    /**
      * @return The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
      * 
      */
@@ -65,6 +70,13 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetai
         return this.imageId;
     }
     /**
+     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * 
+     */
+    public String kmsKeyId() {
+        return this.kmsKeyId;
+    }
+    /**
      * @return The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
      * 
      */
@@ -85,6 +97,7 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetai
         private String bootVolumeSizeInGbs;
         private String bootVolumeVpusPerGb;
         private String imageId;
+        private String kmsKeyId;
         private String sourceType;
         public Builder() {}
         public Builder(GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail defaults) {
@@ -93,6 +106,7 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetai
     	      this.bootVolumeSizeInGbs = defaults.bootVolumeSizeInGbs;
     	      this.bootVolumeVpusPerGb = defaults.bootVolumeVpusPerGb;
     	      this.imageId = defaults.imageId;
+    	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.sourceType = defaults.sourceType;
         }
 
@@ -117,6 +131,11 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetai
             return this;
         }
         @CustomType.Setter
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            return this;
+        }
+        @CustomType.Setter
         public Builder sourceType(String sourceType) {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
@@ -127,6 +146,7 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetai
             o.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
             o.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
             o.imageId = imageId;
+            o.kmsKeyId = kmsKeyId;
             o.sourceType = sourceType;
             return o;
         }

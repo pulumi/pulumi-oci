@@ -4,11 +4,17 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 
 @CustomType
 public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig {
+    /**
+     * @return Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+     * 
+     */
+    private Boolean isLiveMigrationPreferred;
     /**
      * @return The lifecycle state for an instance when it is recovered after infrastructure maintenance.
      * 
@@ -16,6 +22,13 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
     private String recoveryAction;
 
     private GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig() {}
+    /**
+     * @return Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+     * 
+     */
+    public Boolean isLiveMigrationPreferred() {
+        return this.isLiveMigrationPreferred;
+    }
     /**
      * @return The lifecycle state for an instance when it is recovered after infrastructure maintenance.
      * 
@@ -33,13 +46,20 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
     }
     @CustomType.Builder
     public static final class Builder {
+        private Boolean isLiveMigrationPreferred;
         private String recoveryAction;
         public Builder() {}
         public Builder(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.isLiveMigrationPreferred = defaults.isLiveMigrationPreferred;
     	      this.recoveryAction = defaults.recoveryAction;
         }
 
+        @CustomType.Setter
+        public Builder isLiveMigrationPreferred(Boolean isLiveMigrationPreferred) {
+            this.isLiveMigrationPreferred = Objects.requireNonNull(isLiveMigrationPreferred);
+            return this;
+        }
         @CustomType.Setter
         public Builder recoveryAction(String recoveryAction) {
             this.recoveryAction = Objects.requireNonNull(recoveryAction);
@@ -47,6 +67,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         }
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig build() {
             final var o = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig();
+            o.isLiveMigrationPreferred = isLiveMigrationPreferred;
             o.recoveryAction = recoveryAction;
             return o;
         }

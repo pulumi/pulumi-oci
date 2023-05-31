@@ -12,7 +12,10 @@ import (
 
 // This data source provides the list of Snapshots in Oracle Cloud Infrastructure File Storage service.
 //
-// Lists snapshots of the specified file system.
+// Lists snapshots of the specified file system, or by file system snapshot policy and compartment,
+// or by file system snapshot policy and file system.
+//
+// If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
 //
 // ## Example Usage
 //
@@ -29,9 +32,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := FileStorage.GetSnapshots(ctx, &filestorage.GetSnapshotsArgs{
-//				FileSystemId: oci_file_storage_file_system.Test_file_system.Id,
-//				Id:           pulumi.StringRef(_var.Snapshot_id),
-//				State:        pulumi.StringRef(_var.Snapshot_state),
+//				CompartmentId:              pulumi.StringRef(_var.Compartment_id),
+//				FileSystemId:               pulumi.StringRef(oci_file_storage_file_system.Test_file_system.Id),
+//				FilesystemSnapshotPolicyId: pulumi.StringRef(oci_file_storage_filesystem_snapshot_policy.Test_filesystem_snapshot_policy.Id),
+//				Id:                         pulumi.StringRef(_var.Snapshot_id),
+//				State:                      pulumi.StringRef(_var.Snapshot_state),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -52,9 +57,13 @@ func GetSnapshots(ctx *pulumi.Context, args *GetSnapshotsArgs, opts ...pulumi.In
 
 // A collection of arguments for invoking getSnapshots.
 type GetSnapshotsArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
-	FileSystemId string               `pulumi:"fileSystemId"`
-	Filters      []GetSnapshotsFilter `pulumi:"filters"`
+	FileSystemId *string `pulumi:"fileSystemId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
+	FilesystemSnapshotPolicyId *string              `pulumi:"filesystemSnapshotPolicyId"`
+	Filters                    []GetSnapshotsFilter `pulumi:"filters"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
 	Id *string `pulumi:"id"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -63,9 +72,12 @@ type GetSnapshotsArgs struct {
 
 // A collection of values returned by getSnapshots.
 type GetSnapshotsResult struct {
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
-	FileSystemId string               `pulumi:"fileSystemId"`
-	Filters      []GetSnapshotsFilter `pulumi:"filters"`
+	FileSystemId *string `pulumi:"fileSystemId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
+	FilesystemSnapshotPolicyId *string              `pulumi:"filesystemSnapshotPolicyId"`
+	Filters                    []GetSnapshotsFilter `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot.
 	Id *string `pulumi:"id"`
 	// The list of snapshots.
@@ -89,9 +101,13 @@ func GetSnapshotsOutput(ctx *pulumi.Context, args GetSnapshotsOutputArgs, opts .
 
 // A collection of arguments for invoking getSnapshots.
 type GetSnapshotsOutputArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
-	FileSystemId pulumi.StringInput           `pulumi:"fileSystemId"`
-	Filters      GetSnapshotsFilterArrayInput `pulumi:"filters"`
+	FileSystemId pulumi.StringPtrInput `pulumi:"fileSystemId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
+	FilesystemSnapshotPolicyId pulumi.StringPtrInput        `pulumi:"filesystemSnapshotPolicyId"`
+	Filters                    GetSnapshotsFilterArrayInput `pulumi:"filters"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -117,9 +133,18 @@ func (o GetSnapshotsResultOutput) ToGetSnapshotsResultOutputWithContext(ctx cont
 	return o
 }
 
+func (o GetSnapshotsResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSnapshotsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
-func (o GetSnapshotsResultOutput) FileSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSnapshotsResult) string { return v.FileSystemId }).(pulumi.StringOutput)
+func (o GetSnapshotsResultOutput) FileSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSnapshotsResult) *string { return v.FileSystemId }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
+func (o GetSnapshotsResultOutput) FilesystemSnapshotPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSnapshotsResult) *string { return v.FilesystemSnapshotPolicyId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSnapshotsResultOutput) Filters() GetSnapshotsFilterArrayOutput {

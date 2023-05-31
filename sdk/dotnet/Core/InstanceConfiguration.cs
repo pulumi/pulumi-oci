@@ -66,6 +66,11 @@ namespace Pulumi.Oci.Core
     ///                         },
     ///                         AvailabilityDomain = @var.Instance_configuration_instance_details_block_volumes_create_details_availability_domain,
     ///                         BackupPolicyId = data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id,
+    ///                         BlockVolumeReplicas = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs
+    ///                         {
+    ///                             AvailabilityDomain = @var.Instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_availability_domain,
+    ///                             DisplayName = @var.Instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_display_name,
+    ///                         },
     ///                         CompartmentId = @var.Compartment_id,
     ///                         DefinedTags = 
     ///                         {
@@ -76,6 +81,7 @@ namespace Pulumi.Oci.Core
     ///                         {
     ///                             { "Department", "Finance" },
     ///                         },
+    ///                         IsAutoTuneEnabled = @var.Instance_configuration_instance_details_block_volumes_create_details_is_auto_tune_enabled,
     ///                         KmsKeyId = oci_kms_key.Test_key.Id,
     ///                         SizeInGbs = @var.Instance_configuration_instance_details_block_volumes_create_details_size_in_gbs,
     ///                         SourceDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgs
@@ -106,6 +112,7 @@ namespace Pulumi.Oci.Core
     ///                 },
     ///                 AvailabilityConfig = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs
     ///                 {
+    ///                     IsLiveMigrationPreferred = @var.Instance_configuration_instance_details_launch_details_availability_config_is_live_migration_preferred,
     ///                     RecoveryAction = @var.Instance_configuration_instance_details_launch_details_availability_config_recovery_action,
     ///                 },
     ///                 AvailabilityDomain = @var.Instance_configuration_instance_details_launch_details_availability_domain,
@@ -197,6 +204,7 @@ namespace Pulumi.Oci.Core
     ///                     BootVolumeSizeInGbs = @var.Instance_configuration_instance_details_launch_details_source_details_boot_volume_size_in_gbs,
     ///                     BootVolumeVpusPerGb = @var.Instance_configuration_instance_details_launch_details_source_details_boot_volume_vpus_per_gb,
     ///                     ImageId = oci_core_image.Test_image.Id,
+    ///                     KmsKeyId = oci_kms_key.Test_key.Id,
     ///                 },
     ///             },
     ///             SecondaryVnics = new[]

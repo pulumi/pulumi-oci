@@ -18,10 +18,20 @@ public final class GetSnapshotsSnapshot {
      */
     private Map<String,Object> definedTags;
     /**
+     * @return The time when this snapshot will be deleted.
+     * 
+     */
+    private String expirationTime;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      * 
      */
     private String fileSystemId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
+     * 
+     */
+    private String filesystemSnapshotPolicyId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -85,11 +95,25 @@ public final class GetSnapshotsSnapshot {
         return this.definedTags;
     }
     /**
+     * @return The time when this snapshot will be deleted.
+     * 
+     */
+    public String expirationTime() {
+        return this.expirationTime;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      * 
      */
     public String fileSystemId() {
         return this.fileSystemId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
+     * 
+     */
+    public String filesystemSnapshotPolicyId() {
+        return this.filesystemSnapshotPolicyId;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -175,7 +199,9 @@ public final class GetSnapshotsSnapshot {
     @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> definedTags;
+        private String expirationTime;
         private String fileSystemId;
+        private String filesystemSnapshotPolicyId;
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isCloneSource;
@@ -190,7 +216,9 @@ public final class GetSnapshotsSnapshot {
         public Builder(GetSnapshotsSnapshot defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.definedTags = defaults.definedTags;
+    	      this.expirationTime = defaults.expirationTime;
     	      this.fileSystemId = defaults.fileSystemId;
+    	      this.filesystemSnapshotPolicyId = defaults.filesystemSnapshotPolicyId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isCloneSource = defaults.isCloneSource;
@@ -209,8 +237,18 @@ public final class GetSnapshotsSnapshot {
             return this;
         }
         @CustomType.Setter
+        public Builder expirationTime(String expirationTime) {
+            this.expirationTime = Objects.requireNonNull(expirationTime);
+            return this;
+        }
+        @CustomType.Setter
         public Builder fileSystemId(String fileSystemId) {
             this.fileSystemId = Objects.requireNonNull(fileSystemId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder filesystemSnapshotPolicyId(String filesystemSnapshotPolicyId) {
+            this.filesystemSnapshotPolicyId = Objects.requireNonNull(filesystemSnapshotPolicyId);
             return this;
         }
         @CustomType.Setter
@@ -266,7 +304,9 @@ public final class GetSnapshotsSnapshot {
         public GetSnapshotsSnapshot build() {
             final var o = new GetSnapshotsSnapshot();
             o.definedTags = definedTags;
+            o.expirationTime = expirationTime;
             o.fileSystemId = fileSystemId;
+            o.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             o.freeformTags = freeformTags;
             o.id = id;
             o.isCloneSource = isCloneSource;

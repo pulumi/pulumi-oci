@@ -62,6 +62,21 @@ public final class GetFileSystemsArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.displayName);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
+     * 
+     */
+    @Import(name="filesystemSnapshotPolicyId")
+    private @Nullable Output<String> filesystemSnapshotPolicyId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
+     * 
+     */
+    public Optional<Output<String>> filesystemSnapshotPolicyId() {
+        return Optional.ofNullable(this.filesystemSnapshotPolicyId);
+    }
+
     @Import(name="filters")
     private @Nullable Output<List<GetFileSystemsFilterArgs>> filters;
 
@@ -135,6 +150,7 @@ public final class GetFileSystemsArgs extends com.pulumi.resources.InvokeArgs {
         this.availabilityDomain = $.availabilityDomain;
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
+        this.filesystemSnapshotPolicyId = $.filesystemSnapshotPolicyId;
         this.filters = $.filters;
         this.id = $.id;
         this.parentFileSystemId = $.parentFileSystemId;
@@ -221,6 +237,27 @@ public final class GetFileSystemsArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param filesystemSnapshotPolicyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filesystemSnapshotPolicyId(@Nullable Output<String> filesystemSnapshotPolicyId) {
+            $.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
+            return this;
+        }
+
+        /**
+         * @param filesystemSnapshotPolicyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filesystemSnapshotPolicyId(String filesystemSnapshotPolicyId) {
+            return filesystemSnapshotPolicyId(Output.of(filesystemSnapshotPolicyId));
         }
 
         public Builder filters(@Nullable Output<List<GetFileSystemsFilterArgs>> filters) {

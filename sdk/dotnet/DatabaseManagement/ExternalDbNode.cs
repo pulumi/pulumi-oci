@@ -56,6 +56,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// Name of the domain.
+        /// </summary>
+        [Output("domainName")]
+        public Output<string> DomainName { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         /// </summary>
         [Output("externalConnectorId")]
@@ -218,6 +224,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        /// <summary>
+        /// Name of the domain.
+        /// </summary>
+        [Input("domainName")]
+        public Input<string>? DomainName { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.

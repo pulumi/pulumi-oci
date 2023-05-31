@@ -17,14 +17,14 @@ public final class InstanceAvailabilityConfigArgs extends com.pulumi.resources.R
     public static final InstanceAvailabilityConfigArgs Empty = new InstanceAvailabilityConfigArgs();
 
     /**
-     * (Updatable) Whether live migration is preferred for infrastructure maintenance.  If null preference is specified, live migration will be preferred for infrastructure maintenance for applicable instances.
+     * (Updatable) Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
      * 
      */
     @Import(name="isLiveMigrationPreferred")
     private @Nullable Output<Boolean> isLiveMigrationPreferred;
 
     /**
-     * @return (Updatable) Whether live migration is preferred for infrastructure maintenance.  If null preference is specified, live migration will be preferred for infrastructure maintenance for applicable instances.
+     * @return (Updatable) Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
      * 
      */
     public Optional<Output<Boolean>> isLiveMigrationPreferred() {
@@ -72,7 +72,7 @@ public final class InstanceAvailabilityConfigArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param isLiveMigrationPreferred (Updatable) Whether live migration is preferred for infrastructure maintenance.  If null preference is specified, live migration will be preferred for infrastructure maintenance for applicable instances.
+         * @param isLiveMigrationPreferred (Updatable) Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class InstanceAvailabilityConfigArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param isLiveMigrationPreferred (Updatable) Whether live migration is preferred for infrastructure maintenance.  If null preference is specified, live migration will be preferred for infrastructure maintenance for applicable instances.
+         * @param isLiveMigrationPreferred (Updatable) Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
          * 
          * @return builder
          * 

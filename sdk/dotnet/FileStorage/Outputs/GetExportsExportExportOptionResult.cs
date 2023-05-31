@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FileStorage.Outputs
     public sealed class GetExportsExportExportOptionResult
     {
         /// <summary>
-        /// Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+        /// Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
         /// </summary>
         public readonly string Access;
         /// <summary>

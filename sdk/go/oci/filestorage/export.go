@@ -67,8 +67,7 @@ type Export struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Export options for the new export. If left unspecified, defaults to:
-	//
-	// []
+	// [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
 	//
 	// **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
 	//
@@ -134,8 +133,7 @@ func GetExport(ctx *pulumi.Context,
 // Input properties used for looking up and filtering Export resources.
 type exportState struct {
 	// (Updatable) Export options for the new export. If left unspecified, defaults to:
-	//
-	// []
+	// [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
 	//
 	// **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
 	//
@@ -164,8 +162,7 @@ type exportState struct {
 
 type ExportState struct {
 	// (Updatable) Export options for the new export. If left unspecified, defaults to:
-	//
-	// []
+	// [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
 	//
 	// **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
 	//
@@ -198,8 +195,7 @@ func (ExportState) ElementType() reflect.Type {
 
 type exportArgs struct {
 	// (Updatable) Export options for the new export. If left unspecified, defaults to:
-	//
-	// []
+	// [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
 	//
 	// **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
 	//
@@ -225,8 +221,7 @@ type exportArgs struct {
 // The set of arguments for constructing a Export resource.
 type ExportArgs struct {
 	// (Updatable) Export options for the new export. If left unspecified, defaults to:
-	//
-	// []
+	// [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
 	//
 	// **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
 	//
@@ -337,8 +332,7 @@ func (o ExportOutput) ToExportOutputWithContext(ctx context.Context) ExportOutpu
 }
 
 // (Updatable) Export options for the new export. If left unspecified, defaults to:
-//
-// []
+// [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
 //
 // **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
 //

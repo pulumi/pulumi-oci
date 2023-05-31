@@ -5489,10 +5489,10 @@ class GetNodePoolsNodePoolResult(dict):
         :param str compartment_id: The OCID of the compartment.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: The OCID of the compute instance backing this node.
+        :param str id: The OCID of the node pool.
         :param Sequence['GetNodePoolsNodePoolInitialNodeLabelArgs'] initial_node_labels: A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
-        :param str kubernetes_version: The version of Kubernetes this node is running.
-        :param str lifecycle_details: Details about the state of the node.
+        :param str kubernetes_version: The version of Kubernetes running on the nodes in the node pool.
+        :param str lifecycle_details: Details about the state of the nodepool.
         :param str name: The name to filter on.
         :param Sequence['GetNodePoolsNodePoolNodeConfigDetailArgs'] node_config_details: The configuration of nodes in the node pool.
         :param Sequence['GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs'] node_eviction_node_pool_settings: Node Eviction Details configuration
@@ -5500,12 +5500,10 @@ class GetNodePoolsNodePoolResult(dict):
         :param str node_image_name: Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
         :param Mapping[str, Any] node_metadata: A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
         :param Sequence['GetNodePoolsNodePoolNodePoolCyclingDetailArgs'] node_pool_cycling_details: Node Pool Cycling Details
-        :param str node_pool_id: The OCID of the node pool to which this node belongs.
         :param str node_shape: The name of the node shape of the nodes in the node pool.
         :param Sequence['GetNodePoolsNodePoolNodeShapeConfigArgs'] node_shape_configs: The shape configuration of the nodes.
         :param Sequence['GetNodePoolsNodePoolNodeSourceDetailArgs'] node_source_details: Source running on the nodes in the node pool.
         :param Sequence['GetNodePoolsNodePoolNodeSourceArgs'] node_sources: Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
-        :param Sequence['GetNodePoolsNodePoolNodeArgs'] nodes: The nodes in the node pool.
         :param int quantity_per_subnet: The number of nodes in each subnet.
         :param str ssh_public_key: The SSH public key on each node in the node pool on launch.
         :param str state: A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
@@ -5573,7 +5571,7 @@ class GetNodePoolsNodePoolResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the compute instance backing this node.
+        The OCID of the node pool.
         """
         return pulumi.get(self, "id")
 
@@ -5589,7 +5587,7 @@ class GetNodePoolsNodePoolResult(dict):
     @pulumi.getter(name="kubernetesVersion")
     def kubernetes_version(self) -> str:
         """
-        The version of Kubernetes this node is running.
+        The version of Kubernetes running on the nodes in the node pool.
         """
         return pulumi.get(self, "kubernetes_version")
 
@@ -5597,7 +5595,7 @@ class GetNodePoolsNodePoolResult(dict):
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
-        Details about the state of the node.
+        Details about the state of the nodepool.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -5660,9 +5658,6 @@ class GetNodePoolsNodePoolResult(dict):
     @property
     @pulumi.getter(name="nodePoolId")
     def node_pool_id(self) -> str:
-        """
-        The OCID of the node pool to which this node belongs.
-        """
         return pulumi.get(self, "node_pool_id")
 
     @property
@@ -5700,9 +5695,6 @@ class GetNodePoolsNodePoolResult(dict):
     @property
     @pulumi.getter
     def nodes(self) -> Sequence['outputs.GetNodePoolsNodePoolNodeResult']:
-        """
-        The nodes in the node pool.
-        """
         return pulumi.get(self, "nodes")
 
     @property
@@ -5785,20 +5777,15 @@ class GetNodePoolsNodePoolNodeResult(dict):
                  state: str,
                  subnet_id: str):
         """
-        :param str availability_domain: The name of the availability domain in which this node is placed.
+        :param str availability_domain: The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param Sequence['GetNodePoolsNodePoolNodeErrorArgs'] errors: An error that may be associated with the node.
-        :param str fault_domain: The fault domain of this node.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: The OCID of the compute instance backing this node.
-        :param str kubernetes_version: The version of Kubernetes this node is running.
-        :param str lifecycle_details: Details about the state of the node.
+        :param str id: The OCID of the node pool.
+        :param str kubernetes_version: The version of Kubernetes running on the nodes in the node pool.
+        :param str lifecycle_details: Details about the state of the nodepool.
         :param str name: The name to filter on.
-        :param str node_pool_id: The OCID of the node pool to which this node belongs.
-        :param str private_ip: The private IP address of this node.
-        :param str public_ip: The public IP address of this node.
         :param str state: A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
-        :param str subnet_id: The OCID of the subnet in which this node is placed.
+        :param str subnet_id: The OCID of the subnet in which to place nodes.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -5819,7 +5806,7 @@ class GetNodePoolsNodePoolNodeResult(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
         """
-        The name of the availability domain in which this node is placed.
+        The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
@@ -5834,17 +5821,11 @@ class GetNodePoolsNodePoolNodeResult(dict):
     @property
     @pulumi.getter
     def errors(self) -> Sequence['outputs.GetNodePoolsNodePoolNodeErrorResult']:
-        """
-        An error that may be associated with the node.
-        """
         return pulumi.get(self, "errors")
 
     @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> str:
-        """
-        The fault domain of this node.
-        """
         return pulumi.get(self, "fault_domain")
 
     @property
@@ -5859,7 +5840,7 @@ class GetNodePoolsNodePoolNodeResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the compute instance backing this node.
+        The OCID of the node pool.
         """
         return pulumi.get(self, "id")
 
@@ -5867,7 +5848,7 @@ class GetNodePoolsNodePoolNodeResult(dict):
     @pulumi.getter(name="kubernetesVersion")
     def kubernetes_version(self) -> str:
         """
-        The version of Kubernetes this node is running.
+        The version of Kubernetes running on the nodes in the node pool.
         """
         return pulumi.get(self, "kubernetes_version")
 
@@ -5875,7 +5856,7 @@ class GetNodePoolsNodePoolNodeResult(dict):
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
-        Details about the state of the node.
+        Details about the state of the nodepool.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -5890,25 +5871,16 @@ class GetNodePoolsNodePoolNodeResult(dict):
     @property
     @pulumi.getter(name="nodePoolId")
     def node_pool_id(self) -> str:
-        """
-        The OCID of the node pool to which this node belongs.
-        """
         return pulumi.get(self, "node_pool_id")
 
     @property
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> str:
-        """
-        The private IP address of this node.
-        """
         return pulumi.get(self, "private_ip")
 
     @property
     @pulumi.getter(name="publicIp")
     def public_ip(self) -> str:
-        """
-        The public IP address of this node.
-        """
         return pulumi.get(self, "public_ip")
 
     @property
@@ -5923,7 +5895,7 @@ class GetNodePoolsNodePoolNodeResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        The OCID of the subnet in which this node is placed.
+        The OCID of the subnet in which to place nodes.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -6083,11 +6055,11 @@ class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult(dict):
                  preemptible_node_configs: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult'],
                  subnet_id: str):
         """
-        :param str availability_domain: The name of the availability domain in which this node is placed.
+        :param str availability_domain: The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
         :param str capacity_reservation_id: The OCID of the compute capacity reservation in which to place the compute instance.
         :param Sequence[str] fault_domains: A list of fault domains in which to place nodes.
         :param Sequence['GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs'] preemptible_node_configs: Configuration options for preemptible nodes.
-        :param str subnet_id: The OCID of the subnet in which this node is placed.
+        :param str subnet_id: The OCID of the subnet in which to place nodes.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
@@ -6099,7 +6071,7 @@ class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
         """
-        The name of the availability domain in which this node is placed.
+        The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
@@ -6131,7 +6103,7 @@ class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        The OCID of the subnet in which this node is placed.
+        The OCID of the subnet in which to place nodes.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -6189,11 +6161,6 @@ class GetNodePoolsNodePoolNodeErrorResult(dict):
                  code: str,
                  message: str,
                  status: str):
-        """
-        :param str code: A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-        :param str message: A human-readable error string of the upstream error.
-        :param str status: The status of the HTTP response encountered in the upstream error.
-        """
         pulumi.set(__self__, "code", code)
         pulumi.set(__self__, "message", message)
         pulumi.set(__self__, "status", status)
@@ -6201,25 +6168,16 @@ class GetNodePoolsNodePoolNodeErrorResult(dict):
     @property
     @pulumi.getter
     def code(self) -> str:
-        """
-        A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-        """
         return pulumi.get(self, "code")
 
     @property
     @pulumi.getter
     def message(self) -> str:
-        """
-        A human-readable error string of the upstream error.
-        """
         return pulumi.get(self, "message")
 
     @property
     @pulumi.getter
     def status(self) -> str:
-        """
-        The status of the HTTP response encountered in the upstream error.
-        """
         return pulumi.get(self, "status")
 
 

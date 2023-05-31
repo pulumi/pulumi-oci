@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceAvailabilityConfig {
     /**
-     * @return Whether live migration is preferred for infrastructure maintenance.  If null preference is specified, live migration will be preferred for infrastructure maintenance for applicable instances.
+     * @return Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
      * 
      */
     private Boolean isLiveMigrationPreferred;
@@ -23,7 +23,7 @@ public final class GetInstanceAvailabilityConfig {
 
     private GetInstanceAvailabilityConfig() {}
     /**
-     * @return Whether live migration is preferred for infrastructure maintenance.  If null preference is specified, live migration will be preferred for infrastructure maintenance for applicable instances.
+     * @return Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
      * 
      */
     public Boolean isLiveMigrationPreferred() {

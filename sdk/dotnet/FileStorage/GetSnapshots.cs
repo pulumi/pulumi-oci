@@ -14,7 +14,10 @@ namespace Pulumi.Oci.FileStorage
         /// <summary>
         /// This data source provides the list of Snapshots in Oracle Cloud Infrastructure File Storage service.
         /// 
-        /// Lists snapshots of the specified file system.
+        /// Lists snapshots of the specified file system, or by file system snapshot policy and compartment,
+        /// or by file system snapshot policy and file system.
+        /// 
+        /// If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
         /// 
         /// 
         /// {{% examples %}}
@@ -31,7 +34,9 @@ namespace Pulumi.Oci.FileStorage
         /// {
         ///     var testSnapshots = Oci.FileStorage.GetSnapshots.Invoke(new()
         ///     {
+        ///         CompartmentId = @var.Compartment_id,
         ///         FileSystemId = oci_file_storage_file_system.Test_file_system.Id,
+        ///         FilesystemSnapshotPolicyId = oci_file_storage_filesystem_snapshot_policy.Test_filesystem_snapshot_policy.Id,
         ///         Id = @var.Snapshot_id,
         ///         State = @var.Snapshot_state,
         ///     });
@@ -41,13 +46,16 @@ namespace Pulumi.Oci.FileStorage
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
-        public static Task<GetSnapshotsResult> InvokeAsync(GetSnapshotsArgs args, InvokeOptions? options = null)
+        public static Task<GetSnapshotsResult> InvokeAsync(GetSnapshotsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSnapshotsResult>("oci:FileStorage/getSnapshots:getSnapshots", args ?? new GetSnapshotsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Snapshots in Oracle Cloud Infrastructure File Storage service.
         /// 
-        /// Lists snapshots of the specified file system.
+        /// Lists snapshots of the specified file system, or by file system snapshot policy and compartment,
+        /// or by file system snapshot policy and file system.
+        /// 
+        /// If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
         /// 
         /// 
         /// {{% examples %}}
@@ -64,7 +72,9 @@ namespace Pulumi.Oci.FileStorage
         /// {
         ///     var testSnapshots = Oci.FileStorage.GetSnapshots.Invoke(new()
         ///     {
+        ///         CompartmentId = @var.Compartment_id,
         ///         FileSystemId = oci_file_storage_file_system.Test_file_system.Id,
+        ///         FilesystemSnapshotPolicyId = oci_file_storage_filesystem_snapshot_policy.Test_filesystem_snapshot_policy.Id,
         ///         Id = @var.Snapshot_id,
         ///         State = @var.Snapshot_state,
         ///     });
@@ -74,7 +84,7 @@ namespace Pulumi.Oci.FileStorage
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
-        public static Output<GetSnapshotsResult> Invoke(GetSnapshotsInvokeArgs args, InvokeOptions? options = null)
+        public static Output<GetSnapshotsResult> Invoke(GetSnapshotsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSnapshotsResult>("oci:FileStorage/getSnapshots:getSnapshots", args ?? new GetSnapshotsInvokeArgs(), options.WithDefaults());
     }
 
@@ -82,10 +92,22 @@ namespace Pulumi.Oci.FileStorage
     public sealed class GetSnapshotsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        /// </summary>
+        [Input("compartmentId")]
+        public string? CompartmentId { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
         /// </summary>
-        [Input("fileSystemId", required: true)]
-        public string FileSystemId { get; set; } = null!;
+        [Input("fileSystemId")]
+        public string? FileSystemId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
+        /// </summary>
+        [Input("filesystemSnapshotPolicyId")]
+        public string? FilesystemSnapshotPolicyId { get; set; }
 
         [Input("filters")]
         private List<Inputs.GetSnapshotsFilterArgs>? _filters;
@@ -116,10 +138,22 @@ namespace Pulumi.Oci.FileStorage
     public sealed class GetSnapshotsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        /// </summary>
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
         /// </summary>
-        [Input("fileSystemId", required: true)]
-        public Input<string> FileSystemId { get; set; } = null!;
+        [Input("fileSystemId")]
+        public Input<string>? FileSystemId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
+        /// </summary>
+        [Input("filesystemSnapshotPolicyId")]
+        public Input<string>? FilesystemSnapshotPolicyId { get; set; }
 
         [Input("filters")]
         private InputList<Inputs.GetSnapshotsFilterInputArgs>? _filters;
@@ -151,10 +185,15 @@ namespace Pulumi.Oci.FileStorage
     [OutputType]
     public sealed class GetSnapshotsResult
     {
+        public readonly string? CompartmentId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
         /// </summary>
-        public readonly string FileSystemId;
+        public readonly string? FileSystemId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
+        /// </summary>
+        public readonly string? FilesystemSnapshotPolicyId;
         public readonly ImmutableArray<Outputs.GetSnapshotsFilterResult> Filters;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot.
@@ -171,7 +210,11 @@ namespace Pulumi.Oci.FileStorage
 
         [OutputConstructor]
         private GetSnapshotsResult(
-            string fileSystemId,
+            string? compartmentId,
+
+            string? fileSystemId,
+
+            string? filesystemSnapshotPolicyId,
 
             ImmutableArray<Outputs.GetSnapshotsFilterResult> filters,
 
@@ -181,7 +224,9 @@ namespace Pulumi.Oci.FileStorage
 
             string? state)
         {
+            CompartmentId = compartmentId;
             FileSystemId = fileSystemId;
+            FilesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             Filters = filters;
             Id = id;
             Snapshots = snapshots;

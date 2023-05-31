@@ -13,7 +13,7 @@ namespace Pulumi.Oci.FileStorage.Inputs
     public sealed class ExportExportOptionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+        /// (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
         /// </summary>
         [Input("access")]
         public Input<string>? Access { get; set; }

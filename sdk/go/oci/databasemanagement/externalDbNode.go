@@ -37,6 +37,8 @@ type ExternalDbNode struct {
 	CpuCoreCount pulumi.Float64Output `pulumi:"cpuCoreCount"`
 	// The user-friendly name for the external DB node. The name does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// Name of the domain.
+	DomainName pulumi.StringOutput `pulumi:"domainName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
 	ExternalConnectorId pulumi.StringOutput `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
@@ -102,6 +104,8 @@ type externalDbNodeState struct {
 	CpuCoreCount *float64 `pulumi:"cpuCoreCount"`
 	// The user-friendly name for the external DB node. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
+	// Name of the domain.
+	DomainName *string `pulumi:"domainName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
 	ExternalConnectorId *string `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
@@ -136,6 +140,8 @@ type ExternalDbNodeState struct {
 	CpuCoreCount pulumi.Float64PtrInput
 	// The user-friendly name for the external DB node. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
+	// Name of the domain.
+	DomainName pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
 	ExternalConnectorId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
@@ -294,6 +300,11 @@ func (o ExternalDbNodeOutput) CpuCoreCount() pulumi.Float64Output {
 // The user-friendly name for the external DB node. The name does not have to be unique.
 func (o ExternalDbNodeOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalDbNode) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Name of the domain.
+func (o ExternalDbNodeOutput) DomainName() pulumi.StringOutput {
+	return o.ApplyT(func(v *ExternalDbNode) pulumi.StringOutput { return v.DomainName }).(pulumi.StringOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.

@@ -25,6 +25,7 @@ import * as utilities from "../utilities";
  * const testManagedDatabases = oci.DatabaseManagement.getManagedDatabases({
  *     compartmentId: _var.compartment_id,
  *     deploymentType: _var.managed_database_deployment_type,
+ *     externalExadataInfrastructureId: oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure.id,
  *     id: _var.managed_database_id,
  *     managementOption: _var.managed_database_management_option,
  *     name: _var.managed_database_name,
@@ -37,6 +38,7 @@ export function getManagedDatabases(args: GetManagedDatabasesArgs, opts?: pulumi
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabases:getManagedDatabases", {
         "compartmentId": args.compartmentId,
         "deploymentType": args.deploymentType,
+        "externalExadataInfrastructureId": args.externalExadataInfrastructureId,
         "filters": args.filters,
         "id": args.id,
         "managementOption": args.managementOption,
@@ -56,6 +58,10 @@ export interface GetManagedDatabasesArgs {
      * A filter to return Managed Databases of the specified deployment type.
      */
     deploymentType?: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     */
+    externalExadataInfrastructureId?: string;
     filters?: inputs.DatabaseManagement.GetManagedDatabasesFilter[];
     /**
      * The identifier of the resource.
@@ -83,6 +89,7 @@ export interface GetManagedDatabasesResult {
      * The infrastructure used to deploy the Oracle Database.
      */
     readonly deploymentType?: string;
+    readonly externalExadataInfrastructureId?: string;
     readonly filters?: outputs.DatabaseManagement.GetManagedDatabasesFilter[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
@@ -120,6 +127,7 @@ export interface GetManagedDatabasesResult {
  * const testManagedDatabases = oci.DatabaseManagement.getManagedDatabases({
  *     compartmentId: _var.compartment_id,
  *     deploymentType: _var.managed_database_deployment_type,
+ *     externalExadataInfrastructureId: oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure.id,
  *     id: _var.managed_database_id,
  *     managementOption: _var.managed_database_management_option,
  *     name: _var.managed_database_name,
@@ -142,6 +150,10 @@ export interface GetManagedDatabasesOutputArgs {
      * A filter to return Managed Databases of the specified deployment type.
      */
     deploymentType?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     */
+    externalExadataInfrastructureId?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabasesFilterArgs>[]>;
     /**
      * The identifier of the resource.

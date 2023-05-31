@@ -46,6 +46,9 @@ __all__ = [
     'ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo',
     'ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentials',
     'ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionString',
+    'ExternalExadataInfrastructureDatabaseSystem',
+    'ExternalExadataInfrastructureStorageGrid',
+    'ExternalExadataStorageConnectorCredentialInfo',
     'ExternalListenerEndpoint',
     'ExternalListenerServicedAsm',
     'ExternalListenerServicedDatabase',
@@ -91,6 +94,7 @@ __all__ = [
     'GetExternalDatabasesExternalDatabaseCollectionItemResult',
     'GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfigResult',
     'GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoResult',
+    'GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoResult',
     'GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetailResult',
     'GetExternalDatabasesFilterResult',
     'GetExternalDbHomesExternalDbHomeCollectionResult',
@@ -170,6 +174,27 @@ __all__ = [
     'GetExternalDbSystemsExternalDbSystemCollectionItemResult',
     'GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfigResult',
     'GetExternalDbSystemsFilterResult',
+    'GetExternalExadataInfrastructureDatabaseSystemResult',
+    'GetExternalExadataInfrastructureStorageGridResult',
+    'GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionResult',
+    'GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemResult',
+    'GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemResult',
+    'GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridResult',
+    'GetExternalExadataInfrastructuresFilterResult',
+    'GetExternalExadataStorageConnectorCredentialInfoResult',
+    'GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionResult',
+    'GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemResult',
+    'GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoResult',
+    'GetExternalExadataStorageConnectorsFilterResult',
+    'GetExternalExadataStorageGridStorageServerResult',
+    'GetExternalExadataStorageServerConnectorResult',
+    'GetExternalExadataStorageServerIormPlanDbPlanResult',
+    'GetExternalExadataStorageServerIormPlanDbPlanItemResult',
+    'GetExternalExadataStorageServerOpenAlertHistoryAlertResult',
+    'GetExternalExadataStorageServerTopSqlCpuActivityActivityResult',
+    'GetExternalExadataStorageServersExternalExadataStorageServerCollectionResult',
+    'GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemResult',
+    'GetExternalExadataStorageServersFilterResult',
     'GetExternalListenerEndpointResult',
     'GetExternalListenerServicedAsmResult',
     'GetExternalListenerServicedDatabaseResult',
@@ -3738,6 +3763,442 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
 
 
 @pulumi.output_type
+class ExternalExadataInfrastructureDatabaseSystem(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "additionalDetails":
+            suggest = "additional_details"
+        elif key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "internalId":
+            suggest = "internal_id"
+        elif key == "licenseModel":
+            suggest = "license_model"
+        elif key == "lifecycleDetails":
+            suggest = "lifecycle_details"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeUpdated":
+            suggest = "time_updated"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExternalExadataInfrastructureDatabaseSystem. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExternalExadataInfrastructureDatabaseSystem.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExternalExadataInfrastructureDatabaseSystem.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 additional_details: Optional[Mapping[str, Any]] = None,
+                 compartment_id: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 internal_id: Optional[str] = None,
+                 license_model: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 state: Optional[str] = None,
+                 status: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 version: Optional[str] = None):
+        """
+        :param Mapping[str, Any] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param str display_name: (Updatable) The name of the Exadata infrastructure.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        :param str internal_id: The internal ID of the Exadata resource.
+        :param str license_model: (Updatable) The Oracle license model that applies to the database management resources.
+        :param str lifecycle_details: The details of the lifecycle state of the Exadata resource.
+        :param str state: The current lifecycle state of the database resource.
+        :param str status: The status of the Exadata resource.
+        :param str time_created: The timestamp of the creation of the Exadata resource.
+        :param str time_updated: The timestamp of the last update of the Exadata resource.
+        :param str version: The version of the Exadata resource.
+        """
+        if additional_details is not None:
+            pulumi.set(__self__, "additional_details", additional_details)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if internal_id is not None:
+            pulumi.set(__self__, "internal_id", internal_id)
+        if license_model is not None:
+            pulumi.set(__self__, "license_model", license_model)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Optional[Mapping[str, Any]]:
+        """
+        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_details")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        (Updatable) The name of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="internalId")
+    def internal_id(self) -> Optional[str]:
+        """
+        The internal ID of the Exadata resource.
+        """
+        return pulumi.get(self, "internal_id")
+
+    @property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> Optional[str]:
+        """
+        (Updatable) The Oracle license model that applies to the database management resources.
+        """
+        return pulumi.get(self, "license_model")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[str]:
+        """
+        The details of the lifecycle state of the Exadata resource.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The current lifecycle state of the database resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        """
+        The status of the Exadata resource.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The timestamp of the creation of the Exadata resource.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[str]:
+        """
+        The timestamp of the last update of the Exadata resource.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[str]:
+        """
+        The version of the Exadata resource.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class ExternalExadataInfrastructureStorageGrid(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "additionalDetails":
+            suggest = "additional_details"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "internalId":
+            suggest = "internal_id"
+        elif key == "lifecycleDetails":
+            suggest = "lifecycle_details"
+        elif key == "serverCount":
+            suggest = "server_count"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeUpdated":
+            suggest = "time_updated"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExternalExadataInfrastructureStorageGrid. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExternalExadataInfrastructureStorageGrid.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExternalExadataInfrastructureStorageGrid.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 additional_details: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 internal_id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 server_count: Optional[float] = None,
+                 state: Optional[str] = None,
+                 status: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 version: Optional[str] = None):
+        """
+        :param Mapping[str, Any] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        :param str display_name: (Updatable) The name of the Exadata infrastructure.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        :param str internal_id: The internal ID of the Exadata resource.
+        :param str lifecycle_details: The details of the lifecycle state of the Exadata resource.
+        :param float server_count: The number of Exadata storage servers in the Exadata infrastructure.
+        :param str state: The current lifecycle state of the database resource.
+        :param str status: The status of the Exadata resource.
+        :param str time_created: The timestamp of the creation of the Exadata resource.
+        :param str time_updated: The timestamp of the last update of the Exadata resource.
+        :param str version: The version of the Exadata resource.
+        """
+        if additional_details is not None:
+            pulumi.set(__self__, "additional_details", additional_details)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if internal_id is not None:
+            pulumi.set(__self__, "internal_id", internal_id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if server_count is not None:
+            pulumi.set(__self__, "server_count", server_count)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Optional[Mapping[str, Any]]:
+        """
+        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_details")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        (Updatable) The name of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="internalId")
+    def internal_id(self) -> Optional[str]:
+        """
+        The internal ID of the Exadata resource.
+        """
+        return pulumi.get(self, "internal_id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[str]:
+        """
+        The details of the lifecycle state of the Exadata resource.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="serverCount")
+    def server_count(self) -> Optional[float]:
+        """
+        The number of Exadata storage servers in the Exadata infrastructure.
+        """
+        return pulumi.get(self, "server_count")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The current lifecycle state of the database resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        """
+        The status of the Exadata resource.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The timestamp of the creation of the Exadata resource.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[str]:
+        """
+        The timestamp of the last update of the Exadata resource.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[str]:
+        """
+        The version of the Exadata resource.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class ExternalExadataStorageConnectorCredentialInfo(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sslTrustStoreLocation":
+            suggest = "ssl_trust_store_location"
+        elif key == "sslTrustStorePassword":
+            suggest = "ssl_trust_store_password"
+        elif key == "sslTrustStoreType":
+            suggest = "ssl_trust_store_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExternalExadataStorageConnectorCredentialInfo. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExternalExadataStorageConnectorCredentialInfo.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExternalExadataStorageConnectorCredentialInfo.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 password: str,
+                 username: str,
+                 ssl_trust_store_location: Optional[str] = None,
+                 ssl_trust_store_password: Optional[str] = None,
+                 ssl_trust_store_type: Optional[str] = None):
+        """
+        :param str password: (Updatable) The password of the user.
+        :param str username: (Updatable) The name of the user.
+        :param str ssl_trust_store_location: (Updatable) The full path of the SSL truststore location in the agent.
+        :param str ssl_trust_store_password: (Updatable) The password of the SSL truststore location in the agent.
+        :param str ssl_trust_store_type: (Updatable) The SSL truststore type.
+        """
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "username", username)
+        if ssl_trust_store_location is not None:
+            pulumi.set(__self__, "ssl_trust_store_location", ssl_trust_store_location)
+        if ssl_trust_store_password is not None:
+            pulumi.set(__self__, "ssl_trust_store_password", ssl_trust_store_password)
+        if ssl_trust_store_type is not None:
+            pulumi.set(__self__, "ssl_trust_store_type", ssl_trust_store_type)
+
+    @property
+    @pulumi.getter
+    def password(self) -> str:
+        """
+        (Updatable) The password of the user.
+        """
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter
+    def username(self) -> str:
+        """
+        (Updatable) The name of the user.
+        """
+        return pulumi.get(self, "username")
+
+    @property
+    @pulumi.getter(name="sslTrustStoreLocation")
+    def ssl_trust_store_location(self) -> Optional[str]:
+        """
+        (Updatable) The full path of the SSL truststore location in the agent.
+        """
+        return pulumi.get(self, "ssl_trust_store_location")
+
+    @property
+    @pulumi.getter(name="sslTrustStorePassword")
+    def ssl_trust_store_password(self) -> Optional[str]:
+        """
+        (Updatable) The password of the SSL truststore location in the agent.
+        """
+        return pulumi.get(self, "ssl_trust_store_password")
+
+    @property
+    @pulumi.getter(name="sslTrustStoreType")
+    def ssl_trust_store_type(self) -> Optional[str]:
+        """
+        (Updatable) The SSL truststore type.
+        """
+        return pulumi.get(self, "ssl_trust_store_type")
+
+
+@pulumi.output_type
 class ExternalListenerEndpoint(dict):
     def __init__(__self__, *,
                  host: Optional[str] = None,
@@ -6538,6 +6999,57 @@ class GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoResult(dict)
     def __init__(__self__, *,
                  compartment_id: str,
                  display_name: str,
+                 exadata_infra_infos: Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoResult'],
+                 id: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param str display_name: A filter to only return the resources that match the entire display name.
+        :param Sequence['GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArgs'] exadata_infra_infos: The basic information about an external Exadata Infrastructure.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "exadata_infra_infos", exadata_infra_infos)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="exadataInfraInfos")
+    def exadata_infra_infos(self) -> Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoResult']:
+        """
+        The basic information about an external Exadata Infrastructure.
+        """
+        return pulumi.get(self, "exadata_infra_infos")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 display_name: str,
                  id: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -6827,6 +7339,7 @@ class GetExternalDbNodesExternalDbNodeCollectionItemResult(dict):
                  component_name: str,
                  cpu_core_count: float,
                  display_name: str,
+                 domain_name: str,
                  external_connector_id: str,
                  external_db_node_id: str,
                  external_db_system_id: str,
@@ -6843,6 +7356,7 @@ class GetExternalDbNodesExternalDbNodeCollectionItemResult(dict):
         :param str component_name: The name of the external DB node.
         :param float cpu_core_count: The number of CPU cores available on the DB node.
         :param str display_name: A filter to only return the resources that match the entire display name.
+        :param str domain_name: Name of the domain.
         :param str external_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
         :param str host_name: The host name for the DB node.
@@ -6858,6 +7372,7 @@ class GetExternalDbNodesExternalDbNodeCollectionItemResult(dict):
         pulumi.set(__self__, "component_name", component_name)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "domain_name", domain_name)
         pulumi.set(__self__, "external_connector_id", external_connector_id)
         pulumi.set(__self__, "external_db_node_id", external_db_node_id)
         pulumi.set(__self__, "external_db_system_id", external_db_system_id)
@@ -6908,6 +7423,14 @@ class GetExternalDbNodesExternalDbNodeCollectionItemResult(dict):
         A filter to only return the resources that match the entire display name.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> str:
+        """
+        Name of the domain.
+        """
+        return pulumi.get(self, "domain_name")
 
     @property
     @pulumi.getter(name="externalConnectorId")
@@ -11920,6 +12443,2063 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfig
 
 @pulumi.output_type
 class GetExternalDbSystemsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetExternalExadataInfrastructureDatabaseSystemResult(dict):
+    def __init__(__self__, *,
+                 additional_details: Mapping[str, Any],
+                 compartment_id: str,
+                 display_name: str,
+                 id: str,
+                 internal_id: str,
+                 license_model: str,
+                 lifecycle_details: str,
+                 state: str,
+                 status: str,
+                 time_created: str,
+                 time_updated: str,
+                 version: str):
+        """
+        :param Mapping[str, Any] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param str display_name: The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        :param str internal_id: The internal ID of the Exadata resource.
+        :param str license_model: The Oracle license model that applies to the database management resources.
+        :param str lifecycle_details: The details of the lifecycle state of the Exadata resource.
+        :param str state: The current lifecycle state of the database resource.
+        :param str status: The status of the Exadata resource.
+        :param str time_created: The timestamp of the creation of the Exadata resource.
+        :param str time_updated: The timestamp of the last update of the Exadata resource.
+        :param str version: The version of the Exadata resource.
+        """
+        pulumi.set(__self__, "additional_details", additional_details)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "internal_id", internal_id)
+        pulumi.set(__self__, "license_model", license_model)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Mapping[str, Any]:
+        """
+        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_details")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="internalId")
+    def internal_id(self) -> str:
+        """
+        The internal ID of the Exadata resource.
+        """
+        return pulumi.get(self, "internal_id")
+
+    @property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> str:
+        """
+        The Oracle license model that applies to the database management resources.
+        """
+        return pulumi.get(self, "license_model")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        The details of the lifecycle state of the Exadata resource.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current lifecycle state of the database resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the Exadata resource.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The timestamp of the creation of the Exadata resource.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The timestamp of the last update of the Exadata resource.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        The version of the Exadata resource.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetExternalExadataInfrastructureStorageGridResult(dict):
+    def __init__(__self__, *,
+                 additional_details: Mapping[str, Any],
+                 display_name: str,
+                 id: str,
+                 internal_id: str,
+                 lifecycle_details: str,
+                 server_count: float,
+                 state: str,
+                 status: str,
+                 time_created: str,
+                 time_updated: str,
+                 version: str):
+        """
+        :param Mapping[str, Any] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        :param str display_name: The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        :param str internal_id: The internal ID of the Exadata resource.
+        :param str lifecycle_details: The details of the lifecycle state of the Exadata resource.
+        :param float server_count: The number of Exadata storage servers in the Exadata infrastructure.
+        :param str state: The current lifecycle state of the database resource.
+        :param str status: The status of the Exadata resource.
+        :param str time_created: The timestamp of the creation of the Exadata resource.
+        :param str time_updated: The timestamp of the last update of the Exadata resource.
+        :param str version: The version of the Exadata resource.
+        """
+        pulumi.set(__self__, "additional_details", additional_details)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "internal_id", internal_id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "server_count", server_count)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Mapping[str, Any]:
+        """
+        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_details")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="internalId")
+    def internal_id(self) -> str:
+        """
+        The internal ID of the Exadata resource.
+        """
+        return pulumi.get(self, "internal_id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        The details of the lifecycle state of the Exadata resource.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="serverCount")
+    def server_count(self) -> float:
+        """
+        The number of Exadata storage servers in the Exadata infrastructure.
+        """
+        return pulumi.get(self, "server_count")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current lifecycle state of the database resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the Exadata resource.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The timestamp of the creation of the Exadata resource.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The timestamp of the last update of the Exadata resource.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        The version of the Exadata resource.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 additional_details: Mapping[str, Any],
+                 compartment_id: str,
+                 database_compartments: Sequence[str],
+                 database_systems: Sequence['outputs.GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemResult'],
+                 db_system_ids: Sequence[str],
+                 discovery_key: str,
+                 display_name: str,
+                 id: str,
+                 internal_id: str,
+                 license_model: str,
+                 lifecycle_details: str,
+                 rack_size: str,
+                 state: str,
+                 status: str,
+                 storage_grids: Sequence['outputs.GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridResult'],
+                 storage_server_names: Sequence[str],
+                 time_created: str,
+                 time_updated: str,
+                 version: str):
+        """
+        :param Mapping[str, Any] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Sequence[str] database_compartments: The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+        :param Sequence['GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArgs'] database_systems: A list of DB systems.
+        :param str display_name: The optional single value query filter parameter on the entity display name.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        :param str internal_id: The internal ID of the Exadata resource.
+        :param str license_model: The Oracle license model that applies to the database management resources.
+        :param str lifecycle_details: The details of the lifecycle state of the Exadata resource.
+        :param str rack_size: The rack size of the Exadata infrastructure.
+        :param str state: The current lifecycle state of the database resource.
+        :param str status: The status of the Exadata resource.
+        :param Sequence['GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArgs'] storage_grids: The Exadata storage server grid of the Exadata infrastructure.
+        :param str time_created: The timestamp of the creation of the Exadata resource.
+        :param str time_updated: The timestamp of the last update of the Exadata resource.
+        :param str version: The version of the Exadata resource.
+        """
+        pulumi.set(__self__, "additional_details", additional_details)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "database_compartments", database_compartments)
+        pulumi.set(__self__, "database_systems", database_systems)
+        pulumi.set(__self__, "db_system_ids", db_system_ids)
+        pulumi.set(__self__, "discovery_key", discovery_key)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "internal_id", internal_id)
+        pulumi.set(__self__, "license_model", license_model)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "rack_size", rack_size)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "storage_grids", storage_grids)
+        pulumi.set(__self__, "storage_server_names", storage_server_names)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Mapping[str, Any]:
+        """
+        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_details")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="databaseCompartments")
+    def database_compartments(self) -> Sequence[str]:
+        """
+        The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+        """
+        return pulumi.get(self, "database_compartments")
+
+    @property
+    @pulumi.getter(name="databaseSystems")
+    def database_systems(self) -> Sequence['outputs.GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemResult']:
+        """
+        A list of DB systems.
+        """
+        return pulumi.get(self, "database_systems")
+
+    @property
+    @pulumi.getter(name="dbSystemIds")
+    def db_system_ids(self) -> Sequence[str]:
+        return pulumi.get(self, "db_system_ids")
+
+    @property
+    @pulumi.getter(name="discoveryKey")
+    def discovery_key(self) -> str:
+        return pulumi.get(self, "discovery_key")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The optional single value query filter parameter on the entity display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="internalId")
+    def internal_id(self) -> str:
+        """
+        The internal ID of the Exadata resource.
+        """
+        return pulumi.get(self, "internal_id")
+
+    @property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> str:
+        """
+        The Oracle license model that applies to the database management resources.
+        """
+        return pulumi.get(self, "license_model")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        The details of the lifecycle state of the Exadata resource.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="rackSize")
+    def rack_size(self) -> str:
+        """
+        The rack size of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "rack_size")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current lifecycle state of the database resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the Exadata resource.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="storageGrids")
+    def storage_grids(self) -> Sequence['outputs.GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridResult']:
+        """
+        The Exadata storage server grid of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "storage_grids")
+
+    @property
+    @pulumi.getter(name="storageServerNames")
+    def storage_server_names(self) -> Sequence[str]:
+        return pulumi.get(self, "storage_server_names")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The timestamp of the creation of the Exadata resource.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The timestamp of the last update of the Exadata resource.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        The version of the Exadata resource.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemResult(dict):
+    def __init__(__self__, *,
+                 additional_details: Mapping[str, Any],
+                 compartment_id: str,
+                 display_name: str,
+                 id: str,
+                 internal_id: str,
+                 license_model: str,
+                 lifecycle_details: str,
+                 state: str,
+                 status: str,
+                 time_created: str,
+                 time_updated: str,
+                 version: str):
+        """
+        :param Mapping[str, Any] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param str display_name: The optional single value query filter parameter on the entity display name.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        :param str internal_id: The internal ID of the Exadata resource.
+        :param str license_model: The Oracle license model that applies to the database management resources.
+        :param str lifecycle_details: The details of the lifecycle state of the Exadata resource.
+        :param str state: The current lifecycle state of the database resource.
+        :param str status: The status of the Exadata resource.
+        :param str time_created: The timestamp of the creation of the Exadata resource.
+        :param str time_updated: The timestamp of the last update of the Exadata resource.
+        :param str version: The version of the Exadata resource.
+        """
+        pulumi.set(__self__, "additional_details", additional_details)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "internal_id", internal_id)
+        pulumi.set(__self__, "license_model", license_model)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Mapping[str, Any]:
+        """
+        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_details")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The optional single value query filter parameter on the entity display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="internalId")
+    def internal_id(self) -> str:
+        """
+        The internal ID of the Exadata resource.
+        """
+        return pulumi.get(self, "internal_id")
+
+    @property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> str:
+        """
+        The Oracle license model that applies to the database management resources.
+        """
+        return pulumi.get(self, "license_model")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        The details of the lifecycle state of the Exadata resource.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current lifecycle state of the database resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the Exadata resource.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The timestamp of the creation of the Exadata resource.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The timestamp of the last update of the Exadata resource.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        The version of the Exadata resource.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridResult(dict):
+    def __init__(__self__, *,
+                 additional_details: Mapping[str, Any],
+                 display_name: str,
+                 id: str,
+                 internal_id: str,
+                 lifecycle_details: str,
+                 server_count: float,
+                 state: str,
+                 status: str,
+                 time_created: str,
+                 time_updated: str,
+                 version: str):
+        """
+        :param Mapping[str, Any] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        :param str display_name: The optional single value query filter parameter on the entity display name.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        :param str internal_id: The internal ID of the Exadata resource.
+        :param str lifecycle_details: The details of the lifecycle state of the Exadata resource.
+        :param float server_count: The number of Exadata storage servers in the Exadata infrastructure.
+        :param str state: The current lifecycle state of the database resource.
+        :param str status: The status of the Exadata resource.
+        :param str time_created: The timestamp of the creation of the Exadata resource.
+        :param str time_updated: The timestamp of the last update of the Exadata resource.
+        :param str version: The version of the Exadata resource.
+        """
+        pulumi.set(__self__, "additional_details", additional_details)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "internal_id", internal_id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "server_count", server_count)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Mapping[str, Any]:
+        """
+        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_details")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The optional single value query filter parameter on the entity display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="internalId")
+    def internal_id(self) -> str:
+        """
+        The internal ID of the Exadata resource.
+        """
+        return pulumi.get(self, "internal_id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        The details of the lifecycle state of the Exadata resource.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="serverCount")
+    def server_count(self) -> float:
+        """
+        The number of Exadata storage servers in the Exadata infrastructure.
+        """
+        return pulumi.get(self, "server_count")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current lifecycle state of the database resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the Exadata resource.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The timestamp of the creation of the Exadata resource.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The timestamp of the last update of the Exadata resource.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        The version of the Exadata resource.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetExternalExadataInfrastructuresFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetExternalExadataStorageConnectorCredentialInfoResult(dict):
+    def __init__(__self__, *,
+                 password: str,
+                 ssl_trust_store_location: str,
+                 ssl_trust_store_password: str,
+                 ssl_trust_store_type: str,
+                 username: str):
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "ssl_trust_store_location", ssl_trust_store_location)
+        pulumi.set(__self__, "ssl_trust_store_password", ssl_trust_store_password)
+        pulumi.set(__self__, "ssl_trust_store_type", ssl_trust_store_type)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def password(self) -> str:
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter(name="sslTrustStoreLocation")
+    def ssl_trust_store_location(self) -> str:
+        return pulumi.get(self, "ssl_trust_store_location")
+
+    @property
+    @pulumi.getter(name="sslTrustStorePassword")
+    def ssl_trust_store_password(self) -> str:
+        return pulumi.get(self, "ssl_trust_store_password")
+
+    @property
+    @pulumi.getter(name="sslTrustStoreType")
+    def ssl_trust_store_type(self) -> str:
+        return pulumi.get(self, "ssl_trust_store_type")
+
+    @property
+    @pulumi.getter
+    def username(self) -> str:
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 additional_details: Mapping[str, Any],
+                 agent_id: str,
+                 connection_uri: str,
+                 connector_name: str,
+                 credential_infos: Sequence['outputs.GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoResult'],
+                 display_name: str,
+                 exadata_infrastructure_id: str,
+                 id: str,
+                 internal_id: str,
+                 lifecycle_details: str,
+                 state: str,
+                 status: str,
+                 storage_server_id: str,
+                 time_created: str,
+                 time_updated: str,
+                 version: str):
+        """
+        :param Mapping[str, Any] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        :param str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
+        :param str connection_uri: The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+        :param str display_name: The optional single value query filter parameter on the entity display name.
+        :param str exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        :param str internal_id: The internal ID of the Exadata resource.
+        :param str lifecycle_details: The details of the lifecycle state of the Exadata resource.
+        :param str state: The current lifecycle state of the database resource.
+        :param str status: The status of the Exadata resource.
+        :param str storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+        :param str time_created: The timestamp of the creation of the Exadata resource.
+        :param str time_updated: The timestamp of the last update of the Exadata resource.
+        :param str version: The version of the Exadata resource.
+        """
+        pulumi.set(__self__, "additional_details", additional_details)
+        pulumi.set(__self__, "agent_id", agent_id)
+        pulumi.set(__self__, "connection_uri", connection_uri)
+        pulumi.set(__self__, "connector_name", connector_name)
+        pulumi.set(__self__, "credential_infos", credential_infos)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "internal_id", internal_id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "storage_server_id", storage_server_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Mapping[str, Any]:
+        """
+        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_details")
+
+    @property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @property
+    @pulumi.getter(name="connectionUri")
+    def connection_uri(self) -> str:
+        """
+        The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+        """
+        return pulumi.get(self, "connection_uri")
+
+    @property
+    @pulumi.getter(name="connectorName")
+    def connector_name(self) -> str:
+        return pulumi.get(self, "connector_name")
+
+    @property
+    @pulumi.getter(name="credentialInfos")
+    def credential_infos(self) -> Sequence['outputs.GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoResult']:
+        return pulumi.get(self, "credential_infos")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The optional single value query filter parameter on the entity display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="exadataInfrastructureId")
+    def exadata_infrastructure_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "exadata_infrastructure_id")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="internalId")
+    def internal_id(self) -> str:
+        """
+        The internal ID of the Exadata resource.
+        """
+        return pulumi.get(self, "internal_id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        The details of the lifecycle state of the Exadata resource.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current lifecycle state of the database resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the Exadata resource.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="storageServerId")
+    def storage_server_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+        """
+        return pulumi.get(self, "storage_server_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The timestamp of the creation of the Exadata resource.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The timestamp of the last update of the Exadata resource.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        The version of the Exadata resource.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoResult(dict):
+    def __init__(__self__, *,
+                 password: str,
+                 ssl_trust_store_location: str,
+                 ssl_trust_store_password: str,
+                 ssl_trust_store_type: str,
+                 username: str):
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "ssl_trust_store_location", ssl_trust_store_location)
+        pulumi.set(__self__, "ssl_trust_store_password", ssl_trust_store_password)
+        pulumi.set(__self__, "ssl_trust_store_type", ssl_trust_store_type)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def password(self) -> str:
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter(name="sslTrustStoreLocation")
+    def ssl_trust_store_location(self) -> str:
+        return pulumi.get(self, "ssl_trust_store_location")
+
+    @property
+    @pulumi.getter(name="sslTrustStorePassword")
+    def ssl_trust_store_password(self) -> str:
+        return pulumi.get(self, "ssl_trust_store_password")
+
+    @property
+    @pulumi.getter(name="sslTrustStoreType")
+    def ssl_trust_store_type(self) -> str:
+        return pulumi.get(self, "ssl_trust_store_type")
+
+    @property
+    @pulumi.getter
+    def username(self) -> str:
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetExternalExadataStorageConnectorsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetExternalExadataStorageGridStorageServerResult(dict):
+    def __init__(__self__, *,
+                 additional_details: Mapping[str, Any],
+                 connector_id: str,
+                 cpu_count: float,
+                 display_name: str,
+                 id: str,
+                 internal_id: str,
+                 ip_address: str,
+                 lifecycle_details: str,
+                 make_model: str,
+                 max_flash_disk_iops: int,
+                 max_flash_disk_throughput: int,
+                 max_hard_disk_iops: int,
+                 max_hard_disk_throughput: int,
+                 memory_gb: float,
+                 resource_type: str,
+                 state: str,
+                 status: str,
+                 time_created: str,
+                 time_updated: str,
+                 version: str):
+        """
+        :param Mapping[str, Any] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        :param str connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
+        :param float cpu_count: The CPU count of the Exadata storage server.
+        :param str display_name: The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        :param str internal_id: The internal ID of the Exadata resource.
+        :param str ip_address: The IP address of the Exadata storage server.
+        :param str lifecycle_details: The details of the lifecycle state of the Exadata resource.
+        :param str make_model: The make model of the Exadata storage server.
+        :param int max_flash_disk_iops: The maximum flash disk IO operations per second of the Exadata storage server.
+        :param int max_flash_disk_throughput: The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+        :param int max_hard_disk_iops: The maximum hard disk IO operations per second of the Exadata storage server.
+        :param int max_hard_disk_throughput: The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+        :param float memory_gb: The Exadata storage server memory size in GB.
+        :param str resource_type: The type of Exadata resource.
+        :param str state: The current lifecycle state of the database resource.
+        :param str status: The status of the Exadata resource.
+        :param str time_created: The timestamp of the creation of the Exadata resource.
+        :param str time_updated: The timestamp of the last update of the Exadata resource.
+        :param str version: The version of the Exadata resource.
+        """
+        pulumi.set(__self__, "additional_details", additional_details)
+        pulumi.set(__self__, "connector_id", connector_id)
+        pulumi.set(__self__, "cpu_count", cpu_count)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "internal_id", internal_id)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "make_model", make_model)
+        pulumi.set(__self__, "max_flash_disk_iops", max_flash_disk_iops)
+        pulumi.set(__self__, "max_flash_disk_throughput", max_flash_disk_throughput)
+        pulumi.set(__self__, "max_hard_disk_iops", max_hard_disk_iops)
+        pulumi.set(__self__, "max_hard_disk_throughput", max_hard_disk_throughput)
+        pulumi.set(__self__, "memory_gb", memory_gb)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Mapping[str, Any]:
+        """
+        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_details")
+
+    @property
+    @pulumi.getter(name="connectorId")
+    def connector_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
+        """
+        return pulumi.get(self, "connector_id")
+
+    @property
+    @pulumi.getter(name="cpuCount")
+    def cpu_count(self) -> float:
+        """
+        The CPU count of the Exadata storage server.
+        """
+        return pulumi.get(self, "cpu_count")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="internalId")
+    def internal_id(self) -> str:
+        """
+        The internal ID of the Exadata resource.
+        """
+        return pulumi.get(self, "internal_id")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> str:
+        """
+        The IP address of the Exadata storage server.
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        The details of the lifecycle state of the Exadata resource.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="makeModel")
+    def make_model(self) -> str:
+        """
+        The make model of the Exadata storage server.
+        """
+        return pulumi.get(self, "make_model")
+
+    @property
+    @pulumi.getter(name="maxFlashDiskIops")
+    def max_flash_disk_iops(self) -> int:
+        """
+        The maximum flash disk IO operations per second of the Exadata storage server.
+        """
+        return pulumi.get(self, "max_flash_disk_iops")
+
+    @property
+    @pulumi.getter(name="maxFlashDiskThroughput")
+    def max_flash_disk_throughput(self) -> int:
+        """
+        The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+        """
+        return pulumi.get(self, "max_flash_disk_throughput")
+
+    @property
+    @pulumi.getter(name="maxHardDiskIops")
+    def max_hard_disk_iops(self) -> int:
+        """
+        The maximum hard disk IO operations per second of the Exadata storage server.
+        """
+        return pulumi.get(self, "max_hard_disk_iops")
+
+    @property
+    @pulumi.getter(name="maxHardDiskThroughput")
+    def max_hard_disk_throughput(self) -> int:
+        """
+        The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+        """
+        return pulumi.get(self, "max_hard_disk_throughput")
+
+    @property
+    @pulumi.getter(name="memoryGb")
+    def memory_gb(self) -> float:
+        """
+        The Exadata storage server memory size in GB.
+        """
+        return pulumi.get(self, "memory_gb")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> str:
+        """
+        The type of Exadata resource.
+        """
+        return pulumi.get(self, "resource_type")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current lifecycle state of the database resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the Exadata resource.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The timestamp of the creation of the Exadata resource.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The timestamp of the last update of the Exadata resource.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        The version of the Exadata resource.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetExternalExadataStorageServerConnectorResult(dict):
+    def __init__(__self__, *,
+                 additional_details: Mapping[str, Any],
+                 agent_id: str,
+                 connection_uri: str,
+                 display_name: str,
+                 id: str,
+                 internal_id: str,
+                 lifecycle_details: str,
+                 resource_type: str,
+                 state: str,
+                 status: str,
+                 storage_server_id: str,
+                 time_created: str,
+                 time_updated: str,
+                 version: str):
+        """
+        :param Mapping[str, Any] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        :param str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
+        :param str connection_uri: The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+        :param str display_name: The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        :param str internal_id: The internal ID of the Exadata resource.
+        :param str lifecycle_details: The details of the lifecycle state of the Exadata resource.
+        :param str resource_type: The type of Exadata resource.
+        :param str state: The current lifecycle state of the database resource.
+        :param str status: The status of the Exadata resource.
+        :param str storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+        :param str time_created: The timestamp of the creation of the Exadata resource.
+        :param str time_updated: The timestamp of the last update of the Exadata resource.
+        :param str version: The version of the Exadata resource.
+        """
+        pulumi.set(__self__, "additional_details", additional_details)
+        pulumi.set(__self__, "agent_id", agent_id)
+        pulumi.set(__self__, "connection_uri", connection_uri)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "internal_id", internal_id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "storage_server_id", storage_server_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Mapping[str, Any]:
+        """
+        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_details")
+
+    @property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @property
+    @pulumi.getter(name="connectionUri")
+    def connection_uri(self) -> str:
+        """
+        The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+        """
+        return pulumi.get(self, "connection_uri")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="internalId")
+    def internal_id(self) -> str:
+        """
+        The internal ID of the Exadata resource.
+        """
+        return pulumi.get(self, "internal_id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        The details of the lifecycle state of the Exadata resource.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> str:
+        """
+        The type of Exadata resource.
+        """
+        return pulumi.get(self, "resource_type")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current lifecycle state of the database resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the Exadata resource.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="storageServerId")
+    def storage_server_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+        """
+        return pulumi.get(self, "storage_server_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The timestamp of the creation of the Exadata resource.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The timestamp of the last update of the Exadata resource.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        The version of the Exadata resource.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetExternalExadataStorageServerIormPlanDbPlanResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetExternalExadataStorageServerIormPlanDbPlanItemResult']):
+        """
+        :param Sequence['GetExternalExadataStorageServerIormPlanDbPlanItemArgs'] items: A list of DatabasePlanDirectives.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetExternalExadataStorageServerIormPlanDbPlanItemResult']:
+        """
+        A list of DatabasePlanDirectives.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetExternalExadataStorageServerIormPlanDbPlanItemResult(dict):
+    def __init__(__self__, *,
+                 allocation: int,
+                 asm_cluster: str,
+                 flash_cache_limit: str,
+                 flash_cache_min: str,
+                 flash_cache_size: str,
+                 is_flash_cache_on: bool,
+                 is_flash_log_on: bool,
+                 is_pmem_cache_on: bool,
+                 is_pmem_log_on: bool,
+                 level: int,
+                 limit: int,
+                 name: str,
+                 pmem_cache_limit: str,
+                 pmem_cache_min: str,
+                 pmem_cache_size: str,
+                 role: str,
+                 share: int,
+                 type: str):
+        """
+        :param int allocation: The resource allocation as a percentage (0-100) within the level.
+        :param str asm_cluster: Starting with Oracle Exadata System Software release 19.1.0, you can use the asmcluster attribute to distinguish between databases with the same name running in different Oracle ASM clusters.
+        :param str flash_cache_limit: Defines a soft limit for space usage in Exadata Smart Flash Cache. If the cache is not full, the limit can be exceeded. You specify the value for flashcachelimit in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for flashcachelimit must be at least 4 MB. The flashcachelimit and flashcachesize attributes cannot be specified in the same directive. The value for flashcachelimit cannot be smaller than flashcachemin, if it is specified.
+        :param str flash_cache_min: Specifies a minimum guaranteed space allocation in Exadata Smart Flash Cache. You specify the value for flashcachemin in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for flashcachemin must be at least 4 MB. In any plan, the sum of all flashcachemin values cannot exceed the size of Exadata Smart Flash Cache. If flashcachelimit is specified, then the value for flashcachemin cannot exceed flashcachelimit. If flashcachesize is specified, then the value for flashcachemin cannot exceed flashcachesize.
+        :param str flash_cache_size: Defines a hard limit for space usage in Exadata Smart Flash Cache. The limit cannot be exceeded, even if the cache is not full. In an IORM plan, if the size of Exadata Smart Flash Cache can accommodate all of the flashcachemin and flashcachesize allocations, then each flashcachesize definition represents a guaranteed space allocation. However, starting with Oracle Exadata System Software release 19.2.0 you can use the flashcachesize attribute to over-provision space in Exadata Smart Flash Cache. Consequently, if the size of Exadata Smart Flash Cache cannot accommodate all of the flashcachemin and flashcachesize allocations, then only flashcachemin is guaranteed.
+        :param bool is_flash_cache_on: Controls use of Exadata Smart Flash Cache by a database. This ensures that cache space is reserved for mission-critical databases. flashcache=off is invalid in a directive that contains the flashcachemin, flashcachelimit, or flashcachesize attributes.
+        :param bool is_flash_log_on: Controls use of Exadata Smart Flash Log by a database. This ensures that Exadata Smart Flash Log is reserved for mission-critical databases.
+        :param bool is_pmem_cache_on: Controls use of the persistent memory (PMEM) cache by a database. This ensures that cache space is reserved for mission-critical databases. pmemcache=off is invalid in a directive that contains the pmemcachemin, pmemcachelimit, or pmemcachesize attributes.
+        :param bool is_pmem_log_on: Controls use of persistent memory logging (PMEM log) by a database. This ensures that PMEM log is reserved for mission-critical databases.
+        :param int level: The allocation level. Valid values are from 1 to 8. Resources are allocated to level 1 first, and then remaining resources are allocated to level 2, and so on.
+        :param str name: The name of a database or a profile.
+        :param str pmem_cache_limit: Defines a soft limit for space usage in the persistent memory (PMEM) cache. If the cache is not full, the limit can be exceeded. You specify the value for pmemcachelimit in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for pmemcachelimit must be at least 4 MB. The pmemcachelimit and pmemcachesize attributes cannot be specified in the same directive. The value for pmemcachelimit cannot be smaller than pmemcachemin, if it is specified.
+        :param str pmem_cache_min: Specifies a minimum guaranteed space allocation in the persistent memory (PMEM) cache.
+        :param str pmem_cache_size: Defines a hard limit for space usage in the persistent memory (PMEM) cache. The limit cannot be exceeded, even if the cache is not full. In an IORM plan, if the size of the PMEM cache can accommodate all of the pmemcachemin and pmemcachesize allocations, then each pmemcachesize definition represents a guaranteed space allocation. However, you can use the pmemcachesize attribute to over-provision space in the PMEM cache. Consequently, if the PMEM cache size cannot accommodate all of the pmemcachemin and pmemcachesize allocations, then only pmemcachemin is guaranteed.
+        :param str role: Enables you to specify different plan directives based on the Oracle Data Guard database role.
+        :param int share: The relative priority of a database in the database plan. A higher share value implies higher priority and more access to the I/O resources. Use either share or (level, allocation). All plan directives in a database plan should use the same setting. Share-based resource allocation is the recommended method for a database plan.
+        :param str type: Enables you to create a profile or template, to ease management and configuration of resource plans in environments with many databases.
+               * type=database: Specifies a directive that applies to a specific database. If type in not specified, then the directive defaults to the database type.
+               * type=profile: Specifies a directive that applies to a profile rather than a specific database.
+        """
+        pulumi.set(__self__, "allocation", allocation)
+        pulumi.set(__self__, "asm_cluster", asm_cluster)
+        pulumi.set(__self__, "flash_cache_limit", flash_cache_limit)
+        pulumi.set(__self__, "flash_cache_min", flash_cache_min)
+        pulumi.set(__self__, "flash_cache_size", flash_cache_size)
+        pulumi.set(__self__, "is_flash_cache_on", is_flash_cache_on)
+        pulumi.set(__self__, "is_flash_log_on", is_flash_log_on)
+        pulumi.set(__self__, "is_pmem_cache_on", is_pmem_cache_on)
+        pulumi.set(__self__, "is_pmem_log_on", is_pmem_log_on)
+        pulumi.set(__self__, "level", level)
+        pulumi.set(__self__, "limit", limit)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "pmem_cache_limit", pmem_cache_limit)
+        pulumi.set(__self__, "pmem_cache_min", pmem_cache_min)
+        pulumi.set(__self__, "pmem_cache_size", pmem_cache_size)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "share", share)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def allocation(self) -> int:
+        """
+        The resource allocation as a percentage (0-100) within the level.
+        """
+        return pulumi.get(self, "allocation")
+
+    @property
+    @pulumi.getter(name="asmCluster")
+    def asm_cluster(self) -> str:
+        """
+        Starting with Oracle Exadata System Software release 19.1.0, you can use the asmcluster attribute to distinguish between databases with the same name running in different Oracle ASM clusters.
+        """
+        return pulumi.get(self, "asm_cluster")
+
+    @property
+    @pulumi.getter(name="flashCacheLimit")
+    def flash_cache_limit(self) -> str:
+        """
+        Defines a soft limit for space usage in Exadata Smart Flash Cache. If the cache is not full, the limit can be exceeded. You specify the value for flashcachelimit in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for flashcachelimit must be at least 4 MB. The flashcachelimit and flashcachesize attributes cannot be specified in the same directive. The value for flashcachelimit cannot be smaller than flashcachemin, if it is specified.
+        """
+        return pulumi.get(self, "flash_cache_limit")
+
+    @property
+    @pulumi.getter(name="flashCacheMin")
+    def flash_cache_min(self) -> str:
+        """
+        Specifies a minimum guaranteed space allocation in Exadata Smart Flash Cache. You specify the value for flashcachemin in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for flashcachemin must be at least 4 MB. In any plan, the sum of all flashcachemin values cannot exceed the size of Exadata Smart Flash Cache. If flashcachelimit is specified, then the value for flashcachemin cannot exceed flashcachelimit. If flashcachesize is specified, then the value for flashcachemin cannot exceed flashcachesize.
+        """
+        return pulumi.get(self, "flash_cache_min")
+
+    @property
+    @pulumi.getter(name="flashCacheSize")
+    def flash_cache_size(self) -> str:
+        """
+        Defines a hard limit for space usage in Exadata Smart Flash Cache. The limit cannot be exceeded, even if the cache is not full. In an IORM plan, if the size of Exadata Smart Flash Cache can accommodate all of the flashcachemin and flashcachesize allocations, then each flashcachesize definition represents a guaranteed space allocation. However, starting with Oracle Exadata System Software release 19.2.0 you can use the flashcachesize attribute to over-provision space in Exadata Smart Flash Cache. Consequently, if the size of Exadata Smart Flash Cache cannot accommodate all of the flashcachemin and flashcachesize allocations, then only flashcachemin is guaranteed.
+        """
+        return pulumi.get(self, "flash_cache_size")
+
+    @property
+    @pulumi.getter(name="isFlashCacheOn")
+    def is_flash_cache_on(self) -> bool:
+        """
+        Controls use of Exadata Smart Flash Cache by a database. This ensures that cache space is reserved for mission-critical databases. flashcache=off is invalid in a directive that contains the flashcachemin, flashcachelimit, or flashcachesize attributes.
+        """
+        return pulumi.get(self, "is_flash_cache_on")
+
+    @property
+    @pulumi.getter(name="isFlashLogOn")
+    def is_flash_log_on(self) -> bool:
+        """
+        Controls use of Exadata Smart Flash Log by a database. This ensures that Exadata Smart Flash Log is reserved for mission-critical databases.
+        """
+        return pulumi.get(self, "is_flash_log_on")
+
+    @property
+    @pulumi.getter(name="isPmemCacheOn")
+    def is_pmem_cache_on(self) -> bool:
+        """
+        Controls use of the persistent memory (PMEM) cache by a database. This ensures that cache space is reserved for mission-critical databases. pmemcache=off is invalid in a directive that contains the pmemcachemin, pmemcachelimit, or pmemcachesize attributes.
+        """
+        return pulumi.get(self, "is_pmem_cache_on")
+
+    @property
+    @pulumi.getter(name="isPmemLogOn")
+    def is_pmem_log_on(self) -> bool:
+        """
+        Controls use of persistent memory logging (PMEM log) by a database. This ensures that PMEM log is reserved for mission-critical databases.
+        """
+        return pulumi.get(self, "is_pmem_log_on")
+
+    @property
+    @pulumi.getter
+    def level(self) -> int:
+        """
+        The allocation level. Valid values are from 1 to 8. Resources are allocated to level 1 first, and then remaining resources are allocated to level 2, and so on.
+        """
+        return pulumi.get(self, "level")
+
+    @property
+    @pulumi.getter
+    def limit(self) -> int:
+        return pulumi.get(self, "limit")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of a database or a profile.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="pmemCacheLimit")
+    def pmem_cache_limit(self) -> str:
+        """
+        Defines a soft limit for space usage in the persistent memory (PMEM) cache. If the cache is not full, the limit can be exceeded. You specify the value for pmemcachelimit in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for pmemcachelimit must be at least 4 MB. The pmemcachelimit and pmemcachesize attributes cannot be specified in the same directive. The value for pmemcachelimit cannot be smaller than pmemcachemin, if it is specified.
+        """
+        return pulumi.get(self, "pmem_cache_limit")
+
+    @property
+    @pulumi.getter(name="pmemCacheMin")
+    def pmem_cache_min(self) -> str:
+        """
+        Specifies a minimum guaranteed space allocation in the persistent memory (PMEM) cache.
+        """
+        return pulumi.get(self, "pmem_cache_min")
+
+    @property
+    @pulumi.getter(name="pmemCacheSize")
+    def pmem_cache_size(self) -> str:
+        """
+        Defines a hard limit for space usage in the persistent memory (PMEM) cache. The limit cannot be exceeded, even if the cache is not full. In an IORM plan, if the size of the PMEM cache can accommodate all of the pmemcachemin and pmemcachesize allocations, then each pmemcachesize definition represents a guaranteed space allocation. However, you can use the pmemcachesize attribute to over-provision space in the PMEM cache. Consequently, if the PMEM cache size cannot accommodate all of the pmemcachemin and pmemcachesize allocations, then only pmemcachemin is guaranteed.
+        """
+        return pulumi.get(self, "pmem_cache_size")
+
+    @property
+    @pulumi.getter
+    def role(self) -> str:
+        """
+        Enables you to specify different plan directives based on the Oracle Data Guard database role.
+        """
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter
+    def share(self) -> int:
+        """
+        The relative priority of a database in the database plan. A higher share value implies higher priority and more access to the I/O resources. Use either share or (level, allocation). All plan directives in a database plan should use the same setting. Share-based resource allocation is the recommended method for a database plan.
+        """
+        return pulumi.get(self, "share")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Enables you to create a profile or template, to ease management and configuration of resource plans in environments with many databases.
+        * type=database: Specifies a directive that applies to a specific database. If type in not specified, then the directive defaults to the database type.
+        * type=profile: Specifies a directive that applies to a profile rather than a specific database.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetExternalExadataStorageServerOpenAlertHistoryAlertResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 severity: str,
+                 time_start_at: str,
+                 type: str):
+        """
+        :param str message: The alert message.
+        :param str severity: The severity of the alert.
+        :param str time_start_at: The start time of the alert.
+        :param str type: The type of alert.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "time_start_at", time_start_at)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        The alert message.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter
+    def severity(self) -> str:
+        """
+        The severity of the alert.
+        """
+        return pulumi.get(self, "severity")
+
+    @property
+    @pulumi.getter(name="timeStartAt")
+    def time_start_at(self) -> str:
+        """
+        The start time of the alert.
+        """
+        return pulumi.get(self, "time_start_at")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of alert.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetExternalExadataStorageServerTopSqlCpuActivityActivityResult(dict):
+    def __init__(__self__, *,
+                 cpu_activity: float,
+                 database_name: str,
+                 sql_id: str):
+        """
+        :param float cpu_activity: The CPU activity percentage.
+        :param str database_name: The database name.
+        :param str sql_id: The SQL ID.
+        """
+        pulumi.set(__self__, "cpu_activity", cpu_activity)
+        pulumi.set(__self__, "database_name", database_name)
+        pulumi.set(__self__, "sql_id", sql_id)
+
+    @property
+    @pulumi.getter(name="cpuActivity")
+    def cpu_activity(self) -> float:
+        """
+        The CPU activity percentage.
+        """
+        return pulumi.get(self, "cpu_activity")
+
+    @property
+    @pulumi.getter(name="databaseName")
+    def database_name(self) -> str:
+        """
+        The database name.
+        """
+        return pulumi.get(self, "database_name")
+
+    @property
+    @pulumi.getter(name="sqlId")
+    def sql_id(self) -> str:
+        """
+        The SQL ID.
+        """
+        return pulumi.get(self, "sql_id")
+
+
+@pulumi.output_type
+class GetExternalExadataStorageServersExternalExadataStorageServerCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 additional_details: Mapping[str, Any],
+                 connector_id: str,
+                 cpu_count: float,
+                 display_name: str,
+                 exadata_infrastructure_id: str,
+                 id: str,
+                 internal_id: str,
+                 ip_address: str,
+                 lifecycle_details: str,
+                 make_model: str,
+                 max_flash_disk_iops: int,
+                 max_flash_disk_throughput: int,
+                 max_hard_disk_iops: int,
+                 max_hard_disk_throughput: int,
+                 memory_gb: float,
+                 resource_type: str,
+                 state: str,
+                 status: str,
+                 storage_grid_id: str,
+                 time_created: str,
+                 time_updated: str,
+                 version: str):
+        """
+        :param Mapping[str, Any] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        :param float cpu_count: The CPU count of the Exadata storage server.
+        :param str display_name: The optional single value query filter parameter on the entity display name.
+        :param str exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        :param str internal_id: The internal ID of the Exadata resource.
+        :param str ip_address: The IP address of the Exadata storage server.
+        :param str lifecycle_details: The details of the lifecycle state of the Exadata resource.
+        :param str make_model: The make model of the Exadata storage server.
+        :param int max_flash_disk_iops: The maximum flash disk IO operations per second of the Exadata storage server.
+        :param int max_flash_disk_throughput: The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+        :param int max_hard_disk_iops: The maximum hard disk IO operations per second of the Exadata storage server.
+        :param int max_hard_disk_throughput: The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+        :param float memory_gb: The Exadata storage server memory size in GB.
+        :param str resource_type: The type of Exadata resource.
+        :param str state: The current lifecycle state of the database resource.
+        :param str status: The status of the Exadata resource.
+        :param str storage_grid_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server grid.
+        :param str time_created: The timestamp of the creation of the Exadata resource.
+        :param str time_updated: The timestamp of the last update of the Exadata resource.
+        :param str version: The version of the Exadata resource.
+        """
+        pulumi.set(__self__, "additional_details", additional_details)
+        pulumi.set(__self__, "connector_id", connector_id)
+        pulumi.set(__self__, "cpu_count", cpu_count)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "internal_id", internal_id)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "make_model", make_model)
+        pulumi.set(__self__, "max_flash_disk_iops", max_flash_disk_iops)
+        pulumi.set(__self__, "max_flash_disk_throughput", max_flash_disk_throughput)
+        pulumi.set(__self__, "max_hard_disk_iops", max_hard_disk_iops)
+        pulumi.set(__self__, "max_hard_disk_throughput", max_hard_disk_throughput)
+        pulumi.set(__self__, "memory_gb", memory_gb)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "storage_grid_id", storage_grid_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Mapping[str, Any]:
+        """
+        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_details")
+
+    @property
+    @pulumi.getter(name="connectorId")
+    def connector_id(self) -> str:
+        return pulumi.get(self, "connector_id")
+
+    @property
+    @pulumi.getter(name="cpuCount")
+    def cpu_count(self) -> float:
+        """
+        The CPU count of the Exadata storage server.
+        """
+        return pulumi.get(self, "cpu_count")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The optional single value query filter parameter on the entity display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="exadataInfrastructureId")
+    def exadata_infrastructure_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "exadata_infrastructure_id")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="internalId")
+    def internal_id(self) -> str:
+        """
+        The internal ID of the Exadata resource.
+        """
+        return pulumi.get(self, "internal_id")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> str:
+        """
+        The IP address of the Exadata storage server.
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        The details of the lifecycle state of the Exadata resource.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="makeModel")
+    def make_model(self) -> str:
+        """
+        The make model of the Exadata storage server.
+        """
+        return pulumi.get(self, "make_model")
+
+    @property
+    @pulumi.getter(name="maxFlashDiskIops")
+    def max_flash_disk_iops(self) -> int:
+        """
+        The maximum flash disk IO operations per second of the Exadata storage server.
+        """
+        return pulumi.get(self, "max_flash_disk_iops")
+
+    @property
+    @pulumi.getter(name="maxFlashDiskThroughput")
+    def max_flash_disk_throughput(self) -> int:
+        """
+        The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+        """
+        return pulumi.get(self, "max_flash_disk_throughput")
+
+    @property
+    @pulumi.getter(name="maxHardDiskIops")
+    def max_hard_disk_iops(self) -> int:
+        """
+        The maximum hard disk IO operations per second of the Exadata storage server.
+        """
+        return pulumi.get(self, "max_hard_disk_iops")
+
+    @property
+    @pulumi.getter(name="maxHardDiskThroughput")
+    def max_hard_disk_throughput(self) -> int:
+        """
+        The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+        """
+        return pulumi.get(self, "max_hard_disk_throughput")
+
+    @property
+    @pulumi.getter(name="memoryGb")
+    def memory_gb(self) -> float:
+        """
+        The Exadata storage server memory size in GB.
+        """
+        return pulumi.get(self, "memory_gb")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> str:
+        """
+        The type of Exadata resource.
+        """
+        return pulumi.get(self, "resource_type")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current lifecycle state of the database resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the Exadata resource.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="storageGridId")
+    def storage_grid_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server grid.
+        """
+        return pulumi.get(self, "storage_grid_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The timestamp of the creation of the Exadata resource.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The timestamp of the last update of the Exadata resource.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        The version of the Exadata resource.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetExternalExadataStorageServersFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

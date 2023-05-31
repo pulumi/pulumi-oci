@@ -14,6 +14,9 @@ from .external_db_system import *
 from .external_db_system_connector import *
 from .external_db_system_database_managements_management import *
 from .external_db_system_discovery import *
+from .external_exadata_infrastructure import *
+from .external_exadata_infrastructure_exadata_management import *
+from .external_exadata_storage_connector import *
 from .external_listener import *
 from .get_db_management_private_endpoint import *
 from .get_db_management_private_endpoint_associated_database import *
@@ -41,6 +44,16 @@ from .get_external_db_system_connectors import *
 from .get_external_db_system_discoveries import *
 from .get_external_db_system_discovery import *
 from .get_external_db_systems import *
+from .get_external_exadata_infrastructure import *
+from .get_external_exadata_infrastructures import *
+from .get_external_exadata_storage_connector import *
+from .get_external_exadata_storage_connectors import *
+from .get_external_exadata_storage_grid import *
+from .get_external_exadata_storage_server import *
+from .get_external_exadata_storage_server_iorm_plan import *
+from .get_external_exadata_storage_server_open_alert_history import *
+from .get_external_exadata_storage_server_top_sql_cpu_activity import *
+from .get_external_exadata_storage_servers import *
 from .get_external_listener import *
 from .get_external_listener_services import *
 from .get_external_listeners import *

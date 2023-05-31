@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
     public sealed class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult
     {
         /// <summary>
-        /// The name of the availability domain in which this node is placed.
+        /// The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult> PreemptibleNodeConfigs;
         /// <summary>
-        /// The OCID of the subnet in which this node is placed.
+        /// The OCID of the subnet in which to place nodes.
         /// </summary>
         public readonly string SubnetId;
 

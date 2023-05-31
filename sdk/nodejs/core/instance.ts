@@ -196,7 +196,7 @@ export class Instance extends pulumi.CustomResource {
     public readonly agentConfig!: pulumi.Output<outputs.Core.InstanceAgentConfig>;
     public readonly async!: pulumi.Output<boolean | undefined>;
     /**
-     * (Updatable) Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.  This also includes live migration preference for infrastructure maintenance.
+     * (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
      */
     public readonly availabilityConfig!: pulumi.Output<outputs.Core.InstanceAvailabilityConfig>;
     /**
@@ -533,7 +533,7 @@ export interface InstanceState {
     agentConfig?: pulumi.Input<inputs.Core.InstanceAgentConfig>;
     async?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.  This also includes live migration preference for infrastructure maintenance.
+     * (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
      */
     availabilityConfig?: pulumi.Input<inputs.Core.InstanceAvailabilityConfig>;
     /**
@@ -763,7 +763,7 @@ export interface InstanceArgs {
     agentConfig?: pulumi.Input<inputs.Core.InstanceAgentConfig>;
     async?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.  This also includes live migration preference for infrastructure maintenance.
+     * (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
      */
     availabilityConfig?: pulumi.Input<inputs.Core.InstanceAvailabilityConfig>;
     /**

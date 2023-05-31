@@ -13,6 +13,10 @@ import com.pulumi.oci.FileStorage.inputs.GetExportsArgs;
 import com.pulumi.oci.FileStorage.inputs.GetExportsPlainArgs;
 import com.pulumi.oci.FileStorage.inputs.GetFileSystemsArgs;
 import com.pulumi.oci.FileStorage.inputs.GetFileSystemsPlainArgs;
+import com.pulumi.oci.FileStorage.inputs.GetFilesystemSnapshotPoliciesArgs;
+import com.pulumi.oci.FileStorage.inputs.GetFilesystemSnapshotPoliciesPlainArgs;
+import com.pulumi.oci.FileStorage.inputs.GetFilesystemSnapshotPolicyArgs;
+import com.pulumi.oci.FileStorage.inputs.GetFilesystemSnapshotPolicyPlainArgs;
 import com.pulumi.oci.FileStorage.inputs.GetMountTargetsArgs;
 import com.pulumi.oci.FileStorage.inputs.GetMountTargetsPlainArgs;
 import com.pulumi.oci.FileStorage.inputs.GetReplicationArgs;
@@ -30,6 +34,8 @@ import com.pulumi.oci.FileStorage.inputs.GetSnapshotsPlainArgs;
 import com.pulumi.oci.FileStorage.outputs.GetExportSetsResult;
 import com.pulumi.oci.FileStorage.outputs.GetExportsResult;
 import com.pulumi.oci.FileStorage.outputs.GetFileSystemsResult;
+import com.pulumi.oci.FileStorage.outputs.GetFilesystemSnapshotPoliciesResult;
+import com.pulumi.oci.FileStorage.outputs.GetFilesystemSnapshotPolicyResult;
 import com.pulumi.oci.FileStorage.outputs.GetMountTargetsResult;
 import com.pulumi.oci.FileStorage.outputs.GetReplicationResult;
 import com.pulumi.oci.FileStorage.outputs.GetReplicationTargetResult;
@@ -486,7 +492,8 @@ public final class FileStorageFunctions {
     /**
      * This data source provides the list of File Systems in Oracle Cloud Infrastructure File Storage service.
      * 
-     * Lists the file system resources in the specified compartment.
+     * Lists the file system resources in the specified compartment, or by the specified compartment and
+     * file system snapshot policy.
      * 
      * ## Example Usage
      * ```java
@@ -514,6 +521,7 @@ public final class FileStorageFunctions {
      *             .availabilityDomain(var_.file_system_availability_domain())
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.file_system_display_name())
+     *             .filesystemSnapshotPolicyId(oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy().id())
      *             .id(var_.file_system_id())
      *             .parentFileSystemId(oci_file_storage_file_system.test_file_system().id())
      *             .sourceSnapshotId(oci_file_storage_snapshot.test_snapshot().id())
@@ -531,7 +539,8 @@ public final class FileStorageFunctions {
     /**
      * This data source provides the list of File Systems in Oracle Cloud Infrastructure File Storage service.
      * 
-     * Lists the file system resources in the specified compartment.
+     * Lists the file system resources in the specified compartment, or by the specified compartment and
+     * file system snapshot policy.
      * 
      * ## Example Usage
      * ```java
@@ -559,6 +568,7 @@ public final class FileStorageFunctions {
      *             .availabilityDomain(var_.file_system_availability_domain())
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.file_system_display_name())
+     *             .filesystemSnapshotPolicyId(oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy().id())
      *             .id(var_.file_system_id())
      *             .parentFileSystemId(oci_file_storage_file_system.test_file_system().id())
      *             .sourceSnapshotId(oci_file_storage_snapshot.test_snapshot().id())
@@ -576,7 +586,8 @@ public final class FileStorageFunctions {
     /**
      * This data source provides the list of File Systems in Oracle Cloud Infrastructure File Storage service.
      * 
-     * Lists the file system resources in the specified compartment.
+     * Lists the file system resources in the specified compartment, or by the specified compartment and
+     * file system snapshot policy.
      * 
      * ## Example Usage
      * ```java
@@ -604,6 +615,7 @@ public final class FileStorageFunctions {
      *             .availabilityDomain(var_.file_system_availability_domain())
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.file_system_display_name())
+     *             .filesystemSnapshotPolicyId(oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy().id())
      *             .id(var_.file_system_id())
      *             .parentFileSystemId(oci_file_storage_file_system.test_file_system().id())
      *             .sourceSnapshotId(oci_file_storage_snapshot.test_snapshot().id())
@@ -621,7 +633,8 @@ public final class FileStorageFunctions {
     /**
      * This data source provides the list of File Systems in Oracle Cloud Infrastructure File Storage service.
      * 
-     * Lists the file system resources in the specified compartment.
+     * Lists the file system resources in the specified compartment, or by the specified compartment and
+     * file system snapshot policy.
      * 
      * ## Example Usage
      * ```java
@@ -649,6 +662,7 @@ public final class FileStorageFunctions {
      *             .availabilityDomain(var_.file_system_availability_domain())
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.file_system_display_name())
+     *             .filesystemSnapshotPolicyId(oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy().id())
      *             .id(var_.file_system_id())
      *             .parentFileSystemId(oci_file_storage_file_system.test_file_system().id())
      *             .sourceSnapshotId(oci_file_storage_snapshot.test_snapshot().id())
@@ -662,6 +676,334 @@ public final class FileStorageFunctions {
      */
     public static CompletableFuture<GetFileSystemsResult> getFileSystemsPlain(GetFileSystemsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:FileStorage/getFileSystems:getFileSystems", TypeShape.of(GetFileSystemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Filesystem Snapshot Policies in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists file system snapshot policies in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFilesystemSnapshotPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFilesystemSnapshotPolicies = FileStorageFunctions.getFilesystemSnapshotPolicies(GetFilesystemSnapshotPoliciesArgs.builder()
+     *             .availabilityDomain(var_.filesystem_snapshot_policy_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.filesystem_snapshot_policy_display_name())
+     *             .id(var_.filesystem_snapshot_policy_id())
+     *             .state(var_.filesystem_snapshot_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetFilesystemSnapshotPoliciesResult> getFilesystemSnapshotPolicies(GetFilesystemSnapshotPoliciesArgs args) {
+        return getFilesystemSnapshotPolicies(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Filesystem Snapshot Policies in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists file system snapshot policies in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFilesystemSnapshotPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFilesystemSnapshotPolicies = FileStorageFunctions.getFilesystemSnapshotPolicies(GetFilesystemSnapshotPoliciesArgs.builder()
+     *             .availabilityDomain(var_.filesystem_snapshot_policy_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.filesystem_snapshot_policy_display_name())
+     *             .id(var_.filesystem_snapshot_policy_id())
+     *             .state(var_.filesystem_snapshot_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetFilesystemSnapshotPoliciesResult> getFilesystemSnapshotPoliciesPlain(GetFilesystemSnapshotPoliciesPlainArgs args) {
+        return getFilesystemSnapshotPoliciesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Filesystem Snapshot Policies in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists file system snapshot policies in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFilesystemSnapshotPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFilesystemSnapshotPolicies = FileStorageFunctions.getFilesystemSnapshotPolicies(GetFilesystemSnapshotPoliciesArgs.builder()
+     *             .availabilityDomain(var_.filesystem_snapshot_policy_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.filesystem_snapshot_policy_display_name())
+     *             .id(var_.filesystem_snapshot_policy_id())
+     *             .state(var_.filesystem_snapshot_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetFilesystemSnapshotPoliciesResult> getFilesystemSnapshotPolicies(GetFilesystemSnapshotPoliciesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getFilesystemSnapshotPolicies:getFilesystemSnapshotPolicies", TypeShape.of(GetFilesystemSnapshotPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Filesystem Snapshot Policies in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists file system snapshot policies in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFilesystemSnapshotPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFilesystemSnapshotPolicies = FileStorageFunctions.getFilesystemSnapshotPolicies(GetFilesystemSnapshotPoliciesArgs.builder()
+     *             .availabilityDomain(var_.filesystem_snapshot_policy_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.filesystem_snapshot_policy_display_name())
+     *             .id(var_.filesystem_snapshot_policy_id())
+     *             .state(var_.filesystem_snapshot_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetFilesystemSnapshotPoliciesResult> getFilesystemSnapshotPoliciesPlain(GetFilesystemSnapshotPoliciesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FileStorage/getFilesystemSnapshotPolicies:getFilesystemSnapshotPolicies", TypeShape.of(GetFilesystemSnapshotPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Filesystem Snapshot Policy resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified file system snapshot policy&#39;s information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFilesystemSnapshotPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFilesystemSnapshotPolicy = FileStorageFunctions.getFilesystemSnapshotPolicy(GetFilesystemSnapshotPolicyArgs.builder()
+     *             .filesystemSnapshotPolicyId(oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetFilesystemSnapshotPolicyResult> getFilesystemSnapshotPolicy(GetFilesystemSnapshotPolicyArgs args) {
+        return getFilesystemSnapshotPolicy(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Filesystem Snapshot Policy resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified file system snapshot policy&#39;s information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFilesystemSnapshotPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFilesystemSnapshotPolicy = FileStorageFunctions.getFilesystemSnapshotPolicy(GetFilesystemSnapshotPolicyArgs.builder()
+     *             .filesystemSnapshotPolicyId(oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetFilesystemSnapshotPolicyResult> getFilesystemSnapshotPolicyPlain(GetFilesystemSnapshotPolicyPlainArgs args) {
+        return getFilesystemSnapshotPolicyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Filesystem Snapshot Policy resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified file system snapshot policy&#39;s information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFilesystemSnapshotPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFilesystemSnapshotPolicy = FileStorageFunctions.getFilesystemSnapshotPolicy(GetFilesystemSnapshotPolicyArgs.builder()
+     *             .filesystemSnapshotPolicyId(oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetFilesystemSnapshotPolicyResult> getFilesystemSnapshotPolicy(GetFilesystemSnapshotPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getFilesystemSnapshotPolicy:getFilesystemSnapshotPolicy", TypeShape.of(GetFilesystemSnapshotPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Filesystem Snapshot Policy resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified file system snapshot policy&#39;s information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFilesystemSnapshotPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFilesystemSnapshotPolicy = FileStorageFunctions.getFilesystemSnapshotPolicy(GetFilesystemSnapshotPolicyArgs.builder()
+     *             .filesystemSnapshotPolicyId(oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetFilesystemSnapshotPolicyResult> getFilesystemSnapshotPolicyPlain(GetFilesystemSnapshotPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FileStorage/getFilesystemSnapshotPolicy:getFilesystemSnapshotPolicy", TypeShape.of(GetFilesystemSnapshotPolicyResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Mount Targets in Oracle Cloud Infrastructure File Storage service.
@@ -1658,7 +2000,10 @@ public final class FileStorageFunctions {
     /**
      * This data source provides the list of Snapshots in Oracle Cloud Infrastructure File Storage service.
      * 
-     * Lists snapshots of the specified file system.
+     * Lists snapshots of the specified file system, or by file system snapshot policy and compartment,
+     * or by file system snapshot policy and file system.
+     * 
+     * If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
      * 
      * ## Example Usage
      * ```java
@@ -1683,7 +2028,101 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSnapshots = FileStorageFunctions.getSnapshots(GetSnapshotsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
      *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .filesystemSnapshotPolicyId(oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy().id())
+     *             .id(var_.snapshot_id())
+     *             .state(var_.snapshot_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSnapshotsResult> getSnapshots() {
+        return getSnapshots(GetSnapshotsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Snapshots in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists snapshots of the specified file system, or by file system snapshot policy and compartment,
+     * or by file system snapshot policy and file system.
+     * 
+     * If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetSnapshotsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSnapshots = FileStorageFunctions.getSnapshots(GetSnapshotsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .filesystemSnapshotPolicyId(oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy().id())
+     *             .id(var_.snapshot_id())
+     *             .state(var_.snapshot_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSnapshotsResult> getSnapshotsPlain() {
+        return getSnapshotsPlain(GetSnapshotsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Snapshots in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists snapshots of the specified file system, or by file system snapshot policy and compartment,
+     * or by file system snapshot policy and file system.
+     * 
+     * If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetSnapshotsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSnapshots = FileStorageFunctions.getSnapshots(GetSnapshotsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .filesystemSnapshotPolicyId(oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy().id())
      *             .id(var_.snapshot_id())
      *             .state(var_.snapshot_state())
      *             .build());
@@ -1699,7 +2138,10 @@ public final class FileStorageFunctions {
     /**
      * This data source provides the list of Snapshots in Oracle Cloud Infrastructure File Storage service.
      * 
-     * Lists snapshots of the specified file system.
+     * Lists snapshots of the specified file system, or by file system snapshot policy and compartment,
+     * or by file system snapshot policy and file system.
+     * 
+     * If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
      * 
      * ## Example Usage
      * ```java
@@ -1724,7 +2166,9 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSnapshots = FileStorageFunctions.getSnapshots(GetSnapshotsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
      *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .filesystemSnapshotPolicyId(oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy().id())
      *             .id(var_.snapshot_id())
      *             .state(var_.snapshot_state())
      *             .build());
@@ -1740,7 +2184,10 @@ public final class FileStorageFunctions {
     /**
      * This data source provides the list of Snapshots in Oracle Cloud Infrastructure File Storage service.
      * 
-     * Lists snapshots of the specified file system.
+     * Lists snapshots of the specified file system, or by file system snapshot policy and compartment,
+     * or by file system snapshot policy and file system.
+     * 
+     * If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
      * 
      * ## Example Usage
      * ```java
@@ -1765,7 +2212,9 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSnapshots = FileStorageFunctions.getSnapshots(GetSnapshotsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
      *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .filesystemSnapshotPolicyId(oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy().id())
      *             .id(var_.snapshot_id())
      *             .state(var_.snapshot_state())
      *             .build());
@@ -1781,7 +2230,10 @@ public final class FileStorageFunctions {
     /**
      * This data source provides the list of Snapshots in Oracle Cloud Infrastructure File Storage service.
      * 
-     * Lists snapshots of the specified file system.
+     * Lists snapshots of the specified file system, or by file system snapshot policy and compartment,
+     * or by file system snapshot policy and file system.
+     * 
+     * If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
      * 
      * ## Example Usage
      * ```java
@@ -1806,7 +2258,9 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSnapshots = FileStorageFunctions.getSnapshots(GetSnapshotsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
      *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .filesystemSnapshotPolicyId(oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy().id())
      *             .id(var_.snapshot_id())
      *             .state(var_.snapshot_state())
      *             .build());

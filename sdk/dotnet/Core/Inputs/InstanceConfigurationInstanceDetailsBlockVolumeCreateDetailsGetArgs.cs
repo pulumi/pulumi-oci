@@ -37,6 +37,12 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? BackupPolicyId { get; set; }
 
         /// <summary>
+        /// The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
+        /// </summary>
+        [Input("blockVolumeReplicas")]
+        public Input<Inputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasGetArgs>? BlockVolumeReplicas { get; set; }
+
+        /// <summary>
         /// The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
         /// </summary>
         [Input("compartmentId")]
@@ -73,7 +79,13 @@ namespace Pulumi.Oci.Core.Inputs
         }
 
         /// <summary>
-        /// The OCID of the Vault service key to assign as the master encryption key for the volume.
+        /// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        /// </summary>
+        [Input("isAutoTuneEnabled")]
+        public Input<bool>? IsAutoTuneEnabled { get; set; }
+
+        /// <summary>
+        /// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }

@@ -23,13 +23,16 @@ class GetManagedDatabasesResult:
     """
     A collection of values returned by getManagedDatabases.
     """
-    def __init__(__self__, compartment_id=None, deployment_type=None, filters=None, id=None, managed_database_collections=None, management_option=None, name=None):
+    def __init__(__self__, compartment_id=None, deployment_type=None, external_exadata_infrastructure_id=None, filters=None, id=None, managed_database_collections=None, management_option=None, name=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
         if deployment_type and not isinstance(deployment_type, str):
             raise TypeError("Expected argument 'deployment_type' to be a str")
         pulumi.set(__self__, "deployment_type", deployment_type)
+        if external_exadata_infrastructure_id and not isinstance(external_exadata_infrastructure_id, str):
+            raise TypeError("Expected argument 'external_exadata_infrastructure_id' to be a str")
+        pulumi.set(__self__, "external_exadata_infrastructure_id", external_exadata_infrastructure_id)
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -61,6 +64,11 @@ class GetManagedDatabasesResult:
         The infrastructure used to deploy the Oracle Database.
         """
         return pulumi.get(self, "deployment_type")
+
+    @property
+    @pulumi.getter(name="externalExadataInfrastructureId")
+    def external_exadata_infrastructure_id(self) -> Optional[str]:
+        return pulumi.get(self, "external_exadata_infrastructure_id")
 
     @property
     @pulumi.getter
@@ -108,6 +116,7 @@ class AwaitableGetManagedDatabasesResult(GetManagedDatabasesResult):
         return GetManagedDatabasesResult(
             compartment_id=self.compartment_id,
             deployment_type=self.deployment_type,
+            external_exadata_infrastructure_id=self.external_exadata_infrastructure_id,
             filters=self.filters,
             id=self.id,
             managed_database_collections=self.managed_database_collections,
@@ -117,6 +126,7 @@ class AwaitableGetManagedDatabasesResult(GetManagedDatabasesResult):
 
 def get_managed_databases(compartment_id: Optional[str] = None,
                           deployment_type: Optional[str] = None,
+                          external_exadata_infrastructure_id: Optional[str] = None,
                           filters: Optional[Sequence[pulumi.InputType['GetManagedDatabasesFilterArgs']]] = None,
                           id: Optional[str] = None,
                           management_option: Optional[str] = None,
@@ -140,6 +150,7 @@ def get_managed_databases(compartment_id: Optional[str] = None,
 
     test_managed_databases = oci.DatabaseManagement.get_managed_databases(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         deployment_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        external_exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         management_option=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
@@ -148,6 +159,7 @@ def get_managed_databases(compartment_id: Optional[str] = None,
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str deployment_type: A filter to return Managed Databases of the specified deployment type.
+    :param str external_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
     :param str id: The identifier of the resource.
     :param str management_option: A filter to return Managed Databases with the specified management option.
     :param str name: A filter to return only resources that match the entire name.
@@ -155,6 +167,7 @@ def get_managed_databases(compartment_id: Optional[str] = None,
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['deploymentType'] = deployment_type
+    __args__['externalExadataInfrastructureId'] = external_exadata_infrastructure_id
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['managementOption'] = management_option
@@ -165,6 +178,7 @@ def get_managed_databases(compartment_id: Optional[str] = None,
     return AwaitableGetManagedDatabasesResult(
         compartment_id=__ret__.compartment_id,
         deployment_type=__ret__.deployment_type,
+        external_exadata_infrastructure_id=__ret__.external_exadata_infrastructure_id,
         filters=__ret__.filters,
         id=__ret__.id,
         managed_database_collections=__ret__.managed_database_collections,
@@ -175,6 +189,7 @@ def get_managed_databases(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_managed_databases)
 def get_managed_databases_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                  deployment_type: Optional[pulumi.Input[Optional[str]]] = None,
+                                 external_exadata_infrastructure_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabasesFilterArgs']]]]] = None,
                                  id: Optional[pulumi.Input[Optional[str]]] = None,
                                  management_option: Optional[pulumi.Input[Optional[str]]] = None,
@@ -198,6 +213,7 @@ def get_managed_databases_output(compartment_id: Optional[pulumi.Input[str]] = N
 
     test_managed_databases = oci.DatabaseManagement.get_managed_databases(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         deployment_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        external_exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         management_option=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
         name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
@@ -206,6 +222,7 @@ def get_managed_databases_output(compartment_id: Optional[pulumi.Input[str]] = N
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str deployment_type: A filter to return Managed Databases of the specified deployment type.
+    :param str external_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
     :param str id: The identifier of the resource.
     :param str management_option: A filter to return Managed Databases with the specified management option.
     :param str name: A filter to return only resources that match the entire name.

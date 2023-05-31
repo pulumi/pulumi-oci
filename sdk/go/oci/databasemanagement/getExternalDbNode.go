@@ -66,6 +66,8 @@ type LookupExternalDbNodeResult struct {
 	CpuCoreCount float64 `pulumi:"cpuCoreCount"`
 	// The user-friendly name for the external DB node. The name does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
+	// Name of the domain.
+	DomainName string `pulumi:"domainName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
 	ExternalConnectorId string `pulumi:"externalConnectorId"`
 	ExternalDbNodeId    string `pulumi:"externalDbNodeId"`
@@ -148,6 +150,11 @@ func (o LookupExternalDbNodeResultOutput) CpuCoreCount() pulumi.Float64Output {
 // The user-friendly name for the external DB node. The name does not have to be unique.
 func (o LookupExternalDbNodeResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalDbNodeResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Name of the domain.
+func (o LookupExternalDbNodeResultOutput) DomainName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) string { return v.DomainName }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.

@@ -61,7 +61,11 @@ import (
 //								},
 //								AvailabilityDomain: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_availability_domain),
 //								BackupPolicyId:     pulumi.Any(data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id),
-//								CompartmentId:      pulumi.Any(_var.Compartment_id),
+//								BlockVolumeReplicas: &core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs{
+//									AvailabilityDomain: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_availability_domain),
+//									DisplayName:        pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_display_name),
+//								},
+//								CompartmentId: pulumi.Any(_var.Compartment_id),
 //								DefinedTags: pulumi.AnyMap{
 //									"Operations.CostCenter": pulumi.Any("42"),
 //								},
@@ -69,8 +73,9 @@ import (
 //								FreeformTags: pulumi.AnyMap{
 //									"Department": pulumi.Any("Finance"),
 //								},
-//								KmsKeyId:  pulumi.Any(oci_kms_key.Test_key.Id),
-//								SizeInGbs: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_size_in_gbs),
+//								IsAutoTuneEnabled: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_is_auto_tune_enabled),
+//								KmsKeyId:          pulumi.Any(oci_kms_key.Test_key.Id),
+//								SizeInGbs:         pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_size_in_gbs),
 //								SourceDetails: &core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgs{
 //									Type: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_source_details_type),
 //									Id:   pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_source_details_id),
@@ -93,7 +98,8 @@ import (
 //							},
 //						},
 //						AvailabilityConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs{
-//							RecoveryAction: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_availability_config_recovery_action),
+//							IsLiveMigrationPreferred: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_availability_config_is_live_migration_preferred),
+//							RecoveryAction:           pulumi.Any(_var.Instance_configuration_instance_details_launch_details_availability_config_recovery_action),
 //						},
 //						AvailabilityDomain:    pulumi.Any(_var.Instance_configuration_instance_details_launch_details_availability_domain),
 //						CapacityReservationId: pulumi.Any(oci_core_capacity_reservation.Test_capacity_reservation.Id),
@@ -172,6 +178,7 @@ import (
 //							BootVolumeSizeInGbs: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_source_details_boot_volume_size_in_gbs),
 //							BootVolumeVpusPerGb: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_source_details_boot_volume_vpus_per_gb),
 //							ImageId:             pulumi.Any(oci_core_image.Test_image.Id),
+//							KmsKeyId:            pulumi.Any(oci_kms_key.Test_key.Id),
 //						},
 //					},
 //					SecondaryVnics: core.InstanceConfigurationInstanceDetailsSecondaryVnicArray{

@@ -47,6 +47,7 @@ import javax.annotation.Nullable;
  *         var testSnapshot = new Snapshot(&#34;testSnapshot&#34;, SnapshotArgs.builder()        
  *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .expirationTime(var_.snapshot_expiration_time())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 
@@ -80,6 +81,20 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
+     * (Updatable) The time when this snapshot will be deleted.
+     * 
+     */
+    @Export(name="expirationTime", type=String.class, parameters={})
+    private Output<String> expirationTime;
+
+    /**
+     * @return (Updatable) The time when this snapshot will be deleted.
+     * 
+     */
+    public Output<String> expirationTime() {
+        return this.expirationTime;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
      * 
      */
@@ -92,6 +107,20 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      */
     public Output<String> fileSystemId() {
         return this.fileSystemId;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
+     * 
+     */
+    @Export(name="filesystemSnapshotPolicyId", type=String.class, parameters={})
+    private Output<String> filesystemSnapshotPolicyId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
+     * 
+     */
+    public Output<String> filesystemSnapshotPolicyId() {
+        return this.filesystemSnapshotPolicyId;
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`

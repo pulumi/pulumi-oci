@@ -61,6 +61,21 @@ public final class GetFileSystemsPlainArgs extends com.pulumi.resources.InvokeAr
         return Optional.ofNullable(this.displayName);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
+     * 
+     */
+    @Import(name="filesystemSnapshotPolicyId")
+    private @Nullable String filesystemSnapshotPolicyId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
+     * 
+     */
+    public Optional<String> filesystemSnapshotPolicyId() {
+        return Optional.ofNullable(this.filesystemSnapshotPolicyId);
+    }
+
     @Import(name="filters")
     private @Nullable List<GetFileSystemsFilter> filters;
 
@@ -134,6 +149,7 @@ public final class GetFileSystemsPlainArgs extends com.pulumi.resources.InvokeAr
         this.availabilityDomain = $.availabilityDomain;
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
+        this.filesystemSnapshotPolicyId = $.filesystemSnapshotPolicyId;
         this.filters = $.filters;
         this.id = $.id;
         this.parentFileSystemId = $.parentFileSystemId;
@@ -189,6 +205,17 @@ public final class GetFileSystemsPlainArgs extends com.pulumi.resources.InvokeAr
          */
         public Builder displayName(@Nullable String displayName) {
             $.displayName = displayName;
+            return this;
+        }
+
+        /**
+         * @param filesystemSnapshotPolicyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filesystemSnapshotPolicyId(@Nullable String filesystemSnapshotPolicyId) {
+            $.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             return this;
         }
 

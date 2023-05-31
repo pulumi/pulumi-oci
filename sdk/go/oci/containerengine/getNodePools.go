@@ -73,7 +73,7 @@ type GetNodePoolsResult struct {
 	Filters       []GetNodePoolsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The name of the node.
+	// The name of the node pool.
 	Name *string `pulumi:"name"`
 	// The list of node_pools.
 	NodePools []GetNodePoolsNodePool `pulumi:"nodePools"`
@@ -145,7 +145,7 @@ func (o GetNodePoolsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The name of the node.
+// The name of the node pool.
 func (o GetNodePoolsResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetNodePoolsResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }

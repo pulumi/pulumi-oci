@@ -80,6 +80,21 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
     }
 
     /**
+     * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * 
+     */
+    @Import(name="kmsKeyId")
+    private @Nullable Output<String> kmsKeyId;
+
+    /**
+     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * 
+     */
+    public Optional<Output<String>> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
+    }
+
+    /**
      * The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
      * 
      */
@@ -101,6 +116,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
         this.bootVolumeSizeInGbs = $.bootVolumeSizeInGbs;
         this.bootVolumeVpusPerGb = $.bootVolumeVpusPerGb;
         this.imageId = $.imageId;
+        this.kmsKeyId = $.kmsKeyId;
         this.sourceType = $.sourceType;
     }
 
@@ -208,6 +224,27 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
          */
         public Builder imageId(String imageId) {
             return imageId(Output.of(imageId));
+        }
+
+        /**
+         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyId(@Nullable Output<String> kmsKeyId) {
+            $.kmsKeyId = kmsKeyId;
+            return this;
+        }
+
+        /**
+         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyId(String kmsKeyId) {
+            return kmsKeyId(Output.of(kmsKeyId));
         }
 
         /**

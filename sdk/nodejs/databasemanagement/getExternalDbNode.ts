@@ -63,6 +63,10 @@ export interface GetExternalDbNodeResult {
      */
     readonly displayName: string;
     /**
+     * Name of the domain.
+     */
+    readonly domainName: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      */
     readonly externalConnectorId: string;

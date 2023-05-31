@@ -190,7 +190,7 @@ type Instance struct {
 	// (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
 	AgentConfig InstanceAgentConfigOutput `pulumi:"agentConfig"`
 	Async       pulumi.BoolPtrOutput      `pulumi:"async"`
-	// (Updatable) Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.  This also includes live migration preference for infrastructure maintenance.
+	// (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
 	AvailabilityConfig InstanceAvailabilityConfigOutput `pulumi:"availabilityConfig"`
 	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
@@ -389,7 +389,7 @@ type instanceState struct {
 	// (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
 	AgentConfig *InstanceAgentConfig `pulumi:"agentConfig"`
 	Async       *bool                `pulumi:"async"`
-	// (Updatable) Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.  This also includes live migration preference for infrastructure maintenance.
+	// (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
 	AvailabilityConfig *InstanceAvailabilityConfig `pulumi:"availabilityConfig"`
 	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
@@ -551,7 +551,7 @@ type InstanceState struct {
 	// (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
 	AgentConfig InstanceAgentConfigPtrInput
 	Async       pulumi.BoolPtrInput
-	// (Updatable) Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.  This also includes live migration preference for infrastructure maintenance.
+	// (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
 	AvailabilityConfig InstanceAvailabilityConfigPtrInput
 	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringPtrInput
@@ -717,7 +717,7 @@ type instanceArgs struct {
 	// (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
 	AgentConfig *InstanceAgentConfig `pulumi:"agentConfig"`
 	Async       *bool                `pulumi:"async"`
-	// (Updatable) Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.  This also includes live migration preference for infrastructure maintenance.
+	// (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
 	AvailabilityConfig *InstanceAvailabilityConfig `pulumi:"availabilityConfig"`
 	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
@@ -858,7 +858,7 @@ type InstanceArgs struct {
 	// (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
 	AgentConfig InstanceAgentConfigPtrInput
 	Async       pulumi.BoolPtrInput
-	// (Updatable) Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.  This also includes live migration preference for infrastructure maintenance.
+	// (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
 	AvailabilityConfig InstanceAvailabilityConfigPtrInput
 	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput
@@ -1090,7 +1090,7 @@ func (o InstanceOutput) Async() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Instance) pulumi.BoolPtrOutput { return v.Async }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.  This also includes live migration preference for infrastructure maintenance.
+// (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
 func (o InstanceOutput) AvailabilityConfig() InstanceAvailabilityConfigOutput {
 	return o.ApplyT(func(v *Instance) InstanceAvailabilityConfigOutput { return v.AvailabilityConfig }).(InstanceAvailabilityConfigOutput)
 }

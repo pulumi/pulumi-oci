@@ -52,6 +52,7 @@ import * as utilities from "../utilities";
  *         "Operations.CostCenter": "42",
  *     },
  *     displayName: _var.file_system_display_name,
+ *     filesystemSnapshotPolicyId: oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy.id,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
@@ -112,6 +113,12 @@ export class FileSystem extends pulumi.CustomResource {
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
      */
     public readonly displayName!: pulumi.Output<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+     *
+     * May be unset as a blank value.
+     */
+    public readonly filesystemSnapshotPolicyId!: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
@@ -182,6 +189,7 @@ export class FileSystem extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["filesystemSnapshotPolicyId"] = state ? state.filesystemSnapshotPolicyId : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isCloneParent"] = state ? state.isCloneParent : undefined;
             resourceInputs["isHydrated"] = state ? state.isHydrated : undefined;
@@ -206,6 +214,7 @@ export class FileSystem extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["filesystemSnapshotPolicyId"] = args ? args.filesystemSnapshotPolicyId : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
             resourceInputs["sourceSnapshotId"] = args ? args.sourceSnapshotId : undefined;
@@ -244,6 +253,12 @@ export interface FileSystemState {
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+     *
+     * May be unset as a blank value.
+     */
+    filesystemSnapshotPolicyId?: pulumi.Input<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
@@ -318,6 +333,12 @@ export interface FileSystemArgs {
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+     *
+     * May be unset as a blank value.
+     */
+    filesystemSnapshotPolicyId?: pulumi.Input<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */

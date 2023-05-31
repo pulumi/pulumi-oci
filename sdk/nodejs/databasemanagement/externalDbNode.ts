@@ -66,6 +66,10 @@ export class ExternalDbNode extends pulumi.CustomResource {
      */
     public /*out*/ readonly displayName!: pulumi.Output<string>;
     /**
+     * Name of the domain.
+     */
+    public /*out*/ readonly domainName!: pulumi.Output<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      */
     public readonly externalConnectorId!: pulumi.Output<string>;
@@ -124,6 +128,7 @@ export class ExternalDbNode extends pulumi.CustomResource {
             resourceInputs["componentName"] = state ? state.componentName : undefined;
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["domainName"] = state ? state.domainName : undefined;
             resourceInputs["externalConnectorId"] = state ? state.externalConnectorId : undefined;
             resourceInputs["externalDbNodeId"] = state ? state.externalDbNodeId : undefined;
             resourceInputs["externalDbSystemId"] = state ? state.externalDbSystemId : undefined;
@@ -145,6 +150,7 @@ export class ExternalDbNode extends pulumi.CustomResource {
             resourceInputs["componentName"] = undefined /*out*/;
             resourceInputs["cpuCoreCount"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;
+            resourceInputs["domainName"] = undefined /*out*/;
             resourceInputs["externalDbSystemId"] = undefined /*out*/;
             resourceInputs["hostName"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -182,6 +188,10 @@ export interface ExternalDbNodeState {
      * The user-friendly name for the external DB node. The name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * Name of the domain.
+     */
+    domainName?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      */

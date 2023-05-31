@@ -50,7 +50,7 @@ public final class GetShapesShape {
      */
     private Boolean isFlexible;
     /**
-     * @return Whether Live Migration is currently supported for this shape.
+     * @return Whether live migration is supported for this shape.
      * 
      */
     private Boolean isLiveMigrationSupported;
@@ -209,7 +209,7 @@ public final class GetShapesShape {
         return this.isFlexible;
     }
     /**
-     * @return Whether Live Migration is currently supported for this shape.
+     * @return Whether live migration is supported for this shape.
      * 
      */
     public Boolean isLiveMigrationSupported() {

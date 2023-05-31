@@ -12,7 +12,8 @@ import (
 
 // This data source provides the list of File Systems in Oracle Cloud Infrastructure File Storage service.
 //
-// Lists the file system resources in the specified compartment.
+// Lists the file system resources in the specified compartment, or by the specified compartment and
+// file system snapshot policy.
 //
 // ## Example Usage
 //
@@ -29,13 +30,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := FileStorage.GetFileSystems(ctx, &filestorage.GetFileSystemsArgs{
-//				AvailabilityDomain: _var.File_system_availability_domain,
-//				CompartmentId:      _var.Compartment_id,
-//				DisplayName:        pulumi.StringRef(_var.File_system_display_name),
-//				Id:                 pulumi.StringRef(_var.File_system_id),
-//				ParentFileSystemId: pulumi.StringRef(oci_file_storage_file_system.Test_file_system.Id),
-//				SourceSnapshotId:   pulumi.StringRef(oci_file_storage_snapshot.Test_snapshot.Id),
-//				State:              pulumi.StringRef(_var.File_system_state),
+//				AvailabilityDomain:         _var.File_system_availability_domain,
+//				CompartmentId:              _var.Compartment_id,
+//				DisplayName:                pulumi.StringRef(_var.File_system_display_name),
+//				FilesystemSnapshotPolicyId: pulumi.StringRef(oci_file_storage_filesystem_snapshot_policy.Test_filesystem_snapshot_policy.Id),
+//				Id:                         pulumi.StringRef(_var.File_system_id),
+//				ParentFileSystemId:         pulumi.StringRef(oci_file_storage_file_system.Test_file_system.Id),
+//				SourceSnapshotId:           pulumi.StringRef(oci_file_storage_snapshot.Test_snapshot.Id),
+//				State:                      pulumi.StringRef(_var.File_system_state),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -61,8 +63,10 @@ type GetFileSystemsArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-	DisplayName *string                `pulumi:"displayName"`
-	Filters     []GetFileSystemsFilter `pulumi:"filters"`
+	DisplayName *string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
+	FilesystemSnapshotPolicyId *string                `pulumi:"filesystemSnapshotPolicyId"`
+	Filters                    []GetFileSystemsFilter `pulumi:"filters"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
 	Id *string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -83,7 +87,9 @@ type GetFileSystemsResult struct {
 	DisplayName *string `pulumi:"displayName"`
 	// The list of file_systems.
 	FileSystems []GetFileSystemsFileSystem `pulumi:"fileSystems"`
-	Filters     []GetFileSystemsFilter     `pulumi:"filters"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+	FilesystemSnapshotPolicyId *string                `pulumi:"filesystemSnapshotPolicyId"`
+	Filters                    []GetFileSystemsFilter `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
 	Id *string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -114,8 +120,10 @@ type GetFileSystemsOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-	DisplayName pulumi.StringPtrInput          `pulumi:"displayName"`
-	Filters     GetFileSystemsFilterArrayInput `pulumi:"filters"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
+	FilesystemSnapshotPolicyId pulumi.StringPtrInput          `pulumi:"filesystemSnapshotPolicyId"`
+	Filters                    GetFileSystemsFilterArrayInput `pulumi:"filters"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -163,6 +171,11 @@ func (o GetFileSystemsResultOutput) DisplayName() pulumi.StringPtrOutput {
 // The list of file_systems.
 func (o GetFileSystemsResultOutput) FileSystems() GetFileSystemsFileSystemArrayOutput {
 	return o.ApplyT(func(v GetFileSystemsResult) []GetFileSystemsFileSystem { return v.FileSystems }).(GetFileSystemsFileSystemArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+func (o GetFileSystemsResultOutput) FilesystemSnapshotPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFileSystemsResult) *string { return v.FilesystemSnapshotPolicyId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetFileSystemsResultOutput) Filters() GetFileSystemsFilterArrayOutput {

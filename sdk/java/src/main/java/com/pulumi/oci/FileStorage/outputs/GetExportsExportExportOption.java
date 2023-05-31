@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetExportsExportExportOption {
     /**
-     * @return Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+     * @return Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
      * 
      */
     private String access;
@@ -43,7 +43,7 @@ public final class GetExportsExportExportOption {
 
     private GetExportsExportExportOption() {}
     /**
-     * @return Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+     * @return Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
      * 
      */
     public String access() {

@@ -11831,7 +11831,7 @@ export namespace Core {
 
     export interface InstanceAvailabilityConfig {
         /**
-         * (Updatable) Whether live migration is preferred for infrastructure maintenance.  If null preference is specified, live migration will be preferred for infrastructure maintenance for applicable instances.
+         * (Updatable) Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
          */
         isLiveMigrationPreferred?: pulumi.Input<boolean>;
         /**
@@ -11921,6 +11921,10 @@ export namespace Core {
          */
         backupPolicyId?: pulumi.Input<string>;
         /**
+         * The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
+         */
+        blockVolumeReplicas?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas>;
+        /**
          * The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
          */
         compartmentId?: pulumi.Input<string>;
@@ -11937,7 +11941,11 @@ export namespace Core {
          */
         freeformTags?: pulumi.Input<{[key: string]: any}>;
         /**
-         * The OCID of the Vault service key to assign as the master encryption key for the volume.
+         * Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+         */
+        isAutoTuneEnabled?: pulumi.Input<boolean>;
+        /**
+         * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
@@ -11962,6 +11970,17 @@ export namespace Core {
          * This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
          */
         maxVpusPerGb?: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas {
+        /**
+         * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+         */
+        availabilityDomain: pulumi.Input<string>;
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
     }
 
     export interface InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails {
@@ -12175,6 +12194,10 @@ export namespace Core {
 
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfig {
         /**
+         * Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+         */
+        isLiveMigrationPreferred?: pulumi.Input<boolean>;
+        /**
          * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
          */
         recoveryAction?: pulumi.Input<string>;
@@ -12366,6 +12389,10 @@ export namespace Core {
          * The OCID of the image used to boot the instance.
          */
         imageId?: pulumi.Input<string>;
+        /**
+         * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         */
+        kmsKeyId?: pulumi.Input<string>;
         /**
          * The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
          */
@@ -20956,6 +20983,127 @@ export namespace DatabaseManagement {
         service?: pulumi.Input<string>;
     }
 
+    export interface ExternalExadataInfrastructureDatabaseSystem {
+        /**
+         * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+         */
+        additionalDetails?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of the Exadata infrastructure.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * The internal ID of the Exadata resource.
+         */
+        internalId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The Oracle license model that applies to the database management resources.
+         */
+        licenseModel?: pulumi.Input<string>;
+        /**
+         * The details of the lifecycle state of the Exadata resource.
+         */
+        lifecycleDetails?: pulumi.Input<string>;
+        /**
+         * The current lifecycle state of the database resource.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * The status of the Exadata resource.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * The timestamp of the creation of the Exadata resource.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The timestamp of the last update of the Exadata resource.
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * The version of the Exadata resource.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface ExternalExadataInfrastructureStorageGrid {
+        /**
+         * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+         */
+        additionalDetails?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * (Updatable) The name of the Exadata infrastructure.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * The internal ID of the Exadata resource.
+         */
+        internalId?: pulumi.Input<string>;
+        /**
+         * The details of the lifecycle state of the Exadata resource.
+         */
+        lifecycleDetails?: pulumi.Input<string>;
+        /**
+         * The number of Exadata storage servers in the Exadata infrastructure.
+         */
+        serverCount?: pulumi.Input<number>;
+        /**
+         * The current lifecycle state of the database resource.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * The status of the Exadata resource.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * The timestamp of the creation of the Exadata resource.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The timestamp of the last update of the Exadata resource.
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * The version of the Exadata resource.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface ExternalExadataStorageConnectorCredentialInfo {
+        /**
+         * (Updatable) The password of the user.
+         */
+        password: pulumi.Input<string>;
+        /**
+         * (Updatable) The full path of the SSL truststore location in the agent.
+         */
+        sslTrustStoreLocation?: pulumi.Input<string>;
+        /**
+         * (Updatable) The password of the SSL truststore location in the agent.
+         */
+        sslTrustStorePassword?: pulumi.Input<string>;
+        /**
+         * (Updatable) The SSL truststore type.
+         */
+        sslTrustStoreType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of the user.
+         */
+        username: pulumi.Input<string>;
+    }
+
     export interface ExternalListenerEndpoint {
         /**
          * The host name or IP address.
@@ -21212,6 +21360,42 @@ export namespace DatabaseManagement {
     }
 
     export interface GetExternalDbSystemsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetExternalExadataInfrastructuresFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetExternalExadataInfrastructuresFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetExternalExadataStorageConnectorsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetExternalExadataStorageConnectorsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetExternalExadataStorageServersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetExternalExadataStorageServersFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -24890,7 +25074,7 @@ export namespace Events {
 export namespace FileStorage {
     export interface ExportExportOption {
         /**
-         * (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+         * (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
          */
         access?: pulumi.Input<string>;
         /**
@@ -24932,6 +25116,45 @@ export namespace FileStorage {
         sourceSnapshotId?: pulumi.Input<string>;
     }
 
+    export interface FilesystemSnapshotPolicySchedule {
+        /**
+         * (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+         */
+        dayOfMonth?: pulumi.Input<number>;
+        /**
+         * (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+         */
+        dayOfWeek?: pulumi.Input<string>;
+        /**
+         * (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+         */
+        hourOfDay?: pulumi.Input<number>;
+        /**
+         * (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+         */
+        month?: pulumi.Input<string>;
+        /**
+         * (Updatable) The frequency of scheduled snapshots.
+         */
+        period: pulumi.Input<string>;
+        /**
+         * (Updatable) The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
+         */
+        retentionDurationInSeconds?: pulumi.Input<string>;
+        /**
+         * (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+         */
+        schedulePrefix?: pulumi.Input<string>;
+        /**
+         * (Updatable) The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
+         */
+        timeScheduleStart?: pulumi.Input<string>;
+        /**
+         * (Updatable) Time zone used for scheduling the snapshot.
+         */
+        timeZone: pulumi.Input<string>;
+    }
+
     export interface GetExportSetsFilter {
         name: string;
         regex?: boolean;
@@ -24963,6 +25186,18 @@ export namespace FileStorage {
     }
 
     export interface GetFileSystemsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFilesystemSnapshotPoliciesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFilesystemSnapshotPoliciesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;

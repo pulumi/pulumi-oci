@@ -79,6 +79,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(var_.compartment_id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .displayName(var_.file_system_display_name())
+ *             .filesystemSnapshotPolicyId(oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy().id())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .kmsKeyId(oci_kms_key.test_key().id())
  *             .sourceSnapshotId(oci_file_storage_snapshot.test_snapshot().id())
@@ -154,6 +155,24 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+     * 
+     * May be unset as a blank value.
+     * 
+     */
+    @Export(name="filesystemSnapshotPolicyId", type=String.class, parameters={})
+    private Output<String> filesystemSnapshotPolicyId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+     * 
+     * May be unset as a blank value.
+     * 
+     */
+    public Output<String> filesystemSnapshotPolicyId() {
+        return this.filesystemSnapshotPolicyId;
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`

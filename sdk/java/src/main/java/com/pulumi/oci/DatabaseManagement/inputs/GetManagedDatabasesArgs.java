@@ -47,6 +47,21 @@ public final class GetManagedDatabasesArgs extends com.pulumi.resources.InvokeAr
         return Optional.ofNullable(this.deploymentType);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     * 
+     */
+    @Import(name="externalExadataInfrastructureId")
+    private @Nullable Output<String> externalExadataInfrastructureId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     * 
+     */
+    public Optional<Output<String>> externalExadataInfrastructureId() {
+        return Optional.ofNullable(this.externalExadataInfrastructureId);
+    }
+
     @Import(name="filters")
     private @Nullable Output<List<GetManagedDatabasesFilterArgs>> filters;
 
@@ -104,6 +119,7 @@ public final class GetManagedDatabasesArgs extends com.pulumi.resources.InvokeAr
     private GetManagedDatabasesArgs(GetManagedDatabasesArgs $) {
         this.compartmentId = $.compartmentId;
         this.deploymentType = $.deploymentType;
+        this.externalExadataInfrastructureId = $.externalExadataInfrastructureId;
         this.filters = $.filters;
         this.id = $.id;
         this.managementOption = $.managementOption;
@@ -168,6 +184,27 @@ public final class GetManagedDatabasesArgs extends com.pulumi.resources.InvokeAr
          */
         public Builder deploymentType(String deploymentType) {
             return deploymentType(Output.of(deploymentType));
+        }
+
+        /**
+         * @param externalExadataInfrastructureId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalExadataInfrastructureId(@Nullable Output<String> externalExadataInfrastructureId) {
+            $.externalExadataInfrastructureId = externalExadataInfrastructureId;
+            return this;
+        }
+
+        /**
+         * @param externalExadataInfrastructureId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalExadataInfrastructureId(String externalExadataInfrastructureId) {
+            return externalExadataInfrastructureId(Output.of(externalExadataInfrastructureId));
         }
 
         public Builder filters(@Nullable Output<List<GetManagedDatabasesFilterArgs>> filters) {

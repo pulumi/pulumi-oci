@@ -61,6 +61,7 @@ namespace Pulumi.Oci.FileStorage
     ///             { "Operations.CostCenter", "42" },
     ///         },
     ///         DisplayName = @var.File_system_display_name,
+    ///         FilesystemSnapshotPolicyId = oci_file_storage_filesystem_snapshot_policy.Test_filesystem_snapshot_policy.Id,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -106,6 +107,14 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+        /// 
+        /// May be unset as a blank value.
+        /// </summary>
+        [Output("filesystemSnapshotPolicyId")]
+        public Output<string> FilesystemSnapshotPolicyId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -259,6 +268,14 @@ namespace Pulumi.Oci.FileStorage
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+        /// 
+        /// May be unset as a blank value.
+        /// </summary>
+        [Input("filesystemSnapshotPolicyId")]
+        public Input<string>? FilesystemSnapshotPolicyId { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -324,6 +341,14 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+        /// 
+        /// May be unset as a blank value.
+        /// </summary>
+        [Input("filesystemSnapshotPolicyId")]
+        public Input<string>? FilesystemSnapshotPolicyId { get; set; }
 
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;

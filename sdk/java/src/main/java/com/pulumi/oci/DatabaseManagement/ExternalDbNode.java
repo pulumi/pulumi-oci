@@ -103,6 +103,20 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
+     * Name of the domain.
+     * 
+     */
+    @Export(name="domainName", type=String.class, parameters={})
+    private Output<String> domainName;
+
+    /**
+     * @return Name of the domain.
+     * 
+     */
+    public Output<String> domainName() {
+        return this.domainName;
+    }
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      * 
      */

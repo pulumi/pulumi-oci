@@ -18,18 +18,48 @@ public final class GetSnapshotsArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetSnapshotsArgs Empty = new GetSnapshotsArgs();
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * 
+     */
+    @Import(name="compartmentId")
+    private @Nullable Output<String> compartmentId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * 
+     */
+    public Optional<Output<String>> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      * 
      */
-    @Import(name="fileSystemId", required=true)
-    private Output<String> fileSystemId;
+    @Import(name="fileSystemId")
+    private @Nullable Output<String> fileSystemId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      * 
      */
-    public Output<String> fileSystemId() {
-        return this.fileSystemId;
+    public Optional<Output<String>> fileSystemId() {
+        return Optional.ofNullable(this.fileSystemId);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
+     * 
+     */
+    @Import(name="filesystemSnapshotPolicyId")
+    private @Nullable Output<String> filesystemSnapshotPolicyId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
+     * 
+     */
+    public Optional<Output<String>> filesystemSnapshotPolicyId() {
+        return Optional.ofNullable(this.filesystemSnapshotPolicyId);
     }
 
     @Import(name="filters")
@@ -72,7 +102,9 @@ public final class GetSnapshotsArgs extends com.pulumi.resources.InvokeArgs {
     private GetSnapshotsArgs() {}
 
     private GetSnapshotsArgs(GetSnapshotsArgs $) {
+        this.compartmentId = $.compartmentId;
         this.fileSystemId = $.fileSystemId;
+        this.filesystemSnapshotPolicyId = $.filesystemSnapshotPolicyId;
         this.filters = $.filters;
         this.id = $.id;
         this.state = $.state;
@@ -97,12 +129,33 @@ public final class GetSnapshotsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(@Nullable Output<String> compartmentId) {
+            $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(String compartmentId) {
+            return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
          * @param fileSystemId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
          * 
          * @return builder
          * 
          */
-        public Builder fileSystemId(Output<String> fileSystemId) {
+        public Builder fileSystemId(@Nullable Output<String> fileSystemId) {
             $.fileSystemId = fileSystemId;
             return this;
         }
@@ -115,6 +168,27 @@ public final class GetSnapshotsArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder fileSystemId(String fileSystemId) {
             return fileSystemId(Output.of(fileSystemId));
+        }
+
+        /**
+         * @param filesystemSnapshotPolicyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filesystemSnapshotPolicyId(@Nullable Output<String> filesystemSnapshotPolicyId) {
+            $.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
+            return this;
+        }
+
+        /**
+         * @param filesystemSnapshotPolicyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filesystemSnapshotPolicyId(String filesystemSnapshotPolicyId) {
+            return filesystemSnapshotPolicyId(Output.of(filesystemSnapshotPolicyId));
         }
 
         public Builder filters(@Nullable Output<List<GetSnapshotsFilterArgs>> filters) {
@@ -173,7 +247,6 @@ public final class GetSnapshotsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetSnapshotsArgs build() {
-            $.fileSystemId = Objects.requireNonNull($.fileSystemId, "expected parameter 'fileSystemId' to be non-null");
             return $;
         }
     }

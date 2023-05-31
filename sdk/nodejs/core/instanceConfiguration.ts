@@ -46,6 +46,10 @@ import * as utilities from "../utilities";
  *                 }],
  *                 availabilityDomain: _var.instance_configuration_instance_details_block_volumes_create_details_availability_domain,
  *                 backupPolicyId: data.oci_core_volume_backup_policies.test_volume_backup_policies.volume_backup_policies[0].id,
+ *                 blockVolumeReplicas: {
+ *                     availabilityDomain: _var.instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_availability_domain,
+ *                     displayName: _var.instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_display_name,
+ *                 },
  *                 compartmentId: _var.compartment_id,
  *                 definedTags: {
  *                     "Operations.CostCenter": "42",
@@ -54,6 +58,7 @@ import * as utilities from "../utilities";
  *                 freeformTags: {
  *                     Department: "Finance",
  *                 },
+ *                 isAutoTuneEnabled: _var.instance_configuration_instance_details_block_volumes_create_details_is_auto_tune_enabled,
  *                 kmsKeyId: oci_kms_key.test_key.id,
  *                 sizeInGbs: _var.instance_configuration_instance_details_block_volumes_create_details_size_in_gbs,
  *                 sourceDetails: {
@@ -75,6 +80,7 @@ import * as utilities from "../utilities";
  *                 }],
  *             },
  *             availabilityConfig: {
+ *                 isLiveMigrationPreferred: _var.instance_configuration_instance_details_launch_details_availability_config_is_live_migration_preferred,
  *                 recoveryAction: _var.instance_configuration_instance_details_launch_details_availability_config_recovery_action,
  *             },
  *             availabilityDomain: _var.instance_configuration_instance_details_launch_details_availability_domain,
@@ -154,6 +160,7 @@ import * as utilities from "../utilities";
  *                 bootVolumeSizeInGbs: _var.instance_configuration_instance_details_launch_details_source_details_boot_volume_size_in_gbs,
  *                 bootVolumeVpusPerGb: _var.instance_configuration_instance_details_launch_details_source_details_boot_volume_vpus_per_gb,
  *                 imageId: oci_core_image.test_image.id,
+ *                 kmsKeyId: oci_kms_key.test_key.id,
  *             },
  *         },
  *         secondaryVnics: [{

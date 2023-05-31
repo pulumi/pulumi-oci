@@ -5,7 +5,9 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy;
+import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -32,6 +34,11 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
      */
     private @Nullable String backupPolicyId;
     /**
+     * @return The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
+     * 
+     */
+    private @Nullable InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas blockVolumeReplicas;
+    /**
      * @return The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
      * 
      */
@@ -52,7 +59,12 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
      */
     private @Nullable Map<String,Object> freeformTags;
     /**
-     * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
+     * @return Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+     * 
+     */
+    private @Nullable Boolean isAutoTuneEnabled;
+    /**
+     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     private @Nullable String kmsKeyId;
@@ -93,6 +105,13 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
         return Optional.ofNullable(this.backupPolicyId);
     }
     /**
+     * @return The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
+     * 
+     */
+    public Optional<InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas> blockVolumeReplicas() {
+        return Optional.ofNullable(this.blockVolumeReplicas);
+    }
+    /**
      * @return The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
      * 
      */
@@ -121,7 +140,14 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
-     * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
+     * @return Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+     * 
+     */
+    public Optional<Boolean> isAutoTuneEnabled() {
+        return Optional.ofNullable(this.isAutoTuneEnabled);
+    }
+    /**
+     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     public Optional<String> kmsKeyId() {
@@ -159,10 +185,12 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
         private @Nullable List<InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy> autotunePolicies;
         private @Nullable String availabilityDomain;
         private @Nullable String backupPolicyId;
+        private @Nullable InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas blockVolumeReplicas;
         private @Nullable String compartmentId;
         private @Nullable Map<String,Object> definedTags;
         private @Nullable String displayName;
         private @Nullable Map<String,Object> freeformTags;
+        private @Nullable Boolean isAutoTuneEnabled;
         private @Nullable String kmsKeyId;
         private @Nullable String sizeInGbs;
         private @Nullable InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails sourceDetails;
@@ -173,10 +201,12 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
     	      this.autotunePolicies = defaults.autotunePolicies;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.backupPolicyId = defaults.backupPolicyId;
+    	      this.blockVolumeReplicas = defaults.blockVolumeReplicas;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.isAutoTuneEnabled = defaults.isAutoTuneEnabled;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.sizeInGbs = defaults.sizeInGbs;
     	      this.sourceDetails = defaults.sourceDetails;
@@ -202,6 +232,11 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
             return this;
         }
         @CustomType.Setter
+        public Builder blockVolumeReplicas(@Nullable InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas blockVolumeReplicas) {
+            this.blockVolumeReplicas = blockVolumeReplicas;
+            return this;
+        }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
@@ -219,6 +254,11 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
         @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
             this.freeformTags = freeformTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isAutoTuneEnabled(@Nullable Boolean isAutoTuneEnabled) {
+            this.isAutoTuneEnabled = isAutoTuneEnabled;
             return this;
         }
         @CustomType.Setter
@@ -246,10 +286,12 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
             o.autotunePolicies = autotunePolicies;
             o.availabilityDomain = availabilityDomain;
             o.backupPolicyId = backupPolicyId;
+            o.blockVolumeReplicas = blockVolumeReplicas;
             o.compartmentId = compartmentId;
             o.definedTags = definedTags;
             o.displayName = displayName;
             o.freeformTags = freeformTags;
+            o.isAutoTuneEnabled = isAutoTuneEnabled;
             o.kmsKeyId = kmsKeyId;
             o.sizeInGbs = sizeInGbs;
             o.sourceDetails = sourceDetails;

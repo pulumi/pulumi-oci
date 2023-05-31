@@ -13,6 +13,12 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+        /// </summary>
+        [Input("isLiveMigrationPreferred")]
+        public Input<bool>? IsLiveMigrationPreferred { get; set; }
+
+        /// <summary>
         /// The lifecycle state for an instance when it is recovered after infrastructure maintenance.
         /// </summary>
         [Input("recoveryAction")]

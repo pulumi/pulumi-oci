@@ -38,6 +38,11 @@ public final class GetExternalDbNodeResult {
      */
     private String displayName;
     /**
+     * @return Name of the domain.
+     * 
+     */
+    private String domainName;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      * 
      */
@@ -121,6 +126,13 @@ public final class GetExternalDbNodeResult {
         return this.displayName;
     }
     /**
+     * @return Name of the domain.
+     * 
+     */
+    public String domainName() {
+        return this.domainName;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      * 
      */
@@ -201,6 +213,7 @@ public final class GetExternalDbNodeResult {
         private String componentName;
         private Double cpuCoreCount;
         private String displayName;
+        private String domainName;
         private String externalConnectorId;
         private String externalDbNodeId;
         private String externalDbSystemId;
@@ -219,6 +232,7 @@ public final class GetExternalDbNodeResult {
     	      this.componentName = defaults.componentName;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
     	      this.displayName = defaults.displayName;
+    	      this.domainName = defaults.domainName;
     	      this.externalConnectorId = defaults.externalConnectorId;
     	      this.externalDbNodeId = defaults.externalDbNodeId;
     	      this.externalDbSystemId = defaults.externalDbSystemId;
@@ -254,6 +268,11 @@ public final class GetExternalDbNodeResult {
         @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder domainName(String domainName) {
+            this.domainName = Objects.requireNonNull(domainName);
             return this;
         }
         @CustomType.Setter
@@ -313,6 +332,7 @@ public final class GetExternalDbNodeResult {
             o.componentName = componentName;
             o.cpuCoreCount = cpuCoreCount;
             o.displayName = displayName;
+            o.domainName = domainName;
             o.externalConnectorId = externalConnectorId;
             o.externalDbNodeId = externalDbNodeId;
             o.externalDbSystemId = externalDbSystemId;

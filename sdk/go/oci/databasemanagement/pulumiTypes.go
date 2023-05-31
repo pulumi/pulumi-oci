@@ -5476,6 +5476,602 @@ func (o ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConne
 	}).(pulumi.StringPtrOutput)
 }
 
+type ExternalExadataInfrastructureDatabaseSystem struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) The name of the Exadata infrastructure.
+	DisplayName *string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id *string `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId *string `pulumi:"internalId"`
+	// (Updatable) The Oracle license model that applies to the database management resources.
+	LicenseModel *string `pulumi:"licenseModel"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// The current lifecycle state of the database resource.
+	State *string `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status *string `pulumi:"status"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated *string `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version *string `pulumi:"version"`
+}
+
+// ExternalExadataInfrastructureDatabaseSystemInput is an input type that accepts ExternalExadataInfrastructureDatabaseSystemArgs and ExternalExadataInfrastructureDatabaseSystemOutput values.
+// You can construct a concrete instance of `ExternalExadataInfrastructureDatabaseSystemInput` via:
+//
+//	ExternalExadataInfrastructureDatabaseSystemArgs{...}
+type ExternalExadataInfrastructureDatabaseSystemInput interface {
+	pulumi.Input
+
+	ToExternalExadataInfrastructureDatabaseSystemOutput() ExternalExadataInfrastructureDatabaseSystemOutput
+	ToExternalExadataInfrastructureDatabaseSystemOutputWithContext(context.Context) ExternalExadataInfrastructureDatabaseSystemOutput
+}
+
+type ExternalExadataInfrastructureDatabaseSystemArgs struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails pulumi.MapInput `pulumi:"additionalDetails"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// (Updatable) The name of the Exadata infrastructure.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId pulumi.StringPtrInput `pulumi:"internalId"`
+	// (Updatable) The Oracle license model that applies to the database management resources.
+	LicenseModel pulumi.StringPtrInput `pulumi:"licenseModel"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
+	// The current lifecycle state of the database resource.
+	State pulumi.StringPtrInput `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version pulumi.StringPtrInput `pulumi:"version"`
+}
+
+func (ExternalExadataInfrastructureDatabaseSystemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalExadataInfrastructureDatabaseSystem)(nil)).Elem()
+}
+
+func (i ExternalExadataInfrastructureDatabaseSystemArgs) ToExternalExadataInfrastructureDatabaseSystemOutput() ExternalExadataInfrastructureDatabaseSystemOutput {
+	return i.ToExternalExadataInfrastructureDatabaseSystemOutputWithContext(context.Background())
+}
+
+func (i ExternalExadataInfrastructureDatabaseSystemArgs) ToExternalExadataInfrastructureDatabaseSystemOutputWithContext(ctx context.Context) ExternalExadataInfrastructureDatabaseSystemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataInfrastructureDatabaseSystemOutput)
+}
+
+// ExternalExadataInfrastructureDatabaseSystemArrayInput is an input type that accepts ExternalExadataInfrastructureDatabaseSystemArray and ExternalExadataInfrastructureDatabaseSystemArrayOutput values.
+// You can construct a concrete instance of `ExternalExadataInfrastructureDatabaseSystemArrayInput` via:
+//
+//	ExternalExadataInfrastructureDatabaseSystemArray{ ExternalExadataInfrastructureDatabaseSystemArgs{...} }
+type ExternalExadataInfrastructureDatabaseSystemArrayInput interface {
+	pulumi.Input
+
+	ToExternalExadataInfrastructureDatabaseSystemArrayOutput() ExternalExadataInfrastructureDatabaseSystemArrayOutput
+	ToExternalExadataInfrastructureDatabaseSystemArrayOutputWithContext(context.Context) ExternalExadataInfrastructureDatabaseSystemArrayOutput
+}
+
+type ExternalExadataInfrastructureDatabaseSystemArray []ExternalExadataInfrastructureDatabaseSystemInput
+
+func (ExternalExadataInfrastructureDatabaseSystemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalExadataInfrastructureDatabaseSystem)(nil)).Elem()
+}
+
+func (i ExternalExadataInfrastructureDatabaseSystemArray) ToExternalExadataInfrastructureDatabaseSystemArrayOutput() ExternalExadataInfrastructureDatabaseSystemArrayOutput {
+	return i.ToExternalExadataInfrastructureDatabaseSystemArrayOutputWithContext(context.Background())
+}
+
+func (i ExternalExadataInfrastructureDatabaseSystemArray) ToExternalExadataInfrastructureDatabaseSystemArrayOutputWithContext(ctx context.Context) ExternalExadataInfrastructureDatabaseSystemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataInfrastructureDatabaseSystemArrayOutput)
+}
+
+type ExternalExadataInfrastructureDatabaseSystemOutput struct{ *pulumi.OutputState }
+
+func (ExternalExadataInfrastructureDatabaseSystemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalExadataInfrastructureDatabaseSystem)(nil)).Elem()
+}
+
+func (o ExternalExadataInfrastructureDatabaseSystemOutput) ToExternalExadataInfrastructureDatabaseSystemOutput() ExternalExadataInfrastructureDatabaseSystemOutput {
+	return o
+}
+
+func (o ExternalExadataInfrastructureDatabaseSystemOutput) ToExternalExadataInfrastructureDatabaseSystemOutputWithContext(ctx context.Context) ExternalExadataInfrastructureDatabaseSystemOutput {
+	return o
+}
+
+// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+func (o ExternalExadataInfrastructureDatabaseSystemOutput) AdditionalDetails() pulumi.MapOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureDatabaseSystem) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o ExternalExadataInfrastructureDatabaseSystemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureDatabaseSystem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the Exadata infrastructure.
+func (o ExternalExadataInfrastructureDatabaseSystemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureDatabaseSystem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+func (o ExternalExadataInfrastructureDatabaseSystemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureDatabaseSystem) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The internal ID of the Exadata resource.
+func (o ExternalExadataInfrastructureDatabaseSystemOutput) InternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureDatabaseSystem) *string { return v.InternalId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Oracle license model that applies to the database management resources.
+func (o ExternalExadataInfrastructureDatabaseSystemOutput) LicenseModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureDatabaseSystem) *string { return v.LicenseModel }).(pulumi.StringPtrOutput)
+}
+
+// The details of the lifecycle state of the Exadata resource.
+func (o ExternalExadataInfrastructureDatabaseSystemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureDatabaseSystem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
+}
+
+// The current lifecycle state of the database resource.
+func (o ExternalExadataInfrastructureDatabaseSystemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureDatabaseSystem) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// The status of the Exadata resource.
+func (o ExternalExadataInfrastructureDatabaseSystemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureDatabaseSystem) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// The timestamp of the creation of the Exadata resource.
+func (o ExternalExadataInfrastructureDatabaseSystemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureDatabaseSystem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// The timestamp of the last update of the Exadata resource.
+func (o ExternalExadataInfrastructureDatabaseSystemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureDatabaseSystem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
+}
+
+// The version of the Exadata resource.
+func (o ExternalExadataInfrastructureDatabaseSystemOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureDatabaseSystem) *string { return v.Version }).(pulumi.StringPtrOutput)
+}
+
+type ExternalExadataInfrastructureDatabaseSystemArrayOutput struct{ *pulumi.OutputState }
+
+func (ExternalExadataInfrastructureDatabaseSystemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalExadataInfrastructureDatabaseSystem)(nil)).Elem()
+}
+
+func (o ExternalExadataInfrastructureDatabaseSystemArrayOutput) ToExternalExadataInfrastructureDatabaseSystemArrayOutput() ExternalExadataInfrastructureDatabaseSystemArrayOutput {
+	return o
+}
+
+func (o ExternalExadataInfrastructureDatabaseSystemArrayOutput) ToExternalExadataInfrastructureDatabaseSystemArrayOutputWithContext(ctx context.Context) ExternalExadataInfrastructureDatabaseSystemArrayOutput {
+	return o
+}
+
+func (o ExternalExadataInfrastructureDatabaseSystemArrayOutput) Index(i pulumi.IntInput) ExternalExadataInfrastructureDatabaseSystemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExternalExadataInfrastructureDatabaseSystem {
+		return vs[0].([]ExternalExadataInfrastructureDatabaseSystem)[vs[1].(int)]
+	}).(ExternalExadataInfrastructureDatabaseSystemOutput)
+}
+
+type ExternalExadataInfrastructureStorageGrid struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	// (Updatable) The name of the Exadata infrastructure.
+	DisplayName *string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id *string `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId *string `pulumi:"internalId"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// The number of Exadata storage servers in the Exadata infrastructure.
+	ServerCount *float64 `pulumi:"serverCount"`
+	// The current lifecycle state of the database resource.
+	State *string `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status *string `pulumi:"status"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated *string `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version *string `pulumi:"version"`
+}
+
+// ExternalExadataInfrastructureStorageGridInput is an input type that accepts ExternalExadataInfrastructureStorageGridArgs and ExternalExadataInfrastructureStorageGridOutput values.
+// You can construct a concrete instance of `ExternalExadataInfrastructureStorageGridInput` via:
+//
+//	ExternalExadataInfrastructureStorageGridArgs{...}
+type ExternalExadataInfrastructureStorageGridInput interface {
+	pulumi.Input
+
+	ToExternalExadataInfrastructureStorageGridOutput() ExternalExadataInfrastructureStorageGridOutput
+	ToExternalExadataInfrastructureStorageGridOutputWithContext(context.Context) ExternalExadataInfrastructureStorageGridOutput
+}
+
+type ExternalExadataInfrastructureStorageGridArgs struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails pulumi.MapInput `pulumi:"additionalDetails"`
+	// (Updatable) The name of the Exadata infrastructure.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId pulumi.StringPtrInput `pulumi:"internalId"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
+	// The number of Exadata storage servers in the Exadata infrastructure.
+	ServerCount pulumi.Float64PtrInput `pulumi:"serverCount"`
+	// The current lifecycle state of the database resource.
+	State pulumi.StringPtrInput `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version pulumi.StringPtrInput `pulumi:"version"`
+}
+
+func (ExternalExadataInfrastructureStorageGridArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalExadataInfrastructureStorageGrid)(nil)).Elem()
+}
+
+func (i ExternalExadataInfrastructureStorageGridArgs) ToExternalExadataInfrastructureStorageGridOutput() ExternalExadataInfrastructureStorageGridOutput {
+	return i.ToExternalExadataInfrastructureStorageGridOutputWithContext(context.Background())
+}
+
+func (i ExternalExadataInfrastructureStorageGridArgs) ToExternalExadataInfrastructureStorageGridOutputWithContext(ctx context.Context) ExternalExadataInfrastructureStorageGridOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataInfrastructureStorageGridOutput)
+}
+
+// ExternalExadataInfrastructureStorageGridArrayInput is an input type that accepts ExternalExadataInfrastructureStorageGridArray and ExternalExadataInfrastructureStorageGridArrayOutput values.
+// You can construct a concrete instance of `ExternalExadataInfrastructureStorageGridArrayInput` via:
+//
+//	ExternalExadataInfrastructureStorageGridArray{ ExternalExadataInfrastructureStorageGridArgs{...} }
+type ExternalExadataInfrastructureStorageGridArrayInput interface {
+	pulumi.Input
+
+	ToExternalExadataInfrastructureStorageGridArrayOutput() ExternalExadataInfrastructureStorageGridArrayOutput
+	ToExternalExadataInfrastructureStorageGridArrayOutputWithContext(context.Context) ExternalExadataInfrastructureStorageGridArrayOutput
+}
+
+type ExternalExadataInfrastructureStorageGridArray []ExternalExadataInfrastructureStorageGridInput
+
+func (ExternalExadataInfrastructureStorageGridArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalExadataInfrastructureStorageGrid)(nil)).Elem()
+}
+
+func (i ExternalExadataInfrastructureStorageGridArray) ToExternalExadataInfrastructureStorageGridArrayOutput() ExternalExadataInfrastructureStorageGridArrayOutput {
+	return i.ToExternalExadataInfrastructureStorageGridArrayOutputWithContext(context.Background())
+}
+
+func (i ExternalExadataInfrastructureStorageGridArray) ToExternalExadataInfrastructureStorageGridArrayOutputWithContext(ctx context.Context) ExternalExadataInfrastructureStorageGridArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataInfrastructureStorageGridArrayOutput)
+}
+
+type ExternalExadataInfrastructureStorageGridOutput struct{ *pulumi.OutputState }
+
+func (ExternalExadataInfrastructureStorageGridOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalExadataInfrastructureStorageGrid)(nil)).Elem()
+}
+
+func (o ExternalExadataInfrastructureStorageGridOutput) ToExternalExadataInfrastructureStorageGridOutput() ExternalExadataInfrastructureStorageGridOutput {
+	return o
+}
+
+func (o ExternalExadataInfrastructureStorageGridOutput) ToExternalExadataInfrastructureStorageGridOutputWithContext(ctx context.Context) ExternalExadataInfrastructureStorageGridOutput {
+	return o
+}
+
+// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+func (o ExternalExadataInfrastructureStorageGridOutput) AdditionalDetails() pulumi.MapOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureStorageGrid) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
+}
+
+// (Updatable) The name of the Exadata infrastructure.
+func (o ExternalExadataInfrastructureStorageGridOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureStorageGrid) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+func (o ExternalExadataInfrastructureStorageGridOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureStorageGrid) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The internal ID of the Exadata resource.
+func (o ExternalExadataInfrastructureStorageGridOutput) InternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureStorageGrid) *string { return v.InternalId }).(pulumi.StringPtrOutput)
+}
+
+// The details of the lifecycle state of the Exadata resource.
+func (o ExternalExadataInfrastructureStorageGridOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureStorageGrid) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
+}
+
+// The number of Exadata storage servers in the Exadata infrastructure.
+func (o ExternalExadataInfrastructureStorageGridOutput) ServerCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureStorageGrid) *float64 { return v.ServerCount }).(pulumi.Float64PtrOutput)
+}
+
+// The current lifecycle state of the database resource.
+func (o ExternalExadataInfrastructureStorageGridOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureStorageGrid) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// The status of the Exadata resource.
+func (o ExternalExadataInfrastructureStorageGridOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureStorageGrid) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// The timestamp of the creation of the Exadata resource.
+func (o ExternalExadataInfrastructureStorageGridOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureStorageGrid) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// The timestamp of the last update of the Exadata resource.
+func (o ExternalExadataInfrastructureStorageGridOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureStorageGrid) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
+}
+
+// The version of the Exadata resource.
+func (o ExternalExadataInfrastructureStorageGridOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataInfrastructureStorageGrid) *string { return v.Version }).(pulumi.StringPtrOutput)
+}
+
+type ExternalExadataInfrastructureStorageGridArrayOutput struct{ *pulumi.OutputState }
+
+func (ExternalExadataInfrastructureStorageGridArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalExadataInfrastructureStorageGrid)(nil)).Elem()
+}
+
+func (o ExternalExadataInfrastructureStorageGridArrayOutput) ToExternalExadataInfrastructureStorageGridArrayOutput() ExternalExadataInfrastructureStorageGridArrayOutput {
+	return o
+}
+
+func (o ExternalExadataInfrastructureStorageGridArrayOutput) ToExternalExadataInfrastructureStorageGridArrayOutputWithContext(ctx context.Context) ExternalExadataInfrastructureStorageGridArrayOutput {
+	return o
+}
+
+func (o ExternalExadataInfrastructureStorageGridArrayOutput) Index(i pulumi.IntInput) ExternalExadataInfrastructureStorageGridOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExternalExadataInfrastructureStorageGrid {
+		return vs[0].([]ExternalExadataInfrastructureStorageGrid)[vs[1].(int)]
+	}).(ExternalExadataInfrastructureStorageGridOutput)
+}
+
+type ExternalExadataStorageConnectorCredentialInfo struct {
+	// (Updatable) The password of the user.
+	Password string `pulumi:"password"`
+	// (Updatable) The full path of the SSL truststore location in the agent.
+	SslTrustStoreLocation *string `pulumi:"sslTrustStoreLocation"`
+	// (Updatable) The password of the SSL truststore location in the agent.
+	SslTrustStorePassword *string `pulumi:"sslTrustStorePassword"`
+	// (Updatable) The SSL truststore type.
+	SslTrustStoreType *string `pulumi:"sslTrustStoreType"`
+	// (Updatable) The name of the user.
+	Username string `pulumi:"username"`
+}
+
+// ExternalExadataStorageConnectorCredentialInfoInput is an input type that accepts ExternalExadataStorageConnectorCredentialInfoArgs and ExternalExadataStorageConnectorCredentialInfoOutput values.
+// You can construct a concrete instance of `ExternalExadataStorageConnectorCredentialInfoInput` via:
+//
+//	ExternalExadataStorageConnectorCredentialInfoArgs{...}
+type ExternalExadataStorageConnectorCredentialInfoInput interface {
+	pulumi.Input
+
+	ToExternalExadataStorageConnectorCredentialInfoOutput() ExternalExadataStorageConnectorCredentialInfoOutput
+	ToExternalExadataStorageConnectorCredentialInfoOutputWithContext(context.Context) ExternalExadataStorageConnectorCredentialInfoOutput
+}
+
+type ExternalExadataStorageConnectorCredentialInfoArgs struct {
+	// (Updatable) The password of the user.
+	Password pulumi.StringInput `pulumi:"password"`
+	// (Updatable) The full path of the SSL truststore location in the agent.
+	SslTrustStoreLocation pulumi.StringPtrInput `pulumi:"sslTrustStoreLocation"`
+	// (Updatable) The password of the SSL truststore location in the agent.
+	SslTrustStorePassword pulumi.StringPtrInput `pulumi:"sslTrustStorePassword"`
+	// (Updatable) The SSL truststore type.
+	SslTrustStoreType pulumi.StringPtrInput `pulumi:"sslTrustStoreType"`
+	// (Updatable) The name of the user.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (ExternalExadataStorageConnectorCredentialInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalExadataStorageConnectorCredentialInfo)(nil)).Elem()
+}
+
+func (i ExternalExadataStorageConnectorCredentialInfoArgs) ToExternalExadataStorageConnectorCredentialInfoOutput() ExternalExadataStorageConnectorCredentialInfoOutput {
+	return i.ToExternalExadataStorageConnectorCredentialInfoOutputWithContext(context.Background())
+}
+
+func (i ExternalExadataStorageConnectorCredentialInfoArgs) ToExternalExadataStorageConnectorCredentialInfoOutputWithContext(ctx context.Context) ExternalExadataStorageConnectorCredentialInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataStorageConnectorCredentialInfoOutput)
+}
+
+func (i ExternalExadataStorageConnectorCredentialInfoArgs) ToExternalExadataStorageConnectorCredentialInfoPtrOutput() ExternalExadataStorageConnectorCredentialInfoPtrOutput {
+	return i.ToExternalExadataStorageConnectorCredentialInfoPtrOutputWithContext(context.Background())
+}
+
+func (i ExternalExadataStorageConnectorCredentialInfoArgs) ToExternalExadataStorageConnectorCredentialInfoPtrOutputWithContext(ctx context.Context) ExternalExadataStorageConnectorCredentialInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataStorageConnectorCredentialInfoOutput).ToExternalExadataStorageConnectorCredentialInfoPtrOutputWithContext(ctx)
+}
+
+// ExternalExadataStorageConnectorCredentialInfoPtrInput is an input type that accepts ExternalExadataStorageConnectorCredentialInfoArgs, ExternalExadataStorageConnectorCredentialInfoPtr and ExternalExadataStorageConnectorCredentialInfoPtrOutput values.
+// You can construct a concrete instance of `ExternalExadataStorageConnectorCredentialInfoPtrInput` via:
+//
+//	        ExternalExadataStorageConnectorCredentialInfoArgs{...}
+//
+//	or:
+//
+//	        nil
+type ExternalExadataStorageConnectorCredentialInfoPtrInput interface {
+	pulumi.Input
+
+	ToExternalExadataStorageConnectorCredentialInfoPtrOutput() ExternalExadataStorageConnectorCredentialInfoPtrOutput
+	ToExternalExadataStorageConnectorCredentialInfoPtrOutputWithContext(context.Context) ExternalExadataStorageConnectorCredentialInfoPtrOutput
+}
+
+type externalExadataStorageConnectorCredentialInfoPtrType ExternalExadataStorageConnectorCredentialInfoArgs
+
+func ExternalExadataStorageConnectorCredentialInfoPtr(v *ExternalExadataStorageConnectorCredentialInfoArgs) ExternalExadataStorageConnectorCredentialInfoPtrInput {
+	return (*externalExadataStorageConnectorCredentialInfoPtrType)(v)
+}
+
+func (*externalExadataStorageConnectorCredentialInfoPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ExternalExadataStorageConnectorCredentialInfo)(nil)).Elem()
+}
+
+func (i *externalExadataStorageConnectorCredentialInfoPtrType) ToExternalExadataStorageConnectorCredentialInfoPtrOutput() ExternalExadataStorageConnectorCredentialInfoPtrOutput {
+	return i.ToExternalExadataStorageConnectorCredentialInfoPtrOutputWithContext(context.Background())
+}
+
+func (i *externalExadataStorageConnectorCredentialInfoPtrType) ToExternalExadataStorageConnectorCredentialInfoPtrOutputWithContext(ctx context.Context) ExternalExadataStorageConnectorCredentialInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataStorageConnectorCredentialInfoPtrOutput)
+}
+
+type ExternalExadataStorageConnectorCredentialInfoOutput struct{ *pulumi.OutputState }
+
+func (ExternalExadataStorageConnectorCredentialInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalExadataStorageConnectorCredentialInfo)(nil)).Elem()
+}
+
+func (o ExternalExadataStorageConnectorCredentialInfoOutput) ToExternalExadataStorageConnectorCredentialInfoOutput() ExternalExadataStorageConnectorCredentialInfoOutput {
+	return o
+}
+
+func (o ExternalExadataStorageConnectorCredentialInfoOutput) ToExternalExadataStorageConnectorCredentialInfoOutputWithContext(ctx context.Context) ExternalExadataStorageConnectorCredentialInfoOutput {
+	return o
+}
+
+func (o ExternalExadataStorageConnectorCredentialInfoOutput) ToExternalExadataStorageConnectorCredentialInfoPtrOutput() ExternalExadataStorageConnectorCredentialInfoPtrOutput {
+	return o.ToExternalExadataStorageConnectorCredentialInfoPtrOutputWithContext(context.Background())
+}
+
+func (o ExternalExadataStorageConnectorCredentialInfoOutput) ToExternalExadataStorageConnectorCredentialInfoPtrOutputWithContext(ctx context.Context) ExternalExadataStorageConnectorCredentialInfoPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ExternalExadataStorageConnectorCredentialInfo) *ExternalExadataStorageConnectorCredentialInfo {
+		return &v
+	}).(ExternalExadataStorageConnectorCredentialInfoPtrOutput)
+}
+
+// (Updatable) The password of the user.
+func (o ExternalExadataStorageConnectorCredentialInfoOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v ExternalExadataStorageConnectorCredentialInfo) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// (Updatable) The full path of the SSL truststore location in the agent.
+func (o ExternalExadataStorageConnectorCredentialInfoOutput) SslTrustStoreLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageConnectorCredentialInfo) *string { return v.SslTrustStoreLocation }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The password of the SSL truststore location in the agent.
+func (o ExternalExadataStorageConnectorCredentialInfoOutput) SslTrustStorePassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageConnectorCredentialInfo) *string { return v.SslTrustStorePassword }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The SSL truststore type.
+func (o ExternalExadataStorageConnectorCredentialInfoOutput) SslTrustStoreType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalExadataStorageConnectorCredentialInfo) *string { return v.SslTrustStoreType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the user.
+func (o ExternalExadataStorageConnectorCredentialInfoOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v ExternalExadataStorageConnectorCredentialInfo) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type ExternalExadataStorageConnectorCredentialInfoPtrOutput struct{ *pulumi.OutputState }
+
+func (ExternalExadataStorageConnectorCredentialInfoPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ExternalExadataStorageConnectorCredentialInfo)(nil)).Elem()
+}
+
+func (o ExternalExadataStorageConnectorCredentialInfoPtrOutput) ToExternalExadataStorageConnectorCredentialInfoPtrOutput() ExternalExadataStorageConnectorCredentialInfoPtrOutput {
+	return o
+}
+
+func (o ExternalExadataStorageConnectorCredentialInfoPtrOutput) ToExternalExadataStorageConnectorCredentialInfoPtrOutputWithContext(ctx context.Context) ExternalExadataStorageConnectorCredentialInfoPtrOutput {
+	return o
+}
+
+func (o ExternalExadataStorageConnectorCredentialInfoPtrOutput) Elem() ExternalExadataStorageConnectorCredentialInfoOutput {
+	return o.ApplyT(func(v *ExternalExadataStorageConnectorCredentialInfo) ExternalExadataStorageConnectorCredentialInfo {
+		if v != nil {
+			return *v
+		}
+		var ret ExternalExadataStorageConnectorCredentialInfo
+		return ret
+	}).(ExternalExadataStorageConnectorCredentialInfoOutput)
+}
+
+// (Updatable) The password of the user.
+func (o ExternalExadataStorageConnectorCredentialInfoPtrOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataStorageConnectorCredentialInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The full path of the SSL truststore location in the agent.
+func (o ExternalExadataStorageConnectorCredentialInfoPtrOutput) SslTrustStoreLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataStorageConnectorCredentialInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SslTrustStoreLocation
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The password of the SSL truststore location in the agent.
+func (o ExternalExadataStorageConnectorCredentialInfoPtrOutput) SslTrustStorePassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataStorageConnectorCredentialInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SslTrustStorePassword
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The SSL truststore type.
+func (o ExternalExadataStorageConnectorCredentialInfoPtrOutput) SslTrustStoreType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataStorageConnectorCredentialInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SslTrustStoreType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the user.
+func (o ExternalExadataStorageConnectorCredentialInfoPtrOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataStorageConnectorCredentialInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Username
+	}).(pulumi.StringPtrOutput)
+}
+
 type ExternalListenerEndpoint struct {
 	// The host name or IP address.
 	Host *string `pulumi:"host"`
@@ -11512,6 +12108,8 @@ type GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
+	// The basic information about an external Exadata Infrastructure.
+	ExadataInfraInfos []GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo `pulumi:"exadataInfraInfos"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	Id string `pulumi:"id"`
 }
@@ -11532,6 +12130,8 @@ type GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The basic information about an external Exadata Infrastructure.
+	ExadataInfraInfos GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayInput `pulumi:"exadataInfraInfos"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	Id pulumi.StringInput `pulumi:"id"`
 }
@@ -11597,6 +12197,13 @@ func (o GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoOutput) Di
 	return o.ApplyT(func(v GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// The basic information about an external Exadata Infrastructure.
+func (o GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoOutput) ExadataInfraInfos() GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutput {
+	return o.ApplyT(func(v GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo) []GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo {
+		return v.ExadataInfraInfos
+	}).(GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 func (o GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo) string { return v.Id }).(pulumi.StringOutput)
@@ -11620,6 +12227,127 @@ func (o GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoArrayOutpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo {
 		return vs[0].([]GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo)[vs[1].(int)]
 	}).(GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoOutput)
+}
+
+type GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A filter to only return the resources that match the entire display name.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+	Id string `pulumi:"id"`
+}
+
+// GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoInput is an input type that accepts GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArgs and GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput values.
+// You can construct a concrete instance of `GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoInput` via:
+//
+//	GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArgs{...}
+type GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoInput interface {
+	pulumi.Input
+
+	ToGetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput() GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput
+	ToGetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutputWithContext(context.Context) GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput
+}
+
+type GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A filter to only return the resources that match the entire display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo)(nil)).Elem()
+}
+
+func (i GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArgs) ToGetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput() GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput {
+	return i.ToGetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutputWithContext(context.Background())
+}
+
+func (i GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArgs) ToGetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutputWithContext(ctx context.Context) GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput)
+}
+
+// GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayInput is an input type that accepts GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArray and GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutput values.
+// You can construct a concrete instance of `GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayInput` via:
+//
+//	GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArray{ GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArgs{...} }
+type GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutput() GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutput
+	ToGetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutputWithContext(context.Context) GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutput
+}
+
+type GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArray []GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoInput
+
+func (GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo)(nil)).Elem()
+}
+
+func (i GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArray) ToGetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutput() GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutput {
+	return i.ToGetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArray) ToGetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutputWithContext(ctx context.Context) GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutput)
+}
+
+type GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo)(nil)).Elem()
+}
+
+func (o GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput) ToGetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput() GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput {
+	return o
+}
+
+func (o GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput) ToGetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutputWithContext(ctx context.Context) GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to only return the resources that match the entire display name.
+func (o GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+func (o GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo)(nil)).Elem()
+}
+
+func (o GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutput) ToGetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutput() GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutput {
+	return o
+}
+
+func (o GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutput) ToGetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutputWithContext(ctx context.Context) GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutput {
+	return o
+}
+
+func (o GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutput) Index(i pulumi.IntInput) GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo {
+		return vs[0].([]GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo)[vs[1].(int)]
+	}).(GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput)
 }
 
 type GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail struct {
@@ -12341,6 +13069,8 @@ type GetExternalDbNodesExternalDbNodeCollectionItem struct {
 	CpuCoreCount float64 `pulumi:"cpuCoreCount"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
+	// Name of the domain.
+	DomainName string `pulumi:"domainName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
 	ExternalConnectorId string `pulumi:"externalConnectorId"`
 	ExternalDbNodeId    string `pulumi:"externalDbNodeId"`
@@ -12384,6 +13114,8 @@ type GetExternalDbNodesExternalDbNodeCollectionItemArgs struct {
 	CpuCoreCount pulumi.Float64Input `pulumi:"cpuCoreCount"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Name of the domain.
+	DomainName pulumi.StringInput `pulumi:"domainName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
 	ExternalConnectorId pulumi.StringInput `pulumi:"externalConnectorId"`
 	ExternalDbNodeId    pulumi.StringInput `pulumi:"externalDbNodeId"`
@@ -12481,6 +13213,11 @@ func (o GetExternalDbNodesExternalDbNodeCollectionItemOutput) CpuCoreCount() pul
 // A filter to only return the resources that match the entire display name.
 func (o GetExternalDbNodesExternalDbNodeCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbNodesExternalDbNodeCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Name of the domain.
+func (o GetExternalDbNodesExternalDbNodeCollectionItemOutput) DomainName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbNodesExternalDbNodeCollectionItem) string { return v.DomainName }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
@@ -23159,6 +23896,3616 @@ func (o GetExternalDbSystemsFilterArrayOutput) Index(i pulumi.IntInput) GetExter
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDbSystemsFilter {
 		return vs[0].([]GetExternalDbSystemsFilter)[vs[1].(int)]
 	}).(GetExternalDbSystemsFilterOutput)
+}
+
+type GetExternalExadataInfrastructureDatabaseSystem struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id string `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId string `pulumi:"internalId"`
+	// The Oracle license model that applies to the database management resources.
+	LicenseModel string `pulumi:"licenseModel"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current lifecycle state of the database resource.
+	State string `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status string `pulumi:"status"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version string `pulumi:"version"`
+}
+
+// GetExternalExadataInfrastructureDatabaseSystemInput is an input type that accepts GetExternalExadataInfrastructureDatabaseSystemArgs and GetExternalExadataInfrastructureDatabaseSystemOutput values.
+// You can construct a concrete instance of `GetExternalExadataInfrastructureDatabaseSystemInput` via:
+//
+//	GetExternalExadataInfrastructureDatabaseSystemArgs{...}
+type GetExternalExadataInfrastructureDatabaseSystemInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataInfrastructureDatabaseSystemOutput() GetExternalExadataInfrastructureDatabaseSystemOutput
+	ToGetExternalExadataInfrastructureDatabaseSystemOutputWithContext(context.Context) GetExternalExadataInfrastructureDatabaseSystemOutput
+}
+
+type GetExternalExadataInfrastructureDatabaseSystemArgs struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails pulumi.MapInput `pulumi:"additionalDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId pulumi.StringInput `pulumi:"internalId"`
+	// The Oracle license model that applies to the database management resources.
+	LicenseModel pulumi.StringInput `pulumi:"licenseModel"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current lifecycle state of the database resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetExternalExadataInfrastructureDatabaseSystemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataInfrastructureDatabaseSystem)(nil)).Elem()
+}
+
+func (i GetExternalExadataInfrastructureDatabaseSystemArgs) ToGetExternalExadataInfrastructureDatabaseSystemOutput() GetExternalExadataInfrastructureDatabaseSystemOutput {
+	return i.ToGetExternalExadataInfrastructureDatabaseSystemOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataInfrastructureDatabaseSystemArgs) ToGetExternalExadataInfrastructureDatabaseSystemOutputWithContext(ctx context.Context) GetExternalExadataInfrastructureDatabaseSystemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataInfrastructureDatabaseSystemOutput)
+}
+
+// GetExternalExadataInfrastructureDatabaseSystemArrayInput is an input type that accepts GetExternalExadataInfrastructureDatabaseSystemArray and GetExternalExadataInfrastructureDatabaseSystemArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataInfrastructureDatabaseSystemArrayInput` via:
+//
+//	GetExternalExadataInfrastructureDatabaseSystemArray{ GetExternalExadataInfrastructureDatabaseSystemArgs{...} }
+type GetExternalExadataInfrastructureDatabaseSystemArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataInfrastructureDatabaseSystemArrayOutput() GetExternalExadataInfrastructureDatabaseSystemArrayOutput
+	ToGetExternalExadataInfrastructureDatabaseSystemArrayOutputWithContext(context.Context) GetExternalExadataInfrastructureDatabaseSystemArrayOutput
+}
+
+type GetExternalExadataInfrastructureDatabaseSystemArray []GetExternalExadataInfrastructureDatabaseSystemInput
+
+func (GetExternalExadataInfrastructureDatabaseSystemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataInfrastructureDatabaseSystem)(nil)).Elem()
+}
+
+func (i GetExternalExadataInfrastructureDatabaseSystemArray) ToGetExternalExadataInfrastructureDatabaseSystemArrayOutput() GetExternalExadataInfrastructureDatabaseSystemArrayOutput {
+	return i.ToGetExternalExadataInfrastructureDatabaseSystemArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataInfrastructureDatabaseSystemArray) ToGetExternalExadataInfrastructureDatabaseSystemArrayOutputWithContext(ctx context.Context) GetExternalExadataInfrastructureDatabaseSystemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataInfrastructureDatabaseSystemArrayOutput)
+}
+
+type GetExternalExadataInfrastructureDatabaseSystemOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataInfrastructureDatabaseSystemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataInfrastructureDatabaseSystem)(nil)).Elem()
+}
+
+func (o GetExternalExadataInfrastructureDatabaseSystemOutput) ToGetExternalExadataInfrastructureDatabaseSystemOutput() GetExternalExadataInfrastructureDatabaseSystemOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructureDatabaseSystemOutput) ToGetExternalExadataInfrastructureDatabaseSystemOutputWithContext(ctx context.Context) GetExternalExadataInfrastructureDatabaseSystemOutput {
+	return o
+}
+
+// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+func (o GetExternalExadataInfrastructureDatabaseSystemOutput) AdditionalDetails() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureDatabaseSystem) map[string]interface{} {
+		return v.AdditionalDetails
+	}).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetExternalExadataInfrastructureDatabaseSystemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureDatabaseSystem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+func (o GetExternalExadataInfrastructureDatabaseSystemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureDatabaseSystem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+func (o GetExternalExadataInfrastructureDatabaseSystemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureDatabaseSystem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The internal ID of the Exadata resource.
+func (o GetExternalExadataInfrastructureDatabaseSystemOutput) InternalId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureDatabaseSystem) string { return v.InternalId }).(pulumi.StringOutput)
+}
+
+// The Oracle license model that applies to the database management resources.
+func (o GetExternalExadataInfrastructureDatabaseSystemOutput) LicenseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureDatabaseSystem) string { return v.LicenseModel }).(pulumi.StringOutput)
+}
+
+// The details of the lifecycle state of the Exadata resource.
+func (o GetExternalExadataInfrastructureDatabaseSystemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureDatabaseSystem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The current lifecycle state of the database resource.
+func (o GetExternalExadataInfrastructureDatabaseSystemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureDatabaseSystem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The status of the Exadata resource.
+func (o GetExternalExadataInfrastructureDatabaseSystemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureDatabaseSystem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The timestamp of the creation of the Exadata resource.
+func (o GetExternalExadataInfrastructureDatabaseSystemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureDatabaseSystem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The timestamp of the last update of the Exadata resource.
+func (o GetExternalExadataInfrastructureDatabaseSystemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureDatabaseSystem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The version of the Exadata resource.
+func (o GetExternalExadataInfrastructureDatabaseSystemOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureDatabaseSystem) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetExternalExadataInfrastructureDatabaseSystemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataInfrastructureDatabaseSystemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataInfrastructureDatabaseSystem)(nil)).Elem()
+}
+
+func (o GetExternalExadataInfrastructureDatabaseSystemArrayOutput) ToGetExternalExadataInfrastructureDatabaseSystemArrayOutput() GetExternalExadataInfrastructureDatabaseSystemArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructureDatabaseSystemArrayOutput) ToGetExternalExadataInfrastructureDatabaseSystemArrayOutputWithContext(ctx context.Context) GetExternalExadataInfrastructureDatabaseSystemArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructureDatabaseSystemArrayOutput) Index(i pulumi.IntInput) GetExternalExadataInfrastructureDatabaseSystemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataInfrastructureDatabaseSystem {
+		return vs[0].([]GetExternalExadataInfrastructureDatabaseSystem)[vs[1].(int)]
+	}).(GetExternalExadataInfrastructureDatabaseSystemOutput)
+}
+
+type GetExternalExadataInfrastructureStorageGrid struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id string `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId string `pulumi:"internalId"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The number of Exadata storage servers in the Exadata infrastructure.
+	ServerCount float64 `pulumi:"serverCount"`
+	// The current lifecycle state of the database resource.
+	State string `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status string `pulumi:"status"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version string `pulumi:"version"`
+}
+
+// GetExternalExadataInfrastructureStorageGridInput is an input type that accepts GetExternalExadataInfrastructureStorageGridArgs and GetExternalExadataInfrastructureStorageGridOutput values.
+// You can construct a concrete instance of `GetExternalExadataInfrastructureStorageGridInput` via:
+//
+//	GetExternalExadataInfrastructureStorageGridArgs{...}
+type GetExternalExadataInfrastructureStorageGridInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataInfrastructureStorageGridOutput() GetExternalExadataInfrastructureStorageGridOutput
+	ToGetExternalExadataInfrastructureStorageGridOutputWithContext(context.Context) GetExternalExadataInfrastructureStorageGridOutput
+}
+
+type GetExternalExadataInfrastructureStorageGridArgs struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails pulumi.MapInput `pulumi:"additionalDetails"`
+	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId pulumi.StringInput `pulumi:"internalId"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The number of Exadata storage servers in the Exadata infrastructure.
+	ServerCount pulumi.Float64Input `pulumi:"serverCount"`
+	// The current lifecycle state of the database resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetExternalExadataInfrastructureStorageGridArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataInfrastructureStorageGrid)(nil)).Elem()
+}
+
+func (i GetExternalExadataInfrastructureStorageGridArgs) ToGetExternalExadataInfrastructureStorageGridOutput() GetExternalExadataInfrastructureStorageGridOutput {
+	return i.ToGetExternalExadataInfrastructureStorageGridOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataInfrastructureStorageGridArgs) ToGetExternalExadataInfrastructureStorageGridOutputWithContext(ctx context.Context) GetExternalExadataInfrastructureStorageGridOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataInfrastructureStorageGridOutput)
+}
+
+// GetExternalExadataInfrastructureStorageGridArrayInput is an input type that accepts GetExternalExadataInfrastructureStorageGridArray and GetExternalExadataInfrastructureStorageGridArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataInfrastructureStorageGridArrayInput` via:
+//
+//	GetExternalExadataInfrastructureStorageGridArray{ GetExternalExadataInfrastructureStorageGridArgs{...} }
+type GetExternalExadataInfrastructureStorageGridArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataInfrastructureStorageGridArrayOutput() GetExternalExadataInfrastructureStorageGridArrayOutput
+	ToGetExternalExadataInfrastructureStorageGridArrayOutputWithContext(context.Context) GetExternalExadataInfrastructureStorageGridArrayOutput
+}
+
+type GetExternalExadataInfrastructureStorageGridArray []GetExternalExadataInfrastructureStorageGridInput
+
+func (GetExternalExadataInfrastructureStorageGridArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataInfrastructureStorageGrid)(nil)).Elem()
+}
+
+func (i GetExternalExadataInfrastructureStorageGridArray) ToGetExternalExadataInfrastructureStorageGridArrayOutput() GetExternalExadataInfrastructureStorageGridArrayOutput {
+	return i.ToGetExternalExadataInfrastructureStorageGridArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataInfrastructureStorageGridArray) ToGetExternalExadataInfrastructureStorageGridArrayOutputWithContext(ctx context.Context) GetExternalExadataInfrastructureStorageGridArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataInfrastructureStorageGridArrayOutput)
+}
+
+type GetExternalExadataInfrastructureStorageGridOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataInfrastructureStorageGridOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataInfrastructureStorageGrid)(nil)).Elem()
+}
+
+func (o GetExternalExadataInfrastructureStorageGridOutput) ToGetExternalExadataInfrastructureStorageGridOutput() GetExternalExadataInfrastructureStorageGridOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructureStorageGridOutput) ToGetExternalExadataInfrastructureStorageGridOutputWithContext(ctx context.Context) GetExternalExadataInfrastructureStorageGridOutput {
+	return o
+}
+
+// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+func (o GetExternalExadataInfrastructureStorageGridOutput) AdditionalDetails() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureStorageGrid) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
+}
+
+// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+func (o GetExternalExadataInfrastructureStorageGridOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureStorageGrid) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+func (o GetExternalExadataInfrastructureStorageGridOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureStorageGrid) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The internal ID of the Exadata resource.
+func (o GetExternalExadataInfrastructureStorageGridOutput) InternalId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureStorageGrid) string { return v.InternalId }).(pulumi.StringOutput)
+}
+
+// The details of the lifecycle state of the Exadata resource.
+func (o GetExternalExadataInfrastructureStorageGridOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureStorageGrid) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The number of Exadata storage servers in the Exadata infrastructure.
+func (o GetExternalExadataInfrastructureStorageGridOutput) ServerCount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureStorageGrid) float64 { return v.ServerCount }).(pulumi.Float64Output)
+}
+
+// The current lifecycle state of the database resource.
+func (o GetExternalExadataInfrastructureStorageGridOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureStorageGrid) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The status of the Exadata resource.
+func (o GetExternalExadataInfrastructureStorageGridOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureStorageGrid) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The timestamp of the creation of the Exadata resource.
+func (o GetExternalExadataInfrastructureStorageGridOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureStorageGrid) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The timestamp of the last update of the Exadata resource.
+func (o GetExternalExadataInfrastructureStorageGridOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureStorageGrid) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The version of the Exadata resource.
+func (o GetExternalExadataInfrastructureStorageGridOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructureStorageGrid) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetExternalExadataInfrastructureStorageGridArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataInfrastructureStorageGridArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataInfrastructureStorageGrid)(nil)).Elem()
+}
+
+func (o GetExternalExadataInfrastructureStorageGridArrayOutput) ToGetExternalExadataInfrastructureStorageGridArrayOutput() GetExternalExadataInfrastructureStorageGridArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructureStorageGridArrayOutput) ToGetExternalExadataInfrastructureStorageGridArrayOutputWithContext(ctx context.Context) GetExternalExadataInfrastructureStorageGridArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructureStorageGridArrayOutput) Index(i pulumi.IntInput) GetExternalExadataInfrastructureStorageGridOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataInfrastructureStorageGrid {
+		return vs[0].([]GetExternalExadataInfrastructureStorageGrid)[vs[1].(int)]
+	}).(GetExternalExadataInfrastructureStorageGridOutput)
+}
+
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection struct {
+	Items []GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem `pulumi:"items"`
+}
+
+// GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionInput is an input type that accepts GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArgs and GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutput values.
+// You can construct a concrete instance of `GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionInput` via:
+//
+//	GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArgs{...}
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutput
+	ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutputWithContext(context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutput
+}
+
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArgs struct {
+	Items GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection)(nil)).Elem()
+}
+
+func (i GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArgs) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutput {
+	return i.ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArgs) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutputWithContext(ctx context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutput)
+}
+
+// GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayInput is an input type that accepts GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArray and GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayInput` via:
+//
+//	GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArray{ GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArgs{...} }
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutput
+	ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutputWithContext(context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutput
+}
+
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArray []GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionInput
+
+func (GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection)(nil)).Elem()
+}
+
+func (i GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArray) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutput {
+	return i.ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArray) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutputWithContext(ctx context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutput)
+}
+
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection)(nil)).Elem()
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutput) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutput) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutputWithContext(ctx context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutput) Items() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection) []GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem {
+		return v.Items
+	}).(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutput)
+}
+
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection)(nil)).Elem()
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutput) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutput) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutputWithContext(ctx context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutput) Index(i pulumi.IntInput) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection {
+		return vs[0].([]GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection)[vs[1].(int)]
+	}).(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutput)
+}
+
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+	DatabaseCompartments []string `pulumi:"databaseCompartments"`
+	// A list of DB systems.
+	DatabaseSystems []GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem `pulumi:"databaseSystems"`
+	DbSystemIds     []string                                                                                     `pulumi:"dbSystemIds"`
+	DiscoveryKey    string                                                                                       `pulumi:"discoveryKey"`
+	// The optional single value query filter parameter on the entity display name.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id string `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId string `pulumi:"internalId"`
+	// The Oracle license model that applies to the database management resources.
+	LicenseModel string `pulumi:"licenseModel"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The rack size of the Exadata infrastructure.
+	RackSize string `pulumi:"rackSize"`
+	// The current lifecycle state of the database resource.
+	State string `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status string `pulumi:"status"`
+	// The Exadata storage server grid of the Exadata infrastructure.
+	StorageGrids       []GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid `pulumi:"storageGrids"`
+	StorageServerNames []string                                                                                  `pulumi:"storageServerNames"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version string `pulumi:"version"`
+}
+
+// GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemInput is an input type that accepts GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArgs and GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput values.
+// You can construct a concrete instance of `GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemInput` via:
+//
+//	GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArgs{...}
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput
+	ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutputWithContext(context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput
+}
+
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArgs struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails pulumi.MapInput `pulumi:"additionalDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+	DatabaseCompartments pulumi.StringArrayInput `pulumi:"databaseCompartments"`
+	// A list of DB systems.
+	DatabaseSystems GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayInput `pulumi:"databaseSystems"`
+	DbSystemIds     pulumi.StringArrayInput                                                                              `pulumi:"dbSystemIds"`
+	DiscoveryKey    pulumi.StringInput                                                                                   `pulumi:"discoveryKey"`
+	// The optional single value query filter parameter on the entity display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId pulumi.StringInput `pulumi:"internalId"`
+	// The Oracle license model that applies to the database management resources.
+	LicenseModel pulumi.StringInput `pulumi:"licenseModel"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The rack size of the Exadata infrastructure.
+	RackSize pulumi.StringInput `pulumi:"rackSize"`
+	// The current lifecycle state of the database resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The Exadata storage server grid of the Exadata infrastructure.
+	StorageGrids       GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayInput `pulumi:"storageGrids"`
+	StorageServerNames pulumi.StringArrayInput                                                                           `pulumi:"storageServerNames"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem)(nil)).Elem()
+}
+
+func (i GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArgs) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput {
+	return i.ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArgs) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutputWithContext(ctx context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput)
+}
+
+// GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayInput is an input type that accepts GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArray and GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayInput` via:
+//
+//	GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArray{ GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArgs{...} }
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutput
+	ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutputWithContext(context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutput
+}
+
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArray []GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemInput
+
+func (GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem)(nil)).Elem()
+}
+
+func (i GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArray) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutput {
+	return i.ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArray) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutputWithContext(ctx context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutput)
+}
+
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem)(nil)).Elem()
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutputWithContext(ctx context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput {
+	return o
+}
+
+// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) AdditionalDetails() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) map[string]interface{} {
+		return v.AdditionalDetails
+	}).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) DatabaseCompartments() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) []string {
+		return v.DatabaseCompartments
+	}).(pulumi.StringArrayOutput)
+}
+
+// A list of DB systems.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) DatabaseSystems() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) []GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem {
+		return v.DatabaseSystems
+	}).(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutput)
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) DbSystemIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) []string {
+		return v.DbSystemIds
+	}).(pulumi.StringArrayOutput)
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) DiscoveryKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) string {
+		return v.DiscoveryKey
+	}).(pulumi.StringOutput)
+}
+
+// The optional single value query filter parameter on the entity display name.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// The internal ID of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) InternalId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) string {
+		return v.InternalId
+	}).(pulumi.StringOutput)
+}
+
+// The Oracle license model that applies to the database management resources.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) LicenseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) string {
+		return v.LicenseModel
+	}).(pulumi.StringOutput)
+}
+
+// The details of the lifecycle state of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The rack size of the Exadata infrastructure.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) RackSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) string {
+		return v.RackSize
+	}).(pulumi.StringOutput)
+}
+
+// The current lifecycle state of the database resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// The status of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// The Exadata storage server grid of the Exadata infrastructure.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) StorageGrids() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) []GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid {
+		return v.StorageGrids
+	}).(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutput)
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) StorageServerNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) []string {
+		return v.StorageServerNames
+	}).(pulumi.StringArrayOutput)
+}
+
+// The timestamp of the creation of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The timestamp of the last update of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The version of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem) string {
+		return v.Version
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem)(nil)).Elem()
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutput) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutput) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutputWithContext(ctx context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutput) Index(i pulumi.IntInput) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem {
+		return vs[0].([]GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem)[vs[1].(int)]
+	}).(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput)
+}
+
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The optional single value query filter parameter on the entity display name.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id string `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId string `pulumi:"internalId"`
+	// The Oracle license model that applies to the database management resources.
+	LicenseModel string `pulumi:"licenseModel"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current lifecycle state of the database resource.
+	State string `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status string `pulumi:"status"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version string `pulumi:"version"`
+}
+
+// GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemInput is an input type that accepts GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArgs and GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput values.
+// You can construct a concrete instance of `GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemInput` via:
+//
+//	GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArgs{...}
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput
+	ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutputWithContext(context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput
+}
+
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArgs struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails pulumi.MapInput `pulumi:"additionalDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The optional single value query filter parameter on the entity display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId pulumi.StringInput `pulumi:"internalId"`
+	// The Oracle license model that applies to the database management resources.
+	LicenseModel pulumi.StringInput `pulumi:"licenseModel"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current lifecycle state of the database resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem)(nil)).Elem()
+}
+
+func (i GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArgs) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput {
+	return i.ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArgs) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutputWithContext(ctx context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput)
+}
+
+// GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayInput is an input type that accepts GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArray and GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayInput` via:
+//
+//	GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArray{ GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArgs{...} }
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutput
+	ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutputWithContext(context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutput
+}
+
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArray []GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemInput
+
+func (GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem)(nil)).Elem()
+}
+
+func (i GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArray) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutput {
+	return i.ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArray) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutputWithContext(ctx context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutput)
+}
+
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem)(nil)).Elem()
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutputWithContext(ctx context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput {
+	return o
+}
+
+// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput) AdditionalDetails() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem) map[string]interface{} {
+		return v.AdditionalDetails
+	}).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// The optional single value query filter parameter on the entity display name.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// The internal ID of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput) InternalId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem) string {
+		return v.InternalId
+	}).(pulumi.StringOutput)
+}
+
+// The Oracle license model that applies to the database management resources.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput) LicenseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem) string {
+		return v.LicenseModel
+	}).(pulumi.StringOutput)
+}
+
+// The details of the lifecycle state of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The current lifecycle state of the database resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// The status of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// The timestamp of the creation of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The timestamp of the last update of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The version of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem) string {
+		return v.Version
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem)(nil)).Elem()
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutput) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutput) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutputWithContext(ctx context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutput) Index(i pulumi.IntInput) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem {
+		return vs[0].([]GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystem)[vs[1].(int)]
+	}).(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput)
+}
+
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	// The optional single value query filter parameter on the entity display name.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id string `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId string `pulumi:"internalId"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The number of Exadata storage servers in the Exadata infrastructure.
+	ServerCount float64 `pulumi:"serverCount"`
+	// The current lifecycle state of the database resource.
+	State string `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status string `pulumi:"status"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version string `pulumi:"version"`
+}
+
+// GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridInput is an input type that accepts GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArgs and GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput values.
+// You can construct a concrete instance of `GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridInput` via:
+//
+//	GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArgs{...}
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput
+	ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutputWithContext(context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput
+}
+
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArgs struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails pulumi.MapInput `pulumi:"additionalDetails"`
+	// The optional single value query filter parameter on the entity display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId pulumi.StringInput `pulumi:"internalId"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The number of Exadata storage servers in the Exadata infrastructure.
+	ServerCount pulumi.Float64Input `pulumi:"serverCount"`
+	// The current lifecycle state of the database resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid)(nil)).Elem()
+}
+
+func (i GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArgs) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput {
+	return i.ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArgs) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutputWithContext(ctx context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput)
+}
+
+// GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayInput is an input type that accepts GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArray and GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayInput` via:
+//
+//	GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArray{ GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArgs{...} }
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutput
+	ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutputWithContext(context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutput
+}
+
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArray []GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridInput
+
+func (GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid)(nil)).Elem()
+}
+
+func (i GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArray) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutput {
+	return i.ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArray) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutputWithContext(ctx context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutput)
+}
+
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid)(nil)).Elem()
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutputWithContext(ctx context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput {
+	return o
+}
+
+// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput) AdditionalDetails() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid) map[string]interface{} {
+		return v.AdditionalDetails
+	}).(pulumi.MapOutput)
+}
+
+// The optional single value query filter parameter on the entity display name.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// The internal ID of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput) InternalId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid) string {
+		return v.InternalId
+	}).(pulumi.StringOutput)
+}
+
+// The details of the lifecycle state of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The number of Exadata storage servers in the Exadata infrastructure.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput) ServerCount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid) float64 {
+		return v.ServerCount
+	}).(pulumi.Float64Output)
+}
+
+// The current lifecycle state of the database resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// The status of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// The timestamp of the creation of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The timestamp of the last update of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The version of the Exadata resource.
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid) string {
+		return v.Version
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid)(nil)).Elem()
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutput) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutput() GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutput) ToGetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutputWithContext(ctx context.Context) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutput) Index(i pulumi.IntInput) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid {
+		return vs[0].([]GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid)[vs[1].(int)]
+	}).(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput)
+}
+
+type GetExternalExadataInfrastructuresFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetExternalExadataInfrastructuresFilterInput is an input type that accepts GetExternalExadataInfrastructuresFilterArgs and GetExternalExadataInfrastructuresFilterOutput values.
+// You can construct a concrete instance of `GetExternalExadataInfrastructuresFilterInput` via:
+//
+//	GetExternalExadataInfrastructuresFilterArgs{...}
+type GetExternalExadataInfrastructuresFilterInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataInfrastructuresFilterOutput() GetExternalExadataInfrastructuresFilterOutput
+	ToGetExternalExadataInfrastructuresFilterOutputWithContext(context.Context) GetExternalExadataInfrastructuresFilterOutput
+}
+
+type GetExternalExadataInfrastructuresFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetExternalExadataInfrastructuresFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataInfrastructuresFilter)(nil)).Elem()
+}
+
+func (i GetExternalExadataInfrastructuresFilterArgs) ToGetExternalExadataInfrastructuresFilterOutput() GetExternalExadataInfrastructuresFilterOutput {
+	return i.ToGetExternalExadataInfrastructuresFilterOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataInfrastructuresFilterArgs) ToGetExternalExadataInfrastructuresFilterOutputWithContext(ctx context.Context) GetExternalExadataInfrastructuresFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataInfrastructuresFilterOutput)
+}
+
+// GetExternalExadataInfrastructuresFilterArrayInput is an input type that accepts GetExternalExadataInfrastructuresFilterArray and GetExternalExadataInfrastructuresFilterArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataInfrastructuresFilterArrayInput` via:
+//
+//	GetExternalExadataInfrastructuresFilterArray{ GetExternalExadataInfrastructuresFilterArgs{...} }
+type GetExternalExadataInfrastructuresFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataInfrastructuresFilterArrayOutput() GetExternalExadataInfrastructuresFilterArrayOutput
+	ToGetExternalExadataInfrastructuresFilterArrayOutputWithContext(context.Context) GetExternalExadataInfrastructuresFilterArrayOutput
+}
+
+type GetExternalExadataInfrastructuresFilterArray []GetExternalExadataInfrastructuresFilterInput
+
+func (GetExternalExadataInfrastructuresFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataInfrastructuresFilter)(nil)).Elem()
+}
+
+func (i GetExternalExadataInfrastructuresFilterArray) ToGetExternalExadataInfrastructuresFilterArrayOutput() GetExternalExadataInfrastructuresFilterArrayOutput {
+	return i.ToGetExternalExadataInfrastructuresFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataInfrastructuresFilterArray) ToGetExternalExadataInfrastructuresFilterArrayOutputWithContext(ctx context.Context) GetExternalExadataInfrastructuresFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataInfrastructuresFilterArrayOutput)
+}
+
+type GetExternalExadataInfrastructuresFilterOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataInfrastructuresFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataInfrastructuresFilter)(nil)).Elem()
+}
+
+func (o GetExternalExadataInfrastructuresFilterOutput) ToGetExternalExadataInfrastructuresFilterOutput() GetExternalExadataInfrastructuresFilterOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructuresFilterOutput) ToGetExternalExadataInfrastructuresFilterOutputWithContext(ctx context.Context) GetExternalExadataInfrastructuresFilterOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructuresFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetExternalExadataInfrastructuresFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetExternalExadataInfrastructuresFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExternalExadataInfrastructuresFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetExternalExadataInfrastructuresFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataInfrastructuresFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataInfrastructuresFilter)(nil)).Elem()
+}
+
+func (o GetExternalExadataInfrastructuresFilterArrayOutput) ToGetExternalExadataInfrastructuresFilterArrayOutput() GetExternalExadataInfrastructuresFilterArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructuresFilterArrayOutput) ToGetExternalExadataInfrastructuresFilterArrayOutputWithContext(ctx context.Context) GetExternalExadataInfrastructuresFilterArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataInfrastructuresFilterArrayOutput) Index(i pulumi.IntInput) GetExternalExadataInfrastructuresFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataInfrastructuresFilter {
+		return vs[0].([]GetExternalExadataInfrastructuresFilter)[vs[1].(int)]
+	}).(GetExternalExadataInfrastructuresFilterOutput)
+}
+
+type GetExternalExadataStorageConnectorCredentialInfo struct {
+	Password              string `pulumi:"password"`
+	SslTrustStoreLocation string `pulumi:"sslTrustStoreLocation"`
+	SslTrustStorePassword string `pulumi:"sslTrustStorePassword"`
+	SslTrustStoreType     string `pulumi:"sslTrustStoreType"`
+	Username              string `pulumi:"username"`
+}
+
+// GetExternalExadataStorageConnectorCredentialInfoInput is an input type that accepts GetExternalExadataStorageConnectorCredentialInfoArgs and GetExternalExadataStorageConnectorCredentialInfoOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageConnectorCredentialInfoInput` via:
+//
+//	GetExternalExadataStorageConnectorCredentialInfoArgs{...}
+type GetExternalExadataStorageConnectorCredentialInfoInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageConnectorCredentialInfoOutput() GetExternalExadataStorageConnectorCredentialInfoOutput
+	ToGetExternalExadataStorageConnectorCredentialInfoOutputWithContext(context.Context) GetExternalExadataStorageConnectorCredentialInfoOutput
+}
+
+type GetExternalExadataStorageConnectorCredentialInfoArgs struct {
+	Password              pulumi.StringInput `pulumi:"password"`
+	SslTrustStoreLocation pulumi.StringInput `pulumi:"sslTrustStoreLocation"`
+	SslTrustStorePassword pulumi.StringInput `pulumi:"sslTrustStorePassword"`
+	SslTrustStoreType     pulumi.StringInput `pulumi:"sslTrustStoreType"`
+	Username              pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetExternalExadataStorageConnectorCredentialInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageConnectorCredentialInfo)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageConnectorCredentialInfoArgs) ToGetExternalExadataStorageConnectorCredentialInfoOutput() GetExternalExadataStorageConnectorCredentialInfoOutput {
+	return i.ToGetExternalExadataStorageConnectorCredentialInfoOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageConnectorCredentialInfoArgs) ToGetExternalExadataStorageConnectorCredentialInfoOutputWithContext(ctx context.Context) GetExternalExadataStorageConnectorCredentialInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageConnectorCredentialInfoOutput)
+}
+
+// GetExternalExadataStorageConnectorCredentialInfoArrayInput is an input type that accepts GetExternalExadataStorageConnectorCredentialInfoArray and GetExternalExadataStorageConnectorCredentialInfoArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageConnectorCredentialInfoArrayInput` via:
+//
+//	GetExternalExadataStorageConnectorCredentialInfoArray{ GetExternalExadataStorageConnectorCredentialInfoArgs{...} }
+type GetExternalExadataStorageConnectorCredentialInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageConnectorCredentialInfoArrayOutput() GetExternalExadataStorageConnectorCredentialInfoArrayOutput
+	ToGetExternalExadataStorageConnectorCredentialInfoArrayOutputWithContext(context.Context) GetExternalExadataStorageConnectorCredentialInfoArrayOutput
+}
+
+type GetExternalExadataStorageConnectorCredentialInfoArray []GetExternalExadataStorageConnectorCredentialInfoInput
+
+func (GetExternalExadataStorageConnectorCredentialInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageConnectorCredentialInfo)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageConnectorCredentialInfoArray) ToGetExternalExadataStorageConnectorCredentialInfoArrayOutput() GetExternalExadataStorageConnectorCredentialInfoArrayOutput {
+	return i.ToGetExternalExadataStorageConnectorCredentialInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageConnectorCredentialInfoArray) ToGetExternalExadataStorageConnectorCredentialInfoArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageConnectorCredentialInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageConnectorCredentialInfoArrayOutput)
+}
+
+type GetExternalExadataStorageConnectorCredentialInfoOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageConnectorCredentialInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageConnectorCredentialInfo)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageConnectorCredentialInfoOutput) ToGetExternalExadataStorageConnectorCredentialInfoOutput() GetExternalExadataStorageConnectorCredentialInfoOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageConnectorCredentialInfoOutput) ToGetExternalExadataStorageConnectorCredentialInfoOutputWithContext(ctx context.Context) GetExternalExadataStorageConnectorCredentialInfoOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageConnectorCredentialInfoOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorCredentialInfo) string { return v.Password }).(pulumi.StringOutput)
+}
+
+func (o GetExternalExadataStorageConnectorCredentialInfoOutput) SslTrustStoreLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorCredentialInfo) string { return v.SslTrustStoreLocation }).(pulumi.StringOutput)
+}
+
+func (o GetExternalExadataStorageConnectorCredentialInfoOutput) SslTrustStorePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorCredentialInfo) string { return v.SslTrustStorePassword }).(pulumi.StringOutput)
+}
+
+func (o GetExternalExadataStorageConnectorCredentialInfoOutput) SslTrustStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorCredentialInfo) string { return v.SslTrustStoreType }).(pulumi.StringOutput)
+}
+
+func (o GetExternalExadataStorageConnectorCredentialInfoOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorCredentialInfo) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetExternalExadataStorageConnectorCredentialInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageConnectorCredentialInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageConnectorCredentialInfo)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageConnectorCredentialInfoArrayOutput) ToGetExternalExadataStorageConnectorCredentialInfoArrayOutput() GetExternalExadataStorageConnectorCredentialInfoArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageConnectorCredentialInfoArrayOutput) ToGetExternalExadataStorageConnectorCredentialInfoArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageConnectorCredentialInfoArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageConnectorCredentialInfoArrayOutput) Index(i pulumi.IntInput) GetExternalExadataStorageConnectorCredentialInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataStorageConnectorCredentialInfo {
+		return vs[0].([]GetExternalExadataStorageConnectorCredentialInfo)[vs[1].(int)]
+	}).(GetExternalExadataStorageConnectorCredentialInfoOutput)
+}
+
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollection struct {
+	Items []GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem `pulumi:"items"`
+}
+
+// GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionInput is an input type that accepts GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArgs and GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionInput` via:
+//
+//	GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArgs{...}
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutput() GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutput
+	ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutputWithContext(context.Context) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutput
+}
+
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArgs struct {
+	Items GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollection)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArgs) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutput() GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutput {
+	return i.ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArgs) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutputWithContext(ctx context.Context) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutput)
+}
+
+// GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayInput is an input type that accepts GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArray and GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayInput` via:
+//
+//	GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArray{ GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArgs{...} }
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutput() GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutput
+	ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutputWithContext(context.Context) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutput
+}
+
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArray []GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionInput
+
+func (GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollection)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArray) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutput() GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutput {
+	return i.ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArray) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutput)
+}
+
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollection)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutput) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutput() GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutput) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutputWithContext(ctx context.Context) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutput) Items() GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollection) []GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem {
+		return v.Items
+	}).(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutput)
+}
+
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollection)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutput) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutput() GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutput) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutput) Index(i pulumi.IntInput) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollection {
+		return vs[0].([]GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollection)[vs[1].(int)]
+	}).(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutput)
+}
+
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
+	AgentId string `pulumi:"agentId"`
+	// The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+	ConnectionUri   string                                                                                           `pulumi:"connectionUri"`
+	ConnectorName   string                                                                                           `pulumi:"connectorName"`
+	CredentialInfos []GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo `pulumi:"credentialInfos"`
+	// The optional single value query filter parameter on the entity display name.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id string `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId string `pulumi:"internalId"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current lifecycle state of the database resource.
+	State string `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status string `pulumi:"status"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+	StorageServerId string `pulumi:"storageServerId"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version string `pulumi:"version"`
+}
+
+// GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemInput is an input type that accepts GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArgs and GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemInput` via:
+//
+//	GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArgs{...}
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput() GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput
+	ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutputWithContext(context.Context) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput
+}
+
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArgs struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails pulumi.MapInput `pulumi:"additionalDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
+	AgentId pulumi.StringInput `pulumi:"agentId"`
+	// The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+	ConnectionUri   pulumi.StringInput                                                                                       `pulumi:"connectionUri"`
+	ConnectorName   pulumi.StringInput                                                                                       `pulumi:"connectorName"`
+	CredentialInfos GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayInput `pulumi:"credentialInfos"`
+	// The optional single value query filter parameter on the entity display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+	ExadataInfrastructureId pulumi.StringInput `pulumi:"exadataInfrastructureId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId pulumi.StringInput `pulumi:"internalId"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current lifecycle state of the database resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+	StorageServerId pulumi.StringInput `pulumi:"storageServerId"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArgs) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput() GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput {
+	return i.ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArgs) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutputWithContext(ctx context.Context) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput)
+}
+
+// GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayInput is an input type that accepts GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArray and GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayInput` via:
+//
+//	GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArray{ GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArgs{...} }
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutput() GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutput
+	ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutputWithContext(context.Context) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutput
+}
+
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArray []GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemInput
+
+func (GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArray) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutput() GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutput {
+	return i.ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArray) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutput)
+}
+
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput() GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutputWithContext(ctx context.Context) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput {
+	return o
+}
+
+// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) AdditionalDetails() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem) map[string]interface{} {
+		return v.AdditionalDetails
+	}).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) AgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem) string {
+		return v.AgentId
+	}).(pulumi.StringOutput)
+}
+
+// The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) ConnectionUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem) string {
+		return v.ConnectionUri
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) ConnectorName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem) string {
+		return v.ConnectorName
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) CredentialInfos() GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem) []GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo {
+		return v.CredentialInfos
+	}).(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutput)
+}
+
+// The optional single value query filter parameter on the entity display name.
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) ExadataInfrastructureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem) string {
+		return v.ExadataInfrastructureId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// The internal ID of the Exadata resource.
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) InternalId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem) string {
+		return v.InternalId
+	}).(pulumi.StringOutput)
+}
+
+// The details of the lifecycle state of the Exadata resource.
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The current lifecycle state of the database resource.
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// The status of the Exadata resource.
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) StorageServerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem) string {
+		return v.StorageServerId
+	}).(pulumi.StringOutput)
+}
+
+// The timestamp of the creation of the Exadata resource.
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The timestamp of the last update of the Exadata resource.
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The version of the Exadata resource.
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem) string {
+		return v.Version
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutput) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutput() GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutput) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutput) Index(i pulumi.IntInput) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem {
+		return vs[0].([]GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem)[vs[1].(int)]
+	}).(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput)
+}
+
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo struct {
+	Password              string `pulumi:"password"`
+	SslTrustStoreLocation string `pulumi:"sslTrustStoreLocation"`
+	SslTrustStorePassword string `pulumi:"sslTrustStorePassword"`
+	SslTrustStoreType     string `pulumi:"sslTrustStoreType"`
+	Username              string `pulumi:"username"`
+}
+
+// GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoInput is an input type that accepts GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArgs and GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoInput` via:
+//
+//	GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArgs{...}
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput() GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput
+	ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutputWithContext(context.Context) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput
+}
+
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArgs struct {
+	Password              pulumi.StringInput `pulumi:"password"`
+	SslTrustStoreLocation pulumi.StringInput `pulumi:"sslTrustStoreLocation"`
+	SslTrustStorePassword pulumi.StringInput `pulumi:"sslTrustStorePassword"`
+	SslTrustStoreType     pulumi.StringInput `pulumi:"sslTrustStoreType"`
+	Username              pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArgs) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput() GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput {
+	return i.ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArgs) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutputWithContext(ctx context.Context) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput)
+}
+
+// GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayInput is an input type that accepts GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArray and GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayInput` via:
+//
+//	GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArray{ GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArgs{...} }
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutput() GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutput
+	ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutputWithContext(context.Context) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutput
+}
+
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArray []GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoInput
+
+func (GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArray) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutput() GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutput {
+	return i.ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArray) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutput)
+}
+
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput() GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutputWithContext(ctx context.Context) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo) string {
+		return v.Password
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput) SslTrustStoreLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo) string {
+		return v.SslTrustStoreLocation
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput) SslTrustStorePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo) string {
+		return v.SslTrustStorePassword
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput) SslTrustStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo) string {
+		return v.SslTrustStoreType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo) string {
+		return v.Username
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutput) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutput() GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutput) ToGetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutput) Index(i pulumi.IntInput) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo {
+		return vs[0].([]GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo)[vs[1].(int)]
+	}).(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput)
+}
+
+type GetExternalExadataStorageConnectorsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetExternalExadataStorageConnectorsFilterInput is an input type that accepts GetExternalExadataStorageConnectorsFilterArgs and GetExternalExadataStorageConnectorsFilterOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageConnectorsFilterInput` via:
+//
+//	GetExternalExadataStorageConnectorsFilterArgs{...}
+type GetExternalExadataStorageConnectorsFilterInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageConnectorsFilterOutput() GetExternalExadataStorageConnectorsFilterOutput
+	ToGetExternalExadataStorageConnectorsFilterOutputWithContext(context.Context) GetExternalExadataStorageConnectorsFilterOutput
+}
+
+type GetExternalExadataStorageConnectorsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetExternalExadataStorageConnectorsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageConnectorsFilter)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageConnectorsFilterArgs) ToGetExternalExadataStorageConnectorsFilterOutput() GetExternalExadataStorageConnectorsFilterOutput {
+	return i.ToGetExternalExadataStorageConnectorsFilterOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageConnectorsFilterArgs) ToGetExternalExadataStorageConnectorsFilterOutputWithContext(ctx context.Context) GetExternalExadataStorageConnectorsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageConnectorsFilterOutput)
+}
+
+// GetExternalExadataStorageConnectorsFilterArrayInput is an input type that accepts GetExternalExadataStorageConnectorsFilterArray and GetExternalExadataStorageConnectorsFilterArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageConnectorsFilterArrayInput` via:
+//
+//	GetExternalExadataStorageConnectorsFilterArray{ GetExternalExadataStorageConnectorsFilterArgs{...} }
+type GetExternalExadataStorageConnectorsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageConnectorsFilterArrayOutput() GetExternalExadataStorageConnectorsFilterArrayOutput
+	ToGetExternalExadataStorageConnectorsFilterArrayOutputWithContext(context.Context) GetExternalExadataStorageConnectorsFilterArrayOutput
+}
+
+type GetExternalExadataStorageConnectorsFilterArray []GetExternalExadataStorageConnectorsFilterInput
+
+func (GetExternalExadataStorageConnectorsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageConnectorsFilter)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageConnectorsFilterArray) ToGetExternalExadataStorageConnectorsFilterArrayOutput() GetExternalExadataStorageConnectorsFilterArrayOutput {
+	return i.ToGetExternalExadataStorageConnectorsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageConnectorsFilterArray) ToGetExternalExadataStorageConnectorsFilterArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageConnectorsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageConnectorsFilterArrayOutput)
+}
+
+type GetExternalExadataStorageConnectorsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageConnectorsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageConnectorsFilter)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageConnectorsFilterOutput) ToGetExternalExadataStorageConnectorsFilterOutput() GetExternalExadataStorageConnectorsFilterOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageConnectorsFilterOutput) ToGetExternalExadataStorageConnectorsFilterOutputWithContext(ctx context.Context) GetExternalExadataStorageConnectorsFilterOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageConnectorsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetExternalExadataStorageConnectorsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetExternalExadataStorageConnectorsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetExternalExadataStorageConnectorsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageConnectorsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageConnectorsFilter)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageConnectorsFilterArrayOutput) ToGetExternalExadataStorageConnectorsFilterArrayOutput() GetExternalExadataStorageConnectorsFilterArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageConnectorsFilterArrayOutput) ToGetExternalExadataStorageConnectorsFilterArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageConnectorsFilterArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageConnectorsFilterArrayOutput) Index(i pulumi.IntInput) GetExternalExadataStorageConnectorsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataStorageConnectorsFilter {
+		return vs[0].([]GetExternalExadataStorageConnectorsFilter)[vs[1].(int)]
+	}).(GetExternalExadataStorageConnectorsFilterOutput)
+}
+
+type GetExternalExadataStorageGridStorageServer struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
+	ConnectorId string `pulumi:"connectorId"`
+	// The CPU count of the Exadata storage server.
+	CpuCount float64 `pulumi:"cpuCount"`
+	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id string `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId string `pulumi:"internalId"`
+	// The IP address of the Exadata storage server.
+	IpAddress string `pulumi:"ipAddress"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The make model of the Exadata storage server.
+	MakeModel string `pulumi:"makeModel"`
+	// The maximum flash disk IO operations per second of the Exadata storage server.
+	MaxFlashDiskIops int `pulumi:"maxFlashDiskIops"`
+	// The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+	MaxFlashDiskThroughput int `pulumi:"maxFlashDiskThroughput"`
+	// The maximum hard disk IO operations per second of the Exadata storage server.
+	MaxHardDiskIops int `pulumi:"maxHardDiskIops"`
+	// The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+	MaxHardDiskThroughput int `pulumi:"maxHardDiskThroughput"`
+	// The Exadata storage server memory size in GB.
+	MemoryGb float64 `pulumi:"memoryGb"`
+	// The type of Exadata resource.
+	ResourceType string `pulumi:"resourceType"`
+	// The current lifecycle state of the database resource.
+	State string `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status string `pulumi:"status"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version string `pulumi:"version"`
+}
+
+// GetExternalExadataStorageGridStorageServerInput is an input type that accepts GetExternalExadataStorageGridStorageServerArgs and GetExternalExadataStorageGridStorageServerOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageGridStorageServerInput` via:
+//
+//	GetExternalExadataStorageGridStorageServerArgs{...}
+type GetExternalExadataStorageGridStorageServerInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageGridStorageServerOutput() GetExternalExadataStorageGridStorageServerOutput
+	ToGetExternalExadataStorageGridStorageServerOutputWithContext(context.Context) GetExternalExadataStorageGridStorageServerOutput
+}
+
+type GetExternalExadataStorageGridStorageServerArgs struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails pulumi.MapInput `pulumi:"additionalDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
+	ConnectorId pulumi.StringInput `pulumi:"connectorId"`
+	// The CPU count of the Exadata storage server.
+	CpuCount pulumi.Float64Input `pulumi:"cpuCount"`
+	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId pulumi.StringInput `pulumi:"internalId"`
+	// The IP address of the Exadata storage server.
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The make model of the Exadata storage server.
+	MakeModel pulumi.StringInput `pulumi:"makeModel"`
+	// The maximum flash disk IO operations per second of the Exadata storage server.
+	MaxFlashDiskIops pulumi.IntInput `pulumi:"maxFlashDiskIops"`
+	// The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+	MaxFlashDiskThroughput pulumi.IntInput `pulumi:"maxFlashDiskThroughput"`
+	// The maximum hard disk IO operations per second of the Exadata storage server.
+	MaxHardDiskIops pulumi.IntInput `pulumi:"maxHardDiskIops"`
+	// The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+	MaxHardDiskThroughput pulumi.IntInput `pulumi:"maxHardDiskThroughput"`
+	// The Exadata storage server memory size in GB.
+	MemoryGb pulumi.Float64Input `pulumi:"memoryGb"`
+	// The type of Exadata resource.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// The current lifecycle state of the database resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetExternalExadataStorageGridStorageServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageGridStorageServer)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageGridStorageServerArgs) ToGetExternalExadataStorageGridStorageServerOutput() GetExternalExadataStorageGridStorageServerOutput {
+	return i.ToGetExternalExadataStorageGridStorageServerOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageGridStorageServerArgs) ToGetExternalExadataStorageGridStorageServerOutputWithContext(ctx context.Context) GetExternalExadataStorageGridStorageServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageGridStorageServerOutput)
+}
+
+// GetExternalExadataStorageGridStorageServerArrayInput is an input type that accepts GetExternalExadataStorageGridStorageServerArray and GetExternalExadataStorageGridStorageServerArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageGridStorageServerArrayInput` via:
+//
+//	GetExternalExadataStorageGridStorageServerArray{ GetExternalExadataStorageGridStorageServerArgs{...} }
+type GetExternalExadataStorageGridStorageServerArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageGridStorageServerArrayOutput() GetExternalExadataStorageGridStorageServerArrayOutput
+	ToGetExternalExadataStorageGridStorageServerArrayOutputWithContext(context.Context) GetExternalExadataStorageGridStorageServerArrayOutput
+}
+
+type GetExternalExadataStorageGridStorageServerArray []GetExternalExadataStorageGridStorageServerInput
+
+func (GetExternalExadataStorageGridStorageServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageGridStorageServer)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageGridStorageServerArray) ToGetExternalExadataStorageGridStorageServerArrayOutput() GetExternalExadataStorageGridStorageServerArrayOutput {
+	return i.ToGetExternalExadataStorageGridStorageServerArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageGridStorageServerArray) ToGetExternalExadataStorageGridStorageServerArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageGridStorageServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageGridStorageServerArrayOutput)
+}
+
+type GetExternalExadataStorageGridStorageServerOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageGridStorageServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageGridStorageServer)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageGridStorageServerOutput) ToGetExternalExadataStorageGridStorageServerOutput() GetExternalExadataStorageGridStorageServerOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageGridStorageServerOutput) ToGetExternalExadataStorageGridStorageServerOutputWithContext(ctx context.Context) GetExternalExadataStorageGridStorageServerOutput {
+	return o
+}
+
+// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+func (o GetExternalExadataStorageGridStorageServerOutput) AdditionalDetails() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
+func (o GetExternalExadataStorageGridStorageServerOutput) ConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) string { return v.ConnectorId }).(pulumi.StringOutput)
+}
+
+// The CPU count of the Exadata storage server.
+func (o GetExternalExadataStorageGridStorageServerOutput) CpuCount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) float64 { return v.CpuCount }).(pulumi.Float64Output)
+}
+
+// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+func (o GetExternalExadataStorageGridStorageServerOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+func (o GetExternalExadataStorageGridStorageServerOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The internal ID of the Exadata resource.
+func (o GetExternalExadataStorageGridStorageServerOutput) InternalId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) string { return v.InternalId }).(pulumi.StringOutput)
+}
+
+// The IP address of the Exadata storage server.
+func (o GetExternalExadataStorageGridStorageServerOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// The details of the lifecycle state of the Exadata resource.
+func (o GetExternalExadataStorageGridStorageServerOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The make model of the Exadata storage server.
+func (o GetExternalExadataStorageGridStorageServerOutput) MakeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) string { return v.MakeModel }).(pulumi.StringOutput)
+}
+
+// The maximum flash disk IO operations per second of the Exadata storage server.
+func (o GetExternalExadataStorageGridStorageServerOutput) MaxFlashDiskIops() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) int { return v.MaxFlashDiskIops }).(pulumi.IntOutput)
+}
+
+// The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+func (o GetExternalExadataStorageGridStorageServerOutput) MaxFlashDiskThroughput() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) int { return v.MaxFlashDiskThroughput }).(pulumi.IntOutput)
+}
+
+// The maximum hard disk IO operations per second of the Exadata storage server.
+func (o GetExternalExadataStorageGridStorageServerOutput) MaxHardDiskIops() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) int { return v.MaxHardDiskIops }).(pulumi.IntOutput)
+}
+
+// The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+func (o GetExternalExadataStorageGridStorageServerOutput) MaxHardDiskThroughput() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) int { return v.MaxHardDiskThroughput }).(pulumi.IntOutput)
+}
+
+// The Exadata storage server memory size in GB.
+func (o GetExternalExadataStorageGridStorageServerOutput) MemoryGb() pulumi.Float64Output {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) float64 { return v.MemoryGb }).(pulumi.Float64Output)
+}
+
+// The type of Exadata resource.
+func (o GetExternalExadataStorageGridStorageServerOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+// The current lifecycle state of the database resource.
+func (o GetExternalExadataStorageGridStorageServerOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The status of the Exadata resource.
+func (o GetExternalExadataStorageGridStorageServerOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The timestamp of the creation of the Exadata resource.
+func (o GetExternalExadataStorageGridStorageServerOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The timestamp of the last update of the Exadata resource.
+func (o GetExternalExadataStorageGridStorageServerOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The version of the Exadata resource.
+func (o GetExternalExadataStorageGridStorageServerOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridStorageServer) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetExternalExadataStorageGridStorageServerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageGridStorageServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageGridStorageServer)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageGridStorageServerArrayOutput) ToGetExternalExadataStorageGridStorageServerArrayOutput() GetExternalExadataStorageGridStorageServerArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageGridStorageServerArrayOutput) ToGetExternalExadataStorageGridStorageServerArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageGridStorageServerArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageGridStorageServerArrayOutput) Index(i pulumi.IntInput) GetExternalExadataStorageGridStorageServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataStorageGridStorageServer {
+		return vs[0].([]GetExternalExadataStorageGridStorageServer)[vs[1].(int)]
+	}).(GetExternalExadataStorageGridStorageServerOutput)
+}
+
+type GetExternalExadataStorageServerConnector struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
+	AgentId string `pulumi:"agentId"`
+	// The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+	ConnectionUri string `pulumi:"connectionUri"`
+	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id string `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId string `pulumi:"internalId"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The type of Exadata resource.
+	ResourceType string `pulumi:"resourceType"`
+	// The current lifecycle state of the database resource.
+	State string `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status string `pulumi:"status"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+	StorageServerId string `pulumi:"storageServerId"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version string `pulumi:"version"`
+}
+
+// GetExternalExadataStorageServerConnectorInput is an input type that accepts GetExternalExadataStorageServerConnectorArgs and GetExternalExadataStorageServerConnectorOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageServerConnectorInput` via:
+//
+//	GetExternalExadataStorageServerConnectorArgs{...}
+type GetExternalExadataStorageServerConnectorInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageServerConnectorOutput() GetExternalExadataStorageServerConnectorOutput
+	ToGetExternalExadataStorageServerConnectorOutputWithContext(context.Context) GetExternalExadataStorageServerConnectorOutput
+}
+
+type GetExternalExadataStorageServerConnectorArgs struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails pulumi.MapInput `pulumi:"additionalDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
+	AgentId pulumi.StringInput `pulumi:"agentId"`
+	// The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+	ConnectionUri pulumi.StringInput `pulumi:"connectionUri"`
+	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId pulumi.StringInput `pulumi:"internalId"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The type of Exadata resource.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// The current lifecycle state of the database resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+	StorageServerId pulumi.StringInput `pulumi:"storageServerId"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetExternalExadataStorageServerConnectorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageServerConnector)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageServerConnectorArgs) ToGetExternalExadataStorageServerConnectorOutput() GetExternalExadataStorageServerConnectorOutput {
+	return i.ToGetExternalExadataStorageServerConnectorOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageServerConnectorArgs) ToGetExternalExadataStorageServerConnectorOutputWithContext(ctx context.Context) GetExternalExadataStorageServerConnectorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageServerConnectorOutput)
+}
+
+// GetExternalExadataStorageServerConnectorArrayInput is an input type that accepts GetExternalExadataStorageServerConnectorArray and GetExternalExadataStorageServerConnectorArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageServerConnectorArrayInput` via:
+//
+//	GetExternalExadataStorageServerConnectorArray{ GetExternalExadataStorageServerConnectorArgs{...} }
+type GetExternalExadataStorageServerConnectorArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageServerConnectorArrayOutput() GetExternalExadataStorageServerConnectorArrayOutput
+	ToGetExternalExadataStorageServerConnectorArrayOutputWithContext(context.Context) GetExternalExadataStorageServerConnectorArrayOutput
+}
+
+type GetExternalExadataStorageServerConnectorArray []GetExternalExadataStorageServerConnectorInput
+
+func (GetExternalExadataStorageServerConnectorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageServerConnector)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageServerConnectorArray) ToGetExternalExadataStorageServerConnectorArrayOutput() GetExternalExadataStorageServerConnectorArrayOutput {
+	return i.ToGetExternalExadataStorageServerConnectorArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageServerConnectorArray) ToGetExternalExadataStorageServerConnectorArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageServerConnectorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageServerConnectorArrayOutput)
+}
+
+type GetExternalExadataStorageServerConnectorOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageServerConnectorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageServerConnector)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageServerConnectorOutput) ToGetExternalExadataStorageServerConnectorOutput() GetExternalExadataStorageServerConnectorOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServerConnectorOutput) ToGetExternalExadataStorageServerConnectorOutputWithContext(ctx context.Context) GetExternalExadataStorageServerConnectorOutput {
+	return o
+}
+
+// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+func (o GetExternalExadataStorageServerConnectorOutput) AdditionalDetails() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerConnector) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
+func (o GetExternalExadataStorageServerConnectorOutput) AgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerConnector) string { return v.AgentId }).(pulumi.StringOutput)
+}
+
+// The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+func (o GetExternalExadataStorageServerConnectorOutput) ConnectionUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerConnector) string { return v.ConnectionUri }).(pulumi.StringOutput)
+}
+
+// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+func (o GetExternalExadataStorageServerConnectorOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerConnector) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+func (o GetExternalExadataStorageServerConnectorOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerConnector) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The internal ID of the Exadata resource.
+func (o GetExternalExadataStorageServerConnectorOutput) InternalId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerConnector) string { return v.InternalId }).(pulumi.StringOutput)
+}
+
+// The details of the lifecycle state of the Exadata resource.
+func (o GetExternalExadataStorageServerConnectorOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerConnector) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The type of Exadata resource.
+func (o GetExternalExadataStorageServerConnectorOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerConnector) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+// The current lifecycle state of the database resource.
+func (o GetExternalExadataStorageServerConnectorOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerConnector) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The status of the Exadata resource.
+func (o GetExternalExadataStorageServerConnectorOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerConnector) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+func (o GetExternalExadataStorageServerConnectorOutput) StorageServerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerConnector) string { return v.StorageServerId }).(pulumi.StringOutput)
+}
+
+// The timestamp of the creation of the Exadata resource.
+func (o GetExternalExadataStorageServerConnectorOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerConnector) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The timestamp of the last update of the Exadata resource.
+func (o GetExternalExadataStorageServerConnectorOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerConnector) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The version of the Exadata resource.
+func (o GetExternalExadataStorageServerConnectorOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerConnector) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetExternalExadataStorageServerConnectorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageServerConnectorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageServerConnector)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageServerConnectorArrayOutput) ToGetExternalExadataStorageServerConnectorArrayOutput() GetExternalExadataStorageServerConnectorArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServerConnectorArrayOutput) ToGetExternalExadataStorageServerConnectorArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageServerConnectorArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServerConnectorArrayOutput) Index(i pulumi.IntInput) GetExternalExadataStorageServerConnectorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataStorageServerConnector {
+		return vs[0].([]GetExternalExadataStorageServerConnector)[vs[1].(int)]
+	}).(GetExternalExadataStorageServerConnectorOutput)
+}
+
+type GetExternalExadataStorageServerIormPlanDbPlan struct {
+	// A list of DatabasePlanDirectives.
+	Items []GetExternalExadataStorageServerIormPlanDbPlanItem `pulumi:"items"`
+}
+
+// GetExternalExadataStorageServerIormPlanDbPlanInput is an input type that accepts GetExternalExadataStorageServerIormPlanDbPlanArgs and GetExternalExadataStorageServerIormPlanDbPlanOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageServerIormPlanDbPlanInput` via:
+//
+//	GetExternalExadataStorageServerIormPlanDbPlanArgs{...}
+type GetExternalExadataStorageServerIormPlanDbPlanInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageServerIormPlanDbPlanOutput() GetExternalExadataStorageServerIormPlanDbPlanOutput
+	ToGetExternalExadataStorageServerIormPlanDbPlanOutputWithContext(context.Context) GetExternalExadataStorageServerIormPlanDbPlanOutput
+}
+
+type GetExternalExadataStorageServerIormPlanDbPlanArgs struct {
+	// A list of DatabasePlanDirectives.
+	Items GetExternalExadataStorageServerIormPlanDbPlanItemArrayInput `pulumi:"items"`
+}
+
+func (GetExternalExadataStorageServerIormPlanDbPlanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageServerIormPlanDbPlan)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageServerIormPlanDbPlanArgs) ToGetExternalExadataStorageServerIormPlanDbPlanOutput() GetExternalExadataStorageServerIormPlanDbPlanOutput {
+	return i.ToGetExternalExadataStorageServerIormPlanDbPlanOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageServerIormPlanDbPlanArgs) ToGetExternalExadataStorageServerIormPlanDbPlanOutputWithContext(ctx context.Context) GetExternalExadataStorageServerIormPlanDbPlanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageServerIormPlanDbPlanOutput)
+}
+
+// GetExternalExadataStorageServerIormPlanDbPlanArrayInput is an input type that accepts GetExternalExadataStorageServerIormPlanDbPlanArray and GetExternalExadataStorageServerIormPlanDbPlanArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageServerIormPlanDbPlanArrayInput` via:
+//
+//	GetExternalExadataStorageServerIormPlanDbPlanArray{ GetExternalExadataStorageServerIormPlanDbPlanArgs{...} }
+type GetExternalExadataStorageServerIormPlanDbPlanArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageServerIormPlanDbPlanArrayOutput() GetExternalExadataStorageServerIormPlanDbPlanArrayOutput
+	ToGetExternalExadataStorageServerIormPlanDbPlanArrayOutputWithContext(context.Context) GetExternalExadataStorageServerIormPlanDbPlanArrayOutput
+}
+
+type GetExternalExadataStorageServerIormPlanDbPlanArray []GetExternalExadataStorageServerIormPlanDbPlanInput
+
+func (GetExternalExadataStorageServerIormPlanDbPlanArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageServerIormPlanDbPlan)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageServerIormPlanDbPlanArray) ToGetExternalExadataStorageServerIormPlanDbPlanArrayOutput() GetExternalExadataStorageServerIormPlanDbPlanArrayOutput {
+	return i.ToGetExternalExadataStorageServerIormPlanDbPlanArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageServerIormPlanDbPlanArray) ToGetExternalExadataStorageServerIormPlanDbPlanArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageServerIormPlanDbPlanArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageServerIormPlanDbPlanArrayOutput)
+}
+
+type GetExternalExadataStorageServerIormPlanDbPlanOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageServerIormPlanDbPlanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageServerIormPlanDbPlan)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageServerIormPlanDbPlanOutput) ToGetExternalExadataStorageServerIormPlanDbPlanOutput() GetExternalExadataStorageServerIormPlanDbPlanOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServerIormPlanDbPlanOutput) ToGetExternalExadataStorageServerIormPlanDbPlanOutputWithContext(ctx context.Context) GetExternalExadataStorageServerIormPlanDbPlanOutput {
+	return o
+}
+
+// A list of DatabasePlanDirectives.
+func (o GetExternalExadataStorageServerIormPlanDbPlanOutput) Items() GetExternalExadataStorageServerIormPlanDbPlanItemArrayOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanDbPlan) []GetExternalExadataStorageServerIormPlanDbPlanItem {
+		return v.Items
+	}).(GetExternalExadataStorageServerIormPlanDbPlanItemArrayOutput)
+}
+
+type GetExternalExadataStorageServerIormPlanDbPlanArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageServerIormPlanDbPlanArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageServerIormPlanDbPlan)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageServerIormPlanDbPlanArrayOutput) ToGetExternalExadataStorageServerIormPlanDbPlanArrayOutput() GetExternalExadataStorageServerIormPlanDbPlanArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServerIormPlanDbPlanArrayOutput) ToGetExternalExadataStorageServerIormPlanDbPlanArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageServerIormPlanDbPlanArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServerIormPlanDbPlanArrayOutput) Index(i pulumi.IntInput) GetExternalExadataStorageServerIormPlanDbPlanOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataStorageServerIormPlanDbPlan {
+		return vs[0].([]GetExternalExadataStorageServerIormPlanDbPlan)[vs[1].(int)]
+	}).(GetExternalExadataStorageServerIormPlanDbPlanOutput)
+}
+
+type GetExternalExadataStorageServerIormPlanDbPlanItem struct {
+	// The resource allocation as a percentage (0-100) within the level.
+	Allocation int `pulumi:"allocation"`
+	// Starting with Oracle Exadata System Software release 19.1.0, you can use the asmcluster attribute to distinguish between databases with the same name running in different Oracle ASM clusters.
+	AsmCluster string `pulumi:"asmCluster"`
+	// Defines a soft limit for space usage in Exadata Smart Flash Cache. If the cache is not full, the limit can be exceeded. You specify the value for flashcachelimit in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for flashcachelimit must be at least 4 MB. The flashcachelimit and flashcachesize attributes cannot be specified in the same directive. The value for flashcachelimit cannot be smaller than flashcachemin, if it is specified.
+	FlashCacheLimit string `pulumi:"flashCacheLimit"`
+	// Specifies a minimum guaranteed space allocation in Exadata Smart Flash Cache. You specify the value for flashcachemin in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for flashcachemin must be at least 4 MB. In any plan, the sum of all flashcachemin values cannot exceed the size of Exadata Smart Flash Cache. If flashcachelimit is specified, then the value for flashcachemin cannot exceed flashcachelimit. If flashcachesize is specified, then the value for flashcachemin cannot exceed flashcachesize.
+	FlashCacheMin string `pulumi:"flashCacheMin"`
+	// Defines a hard limit for space usage in Exadata Smart Flash Cache. The limit cannot be exceeded, even if the cache is not full. In an IORM plan, if the size of Exadata Smart Flash Cache can accommodate all of the flashcachemin and flashcachesize allocations, then each flashcachesize definition represents a guaranteed space allocation. However, starting with Oracle Exadata System Software release 19.2.0 you can use the flashcachesize attribute to over-provision space in Exadata Smart Flash Cache. Consequently, if the size of Exadata Smart Flash Cache cannot accommodate all of the flashcachemin and flashcachesize allocations, then only flashcachemin is guaranteed.
+	FlashCacheSize string `pulumi:"flashCacheSize"`
+	// Controls use of Exadata Smart Flash Cache by a database. This ensures that cache space is reserved for mission-critical databases. flashcache=off is invalid in a directive that contains the flashcachemin, flashcachelimit, or flashcachesize attributes.
+	IsFlashCacheOn bool `pulumi:"isFlashCacheOn"`
+	// Controls use of Exadata Smart Flash Log by a database. This ensures that Exadata Smart Flash Log is reserved for mission-critical databases.
+	IsFlashLogOn bool `pulumi:"isFlashLogOn"`
+	// Controls use of the persistent memory (PMEM) cache by a database. This ensures that cache space is reserved for mission-critical databases. pmemcache=off is invalid in a directive that contains the pmemcachemin, pmemcachelimit, or pmemcachesize attributes.
+	IsPmemCacheOn bool `pulumi:"isPmemCacheOn"`
+	// Controls use of persistent memory logging (PMEM log) by a database. This ensures that PMEM log is reserved for mission-critical databases.
+	IsPmemLogOn bool `pulumi:"isPmemLogOn"`
+	// The allocation level. Valid values are from 1 to 8. Resources are allocated to level 1 first, and then remaining resources are allocated to level 2, and so on.
+	Level int `pulumi:"level"`
+	Limit int `pulumi:"limit"`
+	// The name of a database or a profile.
+	Name string `pulumi:"name"`
+	// Defines a soft limit for space usage in the persistent memory (PMEM) cache. If the cache is not full, the limit can be exceeded. You specify the value for pmemcachelimit in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for pmemcachelimit must be at least 4 MB. The pmemcachelimit and pmemcachesize attributes cannot be specified in the same directive. The value for pmemcachelimit cannot be smaller than pmemcachemin, if it is specified.
+	PmemCacheLimit string `pulumi:"pmemCacheLimit"`
+	// Specifies a minimum guaranteed space allocation in the persistent memory (PMEM) cache.
+	PmemCacheMin string `pulumi:"pmemCacheMin"`
+	// Defines a hard limit for space usage in the persistent memory (PMEM) cache. The limit cannot be exceeded, even if the cache is not full. In an IORM plan, if the size of the PMEM cache can accommodate all of the pmemcachemin and pmemcachesize allocations, then each pmemcachesize definition represents a guaranteed space allocation. However, you can use the pmemcachesize attribute to over-provision space in the PMEM cache. Consequently, if the PMEM cache size cannot accommodate all of the pmemcachemin and pmemcachesize allocations, then only pmemcachemin is guaranteed.
+	PmemCacheSize string `pulumi:"pmemCacheSize"`
+	// Enables you to specify different plan directives based on the Oracle Data Guard database role.
+	Role string `pulumi:"role"`
+	// The relative priority of a database in the database plan. A higher share value implies higher priority and more access to the I/O resources. Use either share or (level, allocation). All plan directives in a database plan should use the same setting. Share-based resource allocation is the recommended method for a database plan.
+	Share int `pulumi:"share"`
+	// Enables you to create a profile or template, to ease management and configuration of resource plans in environments with many databases.
+	// * type=database: Specifies a directive that applies to a specific database. If type in not specified, then the directive defaults to the database type.
+	// * type=profile: Specifies a directive that applies to a profile rather than a specific database.
+	Type string `pulumi:"type"`
+}
+
+// GetExternalExadataStorageServerIormPlanDbPlanItemInput is an input type that accepts GetExternalExadataStorageServerIormPlanDbPlanItemArgs and GetExternalExadataStorageServerIormPlanDbPlanItemOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageServerIormPlanDbPlanItemInput` via:
+//
+//	GetExternalExadataStorageServerIormPlanDbPlanItemArgs{...}
+type GetExternalExadataStorageServerIormPlanDbPlanItemInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageServerIormPlanDbPlanItemOutput() GetExternalExadataStorageServerIormPlanDbPlanItemOutput
+	ToGetExternalExadataStorageServerIormPlanDbPlanItemOutputWithContext(context.Context) GetExternalExadataStorageServerIormPlanDbPlanItemOutput
+}
+
+type GetExternalExadataStorageServerIormPlanDbPlanItemArgs struct {
+	// The resource allocation as a percentage (0-100) within the level.
+	Allocation pulumi.IntInput `pulumi:"allocation"`
+	// Starting with Oracle Exadata System Software release 19.1.0, you can use the asmcluster attribute to distinguish between databases with the same name running in different Oracle ASM clusters.
+	AsmCluster pulumi.StringInput `pulumi:"asmCluster"`
+	// Defines a soft limit for space usage in Exadata Smart Flash Cache. If the cache is not full, the limit can be exceeded. You specify the value for flashcachelimit in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for flashcachelimit must be at least 4 MB. The flashcachelimit and flashcachesize attributes cannot be specified in the same directive. The value for flashcachelimit cannot be smaller than flashcachemin, if it is specified.
+	FlashCacheLimit pulumi.StringInput `pulumi:"flashCacheLimit"`
+	// Specifies a minimum guaranteed space allocation in Exadata Smart Flash Cache. You specify the value for flashcachemin in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for flashcachemin must be at least 4 MB. In any plan, the sum of all flashcachemin values cannot exceed the size of Exadata Smart Flash Cache. If flashcachelimit is specified, then the value for flashcachemin cannot exceed flashcachelimit. If flashcachesize is specified, then the value for flashcachemin cannot exceed flashcachesize.
+	FlashCacheMin pulumi.StringInput `pulumi:"flashCacheMin"`
+	// Defines a hard limit for space usage in Exadata Smart Flash Cache. The limit cannot be exceeded, even if the cache is not full. In an IORM plan, if the size of Exadata Smart Flash Cache can accommodate all of the flashcachemin and flashcachesize allocations, then each flashcachesize definition represents a guaranteed space allocation. However, starting with Oracle Exadata System Software release 19.2.0 you can use the flashcachesize attribute to over-provision space in Exadata Smart Flash Cache. Consequently, if the size of Exadata Smart Flash Cache cannot accommodate all of the flashcachemin and flashcachesize allocations, then only flashcachemin is guaranteed.
+	FlashCacheSize pulumi.StringInput `pulumi:"flashCacheSize"`
+	// Controls use of Exadata Smart Flash Cache by a database. This ensures that cache space is reserved for mission-critical databases. flashcache=off is invalid in a directive that contains the flashcachemin, flashcachelimit, or flashcachesize attributes.
+	IsFlashCacheOn pulumi.BoolInput `pulumi:"isFlashCacheOn"`
+	// Controls use of Exadata Smart Flash Log by a database. This ensures that Exadata Smart Flash Log is reserved for mission-critical databases.
+	IsFlashLogOn pulumi.BoolInput `pulumi:"isFlashLogOn"`
+	// Controls use of the persistent memory (PMEM) cache by a database. This ensures that cache space is reserved for mission-critical databases. pmemcache=off is invalid in a directive that contains the pmemcachemin, pmemcachelimit, or pmemcachesize attributes.
+	IsPmemCacheOn pulumi.BoolInput `pulumi:"isPmemCacheOn"`
+	// Controls use of persistent memory logging (PMEM log) by a database. This ensures that PMEM log is reserved for mission-critical databases.
+	IsPmemLogOn pulumi.BoolInput `pulumi:"isPmemLogOn"`
+	// The allocation level. Valid values are from 1 to 8. Resources are allocated to level 1 first, and then remaining resources are allocated to level 2, and so on.
+	Level pulumi.IntInput `pulumi:"level"`
+	Limit pulumi.IntInput `pulumi:"limit"`
+	// The name of a database or a profile.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Defines a soft limit for space usage in the persistent memory (PMEM) cache. If the cache is not full, the limit can be exceeded. You specify the value for pmemcachelimit in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for pmemcachelimit must be at least 4 MB. The pmemcachelimit and pmemcachesize attributes cannot be specified in the same directive. The value for pmemcachelimit cannot be smaller than pmemcachemin, if it is specified.
+	PmemCacheLimit pulumi.StringInput `pulumi:"pmemCacheLimit"`
+	// Specifies a minimum guaranteed space allocation in the persistent memory (PMEM) cache.
+	PmemCacheMin pulumi.StringInput `pulumi:"pmemCacheMin"`
+	// Defines a hard limit for space usage in the persistent memory (PMEM) cache. The limit cannot be exceeded, even if the cache is not full. In an IORM plan, if the size of the PMEM cache can accommodate all of the pmemcachemin and pmemcachesize allocations, then each pmemcachesize definition represents a guaranteed space allocation. However, you can use the pmemcachesize attribute to over-provision space in the PMEM cache. Consequently, if the PMEM cache size cannot accommodate all of the pmemcachemin and pmemcachesize allocations, then only pmemcachemin is guaranteed.
+	PmemCacheSize pulumi.StringInput `pulumi:"pmemCacheSize"`
+	// Enables you to specify different plan directives based on the Oracle Data Guard database role.
+	Role pulumi.StringInput `pulumi:"role"`
+	// The relative priority of a database in the database plan. A higher share value implies higher priority and more access to the I/O resources. Use either share or (level, allocation). All plan directives in a database plan should use the same setting. Share-based resource allocation is the recommended method for a database plan.
+	Share pulumi.IntInput `pulumi:"share"`
+	// Enables you to create a profile or template, to ease management and configuration of resource plans in environments with many databases.
+	// * type=database: Specifies a directive that applies to a specific database. If type in not specified, then the directive defaults to the database type.
+	// * type=profile: Specifies a directive that applies to a profile rather than a specific database.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetExternalExadataStorageServerIormPlanDbPlanItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageServerIormPlanDbPlanItem)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageServerIormPlanDbPlanItemArgs) ToGetExternalExadataStorageServerIormPlanDbPlanItemOutput() GetExternalExadataStorageServerIormPlanDbPlanItemOutput {
+	return i.ToGetExternalExadataStorageServerIormPlanDbPlanItemOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageServerIormPlanDbPlanItemArgs) ToGetExternalExadataStorageServerIormPlanDbPlanItemOutputWithContext(ctx context.Context) GetExternalExadataStorageServerIormPlanDbPlanItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageServerIormPlanDbPlanItemOutput)
+}
+
+// GetExternalExadataStorageServerIormPlanDbPlanItemArrayInput is an input type that accepts GetExternalExadataStorageServerIormPlanDbPlanItemArray and GetExternalExadataStorageServerIormPlanDbPlanItemArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageServerIormPlanDbPlanItemArrayInput` via:
+//
+//	GetExternalExadataStorageServerIormPlanDbPlanItemArray{ GetExternalExadataStorageServerIormPlanDbPlanItemArgs{...} }
+type GetExternalExadataStorageServerIormPlanDbPlanItemArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageServerIormPlanDbPlanItemArrayOutput() GetExternalExadataStorageServerIormPlanDbPlanItemArrayOutput
+	ToGetExternalExadataStorageServerIormPlanDbPlanItemArrayOutputWithContext(context.Context) GetExternalExadataStorageServerIormPlanDbPlanItemArrayOutput
+}
+
+type GetExternalExadataStorageServerIormPlanDbPlanItemArray []GetExternalExadataStorageServerIormPlanDbPlanItemInput
+
+func (GetExternalExadataStorageServerIormPlanDbPlanItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageServerIormPlanDbPlanItem)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageServerIormPlanDbPlanItemArray) ToGetExternalExadataStorageServerIormPlanDbPlanItemArrayOutput() GetExternalExadataStorageServerIormPlanDbPlanItemArrayOutput {
+	return i.ToGetExternalExadataStorageServerIormPlanDbPlanItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageServerIormPlanDbPlanItemArray) ToGetExternalExadataStorageServerIormPlanDbPlanItemArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageServerIormPlanDbPlanItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageServerIormPlanDbPlanItemArrayOutput)
+}
+
+type GetExternalExadataStorageServerIormPlanDbPlanItemOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageServerIormPlanDbPlanItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageServerIormPlanDbPlanItem)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemOutput) ToGetExternalExadataStorageServerIormPlanDbPlanItemOutput() GetExternalExadataStorageServerIormPlanDbPlanItemOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemOutput) ToGetExternalExadataStorageServerIormPlanDbPlanItemOutputWithContext(ctx context.Context) GetExternalExadataStorageServerIormPlanDbPlanItemOutput {
+	return o
+}
+
+// The resource allocation as a percentage (0-100) within the level.
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemOutput) Allocation() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanDbPlanItem) int { return v.Allocation }).(pulumi.IntOutput)
+}
+
+// Starting with Oracle Exadata System Software release 19.1.0, you can use the asmcluster attribute to distinguish between databases with the same name running in different Oracle ASM clusters.
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemOutput) AsmCluster() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanDbPlanItem) string { return v.AsmCluster }).(pulumi.StringOutput)
+}
+
+// Defines a soft limit for space usage in Exadata Smart Flash Cache. If the cache is not full, the limit can be exceeded. You specify the value for flashcachelimit in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for flashcachelimit must be at least 4 MB. The flashcachelimit and flashcachesize attributes cannot be specified in the same directive. The value for flashcachelimit cannot be smaller than flashcachemin, if it is specified.
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemOutput) FlashCacheLimit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanDbPlanItem) string { return v.FlashCacheLimit }).(pulumi.StringOutput)
+}
+
+// Specifies a minimum guaranteed space allocation in Exadata Smart Flash Cache. You specify the value for flashcachemin in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for flashcachemin must be at least 4 MB. In any plan, the sum of all flashcachemin values cannot exceed the size of Exadata Smart Flash Cache. If flashcachelimit is specified, then the value for flashcachemin cannot exceed flashcachelimit. If flashcachesize is specified, then the value for flashcachemin cannot exceed flashcachesize.
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemOutput) FlashCacheMin() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanDbPlanItem) string { return v.FlashCacheMin }).(pulumi.StringOutput)
+}
+
+// Defines a hard limit for space usage in Exadata Smart Flash Cache. The limit cannot be exceeded, even if the cache is not full. In an IORM plan, if the size of Exadata Smart Flash Cache can accommodate all of the flashcachemin and flashcachesize allocations, then each flashcachesize definition represents a guaranteed space allocation. However, starting with Oracle Exadata System Software release 19.2.0 you can use the flashcachesize attribute to over-provision space in Exadata Smart Flash Cache. Consequently, if the size of Exadata Smart Flash Cache cannot accommodate all of the flashcachemin and flashcachesize allocations, then only flashcachemin is guaranteed.
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemOutput) FlashCacheSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanDbPlanItem) string { return v.FlashCacheSize }).(pulumi.StringOutput)
+}
+
+// Controls use of Exadata Smart Flash Cache by a database. This ensures that cache space is reserved for mission-critical databases. flashcache=off is invalid in a directive that contains the flashcachemin, flashcachelimit, or flashcachesize attributes.
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemOutput) IsFlashCacheOn() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanDbPlanItem) bool { return v.IsFlashCacheOn }).(pulumi.BoolOutput)
+}
+
+// Controls use of Exadata Smart Flash Log by a database. This ensures that Exadata Smart Flash Log is reserved for mission-critical databases.
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemOutput) IsFlashLogOn() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanDbPlanItem) bool { return v.IsFlashLogOn }).(pulumi.BoolOutput)
+}
+
+// Controls use of the persistent memory (PMEM) cache by a database. This ensures that cache space is reserved for mission-critical databases. pmemcache=off is invalid in a directive that contains the pmemcachemin, pmemcachelimit, or pmemcachesize attributes.
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemOutput) IsPmemCacheOn() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanDbPlanItem) bool { return v.IsPmemCacheOn }).(pulumi.BoolOutput)
+}
+
+// Controls use of persistent memory logging (PMEM log) by a database. This ensures that PMEM log is reserved for mission-critical databases.
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemOutput) IsPmemLogOn() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanDbPlanItem) bool { return v.IsPmemLogOn }).(pulumi.BoolOutput)
+}
+
+// The allocation level. Valid values are from 1 to 8. Resources are allocated to level 1 first, and then remaining resources are allocated to level 2, and so on.
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemOutput) Level() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanDbPlanItem) int { return v.Level }).(pulumi.IntOutput)
+}
+
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemOutput) Limit() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanDbPlanItem) int { return v.Limit }).(pulumi.IntOutput)
+}
+
+// The name of a database or a profile.
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanDbPlanItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Defines a soft limit for space usage in the persistent memory (PMEM) cache. If the cache is not full, the limit can be exceeded. You specify the value for pmemcachelimit in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for pmemcachelimit must be at least 4 MB. The pmemcachelimit and pmemcachesize attributes cannot be specified in the same directive. The value for pmemcachelimit cannot be smaller than pmemcachemin, if it is specified.
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemOutput) PmemCacheLimit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanDbPlanItem) string { return v.PmemCacheLimit }).(pulumi.StringOutput)
+}
+
+// Specifies a minimum guaranteed space allocation in the persistent memory (PMEM) cache.
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemOutput) PmemCacheMin() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanDbPlanItem) string { return v.PmemCacheMin }).(pulumi.StringOutput)
+}
+
+// Defines a hard limit for space usage in the persistent memory (PMEM) cache. The limit cannot be exceeded, even if the cache is not full. In an IORM plan, if the size of the PMEM cache can accommodate all of the pmemcachemin and pmemcachesize allocations, then each pmemcachesize definition represents a guaranteed space allocation. However, you can use the pmemcachesize attribute to over-provision space in the PMEM cache. Consequently, if the PMEM cache size cannot accommodate all of the pmemcachemin and pmemcachesize allocations, then only pmemcachemin is guaranteed.
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemOutput) PmemCacheSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanDbPlanItem) string { return v.PmemCacheSize }).(pulumi.StringOutput)
+}
+
+// Enables you to specify different plan directives based on the Oracle Data Guard database role.
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanDbPlanItem) string { return v.Role }).(pulumi.StringOutput)
+}
+
+// The relative priority of a database in the database plan. A higher share value implies higher priority and more access to the I/O resources. Use either share or (level, allocation). All plan directives in a database plan should use the same setting. Share-based resource allocation is the recommended method for a database plan.
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemOutput) Share() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanDbPlanItem) int { return v.Share }).(pulumi.IntOutput)
+}
+
+// Enables you to create a profile or template, to ease management and configuration of resource plans in environments with many databases.
+// * type=database: Specifies a directive that applies to a specific database. If type in not specified, then the directive defaults to the database type.
+// * type=profile: Specifies a directive that applies to a profile rather than a specific database.
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanDbPlanItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetExternalExadataStorageServerIormPlanDbPlanItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageServerIormPlanDbPlanItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageServerIormPlanDbPlanItem)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemArrayOutput) ToGetExternalExadataStorageServerIormPlanDbPlanItemArrayOutput() GetExternalExadataStorageServerIormPlanDbPlanItemArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemArrayOutput) ToGetExternalExadataStorageServerIormPlanDbPlanItemArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageServerIormPlanDbPlanItemArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServerIormPlanDbPlanItemArrayOutput) Index(i pulumi.IntInput) GetExternalExadataStorageServerIormPlanDbPlanItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataStorageServerIormPlanDbPlanItem {
+		return vs[0].([]GetExternalExadataStorageServerIormPlanDbPlanItem)[vs[1].(int)]
+	}).(GetExternalExadataStorageServerIormPlanDbPlanItemOutput)
+}
+
+type GetExternalExadataStorageServerOpenAlertHistoryAlert struct {
+	// The alert message.
+	Message string `pulumi:"message"`
+	// The severity of the alert.
+	Severity string `pulumi:"severity"`
+	// The start time of the alert.
+	TimeStartAt string `pulumi:"timeStartAt"`
+	// The type of alert.
+	Type string `pulumi:"type"`
+}
+
+// GetExternalExadataStorageServerOpenAlertHistoryAlertInput is an input type that accepts GetExternalExadataStorageServerOpenAlertHistoryAlertArgs and GetExternalExadataStorageServerOpenAlertHistoryAlertOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageServerOpenAlertHistoryAlertInput` via:
+//
+//	GetExternalExadataStorageServerOpenAlertHistoryAlertArgs{...}
+type GetExternalExadataStorageServerOpenAlertHistoryAlertInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageServerOpenAlertHistoryAlertOutput() GetExternalExadataStorageServerOpenAlertHistoryAlertOutput
+	ToGetExternalExadataStorageServerOpenAlertHistoryAlertOutputWithContext(context.Context) GetExternalExadataStorageServerOpenAlertHistoryAlertOutput
+}
+
+type GetExternalExadataStorageServerOpenAlertHistoryAlertArgs struct {
+	// The alert message.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The severity of the alert.
+	Severity pulumi.StringInput `pulumi:"severity"`
+	// The start time of the alert.
+	TimeStartAt pulumi.StringInput `pulumi:"timeStartAt"`
+	// The type of alert.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetExternalExadataStorageServerOpenAlertHistoryAlertArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageServerOpenAlertHistoryAlert)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageServerOpenAlertHistoryAlertArgs) ToGetExternalExadataStorageServerOpenAlertHistoryAlertOutput() GetExternalExadataStorageServerOpenAlertHistoryAlertOutput {
+	return i.ToGetExternalExadataStorageServerOpenAlertHistoryAlertOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageServerOpenAlertHistoryAlertArgs) ToGetExternalExadataStorageServerOpenAlertHistoryAlertOutputWithContext(ctx context.Context) GetExternalExadataStorageServerOpenAlertHistoryAlertOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageServerOpenAlertHistoryAlertOutput)
+}
+
+// GetExternalExadataStorageServerOpenAlertHistoryAlertArrayInput is an input type that accepts GetExternalExadataStorageServerOpenAlertHistoryAlertArray and GetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageServerOpenAlertHistoryAlertArrayInput` via:
+//
+//	GetExternalExadataStorageServerOpenAlertHistoryAlertArray{ GetExternalExadataStorageServerOpenAlertHistoryAlertArgs{...} }
+type GetExternalExadataStorageServerOpenAlertHistoryAlertArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutput() GetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutput
+	ToGetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutputWithContext(context.Context) GetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutput
+}
+
+type GetExternalExadataStorageServerOpenAlertHistoryAlertArray []GetExternalExadataStorageServerOpenAlertHistoryAlertInput
+
+func (GetExternalExadataStorageServerOpenAlertHistoryAlertArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageServerOpenAlertHistoryAlert)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageServerOpenAlertHistoryAlertArray) ToGetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutput() GetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutput {
+	return i.ToGetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageServerOpenAlertHistoryAlertArray) ToGetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutput)
+}
+
+type GetExternalExadataStorageServerOpenAlertHistoryAlertOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageServerOpenAlertHistoryAlertOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageServerOpenAlertHistoryAlert)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageServerOpenAlertHistoryAlertOutput) ToGetExternalExadataStorageServerOpenAlertHistoryAlertOutput() GetExternalExadataStorageServerOpenAlertHistoryAlertOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServerOpenAlertHistoryAlertOutput) ToGetExternalExadataStorageServerOpenAlertHistoryAlertOutputWithContext(ctx context.Context) GetExternalExadataStorageServerOpenAlertHistoryAlertOutput {
+	return o
+}
+
+// The alert message.
+func (o GetExternalExadataStorageServerOpenAlertHistoryAlertOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerOpenAlertHistoryAlert) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The severity of the alert.
+func (o GetExternalExadataStorageServerOpenAlertHistoryAlertOutput) Severity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerOpenAlertHistoryAlert) string { return v.Severity }).(pulumi.StringOutput)
+}
+
+// The start time of the alert.
+func (o GetExternalExadataStorageServerOpenAlertHistoryAlertOutput) TimeStartAt() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerOpenAlertHistoryAlert) string { return v.TimeStartAt }).(pulumi.StringOutput)
+}
+
+// The type of alert.
+func (o GetExternalExadataStorageServerOpenAlertHistoryAlertOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerOpenAlertHistoryAlert) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageServerOpenAlertHistoryAlert)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutput) ToGetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutput() GetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutput) ToGetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutput) Index(i pulumi.IntInput) GetExternalExadataStorageServerOpenAlertHistoryAlertOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataStorageServerOpenAlertHistoryAlert {
+		return vs[0].([]GetExternalExadataStorageServerOpenAlertHistoryAlert)[vs[1].(int)]
+	}).(GetExternalExadataStorageServerOpenAlertHistoryAlertOutput)
+}
+
+type GetExternalExadataStorageServerTopSqlCpuActivityActivity struct {
+	// The CPU activity percentage.
+	CpuActivity float64 `pulumi:"cpuActivity"`
+	// The database name.
+	DatabaseName string `pulumi:"databaseName"`
+	// The SQL ID.
+	SqlId string `pulumi:"sqlId"`
+}
+
+// GetExternalExadataStorageServerTopSqlCpuActivityActivityInput is an input type that accepts GetExternalExadataStorageServerTopSqlCpuActivityActivityArgs and GetExternalExadataStorageServerTopSqlCpuActivityActivityOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageServerTopSqlCpuActivityActivityInput` via:
+//
+//	GetExternalExadataStorageServerTopSqlCpuActivityActivityArgs{...}
+type GetExternalExadataStorageServerTopSqlCpuActivityActivityInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageServerTopSqlCpuActivityActivityOutput() GetExternalExadataStorageServerTopSqlCpuActivityActivityOutput
+	ToGetExternalExadataStorageServerTopSqlCpuActivityActivityOutputWithContext(context.Context) GetExternalExadataStorageServerTopSqlCpuActivityActivityOutput
+}
+
+type GetExternalExadataStorageServerTopSqlCpuActivityActivityArgs struct {
+	// The CPU activity percentage.
+	CpuActivity pulumi.Float64Input `pulumi:"cpuActivity"`
+	// The database name.
+	DatabaseName pulumi.StringInput `pulumi:"databaseName"`
+	// The SQL ID.
+	SqlId pulumi.StringInput `pulumi:"sqlId"`
+}
+
+func (GetExternalExadataStorageServerTopSqlCpuActivityActivityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageServerTopSqlCpuActivityActivity)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageServerTopSqlCpuActivityActivityArgs) ToGetExternalExadataStorageServerTopSqlCpuActivityActivityOutput() GetExternalExadataStorageServerTopSqlCpuActivityActivityOutput {
+	return i.ToGetExternalExadataStorageServerTopSqlCpuActivityActivityOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageServerTopSqlCpuActivityActivityArgs) ToGetExternalExadataStorageServerTopSqlCpuActivityActivityOutputWithContext(ctx context.Context) GetExternalExadataStorageServerTopSqlCpuActivityActivityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageServerTopSqlCpuActivityActivityOutput)
+}
+
+// GetExternalExadataStorageServerTopSqlCpuActivityActivityArrayInput is an input type that accepts GetExternalExadataStorageServerTopSqlCpuActivityActivityArray and GetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageServerTopSqlCpuActivityActivityArrayInput` via:
+//
+//	GetExternalExadataStorageServerTopSqlCpuActivityActivityArray{ GetExternalExadataStorageServerTopSqlCpuActivityActivityArgs{...} }
+type GetExternalExadataStorageServerTopSqlCpuActivityActivityArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutput() GetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutput
+	ToGetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutputWithContext(context.Context) GetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutput
+}
+
+type GetExternalExadataStorageServerTopSqlCpuActivityActivityArray []GetExternalExadataStorageServerTopSqlCpuActivityActivityInput
+
+func (GetExternalExadataStorageServerTopSqlCpuActivityActivityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageServerTopSqlCpuActivityActivity)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageServerTopSqlCpuActivityActivityArray) ToGetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutput() GetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutput {
+	return i.ToGetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageServerTopSqlCpuActivityActivityArray) ToGetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutput)
+}
+
+type GetExternalExadataStorageServerTopSqlCpuActivityActivityOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageServerTopSqlCpuActivityActivityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageServerTopSqlCpuActivityActivity)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageServerTopSqlCpuActivityActivityOutput) ToGetExternalExadataStorageServerTopSqlCpuActivityActivityOutput() GetExternalExadataStorageServerTopSqlCpuActivityActivityOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServerTopSqlCpuActivityActivityOutput) ToGetExternalExadataStorageServerTopSqlCpuActivityActivityOutputWithContext(ctx context.Context) GetExternalExadataStorageServerTopSqlCpuActivityActivityOutput {
+	return o
+}
+
+// The CPU activity percentage.
+func (o GetExternalExadataStorageServerTopSqlCpuActivityActivityOutput) CpuActivity() pulumi.Float64Output {
+	return o.ApplyT(func(v GetExternalExadataStorageServerTopSqlCpuActivityActivity) float64 { return v.CpuActivity }).(pulumi.Float64Output)
+}
+
+// The database name.
+func (o GetExternalExadataStorageServerTopSqlCpuActivityActivityOutput) DatabaseName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerTopSqlCpuActivityActivity) string { return v.DatabaseName }).(pulumi.StringOutput)
+}
+
+// The SQL ID.
+func (o GetExternalExadataStorageServerTopSqlCpuActivityActivityOutput) SqlId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerTopSqlCpuActivityActivity) string { return v.SqlId }).(pulumi.StringOutput)
+}
+
+type GetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageServerTopSqlCpuActivityActivity)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutput) ToGetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutput() GetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutput) ToGetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutput) Index(i pulumi.IntInput) GetExternalExadataStorageServerTopSqlCpuActivityActivityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataStorageServerTopSqlCpuActivityActivity {
+		return vs[0].([]GetExternalExadataStorageServerTopSqlCpuActivityActivity)[vs[1].(int)]
+	}).(GetExternalExadataStorageServerTopSqlCpuActivityActivityOutput)
+}
+
+type GetExternalExadataStorageServersExternalExadataStorageServerCollection struct {
+	Items []GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem `pulumi:"items"`
+}
+
+// GetExternalExadataStorageServersExternalExadataStorageServerCollectionInput is an input type that accepts GetExternalExadataStorageServersExternalExadataStorageServerCollectionArgs and GetExternalExadataStorageServersExternalExadataStorageServerCollectionOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageServersExternalExadataStorageServerCollectionInput` via:
+//
+//	GetExternalExadataStorageServersExternalExadataStorageServerCollectionArgs{...}
+type GetExternalExadataStorageServersExternalExadataStorageServerCollectionInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionOutput() GetExternalExadataStorageServersExternalExadataStorageServerCollectionOutput
+	ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionOutputWithContext(context.Context) GetExternalExadataStorageServersExternalExadataStorageServerCollectionOutput
+}
+
+type GetExternalExadataStorageServersExternalExadataStorageServerCollectionArgs struct {
+	Items GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetExternalExadataStorageServersExternalExadataStorageServerCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageServersExternalExadataStorageServerCollection)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageServersExternalExadataStorageServerCollectionArgs) ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionOutput() GetExternalExadataStorageServersExternalExadataStorageServerCollectionOutput {
+	return i.ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageServersExternalExadataStorageServerCollectionArgs) ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionOutputWithContext(ctx context.Context) GetExternalExadataStorageServersExternalExadataStorageServerCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageServersExternalExadataStorageServerCollectionOutput)
+}
+
+// GetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayInput is an input type that accepts GetExternalExadataStorageServersExternalExadataStorageServerCollectionArray and GetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayInput` via:
+//
+//	GetExternalExadataStorageServersExternalExadataStorageServerCollectionArray{ GetExternalExadataStorageServersExternalExadataStorageServerCollectionArgs{...} }
+type GetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutput() GetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutput
+	ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutputWithContext(context.Context) GetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutput
+}
+
+type GetExternalExadataStorageServersExternalExadataStorageServerCollectionArray []GetExternalExadataStorageServersExternalExadataStorageServerCollectionInput
+
+func (GetExternalExadataStorageServersExternalExadataStorageServerCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageServersExternalExadataStorageServerCollection)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageServersExternalExadataStorageServerCollectionArray) ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutput() GetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutput {
+	return i.ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageServersExternalExadataStorageServerCollectionArray) ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutput)
+}
+
+type GetExternalExadataStorageServersExternalExadataStorageServerCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageServersExternalExadataStorageServerCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageServersExternalExadataStorageServerCollection)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionOutput) ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionOutput() GetExternalExadataStorageServersExternalExadataStorageServerCollectionOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionOutput) ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionOutputWithContext(ctx context.Context) GetExternalExadataStorageServersExternalExadataStorageServerCollectionOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionOutput) Items() GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollection) []GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem {
+		return v.Items
+	}).(GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutput)
+}
+
+type GetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageServersExternalExadataStorageServerCollection)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutput) ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutput() GetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutput) ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutput) Index(i pulumi.IntInput) GetExternalExadataStorageServersExternalExadataStorageServerCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataStorageServersExternalExadataStorageServerCollection {
+		return vs[0].([]GetExternalExadataStorageServersExternalExadataStorageServerCollection)[vs[1].(int)]
+	}).(GetExternalExadataStorageServersExternalExadataStorageServerCollectionOutput)
+}
+
+type GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	ConnectorId       string                 `pulumi:"connectorId"`
+	// The CPU count of the Exadata storage server.
+	CpuCount float64 `pulumi:"cpuCount"`
+	// The optional single value query filter parameter on the entity display name.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id string `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId string `pulumi:"internalId"`
+	// The IP address of the Exadata storage server.
+	IpAddress string `pulumi:"ipAddress"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The make model of the Exadata storage server.
+	MakeModel string `pulumi:"makeModel"`
+	// The maximum flash disk IO operations per second of the Exadata storage server.
+	MaxFlashDiskIops int `pulumi:"maxFlashDiskIops"`
+	// The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+	MaxFlashDiskThroughput int `pulumi:"maxFlashDiskThroughput"`
+	// The maximum hard disk IO operations per second of the Exadata storage server.
+	MaxHardDiskIops int `pulumi:"maxHardDiskIops"`
+	// The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+	MaxHardDiskThroughput int `pulumi:"maxHardDiskThroughput"`
+	// The Exadata storage server memory size in GB.
+	MemoryGb float64 `pulumi:"memoryGb"`
+	// The type of Exadata resource.
+	ResourceType string `pulumi:"resourceType"`
+	// The current lifecycle state of the database resource.
+	State string `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status string `pulumi:"status"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server grid.
+	StorageGridId string `pulumi:"storageGridId"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version string `pulumi:"version"`
+}
+
+// GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemInput is an input type that accepts GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArgs and GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemInput` via:
+//
+//	GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArgs{...}
+type GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput() GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput
+	ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutputWithContext(context.Context) GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput
+}
+
+type GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArgs struct {
+	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+	AdditionalDetails pulumi.MapInput    `pulumi:"additionalDetails"`
+	ConnectorId       pulumi.StringInput `pulumi:"connectorId"`
+	// The CPU count of the Exadata storage server.
+	CpuCount pulumi.Float64Input `pulumi:"cpuCount"`
+	// The optional single value query filter parameter on the entity display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+	ExadataInfrastructureId pulumi.StringInput `pulumi:"exadataInfrastructureId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The internal ID of the Exadata resource.
+	InternalId pulumi.StringInput `pulumi:"internalId"`
+	// The IP address of the Exadata storage server.
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// The details of the lifecycle state of the Exadata resource.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The make model of the Exadata storage server.
+	MakeModel pulumi.StringInput `pulumi:"makeModel"`
+	// The maximum flash disk IO operations per second of the Exadata storage server.
+	MaxFlashDiskIops pulumi.IntInput `pulumi:"maxFlashDiskIops"`
+	// The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+	MaxFlashDiskThroughput pulumi.IntInput `pulumi:"maxFlashDiskThroughput"`
+	// The maximum hard disk IO operations per second of the Exadata storage server.
+	MaxHardDiskIops pulumi.IntInput `pulumi:"maxHardDiskIops"`
+	// The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+	MaxHardDiskThroughput pulumi.IntInput `pulumi:"maxHardDiskThroughput"`
+	// The Exadata storage server memory size in GB.
+	MemoryGb pulumi.Float64Input `pulumi:"memoryGb"`
+	// The type of Exadata resource.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// The current lifecycle state of the database resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// The status of the Exadata resource.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server grid.
+	StorageGridId pulumi.StringInput `pulumi:"storageGridId"`
+	// The timestamp of the creation of the Exadata resource.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The timestamp of the last update of the Exadata resource.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The version of the Exadata resource.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArgs) ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput() GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput {
+	return i.ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArgs) ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutputWithContext(ctx context.Context) GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput)
+}
+
+// GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayInput is an input type that accepts GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArray and GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayInput` via:
+//
+//	GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArray{ GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArgs{...} }
+type GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutput() GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutput
+	ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutputWithContext(context.Context) GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutput
+}
+
+type GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArray []GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemInput
+
+func (GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArray) ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutput() GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutput {
+	return i.ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArray) ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutput)
+}
+
+type GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput() GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutputWithContext(ctx context.Context) GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput {
+	return o
+}
+
+// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) AdditionalDetails() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) map[string]interface{} {
+		return v.AdditionalDetails
+	}).(pulumi.MapOutput)
+}
+
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) ConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) string {
+		return v.ConnectorId
+	}).(pulumi.StringOutput)
+}
+
+// The CPU count of the Exadata storage server.
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) CpuCount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) float64 {
+		return v.CpuCount
+	}).(pulumi.Float64Output)
+}
+
+// The optional single value query filter parameter on the entity display name.
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) ExadataInfrastructureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) string {
+		return v.ExadataInfrastructureId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The internal ID of the Exadata resource.
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) InternalId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) string {
+		return v.InternalId
+	}).(pulumi.StringOutput)
+}
+
+// The IP address of the Exadata storage server.
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) string {
+		return v.IpAddress
+	}).(pulumi.StringOutput)
+}
+
+// The details of the lifecycle state of the Exadata resource.
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The make model of the Exadata storage server.
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) MakeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) string {
+		return v.MakeModel
+	}).(pulumi.StringOutput)
+}
+
+// The maximum flash disk IO operations per second of the Exadata storage server.
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) MaxFlashDiskIops() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) int {
+		return v.MaxFlashDiskIops
+	}).(pulumi.IntOutput)
+}
+
+// The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) MaxFlashDiskThroughput() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) int {
+		return v.MaxFlashDiskThroughput
+	}).(pulumi.IntOutput)
+}
+
+// The maximum hard disk IO operations per second of the Exadata storage server.
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) MaxHardDiskIops() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) int {
+		return v.MaxHardDiskIops
+	}).(pulumi.IntOutput)
+}
+
+// The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) MaxHardDiskThroughput() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) int {
+		return v.MaxHardDiskThroughput
+	}).(pulumi.IntOutput)
+}
+
+// The Exadata storage server memory size in GB.
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) MemoryGb() pulumi.Float64Output {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) float64 {
+		return v.MemoryGb
+	}).(pulumi.Float64Output)
+}
+
+// The type of Exadata resource.
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) string {
+		return v.ResourceType
+	}).(pulumi.StringOutput)
+}
+
+// The current lifecycle state of the database resource.
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// The status of the Exadata resource.
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server grid.
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) StorageGridId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) string {
+		return v.StorageGridId
+	}).(pulumi.StringOutput)
+}
+
+// The timestamp of the creation of the Exadata resource.
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The timestamp of the last update of the Exadata resource.
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The version of the Exadata resource.
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem) string {
+		return v.Version
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutput) ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutput() GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutput) ToGetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutput) Index(i pulumi.IntInput) GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem {
+		return vs[0].([]GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem)[vs[1].(int)]
+	}).(GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput)
+}
+
+type GetExternalExadataStorageServersFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetExternalExadataStorageServersFilterInput is an input type that accepts GetExternalExadataStorageServersFilterArgs and GetExternalExadataStorageServersFilterOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageServersFilterInput` via:
+//
+//	GetExternalExadataStorageServersFilterArgs{...}
+type GetExternalExadataStorageServersFilterInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageServersFilterOutput() GetExternalExadataStorageServersFilterOutput
+	ToGetExternalExadataStorageServersFilterOutputWithContext(context.Context) GetExternalExadataStorageServersFilterOutput
+}
+
+type GetExternalExadataStorageServersFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetExternalExadataStorageServersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageServersFilter)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageServersFilterArgs) ToGetExternalExadataStorageServersFilterOutput() GetExternalExadataStorageServersFilterOutput {
+	return i.ToGetExternalExadataStorageServersFilterOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageServersFilterArgs) ToGetExternalExadataStorageServersFilterOutputWithContext(ctx context.Context) GetExternalExadataStorageServersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageServersFilterOutput)
+}
+
+// GetExternalExadataStorageServersFilterArrayInput is an input type that accepts GetExternalExadataStorageServersFilterArray and GetExternalExadataStorageServersFilterArrayOutput values.
+// You can construct a concrete instance of `GetExternalExadataStorageServersFilterArrayInput` via:
+//
+//	GetExternalExadataStorageServersFilterArray{ GetExternalExadataStorageServersFilterArgs{...} }
+type GetExternalExadataStorageServersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalExadataStorageServersFilterArrayOutput() GetExternalExadataStorageServersFilterArrayOutput
+	ToGetExternalExadataStorageServersFilterArrayOutputWithContext(context.Context) GetExternalExadataStorageServersFilterArrayOutput
+}
+
+type GetExternalExadataStorageServersFilterArray []GetExternalExadataStorageServersFilterInput
+
+func (GetExternalExadataStorageServersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageServersFilter)(nil)).Elem()
+}
+
+func (i GetExternalExadataStorageServersFilterArray) ToGetExternalExadataStorageServersFilterArrayOutput() GetExternalExadataStorageServersFilterArrayOutput {
+	return i.ToGetExternalExadataStorageServersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalExadataStorageServersFilterArray) ToGetExternalExadataStorageServersFilterArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageServersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalExadataStorageServersFilterArrayOutput)
+}
+
+type GetExternalExadataStorageServersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageServersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalExadataStorageServersFilter)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageServersFilterOutput) ToGetExternalExadataStorageServersFilterOutput() GetExternalExadataStorageServersFilterOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServersFilterOutput) ToGetExternalExadataStorageServersFilterOutputWithContext(ctx context.Context) GetExternalExadataStorageServersFilterOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetExternalExadataStorageServersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetExternalExadataStorageServersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetExternalExadataStorageServersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalExadataStorageServersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalExadataStorageServersFilter)(nil)).Elem()
+}
+
+func (o GetExternalExadataStorageServersFilterArrayOutput) ToGetExternalExadataStorageServersFilterArrayOutput() GetExternalExadataStorageServersFilterArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServersFilterArrayOutput) ToGetExternalExadataStorageServersFilterArrayOutputWithContext(ctx context.Context) GetExternalExadataStorageServersFilterArrayOutput {
+	return o
+}
+
+func (o GetExternalExadataStorageServersFilterArrayOutput) Index(i pulumi.IntInput) GetExternalExadataStorageServersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalExadataStorageServersFilter {
+		return vs[0].([]GetExternalExadataStorageServersFilter)[vs[1].(int)]
+	}).(GetExternalExadataStorageServersFilterOutput)
 }
 
 type GetExternalListenerEndpoint struct {
@@ -41875,6 +46222,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsPtrInput)(nil)).Elem(), ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringInput)(nil)).Elem(), ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringPtrInput)(nil)).Elem(), ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalExadataInfrastructureDatabaseSystemInput)(nil)).Elem(), ExternalExadataInfrastructureDatabaseSystemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalExadataInfrastructureDatabaseSystemArrayInput)(nil)).Elem(), ExternalExadataInfrastructureDatabaseSystemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalExadataInfrastructureStorageGridInput)(nil)).Elem(), ExternalExadataInfrastructureStorageGridArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalExadataInfrastructureStorageGridArrayInput)(nil)).Elem(), ExternalExadataInfrastructureStorageGridArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalExadataStorageConnectorCredentialInfoInput)(nil)).Elem(), ExternalExadataStorageConnectorCredentialInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalExadataStorageConnectorCredentialInfoPtrInput)(nil)).Elem(), ExternalExadataStorageConnectorCredentialInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalListenerEndpointInput)(nil)).Elem(), ExternalListenerEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalListenerEndpointArrayInput)(nil)).Elem(), ExternalListenerEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalListenerServicedAsmInput)(nil)).Elem(), ExternalListenerServicedAsmArgs{})
@@ -41965,6 +46318,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfigArrayInput)(nil)).Elem(), GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoInput)(nil)).Elem(), GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoArrayInput)(nil)).Elem(), GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoInput)(nil)).Elem(), GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayInput)(nil)).Elem(), GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetailInput)(nil)).Elem(), GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetailArrayInput)(nil)).Elem(), GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabasesFilterInput)(nil)).Elem(), GetExternalDatabasesFilterArgs{})
@@ -42123,6 +46478,48 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfigArrayInput)(nil)).Elem(), GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemsFilterInput)(nil)).Elem(), GetExternalDbSystemsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemsFilterArrayInput)(nil)).Elem(), GetExternalDbSystemsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataInfrastructureDatabaseSystemInput)(nil)).Elem(), GetExternalExadataInfrastructureDatabaseSystemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataInfrastructureDatabaseSystemArrayInput)(nil)).Elem(), GetExternalExadataInfrastructureDatabaseSystemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataInfrastructureStorageGridInput)(nil)).Elem(), GetExternalExadataInfrastructureStorageGridArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataInfrastructureStorageGridArrayInput)(nil)).Elem(), GetExternalExadataInfrastructureStorageGridArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionInput)(nil)).Elem(), GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayInput)(nil)).Elem(), GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemInput)(nil)).Elem(), GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayInput)(nil)).Elem(), GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemInput)(nil)).Elem(), GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayInput)(nil)).Elem(), GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridInput)(nil)).Elem(), GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayInput)(nil)).Elem(), GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataInfrastructuresFilterInput)(nil)).Elem(), GetExternalExadataInfrastructuresFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataInfrastructuresFilterArrayInput)(nil)).Elem(), GetExternalExadataInfrastructuresFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageConnectorCredentialInfoInput)(nil)).Elem(), GetExternalExadataStorageConnectorCredentialInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageConnectorCredentialInfoArrayInput)(nil)).Elem(), GetExternalExadataStorageConnectorCredentialInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionInput)(nil)).Elem(), GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayInput)(nil)).Elem(), GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemInput)(nil)).Elem(), GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayInput)(nil)).Elem(), GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoInput)(nil)).Elem(), GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayInput)(nil)).Elem(), GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageConnectorsFilterInput)(nil)).Elem(), GetExternalExadataStorageConnectorsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageConnectorsFilterArrayInput)(nil)).Elem(), GetExternalExadataStorageConnectorsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageGridStorageServerInput)(nil)).Elem(), GetExternalExadataStorageGridStorageServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageGridStorageServerArrayInput)(nil)).Elem(), GetExternalExadataStorageGridStorageServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageServerConnectorInput)(nil)).Elem(), GetExternalExadataStorageServerConnectorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageServerConnectorArrayInput)(nil)).Elem(), GetExternalExadataStorageServerConnectorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageServerIormPlanDbPlanInput)(nil)).Elem(), GetExternalExadataStorageServerIormPlanDbPlanArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageServerIormPlanDbPlanArrayInput)(nil)).Elem(), GetExternalExadataStorageServerIormPlanDbPlanArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageServerIormPlanDbPlanItemInput)(nil)).Elem(), GetExternalExadataStorageServerIormPlanDbPlanItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageServerIormPlanDbPlanItemArrayInput)(nil)).Elem(), GetExternalExadataStorageServerIormPlanDbPlanItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageServerOpenAlertHistoryAlertInput)(nil)).Elem(), GetExternalExadataStorageServerOpenAlertHistoryAlertArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageServerOpenAlertHistoryAlertArrayInput)(nil)).Elem(), GetExternalExadataStorageServerOpenAlertHistoryAlertArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageServerTopSqlCpuActivityActivityInput)(nil)).Elem(), GetExternalExadataStorageServerTopSqlCpuActivityActivityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageServerTopSqlCpuActivityActivityArrayInput)(nil)).Elem(), GetExternalExadataStorageServerTopSqlCpuActivityActivityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageServersExternalExadataStorageServerCollectionInput)(nil)).Elem(), GetExternalExadataStorageServersExternalExadataStorageServerCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayInput)(nil)).Elem(), GetExternalExadataStorageServersExternalExadataStorageServerCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemInput)(nil)).Elem(), GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayInput)(nil)).Elem(), GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageServersFilterInput)(nil)).Elem(), GetExternalExadataStorageServersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataStorageServersFilterArrayInput)(nil)).Elem(), GetExternalExadataStorageServersFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalListenerEndpointInput)(nil)).Elem(), GetExternalListenerEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalListenerEndpointArrayInput)(nil)).Elem(), GetExternalListenerEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalListenerServicedAsmInput)(nil)).Elem(), GetExternalListenerServicedAsmArgs{})
@@ -42475,6 +46872,12 @@ func init() {
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsPtrOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringPtrOutput{})
+	pulumi.RegisterOutputType(ExternalExadataInfrastructureDatabaseSystemOutput{})
+	pulumi.RegisterOutputType(ExternalExadataInfrastructureDatabaseSystemArrayOutput{})
+	pulumi.RegisterOutputType(ExternalExadataInfrastructureStorageGridOutput{})
+	pulumi.RegisterOutputType(ExternalExadataInfrastructureStorageGridArrayOutput{})
+	pulumi.RegisterOutputType(ExternalExadataStorageConnectorCredentialInfoOutput{})
+	pulumi.RegisterOutputType(ExternalExadataStorageConnectorCredentialInfoPtrOutput{})
 	pulumi.RegisterOutputType(ExternalListenerEndpointOutput{})
 	pulumi.RegisterOutputType(ExternalListenerEndpointArrayOutput{})
 	pulumi.RegisterOutputType(ExternalListenerServicedAsmOutput{})
@@ -42565,6 +46968,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoOutput{})
 	pulumi.RegisterOutputType(GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoOutput{})
+	pulumi.RegisterOutputType(GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetailOutput{})
 	pulumi.RegisterOutputType(GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDatabasesFilterOutput{})
@@ -42723,6 +47128,48 @@ func init() {
 	pulumi.RegisterOutputType(GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemsFilterOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataInfrastructureDatabaseSystemOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataInfrastructureDatabaseSystemArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataInfrastructureStorageGridOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataInfrastructureStorageGridArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemDatabaseSystemArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataInfrastructuresFilterOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataInfrastructuresFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageConnectorCredentialInfoOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageConnectorCredentialInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageConnectorsFilterOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageConnectorsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageGridStorageServerOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageGridStorageServerArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageServerConnectorOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageServerConnectorArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageServerIormPlanDbPlanOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageServerIormPlanDbPlanArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageServerIormPlanDbPlanItemOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageServerIormPlanDbPlanItemArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageServerOpenAlertHistoryAlertOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageServerOpenAlertHistoryAlertArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageServerTopSqlCpuActivityActivityOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageServersExternalExadataStorageServerCollectionOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageServersExternalExadataStorageServerCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageServersFilterOutput{})
+	pulumi.RegisterOutputType(GetExternalExadataStorageServersFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalListenerEndpointOutput{})
 	pulumi.RegisterOutputType(GetExternalListenerEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalListenerServicedAsmOutput{})

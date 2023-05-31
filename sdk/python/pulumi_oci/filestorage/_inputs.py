@@ -12,9 +12,11 @@ from .. import _utilities
 __all__ = [
     'ExportExportOptionArgs',
     'FileSystemSourceDetailArgs',
+    'FilesystemSnapshotPolicyScheduleArgs',
     'GetExportSetsFilterArgs',
     'GetExportsFilterArgs',
     'GetFileSystemsFilterArgs',
+    'GetFilesystemSnapshotPoliciesFilterArgs',
     'GetMountTargetsFilterArgs',
     'GetReplicationTargetsFilterArgs',
     'GetReplicationsFilterArgs',
@@ -34,7 +36,7 @@ class ExportExportOptionArgs:
         :param pulumi.Input[str] source: (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
                
                **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
-        :param pulumi.Input[str] access: (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+        :param pulumi.Input[str] access: (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
         :param pulumi.Input[str] anonymous_gid: (Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
         :param pulumi.Input[str] anonymous_uid: (Updatable) UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
         :param pulumi.Input[str] identity_squash: (Updatable) Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
@@ -70,7 +72,7 @@ class ExportExportOptionArgs:
     @pulumi.getter
     def access(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+        (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
         """
         return pulumi.get(self, "access")
 
@@ -175,6 +177,155 @@ class FileSystemSourceDetailArgs:
 
 
 @pulumi.input_type
+class FilesystemSnapshotPolicyScheduleArgs:
+    def __init__(__self__, *,
+                 period: pulumi.Input[str],
+                 time_zone: pulumi.Input[str],
+                 day_of_month: Optional[pulumi.Input[int]] = None,
+                 day_of_week: Optional[pulumi.Input[str]] = None,
+                 hour_of_day: Optional[pulumi.Input[int]] = None,
+                 month: Optional[pulumi.Input[str]] = None,
+                 retention_duration_in_seconds: Optional[pulumi.Input[str]] = None,
+                 schedule_prefix: Optional[pulumi.Input[str]] = None,
+                 time_schedule_start: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] period: (Updatable) The frequency of scheduled snapshots.
+        :param pulumi.Input[str] time_zone: (Updatable) Time zone used for scheduling the snapshot.
+        :param pulumi.Input[int] day_of_month: (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+        :param pulumi.Input[str] day_of_week: (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+        :param pulumi.Input[int] hour_of_day: (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+        :param pulumi.Input[str] month: (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+        :param pulumi.Input[str] retention_duration_in_seconds: (Updatable) The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
+        :param pulumi.Input[str] schedule_prefix: (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+        :param pulumi.Input[str] time_schedule_start: (Updatable) The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
+        """
+        pulumi.set(__self__, "period", period)
+        pulumi.set(__self__, "time_zone", time_zone)
+        if day_of_month is not None:
+            pulumi.set(__self__, "day_of_month", day_of_month)
+        if day_of_week is not None:
+            pulumi.set(__self__, "day_of_week", day_of_week)
+        if hour_of_day is not None:
+            pulumi.set(__self__, "hour_of_day", hour_of_day)
+        if month is not None:
+            pulumi.set(__self__, "month", month)
+        if retention_duration_in_seconds is not None:
+            pulumi.set(__self__, "retention_duration_in_seconds", retention_duration_in_seconds)
+        if schedule_prefix is not None:
+            pulumi.set(__self__, "schedule_prefix", schedule_prefix)
+        if time_schedule_start is not None:
+            pulumi.set(__self__, "time_schedule_start", time_schedule_start)
+
+    @property
+    @pulumi.getter
+    def period(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The frequency of scheduled snapshots.
+        """
+        return pulumi.get(self, "period")
+
+    @period.setter
+    def period(self, value: pulumi.Input[str]):
+        pulumi.set(self, "period", value)
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Time zone used for scheduling the snapshot.
+        """
+        return pulumi.get(self, "time_zone")
+
+    @time_zone.setter
+    def time_zone(self, value: pulumi.Input[str]):
+        pulumi.set(self, "time_zone", value)
+
+    @property
+    @pulumi.getter(name="dayOfMonth")
+    def day_of_month(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+        """
+        return pulumi.get(self, "day_of_month")
+
+    @day_of_month.setter
+    def day_of_month(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "day_of_month", value)
+
+    @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+        """
+        return pulumi.get(self, "day_of_week")
+
+    @day_of_week.setter
+    def day_of_week(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "day_of_week", value)
+
+    @property
+    @pulumi.getter(name="hourOfDay")
+    def hour_of_day(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+        """
+        return pulumi.get(self, "hour_of_day")
+
+    @hour_of_day.setter
+    def hour_of_day(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "hour_of_day", value)
+
+    @property
+    @pulumi.getter
+    def month(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+        """
+        return pulumi.get(self, "month")
+
+    @month.setter
+    def month(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "month", value)
+
+    @property
+    @pulumi.getter(name="retentionDurationInSeconds")
+    def retention_duration_in_seconds(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
+        """
+        return pulumi.get(self, "retention_duration_in_seconds")
+
+    @retention_duration_in_seconds.setter
+    def retention_duration_in_seconds(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "retention_duration_in_seconds", value)
+
+    @property
+    @pulumi.getter(name="schedulePrefix")
+    def schedule_prefix(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+        """
+        return pulumi.get(self, "schedule_prefix")
+
+    @schedule_prefix.setter
+    def schedule_prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "schedule_prefix", value)
+
+    @property
+    @pulumi.getter(name="timeScheduleStart")
+    def time_schedule_start(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
+        """
+        return pulumi.get(self, "time_schedule_start")
+
+    @time_schedule_start.setter
+    def time_schedule_start(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_schedule_start", value)
+
+
+@pulumi.input_type
 class GetExportSetsFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -254,6 +405,45 @@ class GetExportsFilterArgs:
 
 @pulumi.input_type
 class GetFileSystemsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetFilesystemSnapshotPoliciesFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

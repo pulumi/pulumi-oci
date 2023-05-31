@@ -32,6 +32,7 @@ namespace Pulumi.Oci.FileStorage
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
+    ///         ExpirationTime = @var.Snapshot_expiration_time,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -59,10 +60,22 @@ namespace Pulumi.Oci.FileStorage
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The time when this snapshot will be deleted.
+        /// </summary>
+        [Output("expirationTime")]
+        public Output<string> ExpirationTime { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
         /// </summary>
         [Output("fileSystemId")]
         public Output<string> FileSystemId { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
+        /// </summary>
+        [Output("filesystemSnapshotPolicyId")]
+        public Output<string> FilesystemSnapshotPolicyId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -188,6 +201,12 @@ namespace Pulumi.Oci.FileStorage
         }
 
         /// <summary>
+        /// (Updatable) The time when this snapshot will be deleted.
+        /// </summary>
+        [Input("expirationTime")]
+        public Input<string>? ExpirationTime { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
         /// </summary>
         [Input("fileSystemId", required: true)]
@@ -240,10 +259,22 @@ namespace Pulumi.Oci.FileStorage
         }
 
         /// <summary>
+        /// (Updatable) The time when this snapshot will be deleted.
+        /// </summary>
+        [Input("expirationTime")]
+        public Input<string>? ExpirationTime { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
         /// </summary>
         [Input("fileSystemId")]
         public Input<string>? FileSystemId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
+        /// </summary>
+        [Input("filesystemSnapshotPolicyId")]
+        public Input<string>? FilesystemSnapshotPolicyId { get; set; }
 
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;

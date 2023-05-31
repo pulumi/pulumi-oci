@@ -14,11 +14,17 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSnapshotsResult {
+    private @Nullable String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
      * 
      */
-    private String fileSystemId;
+    private @Nullable String fileSystemId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
+     * 
+     */
+    private @Nullable String filesystemSnapshotPolicyId;
     private @Nullable List<GetSnapshotsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot.
@@ -37,12 +43,22 @@ public final class GetSnapshotsResult {
     private @Nullable String state;
 
     private GetSnapshotsResult() {}
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
      * 
      */
-    public String fileSystemId() {
-        return this.fileSystemId;
+    public Optional<String> fileSystemId() {
+        return Optional.ofNullable(this.fileSystemId);
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
+     * 
+     */
+    public Optional<String> filesystemSnapshotPolicyId() {
+        return Optional.ofNullable(this.filesystemSnapshotPolicyId);
     }
     public List<GetSnapshotsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -78,7 +94,9 @@ public final class GetSnapshotsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String fileSystemId;
+        private @Nullable String compartmentId;
+        private @Nullable String fileSystemId;
+        private @Nullable String filesystemSnapshotPolicyId;
         private @Nullable List<GetSnapshotsFilter> filters;
         private @Nullable String id;
         private List<GetSnapshotsSnapshot> snapshots;
@@ -86,7 +104,9 @@ public final class GetSnapshotsResult {
         public Builder() {}
         public Builder(GetSnapshotsResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.compartmentId = defaults.compartmentId;
     	      this.fileSystemId = defaults.fileSystemId;
+    	      this.filesystemSnapshotPolicyId = defaults.filesystemSnapshotPolicyId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.snapshots = defaults.snapshots;
@@ -94,8 +114,18 @@ public final class GetSnapshotsResult {
         }
 
         @CustomType.Setter
-        public Builder fileSystemId(String fileSystemId) {
-            this.fileSystemId = Objects.requireNonNull(fileSystemId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder fileSystemId(@Nullable String fileSystemId) {
+            this.fileSystemId = fileSystemId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder filesystemSnapshotPolicyId(@Nullable String filesystemSnapshotPolicyId) {
+            this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             return this;
         }
         @CustomType.Setter
@@ -126,7 +156,9 @@ public final class GetSnapshotsResult {
         }
         public GetSnapshotsResult build() {
             final var o = new GetSnapshotsResult();
+            o.compartmentId = compartmentId;
             o.fileSystemId = fileSystemId;
+            o.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             o.filters = filters;
             o.id = id;
             o.snapshots = snapshots;

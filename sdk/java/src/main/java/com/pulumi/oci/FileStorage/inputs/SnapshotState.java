@@ -34,6 +34,21 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The time when this snapshot will be deleted.
+     * 
+     */
+    @Import(name="expirationTime")
+    private @Nullable Output<String> expirationTime;
+
+    /**
+     * @return (Updatable) The time when this snapshot will be deleted.
+     * 
+     */
+    public Optional<Output<String>> expirationTime() {
+        return Optional.ofNullable(this.expirationTime);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
      * 
      */
@@ -46,6 +61,21 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> fileSystemId() {
         return Optional.ofNullable(this.fileSystemId);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
+     * 
+     */
+    @Import(name="filesystemSnapshotPolicyId")
+    private @Nullable Output<String> filesystemSnapshotPolicyId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
+     * 
+     */
+    public Optional<Output<String>> filesystemSnapshotPolicyId() {
+        return Optional.ofNullable(this.filesystemSnapshotPolicyId);
     }
 
     /**
@@ -207,7 +237,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     private SnapshotState(SnapshotState $) {
         this.definedTags = $.definedTags;
+        this.expirationTime = $.expirationTime;
         this.fileSystemId = $.fileSystemId;
+        this.filesystemSnapshotPolicyId = $.filesystemSnapshotPolicyId;
         this.freeformTags = $.freeformTags;
         this.isCloneSource = $.isCloneSource;
         this.lifecycleDetails = $.lifecycleDetails;
@@ -259,6 +291,27 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param expirationTime (Updatable) The time when this snapshot will be deleted.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder expirationTime(@Nullable Output<String> expirationTime) {
+            $.expirationTime = expirationTime;
+            return this;
+        }
+
+        /**
+         * @param expirationTime (Updatable) The time when this snapshot will be deleted.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder expirationTime(String expirationTime) {
+            return expirationTime(Output.of(expirationTime));
+        }
+
+        /**
          * @param fileSystemId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
          * 
          * @return builder
@@ -277,6 +330,27 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder fileSystemId(String fileSystemId) {
             return fileSystemId(Output.of(fileSystemId));
+        }
+
+        /**
+         * @param filesystemSnapshotPolicyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filesystemSnapshotPolicyId(@Nullable Output<String> filesystemSnapshotPolicyId) {
+            $.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
+            return this;
+        }
+
+        /**
+         * @param filesystemSnapshotPolicyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filesystemSnapshotPolicyId(String filesystemSnapshotPolicyId) {
+            return filesystemSnapshotPolicyId(Output.of(filesystemSnapshotPolicyId));
         }
 
         /**

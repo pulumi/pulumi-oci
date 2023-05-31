@@ -30,7 +30,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The OCID of the compute instance backing this node.
+        /// The OCID of the node pool.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -38,11 +38,11 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodePoolsNodePoolInitialNodeLabelResult> InitialNodeLabels;
         /// <summary>
-        /// The version of Kubernetes this node is running.
+        /// The version of Kubernetes running on the nodes in the node pool.
         /// </summary>
         public readonly string KubernetesVersion;
         /// <summary>
-        /// Details about the state of the node.
+        /// Details about the state of the nodepool.
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
@@ -73,9 +73,6 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// Node Pool Cycling Details
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodePoolsNodePoolNodePoolCyclingDetailResult> NodePoolCyclingDetails;
-        /// <summary>
-        /// The OCID of the node pool to which this node belongs.
-        /// </summary>
         public readonly string NodePoolId;
         /// <summary>
         /// The name of the node shape of the nodes in the node pool.
@@ -93,9 +90,6 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodePoolsNodePoolNodeSourceResult> NodeSources;
-        /// <summary>
-        /// The nodes in the node pool.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetNodePoolsNodePoolNodeResult> Nodes;
         /// <summary>
         /// The number of nodes in each subnet.

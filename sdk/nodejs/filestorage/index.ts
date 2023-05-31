@@ -20,6 +20,11 @@ export type FileSystem = import("./fileSystem").FileSystem;
 export const FileSystem: typeof import("./fileSystem").FileSystem = null as any;
 utilities.lazyLoad(exports, ["FileSystem"], () => require("./fileSystem"));
 
+export { FilesystemSnapshotPolicyArgs, FilesystemSnapshotPolicyState } from "./filesystemSnapshotPolicy";
+export type FilesystemSnapshotPolicy = import("./filesystemSnapshotPolicy").FilesystemSnapshotPolicy;
+export const FilesystemSnapshotPolicy: typeof import("./filesystemSnapshotPolicy").FilesystemSnapshotPolicy = null as any;
+utilities.lazyLoad(exports, ["FilesystemSnapshotPolicy"], () => require("./filesystemSnapshotPolicy"));
+
 export { GetExportSetsArgs, GetExportSetsResult, GetExportSetsOutputArgs } from "./getExportSets";
 export const getExportSets: typeof import("./getExportSets").getExportSets = null as any;
 export const getExportSetsOutput: typeof import("./getExportSets").getExportSetsOutput = null as any;
@@ -34,6 +39,16 @@ export { GetFileSystemsArgs, GetFileSystemsResult, GetFileSystemsOutputArgs } fr
 export const getFileSystems: typeof import("./getFileSystems").getFileSystems = null as any;
 export const getFileSystemsOutput: typeof import("./getFileSystems").getFileSystemsOutput = null as any;
 utilities.lazyLoad(exports, ["getFileSystems","getFileSystemsOutput"], () => require("./getFileSystems"));
+
+export { GetFilesystemSnapshotPoliciesArgs, GetFilesystemSnapshotPoliciesResult, GetFilesystemSnapshotPoliciesOutputArgs } from "./getFilesystemSnapshotPolicies";
+export const getFilesystemSnapshotPolicies: typeof import("./getFilesystemSnapshotPolicies").getFilesystemSnapshotPolicies = null as any;
+export const getFilesystemSnapshotPoliciesOutput: typeof import("./getFilesystemSnapshotPolicies").getFilesystemSnapshotPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getFilesystemSnapshotPolicies","getFilesystemSnapshotPoliciesOutput"], () => require("./getFilesystemSnapshotPolicies"));
+
+export { GetFilesystemSnapshotPolicyArgs, GetFilesystemSnapshotPolicyResult, GetFilesystemSnapshotPolicyOutputArgs } from "./getFilesystemSnapshotPolicy";
+export const getFilesystemSnapshotPolicy: typeof import("./getFilesystemSnapshotPolicy").getFilesystemSnapshotPolicy = null as any;
+export const getFilesystemSnapshotPolicyOutput: typeof import("./getFilesystemSnapshotPolicy").getFilesystemSnapshotPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getFilesystemSnapshotPolicy","getFilesystemSnapshotPolicyOutput"], () => require("./getFilesystemSnapshotPolicy"));
 
 export { GetMountTargetsArgs, GetMountTargetsResult, GetMountTargetsOutputArgs } from "./getMountTargets";
 export const getMountTargets: typeof import("./getMountTargets").getMountTargets = null as any;
@@ -96,6 +111,8 @@ const _module = {
                 return new ExportSet(name, <any>undefined, { urn })
             case "oci:FileStorage/fileSystem:FileSystem":
                 return new FileSystem(name, <any>undefined, { urn })
+            case "oci:FileStorage/filesystemSnapshotPolicy:FilesystemSnapshotPolicy":
+                return new FilesystemSnapshotPolicy(name, <any>undefined, { urn })
             case "oci:FileStorage/mountTarget:MountTarget":
                 return new MountTarget(name, <any>undefined, { urn })
             case "oci:FileStorage/replication:Replication":
@@ -110,6 +127,7 @@ const _module = {
 pulumi.runtime.registerResourceModule("oci", "FileStorage/export", _module)
 pulumi.runtime.registerResourceModule("oci", "FileStorage/exportSet", _module)
 pulumi.runtime.registerResourceModule("oci", "FileStorage/fileSystem", _module)
+pulumi.runtime.registerResourceModule("oci", "FileStorage/filesystemSnapshotPolicy", _module)
 pulumi.runtime.registerResourceModule("oci", "FileStorage/mountTarget", _module)
 pulumi.runtime.registerResourceModule("oci", "FileStorage/replication", _module)
 pulumi.runtime.registerResourceModule("oci", "FileStorage/snapshot", _module)

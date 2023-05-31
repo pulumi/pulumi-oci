@@ -34,11 +34,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabases(ctx, &databasemanagement.GetManagedDatabasesArgs{
-//				CompartmentId:    _var.Compartment_id,
-//				DeploymentType:   pulumi.StringRef(_var.Managed_database_deployment_type),
-//				Id:               pulumi.StringRef(_var.Managed_database_id),
-//				ManagementOption: pulumi.StringRef(_var.Managed_database_management_option),
-//				Name:             pulumi.StringRef(_var.Managed_database_name),
+//				CompartmentId:                   _var.Compartment_id,
+//				DeploymentType:                  pulumi.StringRef(_var.Managed_database_deployment_type),
+//				ExternalExadataInfrastructureId: pulumi.StringRef(oci_database_management_external_exadata_infrastructure.Test_external_exadata_infrastructure.Id),
+//				Id:                              pulumi.StringRef(_var.Managed_database_id),
+//				ManagementOption:                pulumi.StringRef(_var.Managed_database_management_option),
+//				Name:                            pulumi.StringRef(_var.Managed_database_name),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -62,8 +63,10 @@ type GetManagedDatabasesArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return Managed Databases of the specified deployment type.
-	DeploymentType *string                     `pulumi:"deploymentType"`
-	Filters        []GetManagedDatabasesFilter `pulumi:"filters"`
+	DeploymentType *string `pulumi:"deploymentType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+	ExternalExadataInfrastructureId *string                     `pulumi:"externalExadataInfrastructureId"`
+	Filters                         []GetManagedDatabasesFilter `pulumi:"filters"`
 	// The identifier of the resource.
 	Id *string `pulumi:"id"`
 	// A filter to return Managed Databases with the specified management option.
@@ -77,8 +80,9 @@ type GetManagedDatabasesResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The infrastructure used to deploy the Oracle Database.
-	DeploymentType *string                     `pulumi:"deploymentType"`
-	Filters        []GetManagedDatabasesFilter `pulumi:"filters"`
+	DeploymentType                  *string                     `pulumi:"deploymentType"`
+	ExternalExadataInfrastructureId *string                     `pulumi:"externalExadataInfrastructureId"`
+	Filters                         []GetManagedDatabasesFilter `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
 	Id *string `pulumi:"id"`
 	// The list of managed_database_collection.
@@ -107,8 +111,10 @@ type GetManagedDatabasesOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return Managed Databases of the specified deployment type.
-	DeploymentType pulumi.StringPtrInput               `pulumi:"deploymentType"`
-	Filters        GetManagedDatabasesFilterArrayInput `pulumi:"filters"`
+	DeploymentType pulumi.StringPtrInput `pulumi:"deploymentType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+	ExternalExadataInfrastructureId pulumi.StringPtrInput               `pulumi:"externalExadataInfrastructureId"`
+	Filters                         GetManagedDatabasesFilterArrayInput `pulumi:"filters"`
 	// The identifier of the resource.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter to return Managed Databases with the specified management option.
@@ -144,6 +150,10 @@ func (o GetManagedDatabasesResultOutput) CompartmentId() pulumi.StringOutput {
 // The infrastructure used to deploy the Oracle Database.
 func (o GetManagedDatabasesResultOutput) DeploymentType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedDatabasesResult) *string { return v.DeploymentType }).(pulumi.StringPtrOutput)
+}
+
+func (o GetManagedDatabasesResultOutput) ExternalExadataInfrastructureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabasesResult) *string { return v.ExternalExadataInfrastructureId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabasesResultOutput) Filters() GetManagedDatabasesFilterArrayOutput {

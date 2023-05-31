@@ -204,7 +204,7 @@ namespace Pulumi.Oci.Core
         public Output<bool?> Async { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.  This also includes live migration preference for infrastructure maintenance.
+        /// (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
         /// </summary>
         [Output("availabilityConfig")]
         public Output<Outputs.InstanceAvailabilityConfig> AvailabilityConfig { get; private set; } = null!;
@@ -552,7 +552,7 @@ namespace Pulumi.Oci.Core
         public Input<bool>? Async { get; set; }
 
         /// <summary>
-        /// (Updatable) Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.  This also includes live migration preference for infrastructure maintenance.
+        /// (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
         /// </summary>
         [Input("availabilityConfig")]
         public Input<Inputs.InstanceAvailabilityConfigArgs>? AvailabilityConfig { get; set; }
@@ -828,7 +828,7 @@ namespace Pulumi.Oci.Core
         public Input<bool>? Async { get; set; }
 
         /// <summary>
-        /// (Updatable) Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.  This also includes live migration preference for infrastructure maintenance.
+        /// (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
         /// </summary>
         [Input("availabilityConfig")]
         public Input<Inputs.InstanceAvailabilityConfigGetArgs>? AvailabilityConfig { get; set; }

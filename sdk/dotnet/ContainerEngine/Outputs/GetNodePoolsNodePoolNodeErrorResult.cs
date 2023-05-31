@@ -13,17 +13,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
     [OutputType]
     public sealed class GetNodePoolsNodePoolNodeErrorResult
     {
-        /// <summary>
-        /// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-        /// </summary>
         public readonly string Code;
-        /// <summary>
-        /// A human-readable error string of the upstream error.
-        /// </summary>
         public readonly string Message;
-        /// <summary>
-        /// The status of the HTTP response encountered in the upstream error.
-        /// </summary>
         public readonly string Status;
 
         [OutputConstructor]

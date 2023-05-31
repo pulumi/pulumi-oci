@@ -13,6 +13,7 @@ from . import outputs
 __all__ = [
     'ExportExportOption',
     'FileSystemSourceDetail',
+    'FilesystemSnapshotPolicySchedule',
     'GetExportSetsExportSetResult',
     'GetExportSetsFilterResult',
     'GetExportsExportResult',
@@ -21,6 +22,10 @@ __all__ = [
     'GetFileSystemsFileSystemResult',
     'GetFileSystemsFileSystemSourceDetailResult',
     'GetFileSystemsFilterResult',
+    'GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyResult',
+    'GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult',
+    'GetFilesystemSnapshotPoliciesFilterResult',
+    'GetFilesystemSnapshotPolicyScheduleResult',
     'GetMountTargetsFilterResult',
     'GetMountTargetsMountTargetResult',
     'GetReplicationTargetsFilterResult',
@@ -67,7 +72,7 @@ class ExportExportOption(dict):
         :param str source: (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
                
                **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
-        :param str access: (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+        :param str access: (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
         :param str anonymous_gid: (Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
         :param str anonymous_uid: (Updatable) UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
         :param str identity_squash: (Updatable) Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
@@ -99,7 +104,7 @@ class ExportExportOption(dict):
     @pulumi.getter
     def access(self) -> Optional[str]:
         """
-        (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+        (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
         """
         return pulumi.get(self, "access")
 
@@ -192,6 +197,148 @@ class FileSystemSourceDetail(dict):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_snapshot_id")
+
+
+@pulumi.output_type
+class FilesystemSnapshotPolicySchedule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "timeZone":
+            suggest = "time_zone"
+        elif key == "dayOfMonth":
+            suggest = "day_of_month"
+        elif key == "dayOfWeek":
+            suggest = "day_of_week"
+        elif key == "hourOfDay":
+            suggest = "hour_of_day"
+        elif key == "retentionDurationInSeconds":
+            suggest = "retention_duration_in_seconds"
+        elif key == "schedulePrefix":
+            suggest = "schedule_prefix"
+        elif key == "timeScheduleStart":
+            suggest = "time_schedule_start"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FilesystemSnapshotPolicySchedule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FilesystemSnapshotPolicySchedule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FilesystemSnapshotPolicySchedule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 period: str,
+                 time_zone: str,
+                 day_of_month: Optional[int] = None,
+                 day_of_week: Optional[str] = None,
+                 hour_of_day: Optional[int] = None,
+                 month: Optional[str] = None,
+                 retention_duration_in_seconds: Optional[str] = None,
+                 schedule_prefix: Optional[str] = None,
+                 time_schedule_start: Optional[str] = None):
+        """
+        :param str period: (Updatable) The frequency of scheduled snapshots.
+        :param str time_zone: (Updatable) Time zone used for scheduling the snapshot.
+        :param int day_of_month: (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+        :param str day_of_week: (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+        :param int hour_of_day: (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+        :param str month: (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+        :param str retention_duration_in_seconds: (Updatable) The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
+        :param str schedule_prefix: (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+        :param str time_schedule_start: (Updatable) The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
+        """
+        pulumi.set(__self__, "period", period)
+        pulumi.set(__self__, "time_zone", time_zone)
+        if day_of_month is not None:
+            pulumi.set(__self__, "day_of_month", day_of_month)
+        if day_of_week is not None:
+            pulumi.set(__self__, "day_of_week", day_of_week)
+        if hour_of_day is not None:
+            pulumi.set(__self__, "hour_of_day", hour_of_day)
+        if month is not None:
+            pulumi.set(__self__, "month", month)
+        if retention_duration_in_seconds is not None:
+            pulumi.set(__self__, "retention_duration_in_seconds", retention_duration_in_seconds)
+        if schedule_prefix is not None:
+            pulumi.set(__self__, "schedule_prefix", schedule_prefix)
+        if time_schedule_start is not None:
+            pulumi.set(__self__, "time_schedule_start", time_schedule_start)
+
+    @property
+    @pulumi.getter
+    def period(self) -> str:
+        """
+        (Updatable) The frequency of scheduled snapshots.
+        """
+        return pulumi.get(self, "period")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> str:
+        """
+        (Updatable) Time zone used for scheduling the snapshot.
+        """
+        return pulumi.get(self, "time_zone")
+
+    @property
+    @pulumi.getter(name="dayOfMonth")
+    def day_of_month(self) -> Optional[int]:
+        """
+        (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+        """
+        return pulumi.get(self, "day_of_month")
+
+    @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> Optional[str]:
+        """
+        (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+        """
+        return pulumi.get(self, "day_of_week")
+
+    @property
+    @pulumi.getter(name="hourOfDay")
+    def hour_of_day(self) -> Optional[int]:
+        """
+        (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+        """
+        return pulumi.get(self, "hour_of_day")
+
+    @property
+    @pulumi.getter
+    def month(self) -> Optional[str]:
+        """
+        (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+        """
+        return pulumi.get(self, "month")
+
+    @property
+    @pulumi.getter(name="retentionDurationInSeconds")
+    def retention_duration_in_seconds(self) -> Optional[str]:
+        """
+        (Updatable) The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
+        """
+        return pulumi.get(self, "retention_duration_in_seconds")
+
+    @property
+    @pulumi.getter(name="schedulePrefix")
+    def schedule_prefix(self) -> Optional[str]:
+        """
+        (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+        """
+        return pulumi.get(self, "schedule_prefix")
+
+    @property
+    @pulumi.getter(name="timeScheduleStart")
+    def time_schedule_start(self) -> Optional[str]:
+        """
+        (Updatable) The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
+        """
+        return pulumi.get(self, "time_schedule_start")
 
 
 @pulumi.output_type
@@ -428,7 +575,7 @@ class GetExportsExportExportOptionResult(dict):
                  require_privileged_source_port: bool,
                  source: str):
         """
-        :param str access: Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+        :param str access: Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
         :param str anonymous_gid: GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
         :param str anonymous_uid: UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
         :param str identity_squash: Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
@@ -446,7 +593,7 @@ class GetExportsExportExportOptionResult(dict):
     @pulumi.getter
     def access(self) -> str:
         """
-        Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
+        Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
         """
         return pulumi.get(self, "access")
 
@@ -525,6 +672,7 @@ class GetFileSystemsFileSystemResult(dict):
                  compartment_id: str,
                  defined_tags: Mapping[str, Any],
                  display_name: str,
+                 filesystem_snapshot_policy_id: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_clone_parent: bool,
@@ -543,6 +691,7 @@ class GetFileSystemsFileSystemResult(dict):
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+        :param str filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
         :param bool is_clone_parent: Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -561,6 +710,7 @@ class GetFileSystemsFileSystemResult(dict):
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_clone_parent", is_clone_parent)
@@ -606,6 +756,14 @@ class GetFileSystemsFileSystemResult(dict):
         A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="filesystemSnapshotPolicyId")
+    def filesystem_snapshot_policy_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
+        """
+        return pulumi.get(self, "filesystem_snapshot_policy_id")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -766,6 +924,362 @@ class GetFileSystemsFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: str,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 policy_prefix: str,
+                 schedules: Sequence['outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult'],
+                 state: str,
+                 time_created: str):
+        """
+        :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
+        :param str policy_prefix: The prefix to apply to all snapshots created by this policy.  Example: `acme`
+        :param Sequence['GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs'] schedules: The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
+        :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+        :param str time_created: The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "policy_prefix", policy_prefix)
+        pulumi.set(__self__, "schedules", schedules)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="policyPrefix")
+    def policy_prefix(self) -> str:
+        """
+        The prefix to apply to all snapshots created by this policy.  Example: `acme`
+        """
+        return pulumi.get(self, "policy_prefix")
+
+    @property
+    @pulumi.getter
+    def schedules(self) -> Sequence['outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult']:
+        """
+        The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
+        """
+        return pulumi.get(self, "schedules")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult(dict):
+    def __init__(__self__, *,
+                 day_of_month: int,
+                 day_of_week: str,
+                 hour_of_day: int,
+                 month: str,
+                 period: str,
+                 retention_duration_in_seconds: str,
+                 schedule_prefix: str,
+                 time_schedule_start: str,
+                 time_zone: str):
+        """
+        :param int day_of_month: The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+        :param str day_of_week: The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+        :param int hour_of_day: The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+        :param str month: The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+        :param str period: The frequency of scheduled snapshots.
+        :param str retention_duration_in_seconds: The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
+        :param str schedule_prefix: A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+        :param str time_schedule_start: The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
+        :param str time_zone: Time zone used for scheduling the snapshot.
+        """
+        pulumi.set(__self__, "day_of_month", day_of_month)
+        pulumi.set(__self__, "day_of_week", day_of_week)
+        pulumi.set(__self__, "hour_of_day", hour_of_day)
+        pulumi.set(__self__, "month", month)
+        pulumi.set(__self__, "period", period)
+        pulumi.set(__self__, "retention_duration_in_seconds", retention_duration_in_seconds)
+        pulumi.set(__self__, "schedule_prefix", schedule_prefix)
+        pulumi.set(__self__, "time_schedule_start", time_schedule_start)
+        pulumi.set(__self__, "time_zone", time_zone)
+
+    @property
+    @pulumi.getter(name="dayOfMonth")
+    def day_of_month(self) -> int:
+        """
+        The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+        """
+        return pulumi.get(self, "day_of_month")
+
+    @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> str:
+        """
+        The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+        """
+        return pulumi.get(self, "day_of_week")
+
+    @property
+    @pulumi.getter(name="hourOfDay")
+    def hour_of_day(self) -> int:
+        """
+        The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+        """
+        return pulumi.get(self, "hour_of_day")
+
+    @property
+    @pulumi.getter
+    def month(self) -> str:
+        """
+        The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+        """
+        return pulumi.get(self, "month")
+
+    @property
+    @pulumi.getter
+    def period(self) -> str:
+        """
+        The frequency of scheduled snapshots.
+        """
+        return pulumi.get(self, "period")
+
+    @property
+    @pulumi.getter(name="retentionDurationInSeconds")
+    def retention_duration_in_seconds(self) -> str:
+        """
+        The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
+        """
+        return pulumi.get(self, "retention_duration_in_seconds")
+
+    @property
+    @pulumi.getter(name="schedulePrefix")
+    def schedule_prefix(self) -> str:
+        """
+        A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+        """
+        return pulumi.get(self, "schedule_prefix")
+
+    @property
+    @pulumi.getter(name="timeScheduleStart")
+    def time_schedule_start(self) -> str:
+        """
+        The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
+        """
+        return pulumi.get(self, "time_schedule_start")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> str:
+        """
+        Time zone used for scheduling the snapshot.
+        """
+        return pulumi.get(self, "time_zone")
+
+
+@pulumi.output_type
+class GetFilesystemSnapshotPoliciesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFilesystemSnapshotPolicyScheduleResult(dict):
+    def __init__(__self__, *,
+                 day_of_month: int,
+                 day_of_week: str,
+                 hour_of_day: int,
+                 month: str,
+                 period: str,
+                 retention_duration_in_seconds: str,
+                 schedule_prefix: str,
+                 time_schedule_start: str,
+                 time_zone: str):
+        """
+        :param int day_of_month: The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+        :param str day_of_week: The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+        :param int hour_of_day: The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+        :param str month: The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+        :param str period: The frequency of scheduled snapshots.
+        :param str retention_duration_in_seconds: The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
+        :param str schedule_prefix: A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+        :param str time_schedule_start: The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
+        :param str time_zone: Time zone used for scheduling the snapshot.
+        """
+        pulumi.set(__self__, "day_of_month", day_of_month)
+        pulumi.set(__self__, "day_of_week", day_of_week)
+        pulumi.set(__self__, "hour_of_day", hour_of_day)
+        pulumi.set(__self__, "month", month)
+        pulumi.set(__self__, "period", period)
+        pulumi.set(__self__, "retention_duration_in_seconds", retention_duration_in_seconds)
+        pulumi.set(__self__, "schedule_prefix", schedule_prefix)
+        pulumi.set(__self__, "time_schedule_start", time_schedule_start)
+        pulumi.set(__self__, "time_zone", time_zone)
+
+    @property
+    @pulumi.getter(name="dayOfMonth")
+    def day_of_month(self) -> int:
+        """
+        The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+        """
+        return pulumi.get(self, "day_of_month")
+
+    @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> str:
+        """
+        The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+        """
+        return pulumi.get(self, "day_of_week")
+
+    @property
+    @pulumi.getter(name="hourOfDay")
+    def hour_of_day(self) -> int:
+        """
+        The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+        """
+        return pulumi.get(self, "hour_of_day")
+
+    @property
+    @pulumi.getter
+    def month(self) -> str:
+        """
+        The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+        """
+        return pulumi.get(self, "month")
+
+    @property
+    @pulumi.getter
+    def period(self) -> str:
+        """
+        The frequency of scheduled snapshots.
+        """
+        return pulumi.get(self, "period")
+
+    @property
+    @pulumi.getter(name="retentionDurationInSeconds")
+    def retention_duration_in_seconds(self) -> str:
+        """
+        The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
+        """
+        return pulumi.get(self, "retention_duration_in_seconds")
+
+    @property
+    @pulumi.getter(name="schedulePrefix")
+    def schedule_prefix(self) -> str:
+        """
+        A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+        """
+        return pulumi.get(self, "schedule_prefix")
+
+    @property
+    @pulumi.getter(name="timeScheduleStart")
+    def time_schedule_start(self) -> str:
+        """
+        The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
+        """
+        return pulumi.get(self, "time_schedule_start")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> str:
+        """
+        Time zone used for scheduling the snapshot.
+        """
+        return pulumi.get(self, "time_zone")
 
 
 @pulumi.output_type
@@ -1427,7 +1941,9 @@ class GetSnapshotsFilterResult(dict):
 class GetSnapshotsSnapshotResult(dict):
     def __init__(__self__, *,
                  defined_tags: Mapping[str, Any],
+                 expiration_time: str,
                  file_system_id: str,
+                 filesystem_snapshot_policy_id: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_clone_source: bool,
@@ -1440,7 +1956,9 @@ class GetSnapshotsSnapshotResult(dict):
                  time_created: str):
         """
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str expiration_time: The time when this snapshot will be deleted.
         :param str file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
+        :param str filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
         :param bool is_clone_source: Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -1456,7 +1974,9 @@ class GetSnapshotsSnapshotResult(dict):
         :param str time_created: The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "expiration_time", expiration_time)
         pulumi.set(__self__, "file_system_id", file_system_id)
+        pulumi.set(__self__, "filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_clone_source", is_clone_source)
@@ -1477,12 +1997,28 @@ class GetSnapshotsSnapshotResult(dict):
         return pulumi.get(self, "defined_tags")
 
     @property
+    @pulumi.getter(name="expirationTime")
+    def expiration_time(self) -> str:
+        """
+        The time when this snapshot will be deleted.
+        """
+        return pulumi.get(self, "expiration_time")
+
+    @property
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> str:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
         """
         return pulumi.get(self, "file_system_id")
+
+    @property
+    @pulumi.getter(name="filesystemSnapshotPolicyId")
+    def filesystem_snapshot_policy_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
+        """
+        return pulumi.get(self, "filesystem_snapshot_policy_id")
 
     @property
     @pulumi.getter(name="freeformTags")

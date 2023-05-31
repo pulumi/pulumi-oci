@@ -10,6 +10,521 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type GetVlansVlan struct {
+	// The VLAN's availability domain. This attribute will be null if this is a regional VLAN rather than an AD-specific VLAN.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The range of IPv4 addresses that will be used for layer 3 communication with hosts outside the VLAN.  Example: `192.168.1.0/24`
+	CidrBlock string `pulumi:"cidrBlock"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The VLAN's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id string `pulumi:"id"`
+	// A list of the OCIDs of the network security groups (NSGs) to use with this VLAN. All VNICs in the VLAN belong to these NSGs. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+	NsgIds []string `pulumi:"nsgIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the VLAN uses.
+	RouteTableId string `pulumi:"routeTableId"`
+	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// The date and time the VLAN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	VcnId string `pulumi:"vcnId"`
+	// The IEEE 802.1Q VLAN tag of this VLAN.  Example: `100`
+	VlanTag int `pulumi:"vlanTag"`
+}
+
+// GetVlansVlanInput is an input type that accepts GetVlansVlanArgs and GetVlansVlanOutput values.
+// You can construct a concrete instance of `GetVlansVlanInput` via:
+//
+//	GetVlansVlanArgs{...}
+type GetVlansVlanInput interface {
+	pulumi.Input
+
+	ToGetVlansVlanOutput() GetVlansVlanOutput
+	ToGetVlansVlanOutputWithContext(context.Context) GetVlansVlanOutput
+}
+
+type GetVlansVlanArgs struct {
+	// The VLAN's availability domain. This attribute will be null if this is a regional VLAN rather than an AD-specific VLAN.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The range of IPv4 addresses that will be used for layer 3 communication with hosts outside the VLAN.  Example: `192.168.1.0/24`
+	CidrBlock pulumi.StringInput `pulumi:"cidrBlock"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The VLAN's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id pulumi.StringInput `pulumi:"id"`
+	// A list of the OCIDs of the network security groups (NSGs) to use with this VLAN. All VNICs in the VLAN belong to these NSGs. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the VLAN uses.
+	RouteTableId pulumi.StringInput `pulumi:"routeTableId"`
+	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the VLAN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	VcnId pulumi.StringInput `pulumi:"vcnId"`
+	// The IEEE 802.1Q VLAN tag of this VLAN.  Example: `100`
+	VlanTag pulumi.IntInput `pulumi:"vlanTag"`
+}
+
+func (GetVlansVlanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVlansVlan)(nil)).Elem()
+}
+
+func (i GetVlansVlanArgs) ToGetVlansVlanOutput() GetVlansVlanOutput {
+	return i.ToGetVlansVlanOutputWithContext(context.Background())
+}
+
+func (i GetVlansVlanArgs) ToGetVlansVlanOutputWithContext(ctx context.Context) GetVlansVlanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVlansVlanOutput)
+}
+
+// GetVlansVlanArrayInput is an input type that accepts GetVlansVlanArray and GetVlansVlanArrayOutput values.
+// You can construct a concrete instance of `GetVlansVlanArrayInput` via:
+//
+//	GetVlansVlanArray{ GetVlansVlanArgs{...} }
+type GetVlansVlanArrayInput interface {
+	pulumi.Input
+
+	ToGetVlansVlanArrayOutput() GetVlansVlanArrayOutput
+	ToGetVlansVlanArrayOutputWithContext(context.Context) GetVlansVlanArrayOutput
+}
+
+type GetVlansVlanArray []GetVlansVlanInput
+
+func (GetVlansVlanArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVlansVlan)(nil)).Elem()
+}
+
+func (i GetVlansVlanArray) ToGetVlansVlanArrayOutput() GetVlansVlanArrayOutput {
+	return i.ToGetVlansVlanArrayOutputWithContext(context.Background())
+}
+
+func (i GetVlansVlanArray) ToGetVlansVlanArrayOutputWithContext(ctx context.Context) GetVlansVlanArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVlansVlanArrayOutput)
+}
+
+type GetVlansVlanOutput struct{ *pulumi.OutputState }
+
+func (GetVlansVlanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVlansVlan)(nil)).Elem()
+}
+
+func (o GetVlansVlanOutput) ToGetVlansVlanOutput() GetVlansVlanOutput {
+	return o
+}
+
+func (o GetVlansVlanOutput) ToGetVlansVlanOutputWithContext(ctx context.Context) GetVlansVlanOutput {
+	return o
+}
+
+// The VLAN's availability domain. This attribute will be null if this is a regional VLAN rather than an AD-specific VLAN.  Example: `Uocm:PHX-AD-1`
+func (o GetVlansVlanOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVlansVlan) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The range of IPv4 addresses that will be used for layer 3 communication with hosts outside the VLAN.  Example: `192.168.1.0/24`
+func (o GetVlansVlanOutput) CidrBlock() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVlansVlan) string { return v.CidrBlock }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetVlansVlanOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVlansVlan) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetVlansVlanOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVlansVlan) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetVlansVlanOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVlansVlan) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetVlansVlanOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVlansVlan) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The VLAN's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+func (o GetVlansVlanOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVlansVlan) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A list of the OCIDs of the network security groups (NSGs) to use with this VLAN. All VNICs in the VLAN belong to these NSGs. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+func (o GetVlansVlanOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVlansVlan) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the VLAN uses.
+func (o GetVlansVlanOutput) RouteTableId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVlansVlan) string { return v.RouteTableId }).(pulumi.StringOutput)
+}
+
+// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetVlansVlanOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVlansVlan) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the VLAN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetVlansVlanOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVlansVlan) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+func (o GetVlansVlanOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVlansVlan) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+// The IEEE 802.1Q VLAN tag of this VLAN.  Example: `100`
+func (o GetVlansVlanOutput) VlanTag() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVlansVlan) int { return v.VlanTag }).(pulumi.IntOutput)
+}
+
+type GetVlansVlanArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVlansVlanArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVlansVlan)(nil)).Elem()
+}
+
+func (o GetVlansVlanArrayOutput) ToGetVlansVlanArrayOutput() GetVlansVlanArrayOutput {
+	return o
+}
+
+func (o GetVlansVlanArrayOutput) ToGetVlansVlanArrayOutputWithContext(ctx context.Context) GetVlansVlanArrayOutput {
+	return o
+}
+
+func (o GetVlansVlanArrayOutput) Index(i pulumi.IntInput) GetVlansVlanOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVlansVlan {
+		return vs[0].([]GetVlansVlan)[vs[1].(int)]
+	}).(GetVlansVlanOutput)
+}
+
+type GetVnicAttachmentsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetVnicAttachmentsFilterInput is an input type that accepts GetVnicAttachmentsFilterArgs and GetVnicAttachmentsFilterOutput values.
+// You can construct a concrete instance of `GetVnicAttachmentsFilterInput` via:
+//
+//	GetVnicAttachmentsFilterArgs{...}
+type GetVnicAttachmentsFilterInput interface {
+	pulumi.Input
+
+	ToGetVnicAttachmentsFilterOutput() GetVnicAttachmentsFilterOutput
+	ToGetVnicAttachmentsFilterOutputWithContext(context.Context) GetVnicAttachmentsFilterOutput
+}
+
+type GetVnicAttachmentsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetVnicAttachmentsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVnicAttachmentsFilter)(nil)).Elem()
+}
+
+func (i GetVnicAttachmentsFilterArgs) ToGetVnicAttachmentsFilterOutput() GetVnicAttachmentsFilterOutput {
+	return i.ToGetVnicAttachmentsFilterOutputWithContext(context.Background())
+}
+
+func (i GetVnicAttachmentsFilterArgs) ToGetVnicAttachmentsFilterOutputWithContext(ctx context.Context) GetVnicAttachmentsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVnicAttachmentsFilterOutput)
+}
+
+// GetVnicAttachmentsFilterArrayInput is an input type that accepts GetVnicAttachmentsFilterArray and GetVnicAttachmentsFilterArrayOutput values.
+// You can construct a concrete instance of `GetVnicAttachmentsFilterArrayInput` via:
+//
+//	GetVnicAttachmentsFilterArray{ GetVnicAttachmentsFilterArgs{...} }
+type GetVnicAttachmentsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetVnicAttachmentsFilterArrayOutput() GetVnicAttachmentsFilterArrayOutput
+	ToGetVnicAttachmentsFilterArrayOutputWithContext(context.Context) GetVnicAttachmentsFilterArrayOutput
+}
+
+type GetVnicAttachmentsFilterArray []GetVnicAttachmentsFilterInput
+
+func (GetVnicAttachmentsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVnicAttachmentsFilter)(nil)).Elem()
+}
+
+func (i GetVnicAttachmentsFilterArray) ToGetVnicAttachmentsFilterArrayOutput() GetVnicAttachmentsFilterArrayOutput {
+	return i.ToGetVnicAttachmentsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetVnicAttachmentsFilterArray) ToGetVnicAttachmentsFilterArrayOutputWithContext(ctx context.Context) GetVnicAttachmentsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVnicAttachmentsFilterArrayOutput)
+}
+
+type GetVnicAttachmentsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetVnicAttachmentsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVnicAttachmentsFilter)(nil)).Elem()
+}
+
+func (o GetVnicAttachmentsFilterOutput) ToGetVnicAttachmentsFilterOutput() GetVnicAttachmentsFilterOutput {
+	return o
+}
+
+func (o GetVnicAttachmentsFilterOutput) ToGetVnicAttachmentsFilterOutputWithContext(ctx context.Context) GetVnicAttachmentsFilterOutput {
+	return o
+}
+
+func (o GetVnicAttachmentsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetVnicAttachmentsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetVnicAttachmentsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetVnicAttachmentsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVnicAttachmentsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVnicAttachmentsFilter)(nil)).Elem()
+}
+
+func (o GetVnicAttachmentsFilterArrayOutput) ToGetVnicAttachmentsFilterArrayOutput() GetVnicAttachmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetVnicAttachmentsFilterArrayOutput) ToGetVnicAttachmentsFilterArrayOutputWithContext(ctx context.Context) GetVnicAttachmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetVnicAttachmentsFilterArrayOutput) Index(i pulumi.IntInput) GetVnicAttachmentsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVnicAttachmentsFilter {
+		return vs[0].([]GetVnicAttachmentsFilter)[vs[1].(int)]
+	}).(GetVnicAttachmentsFilterOutput)
+}
+
+type GetVnicAttachmentsVnicAttachment struct {
+	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId     string                                             `pulumi:"compartmentId"`
+	CreateVnicDetails []GetVnicAttachmentsVnicAttachmentCreateVnicDetail `pulumi:"createVnicDetails"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// The OCID of the VNIC attachment.
+	Id string `pulumi:"id"`
+	// The OCID of the instance.
+	InstanceId string `pulumi:"instanceId"`
+	// Which physical network interface card (NIC) the VNIC uses. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+	NicIndex int `pulumi:"nicIndex"`
+	// The current state of the VNIC attachment.
+	State string `pulumi:"state"`
+	// The OCID of the subnet to create the VNIC in.
+	SubnetId string `pulumi:"subnetId"`
+	// The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+	VlanId string `pulumi:"vlanId"`
+	// The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is complete.
+	VlanTag int `pulumi:"vlanTag"`
+	// The OCID of the VNIC.
+	VnicId string `pulumi:"vnicId"`
+}
+
+// GetVnicAttachmentsVnicAttachmentInput is an input type that accepts GetVnicAttachmentsVnicAttachmentArgs and GetVnicAttachmentsVnicAttachmentOutput values.
+// You can construct a concrete instance of `GetVnicAttachmentsVnicAttachmentInput` via:
+//
+//	GetVnicAttachmentsVnicAttachmentArgs{...}
+type GetVnicAttachmentsVnicAttachmentInput interface {
+	pulumi.Input
+
+	ToGetVnicAttachmentsVnicAttachmentOutput() GetVnicAttachmentsVnicAttachmentOutput
+	ToGetVnicAttachmentsVnicAttachmentOutputWithContext(context.Context) GetVnicAttachmentsVnicAttachmentOutput
+}
+
+type GetVnicAttachmentsVnicAttachmentArgs struct {
+	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId     pulumi.StringInput                                         `pulumi:"compartmentId"`
+	CreateVnicDetails GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayInput `pulumi:"createVnicDetails"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The OCID of the VNIC attachment.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The OCID of the instance.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// Which physical network interface card (NIC) the VNIC uses. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+	NicIndex pulumi.IntInput `pulumi:"nicIndex"`
+	// The current state of the VNIC attachment.
+	State pulumi.StringInput `pulumi:"state"`
+	// The OCID of the subnet to create the VNIC in.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+	VlanId pulumi.StringInput `pulumi:"vlanId"`
+	// The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is complete.
+	VlanTag pulumi.IntInput `pulumi:"vlanTag"`
+	// The OCID of the VNIC.
+	VnicId pulumi.StringInput `pulumi:"vnicId"`
+}
+
+func (GetVnicAttachmentsVnicAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVnicAttachmentsVnicAttachment)(nil)).Elem()
+}
+
+func (i GetVnicAttachmentsVnicAttachmentArgs) ToGetVnicAttachmentsVnicAttachmentOutput() GetVnicAttachmentsVnicAttachmentOutput {
+	return i.ToGetVnicAttachmentsVnicAttachmentOutputWithContext(context.Background())
+}
+
+func (i GetVnicAttachmentsVnicAttachmentArgs) ToGetVnicAttachmentsVnicAttachmentOutputWithContext(ctx context.Context) GetVnicAttachmentsVnicAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVnicAttachmentsVnicAttachmentOutput)
+}
+
+// GetVnicAttachmentsVnicAttachmentArrayInput is an input type that accepts GetVnicAttachmentsVnicAttachmentArray and GetVnicAttachmentsVnicAttachmentArrayOutput values.
+// You can construct a concrete instance of `GetVnicAttachmentsVnicAttachmentArrayInput` via:
+//
+//	GetVnicAttachmentsVnicAttachmentArray{ GetVnicAttachmentsVnicAttachmentArgs{...} }
+type GetVnicAttachmentsVnicAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToGetVnicAttachmentsVnicAttachmentArrayOutput() GetVnicAttachmentsVnicAttachmentArrayOutput
+	ToGetVnicAttachmentsVnicAttachmentArrayOutputWithContext(context.Context) GetVnicAttachmentsVnicAttachmentArrayOutput
+}
+
+type GetVnicAttachmentsVnicAttachmentArray []GetVnicAttachmentsVnicAttachmentInput
+
+func (GetVnicAttachmentsVnicAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVnicAttachmentsVnicAttachment)(nil)).Elem()
+}
+
+func (i GetVnicAttachmentsVnicAttachmentArray) ToGetVnicAttachmentsVnicAttachmentArrayOutput() GetVnicAttachmentsVnicAttachmentArrayOutput {
+	return i.ToGetVnicAttachmentsVnicAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetVnicAttachmentsVnicAttachmentArray) ToGetVnicAttachmentsVnicAttachmentArrayOutputWithContext(ctx context.Context) GetVnicAttachmentsVnicAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVnicAttachmentsVnicAttachmentArrayOutput)
+}
+
+type GetVnicAttachmentsVnicAttachmentOutput struct{ *pulumi.OutputState }
+
+func (GetVnicAttachmentsVnicAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVnicAttachmentsVnicAttachment)(nil)).Elem()
+}
+
+func (o GetVnicAttachmentsVnicAttachmentOutput) ToGetVnicAttachmentsVnicAttachmentOutput() GetVnicAttachmentsVnicAttachmentOutput {
+	return o
+}
+
+func (o GetVnicAttachmentsVnicAttachmentOutput) ToGetVnicAttachmentsVnicAttachmentOutputWithContext(ctx context.Context) GetVnicAttachmentsVnicAttachmentOutput {
+	return o
+}
+
+// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+func (o GetVnicAttachmentsVnicAttachmentOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachment) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetVnicAttachmentsVnicAttachmentOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachment) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetVnicAttachmentsVnicAttachmentOutput) CreateVnicDetails() GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachment) []GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
+		return v.CreateVnicDetails
+	}).(GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetVnicAttachmentsVnicAttachmentOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachment) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The OCID of the VNIC attachment.
+func (o GetVnicAttachmentsVnicAttachmentOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachment) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The OCID of the instance.
+func (o GetVnicAttachmentsVnicAttachmentOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachment) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// Which physical network interface card (NIC) the VNIC uses. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+func (o GetVnicAttachmentsVnicAttachmentOutput) NicIndex() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachment) int { return v.NicIndex }).(pulumi.IntOutput)
+}
+
+// The current state of the VNIC attachment.
+func (o GetVnicAttachmentsVnicAttachmentOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachment) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The OCID of the subnet to create the VNIC in.
+func (o GetVnicAttachmentsVnicAttachmentOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachment) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetVnicAttachmentsVnicAttachmentOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachment) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+func (o GetVnicAttachmentsVnicAttachmentOutput) VlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachment) string { return v.VlanId }).(pulumi.StringOutput)
+}
+
+// The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is complete.
+func (o GetVnicAttachmentsVnicAttachmentOutput) VlanTag() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachment) int { return v.VlanTag }).(pulumi.IntOutput)
+}
+
+// The OCID of the VNIC.
+func (o GetVnicAttachmentsVnicAttachmentOutput) VnicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachment) string { return v.VnicId }).(pulumi.StringOutput)
+}
+
+type GetVnicAttachmentsVnicAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVnicAttachmentsVnicAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVnicAttachmentsVnicAttachment)(nil)).Elem()
+}
+
+func (o GetVnicAttachmentsVnicAttachmentArrayOutput) ToGetVnicAttachmentsVnicAttachmentArrayOutput() GetVnicAttachmentsVnicAttachmentArrayOutput {
+	return o
+}
+
+func (o GetVnicAttachmentsVnicAttachmentArrayOutput) ToGetVnicAttachmentsVnicAttachmentArrayOutputWithContext(ctx context.Context) GetVnicAttachmentsVnicAttachmentArrayOutput {
+	return o
+}
+
+func (o GetVnicAttachmentsVnicAttachmentArrayOutput) Index(i pulumi.IntInput) GetVnicAttachmentsVnicAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVnicAttachmentsVnicAttachment {
+		return vs[0].([]GetVnicAttachmentsVnicAttachment)[vs[1].(int)]
+	}).(GetVnicAttachmentsVnicAttachmentOutput)
+}
+
 type GetVnicAttachmentsVnicAttachmentCreateVnicDetail struct {
 	AssignPrivateDnsRecord bool                   `pulumi:"assignPrivateDnsRecord"`
 	AssignPublicIp         string                 `pulumi:"assignPublicIp"`
@@ -4895,6 +5410,12 @@ func (o GetVtapsVtapArrayOutput) Index(i pulumi.IntInput) GetVtapsVtapOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVlansVlanInput)(nil)).Elem(), GetVlansVlanArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVlansVlanArrayInput)(nil)).Elem(), GetVlansVlanArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVnicAttachmentsFilterInput)(nil)).Elem(), GetVnicAttachmentsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVnicAttachmentsFilterArrayInput)(nil)).Elem(), GetVnicAttachmentsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVnicAttachmentsVnicAttachmentInput)(nil)).Elem(), GetVnicAttachmentsVnicAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVnicAttachmentsVnicAttachmentArrayInput)(nil)).Elem(), GetVnicAttachmentsVnicAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVnicAttachmentsVnicAttachmentCreateVnicDetailInput)(nil)).Elem(), GetVnicAttachmentsVnicAttachmentCreateVnicDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayInput)(nil)).Elem(), GetVnicAttachmentsVnicAttachmentCreateVnicDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeAttachmentsFilterInput)(nil)).Elem(), GetVolumeAttachmentsFilterArgs{})
@@ -4961,6 +5482,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsFilterArrayInput)(nil)).Elem(), GetVtapsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapInput)(nil)).Elem(), GetVtapsVtapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapArrayInput)(nil)).Elem(), GetVtapsVtapArray{})
+	pulumi.RegisterOutputType(GetVlansVlanOutput{})
+	pulumi.RegisterOutputType(GetVlansVlanArrayOutput{})
+	pulumi.RegisterOutputType(GetVnicAttachmentsFilterOutput{})
+	pulumi.RegisterOutputType(GetVnicAttachmentsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetVnicAttachmentsVnicAttachmentOutput{})
+	pulumi.RegisterOutputType(GetVnicAttachmentsVnicAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput{})
 	pulumi.RegisterOutputType(GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetVolumeAttachmentsFilterOutput{})

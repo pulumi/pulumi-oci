@@ -6,6 +6,7 @@ package com.pulumi.oci.DatabaseMigration.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -60,12 +61,28 @@ public final class MigrationGoldenGateDetailsSettingsReplicatArgs extends com.pu
         return Optional.ofNullable(this.minApplyParallelism);
     }
 
+    /**
+     * (Updatable) Extract performance.
+     * 
+     */
+    @Import(name="performanceProfile")
+    private @Nullable Output<String> performanceProfile;
+
+    /**
+     * @return (Updatable) Extract performance.
+     * 
+     */
+    public Optional<Output<String>> performanceProfile() {
+        return Optional.ofNullable(this.performanceProfile);
+    }
+
     private MigrationGoldenGateDetailsSettingsReplicatArgs() {}
 
     private MigrationGoldenGateDetailsSettingsReplicatArgs(MigrationGoldenGateDetailsSettingsReplicatArgs $) {
         this.mapParallelism = $.mapParallelism;
         this.maxApplyParallelism = $.maxApplyParallelism;
         this.minApplyParallelism = $.minApplyParallelism;
+        this.performanceProfile = $.performanceProfile;
     }
 
     public static Builder builder() {
@@ -147,6 +164,27 @@ public final class MigrationGoldenGateDetailsSettingsReplicatArgs extends com.pu
          */
         public Builder minApplyParallelism(Integer minApplyParallelism) {
             return minApplyParallelism(Output.of(minApplyParallelism));
+        }
+
+        /**
+         * @param performanceProfile (Updatable) Extract performance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder performanceProfile(@Nullable Output<String> performanceProfile) {
+            $.performanceProfile = performanceProfile;
+            return this;
+        }
+
+        /**
+         * @param performanceProfile (Updatable) Extract performance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder performanceProfile(String performanceProfile) {
+            return performanceProfile(Output.of(performanceProfile));
         }
 
         public MigrationGoldenGateDetailsSettingsReplicatArgs build() {

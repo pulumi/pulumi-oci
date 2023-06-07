@@ -41,6 +41,7 @@ import (
 //					IsSkipAdvisor:  pulumi.Any(_var.Migration_advisor_settings_is_skip_advisor),
 //				},
 //				AgentId: pulumi.Any(oci_database_migration_agent.Test_agent.Id),
+//				CsvText: pulumi.Any(_var.Migration_csv_text),
 //				DataTransferMediumDetails: &databasemigration.MigrationDataTransferMediumDetailsArgs{
 //					DatabaseLinkDetails: &databasemigration.MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs{
 //						Name: pulumi.Any(_var.Migration_data_transfer_medium_details_database_link_details_name),
@@ -183,6 +184,8 @@ type Migration struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
 	CredentialsSecretId pulumi.StringOutput `pulumi:"credentialsSecretId"`
+	// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+	CsvText pulumi.StringOutput `pulumi:"csvText"`
 	// (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
 	DataTransferMediumDetails MigrationDataTransferMediumDetailsOutput `pulumi:"dataTransferMediumDetails"`
 	// (Updatable) Optional settings for Data Pump Export and Import jobs
@@ -278,6 +281,8 @@ type migrationState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
 	CredentialsSecretId *string `pulumi:"credentialsSecretId"`
+	// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+	CsvText *string `pulumi:"csvText"`
 	// (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
 	DataTransferMediumDetails *MigrationDataTransferMediumDetails `pulumi:"dataTransferMediumDetails"`
 	// (Updatable) Optional settings for Data Pump Export and Import jobs
@@ -333,6 +338,8 @@ type MigrationState struct {
 	CompartmentId pulumi.StringPtrInput
 	// OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
 	CredentialsSecretId pulumi.StringPtrInput
+	// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+	CsvText pulumi.StringPtrInput
 	// (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
 	DataTransferMediumDetails MigrationDataTransferMediumDetailsPtrInput
 	// (Updatable) Optional settings for Data Pump Export and Import jobs
@@ -390,6 +397,8 @@ type migrationArgs struct {
 	AgentId *string `pulumi:"agentId"`
 	// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+	CsvText *string `pulumi:"csvText"`
 	// (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
 	DataTransferMediumDetails *MigrationDataTransferMediumDetails `pulumi:"dataTransferMediumDetails"`
 	// (Updatable) Optional settings for Data Pump Export and Import jobs
@@ -428,6 +437,8 @@ type MigrationArgs struct {
 	AgentId pulumi.StringPtrInput
 	// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
 	CompartmentId pulumi.StringInput
+	// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+	CsvText pulumi.StringPtrInput
 	// (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
 	DataTransferMediumDetails MigrationDataTransferMediumDetailsPtrInput
 	// (Updatable) Optional settings for Data Pump Export and Import jobs
@@ -563,6 +574,11 @@ func (o MigrationOutput) CompartmentId() pulumi.StringOutput {
 // OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
 func (o MigrationOutput) CredentialsSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.CredentialsSecretId }).(pulumi.StringOutput)
+}
+
+// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+func (o MigrationOutput) CsvText() pulumi.StringOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.CsvText }).(pulumi.StringOutput)
 }
 
 // (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.

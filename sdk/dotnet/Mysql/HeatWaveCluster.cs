@@ -28,6 +28,7 @@ namespace Pulumi.Oci.Mysql
     ///     {
     ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
     ///         ClusterSize = @var.Heat_wave_cluster_cluster_size,
+    ///         IsLakehouseEnabled = @var.Heat_wave_cluster_is_lakehouse_enabled,
     ///         ShapeName = oci_mysql_shape.Test_shape.Name,
     ///     });
     /// 
@@ -62,6 +63,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Output("dbSystemId")]
         public Output<string> DbSystemId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+        /// </summary>
+        [Output("isLakehouseEnabled")]
+        public Output<bool> IsLakehouseEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycleState.
@@ -155,6 +162,12 @@ namespace Pulumi.Oci.Mysql
         public Input<string> DbSystemId { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+        /// </summary>
+        [Input("isLakehouseEnabled")]
+        public Input<bool>? IsLakehouseEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) A change to the shape of the nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
         /// </summary>
         [Input("shapeName", required: true)]
@@ -200,6 +213,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("dbSystemId")]
         public Input<string>? DbSystemId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+        /// </summary>
+        [Input("isLakehouseEnabled")]
+        public Input<bool>? IsLakehouseEnabled { get; set; }
 
         /// <summary>
         /// Additional information about the current lifecycleState.

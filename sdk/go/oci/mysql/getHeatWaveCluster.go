@@ -63,6 +63,8 @@ type LookupHeatWaveClusterResult struct {
 	// The OCID of the parent DB System this HeatWave cluster is attached to.
 	DbSystemId string `pulumi:"dbSystemId"`
 	Id         string `pulumi:"id"`
+	// Lakehouse enabled status for the HeatWave cluster.
+	IsLakehouseEnabled bool `pulumi:"isLakehouseEnabled"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The shape determines resources to allocate to the HeatWave nodes - CPU cores, memory.
@@ -130,6 +132,11 @@ func (o LookupHeatWaveClusterResultOutput) DbSystemId() pulumi.StringOutput {
 
 func (o LookupHeatWaveClusterResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHeatWaveClusterResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Lakehouse enabled status for the HeatWave cluster.
+func (o LookupHeatWaveClusterResultOutput) IsLakehouseEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupHeatWaveClusterResult) bool { return v.IsLakehouseEnabled }).(pulumi.BoolOutput)
 }
 
 // Additional information about the current lifecycleState.

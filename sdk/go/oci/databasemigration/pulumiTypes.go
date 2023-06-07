@@ -5202,6 +5202,8 @@ type MigrationGoldenGateDetailsSettingsReplicat struct {
 	MaxApplyParallelism *int `pulumi:"maxApplyParallelism"`
 	// (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
 	MinApplyParallelism *int `pulumi:"minApplyParallelism"`
+	// (Updatable) Extract performance.
+	PerformanceProfile *string `pulumi:"performanceProfile"`
 }
 
 // MigrationGoldenGateDetailsSettingsReplicatInput is an input type that accepts MigrationGoldenGateDetailsSettingsReplicatArgs and MigrationGoldenGateDetailsSettingsReplicatOutput values.
@@ -5222,6 +5224,8 @@ type MigrationGoldenGateDetailsSettingsReplicatArgs struct {
 	MaxApplyParallelism pulumi.IntPtrInput `pulumi:"maxApplyParallelism"`
 	// (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
 	MinApplyParallelism pulumi.IntPtrInput `pulumi:"minApplyParallelism"`
+	// (Updatable) Extract performance.
+	PerformanceProfile pulumi.StringPtrInput `pulumi:"performanceProfile"`
 }
 
 func (MigrationGoldenGateDetailsSettingsReplicatArgs) ElementType() reflect.Type {
@@ -5316,6 +5320,11 @@ func (o MigrationGoldenGateDetailsSettingsReplicatOutput) MinApplyParallelism() 
 	return o.ApplyT(func(v MigrationGoldenGateDetailsSettingsReplicat) *int { return v.MinApplyParallelism }).(pulumi.IntPtrOutput)
 }
 
+// (Updatable) Extract performance.
+func (o MigrationGoldenGateDetailsSettingsReplicatOutput) PerformanceProfile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationGoldenGateDetailsSettingsReplicat) *string { return v.PerformanceProfile }).(pulumi.StringPtrOutput)
+}
+
 type MigrationGoldenGateDetailsSettingsReplicatPtrOutput struct{ *pulumi.OutputState }
 
 func (MigrationGoldenGateDetailsSettingsReplicatPtrOutput) ElementType() reflect.Type {
@@ -5368,6 +5377,16 @@ func (o MigrationGoldenGateDetailsSettingsReplicatPtrOutput) MinApplyParallelism
 		}
 		return v.MinApplyParallelism
 	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Extract performance.
+func (o MigrationGoldenGateDetailsSettingsReplicatPtrOutput) PerformanceProfile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationGoldenGateDetailsSettingsReplicat) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PerformanceProfile
+	}).(pulumi.StringPtrOutput)
 }
 
 type MigrationIncludeObject struct {
@@ -10873,6 +10892,8 @@ type GetMigrationGoldenGateDetailSettingReplicat struct {
 	MaxApplyParallelism int `pulumi:"maxApplyParallelism"`
 	// Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
 	MinApplyParallelism int `pulumi:"minApplyParallelism"`
+	// Extract performance.
+	PerformanceProfile string `pulumi:"performanceProfile"`
 }
 
 // GetMigrationGoldenGateDetailSettingReplicatInput is an input type that accepts GetMigrationGoldenGateDetailSettingReplicatArgs and GetMigrationGoldenGateDetailSettingReplicatOutput values.
@@ -10893,6 +10914,8 @@ type GetMigrationGoldenGateDetailSettingReplicatArgs struct {
 	MaxApplyParallelism pulumi.IntInput `pulumi:"maxApplyParallelism"`
 	// Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
 	MinApplyParallelism pulumi.IntInput `pulumi:"minApplyParallelism"`
+	// Extract performance.
+	PerformanceProfile pulumi.StringInput `pulumi:"performanceProfile"`
 }
 
 func (GetMigrationGoldenGateDetailSettingReplicatArgs) ElementType() reflect.Type {
@@ -10959,6 +10982,11 @@ func (o GetMigrationGoldenGateDetailSettingReplicatOutput) MaxApplyParallelism()
 // Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
 func (o GetMigrationGoldenGateDetailSettingReplicatOutput) MinApplyParallelism() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMigrationGoldenGateDetailSettingReplicat) int { return v.MinApplyParallelism }).(pulumi.IntOutput)
+}
+
+// Extract performance.
+func (o GetMigrationGoldenGateDetailSettingReplicatOutput) PerformanceProfile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationGoldenGateDetailSettingReplicat) string { return v.PerformanceProfile }).(pulumi.StringOutput)
 }
 
 type GetMigrationGoldenGateDetailSettingReplicatArrayOutput struct{ *pulumi.OutputState }
@@ -11728,6 +11756,7 @@ type GetMigrationsMigrationCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
 	CredentialsSecretId string `pulumi:"credentialsSecretId"`
+	CsvText             string `pulumi:"csvText"`
 	// Data Transfer Medium details for the Migration.
 	DataTransferMediumDetails []GetMigrationsMigrationCollectionItemDataTransferMediumDetail `pulumi:"dataTransferMediumDetails"`
 	// Optional settings for Data Pump Export and Import jobs
@@ -11796,6 +11825,7 @@ type GetMigrationsMigrationCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
 	CredentialsSecretId pulumi.StringInput `pulumi:"credentialsSecretId"`
+	CsvText             pulumi.StringInput `pulumi:"csvText"`
 	// Data Transfer Medium details for the Migration.
 	DataTransferMediumDetails GetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayInput `pulumi:"dataTransferMediumDetails"`
 	// Optional settings for Data Pump Export and Import jobs
@@ -11915,6 +11945,10 @@ func (o GetMigrationsMigrationCollectionItemOutput) CompartmentId() pulumi.Strin
 // OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
 func (o GetMigrationsMigrationCollectionItemOutput) CredentialsSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationsMigrationCollectionItem) string { return v.CredentialsSecretId }).(pulumi.StringOutput)
+}
+
+func (o GetMigrationsMigrationCollectionItemOutput) CsvText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItem) string { return v.CsvText }).(pulumi.StringOutput)
 }
 
 // Data Transfer Medium details for the Migration.
@@ -14613,6 +14647,8 @@ type GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat struct 
 	MaxApplyParallelism int `pulumi:"maxApplyParallelism"`
 	// Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
 	MinApplyParallelism int `pulumi:"minApplyParallelism"`
+	// Extract performance.
+	PerformanceProfile string `pulumi:"performanceProfile"`
 }
 
 // GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArgs and GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatOutput values.
@@ -14633,6 +14669,8 @@ type GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArgs str
 	MaxApplyParallelism pulumi.IntInput `pulumi:"maxApplyParallelism"`
 	// Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
 	MinApplyParallelism pulumi.IntInput `pulumi:"minApplyParallelism"`
+	// Extract performance.
+	PerformanceProfile pulumi.StringInput `pulumi:"performanceProfile"`
 }
 
 func (GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArgs) ElementType() reflect.Type {
@@ -14705,6 +14743,13 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatOutpu
 	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat) int {
 		return v.MinApplyParallelism
 	}).(pulumi.IntOutput)
+}
+
+// Extract performance.
+func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatOutput) PerformanceProfile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat) string {
+		return v.PerformanceProfile
+	}).(pulumi.StringOutput)
 }
 
 type GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArrayOutput struct{ *pulumi.OutputState }

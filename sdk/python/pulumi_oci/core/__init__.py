@@ -11,6 +11,7 @@ from .boot_volume import *
 from .boot_volume_backup import *
 from .capture_filter import *
 from .cluster_network import *
+from .compute_capacity_report import *
 from .compute_capacity_reservation import *
 from .compute_cluster import *
 from .compute_image_capability_schema import *

@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -44,6 +45,21 @@ public final class HeatWaveClusterArgs extends com.pulumi.resources.ResourceArgs
      */
     public Output<String> dbSystemId() {
         return this.dbSystemId;
+    }
+
+    /**
+     * (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+     * 
+     */
+    @Import(name="isLakehouseEnabled")
+    private @Nullable Output<Boolean> isLakehouseEnabled;
+
+    /**
+     * @return (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+     * 
+     */
+    public Optional<Output<Boolean>> isLakehouseEnabled() {
+        return Optional.ofNullable(this.isLakehouseEnabled);
     }
 
     /**
@@ -87,6 +103,7 @@ public final class HeatWaveClusterArgs extends com.pulumi.resources.ResourceArgs
     private HeatWaveClusterArgs(HeatWaveClusterArgs $) {
         this.clusterSize = $.clusterSize;
         this.dbSystemId = $.dbSystemId;
+        this.isLakehouseEnabled = $.isLakehouseEnabled;
         this.shapeName = $.shapeName;
         this.state = $.state;
     }
@@ -149,6 +166,27 @@ public final class HeatWaveClusterArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder dbSystemId(String dbSystemId) {
             return dbSystemId(Output.of(dbSystemId));
+        }
+
+        /**
+         * @param isLakehouseEnabled (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLakehouseEnabled(@Nullable Output<Boolean> isLakehouseEnabled) {
+            $.isLakehouseEnabled = isLakehouseEnabled;
+            return this;
+        }
+
+        /**
+         * @param isLakehouseEnabled (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLakehouseEnabled(Boolean isLakehouseEnabled) {
+            return isLakehouseEnabled(Output.of(isLakehouseEnabled));
         }
 
         /**

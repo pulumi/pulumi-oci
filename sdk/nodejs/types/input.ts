@@ -10228,6 +10228,50 @@ export namespace Core {
         subnetId: pulumi.Input<string>;
     }
 
+    export interface ComputeCapacityReportShapeAvailability {
+        /**
+         * A flag denoting whether capacity is available.
+         */
+        availabilityStatus?: pulumi.Input<string>;
+        /**
+         * The total number of new instances that can be created with the specified shape configuration.
+         */
+        availableCount?: pulumi.Input<string>;
+        /**
+         * The fault domain for the capacity report.
+         *
+         * If you do not specify a fault domain, the capacity report includes information about all fault domains.
+         */
+        faultDomain?: pulumi.Input<string>;
+        /**
+         * The shape that you want to request a capacity report for. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+         */
+        instanceShape: pulumi.Input<string>;
+        /**
+         * The shape configuration for a shape in a capacity report.
+         */
+        instanceShapeConfig?: pulumi.Input<inputs.Core.ComputeCapacityReportShapeAvailabilityInstanceShapeConfig>;
+    }
+
+    export interface ComputeCapacityReportShapeAvailabilityInstanceShapeConfig {
+        /**
+         * The total amount of memory available to the instance, in gigabytes.
+         */
+        memoryInGbs?: pulumi.Input<number>;
+        /**
+         * The number of NVMe drives to be used for storage.
+         */
+        nvmes?: pulumi.Input<number>;
+        /**
+         * The total number of OCPUs available to the instance. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        ocpus?: pulumi.Input<number>;
+    }
+
     export interface ComputeCapacityReservationInstanceReservationConfig {
         /**
          * (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
@@ -22488,6 +22532,10 @@ export namespace DatabaseMigration {
          * (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
          */
         minApplyParallelism?: pulumi.Input<number>;
+        /**
+         * (Updatable) Extract performance.
+         */
+        performanceProfile?: pulumi.Input<string>;
     }
 
     export interface MigrationIncludeObject {
@@ -39954,18 +40002,6 @@ export namespace Identity {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetSwiftPasswordsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetSwiftPasswordsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetTagDefaultsFilter {
         name: string;
         regex?: boolean;
@@ -44508,6 +44544,10 @@ export namespace Mysql {
          * The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
          */
         clusterSize?: pulumi.Input<number>;
+        /**
+         * Lakehouse enabled status for the HeatWave cluster.
+         */
+        isLakehouseEnabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) The name of the shape. The shape determines the resources allocated
          * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.

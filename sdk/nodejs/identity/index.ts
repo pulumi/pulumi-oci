@@ -525,11 +525,6 @@ export const getSmtpCredentials: typeof import("./getSmtpCredentials").getSmtpCr
 export const getSmtpCredentialsOutput: typeof import("./getSmtpCredentials").getSmtpCredentialsOutput = null as any;
 utilities.lazyLoad(exports, ["getSmtpCredentials","getSmtpCredentialsOutput"], () => require("./getSmtpCredentials"));
 
-export { GetSwiftPasswordsArgs, GetSwiftPasswordsResult, GetSwiftPasswordsOutputArgs } from "./getSwiftPasswords";
-export const getSwiftPasswords: typeof import("./getSwiftPasswords").getSwiftPasswords = null as any;
-export const getSwiftPasswordsOutput: typeof import("./getSwiftPasswords").getSwiftPasswordsOutput = null as any;
-utilities.lazyLoad(exports, ["getSwiftPasswords","getSwiftPasswordsOutput"], () => require("./getSwiftPasswords"));
-
 export { GetTagArgs, GetTagResult, GetTagOutputArgs } from "./getTag";
 export const getTag: typeof import("./getTag").getTag = null as any;
 export const getTagOutput: typeof import("./getTag").getTagOutput = null as any;
@@ -624,11 +619,6 @@ export { SmtpCredentialArgs, SmtpCredentialState } from "./smtpCredential";
 export type SmtpCredential = import("./smtpCredential").SmtpCredential;
 export const SmtpCredential: typeof import("./smtpCredential").SmtpCredential = null as any;
 utilities.lazyLoad(exports, ["SmtpCredential"], () => require("./smtpCredential"));
-
-export { SwiftPasswordArgs, SwiftPasswordState } from "./swiftPassword";
-export type SwiftPassword = import("./swiftPassword").SwiftPassword;
-export const SwiftPassword: typeof import("./swiftPassword").SwiftPassword = null as any;
-utilities.lazyLoad(exports, ["SwiftPassword"], () => require("./swiftPassword"));
 
 export { TagArgs, TagState } from "./tag";
 export type Tag = import("./tag").Tag;
@@ -742,8 +732,6 @@ const _module = {
                 return new Policy(name, <any>undefined, { urn })
             case "oci:Identity/smtpCredential:SmtpCredential":
                 return new SmtpCredential(name, <any>undefined, { urn })
-            case "oci:Identity/swiftPassword:SwiftPassword":
-                return new SwiftPassword(name, <any>undefined, { urn })
             case "oci:Identity/tag:Tag":
                 return new Tag(name, <any>undefined, { urn })
             case "oci:Identity/tagDefault:TagDefault":
@@ -799,7 +787,6 @@ pulumi.runtime.registerResourceModule("oci", "Identity/importStandardTagsManagem
 pulumi.runtime.registerResourceModule("oci", "Identity/networkSource", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/policy", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/smtpCredential", _module)
-pulumi.runtime.registerResourceModule("oci", "Identity/swiftPassword", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/tag", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/tagDefault", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/tagNamespace", _module)

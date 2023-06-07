@@ -38,6 +38,7 @@ namespace Pulumi.Oci.DatabaseMigration
     ///             IsSkipAdvisor = @var.Migration_advisor_settings_is_skip_advisor,
     ///         },
     ///         AgentId = oci_database_migration_agent.Test_agent.Id,
+    ///         CsvText = @var.Migration_csv_text,
     ///         DataTransferMediumDetails = new Oci.DatabaseMigration.Inputs.MigrationDataTransferMediumDetailsArgs
     ///         {
     ///             DatabaseLinkDetails = new Oci.DatabaseMigration.Inputs.MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs
@@ -218,6 +219,12 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Output("credentialsSecretId")]
         public Output<string> CredentialsSecretId { get; private set; } = null!;
+
+        /// <summary>
+        /// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+        /// </summary>
+        [Output("csvText")]
+        public Output<string> CsvText { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
@@ -416,6 +423,12 @@ namespace Pulumi.Oci.DatabaseMigration
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
+        /// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+        /// </summary>
+        [Input("csvText")]
+        public Input<string>? CsvText { get; set; }
+
+        /// <summary>
         /// (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
         /// </summary>
         [Input("dataTransferMediumDetails")]
@@ -554,6 +567,12 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Input("credentialsSecretId")]
         public Input<string>? CredentialsSecretId { get; set; }
+
+        /// <summary>
+        /// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+        /// </summary>
+        [Input("csvText")]
+        public Input<string>? CsvText { get; set; }
 
         /// <summary>
         /// (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.

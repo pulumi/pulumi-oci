@@ -29,6 +29,7 @@ import * as utilities from "../utilities";
  *         isSkipAdvisor: _var.migration_advisor_settings_is_skip_advisor,
  *     },
  *     agentId: oci_database_migration_agent.test_agent.id,
+ *     csvText: _var.migration_csv_text,
  *     dataTransferMediumDetails: {
  *         databaseLinkDetails: {
  *             name: _var.migration_data_transfer_medium_details_database_link_details_name,
@@ -191,6 +192,10 @@ export class Migration extends pulumi.CustomResource {
      */
     public /*out*/ readonly credentialsSecretId!: pulumi.Output<string>;
     /**
+     * Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+     */
+    public readonly csvText!: pulumi.Output<string>;
+    /**
      * (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
      */
     public readonly dataTransferMediumDetails!: pulumi.Output<outputs.DatabaseMigration.MigrationDataTransferMediumDetails>;
@@ -296,6 +301,7 @@ export class Migration extends pulumi.CustomResource {
             resourceInputs["agentId"] = state ? state.agentId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["credentialsSecretId"] = state ? state.credentialsSecretId : undefined;
+            resourceInputs["csvText"] = state ? state.csvText : undefined;
             resourceInputs["dataTransferMediumDetails"] = state ? state.dataTransferMediumDetails : undefined;
             resourceInputs["datapumpSettings"] = state ? state.datapumpSettings : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
@@ -335,6 +341,7 @@ export class Migration extends pulumi.CustomResource {
             resourceInputs["advisorSettings"] = args ? args.advisorSettings : undefined;
             resourceInputs["agentId"] = args ? args.agentId : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["csvText"] = args ? args.csvText : undefined;
             resourceInputs["dataTransferMediumDetails"] = args ? args.dataTransferMediumDetails : undefined;
             resourceInputs["datapumpSettings"] = args ? args.datapumpSettings : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
@@ -384,6 +391,10 @@ export interface MigrationState {
      * OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
      */
     credentialsSecretId?: pulumi.Input<string>;
+    /**
+     * Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+     */
+    csvText?: pulumi.Input<string>;
     /**
      * (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
      */
@@ -490,6 +501,10 @@ export interface MigrationArgs {
      * (Updatable) OCID of the compartment where the secret containing the credentials will be created.
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+     */
+    csvText?: pulumi.Input<string>;
     /**
      * (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
      */

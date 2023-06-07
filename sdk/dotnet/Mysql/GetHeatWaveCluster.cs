@@ -119,6 +119,10 @@ namespace Pulumi.Oci.Mysql
         public readonly string DbSystemId;
         public readonly string Id;
         /// <summary>
+        /// Lakehouse enabled status for the HeatWave cluster.
+        /// </summary>
+        public readonly bool IsLakehouseEnabled;
+        /// <summary>
         /// Additional information about the current lifecycleState.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -149,6 +153,8 @@ namespace Pulumi.Oci.Mysql
 
             string id,
 
+            bool isLakehouseEnabled,
+
             string lifecycleDetails,
 
             string shapeName,
@@ -163,6 +169,7 @@ namespace Pulumi.Oci.Mysql
             ClusterSize = clusterSize;
             DbSystemId = dbSystemId;
             Id = id;
+            IsLakehouseEnabled = isLakehouseEnabled;
             LifecycleDetails = lifecycleDetails;
             ShapeName = shapeName;
             State = state;

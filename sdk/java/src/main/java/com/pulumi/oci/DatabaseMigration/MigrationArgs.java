@@ -72,6 +72,21 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+     * 
+     */
+    @Import(name="csvText")
+    private @Nullable Output<String> csvText;
+
+    /**
+     * @return Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+     * 
+     */
+    public Optional<Output<String>> csvText() {
+        return Optional.ofNullable(this.csvText);
+    }
+
+    /**
      * (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
      * 
      */
@@ -287,6 +302,7 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
         this.advisorSettings = $.advisorSettings;
         this.agentId = $.agentId;
         this.compartmentId = $.compartmentId;
+        this.csvText = $.csvText;
         this.dataTransferMediumDetails = $.dataTransferMediumDetails;
         this.datapumpSettings = $.datapumpSettings;
         this.definedTags = $.definedTags;
@@ -382,6 +398,27 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param csvText Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder csvText(@Nullable Output<String> csvText) {
+            $.csvText = csvText;
+            return this;
+        }
+
+        /**
+         * @param csvText Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder csvText(String csvText) {
+            return csvText(Output.of(csvText));
         }
 
         /**

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -17,6 +18,11 @@ public final class MysqlDbSystemHeatWaveCluster {
      * 
      */
     private @Nullable Integer clusterSize;
+    /**
+     * @return Lakehouse enabled status for the HeatWave cluster.
+     * 
+     */
+    private @Nullable Boolean isLakehouseEnabled;
     /**
      * @return (Updatable) The name of the shape. The shape determines the resources allocated
      * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -46,6 +52,13 @@ public final class MysqlDbSystemHeatWaveCluster {
      */
     public Optional<Integer> clusterSize() {
         return Optional.ofNullable(this.clusterSize);
+    }
+    /**
+     * @return Lakehouse enabled status for the HeatWave cluster.
+     * 
+     */
+    public Optional<Boolean> isLakehouseEnabled() {
+        return Optional.ofNullable(this.isLakehouseEnabled);
     }
     /**
      * @return (Updatable) The name of the shape. The shape determines the resources allocated
@@ -87,6 +100,7 @@ public final class MysqlDbSystemHeatWaveCluster {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer clusterSize;
+        private @Nullable Boolean isLakehouseEnabled;
         private @Nullable String shapeName;
         private @Nullable String state;
         private @Nullable String timeCreated;
@@ -95,6 +109,7 @@ public final class MysqlDbSystemHeatWaveCluster {
         public Builder(MysqlDbSystemHeatWaveCluster defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.clusterSize = defaults.clusterSize;
+    	      this.isLakehouseEnabled = defaults.isLakehouseEnabled;
     	      this.shapeName = defaults.shapeName;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -104,6 +119,11 @@ public final class MysqlDbSystemHeatWaveCluster {
         @CustomType.Setter
         public Builder clusterSize(@Nullable Integer clusterSize) {
             this.clusterSize = clusterSize;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isLakehouseEnabled(@Nullable Boolean isLakehouseEnabled) {
+            this.isLakehouseEnabled = isLakehouseEnabled;
             return this;
         }
         @CustomType.Setter
@@ -129,6 +149,7 @@ public final class MysqlDbSystemHeatWaveCluster {
         public MysqlDbSystemHeatWaveCluster build() {
             final var o = new MysqlDbSystemHeatWaveCluster();
             o.clusterSize = clusterSize;
+            o.isLakehouseEnabled = isLakehouseEnabled;
             o.shapeName = shapeName;
             o.state = state;
             o.timeCreated = timeCreated;

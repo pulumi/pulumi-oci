@@ -22,7 +22,7 @@ class GetMigrationResult:
     """
     A collection of values returned by getMigration.
     """
-    def __init__(__self__, advisor_settings=None, agent_id=None, compartment_id=None, credentials_secret_id=None, data_transfer_medium_details=None, datapump_settings=None, defined_tags=None, display_name=None, dump_transfer_details=None, exclude_objects=None, executing_job_id=None, freeform_tags=None, golden_gate_details=None, id=None, include_objects=None, lifecycle_details=None, migration_id=None, source_container_database_connection_id=None, source_database_connection_id=None, state=None, system_tags=None, target_database_connection_id=None, time_created=None, time_last_migration=None, time_updated=None, type=None, vault_details=None, wait_after=None):
+    def __init__(__self__, advisor_settings=None, agent_id=None, compartment_id=None, credentials_secret_id=None, csv_text=None, data_transfer_medium_details=None, datapump_settings=None, defined_tags=None, display_name=None, dump_transfer_details=None, exclude_objects=None, executing_job_id=None, freeform_tags=None, golden_gate_details=None, id=None, include_objects=None, lifecycle_details=None, migration_id=None, source_container_database_connection_id=None, source_database_connection_id=None, state=None, system_tags=None, target_database_connection_id=None, time_created=None, time_last_migration=None, time_updated=None, type=None, vault_details=None, wait_after=None):
         if advisor_settings and not isinstance(advisor_settings, list):
             raise TypeError("Expected argument 'advisor_settings' to be a list")
         pulumi.set(__self__, "advisor_settings", advisor_settings)
@@ -35,6 +35,9 @@ class GetMigrationResult:
         if credentials_secret_id and not isinstance(credentials_secret_id, str):
             raise TypeError("Expected argument 'credentials_secret_id' to be a str")
         pulumi.set(__self__, "credentials_secret_id", credentials_secret_id)
+        if csv_text and not isinstance(csv_text, str):
+            raise TypeError("Expected argument 'csv_text' to be a str")
+        pulumi.set(__self__, "csv_text", csv_text)
         if data_transfer_medium_details and not isinstance(data_transfer_medium_details, list):
             raise TypeError("Expected argument 'data_transfer_medium_details' to be a list")
         pulumi.set(__self__, "data_transfer_medium_details", data_transfer_medium_details)
@@ -139,6 +142,11 @@ class GetMigrationResult:
         OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
         """
         return pulumi.get(self, "credentials_secret_id")
+
+    @property
+    @pulumi.getter(name="csvText")
+    def csv_text(self) -> str:
+        return pulumi.get(self, "csv_text")
 
     @property
     @pulumi.getter(name="dataTransferMediumDetails")
@@ -340,6 +348,7 @@ class AwaitableGetMigrationResult(GetMigrationResult):
             agent_id=self.agent_id,
             compartment_id=self.compartment_id,
             credentials_secret_id=self.credentials_secret_id,
+            csv_text=self.csv_text,
             data_transfer_medium_details=self.data_transfer_medium_details,
             datapump_settings=self.datapump_settings,
             defined_tags=self.defined_tags,
@@ -395,6 +404,7 @@ def get_migration(migration_id: Optional[str] = None,
         agent_id=__ret__.agent_id,
         compartment_id=__ret__.compartment_id,
         credentials_secret_id=__ret__.credentials_secret_id,
+        csv_text=__ret__.csv_text,
         data_transfer_medium_details=__ret__.data_transfer_medium_details,
         datapump_settings=__ret__.datapump_settings,
         defined_tags=__ret__.defined_tags,

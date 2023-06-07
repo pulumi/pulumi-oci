@@ -64,6 +64,7 @@ type LookupMigrationResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
 	CredentialsSecretId string `pulumi:"credentialsSecretId"`
+	CsvText             string `pulumi:"csvText"`
 	// Data Transfer Medium details for the Migration.
 	DataTransferMediumDetails []GetMigrationDataTransferMediumDetail `pulumi:"dataTransferMediumDetails"`
 	// Optional settings for Data Pump Export and Import jobs
@@ -169,6 +170,10 @@ func (o LookupMigrationResultOutput) CompartmentId() pulumi.StringOutput {
 // OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
 func (o LookupMigrationResultOutput) CredentialsSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMigrationResult) string { return v.CredentialsSecretId }).(pulumi.StringOutput)
+}
+
+func (o LookupMigrationResultOutput) CsvText() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMigrationResult) string { return v.CsvText }).(pulumi.StringOutput)
 }
 
 // Data Transfer Medium details for the Migration.

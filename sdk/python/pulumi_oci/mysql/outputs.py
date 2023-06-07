@@ -3814,6 +3814,8 @@ class MysqlDbSystemHeatWaveCluster(dict):
         suggest = None
         if key == "clusterSize":
             suggest = "cluster_size"
+        elif key == "isLakehouseEnabled":
+            suggest = "is_lakehouse_enabled"
         elif key == "shapeName":
             suggest = "shape_name"
         elif key == "timeCreated":
@@ -3834,12 +3836,14 @@ class MysqlDbSystemHeatWaveCluster(dict):
 
     def __init__(__self__, *,
                  cluster_size: Optional[int] = None,
+                 is_lakehouse_enabled: Optional[bool] = None,
                  shape_name: Optional[str] = None,
                  state: Optional[str] = None,
                  time_created: Optional[str] = None,
                  time_updated: Optional[str] = None):
         """
         :param int cluster_size: The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
+        :param bool is_lakehouse_enabled: Lakehouse enabled status for the HeatWave cluster.
         :param str shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param str state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
@@ -3848,6 +3852,8 @@ class MysqlDbSystemHeatWaveCluster(dict):
         """
         if cluster_size is not None:
             pulumi.set(__self__, "cluster_size", cluster_size)
+        if is_lakehouse_enabled is not None:
+            pulumi.set(__self__, "is_lakehouse_enabled", is_lakehouse_enabled)
         if shape_name is not None:
             pulumi.set(__self__, "shape_name", shape_name)
         if state is not None:
@@ -3864,6 +3870,14 @@ class MysqlDbSystemHeatWaveCluster(dict):
         The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
         """
         return pulumi.get(self, "cluster_size")
+
+    @property
+    @pulumi.getter(name="isLakehouseEnabled")
+    def is_lakehouse_enabled(self) -> Optional[bool]:
+        """
+        Lakehouse enabled status for the HeatWave cluster.
+        """
+        return pulumi.get(self, "is_lakehouse_enabled")
 
     @property
     @pulumi.getter(name="shapeName")
@@ -8907,18 +8921,21 @@ class GetMysqlDbSystemEndpointResult(dict):
 class GetMysqlDbSystemHeatWaveClusterResult(dict):
     def __init__(__self__, *,
                  cluster_size: int,
+                 is_lakehouse_enabled: bool,
                  shape_name: str,
                  state: str,
                  time_created: str,
                  time_updated: str):
         """
         :param int cluster_size: The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
+        :param bool is_lakehouse_enabled: Lakehouse enabled status for the HeatWave cluster.
         :param str shape_name: The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
         :param str state: The current state of the DB System.
         :param str time_created: The date and time the DB System was created.
         :param str time_updated: The time the DB System was last updated.
         """
         pulumi.set(__self__, "cluster_size", cluster_size)
+        pulumi.set(__self__, "is_lakehouse_enabled", is_lakehouse_enabled)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
@@ -8931,6 +8948,14 @@ class GetMysqlDbSystemHeatWaveClusterResult(dict):
         The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
         """
         return pulumi.get(self, "cluster_size")
+
+    @property
+    @pulumi.getter(name="isLakehouseEnabled")
+    def is_lakehouse_enabled(self) -> bool:
+        """
+        Lakehouse enabled status for the HeatWave cluster.
+        """
+        return pulumi.get(self, "is_lakehouse_enabled")
 
     @property
     @pulumi.getter(name="shapeName")
@@ -10209,18 +10234,21 @@ class GetMysqlDbSystemsDbSystemEndpointResult(dict):
 class GetMysqlDbSystemsDbSystemHeatWaveClusterResult(dict):
     def __init__(__self__, *,
                  cluster_size: int,
+                 is_lakehouse_enabled: bool,
                  shape_name: str,
                  state: str,
                  time_created: str,
                  time_updated: str):
         """
         :param int cluster_size: The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
+        :param bool is_lakehouse_enabled: Lakehouse enabled status for the HeatWave cluster.
         :param str shape_name: The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
         :param str state: DbSystem Lifecycle State
         :param str time_created: The date and time the DB System was created.
         :param str time_updated: The time the DB System was last updated.
         """
         pulumi.set(__self__, "cluster_size", cluster_size)
+        pulumi.set(__self__, "is_lakehouse_enabled", is_lakehouse_enabled)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
@@ -10233,6 +10261,14 @@ class GetMysqlDbSystemsDbSystemHeatWaveClusterResult(dict):
         The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
         """
         return pulumi.get(self, "cluster_size")
+
+    @property
+    @pulumi.getter(name="isLakehouseEnabled")
+    def is_lakehouse_enabled(self) -> bool:
+        """
+        Lakehouse enabled status for the HeatWave cluster.
+        """
+        return pulumi.get(self, "is_lakehouse_enabled")
 
     @property
     @pulumi.getter(name="shapeName")

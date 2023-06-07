@@ -10,6 +10,212 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type GetVirtualNetworksVirtualNetworkByoipv6cidrDetail struct {
+	Byoipv6rangeId string `pulumi:"byoipv6rangeId"`
+	Ipv6cidrBlock  string `pulumi:"ipv6cidrBlock"`
+}
+
+// GetVirtualNetworksVirtualNetworkByoipv6cidrDetailInput is an input type that accepts GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArgs and GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput values.
+// You can construct a concrete instance of `GetVirtualNetworksVirtualNetworkByoipv6cidrDetailInput` via:
+//
+//	GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArgs{...}
+type GetVirtualNetworksVirtualNetworkByoipv6cidrDetailInput interface {
+	pulumi.Input
+
+	ToGetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput() GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput
+	ToGetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutputWithContext(context.Context) GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput
+}
+
+type GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArgs struct {
+	Byoipv6rangeId pulumi.StringInput `pulumi:"byoipv6rangeId"`
+	Ipv6cidrBlock  pulumi.StringInput `pulumi:"ipv6cidrBlock"`
+}
+
+func (GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNetworksVirtualNetworkByoipv6cidrDetail)(nil)).Elem()
+}
+
+func (i GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArgs) ToGetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput() GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput {
+	return i.ToGetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArgs) ToGetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutputWithContext(ctx context.Context) GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput)
+}
+
+// GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayInput is an input type that accepts GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArray and GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput values.
+// You can construct a concrete instance of `GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayInput` via:
+//
+//	GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArray{ GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArgs{...} }
+type GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput() GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput
+	ToGetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutputWithContext(context.Context) GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput
+}
+
+type GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArray []GetVirtualNetworksVirtualNetworkByoipv6cidrDetailInput
+
+func (GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNetworksVirtualNetworkByoipv6cidrDetail)(nil)).Elem()
+}
+
+func (i GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArray) ToGetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput() GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput {
+	return i.ToGetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArray) ToGetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutputWithContext(ctx context.Context) GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput)
+}
+
+type GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNetworksVirtualNetworkByoipv6cidrDetail)(nil)).Elem()
+}
+
+func (o GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput) ToGetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput() GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput {
+	return o
+}
+
+func (o GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput) ToGetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutputWithContext(ctx context.Context) GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput {
+	return o
+}
+
+func (o GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput) Byoipv6rangeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetworkByoipv6cidrDetail) string { return v.Byoipv6rangeId }).(pulumi.StringOutput)
+}
+
+func (o GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput) Ipv6cidrBlock() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetworkByoipv6cidrDetail) string { return v.Ipv6cidrBlock }).(pulumi.StringOutput)
+}
+
+type GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNetworksVirtualNetworkByoipv6cidrDetail)(nil)).Elem()
+}
+
+func (o GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput) ToGetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput() GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput {
+	return o
+}
+
+func (o GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput) ToGetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutputWithContext(ctx context.Context) GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput {
+	return o
+}
+
+func (o GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput) Index(i pulumi.IntInput) GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNetworksVirtualNetworkByoipv6cidrDetail {
+		return vs[0].([]GetVirtualNetworksVirtualNetworkByoipv6cidrDetail)[vs[1].(int)]
+	}).(GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput)
+}
+
+type GetVlansFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetVlansFilterInput is an input type that accepts GetVlansFilterArgs and GetVlansFilterOutput values.
+// You can construct a concrete instance of `GetVlansFilterInput` via:
+//
+//	GetVlansFilterArgs{...}
+type GetVlansFilterInput interface {
+	pulumi.Input
+
+	ToGetVlansFilterOutput() GetVlansFilterOutput
+	ToGetVlansFilterOutputWithContext(context.Context) GetVlansFilterOutput
+}
+
+type GetVlansFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetVlansFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVlansFilter)(nil)).Elem()
+}
+
+func (i GetVlansFilterArgs) ToGetVlansFilterOutput() GetVlansFilterOutput {
+	return i.ToGetVlansFilterOutputWithContext(context.Background())
+}
+
+func (i GetVlansFilterArgs) ToGetVlansFilterOutputWithContext(ctx context.Context) GetVlansFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVlansFilterOutput)
+}
+
+// GetVlansFilterArrayInput is an input type that accepts GetVlansFilterArray and GetVlansFilterArrayOutput values.
+// You can construct a concrete instance of `GetVlansFilterArrayInput` via:
+//
+//	GetVlansFilterArray{ GetVlansFilterArgs{...} }
+type GetVlansFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetVlansFilterArrayOutput() GetVlansFilterArrayOutput
+	ToGetVlansFilterArrayOutputWithContext(context.Context) GetVlansFilterArrayOutput
+}
+
+type GetVlansFilterArray []GetVlansFilterInput
+
+func (GetVlansFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVlansFilter)(nil)).Elem()
+}
+
+func (i GetVlansFilterArray) ToGetVlansFilterArrayOutput() GetVlansFilterArrayOutput {
+	return i.ToGetVlansFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetVlansFilterArray) ToGetVlansFilterArrayOutputWithContext(ctx context.Context) GetVlansFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVlansFilterArrayOutput)
+}
+
+type GetVlansFilterOutput struct{ *pulumi.OutputState }
+
+func (GetVlansFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVlansFilter)(nil)).Elem()
+}
+
+func (o GetVlansFilterOutput) ToGetVlansFilterOutput() GetVlansFilterOutput {
+	return o
+}
+
+func (o GetVlansFilterOutput) ToGetVlansFilterOutputWithContext(ctx context.Context) GetVlansFilterOutput {
+	return o
+}
+
+func (o GetVlansFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVlansFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetVlansFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVlansFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetVlansFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVlansFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetVlansFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVlansFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVlansFilter)(nil)).Elem()
+}
+
+func (o GetVlansFilterArrayOutput) ToGetVlansFilterArrayOutput() GetVlansFilterArrayOutput {
+	return o
+}
+
+func (o GetVlansFilterArrayOutput) ToGetVlansFilterArrayOutputWithContext(ctx context.Context) GetVlansFilterArrayOutput {
+	return o
+}
+
+func (o GetVlansFilterArrayOutput) Index(i pulumi.IntInput) GetVlansFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVlansFilter {
+		return vs[0].([]GetVlansFilter)[vs[1].(int)]
+	}).(GetVlansFilterOutput)
+}
+
 type GetVlansVlan struct {
 	// The VLAN's availability domain. This attribute will be null if this is a regional VLAN rather than an AD-specific VLAN.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
@@ -5410,6 +5616,10 @@ func (o GetVtapsVtapArrayOutput) Index(i pulumi.IntInput) GetVtapsVtapOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNetworksVirtualNetworkByoipv6cidrDetailInput)(nil)).Elem(), GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayInput)(nil)).Elem(), GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVlansFilterInput)(nil)).Elem(), GetVlansFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVlansFilterArrayInput)(nil)).Elem(), GetVlansFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVlansVlanInput)(nil)).Elem(), GetVlansVlanArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVlansVlanArrayInput)(nil)).Elem(), GetVlansVlanArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVnicAttachmentsFilterInput)(nil)).Elem(), GetVnicAttachmentsFilterArgs{})
@@ -5482,6 +5692,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsFilterArrayInput)(nil)).Elem(), GetVtapsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapInput)(nil)).Elem(), GetVtapsVtapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapArrayInput)(nil)).Elem(), GetVtapsVtapArray{})
+	pulumi.RegisterOutputType(GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput{})
+	pulumi.RegisterOutputType(GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetVlansFilterOutput{})
+	pulumi.RegisterOutputType(GetVlansFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetVlansVlanOutput{})
 	pulumi.RegisterOutputType(GetVlansVlanArrayOutput{})
 	pulumi.RegisterOutputType(GetVnicAttachmentsFilterOutput{})

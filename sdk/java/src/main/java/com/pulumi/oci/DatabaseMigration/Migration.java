@@ -87,6 +87,7 @@ import javax.annotation.Nullable;
  *                 .isSkipAdvisor(var_.migration_advisor_settings_is_skip_advisor())
  *                 .build())
  *             .agentId(oci_database_migration_agent.test_agent().id())
+ *             .csvText(var_.migration_csv_text())
  *             .dataTransferMediumDetails(MigrationDataTransferMediumDetailsArgs.builder()
  *                 .databaseLinkDetails(MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs.builder()
  *                     .name(var_.migration_data_transfer_medium_details_database_link_details_name())
@@ -261,6 +262,20 @@ public class Migration extends com.pulumi.resources.CustomResource {
      */
     public Output<String> credentialsSecretId() {
         return this.credentialsSecretId;
+    }
+    /**
+     * Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+     * 
+     */
+    @Export(name="csvText", type=String.class, parameters={})
+    private Output<String> csvText;
+
+    /**
+     * @return Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+     * 
+     */
+    public Output<String> csvText() {
+        return this.csvText;
     }
     /**
      * (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.

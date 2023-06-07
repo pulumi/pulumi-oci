@@ -35,6 +35,11 @@ export type ClusterNetwork = import("./clusterNetwork").ClusterNetwork;
 export const ClusterNetwork: typeof import("./clusterNetwork").ClusterNetwork = null as any;
 utilities.lazyLoad(exports, ["ClusterNetwork"], () => require("./clusterNetwork"));
 
+export { ComputeCapacityReportArgs, ComputeCapacityReportState } from "./computeCapacityReport";
+export type ComputeCapacityReport = import("./computeCapacityReport").ComputeCapacityReport;
+export const ComputeCapacityReport: typeof import("./computeCapacityReport").ComputeCapacityReport = null as any;
+utilities.lazyLoad(exports, ["ComputeCapacityReport"], () => require("./computeCapacityReport"));
+
 export { ComputeCapacityReservationArgs, ComputeCapacityReservationState } from "./computeCapacityReservation";
 export type ComputeCapacityReservation = import("./computeCapacityReservation").ComputeCapacityReservation;
 export const ComputeCapacityReservation: typeof import("./computeCapacityReservation").ComputeCapacityReservation = null as any;
@@ -1056,6 +1061,8 @@ const _module = {
                 return new CaptureFilter(name, <any>undefined, { urn })
             case "oci:Core/clusterNetwork:ClusterNetwork":
                 return new ClusterNetwork(name, <any>undefined, { urn })
+            case "oci:Core/computeCapacityReport:ComputeCapacityReport":
+                return new ComputeCapacityReport(name, <any>undefined, { urn })
             case "oci:Core/computeCapacityReservation:ComputeCapacityReservation":
                 return new ComputeCapacityReservation(name, <any>undefined, { urn })
             case "oci:Core/computeCluster:ComputeCluster":
@@ -1185,6 +1192,7 @@ pulumi.runtime.registerResourceModule("oci", "Core/bootVolume", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/bootVolumeBackup", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/captureFilter", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/clusterNetwork", _module)
+pulumi.runtime.registerResourceModule("oci", "Core/computeCapacityReport", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/computeCapacityReservation", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/computeCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/computeImageCapabilitySchema", _module)

@@ -157,8 +157,6 @@ import com.pulumi.oci.Identity.inputs.GetRegionsArgs;
 import com.pulumi.oci.Identity.inputs.GetRegionsPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetSmtpCredentialsArgs;
 import com.pulumi.oci.Identity.inputs.GetSmtpCredentialsPlainArgs;
-import com.pulumi.oci.Identity.inputs.GetSwiftPasswordsArgs;
-import com.pulumi.oci.Identity.inputs.GetSwiftPasswordsPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetTagArgs;
 import com.pulumi.oci.Identity.inputs.GetTagDefaultArgs;
 import com.pulumi.oci.Identity.inputs.GetTagDefaultPlainArgs;
@@ -258,7 +256,6 @@ import com.pulumi.oci.Identity.outputs.GetPoliciesResult;
 import com.pulumi.oci.Identity.outputs.GetRegionSubscriptionsResult;
 import com.pulumi.oci.Identity.outputs.GetRegionsResult;
 import com.pulumi.oci.Identity.outputs.GetSmtpCredentialsResult;
-import com.pulumi.oci.Identity.outputs.GetSwiftPasswordsResult;
 import com.pulumi.oci.Identity.outputs.GetTagDefaultResult;
 import com.pulumi.oci.Identity.outputs.GetTagDefaultsResult;
 import com.pulumi.oci.Identity.outputs.GetTagNamespacesResult;
@@ -13532,174 +13529,6 @@ public final class IdentityFunctions {
      */
     public static CompletableFuture<GetSmtpCredentialsResult> getSmtpCredentialsPlain(GetSmtpCredentialsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Identity/getSmtpCredentials:getSmtpCredentials", TypeShape.of(GetSmtpCredentialsResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Swift Passwords in Oracle Cloud Infrastructure Identity service.
-     * 
-     * **Deprecated. Use [ListAuthTokens](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/ListAuthTokens) instead.**
-     * 
-     * Lists the Swift passwords for the specified user. The returned object contains the password&#39;s OCID, but not
-     * the password itself. The actual password is returned only upon creation.
-     * 
-     * ## Example Usage
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Identity.IdentityFunctions;
-     * import com.pulumi.oci.Identity.inputs.GetSwiftPasswordsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testSwiftPasswords = IdentityFunctions.getSwiftPasswords(GetSwiftPasswordsArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * ```
-     * 
-     */
-    public static Output<GetSwiftPasswordsResult> getSwiftPasswords(GetSwiftPasswordsArgs args) {
-        return getSwiftPasswords(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Swift Passwords in Oracle Cloud Infrastructure Identity service.
-     * 
-     * **Deprecated. Use [ListAuthTokens](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/ListAuthTokens) instead.**
-     * 
-     * Lists the Swift passwords for the specified user. The returned object contains the password&#39;s OCID, but not
-     * the password itself. The actual password is returned only upon creation.
-     * 
-     * ## Example Usage
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Identity.IdentityFunctions;
-     * import com.pulumi.oci.Identity.inputs.GetSwiftPasswordsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testSwiftPasswords = IdentityFunctions.getSwiftPasswords(GetSwiftPasswordsArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * ```
-     * 
-     */
-    public static CompletableFuture<GetSwiftPasswordsResult> getSwiftPasswordsPlain(GetSwiftPasswordsPlainArgs args) {
-        return getSwiftPasswordsPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Swift Passwords in Oracle Cloud Infrastructure Identity service.
-     * 
-     * **Deprecated. Use [ListAuthTokens](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/ListAuthTokens) instead.**
-     * 
-     * Lists the Swift passwords for the specified user. The returned object contains the password&#39;s OCID, but not
-     * the password itself. The actual password is returned only upon creation.
-     * 
-     * ## Example Usage
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Identity.IdentityFunctions;
-     * import com.pulumi.oci.Identity.inputs.GetSwiftPasswordsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testSwiftPasswords = IdentityFunctions.getSwiftPasswords(GetSwiftPasswordsArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * ```
-     * 
-     */
-    public static Output<GetSwiftPasswordsResult> getSwiftPasswords(GetSwiftPasswordsArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:Identity/getSwiftPasswords:getSwiftPasswords", TypeShape.of(GetSwiftPasswordsResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Swift Passwords in Oracle Cloud Infrastructure Identity service.
-     * 
-     * **Deprecated. Use [ListAuthTokens](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/ListAuthTokens) instead.**
-     * 
-     * Lists the Swift passwords for the specified user. The returned object contains the password&#39;s OCID, but not
-     * the password itself. The actual password is returned only upon creation.
-     * 
-     * ## Example Usage
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Identity.IdentityFunctions;
-     * import com.pulumi.oci.Identity.inputs.GetSwiftPasswordsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testSwiftPasswords = IdentityFunctions.getSwiftPasswords(GetSwiftPasswordsArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * ```
-     * 
-     */
-    public static CompletableFuture<GetSwiftPasswordsResult> getSwiftPasswordsPlain(GetSwiftPasswordsPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:Identity/getSwiftPasswords:getSwiftPasswords", TypeShape.of(GetSwiftPasswordsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Tag resource in Oracle Cloud Infrastructure Identity service.

@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int ClusterSize;
         /// <summary>
+        /// Lakehouse enabled status for the HeatWave cluster.
+        /// </summary>
+        public readonly bool IsLakehouseEnabled;
+        /// <summary>
         /// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
         /// </summary>
         public readonly string ShapeName;
@@ -38,6 +42,8 @@ namespace Pulumi.Oci.Mysql.Outputs
         private GetMysqlDbSystemsDbSystemHeatWaveClusterResult(
             int clusterSize,
 
+            bool isLakehouseEnabled,
+
             string shapeName,
 
             string state,
@@ -47,6 +53,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             string timeUpdated)
         {
             ClusterSize = clusterSize;
+            IsLakehouseEnabled = isLakehouseEnabled;
             ShapeName = shapeName;
             State = state;
             TimeCreated = timeCreated;

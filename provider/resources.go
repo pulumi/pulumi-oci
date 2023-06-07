@@ -748,7 +748,6 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_identity_network_source":                  {Tok: tfbridge.MakeResource(mainPkg, identityMod, "NetworkSource")},
 			"oci_identity_policy":                          {Tok: tfbridge.MakeResource(mainPkg, identityMod, "Policy")},
 			"oci_identity_smtp_credential":                 {Tok: tfbridge.MakeResource(mainPkg, identityMod, "SmtpCredential")},
-			"oci_identity_swift_password":                  {Tok: tfbridge.MakeResource(mainPkg, identityMod, "SwiftPassword")},
 			"oci_identity_tag":                             {Tok: tfbridge.MakeResource(mainPkg, identityMod, "Tag")},
 			"oci_identity_tag_default":                     {Tok: tfbridge.MakeResource(mainPkg, identityMod, "TagDefault")},
 			"oci_identity_tag_namespace":                   {Tok: tfbridge.MakeResource(mainPkg, identityMod, "TagNamespace")},

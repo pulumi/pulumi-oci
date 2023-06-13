@@ -30,9 +30,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Mysql.NewHeatWaveCluster(ctx, "testHeatWaveCluster", &Mysql.HeatWaveClusterArgs{
-//				DbSystemId:  pulumi.Any(oci_database_db_system.Test_db_system.Id),
-//				ClusterSize: pulumi.Any(_var.Heat_wave_cluster_cluster_size),
-//				ShapeName:   pulumi.Any(oci_mysql_shape.Test_shape.Name),
+//				DbSystemId:         pulumi.Any(oci_database_db_system.Test_db_system.Id),
+//				ClusterSize:        pulumi.Any(_var.Heat_wave_cluster_cluster_size),
+//				IsLakehouseEnabled: pulumi.Any(_var.Heat_wave_cluster_is_lakehouse_enabled),
+//				ShapeName:          pulumi.Any(oci_mysql_shape.Test_shape.Name),
 //			})
 //			if err != nil {
 //				return err
@@ -61,6 +62,8 @@ type HeatWaveCluster struct {
 	ClusterSize pulumi.IntOutput `pulumi:"clusterSize"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId pulumi.StringOutput `pulumi:"dbSystemId"`
+	// (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+	IsLakehouseEnabled pulumi.BoolOutput `pulumi:"isLakehouseEnabled"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) A change to the shape of the nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
@@ -120,6 +123,8 @@ type heatWaveClusterState struct {
 	ClusterSize *int `pulumi:"clusterSize"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId *string `pulumi:"dbSystemId"`
+	// (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+	IsLakehouseEnabled *bool `pulumi:"isLakehouseEnabled"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) A change to the shape of the nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
@@ -142,6 +147,8 @@ type HeatWaveClusterState struct {
 	ClusterSize pulumi.IntPtrInput
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId pulumi.StringPtrInput
+	// (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+	IsLakehouseEnabled pulumi.BoolPtrInput
 	// Additional information about the current lifecycleState.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) A change to the shape of the nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
@@ -166,6 +173,8 @@ type heatWaveClusterArgs struct {
 	ClusterSize int `pulumi:"clusterSize"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId string `pulumi:"dbSystemId"`
+	// (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+	IsLakehouseEnabled *bool `pulumi:"isLakehouseEnabled"`
 	// (Updatable) A change to the shape of the nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
 	ShapeName string `pulumi:"shapeName"`
 	// (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
@@ -181,6 +190,8 @@ type HeatWaveClusterArgs struct {
 	ClusterSize pulumi.IntInput
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId pulumi.StringInput
+	// (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+	IsLakehouseEnabled pulumi.BoolPtrInput
 	// (Updatable) A change to the shape of the nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
 	ShapeName pulumi.StringInput
 	// (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
@@ -290,6 +301,11 @@ func (o HeatWaveClusterOutput) ClusterSize() pulumi.IntOutput {
 // The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o HeatWaveClusterOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v *HeatWaveCluster) pulumi.StringOutput { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+func (o HeatWaveClusterOutput) IsLakehouseEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *HeatWaveCluster) pulumi.BoolOutput { return v.IsLakehouseEnabled }).(pulumi.BoolOutput)
 }
 
 // Additional information about the current lifecycleState.

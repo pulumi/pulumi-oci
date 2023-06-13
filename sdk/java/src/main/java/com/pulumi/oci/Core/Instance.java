@@ -69,6 +69,10 @@ import javax.annotation.Nullable;
  * with the signature. To get the image ID for the LaunchInstance operation, call
  * [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion).
  * 
+ * To determine whether capacity is available for a specific shape before you create an instance,
+ * use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
+ * operation.
+ * 
  * ## Example Usage
  * ```java
  * package generated_program;

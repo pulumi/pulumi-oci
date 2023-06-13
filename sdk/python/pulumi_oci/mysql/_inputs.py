@@ -3890,12 +3890,14 @@ class MysqlDbSystemEndpointArgs:
 class MysqlDbSystemHeatWaveClusterArgs:
     def __init__(__self__, *,
                  cluster_size: Optional[pulumi.Input[int]] = None,
+                 is_lakehouse_enabled: Optional[pulumi.Input[bool]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[int] cluster_size: The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
+        :param pulumi.Input[bool] is_lakehouse_enabled: Lakehouse enabled status for the HeatWave cluster.
         :param pulumi.Input[str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[str] state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
@@ -3904,6 +3906,8 @@ class MysqlDbSystemHeatWaveClusterArgs:
         """
         if cluster_size is not None:
             pulumi.set(__self__, "cluster_size", cluster_size)
+        if is_lakehouse_enabled is not None:
+            pulumi.set(__self__, "is_lakehouse_enabled", is_lakehouse_enabled)
         if shape_name is not None:
             pulumi.set(__self__, "shape_name", shape_name)
         if state is not None:
@@ -3924,6 +3928,18 @@ class MysqlDbSystemHeatWaveClusterArgs:
     @cluster_size.setter
     def cluster_size(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "cluster_size", value)
+
+    @property
+    @pulumi.getter(name="isLakehouseEnabled")
+    def is_lakehouse_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Lakehouse enabled status for the HeatWave cluster.
+        """
+        return pulumi.get(self, "is_lakehouse_enabled")
+
+    @is_lakehouse_enabled.setter
+    def is_lakehouse_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lakehouse_enabled", value)
 
     @property
     @pulumi.getter(name="shapeName")

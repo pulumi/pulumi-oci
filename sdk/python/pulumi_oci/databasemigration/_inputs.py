@@ -1802,11 +1802,13 @@ class MigrationGoldenGateDetailsSettingsReplicatArgs:
     def __init__(__self__, *,
                  map_parallelism: Optional[pulumi.Input[int]] = None,
                  max_apply_parallelism: Optional[pulumi.Input[int]] = None,
-                 min_apply_parallelism: Optional[pulumi.Input[int]] = None):
+                 min_apply_parallelism: Optional[pulumi.Input[int]] = None,
+                 performance_profile: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[int] map_parallelism: (Updatable) Number of threads used to read trail files (valid for Parallel Replicat)
         :param pulumi.Input[int] max_apply_parallelism: (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
         :param pulumi.Input[int] min_apply_parallelism: (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+        :param pulumi.Input[str] performance_profile: (Updatable) Extract performance.
         """
         if map_parallelism is not None:
             pulumi.set(__self__, "map_parallelism", map_parallelism)
@@ -1814,6 +1816,8 @@ class MigrationGoldenGateDetailsSettingsReplicatArgs:
             pulumi.set(__self__, "max_apply_parallelism", max_apply_parallelism)
         if min_apply_parallelism is not None:
             pulumi.set(__self__, "min_apply_parallelism", min_apply_parallelism)
+        if performance_profile is not None:
+            pulumi.set(__self__, "performance_profile", performance_profile)
 
     @property
     @pulumi.getter(name="mapParallelism")
@@ -1850,6 +1854,18 @@ class MigrationGoldenGateDetailsSettingsReplicatArgs:
     @min_apply_parallelism.setter
     def min_apply_parallelism(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "min_apply_parallelism", value)
+
+    @property
+    @pulumi.getter(name="performanceProfile")
+    def performance_profile(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Extract performance.
+        """
+        return pulumi.get(self, "performance_profile")
+
+    @performance_profile.setter
+    def performance_profile(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "performance_profile", value)
 
 
 @pulumi.input_type

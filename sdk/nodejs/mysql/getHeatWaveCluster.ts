@@ -58,6 +58,10 @@ export interface GetHeatWaveClusterResult {
     readonly dbSystemId: string;
     readonly id: string;
     /**
+     * Lakehouse enabled status for the HeatWave cluster.
+     */
+    readonly isLakehouseEnabled: boolean;
+    /**
      * Additional information about the current lifecycleState.
      */
     readonly lifecycleDetails: string;

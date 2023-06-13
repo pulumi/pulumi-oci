@@ -22,6 +22,7 @@ class MigrationArgs:
                  type: pulumi.Input[str],
                  advisor_settings: Optional[pulumi.Input['MigrationAdvisorSettingsArgs']] = None,
                  agent_id: Optional[pulumi.Input[str]] = None,
+                 csv_text: Optional[pulumi.Input[str]] = None,
                  data_transfer_medium_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']] = None,
                  datapump_settings: Optional[pulumi.Input['MigrationDatapumpSettingsArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -41,6 +42,7 @@ class MigrationArgs:
         :param pulumi.Input[str] type: (Updatable) Migration type.
         :param pulumi.Input['MigrationAdvisorSettingsArgs'] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
         :param pulumi.Input[str] agent_id: (Updatable) The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
+        :param pulumi.Input[str] csv_text: Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
         :param pulumi.Input['MigrationDataTransferMediumDetailsArgs'] data_transfer_medium_details: (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
         :param pulumi.Input['MigrationDatapumpSettingsArgs'] datapump_settings: (Updatable) Optional settings for Data Pump Export and Import jobs
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -61,6 +63,8 @@ class MigrationArgs:
             pulumi.set(__self__, "advisor_settings", advisor_settings)
         if agent_id is not None:
             pulumi.set(__self__, "agent_id", agent_id)
+        if csv_text is not None:
+            pulumi.set(__self__, "csv_text", csv_text)
         if data_transfer_medium_details is not None:
             pulumi.set(__self__, "data_transfer_medium_details", data_transfer_medium_details)
         if datapump_settings is not None:
@@ -155,6 +159,18 @@ class MigrationArgs:
     @agent_id.setter
     def agent_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "agent_id", value)
+
+    @property
+    @pulumi.getter(name="csvText")
+    def csv_text(self) -> Optional[pulumi.Input[str]]:
+        """
+        Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+        """
+        return pulumi.get(self, "csv_text")
+
+    @csv_text.setter
+    def csv_text(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "csv_text", value)
 
     @property
     @pulumi.getter(name="dataTransferMediumDetails")
@@ -296,6 +312,7 @@ class _MigrationState:
                  agent_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  credentials_secret_id: Optional[pulumi.Input[str]] = None,
+                 csv_text: Optional[pulumi.Input[str]] = None,
                  data_transfer_medium_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']] = None,
                  datapump_settings: Optional[pulumi.Input['MigrationDatapumpSettingsArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -324,6 +341,7 @@ class _MigrationState:
         :param pulumi.Input[str] agent_id: (Updatable) The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
         :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
         :param pulumi.Input[str] credentials_secret_id: OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
+        :param pulumi.Input[str] csv_text: Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
         :param pulumi.Input['MigrationDataTransferMediumDetailsArgs'] data_transfer_medium_details: (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
         :param pulumi.Input['MigrationDatapumpSettingsArgs'] datapump_settings: (Updatable) Optional settings for Data Pump Export and Import jobs
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -355,6 +373,8 @@ class _MigrationState:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if credentials_secret_id is not None:
             pulumi.set(__self__, "credentials_secret_id", credentials_secret_id)
+        if csv_text is not None:
+            pulumi.set(__self__, "csv_text", csv_text)
         if data_transfer_medium_details is not None:
             pulumi.set(__self__, "data_transfer_medium_details", data_transfer_medium_details)
         if datapump_settings is not None:
@@ -447,6 +467,18 @@ class _MigrationState:
     @credentials_secret_id.setter
     def credentials_secret_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "credentials_secret_id", value)
+
+    @property
+    @pulumi.getter(name="csvText")
+    def csv_text(self) -> Optional[pulumi.Input[str]]:
+        """
+        Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+        """
+        return pulumi.get(self, "csv_text")
+
+    @csv_text.setter
+    def csv_text(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "csv_text", value)
 
     @property
     @pulumi.getter(name="dataTransferMediumDetails")
@@ -721,6 +753,7 @@ class Migration(pulumi.CustomResource):
                  advisor_settings: Optional[pulumi.Input[pulumi.InputType['MigrationAdvisorSettingsArgs']]] = None,
                  agent_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 csv_text: Optional[pulumi.Input[str]] = None,
                  data_transfer_medium_details: Optional[pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsArgs']]] = None,
                  datapump_settings: Optional[pulumi.Input[pulumi.InputType['MigrationDatapumpSettingsArgs']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -759,6 +792,7 @@ class Migration(pulumi.CustomResource):
                 is_skip_advisor=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             agent_id=oci_database_migration_agent["test_agent"]["id"],
+            csv_text=var["migration_csv_text"],
             data_transfer_medium_details=oci.database_migration.MigrationDataTransferMediumDetailsArgs(
                 database_link_details=oci.database_migration.MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs(
                     name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
@@ -880,6 +914,7 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['MigrationAdvisorSettingsArgs']] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
         :param pulumi.Input[str] agent_id: (Updatable) The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
         :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        :param pulumi.Input[str] csv_text: Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
         :param pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsArgs']] data_transfer_medium_details: (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
         :param pulumi.Input[pulumi.InputType['MigrationDatapumpSettingsArgs']] datapump_settings: (Updatable) Optional settings for Data Pump Export and Import jobs
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -924,6 +959,7 @@ class Migration(pulumi.CustomResource):
                 is_skip_advisor=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
             ),
             agent_id=oci_database_migration_agent["test_agent"]["id"],
+            csv_text=var["migration_csv_text"],
             data_transfer_medium_details=oci.database_migration.MigrationDataTransferMediumDetailsArgs(
                 database_link_details=oci.database_migration.MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs(
                     name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
@@ -1058,6 +1094,7 @@ class Migration(pulumi.CustomResource):
                  advisor_settings: Optional[pulumi.Input[pulumi.InputType['MigrationAdvisorSettingsArgs']]] = None,
                  agent_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 csv_text: Optional[pulumi.Input[str]] = None,
                  data_transfer_medium_details: Optional[pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsArgs']]] = None,
                  datapump_settings: Optional[pulumi.Input[pulumi.InputType['MigrationDatapumpSettingsArgs']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1086,6 +1123,7 @@ class Migration(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["csv_text"] = csv_text
             __props__.__dict__["data_transfer_medium_details"] = data_transfer_medium_details
             __props__.__dict__["datapump_settings"] = datapump_settings
             __props__.__dict__["defined_tags"] = defined_tags
@@ -1129,6 +1167,7 @@ class Migration(pulumi.CustomResource):
             agent_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             credentials_secret_id: Optional[pulumi.Input[str]] = None,
+            csv_text: Optional[pulumi.Input[str]] = None,
             data_transfer_medium_details: Optional[pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsArgs']]] = None,
             datapump_settings: Optional[pulumi.Input[pulumi.InputType['MigrationDatapumpSettingsArgs']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1162,6 +1201,7 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[str] agent_id: (Updatable) The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
         :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
         :param pulumi.Input[str] credentials_secret_id: OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
+        :param pulumi.Input[str] csv_text: Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
         :param pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsArgs']] data_transfer_medium_details: (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
         :param pulumi.Input[pulumi.InputType['MigrationDatapumpSettingsArgs']] datapump_settings: (Updatable) Optional settings for Data Pump Export and Import jobs
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1193,6 +1233,7 @@ class Migration(pulumi.CustomResource):
         __props__.__dict__["agent_id"] = agent_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["credentials_secret_id"] = credentials_secret_id
+        __props__.__dict__["csv_text"] = csv_text
         __props__.__dict__["data_transfer_medium_details"] = data_transfer_medium_details
         __props__.__dict__["datapump_settings"] = datapump_settings
         __props__.__dict__["defined_tags"] = defined_tags
@@ -1248,6 +1289,14 @@ class Migration(pulumi.CustomResource):
         OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
         """
         return pulumi.get(self, "credentials_secret_id")
+
+    @property
+    @pulumi.getter(name="csvText")
+    def csv_text(self) -> pulumi.Output[str]:
+        """
+        Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+        """
+        return pulumi.get(self, "csv_text")
 
     @property
     @pulumi.getter(name="dataTransferMediumDetails")

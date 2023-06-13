@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testHeatWaveCluster = new oci.mysql.HeatWaveCluster("testHeatWaveCluster", {
  *     dbSystemId: oci_database_db_system.test_db_system.id,
  *     clusterSize: _var.heat_wave_cluster_cluster_size,
+ *     isLakehouseEnabled: _var.heat_wave_cluster_is_lakehouse_enabled,
  *     shapeName: oci_mysql_shape.test_shape.name,
  * });
  * ```
@@ -73,6 +74,10 @@ export class HeatWaveCluster extends pulumi.CustomResource {
      */
     public readonly dbSystemId!: pulumi.Output<string>;
     /**
+     * (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+     */
+    public readonly isLakehouseEnabled!: pulumi.Output<boolean>;
+    /**
      * Additional information about the current lifecycleState.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
@@ -112,6 +117,7 @@ export class HeatWaveCluster extends pulumi.CustomResource {
             resourceInputs["clusterNodes"] = state ? state.clusterNodes : undefined;
             resourceInputs["clusterSize"] = state ? state.clusterSize : undefined;
             resourceInputs["dbSystemId"] = state ? state.dbSystemId : undefined;
+            resourceInputs["isLakehouseEnabled"] = state ? state.isLakehouseEnabled : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["shapeName"] = state ? state.shapeName : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -130,6 +136,7 @@ export class HeatWaveCluster extends pulumi.CustomResource {
             }
             resourceInputs["clusterSize"] = args ? args.clusterSize : undefined;
             resourceInputs["dbSystemId"] = args ? args.dbSystemId : undefined;
+            resourceInputs["isLakehouseEnabled"] = args ? args.isLakehouseEnabled : undefined;
             resourceInputs["shapeName"] = args ? args.shapeName : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["clusterNodes"] = undefined /*out*/;
@@ -158,6 +165,10 @@ export interface HeatWaveClusterState {
      * The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     dbSystemId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+     */
+    isLakehouseEnabled?: pulumi.Input<boolean>;
     /**
      * Additional information about the current lifecycleState.
      */
@@ -195,6 +206,10 @@ export interface HeatWaveClusterArgs {
      * The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     dbSystemId: pulumi.Input<string>;
+    /**
+     * (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+     */
+    isLakehouseEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) A change to the shape of the nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
      */

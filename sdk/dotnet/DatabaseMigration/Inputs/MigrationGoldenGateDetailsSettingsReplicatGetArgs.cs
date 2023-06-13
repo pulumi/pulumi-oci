@@ -30,6 +30,12 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         [Input("minApplyParallelism")]
         public Input<int>? MinApplyParallelism { get; set; }
 
+        /// <summary>
+        /// (Updatable) Extract performance.
+        /// </summary>
+        [Input("performanceProfile")]
+        public Input<string>? PerformanceProfile { get; set; }
+
         public MigrationGoldenGateDetailsSettingsReplicatGetArgs()
         {
         }

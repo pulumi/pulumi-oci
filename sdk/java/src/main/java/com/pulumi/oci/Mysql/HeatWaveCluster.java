@@ -11,6 +11,7 @@ import com.pulumi.oci.Mysql.HeatWaveClusterArgs;
 import com.pulumi.oci.Mysql.inputs.HeatWaveClusterState;
 import com.pulumi.oci.Mysql.outputs.HeatWaveClusterClusterNode;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -46,6 +47,7 @@ import javax.annotation.Nullable;
  *         var testHeatWaveCluster = new HeatWaveCluster(&#34;testHeatWaveCluster&#34;, HeatWaveClusterArgs.builder()        
  *             .dbSystemId(oci_database_db_system.test_db_system().id())
  *             .clusterSize(var_.heat_wave_cluster_cluster_size())
+ *             .isLakehouseEnabled(var_.heat_wave_cluster_is_lakehouse_enabled())
  *             .shapeName(oci_mysql_shape.test_shape().name())
  *             .build());
  * 
@@ -105,6 +107,20 @@ public class HeatWaveCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> dbSystemId() {
         return this.dbSystemId;
+    }
+    /**
+     * (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+     * 
+     */
+    @Export(name="isLakehouseEnabled", type=Boolean.class, parameters={})
+    private Output<Boolean> isLakehouseEnabled;
+
+    /**
+     * @return (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+     * 
+     */
+    public Output<Boolean> isLakehouseEnabled() {
+        return this.isLakehouseEnabled;
     }
     /**
      * Additional information about the current lifecycleState.

@@ -29,6 +29,8 @@ __all__ = [
     'ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet',
     'ClusterNetworkPlacementConfiguration',
     'ClusterNetworkPlacementConfigurationSecondaryVnicSubnet',
+    'ComputeCapacityReportShapeAvailability',
+    'ComputeCapacityReportShapeAvailabilityInstanceShapeConfig',
     'ComputeCapacityReservationInstanceReservationConfig',
     'ComputeCapacityReservationInstanceReservationConfigClusterConfig',
     'ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig',
@@ -1704,6 +1706,169 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnet(dict):
         The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         """
         return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
+class ComputeCapacityReportShapeAvailability(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceShape":
+            suggest = "instance_shape"
+        elif key == "availabilityStatus":
+            suggest = "availability_status"
+        elif key == "availableCount":
+            suggest = "available_count"
+        elif key == "faultDomain":
+            suggest = "fault_domain"
+        elif key == "instanceShapeConfig":
+            suggest = "instance_shape_config"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ComputeCapacityReportShapeAvailability. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ComputeCapacityReportShapeAvailability.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ComputeCapacityReportShapeAvailability.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 instance_shape: str,
+                 availability_status: Optional[str] = None,
+                 available_count: Optional[str] = None,
+                 fault_domain: Optional[str] = None,
+                 instance_shape_config: Optional['outputs.ComputeCapacityReportShapeAvailabilityInstanceShapeConfig'] = None):
+        """
+        :param str instance_shape: The shape that you want to request a capacity report for. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+        :param str availability_status: A flag denoting whether capacity is available.
+        :param str available_count: The total number of new instances that can be created with the specified shape configuration.
+        :param str fault_domain: The fault domain for the capacity report.
+               
+               If you do not specify a fault domain, the capacity report includes information about all fault domains.
+        :param 'ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs' instance_shape_config: The shape configuration for a shape in a capacity report.
+        """
+        pulumi.set(__self__, "instance_shape", instance_shape)
+        if availability_status is not None:
+            pulumi.set(__self__, "availability_status", availability_status)
+        if available_count is not None:
+            pulumi.set(__self__, "available_count", available_count)
+        if fault_domain is not None:
+            pulumi.set(__self__, "fault_domain", fault_domain)
+        if instance_shape_config is not None:
+            pulumi.set(__self__, "instance_shape_config", instance_shape_config)
+
+    @property
+    @pulumi.getter(name="instanceShape")
+    def instance_shape(self) -> str:
+        """
+        The shape that you want to request a capacity report for. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+        """
+        return pulumi.get(self, "instance_shape")
+
+    @property
+    @pulumi.getter(name="availabilityStatus")
+    def availability_status(self) -> Optional[str]:
+        """
+        A flag denoting whether capacity is available.
+        """
+        return pulumi.get(self, "availability_status")
+
+    @property
+    @pulumi.getter(name="availableCount")
+    def available_count(self) -> Optional[str]:
+        """
+        The total number of new instances that can be created with the specified shape configuration.
+        """
+        return pulumi.get(self, "available_count")
+
+    @property
+    @pulumi.getter(name="faultDomain")
+    def fault_domain(self) -> Optional[str]:
+        """
+        The fault domain for the capacity report.
+
+        If you do not specify a fault domain, the capacity report includes information about all fault domains.
+        """
+        return pulumi.get(self, "fault_domain")
+
+    @property
+    @pulumi.getter(name="instanceShapeConfig")
+    def instance_shape_config(self) -> Optional['outputs.ComputeCapacityReportShapeAvailabilityInstanceShapeConfig']:
+        """
+        The shape configuration for a shape in a capacity report.
+        """
+        return pulumi.get(self, "instance_shape_config")
+
+
+@pulumi.output_type
+class ComputeCapacityReportShapeAvailabilityInstanceShapeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ComputeCapacityReportShapeAvailabilityInstanceShapeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ComputeCapacityReportShapeAvailabilityInstanceShapeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ComputeCapacityReportShapeAvailabilityInstanceShapeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[float] = None,
+                 nvmes: Optional[int] = None,
+                 ocpus: Optional[float] = None):
+        """
+        :param float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
+        :param int nvmes: The number of NVMe drives to be used for storage.
+        :param float ocpus: The total number of OCPUs available to the instance. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[float]:
+        """
+        The total amount of memory available to the instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> Optional[int]:
+        """
+        The number of NVMe drives to be used for storage.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[float]:
+        """
+        The total number of OCPUs available to the instance. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type

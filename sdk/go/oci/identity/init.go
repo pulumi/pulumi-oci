@@ -93,8 +93,6 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Policy{}
 	case "oci:Identity/smtpCredential:SmtpCredential":
 		r = &SmtpCredential{}
-	case "oci:Identity/swiftPassword:SwiftPassword":
-		r = &SwiftPassword{}
 	case "oci:Identity/tag:Tag":
 		r = &Tag{}
 	case "oci:Identity/tagDefault:TagDefault":
@@ -300,11 +298,6 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Identity/smtpCredential",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"oci",
-		"Identity/swiftPassword",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

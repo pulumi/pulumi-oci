@@ -40,6 +40,7 @@ public final class GetMigrationsMigrationCollectionItem {
      * 
      */
     private String credentialsSecretId;
+    private String csvText;
     /**
      * @return Data Transfer Medium details for the Migration.
      * 
@@ -184,6 +185,9 @@ public final class GetMigrationsMigrationCollectionItem {
      */
     public String credentialsSecretId() {
         return this.credentialsSecretId;
+    }
+    public String csvText() {
+        return this.csvText;
     }
     /**
      * @return Data Transfer Medium details for the Migration.
@@ -360,6 +364,7 @@ public final class GetMigrationsMigrationCollectionItem {
         private String agentId;
         private String compartmentId;
         private String credentialsSecretId;
+        private String csvText;
         private List<GetMigrationsMigrationCollectionItemDataTransferMediumDetail> dataTransferMediumDetails;
         private List<GetMigrationsMigrationCollectionItemDatapumpSetting> datapumpSettings;
         private Map<String,Object> definedTags;
@@ -390,6 +395,7 @@ public final class GetMigrationsMigrationCollectionItem {
     	      this.agentId = defaults.agentId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.credentialsSecretId = defaults.credentialsSecretId;
+    	      this.csvText = defaults.csvText;
     	      this.dataTransferMediumDetails = defaults.dataTransferMediumDetails;
     	      this.datapumpSettings = defaults.datapumpSettings;
     	      this.definedTags = defaults.definedTags;
@@ -436,6 +442,11 @@ public final class GetMigrationsMigrationCollectionItem {
         @CustomType.Setter
         public Builder credentialsSecretId(String credentialsSecretId) {
             this.credentialsSecretId = Objects.requireNonNull(credentialsSecretId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder csvText(String csvText) {
+            this.csvText = Objects.requireNonNull(csvText);
             return this;
         }
         @CustomType.Setter
@@ -580,6 +591,7 @@ public final class GetMigrationsMigrationCollectionItem {
             o.agentId = agentId;
             o.compartmentId = compartmentId;
             o.credentialsSecretId = credentialsSecretId;
+            o.csvText = csvText;
             o.dataTransferMediumDetails = dataTransferMediumDetails;
             o.datapumpSettings = datapumpSettings;
             o.definedTags = definedTags;

@@ -6150,6 +6150,8 @@ func (o MysqlDbSystemEndpointArrayOutput) Index(i pulumi.IntInput) MysqlDbSystem
 type MysqlDbSystemHeatWaveCluster struct {
 	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
 	ClusterSize *int `pulumi:"clusterSize"`
+	// Lakehouse enabled status for the HeatWave cluster.
+	IsLakehouseEnabled *bool `pulumi:"isLakehouseEnabled"`
 	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName *string `pulumi:"shapeName"`
@@ -6175,6 +6177,8 @@ type MysqlDbSystemHeatWaveClusterInput interface {
 type MysqlDbSystemHeatWaveClusterArgs struct {
 	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
 	ClusterSize pulumi.IntPtrInput `pulumi:"clusterSize"`
+	// Lakehouse enabled status for the HeatWave cluster.
+	IsLakehouseEnabled pulumi.BoolPtrInput `pulumi:"isLakehouseEnabled"`
 	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
@@ -6240,6 +6244,11 @@ func (o MysqlDbSystemHeatWaveClusterOutput) ToMysqlDbSystemHeatWaveClusterOutput
 // The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
 func (o MysqlDbSystemHeatWaveClusterOutput) ClusterSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemHeatWaveCluster) *int { return v.ClusterSize }).(pulumi.IntPtrOutput)
+}
+
+// Lakehouse enabled status for the HeatWave cluster.
+func (o MysqlDbSystemHeatWaveClusterOutput) IsLakehouseEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemHeatWaveCluster) *bool { return v.IsLakehouseEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The name of the shape. The shape determines the resources allocated
@@ -14638,6 +14647,8 @@ func (o GetMysqlDbSystemEndpointArrayOutput) Index(i pulumi.IntInput) GetMysqlDb
 type GetMysqlDbSystemHeatWaveCluster struct {
 	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
 	ClusterSize int `pulumi:"clusterSize"`
+	// Lakehouse enabled status for the HeatWave cluster.
+	IsLakehouseEnabled bool `pulumi:"isLakehouseEnabled"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
 	ShapeName string `pulumi:"shapeName"`
 	// The current state of the DB System.
@@ -14662,6 +14673,8 @@ type GetMysqlDbSystemHeatWaveClusterInput interface {
 type GetMysqlDbSystemHeatWaveClusterArgs struct {
 	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
 	ClusterSize pulumi.IntInput `pulumi:"clusterSize"`
+	// Lakehouse enabled status for the HeatWave cluster.
+	IsLakehouseEnabled pulumi.BoolInput `pulumi:"isLakehouseEnabled"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
 	// The current state of the DB System.
@@ -14726,6 +14739,11 @@ func (o GetMysqlDbSystemHeatWaveClusterOutput) ToGetMysqlDbSystemHeatWaveCluster
 // The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
 func (o GetMysqlDbSystemHeatWaveClusterOutput) ClusterSize() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemHeatWaveCluster) int { return v.ClusterSize }).(pulumi.IntOutput)
+}
+
+// Lakehouse enabled status for the HeatWave cluster.
+func (o GetMysqlDbSystemHeatWaveClusterOutput) IsLakehouseEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemHeatWaveCluster) bool { return v.IsLakehouseEnabled }).(pulumi.BoolOutput)
 }
 
 // The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
@@ -17123,6 +17141,8 @@ func (o GetMysqlDbSystemsDbSystemEndpointArrayOutput) Index(i pulumi.IntInput) G
 type GetMysqlDbSystemsDbSystemHeatWaveCluster struct {
 	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
 	ClusterSize int `pulumi:"clusterSize"`
+	// Lakehouse enabled status for the HeatWave cluster.
+	IsLakehouseEnabled bool `pulumi:"isLakehouseEnabled"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
 	ShapeName string `pulumi:"shapeName"`
 	// DbSystem Lifecycle State
@@ -17147,6 +17167,8 @@ type GetMysqlDbSystemsDbSystemHeatWaveClusterInput interface {
 type GetMysqlDbSystemsDbSystemHeatWaveClusterArgs struct {
 	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
 	ClusterSize pulumi.IntInput `pulumi:"clusterSize"`
+	// Lakehouse enabled status for the HeatWave cluster.
+	IsLakehouseEnabled pulumi.BoolInput `pulumi:"isLakehouseEnabled"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
 	// DbSystem Lifecycle State
@@ -17211,6 +17233,11 @@ func (o GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) ToGetMysqlDbSystemsDbSys
 // The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
 func (o GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) ClusterSize() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemHeatWaveCluster) int { return v.ClusterSize }).(pulumi.IntOutput)
+}
+
+// Lakehouse enabled status for the HeatWave cluster.
+func (o GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) IsLakehouseEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemHeatWaveCluster) bool { return v.IsLakehouseEnabled }).(pulumi.BoolOutput)
 }
 
 // The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.

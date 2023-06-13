@@ -22,7 +22,7 @@ class GetHeatWaveClusterResult:
     """
     A collection of values returned by getHeatWaveCluster.
     """
-    def __init__(__self__, cluster_nodes=None, cluster_size=None, db_system_id=None, id=None, lifecycle_details=None, shape_name=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, cluster_nodes=None, cluster_size=None, db_system_id=None, id=None, is_lakehouse_enabled=None, lifecycle_details=None, shape_name=None, state=None, time_created=None, time_updated=None):
         if cluster_nodes and not isinstance(cluster_nodes, list):
             raise TypeError("Expected argument 'cluster_nodes' to be a list")
         pulumi.set(__self__, "cluster_nodes", cluster_nodes)
@@ -35,6 +35,9 @@ class GetHeatWaveClusterResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_lakehouse_enabled and not isinstance(is_lakehouse_enabled, bool):
+            raise TypeError("Expected argument 'is_lakehouse_enabled' to be a bool")
+        pulumi.set(__self__, "is_lakehouse_enabled", is_lakehouse_enabled)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -79,6 +82,14 @@ class GetHeatWaveClusterResult:
     @pulumi.getter
     def id(self) -> str:
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isLakehouseEnabled")
+    def is_lakehouse_enabled(self) -> bool:
+        """
+        Lakehouse enabled status for the HeatWave cluster.
+        """
+        return pulumi.get(self, "is_lakehouse_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -131,6 +142,7 @@ class AwaitableGetHeatWaveClusterResult(GetHeatWaveClusterResult):
             cluster_size=self.cluster_size,
             db_system_id=self.db_system_id,
             id=self.id,
+            is_lakehouse_enabled=self.is_lakehouse_enabled,
             lifecycle_details=self.lifecycle_details,
             shape_name=self.shape_name,
             state=self.state,
@@ -167,6 +179,7 @@ def get_heat_wave_cluster(db_system_id: Optional[str] = None,
         cluster_size=__ret__.cluster_size,
         db_system_id=__ret__.db_system_id,
         id=__ret__.id,
+        is_lakehouse_enabled=__ret__.is_lakehouse_enabled,
         lifecycle_details=__ret__.lifecycle_details,
         shape_name=__ret__.shape_name,
         state=__ret__.state,

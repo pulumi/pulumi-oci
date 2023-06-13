@@ -1835,6 +1835,8 @@ class MigrationGoldenGateDetailsSettingsReplicat(dict):
             suggest = "max_apply_parallelism"
         elif key == "minApplyParallelism":
             suggest = "min_apply_parallelism"
+        elif key == "performanceProfile":
+            suggest = "performance_profile"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in MigrationGoldenGateDetailsSettingsReplicat. Access the value via the '{suggest}' property getter instead.")
@@ -1850,11 +1852,13 @@ class MigrationGoldenGateDetailsSettingsReplicat(dict):
     def __init__(__self__, *,
                  map_parallelism: Optional[int] = None,
                  max_apply_parallelism: Optional[int] = None,
-                 min_apply_parallelism: Optional[int] = None):
+                 min_apply_parallelism: Optional[int] = None,
+                 performance_profile: Optional[str] = None):
         """
         :param int map_parallelism: (Updatable) Number of threads used to read trail files (valid for Parallel Replicat)
         :param int max_apply_parallelism: (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
         :param int min_apply_parallelism: (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+        :param str performance_profile: (Updatable) Extract performance.
         """
         if map_parallelism is not None:
             pulumi.set(__self__, "map_parallelism", map_parallelism)
@@ -1862,6 +1866,8 @@ class MigrationGoldenGateDetailsSettingsReplicat(dict):
             pulumi.set(__self__, "max_apply_parallelism", max_apply_parallelism)
         if min_apply_parallelism is not None:
             pulumi.set(__self__, "min_apply_parallelism", min_apply_parallelism)
+        if performance_profile is not None:
+            pulumi.set(__self__, "performance_profile", performance_profile)
 
     @property
     @pulumi.getter(name="mapParallelism")
@@ -1886,6 +1892,14 @@ class MigrationGoldenGateDetailsSettingsReplicat(dict):
         (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
         """
         return pulumi.get(self, "min_apply_parallelism")
+
+    @property
+    @pulumi.getter(name="performanceProfile")
+    def performance_profile(self) -> Optional[str]:
+        """
+        (Updatable) Extract performance.
+        """
+        return pulumi.get(self, "performance_profile")
 
 
 @pulumi.output_type
@@ -3866,15 +3880,18 @@ class GetMigrationGoldenGateDetailSettingReplicatResult(dict):
     def __init__(__self__, *,
                  map_parallelism: int,
                  max_apply_parallelism: int,
-                 min_apply_parallelism: int):
+                 min_apply_parallelism: int,
+                 performance_profile: str):
         """
         :param int map_parallelism: Number of threads used to read trail files (valid for Parallel Replicat)
         :param int max_apply_parallelism: Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
         :param int min_apply_parallelism: Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+        :param str performance_profile: Extract performance.
         """
         pulumi.set(__self__, "map_parallelism", map_parallelism)
         pulumi.set(__self__, "max_apply_parallelism", max_apply_parallelism)
         pulumi.set(__self__, "min_apply_parallelism", min_apply_parallelism)
+        pulumi.set(__self__, "performance_profile", performance_profile)
 
     @property
     @pulumi.getter(name="mapParallelism")
@@ -3899,6 +3916,14 @@ class GetMigrationGoldenGateDetailSettingReplicatResult(dict):
         Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
         """
         return pulumi.get(self, "min_apply_parallelism")
+
+    @property
+    @pulumi.getter(name="performanceProfile")
+    def performance_profile(self) -> str:
+        """
+        Extract performance.
+        """
+        return pulumi.get(self, "performance_profile")
 
 
 @pulumi.output_type
@@ -4102,6 +4127,7 @@ class GetMigrationsMigrationCollectionItemResult(dict):
                  agent_id: str,
                  compartment_id: str,
                  credentials_secret_id: str,
+                 csv_text: str,
                  data_transfer_medium_details: Sequence['outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailResult'],
                  datapump_settings: Sequence['outputs.GetMigrationsMigrationCollectionItemDatapumpSettingResult'],
                  defined_tags: Mapping[str, Any],
@@ -4158,6 +4184,7 @@ class GetMigrationsMigrationCollectionItemResult(dict):
         pulumi.set(__self__, "agent_id", agent_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "credentials_secret_id", credentials_secret_id)
+        pulumi.set(__self__, "csv_text", csv_text)
         pulumi.set(__self__, "data_transfer_medium_details", data_transfer_medium_details)
         pulumi.set(__self__, "datapump_settings", datapump_settings)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -4213,6 +4240,11 @@ class GetMigrationsMigrationCollectionItemResult(dict):
         OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
         """
         return pulumi.get(self, "credentials_secret_id")
+
+    @property
+    @pulumi.getter(name="csvText")
+    def csv_text(self) -> str:
+        return pulumi.get(self, "csv_text")
 
     @property
     @pulumi.getter(name="dataTransferMediumDetails")
@@ -5202,15 +5234,18 @@ class GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatResult(
     def __init__(__self__, *,
                  map_parallelism: int,
                  max_apply_parallelism: int,
-                 min_apply_parallelism: int):
+                 min_apply_parallelism: int,
+                 performance_profile: str):
         """
         :param int map_parallelism: Number of threads used to read trail files (valid for Parallel Replicat)
         :param int max_apply_parallelism: Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
         :param int min_apply_parallelism: Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+        :param str performance_profile: Extract performance.
         """
         pulumi.set(__self__, "map_parallelism", map_parallelism)
         pulumi.set(__self__, "max_apply_parallelism", max_apply_parallelism)
         pulumi.set(__self__, "min_apply_parallelism", min_apply_parallelism)
+        pulumi.set(__self__, "performance_profile", performance_profile)
 
     @property
     @pulumi.getter(name="mapParallelism")
@@ -5235,6 +5270,14 @@ class GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatResult(
         Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
         """
         return pulumi.get(self, "min_apply_parallelism")
+
+    @property
+    @pulumi.getter(name="performanceProfile")
+    def performance_profile(self) -> str:
+        """
+        Extract performance.
+        """
+        return pulumi.get(self, "performance_profile")
 
 
 @pulumi.output_type

@@ -109,7 +109,6 @@ from .get_policies import *
 from .get_region_subscriptions import *
 from .get_regions import *
 from .get_smtp_credentials import *
-from .get_swift_passwords import *
 from .get_tag import *
 from .get_tag_default import *
 from .get_tag_defaults import *
@@ -129,7 +128,6 @@ from .import_standard_tags_management import *
 from .network_source import *
 from .policy import *
 from .smtp_credential import *
-from .swift_password import *
 from .tag import *
 from .tag_default import *
 from .tag_namespace import *

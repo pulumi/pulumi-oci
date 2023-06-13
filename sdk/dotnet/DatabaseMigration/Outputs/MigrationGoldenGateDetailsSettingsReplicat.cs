@@ -25,6 +25,10 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
         /// </summary>
         public readonly int? MinApplyParallelism;
+        /// <summary>
+        /// (Updatable) Extract performance.
+        /// </summary>
+        public readonly string? PerformanceProfile;
 
         [OutputConstructor]
         private MigrationGoldenGateDetailsSettingsReplicat(
@@ -32,11 +36,14 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
 
             int? maxApplyParallelism,
 
-            int? minApplyParallelism)
+            int? minApplyParallelism,
+
+            string? performanceProfile)
         {
             MapParallelism = mapParallelism;
             MaxApplyParallelism = maxApplyParallelism;
             MinApplyParallelism = minApplyParallelism;
+            PerformanceProfile = performanceProfile;
         }
     }
 }

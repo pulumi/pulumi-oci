@@ -19,12 +19,14 @@ class HeatWaveClusterArgs:
                  cluster_size: pulumi.Input[int],
                  db_system_id: pulumi.Input[str],
                  shape_name: pulumi.Input[str],
+                 is_lakehouse_enabled: Optional[pulumi.Input[bool]] = None,
                  state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a HeatWaveCluster resource.
         :param pulumi.Input[int] cluster_size: (Updatable) A change to the number of nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with the new cluster of nodes. This may result in a significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
         :param pulumi.Input[str] db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] shape_name: (Updatable) A change to the shape of the nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
+        :param pulumi.Input[bool] is_lakehouse_enabled: (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
         :param pulumi.Input[str] state: (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
@@ -33,6 +35,8 @@ class HeatWaveClusterArgs:
         pulumi.set(__self__, "cluster_size", cluster_size)
         pulumi.set(__self__, "db_system_id", db_system_id)
         pulumi.set(__self__, "shape_name", shape_name)
+        if is_lakehouse_enabled is not None:
+            pulumi.set(__self__, "is_lakehouse_enabled", is_lakehouse_enabled)
         if state is not None:
             pulumi.set(__self__, "state", state)
 
@@ -73,6 +77,18 @@ class HeatWaveClusterArgs:
         pulumi.set(self, "shape_name", value)
 
     @property
+    @pulumi.getter(name="isLakehouseEnabled")
+    def is_lakehouse_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+        """
+        return pulumi.get(self, "is_lakehouse_enabled")
+
+    @is_lakehouse_enabled.setter
+    def is_lakehouse_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lakehouse_enabled", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
@@ -94,6 +110,7 @@ class _HeatWaveClusterState:
                  cluster_nodes: Optional[pulumi.Input[Sequence[pulumi.Input['HeatWaveClusterClusterNodeArgs']]]] = None,
                  cluster_size: Optional[pulumi.Input[int]] = None,
                  db_system_id: Optional[pulumi.Input[str]] = None,
+                 is_lakehouse_enabled: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -104,6 +121,7 @@ class _HeatWaveClusterState:
         :param pulumi.Input[Sequence[pulumi.Input['HeatWaveClusterClusterNodeArgs']]] cluster_nodes: A HeatWave node is a compute host that is part of a HeatWave cluster.
         :param pulumi.Input[int] cluster_size: (Updatable) A change to the number of nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with the new cluster of nodes. This may result in a significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
         :param pulumi.Input[str] db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[bool] is_lakehouse_enabled: (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState.
         :param pulumi.Input[str] shape_name: (Updatable) A change to the shape of the nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
         :param pulumi.Input[str] state: (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
@@ -119,6 +137,8 @@ class _HeatWaveClusterState:
             pulumi.set(__self__, "cluster_size", cluster_size)
         if db_system_id is not None:
             pulumi.set(__self__, "db_system_id", db_system_id)
+        if is_lakehouse_enabled is not None:
+            pulumi.set(__self__, "is_lakehouse_enabled", is_lakehouse_enabled)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if shape_name is not None:
@@ -165,6 +185,18 @@ class _HeatWaveClusterState:
     @db_system_id.setter
     def db_system_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "db_system_id", value)
+
+    @property
+    @pulumi.getter(name="isLakehouseEnabled")
+    def is_lakehouse_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+        """
+        return pulumi.get(self, "is_lakehouse_enabled")
+
+    @is_lakehouse_enabled.setter
+    def is_lakehouse_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lakehouse_enabled", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -237,6 +269,7 @@ class HeatWaveCluster(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cluster_size: Optional[pulumi.Input[int]] = None,
                  db_system_id: Optional[pulumi.Input[str]] = None,
+                 is_lakehouse_enabled: Optional[pulumi.Input[bool]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -254,6 +287,7 @@ class HeatWaveCluster(pulumi.CustomResource):
         test_heat_wave_cluster = oci.mysql.HeatWaveCluster("testHeatWaveCluster",
             db_system_id=oci_database_db_system["test_db_system"]["id"],
             cluster_size=var["heat_wave_cluster_cluster_size"],
+            is_lakehouse_enabled=var["heat_wave_cluster_is_lakehouse_enabled"],
             shape_name=oci_mysql_shape["test_shape"]["name"])
         ```
 
@@ -269,6 +303,7 @@ class HeatWaveCluster(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] cluster_size: (Updatable) A change to the number of nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with the new cluster of nodes. This may result in a significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
         :param pulumi.Input[str] db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[bool] is_lakehouse_enabled: (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
         :param pulumi.Input[str] shape_name: (Updatable) A change to the shape of the nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
         :param pulumi.Input[str] state: (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
                
@@ -295,6 +330,7 @@ class HeatWaveCluster(pulumi.CustomResource):
         test_heat_wave_cluster = oci.mysql.HeatWaveCluster("testHeatWaveCluster",
             db_system_id=oci_database_db_system["test_db_system"]["id"],
             cluster_size=var["heat_wave_cluster_cluster_size"],
+            is_lakehouse_enabled=var["heat_wave_cluster_is_lakehouse_enabled"],
             shape_name=oci_mysql_shape["test_shape"]["name"])
         ```
 
@@ -323,6 +359,7 @@ class HeatWaveCluster(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cluster_size: Optional[pulumi.Input[int]] = None,
                  db_system_id: Optional[pulumi.Input[str]] = None,
+                 is_lakehouse_enabled: Optional[pulumi.Input[bool]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -340,6 +377,7 @@ class HeatWaveCluster(pulumi.CustomResource):
             if db_system_id is None and not opts.urn:
                 raise TypeError("Missing required property 'db_system_id'")
             __props__.__dict__["db_system_id"] = db_system_id
+            __props__.__dict__["is_lakehouse_enabled"] = is_lakehouse_enabled
             if shape_name is None and not opts.urn:
                 raise TypeError("Missing required property 'shape_name'")
             __props__.__dict__["shape_name"] = shape_name
@@ -361,6 +399,7 @@ class HeatWaveCluster(pulumi.CustomResource):
             cluster_nodes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['HeatWaveClusterClusterNodeArgs']]]]] = None,
             cluster_size: Optional[pulumi.Input[int]] = None,
             db_system_id: Optional[pulumi.Input[str]] = None,
+            is_lakehouse_enabled: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             shape_name: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -376,6 +415,7 @@ class HeatWaveCluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['HeatWaveClusterClusterNodeArgs']]]] cluster_nodes: A HeatWave node is a compute host that is part of a HeatWave cluster.
         :param pulumi.Input[int] cluster_size: (Updatable) A change to the number of nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with the new cluster of nodes. This may result in a significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
         :param pulumi.Input[str] db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[bool] is_lakehouse_enabled: (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState.
         :param pulumi.Input[str] shape_name: (Updatable) A change to the shape of the nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
         :param pulumi.Input[str] state: (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
@@ -392,6 +432,7 @@ class HeatWaveCluster(pulumi.CustomResource):
         __props__.__dict__["cluster_nodes"] = cluster_nodes
         __props__.__dict__["cluster_size"] = cluster_size
         __props__.__dict__["db_system_id"] = db_system_id
+        __props__.__dict__["is_lakehouse_enabled"] = is_lakehouse_enabled
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["shape_name"] = shape_name
         __props__.__dict__["state"] = state
@@ -422,6 +463,14 @@ class HeatWaveCluster(pulumi.CustomResource):
         The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "db_system_id")
+
+    @property
+    @pulumi.getter(name="isLakehouseEnabled")
+    def is_lakehouse_enabled(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+        """
+        return pulumi.get(self, "is_lakehouse_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")

@@ -6,6 +6,7 @@ package com.pulumi.oci.Mysql.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Mysql.inputs.HeatWaveClusterClusterNodeArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -61,6 +62,21 @@ public final class HeatWaveClusterState extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<String>> dbSystemId() {
         return Optional.ofNullable(this.dbSystemId);
+    }
+
+    /**
+     * (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+     * 
+     */
+    @Import(name="isLakehouseEnabled")
+    private @Nullable Output<Boolean> isLakehouseEnabled;
+
+    /**
+     * @return (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+     * 
+     */
+    public Optional<Output<Boolean>> isLakehouseEnabled() {
+        return Optional.ofNullable(this.isLakehouseEnabled);
     }
 
     /**
@@ -150,6 +166,7 @@ public final class HeatWaveClusterState extends com.pulumi.resources.ResourceArg
         this.clusterNodes = $.clusterNodes;
         this.clusterSize = $.clusterSize;
         this.dbSystemId = $.dbSystemId;
+        this.isLakehouseEnabled = $.isLakehouseEnabled;
         this.lifecycleDetails = $.lifecycleDetails;
         this.shapeName = $.shapeName;
         this.state = $.state;
@@ -246,6 +263,27 @@ public final class HeatWaveClusterState extends com.pulumi.resources.ResourceArg
          */
         public Builder dbSystemId(String dbSystemId) {
             return dbSystemId(Output.of(dbSystemId));
+        }
+
+        /**
+         * @param isLakehouseEnabled (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLakehouseEnabled(@Nullable Output<Boolean> isLakehouseEnabled) {
+            $.isLakehouseEnabled = isLakehouseEnabled;
+            return this;
+        }
+
+        /**
+         * @param isLakehouseEnabled (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLakehouseEnabled(Boolean isLakehouseEnabled) {
+            return isLakehouseEnabled(Output.of(isLakehouseEnabled));
         }
 
         /**

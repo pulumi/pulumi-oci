@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.Objects;
 
 @CustomType
@@ -24,6 +25,11 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailSettingRe
      * 
      */
     private Integer minApplyParallelism;
+    /**
+     * @return Extract performance.
+     * 
+     */
+    private String performanceProfile;
 
     private GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat() {}
     /**
@@ -47,6 +53,13 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailSettingRe
     public Integer minApplyParallelism() {
         return this.minApplyParallelism;
     }
+    /**
+     * @return Extract performance.
+     * 
+     */
+    public String performanceProfile() {
+        return this.performanceProfile;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -60,12 +73,14 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailSettingRe
         private Integer mapParallelism;
         private Integer maxApplyParallelism;
         private Integer minApplyParallelism;
+        private String performanceProfile;
         public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.mapParallelism = defaults.mapParallelism;
     	      this.maxApplyParallelism = defaults.maxApplyParallelism;
     	      this.minApplyParallelism = defaults.minApplyParallelism;
+    	      this.performanceProfile = defaults.performanceProfile;
         }
 
         @CustomType.Setter
@@ -83,11 +98,17 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailSettingRe
             this.minApplyParallelism = Objects.requireNonNull(minApplyParallelism);
             return this;
         }
+        @CustomType.Setter
+        public Builder performanceProfile(String performanceProfile) {
+            this.performanceProfile = Objects.requireNonNull(performanceProfile);
+            return this;
+        }
         public GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat build() {
             final var o = new GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat();
             o.mapParallelism = mapParallelism;
             o.maxApplyParallelism = maxApplyParallelism;
             o.minApplyParallelism = minApplyParallelism;
+            o.performanceProfile = performanceProfile;
             return o;
         }
     }

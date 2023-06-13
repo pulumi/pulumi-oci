@@ -28,6 +28,8 @@ __all__ = [
     'ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs',
     'ClusterNetworkPlacementConfigurationArgs',
     'ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs',
+    'ComputeCapacityReportShapeAvailabilityArgs',
+    'ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs',
     'ComputeCapacityReservationInstanceReservationConfigArgs',
     'ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs',
     'ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs',
@@ -1362,6 +1364,159 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+
+@pulumi.input_type
+class ComputeCapacityReportShapeAvailabilityArgs:
+    def __init__(__self__, *,
+                 instance_shape: pulumi.Input[str],
+                 availability_status: Optional[pulumi.Input[str]] = None,
+                 available_count: Optional[pulumi.Input[str]] = None,
+                 fault_domain: Optional[pulumi.Input[str]] = None,
+                 instance_shape_config: Optional[pulumi.Input['ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs']] = None):
+        """
+        :param pulumi.Input[str] instance_shape: The shape that you want to request a capacity report for. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+        :param pulumi.Input[str] availability_status: A flag denoting whether capacity is available.
+        :param pulumi.Input[str] available_count: The total number of new instances that can be created with the specified shape configuration.
+        :param pulumi.Input[str] fault_domain: The fault domain for the capacity report.
+               
+               If you do not specify a fault domain, the capacity report includes information about all fault domains.
+        :param pulumi.Input['ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs'] instance_shape_config: The shape configuration for a shape in a capacity report.
+        """
+        pulumi.set(__self__, "instance_shape", instance_shape)
+        if availability_status is not None:
+            pulumi.set(__self__, "availability_status", availability_status)
+        if available_count is not None:
+            pulumi.set(__self__, "available_count", available_count)
+        if fault_domain is not None:
+            pulumi.set(__self__, "fault_domain", fault_domain)
+        if instance_shape_config is not None:
+            pulumi.set(__self__, "instance_shape_config", instance_shape_config)
+
+    @property
+    @pulumi.getter(name="instanceShape")
+    def instance_shape(self) -> pulumi.Input[str]:
+        """
+        The shape that you want to request a capacity report for. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+        """
+        return pulumi.get(self, "instance_shape")
+
+    @instance_shape.setter
+    def instance_shape(self, value: pulumi.Input[str]):
+        pulumi.set(self, "instance_shape", value)
+
+    @property
+    @pulumi.getter(name="availabilityStatus")
+    def availability_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        A flag denoting whether capacity is available.
+        """
+        return pulumi.get(self, "availability_status")
+
+    @availability_status.setter
+    def availability_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "availability_status", value)
+
+    @property
+    @pulumi.getter(name="availableCount")
+    def available_count(self) -> Optional[pulumi.Input[str]]:
+        """
+        The total number of new instances that can be created with the specified shape configuration.
+        """
+        return pulumi.get(self, "available_count")
+
+    @available_count.setter
+    def available_count(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "available_count", value)
+
+    @property
+    @pulumi.getter(name="faultDomain")
+    def fault_domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        The fault domain for the capacity report.
+
+        If you do not specify a fault domain, the capacity report includes information about all fault domains.
+        """
+        return pulumi.get(self, "fault_domain")
+
+    @fault_domain.setter
+    def fault_domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "fault_domain", value)
+
+    @property
+    @pulumi.getter(name="instanceShapeConfig")
+    def instance_shape_config(self) -> Optional[pulumi.Input['ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs']]:
+        """
+        The shape configuration for a shape in a capacity report.
+        """
+        return pulumi.get(self, "instance_shape_config")
+
+    @instance_shape_config.setter
+    def instance_shape_config(self, value: Optional[pulumi.Input['ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs']]):
+        pulumi.set(self, "instance_shape_config", value)
+
+
+@pulumi.input_type
+class ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs:
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[pulumi.Input[float]] = None,
+                 nvmes: Optional[pulumi.Input[int]] = None,
+                 ocpus: Optional[pulumi.Input[float]] = None):
+        """
+        :param pulumi.Input[float] memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
+        :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage.
+        :param pulumi.Input[float] ocpus: The total number of OCPUs available to the instance. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
+        """
+        The total amount of memory available to the instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of NVMe drives to be used for storage.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @nvmes.setter
+    def nvmes(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "nvmes", value)
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[pulumi.Input[float]]:
+        """
+        The total number of OCPUs available to the instance. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "ocpus", value)
 
 
 @pulumi.input_type

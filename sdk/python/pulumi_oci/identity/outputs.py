@@ -754,8 +754,6 @@ __all__ = [
     'GetRegionsRegionResult',
     'GetSmtpCredentialsFilterResult',
     'GetSmtpCredentialsSmtpCredentialResult',
-    'GetSwiftPasswordsFilterResult',
-    'GetSwiftPasswordsPasswordResult',
     'GetTagDefaultsFilterResult',
     'GetTagDefaultsTagDefaultResult',
     'GetTagNamespacesFilterResult',
@@ -69225,128 +69223,6 @@ class GetSmtpCredentialsSmtpCredentialResult(dict):
         The SMTP user name.
         """
         return pulumi.get(self, "username")
-
-
-@pulumi.output_type
-class GetSwiftPasswordsFilterResult(dict):
-    def __init__(__self__, *,
-                 name: str,
-                 values: Sequence[str],
-                 regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter
-    def values(self) -> Sequence[str]:
-        return pulumi.get(self, "values")
-
-    @property
-    @pulumi.getter
-    def regex(self) -> Optional[bool]:
-        return pulumi.get(self, "regex")
-
-
-@pulumi.output_type
-class GetSwiftPasswordsPasswordResult(dict):
-    def __init__(__self__, *,
-                 description: str,
-                 expires_on: str,
-                 id: str,
-                 inactive_state: str,
-                 password: str,
-                 state: str,
-                 time_created: str,
-                 user_id: str):
-        """
-        :param str description: The description you assign to the Swift password. Does not have to be unique, and it's changeable.
-        :param str expires_on: Date and time when this password will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
-        :param str id: The OCID of the Swift password.
-        :param str inactive_state: The detailed status of INACTIVE lifecycleState.
-        :param str password: The Swift password. The value is available only in the response for `CreateSwiftPassword`, and not for `ListSwiftPasswords` or `UpdateSwiftPassword`.
-        :param str state: The password's current state.
-        :param str time_created: Date and time the `SwiftPassword` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param str user_id: The OCID of the user.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "expires_on", expires_on)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "inactive_state", inactive_state)
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "user_id", user_id)
-
-    @property
-    @pulumi.getter
-    def description(self) -> str:
-        """
-        The description you assign to the Swift password. Does not have to be unique, and it's changeable.
-        """
-        return pulumi.get(self, "description")
-
-    @property
-    @pulumi.getter(name="expiresOn")
-    def expires_on(self) -> str:
-        """
-        Date and time when this password will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
-        """
-        return pulumi.get(self, "expires_on")
-
-    @property
-    @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the Swift password.
-        """
-        return pulumi.get(self, "id")
-
-    @property
-    @pulumi.getter(name="inactiveState")
-    def inactive_state(self) -> str:
-        """
-        The detailed status of INACTIVE lifecycleState.
-        """
-        return pulumi.get(self, "inactive_state")
-
-    @property
-    @pulumi.getter
-    def password(self) -> str:
-        """
-        The Swift password. The value is available only in the response for `CreateSwiftPassword`, and not for `ListSwiftPasswords` or `UpdateSwiftPassword`.
-        """
-        return pulumi.get(self, "password")
-
-    @property
-    @pulumi.getter
-    def state(self) -> str:
-        """
-        The password's current state.
-        """
-        return pulumi.get(self, "state")
-
-    @property
-    @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Date and time the `SwiftPassword` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
-        return pulumi.get(self, "time_created")
-
-    @property
-    @pulumi.getter(name="userId")
-    def user_id(self) -> str:
-        """
-        The OCID of the user.
-        """
-        return pulumi.get(self, "user_id")
 
 
 @pulumi.output_type

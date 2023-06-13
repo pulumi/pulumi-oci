@@ -29,6 +29,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
         /// </summary>
         public readonly string CredentialsSecretId;
+        public readonly string CsvText;
         /// <summary>
         /// Data Transfer Medium details for the Migration.
         /// </summary>
@@ -132,6 +133,8 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
 
             string credentialsSecretId,
 
+            string csvText,
+
             ImmutableArray<Outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailResult> dataTransferMediumDetails,
 
             ImmutableArray<Outputs.GetMigrationsMigrationCollectionItemDatapumpSettingResult> datapumpSettings,
@@ -182,6 +185,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
             AgentId = agentId;
             CompartmentId = compartmentId;
             CredentialsSecretId = credentialsSecretId;
+            CsvText = csvText;
             DataTransferMediumDetails = dataTransferMediumDetails;
             DatapumpSettings = datapumpSettings;
             DefinedTags = definedTags;

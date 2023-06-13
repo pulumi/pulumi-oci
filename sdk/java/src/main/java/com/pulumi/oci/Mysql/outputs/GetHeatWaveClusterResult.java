@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Mysql.outputs.GetHeatWaveClusterClusterNode;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -28,6 +29,11 @@ public final class GetHeatWaveClusterResult {
      */
     private String dbSystemId;
     private String id;
+    /**
+     * @return Lakehouse enabled status for the HeatWave cluster.
+     * 
+     */
+    private Boolean isLakehouseEnabled;
     /**
      * @return Additional information about the current lifecycleState.
      * 
@@ -80,6 +86,13 @@ public final class GetHeatWaveClusterResult {
         return this.id;
     }
     /**
+     * @return Lakehouse enabled status for the HeatWave cluster.
+     * 
+     */
+    public Boolean isLakehouseEnabled() {
+        return this.isLakehouseEnabled;
+    }
+    /**
      * @return Additional information about the current lifecycleState.
      * 
      */
@@ -128,6 +141,7 @@ public final class GetHeatWaveClusterResult {
         private Integer clusterSize;
         private String dbSystemId;
         private String id;
+        private Boolean isLakehouseEnabled;
         private String lifecycleDetails;
         private String shapeName;
         private String state;
@@ -140,6 +154,7 @@ public final class GetHeatWaveClusterResult {
     	      this.clusterSize = defaults.clusterSize;
     	      this.dbSystemId = defaults.dbSystemId;
     	      this.id = defaults.id;
+    	      this.isLakehouseEnabled = defaults.isLakehouseEnabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.shapeName = defaults.shapeName;
     	      this.state = defaults.state;
@@ -168,6 +183,11 @@ public final class GetHeatWaveClusterResult {
         @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isLakehouseEnabled(Boolean isLakehouseEnabled) {
+            this.isLakehouseEnabled = Objects.requireNonNull(isLakehouseEnabled);
             return this;
         }
         @CustomType.Setter
@@ -201,6 +221,7 @@ public final class GetHeatWaveClusterResult {
             o.clusterSize = clusterSize;
             o.dbSystemId = dbSystemId;
             o.id = id;
+            o.isLakehouseEnabled = isLakehouseEnabled;
             o.lifecycleDetails = lifecycleDetails;
             o.shapeName = shapeName;
             o.state = state;

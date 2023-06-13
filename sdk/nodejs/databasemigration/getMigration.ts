@@ -60,6 +60,7 @@ export interface GetMigrationResult {
      * OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
      */
     readonly credentialsSecretId: string;
+    readonly csvText: string;
     /**
      * Data Transfer Medium details for the Migration.
      */

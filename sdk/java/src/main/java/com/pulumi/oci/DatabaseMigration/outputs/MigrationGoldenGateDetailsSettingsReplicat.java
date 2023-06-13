@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -26,6 +27,11 @@ public final class MigrationGoldenGateDetailsSettingsReplicat {
      * 
      */
     private @Nullable Integer minApplyParallelism;
+    /**
+     * @return (Updatable) Extract performance.
+     * 
+     */
+    private @Nullable String performanceProfile;
 
     private MigrationGoldenGateDetailsSettingsReplicat() {}
     /**
@@ -49,6 +55,13 @@ public final class MigrationGoldenGateDetailsSettingsReplicat {
     public Optional<Integer> minApplyParallelism() {
         return Optional.ofNullable(this.minApplyParallelism);
     }
+    /**
+     * @return (Updatable) Extract performance.
+     * 
+     */
+    public Optional<String> performanceProfile() {
+        return Optional.ofNullable(this.performanceProfile);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -62,12 +75,14 @@ public final class MigrationGoldenGateDetailsSettingsReplicat {
         private @Nullable Integer mapParallelism;
         private @Nullable Integer maxApplyParallelism;
         private @Nullable Integer minApplyParallelism;
+        private @Nullable String performanceProfile;
         public Builder() {}
         public Builder(MigrationGoldenGateDetailsSettingsReplicat defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.mapParallelism = defaults.mapParallelism;
     	      this.maxApplyParallelism = defaults.maxApplyParallelism;
     	      this.minApplyParallelism = defaults.minApplyParallelism;
+    	      this.performanceProfile = defaults.performanceProfile;
         }
 
         @CustomType.Setter
@@ -85,11 +100,17 @@ public final class MigrationGoldenGateDetailsSettingsReplicat {
             this.minApplyParallelism = minApplyParallelism;
             return this;
         }
+        @CustomType.Setter
+        public Builder performanceProfile(@Nullable String performanceProfile) {
+            this.performanceProfile = performanceProfile;
+            return this;
+        }
         public MigrationGoldenGateDetailsSettingsReplicat build() {
             final var o = new MigrationGoldenGateDetailsSettingsReplicat();
             o.mapParallelism = mapParallelism;
             o.maxApplyParallelism = maxApplyParallelism;
             o.minApplyParallelism = minApplyParallelism;
+            o.performanceProfile = performanceProfile;
             return o;
         }
     }

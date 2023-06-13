@@ -987,6 +987,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Core/computeCapacityReport",
+  "fqn": "pulumi_oci.core",
+  "classes": {
+   "oci:Core/computeCapacityReport:ComputeCapacityReport": "ComputeCapacityReport"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Core/computeCapacityReservation",
   "fqn": "pulumi_oci.core",
   "classes": {
@@ -3279,14 +3287,6 @@ _utilities.register(
   "fqn": "pulumi_oci.identity",
   "classes": {
    "oci:Identity/smtpCredential:SmtpCredential": "SmtpCredential"
-  }
- },
- {
-  "pkg": "oci",
-  "mod": "Identity/swiftPassword",
-  "fqn": "pulumi_oci.identity",
-  "classes": {
-   "oci:Identity/swiftPassword:SwiftPassword": "SwiftPassword"
   }
  },
  {

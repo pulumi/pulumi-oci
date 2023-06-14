@@ -28,7 +28,7 @@ builds:
   - linux
   ignore: []
   ldflags:
-  - -X github.com/pulumi/pulumi-oci/provider/pkg/version.Version={{.Tag}}
+  - -X github.com/pulumi/pulumi-oci/provider/v2/pkg/version.Version={{.Tag}}
   main: ./cmd/pulumi-resource-oci/
 changelog:
   filters:

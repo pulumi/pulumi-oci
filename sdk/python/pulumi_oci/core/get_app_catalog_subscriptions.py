@@ -106,8 +106,8 @@ def get_app_catalog_subscriptions(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_app_catalog_subscriptions = oci.Core.get_app_catalog_subscriptions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        listing_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_app_catalog_subscriptions = oci.Core.get_app_catalog_subscriptions(compartment_id=var["compartment_id"],
+        listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"])
     ```
 
 
@@ -145,8 +145,8 @@ def get_app_catalog_subscriptions_output(compartment_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_app_catalog_subscriptions = oci.Core.get_app_catalog_subscriptions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        listing_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_app_catalog_subscriptions = oci.Core.get_app_catalog_subscriptions(compartment_id=var["compartment_id"],
+        listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"])
     ```
 
 

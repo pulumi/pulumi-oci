@@ -129,10 +129,10 @@ def get_subscribed_services(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscribed_services = oci.OneSubsription.get_subscribed_services(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        subscription_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        order_line_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        status=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_subscribed_services = oci.OneSubsription.get_subscribed_services(compartment_id=var["compartment_id"],
+        subscription_id=oci_onesubscription_subscription["test_subscription"]["id"],
+        order_line_id=oci_onesubscription_order_line["test_order_line"]["id"],
+        status=var["subscribed_service_status"])
     ```
 
 
@@ -178,10 +178,10 @@ def get_subscribed_services_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_subscribed_services = oci.OneSubsription.get_subscribed_services(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        subscription_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        order_line_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        status=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_subscribed_services = oci.OneSubsription.get_subscribed_services(compartment_id=var["compartment_id"],
+        subscription_id=oci_onesubscription_subscription["test_subscription"]["id"],
+        order_line_id=oci_onesubscription_order_line["test_order_line"]["id"],
+        status=var["subscribed_service_status"])
     ```
 
 

@@ -158,8 +158,8 @@ def get_peer(blockchain_platform_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_peer = oci.Blockchain.get_peer(blockchain_platform_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        peer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_peer = oci.Blockchain.get_peer(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
+        peer_id=oci_blockchain_peer["test_peer"]["id"])
     ```
 
 
@@ -200,8 +200,8 @@ def get_peer_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_peer = oci.Blockchain.get_peer(blockchain_platform_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        peer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_peer = oci.Blockchain.get_peer(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
+        peer_id=oci_blockchain_peer["test_peer"]["id"])
     ```
 
 

@@ -289,7 +289,7 @@ def get_media_workflow_job(media_workflow_job_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow_job = oci.MediaServices.get_media_workflow_job(media_workflow_job_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_media_workflow_job = oci.MediaServices.get_media_workflow_job(media_workflow_job_id=oci_media_services_media_workflow_job["test_media_workflow_job"]["id"])
     ```
 
 
@@ -338,7 +338,7 @@ def get_media_workflow_job_output(media_workflow_job_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow_job = oci.MediaServices.get_media_workflow_job(media_workflow_job_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_media_workflow_job = oci.MediaServices.get_media_workflow_job(media_workflow_job_id=oci_media_services_media_workflow_job["test_media_workflow_job"]["id"])
     ```
 
 

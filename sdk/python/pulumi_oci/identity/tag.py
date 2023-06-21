@@ -404,8 +404,8 @@ class Tag(pulumi.CustomResource):
             },
             is_cost_tracking=var["tag_is_cost_tracking"],
             validator=oci.identity.TagValidatorArgs(
-                validator_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                values=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                validator_type=var["tag_validator_validator_type"],
+                values=var["tag_validator_values"],
             ),
             is_retired=False)
         ```
@@ -486,8 +486,8 @@ class Tag(pulumi.CustomResource):
             },
             is_cost_tracking=var["tag_is_cost_tracking"],
             validator=oci.identity.TagValidatorArgs(
-                validator_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                values=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                validator_type=var["tag_validator_validator_type"],
+                values=var["tag_validator_values"],
             ),
             is_retired=False)
         ```

@@ -222,7 +222,7 @@ def get_dedicated_vm_host(dedicated_vm_host_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_host = oci.Core.get_dedicated_vm_host(dedicated_vm_host_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_dedicated_vm_host = oci.Core.get_dedicated_vm_host(dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"])
     ```
 
 
@@ -265,7 +265,7 @@ def get_dedicated_vm_host_output(dedicated_vm_host_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_host = oci.Core.get_dedicated_vm_host(dedicated_vm_host_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_dedicated_vm_host = oci.Core.get_dedicated_vm_host(dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"])
     ```
 
 

@@ -106,8 +106,8 @@ def get_auto_scaling_configurations(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_auto_scaling_configurations = oci.Autoscaling.get_auto_scaling_configurations(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_auto_scaling_configurations = oci.Autoscaling.get_auto_scaling_configurations(compartment_id=var["compartment_id"],
+        display_name=var["auto_scaling_configuration_display_name"])
     ```
 
 
@@ -145,8 +145,8 @@ def get_auto_scaling_configurations_output(compartment_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_auto_scaling_configurations = oci.Autoscaling.get_auto_scaling_configurations(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_auto_scaling_configurations = oci.Autoscaling.get_auto_scaling_configurations(compartment_id=var["compartment_id"],
+        display_name=var["auto_scaling_configuration_display_name"])
     ```
 
 

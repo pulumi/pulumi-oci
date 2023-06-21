@@ -162,7 +162,7 @@ def get_knowledgebase(knowledge_base_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_knowledge_base = oci.Adm.get_knowledgebase(knowledge_base_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_knowledge_base = oci.Adm.get_knowledgebase(knowledge_base_id=oci_adm_knowledge_base["test_knowledge_base"]["id"])
     ```
 
 
@@ -200,7 +200,7 @@ def get_knowledgebase_output(knowledge_base_id: Optional[pulumi.Input[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_knowledge_base = oci.Adm.get_knowledgebase(knowledge_base_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_knowledge_base = oci.Adm.get_knowledgebase(knowledge_base_id=oci_adm_knowledge_base["test_knowledge_base"]["id"])
     ```
 
 

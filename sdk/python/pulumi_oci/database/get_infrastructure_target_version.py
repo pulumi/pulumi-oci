@@ -117,9 +117,9 @@ def get_infrastructure_target_version(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_infrastructure_target_version = oci.Database.get_infrastructure_target_version(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        target_resource_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        target_resource_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_infrastructure_target_version = oci.Database.get_infrastructure_target_version(compartment_id=var["compartment_id"],
+        target_resource_id=oci_database_target_resource["test_target_resource"]["id"],
+        target_resource_type=var["infrastructure_target_version_target_resource_type"])
     ```
 
 
@@ -160,9 +160,9 @@ def get_infrastructure_target_version_output(compartment_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_infrastructure_target_version = oci.Database.get_infrastructure_target_version(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        target_resource_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        target_resource_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_infrastructure_target_version = oci.Database.get_infrastructure_target_version(compartment_id=var["compartment_id"],
+        target_resource_id=oci_database_target_resource["test_target_resource"]["id"],
+        target_resource_type=var["infrastructure_target_version_target_resource_type"])
     ```
 
 

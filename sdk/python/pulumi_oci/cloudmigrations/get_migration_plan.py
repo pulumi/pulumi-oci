@@ -259,7 +259,7 @@ def get_migration_plan(migration_plan_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_plan = oci.CloudMigrations.get_migration_plan(migration_plan_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_migration_plan = oci.CloudMigrations.get_migration_plan(migration_plan_id=oci_cloud_migrations_migration_plan["test_migration_plan"]["id"])
     ```
 
 
@@ -305,7 +305,7 @@ def get_migration_plan_output(migration_plan_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_plan = oci.CloudMigrations.get_migration_plan(migration_plan_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_migration_plan = oci.CloudMigrations.get_migration_plan(migration_plan_id=oci_cloud_migrations_migration_plan["test_migration_plan"]["id"])
     ```
 
 

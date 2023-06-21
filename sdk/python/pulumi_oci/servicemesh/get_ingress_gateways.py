@@ -133,11 +133,11 @@ def get_ingress_gateways(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ingress_gateways = oci.ServiceMesh.get_ingress_gateways(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        mesh_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_ingress_gateways = oci.ServiceMesh.get_ingress_gateways(compartment_id=var["compartment_id"],
+        id=var["ingress_gateway_id"],
+        mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
+        name=var["ingress_gateway_name"],
+        state=var["ingress_gateway_state"])
     ```
 
 
@@ -186,11 +186,11 @@ def get_ingress_gateways_output(compartment_id: Optional[pulumi.Input[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_ingress_gateways = oci.ServiceMesh.get_ingress_gateways(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        mesh_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_ingress_gateways = oci.ServiceMesh.get_ingress_gateways(compartment_id=var["compartment_id"],
+        id=var["ingress_gateway_id"],
+        mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
+        name=var["ingress_gateway_name"],
+        state=var["ingress_gateway_state"])
     ```
 
 

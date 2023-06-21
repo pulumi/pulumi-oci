@@ -114,10 +114,10 @@ def get_autonomous_database_wallet(autonomous_database_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_wallet = oci.Database.get_autonomous_database_wallet(autonomous_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        password=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_autonomous_database_wallet = oci.Database.get_autonomous_database_wallet(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
+        password=var["autonomous_database_wallet_password"],
         base64_encode_content=False,
-        generate_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        generate_type=var["autonomous_database_wallet_generate_type"])
     ```
 
 
@@ -163,10 +163,10 @@ def get_autonomous_database_wallet_output(autonomous_database_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_wallet = oci.Database.get_autonomous_database_wallet(autonomous_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        password=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_autonomous_database_wallet = oci.Database.get_autonomous_database_wallet(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
+        password=var["autonomous_database_wallet_password"],
         base64_encode_content=False,
-        generate_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        generate_type=var["autonomous_database_wallet_generate_type"])
     ```
 
 

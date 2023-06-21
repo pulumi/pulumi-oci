@@ -115,10 +115,10 @@ def get_media_workflow_task_declaration(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow_task_declaration = oci.MediaServices.get_media_workflow_task_declaration(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_current=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_media_workflow_task_declaration = oci.MediaServices.get_media_workflow_task_declaration(compartment_id=var["compartment_id"],
+        is_current=var["media_workflow_task_declaration_is_current"],
+        name=var["media_workflow_task_declaration_name"],
+        version=var["media_workflow_task_declaration_version"])
     ```
 
 
@@ -161,10 +161,10 @@ def get_media_workflow_task_declaration_output(compartment_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow_task_declaration = oci.MediaServices.get_media_workflow_task_declaration(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_current=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_media_workflow_task_declaration = oci.MediaServices.get_media_workflow_task_declaration(compartment_id=var["compartment_id"],
+        is_current=var["media_workflow_task_declaration_is_current"],
+        name=var["media_workflow_task_declaration_name"],
+        version=var["media_workflow_task_declaration_version"])
     ```
 
 

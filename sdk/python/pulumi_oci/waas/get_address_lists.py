@@ -143,12 +143,12 @@ def get_address_lists(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_address_lists = oci.Waas.get_address_lists(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        states=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_address_lists = oci.Waas.get_address_lists(compartment_id=var["compartment_id"],
+        ids=var["address_list_ids"],
+        names=var["address_list_names"],
+        states=var["address_list_states"],
+        time_created_greater_than_or_equal_to=var["address_list_time_created_greater_than_or_equal_to"],
+        time_created_less_than=var["address_list_time_created_less_than"])
     ```
 
 
@@ -202,12 +202,12 @@ def get_address_lists_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_address_lists = oci.Waas.get_address_lists(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        states=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_address_lists = oci.Waas.get_address_lists(compartment_id=var["compartment_id"],
+        ids=var["address_list_ids"],
+        names=var["address_list_names"],
+        states=var["address_list_states"],
+        time_created_greater_than_or_equal_to=var["address_list_time_created_greater_than_or_equal_to"],
+        time_created_less_than=var["address_list_time_created_less_than"])
     ```
 
 

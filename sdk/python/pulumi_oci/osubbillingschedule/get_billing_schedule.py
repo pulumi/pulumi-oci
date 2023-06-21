@@ -121,10 +121,10 @@ def get_billing_schedule(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_billing_schedules = oci.OsubBillingSchedule.get_billing_schedule(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        subscription_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        subscribed_service_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        x_one_origin_region=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_billing_schedules = oci.OsubBillingSchedule.get_billing_schedule(compartment_id=var["compartment_id"],
+        subscription_id=oci_ons_subscription["test_subscription"]["id"],
+        subscribed_service_id=oci_core_service["test_service"]["id"],
+        x_one_origin_region=var["billing_schedule_x_one_origin_region"])
     ```
 
 
@@ -171,10 +171,10 @@ def get_billing_schedule_output(compartment_id: Optional[pulumi.Input[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_billing_schedules = oci.OsubBillingSchedule.get_billing_schedule(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        subscription_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        subscribed_service_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        x_one_origin_region=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_billing_schedules = oci.OsubBillingSchedule.get_billing_schedule(compartment_id=var["compartment_id"],
+        subscription_id=oci_ons_subscription["test_subscription"]["id"],
+        subscribed_service_id=oci_core_service["test_service"]["id"],
+        x_one_origin_region=var["billing_schedule_x_one_origin_region"])
     ```
 
 

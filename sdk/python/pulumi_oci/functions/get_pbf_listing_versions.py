@@ -143,11 +143,11 @@ def get_pbf_listing_versions(filters: Optional[Sequence[pulumi.InputType['GetPbf
     import pulumi
     import pulumi_oci as oci
 
-    test_pbf_listing_versions = oci.Functions.get_pbf_listing_versions(pbf_listing_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_current_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        pbf_listing_version_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_pbf_listing_versions = oci.Functions.get_pbf_listing_versions(pbf_listing_id=oci_functions_pbf_listing["test_pbf_listing"]["id"],
+        is_current_version=var["pbf_listing_version_is_current_version"],
+        name=var["pbf_listing_version_name"],
+        pbf_listing_version_id=oci_functions_pbf_listing_version["test_pbf_listing_version"]["id"],
+        state=var["pbf_listing_version_state"])
     ```
 
 
@@ -201,11 +201,11 @@ def get_pbf_listing_versions_output(filters: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_pbf_listing_versions = oci.Functions.get_pbf_listing_versions(pbf_listing_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_current_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        pbf_listing_version_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_pbf_listing_versions = oci.Functions.get_pbf_listing_versions(pbf_listing_id=oci_functions_pbf_listing["test_pbf_listing"]["id"],
+        is_current_version=var["pbf_listing_version_is_current_version"],
+        name=var["pbf_listing_version_name"],
+        pbf_listing_version_id=oci_functions_pbf_listing_version["test_pbf_listing_version"]["id"],
+        state=var["pbf_listing_version_state"])
     ```
 
 

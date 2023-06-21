@@ -96,7 +96,7 @@ def get_volume_backup_policies(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_backup_policies = oci.Core.get_volume_backup_policies(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_volume_backup_policies = oci.Core.get_volume_backup_policies(compartment_id=var["compartment_id"])
     ```
 
 
@@ -133,7 +133,7 @@ def get_volume_backup_policies_output(compartment_id: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_backup_policies = oci.Core.get_volume_backup_policies(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_volume_backup_policies = oci.Core.get_volume_backup_policies(compartment_id=var["compartment_id"])
     ```
 
 

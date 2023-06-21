@@ -90,7 +90,7 @@ def get_rule_sets(filters: Optional[Sequence[pulumi.InputType['GetRuleSetsFilter
     import pulumi
     import pulumi_oci as oci
 
-    test_rule_sets = oci.LoadBalancer.get_rule_sets(load_balancer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_rule_sets = oci.LoadBalancer.get_rule_sets(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
     ```
 
 
@@ -124,7 +124,7 @@ def get_rule_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_rule_sets = oci.LoadBalancer.get_rule_sets(load_balancer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_rule_sets = oci.LoadBalancer.get_rule_sets(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
     ```
 
 

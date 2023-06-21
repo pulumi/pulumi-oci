@@ -133,10 +133,10 @@ def get_sddcs(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sddcs = oci.Ocvp.get_sddcs(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compute_availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_sddcs = oci.Ocvp.get_sddcs(compartment_id=var["compartment_id"],
+        compute_availability_domain=var["sddc_compute_availability_domain"],
+        display_name=var["sddc_display_name"],
+        state=var["sddc_state"])
     ```
 
 
@@ -183,10 +183,10 @@ def get_sddcs_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sddcs = oci.Ocvp.get_sddcs(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compute_availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_sddcs = oci.Ocvp.get_sddcs(compartment_id=var["compartment_id"],
+        compute_availability_domain=var["sddc_compute_availability_domain"],
+        display_name=var["sddc_display_name"],
+        state=var["sddc_state"])
     ```
 
 

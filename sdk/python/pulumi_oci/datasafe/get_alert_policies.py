@@ -192,16 +192,16 @@ def get_alert_policies(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_policies = oci.DataSafe.get_alert_policies(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        alert_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_user_defined=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_alert_policies = oci.DataSafe.get_alert_policies(compartment_id=var["compartment_id"],
+        access_level=var["alert_policy_access_level"],
+        alert_policy_id=oci_data_safe_alert_policy["test_alert_policy"]["id"],
+        compartment_id_in_subtree=var["alert_policy_compartment_id_in_subtree"],
+        display_name=var["alert_policy_display_name"],
+        is_user_defined=var["alert_policy_is_user_defined"],
+        state=var["alert_policy_state"],
+        time_created_greater_than_or_equal_to=var["alert_policy_time_created_greater_than_or_equal_to"],
+        time_created_less_than=var["alert_policy_time_created_less_than"],
+        type=var["alert_policy_type"])
     ```
 
 
@@ -275,16 +275,16 @@ def get_alert_policies_output(access_level: Optional[pulumi.Input[Optional[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_policies = oci.DataSafe.get_alert_policies(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        alert_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_user_defined=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_alert_policies = oci.DataSafe.get_alert_policies(compartment_id=var["compartment_id"],
+        access_level=var["alert_policy_access_level"],
+        alert_policy_id=oci_data_safe_alert_policy["test_alert_policy"]["id"],
+        compartment_id_in_subtree=var["alert_policy_compartment_id_in_subtree"],
+        display_name=var["alert_policy_display_name"],
+        is_user_defined=var["alert_policy_is_user_defined"],
+        state=var["alert_policy_state"],
+        time_created_greater_than_or_equal_to=var["alert_policy_time_created_greater_than_or_equal_to"],
+        time_created_less_than=var["alert_policy_time_created_less_than"],
+        type=var["alert_policy_type"])
     ```
 
 

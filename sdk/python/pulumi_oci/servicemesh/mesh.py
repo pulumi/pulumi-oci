@@ -356,7 +356,7 @@ class Mesh(pulumi.CustomResource):
 
         test_mesh = oci.service_mesh.Mesh("testMesh",
             certificate_authorities=[oci.service_mesh.MeshCertificateAuthorityArgs(
-                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                id=var["mesh_certificate_authorities_id"],
             )],
             compartment_id=var["compartment_id"],
             display_name=var["mesh_display_name"],
@@ -368,7 +368,7 @@ class Mesh(pulumi.CustomResource):
                 "bar-key": "value",
             },
             mtls=oci.service_mesh.MeshMtlsArgs(
-                minimum=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                minimum=var["mesh_mtls_minimum"],
             ))
         ```
 
@@ -409,7 +409,7 @@ class Mesh(pulumi.CustomResource):
 
         test_mesh = oci.service_mesh.Mesh("testMesh",
             certificate_authorities=[oci.service_mesh.MeshCertificateAuthorityArgs(
-                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                id=var["mesh_certificate_authorities_id"],
             )],
             compartment_id=var["compartment_id"],
             display_name=var["mesh_display_name"],
@@ -421,7 +421,7 @@ class Mesh(pulumi.CustomResource):
                 "bar-key": "value",
             },
             mtls=oci.service_mesh.MeshMtlsArgs(
-                minimum=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                minimum=var["mesh_mtls_minimum"],
             ))
         ```
 

@@ -123,10 +123,10 @@ def get_management_agent_images(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_images = oci.ManagementAgent.get_management_agent_images(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        install_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_management_agent_images = oci.ManagementAgent.get_management_agent_images(compartment_id=var["compartment_id"],
+        install_type=var["management_agent_image_install_type"],
+        name=var["management_agent_image_name"],
+        state=var["management_agent_image_state"])
     ```
 
 
@@ -172,10 +172,10 @@ def get_management_agent_images_output(compartment_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_images = oci.ManagementAgent.get_management_agent_images(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        install_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_management_agent_images = oci.ManagementAgent.get_management_agent_images(compartment_id=var["compartment_id"],
+        install_type=var["management_agent_image_install_type"],
+        name=var["management_agent_image_name"],
+        state=var["management_agent_image_state"])
     ```
 
 

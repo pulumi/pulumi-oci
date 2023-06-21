@@ -132,10 +132,10 @@ def get_vm_cluster_networks(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_networks = oci.Database.get_vm_cluster_networks(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_vm_cluster_networks = oci.Database.get_vm_cluster_networks(compartment_id=var["compartment_id"],
+        exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
+        display_name=var["vm_cluster_network_display_name"],
+        state=var["vm_cluster_network_state"])
     ```
 
 
@@ -181,10 +181,10 @@ def get_vm_cluster_networks_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_networks = oci.Database.get_vm_cluster_networks(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_vm_cluster_networks = oci.Database.get_vm_cluster_networks(compartment_id=var["compartment_id"],
+        exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
+        display_name=var["vm_cluster_network_display_name"],
+        state=var["vm_cluster_network_state"])
     ```
 
 

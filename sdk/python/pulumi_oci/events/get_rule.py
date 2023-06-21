@@ -200,7 +200,7 @@ def get_rule(rule_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rule = oci.Events.get_rule(rule_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_rule = oci.Events.get_rule(rule_id=oci_events_rule["test_rule"]["id"])
     ```
 
 
@@ -241,7 +241,7 @@ def get_rule_output(rule_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rule = oci.Events.get_rule(rule_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_rule = oci.Events.get_rule(rule_id=oci_events_rule["test_rule"]["id"])
     ```
 
 

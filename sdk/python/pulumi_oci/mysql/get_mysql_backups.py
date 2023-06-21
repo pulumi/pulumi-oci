@@ -155,12 +155,12 @@ def get_mysql_backups(backup_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_backups = oci.Mysql.get_mysql_backups(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        backup_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        creation_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_mysql_backups = oci.Mysql.get_mysql_backups(compartment_id=var["compartment_id"],
+        backup_id=oci_mysql_mysql_backup["test_backup"]["id"],
+        creation_type=var["mysql_backup_creation_type"],
+        db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"],
+        display_name=var["mysql_backup_display_name"],
+        state=var["mysql_backup_state"])
     ```
 
 
@@ -214,12 +214,12 @@ def get_mysql_backups_output(backup_id: Optional[pulumi.Input[Optional[str]]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_backups = oci.Mysql.get_mysql_backups(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        backup_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        creation_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_mysql_backups = oci.Mysql.get_mysql_backups(compartment_id=var["compartment_id"],
+        backup_id=oci_mysql_mysql_backup["test_backup"]["id"],
+        creation_type=var["mysql_backup_creation_type"],
+        db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"],
+        display_name=var["mysql_backup_display_name"],
+        state=var["mysql_backup_state"])
     ```
 
 

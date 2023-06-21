@@ -210,7 +210,7 @@ def get_vlan(vlan_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vlan = oci.Core.get_vlan(vlan_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_vlan = oci.Core.get_vlan(vlan_id=oci_core_vlan["test_vlan"]["id"])
     ```
 
 
@@ -252,7 +252,7 @@ def get_vlan_output(vlan_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vlan = oci.Core.get_vlan(vlan_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_vlan = oci.Core.get_vlan(vlan_id=oci_core_vlan["test_vlan"]["id"])
     ```
 
 

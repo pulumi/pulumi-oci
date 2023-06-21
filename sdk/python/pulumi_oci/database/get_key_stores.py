@@ -93,7 +93,7 @@ def get_key_stores(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_key_stores = oci.Database.get_key_stores(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_key_stores = oci.Database.get_key_stores(compartment_id=var["compartment_id"])
     ```
 
 
@@ -127,7 +127,7 @@ def get_key_stores_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_key_stores = oci.Database.get_key_stores(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_key_stores = oci.Database.get_key_stores(compartment_id=var["compartment_id"])
     ```
 
 

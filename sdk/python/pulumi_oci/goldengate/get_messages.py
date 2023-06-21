@@ -90,7 +90,7 @@ def get_messages(deployment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_messages = oci.GoldenGate.get_messages(deployment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_messages = oci.GoldenGate.get_messages(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
     ```
 
 
@@ -124,7 +124,7 @@ def get_messages_output(deployment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_messages = oci.GoldenGate.get_messages(deployment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_messages = oci.GoldenGate.get_messages(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
     ```
 
 

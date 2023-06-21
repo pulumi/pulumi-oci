@@ -168,13 +168,13 @@ def get_sdm_masking_policy_difference_difference_columns(column_names: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_sdm_masking_policy_difference_difference_columns = oci.DataSafe.get_sdm_masking_policy_difference_difference_columns(sdm_masking_policy_difference_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        column_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        difference_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        objects=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        planned_action=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        schema_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        sync_status=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_sdm_masking_policy_difference_difference_columns = oci.DataSafe.get_sdm_masking_policy_difference_difference_columns(sdm_masking_policy_difference_id=oci_data_safe_sdm_masking_policy_difference["test_sdm_masking_policy_difference"]["id"],
+        column_names=var["sdm_masking_policy_difference_difference_column_column_name"],
+        difference_type=var["sdm_masking_policy_difference_difference_column_difference_type"],
+        objects=var["sdm_masking_policy_difference_difference_column_object"],
+        planned_action=var["sdm_masking_policy_difference_difference_column_planned_action"],
+        schema_names=var["sdm_masking_policy_difference_difference_column_schema_name"],
+        sync_status=var["sdm_masking_policy_difference_difference_column_sync_status"])
     ```
 
 
@@ -232,13 +232,13 @@ def get_sdm_masking_policy_difference_difference_columns_output(column_names: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_sdm_masking_policy_difference_difference_columns = oci.DataSafe.get_sdm_masking_policy_difference_difference_columns(sdm_masking_policy_difference_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        column_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        difference_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        objects=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        planned_action=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        schema_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        sync_status=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_sdm_masking_policy_difference_difference_columns = oci.DataSafe.get_sdm_masking_policy_difference_difference_columns(sdm_masking_policy_difference_id=oci_data_safe_sdm_masking_policy_difference["test_sdm_masking_policy_difference"]["id"],
+        column_names=var["sdm_masking_policy_difference_difference_column_column_name"],
+        difference_type=var["sdm_masking_policy_difference_difference_column_difference_type"],
+        objects=var["sdm_masking_policy_difference_difference_column_object"],
+        planned_action=var["sdm_masking_policy_difference_difference_column_planned_action"],
+        schema_names=var["sdm_masking_policy_difference_difference_column_schema_name"],
+        sync_status=var["sdm_masking_policy_difference_difference_column_sync_status"])
     ```
 
 

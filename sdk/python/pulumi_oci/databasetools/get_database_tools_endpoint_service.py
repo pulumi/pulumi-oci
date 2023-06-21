@@ -198,7 +198,7 @@ def get_database_tools_endpoint_service(database_tools_endpoint_service_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_endpoint_service = oci.DatabaseTools.get_database_tools_endpoint_service(database_tools_endpoint_service_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_database_tools_endpoint_service = oci.DatabaseTools.get_database_tools_endpoint_service(database_tools_endpoint_service_id=oci_database_tools_database_tools_endpoint_service["test_database_tools_endpoint_service"]["id"])
     ```
 
 
@@ -239,7 +239,7 @@ def get_database_tools_endpoint_service_output(database_tools_endpoint_service_i
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_endpoint_service = oci.DatabaseTools.get_database_tools_endpoint_service(database_tools_endpoint_service_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_database_tools_endpoint_service = oci.DatabaseTools.get_database_tools_endpoint_service(database_tools_endpoint_service_id=oci_database_tools_database_tools_endpoint_service["test_database_tools_endpoint_service"]["id"])
     ```
 
 

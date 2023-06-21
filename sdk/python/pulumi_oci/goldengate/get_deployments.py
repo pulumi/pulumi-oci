@@ -175,14 +175,14 @@ def get_deployments(assignable_connection_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployments = oci.GoldenGate.get_deployments(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        assignable_connection_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        assigned_connection_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        fqdn=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        lifecycle_sub_state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        supported_connection_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_deployments = oci.GoldenGate.get_deployments(compartment_id=var["compartment_id"],
+        assignable_connection_id=oci_golden_gate_connection["test_connection"]["id"],
+        assigned_connection_id=oci_golden_gate_connection["test_connection"]["id"],
+        display_name=var["deployment_display_name"],
+        fqdn=var["deployment_fqdn"],
+        lifecycle_sub_state=var["deployment_lifecycle_sub_state"],
+        state=var["deployment_state"],
+        supported_connection_type=var["deployment_supported_connection_type"])
     ```
 
 
@@ -244,14 +244,14 @@ def get_deployments_output(assignable_connection_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_deployments = oci.GoldenGate.get_deployments(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        assignable_connection_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        assigned_connection_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        fqdn=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        lifecycle_sub_state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        supported_connection_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_deployments = oci.GoldenGate.get_deployments(compartment_id=var["compartment_id"],
+        assignable_connection_id=oci_golden_gate_connection["test_connection"]["id"],
+        assigned_connection_id=oci_golden_gate_connection["test_connection"]["id"],
+        display_name=var["deployment_display_name"],
+        fqdn=var["deployment_fqdn"],
+        lifecycle_sub_state=var["deployment_lifecycle_sub_state"],
+        state=var["deployment_state"],
+        supported_connection_type=var["deployment_supported_connection_type"])
     ```
 
 

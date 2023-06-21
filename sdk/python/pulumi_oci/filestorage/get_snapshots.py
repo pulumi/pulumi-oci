@@ -133,11 +133,11 @@ def get_snapshots(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_snapshots = oci.FileStorage.get_snapshots(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        file_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        filesystem_snapshot_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_snapshots = oci.FileStorage.get_snapshots(compartment_id=var["compartment_id"],
+        file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
+        filesystem_snapshot_policy_id=oci_file_storage_filesystem_snapshot_policy["test_filesystem_snapshot_policy"]["id"],
+        id=var["snapshot_id"],
+        state=var["snapshot_state"])
     ```
 
 
@@ -189,11 +189,11 @@ def get_snapshots_output(compartment_id: Optional[pulumi.Input[Optional[str]]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_snapshots = oci.FileStorage.get_snapshots(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        file_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        filesystem_snapshot_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_snapshots = oci.FileStorage.get_snapshots(compartment_id=var["compartment_id"],
+        file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
+        filesystem_snapshot_policy_id=oci_file_storage_filesystem_snapshot_policy["test_filesystem_snapshot_policy"]["id"],
+        id=var["snapshot_id"],
+        state=var["snapshot_state"])
     ```
 
 

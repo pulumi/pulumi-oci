@@ -139,7 +139,7 @@ def get_action(operator_action_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_action = oci.OperatorAccessControl.get_action(operator_action_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_operator_action = oci.OperatorAccessControl.get_action(operator_action_id=oci_operator_access_control_operator_action["test_operator_action"]["id"])
     ```
 
 
@@ -175,7 +175,7 @@ def get_action_output(operator_action_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_action = oci.OperatorAccessControl.get_action(operator_action_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_operator_action = oci.OperatorAccessControl.get_action(operator_action_id=oci_operator_access_control_operator_action["test_operator_action"]["id"])
     ```
 
 

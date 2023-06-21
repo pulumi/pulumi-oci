@@ -201,8 +201,8 @@ def get_database_pdb_conversion_history_entry(database_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database_pdb_conversion_history_entry = oci.Database.get_database_pdb_conversion_history_entry(database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        pdb_conversion_history_entry_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_database_pdb_conversion_history_entry = oci.Database.get_database_pdb_conversion_history_entry(database_id=oci_database_database["test_database"]["id"],
+        pdb_conversion_history_entry_id=oci_database_pdb_conversion_history_entry["test_pdb_conversion_history_entry"]["id"])
     ```
 
 
@@ -246,8 +246,8 @@ def get_database_pdb_conversion_history_entry_output(database_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_database_pdb_conversion_history_entry = oci.Database.get_database_pdb_conversion_history_entry(database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        pdb_conversion_history_entry_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_database_pdb_conversion_history_entry = oci.Database.get_database_pdb_conversion_history_entry(database_id=oci_database_database["test_database"]["id"],
+        pdb_conversion_history_entry_id=oci_database_pdb_conversion_history_entry["test_pdb_conversion_history_entry"]["id"])
     ```
 
 

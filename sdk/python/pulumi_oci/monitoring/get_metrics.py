@@ -166,13 +166,13 @@ def get_metrics(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metrics = oci.Monitoring.get_metrics(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        dimension_filters=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        group_bies=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_group=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_metrics = oci.Monitoring.get_metrics(compartment_id=var["compartment_id"],
+        compartment_id_in_subtree=var["metric_compartment_id_in_subtree"],
+        dimension_filters=var["metric_dimension_filters"],
+        group_bies=var["metric_group_by"],
+        name=var["metric_name"],
+        namespace=var["metric_namespace"],
+        resource_group=var["metric_resource_group"])
     ```
 
 
@@ -236,13 +236,13 @@ def get_metrics_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metrics = oci.Monitoring.get_metrics(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        dimension_filters=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        group_bies=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_group=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_metrics = oci.Monitoring.get_metrics(compartment_id=var["compartment_id"],
+        compartment_id_in_subtree=var["metric_compartment_id_in_subtree"],
+        dimension_filters=var["metric_dimension_filters"],
+        group_bies=var["metric_group_by"],
+        name=var["metric_name"],
+        namespace=var["metric_namespace"],
+        resource_group=var["metric_resource_group"])
     ```
 
 

@@ -145,11 +145,11 @@ def get_managed_database_optimizer_statistics_collection_aggregations(end_time_l
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_optimizer_statistics_collection_aggregations = oci.DatabaseManagement.get_managed_database_optimizer_statistics_collection_aggregations(group_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        end_time_less_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        start_time_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        task_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_managed_database_optimizer_statistics_collection_aggregations = oci.DatabaseManagement.get_managed_database_optimizer_statistics_collection_aggregations(group_type=var["managed_database_optimizer_statistics_collection_aggregation_group_type"],
+        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
+        end_time_less_than_or_equal_to=var["managed_database_optimizer_statistics_collection_aggregation_end_time_less_than_or_equal_to"],
+        start_time_greater_than_or_equal_to=var["managed_database_optimizer_statistics_collection_aggregation_start_time_greater_than_or_equal_to"],
+        task_type=var["managed_database_optimizer_statistics_collection_aggregation_task_type"])
     ```
 
 
@@ -207,11 +207,11 @@ def get_managed_database_optimizer_statistics_collection_aggregations_output(end
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_optimizer_statistics_collection_aggregations = oci.DatabaseManagement.get_managed_database_optimizer_statistics_collection_aggregations(group_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        end_time_less_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        start_time_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        task_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_managed_database_optimizer_statistics_collection_aggregations = oci.DatabaseManagement.get_managed_database_optimizer_statistics_collection_aggregations(group_type=var["managed_database_optimizer_statistics_collection_aggregation_group_type"],
+        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
+        end_time_less_than_or_equal_to=var["managed_database_optimizer_statistics_collection_aggregation_end_time_less_than_or_equal_to"],
+        start_time_greater_than_or_equal_to=var["managed_database_optimizer_statistics_collection_aggregation_start_time_greater_than_or_equal_to"],
+        task_type=var["managed_database_optimizer_statistics_collection_aggregation_task_type"])
     ```
 
 

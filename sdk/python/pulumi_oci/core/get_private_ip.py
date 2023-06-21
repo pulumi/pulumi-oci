@@ -225,7 +225,7 @@ def get_private_ip(private_ip_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_private_ip = oci.Core.get_private_ip(private_ip_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_private_ip = oci.Core.get_private_ip(private_ip_id=oci_core_private_ip["test_private_ip"]["id"])
     ```
 
 
@@ -271,7 +271,7 @@ def get_private_ip_output(private_ip_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_private_ip = oci.Core.get_private_ip(private_ip_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_private_ip = oci.Core.get_private_ip(private_ip_id=oci_core_private_ip["test_private_ip"]["id"])
     ```
 
 

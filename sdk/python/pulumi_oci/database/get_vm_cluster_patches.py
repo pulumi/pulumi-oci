@@ -90,7 +90,7 @@ def get_vm_cluster_patches(filters: Optional[Sequence[pulumi.InputType['GetVmClu
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_patches = oci.Database.get_vm_cluster_patches(vm_cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_vm_cluster_patches = oci.Database.get_vm_cluster_patches(vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
     ```
 
 
@@ -124,7 +124,7 @@ def get_vm_cluster_patches_output(filters: Optional[pulumi.Input[Optional[Sequen
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_patches = oci.Database.get_vm_cluster_patches(vm_cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_vm_cluster_patches = oci.Database.get_vm_cluster_patches(vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
     ```
 
 

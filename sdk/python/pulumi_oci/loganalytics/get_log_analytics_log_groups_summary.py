@@ -85,8 +85,8 @@ def get_log_analytics_log_groups_summary(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_log_groups_summary = oci.LogAnalytics.get_log_analytics_log_groups_summary(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_log_analytics_log_groups_summary = oci.LogAnalytics.get_log_analytics_log_groups_summary(compartment_id=var["compartment_id"],
+        namespace=var["log_analytics_log_groups_summary_namespace"])
     ```
 
 
@@ -121,8 +121,8 @@ def get_log_analytics_log_groups_summary_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_log_groups_summary = oci.LogAnalytics.get_log_analytics_log_groups_summary(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_log_analytics_log_groups_summary = oci.LogAnalytics.get_log_analytics_log_groups_summary(compartment_id=var["compartment_id"],
+        namespace=var["log_analytics_log_groups_summary_namespace"])
     ```
 
 

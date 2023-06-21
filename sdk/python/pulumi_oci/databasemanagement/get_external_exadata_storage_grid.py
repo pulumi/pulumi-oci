@@ -223,7 +223,7 @@ def get_external_exadata_storage_grid(external_exadata_storage_grid_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_grid = oci.DatabaseManagement.get_external_exadata_storage_grid(external_exadata_storage_grid_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_external_exadata_storage_grid = oci.DatabaseManagement.get_external_exadata_storage_grid(external_exadata_storage_grid_id=oci_database_management_external_exadata_storage_grid["test_external_exadata_storage_grid"]["id"])
     ```
 
 
@@ -266,7 +266,7 @@ def get_external_exadata_storage_grid_output(external_exadata_storage_grid_id: O
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_grid = oci.DatabaseManagement.get_external_exadata_storage_grid(external_exadata_storage_grid_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_external_exadata_storage_grid = oci.DatabaseManagement.get_external_exadata_storage_grid(external_exadata_storage_grid_id=oci_database_management_external_exadata_storage_grid["test_external_exadata_storage_grid"]["id"])
     ```
 
 

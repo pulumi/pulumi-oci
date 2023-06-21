@@ -1035,8 +1035,8 @@ class Application(pulumi.CustomResource):
             num_executors=var["application_num_executors"],
             spark_version=var["application_spark_version"],
             application_log_config=oci.data_flow.ApplicationApplicationLogConfigArgs(
-                log_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                log_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                log_group_id=oci_logging_log_group["test_log_group"]["id"],
+                log_id=oci_logging_log["test_log"]["id"],
             ),
             archive_uri=var["application_archive_uri"],
             arguments=var["application_arguments"],
@@ -1047,13 +1047,13 @@ class Application(pulumi.CustomResource):
             },
             description=var["application_description"],
             driver_shape_config=oci.data_flow.ApplicationDriverShapeConfigArgs(
-                memory_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                ocpus=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                memory_in_gbs=var["application_driver_shape_config_memory_in_gbs"],
+                ocpus=var["application_driver_shape_config_ocpus"],
             ),
             execute=var["application_execute"],
             executor_shape_config=oci.data_flow.ApplicationExecutorShapeConfigArgs(
-                memory_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                ocpus=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                memory_in_gbs=var["application_executor_shape_config_memory_in_gbs"],
+                ocpus=var["application_executor_shape_config_ocpus"],
             ),
             file_uri=var["application_file_uri"],
             freeform_tags={
@@ -1064,8 +1064,8 @@ class Application(pulumi.CustomResource):
             max_duration_in_minutes=var["application_max_duration_in_minutes"],
             metastore_id=var["metastore_id"],
             parameters=[oci.data_flow.ApplicationParameterArgs(
-                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=var["application_parameters_name"],
+                value=var["application_parameters_value"],
             )],
             private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
             type=var["application_type"],
@@ -1140,8 +1140,8 @@ class Application(pulumi.CustomResource):
             num_executors=var["application_num_executors"],
             spark_version=var["application_spark_version"],
             application_log_config=oci.data_flow.ApplicationApplicationLogConfigArgs(
-                log_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                log_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                log_group_id=oci_logging_log_group["test_log_group"]["id"],
+                log_id=oci_logging_log["test_log"]["id"],
             ),
             archive_uri=var["application_archive_uri"],
             arguments=var["application_arguments"],
@@ -1152,13 +1152,13 @@ class Application(pulumi.CustomResource):
             },
             description=var["application_description"],
             driver_shape_config=oci.data_flow.ApplicationDriverShapeConfigArgs(
-                memory_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                ocpus=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                memory_in_gbs=var["application_driver_shape_config_memory_in_gbs"],
+                ocpus=var["application_driver_shape_config_ocpus"],
             ),
             execute=var["application_execute"],
             executor_shape_config=oci.data_flow.ApplicationExecutorShapeConfigArgs(
-                memory_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                ocpus=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                memory_in_gbs=var["application_executor_shape_config_memory_in_gbs"],
+                ocpus=var["application_executor_shape_config_ocpus"],
             ),
             file_uri=var["application_file_uri"],
             freeform_tags={
@@ -1169,8 +1169,8 @@ class Application(pulumi.CustomResource):
             max_duration_in_minutes=var["application_max_duration_in_minutes"],
             metastore_id=var["metastore_id"],
             parameters=[oci.data_flow.ApplicationParameterArgs(
-                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=var["application_parameters_name"],
+                value=var["application_parameters_value"],
             )],
             private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
             type=var["application_type"],

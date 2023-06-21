@@ -113,9 +113,9 @@ def get_publication_packages(filters: Optional[Sequence[pulumi.InputType['GetPub
     import pulumi
     import pulumi_oci as oci
 
-    test_publication_packages = oci.Marketplace.get_publication_packages(publication_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        package_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        package_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_publication_packages = oci.Marketplace.get_publication_packages(publication_id=oci_marketplace_publication["test_publication"]["id"],
+        package_type=var["publication_package_package_type"],
+        package_version=var["publication_package_package_version"])
     ```
 
 
@@ -157,9 +157,9 @@ def get_publication_packages_output(filters: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_publication_packages = oci.Marketplace.get_publication_packages(publication_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        package_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        package_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_publication_packages = oci.Marketplace.get_publication_packages(publication_id=oci_marketplace_publication["test_publication"]["id"],
+        package_type=var["publication_package_package_type"],
+        package_version=var["publication_package_package_version"])
     ```
 
 

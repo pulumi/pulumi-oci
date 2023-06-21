@@ -168,11 +168,11 @@ def get_domains_kmsi_settings(attribute_sets: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_kmsi_settings = oci.Identity.get_domains_kmsi_settings(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_kmsi_settings = oci.Identity.get_domains_kmsi_settings(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
         attribute_sets=[],
         attributes="",
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        authorization=var["kmsi_setting_authorization"],
+        resource_type_schema_version=var["kmsi_setting_resource_type_schema_version"])
     ```
 
 
@@ -226,11 +226,11 @@ def get_domains_kmsi_settings_output(attribute_sets: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_kmsi_settings = oci.Identity.get_domains_kmsi_settings(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_kmsi_settings = oci.Identity.get_domains_kmsi_settings(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
         attribute_sets=[],
         attributes="",
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        authorization=var["kmsi_setting_authorization"],
+        resource_type_schema_version=var["kmsi_setting_resource_type_schema_version"])
     ```
 
 

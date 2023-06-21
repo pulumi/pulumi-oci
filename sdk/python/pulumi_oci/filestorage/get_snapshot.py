@@ -225,7 +225,7 @@ def get_snapshot(snapshot_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_snapshot = oci.FileStorage.get_snapshot(snapshot_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_snapshot = oci.FileStorage.get_snapshot(snapshot_id=oci_file_storage_snapshot["test_snapshot"]["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_snapshot_output(snapshot_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_snapshot = oci.FileStorage.get_snapshot(snapshot_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_snapshot = oci.FileStorage.get_snapshot(snapshot_id=oci_file_storage_snapshot["test_snapshot"]["id"])
     ```
 
 

@@ -144,7 +144,7 @@ def get_private_application_package(private_application_package_id: Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_private_application_package = oci.ServiceCatalog.get_private_application_package(private_application_package_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_private_application_package = oci.ServiceCatalog.get_private_application_package(private_application_package_id=oci_service_catalog_private_application_package["test_private_application_package"]["id"])
     ```
 
 
@@ -181,7 +181,7 @@ def get_private_application_package_output(private_application_package_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_private_application_package = oci.ServiceCatalog.get_private_application_package(private_application_package_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_private_application_package = oci.ServiceCatalog.get_private_application_package(private_application_package_id=oci_service_catalog_private_application_package["test_private_application_package"]["id"])
     ```
 
 

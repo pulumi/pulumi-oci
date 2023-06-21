@@ -146,11 +146,11 @@ def get_certificates(certificate_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_certificates = oci.CertificatesManagement.get_certificates(certificate_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        issuer_certificate_authority_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_certificates = oci.CertificatesManagement.get_certificates(certificate_id=oci_certificates_management_certificate["test_certificate"]["id"],
+        compartment_id=var["compartment_id"],
+        issuer_certificate_authority_id=oci_certificates_management_certificate_authority["test_certificate_authority"]["id"],
+        name=var["certificate_name"],
+        state=var["certificate_state"])
     ```
 
 
@@ -201,11 +201,11 @@ def get_certificates_output(certificate_id: Optional[pulumi.Input[Optional[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_certificates = oci.CertificatesManagement.get_certificates(certificate_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        issuer_certificate_authority_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_certificates = oci.CertificatesManagement.get_certificates(certificate_id=oci_certificates_management_certificate["test_certificate"]["id"],
+        compartment_id=var["compartment_id"],
+        issuer_certificate_authority_id=oci_certificates_management_certificate_authority["test_certificate_authority"]["id"],
+        name=var["certificate_name"],
+        state=var["certificate_state"])
     ```
 
 

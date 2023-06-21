@@ -871,7 +871,7 @@ def get_deploy_stage(deploy_stage_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_stage = oci.DevOps.get_deploy_stage(deploy_stage_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_deploy_stage = oci.DevOps.get_deploy_stage(deploy_stage_id=oci_devops_deploy_stage["test_deploy_stage"]["id"])
     ```
 
 
@@ -968,7 +968,7 @@ def get_deploy_stage_output(deploy_stage_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_stage = oci.DevOps.get_deploy_stage(deploy_stage_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_deploy_stage = oci.DevOps.get_deploy_stage(deploy_stage_id=oci_devops_deploy_stage["test_deploy_stage"]["id"])
     ```
 
 

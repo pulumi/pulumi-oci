@@ -145,11 +145,11 @@ def get_boot_volume_backups(boot_volume_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volume_backups = oci.Core.get_boot_volume_backups(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        boot_volume_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        source_boot_volume_backup_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_boot_volume_backups = oci.Core.get_boot_volume_backups(compartment_id=var["compartment_id"],
+        boot_volume_id=oci_core_boot_volume["test_boot_volume"]["id"],
+        display_name=var["boot_volume_backup_display_name"],
+        source_boot_volume_backup_id=oci_core_boot_volume_backup["test_boot_volume_backup"]["id"],
+        state=var["boot_volume_backup_state"])
     ```
 
 
@@ -199,11 +199,11 @@ def get_boot_volume_backups_output(boot_volume_id: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volume_backups = oci.Core.get_boot_volume_backups(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        boot_volume_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        source_boot_volume_backup_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_boot_volume_backups = oci.Core.get_boot_volume_backups(compartment_id=var["compartment_id"],
+        boot_volume_id=oci_core_boot_volume["test_boot_volume"]["id"],
+        display_name=var["boot_volume_backup_display_name"],
+        source_boot_volume_backup_id=oci_core_boot_volume_backup["test_boot_volume_backup"]["id"],
+        state=var["boot_volume_backup_state"])
     ```
 
 

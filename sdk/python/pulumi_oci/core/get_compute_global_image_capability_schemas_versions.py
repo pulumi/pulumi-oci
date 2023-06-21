@@ -106,8 +106,8 @@ def get_compute_global_image_capability_schemas_versions(compute_global_image_ca
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_global_image_capability_schemas_versions = oci.Core.get_compute_global_image_capability_schemas_versions(compute_global_image_capability_schema_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_compute_global_image_capability_schemas_versions = oci.Core.get_compute_global_image_capability_schemas_versions(compute_global_image_capability_schema_id=oci_core_compute_global_image_capability_schema["test_compute_global_image_capability_schema"]["id"],
+        display_name=var["compute_global_image_capability_schemas_version_display_name"])
     ```
 
 
@@ -145,8 +145,8 @@ def get_compute_global_image_capability_schemas_versions_output(compute_global_i
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_global_image_capability_schemas_versions = oci.Core.get_compute_global_image_capability_schemas_versions(compute_global_image_capability_schema_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_compute_global_image_capability_schemas_versions = oci.Core.get_compute_global_image_capability_schemas_versions(compute_global_image_capability_schema_id=oci_core_compute_global_image_capability_schema["test_compute_global_image_capability_schema"]["id"],
+        display_name=var["compute_global_image_capability_schemas_version_display_name"])
     ```
 
 

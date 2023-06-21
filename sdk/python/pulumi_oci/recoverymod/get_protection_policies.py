@@ -145,11 +145,11 @@ def get_protection_policies(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_policies = oci.RecoveryMod.get_protection_policies(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        owner=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        protection_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_protection_policies = oci.RecoveryMod.get_protection_policies(compartment_id=var["compartment_id"],
+        display_name=var["protection_policy_display_name"],
+        owner=var["protection_policy_owner"],
+        protection_policy_id=oci_recovery_protection_policy["test_protection_policy"]["id"],
+        state=var["protection_policy_state"])
     ```
 
 
@@ -199,11 +199,11 @@ def get_protection_policies_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_policies = oci.RecoveryMod.get_protection_policies(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        owner=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        protection_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_protection_policies = oci.RecoveryMod.get_protection_policies(compartment_id=var["compartment_id"],
+        display_name=var["protection_policy_display_name"],
+        owner=var["protection_policy_owner"],
+        protection_policy_id=oci_recovery_protection_policy["test_protection_policy"]["id"],
+        state=var["protection_policy_state"])
     ```
 
 

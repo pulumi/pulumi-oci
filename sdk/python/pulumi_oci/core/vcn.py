@@ -650,8 +650,8 @@ class Vcn(pulumi.CustomResource):
         test_vcn = oci.core.Vcn("testVcn",
             compartment_id=var["compartment_id"],
             byoipv6cidr_details=[oci.core.VcnByoipv6cidrDetailArgs(
-                byoipv6range_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                ipv6cidr_block=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                byoipv6range_id=oci_core_byoipv6range["test_byoipv6range"]["id"],
+                ipv6cidr_block=var["vcn_byoipv6cidr_details_ipv6cidr_block"],
             )],
             cidr_block=var["vcn_cidr_block"],
             cidr_blocks=var["vcn_cidr_blocks"],
@@ -767,8 +767,8 @@ class Vcn(pulumi.CustomResource):
         test_vcn = oci.core.Vcn("testVcn",
             compartment_id=var["compartment_id"],
             byoipv6cidr_details=[oci.core.VcnByoipv6cidrDetailArgs(
-                byoipv6range_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                ipv6cidr_block=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                byoipv6range_id=oci_core_byoipv6range["test_byoipv6range"]["id"],
+                ipv6cidr_block=var["vcn_byoipv6cidr_details_ipv6cidr_block"],
             )],
             cidr_block=var["vcn_cidr_block"],
             cidr_blocks=var["vcn_cidr_blocks"],

@@ -174,7 +174,7 @@ def get_stream_distribution_channel(stream_distribution_channel_id: Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_distribution_channel = oci.MediaServices.get_stream_distribution_channel(stream_distribution_channel_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_stream_distribution_channel = oci.MediaServices.get_stream_distribution_channel(stream_distribution_channel_id=oci_media_services_stream_distribution_channel["test_stream_distribution_channel"]["id"])
     ```
 
 
@@ -213,7 +213,7 @@ def get_stream_distribution_channel_output(stream_distribution_channel_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_distribution_channel = oci.MediaServices.get_stream_distribution_channel(stream_distribution_channel_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_stream_distribution_channel = oci.MediaServices.get_stream_distribution_channel(stream_distribution_channel_id=oci_media_services_stream_distribution_channel["test_stream_distribution_channel"]["id"])
     ```
 
 

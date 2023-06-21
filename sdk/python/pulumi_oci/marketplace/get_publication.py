@@ -241,7 +241,7 @@ def get_publication(publication_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_publication = oci.Marketplace.get_publication(publication_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_publication = oci.Marketplace.get_publication(publication_id=oci_marketplace_publication["test_publication"]["id"])
     ```
 
 
@@ -286,7 +286,7 @@ def get_publication_output(publication_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_publication = oci.Marketplace.get_publication(publication_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_publication = oci.Marketplace.get_publication(publication_id=oci_marketplace_publication["test_publication"]["id"])
     ```
 
 

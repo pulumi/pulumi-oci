@@ -213,17 +213,17 @@ def get_listings(categories: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_listings = oci.Marketplace.get_listings(categories=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        image_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_featured=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        listing_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        listing_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        operating_systems=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        package_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        pricings=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        publisher_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_listings = oci.Marketplace.get_listings(categories=var["listing_category"],
+        compartment_id=var["compartment_id"],
+        image_id=oci_core_image["test_image"]["id"],
+        is_featured=var["listing_is_featured"],
+        listing_id=oci_marketplace_listing["test_listing"]["id"],
+        listing_types=var["listing_listing_types"],
+        names=var["listing_name"],
+        operating_systems=var["listing_operating_systems"],
+        package_type=var["listing_package_type"],
+        pricings=var["listing_pricing"],
+        publisher_id=oci_marketplace_publisher["test_publisher"]["id"])
     ```
 
 
@@ -311,17 +311,17 @@ def get_listings_output(categories: Optional[pulumi.Input[Optional[Sequence[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_listings = oci.Marketplace.get_listings(categories=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        image_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_featured=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        listing_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        listing_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        operating_systems=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        package_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        pricings=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        publisher_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_listings = oci.Marketplace.get_listings(categories=var["listing_category"],
+        compartment_id=var["compartment_id"],
+        image_id=oci_core_image["test_image"]["id"],
+        is_featured=var["listing_is_featured"],
+        listing_id=oci_marketplace_listing["test_listing"]["id"],
+        listing_types=var["listing_listing_types"],
+        names=var["listing_name"],
+        operating_systems=var["listing_operating_systems"],
+        package_type=var["listing_package_type"],
+        pricings=var["listing_pricing"],
+        publisher_id=oci_marketplace_publisher["test_publisher"]["id"])
     ```
 
 

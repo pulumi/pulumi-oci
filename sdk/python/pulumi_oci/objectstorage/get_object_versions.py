@@ -179,14 +179,14 @@ def get_object_versions(bucket: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object_versions = oci.ObjectStorage.get_object_versions(bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        delimiter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        end=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        prefix=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        start=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        start_after=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_object_versions = oci.ObjectStorage.get_object_versions(bucket=var["object_version_bucket"],
+        namespace=var["object_version_namespace"],
+        delimiter=var["object_version_delimiter"],
+        end=var["object_version_end"],
+        fields=var["object_version_fields"],
+        prefix=var["object_version_prefix"],
+        start=var["object_version_start"],
+        start_after=var["object_version_start_after"])
     ```
 
 
@@ -256,14 +256,14 @@ def get_object_versions_output(bucket: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object_versions = oci.ObjectStorage.get_object_versions(bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        delimiter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        end=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        prefix=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        start=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        start_after=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_object_versions = oci.ObjectStorage.get_object_versions(bucket=var["object_version_bucket"],
+        namespace=var["object_version_namespace"],
+        delimiter=var["object_version_delimiter"],
+        end=var["object_version_end"],
+        fields=var["object_version_fields"],
+        prefix=var["object_version_prefix"],
+        start=var["object_version_start"],
+        start_after=var["object_version_start_after"])
     ```
 
 

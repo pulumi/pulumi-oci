@@ -253,7 +253,7 @@ def get_dr_protection_group(dr_protection_group_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_protection_group = oci.DisasterRecovery.get_dr_protection_group(dr_protection_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_dr_protection_group = oci.DisasterRecovery.get_dr_protection_group(dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"])
     ```
 
 
@@ -299,7 +299,7 @@ def get_dr_protection_group_output(dr_protection_group_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_protection_group = oci.DisasterRecovery.get_dr_protection_group(dr_protection_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_dr_protection_group = oci.DisasterRecovery.get_dr_protection_group(dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"])
     ```
 
 

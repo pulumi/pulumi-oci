@@ -132,10 +132,10 @@ def get_gateways(certificate_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_gateways = oci.ApiGateway.get_gateways(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        certificate_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_gateways = oci.ApiGateway.get_gateways(compartment_id=var["compartment_id"],
+        certificate_id=var["oci_apigateway_certificate"]["test_certificate"]["id"],
+        display_name=var["gateway_display_name"],
+        state=var["gateway_state"])
     ```
 
 
@@ -181,10 +181,10 @@ def get_gateways_output(certificate_id: Optional[pulumi.Input[Optional[str]]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_gateways = oci.ApiGateway.get_gateways(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        certificate_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_gateways = oci.ApiGateway.get_gateways(compartment_id=var["compartment_id"],
+        certificate_id=var["oci_apigateway_certificate"]["test_certificate"]["id"],
+        display_name=var["gateway_display_name"],
+        state=var["gateway_state"])
     ```
 
 

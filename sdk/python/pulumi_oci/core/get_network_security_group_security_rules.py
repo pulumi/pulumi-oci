@@ -103,8 +103,8 @@ def get_network_security_group_security_rules(direction: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_network_security_group_security_rules = oci.Core.get_network_security_group_security_rules(network_security_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        direction=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_network_security_group_security_rules = oci.Core.get_network_security_group_security_rules(network_security_group_id=oci_core_network_security_group["test_network_security_group"]["id"],
+        direction=var["network_security_group_security_rule_direction"])
     ```
 
 
@@ -142,8 +142,8 @@ def get_network_security_group_security_rules_output(direction: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_network_security_group_security_rules = oci.Core.get_network_security_group_security_rules(network_security_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        direction=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_network_security_group_security_rules = oci.Core.get_network_security_group_security_rules(network_security_group_id=oci_core_network_security_group["test_network_security_group"]["id"],
+        direction=var["network_security_group_security_rule_direction"])
     ```
 
 

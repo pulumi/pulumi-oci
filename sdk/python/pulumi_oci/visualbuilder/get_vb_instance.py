@@ -328,7 +328,7 @@ def get_vb_instance(vb_instance_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vb_instance = oci.VisualBuilder.get_vb_instance(vb_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_vb_instance = oci.VisualBuilder.get_vb_instance(vb_instance_id=oci_visual_builder_vb_instance["test_vb_instance"]["id"])
     ```
 
 
@@ -380,7 +380,7 @@ def get_vb_instance_output(vb_instance_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vb_instance = oci.VisualBuilder.get_vb_instance(vb_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_vb_instance = oci.VisualBuilder.get_vb_instance(vb_instance_id=oci_visual_builder_vb_instance["test_vb_instance"]["id"])
     ```
 
 

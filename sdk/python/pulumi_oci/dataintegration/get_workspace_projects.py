@@ -136,11 +136,11 @@ def get_workspace_projects(fields: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_projects = oci.DataIntegration.get_workspace_projects(workspace_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        identifiers=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_workspace_projects = oci.DataIntegration.get_workspace_projects(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
+        fields=var["workspace_project_fields"],
+        identifiers=var["workspace_project_identifier"],
+        name=var["workspace_project_name"],
+        name_contains=var["workspace_project_name_contains"])
     ```
 
 
@@ -190,11 +190,11 @@ def get_workspace_projects_output(fields: Optional[pulumi.Input[Optional[Sequenc
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_projects = oci.DataIntegration.get_workspace_projects(workspace_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        identifiers=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_workspace_projects = oci.DataIntegration.get_workspace_projects(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
+        fields=var["workspace_project_fields"],
+        identifiers=var["workspace_project_identifier"],
+        name=var["workspace_project_name"],
+        name_contains=var["workspace_project_name_contains"])
     ```
 
 

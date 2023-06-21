@@ -364,15 +364,15 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
             },
             policy_prefix=var["filesystem_snapshot_policy_policy_prefix"],
             schedules=[oci.file_storage.FilesystemSnapshotPolicyScheduleArgs(
-                period=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                time_zone=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                day_of_month=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                day_of_week=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                hour_of_day=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                month=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                retention_duration_in_seconds=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                schedule_prefix=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                time_schedule_start=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                period=var["filesystem_snapshot_policy_schedules_period"],
+                time_zone=var["filesystem_snapshot_policy_schedules_time_zone"],
+                day_of_month=var["filesystem_snapshot_policy_schedules_day_of_month"],
+                day_of_week=var["filesystem_snapshot_policy_schedules_day_of_week"],
+                hour_of_day=var["filesystem_snapshot_policy_schedules_hour_of_day"],
+                month=var["filesystem_snapshot_policy_schedules_month"],
+                retention_duration_in_seconds=var["filesystem_snapshot_policy_schedules_retention_duration_in_seconds"],
+                schedule_prefix=var["filesystem_snapshot_policy_schedules_schedule_prefix"],
+                time_schedule_start=var["filesystem_snapshot_policy_schedules_time_schedule_start"],
             )])
         ```
 
@@ -434,15 +434,15 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
             },
             policy_prefix=var["filesystem_snapshot_policy_policy_prefix"],
             schedules=[oci.file_storage.FilesystemSnapshotPolicyScheduleArgs(
-                period=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                time_zone=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                day_of_month=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                day_of_week=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                hour_of_day=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                month=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                retention_duration_in_seconds=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                schedule_prefix=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                time_schedule_start=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                period=var["filesystem_snapshot_policy_schedules_period"],
+                time_zone=var["filesystem_snapshot_policy_schedules_time_zone"],
+                day_of_month=var["filesystem_snapshot_policy_schedules_day_of_month"],
+                day_of_week=var["filesystem_snapshot_policy_schedules_day_of_week"],
+                hour_of_day=var["filesystem_snapshot_policy_schedules_hour_of_day"],
+                month=var["filesystem_snapshot_policy_schedules_month"],
+                retention_duration_in_seconds=var["filesystem_snapshot_policy_schedules_retention_duration_in_seconds"],
+                schedule_prefix=var["filesystem_snapshot_policy_schedules_schedule_prefix"],
+                time_schedule_start=var["filesystem_snapshot_policy_schedules_time_schedule_start"],
             )])
         ```
 

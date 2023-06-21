@@ -100,8 +100,8 @@ def get_gi_versions(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_gi_versions = oci.Database.get_gi_versions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        shape=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_gi_versions = oci.Database.get_gi_versions(compartment_id=var["compartment_id"],
+        shape=var["gi_version_shape"])
     ```
 
 
@@ -139,8 +139,8 @@ def get_gi_versions_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_gi_versions = oci.Database.get_gi_versions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        shape=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_gi_versions = oci.Database.get_gi_versions(compartment_id=var["compartment_id"],
+        shape=var["gi_version_shape"])
     ```
 
 

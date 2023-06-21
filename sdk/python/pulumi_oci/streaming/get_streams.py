@@ -136,11 +136,11 @@ def get_streams(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_streams = oci.Streaming.get_streams(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        stream_pool_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_streams = oci.Streaming.get_streams(compartment_id=var["compartment_id"],
+        id=var["stream_id"],
+        name=var["stream_name"],
+        state=var["stream_state"],
+        stream_pool_id=oci_streaming_stream_pool["test_stream_pool"]["id"])
     ```
 
 
@@ -192,11 +192,11 @@ def get_streams_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_streams = oci.Streaming.get_streams(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        stream_pool_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_streams = oci.Streaming.get_streams(compartment_id=var["compartment_id"],
+        id=var["stream_id"],
+        name=var["stream_name"],
+        state=var["stream_state"],
+        stream_pool_id=oci_streaming_stream_pool["test_stream_pool"]["id"])
     ```
 
 

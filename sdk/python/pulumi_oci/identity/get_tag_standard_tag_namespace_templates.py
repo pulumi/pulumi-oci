@@ -90,7 +90,7 @@ def get_tag_standard_tag_namespace_templates(compartment_id: Optional[str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_tag_standard_tag_namespace_templates = oci.Identity.get_tag_standard_tag_namespace_templates(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_tag_standard_tag_namespace_templates = oci.Identity.get_tag_standard_tag_namespace_templates(compartment_id=var["compartment_id"])
     ```
 
 
@@ -124,7 +124,7 @@ def get_tag_standard_tag_namespace_templates_output(compartment_id: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_tag_standard_tag_namespace_templates = oci.Identity.get_tag_standard_tag_namespace_templates(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_tag_standard_tag_namespace_templates = oci.Identity.get_tag_standard_tag_namespace_templates(compartment_id=var["compartment_id"])
     ```
 
 

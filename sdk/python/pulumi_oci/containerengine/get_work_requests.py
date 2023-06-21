@@ -136,11 +136,11 @@ def get_work_requests(cluster_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_work_requests = oci.ContainerEngine.get_work_requests(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        statuses=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_work_requests = oci.ContainerEngine.get_work_requests(compartment_id=var["compartment_id"],
+        cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
+        resource_id=oci_containerengine_resource["test_resource"]["id"],
+        resource_type=var["work_request_resource_type"],
+        statuses=var["work_request_status"])
     ```
 
 
@@ -190,11 +190,11 @@ def get_work_requests_output(cluster_id: Optional[pulumi.Input[Optional[str]]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_work_requests = oci.ContainerEngine.get_work_requests(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        statuses=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_work_requests = oci.ContainerEngine.get_work_requests(compartment_id=var["compartment_id"],
+        cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
+        resource_id=oci_containerengine_resource["test_resource"]["id"],
+        resource_type=var["work_request_resource_type"],
+        statuses=var["work_request_status"])
     ```
 
 

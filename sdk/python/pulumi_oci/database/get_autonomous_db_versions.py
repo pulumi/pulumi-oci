@@ -107,8 +107,8 @@ def get_autonomous_db_versions(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_db_versions = oci.Database.get_autonomous_db_versions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        db_workload=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_autonomous_db_versions = oci.Database.get_autonomous_db_versions(compartment_id=var["compartment_id"],
+        db_workload=var["autonomous_db_version_db_workload"])
     ```
 
 
@@ -146,8 +146,8 @@ def get_autonomous_db_versions_output(compartment_id: Optional[pulumi.Input[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_db_versions = oci.Database.get_autonomous_db_versions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        db_workload=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_autonomous_db_versions = oci.Database.get_autonomous_db_versions(compartment_id=var["compartment_id"],
+        db_workload=var["autonomous_db_version_db_workload"])
     ```
 
 

@@ -315,7 +315,7 @@ def get_workspace(workspace_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace = oci.DataIntegration.get_workspace(workspace_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_workspace = oci.DataIntegration.get_workspace(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
     ```
 
 
@@ -367,7 +367,7 @@ def get_workspace_output(workspace_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace = oci.DataIntegration.get_workspace(workspace_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_workspace = oci.DataIntegration.get_workspace(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
     ```
 
 

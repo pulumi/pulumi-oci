@@ -331,7 +331,7 @@ def get_media_asset(media_asset_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_media_asset = oci.MediaServices.get_media_asset(media_asset_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_media_asset = oci.MediaServices.get_media_asset(media_asset_id=oci_media_services_media_asset["test_media_asset"]["id"])
     ```
 
 
@@ -383,7 +383,7 @@ def get_media_asset_output(media_asset_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_media_asset = oci.MediaServices.get_media_asset(media_asset_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_media_asset = oci.MediaServices.get_media_asset(media_asset_id=oci_media_services_media_asset["test_media_asset"]["id"])
     ```
 
 

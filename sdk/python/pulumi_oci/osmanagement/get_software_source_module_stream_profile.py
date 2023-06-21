@@ -141,10 +141,10 @@ def get_software_source_module_stream_profile(module_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_module_stream_profile = oci.OsManagement.get_software_source_module_stream_profile(module_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        profile_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        software_source_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        stream_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_software_source_module_stream_profile = oci.OsManagement.get_software_source_module_stream_profile(module_name=var["software_source_module_name"],
+        profile_name=var["software_source_module_stream_profile_name"],
+        software_source_id=var["software_source"]["id"],
+        stream_name=var["software_source_module_stream_name"])
     ```
 
 
@@ -189,10 +189,10 @@ def get_software_source_module_stream_profile_output(module_name: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_module_stream_profile = oci.OsManagement.get_software_source_module_stream_profile(module_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        profile_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        software_source_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        stream_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_software_source_module_stream_profile = oci.OsManagement.get_software_source_module_stream_profile(module_name=var["software_source_module_name"],
+        profile_name=var["software_source_module_stream_profile_name"],
+        software_source_id=var["software_source"]["id"],
+        stream_name=var["software_source_module_stream_name"])
     ```
 
 

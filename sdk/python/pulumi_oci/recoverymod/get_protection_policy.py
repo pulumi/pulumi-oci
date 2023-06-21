@@ -204,7 +204,7 @@ def get_protection_policy(protection_policy_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_policy = oci.RecoveryMod.get_protection_policy(protection_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_protection_policy = oci.RecoveryMod.get_protection_policy(protection_policy_id=oci_recovery_protection_policy["test_protection_policy"]["id"])
     ```
 
 
@@ -245,7 +245,7 @@ def get_protection_policy_output(protection_policy_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_policy = oci.RecoveryMod.get_protection_policy(protection_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_protection_policy = oci.RecoveryMod.get_protection_policy(protection_policy_id=oci_recovery_protection_policy["test_protection_policy"]["id"])
     ```
 
 

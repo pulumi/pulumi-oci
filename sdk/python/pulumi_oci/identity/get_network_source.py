@@ -199,7 +199,7 @@ def get_network_source(network_source_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_network_source = oci.Identity.get_network_source(network_source_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_network_source = oci.Identity.get_network_source(network_source_id=oci_identity_network_source["test_network_source"]["id"])
     ```
 
 
@@ -240,7 +240,7 @@ def get_network_source_output(network_source_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_network_source = oci.Identity.get_network_source(network_source_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_network_source = oci.Identity.get_network_source(network_source_id=oci_identity_network_source["test_network_source"]["id"])
     ```
 
 

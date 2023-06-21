@@ -116,9 +116,9 @@ def get_backend_health(backend_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backend_health = oci.NetworkLoadBalancer.get_backend_health(backend_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        backend_set_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        network_load_balancer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_backend_health = oci.NetworkLoadBalancer.get_backend_health(backend_name=oci_network_load_balancer_backend["test_backend"]["name"],
+        backend_set_name=oci_network_load_balancer_backend_set["test_backend_set"]["name"],
+        network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
     ```
 
 
@@ -158,9 +158,9 @@ def get_backend_health_output(backend_name: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backend_health = oci.NetworkLoadBalancer.get_backend_health(backend_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        backend_set_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        network_load_balancer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_backend_health = oci.NetworkLoadBalancer.get_backend_health(backend_name=oci_network_load_balancer_backend["test_backend"]["name"],
+        backend_set_name=oci_network_load_balancer_backend_set["test_backend_set"]["name"],
+        network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
     ```
 
 

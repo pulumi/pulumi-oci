@@ -405,12 +405,12 @@ def get_domains_user_db_credential(attribute_sets: Optional[Sequence[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_user_db_credential = oci.Identity.get_domains_user_db_credential(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        user_db_credential_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_user_db_credential = oci.Identity.get_domains_user_db_credential(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        user_db_credential_id=oci_identity_db_credential["test_db_credential"]["id"],
         attribute_sets=[],
         attributes="",
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        authorization=var["user_db_credential_authorization"],
+        resource_type_schema_version=var["user_db_credential_resource_type_schema_version"])
     ```
 
 
@@ -484,12 +484,12 @@ def get_domains_user_db_credential_output(attribute_sets: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_user_db_credential = oci.Identity.get_domains_user_db_credential(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        user_db_credential_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_user_db_credential = oci.Identity.get_domains_user_db_credential(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        user_db_credential_id=oci_identity_db_credential["test_db_credential"]["id"],
         attribute_sets=[],
         attributes="",
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        authorization=var["user_db_credential_authorization"],
+        resource_type_schema_version=var["user_db_credential_resource_type_schema_version"])
     ```
 
 

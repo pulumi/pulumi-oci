@@ -235,7 +235,7 @@ def get_ingress_gateway(ingress_gateway_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ingress_gateway = oci.ServiceMesh.get_ingress_gateway(ingress_gateway_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_ingress_gateway = oci.ServiceMesh.get_ingress_gateway(ingress_gateway_id=oci_service_mesh_ingress_gateway["test_ingress_gateway"]["id"])
     ```
 
 
@@ -279,7 +279,7 @@ def get_ingress_gateway_output(ingress_gateway_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_ingress_gateway = oci.ServiceMesh.get_ingress_gateway(ingress_gateway_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_ingress_gateway = oci.ServiceMesh.get_ingress_gateway(ingress_gateway_id=oci_service_mesh_ingress_gateway["test_ingress_gateway"]["id"])
     ```
 
 

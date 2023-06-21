@@ -305,10 +305,10 @@ class Rrset(pulumi.CustomResource):
             zone_name_or_id=oci_dns_zone["test_zone"]["id"],
             compartment_id=var["compartment_id"],
             items=[oci.dns.RrsetItemArgs(
-                domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                rdata=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                rtype=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                ttl=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                domain=var["rrset_items_domain"],
+                rdata=var["rrset_items_rdata"],
+                rtype=var["rrset_items_rtype"],
+                ttl=var["rrset_items_ttl"],
             )],
             scope=var["rrset_scope"],
             view_id=oci_dns_view["test_view"]["id"])
@@ -370,10 +370,10 @@ class Rrset(pulumi.CustomResource):
             zone_name_or_id=oci_dns_zone["test_zone"]["id"],
             compartment_id=var["compartment_id"],
             items=[oci.dns.RrsetItemArgs(
-                domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                rdata=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                rtype=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                ttl=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                domain=var["rrset_items_domain"],
+                rdata=var["rrset_items_rdata"],
+                rtype=var["rrset_items_rtype"],
+                ttl=var["rrset_items_ttl"],
             )],
             scope=var["rrset_scope"],
             view_id=oci_dns_view["test_view"]["id"])

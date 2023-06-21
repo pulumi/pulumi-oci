@@ -273,16 +273,16 @@ class VolumeBackupPolicy(pulumi.CustomResource):
                 "Department": "Finance",
             },
             schedules=[oci.core.VolumeBackupPolicyScheduleArgs(
-                backup_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                period=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                retention_seconds=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                day_of_month=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                day_of_week=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                hour_of_day=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                month=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                offset_seconds=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                offset_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                time_zone=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                backup_type=var["volume_backup_policy_schedules_backup_type"],
+                period=var["volume_backup_policy_schedules_period"],
+                retention_seconds=var["volume_backup_policy_schedules_retention_seconds"],
+                day_of_month=var["volume_backup_policy_schedules_day_of_month"],
+                day_of_week=var["volume_backup_policy_schedules_day_of_week"],
+                hour_of_day=var["volume_backup_policy_schedules_hour_of_day"],
+                month=var["volume_backup_policy_schedules_month"],
+                offset_seconds=var["volume_backup_policy_schedules_offset_seconds"],
+                offset_type=var["volume_backup_policy_schedules_offset_type"],
+                time_zone=var["volume_backup_policy_schedules_time_zone"],
             )])
         ```
 
@@ -334,16 +334,16 @@ class VolumeBackupPolicy(pulumi.CustomResource):
                 "Department": "Finance",
             },
             schedules=[oci.core.VolumeBackupPolicyScheduleArgs(
-                backup_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                period=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                retention_seconds=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                day_of_month=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                day_of_week=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                hour_of_day=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                month=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                offset_seconds=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                offset_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                time_zone=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                backup_type=var["volume_backup_policy_schedules_backup_type"],
+                period=var["volume_backup_policy_schedules_period"],
+                retention_seconds=var["volume_backup_policy_schedules_retention_seconds"],
+                day_of_month=var["volume_backup_policy_schedules_day_of_month"],
+                day_of_week=var["volume_backup_policy_schedules_day_of_week"],
+                hour_of_day=var["volume_backup_policy_schedules_hour_of_day"],
+                month=var["volume_backup_policy_schedules_month"],
+                offset_seconds=var["volume_backup_policy_schedules_offset_seconds"],
+                offset_type=var["volume_backup_policy_schedules_offset_type"],
+                time_zone=var["volume_backup_policy_schedules_time_zone"],
             )])
         ```
 

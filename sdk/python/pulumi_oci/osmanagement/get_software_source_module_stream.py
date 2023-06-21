@@ -155,9 +155,9 @@ def get_software_source_module_stream(module_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_module_stream = oci.OsManagement.get_software_source_module_stream(module_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        software_source_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        stream_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_software_source_module_stream = oci.OsManagement.get_software_source_module_stream(module_name=var["software_source_module_stream_module_name"],
+        software_source_id=var["software_source"]["id"],
+        stream_name=var["software_source_module_stream_name"])
     ```
 
 
@@ -200,9 +200,9 @@ def get_software_source_module_stream_output(module_name: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_module_stream = oci.OsManagement.get_software_source_module_stream(module_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        software_source_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        stream_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_software_source_module_stream = oci.OsManagement.get_software_source_module_stream(module_name=var["software_source_module_stream_module_name"],
+        software_source_id=var["software_source"]["id"],
+        stream_name=var["software_source_module_stream_name"])
     ```
 
 

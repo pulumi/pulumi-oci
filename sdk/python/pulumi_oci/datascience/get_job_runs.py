@@ -146,12 +146,12 @@ def get_job_runs(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job_runs = oci.DataScience.get_job_runs(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        created_by=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        job_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_job_runs = oci.DataScience.get_job_runs(compartment_id=var["compartment_id"],
+        created_by=var["job_run_created_by"],
+        display_name=var["job_run_display_name"],
+        id=var["job_run_id"],
+        job_id=oci_datascience_job["test_job"]["id"],
+        state=var["job_run_state"])
     ```
 
 
@@ -204,12 +204,12 @@ def get_job_runs_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job_runs = oci.DataScience.get_job_runs(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        created_by=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        job_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_job_runs = oci.DataScience.get_job_runs(compartment_id=var["compartment_id"],
+        created_by=var["job_run_created_by"],
+        display_name=var["job_run_display_name"],
+        id=var["job_run_id"],
+        job_id=oci_datascience_job["test_job"]["id"],
+        state=var["job_run_state"])
     ```
 
 

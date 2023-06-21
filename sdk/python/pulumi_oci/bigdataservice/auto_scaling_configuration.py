@@ -368,34 +368,34 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             node_type=var["auto_scaling_configuration_node_type"],
             display_name=var["auto_scaling_configuration_display_name"],
             policy_details=oci.big_data_service.AutoScalingConfigurationPolicyDetailsArgs(
-                policy_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                policy_type=var["auto_scaling_configuration_policy_details_policy_type"],
                 scale_down_config=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs(
-                    memory_step_size=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    memory_step_size=var["auto_scaling_configuration_policy_details_scale_down_config_memory_step_size"],
                     metric=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs(
-                        metric_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        metric_type=var["auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type"],
                         threshold=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs(
-                            duration_in_minutes=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                            operator=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                            value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            duration_in_minutes=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes"],
+                            operator=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator"],
+                            value=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value"],
                         ),
                     ),
-                    min_memory_per_node=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    min_ocpus_per_node=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    ocpu_step_size=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    min_memory_per_node=var["auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node"],
+                    min_ocpus_per_node=var["auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node"],
+                    ocpu_step_size=var["auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size"],
                 ),
                 scale_up_config=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs(
-                    max_memory_per_node=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    max_ocpus_per_node=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    memory_step_size=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    max_memory_per_node=var["auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node"],
+                    max_ocpus_per_node=var["auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node"],
+                    memory_step_size=var["auto_scaling_configuration_policy_details_scale_up_config_memory_step_size"],
                     metric=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs(
-                        metric_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        metric_type=var["auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type"],
                         threshold=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs(
-                            duration_in_minutes=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                            operator=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                            value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            duration_in_minutes=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes"],
+                            operator=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator"],
+                            value=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value"],
                         ),
                     ),
-                    ocpu_step_size=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    ocpu_step_size=var["auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size"],
                 ),
             ))
         ```
@@ -452,34 +452,34 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             node_type=var["auto_scaling_configuration_node_type"],
             display_name=var["auto_scaling_configuration_display_name"],
             policy_details=oci.big_data_service.AutoScalingConfigurationPolicyDetailsArgs(
-                policy_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                policy_type=var["auto_scaling_configuration_policy_details_policy_type"],
                 scale_down_config=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs(
-                    memory_step_size=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    memory_step_size=var["auto_scaling_configuration_policy_details_scale_down_config_memory_step_size"],
                     metric=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs(
-                        metric_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        metric_type=var["auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type"],
                         threshold=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs(
-                            duration_in_minutes=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                            operator=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                            value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            duration_in_minutes=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes"],
+                            operator=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator"],
+                            value=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value"],
                         ),
                     ),
-                    min_memory_per_node=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    min_ocpus_per_node=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    ocpu_step_size=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    min_memory_per_node=var["auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node"],
+                    min_ocpus_per_node=var["auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node"],
+                    ocpu_step_size=var["auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size"],
                 ),
                 scale_up_config=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs(
-                    max_memory_per_node=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    max_ocpus_per_node=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    memory_step_size=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    max_memory_per_node=var["auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node"],
+                    max_ocpus_per_node=var["auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node"],
+                    memory_step_size=var["auto_scaling_configuration_policy_details_scale_up_config_memory_step_size"],
                     metric=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs(
-                        metric_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        metric_type=var["auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type"],
                         threshold=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs(
-                            duration_in_minutes=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                            operator=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                            value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            duration_in_minutes=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes"],
+                            operator=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator"],
+                            value=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value"],
                         ),
                     ),
-                    ocpu_step_size=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    ocpu_step_size=var["auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size"],
                 ),
             ))
         ```

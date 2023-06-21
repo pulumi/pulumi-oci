@@ -100,8 +100,8 @@ def get_work_request_log_entries(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_work_request_log_entries = oci.ContainerEngine.get_work_request_log_entries(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        work_request_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_work_request_log_entries = oci.ContainerEngine.get_work_request_log_entries(compartment_id=var["compartment_id"],
+        work_request_id=oci_containerengine_work_request["test_work_request"]["id"])
     ```
 
 
@@ -139,8 +139,8 @@ def get_work_request_log_entries_output(compartment_id: Optional[pulumi.Input[st
     import pulumi
     import pulumi_oci as oci
 
-    test_work_request_log_entries = oci.ContainerEngine.get_work_request_log_entries(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        work_request_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_work_request_log_entries = oci.ContainerEngine.get_work_request_log_entries(compartment_id=var["compartment_id"],
+        work_request_id=oci_containerengine_work_request["test_work_request"]["id"])
     ```
 
 

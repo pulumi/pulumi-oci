@@ -114,9 +114,9 @@ def get_events(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_events = oci.Audit.get_events(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        end_time=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        start_time=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_audit_events = oci.Audit.get_events(compartment_id=var["compartment_id"],
+        end_time=var["audit_event_end_time"],
+        start_time=var["audit_event_start_time"])
     ```
 
 
@@ -163,9 +163,9 @@ def get_events_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_events = oci.Audit.get_events(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        end_time=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        start_time=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_audit_events = oci.Audit.get_events(compartment_id=var["compartment_id"],
+        end_time=var["audit_event_end_time"],
+        start_time=var["audit_event_start_time"])
     ```
 
 

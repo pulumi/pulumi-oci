@@ -230,7 +230,7 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             description=var["managed_database_group_description"],
             managed_databases=[oci.database_management.ManagedDatabaseGroupManagedDatabaseArgs(
-                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                id=var["managed_database_id"],
             )])
         ```
 
@@ -271,7 +271,7 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             description=var["managed_database_group_description"],
             managed_databases=[oci.database_management.ManagedDatabaseGroupManagedDatabaseArgs(
-                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                id=var["managed_database_id"],
             )])
         ```
 

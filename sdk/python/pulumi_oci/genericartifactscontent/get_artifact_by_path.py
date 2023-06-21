@@ -182,9 +182,9 @@ def get_artifact_by_path(artifact_path: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_artifact_by_path = oci.GenericArtifactsContent.get_artifact_by_path(artifact_path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_artifact_by_path = oci.GenericArtifactsContent.get_artifact_by_path(artifact_path=var["artifact_by_path_artifact_path"],
+        repository_id=oci_artifacts_repository["test_repository"]["id"],
+        version=var["artifact_by_path_version"])
     ```
 
 
@@ -233,9 +233,9 @@ def get_artifact_by_path_output(artifact_path: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_artifact_by_path = oci.GenericArtifactsContent.get_artifact_by_path(artifact_path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_artifact_by_path = oci.GenericArtifactsContent.get_artifact_by_path(artifact_path=var["artifact_by_path_artifact_path"],
+        repository_id=oci_artifacts_repository["test_repository"]["id"],
+        version=var["artifact_by_path_version"])
     ```
 
 

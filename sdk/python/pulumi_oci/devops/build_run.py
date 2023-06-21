@@ -423,14 +423,14 @@ class BuildRun(pulumi.CustomResource):
             build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"],
             build_run_arguments=oci.dev_ops.BuildRunBuildRunArgumentsArgs(
                 items=[oci.dev_ops.BuildRunBuildRunArgumentsItemArgs(
-                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    name=var["build_run_build_run_arguments_items_name"],
+                    value=var["build_run_build_run_arguments_items_value"],
                 )],
             ),
             commit_info=oci.dev_ops.BuildRunCommitInfoArgs(
-                commit_hash=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                repository_branch=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                repository_url=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                commit_hash=var["build_run_commit_info_commit_hash"],
+                repository_branch=var["build_run_commit_info_repository_branch"],
+                repository_url=var["build_run_commit_info_repository_url"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -483,14 +483,14 @@ class BuildRun(pulumi.CustomResource):
             build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"],
             build_run_arguments=oci.dev_ops.BuildRunBuildRunArgumentsArgs(
                 items=[oci.dev_ops.BuildRunBuildRunArgumentsItemArgs(
-                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    name=var["build_run_build_run_arguments_items_name"],
+                    value=var["build_run_build_run_arguments_items_value"],
                 )],
             ),
             commit_info=oci.dev_ops.BuildRunCommitInfoArgs(
-                commit_hash=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                repository_branch=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                repository_url=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                commit_hash=var["build_run_commit_info_commit_hash"],
+                repository_branch=var["build_run_commit_info_repository_branch"],
+                repository_url=var["build_run_commit_info_repository_url"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",

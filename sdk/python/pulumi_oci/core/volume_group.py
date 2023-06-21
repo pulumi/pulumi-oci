@@ -498,8 +498,8 @@ class VolumeGroup(pulumi.CustomResource):
                 "Department": "Finance",
             },
             volume_group_replicas=[oci.core.VolumeGroupVolumeGroupReplicaArgs(
-                availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                availability_domain=var["volume_group_volume_group_replicas_availability_domain"],
+                display_name=var["volume_group_volume_group_replicas_display_name"],
             )])
         ```
 
@@ -556,8 +556,8 @@ class VolumeGroup(pulumi.CustomResource):
                 "Department": "Finance",
             },
             volume_group_replicas=[oci.core.VolumeGroupVolumeGroupReplicaArgs(
-                availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                availability_domain=var["volume_group_volume_group_replicas_availability_domain"],
+                display_name=var["volume_group_volume_group_replicas_display_name"],
             )])
         ```
 

@@ -196,8 +196,8 @@ def get_agent_plugin(agent_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agent_plugin = oci.CloudBridge.get_agent_plugin(agent_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        plugin_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_agent_plugin = oci.CloudBridge.get_agent_plugin(agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
+        plugin_name=var["agent_plugin_plugin_name"])
     ```
 
 
@@ -241,8 +241,8 @@ def get_agent_plugin_output(agent_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agent_plugin = oci.CloudBridge.get_agent_plugin(agent_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        plugin_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_agent_plugin = oci.CloudBridge.get_agent_plugin(agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
+        plugin_name=var["agent_plugin_plugin_name"])
     ```
 
 

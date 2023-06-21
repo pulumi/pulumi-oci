@@ -120,10 +120,10 @@ def get_subscription_redemptions(filters: Optional[Sequence[pulumi.InputType['Ge
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_redemptions = oci.UsageProxy.get_subscription_redemptions(subscription_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        tenancy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_redeemed_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_redeemed_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_subscription_redemptions = oci.UsageProxy.get_subscription_redemptions(subscription_id=oci_onesubscription_subscription["test_subscription"]["id"],
+        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
+        time_redeemed_greater_than_or_equal_to=var["subscription_redemption_time_redeemed_greater_than_or_equal_to"],
+        time_redeemed_less_than=var["subscription_redemption_time_redeemed_less_than"])
     ```
 
 
@@ -169,10 +169,10 @@ def get_subscription_redemptions_output(filters: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_redemptions = oci.UsageProxy.get_subscription_redemptions(subscription_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        tenancy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_redeemed_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_redeemed_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_subscription_redemptions = oci.UsageProxy.get_subscription_redemptions(subscription_id=oci_onesubscription_subscription["test_subscription"]["id"],
+        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
+        time_redeemed_greater_than_or_equal_to=var["subscription_redemption_time_redeemed_greater_than_or_equal_to"],
+        time_redeemed_less_than=var["subscription_redemption_time_redeemed_less_than"])
     ```
 
 

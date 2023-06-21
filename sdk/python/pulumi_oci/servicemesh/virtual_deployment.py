@@ -441,7 +441,7 @@ class VirtualDeployment(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
             access_logging=oci.service_mesh.VirtualDeploymentAccessLoggingArgs(
-                is_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_enabled=var["virtual_deployment_access_logging_is_enabled"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -451,14 +451,14 @@ class VirtualDeployment(pulumi.CustomResource):
                 "bar-key": "value",
             },
             listeners=[oci.service_mesh.VirtualDeploymentListenerArgs(
-                port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                protocol=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                idle_timeout_in_ms=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                request_timeout_in_ms=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                port=var["virtual_deployment_listeners_port"],
+                protocol=var["virtual_deployment_listeners_protocol"],
+                idle_timeout_in_ms=var["virtual_deployment_listeners_idle_timeout_in_ms"],
+                request_timeout_in_ms=var["virtual_deployment_listeners_request_timeout_in_ms"],
             )],
             service_discovery=oci.service_mesh.VirtualDeploymentServiceDiscoveryArgs(
-                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                hostname=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=var["virtual_deployment_service_discovery_type"],
+                hostname=var["virtual_deployment_service_discovery_hostname"],
             ))
         ```
 
@@ -507,7 +507,7 @@ class VirtualDeployment(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
             access_logging=oci.service_mesh.VirtualDeploymentAccessLoggingArgs(
-                is_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_enabled=var["virtual_deployment_access_logging_is_enabled"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -517,14 +517,14 @@ class VirtualDeployment(pulumi.CustomResource):
                 "bar-key": "value",
             },
             listeners=[oci.service_mesh.VirtualDeploymentListenerArgs(
-                port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                protocol=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                idle_timeout_in_ms=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                request_timeout_in_ms=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                port=var["virtual_deployment_listeners_port"],
+                protocol=var["virtual_deployment_listeners_protocol"],
+                idle_timeout_in_ms=var["virtual_deployment_listeners_idle_timeout_in_ms"],
+                request_timeout_in_ms=var["virtual_deployment_listeners_request_timeout_in_ms"],
             )],
             service_discovery=oci.service_mesh.VirtualDeploymentServiceDiscoveryArgs(
-                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                hostname=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=var["virtual_deployment_service_discovery_type"],
+                hostname=var["virtual_deployment_service_discovery_hostname"],
             ))
         ```
 

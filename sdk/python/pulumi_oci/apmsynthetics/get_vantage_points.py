@@ -116,9 +116,9 @@ def get_vantage_points(apm_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_public_vantage_points = oci.ApmSynthetics.get_vantage_points(apm_domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_public_vantage_points = oci.ApmSynthetics.get_vantage_points(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
+        display_name=var["public_vantage_point_display_name"],
+        name=var["public_vantage_point_name"])
     ```
 
 
@@ -160,9 +160,9 @@ def get_vantage_points_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_public_vantage_points = oci.ApmSynthetics.get_vantage_points(apm_domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_public_vantage_points = oci.ApmSynthetics.get_vantage_points(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
+        display_name=var["public_vantage_point_display_name"],
+        name=var["public_vantage_point_name"])
     ```
 
 

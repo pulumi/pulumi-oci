@@ -138,7 +138,7 @@ def get_tenancy(tenancy_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tenancy = oci.Identity.get_tenancy(tenancy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_tenancy = oci.Identity.get_tenancy(tenancy_id=var["tenancy_ocid"])
     ```
 
 
@@ -174,7 +174,7 @@ def get_tenancy_output(tenancy_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tenancy = oci.Identity.get_tenancy(tenancy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_tenancy = oci.Identity.get_tenancy(tenancy_id=var["tenancy_ocid"])
     ```
 
 

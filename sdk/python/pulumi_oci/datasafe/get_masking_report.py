@@ -282,7 +282,7 @@ def get_masking_report(masking_report_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_report = oci.DataSafe.get_masking_report(masking_report_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_masking_report = oci.DataSafe.get_masking_report(masking_report_id=oci_data_safe_masking_report["test_masking_report"]["id"])
     ```
 
 
@@ -330,7 +330,7 @@ def get_masking_report_output(masking_report_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_report = oci.DataSafe.get_masking_report(masking_report_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_masking_report = oci.DataSafe.get_masking_report(masking_report_id=oci_data_safe_masking_report["test_masking_report"]["id"])
     ```
 
 

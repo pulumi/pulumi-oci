@@ -375,7 +375,7 @@ def get_oce_instance(oce_instance_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oce_instance = oci.Oce.get_oce_instance(oce_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_oce_instance = oci.Oce.get_oce_instance(oce_instance_id=oci_oce_oce_instance["test_oce_instance"]["id"])
     ```
 
 
@@ -431,7 +431,7 @@ def get_oce_instance_output(oce_instance_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oce_instance = oci.Oce.get_oce_instance(oce_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_oce_instance = oci.Oce.get_oce_instance(oce_instance_id=oci_oce_oce_instance["test_oce_instance"]["id"])
     ```
 
 

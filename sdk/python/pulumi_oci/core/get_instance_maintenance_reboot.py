@@ -79,7 +79,7 @@ def get_instance_maintenance_reboot(instance_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_maintenance_reboot = oci.Core.get_instance_maintenance_reboot(instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_instance_maintenance_reboot = oci.Core.get_instance_maintenance_reboot(instance_id=oci_core_instance["test_instance"]["id"])
     ```
 
 
@@ -111,7 +111,7 @@ def get_instance_maintenance_reboot_output(instance_id: Optional[pulumi.Input[st
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_maintenance_reboot = oci.Core.get_instance_maintenance_reboot(instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_instance_maintenance_reboot = oci.Core.get_instance_maintenance_reboot(instance_id=oci_core_instance["test_instance"]["id"])
     ```
 
 

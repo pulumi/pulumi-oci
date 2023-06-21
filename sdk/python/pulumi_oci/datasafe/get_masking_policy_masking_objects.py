@@ -129,10 +129,10 @@ def get_masking_policy_masking_objects(filters: Optional[Sequence[pulumi.InputTy
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy_masking_objects = oci.DataSafe.get_masking_policy_masking_objects(masking_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        objects=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        object_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        schema_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_masking_policy_masking_objects = oci.DataSafe.get_masking_policy_masking_objects(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
+        objects=var["masking_policy_masking_object_object"],
+        object_types=var["masking_policy_masking_object_object_type"],
+        schema_names=var["masking_policy_masking_object_schema_name"])
     ```
 
 
@@ -178,10 +178,10 @@ def get_masking_policy_masking_objects_output(filters: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy_masking_objects = oci.DataSafe.get_masking_policy_masking_objects(masking_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        objects=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        object_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        schema_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_masking_policy_masking_objects = oci.DataSafe.get_masking_policy_masking_objects(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
+        objects=var["masking_policy_masking_object_object"],
+        object_types=var["masking_policy_masking_object_object_type"],
+        schema_names=var["masking_policy_masking_object_schema_name"])
     ```
 
 

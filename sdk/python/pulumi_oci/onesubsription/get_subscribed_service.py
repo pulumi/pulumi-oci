@@ -1400,8 +1400,8 @@ def get_subscribed_service(fields: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscribed_service = oci.OneSubsription.get_subscribed_service(subscribed_service_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_subscribed_service = oci.OneSubsription.get_subscribed_service(subscribed_service_id=oci_onesubscription_subscribed_service["test_subscribed_service"]["id"],
+        fields=var["subscribed_service_fields"])
     ```
 
 
@@ -1545,8 +1545,8 @@ def get_subscribed_service_output(fields: Optional[pulumi.Input[Optional[Sequenc
     import pulumi
     import pulumi_oci as oci
 
-    test_subscribed_service = oci.OneSubsription.get_subscribed_service(subscribed_service_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_subscribed_service = oci.OneSubsription.get_subscribed_service(subscribed_service_id=oci_onesubscription_subscribed_service["test_subscribed_service"]["id"],
+        fields=var["subscribed_service_fields"])
     ```
 
 

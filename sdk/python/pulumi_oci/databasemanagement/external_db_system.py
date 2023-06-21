@@ -308,7 +308,7 @@ class ExternalDbSystem(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             db_system_discovery_id=oci_database_management_db_system_discovery["test_db_system_discovery"]["id"],
             database_management_config=oci.database_management.ExternalDbSystemDatabaseManagementConfigArgs(
-                license_model=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                license_model=var["external_db_system_database_management_config_license_model"],
             ),
             display_name=var["external_db_system_display_name"])
         ```
@@ -353,7 +353,7 @@ class ExternalDbSystem(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             db_system_discovery_id=oci_database_management_db_system_discovery["test_db_system_discovery"]["id"],
             database_management_config=oci.database_management.ExternalDbSystemDatabaseManagementConfigArgs(
-                license_model=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                license_model=var["external_db_system_database_management_config_license_model"],
             ),
             display_name=var["external_db_system_display_name"])
         ```

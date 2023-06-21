@@ -107,8 +107,8 @@ def get_certificate_authority_versions(certificate_authority_id: Optional[str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate_authority_versions = oci.CertificatesManagement.get_certificate_authority_versions(certificate_authority_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        version_number=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_certificate_authority_versions = oci.CertificatesManagement.get_certificate_authority_versions(certificate_authority_id=oci_certificates_management_certificate_authority["test_certificate_authority"]["id"],
+        version_number=var["certificate_authority_version_version_number"])
     ```
 
 
@@ -147,8 +147,8 @@ def get_certificate_authority_versions_output(certificate_authority_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate_authority_versions = oci.CertificatesManagement.get_certificate_authority_versions(certificate_authority_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        version_number=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_certificate_authority_versions = oci.CertificatesManagement.get_certificate_authority_versions(certificate_authority_id=oci_certificates_management_certificate_authority["test_certificate_authority"]["id"],
+        version_number=var["certificate_authority_version_version_number"])
     ```
 
 

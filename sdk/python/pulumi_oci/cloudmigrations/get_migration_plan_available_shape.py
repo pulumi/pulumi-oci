@@ -122,11 +122,11 @@ def get_migration_plan_available_shape(availability_domain: Optional[str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_plan_available_shape = oci.CloudMigrations.get_migration_plan_available_shape(migration_plan_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        dvh_host_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        reserved_capacity_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_migration_plan_available_shape = oci.CloudMigrations.get_migration_plan_available_shape(migration_plan_id=oci_cloud_migrations_migration_plan["test_migration_plan"]["id"],
+        availability_domain=var["migration_plan_available_shape_availability_domain"],
+        compartment_id=var["compartment_id"],
+        dvh_host_id=oci_cloud_migrations_dvh_host["test_dvh_host"]["id"],
+        reserved_capacity_id=oci_cloud_migrations_reserved_capacity["test_reserved_capacity"]["id"])
     ```
 
 
@@ -173,11 +173,11 @@ def get_migration_plan_available_shape_output(availability_domain: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_plan_available_shape = oci.CloudMigrations.get_migration_plan_available_shape(migration_plan_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        dvh_host_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        reserved_capacity_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_migration_plan_available_shape = oci.CloudMigrations.get_migration_plan_available_shape(migration_plan_id=oci_cloud_migrations_migration_plan["test_migration_plan"]["id"],
+        availability_domain=var["migration_plan_available_shape_availability_domain"],
+        compartment_id=var["compartment_id"],
+        dvh_host_id=oci_cloud_migrations_dvh_host["test_dvh_host"]["id"],
+        reserved_capacity_id=oci_cloud_migrations_reserved_capacity["test_reserved_capacity"]["id"])
     ```
 
 

@@ -120,10 +120,10 @@ def get_app_acceleration_policies(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_acceleration_policies = oci.Waa.get_app_acceleration_policies(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        states=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_web_app_acceleration_policies = oci.Waa.get_app_acceleration_policies(compartment_id=var["compartment_id"],
+        display_name=var["web_app_acceleration_policy_display_name"],
+        id=var["web_app_acceleration_policy_id"],
+        states=var["web_app_acceleration_policy_state"])
     ```
 
 
@@ -168,10 +168,10 @@ def get_app_acceleration_policies_output(compartment_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_acceleration_policies = oci.Waa.get_app_acceleration_policies(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        states=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_web_app_acceleration_policies = oci.Waa.get_app_acceleration_policies(compartment_id=var["compartment_id"],
+        display_name=var["web_app_acceleration_policy_display_name"],
+        id=var["web_app_acceleration_policy_id"],
+        states=var["web_app_acceleration_policy_state"])
     ```
 
 

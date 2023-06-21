@@ -333,12 +333,12 @@ def get_domains_dynamic_resource_group(attribute_sets: Optional[Sequence[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_resource_group = oci.Identity.get_domains_dynamic_resource_group(dynamic_resource_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_dynamic_resource_group = oci.Identity.get_domains_dynamic_resource_group(dynamic_resource_group_id=oci_identity_group["test_group"]["id"],
+        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
         attribute_sets=[],
         attributes="",
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        authorization=var["dynamic_resource_group_authorization"],
+        resource_type_schema_version=var["dynamic_resource_group_resource_type_schema_version"])
     ```
 
 
@@ -406,12 +406,12 @@ def get_domains_dynamic_resource_group_output(attribute_sets: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_resource_group = oci.Identity.get_domains_dynamic_resource_group(dynamic_resource_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_dynamic_resource_group = oci.Identity.get_domains_dynamic_resource_group(dynamic_resource_group_id=oci_identity_group["test_group"]["id"],
+        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
         attribute_sets=[],
         attributes="",
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        authorization=var["dynamic_resource_group_authorization"],
+        resource_type_schema_version=var["dynamic_resource_group_resource_type_schema_version"])
     ```
 
 

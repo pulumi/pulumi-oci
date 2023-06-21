@@ -119,9 +119,9 @@ def get_usage_plans(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_usage_plans = oci.ApiGateway.get_usage_plans(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_usage_plans = oci.ApiGateway.get_usage_plans(compartment_id=var["compartment_id"],
+        display_name=var["usage_plan_display_name"],
+        state=var["usage_plan_state"])
     ```
 
 
@@ -163,9 +163,9 @@ def get_usage_plans_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_usage_plans = oci.ApiGateway.get_usage_plans(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_usage_plans = oci.ApiGateway.get_usage_plans(compartment_id=var["compartment_id"],
+        display_name=var["usage_plan_display_name"],
+        state=var["usage_plan_state"])
     ```
 
 

@@ -262,7 +262,7 @@ def get_cross_connect(cross_connect_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect = oci.Core.get_cross_connect(cross_connect_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_cross_connect = oci.Core.get_cross_connect(cross_connect_id=oci_core_cross_connect["test_cross_connect"]["id"])
     ```
 
 
@@ -309,7 +309,7 @@ def get_cross_connect_output(cross_connect_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect = oci.Core.get_cross_connect(cross_connect_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_cross_connect = oci.Core.get_cross_connect(cross_connect_id=oci_core_cross_connect["test_cross_connect"]["id"])
     ```
 
 

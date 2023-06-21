@@ -93,7 +93,7 @@ def get_scheduled_runs(filters: Optional[Sequence[pulumi.InputType['GetScheduled
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_runs = oci.MeteringComputation.get_scheduled_runs(schedule_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_scheduled_runs = oci.MeteringComputation.get_scheduled_runs(schedule_id=oci_metering_computation_schedule["test_schedule"]["id"])
     ```
 
 
@@ -127,7 +127,7 @@ def get_scheduled_runs_output(filters: Optional[pulumi.Input[Optional[Sequence[p
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_runs = oci.MeteringComputation.get_scheduled_runs(schedule_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_scheduled_runs = oci.MeteringComputation.get_scheduled_runs(schedule_id=oci_metering_computation_schedule["test_schedule"]["id"])
     ```
 
 

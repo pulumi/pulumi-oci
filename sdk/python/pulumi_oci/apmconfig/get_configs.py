@@ -169,14 +169,14 @@ def get_configs(apm_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configs = oci.ApmConfig.get_configs(apm_domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        config_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        defined_tag_equals=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        defined_tag_exists=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        freeform_tag_equals=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        freeform_tag_exists=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        options_group=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_configs = oci.ApmConfig.get_configs(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
+        config_type=var["config_config_type"],
+        defined_tag_equals=var["config_defined_tag_equals"],
+        defined_tag_exists=var["config_defined_tag_exists"],
+        display_name=var["config_display_name"],
+        freeform_tag_equals=var["config_freeform_tag_equals"],
+        freeform_tag_exists=var["config_freeform_tag_exists"],
+        options_group=var["config_options_group"])
     ```
 
 
@@ -238,14 +238,14 @@ def get_configs_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configs = oci.ApmConfig.get_configs(apm_domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        config_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        defined_tag_equals=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        defined_tag_exists=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        freeform_tag_equals=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        freeform_tag_exists=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        options_group=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_configs = oci.ApmConfig.get_configs(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
+        config_type=var["config_config_type"],
+        defined_tag_equals=var["config_defined_tag_equals"],
+        defined_tag_exists=var["config_defined_tag_exists"],
+        display_name=var["config_display_name"],
+        freeform_tag_equals=var["config_freeform_tag_equals"],
+        freeform_tag_exists=var["config_freeform_tag_exists"],
+        options_group=var["config_options_group"])
     ```
 
 

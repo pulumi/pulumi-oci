@@ -119,10 +119,10 @@ def get_notification_topics(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_notification_topics = oci.Ons.get_notification_topics(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_notification_topics = oci.Ons.get_notification_topics(compartment_id=var["compartment_id"],
+        id=var["notification_topic_id"],
+        name=var["notification_topic_name"],
+        state=var["notification_topic_state"])
     ```
 
 
@@ -169,10 +169,10 @@ def get_notification_topics_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_notification_topics = oci.Ons.get_notification_topics(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_notification_topics = oci.Ons.get_notification_topics(compartment_id=var["compartment_id"],
+        id=var["notification_topic_id"],
+        name=var["notification_topic_name"],
+        state=var["notification_topic_state"])
     ```
 
 

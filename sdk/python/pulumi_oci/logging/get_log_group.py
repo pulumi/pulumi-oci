@@ -162,7 +162,7 @@ def get_log_group(log_group_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_group = oci.Logging.get_log_group(log_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_log_group = oci.Logging.get_log_group(log_group_id=oci_logging_log_group["test_log_group"]["id"])
     ```
 
 
@@ -200,7 +200,7 @@ def get_log_group_output(log_group_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_group = oci.Logging.get_log_group(log_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_log_group = oci.Logging.get_log_group(log_group_id=oci_logging_log_group["test_log_group"]["id"])
     ```
 
 

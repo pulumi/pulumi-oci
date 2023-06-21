@@ -91,7 +91,7 @@ def get_cnv_dns_resolver_association(vcn_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vcn_dns_resolver_association = oci.Core.get_cnv_dns_resolver_association(vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_vcn_dns_resolver_association = oci.Core.get_cnv_dns_resolver_association(vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
 
 
@@ -123,7 +123,7 @@ def get_cnv_dns_resolver_association_output(vcn_id: Optional[pulumi.Input[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_vcn_dns_resolver_association = oci.Core.get_cnv_dns_resolver_association(vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_vcn_dns_resolver_association = oci.Core.get_cnv_dns_resolver_association(vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
 
 

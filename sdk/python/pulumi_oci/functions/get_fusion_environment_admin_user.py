@@ -133,7 +133,7 @@ def get_fusion_environment_admin_user(fusion_environment_id: Optional[str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_admin_user = oci.Functions.get_fusion_environment_admin_user(fusion_environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_fusion_environment_admin_user = oci.Functions.get_fusion_environment_admin_user(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
     ```
 
 
@@ -169,7 +169,7 @@ def get_fusion_environment_admin_user_output(fusion_environment_id: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_admin_user = oci.Functions.get_fusion_environment_admin_user(fusion_environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_fusion_environment_admin_user = oci.Functions.get_fusion_environment_admin_user(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
     ```
 
 

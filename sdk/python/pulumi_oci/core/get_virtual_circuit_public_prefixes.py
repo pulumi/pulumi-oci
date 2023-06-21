@@ -104,8 +104,8 @@ def get_virtual_circuit_public_prefixes(filters: Optional[Sequence[pulumi.InputT
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_circuit_public_prefixes = oci.Core.get_virtual_circuit_public_prefixes(virtual_circuit_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        verification_state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_virtual_circuit_public_prefixes = oci.Core.get_virtual_circuit_public_prefixes(virtual_circuit_id=oci_core_virtual_circuit["test_virtual_circuit"]["id"],
+        verification_state=var["virtual_circuit_public_prefix_verification_state"])
     ```
 
 
@@ -146,8 +146,8 @@ def get_virtual_circuit_public_prefixes_output(filters: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_circuit_public_prefixes = oci.Core.get_virtual_circuit_public_prefixes(virtual_circuit_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        verification_state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_virtual_circuit_public_prefixes = oci.Core.get_virtual_circuit_public_prefixes(virtual_circuit_id=oci_core_virtual_circuit["test_virtual_circuit"]["id"],
+        verification_state=var["virtual_circuit_public_prefix_verification_state"])
     ```
 
 

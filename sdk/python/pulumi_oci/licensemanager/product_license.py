@@ -526,8 +526,8 @@ class ProductLicense(pulumi.CustomResource):
                 "bar-key": "value",
             },
             images=[oci.license_manager.ProductLicenseImageArgs(
-                listing_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                package_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                listing_id=oci_marketplace_listing["test_listing"]["id"],
+                package_version=var["product_license_images_package_version"],
             )],
             vendor_name=var["product_license_vendor_name"])
         ```
@@ -584,8 +584,8 @@ class ProductLicense(pulumi.CustomResource):
                 "bar-key": "value",
             },
             images=[oci.license_manager.ProductLicenseImageArgs(
-                listing_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                package_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                listing_id=oci_marketplace_listing["test_listing"]["id"],
+                package_version=var["product_license_images_package_version"],
             )],
             vendor_name=var["product_license_vendor_name"])
         ```

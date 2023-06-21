@@ -128,9 +128,9 @@ def get_user_group_memberships(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_user_group_memberships = oci.Identity.get_user_group_memberships(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        user_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_user_group_memberships = oci.Identity.get_user_group_memberships(compartment_id=var["tenancy_ocid"],
+        group_id=oci_identity_group["test_group"]["id"],
+        user_id=oci_identity_user["test_user"]["id"])
     ```
 
 
@@ -181,9 +181,9 @@ def get_user_group_memberships_output(compartment_id: Optional[pulumi.Input[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_user_group_memberships = oci.Identity.get_user_group_memberships(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        user_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_user_group_memberships = oci.Identity.get_user_group_memberships(compartment_id=var["tenancy_ocid"],
+        group_id=oci_identity_group["test_group"]["id"],
+        user_id=oci_identity_user["test_user"]["id"])
     ```
 
 

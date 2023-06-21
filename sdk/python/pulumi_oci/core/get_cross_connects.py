@@ -133,10 +133,10 @@ def get_cross_connects(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connects = oci.Core.get_cross_connects(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        cross_connect_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_cross_connects = oci.Core.get_cross_connects(compartment_id=var["compartment_id"],
+        cross_connect_group_id=oci_core_cross_connect_group["test_cross_connect_group"]["id"],
+        display_name=var["cross_connect_display_name"],
+        state=var["cross_connect_state"])
     ```
 
 
@@ -183,10 +183,10 @@ def get_cross_connects_output(compartment_id: Optional[pulumi.Input[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connects = oci.Core.get_cross_connects(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        cross_connect_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_cross_connects = oci.Core.get_cross_connects(compartment_id=var["compartment_id"],
+        cross_connect_group_id=oci_core_cross_connect_group["test_cross_connect_group"]["id"],
+        display_name=var["cross_connect_display_name"],
+        state=var["cross_connect_state"])
     ```
 
 

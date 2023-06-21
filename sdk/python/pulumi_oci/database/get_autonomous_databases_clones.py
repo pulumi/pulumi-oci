@@ -139,11 +139,11 @@ def get_autonomous_databases_clones(autonomous_database_id: Optional[str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_databases_clones = oci.Database.get_autonomous_databases_clones(autonomous_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        clone_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_autonomous_databases_clones = oci.Database.get_autonomous_databases_clones(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
+        compartment_id=var["compartment_id"],
+        clone_type=var["autonomous_databases_clone_clone_type"],
+        display_name=var["autonomous_databases_clone_display_name"],
+        state=var["autonomous_databases_clone_state"])
     ```
 
 
@@ -193,11 +193,11 @@ def get_autonomous_databases_clones_output(autonomous_database_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_databases_clones = oci.Database.get_autonomous_databases_clones(autonomous_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        clone_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_autonomous_databases_clones = oci.Database.get_autonomous_databases_clones(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
+        compartment_id=var["compartment_id"],
+        clone_type=var["autonomous_databases_clone_clone_type"],
+        display_name=var["autonomous_databases_clone_display_name"],
+        state=var["autonomous_databases_clone_state"])
     ```
 
 

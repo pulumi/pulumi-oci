@@ -451,7 +451,7 @@ def get_application(application_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_application = oci.DataFlow.get_application(application_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_application = oci.DataFlow.get_application(application_id=oci_dataflow_application["test_application"]["id"])
     ```
 
 
@@ -513,7 +513,7 @@ def get_application_output(application_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_application = oci.DataFlow.get_application(application_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_application = oci.DataFlow.get_application(application_id=oci_dataflow_application["test_application"]["id"])
     ```
 
 

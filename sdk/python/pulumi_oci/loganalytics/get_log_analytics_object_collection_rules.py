@@ -129,10 +129,10 @@ def get_log_analytics_object_collection_rules(compartment_id: Optional[str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_object_collection_rules = oci.LogAnalytics.get_log_analytics_object_collection_rules(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_log_analytics_object_collection_rules = oci.LogAnalytics.get_log_analytics_object_collection_rules(compartment_id=var["compartment_id"],
+        namespace=var["log_analytics_object_collection_rule_namespace"],
+        name=var["log_analytics_object_collection_rule_name"],
+        state=var["log_analytics_object_collection_rule_state"])
     ```
 
 
@@ -178,10 +178,10 @@ def get_log_analytics_object_collection_rules_output(compartment_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_object_collection_rules = oci.LogAnalytics.get_log_analytics_object_collection_rules(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_log_analytics_object_collection_rules = oci.LogAnalytics.get_log_analytics_object_collection_rules(compartment_id=var["compartment_id"],
+        namespace=var["log_analytics_object_collection_rule_namespace"],
+        name=var["log_analytics_object_collection_rule_name"],
+        state=var["log_analytics_object_collection_rule_state"])
     ```
 
 

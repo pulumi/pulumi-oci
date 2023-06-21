@@ -113,9 +113,9 @@ def get_external_exadata_storage_connectors(compartment_id: Optional[str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_connectors = oci.DatabaseManagement.get_external_exadata_storage_connectors(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        external_exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_external_exadata_storage_connectors = oci.DatabaseManagement.get_external_exadata_storage_connectors(compartment_id=var["compartment_id"],
+        external_exadata_infrastructure_id=oci_database_management_external_exadata_infrastructure["test_external_exadata_infrastructure"]["id"],
+        display_name=var["external_exadata_storage_connector_display_name"])
     ```
 
 
@@ -157,9 +157,9 @@ def get_external_exadata_storage_connectors_output(compartment_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_connectors = oci.DatabaseManagement.get_external_exadata_storage_connectors(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        external_exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_external_exadata_storage_connectors = oci.DatabaseManagement.get_external_exadata_storage_connectors(compartment_id=var["compartment_id"],
+        external_exadata_infrastructure_id=oci_database_management_external_exadata_infrastructure["test_external_exadata_infrastructure"]["id"],
+        display_name=var["external_exadata_storage_connector_display_name"])
     ```
 
 

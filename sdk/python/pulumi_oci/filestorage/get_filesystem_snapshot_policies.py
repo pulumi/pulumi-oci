@@ -133,11 +133,11 @@ def get_filesystem_snapshot_policies(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_filesystem_snapshot_policies = oci.FileStorage.get_filesystem_snapshot_policies(availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_filesystem_snapshot_policies = oci.FileStorage.get_filesystem_snapshot_policies(availability_domain=var["filesystem_snapshot_policy_availability_domain"],
+        compartment_id=var["compartment_id"],
+        display_name=var["filesystem_snapshot_policy_display_name"],
+        id=var["filesystem_snapshot_policy_id"],
+        state=var["filesystem_snapshot_policy_state"])
     ```
 
 
@@ -186,11 +186,11 @@ def get_filesystem_snapshot_policies_output(availability_domain: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_filesystem_snapshot_policies = oci.FileStorage.get_filesystem_snapshot_policies(availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_filesystem_snapshot_policies = oci.FileStorage.get_filesystem_snapshot_policies(availability_domain=var["filesystem_snapshot_policy_availability_domain"],
+        compartment_id=var["compartment_id"],
+        display_name=var["filesystem_snapshot_policy_display_name"],
+        id=var["filesystem_snapshot_policy_id"],
+        state=var["filesystem_snapshot_policy_state"])
     ```
 
 

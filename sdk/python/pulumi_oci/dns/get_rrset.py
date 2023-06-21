@@ -142,12 +142,12 @@ def get_rrset(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rrset = oci.Dns.get_rrset(domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        rtype=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        zone_name_or_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        scope=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        view_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_rrset = oci.Dns.get_rrset(domain=var["rrset_domain"],
+        rtype=var["rrset_rtype"],
+        zone_name_or_id=oci_dns_zone["test_zone"]["id"],
+        compartment_id=var["compartment_id"],
+        scope=var["rrset_scope"],
+        view_id=oci_dns_view["test_view"]["id"])
     ```
 
 
@@ -206,12 +206,12 @@ def get_rrset_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_rrset = oci.Dns.get_rrset(domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        rtype=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        zone_name_or_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        scope=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        view_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_rrset = oci.Dns.get_rrset(domain=var["rrset_domain"],
+        rtype=var["rrset_rtype"],
+        zone_name_or_id=oci_dns_zone["test_zone"]["id"],
+        compartment_id=var["compartment_id"],
+        scope=var["rrset_scope"],
+        view_id=oci_dns_view["test_view"]["id"])
     ```
 
 

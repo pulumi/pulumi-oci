@@ -292,24 +292,24 @@ def get_user_assessment_profiles(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_profiles = oci.DataSafe.get_user_assessment_profiles(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        user_assessment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        failed_login_attempts_greater_than_or_equal=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        failed_login_attempts_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        inactive_account_time_greater_than_or_equal=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        inactive_account_time_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_user_created=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        password_lock_time_greater_than_or_equal=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        password_lock_time_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        password_verification_function=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        profile_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        sessions_per_user_greater_than_or_equal=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        sessions_per_user_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        user_count_greater_than_or_equal=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        user_count_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_user_assessment_profiles = oci.DataSafe.get_user_assessment_profiles(compartment_id=var["compartment_id"],
+        user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
+        access_level=var["user_assessment_profile_access_level"],
+        compartment_id_in_subtree=var["user_assessment_profile_compartment_id_in_subtree"],
+        failed_login_attempts_greater_than_or_equal=var["user_assessment_profile_failed_login_attempts_greater_than_or_equal"],
+        failed_login_attempts_less_than=var["user_assessment_profile_failed_login_attempts_less_than"],
+        inactive_account_time_greater_than_or_equal=var["user_assessment_profile_inactive_account_time_greater_than_or_equal"],
+        inactive_account_time_less_than=var["user_assessment_profile_inactive_account_time_less_than"],
+        is_user_created=var["user_assessment_profile_is_user_created"],
+        password_lock_time_greater_than_or_equal=var["user_assessment_profile_password_lock_time_greater_than_or_equal"],
+        password_lock_time_less_than=var["user_assessment_profile_password_lock_time_less_than"],
+        password_verification_function=var["user_assessment_profile_password_verification_function"],
+        profile_name=oci_optimizer_profile["test_profile"]["name"],
+        sessions_per_user_greater_than_or_equal=var["user_assessment_profile_sessions_per_user_greater_than_or_equal"],
+        sessions_per_user_less_than=var["user_assessment_profile_sessions_per_user_less_than"],
+        target_id=oci_cloud_guard_target["test_target"]["id"],
+        user_count_greater_than_or_equal=var["user_assessment_profile_user_count_greater_than_or_equal"],
+        user_count_less_than=var["user_assessment_profile_user_count_less_than"])
     ```
 
 
@@ -425,24 +425,24 @@ def get_user_assessment_profiles_output(access_level: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_profiles = oci.DataSafe.get_user_assessment_profiles(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        user_assessment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        failed_login_attempts_greater_than_or_equal=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        failed_login_attempts_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        inactive_account_time_greater_than_or_equal=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        inactive_account_time_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_user_created=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        password_lock_time_greater_than_or_equal=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        password_lock_time_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        password_verification_function=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        profile_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        sessions_per_user_greater_than_or_equal=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        sessions_per_user_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        user_count_greater_than_or_equal=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        user_count_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_user_assessment_profiles = oci.DataSafe.get_user_assessment_profiles(compartment_id=var["compartment_id"],
+        user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
+        access_level=var["user_assessment_profile_access_level"],
+        compartment_id_in_subtree=var["user_assessment_profile_compartment_id_in_subtree"],
+        failed_login_attempts_greater_than_or_equal=var["user_assessment_profile_failed_login_attempts_greater_than_or_equal"],
+        failed_login_attempts_less_than=var["user_assessment_profile_failed_login_attempts_less_than"],
+        inactive_account_time_greater_than_or_equal=var["user_assessment_profile_inactive_account_time_greater_than_or_equal"],
+        inactive_account_time_less_than=var["user_assessment_profile_inactive_account_time_less_than"],
+        is_user_created=var["user_assessment_profile_is_user_created"],
+        password_lock_time_greater_than_or_equal=var["user_assessment_profile_password_lock_time_greater_than_or_equal"],
+        password_lock_time_less_than=var["user_assessment_profile_password_lock_time_less_than"],
+        password_verification_function=var["user_assessment_profile_password_verification_function"],
+        profile_name=oci_optimizer_profile["test_profile"]["name"],
+        sessions_per_user_greater_than_or_equal=var["user_assessment_profile_sessions_per_user_greater_than_or_equal"],
+        sessions_per_user_less_than=var["user_assessment_profile_sessions_per_user_less_than"],
+        target_id=oci_cloud_guard_target["test_target"]["id"],
+        user_count_greater_than_or_equal=var["user_assessment_profile_user_count_greater_than_or_equal"],
+        user_count_less_than=var["user_assessment_profile_user_count_less_than"])
     ```
 
 

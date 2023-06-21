@@ -131,10 +131,10 @@ def get_private_endpoints(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoints = oci.ResourceManager.get_private_endpoints(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        private_endpoint_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_private_endpoints = oci.ResourceManager.get_private_endpoints(compartment_id=var["compartment_id"],
+        display_name=var["private_endpoint_display_name"],
+        private_endpoint_id=oci_resourcemanager_private_endpoint["test_private_endpoint"]["id"],
+        vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
 
 
@@ -182,10 +182,10 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoints = oci.ResourceManager.get_private_endpoints(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        private_endpoint_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_private_endpoints = oci.ResourceManager.get_private_endpoints(compartment_id=var["compartment_id"],
+        display_name=var["private_endpoint_display_name"],
+        private_endpoint_id=oci_resourcemanager_private_endpoint["test_private_endpoint"]["id"],
+        vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
 
 

@@ -143,12 +143,12 @@ def get_certificates(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_certificates = oci.Waas.get_certificates(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        states=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_certificates = oci.Waas.get_certificates(compartment_id=var["compartment_id"],
+        display_names=var["certificate_display_names"],
+        ids=var["certificate_ids"],
+        states=var["certificate_states"],
+        time_created_greater_than_or_equal_to=var["certificate_time_created_greater_than_or_equal_to"],
+        time_created_less_than=var["certificate_time_created_less_than"])
     ```
 
 
@@ -202,12 +202,12 @@ def get_certificates_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_certificates = oci.Waas.get_certificates(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        states=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_certificates = oci.Waas.get_certificates(compartment_id=var["compartment_id"],
+        display_names=var["certificate_display_names"],
+        ids=var["certificate_ids"],
+        states=var["certificate_states"],
+        time_created_greater_than_or_equal_to=var["certificate_time_created_greater_than_or_equal_to"],
+        time_created_less_than=var["certificate_time_created_less_than"])
     ```
 
 

@@ -139,7 +139,7 @@ def get_job_advisor_report(job_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job_advisor_report = oci.DatabaseMigration.get_job_advisor_report(job_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_job_advisor_report = oci.DatabaseMigration.get_job_advisor_report(job_id=oci_database_migration_job["test_job"]["id"])
     ```
 
 
@@ -175,7 +175,7 @@ def get_job_advisor_report_output(job_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job_advisor_report = oci.DatabaseMigration.get_job_advisor_report(job_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_job_advisor_report = oci.DatabaseMigration.get_job_advisor_report(job_id=oci_database_migration_job["test_job"]["id"])
     ```
 
 

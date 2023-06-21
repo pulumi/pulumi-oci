@@ -133,11 +133,11 @@ def get_app_accelerations(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_accelerations = oci.Waa.get_app_accelerations(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        states=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        web_app_acceleration_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_web_app_accelerations = oci.Waa.get_app_accelerations(compartment_id=var["compartment_id"],
+        display_name=var["web_app_acceleration_display_name"],
+        id=var["web_app_acceleration_id"],
+        states=var["web_app_acceleration_state"],
+        web_app_acceleration_policy_id=oci_waa_web_app_acceleration_policy["test_web_app_acceleration_policy"]["id"])
     ```
 
 
@@ -186,11 +186,11 @@ def get_app_accelerations_output(compartment_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_accelerations = oci.Waa.get_app_accelerations(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        states=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        web_app_acceleration_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_web_app_accelerations = oci.Waa.get_app_accelerations(compartment_id=var["compartment_id"],
+        display_name=var["web_app_acceleration_display_name"],
+        id=var["web_app_acceleration_id"],
+        states=var["web_app_acceleration_state"],
+        web_app_acceleration_policy_id=oci_waa_web_app_acceleration_policy["test_web_app_acceleration_policy"]["id"])
     ```
 
 

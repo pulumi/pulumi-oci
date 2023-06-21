@@ -223,7 +223,7 @@ def get_model_deployment(model_deployment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_deployment = oci.DataScience.get_model_deployment(model_deployment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_model_deployment = oci.DataScience.get_model_deployment(model_deployment_id=oci_datascience_model_deployment["test_model_deployment"]["id"])
     ```
 
 
@@ -266,7 +266,7 @@ def get_model_deployment_output(model_deployment_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_model_deployment = oci.DataScience.get_model_deployment(model_deployment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_model_deployment = oci.DataScience.get_model_deployment(model_deployment_id=oci_datascience_model_deployment["test_model_deployment"]["id"])
     ```
 
 

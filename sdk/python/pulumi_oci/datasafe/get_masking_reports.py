@@ -139,11 +139,11 @@ def get_masking_reports(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_reports = oci.DataSafe.get_masking_reports(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        masking_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_masking_reports = oci.DataSafe.get_masking_reports(compartment_id=var["compartment_id"],
+        access_level=var["masking_report_access_level"],
+        compartment_id_in_subtree=var["masking_report_compartment_id_in_subtree"],
+        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
+        target_id=oci_cloud_guard_target["test_target"]["id"])
     ```
 
 
@@ -193,11 +193,11 @@ def get_masking_reports_output(access_level: Optional[pulumi.Input[Optional[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_reports = oci.DataSafe.get_masking_reports(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        masking_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_masking_reports = oci.DataSafe.get_masking_reports(compartment_id=var["compartment_id"],
+        access_level=var["masking_report_access_level"],
+        compartment_id_in_subtree=var["masking_report_compartment_id_in_subtree"],
+        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
+        target_id=oci_cloud_guard_target["test_target"]["id"])
     ```
 
 

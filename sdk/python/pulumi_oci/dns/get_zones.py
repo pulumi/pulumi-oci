@@ -224,16 +224,16 @@ def get_zones(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_zones = oci.Dns.get_zones(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        scope=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        tsig_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        view_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        zone_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_zones = oci.Dns.get_zones(compartment_id=var["compartment_id"],
+        name=var["zone_name"],
+        name_contains=var["zone_name_contains"],
+        scope=var["zone_scope"],
+        state=var["zone_state"],
+        time_created_greater_than_or_equal_to=var["zone_time_created_greater_than_or_equal_to"],
+        time_created_less_than=var["zone_time_created_less_than"],
+        tsig_key_id=oci_dns_tsig_key["test_tsig_key"]["id"],
+        view_id=oci_dns_view["test_view"]["id"],
+        zone_type=var["zone_zone_type"])
     ```
 
 
@@ -315,16 +315,16 @@ def get_zones_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_zones = oci.Dns.get_zones(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        scope=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        tsig_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        view_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        zone_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_zones = oci.Dns.get_zones(compartment_id=var["compartment_id"],
+        name=var["zone_name"],
+        name_contains=var["zone_name_contains"],
+        scope=var["zone_scope"],
+        state=var["zone_state"],
+        time_created_greater_than_or_equal_to=var["zone_time_created_greater_than_or_equal_to"],
+        time_created_less_than=var["zone_time_created_less_than"],
+        tsig_key_id=oci_dns_tsig_key["test_tsig_key"]["id"],
+        view_id=oci_dns_view["test_view"]["id"],
+        zone_type=var["zone_zone_type"])
     ```
 
 

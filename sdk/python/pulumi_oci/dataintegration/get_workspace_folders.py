@@ -149,12 +149,12 @@ def get_workspace_folders(aggregator_key: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_folders = oci.DataIntegration.get_workspace_folders(workspace_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        aggregator_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        identifiers=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_workspace_folders = oci.DataIntegration.get_workspace_folders(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
+        aggregator_key=var["workspace_folder_aggregator_key"],
+        fields=var["workspace_folder_fields"],
+        identifiers=var["workspace_folder_identifier"],
+        name=var["workspace_folder_name"],
+        name_contains=var["workspace_folder_name_contains"])
     ```
 
 
@@ -208,12 +208,12 @@ def get_workspace_folders_output(aggregator_key: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_folders = oci.DataIntegration.get_workspace_folders(workspace_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        aggregator_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        identifiers=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_workspace_folders = oci.DataIntegration.get_workspace_folders(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
+        aggregator_key=var["workspace_folder_aggregator_key"],
+        fields=var["workspace_folder_fields"],
+        identifiers=var["workspace_folder_identifier"],
+        name=var["workspace_folder_name"],
+        name_contains=var["workspace_folder_name_contains"])
     ```
 
 

@@ -158,12 +158,12 @@ def get_database_software_images(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database_software_images = oci.Database.get_database_software_images(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        image_shape_family=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        image_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_upgrade_supported=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_database_software_images = oci.Database.get_database_software_images(compartment_id=var["compartment_id"],
+        display_name=var["database_software_image_display_name"],
+        image_shape_family=var["database_software_image_image_shape_family"],
+        image_type=var["database_software_image_image_type"],
+        is_upgrade_supported=var["database_software_image_is_upgrade_supported"],
+        state=var["database_software_image_state"])
     ```
 
 
@@ -217,12 +217,12 @@ def get_database_software_images_output(compartment_id: Optional[pulumi.Input[st
     import pulumi
     import pulumi_oci as oci
 
-    test_database_software_images = oci.Database.get_database_software_images(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        image_shape_family=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        image_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_upgrade_supported=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_database_software_images = oci.Database.get_database_software_images(compartment_id=var["compartment_id"],
+        display_name=var["database_software_image_display_name"],
+        image_shape_family=var["database_software_image_image_shape_family"],
+        image_type=var["database_software_image_image_type"],
+        is_upgrade_supported=var["database_software_image_is_upgrade_supported"],
+        state=var["database_software_image_state"])
     ```
 
 

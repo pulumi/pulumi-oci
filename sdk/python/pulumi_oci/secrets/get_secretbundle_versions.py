@@ -93,7 +93,7 @@ def get_secretbundle_versions(filters: Optional[Sequence[pulumi.InputType['GetSe
     import pulumi
     import pulumi_oci as oci
 
-    test_secretbundle_versions = oci.Secrets.get_secretbundle_versions(secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_secretbundle_versions = oci.Secrets.get_secretbundle_versions(secret_id=oci_vault_secret["test_secret"]["id"])
     ```
 
 
@@ -127,7 +127,7 @@ def get_secretbundle_versions_output(filters: Optional[pulumi.Input[Optional[Seq
     import pulumi
     import pulumi_oci as oci
 
-    test_secretbundle_versions = oci.Secrets.get_secretbundle_versions(secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_secretbundle_versions = oci.Secrets.get_secretbundle_versions(secret_id=oci_vault_secret["test_secret"]["id"])
     ```
 
 

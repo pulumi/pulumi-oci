@@ -179,7 +179,7 @@ class Osn(pulumi.CustomResource):
             ad=var["osn_ad"],
             blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
             ocpu_allocation_param=oci.blockchain.OsnOcpuAllocationParamArgs(
-                ocpu_allocation_number=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                ocpu_allocation_number=var["osn_ocpu_allocation_param_ocpu_allocation_number"],
             ))
         ```
 
@@ -218,7 +218,7 @@ class Osn(pulumi.CustomResource):
             ad=var["osn_ad"],
             blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
             ocpu_allocation_param=oci.blockchain.OsnOcpuAllocationParamArgs(
-                ocpu_allocation_number=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                ocpu_allocation_number=var["osn_ocpu_allocation_param_ocpu_allocation_number"],
             ))
         ```
 

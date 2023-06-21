@@ -96,7 +96,7 @@ def get_api_keys(filters: Optional[Sequence[pulumi.InputType['GetApiKeysFilterAr
     import pulumi
     import pulumi_oci as oci
 
-    test_api_keys = oci.Identity.get_api_keys(user_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_api_keys = oci.Identity.get_api_keys(user_id=oci_identity_user["test_user"]["id"])
     ```
 
 
@@ -133,7 +133,7 @@ def get_api_keys_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_api_keys = oci.Identity.get_api_keys(user_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_api_keys = oci.Identity.get_api_keys(user_id=oci_identity_user["test_user"]["id"])
     ```
 
 

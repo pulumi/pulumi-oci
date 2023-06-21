@@ -166,13 +166,13 @@ def get_models(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_models = oci.DataScience.get_models(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        created_by=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        model_version_set_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_models = oci.DataScience.get_models(compartment_id=var["compartment_id"],
+        created_by=var["model_created_by"],
+        display_name=var["model_display_name"],
+        id=var["model_id"],
+        model_version_set_name=oci_datascience_model_version_set["test_model_version_set"]["name"],
+        project_id=oci_datascience_project["test_project"]["id"],
+        state=var["model_state"])
     ```
 
 
@@ -231,13 +231,13 @@ def get_models_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_models = oci.DataScience.get_models(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        created_by=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        model_version_set_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_models = oci.DataScience.get_models(compartment_id=var["compartment_id"],
+        created_by=var["model_created_by"],
+        display_name=var["model_display_name"],
+        id=var["model_id"],
+        model_version_set_name=oci_datascience_model_version_set["test_model_version_set"]["name"],
+        project_id=oci_datascience_project["test_project"]["id"],
+        state=var["model_state"])
     ```
 
 

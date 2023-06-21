@@ -88,7 +88,7 @@ def get_exadata_infrastructure_download_config_file(base64_encode_content: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_exadata_infrastructure_download_config_file = oci.Database.get_exadata_infrastructure_download_config_file(exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_exadata_infrastructure_download_config_file = oci.Database.get_exadata_infrastructure_download_config_file(exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
         base64_encode_content=False)
     ```
 
@@ -123,7 +123,7 @@ def get_exadata_infrastructure_download_config_file_output(base64_encode_content
     import pulumi
     import pulumi_oci as oci
 
-    test_exadata_infrastructure_download_config_file = oci.Database.get_exadata_infrastructure_download_config_file(exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_exadata_infrastructure_download_config_file = oci.Database.get_exadata_infrastructure_download_config_file(exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
         base64_encode_content=False)
     ```
 

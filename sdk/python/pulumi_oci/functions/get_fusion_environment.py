@@ -400,7 +400,7 @@ def get_fusion_environment(fusion_environment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment = oci.Functions.get_fusion_environment(fusion_environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_fusion_environment = oci.Functions.get_fusion_environment(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
     ```
 
 
@@ -458,7 +458,7 @@ def get_fusion_environment_output(fusion_environment_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment = oci.Functions.get_fusion_environment(fusion_environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_fusion_environment = oci.Functions.get_fusion_environment(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
     ```
 
 

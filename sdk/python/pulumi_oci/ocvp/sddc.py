@@ -1566,8 +1566,8 @@ class Sddc(pulumi.CustomResource):
             vsphere_vlan_id=oci_core_vlan["test_vsphere_vlan"]["id"],
             capacity_reservation_id=oci_ocvp_capacity_reservation["test_capacity_reservation"]["id"],
             datastores=[oci.ocvp.SddcDatastoreArgs(
-                block_volume_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                datastore_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                block_volume_ids=var["sddc_datastores_block_volume_ids"],
+                datastore_type=var["sddc_datastores_datastore_type"],
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -1683,8 +1683,8 @@ class Sddc(pulumi.CustomResource):
             vsphere_vlan_id=oci_core_vlan["test_vsphere_vlan"]["id"],
             capacity_reservation_id=oci_ocvp_capacity_reservation["test_capacity_reservation"]["id"],
             datastores=[oci.ocvp.SddcDatastoreArgs(
-                block_volume_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                datastore_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                block_volume_ids=var["sddc_datastores_block_volume_ids"],
+                datastore_type=var["sddc_datastores_datastore_type"],
             )],
             defined_tags={
                 "Operations.CostCenter": "42",

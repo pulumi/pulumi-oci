@@ -99,9 +99,9 @@ def get_top_utilized_resources(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_top_utilized_resources = oci.LicenseManager.get_top_utilized_resources(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_unit_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_top_utilized_resources = oci.LicenseManager.get_top_utilized_resources(compartment_id=var["compartment_id"],
+        is_compartment_id_in_subtree=var["top_utilized_resource_is_compartment_id_in_subtree"],
+        resource_unit_type=var["top_utilized_resource_resource_unit_type"])
     ```
 
 
@@ -140,9 +140,9 @@ def get_top_utilized_resources_output(compartment_id: Optional[pulumi.Input[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_top_utilized_resources = oci.LicenseManager.get_top_utilized_resources(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_unit_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_top_utilized_resources = oci.LicenseManager.get_top_utilized_resources(compartment_id=var["compartment_id"],
+        is_compartment_id_in_subtree=var["top_utilized_resource_is_compartment_id_in_subtree"],
+        resource_unit_type=var["top_utilized_resource_resource_unit_type"])
     ```
 
 

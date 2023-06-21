@@ -133,11 +133,11 @@ def get_models(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_models = oci.AiVision.get_models(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_models = oci.AiVision.get_models(compartment_id=var["compartment_id"],
+        display_name=var["model_display_name"],
+        id=var["model_id"],
+        project_id=oci_ai_vision_project["test_project"]["id"],
+        state=var["model_state"])
     ```
 
 
@@ -186,11 +186,11 @@ def get_models_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_models = oci.AiVision.get_models(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_models = oci.AiVision.get_models(compartment_id=var["compartment_id"],
+        display_name=var["model_display_name"],
+        id=var["model_id"],
+        project_id=oci_ai_vision_project["test_project"]["id"],
+        state=var["model_state"])
     ```
 
 

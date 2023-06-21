@@ -235,7 +235,7 @@ def get_dr_plan(dr_plan_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_plan = oci.DisasterRecovery.get_dr_plan(dr_plan_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_dr_plan = oci.DisasterRecovery.get_dr_plan(dr_plan_id=oci_disaster_recovery_dr_plan["test_dr_plan"]["id"])
     ```
 
 
@@ -279,7 +279,7 @@ def get_dr_plan_output(dr_plan_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_plan = oci.DisasterRecovery.get_dr_plan(dr_plan_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_dr_plan = oci.DisasterRecovery.get_dr_plan(dr_plan_id=oci_disaster_recovery_dr_plan["test_dr_plan"]["id"])
     ```
 
 

@@ -211,7 +211,7 @@ def get_stream_pool(stream_pool_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_pool = oci.Streaming.get_stream_pool(stream_pool_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_stream_pool = oci.Streaming.get_stream_pool(stream_pool_id=oci_streaming_stream_pool["test_stream_pool"]["id"])
     ```
 
 
@@ -253,7 +253,7 @@ def get_stream_pool_output(stream_pool_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_pool = oci.Streaming.get_stream_pool(stream_pool_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_stream_pool = oci.Streaming.get_stream_pool(stream_pool_id=oci_streaming_stream_pool["test_stream_pool"]["id"])
     ```
 
 

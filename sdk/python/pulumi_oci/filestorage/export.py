@@ -273,12 +273,12 @@ class Export(pulumi.CustomResource):
             file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
             path=var["export_path"],
             export_options=[oci.file_storage.ExportExportOptionArgs(
-                source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                access=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                anonymous_gid=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                anonymous_uid=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                identity_squash=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                require_privileged_source_port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                source=var["export_export_options_source"],
+                access=var["export_export_options_access"],
+                anonymous_gid=var["export_export_options_anonymous_gid"],
+                anonymous_uid=var["export_export_options_anonymous_uid"],
+                identity_squash=var["export_export_options_identity_squash"],
+                require_privileged_source_port=var["export_export_options_require_privileged_source_port"],
             )])
         ```
 
@@ -335,12 +335,12 @@ class Export(pulumi.CustomResource):
             file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
             path=var["export_path"],
             export_options=[oci.file_storage.ExportExportOptionArgs(
-                source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                access=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                anonymous_gid=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                anonymous_uid=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                identity_squash=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                require_privileged_source_port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                source=var["export_export_options_source"],
+                access=var["export_export_options_access"],
+                anonymous_gid=var["export_export_options_anonymous_gid"],
+                anonymous_uid=var["export_export_options_anonymous_uid"],
+                identity_squash=var["export_export_options_identity_squash"],
+                require_privileged_source_port=var["export_export_options_require_privileged_source_port"],
             )])
         ```
 

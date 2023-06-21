@@ -102,9 +102,9 @@ def get_log_analytics_entity_topology(log_analytics_entity_id: Optional[str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity_topology = oci.LogAnalytics.get_log_analytics_entity_topology(log_analytics_entity_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_log_analytics_entity_topology = oci.LogAnalytics.get_log_analytics_entity_topology(log_analytics_entity_id=oci_log_analytics_log_analytics_entity["test_log_analytics_entity"]["id"],
+        namespace=var["log_analytics_entity_topology_namespace"],
+        state=var["log_analytics_entity_topology_state"])
     ```
 
 
@@ -143,9 +143,9 @@ def get_log_analytics_entity_topology_output(log_analytics_entity_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity_topology = oci.LogAnalytics.get_log_analytics_entity_topology(log_analytics_entity_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_log_analytics_entity_topology = oci.LogAnalytics.get_log_analytics_entity_topology(log_analytics_entity_id=oci_log_analytics_log_analytics_entity["test_log_analytics_entity"]["id"],
+        namespace=var["log_analytics_entity_topology_namespace"],
+        state=var["log_analytics_entity_topology_state"])
     ```
 
 

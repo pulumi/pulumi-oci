@@ -168,13 +168,13 @@ def get_namespace_ingest_time_rules(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_ingest_time_rules = oci.LogAnalytics.get_namespace_ingest_time_rules(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        condition_kind=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        field_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        field_value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_namespace_ingest_time_rules = oci.LogAnalytics.get_namespace_ingest_time_rules(compartment_id=var["compartment_id"],
+        namespace=var["namespace_ingest_time_rule_namespace"],
+        condition_kind=var["namespace_ingest_time_rule_condition_kind"],
+        display_name=var["namespace_ingest_time_rule_display_name"],
+        field_name=var["namespace_ingest_time_rule_field_name"],
+        field_value=var["namespace_ingest_time_rule_field_value"],
+        state=var["namespace_ingest_time_rule_state"])
     ```
 
 
@@ -232,13 +232,13 @@ def get_namespace_ingest_time_rules_output(compartment_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_ingest_time_rules = oci.LogAnalytics.get_namespace_ingest_time_rules(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        condition_kind=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        field_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        field_value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_namespace_ingest_time_rules = oci.LogAnalytics.get_namespace_ingest_time_rules(compartment_id=var["compartment_id"],
+        namespace=var["namespace_ingest_time_rule_namespace"],
+        condition_kind=var["namespace_ingest_time_rule_condition_kind"],
+        display_name=var["namespace_ingest_time_rule_display_name"],
+        field_name=var["namespace_ingest_time_rule_field_name"],
+        field_value=var["namespace_ingest_time_rule_field_value"],
+        state=var["namespace_ingest_time_rule_state"])
     ```
 
 

@@ -393,8 +393,8 @@ class Profile(pulumi.CustomResource):
             description=var["profile_description"],
             levels_configuration=oci.optimizer.ProfileLevelsConfigurationArgs(
                 items=[oci.optimizer.ProfileLevelsConfigurationItemArgs(
-                    level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    recommendation_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    level=var["profile_levels_configuration_items_level"],
+                    recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
                 )],
             ),
             aggregation_interval_in_days=var["profile_aggregation_interval_in_days"],
@@ -405,14 +405,14 @@ class Profile(pulumi.CustomResource):
                 "bar-key": "value",
             },
             target_compartments=oci.optimizer.ProfileTargetCompartmentsArgs(
-                items=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                items=var["profile_target_compartments_items"],
             ),
             target_tags=oci.optimizer.ProfileTargetTagsArgs(
                 items=[oci.optimizer.ProfileTargetTagsItemArgs(
-                    tag_definition_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    tag_namespace_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    tag_value_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    tag_values=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    tag_definition_name=var["profile_target_tags_items_tag_definition_name"],
+                    tag_namespace_name=oci_identity_tag_namespace["test_tag_namespace"]["name"],
+                    tag_value_type=var["profile_target_tags_items_tag_value_type"],
+                    tag_values=var["profile_target_tags_items_tag_values"],
                 )],
             ))
         ```
@@ -459,8 +459,8 @@ class Profile(pulumi.CustomResource):
             description=var["profile_description"],
             levels_configuration=oci.optimizer.ProfileLevelsConfigurationArgs(
                 items=[oci.optimizer.ProfileLevelsConfigurationItemArgs(
-                    level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    recommendation_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    level=var["profile_levels_configuration_items_level"],
+                    recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
                 )],
             ),
             aggregation_interval_in_days=var["profile_aggregation_interval_in_days"],
@@ -471,14 +471,14 @@ class Profile(pulumi.CustomResource):
                 "bar-key": "value",
             },
             target_compartments=oci.optimizer.ProfileTargetCompartmentsArgs(
-                items=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                items=var["profile_target_compartments_items"],
             ),
             target_tags=oci.optimizer.ProfileTargetTagsArgs(
                 items=[oci.optimizer.ProfileTargetTagsItemArgs(
-                    tag_definition_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    tag_namespace_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    tag_value_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    tag_values=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    tag_definition_name=var["profile_target_tags_items_tag_definition_name"],
+                    tag_namespace_name=oci_identity_tag_namespace["test_tag_namespace"]["name"],
+                    tag_value_type=var["profile_target_tags_items_tag_value_type"],
+                    tag_values=var["profile_target_tags_items_tag_values"],
                 )],
             ))
         ```

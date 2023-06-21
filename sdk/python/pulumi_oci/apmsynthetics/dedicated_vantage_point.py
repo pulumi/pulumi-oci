@@ -357,10 +357,10 @@ class DedicatedVantagePoint(pulumi.CustomResource):
             apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
             display_name=var["dedicated_vantage_point_display_name"],
             dvp_stack_details=oci.apm_synthetics.DedicatedVantagePointDvpStackDetailsArgs(
-                dvp_stack_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                dvp_stack_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                dvp_stream_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                dvp_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                dvp_stack_id=oci_resourcemanager_stack["test_stack"]["id"],
+                dvp_stack_type=var["dedicated_vantage_point_dvp_stack_details_dvp_stack_type"],
+                dvp_stream_id=oci_streaming_stream["test_stream"]["id"],
+                dvp_version=var["dedicated_vantage_point_dvp_stack_details_dvp_version"],
             ),
             region=var["dedicated_vantage_point_region"],
             defined_tags={
@@ -415,10 +415,10 @@ class DedicatedVantagePoint(pulumi.CustomResource):
             apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
             display_name=var["dedicated_vantage_point_display_name"],
             dvp_stack_details=oci.apm_synthetics.DedicatedVantagePointDvpStackDetailsArgs(
-                dvp_stack_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                dvp_stack_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                dvp_stream_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                dvp_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                dvp_stack_id=oci_resourcemanager_stack["test_stack"]["id"],
+                dvp_stack_type=var["dedicated_vantage_point_dvp_stack_details_dvp_stack_type"],
+                dvp_stream_id=oci_streaming_stream["test_stream"]["id"],
+                dvp_version=var["dedicated_vantage_point_dvp_stack_details_dvp_version"],
             ),
             region=var["dedicated_vantage_point_region"],
             defined_tags={

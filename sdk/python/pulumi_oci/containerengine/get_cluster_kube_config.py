@@ -108,10 +108,10 @@ def get_cluster_kube_config(cluster_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_kube_config = oci.ContainerEngine.get_cluster_kube_config(cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        expiration=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        token_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_cluster_kube_config = oci.ContainerEngine.get_cluster_kube_config(cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
+        endpoint=var["cluster_kube_config_endpoint"],
+        expiration=var["cluster_kube_config_expiration"],
+        token_version=var["cluster_kube_config_token_version"])
     ```
 
 
@@ -154,10 +154,10 @@ def get_cluster_kube_config_output(cluster_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_kube_config = oci.ContainerEngine.get_cluster_kube_config(cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        expiration=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        token_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_cluster_kube_config = oci.ContainerEngine.get_cluster_kube_config(cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
+        endpoint=var["cluster_kube_config_endpoint"],
+        expiration=var["cluster_kube_config_expiration"],
+        token_version=var["cluster_kube_config_token_version"])
     ```
 
 

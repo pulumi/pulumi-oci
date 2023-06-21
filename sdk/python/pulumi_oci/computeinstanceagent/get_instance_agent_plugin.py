@@ -134,8 +134,8 @@ def get_instance_agent_plugin(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_agent_plugin = oci.ComputeInstanceAgent.get_instance_agent_plugin(instanceagent_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        plugin_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_instance_agent_plugin = oci.ComputeInstanceAgent.get_instance_agent_plugin(instanceagent_id=oci_computeinstanceagent_instanceagent["test_instanceagent"]["id"],
+        plugin_name=var["instance_agent_plugin_plugin_name"])
     ```
 
 
@@ -176,8 +176,8 @@ def get_instance_agent_plugin_output(compartment_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_agent_plugin = oci.ComputeInstanceAgent.get_instance_agent_plugin(instanceagent_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        plugin_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_instance_agent_plugin = oci.ComputeInstanceAgent.get_instance_agent_plugin(instanceagent_id=oci_computeinstanceagent_instanceagent["test_instanceagent"]["id"],
+        plugin_name=var["instance_agent_plugin_plugin_name"])
     ```
 
 

@@ -91,7 +91,7 @@ def get_query(query_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_query = oci.MeteringComputation.get_query(query_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_query = oci.MeteringComputation.get_query(query_id=oci_metering_computation_query["test_query"]["id"])
     ```
 
 
@@ -123,7 +123,7 @@ def get_query_output(query_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_query = oci.MeteringComputation.get_query(query_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_query = oci.MeteringComputation.get_query(query_id=oci_metering_computation_query["test_query"]["id"])
     ```
 
 

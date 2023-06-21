@@ -195,7 +195,7 @@ def get_block_volume_replica(block_volume_replica_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_block_volume_replica = oci.Core.get_block_volume_replica(block_volume_replica_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_block_volume_replica = oci.Core.get_block_volume_replica(block_volume_replica_id=oci_core_block_volume_replica["test_block_volume_replica"]["id"])
     ```
 
 
@@ -236,7 +236,7 @@ def get_block_volume_replica_output(block_volume_replica_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_block_volume_replica = oci.Core.get_block_volume_replica(block_volume_replica_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_block_volume_replica = oci.Core.get_block_volume_replica(block_volume_replica_id=oci_core_block_volume_replica["test_block_volume_replica"]["id"])
     ```
 
 

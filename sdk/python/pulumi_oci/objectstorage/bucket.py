@@ -650,12 +650,12 @@ class Bucket(pulumi.CustomResource):
             object_events_enabled=var["bucket_object_events_enabled"],
             storage_tier=var["bucket_storage_tier"],
             retention_rules=[oci.object_storage.BucketRetentionRuleArgs(
-                display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                display_name=var["retention_rule_display_name"],
                 duration=oci.object_storage.BucketRetentionRuleDurationArgs(
-                    time_amount=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    time_unit=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    time_amount=var["retention_rule_duration_time_amount"],
+                    time_unit=var["retention_rule_duration_time_unit"],
                 ),
-                time_rule_locked=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                time_rule_locked=var["retention_rule_time_rule_locked"],
             )],
             versioning=var["bucket_versioning"])
         ```
@@ -722,12 +722,12 @@ class Bucket(pulumi.CustomResource):
             object_events_enabled=var["bucket_object_events_enabled"],
             storage_tier=var["bucket_storage_tier"],
             retention_rules=[oci.object_storage.BucketRetentionRuleArgs(
-                display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                display_name=var["retention_rule_display_name"],
                 duration=oci.object_storage.BucketRetentionRuleDurationArgs(
-                    time_amount=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    time_unit=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    time_amount=var["retention_rule_duration_time_amount"],
+                    time_unit=var["retention_rule_duration_time_unit"],
                 ),
-                time_rule_locked=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                time_rule_locked=var["retention_rule_time_rule_locked"],
             )],
             versioning=var["bucket_versioning"])
         ```

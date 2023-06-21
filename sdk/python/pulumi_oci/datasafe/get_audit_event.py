@@ -124,10 +124,10 @@ def get_audit_event(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_event = oci.DataSafe.get_audit_event(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        scim_query=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_audit_event = oci.DataSafe.get_audit_event(compartment_id=var["compartment_id"],
+        access_level=var["audit_event_access_level"],
+        compartment_id_in_subtree=var["audit_event_compartment_id_in_subtree"],
+        scim_query=var["audit_event_scim_query"])
     ```
 
 
@@ -184,10 +184,10 @@ def get_audit_event_output(access_level: Optional[pulumi.Input[Optional[str]]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_event = oci.DataSafe.get_audit_event(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        scim_query=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_audit_event = oci.DataSafe.get_audit_event(compartment_id=var["compartment_id"],
+        access_level=var["audit_event_access_level"],
+        compartment_id_in_subtree=var["audit_event_compartment_id_in_subtree"],
+        scim_query=var["audit_event_scim_query"])
     ```
 
 

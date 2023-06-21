@@ -156,12 +156,12 @@ def get_associations(associated_resource_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_associations = oci.CertificatesManagement.get_associations(associated_resource_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        association_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        association_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        certificates_resource_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_associations = oci.CertificatesManagement.get_associations(associated_resource_id=oci_certificates_management_associated_resource["test_associated_resource"]["id"],
+        association_id=oci_certificates_management_association["test_association"]["id"],
+        association_type=var["association_association_type"],
+        certificates_resource_id=oci_certificates_management_certificates_resource["test_certificates_resource"]["id"],
+        compartment_id=var["compartment_id"],
+        name=var["association_name"])
     ```
 
 
@@ -216,12 +216,12 @@ def get_associations_output(associated_resource_id: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_associations = oci.CertificatesManagement.get_associations(associated_resource_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        association_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        association_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        certificates_resource_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_associations = oci.CertificatesManagement.get_associations(associated_resource_id=oci_certificates_management_associated_resource["test_associated_resource"]["id"],
+        association_id=oci_certificates_management_association["test_association"]["id"],
+        association_type=var["association_association_type"],
+        certificates_resource_id=oci_certificates_management_certificates_resource["test_certificates_resource"]["id"],
+        compartment_id=var["compartment_id"],
+        name=var["association_name"])
     ```
 
 

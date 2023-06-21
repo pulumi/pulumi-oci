@@ -120,10 +120,10 @@ def get_tsig_keys(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tsig_keys = oci.Dns.get_tsig_keys(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_tsig_keys = oci.Dns.get_tsig_keys(compartment_id=var["compartment_id"],
+        id=var["tsig_key_id"],
+        name=var["tsig_key_name"],
+        state=var["tsig_key_state"])
     ```
 
 
@@ -168,10 +168,10 @@ def get_tsig_keys_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tsig_keys = oci.Dns.get_tsig_keys(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_tsig_keys = oci.Dns.get_tsig_keys(compartment_id=var["compartment_id"],
+        id=var["tsig_key_id"],
+        name=var["tsig_key_name"],
+        state=var["tsig_key_state"])
     ```
 
 

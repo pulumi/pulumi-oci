@@ -210,7 +210,7 @@ def get_target_alert_policy_association(target_alert_policy_association_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_target_alert_policy_association = oci.DataSafe.get_target_alert_policy_association(target_alert_policy_association_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_target_alert_policy_association = oci.DataSafe.get_target_alert_policy_association(target_alert_policy_association_id=oci_data_safe_target_alert_policy_association["test_target_alert_policy_association"]["id"])
     ```
 
 
@@ -252,7 +252,7 @@ def get_target_alert_policy_association_output(target_alert_policy_association_i
     import pulumi
     import pulumi_oci as oci
 
-    test_target_alert_policy_association = oci.DataSafe.get_target_alert_policy_association(target_alert_policy_association_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_target_alert_policy_association = oci.DataSafe.get_target_alert_policy_association(target_alert_policy_association_id=oci_data_safe_target_alert_policy_association["test_target_alert_policy_association"]["id"])
     ```
 
 

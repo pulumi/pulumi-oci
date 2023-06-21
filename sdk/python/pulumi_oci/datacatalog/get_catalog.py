@@ -210,7 +210,7 @@ def get_catalog(catalog_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog = oci.DataCatalog.get_catalog(catalog_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_catalog = oci.DataCatalog.get_catalog(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"])
     ```
 
 
@@ -252,7 +252,7 @@ def get_catalog_output(catalog_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog = oci.DataCatalog.get_catalog(catalog_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_catalog = oci.DataCatalog.get_catalog(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"])
     ```
 
 

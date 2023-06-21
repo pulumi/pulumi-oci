@@ -370,9 +370,9 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
                 "foo-namespace.bar-key": "value",
             },
             family_maintenance_policy=oci.fusion_apps.FusionEnvironmentFamilyFamilyMaintenancePolicyArgs(
-                concurrent_maintenance=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                is_monthly_patching_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                quarterly_upgrade_begin_times=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                concurrent_maintenance=var["fusion_environment_family_family_maintenance_policy_concurrent_maintenance"],
+                is_monthly_patching_enabled=var["fusion_environment_family_family_maintenance_policy_is_monthly_patching_enabled"],
+                quarterly_upgrade_begin_times=var["fusion_environment_family_family_maintenance_policy_quarterly_upgrade_begin_times"],
             ),
             freeform_tags={
                 "bar-key": "value",
@@ -425,9 +425,9 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
                 "foo-namespace.bar-key": "value",
             },
             family_maintenance_policy=oci.fusion_apps.FusionEnvironmentFamilyFamilyMaintenancePolicyArgs(
-                concurrent_maintenance=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                is_monthly_patching_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                quarterly_upgrade_begin_times=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                concurrent_maintenance=var["fusion_environment_family_family_maintenance_policy_concurrent_maintenance"],
+                is_monthly_patching_enabled=var["fusion_environment_family_family_maintenance_policy_is_monthly_patching_enabled"],
+                quarterly_upgrade_begin_times=var["fusion_environment_family_family_maintenance_policy_quarterly_upgrade_begin_times"],
             ),
             freeform_tags={
                 "bar-key": "value",

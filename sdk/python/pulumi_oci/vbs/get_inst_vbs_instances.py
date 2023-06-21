@@ -120,10 +120,10 @@ def get_inst_vbs_instances(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vbs_instances = oci.Vbs.get_inst_vbs_instances(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_vbs_instances = oci.Vbs.get_inst_vbs_instances(compartment_id=var["compartment_id"],
+        id=var["vbs_instance_id"],
+        name=var["vbs_instance_name"],
+        state=var["vbs_instance_state"])
     ```
 
 
@@ -168,10 +168,10 @@ def get_inst_vbs_instances_output(compartment_id: Optional[pulumi.Input[str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_vbs_instances = oci.Vbs.get_inst_vbs_instances(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_vbs_instances = oci.Vbs.get_inst_vbs_instances(compartment_id=var["compartment_id"],
+        id=var["vbs_instance_id"],
+        name=var["vbs_instance_name"],
+        state=var["vbs_instance_state"])
     ```
 
 

@@ -135,11 +135,11 @@ def get_views(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_views = oci.Dns.get_views(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_views = oci.Dns.get_views(compartment_id=var["compartment_id"],
         scope="PRIVATE",
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        display_name=var["view_display_name"],
+        id=var["view_id"],
+        state=var["view_state"])
     ```
 
 
@@ -193,11 +193,11 @@ def get_views_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_views = oci.Dns.get_views(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_views = oci.Dns.get_views(compartment_id=var["compartment_id"],
         scope="PRIVATE",
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        display_name=var["view_display_name"],
+        id=var["view_id"],
+        state=var["view_state"])
     ```
 
 

@@ -90,7 +90,7 @@ def get_blockchain_platform_patches(blockchain_platform_id: Optional[str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_blockchain_platform_patches = oci.Blockchain.get_blockchain_platform_patches(blockchain_platform_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_blockchain_platform_patches = oci.Blockchain.get_blockchain_platform_patches(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"])
     ```
 
 
@@ -124,7 +124,7 @@ def get_blockchain_platform_patches_output(blockchain_platform_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_blockchain_platform_patches = oci.Blockchain.get_blockchain_platform_patches(blockchain_platform_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_blockchain_platform_patches = oci.Blockchain.get_blockchain_platform_patches(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"])
     ```
 
 

@@ -93,7 +93,7 @@ def get_instance_configurations(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_configurations = oci.Core.get_instance_configurations(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_instance_configurations = oci.Core.get_instance_configurations(compartment_id=var["compartment_id"])
     ```
 
 
@@ -127,7 +127,7 @@ def get_instance_configurations_output(compartment_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_configurations = oci.Core.get_instance_configurations(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_instance_configurations = oci.Core.get_instance_configurations(compartment_id=var["compartment_id"])
     ```
 
 

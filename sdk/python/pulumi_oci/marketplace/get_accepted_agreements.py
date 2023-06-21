@@ -143,11 +143,11 @@ def get_accepted_agreements(accepted_agreement_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_accepted_agreements = oci.Marketplace.get_accepted_agreements(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        accepted_agreement_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        listing_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        package_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_accepted_agreements = oci.Marketplace.get_accepted_agreements(compartment_id=var["compartment_id"],
+        accepted_agreement_id=oci_marketplace_accepted_agreement["test_accepted_agreement"]["id"],
+        display_name=var["accepted_agreement_display_name"],
+        listing_id=oci_marketplace_listing["test_listing"]["id"],
+        package_version=var["accepted_agreement_package_version"])
     ```
 
 
@@ -198,11 +198,11 @@ def get_accepted_agreements_output(accepted_agreement_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_accepted_agreements = oci.Marketplace.get_accepted_agreements(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        accepted_agreement_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        listing_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        package_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_accepted_agreements = oci.Marketplace.get_accepted_agreements(compartment_id=var["compartment_id"],
+        accepted_agreement_id=oci_marketplace_accepted_agreement["test_accepted_agreement"]["id"],
+        display_name=var["accepted_agreement_display_name"],
+        listing_id=oci_marketplace_listing["test_listing"]["id"],
+        package_version=var["accepted_agreement_package_version"])
     ```
 
 

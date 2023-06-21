@@ -184,8 +184,8 @@ def get_compute_image_capability_schema(compute_image_capability_schema_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_image_capability_schema = oci.Core.get_compute_image_capability_schema(compute_image_capability_schema_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_merge_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_compute_image_capability_schema = oci.Core.get_compute_image_capability_schema(compute_image_capability_schema_id=oci_core_compute_image_capability_schema["test_compute_image_capability_schema"]["id"],
+        is_merge_enabled=var["compute_image_capability_schema_is_merge_enabled"])
     ```
 
 
@@ -228,8 +228,8 @@ def get_compute_image_capability_schema_output(compute_image_capability_schema_i
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_image_capability_schema = oci.Core.get_compute_image_capability_schema(compute_image_capability_schema_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_merge_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_compute_image_capability_schema = oci.Core.get_compute_image_capability_schema(compute_image_capability_schema_id=oci_core_compute_image_capability_schema["test_compute_image_capability_schema"]["id"],
+        is_merge_enabled=var["compute_image_capability_schema_is_merge_enabled"])
     ```
 
 

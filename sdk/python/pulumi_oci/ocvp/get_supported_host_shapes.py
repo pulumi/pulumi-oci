@@ -113,9 +113,9 @@ def get_supported_host_shapes(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_host_shapes = oci.Ocvp.get_supported_host_shapes(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        sddc_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_supported_host_shapes = oci.Ocvp.get_supported_host_shapes(compartment_id=var["compartment_id"],
+        name=var["supported_host_shape_name"],
+        sddc_type=var["supported_host_shape_sddc_type"])
     ```
 
 
@@ -157,9 +157,9 @@ def get_supported_host_shapes_output(compartment_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_host_shapes = oci.Ocvp.get_supported_host_shapes(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        sddc_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_supported_host_shapes = oci.Ocvp.get_supported_host_shapes(compartment_id=var["compartment_id"],
+        name=var["supported_host_shape_name"],
+        sddc_type=var["supported_host_shape_sddc_type"])
     ```
 
 

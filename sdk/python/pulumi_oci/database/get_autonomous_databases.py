@@ -214,16 +214,16 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_databases = oci.Database.get_autonomous_databases(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        autonomous_container_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        db_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        db_workload=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        infrastructure_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_data_guard_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_free_tier=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_refreshable_clone=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_autonomous_databases = oci.Database.get_autonomous_databases(compartment_id=var["compartment_id"],
+        autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"],
+        db_version=var["autonomous_database_db_version"],
+        db_workload=var["autonomous_database_db_workload"],
+        display_name=var["autonomous_database_display_name"],
+        infrastructure_type=var["autonomous_database_infrastructure_type"],
+        is_data_guard_enabled=var["autonomous_database_is_data_guard_enabled"],
+        is_free_tier=var["autonomous_database_is_free_tier"],
+        is_refreshable_clone=var["autonomous_database_is_refreshable_clone"],
+        state=var["autonomous_database_state"])
     ```
 
 
@@ -293,16 +293,16 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_databases = oci.Database.get_autonomous_databases(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        autonomous_container_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        db_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        db_workload=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        infrastructure_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_data_guard_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_free_tier=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_refreshable_clone=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_autonomous_databases = oci.Database.get_autonomous_databases(compartment_id=var["compartment_id"],
+        autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"],
+        db_version=var["autonomous_database_db_version"],
+        db_workload=var["autonomous_database_db_workload"],
+        display_name=var["autonomous_database_display_name"],
+        infrastructure_type=var["autonomous_database_infrastructure_type"],
+        is_data_guard_enabled=var["autonomous_database_is_data_guard_enabled"],
+        is_free_tier=var["autonomous_database_is_free_tier"],
+        is_refreshable_clone=var["autonomous_database_is_refreshable_clone"],
+        state=var["autonomous_database_state"])
     ```
 
 

@@ -130,10 +130,10 @@ def get_ca_bundles(ca_bundle_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ca_bundles = oci.CertificatesManagement.get_ca_bundles(ca_bundle_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_ca_bundles = oci.CertificatesManagement.get_ca_bundles(ca_bundle_id=oci_certificates_management_ca_bundle["test_ca_bundle"]["id"],
+        compartment_id=var["compartment_id"],
+        name=var["ca_bundle_name"],
+        state=var["ca_bundle_state"])
     ```
 
 
@@ -180,10 +180,10 @@ def get_ca_bundles_output(ca_bundle_id: Optional[pulumi.Input[Optional[str]]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_ca_bundles = oci.CertificatesManagement.get_ca_bundles(ca_bundle_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_ca_bundles = oci.CertificatesManagement.get_ca_bundles(ca_bundle_id=oci_certificates_management_ca_bundle["test_ca_bundle"]["id"],
+        compartment_id=var["compartment_id"],
+        name=var["ca_bundle_name"],
+        state=var["ca_bundle_state"])
     ```
 
 

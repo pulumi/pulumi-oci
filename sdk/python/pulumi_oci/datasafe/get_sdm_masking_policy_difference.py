@@ -198,7 +198,7 @@ def get_sdm_masking_policy_difference(sdm_masking_policy_difference_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_sdm_masking_policy_difference = oci.DataSafe.get_sdm_masking_policy_difference(sdm_masking_policy_difference_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_sdm_masking_policy_difference = oci.DataSafe.get_sdm_masking_policy_difference(sdm_masking_policy_difference_id=oci_data_safe_sdm_masking_policy_difference["test_sdm_masking_policy_difference"]["id"])
     ```
 
 
@@ -239,7 +239,7 @@ def get_sdm_masking_policy_difference_output(sdm_masking_policy_difference_id: O
     import pulumi
     import pulumi_oci as oci
 
-    test_sdm_masking_policy_difference = oci.DataSafe.get_sdm_masking_policy_difference(sdm_masking_policy_difference_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_sdm_masking_policy_difference = oci.DataSafe.get_sdm_masking_policy_difference(sdm_masking_policy_difference_id=oci_data_safe_sdm_masking_policy_difference["test_sdm_masking_policy_difference"]["id"])
     ```
 
 

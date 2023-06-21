@@ -206,17 +206,17 @@ def get_database_insights(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database_insights = oci.Opsi.get_database_insights(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        database_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        database_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        enterprise_manager_bridge_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        exadata_insight_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        opsi_private_endpoint_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        states=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        statuses=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_database_insights = oci.Opsi.get_database_insights(compartment_id=var["compartment_id"],
+        compartment_id_in_subtree=var["database_insight_compartment_id_in_subtree"],
+        database_ids=oci_database_database["test_database"]["id"],
+        database_types=var["database_insight_database_type"],
+        enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"],
+        exadata_insight_id=oci_opsi_exadata_insight["test_exadata_insight"]["id"],
+        fields=var["database_insight_fields"],
+        id=var["database_insight_id"],
+        opsi_private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
+        states=var["database_insight_state"],
+        statuses=var["database_insight_status"])
     ```
 
 
@@ -290,17 +290,17 @@ def get_database_insights_output(compartment_id: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_database_insights = oci.Opsi.get_database_insights(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        database_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        database_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        enterprise_manager_bridge_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        exadata_insight_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        opsi_private_endpoint_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        states=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        statuses=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_database_insights = oci.Opsi.get_database_insights(compartment_id=var["compartment_id"],
+        compartment_id_in_subtree=var["database_insight_compartment_id_in_subtree"],
+        database_ids=oci_database_database["test_database"]["id"],
+        database_types=var["database_insight_database_type"],
+        enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"],
+        exadata_insight_id=oci_opsi_exadata_insight["test_exadata_insight"]["id"],
+        fields=var["database_insight_fields"],
+        id=var["database_insight_id"],
+        opsi_private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
+        states=var["database_insight_state"],
+        statuses=var["database_insight_status"])
     ```
 
 

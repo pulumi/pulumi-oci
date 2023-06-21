@@ -280,7 +280,7 @@ def get_boot_volume_backup(boot_volume_backup_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volume_backup = oci.Core.get_boot_volume_backup(boot_volume_backup_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_boot_volume_backup = oci.Core.get_boot_volume_backup(boot_volume_backup_id=oci_core_boot_volume_backup["test_boot_volume_backup"]["id"])
     ```
 
 
@@ -328,7 +328,7 @@ def get_boot_volume_backup_output(boot_volume_backup_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volume_backup = oci.Core.get_boot_volume_backup(boot_volume_backup_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_boot_volume_backup = oci.Core.get_boot_volume_backup(boot_volume_backup_id=oci_core_boot_volume_backup["test_boot_volume_backup"]["id"])
     ```
 
 

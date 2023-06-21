@@ -345,9 +345,9 @@ class Quota(pulumi.CustomResource):
                 "Department": "Finance",
             },
             locks=[oci.limits.QuotaLockArgs(
-                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                message=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                related_resource_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=var["quota_locks_type"],
+                message=var["quota_locks_message"],
+                related_resource_id=oci_limits_related_resource["test_related_resource"]["id"],
             )])
         ```
 
@@ -400,9 +400,9 @@ class Quota(pulumi.CustomResource):
                 "Department": "Finance",
             },
             locks=[oci.limits.QuotaLockArgs(
-                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                message=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                related_resource_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=var["quota_locks_type"],
+                message=var["quota_locks_message"],
+                related_resource_id=oci_limits_related_resource["test_related_resource"]["id"],
             )])
         ```
 

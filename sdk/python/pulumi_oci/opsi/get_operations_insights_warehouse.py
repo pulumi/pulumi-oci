@@ -259,7 +259,7 @@ def get_operations_insights_warehouse(operations_insights_warehouse_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_warehouse = oci.Opsi.get_operations_insights_warehouse(operations_insights_warehouse_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_operations_insights_warehouse = oci.Opsi.get_operations_insights_warehouse(operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"])
     ```
 
 
@@ -306,7 +306,7 @@ def get_operations_insights_warehouse_output(operations_insights_warehouse_id: O
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_warehouse = oci.Opsi.get_operations_insights_warehouse(operations_insights_warehouse_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_operations_insights_warehouse = oci.Opsi.get_operations_insights_warehouse(operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"])
     ```
 
 

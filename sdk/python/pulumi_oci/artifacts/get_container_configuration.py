@@ -87,7 +87,7 @@ def get_container_configuration(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_container_configuration = oci.Artifacts.get_container_configuration(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_container_configuration = oci.Artifacts.get_container_configuration(compartment_id=var["compartment_id"])
     ```
 
 
@@ -119,7 +119,7 @@ def get_container_configuration_output(compartment_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_container_configuration = oci.Artifacts.get_container_configuration(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_container_configuration = oci.Artifacts.get_container_configuration(compartment_id=var["compartment_id"])
     ```
 
 

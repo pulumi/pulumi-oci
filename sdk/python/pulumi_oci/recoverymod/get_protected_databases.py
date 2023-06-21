@@ -146,12 +146,12 @@ def get_protected_databases(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_protected_databases = oci.RecoveryMod.get_protected_databases(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        protection_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        recovery_service_subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_protected_databases = oci.RecoveryMod.get_protected_databases(compartment_id=var["compartment_id"],
+        display_name=var["protected_database_display_name"],
+        id=var["protected_database_id"],
+        protection_policy_id=oci_recovery_protection_policy["test_protection_policy"]["id"],
+        recovery_service_subnet_id=oci_recovery_recovery_service_subnet["test_recovery_service_subnet"]["id"],
+        state=var["protected_database_state"])
     ```
 
 
@@ -204,12 +204,12 @@ def get_protected_databases_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_protected_databases = oci.RecoveryMod.get_protected_databases(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        protection_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        recovery_service_subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_protected_databases = oci.RecoveryMod.get_protected_databases(compartment_id=var["compartment_id"],
+        display_name=var["protected_database_display_name"],
+        id=var["protected_database_id"],
+        protection_policy_id=oci_recovery_protection_policy["test_protection_policy"]["id"],
+        recovery_service_subnet_id=oci_recovery_recovery_service_subnet["test_recovery_service_subnet"]["id"],
+        state=var["protected_database_state"])
     ```
 
 

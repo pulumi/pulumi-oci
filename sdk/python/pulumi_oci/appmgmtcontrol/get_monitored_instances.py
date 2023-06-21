@@ -106,8 +106,8 @@ def get_monitored_instances(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_instances = oci.AppMgmtControl.get_monitored_instances(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_monitored_instances = oci.AppMgmtControl.get_monitored_instances(compartment_id=var["compartment_id"],
+        display_name=var["monitored_instance_display_name"])
     ```
 
 
@@ -145,8 +145,8 @@ def get_monitored_instances_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_instances = oci.AppMgmtControl.get_monitored_instances(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_monitored_instances = oci.AppMgmtControl.get_monitored_instances(compartment_id=var["compartment_id"],
+        display_name=var["monitored_instance_display_name"])
     ```
 
 

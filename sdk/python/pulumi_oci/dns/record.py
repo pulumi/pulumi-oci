@@ -420,25 +420,25 @@ class Record(pulumi.CustomResource):
             __props__ = RecordArgs.__new__(RecordArgs)
 
             __props__.__dict__["compartment_id"] = compartment_id
-            if domain is None and not opts.urn:
-                raise TypeError("Missing required property 'domain'")
             if domain is not None and not opts.urn:
                 warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
                 pulumi.log.warn("""domain is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
+            if domain is None and not opts.urn:
+                raise TypeError("Missing required property 'domain'")
             __props__.__dict__["domain"] = domain
             __props__.__dict__["rdata"] = rdata
-            if rtype is None and not opts.urn:
-                raise TypeError("Missing required property 'rtype'")
             if rtype is not None and not opts.urn:
                 warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
                 pulumi.log.warn("""rtype is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
+            if rtype is None and not opts.urn:
+                raise TypeError("Missing required property 'rtype'")
             __props__.__dict__["rtype"] = rtype
             __props__.__dict__["ttl"] = ttl
-            if zone_name_or_id is None and not opts.urn:
-                raise TypeError("Missing required property 'zone_name_or_id'")
             if zone_name_or_id is not None and not opts.urn:
                 warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
                 pulumi.log.warn("""zone_name_or_id is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
+            if zone_name_or_id is None and not opts.urn:
+                raise TypeError("Missing required property 'zone_name_or_id'")
             __props__.__dict__["zone_name_or_id"] = zone_name_or_id
             __props__.__dict__["is_protected"] = None
             __props__.__dict__["record_hash"] = None

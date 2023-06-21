@@ -100,8 +100,8 @@ def get_repository_authors(filters: Optional[Sequence[pulumi.InputType['GetRepos
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_authors = oci.DevOps.get_repository_authors(repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        ref_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_repository_authors = oci.DevOps.get_repository_authors(repository_id=oci_devops_repository["test_repository"]["id"],
+        ref_name=var["repository_author_ref_name"])
     ```
 
 
@@ -139,8 +139,8 @@ def get_repository_authors_output(filters: Optional[pulumi.Input[Optional[Sequen
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_authors = oci.DevOps.get_repository_authors(repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        ref_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_repository_authors = oci.DevOps.get_repository_authors(repository_id=oci_devops_repository["test_repository"]["id"],
+        ref_name=var["repository_author_ref_name"])
     ```
 
 

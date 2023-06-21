@@ -123,9 +123,9 @@ def get_instance_available_plugin(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_available_plugins = oci.ComputeInstanceAgent.get_instance_available_plugin(os_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        os_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_instance_available_plugins = oci.ComputeInstanceAgent.get_instance_available_plugin(os_name=var["instance_available_plugin_os_name"],
+        os_version=var["instance_available_plugin_os_version"],
+        name=var["instance_available_plugin_name"])
     ```
 
 
@@ -170,9 +170,9 @@ def get_instance_available_plugin_output(compartment_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_available_plugins = oci.ComputeInstanceAgent.get_instance_available_plugin(os_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        os_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_instance_available_plugins = oci.ComputeInstanceAgent.get_instance_available_plugin(os_name=var["instance_available_plugin_os_name"],
+        os_version=var["instance_available_plugin_os_version"],
+        name=var["instance_available_plugin_name"])
     ```
 
 

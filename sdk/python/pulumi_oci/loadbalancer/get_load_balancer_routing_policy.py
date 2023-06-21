@@ -119,8 +119,8 @@ def get_load_balancer_routing_policy(load_balancer_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancer_routing_policy = oci.LoadBalancer.get_load_balancer_routing_policy(load_balancer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        routing_policy_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_load_balancer_routing_policy = oci.LoadBalancer.get_load_balancer_routing_policy(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
+        routing_policy_name=oci_load_balancer_routing_policy["test_routing_policy"]["name"])
     ```
 
 
@@ -158,8 +158,8 @@ def get_load_balancer_routing_policy_output(load_balancer_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancer_routing_policy = oci.LoadBalancer.get_load_balancer_routing_policy(load_balancer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        routing_policy_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_load_balancer_routing_policy = oci.LoadBalancer.get_load_balancer_routing_policy(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
+        routing_policy_name=oci_load_balancer_routing_policy["test_routing_policy"]["name"])
     ```
 
 

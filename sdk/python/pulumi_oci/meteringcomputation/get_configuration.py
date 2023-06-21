@@ -79,7 +79,7 @@ def get_configuration(tenant_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configuration = oci.MeteringComputation.get_configuration(tenant_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_configuration = oci.MeteringComputation.get_configuration(tenant_id=oci_metering_computation_tenant["test_tenant"]["id"])
     ```
 
 
@@ -110,7 +110,7 @@ def get_configuration_output(tenant_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configuration = oci.MeteringComputation.get_configuration(tenant_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_configuration = oci.MeteringComputation.get_configuration(tenant_id=oci_metering_computation_tenant["test_tenant"]["id"])
     ```
 
 

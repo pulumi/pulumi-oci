@@ -462,11 +462,11 @@ class DiscoveryJobsResult(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DiscoveryJobsResultArgs.__new__(DiscoveryJobsResultArgs)
 
-            if discovery_job_id is None and not opts.urn:
-                raise TypeError("Missing required property 'discovery_job_id'")
             if discovery_job_id is not None and not opts.urn:
                 warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
                 pulumi.log.warn("""discovery_job_id is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
+            if discovery_job_id is None and not opts.urn:
+                raise TypeError("Missing required property 'discovery_job_id'")
             __props__.__dict__["discovery_job_id"] = discovery_job_id
             __props__.__dict__["app_defined_child_column_keys"] = None
             __props__.__dict__["app_name"] = None

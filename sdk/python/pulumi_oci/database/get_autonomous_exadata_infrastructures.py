@@ -132,10 +132,10 @@ def get_autonomous_exadata_infrastructures(availability_domain: Optional[str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_exadata_infrastructures = oci.Database.get_autonomous_exadata_infrastructures(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_autonomous_exadata_infrastructures = oci.Database.get_autonomous_exadata_infrastructures(compartment_id=var["compartment_id"],
+        availability_domain=var["autonomous_exadata_infrastructure_availability_domain"],
+        display_name=var["autonomous_exadata_infrastructure_display_name"],
+        state=var["autonomous_exadata_infrastructure_state"])
     ```
 
 
@@ -181,10 +181,10 @@ def get_autonomous_exadata_infrastructures_output(availability_domain: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_exadata_infrastructures = oci.Database.get_autonomous_exadata_infrastructures(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_autonomous_exadata_infrastructures = oci.Database.get_autonomous_exadata_infrastructures(compartment_id=var["compartment_id"],
+        availability_domain=var["autonomous_exadata_infrastructure_availability_domain"],
+        display_name=var["autonomous_exadata_infrastructure_display_name"],
+        state=var["autonomous_exadata_infrastructure_state"])
     ```
 
 

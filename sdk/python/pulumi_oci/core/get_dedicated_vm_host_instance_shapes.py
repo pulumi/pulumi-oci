@@ -114,9 +114,9 @@ def get_dedicated_vm_host_instance_shapes(availability_domain: Optional[str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_host_instance_shapes = oci.Core.get_dedicated_vm_host_instance_shapes(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        dedicated_vm_host_shape=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_dedicated_vm_host_instance_shapes = oci.Core.get_dedicated_vm_host_instance_shapes(compartment_id=var["compartment_id"],
+        availability_domain=var["dedicated_vm_host_instance_shape_availability_domain"],
+        dedicated_vm_host_shape=var["dedicated_vm_host_instance_shape_dedicated_vm_host_shape"])
     ```
 
 
@@ -159,9 +159,9 @@ def get_dedicated_vm_host_instance_shapes_output(availability_domain: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_host_instance_shapes = oci.Core.get_dedicated_vm_host_instance_shapes(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        dedicated_vm_host_shape=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_dedicated_vm_host_instance_shapes = oci.Core.get_dedicated_vm_host_instance_shapes(compartment_id=var["compartment_id"],
+        availability_domain=var["dedicated_vm_host_instance_shape_availability_domain"],
+        dedicated_vm_host_shape=var["dedicated_vm_host_instance_shape_dedicated_vm_host_shape"])
     ```
 
 

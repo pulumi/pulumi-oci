@@ -127,7 +127,7 @@ def get_resource_usage(em_warehouse_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_em_warehouse_resource_usage = oci.EmWarehouse.get_resource_usage(em_warehouse_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_em_warehouse_resource_usage = oci.EmWarehouse.get_resource_usage(em_warehouse_id=oci_em_warehouse_em_warehouse["test_em_warehouse"]["id"])
     ```
 
 
@@ -162,7 +162,7 @@ def get_resource_usage_output(em_warehouse_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_em_warehouse_resource_usage = oci.EmWarehouse.get_resource_usage(em_warehouse_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_em_warehouse_resource_usage = oci.EmWarehouse.get_resource_usage(em_warehouse_id=oci_em_warehouse_em_warehouse["test_em_warehouse"]["id"])
     ```
 
 

@@ -100,8 +100,8 @@ def get_autonomous_container_patches(autonomous_container_database_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_patches = oci.Database.get_autonomous_container_patches(autonomous_container_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_autonomous_container_patches = oci.Database.get_autonomous_container_patches(autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"],
+        compartment_id=var["compartment_id"])
     ```
 
 
@@ -139,8 +139,8 @@ def get_autonomous_container_patches_output(autonomous_container_database_id: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_patches = oci.Database.get_autonomous_container_patches(autonomous_container_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_autonomous_container_patches = oci.Database.get_autonomous_container_patches(autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"],
+        compartment_id=var["compartment_id"])
     ```
 
 

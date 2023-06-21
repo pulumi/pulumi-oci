@@ -113,9 +113,9 @@ def get_ipsec_connection_tunnel_routes(advertiser: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ipsec_connection_tunnel_routes = oci.Core.get_ipsec_connection_tunnel_routes(ipsec_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        tunnel_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        advertiser=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_ipsec_connection_tunnel_routes = oci.Core.get_ipsec_connection_tunnel_routes(ipsec_id=oci_core_ipsec["test_ipsec"]["id"],
+        tunnel_id=oci_core_tunnel["test_tunnel"]["id"],
+        advertiser=var["ipsec_connection_tunnel_route_advertiser"])
     ```
 
 
@@ -157,9 +157,9 @@ def get_ipsec_connection_tunnel_routes_output(advertiser: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_ipsec_connection_tunnel_routes = oci.Core.get_ipsec_connection_tunnel_routes(ipsec_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        tunnel_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        advertiser=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_ipsec_connection_tunnel_routes = oci.Core.get_ipsec_connection_tunnel_routes(ipsec_id=oci_core_ipsec["test_ipsec"]["id"],
+        tunnel_id=oci_core_tunnel["test_tunnel"]["id"],
+        advertiser=var["ipsec_connection_tunnel_route_advertiser"])
     ```
 
 

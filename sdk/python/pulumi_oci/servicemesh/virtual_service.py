@@ -441,7 +441,7 @@ class VirtualService(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
             default_routing_policy=oci.service_mesh.VirtualServiceDefaultRoutingPolicyArgs(
-                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=var["virtual_service_default_routing_policy_type"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -452,8 +452,8 @@ class VirtualService(pulumi.CustomResource):
             },
             hosts=var["virtual_service_hosts"],
             mtls=oci.service_mesh.VirtualServiceMtlsArgs(
-                mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                maximum_validity=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                mode=var["virtual_service_mtls_mode"],
+                maximum_validity=var["virtual_service_mtls_maximum_validity"],
             ))
         ```
 
@@ -502,7 +502,7 @@ class VirtualService(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
             default_routing_policy=oci.service_mesh.VirtualServiceDefaultRoutingPolicyArgs(
-                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=var["virtual_service_default_routing_policy_type"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -513,8 +513,8 @@ class VirtualService(pulumi.CustomResource):
             },
             hosts=var["virtual_service_hosts"],
             mtls=oci.service_mesh.VirtualServiceMtlsArgs(
-                mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                maximum_validity=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                mode=var["virtual_service_mtls_mode"],
+                maximum_validity=var["virtual_service_mtls_maximum_validity"],
             ))
         ```
 

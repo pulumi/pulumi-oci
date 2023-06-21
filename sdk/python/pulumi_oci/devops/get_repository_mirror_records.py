@@ -90,7 +90,7 @@ def get_repository_mirror_records(filters: Optional[Sequence[pulumi.InputType['G
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_mirror_records = oci.DevOps.get_repository_mirror_records(repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_repository_mirror_records = oci.DevOps.get_repository_mirror_records(repository_id=oci_devops_repository["test_repository"]["id"])
     ```
 
 
@@ -124,7 +124,7 @@ def get_repository_mirror_records_output(filters: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_mirror_records = oci.DevOps.get_repository_mirror_records(repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_repository_mirror_records = oci.DevOps.get_repository_mirror_records(repository_id=oci_devops_repository["test_repository"]["id"])
     ```
 
 

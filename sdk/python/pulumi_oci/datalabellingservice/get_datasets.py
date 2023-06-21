@@ -133,11 +133,11 @@ def get_datasets(annotation_format: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_datasets = oci.DataLabellingService.get_datasets(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        annotation_format=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_datasets = oci.DataLabellingService.get_datasets(compartment_id=var["compartment_id"],
+        annotation_format=var["dataset_annotation_format"],
+        display_name=var["dataset_display_name"],
+        id=var["dataset_id"],
+        state=var["dataset_state"])
     ```
 
 
@@ -186,11 +186,11 @@ def get_datasets_output(annotation_format: Optional[pulumi.Input[Optional[str]]]
     import pulumi
     import pulumi_oci as oci
 
-    test_datasets = oci.DataLabellingService.get_datasets(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        annotation_format=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_datasets = oci.DataLabellingService.get_datasets(compartment_id=var["compartment_id"],
+        annotation_format=var["dataset_annotation_format"],
+        display_name=var["dataset_display_name"],
+        id=var["dataset_id"],
+        state=var["dataset_state"])
     ```
 
 

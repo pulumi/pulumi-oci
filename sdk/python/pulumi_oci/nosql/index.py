@@ -291,9 +291,9 @@ class Index(pulumi.CustomResource):
 
         test_index = oci.nosql.Index("testIndex",
             keys=[oci.nosql.IndexKeyArgs(
-                column_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                json_field_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                json_path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                column_name=var["index_keys_column_name"],
+                json_field_type=var["index_keys_json_field_type"],
+                json_path=var["index_keys_json_path"],
             )],
             table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
             compartment_id=var["compartment_id"],
@@ -339,9 +339,9 @@ class Index(pulumi.CustomResource):
 
         test_index = oci.nosql.Index("testIndex",
             keys=[oci.nosql.IndexKeyArgs(
-                column_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                json_field_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                json_path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                column_name=var["index_keys_column_name"],
+                json_field_type=var["index_keys_json_field_type"],
+                json_path=var["index_keys_json_path"],
             )],
             table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
             compartment_id=var["compartment_id"],

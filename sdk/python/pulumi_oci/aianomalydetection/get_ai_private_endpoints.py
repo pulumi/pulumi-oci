@@ -120,10 +120,10 @@ def get_ai_private_endpoints(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ai_private_endpoints = oci.AiAnomalyDetection.get_ai_private_endpoints(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_ai_private_endpoints = oci.AiAnomalyDetection.get_ai_private_endpoints(compartment_id=var["compartment_id"],
+        display_name=var["ai_private_endpoint_display_name"],
+        id=var["ai_private_endpoint_id"],
+        state=var["ai_private_endpoint_state"])
     ```
 
 
@@ -168,10 +168,10 @@ def get_ai_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_ai_private_endpoints = oci.AiAnomalyDetection.get_ai_private_endpoints(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_ai_private_endpoints = oci.AiAnomalyDetection.get_ai_private_endpoints(compartment_id=var["compartment_id"],
+        display_name=var["ai_private_endpoint_display_name"],
+        id=var["ai_private_endpoint_id"],
+        state=var["ai_private_endpoint_state"])
     ```
 
 

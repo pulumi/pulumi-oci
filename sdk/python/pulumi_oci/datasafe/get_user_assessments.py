@@ -254,19 +254,19 @@ def get_user_assessments(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessments = oci.DataSafe.get_user_assessments(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_baseline=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_schedule_assessment=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        schedule_user_assessment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        triggered_by=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_user_assessments = oci.DataSafe.get_user_assessments(compartment_id=var["compartment_id"],
+        access_level=var["user_assessment_access_level"],
+        compartment_id_in_subtree=var["user_assessment_compartment_id_in_subtree"],
+        display_name=var["user_assessment_display_name"],
+        is_baseline=var["user_assessment_is_baseline"],
+        is_schedule_assessment=var["user_assessment_is_schedule_assessment"],
+        schedule_user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
+        state=var["user_assessment_state"],
+        target_id=oci_cloud_guard_target["test_target"]["id"],
+        time_created_greater_than_or_equal_to=var["user_assessment_time_created_greater_than_or_equal_to"],
+        time_created_less_than=var["user_assessment_time_created_less_than"],
+        triggered_by=var["user_assessment_triggered_by"],
+        type=var["user_assessment_type"])
     ```
 
 
@@ -367,19 +367,19 @@ def get_user_assessments_output(access_level: Optional[pulumi.Input[Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessments = oci.DataSafe.get_user_assessments(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_baseline=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_schedule_assessment=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        schedule_user_assessment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        triggered_by=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_user_assessments = oci.DataSafe.get_user_assessments(compartment_id=var["compartment_id"],
+        access_level=var["user_assessment_access_level"],
+        compartment_id_in_subtree=var["user_assessment_compartment_id_in_subtree"],
+        display_name=var["user_assessment_display_name"],
+        is_baseline=var["user_assessment_is_baseline"],
+        is_schedule_assessment=var["user_assessment_is_schedule_assessment"],
+        schedule_user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
+        state=var["user_assessment_state"],
+        target_id=oci_cloud_guard_target["test_target"]["id"],
+        time_created_greater_than_or_equal_to=var["user_assessment_time_created_greater_than_or_equal_to"],
+        time_created_less_than=var["user_assessment_time_created_less_than"],
+        triggered_by=var["user_assessment_triggered_by"],
+        type=var["user_assessment_type"])
     ```
 
 

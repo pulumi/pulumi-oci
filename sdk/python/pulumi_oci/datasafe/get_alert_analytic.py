@@ -168,15 +168,15 @@ def get_alert_analytic(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_analytic = oci.DataSafe.get_alert_analytic(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        group_bies=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        query_time_zone=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        scim_query=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        summary_fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_ended=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_started=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_alert_analytic = oci.DataSafe.get_alert_analytic(compartment_id=var["compartment_id"],
+        access_level=var["alert_analytic_access_level"],
+        compartment_id_in_subtree=var["alert_analytic_compartment_id_in_subtree"],
+        group_bies=var["alert_analytic_group_by"],
+        query_time_zone=var["alert_analytic_query_time_zone"],
+        scim_query=var["alert_analytic_scim_query"],
+        summary_fields=var["alert_analytic_summary_field"],
+        time_ended=var["alert_analytic_time_ended"],
+        time_started=var["alert_analytic_time_started"])
     ```
 
 
@@ -241,15 +241,15 @@ def get_alert_analytic_output(access_level: Optional[pulumi.Input[Optional[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_analytic = oci.DataSafe.get_alert_analytic(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        group_bies=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        query_time_zone=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        scim_query=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        summary_fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_ended=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_started=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_alert_analytic = oci.DataSafe.get_alert_analytic(compartment_id=var["compartment_id"],
+        access_level=var["alert_analytic_access_level"],
+        compartment_id_in_subtree=var["alert_analytic_compartment_id_in_subtree"],
+        group_bies=var["alert_analytic_group_by"],
+        query_time_zone=var["alert_analytic_query_time_zone"],
+        scim_query=var["alert_analytic_scim_query"],
+        summary_fields=var["alert_analytic_summary_field"],
+        time_ended=var["alert_analytic_time_ended"],
+        time_started=var["alert_analytic_time_started"])
     ```
 
 

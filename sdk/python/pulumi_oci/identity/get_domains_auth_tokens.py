@@ -209,14 +209,14 @@ def get_domains_auth_tokens(attribute_sets: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_auth_tokens = oci.Identity.get_domains_auth_tokens(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        auth_token_count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        auth_token_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_auth_tokens = oci.Identity.get_domains_auth_tokens(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        auth_token_count=var["auth_token_auth_token_count"],
+        auth_token_filter=var["auth_token_auth_token_filter"],
         attribute_sets=[],
         attributes="",
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        start_index=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        authorization=var["auth_token_authorization"],
+        resource_type_schema_version=var["auth_token_resource_type_schema_version"],
+        start_index=var["auth_token_start_index"])
     ```
 
 
@@ -287,14 +287,14 @@ def get_domains_auth_tokens_output(attribute_sets: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_auth_tokens = oci.Identity.get_domains_auth_tokens(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        auth_token_count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        auth_token_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_auth_tokens = oci.Identity.get_domains_auth_tokens(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        auth_token_count=var["auth_token_auth_token_count"],
+        auth_token_filter=var["auth_token_auth_token_filter"],
         attribute_sets=[],
         attributes="",
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        start_index=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        authorization=var["auth_token_authorization"],
+        resource_type_schema_version=var["auth_token_resource_type_schema_version"],
+        start_index=var["auth_token_start_index"])
     ```
 
 

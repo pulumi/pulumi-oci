@@ -124,9 +124,9 @@ def get_oda_private_endpoints(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_private_endpoints = oci.Oda.get_oda_private_endpoints(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_oda_private_endpoints = oci.Oda.get_oda_private_endpoints(compartment_id=var["compartment_id"],
+        display_name=var["oda_private_endpoint_display_name"],
+        state=var["oda_private_endpoint_state"])
     ```
 
 
@@ -173,9 +173,9 @@ def get_oda_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_private_endpoints = oci.Oda.get_oda_private_endpoints(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_oda_private_endpoints = oci.Oda.get_oda_private_endpoints(compartment_id=var["compartment_id"],
+        display_name=var["oda_private_endpoint_display_name"],
+        state=var["oda_private_endpoint_state"])
     ```
 
 

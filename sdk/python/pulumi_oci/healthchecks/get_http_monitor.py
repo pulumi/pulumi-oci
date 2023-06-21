@@ -270,7 +270,7 @@ def get_http_monitor(monitor_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_http_monitor = oci.HealthChecks.get_http_monitor(monitor_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_http_monitor = oci.HealthChecks.get_http_monitor(monitor_id=oci_apm_synthetics_monitor["test_monitor"]["id"])
     ```
 
 
@@ -317,7 +317,7 @@ def get_http_monitor_output(monitor_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_http_monitor = oci.HealthChecks.get_http_monitor(monitor_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_http_monitor = oci.HealthChecks.get_http_monitor(monitor_id=oci_apm_synthetics_monitor["test_monitor"]["id"])
     ```
 
 

@@ -277,7 +277,7 @@ def get_audit_policy(audit_policy_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_policy = oci.DataSafe.get_audit_policy(audit_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_audit_policy = oci.DataSafe.get_audit_policy(audit_policy_id=oci_data_safe_audit_policy["test_audit_policy"]["id"])
     ```
 
 
@@ -325,7 +325,7 @@ def get_audit_policy_output(audit_policy_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_policy = oci.DataSafe.get_audit_policy(audit_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_audit_policy = oci.DataSafe.get_audit_policy(audit_policy_id=oci_data_safe_audit_policy["test_audit_policy"]["id"])
     ```
 
 

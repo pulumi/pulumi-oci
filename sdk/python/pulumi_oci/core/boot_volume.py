@@ -637,18 +637,18 @@ class BootVolume(pulumi.CustomResource):
         test_boot_volume = oci.core.BootVolume("testBootVolume",
             compartment_id=var["compartment_id"],
             source_details=oci.core.BootVolumeSourceDetailsArgs(
-                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                id=var["boot_volume_source_details_id"],
+                type=var["boot_volume_source_details_type"],
             ),
             autotune_policies=[oci.core.BootVolumeAutotunePolicyArgs(
-                autotune_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                max_vpus_per_gb=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                autotune_type=var["boot_volume_autotune_policies_autotune_type"],
+                max_vpus_per_gb=var["boot_volume_autotune_policies_max_vpus_per_gb"],
             )],
             availability_domain=var["boot_volume_availability_domain"],
             backup_policy_id=data["oci_core_volume_backup_policies"]["test_volume_backup_policies"]["volume_backup_policies"][0]["id"],
             boot_volume_replicas=[oci.core.BootVolumeBootVolumeReplicaArgs(
-                availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                availability_domain=var["boot_volume_boot_volume_replicas_availability_domain"],
+                display_name=var["boot_volume_boot_volume_replicas_display_name"],
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -712,18 +712,18 @@ class BootVolume(pulumi.CustomResource):
         test_boot_volume = oci.core.BootVolume("testBootVolume",
             compartment_id=var["compartment_id"],
             source_details=oci.core.BootVolumeSourceDetailsArgs(
-                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                id=var["boot_volume_source_details_id"],
+                type=var["boot_volume_source_details_type"],
             ),
             autotune_policies=[oci.core.BootVolumeAutotunePolicyArgs(
-                autotune_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                max_vpus_per_gb=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                autotune_type=var["boot_volume_autotune_policies_autotune_type"],
+                max_vpus_per_gb=var["boot_volume_autotune_policies_max_vpus_per_gb"],
             )],
             availability_domain=var["boot_volume_availability_domain"],
             backup_policy_id=data["oci_core_volume_backup_policies"]["test_volume_backup_policies"]["volume_backup_policies"][0]["id"],
             boot_volume_replicas=[oci.core.BootVolumeBootVolumeReplicaArgs(
-                availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                availability_domain=var["boot_volume_boot_volume_replicas_availability_domain"],
+                display_name=var["boot_volume_boot_volume_replicas_display_name"],
             )],
             defined_tags={
                 "Operations.CostCenter": "42",

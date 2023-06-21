@@ -120,10 +120,10 @@ def get_security_policies(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policies = oci.CloudGuard.get_security_policies(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_security_policies = oci.CloudGuard.get_security_policies(compartment_id=var["compartment_id"],
+        display_name=var["security_policy_display_name"],
+        id=var["security_policy_id"],
+        state=var["security_policy_state"])
     ```
 
 
@@ -168,10 +168,10 @@ def get_security_policies_output(compartment_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policies = oci.CloudGuard.get_security_policies(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_security_policies = oci.CloudGuard.get_security_policies(compartment_id=var["compartment_id"],
+        display_name=var["security_policy_display_name"],
+        id=var["security_policy_id"],
+        state=var["security_policy_state"])
     ```
 
 

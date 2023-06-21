@@ -543,30 +543,30 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
             destination=var["network_security_group_security_rule_destination"],
             destination_type=var["network_security_group_security_rule_destination_type"],
             icmp_options=oci.core.NetworkSecurityGroupSecurityRuleIcmpOptionsArgs(
-                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                code=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=var["network_security_group_security_rule_icmp_options_type"],
+                code=var["network_security_group_security_rule_icmp_options_code"],
             ),
             source=var["network_security_group_security_rule_source"],
             source_type=var["network_security_group_security_rule_source_type"],
             stateless=var["network_security_group_security_rule_stateless"],
             tcp_options=oci.core.NetworkSecurityGroupSecurityRuleTcpOptionsArgs(
                 destination_port_range=oci.core.NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgs(
-                    max=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    min=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    max=var["network_security_group_security_rule_tcp_options_destination_port_range_max"],
+                    min=var["network_security_group_security_rule_tcp_options_destination_port_range_min"],
                 ),
                 source_port_range=oci.core.NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeArgs(
-                    max=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    min=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    max=var["network_security_group_security_rule_tcp_options_source_port_range_max"],
+                    min=var["network_security_group_security_rule_tcp_options_source_port_range_min"],
                 ),
             ),
             udp_options=oci.core.NetworkSecurityGroupSecurityRuleUdpOptionsArgs(
                 destination_port_range=oci.core.NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeArgs(
-                    max=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    min=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    max=var["network_security_group_security_rule_udp_options_destination_port_range_max"],
+                    min=var["network_security_group_security_rule_udp_options_destination_port_range_min"],
                 ),
                 source_port_range=oci.core.NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeArgs(
-                    max=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    min=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    max=var["network_security_group_security_rule_udp_options_source_port_range_max"],
+                    min=var["network_security_group_security_rule_udp_options_source_port_range_min"],
                 ),
             ))
         ```
@@ -635,30 +635,30 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
             destination=var["network_security_group_security_rule_destination"],
             destination_type=var["network_security_group_security_rule_destination_type"],
             icmp_options=oci.core.NetworkSecurityGroupSecurityRuleIcmpOptionsArgs(
-                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                code=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=var["network_security_group_security_rule_icmp_options_type"],
+                code=var["network_security_group_security_rule_icmp_options_code"],
             ),
             source=var["network_security_group_security_rule_source"],
             source_type=var["network_security_group_security_rule_source_type"],
             stateless=var["network_security_group_security_rule_stateless"],
             tcp_options=oci.core.NetworkSecurityGroupSecurityRuleTcpOptionsArgs(
                 destination_port_range=oci.core.NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgs(
-                    max=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    min=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    max=var["network_security_group_security_rule_tcp_options_destination_port_range_max"],
+                    min=var["network_security_group_security_rule_tcp_options_destination_port_range_min"],
                 ),
                 source_port_range=oci.core.NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeArgs(
-                    max=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    min=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    max=var["network_security_group_security_rule_tcp_options_source_port_range_max"],
+                    min=var["network_security_group_security_rule_tcp_options_source_port_range_min"],
                 ),
             ),
             udp_options=oci.core.NetworkSecurityGroupSecurityRuleUdpOptionsArgs(
                 destination_port_range=oci.core.NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeArgs(
-                    max=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    min=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    max=var["network_security_group_security_rule_udp_options_destination_port_range_max"],
+                    min=var["network_security_group_security_rule_udp_options_destination_port_range_min"],
                 ),
                 source_port_range=oci.core.NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeArgs(
-                    max=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    min=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    max=var["network_security_group_security_rule_udp_options_source_port_range_max"],
+                    min=var["network_security_group_security_rule_udp_options_source_port_range_min"],
                 ),
             ))
         ```

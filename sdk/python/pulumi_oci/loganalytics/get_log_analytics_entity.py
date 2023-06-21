@@ -304,8 +304,8 @@ def get_log_analytics_entity(log_analytics_entity_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity = oci.LogAnalytics.get_log_analytics_entity(log_analytics_entity_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_log_analytics_entity = oci.LogAnalytics.get_log_analytics_entity(log_analytics_entity_id=oci_log_analytics_log_analytics_entity["test_log_analytics_entity"]["id"],
+        namespace=var["log_analytics_entity_namespace"])
     ```
 
 
@@ -358,8 +358,8 @@ def get_log_analytics_entity_output(log_analytics_entity_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity = oci.LogAnalytics.get_log_analytics_entity(log_analytics_entity_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_log_analytics_entity = oci.LogAnalytics.get_log_analytics_entity(log_analytics_entity_id=oci_log_analytics_log_analytics_entity["test_log_analytics_entity"]["id"],
+        namespace=var["log_analytics_entity_namespace"])
     ```
 
 

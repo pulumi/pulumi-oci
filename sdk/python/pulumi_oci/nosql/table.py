@@ -396,10 +396,10 @@ class Table(pulumi.CustomResource):
             },
             is_auto_reclaimable=var["table_is_auto_reclaimable"],
             table_limits=oci.nosql.TableTableLimitsArgs(
-                max_read_units=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                max_storage_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                max_write_units=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                capacity_mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                max_read_units=var["table_table_limits_max_read_units"],
+                max_storage_in_gbs=var["table_table_limits_max_storage_in_gbs"],
+                max_write_units=var["table_table_limits_max_write_units"],
+                capacity_mode=var["table_table_limits_capacity_mode"],
             ))
         ```
 
@@ -447,10 +447,10 @@ class Table(pulumi.CustomResource):
             },
             is_auto_reclaimable=var["table_is_auto_reclaimable"],
             table_limits=oci.nosql.TableTableLimitsArgs(
-                max_read_units=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                max_storage_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                max_write_units=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                capacity_mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                max_read_units=var["table_table_limits_max_read_units"],
+                max_storage_in_gbs=var["table_table_limits_max_storage_in_gbs"],
+                max_write_units=var["table_table_limits_max_write_units"],
+                capacity_mode=var["table_table_limits_capacity_mode"],
             ))
         ```
 

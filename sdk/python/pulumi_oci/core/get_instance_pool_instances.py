@@ -116,9 +116,9 @@ def get_instance_pool_instances(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_pool_instances = oci.Core.get_instance_pool_instances(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        instance_pool_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_instance_pool_instances = oci.Core.get_instance_pool_instances(compartment_id=var["compartment_id"],
+        instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"],
+        display_name=var["instance_pool_instance_display_name"])
     ```
 
 
@@ -160,9 +160,9 @@ def get_instance_pool_instances_output(compartment_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_pool_instances = oci.Core.get_instance_pool_instances(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        instance_pool_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_instance_pool_instances = oci.Core.get_instance_pool_instances(compartment_id=var["compartment_id"],
+        instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"],
+        display_name=var["instance_pool_instance_display_name"])
     ```
 
 

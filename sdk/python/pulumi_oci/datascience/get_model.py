@@ -277,7 +277,7 @@ def get_model(model_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model = oci.DataScience.get_model(model_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_model = oci.DataScience.get_model(model_id=oci_datascience_model["test_model"]["id"])
     ```
 
 
@@ -326,7 +326,7 @@ def get_model_output(model_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model = oci.DataScience.get_model(model_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_model = oci.DataScience.get_model(model_id=oci_datascience_model["test_model"]["id"])
     ```
 
 

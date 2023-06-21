@@ -132,10 +132,10 @@ def get_autonomous_vm_clusters(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_vm_clusters = oci.Database.get_autonomous_vm_clusters(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_autonomous_vm_clusters = oci.Database.get_autonomous_vm_clusters(compartment_id=var["compartment_id"],
+        display_name=var["autonomous_vm_cluster_display_name"],
+        exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
+        state=var["autonomous_vm_cluster_state"])
     ```
 
 
@@ -181,10 +181,10 @@ def get_autonomous_vm_clusters_output(compartment_id: Optional[pulumi.Input[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_vm_clusters = oci.Database.get_autonomous_vm_clusters(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_autonomous_vm_clusters = oci.Database.get_autonomous_vm_clusters(compartment_id=var["compartment_id"],
+        display_name=var["autonomous_vm_cluster_display_name"],
+        exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
+        state=var["autonomous_vm_cluster_state"])
     ```
 
 

@@ -211,7 +211,7 @@ def get_compute_capacity_reservation(capacity_reservation_id: Optional[str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_reservation = oci.Core.get_compute_capacity_reservation(capacity_reservation_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_compute_capacity_reservation = oci.Core.get_compute_capacity_reservation(capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"])
     ```
 
 
@@ -253,7 +253,7 @@ def get_compute_capacity_reservation_output(capacity_reservation_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_reservation = oci.Core.get_compute_capacity_reservation(capacity_reservation_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_compute_capacity_reservation = oci.Core.get_compute_capacity_reservation(capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"])
     ```
 
 

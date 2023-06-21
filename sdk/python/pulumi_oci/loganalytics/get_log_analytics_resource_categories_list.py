@@ -121,10 +121,10 @@ def get_log_analytics_resource_categories_list(namespace: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_resource_categories_list = oci.LogAnalytics.get_log_analytics_resource_categories_list(namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_categories=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_log_analytics_resource_categories_list = oci.LogAnalytics.get_log_analytics_resource_categories_list(namespace=var["log_analytics_resource_categories_list_namespace"],
+        resource_ids=var["log_analytics_resource_categories_list_resource_ids"],
+        resource_types=var["log_analytics_resource_categories_list_resource_types"],
+        resource_categories=var["log_analytics_resource_categories_list_resource_categories"])
     ```
 
 
@@ -168,10 +168,10 @@ def get_log_analytics_resource_categories_list_output(namespace: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_resource_categories_list = oci.LogAnalytics.get_log_analytics_resource_categories_list(namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_categories=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_log_analytics_resource_categories_list = oci.LogAnalytics.get_log_analytics_resource_categories_list(namespace=var["log_analytics_resource_categories_list_namespace"],
+        resource_ids=var["log_analytics_resource_categories_list_resource_ids"],
+        resource_types=var["log_analytics_resource_categories_list_resource_types"],
+        resource_categories=var["log_analytics_resource_categories_list_resource_categories"])
     ```
 
 

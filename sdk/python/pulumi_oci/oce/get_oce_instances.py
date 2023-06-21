@@ -129,10 +129,10 @@ def get_oce_instances(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oce_instances = oci.Oce.get_oce_instances(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        tenancy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_oce_instances = oci.Oce.get_oce_instances(compartment_id=var["compartment_id"],
+        display_name=var["oce_instance_display_name"],
+        state=var["oce_instance_state"],
+        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
     ```
 
 
@@ -178,10 +178,10 @@ def get_oce_instances_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oce_instances = oci.Oce.get_oce_instances(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        tenancy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_oce_instances = oci.Oce.get_oce_instances(compartment_id=var["compartment_id"],
+        display_name=var["oce_instance_display_name"],
+        state=var["oce_instance_state"],
+        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
     ```
 
 

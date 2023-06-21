@@ -123,10 +123,10 @@ def get_recommendation_strategies(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_recommendation_strategies = oci.Optimizer.get_recommendation_strategies(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        recommendation_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_recommendation_strategies = oci.Optimizer.get_recommendation_strategies(compartment_id=var["compartment_id"],
+        compartment_id_in_subtree=var["recommendation_strategy_compartment_id_in_subtree"],
+        name=var["recommendation_strategy_name"],
+        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"])
     ```
 
 
@@ -174,10 +174,10 @@ def get_recommendation_strategies_output(compartment_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_recommendation_strategies = oci.Optimizer.get_recommendation_strategies(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        recommendation_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_recommendation_strategies = oci.Optimizer.get_recommendation_strategies(compartment_id=var["compartment_id"],
+        compartment_id_in_subtree=var["recommendation_strategy_compartment_id_in_subtree"],
+        name=var["recommendation_strategy_name"],
+        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"])
     ```
 
 

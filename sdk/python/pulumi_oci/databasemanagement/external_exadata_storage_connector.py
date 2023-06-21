@@ -387,11 +387,11 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
             connection_uri=var["external_exadata_storage_connector_connection_uri"],
             connector_name=var["external_exadata_storage_connector_connector_name"],
             credential_info=oci.database_management.ExternalExadataStorageConnectorCredentialInfoArgs(
-                password=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                username=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                ssl_trust_store_location=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                ssl_trust_store_password=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                ssl_trust_store_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                password=var["external_exadata_storage_connector_credential_info_password"],
+                username=var["external_exadata_storage_connector_credential_info_username"],
+                ssl_trust_store_location=var["external_exadata_storage_connector_credential_info_ssl_trust_store_location"],
+                ssl_trust_store_password=var["external_exadata_storage_connector_credential_info_ssl_trust_store_password"],
+                ssl_trust_store_type=var["external_exadata_storage_connector_credential_info_ssl_trust_store_type"],
             ),
             storage_server_id=oci_database_management_storage_server["test_storage_server"]["id"])
         ```
@@ -438,11 +438,11 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
             connection_uri=var["external_exadata_storage_connector_connection_uri"],
             connector_name=var["external_exadata_storage_connector_connector_name"],
             credential_info=oci.database_management.ExternalExadataStorageConnectorCredentialInfoArgs(
-                password=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                username=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                ssl_trust_store_location=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                ssl_trust_store_password=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                ssl_trust_store_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                password=var["external_exadata_storage_connector_credential_info_password"],
+                username=var["external_exadata_storage_connector_credential_info_username"],
+                ssl_trust_store_location=var["external_exadata_storage_connector_credential_info_ssl_trust_store_location"],
+                ssl_trust_store_password=var["external_exadata_storage_connector_credential_info_ssl_trust_store_password"],
+                ssl_trust_store_type=var["external_exadata_storage_connector_credential_info_ssl_trust_store_type"],
             ),
             storage_server_id=oci_database_management_storage_server["test_storage_server"]["id"])
         ```

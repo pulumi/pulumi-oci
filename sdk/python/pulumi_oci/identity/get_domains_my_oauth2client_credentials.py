@@ -189,12 +189,12 @@ def get_domains_my_oauth2client_credentials(authorization: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_my_oauth2client_credentials = oci.Identity.get_domains_my_oauth2client_credentials(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        my_oauth2client_credential_count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        my_oauth2client_credential_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        start_index=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_my_oauth2client_credentials = oci.Identity.get_domains_my_oauth2client_credentials(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        my_oauth2client_credential_count=var["my_oauth2client_credential_my_oauth2client_credential_count"],
+        my_oauth2client_credential_filter=var["my_oauth2client_credential_my_oauth2client_credential_filter"],
+        authorization=var["my_oauth2client_credential_authorization"],
+        resource_type_schema_version=var["my_oauth2client_credential_resource_type_schema_version"],
+        start_index=var["my_oauth2client_credential_start_index"])
     ```
 
 
@@ -257,12 +257,12 @@ def get_domains_my_oauth2client_credentials_output(authorization: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_my_oauth2client_credentials = oci.Identity.get_domains_my_oauth2client_credentials(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        my_oauth2client_credential_count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        my_oauth2client_credential_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        start_index=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_my_oauth2client_credentials = oci.Identity.get_domains_my_oauth2client_credentials(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        my_oauth2client_credential_count=var["my_oauth2client_credential_my_oauth2client_credential_count"],
+        my_oauth2client_credential_filter=var["my_oauth2client_credential_my_oauth2client_credential_filter"],
+        authorization=var["my_oauth2client_credential_authorization"],
+        resource_type_schema_version=var["my_oauth2client_credential_resource_type_schema_version"],
+        start_index=var["my_oauth2client_credential_start_index"])
     ```
 
 

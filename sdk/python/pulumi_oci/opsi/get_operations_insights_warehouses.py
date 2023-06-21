@@ -121,10 +121,10 @@ def get_operations_insights_warehouses(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_warehouses = oci.Opsi.get_operations_insights_warehouses(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        states=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_operations_insights_warehouses = oci.Opsi.get_operations_insights_warehouses(compartment_id=var["compartment_id"],
+        display_name=var["operations_insights_warehouse_display_name"],
+        id=var["operations_insights_warehouse_id"],
+        states=var["operations_insights_warehouse_state"])
     ```
 
 
@@ -170,10 +170,10 @@ def get_operations_insights_warehouses_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_warehouses = oci.Opsi.get_operations_insights_warehouses(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        states=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_operations_insights_warehouses = oci.Opsi.get_operations_insights_warehouses(compartment_id=var["compartment_id"],
+        display_name=var["operations_insights_warehouse_display_name"],
+        id=var["operations_insights_warehouse_id"],
+        states=var["operations_insights_warehouse_state"])
     ```
 
 

@@ -130,8 +130,8 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
         test_log_analytics_preferences_management = oci.log_analytics.LogAnalyticsPreferencesManagement("testLogAnalyticsPreferencesManagement",
             namespace=var["log_analytics_preferences_management_namespace"],
             items=[oci.log_analytics.LogAnalyticsPreferencesManagementItemArgs(
-                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=var["log_analytics_preferences_management_items_name"],
+                value=var["log_analytics_preferences_management_items_value"],
             )])
         ```
 
@@ -168,8 +168,8 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
         test_log_analytics_preferences_management = oci.log_analytics.LogAnalyticsPreferencesManagement("testLogAnalyticsPreferencesManagement",
             namespace=var["log_analytics_preferences_management_namespace"],
             items=[oci.log_analytics.LogAnalyticsPreferencesManagementItemArgs(
-                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=var["log_analytics_preferences_management_items_name"],
+                value=var["log_analytics_preferences_management_items_value"],
             )])
         ```
 

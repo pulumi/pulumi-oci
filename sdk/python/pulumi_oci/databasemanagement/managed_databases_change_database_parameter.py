@@ -212,16 +212,16 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
 
         test_managed_databases_change_database_parameter = oci.database_management.ManagedDatabasesChangeDatabaseParameter("testManagedDatabasesChangeDatabaseParameter",
             credentials=oci.database_management.ManagedDatabasesChangeDatabaseParameterCredentialsArgs(
-                password=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                role=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                user_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                password=var["managed_databases_change_database_parameter_credentials_password"],
+                role=var["managed_databases_change_database_parameter_credentials_role"],
+                secret_id=oci_vault_secret["test_secret"]["id"],
+                user_name=oci_identity_user["test_user"]["name"],
             ),
             managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
             parameters=[oci.database_management.ManagedDatabasesChangeDatabaseParameterParameterArgs(
-                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                update_comment=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=var["managed_databases_change_database_parameter_parameters_name"],
+                value=var["managed_databases_change_database_parameter_parameters_value"],
+                update_comment=var["managed_databases_change_database_parameter_parameters_update_comment"],
             )],
             scope=var["managed_databases_change_database_parameter_scope"])
         ```
@@ -274,16 +274,16 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
 
         test_managed_databases_change_database_parameter = oci.database_management.ManagedDatabasesChangeDatabaseParameter("testManagedDatabasesChangeDatabaseParameter",
             credentials=oci.database_management.ManagedDatabasesChangeDatabaseParameterCredentialsArgs(
-                password=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                role=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                user_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                password=var["managed_databases_change_database_parameter_credentials_password"],
+                role=var["managed_databases_change_database_parameter_credentials_role"],
+                secret_id=oci_vault_secret["test_secret"]["id"],
+                user_name=oci_identity_user["test_user"]["name"],
             ),
             managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
             parameters=[oci.database_management.ManagedDatabasesChangeDatabaseParameterParameterArgs(
-                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                update_comment=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=var["managed_databases_change_database_parameter_parameters_name"],
+                value=var["managed_databases_change_database_parameter_parameters_value"],
+                update_comment=var["managed_databases_change_database_parameter_parameters_update_comment"],
             )],
             scope=var["managed_databases_change_database_parameter_scope"])
         ```

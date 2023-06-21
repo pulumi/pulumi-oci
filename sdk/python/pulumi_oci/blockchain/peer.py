@@ -275,7 +275,7 @@ class Peer(pulumi.CustomResource):
             ad=var["peer_ad"],
             blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
             ocpu_allocation_param=oci.blockchain.PeerOcpuAllocationParamArgs(
-                ocpu_allocation_number=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                ocpu_allocation_number=var["peer_ocpu_allocation_param_ocpu_allocation_number"],
             ),
             role=var["peer_role"],
             alias=var["peer_alias"])
@@ -322,7 +322,7 @@ class Peer(pulumi.CustomResource):
             ad=var["peer_ad"],
             blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
             ocpu_allocation_param=oci.blockchain.PeerOcpuAllocationParamArgs(
-                ocpu_allocation_number=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                ocpu_allocation_number=var["peer_ocpu_allocation_param_ocpu_allocation_number"],
             ),
             role=var["peer_role"],
             alias=var["peer_alias"])

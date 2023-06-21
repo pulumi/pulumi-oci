@@ -156,9 +156,9 @@ def get_object_head(bucket: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object_head = oci.ObjectStorage.get_object_head(bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        object=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_object_head = oci.ObjectStorage.get_object_head(bucket=var["object_bucket"],
+        namespace=var["object_namespace"],
+        object=var["object_object"])
     ```
 
 
@@ -202,9 +202,9 @@ def get_object_head_output(bucket: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object_head = oci.ObjectStorage.get_object_head(bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        object=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_object_head = oci.ObjectStorage.get_object_head(bucket=var["object_bucket"],
+        namespace=var["object_namespace"],
+        object=var["object_object"])
     ```
 
 

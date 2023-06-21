@@ -165,13 +165,13 @@ def get_sdm_masking_policy_differences(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sdm_masking_policy_differences = oci.DataSafe.get_sdm_masking_policy_differences(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        difference_access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        masking_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        sensitive_data_model_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_sdm_masking_policy_differences = oci.DataSafe.get_sdm_masking_policy_differences(compartment_id=var["compartment_id"],
+        compartment_id_in_subtree=var["sdm_masking_policy_difference_compartment_id_in_subtree"],
+        difference_access_level=var["sdm_masking_policy_difference_difference_access_level"],
+        display_name=var["sdm_masking_policy_difference_display_name"],
+        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
+        sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
+        state=var["sdm_masking_policy_difference_state"])
     ```
 
 
@@ -229,13 +229,13 @@ def get_sdm_masking_policy_differences_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_sdm_masking_policy_differences = oci.DataSafe.get_sdm_masking_policy_differences(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        difference_access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        masking_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        sensitive_data_model_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_sdm_masking_policy_differences = oci.DataSafe.get_sdm_masking_policy_differences(compartment_id=var["compartment_id"],
+        compartment_id_in_subtree=var["sdm_masking_policy_difference_compartment_id_in_subtree"],
+        difference_access_level=var["sdm_masking_policy_difference_difference_access_level"],
+        display_name=var["sdm_masking_policy_difference_display_name"],
+        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
+        sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
+        state=var["sdm_masking_policy_difference_state"])
     ```
 
 

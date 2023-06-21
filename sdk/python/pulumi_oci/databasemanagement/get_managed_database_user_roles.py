@@ -113,9 +113,9 @@ def get_managed_database_user_roles(filters: Optional[Sequence[pulumi.InputType[
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_roles = oci.DatabaseManagement.get_managed_database_user_roles(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        user_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_managed_database_user_roles = oci.DatabaseManagement.get_managed_database_user_roles(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
+        user_name=oci_identity_user["test_user"]["name"],
+        name=var["managed_database_user_role_name"])
     ```
 
 
@@ -157,9 +157,9 @@ def get_managed_database_user_roles_output(filters: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_roles = oci.DatabaseManagement.get_managed_database_user_roles(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        user_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_managed_database_user_roles = oci.DatabaseManagement.get_managed_database_user_roles(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
+        user_name=oci_identity_user["test_user"]["name"],
+        name=var["managed_database_user_role_name"])
     ```
 
 

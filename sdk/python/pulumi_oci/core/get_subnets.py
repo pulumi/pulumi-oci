@@ -133,10 +133,10 @@ def get_subnets(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subnets = oci.Core.get_subnets(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_subnets = oci.Core.get_subnets(compartment_id=var["compartment_id"],
+        display_name=var["subnet_display_name"],
+        state=var["subnet_state"],
+        vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
 
 
@@ -183,10 +183,10 @@ def get_subnets_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subnets = oci.Core.get_subnets(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_subnets = oci.Core.get_subnets(compartment_id=var["compartment_id"],
+        display_name=var["subnet_display_name"],
+        state=var["subnet_state"],
+        vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
 
 

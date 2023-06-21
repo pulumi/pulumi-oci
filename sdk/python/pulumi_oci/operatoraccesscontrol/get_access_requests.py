@@ -152,12 +152,12 @@ def get_access_requests(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_access_requests = oci.OperatorAccessControl.get_access_requests(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_end=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_start=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_access_requests = oci.OperatorAccessControl.get_access_requests(compartment_id=var["compartment_id"],
+        resource_name=var["access_request_resource_name"],
+        resource_type=var["access_request_resource_type"],
+        state=var["access_request_state"],
+        time_end=var["access_request_time_end"],
+        time_start=var["access_request_time_start"])
     ```
 
 
@@ -211,12 +211,12 @@ def get_access_requests_output(compartment_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_access_requests = oci.OperatorAccessControl.get_access_requests(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_end=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_start=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_access_requests = oci.OperatorAccessControl.get_access_requests(compartment_id=var["compartment_id"],
+        resource_name=var["access_request_resource_name"],
+        resource_type=var["access_request_resource_type"],
+        state=var["access_request_state"],
+        time_end=var["access_request_time_end"],
+        time_start=var["access_request_time_start"])
     ```
 
 

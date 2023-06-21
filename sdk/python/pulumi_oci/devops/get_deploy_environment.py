@@ -259,7 +259,7 @@ def get_deploy_environment(deploy_environment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_environment = oci.DevOps.get_deploy_environment(deploy_environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_deploy_environment = oci.DevOps.get_deploy_environment(deploy_environment_id=oci_devops_deploy_environment["test_deploy_environment"]["id"])
     ```
 
 
@@ -305,7 +305,7 @@ def get_deploy_environment_output(deploy_environment_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_environment = oci.DevOps.get_deploy_environment(deploy_environment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_deploy_environment = oci.DevOps.get_deploy_environment(deploy_environment_id=oci_devops_deploy_environment["test_deploy_environment"]["id"])
     ```
 
 

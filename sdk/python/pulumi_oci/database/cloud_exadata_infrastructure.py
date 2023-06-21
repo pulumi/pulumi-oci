@@ -731,27 +731,27 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             shape=var["cloud_exadata_infrastructure_shape"],
             compute_count=var["cloud_exadata_infrastructure_compute_count"],
             customer_contacts=[oci.database.CloudExadataInfrastructureCustomerContactArgs(
-                email=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                email=var["cloud_exadata_infrastructure_customer_contacts_email"],
             )],
             defined_tags=var["cloud_exadata_infrastructure_defined_tags"],
             freeform_tags={
                 "Department": "Finance",
             },
             maintenance_window=oci.database.CloudExadataInfrastructureMaintenanceWindowArgs(
-                custom_action_timeout_in_mins=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                custom_action_timeout_in_mins=var["cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins"],
                 days_of_weeks=[oci.database.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs(
-                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    name=var["cloud_exadata_infrastructure_maintenance_window_days_of_week_name"],
                 )],
-                hours_of_days=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                is_custom_action_timeout_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                is_monthly_patching_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                lead_time_in_weeks=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                hours_of_days=var["cloud_exadata_infrastructure_maintenance_window_hours_of_day"],
+                is_custom_action_timeout_enabled=var["cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled"],
+                is_monthly_patching_enabled=var["cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled"],
+                lead_time_in_weeks=var["cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks"],
                 months=[oci.database.CloudExadataInfrastructureMaintenanceWindowMonthArgs(
-                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    name=var["cloud_exadata_infrastructure_maintenance_window_months_name"],
                 )],
-                patching_mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                preference=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                weeks_of_months=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                patching_mode=var["cloud_exadata_infrastructure_maintenance_window_patching_mode"],
+                preference=var["cloud_exadata_infrastructure_maintenance_window_preference"],
+                weeks_of_months=var["cloud_exadata_infrastructure_maintenance_window_weeks_of_month"],
             ),
             storage_count=var["cloud_exadata_infrastructure_storage_count"])
         ```
@@ -805,27 +805,27 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             shape=var["cloud_exadata_infrastructure_shape"],
             compute_count=var["cloud_exadata_infrastructure_compute_count"],
             customer_contacts=[oci.database.CloudExadataInfrastructureCustomerContactArgs(
-                email=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                email=var["cloud_exadata_infrastructure_customer_contacts_email"],
             )],
             defined_tags=var["cloud_exadata_infrastructure_defined_tags"],
             freeform_tags={
                 "Department": "Finance",
             },
             maintenance_window=oci.database.CloudExadataInfrastructureMaintenanceWindowArgs(
-                custom_action_timeout_in_mins=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                custom_action_timeout_in_mins=var["cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins"],
                 days_of_weeks=[oci.database.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs(
-                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    name=var["cloud_exadata_infrastructure_maintenance_window_days_of_week_name"],
                 )],
-                hours_of_days=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                is_custom_action_timeout_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                is_monthly_patching_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                lead_time_in_weeks=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                hours_of_days=var["cloud_exadata_infrastructure_maintenance_window_hours_of_day"],
+                is_custom_action_timeout_enabled=var["cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled"],
+                is_monthly_patching_enabled=var["cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled"],
+                lead_time_in_weeks=var["cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks"],
                 months=[oci.database.CloudExadataInfrastructureMaintenanceWindowMonthArgs(
-                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    name=var["cloud_exadata_infrastructure_maintenance_window_months_name"],
                 )],
-                patching_mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                preference=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                weeks_of_months=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                patching_mode=var["cloud_exadata_infrastructure_maintenance_window_patching_mode"],
+                preference=var["cloud_exadata_infrastructure_maintenance_window_preference"],
+                weeks_of_months=var["cloud_exadata_infrastructure_maintenance_window_weeks_of_month"],
             ),
             storage_count=var["cloud_exadata_infrastructure_storage_count"])
         ```

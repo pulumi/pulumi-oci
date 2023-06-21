@@ -399,9 +399,9 @@ class Script(pulumi.CustomResource):
                 "bar-key": "value",
             },
             parameters=[oci.apm_synthetics.ScriptParameterArgs(
-                param_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                is_secret=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                param_value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                param_name=var["script_parameters_param_name"],
+                is_secret=var["script_parameters_is_secret"],
+                param_value=var["script_parameters_param_value"],
             )])
         ```
 
@@ -454,9 +454,9 @@ class Script(pulumi.CustomResource):
                 "bar-key": "value",
             },
             parameters=[oci.apm_synthetics.ScriptParameterArgs(
-                param_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                is_secret=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                param_value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                param_name=var["script_parameters_param_name"],
+                is_secret=var["script_parameters_is_secret"],
+                param_value=var["script_parameters_param_value"],
             )])
         ```
 

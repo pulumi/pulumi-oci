@@ -215,9 +215,9 @@ def get_key_version(key_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_key_version = oci.Kms.get_key_version(key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        key_version_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        management_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_key_version = oci.Kms.get_key_version(key_id=oci_kms_key["test_key"]["id"],
+        key_version_id=oci_kms_key_version["test_key_version"]["id"],
+        management_endpoint=var["key_version_management_endpoint"])
     ```
 
 
@@ -270,9 +270,9 @@ def get_key_version_output(key_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_key_version = oci.Kms.get_key_version(key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        key_version_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        management_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_key_version = oci.Kms.get_key_version(key_id=oci_kms_key["test_key"]["id"],
+        key_version_id=oci_kms_key_version["test_key_version"]["id"],
+        management_endpoint=var["key_version_management_endpoint"])
     ```
 
 

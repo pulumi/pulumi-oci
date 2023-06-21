@@ -377,8 +377,8 @@ def get_log_analytics_object_collection_rule(log_analytics_object_collection_rul
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_object_collection_rule = oci.LogAnalytics.get_log_analytics_object_collection_rule(log_analytics_object_collection_rule_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_log_analytics_object_collection_rule = oci.LogAnalytics.get_log_analytics_object_collection_rule(log_analytics_object_collection_rule_id=oci_log_analytics_log_analytics_object_collection_rule["test_log_analytics_object_collection_rule"]["id"],
+        namespace=var["log_analytics_object_collection_rule_namespace"])
     ```
 
 
@@ -437,8 +437,8 @@ def get_log_analytics_object_collection_rule_output(log_analytics_object_collect
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_object_collection_rule = oci.LogAnalytics.get_log_analytics_object_collection_rule(log_analytics_object_collection_rule_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_log_analytics_object_collection_rule = oci.LogAnalytics.get_log_analytics_object_collection_rule(log_analytics_object_collection_rule_id=oci_log_analytics_log_analytics_object_collection_rule["test_log_analytics_object_collection_rule"]["id"],
+        namespace=var["log_analytics_object_collection_rule_namespace"])
     ```
 
 

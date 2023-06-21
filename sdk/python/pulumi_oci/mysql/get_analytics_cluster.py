@@ -152,7 +152,7 @@ def get_analytics_cluster(db_system_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_analytics_cluster = oci.Mysql.get_analytics_cluster(db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_analytics_cluster = oci.Mysql.get_analytics_cluster(db_system_id=oci_database_db_system["test_db_system"]["id"])
     ```
 
 
@@ -190,7 +190,7 @@ def get_analytics_cluster_output(db_system_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_analytics_cluster = oci.Mysql.get_analytics_cluster(db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_analytics_cluster = oci.Mysql.get_analytics_cluster(db_system_id=oci_database_db_system["test_db_system"]["id"])
     ```
 
 

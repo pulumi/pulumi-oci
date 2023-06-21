@@ -437,11 +437,11 @@ class WorkspaceProject(pulumi.CustomResource):
             model_version=var["workspace_project_model_version"],
             object_status=var["workspace_project_object_status"],
             registry_metadata=oci.data_integration.WorkspaceProjectRegistryMetadataArgs(
-                aggregator_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                is_favorite=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                labels=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                registry_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                aggregator_key=var["workspace_project_registry_metadata_aggregator_key"],
+                is_favorite=var["workspace_project_registry_metadata_is_favorite"],
+                key=var["workspace_project_registry_metadata_key"],
+                labels=var["workspace_project_registry_metadata_labels"],
+                registry_version=var["workspace_project_registry_metadata_registry_version"],
             ))
         ```
 
@@ -493,11 +493,11 @@ class WorkspaceProject(pulumi.CustomResource):
             model_version=var["workspace_project_model_version"],
             object_status=var["workspace_project_object_status"],
             registry_metadata=oci.data_integration.WorkspaceProjectRegistryMetadataArgs(
-                aggregator_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                is_favorite=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                labels=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                registry_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                aggregator_key=var["workspace_project_registry_metadata_aggregator_key"],
+                is_favorite=var["workspace_project_registry_metadata_is_favorite"],
+                key=var["workspace_project_registry_metadata_key"],
+                labels=var["workspace_project_registry_metadata_labels"],
+                registry_version=var["workspace_project_registry_metadata_registry_version"],
             ))
         ```
 

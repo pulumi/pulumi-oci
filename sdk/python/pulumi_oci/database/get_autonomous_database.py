@@ -1410,7 +1410,7 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database = oci.Database.get_autonomous_database(autonomous_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_autonomous_database = oci.Database.get_autonomous_database(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"])
     ```
 
 
@@ -1555,7 +1555,7 @@ def get_autonomous_database_output(autonomous_database_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database = oci.Database.get_autonomous_database(autonomous_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_autonomous_database = oci.Database.get_autonomous_database(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"])
     ```
 
 

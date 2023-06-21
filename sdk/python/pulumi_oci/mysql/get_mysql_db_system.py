@@ -505,7 +505,7 @@ def get_mysql_db_system(db_system_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_db_system = oci.Mysql.get_mysql_db_system(db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_mysql_db_system = oci.Mysql.get_mysql_db_system(db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"])
     ```
 
 
@@ -572,7 +572,7 @@ def get_mysql_db_system_output(db_system_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_db_system = oci.Mysql.get_mysql_db_system(db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_mysql_db_system = oci.Mysql.get_mysql_db_system(db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"])
     ```
 
 

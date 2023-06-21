@@ -618,8 +618,8 @@ class AssetSource(pulumi.CustomResource):
             assets_compartment_id=oci_identity_compartment["test_compartment"]["id"],
             compartment_id=var["compartment_id"],
             discovery_credentials=oci.cloud_bridge.AssetSourceDiscoveryCredentialsArgs(
-                secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                secret_id=oci_vault_secret["test_secret"]["id"],
+                type=var["asset_source_discovery_credentials_type"],
             ),
             environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
             inventory_id=oci_cloud_bridge_inventory["test_inventory"]["id"],
@@ -636,8 +636,8 @@ class AssetSource(pulumi.CustomResource):
                 "Department": "Finance",
             },
             replication_credentials=oci.cloud_bridge.AssetSourceReplicationCredentialsArgs(
-                secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                secret_id=oci_vault_secret["test_secret"]["id"],
+                type=var["asset_source_replication_credentials_type"],
             ),
             system_tags=var["asset_source_system_tags"])
         ```
@@ -693,8 +693,8 @@ class AssetSource(pulumi.CustomResource):
             assets_compartment_id=oci_identity_compartment["test_compartment"]["id"],
             compartment_id=var["compartment_id"],
             discovery_credentials=oci.cloud_bridge.AssetSourceDiscoveryCredentialsArgs(
-                secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                secret_id=oci_vault_secret["test_secret"]["id"],
+                type=var["asset_source_discovery_credentials_type"],
             ),
             environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
             inventory_id=oci_cloud_bridge_inventory["test_inventory"]["id"],
@@ -711,8 +711,8 @@ class AssetSource(pulumi.CustomResource):
                 "Department": "Finance",
             },
             replication_credentials=oci.cloud_bridge.AssetSourceReplicationCredentialsArgs(
-                secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                secret_id=oci_vault_secret["test_secret"]["id"],
+                type=var["asset_source_replication_credentials_type"],
             ),
             system_tags=var["asset_source_system_tags"])
         ```

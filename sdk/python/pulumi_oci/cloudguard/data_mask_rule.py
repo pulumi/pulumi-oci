@@ -457,8 +457,8 @@ class DataMaskRule(pulumi.CustomResource):
             display_name=var["data_mask_rule_display_name"],
             iam_group_id=oci_identity_group["test_group"]["id"],
             target_selected=oci.cloud_guard.DataMaskRuleTargetSelectedArgs(
-                kind=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                values=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                kind=var["data_mask_rule_target_selected_kind"],
+                values=var["data_mask_rule_target_selected_values"],
             ),
             data_mask_rule_status=var["data_mask_rule_data_mask_rule_status"],
             defined_tags={
@@ -519,8 +519,8 @@ class DataMaskRule(pulumi.CustomResource):
             display_name=var["data_mask_rule_display_name"],
             iam_group_id=oci_identity_group["test_group"]["id"],
             target_selected=oci.cloud_guard.DataMaskRuleTargetSelectedArgs(
-                kind=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                values=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                kind=var["data_mask_rule_target_selected_kind"],
+                values=var["data_mask_rule_target_selected_values"],
             ),
             data_mask_rule_status=var["data_mask_rule_data_mask_rule_status"],
             defined_tags={

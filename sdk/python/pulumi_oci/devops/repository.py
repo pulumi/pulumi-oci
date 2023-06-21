@@ -560,11 +560,11 @@ class Repository(pulumi.CustomResource):
                 "bar-key": "value",
             },
             mirror_repository_config=oci.dev_ops.RepositoryMirrorRepositoryConfigArgs(
-                connector_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                repository_url=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                connector_id=oci_devops_connector["test_connector"]["id"],
+                repository_url=var["repository_mirror_repository_config_repository_url"],
                 trigger_schedule=oci.dev_ops.RepositoryMirrorRepositoryConfigTriggerScheduleArgs(
-                    schedule_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    custom_schedule=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    schedule_type=var["repository_mirror_repository_config_trigger_schedule_schedule_type"],
+                    custom_schedule=var["repository_mirror_repository_config_trigger_schedule_custom_schedule"],
                 ),
             ))
         ```
@@ -621,11 +621,11 @@ class Repository(pulumi.CustomResource):
                 "bar-key": "value",
             },
             mirror_repository_config=oci.dev_ops.RepositoryMirrorRepositoryConfigArgs(
-                connector_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                repository_url=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                connector_id=oci_devops_connector["test_connector"]["id"],
+                repository_url=var["repository_mirror_repository_config_repository_url"],
                 trigger_schedule=oci.dev_ops.RepositoryMirrorRepositoryConfigTriggerScheduleArgs(
-                    schedule_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    custom_schedule=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    schedule_type=var["repository_mirror_repository_config_trigger_schedule_schedule_type"],
+                    custom_schedule=var["repository_mirror_repository_config_trigger_schedule_custom_schedule"],
                 ),
             ))
         ```

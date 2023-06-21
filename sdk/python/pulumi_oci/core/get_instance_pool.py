@@ -199,7 +199,7 @@ def get_instance_pool(instance_pool_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_pool = oci.Core.get_instance_pool(instance_pool_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_instance_pool = oci.Core.get_instance_pool(instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"])
     ```
 
 
@@ -240,7 +240,7 @@ def get_instance_pool_output(instance_pool_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_pool = oci.Core.get_instance_pool(instance_pool_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_instance_pool = oci.Core.get_instance_pool(instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"])
     ```
 
 

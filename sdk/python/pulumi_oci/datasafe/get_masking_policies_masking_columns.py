@@ -257,21 +257,21 @@ def get_masking_policies_masking_columns(column_names: Optional[Sequence[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policies_masking_columns = oci.DataSafe.get_masking_policies_masking_columns(masking_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        column_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        data_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_masking_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_seed_required=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        masking_column_groups=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        masking_column_lifecycle_state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        objects=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        object_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        schema_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        sensitive_type_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_updated_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_updated_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_masking_policies_masking_columns = oci.DataSafe.get_masking_policies_masking_columns(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
+        column_names=var["masking_policies_masking_column_column_name"],
+        data_types=var["masking_policies_masking_column_data_type"],
+        is_masking_enabled=var["masking_policies_masking_column_is_masking_enabled"],
+        is_seed_required=var["masking_policies_masking_column_is_seed_required"],
+        masking_column_groups=var["masking_policies_masking_column_masking_column_group"],
+        masking_column_lifecycle_state=var["masking_policies_masking_column_masking_column_lifecycle_state"],
+        objects=var["masking_policies_masking_column_object"],
+        object_types=var["masking_policies_masking_column_object_type"],
+        schema_names=var["masking_policies_masking_column_schema_name"],
+        sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
+        time_created_greater_than_or_equal_to=var["masking_policies_masking_column_time_created_greater_than_or_equal_to"],
+        time_created_less_than=var["masking_policies_masking_column_time_created_less_than"],
+        time_updated_greater_than_or_equal_to=var["masking_policies_masking_column_time_updated_greater_than_or_equal_to"],
+        time_updated_less_than=var["masking_policies_masking_column_time_updated_less_than"])
     ```
 
 
@@ -365,21 +365,21 @@ def get_masking_policies_masking_columns_output(column_names: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policies_masking_columns = oci.DataSafe.get_masking_policies_masking_columns(masking_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        column_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        data_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_masking_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_seed_required=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        masking_column_groups=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        masking_column_lifecycle_state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        objects=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        object_types=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        schema_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        sensitive_type_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_updated_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_updated_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_masking_policies_masking_columns = oci.DataSafe.get_masking_policies_masking_columns(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
+        column_names=var["masking_policies_masking_column_column_name"],
+        data_types=var["masking_policies_masking_column_data_type"],
+        is_masking_enabled=var["masking_policies_masking_column_is_masking_enabled"],
+        is_seed_required=var["masking_policies_masking_column_is_seed_required"],
+        masking_column_groups=var["masking_policies_masking_column_masking_column_group"],
+        masking_column_lifecycle_state=var["masking_policies_masking_column_masking_column_lifecycle_state"],
+        objects=var["masking_policies_masking_column_object"],
+        object_types=var["masking_policies_masking_column_object_type"],
+        schema_names=var["masking_policies_masking_column_schema_name"],
+        sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
+        time_created_greater_than_or_equal_to=var["masking_policies_masking_column_time_created_greater_than_or_equal_to"],
+        time_created_less_than=var["masking_policies_masking_column_time_created_less_than"],
+        time_updated_greater_than_or_equal_to=var["masking_policies_masking_column_time_updated_greater_than_or_equal_to"],
+        time_updated_less_than=var["masking_policies_masking_column_time_updated_less_than"])
     ```
 
 

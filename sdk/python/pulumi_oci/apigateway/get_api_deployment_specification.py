@@ -103,7 +103,7 @@ def get_api_deployment_specification(api_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_api_deployment_specification = oci.ApiGateway.get_api_deployment_specification(api_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_api_deployment_specification = oci.ApiGateway.get_api_deployment_specification(api_id=oci_apigateway_api["test_api"]["id"])
     ```
 
 
@@ -136,7 +136,7 @@ def get_api_deployment_specification_output(api_id: Optional[pulumi.Input[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_api_deployment_specification = oci.ApiGateway.get_api_deployment_specification(api_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_api_deployment_specification = oci.ApiGateway.get_api_deployment_specification(api_id=oci_apigateway_api["test_api"]["id"])
     ```
 
 

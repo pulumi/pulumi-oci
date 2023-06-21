@@ -145,11 +145,11 @@ def get_volumes(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volumes = oci.Core.get_volumes(availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        volume_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_volumes = oci.Core.get_volumes(availability_domain=var["volume_availability_domain"],
+        compartment_id=var["compartment_id"],
+        display_name=var["volume_display_name"],
+        state=var["volume_state"],
+        volume_group_id=oci_core_volume_group["test_volume_group"]["id"])
     ```
 
 
@@ -199,11 +199,11 @@ def get_volumes_output(availability_domain: Optional[pulumi.Input[Optional[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_volumes = oci.Core.get_volumes(availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        volume_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_volumes = oci.Core.get_volumes(availability_domain=var["volume_availability_domain"],
+        compartment_id=var["compartment_id"],
+        display_name=var["volume_display_name"],
+        state=var["volume_state"],
+        volume_group_id=oci_core_volume_group["test_volume_group"]["id"])
     ```
 
 

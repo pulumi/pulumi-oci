@@ -271,7 +271,7 @@ def get_network_firewall_policy(network_firewall_policy_id: Optional[str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy = oci.NetworkFirewall.get_network_firewall_policy(network_firewall_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_network_firewall_policy = oci.NetworkFirewall.get_network_firewall_policy(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"])
     ```
 
 
@@ -318,7 +318,7 @@ def get_network_firewall_policy_output(network_firewall_policy_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy = oci.NetworkFirewall.get_network_firewall_policy(network_firewall_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_network_firewall_policy = oci.NetworkFirewall.get_network_firewall_policy(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"])
     ```
 
 

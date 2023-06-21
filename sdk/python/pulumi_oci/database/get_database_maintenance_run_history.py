@@ -91,7 +91,7 @@ def get_database_maintenance_run_history(maintenance_run_history_id: Optional[st
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_run_history = oci.Database.get_database_maintenance_run_history(maintenance_run_history_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_maintenance_run_history = oci.Database.get_database_maintenance_run_history(maintenance_run_history_id=oci_database_maintenance_run_history["test_maintenance_run_history"]["id"])
     ```
 
 
@@ -123,7 +123,7 @@ def get_database_maintenance_run_history_output(maintenance_run_history_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_run_history = oci.Database.get_database_maintenance_run_history(maintenance_run_history_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_maintenance_run_history = oci.Database.get_database_maintenance_run_history(maintenance_run_history_id=oci_database_maintenance_run_history["test_maintenance_run_history"]["id"])
     ```
 
 

@@ -259,9 +259,9 @@ def get_listing_package(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_listing_package = oci.Marketplace.get_listing_package(listing_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        package_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_listing_package = oci.Marketplace.get_listing_package(listing_id=oci_marketplace_listing["test_listing"]["id"],
+        package_version=var["listing_package_package_version"],
+        compartment_id=var["compartment_id"])
     ```
 
 
@@ -325,9 +325,9 @@ def get_listing_package_output(compartment_id: Optional[pulumi.Input[Optional[st
     import pulumi
     import pulumi_oci as oci
 
-    test_listing_package = oci.Marketplace.get_listing_package(listing_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        package_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_listing_package = oci.Marketplace.get_listing_package(listing_id=oci_marketplace_listing["test_listing"]["id"],
+        package_version=var["listing_package_package_version"],
+        compartment_id=var["compartment_id"])
     ```
 
 

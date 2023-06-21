@@ -126,10 +126,10 @@ def get_target_databases_schemas(filters: Optional[Sequence[pulumi.InputType['Ge
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases_schemas = oci.DataSafe.get_target_databases_schemas(target_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_oracle_maintained=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        schema_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        schema_name_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_target_databases_schemas = oci.DataSafe.get_target_databases_schemas(target_database_id=oci_data_safe_target_database["test_target_database"]["id"],
+        is_oracle_maintained=var["target_databases_schema_is_oracle_maintained"],
+        schema_names=var["target_databases_schema_schema_name"],
+        schema_name_contains=var["target_databases_schema_schema_name_contains"])
     ```
 
 
@@ -175,10 +175,10 @@ def get_target_databases_schemas_output(filters: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases_schemas = oci.DataSafe.get_target_databases_schemas(target_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_oracle_maintained=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        schema_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        schema_name_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_target_databases_schemas = oci.DataSafe.get_target_databases_schemas(target_database_id=oci_data_safe_target_database["test_target_database"]["id"],
+        is_oracle_maintained=var["target_databases_schema_is_oracle_maintained"],
+        schema_names=var["target_databases_schema_schema_name"],
+        schema_name_contains=var["target_databases_schema_schema_name_contains"])
     ```
 
 

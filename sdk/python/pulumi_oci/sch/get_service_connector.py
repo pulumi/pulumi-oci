@@ -223,7 +223,7 @@ def get_service_connector(service_connector_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_connector = oci.Sch.get_service_connector(service_connector_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_service_connector = oci.Sch.get_service_connector(service_connector_id=oci_sch_service_connector["test_service_connector"]["id"])
     ```
 
 
@@ -266,7 +266,7 @@ def get_service_connector_output(service_connector_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_service_connector = oci.Sch.get_service_connector(service_connector_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_service_connector = oci.Sch.get_service_connector(service_connector_id=oci_sch_service_connector["test_service_connector"]["id"])
     ```
 
 

@@ -119,9 +119,9 @@ def get_virtual_circuits(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_circuits = oci.Core.get_virtual_circuits(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_virtual_circuits = oci.Core.get_virtual_circuits(compartment_id=var["compartment_id"],
+        display_name=var["virtual_circuit_display_name"],
+        state=var["virtual_circuit_state"])
     ```
 
 
@@ -163,9 +163,9 @@ def get_virtual_circuits_output(compartment_id: Optional[pulumi.Input[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_circuits = oci.Core.get_virtual_circuits(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_virtual_circuits = oci.Core.get_virtual_circuits(compartment_id=var["compartment_id"],
+        display_name=var["virtual_circuit_display_name"],
+        state=var["virtual_circuit_state"])
     ```
 
 

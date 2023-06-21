@@ -388,7 +388,7 @@ def get_migration(migration_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_migration = oci.DatabaseMigration.get_migration(migration_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_migration = oci.DatabaseMigration.get_migration(migration_id=oci_database_migration_migration["test_migration"]["id"])
     ```
 
 
@@ -445,7 +445,7 @@ def get_migration_output(migration_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_migration = oci.DatabaseMigration.get_migration(migration_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_migration = oci.DatabaseMigration.get_migration(migration_id=oci_database_migration_migration["test_migration"]["id"])
     ```
 
 

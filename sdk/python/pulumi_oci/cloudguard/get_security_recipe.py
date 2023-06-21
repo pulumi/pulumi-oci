@@ -198,7 +198,7 @@ def get_security_recipe(security_recipe_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_recipe = oci.CloudGuard.get_security_recipe(security_recipe_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_security_recipe = oci.CloudGuard.get_security_recipe(security_recipe_id=oci_cloud_guard_security_recipe["test_security_recipe"]["id"])
     ```
 
 
@@ -239,7 +239,7 @@ def get_security_recipe_output(security_recipe_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_security_recipe = oci.CloudGuard.get_security_recipe(security_recipe_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_security_recipe = oci.CloudGuard.get_security_recipe(security_recipe_id=oci_cloud_guard_security_recipe["test_security_recipe"]["id"])
     ```
 
 

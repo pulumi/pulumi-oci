@@ -247,7 +247,7 @@ def get_recommendation(recommendation_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_recommendation = oci.Optimizer.get_recommendation(recommendation_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_recommendation = oci.Optimizer.get_recommendation(recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"])
     ```
 
 
@@ -292,7 +292,7 @@ def get_recommendation_output(recommendation_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_recommendation = oci.Optimizer.get_recommendation(recommendation_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_recommendation = oci.Optimizer.get_recommendation(recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"])
     ```
 
 

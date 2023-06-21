@@ -134,7 +134,7 @@ def get_health(load_balancer_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancer_health = oci.LoadBalancer.get_health(load_balancer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_load_balancer_health = oci.LoadBalancer.get_health(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
     ```
 
 
@@ -169,7 +169,7 @@ def get_health_output(load_balancer_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancer_health = oci.LoadBalancer.get_health(load_balancer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_load_balancer_health = oci.LoadBalancer.get_health(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
     ```
 
 

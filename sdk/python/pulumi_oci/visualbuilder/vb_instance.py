@@ -586,13 +586,13 @@ class VbInstance(pulumi.CustomResource):
             display_name=var["vb_instance_display_name"],
             node_count=var["vb_instance_node_count"],
             alternate_custom_endpoints=[oci.visual_builder.VbInstanceAlternateCustomEndpointArgs(
-                hostname=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                certificate_secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                hostname=var["vb_instance_alternate_custom_endpoints_hostname"],
+                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
             )],
             consumption_model=var["vb_instance_consumption_model"],
             custom_endpoint=oci.visual_builder.VbInstanceCustomEndpointArgs(
-                hostname=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                certificate_secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                hostname=var["vb_instance_custom_endpoint_hostname"],
+                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -651,13 +651,13 @@ class VbInstance(pulumi.CustomResource):
             display_name=var["vb_instance_display_name"],
             node_count=var["vb_instance_node_count"],
             alternate_custom_endpoints=[oci.visual_builder.VbInstanceAlternateCustomEndpointArgs(
-                hostname=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                certificate_secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                hostname=var["vb_instance_alternate_custom_endpoints_hostname"],
+                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
             )],
             consumption_model=var["vb_instance_consumption_model"],
             custom_endpoint=oci.visual_builder.VbInstanceCustomEndpointArgs(
-                hostname=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                certificate_secret_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                hostname=var["vb_instance_custom_endpoint_hostname"],
+                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",

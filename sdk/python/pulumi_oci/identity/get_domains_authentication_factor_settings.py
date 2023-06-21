@@ -168,11 +168,11 @@ def get_domains_authentication_factor_settings(attribute_sets: Optional[Sequence
     import pulumi
     import pulumi_oci as oci
 
-    test_authentication_factor_settings = oci.Identity.get_domains_authentication_factor_settings(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_authentication_factor_settings = oci.Identity.get_domains_authentication_factor_settings(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
         attribute_sets=[],
         attributes="",
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        authorization=var["authentication_factor_setting_authorization"],
+        resource_type_schema_version=var["authentication_factor_setting_resource_type_schema_version"])
     ```
 
 
@@ -226,11 +226,11 @@ def get_domains_authentication_factor_settings_output(attribute_sets: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_authentication_factor_settings = oci.Identity.get_domains_authentication_factor_settings(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_authentication_factor_settings = oci.Identity.get_domains_authentication_factor_settings(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
         attribute_sets=[],
         attributes="",
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        authorization=var["authentication_factor_setting_authorization"],
+        resource_type_schema_version=var["authentication_factor_setting_resource_type_schema_version"])
     ```
 
 

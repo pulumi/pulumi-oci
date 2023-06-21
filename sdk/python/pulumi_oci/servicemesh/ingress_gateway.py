@@ -440,31 +440,31 @@ class IngressGateway(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             hosts=[oci.service_mesh.IngressGatewayHostArgs(
                 listeners=[oci.service_mesh.IngressGatewayHostListenerArgs(
-                    port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    protocol=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    port=var["ingress_gateway_hosts_listeners_port"],
+                    protocol=var["ingress_gateway_hosts_listeners_protocol"],
                     tls=oci.service_mesh.IngressGatewayHostListenerTlsArgs(
-                        mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        mode=var["ingress_gateway_hosts_listeners_tls_mode"],
                         client_validation=oci.service_mesh.IngressGatewayHostListenerTlsClientValidationArgs(
-                            subject_alternate_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            subject_alternate_names=var["ingress_gateway_hosts_listeners_tls_client_validation_subject_alternate_names"],
                             trusted_ca_bundle=oci.service_mesh.IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs(
-                                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                                ca_bundle_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                                secret_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                                type=var["ingress_gateway_hosts_listeners_tls_client_validation_trusted_ca_bundle_type"],
+                                ca_bundle_id=oci_certificates_management_ca_bundle["test_ca_bundle"]["id"],
+                                secret_name=oci_vault_secret["test_secret"]["name"],
                             ),
                         ),
                         server_certificate=oci.service_mesh.IngressGatewayHostListenerTlsServerCertificateArgs(
-                            type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                            certificate_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                            secret_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            type=var["ingress_gateway_hosts_listeners_tls_server_certificate_type"],
+                            certificate_id=oci_certificates_management_certificate["test_certificate"]["id"],
+                            secret_name=oci_vault_secret["test_secret"]["name"],
                         ),
                     ),
                 )],
-                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                hostnames=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=var["ingress_gateway_hosts_name"],
+                hostnames=var["ingress_gateway_hosts_hostnames"],
             )],
             mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
             access_logging=oci.service_mesh.IngressGatewayAccessLoggingArgs(
-                is_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_enabled=var["ingress_gateway_access_logging_is_enabled"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -474,7 +474,7 @@ class IngressGateway(pulumi.CustomResource):
                 "bar-key": "value",
             },
             mtls=oci.service_mesh.IngressGatewayMtlsArgs(
-                maximum_validity=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                maximum_validity=var["ingress_gateway_mtls_maximum_validity"],
             ))
         ```
 
@@ -523,31 +523,31 @@ class IngressGateway(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             hosts=[oci.service_mesh.IngressGatewayHostArgs(
                 listeners=[oci.service_mesh.IngressGatewayHostListenerArgs(
-                    port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    protocol=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    port=var["ingress_gateway_hosts_listeners_port"],
+                    protocol=var["ingress_gateway_hosts_listeners_protocol"],
                     tls=oci.service_mesh.IngressGatewayHostListenerTlsArgs(
-                        mode=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        mode=var["ingress_gateway_hosts_listeners_tls_mode"],
                         client_validation=oci.service_mesh.IngressGatewayHostListenerTlsClientValidationArgs(
-                            subject_alternate_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            subject_alternate_names=var["ingress_gateway_hosts_listeners_tls_client_validation_subject_alternate_names"],
                             trusted_ca_bundle=oci.service_mesh.IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs(
-                                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                                ca_bundle_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                                secret_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                                type=var["ingress_gateway_hosts_listeners_tls_client_validation_trusted_ca_bundle_type"],
+                                ca_bundle_id=oci_certificates_management_ca_bundle["test_ca_bundle"]["id"],
+                                secret_name=oci_vault_secret["test_secret"]["name"],
                             ),
                         ),
                         server_certificate=oci.service_mesh.IngressGatewayHostListenerTlsServerCertificateArgs(
-                            type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                            certificate_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                            secret_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            type=var["ingress_gateway_hosts_listeners_tls_server_certificate_type"],
+                            certificate_id=oci_certificates_management_certificate["test_certificate"]["id"],
+                            secret_name=oci_vault_secret["test_secret"]["name"],
                         ),
                     ),
                 )],
-                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                hostnames=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                name=var["ingress_gateway_hosts_name"],
+                hostnames=var["ingress_gateway_hosts_hostnames"],
             )],
             mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
             access_logging=oci.service_mesh.IngressGatewayAccessLoggingArgs(
-                is_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_enabled=var["ingress_gateway_access_logging_is_enabled"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -557,7 +557,7 @@ class IngressGateway(pulumi.CustomResource):
                 "bar-key": "value",
             },
             mtls=oci.service_mesh.IngressGatewayMtlsArgs(
-                maximum_validity=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                maximum_validity=var["ingress_gateway_mtls_maximum_validity"],
             ))
         ```
 

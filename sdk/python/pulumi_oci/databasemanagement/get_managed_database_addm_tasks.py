@@ -114,9 +114,9 @@ def get_managed_database_addm_tasks(filters: Optional[Sequence[pulumi.InputType[
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_addm_tasks = oci.DatabaseManagement.get_managed_database_addm_tasks(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_end=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_start=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_managed_database_addm_tasks = oci.DatabaseManagement.get_managed_database_addm_tasks(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
+        time_end=var["managed_database_addm_task_time_end"],
+        time_start=var["managed_database_addm_task_time_start"])
     ```
 
 
@@ -159,9 +159,9 @@ def get_managed_database_addm_tasks_output(filters: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_addm_tasks = oci.DatabaseManagement.get_managed_database_addm_tasks(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_end=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_start=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_managed_database_addm_tasks = oci.DatabaseManagement.get_managed_database_addm_tasks(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
+        time_end=var["managed_database_addm_task_time_end"],
+        time_start=var["managed_database_addm_task_time_start"])
     ```
 
 

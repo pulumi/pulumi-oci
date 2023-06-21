@@ -152,14 +152,14 @@ def get_managed_database_attention_log_count(group_by: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_attention_log_count = oci.DatabaseManagement.get_managed_database_attention_log_count(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        group_by=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_regular_expression=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        log_search_text=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_less_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        type_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        urgency_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_managed_database_attention_log_count = oci.DatabaseManagement.get_managed_database_attention_log_count(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
+        group_by=var["managed_database_attention_log_count_group_by"],
+        is_regular_expression=var["managed_database_attention_log_count_is_regular_expression"],
+        log_search_text=var["managed_database_attention_log_count_log_search_text"],
+        time_greater_than_or_equal_to=var["managed_database_attention_log_count_time_greater_than_or_equal_to"],
+        time_less_than_or_equal_to=var["managed_database_attention_log_count_time_less_than_or_equal_to"],
+        type_filter=var["managed_database_attention_log_count_type_filter"],
+        urgency_filter=var["managed_database_attention_log_count_urgency_filter"])
     ```
 
 
@@ -218,14 +218,14 @@ def get_managed_database_attention_log_count_output(group_by: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_attention_log_count = oci.DatabaseManagement.get_managed_database_attention_log_count(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        group_by=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_regular_expression=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        log_search_text=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_less_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        type_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        urgency_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_managed_database_attention_log_count = oci.DatabaseManagement.get_managed_database_attention_log_count(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
+        group_by=var["managed_database_attention_log_count_group_by"],
+        is_regular_expression=var["managed_database_attention_log_count_is_regular_expression"],
+        log_search_text=var["managed_database_attention_log_count_log_search_text"],
+        time_greater_than_or_equal_to=var["managed_database_attention_log_count_time_greater_than_or_equal_to"],
+        time_less_than_or_equal_to=var["managed_database_attention_log_count_time_less_than_or_equal_to"],
+        type_filter=var["managed_database_attention_log_count_type_filter"],
+        urgency_filter=var["managed_database_attention_log_count_urgency_filter"])
     ```
 
 

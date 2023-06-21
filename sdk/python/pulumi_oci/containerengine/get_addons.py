@@ -90,7 +90,7 @@ def get_addons(cluster_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_addons = oci.ContainerEngine.get_addons(cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_addons = oci.ContainerEngine.get_addons(cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
     ```
 
 
@@ -124,7 +124,7 @@ def get_addons_output(cluster_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_addons = oci.ContainerEngine.get_addons(cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_addons = oci.ContainerEngine.get_addons(cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
     ```
 
 

@@ -116,9 +116,9 @@ def get_instance_devices(filters: Optional[Sequence[pulumi.InputType['GetInstanc
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_devices = oci.Core.get_instance_devices(instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_available=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_instance_devices = oci.Core.get_instance_devices(instance_id=oci_core_instance["test_instance"]["id"],
+        is_available=var["instance_device_is_available"],
+        name=var["instance_device_name"])
     ```
 
 
@@ -160,9 +160,9 @@ def get_instance_devices_output(filters: Optional[pulumi.Input[Optional[Sequence
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_devices = oci.Core.get_instance_devices(instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_available=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_instance_devices = oci.Core.get_instance_devices(instance_id=oci_core_instance["test_instance"]["id"],
+        is_available=var["instance_device_is_available"],
+        name=var["instance_device_name"])
     ```
 
 

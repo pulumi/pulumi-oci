@@ -341,7 +341,7 @@ class Project(pulumi.CustomResource):
         test_project = oci.dev_ops.Project("testProject",
             compartment_id=var["compartment_id"],
             notification_config=oci.dev_ops.ProjectNotificationConfigArgs(
-                topic_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                topic_id=oci_ons_notification_topic["test_notification_topic"]["id"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -389,7 +389,7 @@ class Project(pulumi.CustomResource):
         test_project = oci.dev_ops.Project("testProject",
             compartment_id=var["compartment_id"],
             notification_config=oci.dev_ops.ProjectNotificationConfigArgs(
-                topic_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                topic_id=oci_ons_notification_topic["test_notification_topic"]["id"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",

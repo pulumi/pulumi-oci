@@ -111,9 +111,9 @@ def get_shapes(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_shapes = oci.Core.get_shapes(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        image_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_shapes = oci.Core.get_shapes(compartment_id=var["compartment_id"],
+        availability_domain=var["shape_availability_domain"],
+        image_id=oci_core_image["test_image"]["id"])
     ```
 
 
@@ -156,9 +156,9 @@ def get_shapes_output(availability_domain: Optional[pulumi.Input[Optional[str]]]
     import pulumi
     import pulumi_oci as oci
 
-    test_shapes = oci.Core.get_shapes(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        image_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_shapes = oci.Core.get_shapes(compartment_id=var["compartment_id"],
+        availability_domain=var["shape_availability_domain"],
+        image_id=oci_core_image["test_image"]["id"])
     ```
 
 

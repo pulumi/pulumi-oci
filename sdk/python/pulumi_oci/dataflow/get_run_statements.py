@@ -106,8 +106,8 @@ def get_run_statements(filters: Optional[Sequence[pulumi.InputType['GetRunStatem
     import pulumi
     import pulumi_oci as oci
 
-    test_run_statements = oci.DataFlow.get_run_statements(run_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_run_statements = oci.DataFlow.get_run_statements(run_id=oci_dataflow_run["test_run"]["id"],
+        state=var["run_statement_state"])
     ```
 
 
@@ -145,8 +145,8 @@ def get_run_statements_output(filters: Optional[pulumi.Input[Optional[Sequence[p
     import pulumi
     import pulumi_oci as oci
 
-    test_run_statements = oci.DataFlow.get_run_statements(run_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_run_statements = oci.DataFlow.get_run_statements(run_id=oci_dataflow_run["test_run"]["id"],
+        state=var["run_statement_state"])
     ```
 
 

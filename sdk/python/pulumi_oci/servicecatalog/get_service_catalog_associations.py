@@ -129,10 +129,10 @@ def get_service_catalog_associations(entity_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalog_associations = oci.ServiceCatalog.get_service_catalog_associations(entity_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        entity_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        service_catalog_association_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        service_catalog_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_service_catalog_associations = oci.ServiceCatalog.get_service_catalog_associations(entity_id=oci_service_catalog_entity["test_entity"]["id"],
+        entity_type=var["service_catalog_association_entity_type"],
+        service_catalog_association_id=oci_service_catalog_service_catalog_association["test_service_catalog_association"]["id"],
+        service_catalog_id=oci_service_catalog_service_catalog["test_service_catalog"]["id"])
     ```
 
 
@@ -178,10 +178,10 @@ def get_service_catalog_associations_output(entity_id: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalog_associations = oci.ServiceCatalog.get_service_catalog_associations(entity_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        entity_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        service_catalog_association_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        service_catalog_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_service_catalog_associations = oci.ServiceCatalog.get_service_catalog_associations(entity_id=oci_service_catalog_entity["test_entity"]["id"],
+        entity_type=var["service_catalog_association_entity_type"],
+        service_catalog_association_id=oci_service_catalog_service_catalog_association["test_service_catalog_association"]["id"],
+        service_catalog_id=oci_service_catalog_service_catalog["test_service_catalog"]["id"])
     ```
 
 

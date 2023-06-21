@@ -576,7 +576,7 @@ class ProtectedDatabase(pulumi.CustomResource):
             password=var["protected_database_password"],
             protection_policy_id=oci_recovery_protection_policy["test_protection_policy"]["id"],
             recovery_service_subnets=[oci.recovery_mod.ProtectedDatabaseRecoveryServiceSubnetArgs(
-                recovery_service_subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                recovery_service_subnet_id=oci_recovery_recovery_service_subnet["test_recovery_service_subnet"]["id"],
             )],
             database_id=oci_database_database["test_database"]["id"],
             database_size=var["protected_database_database_size"],
@@ -635,7 +635,7 @@ class ProtectedDatabase(pulumi.CustomResource):
             password=var["protected_database_password"],
             protection_policy_id=oci_recovery_protection_policy["test_protection_policy"]["id"],
             recovery_service_subnets=[oci.recovery_mod.ProtectedDatabaseRecoveryServiceSubnetArgs(
-                recovery_service_subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                recovery_service_subnet_id=oci_recovery_recovery_service_subnet["test_recovery_service_subnet"]["id"],
             )],
             database_id=oci_database_database["test_database"]["id"],
             database_size=var["protected_database_database_size"],

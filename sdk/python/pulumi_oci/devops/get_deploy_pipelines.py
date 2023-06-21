@@ -133,11 +133,11 @@ def get_deploy_pipelines(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_pipelines = oci.DevOps.get_deploy_pipelines(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_deploy_pipelines = oci.DevOps.get_deploy_pipelines(compartment_id=var["compartment_id"],
+        display_name=var["deploy_pipeline_display_name"],
+        id=var["deploy_pipeline_id"],
+        project_id=oci_devops_project["test_project"]["id"],
+        state=var["deploy_pipeline_state"])
     ```
 
 
@@ -186,11 +186,11 @@ def get_deploy_pipelines_output(compartment_id: Optional[pulumi.Input[Optional[s
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_pipelines = oci.DevOps.get_deploy_pipelines(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_deploy_pipelines = oci.DevOps.get_deploy_pipelines(compartment_id=var["compartment_id"],
+        display_name=var["deploy_pipeline_display_name"],
+        id=var["deploy_pipeline_id"],
+        project_id=oci_devops_project["test_project"]["id"],
+        state=var["deploy_pipeline_state"])
     ```
 
 

@@ -331,7 +331,7 @@ def get_oda_instance(oda_instance_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_instance = oci.Oda.get_oda_instance(oda_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_oda_instance = oci.Oda.get_oda_instance(oda_instance_id=oci_oda_oda_instance["test_oda_instance"]["id"])
     ```
 
 
@@ -383,7 +383,7 @@ def get_oda_instance_output(oda_instance_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_instance = oci.Oda.get_oda_instance(oda_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_oda_instance = oci.Oda.get_oda_instance(oda_instance_id=oci_oda_oda_instance["test_oda_instance"]["id"])
     ```
 
 

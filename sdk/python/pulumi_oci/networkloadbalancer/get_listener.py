@@ -133,8 +133,8 @@ def get_listener(listener_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_listener = oci.NetworkLoadBalancer.get_listener(listener_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        network_load_balancer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_listener = oci.NetworkLoadBalancer.get_listener(listener_name=oci_network_load_balancer_listener["test_listener"]["name"],
+        network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
     ```
 
 
@@ -173,8 +173,8 @@ def get_listener_output(listener_name: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_listener = oci.NetworkLoadBalancer.get_listener(listener_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        network_load_balancer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_listener = oci.NetworkLoadBalancer.get_listener(listener_name=oci_network_load_balancer_listener["test_listener"]["name"],
+        network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
     ```
 
 

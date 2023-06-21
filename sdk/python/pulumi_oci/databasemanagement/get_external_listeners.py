@@ -119,9 +119,9 @@ def get_external_listeners(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_listeners = oci.DatabaseManagement.get_external_listeners(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        external_db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_external_listeners = oci.DatabaseManagement.get_external_listeners(compartment_id=var["compartment_id"],
+        display_name=var["external_listener_display_name"],
+        external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"])
     ```
 
 
@@ -163,9 +163,9 @@ def get_external_listeners_output(compartment_id: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_external_listeners = oci.DatabaseManagement.get_external_listeners(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        external_db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_external_listeners = oci.DatabaseManagement.get_external_listeners(compartment_id=var["compartment_id"],
+        display_name=var["external_listener_display_name"],
+        external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"])
     ```
 
 

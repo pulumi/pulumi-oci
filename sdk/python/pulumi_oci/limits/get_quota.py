@@ -184,7 +184,7 @@ def get_quota(quota_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_quota = oci.Limits.get_quota(quota_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_quota = oci.Limits.get_quota(quota_id=oci_limits_quota["test_quota"]["id"])
     ```
 
 
@@ -224,7 +224,7 @@ def get_quota_output(quota_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_quota = oci.Limits.get_quota(quota_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_quota = oci.Limits.get_quota(quota_id=oci_limits_quota["test_quota"]["id"])
     ```
 
 

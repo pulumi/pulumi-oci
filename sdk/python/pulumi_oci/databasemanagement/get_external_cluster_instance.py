@@ -246,7 +246,7 @@ def get_external_cluster_instance(external_cluster_instance_id: Optional[str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_external_cluster_instance = oci.DatabaseManagement.get_external_cluster_instance(external_cluster_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_external_cluster_instance = oci.DatabaseManagement.get_external_cluster_instance(external_cluster_instance_id=oci_database_management_external_cluster_instance["test_external_cluster_instance"]["id"])
     ```
 
 
@@ -291,7 +291,7 @@ def get_external_cluster_instance_output(external_cluster_instance_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_external_cluster_instance = oci.DatabaseManagement.get_external_cluster_instance(external_cluster_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_external_cluster_instance = oci.DatabaseManagement.get_external_cluster_instance(external_cluster_instance_id=oci_database_management_external_cluster_instance["test_external_cluster_instance"]["id"])
     ```
 
 

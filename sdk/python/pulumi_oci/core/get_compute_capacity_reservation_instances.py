@@ -116,9 +116,9 @@ def get_compute_capacity_reservation_instances(availability_domain: Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_reservation_instances = oci.Core.get_compute_capacity_reservation_instances(capacity_reservation_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_compute_capacity_reservation_instances = oci.Core.get_compute_capacity_reservation_instances(capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"],
+        availability_domain=var["compute_capacity_reservation_instance_availability_domain"],
+        compartment_id=var["compartment_id"])
     ```
 
 
@@ -160,9 +160,9 @@ def get_compute_capacity_reservation_instances_output(availability_domain: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_reservation_instances = oci.Core.get_compute_capacity_reservation_instances(capacity_reservation_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_compute_capacity_reservation_instances = oci.Core.get_compute_capacity_reservation_instances(capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"],
+        availability_domain=var["compute_capacity_reservation_instance_availability_domain"],
+        compartment_id=var["compartment_id"])
     ```
 
 

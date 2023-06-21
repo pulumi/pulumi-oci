@@ -189,12 +189,12 @@ def get_domains_my_customer_secret_keys(authorization: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_my_customer_secret_keys = oci.Identity.get_domains_my_customer_secret_keys(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        my_customer_secret_key_count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        my_customer_secret_key_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        start_index=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_my_customer_secret_keys = oci.Identity.get_domains_my_customer_secret_keys(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        my_customer_secret_key_count=var["my_customer_secret_key_my_customer_secret_key_count"],
+        my_customer_secret_key_filter=var["my_customer_secret_key_my_customer_secret_key_filter"],
+        authorization=var["my_customer_secret_key_authorization"],
+        resource_type_schema_version=var["my_customer_secret_key_resource_type_schema_version"],
+        start_index=var["my_customer_secret_key_start_index"])
     ```
 
 
@@ -257,12 +257,12 @@ def get_domains_my_customer_secret_keys_output(authorization: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_my_customer_secret_keys = oci.Identity.get_domains_my_customer_secret_keys(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        my_customer_secret_key_count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        my_customer_secret_key_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        start_index=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_my_customer_secret_keys = oci.Identity.get_domains_my_customer_secret_keys(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        my_customer_secret_key_count=var["my_customer_secret_key_my_customer_secret_key_count"],
+        my_customer_secret_key_filter=var["my_customer_secret_key_my_customer_secret_key_filter"],
+        authorization=var["my_customer_secret_key_authorization"],
+        resource_type_schema_version=var["my_customer_secret_key_resource_type_schema_version"],
+        start_index=var["my_customer_secret_key_start_index"])
     ```
 
 

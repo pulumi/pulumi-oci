@@ -262,7 +262,7 @@ def get_user(user_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_user = oci.Identity.get_user(user_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_user = oci.Identity.get_user(user_id=oci_identity_user["test_user"]["id"])
     ```
 
 
@@ -308,7 +308,7 @@ def get_user_output(user_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_user = oci.Identity.get_user(user_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_user = oci.Identity.get_user(user_id=oci_identity_user["test_user"]["id"])
     ```
 
 

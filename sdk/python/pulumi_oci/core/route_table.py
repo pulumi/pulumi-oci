@@ -317,11 +317,11 @@ class RouteTable(pulumi.CustomResource):
                 "Department": "Finance",
             },
             route_rules=[oci.core.RouteTableRouteRuleArgs(
-                network_entity_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                cidr_block=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                destination=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                destination_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                network_entity_id=oci_core_internet_gateway["test_internet_gateway"]["id"],
+                cidr_block=var["route_table_route_rules_cidr_block"],
+                description=var["route_table_route_rules_description"],
+                destination=var["route_table_route_rules_destination"],
+                destination_type=var["route_table_route_rules_destination_type"],
             )])
         ```
 
@@ -390,11 +390,11 @@ class RouteTable(pulumi.CustomResource):
                 "Department": "Finance",
             },
             route_rules=[oci.core.RouteTableRouteRuleArgs(
-                network_entity_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                cidr_block=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                destination=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                destination_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                network_entity_id=oci_core_internet_gateway["test_internet_gateway"]["id"],
+                cidr_block=var["route_table_route_rules_cidr_block"],
+                description=var["route_table_route_rules_description"],
+                destination=var["route_table_route_rules_destination"],
+                destination_type=var["route_table_route_rules_destination_type"],
             )])
         ```
 

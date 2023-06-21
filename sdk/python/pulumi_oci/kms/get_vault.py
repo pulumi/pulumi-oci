@@ -264,7 +264,7 @@ def get_vault(vault_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vault = oci.Kms.get_vault(vault_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_vault = oci.Kms.get_vault(vault_id=oci_kms_vault["test_vault"]["id"])
     ```
 
 
@@ -315,7 +315,7 @@ def get_vault_output(vault_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vault = oci.Kms.get_vault(vault_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_vault = oci.Kms.get_vault(vault_id=oci_kms_vault["test_vault"]["id"])
     ```
 
 

@@ -175,7 +175,7 @@ def get_filesystem_snapshot_policy(filesystem_snapshot_policy_id: Optional[str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_filesystem_snapshot_policy = oci.FileStorage.get_filesystem_snapshot_policy(filesystem_snapshot_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_filesystem_snapshot_policy = oci.FileStorage.get_filesystem_snapshot_policy(filesystem_snapshot_policy_id=oci_file_storage_filesystem_snapshot_policy["test_filesystem_snapshot_policy"]["id"])
     ```
 
 
@@ -214,7 +214,7 @@ def get_filesystem_snapshot_policy_output(filesystem_snapshot_policy_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_filesystem_snapshot_policy = oci.FileStorage.get_filesystem_snapshot_policy(filesystem_snapshot_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_filesystem_snapshot_policy = oci.FileStorage.get_filesystem_snapshot_policy(filesystem_snapshot_policy_id=oci_file_storage_filesystem_snapshot_policy["test_filesystem_snapshot_policy"]["id"])
     ```
 
 

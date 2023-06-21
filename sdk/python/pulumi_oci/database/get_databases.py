@@ -142,11 +142,11 @@ def get_databases(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_databases = oci.Database.get_databases(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        db_home_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        db_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_databases = oci.Database.get_databases(compartment_id=var["compartment_id"],
+        db_home_id=oci_database_db_home["test_db_home"]["id"],
+        db_name=var["database_db_name"],
+        state=var["database_state"],
+        system_id=oci_database_system["test_system"]["id"])
     ```
 
 
@@ -196,11 +196,11 @@ def get_databases_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_databases = oci.Database.get_databases(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        db_home_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        db_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_databases = oci.Database.get_databases(compartment_id=var["compartment_id"],
+        db_home_id=oci_database_db_home["test_db_home"]["id"],
+        db_name=var["database_db_name"],
+        state=var["database_state"],
+        system_id=oci_database_system["test_system"]["id"])
     ```
 
 

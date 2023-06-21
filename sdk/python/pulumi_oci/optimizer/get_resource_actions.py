@@ -198,16 +198,16 @@ def get_resource_actions(child_tenancy_ids: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_actions = oci.Optimizer.get_resource_actions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        child_tenancy_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        include_organization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        recommendation_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        recommendation_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        status=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_resource_actions = oci.Optimizer.get_resource_actions(compartment_id=var["compartment_id"],
+        compartment_id_in_subtree=var["resource_action_compartment_id_in_subtree"],
+        child_tenancy_ids=var["resource_action_child_tenancy_ids"],
+        include_organization=var["resource_action_include_organization"],
+        name=var["resource_action_name"],
+        recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
+        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"],
+        resource_type=var["resource_action_resource_type"],
+        state=var["resource_action_state"],
+        status=var["resource_action_status"])
     ```
 
 
@@ -289,16 +289,16 @@ def get_resource_actions_output(child_tenancy_ids: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_actions = oci.Optimizer.get_resource_actions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        child_tenancy_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        include_organization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        recommendation_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        recommendation_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        status=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_resource_actions = oci.Optimizer.get_resource_actions(compartment_id=var["compartment_id"],
+        compartment_id_in_subtree=var["resource_action_compartment_id_in_subtree"],
+        child_tenancy_ids=var["resource_action_child_tenancy_ids"],
+        include_organization=var["resource_action_include_organization"],
+        name=var["resource_action_name"],
+        recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
+        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"],
+        resource_type=var["resource_action_resource_type"],
+        state=var["resource_action_state"],
+        status=var["resource_action_status"])
     ```
 
 

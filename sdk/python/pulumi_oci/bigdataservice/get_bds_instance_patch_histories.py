@@ -113,9 +113,9 @@ def get_bds_instance_patch_histories(bds_instance_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_patch_histories = oci.BigDataService.get_bds_instance_patch_histories(bds_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        patch_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_bds_instance_patch_histories = oci.BigDataService.get_bds_instance_patch_histories(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
+        patch_version=var["bds_instance_patch_history_patch_version"],
+        state=var["bds_instance_patch_history_state"])
     ```
 
 
@@ -157,9 +157,9 @@ def get_bds_instance_patch_histories_output(bds_instance_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_patch_histories = oci.BigDataService.get_bds_instance_patch_histories(bds_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        patch_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_bds_instance_patch_histories = oci.BigDataService.get_bds_instance_patch_histories(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
+        patch_version=var["bds_instance_patch_history_patch_version"],
+        state=var["bds_instance_patch_history_state"])
     ```
 
 

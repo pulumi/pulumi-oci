@@ -235,7 +235,7 @@ def get_deploy_artifact(deploy_artifact_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_artifact = oci.DevOps.get_deploy_artifact(deploy_artifact_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_deploy_artifact = oci.DevOps.get_deploy_artifact(deploy_artifact_id=oci_devops_deploy_artifact["test_deploy_artifact"]["id"])
     ```
 
 
@@ -279,7 +279,7 @@ def get_deploy_artifact_output(deploy_artifact_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_artifact = oci.DevOps.get_deploy_artifact(deploy_artifact_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_deploy_artifact = oci.DevOps.get_deploy_artifact(deploy_artifact_id=oci_devops_deploy_artifact["test_deploy_artifact"]["id"])
     ```
 
 

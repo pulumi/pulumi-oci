@@ -271,7 +271,7 @@ def get_asset(asset_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_asset = oci.CloudBridge.get_asset(asset_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_asset = oci.CloudBridge.get_asset(asset_id=oci_cloud_bridge_asset["test_asset"]["id"])
     ```
 
 
@@ -318,7 +318,7 @@ def get_asset_output(asset_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_asset = oci.CloudBridge.get_asset(asset_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_asset = oci.CloudBridge.get_asset(asset_id=oci_cloud_bridge_asset["test_asset"]["id"])
     ```
 
 

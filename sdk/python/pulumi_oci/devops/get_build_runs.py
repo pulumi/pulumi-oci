@@ -149,12 +149,12 @@ def get_build_runs(build_pipeline_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_build_runs = oci.DevOps.get_build_runs(build_pipeline_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_build_runs = oci.DevOps.get_build_runs(build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"],
+        compartment_id=var["compartment_id"],
+        display_name=var["build_run_display_name"],
+        id=var["build_run_id"],
+        project_id=oci_devops_project["test_project"]["id"],
+        state=var["build_run_state"])
     ```
 
 
@@ -208,12 +208,12 @@ def get_build_runs_output(build_pipeline_id: Optional[pulumi.Input[Optional[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_build_runs = oci.DevOps.get_build_runs(build_pipeline_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_build_runs = oci.DevOps.get_build_runs(build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"],
+        compartment_id=var["compartment_id"],
+        display_name=var["build_run_display_name"],
+        id=var["build_run_id"],
+        project_id=oci_devops_project["test_project"]["id"],
+        state=var["build_run_state"])
     ```
 
 

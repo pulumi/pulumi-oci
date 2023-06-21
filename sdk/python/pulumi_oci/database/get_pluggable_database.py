@@ -238,7 +238,7 @@ def get_pluggable_database(pluggable_database_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pluggable_database = oci.Database.get_pluggable_database(pluggable_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_pluggable_database = oci.Database.get_pluggable_database(pluggable_database_id=oci_database_pluggable_database["test_pluggable_database"]["id"])
     ```
 
 
@@ -283,7 +283,7 @@ def get_pluggable_database_output(pluggable_database_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_pluggable_database = oci.Database.get_pluggable_database(pluggable_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_pluggable_database = oci.Database.get_pluggable_database(pluggable_database_id=oci_database_pluggable_database["test_pluggable_database"]["id"])
     ```
 
 

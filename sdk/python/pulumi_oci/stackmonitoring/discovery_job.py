@@ -406,23 +406,23 @@ class DiscoveryJob(pulumi.CustomResource):
         test_discovery_job = oci.stack_monitoring.DiscoveryJob("testDiscoveryJob",
             compartment_id=var["compartment_id"],
             discovery_details=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsArgs(
-                agent_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                agent_id=var["management_agent_id"],
                 properties=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsPropertiesArgs(
-                    properties_map=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    properties_map=var["discovery_job_discovery_details_properties_properties_map"],
                 ),
-                resource_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                resource_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                resource_name=var["discovery_job_discovery_details_resource_name"],
+                resource_type=var["discovery_job_discovery_details_resource_type"],
                 credentials=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsArgs(
                     items=[oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsItemArgs(
-                        credential_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                        credential_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        credential_name=var["discovery_job_discovery_details_credentials_items_credential_name"],
+                        credential_type=var["discovery_job_discovery_details_credentials_items_credential_type"],
                         properties=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs(
-                            properties_map=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            properties_map=var["discovery_job_discovery_details_credentials_items_properties_properties_map"],
                         ),
                     )],
                 ),
                 tags=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsTagsArgs(
-                    properties_map=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    properties_map=var["discovery_job_discovery_details_tags_properties_map"],
                 ),
             ),
             defined_tags={
@@ -478,23 +478,23 @@ class DiscoveryJob(pulumi.CustomResource):
         test_discovery_job = oci.stack_monitoring.DiscoveryJob("testDiscoveryJob",
             compartment_id=var["compartment_id"],
             discovery_details=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsArgs(
-                agent_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                agent_id=var["management_agent_id"],
                 properties=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsPropertiesArgs(
-                    properties_map=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    properties_map=var["discovery_job_discovery_details_properties_properties_map"],
                 ),
-                resource_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                resource_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                resource_name=var["discovery_job_discovery_details_resource_name"],
+                resource_type=var["discovery_job_discovery_details_resource_type"],
                 credentials=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsArgs(
                     items=[oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsItemArgs(
-                        credential_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                        credential_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        credential_name=var["discovery_job_discovery_details_credentials_items_credential_name"],
+                        credential_type=var["discovery_job_discovery_details_credentials_items_credential_type"],
                         properties=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs(
-                            properties_map=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            properties_map=var["discovery_job_discovery_details_credentials_items_properties_properties_map"],
                         ),
                     )],
                 ),
                 tags=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsTagsArgs(
-                    properties_map=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    properties_map=var["discovery_job_discovery_details_tags_properties_map"],
                 ),
             ),
             defined_tags={

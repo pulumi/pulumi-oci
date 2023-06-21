@@ -188,15 +188,15 @@ def get_container_images(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_container_images = oci.Artifacts.get_container_images(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        image_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_versioned=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        repository_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_container_images = oci.Artifacts.get_container_images(compartment_id=var["compartment_id"],
+        compartment_id_in_subtree=var["container_image_compartment_id_in_subtree"],
+        display_name=var["container_image_display_name"],
+        image_id=oci_core_image["test_image"]["id"],
+        is_versioned=var["container_image_is_versioned"],
+        repository_id=oci_artifacts_repository["test_repository"]["id"],
+        repository_name=oci_artifacts_repository["test_repository"]["name"],
+        state=var["container_image_state"],
+        version=var["container_image_version"])
     ```
 
 
@@ -262,15 +262,15 @@ def get_container_images_output(compartment_id: Optional[pulumi.Input[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_container_images = oci.Artifacts.get_container_images(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        image_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_versioned=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        repository_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_container_images = oci.Artifacts.get_container_images(compartment_id=var["compartment_id"],
+        compartment_id_in_subtree=var["container_image_compartment_id_in_subtree"],
+        display_name=var["container_image_display_name"],
+        image_id=oci_core_image["test_image"]["id"],
+        is_versioned=var["container_image_is_versioned"],
+        repository_id=oci_artifacts_repository["test_repository"]["id"],
+        repository_name=oci_artifacts_repository["test_repository"]["name"],
+        state=var["container_image_state"],
+        version=var["container_image_version"])
     ```
 
 

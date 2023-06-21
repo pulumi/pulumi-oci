@@ -186,7 +186,7 @@ def get_ipv6(ipv6id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ipv6 = oci.Core.get_ipv6(ipv6id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_ipv6 = oci.Core.get_ipv6(ipv6id=oci_core_ipv6["test_ipv6"]["id"])
     ```
 
 
@@ -229,7 +229,7 @@ def get_ipv6_output(ipv6id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ipv6 = oci.Core.get_ipv6(ipv6id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_ipv6 = oci.Core.get_ipv6(ipv6id=oci_core_ipv6["test_ipv6"]["id"])
     ```
 
 

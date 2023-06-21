@@ -445,8 +445,8 @@ class Fleet(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             display_name=var["fleet_display_name"],
             inventory_log=oci.jms.FleetInventoryLogArgs(
-                log_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                log_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                log_group_id=oci_logging_log_group["test_log_group"]["id"],
+                log_id=oci_logging_log["test_log"]["id"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -457,8 +457,8 @@ class Fleet(pulumi.CustomResource):
             },
             is_advanced_features_enabled=var["fleet_is_advanced_features_enabled"],
             operation_log=oci.jms.FleetOperationLogArgs(
-                log_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                log_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                log_group_id=oci_logging_log_group["test_log_group"]["id"],
+                log_id=oci_logging_log["test_log"]["id"],
             ))
         ```
 
@@ -508,8 +508,8 @@ class Fleet(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             display_name=var["fleet_display_name"],
             inventory_log=oci.jms.FleetInventoryLogArgs(
-                log_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                log_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                log_group_id=oci_logging_log_group["test_log_group"]["id"],
+                log_id=oci_logging_log["test_log"]["id"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -520,8 +520,8 @@ class Fleet(pulumi.CustomResource):
             },
             is_advanced_features_enabled=var["fleet_is_advanced_features_enabled"],
             operation_log=oci.jms.FleetOperationLogArgs(
-                log_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                log_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                log_group_id=oci_logging_log_group["test_log_group"]["id"],
+                log_id=oci_logging_log["test_log"]["id"],
             ))
         ```
 

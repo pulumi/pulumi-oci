@@ -1162,12 +1162,12 @@ class MysqlDbSystem(pulumi.CustomResource):
                 freeform_tags={
                     "bar-key": "value",
                 },
-                is_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_enabled=var["mysql_db_system_backup_policy_is_enabled"],
                 pitr_policy=oci.mysql.MysqlDbSystemBackupPolicyPitrPolicyArgs(
-                    is_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    is_enabled=var["mysql_db_system_backup_policy_pitr_policy_is_enabled"],
                 ),
-                retention_in_days=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                window_start_time=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                retention_in_days=var["mysql_db_system_backup_policy_retention_in_days"],
+                window_start_time=var["mysql_db_system_backup_policy_window_start_time"],
             ),
             configuration_id=oci_audit_configuration["test_configuration"]["id"],
             crash_recovery=var["mysql_db_system_crash_recovery"],
@@ -1176,9 +1176,9 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "foo-namespace.bar-key": "value",
             },
             deletion_policies=[oci.mysql.MysqlDbSystemDeletionPolicyArgs(
-                automatic_backup_retention=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                final_backup=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                is_delete_protected=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                automatic_backup_retention=var["mysql_db_system_deletion_policy_automatic_backup_retention"],
+                final_backup=var["mysql_db_system_deletion_policy_final_backup"],
+                is_delete_protected=var["mysql_db_system_deletion_policy_is_delete_protected"],
             )],
             description=var["mysql_db_system_description"],
             display_name=var["mysql_db_system_display_name"],
@@ -1190,13 +1190,13 @@ class MysqlDbSystem(pulumi.CustomResource):
             ip_address=var["mysql_db_system_ip_address"],
             is_highly_available=var["mysql_db_system_is_highly_available"],
             maintenance=oci.mysql.MysqlDbSystemMaintenanceArgs(
-                window_start_time=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                window_start_time=var["mysql_db_system_maintenance_window_start_time"],
             ),
             port=var["mysql_db_system_port"],
             port_x=var["mysql_db_system_port_x"],
             source=oci.mysql.MysqlDbSystemSourceArgs(
-                source_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                backup_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                source_type=var["mysql_db_system_source_source_type"],
+                backup_id=oci_mysql_mysql_backup["test_backup"]["id"],
             ))
         ```
 
@@ -1286,12 +1286,12 @@ class MysqlDbSystem(pulumi.CustomResource):
                 freeform_tags={
                     "bar-key": "value",
                 },
-                is_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                is_enabled=var["mysql_db_system_backup_policy_is_enabled"],
                 pitr_policy=oci.mysql.MysqlDbSystemBackupPolicyPitrPolicyArgs(
-                    is_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    is_enabled=var["mysql_db_system_backup_policy_pitr_policy_is_enabled"],
                 ),
-                retention_in_days=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                window_start_time=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                retention_in_days=var["mysql_db_system_backup_policy_retention_in_days"],
+                window_start_time=var["mysql_db_system_backup_policy_window_start_time"],
             ),
             configuration_id=oci_audit_configuration["test_configuration"]["id"],
             crash_recovery=var["mysql_db_system_crash_recovery"],
@@ -1300,9 +1300,9 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "foo-namespace.bar-key": "value",
             },
             deletion_policies=[oci.mysql.MysqlDbSystemDeletionPolicyArgs(
-                automatic_backup_retention=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                final_backup=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                is_delete_protected=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                automatic_backup_retention=var["mysql_db_system_deletion_policy_automatic_backup_retention"],
+                final_backup=var["mysql_db_system_deletion_policy_final_backup"],
+                is_delete_protected=var["mysql_db_system_deletion_policy_is_delete_protected"],
             )],
             description=var["mysql_db_system_description"],
             display_name=var["mysql_db_system_display_name"],
@@ -1314,13 +1314,13 @@ class MysqlDbSystem(pulumi.CustomResource):
             ip_address=var["mysql_db_system_ip_address"],
             is_highly_available=var["mysql_db_system_is_highly_available"],
             maintenance=oci.mysql.MysqlDbSystemMaintenanceArgs(
-                window_start_time=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                window_start_time=var["mysql_db_system_maintenance_window_start_time"],
             ),
             port=var["mysql_db_system_port"],
             port_x=var["mysql_db_system_port_x"],
             source=oci.mysql.MysqlDbSystemSourceArgs(
-                source_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                backup_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                source_type=var["mysql_db_system_source_source_type"],
+                backup_id=oci_mysql_mysql_backup["test_backup"]["id"],
             ))
         ```
 

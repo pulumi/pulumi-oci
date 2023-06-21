@@ -188,14 +188,14 @@ def get_audit_trails(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_trails = oci.DataSafe.get_audit_trails(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        audit_trail_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        status=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_audit_trails = oci.DataSafe.get_audit_trails(compartment_id=var["compartment_id"],
+        access_level=var["audit_trail_access_level"],
+        audit_trail_id=oci_data_safe_audit_trail["test_audit_trail"]["id"],
+        compartment_id_in_subtree=var["audit_trail_compartment_id_in_subtree"],
+        display_name=var["audit_trail_display_name"],
+        state=var["audit_trail_state"],
+        status=var["audit_trail_status"],
+        target_id=oci_cloud_guard_target["test_target"]["id"])
     ```
 
 
@@ -270,14 +270,14 @@ def get_audit_trails_output(access_level: Optional[pulumi.Input[Optional[str]]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_trails = oci.DataSafe.get_audit_trails(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        audit_trail_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        status=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_audit_trails = oci.DataSafe.get_audit_trails(compartment_id=var["compartment_id"],
+        access_level=var["audit_trail_access_level"],
+        audit_trail_id=oci_data_safe_audit_trail["test_audit_trail"]["id"],
+        compartment_id_in_subtree=var["audit_trail_compartment_id_in_subtree"],
+        display_name=var["audit_trail_display_name"],
+        state=var["audit_trail_state"],
+        status=var["audit_trail_status"],
+        target_id=oci_cloud_guard_target["test_target"]["id"])
     ```
 
 

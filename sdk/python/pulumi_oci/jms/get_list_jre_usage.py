@@ -135,12 +135,12 @@ def get_list_jre_usage(application_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_list_jre_usage = oci.Jms.get_list_jre_usage(application_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        application_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        host_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_end=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_start=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_list_jre_usage = oci.Jms.get_list_jre_usage(application_id=oci_dataflow_application["test_application"]["id"],
+        application_name=oci_dataflow_application["test_application"]["name"],
+        compartment_id=var["compartment_id"],
+        host_id=oci_jms_host["test_host"]["id"],
+        time_end=var["list_jre_usage_time_end"],
+        time_start=var["list_jre_usage_time_start"])
     ```
 
 
@@ -191,12 +191,12 @@ def get_list_jre_usage_output(application_id: Optional[pulumi.Input[Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_list_jre_usage = oci.Jms.get_list_jre_usage(application_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        application_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        host_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_end=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_start=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_list_jre_usage = oci.Jms.get_list_jre_usage(application_id=oci_dataflow_application["test_application"]["id"],
+        application_name=oci_dataflow_application["test_application"]["name"],
+        compartment_id=var["compartment_id"],
+        host_id=oci_jms_host["test_host"]["id"],
+        time_end=var["list_jre_usage_time_end"],
+        time_start=var["list_jre_usage_time_start"])
     ```
 
 

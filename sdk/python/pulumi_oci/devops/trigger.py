@@ -470,15 +470,15 @@ class Trigger(pulumi.CustomResource):
 
         test_trigger = oci.dev_ops.Trigger("testTrigger",
             actions=[oci.dev_ops.TriggerActionArgs(
-                build_pipeline_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"],
+                type=var["trigger_actions_type"],
                 filter=oci.dev_ops.TriggerActionFilterArgs(
-                    trigger_source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    events=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    trigger_source=var["trigger_actions_filter_trigger_source"],
+                    events=var["trigger_actions_filter_events"],
                     include=oci.dev_ops.TriggerActionFilterIncludeArgs(
-                        base_ref=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                        head_ref=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                        repository_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        base_ref=var["trigger_actions_filter_include_base_ref"],
+                        head_ref=var["trigger_actions_filter_include_head_ref"],
+                        repository_name=oci_devops_repository["test_repository"]["name"],
                     ),
                 ),
             )],
@@ -538,15 +538,15 @@ class Trigger(pulumi.CustomResource):
 
         test_trigger = oci.dev_ops.Trigger("testTrigger",
             actions=[oci.dev_ops.TriggerActionArgs(
-                build_pipeline_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"],
+                type=var["trigger_actions_type"],
                 filter=oci.dev_ops.TriggerActionFilterArgs(
-                    trigger_source=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    events=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    trigger_source=var["trigger_actions_filter_trigger_source"],
+                    events=var["trigger_actions_filter_events"],
                     include=oci.dev_ops.TriggerActionFilterIncludeArgs(
-                        base_ref=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                        head_ref=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                        repository_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        base_ref=var["trigger_actions_filter_include_base_ref"],
+                        head_ref=var["trigger_actions_filter_include_head_ref"],
+                        repository_name=oci_devops_repository["test_repository"]["name"],
                     ),
                 ),
             )],

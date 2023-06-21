@@ -337,22 +337,22 @@ class ClusterNetwork(pulumi.CustomResource):
         test_cluster_network = oci.core.ClusterNetwork("testClusterNetwork",
             compartment_id=var["compartment_id"],
             instance_pools=[oci.core.ClusterNetworkInstancePoolArgs(
-                instance_configuration_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                size=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                instance_configuration_id=oci_core_instance_configuration["test_instance_configuration"]["id"],
+                size=var["cluster_network_instance_pools_size"],
                 defined_tags={
                     "Operations.CostCenter": "42",
                 },
-                display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                display_name=var["cluster_network_instance_pools_display_name"],
                 freeform_tags={
                     "Department": "Finance",
                 },
             )],
             placement_configuration=oci.core.ClusterNetworkPlacementConfigurationArgs(
-                availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                primary_subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                availability_domain=var["cluster_network_placement_configuration_availability_domain"],
+                primary_subnet_id=oci_core_subnet["test_subnet"]["id"],
                 secondary_vnic_subnets=[oci.core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs(
-                    subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    subnet_id=oci_core_subnet["test_subnet"]["id"],
+                    display_name=var["cluster_network_placement_configuration_secondary_vnic_subnets_display_name"],
                 )],
             ),
             defined_tags={
@@ -408,22 +408,22 @@ class ClusterNetwork(pulumi.CustomResource):
         test_cluster_network = oci.core.ClusterNetwork("testClusterNetwork",
             compartment_id=var["compartment_id"],
             instance_pools=[oci.core.ClusterNetworkInstancePoolArgs(
-                instance_configuration_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                size=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                instance_configuration_id=oci_core_instance_configuration["test_instance_configuration"]["id"],
+                size=var["cluster_network_instance_pools_size"],
                 defined_tags={
                     "Operations.CostCenter": "42",
                 },
-                display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                display_name=var["cluster_network_instance_pools_display_name"],
                 freeform_tags={
                     "Department": "Finance",
                 },
             )],
             placement_configuration=oci.core.ClusterNetworkPlacementConfigurationArgs(
-                availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                primary_subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                availability_domain=var["cluster_network_placement_configuration_availability_domain"],
+                primary_subnet_id=oci_core_subnet["test_subnet"]["id"],
                 secondary_vnic_subnets=[oci.core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs(
-                    subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    subnet_id=oci_core_subnet["test_subnet"]["id"],
+                    display_name=var["cluster_network_placement_configuration_secondary_vnic_subnets_display_name"],
                 )],
             ),
             defined_tags={

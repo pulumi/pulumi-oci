@@ -432,28 +432,28 @@ class NotebookSession(pulumi.CustomResource):
                 "Department": "Finance",
             },
             notebook_session_config_details=oci.data_science.NotebookSessionNotebookSessionConfigDetailsArgs(
-                shape=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                block_storage_size_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                shape=var["notebook_session_notebook_session_config_details_shape"],
+                block_storage_size_in_gbs=var["notebook_session_notebook_session_config_details_block_storage_size_in_gbs"],
                 notebook_session_shape_config_details=oci.data_science.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs(
-                    memory_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    ocpus=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    memory_in_gbs=var["notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs"],
+                    ocpus=var["notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus"],
                 ),
-                subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                subnet_id=oci_core_subnet["test_subnet"]["id"],
             ),
             notebook_session_configuration_details=oci.data_science.NotebookSessionNotebookSessionConfigurationDetailsArgs(
-                shape=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                block_storage_size_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                shape=var["notebook_session_notebook_session_configuration_details_shape"],
+                subnet_id=oci_core_subnet["test_subnet"]["id"],
+                block_storage_size_in_gbs=var["notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs"],
                 notebook_session_shape_config_details=oci.data_science.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs(
-                    memory_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    ocpus=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    memory_in_gbs=var["notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs"],
+                    ocpus=var["notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus"],
                 ),
             ),
             notebook_session_runtime_config_details=oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs(
-                custom_environment_variables=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                custom_environment_variables=var["notebook_session_notebook_session_runtime_config_details_custom_environment_variables"],
                 notebook_session_git_config_details=oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs(
                     notebook_session_git_repo_config_collections=[oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs(
-                        url=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        url=var["notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url"],
                     )],
                 ),
             ))
@@ -511,28 +511,28 @@ class NotebookSession(pulumi.CustomResource):
                 "Department": "Finance",
             },
             notebook_session_config_details=oci.data_science.NotebookSessionNotebookSessionConfigDetailsArgs(
-                shape=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                block_storage_size_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                shape=var["notebook_session_notebook_session_config_details_shape"],
+                block_storage_size_in_gbs=var["notebook_session_notebook_session_config_details_block_storage_size_in_gbs"],
                 notebook_session_shape_config_details=oci.data_science.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs(
-                    memory_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    ocpus=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    memory_in_gbs=var["notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs"],
+                    ocpus=var["notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus"],
                 ),
-                subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                subnet_id=oci_core_subnet["test_subnet"]["id"],
             ),
             notebook_session_configuration_details=oci.data_science.NotebookSessionNotebookSessionConfigurationDetailsArgs(
-                shape=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                block_storage_size_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                shape=var["notebook_session_notebook_session_configuration_details_shape"],
+                subnet_id=oci_core_subnet["test_subnet"]["id"],
+                block_storage_size_in_gbs=var["notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs"],
                 notebook_session_shape_config_details=oci.data_science.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs(
-                    memory_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    ocpus=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    memory_in_gbs=var["notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs"],
+                    ocpus=var["notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus"],
                 ),
             ),
             notebook_session_runtime_config_details=oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs(
-                custom_environment_variables=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                custom_environment_variables=var["notebook_session_notebook_session_runtime_config_details_custom_environment_variables"],
                 notebook_session_git_config_details=oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs(
                     notebook_session_git_repo_config_collections=[oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs(
-                        url=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        url=var["notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url"],
                     )],
                 ),
             ))

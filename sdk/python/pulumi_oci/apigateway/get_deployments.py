@@ -132,10 +132,10 @@ def get_deployments(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployments = oci.ApiGateway.get_deployments(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        gateway_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_deployments = oci.ApiGateway.get_deployments(compartment_id=var["compartment_id"],
+        display_name=var["deployment_display_name"],
+        gateway_id=oci_apigateway_gateway["test_gateway"]["id"],
+        state=var["deployment_state"])
     ```
 
 
@@ -181,10 +181,10 @@ def get_deployments_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployments = oci.ApiGateway.get_deployments(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        gateway_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_deployments = oci.ApiGateway.get_deployments(compartment_id=var["compartment_id"],
+        display_name=var["deployment_display_name"],
+        gateway_id=oci_apigateway_gateway["test_gateway"]["id"],
+        state=var["deployment_state"])
     ```
 
 

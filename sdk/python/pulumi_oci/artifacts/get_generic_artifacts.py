@@ -172,14 +172,14 @@ def get_generic_artifacts(artifact_path: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_generic_artifacts = oci.Artifacts.get_generic_artifacts(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        artifact_path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        sha256=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_generic_artifacts = oci.Artifacts.get_generic_artifacts(compartment_id=var["compartment_id"],
+        repository_id=oci_artifacts_repository["test_repository"]["id"],
+        artifact_path=var["generic_artifact_artifact_path"],
+        display_name=var["generic_artifact_display_name"],
+        id=var["generic_artifact_id"],
+        sha256=var["generic_artifact_sha256"],
+        state=var["generic_artifact_state"],
+        version=var["generic_artifact_version"])
     ```
 
 
@@ -240,14 +240,14 @@ def get_generic_artifacts_output(artifact_path: Optional[pulumi.Input[Optional[s
     import pulumi
     import pulumi_oci as oci
 
-    test_generic_artifacts = oci.Artifacts.get_generic_artifacts(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        artifact_path=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        sha256=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_generic_artifacts = oci.Artifacts.get_generic_artifacts(compartment_id=var["compartment_id"],
+        repository_id=oci_artifacts_repository["test_repository"]["id"],
+        artifact_path=var["generic_artifact_artifact_path"],
+        display_name=var["generic_artifact_display_name"],
+        id=var["generic_artifact_id"],
+        sha256=var["generic_artifact_sha256"],
+        state=var["generic_artifact_state"],
+        version=var["generic_artifact_version"])
     ```
 
 

@@ -132,10 +132,10 @@ def get_db_servers(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_servers = oci.Database.get_db_servers(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_db_servers = oci.Database.get_db_servers(compartment_id=var["compartment_id"],
+        exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
+        display_name=var["db_server_display_name"],
+        state=var["db_server_state"])
     ```
 
 
@@ -181,10 +181,10 @@ def get_db_servers_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_servers = oci.Database.get_db_servers(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_db_servers = oci.Database.get_db_servers(compartment_id=var["compartment_id"],
+        exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
+        display_name=var["db_server_display_name"],
+        state=var["db_server_state"])
     ```
 
 

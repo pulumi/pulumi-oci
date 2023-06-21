@@ -129,10 +129,10 @@ def get_deployment_types(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_types = oci.GoldenGate.get_deployment_types(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        deployment_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        ogg_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_deployment_types = oci.GoldenGate.get_deployment_types(compartment_id=var["compartment_id"],
+        deployment_type=var["deployment_type_deployment_type"],
+        display_name=var["deployment_type_display_name"],
+        ogg_version=var["deployment_type_ogg_version"])
     ```
 
 
@@ -178,10 +178,10 @@ def get_deployment_types_output(compartment_id: Optional[pulumi.Input[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_types = oci.GoldenGate.get_deployment_types(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        deployment_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        ogg_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_deployment_types = oci.GoldenGate.get_deployment_types(compartment_id=var["compartment_id"],
+        deployment_type=var["deployment_type_deployment_type"],
+        display_name=var["deployment_type_display_name"],
+        ogg_version=var["deployment_type_ogg_version"])
     ```
 
 

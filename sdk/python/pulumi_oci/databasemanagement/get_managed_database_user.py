@@ -364,8 +364,8 @@ def get_managed_database_user(managed_database_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user = oci.DatabaseManagement.get_managed_database_user(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        user_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_managed_database_user = oci.DatabaseManagement.get_managed_database_user(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
+        user_name=oci_identity_user["test_user"]["name"])
     ```
 
 
@@ -423,8 +423,8 @@ def get_managed_database_user_output(managed_database_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user = oci.DatabaseManagement.get_managed_database_user(managed_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        user_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_managed_database_user = oci.DatabaseManagement.get_managed_database_user(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
+        user_name=oci_identity_user["test_user"]["name"])
     ```
 
 

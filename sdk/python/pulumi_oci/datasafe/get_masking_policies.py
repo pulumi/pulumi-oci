@@ -195,16 +195,16 @@ def get_masking_policies(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policies = oci.DataSafe.get_masking_policies(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        masking_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        sensitive_data_model_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_masking_policies = oci.DataSafe.get_masking_policies(compartment_id=var["compartment_id"],
+        access_level=var["masking_policy_access_level"],
+        compartment_id_in_subtree=var["masking_policy_compartment_id_in_subtree"],
+        display_name=var["masking_policy_display_name"],
+        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
+        sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
+        state=var["masking_policy_state"],
+        target_id=oci_cloud_guard_target["test_target"]["id"],
+        time_created_greater_than_or_equal_to=var["masking_policy_time_created_greater_than_or_equal_to"],
+        time_created_less_than=var["masking_policy_time_created_less_than"])
     ```
 
 
@@ -278,16 +278,16 @@ def get_masking_policies_output(access_level: Optional[pulumi.Input[Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policies = oci.DataSafe.get_masking_policies(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        masking_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        sensitive_data_model_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_masking_policies = oci.DataSafe.get_masking_policies(compartment_id=var["compartment_id"],
+        access_level=var["masking_policy_access_level"],
+        compartment_id_in_subtree=var["masking_policy_compartment_id_in_subtree"],
+        display_name=var["masking_policy_display_name"],
+        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
+        sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
+        state=var["masking_policy_state"],
+        target_id=oci_cloud_guard_target["test_target"]["id"],
+        time_created_greater_than_or_equal_to=var["masking_policy_time_created_greater_than_or_equal_to"],
+        time_created_less_than=var["masking_policy_time_created_less_than"])
     ```
 
 

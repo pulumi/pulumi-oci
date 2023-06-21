@@ -571,9 +571,9 @@ class Key(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             display_name=var["key_display_name"],
             key_shape=oci.kms.KeyKeyShapeArgs(
-                algorithm=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                length=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                curve_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                algorithm=var["key_key_shape_algorithm"],
+                length=var["key_key_shape_length"],
+                curve_id=oci_kms_curve["test_curve"]["id"],
             ),
             management_endpoint=var["key_management_endpoint"],
             defined_tags={
@@ -637,9 +637,9 @@ class Key(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             display_name=var["key_display_name"],
             key_shape=oci.kms.KeyKeyShapeArgs(
-                algorithm=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                length=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                curve_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                algorithm=var["key_key_shape_algorithm"],
+                length=var["key_key_shape_length"],
+                curve_id=oci_kms_curve["test_curve"]["id"],
             ),
             management_endpoint=var["key_management_endpoint"],
             defined_tags={

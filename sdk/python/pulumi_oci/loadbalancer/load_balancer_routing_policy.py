@@ -209,11 +209,11 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
             rules=[oci.load_balancer.LoadBalancerRoutingPolicyRuleArgs(
                 actions=[oci.load_balancer.LoadBalancerRoutingPolicyRuleActionArgs(
-                    backend_set_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
+                    name=var["load_balancer_routing_policy_rules_actions_name"],
                 )],
-                condition=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                condition=var["load_balancer_routing_policy_rules_condition"],
+                name=var["load_balancer_routing_policy_rules_name"],
             )])
         ```
 
@@ -259,11 +259,11 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
             rules=[oci.load_balancer.LoadBalancerRoutingPolicyRuleArgs(
                 actions=[oci.load_balancer.LoadBalancerRoutingPolicyRuleActionArgs(
-                    backend_set_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
+                    name=var["load_balancer_routing_policy_rules_actions_name"],
                 )],
-                condition=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                condition=var["load_balancer_routing_policy_rules_condition"],
+                name=var["load_balancer_routing_policy_rules_name"],
             )])
         ```
 

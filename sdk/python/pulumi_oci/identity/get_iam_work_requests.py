@@ -106,8 +106,8 @@ def get_iam_work_requests(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_iam_work_requests = oci.Identity.get_iam_work_requests(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_identifier=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_iam_work_requests = oci.Identity.get_iam_work_requests(compartment_id=var["compartment_id"],
+        resource_identifier=var["iam_work_request_resource_identifier"])
     ```
 
 
@@ -148,8 +148,8 @@ def get_iam_work_requests_output(compartment_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_iam_work_requests = oci.Identity.get_iam_work_requests(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_identifier=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_iam_work_requests = oci.Identity.get_iam_work_requests(compartment_id=var["compartment_id"],
+        resource_identifier=var["iam_work_request_resource_identifier"])
     ```
 
 

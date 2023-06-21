@@ -90,7 +90,7 @@ def get_db_system_patches(db_system_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_patches = oci.Database.get_db_system_patches(db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_db_system_patches = oci.Database.get_db_system_patches(db_system_id=oci_database_db_system["test_db_system"]["id"])
     ```
 
 
@@ -124,7 +124,7 @@ def get_db_system_patches_output(db_system_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_patches = oci.Database.get_db_system_patches(db_system_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_db_system_patches = oci.Database.get_db_system_patches(db_system_id=oci_database_db_system["test_db_system"]["id"])
     ```
 
 

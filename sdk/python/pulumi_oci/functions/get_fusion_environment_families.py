@@ -129,10 +129,10 @@ def get_fusion_environment_families(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_families = oci.Functions.get_fusion_environment_families(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        fusion_environment_family_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_fusion_environment_families = oci.Functions.get_fusion_environment_families(compartment_id=var["compartment_id"],
+        display_name=var["fusion_environment_family_display_name"],
+        fusion_environment_family_id=oci_fusion_apps_fusion_environment_family["test_fusion_environment_family"]["id"],
+        state=var["fusion_environment_family_state"])
     ```
 
 
@@ -178,10 +178,10 @@ def get_fusion_environment_families_output(compartment_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_families = oci.Functions.get_fusion_environment_families(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        fusion_environment_family_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_fusion_environment_families = oci.Functions.get_fusion_environment_families(compartment_id=var["compartment_id"],
+        display_name=var["fusion_environment_family_display_name"],
+        fusion_environment_family_id=oci_fusion_apps_fusion_environment_family["test_fusion_environment_family"]["id"],
+        state=var["fusion_environment_family_state"])
     ```
 
 

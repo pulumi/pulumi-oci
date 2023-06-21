@@ -448,7 +448,7 @@ def get_database(database_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database = oci.Database.get_database(database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_database = oci.Database.get_database(database_id=var["database_id"])
     ```
 
 
@@ -511,7 +511,7 @@ def get_database_output(database_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database = oci.Database.get_database(database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_database = oci.Database.get_database(database_id=var["database_id"])
     ```
 
 

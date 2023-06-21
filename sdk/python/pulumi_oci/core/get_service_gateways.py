@@ -120,9 +120,9 @@ def get_service_gateways(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_gateways = oci.Core.get_service_gateways(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_service_gateways = oci.Core.get_service_gateways(compartment_id=var["compartment_id"],
+        state=var["service_gateway_state"],
+        vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
 
 
@@ -165,9 +165,9 @@ def get_service_gateways_output(compartment_id: Optional[pulumi.Input[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_service_gateways = oci.Core.get_service_gateways(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_service_gateways = oci.Core.get_service_gateways(compartment_id=var["compartment_id"],
+        state=var["service_gateway_state"],
+        vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
 
 

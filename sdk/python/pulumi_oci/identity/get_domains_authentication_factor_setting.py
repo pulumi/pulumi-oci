@@ -561,12 +561,12 @@ def get_domains_authentication_factor_setting(attribute_sets: Optional[Sequence[
     import pulumi
     import pulumi_oci as oci
 
-    test_authentication_factor_setting = oci.Identity.get_domains_authentication_factor_setting(authentication_factor_setting_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_authentication_factor_setting = oci.Identity.get_domains_authentication_factor_setting(authentication_factor_setting_id=oci_identity_domains_authentication_factor_setting["test_authentication_factor_setting"]["id"],
+        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
         attribute_sets=[],
         attributes="",
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        authorization=var["authentication_factor_setting_authorization"],
+        resource_type_schema_version=var["authentication_factor_setting_resource_type_schema_version"])
     ```
 
 
@@ -653,12 +653,12 @@ def get_domains_authentication_factor_setting_output(attribute_sets: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_authentication_factor_setting = oci.Identity.get_domains_authentication_factor_setting(authentication_factor_setting_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_authentication_factor_setting = oci.Identity.get_domains_authentication_factor_setting(authentication_factor_setting_id=oci_identity_domains_authentication_factor_setting["test_authentication_factor_setting"]["id"],
+        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
         attribute_sets=[],
         attributes="",
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        authorization=var["authentication_factor_setting_authorization"],
+        resource_type_schema_version=var["authentication_factor_setting_resource_type_schema_version"])
     ```
 
 

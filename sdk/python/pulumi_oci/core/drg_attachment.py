@@ -504,10 +504,10 @@ class DrgAttachment(pulumi.CustomResource):
                 "Department": "Finance",
             },
             network_details=oci.core.DrgAttachmentNetworkDetailsArgs(
-                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                route_table_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                vcn_route_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                id=oci_core_vcn["test_vcn"]["id"],
+                type=var["drg_attachment_network_details_type"],
+                route_table_id=oci_core_route_table["test_route_table"]["id"],
+                vcn_route_type=var["drg_attachment_network_details_vcn_route_type"],
             ))
         ```
 
@@ -581,10 +581,10 @@ class DrgAttachment(pulumi.CustomResource):
                 "Department": "Finance",
             },
             network_details=oci.core.DrgAttachmentNetworkDetailsArgs(
-                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                route_table_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                vcn_route_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                id=oci_core_vcn["test_vcn"]["id"],
+                type=var["drg_attachment_network_details_type"],
+                route_table_id=oci_core_route_table["test_route_table"]["id"],
+                vcn_route_type=var["drg_attachment_network_details_vcn_route_type"],
             ))
         ```
 

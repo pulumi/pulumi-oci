@@ -185,15 +185,15 @@ def get_target_databases(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases = oci.DataSafe.get_target_databases(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        associated_resource_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        database_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        infrastructure_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        target_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_target_databases = oci.DataSafe.get_target_databases(compartment_id=var["compartment_id"],
+        access_level=var["target_database_access_level"],
+        associated_resource_id=oci_data_safe_associated_resource["test_associated_resource"]["id"],
+        compartment_id_in_subtree=var["target_database_compartment_id_in_subtree"],
+        database_type=var["target_database_database_type"],
+        display_name=var["target_database_display_name"],
+        infrastructure_type=var["target_database_infrastructure_type"],
+        state=var["target_database_state"],
+        target_database_id=oci_data_safe_target_database["test_target_database"]["id"])
     ```
 
 
@@ -259,15 +259,15 @@ def get_target_databases_output(access_level: Optional[pulumi.Input[Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases = oci.DataSafe.get_target_databases(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        associated_resource_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        database_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        infrastructure_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        target_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_target_databases = oci.DataSafe.get_target_databases(compartment_id=var["compartment_id"],
+        access_level=var["target_database_access_level"],
+        associated_resource_id=oci_data_safe_associated_resource["test_associated_resource"]["id"],
+        compartment_id_in_subtree=var["target_database_compartment_id_in_subtree"],
+        database_type=var["target_database_database_type"],
+        display_name=var["target_database_display_name"],
+        infrastructure_type=var["target_database_infrastructure_type"],
+        state=var["target_database_state"],
+        target_database_id=oci_data_safe_target_database["test_target_database"]["id"])
     ```
 
 

@@ -135,10 +135,10 @@ def get_dhcp_options(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dhcp_options = oci.Core.get_dhcp_options(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_dhcp_options = oci.Core.get_dhcp_options(compartment_id=var["compartment_id"],
+        display_name=var["dhcp_options_display_name"],
+        state=var["dhcp_options_state"],
+        vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
 
 
@@ -187,10 +187,10 @@ def get_dhcp_options_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dhcp_options = oci.Core.get_dhcp_options(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_dhcp_options = oci.Core.get_dhcp_options(compartment_id=var["compartment_id"],
+        display_name=var["dhcp_options_display_name"],
+        state=var["dhcp_options_state"],
+        vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
 
 

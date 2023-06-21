@@ -289,7 +289,7 @@ def get_certificate(certificate_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate = oci.Waas.get_certificate(certificate_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_certificate = oci.Waas.get_certificate(certificate_id=oci_waas_certificate["test_certificate"]["id"])
     ```
 
 
@@ -338,7 +338,7 @@ def get_certificate_output(certificate_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate = oci.Waas.get_certificate(certificate_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_certificate = oci.Waas.get_certificate(certificate_id=oci_waas_certificate["test_certificate"]["id"])
     ```
 
 

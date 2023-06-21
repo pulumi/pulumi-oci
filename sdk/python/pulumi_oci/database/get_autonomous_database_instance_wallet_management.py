@@ -111,7 +111,7 @@ def get_autonomous_database_instance_wallet_management(autonomous_database_id: O
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_instance_wallet_management = oci.Database.get_autonomous_database_instance_wallet_management(autonomous_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_autonomous_database_instance_wallet_management = oci.Database.get_autonomous_database_instance_wallet_management(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"])
     ```
 
 
@@ -145,7 +145,7 @@ def get_autonomous_database_instance_wallet_management_output(autonomous_databas
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_instance_wallet_management = oci.Database.get_autonomous_database_instance_wallet_management(autonomous_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_autonomous_database_instance_wallet_management = oci.Database.get_autonomous_database_instance_wallet_management(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"])
     ```
 
 

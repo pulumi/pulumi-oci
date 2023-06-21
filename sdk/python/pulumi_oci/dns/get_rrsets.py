@@ -149,12 +149,12 @@ def get_rrsets(domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rrsets = oci.Dns.get_rrsets(zone_name_or_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        domain_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        rtype=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        scope=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        view_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_rrsets = oci.Dns.get_rrsets(zone_name_or_id=oci_dns_zone["test_zone"]["id"],
+        domain=var["rrset_domain"],
+        domain_contains=var["rrset_domain"],
+        rtype=var["rrset_rtype"],
+        scope=var["rrset_scope"],
+        view_id=oci_dns_view["test_view"]["id"])
     ```
 
 
@@ -211,12 +211,12 @@ def get_rrsets_output(domain: Optional[pulumi.Input[Optional[str]]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rrsets = oci.Dns.get_rrsets(zone_name_or_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        domain_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        rtype=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        scope=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        view_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_rrsets = oci.Dns.get_rrsets(zone_name_or_id=oci_dns_zone["test_zone"]["id"],
+        domain=var["rrset_domain"],
+        domain_contains=var["rrset_domain"],
+        rtype=var["rrset_rtype"],
+        scope=var["rrset_scope"],
+        view_id=oci_dns_view["test_view"]["id"])
     ```
 
 

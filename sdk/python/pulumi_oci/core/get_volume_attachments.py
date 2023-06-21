@@ -136,10 +136,10 @@ def get_volume_attachments(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_attachments = oci.Core.get_volume_attachments(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        volume_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_volume_attachments = oci.Core.get_volume_attachments(compartment_id=var["compartment_id"],
+        availability_domain=var["volume_attachment_availability_domain"],
+        instance_id=oci_core_instance["test_instance"]["id"],
+        volume_id=oci_core_volume["test_volume"]["id"])
     ```
 
 
@@ -189,10 +189,10 @@ def get_volume_attachments_output(availability_domain: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_attachments = oci.Core.get_volume_attachments(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        volume_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_volume_attachments = oci.Core.get_volume_attachments(compartment_id=var["compartment_id"],
+        availability_domain=var["volume_attachment_availability_domain"],
+        instance_id=oci_core_instance["test_instance"]["id"],
+        volume_id=oci_core_volume["test_volume"]["id"])
     ```
 
 

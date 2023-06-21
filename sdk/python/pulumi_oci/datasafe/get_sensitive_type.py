@@ -282,7 +282,7 @@ def get_sensitive_type(sensitive_type_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_type = oci.DataSafe.get_sensitive_type(sensitive_type_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_sensitive_type = oci.DataSafe.get_sensitive_type(sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"])
     ```
 
 
@@ -330,7 +330,7 @@ def get_sensitive_type_output(sensitive_type_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_type = oci.DataSafe.get_sensitive_type(sensitive_type_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_sensitive_type = oci.DataSafe.get_sensitive_type(sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"])
     ```
 
 

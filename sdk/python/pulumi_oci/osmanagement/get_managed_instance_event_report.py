@@ -105,10 +105,10 @@ def get_managed_instance_event_report(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_event_report = oci.OsManagement.get_managed_instance_event_report(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        managed_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        latest_timestamp_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        latest_timestamp_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_managed_instance_event_report = oci.OsManagement.get_managed_instance_event_report(compartment_id=var["compartment_id"],
+        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
+        latest_timestamp_greater_than_or_equal_to=var["managed_instance_event_report_latest_timestamp_greater_than_or_equal_to"],
+        latest_timestamp_less_than=var["managed_instance_event_report_latest_timestamp_less_than"])
     ```
 
 
@@ -151,10 +151,10 @@ def get_managed_instance_event_report_output(compartment_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_event_report = oci.OsManagement.get_managed_instance_event_report(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        managed_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        latest_timestamp_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        latest_timestamp_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_managed_instance_event_report = oci.OsManagement.get_managed_instance_event_report(compartment_id=var["compartment_id"],
+        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
+        latest_timestamp_greater_than_or_equal_to=var["managed_instance_event_report_latest_timestamp_greater_than_or_equal_to"],
+        latest_timestamp_less_than=var["managed_instance_event_report_latest_timestamp_less_than"])
     ```
 
 

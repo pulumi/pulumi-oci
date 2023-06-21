@@ -260,7 +260,7 @@ def get_backup_destination(backup_destination_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backup_destination = oci.Database.get_backup_destination(backup_destination_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_backup_destination = oci.Database.get_backup_destination(backup_destination_id=oci_database_backup_destination["test_backup_destination"]["id"])
     ```
 
 
@@ -306,7 +306,7 @@ def get_backup_destination_output(backup_destination_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_backup_destination = oci.Database.get_backup_destination(backup_destination_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_backup_destination = oci.Database.get_backup_destination(backup_destination_id=oci_database_backup_destination["test_backup_destination"]["id"])
     ```
 
 

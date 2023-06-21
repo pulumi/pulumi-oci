@@ -90,7 +90,7 @@ def get_ipsec_connection_tunnels(filters: Optional[Sequence[pulumi.InputType['Ge
     import pulumi
     import pulumi_oci as oci
 
-    test_ip_sec_connection_tunnels = oci.Core.get_ipsec_connection_tunnels(ipsec_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_ip_sec_connection_tunnels = oci.Core.get_ipsec_connection_tunnels(ipsec_id=oci_core_ipsec["test_ipsec"]["id"])
     ```
 
 
@@ -124,7 +124,7 @@ def get_ipsec_connection_tunnels_output(filters: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_ip_sec_connection_tunnels = oci.Core.get_ipsec_connection_tunnels(ipsec_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_ip_sec_connection_tunnels = oci.Core.get_ipsec_connection_tunnels(ipsec_id=oci_core_ipsec["test_ipsec"]["id"])
     ```
 
 

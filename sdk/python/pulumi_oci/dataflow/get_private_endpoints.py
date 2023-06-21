@@ -142,11 +142,11 @@ def get_private_endpoints(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoints = oci.DataFlow.get_private_endpoints(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name_starts_with=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        owner_principal_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_private_endpoints = oci.DataFlow.get_private_endpoints(compartment_id=var["compartment_id"],
+        display_name=var["private_endpoint_display_name"],
+        display_name_starts_with=var["private_endpoint_display_name_starts_with"],
+        owner_principal_id=var["owner_principal_id"],
+        state=var["private_endpoint_state"])
     ```
 
 
@@ -196,11 +196,11 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoints = oci.DataFlow.get_private_endpoints(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name_starts_with=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        owner_principal_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_private_endpoints = oci.DataFlow.get_private_endpoints(compartment_id=var["compartment_id"],
+        display_name=var["private_endpoint_display_name"],
+        display_name_starts_with=var["private_endpoint_display_name_starts_with"],
+        owner_principal_id=var["owner_principal_id"],
+        state=var["private_endpoint_state"])
     ```
 
 

@@ -79,7 +79,7 @@ def get_log_analytics_preference(namespace: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_preference = oci.LogAnalytics.get_log_analytics_preference(namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_log_analytics_preference = oci.LogAnalytics.get_log_analytics_preference(namespace=var["log_analytics_preference_namespace"])
     ```
 
 
@@ -110,7 +110,7 @@ def get_log_analytics_preference_output(namespace: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_preference = oci.LogAnalytics.get_log_analytics_preference(namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_log_analytics_preference = oci.LogAnalytics.get_log_analytics_preference(namespace=var["log_analytics_preference_namespace"])
     ```
 
 

@@ -333,12 +333,12 @@ def get_domains_smtp_credential(attribute_sets: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_smtp_credential = oci.Identity.get_domains_smtp_credential(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        smtp_credential_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_smtp_credential = oci.Identity.get_domains_smtp_credential(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        smtp_credential_id=oci_identity_smtp_credential["test_smtp_credential"]["id"],
         attribute_sets=[],
         attributes="",
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        authorization=var["smtp_credential_authorization"],
+        resource_type_schema_version=var["smtp_credential_resource_type_schema_version"])
     ```
 
 
@@ -406,12 +406,12 @@ def get_domains_smtp_credential_output(attribute_sets: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_smtp_credential = oci.Identity.get_domains_smtp_credential(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        smtp_credential_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_smtp_credential = oci.Identity.get_domains_smtp_credential(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        smtp_credential_id=oci_identity_smtp_credential["test_smtp_credential"]["id"],
         attribute_sets=[],
         attributes="",
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        authorization=var["smtp_credential_authorization"],
+        resource_type_schema_version=var["smtp_credential_resource_type_schema_version"])
     ```
 
 

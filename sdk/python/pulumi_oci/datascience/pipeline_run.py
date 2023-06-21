@@ -578,10 +578,10 @@ class PipelineRun(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             pipeline_id=oci_datascience_pipeline["test_pipeline"]["id"],
             configuration_override_details=oci.data_science.PipelineRunConfigurationOverrideDetailsArgs(
-                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                command_line_arguments=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                environment_variables=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                maximum_runtime_in_minutes=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=var["pipeline_run_configuration_override_details_type"],
+                command_line_arguments=var["pipeline_run_configuration_override_details_command_line_arguments"],
+                environment_variables=var["pipeline_run_configuration_override_details_environment_variables"],
+                maximum_runtime_in_minutes=var["pipeline_run_configuration_override_details_maximum_runtime_in_minutes"],
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -591,19 +591,19 @@ class PipelineRun(pulumi.CustomResource):
                 "Department": "Finance",
             },
             log_configuration_override_details=oci.data_science.PipelineRunLogConfigurationOverrideDetailsArgs(
-                enable_auto_log_creation=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                enable_logging=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                log_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                log_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                enable_auto_log_creation=var["pipeline_run_log_configuration_override_details_enable_auto_log_creation"],
+                enable_logging=var["pipeline_run_log_configuration_override_details_enable_logging"],
+                log_group_id=oci_logging_log_group["test_log_group"]["id"],
+                log_id=oci_logging_log["test_log"]["id"],
             ),
             project_id=oci_datascience_project["test_project"]["id"],
             step_override_details=[oci.data_science.PipelineRunStepOverrideDetailArgs(
                 step_configuration_details=oci.data_science.PipelineRunStepOverrideDetailStepConfigurationDetailsArgs(
-                    command_line_arguments=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    environment_variables=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    maximum_runtime_in_minutes=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    command_line_arguments=var["pipeline_run_step_override_details_step_configuration_details_command_line_arguments"],
+                    environment_variables=var["pipeline_run_step_override_details_step_configuration_details_environment_variables"],
+                    maximum_runtime_in_minutes=var["pipeline_run_step_override_details_step_configuration_details_maximum_runtime_in_minutes"],
                 ),
-                step_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                step_name=var["pipeline_run_step_override_details_step_name"],
             )],
             system_tags=var["pipeline_run_system_tags"])
         ```
@@ -654,10 +654,10 @@ class PipelineRun(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             pipeline_id=oci_datascience_pipeline["test_pipeline"]["id"],
             configuration_override_details=oci.data_science.PipelineRunConfigurationOverrideDetailsArgs(
-                type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                command_line_arguments=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                environment_variables=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                maximum_runtime_in_minutes=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                type=var["pipeline_run_configuration_override_details_type"],
+                command_line_arguments=var["pipeline_run_configuration_override_details_command_line_arguments"],
+                environment_variables=var["pipeline_run_configuration_override_details_environment_variables"],
+                maximum_runtime_in_minutes=var["pipeline_run_configuration_override_details_maximum_runtime_in_minutes"],
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -667,19 +667,19 @@ class PipelineRun(pulumi.CustomResource):
                 "Department": "Finance",
             },
             log_configuration_override_details=oci.data_science.PipelineRunLogConfigurationOverrideDetailsArgs(
-                enable_auto_log_creation=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                enable_logging=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                log_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                log_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                enable_auto_log_creation=var["pipeline_run_log_configuration_override_details_enable_auto_log_creation"],
+                enable_logging=var["pipeline_run_log_configuration_override_details_enable_logging"],
+                log_group_id=oci_logging_log_group["test_log_group"]["id"],
+                log_id=oci_logging_log["test_log"]["id"],
             ),
             project_id=oci_datascience_project["test_project"]["id"],
             step_override_details=[oci.data_science.PipelineRunStepOverrideDetailArgs(
                 step_configuration_details=oci.data_science.PipelineRunStepOverrideDetailStepConfigurationDetailsArgs(
-                    command_line_arguments=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    environment_variables=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    maximum_runtime_in_minutes=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    command_line_arguments=var["pipeline_run_step_override_details_step_configuration_details_command_line_arguments"],
+                    environment_variables=var["pipeline_run_step_override_details_step_configuration_details_environment_variables"],
+                    maximum_runtime_in_minutes=var["pipeline_run_step_override_details_step_configuration_details_maximum_runtime_in_minutes"],
                 ),
-                step_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                step_name=var["pipeline_run_step_override_details_step_name"],
             )],
             system_tags=var["pipeline_run_system_tags"])
         ```

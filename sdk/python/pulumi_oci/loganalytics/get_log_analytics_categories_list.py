@@ -112,10 +112,10 @@ def get_log_analytics_categories_list(category_display_text: Optional[str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_categories_list = oci.LogAnalytics.get_log_analytics_categories_list(namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        category_display_text=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        category_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_log_analytics_categories_list = oci.LogAnalytics.get_log_analytics_categories_list(namespace=var["log_analytics_categories_list_namespace"],
+        category_display_text=var["log_analytics_categories_list_category_display_text"],
+        category_type=var["log_analytics_categories_list_category_type"],
+        name=var["log_analytics_categories_list_name"])
     ```
 
 
@@ -158,10 +158,10 @@ def get_log_analytics_categories_list_output(category_display_text: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_categories_list = oci.LogAnalytics.get_log_analytics_categories_list(namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        category_display_text=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        category_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_log_analytics_categories_list = oci.LogAnalytics.get_log_analytics_categories_list(namespace=var["log_analytics_categories_list_namespace"],
+        category_display_text=var["log_analytics_categories_list_category_display_text"],
+        category_type=var["log_analytics_categories_list_category_type"],
+        name=var["log_analytics_categories_list_name"])
     ```
 
 

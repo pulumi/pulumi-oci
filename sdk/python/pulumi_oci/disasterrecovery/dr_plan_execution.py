@@ -467,9 +467,9 @@ class DrPlanExecution(pulumi.CustomResource):
 
         test_dr_plan_execution = oci.disaster_recovery.DrPlanExecution("testDrPlanExecution",
             execution_options=oci.disaster_recovery.DrPlanExecutionExecutionOptionsArgs(
-                plan_execution_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                are_prechecks_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                are_warnings_ignored=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                plan_execution_type=var["dr_plan_execution_execution_options_plan_execution_type"],
+                are_prechecks_enabled=var["dr_plan_execution_execution_options_are_prechecks_enabled"],
+                are_warnings_ignored=var["dr_plan_execution_execution_options_are_warnings_ignored"],
             ),
             plan_id=oci_disaster_recovery_plan["test_plan"]["id"],
             defined_tags={
@@ -520,9 +520,9 @@ class DrPlanExecution(pulumi.CustomResource):
 
         test_dr_plan_execution = oci.disaster_recovery.DrPlanExecution("testDrPlanExecution",
             execution_options=oci.disaster_recovery.DrPlanExecutionExecutionOptionsArgs(
-                plan_execution_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                are_prechecks_enabled=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                are_warnings_ignored=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                plan_execution_type=var["dr_plan_execution_execution_options_plan_execution_type"],
+                are_prechecks_enabled=var["dr_plan_execution_execution_options_are_prechecks_enabled"],
+                are_warnings_ignored=var["dr_plan_execution_execution_options_are_warnings_ignored"],
             ),
             plan_id=oci_disaster_recovery_plan["test_plan"]["id"],
             defined_tags={

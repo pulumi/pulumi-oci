@@ -145,11 +145,11 @@ def get_db_management_private_endpoints(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_management_private_endpoints = oci.DatabaseManagement.get_db_management_private_endpoints(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_cluster=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_db_management_private_endpoints = oci.DatabaseManagement.get_db_management_private_endpoints(compartment_id=var["compartment_id"],
+        is_cluster=var["db_management_private_endpoint_is_cluster"],
+        name=var["db_management_private_endpoint_name"],
+        state=var["db_management_private_endpoint_state"],
+        vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
 
 
@@ -199,11 +199,11 @@ def get_db_management_private_endpoints_output(compartment_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_db_management_private_endpoints = oci.DatabaseManagement.get_db_management_private_endpoints(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_cluster=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_db_management_private_endpoints = oci.DatabaseManagement.get_db_management_private_endpoints(compartment_id=var["compartment_id"],
+        is_cluster=var["db_management_private_endpoint_is_cluster"],
+        name=var["db_management_private_endpoint_name"],
+        state=var["db_management_private_endpoint_state"],
+        vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
 
 

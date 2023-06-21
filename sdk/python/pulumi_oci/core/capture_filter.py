@@ -293,33 +293,33 @@ class CaptureFilter(pulumi.CustomResource):
                 "Department": "Finance",
             },
             vtap_capture_filter_rules=[oci.core.CaptureFilterVtapCaptureFilterRuleArgs(
-                traffic_direction=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                destination_cidr=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                traffic_direction=var["capture_filter_vtap_capture_filter_rules_traffic_direction"],
+                destination_cidr=var["capture_filter_vtap_capture_filter_rules_destination_cidr"],
                 icmp_options=oci.core.CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs(
-                    type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    code=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    type=var["capture_filter_vtap_capture_filter_rules_icmp_options_type"],
+                    code=var["capture_filter_vtap_capture_filter_rules_icmp_options_code"],
                 ),
-                protocol=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                rule_action=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                source_cidr=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                protocol=var["capture_filter_vtap_capture_filter_rules_protocol"],
+                rule_action=var["capture_filter_vtap_capture_filter_rules_rule_action"],
+                source_cidr=var["capture_filter_vtap_capture_filter_rules_source_cidr"],
                 tcp_options=oci.core.CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs(
                     destination_port_range=oci.core.CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs(
-                        max=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                        min=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        max=var["capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_max"],
+                        min=var["capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_min"],
                     ),
                     source_port_range=oci.core.CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs(
-                        max=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                        min=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        max=var["capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_max"],
+                        min=var["capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_min"],
                     ),
                 ),
                 udp_options=oci.core.CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs(
                     destination_port_range=oci.core.CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs(
-                        max=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                        min=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        max=var["capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_max"],
+                        min=var["capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_min"],
                     ),
                     source_port_range=oci.core.CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs(
-                        max=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                        min=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        max=var["capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_max"],
+                        min=var["capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_min"],
                     ),
                 ),
             )])
@@ -378,33 +378,33 @@ class CaptureFilter(pulumi.CustomResource):
                 "Department": "Finance",
             },
             vtap_capture_filter_rules=[oci.core.CaptureFilterVtapCaptureFilterRuleArgs(
-                traffic_direction=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                destination_cidr=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                traffic_direction=var["capture_filter_vtap_capture_filter_rules_traffic_direction"],
+                destination_cidr=var["capture_filter_vtap_capture_filter_rules_destination_cidr"],
                 icmp_options=oci.core.CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs(
-                    type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    code=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    type=var["capture_filter_vtap_capture_filter_rules_icmp_options_type"],
+                    code=var["capture_filter_vtap_capture_filter_rules_icmp_options_code"],
                 ),
-                protocol=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                rule_action=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                source_cidr=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                protocol=var["capture_filter_vtap_capture_filter_rules_protocol"],
+                rule_action=var["capture_filter_vtap_capture_filter_rules_rule_action"],
+                source_cidr=var["capture_filter_vtap_capture_filter_rules_source_cidr"],
                 tcp_options=oci.core.CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs(
                     destination_port_range=oci.core.CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs(
-                        max=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                        min=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        max=var["capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_max"],
+                        min=var["capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_min"],
                     ),
                     source_port_range=oci.core.CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs(
-                        max=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                        min=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        max=var["capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_max"],
+                        min=var["capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_min"],
                     ),
                 ),
                 udp_options=oci.core.CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs(
                     destination_port_range=oci.core.CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs(
-                        max=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                        min=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        max=var["capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_max"],
+                        min=var["capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_min"],
                     ),
                     source_port_range=oci.core.CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs(
-                        max=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                        min=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        max=var["capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_max"],
+                        min=var["capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_min"],
                     ),
                 ),
             )])

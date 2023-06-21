@@ -186,16 +186,16 @@ def get_steering_policy_attachments(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_steering_policy_attachments = oci.Dns.get_steering_policy_attachments(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        domain_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        steering_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        zone_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_steering_policy_attachments = oci.Dns.get_steering_policy_attachments(compartment_id=var["compartment_id"],
+        display_name=var["steering_policy_attachment_display_name"],
+        domain=var["steering_policy_attachment_domain"],
+        domain_contains=var["steering_policy_attachment_domain_contains"],
+        id=var["steering_policy_attachment_id"],
+        state=var["steering_policy_attachment_state"],
+        steering_policy_id=oci_dns_steering_policy["test_steering_policy"]["id"],
+        time_created_greater_than_or_equal_to=var["steering_policy_attachment_time_created_greater_than_or_equal_to"],
+        time_created_less_than=var["steering_policy_attachment_time_created_less_than"],
+        zone_id=oci_dns_zone["test_zone"]["id"])
     ```
 
 
@@ -264,16 +264,16 @@ def get_steering_policy_attachments_output(compartment_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_steering_policy_attachments = oci.Dns.get_steering_policy_attachments(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        domain_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        steering_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_created_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        zone_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_steering_policy_attachments = oci.Dns.get_steering_policy_attachments(compartment_id=var["compartment_id"],
+        display_name=var["steering_policy_attachment_display_name"],
+        domain=var["steering_policy_attachment_domain"],
+        domain_contains=var["steering_policy_attachment_domain_contains"],
+        id=var["steering_policy_attachment_id"],
+        state=var["steering_policy_attachment_state"],
+        steering_policy_id=oci_dns_steering_policy["test_steering_policy"]["id"],
+        time_created_greater_than_or_equal_to=var["steering_policy_attachment_time_created_greater_than_or_equal_to"],
+        time_created_less_than=var["steering_policy_attachment_time_created_less_than"],
+        zone_id=oci_dns_zone["test_zone"]["id"])
     ```
 
 

@@ -160,12 +160,12 @@ def get_instances(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instances = oci.Core.get_instances(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        capacity_reservation_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compute_cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_instances = oci.Core.get_instances(compartment_id=var["compartment_id"],
+        availability_domain=var["instance_availability_domain"],
+        capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"],
+        compute_cluster_id=oci_core_compute_cluster["test_compute_cluster"]["id"],
+        display_name=var["instance_display_name"],
+        state=var["instance_state"])
     ```
 
 
@@ -224,12 +224,12 @@ def get_instances_output(availability_domain: Optional[pulumi.Input[Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_instances = oci.Core.get_instances(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        capacity_reservation_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compute_cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_instances = oci.Core.get_instances(compartment_id=var["compartment_id"],
+        availability_domain=var["instance_availability_domain"],
+        capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"],
+        compute_cluster_id=oci_core_compute_cluster["test_compute_cluster"]["id"],
+        display_name=var["instance_display_name"],
+        state=var["instance_state"])
     ```
 
 

@@ -90,7 +90,7 @@ def get_external_asm_users(external_asm_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_asm_users = oci.DatabaseManagement.get_external_asm_users(external_asm_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_external_asm_users = oci.DatabaseManagement.get_external_asm_users(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"])
     ```
 
 
@@ -124,7 +124,7 @@ def get_external_asm_users_output(external_asm_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_external_asm_users = oci.DatabaseManagement.get_external_asm_users(external_asm_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_external_asm_users = oci.DatabaseManagement.get_external_asm_users(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"])
     ```
 
 

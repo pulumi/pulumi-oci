@@ -136,11 +136,11 @@ def get_triggers(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_triggers = oci.DevOps.get_triggers(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_triggers = oci.DevOps.get_triggers(compartment_id=var["compartment_id"],
+        display_name=var["trigger_display_name"],
+        id=var["trigger_id"],
+        project_id=oci_devops_project["test_project"]["id"],
+        state=var["trigger_state"])
     ```
 
 
@@ -190,11 +190,11 @@ def get_triggers_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_triggers = oci.DevOps.get_triggers(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_triggers = oci.DevOps.get_triggers(compartment_id=var["compartment_id"],
+        display_name=var["trigger_display_name"],
+        id=var["trigger_id"],
+        project_id=oci_devops_project["test_project"]["id"],
+        state=var["trigger_state"])
     ```
 
 

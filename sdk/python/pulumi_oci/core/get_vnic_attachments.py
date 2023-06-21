@@ -134,10 +134,10 @@ def get_vnic_attachments(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vnic_attachments = oci.Core.get_vnic_attachments(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        vnic_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_vnic_attachments = oci.Core.get_vnic_attachments(compartment_id=var["compartment_id"],
+        availability_domain=var["vnic_attachment_availability_domain"],
+        instance_id=oci_core_instance["test_instance"]["id"],
+        vnic_id=oci_core_vnic["test_vnic"]["id"])
     ```
 
 
@@ -185,10 +185,10 @@ def get_vnic_attachments_output(availability_domain: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_vnic_attachments = oci.Core.get_vnic_attachments(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        availability_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        vnic_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_vnic_attachments = oci.Core.get_vnic_attachments(compartment_id=var["compartment_id"],
+        availability_domain=var["vnic_attachment_availability_domain"],
+        instance_id=oci_core_instance["test_instance"]["id"],
+        vnic_id=oci_core_vnic["test_vnic"]["id"])
     ```
 
 

@@ -155,12 +155,12 @@ def get_detect_anomaly_jobs(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_detect_anomaly_jobs = oci.AiAnomalyDetection.get_detect_anomaly_jobs(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        detect_anomaly_job_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        model_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_detect_anomaly_jobs = oci.AiAnomalyDetection.get_detect_anomaly_jobs(compartment_id=var["compartment_id"],
+        detect_anomaly_job_id=oci_ai_anomaly_detection_detect_anomaly_job["test_detect_anomaly_job"]["id"],
+        display_name=var["detect_anomaly_job_display_name"],
+        model_id=oci_ai_anomaly_detection_model["test_model"]["id"],
+        project_id=oci_ai_anomaly_detection_project["test_project"]["id"],
+        state=var["detect_anomaly_job_state"])
     ```
 
 
@@ -214,12 +214,12 @@ def get_detect_anomaly_jobs_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_detect_anomaly_jobs = oci.AiAnomalyDetection.get_detect_anomaly_jobs(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        detect_anomaly_job_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        model_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        project_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_detect_anomaly_jobs = oci.AiAnomalyDetection.get_detect_anomaly_jobs(compartment_id=var["compartment_id"],
+        detect_anomaly_job_id=oci_ai_anomaly_detection_detect_anomaly_job["test_detect_anomaly_job"]["id"],
+        display_name=var["detect_anomaly_job_display_name"],
+        model_id=oci_ai_anomaly_detection_model["test_model"]["id"],
+        project_id=oci_ai_anomaly_detection_project["test_project"]["id"],
+        state=var["detect_anomaly_job_state"])
     ```
 
 

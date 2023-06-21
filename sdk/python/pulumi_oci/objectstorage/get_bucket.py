@@ -320,8 +320,8 @@ def get_bucket(name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bucket = oci.ObjectStorage.get_bucket(name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_bucket = oci.ObjectStorage.get_bucket(name=var["bucket_name"],
+        namespace=var["bucket_namespace"])
     ```
 
 
@@ -375,8 +375,8 @@ def get_bucket_output(name: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bucket = oci.ObjectStorage.get_bucket(name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_bucket = oci.ObjectStorage.get_bucket(name=var["bucket_name"],
+        namespace=var["bucket_namespace"])
     ```
 
 

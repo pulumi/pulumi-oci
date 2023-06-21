@@ -119,9 +119,9 @@ def get_application_vips(cloud_vm_cluster_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_application_vips = oci.Database.get_application_vips(cloud_vm_cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_application_vips = oci.Database.get_application_vips(cloud_vm_cluster_id=oci_database_cloud_vm_cluster["test_cloud_vm_cluster"]["id"],
+        compartment_id=var["compartment_id"],
+        state=var["application_vip_state"])
     ```
 
 
@@ -163,9 +163,9 @@ def get_application_vips_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_application_vips = oci.Database.get_application_vips(cloud_vm_cluster_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_application_vips = oci.Database.get_application_vips(cloud_vm_cluster_id=oci_database_cloud_vm_cluster["test_cloud_vm_cluster"]["id"],
+        compartment_id=var["compartment_id"],
+        state=var["application_vip_state"])
     ```
 
 

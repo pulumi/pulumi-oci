@@ -98,8 +98,8 @@ def get_object_lifecycle_policy(bucket: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object_lifecycle_policy = oci.ObjectStorage.get_object_lifecycle_policy(bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_object_lifecycle_policy = oci.ObjectStorage.get_object_lifecycle_policy(bucket=var["object_lifecycle_policy_bucket"],
+        namespace=var["object_lifecycle_policy_namespace"])
     ```
 
 
@@ -135,8 +135,8 @@ def get_object_lifecycle_policy_output(bucket: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_object_lifecycle_policy = oci.ObjectStorage.get_object_lifecycle_policy(bucket=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_object_lifecycle_policy = oci.ObjectStorage.get_object_lifecycle_policy(bucket=var["object_lifecycle_policy_bucket"],
+        namespace=var["object_lifecycle_policy_namespace"])
     ```
 
 

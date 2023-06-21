@@ -103,8 +103,8 @@ def get_discovery_job_logs(discovery_job_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_job_logs = oci.StackMonitoring.get_discovery_job_logs(discovery_job_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        log_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_discovery_job_logs = oci.StackMonitoring.get_discovery_job_logs(discovery_job_id=oci_stack_monitoring_discovery_job["test_discovery_job"]["id"],
+        log_type=var["discovery_job_log_log_type"])
     ```
 
 
@@ -142,8 +142,8 @@ def get_discovery_job_logs_output(discovery_job_id: Optional[pulumi.Input[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_job_logs = oci.StackMonitoring.get_discovery_job_logs(discovery_job_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        log_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_discovery_job_logs = oci.StackMonitoring.get_discovery_job_logs(discovery_job_id=oci_stack_monitoring_discovery_job["test_discovery_job"]["id"],
+        log_type=var["discovery_job_log_log_type"])
     ```
 
 

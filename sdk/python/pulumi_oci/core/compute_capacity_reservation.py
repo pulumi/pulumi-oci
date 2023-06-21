@@ -393,16 +393,16 @@ class ComputeCapacityReservation(pulumi.CustomResource):
                 "Department": "Finance",
             },
             instance_reservation_configs=[oci.core.ComputeCapacityReservationInstanceReservationConfigArgs(
-                instance_shape=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                reserved_count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                instance_shape=var["compute_capacity_reservation_instance_reservation_configs_instance_shape"],
+                reserved_count=var["compute_capacity_reservation_instance_reservation_configs_reserved_count"],
                 cluster_config=oci.core.ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs(
-                    hpc_island_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    network_block_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    hpc_island_id=oci_core_hpc_island["test_hpc_island"]["id"],
+                    network_block_ids=var["compute_capacity_reservation_instance_reservation_configs_cluster_config_network_block_ids"],
                 ),
-                fault_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                fault_domain=var["compute_capacity_reservation_instance_reservation_configs_fault_domain"],
                 instance_shape_config=oci.core.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs(
-                    memory_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    ocpus=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    memory_in_gbs=var["compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs"],
+                    ocpus=var["compute_capacity_reservation_instance_reservation_configs_instance_shape_config_ocpus"],
                 ),
             )],
             is_default_reservation=var["compute_capacity_reservation_is_default_reservation"])
@@ -464,16 +464,16 @@ class ComputeCapacityReservation(pulumi.CustomResource):
                 "Department": "Finance",
             },
             instance_reservation_configs=[oci.core.ComputeCapacityReservationInstanceReservationConfigArgs(
-                instance_shape=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                reserved_count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                instance_shape=var["compute_capacity_reservation_instance_reservation_configs_instance_shape"],
+                reserved_count=var["compute_capacity_reservation_instance_reservation_configs_reserved_count"],
                 cluster_config=oci.core.ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs(
-                    hpc_island_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    network_block_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    hpc_island_id=oci_core_hpc_island["test_hpc_island"]["id"],
+                    network_block_ids=var["compute_capacity_reservation_instance_reservation_configs_cluster_config_network_block_ids"],
                 ),
-                fault_domain=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                fault_domain=var["compute_capacity_reservation_instance_reservation_configs_fault_domain"],
                 instance_shape_config=oci.core.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs(
-                    memory_in_gbs=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    ocpus=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    memory_in_gbs=var["compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs"],
+                    ocpus=var["compute_capacity_reservation_instance_reservation_configs_instance_shape_config_ocpus"],
                 ),
             )],
             is_default_reservation=var["compute_capacity_reservation_is_default_reservation"])

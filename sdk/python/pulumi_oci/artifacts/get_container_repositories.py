@@ -152,12 +152,12 @@ def get_container_repositories(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_container_repositories = oci.Artifacts.get_container_repositories(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_public=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_container_repositories = oci.Artifacts.get_container_repositories(compartment_id=var["compartment_id"],
+        compartment_id_in_subtree=var["container_repository_compartment_id_in_subtree"],
+        display_name=var["container_repository_display_name"],
+        is_public=var["container_repository_is_public"],
+        repository_id=oci_artifacts_repository["test_repository"]["id"],
+        state=var["container_repository_state"])
     ```
 
 
@@ -211,12 +211,12 @@ def get_container_repositories_output(compartment_id: Optional[pulumi.Input[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_container_repositories = oci.Artifacts.get_container_repositories(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_public=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_container_repositories = oci.Artifacts.get_container_repositories(compartment_id=var["compartment_id"],
+        compartment_id_in_subtree=var["container_repository_compartment_id_in_subtree"],
+        display_name=var["container_repository_display_name"],
+        is_public=var["container_repository_is_public"],
+        repository_id=oci_artifacts_repository["test_repository"]["id"],
+        state=var["container_repository_state"])
     ```
 
 

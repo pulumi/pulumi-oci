@@ -543,14 +543,14 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
             tunnel_id=data["oci_core_ipsec_connection_tunnels"]["test_ip_sec_connection_tunnels"]["ip_sec_connection_tunnels"][0]["id"],
             routing=var["ip_sec_connection_tunnel_management_routing"],
             bgp_session_infos=[oci.core.IpsecConnectionTunnelManagementBgpSessionInfoArgs(
-                customer_bgp_asn=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                customer_interface_ip=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                oracle_interface_ip=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                customer_bgp_asn=var["ip_sec_connection_tunnel_management_bgp_session_info_customer_bgp_asn"],
+                customer_interface_ip=var["ip_sec_connection_tunnel_management_bgp_session_info_customer_interface_ip"],
+                oracle_interface_ip=var["ip_sec_connection_tunnel_management_bgp_session_info_oracle_interface_ip"],
             )],
             display_name=var["ip_sec_connection_tunnel_management_display_name"],
             encryption_domain_config=oci.core.IpsecConnectionTunnelManagementEncryptionDomainConfigArgs(
-                cpe_traffic_selectors=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                oracle_traffic_selectors=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                cpe_traffic_selectors=var["ip_sec_connection_tunnel_management_encryption_domain_config_cpe_traffic_selector"],
+                oracle_traffic_selectors=var["ip_sec_connection_tunnel_management_encryption_domain_config_oracle_traffic_selector"],
             ),
             shared_secret=var["ip_sec_connection_tunnel_management_shared_secret"],
             ike_version="V1")
@@ -605,14 +605,14 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
             tunnel_id=data["oci_core_ipsec_connection_tunnels"]["test_ip_sec_connection_tunnels"]["ip_sec_connection_tunnels"][0]["id"],
             routing=var["ip_sec_connection_tunnel_management_routing"],
             bgp_session_infos=[oci.core.IpsecConnectionTunnelManagementBgpSessionInfoArgs(
-                customer_bgp_asn=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                customer_interface_ip=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                oracle_interface_ip=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                customer_bgp_asn=var["ip_sec_connection_tunnel_management_bgp_session_info_customer_bgp_asn"],
+                customer_interface_ip=var["ip_sec_connection_tunnel_management_bgp_session_info_customer_interface_ip"],
+                oracle_interface_ip=var["ip_sec_connection_tunnel_management_bgp_session_info_oracle_interface_ip"],
             )],
             display_name=var["ip_sec_connection_tunnel_management_display_name"],
             encryption_domain_config=oci.core.IpsecConnectionTunnelManagementEncryptionDomainConfigArgs(
-                cpe_traffic_selectors=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                oracle_traffic_selectors=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                cpe_traffic_selectors=var["ip_sec_connection_tunnel_management_encryption_domain_config_cpe_traffic_selector"],
+                oracle_traffic_selectors=var["ip_sec_connection_tunnel_management_encryption_domain_config_oracle_traffic_selector"],
             ),
             shared_secret=var["ip_sec_connection_tunnel_management_shared_secret"],
             ike_version="V1")

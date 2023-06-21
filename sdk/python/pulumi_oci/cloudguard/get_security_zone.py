@@ -210,7 +210,7 @@ def get_security_zone(security_zone_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_zone = oci.CloudGuard.get_security_zone(security_zone_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_security_zone = oci.CloudGuard.get_security_zone(security_zone_id=oci_cloud_guard_security_zone["test_security_zone"]["id"])
     ```
 
 
@@ -252,7 +252,7 @@ def get_security_zone_output(security_zone_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_security_zone = oci.CloudGuard.get_security_zone(security_zone_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_security_zone = oci.CloudGuard.get_security_zone(security_zone_id=oci_cloud_guard_security_zone["test_security_zone"]["id"])
     ```
 
 

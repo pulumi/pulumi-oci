@@ -129,10 +129,10 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_scheduled_tasks = oci.LogAnalytics.get_namespace_scheduled_tasks(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        task_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_namespace_scheduled_tasks = oci.LogAnalytics.get_namespace_scheduled_tasks(compartment_id=var["compartment_id"],
+        namespace=var["namespace_scheduled_task_namespace"],
+        display_name=var["namespace_scheduled_task_display_name"],
+        task_type=var["namespace_scheduled_task_task_type"])
     ```
 
 
@@ -178,10 +178,10 @@ def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_scheduled_tasks = oci.LogAnalytics.get_namespace_scheduled_tasks(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        namespace=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        task_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_namespace_scheduled_tasks = oci.LogAnalytics.get_namespace_scheduled_tasks(compartment_id=var["compartment_id"],
+        namespace=var["namespace_scheduled_task_namespace"],
+        display_name=var["namespace_scheduled_task_display_name"],
+        task_type=var["namespace_scheduled_task_task_type"])
     ```
 
 

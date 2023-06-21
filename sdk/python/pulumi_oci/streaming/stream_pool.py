@@ -361,22 +361,22 @@ class StreamPool(pulumi.CustomResource):
         test_stream_pool = oci.streaming.StreamPool("testStreamPool",
             compartment_id=var["compartment_id"],
             custom_encryption_key=oci.streaming.StreamPoolCustomEncryptionKeyArgs(
-                kms_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                kms_key_id=oci_kms_key["test_key"]["id"],
             ),
             defined_tags=var["stream_pool_defined_tags"],
             freeform_tags={
                 "Department": "Finance",
             },
             kafka_settings=oci.streaming.StreamPoolKafkaSettingsArgs(
-                auto_create_topics_enable=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                bootstrap_servers=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                log_retention_hours=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                num_partitions=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                auto_create_topics_enable=var["stream_pool_kafka_settings_auto_create_topics_enable"],
+                bootstrap_servers=var["stream_pool_kafka_settings_bootstrap_servers"],
+                log_retention_hours=var["stream_pool_kafka_settings_log_retention_hours"],
+                num_partitions=var["stream_pool_kafka_settings_num_partitions"],
             ),
             private_endpoint_settings=oci.streaming.StreamPoolPrivateEndpointSettingsArgs(
-                nsg_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                private_endpoint_ip=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                nsg_ids=var["stream_pool_private_endpoint_settings_nsg_ids"],
+                private_endpoint_ip=var["stream_pool_private_endpoint_settings_private_endpoint_ip"],
+                subnet_id=oci_core_subnet["test_subnet"]["id"],
             ))
         ```
 
@@ -420,22 +420,22 @@ class StreamPool(pulumi.CustomResource):
         test_stream_pool = oci.streaming.StreamPool("testStreamPool",
             compartment_id=var["compartment_id"],
             custom_encryption_key=oci.streaming.StreamPoolCustomEncryptionKeyArgs(
-                kms_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                kms_key_id=oci_kms_key["test_key"]["id"],
             ),
             defined_tags=var["stream_pool_defined_tags"],
             freeform_tags={
                 "Department": "Finance",
             },
             kafka_settings=oci.streaming.StreamPoolKafkaSettingsArgs(
-                auto_create_topics_enable=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                bootstrap_servers=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                log_retention_hours=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                num_partitions=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                auto_create_topics_enable=var["stream_pool_kafka_settings_auto_create_topics_enable"],
+                bootstrap_servers=var["stream_pool_kafka_settings_bootstrap_servers"],
+                log_retention_hours=var["stream_pool_kafka_settings_log_retention_hours"],
+                num_partitions=var["stream_pool_kafka_settings_num_partitions"],
             ),
             private_endpoint_settings=oci.streaming.StreamPoolPrivateEndpointSettingsArgs(
-                nsg_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                private_endpoint_ip=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                nsg_ids=var["stream_pool_private_endpoint_settings_nsg_ids"],
+                private_endpoint_ip=var["stream_pool_private_endpoint_settings_private_endpoint_ip"],
+                subnet_id=oci_core_subnet["test_subnet"]["id"],
             ))
         ```
 

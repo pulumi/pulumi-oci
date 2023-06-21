@@ -294,7 +294,7 @@ def get_bastion(bastion_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bastion = oci.Bastion.get_bastion(bastion_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_bastion = oci.Bastion.get_bastion(bastion_id=oci_bastion_bastion["test_bastion"]["id"])
     ```
 
 
@@ -343,7 +343,7 @@ def get_bastion_output(bastion_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bastion = oci.Bastion.get_bastion(bastion_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_bastion = oci.Bastion.get_bastion(bastion_id=oci_bastion_bastion["test_bastion"]["id"])
     ```
 
 

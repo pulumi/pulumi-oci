@@ -198,16 +198,16 @@ def get_container_signatures(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_container_image_signatures = oci.Artifacts.get_container_signatures(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        image_digest=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        image_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        kms_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        kms_key_version_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        repository_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        signing_algorithm=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_container_image_signatures = oci.Artifacts.get_container_signatures(compartment_id=var["compartment_id"],
+        compartment_id_in_subtree=var["container_image_signature_compartment_id_in_subtree"],
+        display_name=var["container_image_signature_display_name"],
+        image_digest=var["container_image_signature_image_digest"],
+        image_id=oci_core_image["test_image"]["id"],
+        kms_key_id=oci_kms_key["test_key"]["id"],
+        kms_key_version_id=oci_kms_key_version["test_key_version"]["id"],
+        repository_id=oci_artifacts_repository["test_repository"]["id"],
+        repository_name=oci_artifacts_repository["test_repository"]["name"],
+        signing_algorithm=var["container_image_signature_signing_algorithm"])
     ```
 
 
@@ -277,16 +277,16 @@ def get_container_signatures_output(compartment_id: Optional[pulumi.Input[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_container_image_signatures = oci.Artifacts.get_container_signatures(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        image_digest=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        image_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        kms_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        kms_key_version_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        repository_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        repository_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        signing_algorithm=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_container_image_signatures = oci.Artifacts.get_container_signatures(compartment_id=var["compartment_id"],
+        compartment_id_in_subtree=var["container_image_signature_compartment_id_in_subtree"],
+        display_name=var["container_image_signature_display_name"],
+        image_digest=var["container_image_signature_image_digest"],
+        image_id=oci_core_image["test_image"]["id"],
+        kms_key_id=oci_kms_key["test_key"]["id"],
+        kms_key_version_id=oci_kms_key_version["test_key_version"]["id"],
+        repository_id=oci_artifacts_repository["test_repository"]["id"],
+        repository_name=oci_artifacts_repository["test_repository"]["name"],
+        signing_algorithm=var["container_image_signature_signing_algorithm"])
     ```
 
 

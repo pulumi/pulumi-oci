@@ -210,7 +210,7 @@ def get_channel(channel_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_channel = oci.Mysql.get_channel(channel_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_channel = oci.Mysql.get_channel(channel_id=oci_mysql_channel["test_channel"]["id"])
     ```
 
 
@@ -254,7 +254,7 @@ def get_channel_output(channel_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_channel = oci.Mysql.get_channel(channel_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_channel = oci.Mysql.get_channel(channel_id=oci_mysql_channel["test_channel"]["id"])
     ```
 
 

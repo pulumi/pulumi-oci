@@ -199,7 +199,7 @@ def get_volume_group_replica(volume_group_replica_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_group_replica = oci.Core.get_volume_group_replica(volume_group_replica_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_volume_group_replica = oci.Core.get_volume_group_replica(volume_group_replica_id=oci_core_volume_group_replica["test_volume_group_replica"]["id"])
     ```
 
 
@@ -240,7 +240,7 @@ def get_volume_group_replica_output(volume_group_replica_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_group_replica = oci.Core.get_volume_group_replica(volume_group_replica_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_volume_group_replica = oci.Core.get_volume_group_replica(volume_group_replica_id=oci_core_volume_group_replica["test_volume_group_replica"]["id"])
     ```
 
 

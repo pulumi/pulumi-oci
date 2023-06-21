@@ -109,10 +109,10 @@ def get_subscription_product(producttype: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_product = oci.UsageProxy.get_subscription_product(subscription_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        tenancy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        usage_period_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        producttype=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_subscription_product = oci.UsageProxy.get_subscription_product(subscription_id=oci_ons_subscription["test_subscription"]["id"],
+        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
+        usage_period_key=var["subscription_product_usage_period_key"],
+        producttype=var["subscription_product_producttype"])
     ```
 
 
@@ -155,10 +155,10 @@ def get_subscription_product_output(producttype: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_product = oci.UsageProxy.get_subscription_product(subscription_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        tenancy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        usage_period_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        producttype=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_subscription_product = oci.UsageProxy.get_subscription_product(subscription_id=oci_ons_subscription["test_subscription"]["id"],
+        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
+        usage_period_key=var["subscription_product_usage_period_key"],
+        producttype=var["subscription_product_producttype"])
     ```
 
 

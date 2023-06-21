@@ -89,8 +89,8 @@ def get_trace_aggregated_snapshot_data(apm_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trace_aggregated_snapshot_data = oci.ApmTraces.get_trace_aggregated_snapshot_data(apm_domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        trace_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_trace_aggregated_snapshot_data = oci.ApmTraces.get_trace_aggregated_snapshot_data(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
+        trace_key=var["trace_aggregated_snapshot_data_trace_key"])
     ```
 
 
@@ -125,8 +125,8 @@ def get_trace_aggregated_snapshot_data_output(apm_domain_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_trace_aggregated_snapshot_data = oci.ApmTraces.get_trace_aggregated_snapshot_data(apm_domain_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        trace_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_trace_aggregated_snapshot_data = oci.ApmTraces.get_trace_aggregated_snapshot_data(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
+        trace_key=var["trace_aggregated_snapshot_data_trace_key"])
     ```
 
 

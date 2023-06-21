@@ -512,7 +512,7 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
 
         test_vm_cluster_remove_virtual_machine = oci.database.VmClusterRemoveVirtualMachine("testVmClusterRemoveVirtualMachine",
             db_servers=[oci.database.VmClusterRemoveVirtualMachineDbServerArgs(
-                db_server_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                db_server_id=oci_database_db_server["test_db_server"]["id"],
             )],
             vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
         ```
@@ -553,7 +553,7 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
 
         test_vm_cluster_remove_virtual_machine = oci.database.VmClusterRemoveVirtualMachine("testVmClusterRemoveVirtualMachine",
             db_servers=[oci.database.VmClusterRemoveVirtualMachineDbServerArgs(
-                db_server_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                db_server_id=oci_database_db_server["test_db_server"]["id"],
             )],
             vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
         ```

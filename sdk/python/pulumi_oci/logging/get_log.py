@@ -224,8 +224,8 @@ def get_log(log_group_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log = oci.Logging.get_log(log_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        log_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_log = oci.Logging.get_log(log_group_id=oci_logging_log_group["test_log_group"]["id"],
+        log_id=oci_logging_log["test_log"]["id"])
     ```
 
 
@@ -271,8 +271,8 @@ def get_log_output(log_group_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log = oci.Logging.get_log(log_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        log_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_log = oci.Logging.get_log(log_group_id=oci_logging_log_group["test_log_group"]["id"],
+        log_id=oci_logging_log["test_log"]["id"])
     ```
 
 

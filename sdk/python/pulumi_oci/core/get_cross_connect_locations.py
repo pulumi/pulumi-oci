@@ -91,7 +91,7 @@ def get_cross_connect_locations(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect_locations = oci.Core.get_cross_connect_locations(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_cross_connect_locations = oci.Core.get_cross_connect_locations(compartment_id=var["compartment_id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_cross_connect_locations_output(compartment_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect_locations = oci.Core.get_cross_connect_locations(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_cross_connect_locations = oci.Core.get_cross_connect_locations(compartment_id=var["compartment_id"])
     ```
 
 

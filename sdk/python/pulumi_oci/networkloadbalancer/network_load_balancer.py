@@ -564,7 +564,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
             network_security_group_ids=var["network_load_balancer_network_security_group_ids"],
             nlb_ip_version=var["network_load_balancer_nlb_ip_version"],
             reserved_ips=[oci.network_load_balancer.NetworkLoadBalancerReservedIpArgs(
-                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                id=var["network_load_balancer_reserved_ips_id"],
             )])
         ```
 
@@ -641,7 +641,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
             network_security_group_ids=var["network_load_balancer_network_security_group_ids"],
             nlb_ip_version=var["network_load_balancer_nlb_ip_version"],
             reserved_ips=[oci.network_load_balancer.NetworkLoadBalancerReservedIpArgs(
-                id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                id=var["network_load_balancer_reserved_ips_id"],
             )])
         ```
 

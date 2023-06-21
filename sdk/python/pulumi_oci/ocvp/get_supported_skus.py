@@ -100,8 +100,8 @@ def get_supported_skus(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_skus = oci.Ocvp.get_supported_skus(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        host_shape_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_supported_skus = oci.Ocvp.get_supported_skus(compartment_id=var["compartment_id"],
+        host_shape_name=oci_core_shape["test_shape"]["name"])
     ```
 
 
@@ -139,8 +139,8 @@ def get_supported_skus_output(compartment_id: Optional[pulumi.Input[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_skus = oci.Ocvp.get_supported_skus(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        host_shape_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_supported_skus = oci.Ocvp.get_supported_skus(compartment_id=var["compartment_id"],
+        host_shape_name=oci_core_shape["test_shape"]["name"])
     ```
 
 

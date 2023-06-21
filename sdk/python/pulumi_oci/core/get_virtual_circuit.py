@@ -399,7 +399,7 @@ def get_virtual_circuit(virtual_circuit_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_circuit = oci.Core.get_virtual_circuit(virtual_circuit_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_virtual_circuit = oci.Core.get_virtual_circuit(virtual_circuit_id=oci_core_virtual_circuit["test_virtual_circuit"]["id"])
     ```
 
 
@@ -456,7 +456,7 @@ def get_virtual_circuit_output(virtual_circuit_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_circuit = oci.Core.get_virtual_circuit(virtual_circuit_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_virtual_circuit = oci.Core.get_virtual_circuit(virtual_circuit_id=oci_core_virtual_circuit["test_virtual_circuit"]["id"])
     ```
 
 

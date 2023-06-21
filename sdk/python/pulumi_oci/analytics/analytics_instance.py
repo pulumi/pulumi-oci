@@ -537,8 +537,8 @@ class AnalyticsInstance(pulumi.CustomResource):
 
         test_analytics_instance = oci.analytics.AnalyticsInstance("testAnalyticsInstance",
             capacity=oci.analytics.AnalyticsInstanceCapacityArgs(
-                capacity_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                capacity_value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                capacity_type=var["analytics_instance_capacity_capacity_type"],
+                capacity_value=var["analytics_instance_capacity_capacity_value"],
             ),
             compartment_id=var["compartment_id"],
             feature_set=var["analytics_instance_feature_set"],
@@ -554,15 +554,15 @@ class AnalyticsInstance(pulumi.CustomResource):
             },
             kms_key_id=oci_kms_key["test_key"]["id"],
             network_endpoint_details=oci.analytics.AnalyticsInstanceNetworkEndpointDetailsArgs(
-                network_endpoint_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                network_security_group_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                whitelisted_ips=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                whitelisted_services=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                network_endpoint_type=var["analytics_instance_network_endpoint_details_network_endpoint_type"],
+                network_security_group_ids=var["analytics_instance_network_endpoint_details_network_security_group_ids"],
+                subnet_id=oci_core_subnet["test_subnet"]["id"],
+                vcn_id=oci_core_vcn["test_vcn"]["id"],
+                whitelisted_ips=var["analytics_instance_network_endpoint_details_whitelisted_ips"],
+                whitelisted_services=var["analytics_instance_network_endpoint_details_whitelisted_services"],
                 whitelisted_vcns=[oci.analytics.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs(
-                    id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    whitelisted_ips=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    id=var["analytics_instance_network_endpoint_details_whitelisted_vcns_id"],
+                    whitelisted_ips=var["analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips"],
                 )],
             ))
         ```
@@ -615,8 +615,8 @@ class AnalyticsInstance(pulumi.CustomResource):
 
         test_analytics_instance = oci.analytics.AnalyticsInstance("testAnalyticsInstance",
             capacity=oci.analytics.AnalyticsInstanceCapacityArgs(
-                capacity_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                capacity_value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                capacity_type=var["analytics_instance_capacity_capacity_type"],
+                capacity_value=var["analytics_instance_capacity_capacity_value"],
             ),
             compartment_id=var["compartment_id"],
             feature_set=var["analytics_instance_feature_set"],
@@ -632,15 +632,15 @@ class AnalyticsInstance(pulumi.CustomResource):
             },
             kms_key_id=oci_kms_key["test_key"]["id"],
             network_endpoint_details=oci.analytics.AnalyticsInstanceNetworkEndpointDetailsArgs(
-                network_endpoint_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                network_security_group_ids=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                subnet_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                whitelisted_ips=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                whitelisted_services=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                network_endpoint_type=var["analytics_instance_network_endpoint_details_network_endpoint_type"],
+                network_security_group_ids=var["analytics_instance_network_endpoint_details_network_security_group_ids"],
+                subnet_id=oci_core_subnet["test_subnet"]["id"],
+                vcn_id=oci_core_vcn["test_vcn"]["id"],
+                whitelisted_ips=var["analytics_instance_network_endpoint_details_whitelisted_ips"],
+                whitelisted_services=var["analytics_instance_network_endpoint_details_whitelisted_services"],
                 whitelisted_vcns=[oci.analytics.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs(
-                    id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    whitelisted_ips=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    id=var["analytics_instance_network_endpoint_details_whitelisted_vcns_id"],
+                    whitelisted_ips=var["analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips"],
                 )],
             ))
         ```

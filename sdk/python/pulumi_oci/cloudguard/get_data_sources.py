@@ -179,13 +179,13 @@ def get_data_sources(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_sources = oci.CloudGuard.get_data_sources(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        data_source_feed_provider=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        logging_query_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_data_sources = oci.CloudGuard.get_data_sources(compartment_id=var["compartment_id"],
+        access_level=var["data_source_access_level"],
+        compartment_id_in_subtree=var["data_source_compartment_id_in_subtree"],
+        data_source_feed_provider=var["data_source_data_source_feed_provider"],
+        display_name=var["data_source_display_name"],
+        logging_query_type=var["data_source_logging_query_type"],
+        state=var["data_source_state"])
     ```
 
 
@@ -257,13 +257,13 @@ def get_data_sources_output(access_level: Optional[pulumi.Input[Optional[str]]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_data_sources = oci.CloudGuard.get_data_sources(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        data_source_feed_provider=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        logging_query_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_data_sources = oci.CloudGuard.get_data_sources(compartment_id=var["compartment_id"],
+        access_level=var["data_source_access_level"],
+        compartment_id_in_subtree=var["data_source_compartment_id_in_subtree"],
+        data_source_feed_provider=var["data_source_data_source_feed_provider"],
+        display_name=var["data_source_display_name"],
+        logging_query_type=var["data_source_logging_query_type"],
+        state=var["data_source_state"])
     ```
 
 

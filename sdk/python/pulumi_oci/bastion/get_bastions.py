@@ -126,10 +126,10 @@ def get_bastions(bastion_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bastions = oci.Bastion.get_bastions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        bastion_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        bastion_lifecycle_state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_bastions = oci.Bastion.get_bastions(compartment_id=var["compartment_id"],
+        bastion_id=oci_bastion_bastion["test_bastion"]["id"],
+        bastion_lifecycle_state=var["bastion_bastion_lifecycle_state"],
+        name=var["bastion_name"])
     ```
 
 
@@ -175,10 +175,10 @@ def get_bastions_output(bastion_id: Optional[pulumi.Input[Optional[str]]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_bastions = oci.Bastion.get_bastions(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        bastion_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        bastion_lifecycle_state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_bastions = oci.Bastion.get_bastions(compartment_id=var["compartment_id"],
+        bastion_id=oci_bastion_bastion["test_bastion"]["id"],
+        bastion_lifecycle_state=var["bastion_bastion_lifecycle_state"],
+        name=var["bastion_name"])
     ```
 
 

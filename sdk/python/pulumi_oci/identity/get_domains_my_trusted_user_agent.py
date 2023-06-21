@@ -369,12 +369,12 @@ def get_domains_my_trusted_user_agent(attribute_sets: Optional[Sequence[str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_my_trusted_user_agent = oci.Identity.get_domains_my_trusted_user_agent(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        my_trusted_user_agent_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_my_trusted_user_agent = oci.Identity.get_domains_my_trusted_user_agent(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        my_trusted_user_agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
         attribute_sets=[],
         attributes="",
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        authorization=var["my_trusted_user_agent_authorization"],
+        resource_type_schema_version=var["my_trusted_user_agent_resource_type_schema_version"])
     ```
 
 
@@ -445,12 +445,12 @@ def get_domains_my_trusted_user_agent_output(attribute_sets: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_my_trusted_user_agent = oci.Identity.get_domains_my_trusted_user_agent(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        my_trusted_user_agent_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_my_trusted_user_agent = oci.Identity.get_domains_my_trusted_user_agent(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        my_trusted_user_agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
         attribute_sets=[],
         attributes="",
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        authorization=var["my_trusted_user_agent_authorization"],
+        resource_type_schema_version=var["my_trusted_user_agent_resource_type_schema_version"])
     ```
 
 

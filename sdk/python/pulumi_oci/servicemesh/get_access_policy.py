@@ -211,7 +211,7 @@ def get_access_policy(access_policy_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_access_policy = oci.ServiceMesh.get_access_policy(access_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_access_policy = oci.ServiceMesh.get_access_policy(access_policy_id=oci_service_mesh_access_policy["test_access_policy"]["id"])
     ```
 
 
@@ -253,7 +253,7 @@ def get_access_policy_output(access_policy_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_access_policy = oci.ServiceMesh.get_access_policy(access_policy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_access_policy = oci.ServiceMesh.get_access_policy(access_policy_id=oci_service_mesh_access_policy["test_access_policy"]["id"])
     ```
 
 

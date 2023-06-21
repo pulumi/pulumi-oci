@@ -342,7 +342,7 @@ def get_discovery_job(discovery_job_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_job = oci.DataSafe.get_discovery_job(discovery_job_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_discovery_job = oci.DataSafe.get_discovery_job(discovery_job_id=oci_data_safe_discovery_job["test_discovery_job"]["id"])
     ```
 
 
@@ -395,7 +395,7 @@ def get_discovery_job_output(discovery_job_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_job = oci.DataSafe.get_discovery_job(discovery_job_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_discovery_job = oci.DataSafe.get_discovery_job(discovery_job_id=oci_data_safe_discovery_job["test_discovery_job"]["id"])
     ```
 
 

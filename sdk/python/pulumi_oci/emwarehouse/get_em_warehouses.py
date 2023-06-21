@@ -133,11 +133,11 @@ def get_em_warehouses(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_em_warehouses = oci.EmWarehouse.get_em_warehouses(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        operations_insights_warehouse_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_em_warehouses = oci.EmWarehouse.get_em_warehouses(compartment_id=var["compartment_id"],
+        display_name=var["em_warehouse_display_name"],
+        id=var["em_warehouse_id"],
+        operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
+        state=var["em_warehouse_state"])
     ```
 
 
@@ -186,11 +186,11 @@ def get_em_warehouses_output(compartment_id: Optional[pulumi.Input[Optional[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_em_warehouses = oci.EmWarehouse.get_em_warehouses(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        operations_insights_warehouse_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_em_warehouses = oci.EmWarehouse.get_em_warehouses(compartment_id=var["compartment_id"],
+        display_name=var["em_warehouse_display_name"],
+        id=var["em_warehouse_id"],
+        operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
+        state=var["em_warehouse_state"])
     ```
 
 

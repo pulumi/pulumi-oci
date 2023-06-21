@@ -185,15 +185,15 @@ def get_list_user_grants(depth_level: Optional[int] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_list_user_grants = oci.DataSafe.get_list_user_grants(user_assessment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        user_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        depth_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        depth_level_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        depth_level_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        grant_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        grant_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        privilege_category=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        privilege_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_list_user_grants = oci.DataSafe.get_list_user_grants(user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
+        user_key=var["list_user_grant_user_key"],
+        depth_level=var["list_user_grant_depth_level"],
+        depth_level_greater_than_or_equal_to=var["list_user_grant_depth_level_greater_than_or_equal_to"],
+        depth_level_less_than=var["list_user_grant_depth_level_less_than"],
+        grant_key=var["list_user_grant_grant_key"],
+        grant_name=var["list_user_grant_grant_name"],
+        privilege_category=var["list_user_grant_privilege_category"],
+        privilege_type=var["list_user_grant_privilege_type"])
     ```
 
 
@@ -262,15 +262,15 @@ def get_list_user_grants_output(depth_level: Optional[pulumi.Input[Optional[int]
     import pulumi
     import pulumi_oci as oci
 
-    test_list_user_grants = oci.DataSafe.get_list_user_grants(user_assessment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        user_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        depth_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        depth_level_greater_than_or_equal_to=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        depth_level_less_than=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        grant_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        grant_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        privilege_category=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        privilege_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_list_user_grants = oci.DataSafe.get_list_user_grants(user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
+        user_key=var["list_user_grant_user_key"],
+        depth_level=var["list_user_grant_depth_level"],
+        depth_level_greater_than_or_equal_to=var["list_user_grant_depth_level_greater_than_or_equal_to"],
+        depth_level_less_than=var["list_user_grant_depth_level_less_than"],
+        grant_key=var["list_user_grant_grant_key"],
+        grant_name=var["list_user_grant_grant_name"],
+        privilege_category=var["list_user_grant_privilege_category"],
+        privilege_type=var["list_user_grant_privilege_type"])
     ```
 
 

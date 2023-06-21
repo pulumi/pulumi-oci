@@ -175,14 +175,14 @@ def get_audit_archive_retrievals(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_archive_retrievals = oci.DataSafe.get_audit_archive_retrievals(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        audit_archive_retrieval_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_of_expiry=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_audit_archive_retrievals = oci.DataSafe.get_audit_archive_retrievals(compartment_id=var["compartment_id"],
+        access_level=var["audit_archive_retrieval_access_level"],
+        audit_archive_retrieval_id=oci_data_safe_audit_archive_retrieval["test_audit_archive_retrieval"]["id"],
+        compartment_id_in_subtree=var["audit_archive_retrieval_compartment_id_in_subtree"],
+        display_name=var["audit_archive_retrieval_display_name"],
+        state=var["audit_archive_retrieval_state"],
+        target_id=oci_cloud_guard_target["test_target"]["id"],
+        time_of_expiry=var["audit_archive_retrieval_time_of_expiry"])
     ```
 
 
@@ -244,14 +244,14 @@ def get_audit_archive_retrievals_output(access_level: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_archive_retrievals = oci.DataSafe.get_audit_archive_retrievals(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        access_level=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        audit_archive_retrieval_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        time_of_expiry=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_audit_archive_retrievals = oci.DataSafe.get_audit_archive_retrievals(compartment_id=var["compartment_id"],
+        access_level=var["audit_archive_retrieval_access_level"],
+        audit_archive_retrieval_id=oci_data_safe_audit_archive_retrieval["test_audit_archive_retrieval"]["id"],
+        compartment_id_in_subtree=var["audit_archive_retrieval_compartment_id_in_subtree"],
+        display_name=var["audit_archive_retrieval_display_name"],
+        state=var["audit_archive_retrieval_state"],
+        target_id=oci_cloud_guard_target["test_target"]["id"],
+        time_of_expiry=var["audit_archive_retrieval_time_of_expiry"])
     ```
 
 

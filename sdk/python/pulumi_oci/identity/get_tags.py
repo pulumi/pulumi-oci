@@ -106,8 +106,8 @@ def get_tags(filters: Optional[Sequence[pulumi.InputType['GetTagsFilterArgs']]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_tags = oci.Identity.get_tags(tag_namespace_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_tags = oci.Identity.get_tags(tag_namespace_id=oci_identity_tag_namespace["test_tag_namespace"]["id"],
+        state=var["tag_state"])
     ```
 
 
@@ -145,8 +145,8 @@ def get_tags_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_tags = oci.Identity.get_tags(tag_namespace_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_tags = oci.Identity.get_tags(tag_namespace_id=oci_identity_tag_namespace["test_tag_namespace"]["id"],
+        state=var["tag_state"])
     ```
 
 

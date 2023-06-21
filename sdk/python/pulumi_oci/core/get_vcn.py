@@ -286,7 +286,7 @@ def get_vcn(vcn_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vcn = oci.Core.get_vcn(vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_vcn = oci.Core.get_vcn(vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
 
 
@@ -335,7 +335,7 @@ def get_vcn_output(vcn_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vcn = oci.Core.get_vcn(vcn_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_vcn = oci.Core.get_vcn(vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
 
 

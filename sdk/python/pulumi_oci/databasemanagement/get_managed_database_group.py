@@ -151,7 +151,7 @@ def get_managed_database_group(managed_database_group_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_group = oci.DatabaseManagement.get_managed_database_group(managed_database_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_managed_database_group = oci.DatabaseManagement.get_managed_database_group(managed_database_group_id=oci_database_management_managed_database_group["test_managed_database_group"]["id"])
     ```
 
 
@@ -188,7 +188,7 @@ def get_managed_database_group_output(managed_database_group_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_group = oci.DatabaseManagement.get_managed_database_group(managed_database_group_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_managed_database_group = oci.DatabaseManagement.get_managed_database_group(managed_database_group_id=oci_database_management_managed_database_group["test_managed_database_group"]["id"])
     ```
 
 

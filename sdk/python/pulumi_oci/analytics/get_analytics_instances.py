@@ -145,11 +145,11 @@ def get_analytics_instances(capacity_type: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_analytics_instances = oci.Analytics.get_analytics_instances(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        capacity_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        feature_set=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_analytics_instances = oci.Analytics.get_analytics_instances(compartment_id=var["compartment_id"],
+        capacity_type=var["analytics_instance_capacity_type"],
+        feature_set=var["analytics_instance_feature_set"],
+        name=var["analytics_instance_name"],
+        state=var["analytics_instance_state"])
     ```
 
 
@@ -199,11 +199,11 @@ def get_analytics_instances_output(capacity_type: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_analytics_instances = oci.Analytics.get_analytics_instances(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        capacity_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        feature_set=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_analytics_instances = oci.Analytics.get_analytics_instances(compartment_id=var["compartment_id"],
+        capacity_type=var["analytics_instance_capacity_type"],
+        feature_set=var["analytics_instance_feature_set"],
+        name=var["analytics_instance_name"],
+        state=var["analytics_instance_state"])
     ```
 
 

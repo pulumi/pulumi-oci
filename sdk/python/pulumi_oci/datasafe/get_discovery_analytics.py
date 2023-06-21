@@ -138,11 +138,11 @@ def get_discovery_analytics(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_analytics = oci.DataSafe.get_discovery_analytics(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        group_by=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        sensitive_data_model_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_discovery_analytics = oci.DataSafe.get_discovery_analytics(compartment_id=var["compartment_id"],
+        compartment_id_in_subtree=var["discovery_analytic_compartment_id_in_subtree"],
+        group_by=var["discovery_analytic_group_by"],
+        sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
+        target_id=oci_cloud_guard_target["test_target"]["id"])
     ```
 
 
@@ -194,11 +194,11 @@ def get_discovery_analytics_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_analytics = oci.DataSafe.get_discovery_analytics(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id_in_subtree=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        group_by=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        sensitive_data_model_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        target_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_discovery_analytics = oci.DataSafe.get_discovery_analytics(compartment_id=var["compartment_id"],
+        compartment_id_in_subtree=var["discovery_analytic_compartment_id_in_subtree"],
+        group_by=var["discovery_analytic_group_by"],
+        sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
+        target_id=oci_cloud_guard_target["test_target"]["id"])
     ```
 
 

@@ -116,9 +116,9 @@ def get_cluster_network_instances(cluster_network_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_network_instances = oci.Core.get_cluster_network_instances(cluster_network_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_cluster_network_instances = oci.Core.get_cluster_network_instances(cluster_network_id=oci_core_cluster_network["test_cluster_network"]["id"],
+        compartment_id=var["compartment_id"],
+        display_name=var["cluster_network_instance_display_name"])
     ```
 
 
@@ -160,9 +160,9 @@ def get_cluster_network_instances_output(cluster_network_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_network_instances = oci.Core.get_cluster_network_instances(cluster_network_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_cluster_network_instances = oci.Core.get_cluster_network_instances(cluster_network_id=oci_core_cluster_network["test_cluster_network"]["id"],
+        compartment_id=var["compartment_id"],
+        display_name=var["cluster_network_instance_display_name"])
     ```
 
 

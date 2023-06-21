@@ -120,10 +120,10 @@ def get_connect_harnesses(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connect_harnesses = oci.Streaming.get_connect_harnesses(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_connect_harnesses = oci.Streaming.get_connect_harnesses(compartment_id=var["compartment_id"],
+        id=var["connect_harness_id"],
+        name=var["connect_harness_name"],
+        state=var["connect_harness_state"])
     ```
 
 
@@ -168,10 +168,10 @@ def get_connect_harnesses_output(compartment_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_connect_harnesses = oci.Streaming.get_connect_harnesses(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        state=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_connect_harnesses = oci.Streaming.get_connect_harnesses(compartment_id=var["compartment_id"],
+        id=var["connect_harness_id"],
+        name=var["connect_harness_name"],
+        state=var["connect_harness_state"])
     ```
 
 

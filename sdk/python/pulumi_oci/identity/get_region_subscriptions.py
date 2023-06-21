@@ -90,7 +90,7 @@ def get_region_subscriptions(filters: Optional[Sequence[pulumi.InputType['GetReg
     import pulumi
     import pulumi_oci as oci
 
-    test_region_subscriptions = oci.Identity.get_region_subscriptions(tenancy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_region_subscriptions = oci.Identity.get_region_subscriptions(tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
     ```
 
 
@@ -124,7 +124,7 @@ def get_region_subscriptions_output(filters: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_region_subscriptions = oci.Identity.get_region_subscriptions(tenancy_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_region_subscriptions = oci.Identity.get_region_subscriptions(tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
     ```
 
 

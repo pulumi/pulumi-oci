@@ -359,9 +359,9 @@ class BuildPipeline(pulumi.CustomResource):
             project_id=oci_devops_project["test_project"]["id"],
             build_pipeline_parameters=oci.dev_ops.BuildPipelineBuildPipelineParametersArgs(
                 items=[oci.dev_ops.BuildPipelineBuildPipelineParametersItemArgs(
-                    default_value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    default_value=var["build_pipeline_build_pipeline_parameters_items_default_value"],
+                    name=var["build_pipeline_build_pipeline_parameters_items_name"],
+                    description=var["build_pipeline_build_pipeline_parameters_items_description"],
                 )],
             ),
             defined_tags={
@@ -416,9 +416,9 @@ class BuildPipeline(pulumi.CustomResource):
             project_id=oci_devops_project["test_project"]["id"],
             build_pipeline_parameters=oci.dev_ops.BuildPipelineBuildPipelineParametersArgs(
                 items=[oci.dev_ops.BuildPipelineBuildPipelineParametersItemArgs(
-                    default_value=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-                    description=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                    default_value=var["build_pipeline_build_pipeline_parameters_items_default_value"],
+                    name=var["build_pipeline_build_pipeline_parameters_items_name"],
+                    description=var["build_pipeline_build_pipeline_parameters_items_description"],
                 )],
             ),
             defined_tags={

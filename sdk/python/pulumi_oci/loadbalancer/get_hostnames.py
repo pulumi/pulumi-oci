@@ -90,7 +90,7 @@ def get_hostnames(filters: Optional[Sequence[pulumi.InputType['GetHostnamesFilte
     import pulumi
     import pulumi_oci as oci
 
-    test_hostnames = oci.LoadBalancer.get_hostnames(load_balancer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_hostnames = oci.LoadBalancer.get_hostnames(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
     ```
 
 
@@ -124,7 +124,7 @@ def get_hostnames_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_hostnames = oci.LoadBalancer.get_hostnames(load_balancer_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_hostnames = oci.LoadBalancer.get_hostnames(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
     ```
 
 

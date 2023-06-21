@@ -154,12 +154,12 @@ def get_protection_capabilities(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_capabilities = oci.Waf.get_protection_capabilities(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        group_tags=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_latest_versions=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_protection_capabilities = oci.Waf.get_protection_capabilities(compartment_id=var["compartment_id"],
+        display_name=var["protection_capability_display_name"],
+        group_tags=var["protection_capability_group_tag"],
+        is_latest_versions=var["protection_capability_is_latest_version"],
+        key=var["protection_capability_key"],
+        type=var["protection_capability_type"])
     ```
 
 
@@ -213,12 +213,12 @@ def get_protection_capabilities_output(compartment_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_capabilities = oci.Waf.get_protection_capabilities(compartment_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        display_name=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        group_tags=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_latest_versions=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_protection_capabilities = oci.Waf.get_protection_capabilities(compartment_id=var["compartment_id"],
+        display_name=var["protection_capability_display_name"],
+        group_tags=var["protection_capability_group_tag"],
+        is_latest_versions=var["protection_capability_is_latest_version"],
+        key=var["protection_capability_key"],
+        type=var["protection_capability_type"])
     ```
 
 

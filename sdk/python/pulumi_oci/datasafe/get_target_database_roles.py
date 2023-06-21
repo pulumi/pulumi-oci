@@ -139,11 +139,11 @@ def get_target_database_roles(authentication_type: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_target_database_roles = oci.DataSafe.get_target_database_roles(target_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        authentication_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_oracle_maintained=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        role_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        role_name_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_target_database_roles = oci.DataSafe.get_target_database_roles(target_database_id=oci_data_safe_target_database["test_target_database"]["id"],
+        authentication_type=var["target_database_role_authentication_type"],
+        is_oracle_maintained=var["target_database_role_is_oracle_maintained"],
+        role_names=var["target_database_role_role_name"],
+        role_name_contains=var["target_database_role_role_name_contains"])
     ```
 
 
@@ -193,11 +193,11 @@ def get_target_database_roles_output(authentication_type: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_target_database_roles = oci.DataSafe.get_target_database_roles(target_database_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        authentication_type=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        is_oracle_maintained=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        role_names=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        role_name_contains=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_target_database_roles = oci.DataSafe.get_target_database_roles(target_database_id=oci_data_safe_target_database["test_target_database"]["id"],
+        authentication_type=var["target_database_role_authentication_type"],
+        is_oracle_maintained=var["target_database_role_is_oracle_maintained"],
+        role_names=var["target_database_role_role_name"],
+        role_name_contains=var["target_database_role_role_name_contains"])
     ```
 
 

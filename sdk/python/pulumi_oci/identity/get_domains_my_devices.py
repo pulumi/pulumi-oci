@@ -209,14 +209,14 @@ def get_domains_my_devices(attribute_sets: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_my_devices = oci.Identity.get_domains_my_devices(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        my_device_count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        my_device_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_my_devices = oci.Identity.get_domains_my_devices(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        my_device_count=var["my_device_my_device_count"],
+        my_device_filter=var["my_device_my_device_filter"],
         attribute_sets=[],
         attributes="",
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        start_index=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        authorization=var["my_device_authorization"],
+        resource_type_schema_version=var["my_device_resource_type_schema_version"],
+        start_index=var["my_device_start_index"])
     ```
 
 
@@ -287,14 +287,14 @@ def get_domains_my_devices_output(attribute_sets: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_my_devices = oci.Identity.get_domains_my_devices(idcs_endpoint=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        my_device_count=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        my_device_filter=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+    test_my_devices = oci.Identity.get_domains_my_devices(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        my_device_count=var["my_device_my_device_count"],
+        my_device_filter=var["my_device_my_device_filter"],
         attribute_sets=[],
         attributes="",
-        authorization=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        resource_type_schema_version=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        start_index=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+        authorization=var["my_device_authorization"],
+        resource_type_schema_version=var["my_device_resource_type_schema_version"],
+        start_index=var["my_device_start_index"])
     ```
 
 

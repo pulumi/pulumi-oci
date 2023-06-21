@@ -188,7 +188,7 @@ def get_subscription(subscription_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription = oci.Ons.get_subscription(subscription_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_subscription = oci.Ons.get_subscription(subscription_id=oci_ons_subscription["test_subscription"]["id"])
     ```
 
 
@@ -230,7 +230,7 @@ def get_subscription_output(subscription_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription = oci.Ons.get_subscription(subscription_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_subscription = oci.Ons.get_subscription(subscription_id=oci_ons_subscription["test_subscription"]["id"])
     ```
 
 

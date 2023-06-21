@@ -182,8 +182,8 @@ def get_analytics_instance_private_access_channel(analytics_instance_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_analytics_instance_private_access_channel = oci.Analytics.get_analytics_instance_private_access_channel(analytics_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        private_access_channel_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_analytics_instance_private_access_channel = oci.Analytics.get_analytics_instance_private_access_channel(analytics_instance_id=oci_analytics_analytics_instance["test_analytics_instance"]["id"],
+        private_access_channel_key=var["analytics_instance_private_access_channel_private_access_channel_key"])
     ```
 
 
@@ -226,8 +226,8 @@ def get_analytics_instance_private_access_channel_output(analytics_instance_id: 
     import pulumi
     import pulumi_oci as oci
 
-    test_analytics_instance_private_access_channel = oci.Analytics.get_analytics_instance_private_access_channel(analytics_instance_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
-        private_access_channel_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_analytics_instance_private_access_channel = oci.Analytics.get_analytics_instance_private_access_channel(analytics_instance_id=oci_analytics_analytics_instance["test_analytics_instance"]["id"],
+        private_access_channel_key=var["analytics_instance_private_access_channel_private_access_channel_key"])
     ```
 
 

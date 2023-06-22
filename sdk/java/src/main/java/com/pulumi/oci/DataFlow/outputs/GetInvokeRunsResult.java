@@ -42,6 +42,11 @@ public final class GetInvokeRunsResult {
      */
     private @Nullable String ownerPrincipalId;
     /**
+     * @return The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     * 
+     */
+    private @Nullable String poolId;
+    /**
      * @return The list of runs.
      * 
      */
@@ -96,6 +101,13 @@ public final class GetInvokeRunsResult {
         return Optional.ofNullable(this.ownerPrincipalId);
     }
     /**
+     * @return The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     * 
+     */
+    public Optional<String> poolId() {
+        return Optional.ofNullable(this.poolId);
+    }
+    /**
      * @return The list of runs.
      * 
      */
@@ -129,6 +141,7 @@ public final class GetInvokeRunsResult {
         private @Nullable List<GetInvokeRunsFilter> filters;
         private String id;
         private @Nullable String ownerPrincipalId;
+        private @Nullable String poolId;
         private List<GetInvokeRunsRun> runs;
         private @Nullable String state;
         private @Nullable String timeCreatedGreaterThan;
@@ -142,6 +155,7 @@ public final class GetInvokeRunsResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.ownerPrincipalId = defaults.ownerPrincipalId;
+    	      this.poolId = defaults.poolId;
     	      this.runs = defaults.runs;
     	      this.state = defaults.state;
     	      this.timeCreatedGreaterThan = defaults.timeCreatedGreaterThan;
@@ -186,6 +200,11 @@ public final class GetInvokeRunsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder poolId(@Nullable String poolId) {
+            this.poolId = poolId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder runs(List<GetInvokeRunsRun> runs) {
             this.runs = Objects.requireNonNull(runs);
             return this;
@@ -212,6 +231,7 @@ public final class GetInvokeRunsResult {
             o.filters = filters;
             o.id = id;
             o.ownerPrincipalId = ownerPrincipalId;
+            o.poolId = poolId;
             o.runs = runs;
             o.state = state;
             o.timeCreatedGreaterThan = timeCreatedGreaterThan;

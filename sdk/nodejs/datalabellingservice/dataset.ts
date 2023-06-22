@@ -46,6 +46,18 @@ import * as utilities from "../utilities";
  *     description: _var.dataset_description,
  *     displayName: _var.dataset_display_name,
  *     freeformTags: _var.dataset_freeform_tags,
+ *     initialImportDatasetConfiguration: {
+ *         importFormat: {
+ *             name: _var.dataset_initial_import_dataset_configuration_import_format_name,
+ *             version: _var.dataset_initial_import_dataset_configuration_import_format_version,
+ *         },
+ *         importMetadataPath: {
+ *             bucket: _var.dataset_initial_import_dataset_configuration_import_metadata_path_bucket,
+ *             namespace: _var.dataset_initial_import_dataset_configuration_import_metadata_path_namespace,
+ *             path: _var.dataset_initial_import_dataset_configuration_import_metadata_path_path,
+ *             sourceType: _var.dataset_initial_import_dataset_configuration_import_metadata_path_source_type,
+ *         },
+ *     },
  *     initialRecordGenerationConfiguration: {},
  *     labelingInstructions: _var.dataset_labeling_instructions,
  * });
@@ -88,6 +100,10 @@ export class Dataset extends pulumi.CustomResource {
     }
 
     /**
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+     */
+    public /*out*/ readonly additionalProperties!: pulumi.Output<{[key: string]: any}>;
+    /**
      * The annotation format name required for labeling records.
      */
     public readonly annotationFormat!: pulumi.Output<string>;
@@ -120,6 +136,10 @@ export class Dataset extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
+     * Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+     */
+    public readonly initialImportDatasetConfiguration!: pulumi.Output<outputs.DataLabellingService.DatasetInitialImportDatasetConfiguration>;
+    /**
      * The initial generate records configuration. It generates records from the dataset's source.
      */
     public readonly initialRecordGenerationConfiguration!: pulumi.Output<outputs.DataLabellingService.DatasetInitialRecordGenerationConfiguration>;
@@ -139,6 +159,10 @@ export class Dataset extends pulumi.CustomResource {
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+     */
+    public /*out*/ readonly lifecycleSubstate!: pulumi.Output<string>;
     /**
      * The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
      */
@@ -165,6 +189,7 @@ export class Dataset extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DatasetState | undefined;
+            resourceInputs["additionalProperties"] = state ? state.additionalProperties : undefined;
             resourceInputs["annotationFormat"] = state ? state.annotationFormat : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["datasetFormatDetails"] = state ? state.datasetFormatDetails : undefined;
@@ -173,10 +198,12 @@ export class Dataset extends pulumi.CustomResource {
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["initialImportDatasetConfiguration"] = state ? state.initialImportDatasetConfiguration : undefined;
             resourceInputs["initialRecordGenerationConfiguration"] = state ? state.initialRecordGenerationConfiguration : undefined;
             resourceInputs["labelSet"] = state ? state.labelSet : undefined;
             resourceInputs["labelingInstructions"] = state ? state.labelingInstructions : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["lifecycleSubstate"] = state ? state.lifecycleSubstate : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -205,10 +232,13 @@ export class Dataset extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["initialImportDatasetConfiguration"] = args ? args.initialImportDatasetConfiguration : undefined;
             resourceInputs["initialRecordGenerationConfiguration"] = args ? args.initialRecordGenerationConfiguration : undefined;
             resourceInputs["labelSet"] = args ? args.labelSet : undefined;
             resourceInputs["labelingInstructions"] = args ? args.labelingInstructions : undefined;
+            resourceInputs["additionalProperties"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["lifecycleSubstate"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -222,6 +252,10 @@ export class Dataset extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Dataset resources.
  */
 export interface DatasetState {
+    /**
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+     */
+    additionalProperties?: pulumi.Input<{[key: string]: any}>;
     /**
      * The annotation format name required for labeling records.
      */
@@ -255,6 +289,10 @@ export interface DatasetState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
+     * Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+     */
+    initialImportDatasetConfiguration?: pulumi.Input<inputs.DataLabellingService.DatasetInitialImportDatasetConfiguration>;
+    /**
      * The initial generate records configuration. It generates records from the dataset's source.
      */
     initialRecordGenerationConfiguration?: pulumi.Input<inputs.DataLabellingService.DatasetInitialRecordGenerationConfiguration>;
@@ -274,6 +312,10 @@ export interface DatasetState {
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+     */
+    lifecycleSubstate?: pulumi.Input<string>;
     /**
      * The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
      */
@@ -324,6 +366,10 @@ export interface DatasetArgs {
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+     */
+    initialImportDatasetConfiguration?: pulumi.Input<inputs.DataLabellingService.DatasetInitialImportDatasetConfiguration>;
     /**
      * The initial generate records configuration. It generates records from the dataset's source.
      */

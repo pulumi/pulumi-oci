@@ -15,6 +15,10 @@ import com.pulumi.oci.DataFlow.inputs.GetInvokeRunArgs;
 import com.pulumi.oci.DataFlow.inputs.GetInvokeRunPlainArgs;
 import com.pulumi.oci.DataFlow.inputs.GetInvokeRunsArgs;
 import com.pulumi.oci.DataFlow.inputs.GetInvokeRunsPlainArgs;
+import com.pulumi.oci.DataFlow.inputs.GetPoolArgs;
+import com.pulumi.oci.DataFlow.inputs.GetPoolPlainArgs;
+import com.pulumi.oci.DataFlow.inputs.GetPoolsArgs;
+import com.pulumi.oci.DataFlow.inputs.GetPoolsPlainArgs;
 import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointArgs;
 import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointPlainArgs;
 import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
@@ -31,6 +35,8 @@ import com.pulumi.oci.DataFlow.outputs.GetApplicationResult;
 import com.pulumi.oci.DataFlow.outputs.GetApplicationsResult;
 import com.pulumi.oci.DataFlow.outputs.GetInvokeRunResult;
 import com.pulumi.oci.DataFlow.outputs.GetInvokeRunsResult;
+import com.pulumi.oci.DataFlow.outputs.GetPoolResult;
+import com.pulumi.oci.DataFlow.outputs.GetPoolsResult;
 import com.pulumi.oci.DataFlow.outputs.GetPrivateEndpointResult;
 import com.pulumi.oci.DataFlow.outputs.GetPrivateEndpointsResult;
 import com.pulumi.oci.DataFlow.outputs.GetRunLogResult;
@@ -558,6 +564,7 @@ public final class DataFlowFunctions {
      *             .displayName(var_.invoke_run_display_name())
      *             .displayNameStartsWith(var_.invoke_run_display_name_starts_with())
      *             .ownerPrincipalId(oci_dataflow_owner_principal.test_owner_principal().id())
+     *             .poolId(oci_dataflow_pool.test_pool().id())
      *             .state(var_.invoke_run_state())
      *             .timeCreatedGreaterThan(var_.invoke_run_time_created_greater_than())
      *             .build());
@@ -603,6 +610,7 @@ public final class DataFlowFunctions {
      *             .displayName(var_.invoke_run_display_name())
      *             .displayNameStartsWith(var_.invoke_run_display_name_starts_with())
      *             .ownerPrincipalId(oci_dataflow_owner_principal.test_owner_principal().id())
+     *             .poolId(oci_dataflow_pool.test_pool().id())
      *             .state(var_.invoke_run_state())
      *             .timeCreatedGreaterThan(var_.invoke_run_time_created_greater_than())
      *             .build());
@@ -648,6 +656,7 @@ public final class DataFlowFunctions {
      *             .displayName(var_.invoke_run_display_name())
      *             .displayNameStartsWith(var_.invoke_run_display_name_starts_with())
      *             .ownerPrincipalId(oci_dataflow_owner_principal.test_owner_principal().id())
+     *             .poolId(oci_dataflow_pool.test_pool().id())
      *             .state(var_.invoke_run_state())
      *             .timeCreatedGreaterThan(var_.invoke_run_time_created_greater_than())
      *             .build());
@@ -693,6 +702,7 @@ public final class DataFlowFunctions {
      *             .displayName(var_.invoke_run_display_name())
      *             .displayNameStartsWith(var_.invoke_run_display_name_starts_with())
      *             .ownerPrincipalId(oci_dataflow_owner_principal.test_owner_principal().id())
+     *             .poolId(oci_dataflow_pool.test_pool().id())
      *             .state(var_.invoke_run_state())
      *             .timeCreatedGreaterThan(var_.invoke_run_time_created_greater_than())
      *             .build());
@@ -704,6 +714,334 @@ public final class DataFlowFunctions {
      */
     public static CompletableFuture<GetInvokeRunsResult> getInvokeRunsPlain(GetInvokeRunsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataFlow/getInvokeRuns:getInvokeRuns", TypeShape.of(GetInvokeRunsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Pool resource in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Retrieves a pool using a `poolId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPool = DataFlowFunctions.getPool(GetPoolArgs.builder()
+     *             .poolId(oci_dataflow_pool.test_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPoolResult> getPool(GetPoolArgs args) {
+        return getPool(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Pool resource in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Retrieves a pool using a `poolId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPool = DataFlowFunctions.getPool(GetPoolArgs.builder()
+     *             .poolId(oci_dataflow_pool.test_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPoolResult> getPoolPlain(GetPoolPlainArgs args) {
+        return getPoolPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Pool resource in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Retrieves a pool using a `poolId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPool = DataFlowFunctions.getPool(GetPoolArgs.builder()
+     *             .poolId(oci_dataflow_pool.test_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPoolResult> getPool(GetPoolArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataFlow/getPool:getPool", TypeShape.of(GetPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Pool resource in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Retrieves a pool using a `poolId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPool = DataFlowFunctions.getPool(GetPoolArgs.builder()
+     *             .poolId(oci_dataflow_pool.test_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPoolResult> getPoolPlain(GetPoolPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataFlow/getPool:getPool", TypeShape.of(GetPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pools in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Lists all pools in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPools = DataFlowFunctions.getPools(GetPoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.pool_display_name())
+     *             .displayNameStartsWith(var_.pool_display_name_starts_with())
+     *             .ownerPrincipalId(oci_dataflow_owner_principal.test_owner_principal().id())
+     *             .state(var_.pool_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPoolsResult> getPools(GetPoolsArgs args) {
+        return getPools(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pools in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Lists all pools in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPools = DataFlowFunctions.getPools(GetPoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.pool_display_name())
+     *             .displayNameStartsWith(var_.pool_display_name_starts_with())
+     *             .ownerPrincipalId(oci_dataflow_owner_principal.test_owner_principal().id())
+     *             .state(var_.pool_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPoolsResult> getPoolsPlain(GetPoolsPlainArgs args) {
+        return getPoolsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pools in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Lists all pools in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPools = DataFlowFunctions.getPools(GetPoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.pool_display_name())
+     *             .displayNameStartsWith(var_.pool_display_name_starts_with())
+     *             .ownerPrincipalId(oci_dataflow_owner_principal.test_owner_principal().id())
+     *             .state(var_.pool_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPoolsResult> getPools(GetPoolsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataFlow/getPools:getPools", TypeShape.of(GetPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pools in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Lists all pools in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPools = DataFlowFunctions.getPools(GetPoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.pool_display_name())
+     *             .displayNameStartsWith(var_.pool_display_name_starts_with())
+     *             .ownerPrincipalId(oci_dataflow_owner_principal.test_owner_principal().id())
+     *             .state(var_.pool_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPoolsResult> getPoolsPlain(GetPoolsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataFlow/getPools:getPools", TypeShape.of(GetPoolsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Data Flow service.

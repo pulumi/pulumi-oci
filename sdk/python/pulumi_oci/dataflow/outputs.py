@@ -19,6 +19,11 @@ __all__ = [
     'InvokeRunDriverShapeConfig',
     'InvokeRunExecutorShapeConfig',
     'InvokeRunParameter',
+    'PoolConfiguration',
+    'PoolConfigurationShapeConfig',
+    'PoolPoolMetric',
+    'PoolPoolMetricActivelyUsedNodeCount',
+    'PoolSchedule',
     'PrivateEndpointScanDetail',
     'RunStatementOutput',
     'RunStatementOutputData',
@@ -42,6 +47,19 @@ __all__ = [
     'GetInvokeRunsRunDriverShapeConfigResult',
     'GetInvokeRunsRunExecutorShapeConfigResult',
     'GetInvokeRunsRunParameterResult',
+    'GetPoolConfigurationResult',
+    'GetPoolConfigurationShapeConfigResult',
+    'GetPoolPoolMetricResult',
+    'GetPoolPoolMetricActivelyUsedNodeCountResult',
+    'GetPoolScheduleResult',
+    'GetPoolsFilterResult',
+    'GetPoolsPoolCollectionResult',
+    'GetPoolsPoolCollectionItemResult',
+    'GetPoolsPoolCollectionItemConfigurationResult',
+    'GetPoolsPoolCollectionItemConfigurationShapeConfigResult',
+    'GetPoolsPoolCollectionItemPoolMetricResult',
+    'GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountResult',
+    'GetPoolsPoolCollectionItemScheduleResult',
     'GetPrivateEndpointScanDetailResult',
     'GetPrivateEndpointsFilterResult',
     'GetPrivateEndpointsPrivateEndpointCollectionResult',
@@ -405,6 +423,346 @@ class InvokeRunParameter(dict):
 
 
 @pulumi.output_type
+class PoolConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "shapeConfig":
+            suggest = "shape_config"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PoolConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PoolConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PoolConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 max: Optional[int] = None,
+                 min: Optional[int] = None,
+                 shape: Optional[str] = None,
+                 shape_config: Optional['outputs.PoolConfigurationShapeConfig'] = None):
+        """
+        :param int max: (Updatable) Maximum number of compute instances in the pool for a given compute shape.
+        :param int min: (Updatable) Minimum number of compute instances in the pool for a given compute shape.
+        :param str shape: (Updatable) The compute shape of the resources you would like to provision.
+        :param 'PoolConfigurationShapeConfigArgs' shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        if max is not None:
+            pulumi.set(__self__, "max", max)
+        if min is not None:
+            pulumi.set(__self__, "min", min)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
+        if shape_config is not None:
+            pulumi.set(__self__, "shape_config", shape_config)
+
+    @property
+    @pulumi.getter
+    def max(self) -> Optional[int]:
+        """
+        (Updatable) Maximum number of compute instances in the pool for a given compute shape.
+        """
+        return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter
+    def min(self) -> Optional[int]:
+        """
+        (Updatable) Minimum number of compute instances in the pool for a given compute shape.
+        """
+        return pulumi.get(self, "min")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> Optional[str]:
+        """
+        (Updatable) The compute shape of the resources you would like to provision.
+        """
+        return pulumi.get(self, "shape")
+
+    @property
+    @pulumi.getter(name="shapeConfig")
+    def shape_config(self) -> Optional['outputs.PoolConfigurationShapeConfig']:
+        """
+        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "shape_config")
+
+
+@pulumi.output_type
+class PoolConfigurationShapeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PoolConfigurationShapeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PoolConfigurationShapeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PoolConfigurationShapeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        """
+        :param float memory_in_gbs: (Updatable) The amount of memory used for the driver or executors.
+        :param float ocpus: (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[float]:
+        """
+        (Updatable) The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[float]:
+        """
+        (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class PoolPoolMetric(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "activeRunsCount":
+            suggest = "active_runs_count"
+        elif key == "activelyUsedNodeCounts":
+            suggest = "actively_used_node_counts"
+        elif key == "timeLastMetricsUpdated":
+            suggest = "time_last_metrics_updated"
+        elif key == "timeLastStarted":
+            suggest = "time_last_started"
+        elif key == "timeLastStopped":
+            suggest = "time_last_stopped"
+        elif key == "timeLastUsed":
+            suggest = "time_last_used"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PoolPoolMetric. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PoolPoolMetric.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PoolPoolMetric.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 active_runs_count: Optional[str] = None,
+                 actively_used_node_counts: Optional[Sequence['outputs.PoolPoolMetricActivelyUsedNodeCount']] = None,
+                 time_last_metrics_updated: Optional[str] = None,
+                 time_last_started: Optional[str] = None,
+                 time_last_stopped: Optional[str] = None,
+                 time_last_used: Optional[str] = None):
+        """
+        :param str active_runs_count: The number of runs that are currently running that are using this pool.
+        :param Sequence['PoolPoolMetricActivelyUsedNodeCountArgs'] actively_used_node_counts: A count of the nodes that are currently being used for each shape in this pool.
+        :param str time_last_metrics_updated: The last time the mertics were updated for this.
+        :param str time_last_started: The last time this pool was started.
+        :param str time_last_stopped: The last time this pool was stopped.
+        :param str time_last_used: The last time a run used this pool.
+        """
+        if active_runs_count is not None:
+            pulumi.set(__self__, "active_runs_count", active_runs_count)
+        if actively_used_node_counts is not None:
+            pulumi.set(__self__, "actively_used_node_counts", actively_used_node_counts)
+        if time_last_metrics_updated is not None:
+            pulumi.set(__self__, "time_last_metrics_updated", time_last_metrics_updated)
+        if time_last_started is not None:
+            pulumi.set(__self__, "time_last_started", time_last_started)
+        if time_last_stopped is not None:
+            pulumi.set(__self__, "time_last_stopped", time_last_stopped)
+        if time_last_used is not None:
+            pulumi.set(__self__, "time_last_used", time_last_used)
+
+    @property
+    @pulumi.getter(name="activeRunsCount")
+    def active_runs_count(self) -> Optional[str]:
+        """
+        The number of runs that are currently running that are using this pool.
+        """
+        return pulumi.get(self, "active_runs_count")
+
+    @property
+    @pulumi.getter(name="activelyUsedNodeCounts")
+    def actively_used_node_counts(self) -> Optional[Sequence['outputs.PoolPoolMetricActivelyUsedNodeCount']]:
+        """
+        A count of the nodes that are currently being used for each shape in this pool.
+        """
+        return pulumi.get(self, "actively_used_node_counts")
+
+    @property
+    @pulumi.getter(name="timeLastMetricsUpdated")
+    def time_last_metrics_updated(self) -> Optional[str]:
+        """
+        The last time the mertics were updated for this.
+        """
+        return pulumi.get(self, "time_last_metrics_updated")
+
+    @property
+    @pulumi.getter(name="timeLastStarted")
+    def time_last_started(self) -> Optional[str]:
+        """
+        The last time this pool was started.
+        """
+        return pulumi.get(self, "time_last_started")
+
+    @property
+    @pulumi.getter(name="timeLastStopped")
+    def time_last_stopped(self) -> Optional[str]:
+        """
+        The last time this pool was stopped.
+        """
+        return pulumi.get(self, "time_last_stopped")
+
+    @property
+    @pulumi.getter(name="timeLastUsed")
+    def time_last_used(self) -> Optional[str]:
+        """
+        The last time a run used this pool.
+        """
+        return pulumi.get(self, "time_last_used")
+
+
+@pulumi.output_type
+class PoolPoolMetricActivelyUsedNodeCount(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "logicalShape":
+            suggest = "logical_shape"
+        elif key == "poolCount":
+            suggest = "pool_count"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PoolPoolMetricActivelyUsedNodeCount. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PoolPoolMetricActivelyUsedNodeCount.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PoolPoolMetricActivelyUsedNodeCount.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 logical_shape: Optional[str] = None,
+                 pool_count: Optional[int] = None):
+        """
+        :param str logical_shape: The compute shape of the nodes that the count is for.
+        :param int pool_count: The node count of this compute shape.
+        """
+        if logical_shape is not None:
+            pulumi.set(__self__, "logical_shape", logical_shape)
+        if pool_count is not None:
+            pulumi.set(__self__, "pool_count", pool_count)
+
+    @property
+    @pulumi.getter(name="logicalShape")
+    def logical_shape(self) -> Optional[str]:
+        """
+        The compute shape of the nodes that the count is for.
+        """
+        return pulumi.get(self, "logical_shape")
+
+    @property
+    @pulumi.getter(name="poolCount")
+    def pool_count(self) -> Optional[int]:
+        """
+        The node count of this compute shape.
+        """
+        return pulumi.get(self, "pool_count")
+
+
+@pulumi.output_type
+class PoolSchedule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dayOfWeek":
+            suggest = "day_of_week"
+        elif key == "startTime":
+            suggest = "start_time"
+        elif key == "stopTime":
+            suggest = "stop_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PoolSchedule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PoolSchedule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PoolSchedule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 day_of_week: Optional[str] = None,
+                 start_time: Optional[int] = None,
+                 stop_time: Optional[int] = None):
+        """
+        :param str day_of_week: (Updatable) Day of the week SUN-SAT
+        :param int start_time: (Updatable) Hour of the day to start or stop pool.
+        :param int stop_time: (Updatable) Hour of the day to stop the pool.
+        """
+        if day_of_week is not None:
+            pulumi.set(__self__, "day_of_week", day_of_week)
+        if start_time is not None:
+            pulumi.set(__self__, "start_time", start_time)
+        if stop_time is not None:
+            pulumi.set(__self__, "stop_time", stop_time)
+
+    @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> Optional[str]:
+        """
+        (Updatable) Day of the week SUN-SAT
+        """
+        return pulumi.get(self, "day_of_week")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> Optional[int]:
+        """
+        (Updatable) Hour of the day to start or stop pool.
+        """
+        return pulumi.get(self, "start_time")
+
+    @property
+    @pulumi.getter(name="stopTime")
+    def stop_time(self) -> Optional[int]:
+        """
+        (Updatable) Hour of the day to stop the pool.
+        """
+        return pulumi.get(self, "stop_time")
+
+
+@pulumi.output_type
 class PrivateEndpointScanDetail(dict):
     def __init__(__self__, *,
                  fqdn: Optional[str] = None,
@@ -697,6 +1055,7 @@ class GetApplicationsApplicationResult(dict):
                  owner_principal_id: str,
                  owner_user_name: str,
                  parameters: Sequence['outputs.GetApplicationsApplicationParameterResult'],
+                 pool_id: str,
                  private_endpoint_id: str,
                  spark_version: str,
                  state: str,
@@ -731,11 +1090,12 @@ class GetApplicationsApplicationResult(dict):
         :param str owner_principal_id: The OCID of the user who created the resource.
         :param str owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         :param Sequence['GetApplicationsApplicationParameterArgs'] parameters: An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
+        :param str pool_id: The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         :param str private_endpoint_id: The OCID of a private endpoint.
         :param str spark_version: The Spark version utilized to run the application.
         :param str state: The current state of this application.
-        :param str time_created: The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param str time_updated: The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param str time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param str time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         :param str type: The Spark application processing type.
         :param str warehouse_bucket_uri: An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
@@ -765,6 +1125,7 @@ class GetApplicationsApplicationResult(dict):
         pulumi.set(__self__, "owner_principal_id", owner_principal_id)
         pulumi.set(__self__, "owner_user_name", owner_user_name)
         pulumi.set(__self__, "parameters", parameters)
+        pulumi.set(__self__, "pool_id", pool_id)
         pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         pulumi.set(__self__, "spark_version", spark_version)
         pulumi.set(__self__, "state", state)
@@ -982,6 +1343,14 @@ class GetApplicationsApplicationResult(dict):
         return pulumi.get(self, "parameters")
 
     @property
+    @pulumi.getter(name="poolId")
+    def pool_id(self) -> str:
+        """
+        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+        """
+        return pulumi.get(self, "pool_id")
+
+    @property
     @pulumi.getter(name="privateEndpointId")
     def private_endpoint_id(self) -> str:
         """
@@ -1009,7 +1378,7 @@ class GetApplicationsApplicationResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -1017,7 +1386,7 @@ class GetApplicationsApplicationResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -1370,6 +1739,7 @@ class GetInvokeRunsRunResult(dict):
                  owner_principal_id: str,
                  owner_user_name: str,
                  parameters: Sequence['outputs.GetInvokeRunsRunParameterResult'],
+                 pool_id: str,
                  private_endpoint_dns_zones: Sequence[str],
                  private_endpoint_id: str,
                  private_endpoint_max_host_count: int,
@@ -1414,6 +1784,7 @@ class GetInvokeRunsRunResult(dict):
         :param str owner_principal_id: The OCID of the user who created the resource.
         :param str owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         :param Sequence['GetInvokeRunsRunParameterArgs'] parameters: An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
+        :param str pool_id: The ID of the pool.
         :param Sequence[str] private_endpoint_dns_zones: An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
         :param str private_endpoint_id: The OCID of a private endpoint.
         :param int private_endpoint_max_host_count: The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
@@ -1422,8 +1793,8 @@ class GetInvokeRunsRunResult(dict):
         :param str run_duration_in_milliseconds: The duration of the run in milliseconds.
         :param str spark_version: The Spark version utilized to run the application.
         :param str state: The LifecycleState of the run.
-        :param str time_created: The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param str time_updated: The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param str time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param str time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         :param int total_ocpu: The total number of oCPU requested by the run.
         :param str type: The Spark application processing type.
         :param str warehouse_bucket_uri: An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
@@ -1459,6 +1830,7 @@ class GetInvokeRunsRunResult(dict):
         pulumi.set(__self__, "owner_principal_id", owner_principal_id)
         pulumi.set(__self__, "owner_user_name", owner_user_name)
         pulumi.set(__self__, "parameters", parameters)
+        pulumi.set(__self__, "pool_id", pool_id)
         pulumi.set(__self__, "private_endpoint_dns_zones", private_endpoint_dns_zones)
         pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         pulumi.set(__self__, "private_endpoint_max_host_count", private_endpoint_max_host_count)
@@ -1719,6 +2091,14 @@ class GetInvokeRunsRunResult(dict):
         return pulumi.get(self, "parameters")
 
     @property
+    @pulumi.getter(name="poolId")
+    def pool_id(self) -> str:
+        """
+        The ID of the pool.
+        """
+        return pulumi.get(self, "pool_id")
+
+    @property
     @pulumi.getter(name="privateEndpointDnsZones")
     def private_endpoint_dns_zones(self) -> Sequence[str]:
         """
@@ -1786,7 +2166,7 @@ class GetInvokeRunsRunResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -1794,7 +2174,7 @@ class GetInvokeRunsRunResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -1940,6 +2320,672 @@ class GetInvokeRunsRunParameterResult(dict):
 
 
 @pulumi.output_type
+class GetPoolConfigurationResult(dict):
+    def __init__(__self__, *,
+                 max: int,
+                 min: int,
+                 shape: str,
+                 shape_configs: Sequence['outputs.GetPoolConfigurationShapeConfigResult']):
+        """
+        :param int max: Maximum number of compute instances in the pool for a given compute shape.
+        :param int min: Minimum number of compute instances in the pool for a given compute shape.
+        :param str shape: The compute shape of the resources you would like to provision.
+        :param Sequence['GetPoolConfigurationShapeConfigArgs'] shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "shape_configs", shape_configs)
+
+    @property
+    @pulumi.getter
+    def max(self) -> int:
+        """
+        Maximum number of compute instances in the pool for a given compute shape.
+        """
+        return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter
+    def min(self) -> int:
+        """
+        Minimum number of compute instances in the pool for a given compute shape.
+        """
+        return pulumi.get(self, "min")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        The compute shape of the resources you would like to provision.
+        """
+        return pulumi.get(self, "shape")
+
+    @property
+    @pulumi.getter(name="shapeConfigs")
+    def shape_configs(self) -> Sequence['outputs.GetPoolConfigurationShapeConfigResult']:
+        """
+        This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "shape_configs")
+
+
+@pulumi.output_type
+class GetPoolConfigurationShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: float,
+                 ocpus: float):
+        """
+        :param float memory_in_gbs: The amount of memory used for the driver or executors.
+        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetPoolPoolMetricResult(dict):
+    def __init__(__self__, *,
+                 active_runs_count: str,
+                 actively_used_node_counts: Sequence['outputs.GetPoolPoolMetricActivelyUsedNodeCountResult'],
+                 time_last_metrics_updated: str,
+                 time_last_started: str,
+                 time_last_stopped: str,
+                 time_last_used: str):
+        """
+        :param str active_runs_count: The number of runs that are currently running that are using this pool.
+        :param Sequence['GetPoolPoolMetricActivelyUsedNodeCountArgs'] actively_used_node_counts: A count of the nodes that are currently being used for each shape in this pool.
+        :param str time_last_metrics_updated: The last time the mertics were updated for this.
+        :param str time_last_started: The last time this pool was started.
+        :param str time_last_stopped: The last time this pool was stopped.
+        :param str time_last_used: The last time a run used this pool.
+        """
+        pulumi.set(__self__, "active_runs_count", active_runs_count)
+        pulumi.set(__self__, "actively_used_node_counts", actively_used_node_counts)
+        pulumi.set(__self__, "time_last_metrics_updated", time_last_metrics_updated)
+        pulumi.set(__self__, "time_last_started", time_last_started)
+        pulumi.set(__self__, "time_last_stopped", time_last_stopped)
+        pulumi.set(__self__, "time_last_used", time_last_used)
+
+    @property
+    @pulumi.getter(name="activeRunsCount")
+    def active_runs_count(self) -> str:
+        """
+        The number of runs that are currently running that are using this pool.
+        """
+        return pulumi.get(self, "active_runs_count")
+
+    @property
+    @pulumi.getter(name="activelyUsedNodeCounts")
+    def actively_used_node_counts(self) -> Sequence['outputs.GetPoolPoolMetricActivelyUsedNodeCountResult']:
+        """
+        A count of the nodes that are currently being used for each shape in this pool.
+        """
+        return pulumi.get(self, "actively_used_node_counts")
+
+    @property
+    @pulumi.getter(name="timeLastMetricsUpdated")
+    def time_last_metrics_updated(self) -> str:
+        """
+        The last time the mertics were updated for this.
+        """
+        return pulumi.get(self, "time_last_metrics_updated")
+
+    @property
+    @pulumi.getter(name="timeLastStarted")
+    def time_last_started(self) -> str:
+        """
+        The last time this pool was started.
+        """
+        return pulumi.get(self, "time_last_started")
+
+    @property
+    @pulumi.getter(name="timeLastStopped")
+    def time_last_stopped(self) -> str:
+        """
+        The last time this pool was stopped.
+        """
+        return pulumi.get(self, "time_last_stopped")
+
+    @property
+    @pulumi.getter(name="timeLastUsed")
+    def time_last_used(self) -> str:
+        """
+        The last time a run used this pool.
+        """
+        return pulumi.get(self, "time_last_used")
+
+
+@pulumi.output_type
+class GetPoolPoolMetricActivelyUsedNodeCountResult(dict):
+    def __init__(__self__, *,
+                 logical_shape: str,
+                 pool_count: int):
+        """
+        :param str logical_shape: The compute shape of the nodes that the count is for.
+        :param int pool_count: The node count of this compute shape.
+        """
+        pulumi.set(__self__, "logical_shape", logical_shape)
+        pulumi.set(__self__, "pool_count", pool_count)
+
+    @property
+    @pulumi.getter(name="logicalShape")
+    def logical_shape(self) -> str:
+        """
+        The compute shape of the nodes that the count is for.
+        """
+        return pulumi.get(self, "logical_shape")
+
+    @property
+    @pulumi.getter(name="poolCount")
+    def pool_count(self) -> int:
+        """
+        The node count of this compute shape.
+        """
+        return pulumi.get(self, "pool_count")
+
+
+@pulumi.output_type
+class GetPoolScheduleResult(dict):
+    def __init__(__self__, *,
+                 day_of_week: str,
+                 start_time: int,
+                 stop_time: int):
+        """
+        :param str day_of_week: Day of the week SUN-SAT
+        :param int start_time: Hour of the day to start or stop pool.
+        :param int stop_time: Hour of the day to stop the pool.
+        """
+        pulumi.set(__self__, "day_of_week", day_of_week)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "stop_time", stop_time)
+
+    @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> str:
+        """
+        Day of the week SUN-SAT
+        """
+        return pulumi.get(self, "day_of_week")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> int:
+        """
+        Hour of the day to start or stop pool.
+        """
+        return pulumi.get(self, "start_time")
+
+    @property
+    @pulumi.getter(name="stopTime")
+    def stop_time(self) -> int:
+        """
+        Hour of the day to stop the pool.
+        """
+        return pulumi.get(self, "stop_time")
+
+
+@pulumi.output_type
+class GetPoolsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPoolsPoolCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetPoolsPoolCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetPoolsPoolCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetPoolsPoolCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 configurations: Sequence['outputs.GetPoolsPoolCollectionItemConfigurationResult'],
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 idle_timeout_in_minutes: int,
+                 lifecycle_details: str,
+                 owner_principal_id: str,
+                 owner_user_name: str,
+                 pool_metrics: Sequence['outputs.GetPoolsPoolCollectionItemPoolMetricResult'],
+                 schedules: Sequence['outputs.GetPoolsPoolCollectionItemScheduleResult'],
+                 state: str,
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: The OCID of the compartment.
+        :param Sequence['GetPoolsPoolCollectionItemConfigurationArgs'] configurations: List of PoolConfig items.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str description: A user-friendly description. Avoid entering confidential information.
+        :param str display_name: The query parameter for the Spark application name.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param str id: The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+        :param int idle_timeout_in_minutes: Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
+        :param str lifecycle_details: The detailed messages about the lifecycle state.
+        :param str owner_principal_id: The OCID of the user who created the resource.
+        :param str owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
+        :param Sequence['GetPoolsPoolCollectionItemPoolMetricArgs'] pool_metrics: A collection of metrics related to a particular pool.
+        :param Sequence['GetPoolsPoolCollectionItemScheduleArgs'] schedules: A list of schedules for pool to auto start and stop.
+        :param str state: The LifecycleState of the pool.
+        :param str time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param str time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "idle_timeout_in_minutes", idle_timeout_in_minutes)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "owner_principal_id", owner_principal_id)
+        pulumi.set(__self__, "owner_user_name", owner_user_name)
+        pulumi.set(__self__, "pool_metrics", pool_metrics)
+        pulumi.set(__self__, "schedules", schedules)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The OCID of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def configurations(self) -> Sequence['outputs.GetPoolsPoolCollectionItemConfigurationResult']:
+        """
+        List of PoolConfig items.
+        """
+        return pulumi.get(self, "configurations")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A user-friendly description. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The query parameter for the Spark application name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="idleTimeoutInMinutes")
+    def idle_timeout_in_minutes(self) -> int:
+        """
+        Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
+        """
+        return pulumi.get(self, "idle_timeout_in_minutes")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        The detailed messages about the lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="ownerPrincipalId")
+    def owner_principal_id(self) -> str:
+        """
+        The OCID of the user who created the resource.
+        """
+        return pulumi.get(self, "owner_principal_id")
+
+    @property
+    @pulumi.getter(name="ownerUserName")
+    def owner_user_name(self) -> str:
+        """
+        The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
+        """
+        return pulumi.get(self, "owner_user_name")
+
+    @property
+    @pulumi.getter(name="poolMetrics")
+    def pool_metrics(self) -> Sequence['outputs.GetPoolsPoolCollectionItemPoolMetricResult']:
+        """
+        A collection of metrics related to a particular pool.
+        """
+        return pulumi.get(self, "pool_metrics")
+
+    @property
+    @pulumi.getter
+    def schedules(self) -> Sequence['outputs.GetPoolsPoolCollectionItemScheduleResult']:
+        """
+        A list of schedules for pool to auto start and stop.
+        """
+        return pulumi.get(self, "schedules")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The LifecycleState of the pool.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetPoolsPoolCollectionItemConfigurationResult(dict):
+    def __init__(__self__, *,
+                 max: int,
+                 min: int,
+                 shape: str,
+                 shape_configs: Sequence['outputs.GetPoolsPoolCollectionItemConfigurationShapeConfigResult']):
+        """
+        :param int max: Maximum number of compute instances in the pool for a given compute shape.
+        :param int min: Minimum number of compute instances in the pool for a given compute shape.
+        :param str shape: The compute shape of the resources you would like to provision.
+        :param Sequence['GetPoolsPoolCollectionItemConfigurationShapeConfigArgs'] shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "shape_configs", shape_configs)
+
+    @property
+    @pulumi.getter
+    def max(self) -> int:
+        """
+        Maximum number of compute instances in the pool for a given compute shape.
+        """
+        return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter
+    def min(self) -> int:
+        """
+        Minimum number of compute instances in the pool for a given compute shape.
+        """
+        return pulumi.get(self, "min")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        The compute shape of the resources you would like to provision.
+        """
+        return pulumi.get(self, "shape")
+
+    @property
+    @pulumi.getter(name="shapeConfigs")
+    def shape_configs(self) -> Sequence['outputs.GetPoolsPoolCollectionItemConfigurationShapeConfigResult']:
+        """
+        This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "shape_configs")
+
+
+@pulumi.output_type
+class GetPoolsPoolCollectionItemConfigurationShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: float,
+                 ocpus: float):
+        """
+        :param float memory_in_gbs: The amount of memory used for the driver or executors.
+        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetPoolsPoolCollectionItemPoolMetricResult(dict):
+    def __init__(__self__, *,
+                 active_runs_count: str,
+                 actively_used_node_counts: Sequence['outputs.GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountResult'],
+                 time_last_metrics_updated: str,
+                 time_last_started: str,
+                 time_last_stopped: str,
+                 time_last_used: str):
+        """
+        :param str active_runs_count: The number of runs that are currently running that are using this pool.
+        :param Sequence['GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArgs'] actively_used_node_counts: A count of the nodes that are currently being used for each shape in this pool.
+        :param str time_last_metrics_updated: The last time the mertics were updated for this.
+        :param str time_last_started: The last time this pool was started.
+        :param str time_last_stopped: The last time this pool was stopped.
+        :param str time_last_used: The last time a run used this pool.
+        """
+        pulumi.set(__self__, "active_runs_count", active_runs_count)
+        pulumi.set(__self__, "actively_used_node_counts", actively_used_node_counts)
+        pulumi.set(__self__, "time_last_metrics_updated", time_last_metrics_updated)
+        pulumi.set(__self__, "time_last_started", time_last_started)
+        pulumi.set(__self__, "time_last_stopped", time_last_stopped)
+        pulumi.set(__self__, "time_last_used", time_last_used)
+
+    @property
+    @pulumi.getter(name="activeRunsCount")
+    def active_runs_count(self) -> str:
+        """
+        The number of runs that are currently running that are using this pool.
+        """
+        return pulumi.get(self, "active_runs_count")
+
+    @property
+    @pulumi.getter(name="activelyUsedNodeCounts")
+    def actively_used_node_counts(self) -> Sequence['outputs.GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountResult']:
+        """
+        A count of the nodes that are currently being used for each shape in this pool.
+        """
+        return pulumi.get(self, "actively_used_node_counts")
+
+    @property
+    @pulumi.getter(name="timeLastMetricsUpdated")
+    def time_last_metrics_updated(self) -> str:
+        """
+        The last time the mertics were updated for this.
+        """
+        return pulumi.get(self, "time_last_metrics_updated")
+
+    @property
+    @pulumi.getter(name="timeLastStarted")
+    def time_last_started(self) -> str:
+        """
+        The last time this pool was started.
+        """
+        return pulumi.get(self, "time_last_started")
+
+    @property
+    @pulumi.getter(name="timeLastStopped")
+    def time_last_stopped(self) -> str:
+        """
+        The last time this pool was stopped.
+        """
+        return pulumi.get(self, "time_last_stopped")
+
+    @property
+    @pulumi.getter(name="timeLastUsed")
+    def time_last_used(self) -> str:
+        """
+        The last time a run used this pool.
+        """
+        return pulumi.get(self, "time_last_used")
+
+
+@pulumi.output_type
+class GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountResult(dict):
+    def __init__(__self__, *,
+                 logical_shape: str,
+                 pool_count: int):
+        """
+        :param str logical_shape: The compute shape of the nodes that the count is for.
+        :param int pool_count: The node count of this compute shape.
+        """
+        pulumi.set(__self__, "logical_shape", logical_shape)
+        pulumi.set(__self__, "pool_count", pool_count)
+
+    @property
+    @pulumi.getter(name="logicalShape")
+    def logical_shape(self) -> str:
+        """
+        The compute shape of the nodes that the count is for.
+        """
+        return pulumi.get(self, "logical_shape")
+
+    @property
+    @pulumi.getter(name="poolCount")
+    def pool_count(self) -> int:
+        """
+        The node count of this compute shape.
+        """
+        return pulumi.get(self, "pool_count")
+
+
+@pulumi.output_type
+class GetPoolsPoolCollectionItemScheduleResult(dict):
+    def __init__(__self__, *,
+                 day_of_week: str,
+                 start_time: int,
+                 stop_time: int):
+        """
+        :param str day_of_week: Day of the week SUN-SAT
+        :param int start_time: Hour of the day to start or stop pool.
+        :param int stop_time: Hour of the day to stop the pool.
+        """
+        pulumi.set(__self__, "day_of_week", day_of_week)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "stop_time", stop_time)
+
+    @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> str:
+        """
+        Day of the week SUN-SAT
+        """
+        return pulumi.get(self, "day_of_week")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> int:
+        """
+        Hour of the day to start or stop pool.
+        """
+        return pulumi.get(self, "start_time")
+
+    @property
+    @pulumi.getter(name="stopTime")
+    def stop_time(self) -> int:
+        """
+        Hour of the day to stop the pool.
+        """
+        return pulumi.get(self, "stop_time")
+
+
+@pulumi.output_type
 class GetPrivateEndpointScanDetailResult(dict):
     def __init__(__self__, *,
                  fqdn: str,
@@ -2043,8 +3089,8 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
         :param Sequence['GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArgs'] scan_details: An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
         :param str state: The LifecycleState of the private endpoint.
         :param str subnet_id: The OCID of a subnet.
-        :param str time_created: The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param str time_updated: The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param str time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param str time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -2188,7 +3234,7 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -2196,7 +3242,7 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -2459,7 +3505,7 @@ class GetRunStatementsStatementCollectionItemResult(dict):
         :param str run_id: The unique ID for the run
         :param str state: The LifecycleState of the statement.
         :param str time_completed: The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
-        :param str time_created: The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param str time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         pulumi.set(__self__, "code", code)
         pulumi.set(__self__, "id", id)
@@ -2530,7 +3576,7 @@ class GetRunStatementsStatementCollectionItemResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 

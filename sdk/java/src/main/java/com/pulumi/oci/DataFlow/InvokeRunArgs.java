@@ -332,6 +332,21 @@ public final class InvokeRunArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     * 
+     */
+    @Import(name="poolId")
+    private @Nullable Output<String> poolId;
+
+    /**
+     * @return The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     * 
+     */
+    public Optional<Output<String>> poolId() {
+        return Optional.ofNullable(this.poolId);
+    }
+
+    /**
      * The Spark version utilized to run the application. This value may be set if applicationId is not since the Spark version will be taken from the associated application.
      * 
      */
@@ -406,6 +421,7 @@ public final class InvokeRunArgs extends com.pulumi.resources.ResourceArgs {
         this.metastoreId = $.metastoreId;
         this.numExecutors = $.numExecutors;
         this.parameters = $.parameters;
+        this.poolId = $.poolId;
         this.sparkVersion = $.sparkVersion;
         this.type = $.type;
         this.warehouseBucketUri = $.warehouseBucketUri;
@@ -876,6 +892,27 @@ public final class InvokeRunArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder parameters(InvokeRunParameterArgs... parameters) {
             return parameters(List.of(parameters));
+        }
+
+        /**
+         * @param poolId The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder poolId(@Nullable Output<String> poolId) {
+            $.poolId = poolId;
+            return this;
+        }
+
+        /**
+         * @param poolId The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder poolId(String poolId) {
+            return poolId(Output.of(poolId));
         }
 
         /**

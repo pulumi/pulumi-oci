@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string Family;
         /// <summary>
-        /// Number of instances running the operating system
+        /// Number of instances running the operating system.
         /// </summary>
         public readonly int ManagedInstanceCount;
         /// <summary>

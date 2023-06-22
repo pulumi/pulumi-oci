@@ -10,6 +10,11 @@ export type Fleet = import("./fleet").Fleet;
 export const Fleet: typeof import("./fleet").Fleet = null as any;
 utilities.lazyLoad(exports, ["Fleet"], () => require("./fleet"));
 
+export { GetAnnouncementsArgs, GetAnnouncementsResult, GetAnnouncementsOutputArgs } from "./getAnnouncements";
+export const getAnnouncements: typeof import("./getAnnouncements").getAnnouncements = null as any;
+export const getAnnouncementsOutput: typeof import("./getAnnouncements").getAnnouncementsOutput = null as any;
+utilities.lazyLoad(exports, ["getAnnouncements","getAnnouncementsOutput"], () => require("./getAnnouncements"));
+
 export { GetFleetArgs, GetFleetResult, GetFleetOutputArgs } from "./getFleet";
 export const getFleet: typeof import("./getFleet").getFleet = null as any;
 export const getFleetOutput: typeof import("./getFleet").getFleetOutput = null as any;
@@ -34,6 +39,31 @@ export { GetFleetCryptoAnalysisResultsArgs, GetFleetCryptoAnalysisResultsResult,
 export const getFleetCryptoAnalysisResults: typeof import("./getFleetCryptoAnalysisResults").getFleetCryptoAnalysisResults = null as any;
 export const getFleetCryptoAnalysisResultsOutput: typeof import("./getFleetCryptoAnalysisResults").getFleetCryptoAnalysisResultsOutput = null as any;
 utilities.lazyLoad(exports, ["getFleetCryptoAnalysisResults","getFleetCryptoAnalysisResultsOutput"], () => require("./getFleetCryptoAnalysisResults"));
+
+export { GetFleetDiagnosesArgs, GetFleetDiagnosesResult, GetFleetDiagnosesOutputArgs } from "./getFleetDiagnoses";
+export const getFleetDiagnoses: typeof import("./getFleetDiagnoses").getFleetDiagnoses = null as any;
+export const getFleetDiagnosesOutput: typeof import("./getFleetDiagnoses").getFleetDiagnosesOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetDiagnoses","getFleetDiagnosesOutput"], () => require("./getFleetDiagnoses"));
+
+export { GetFleetJavaMigrationAnalysisResultArgs, GetFleetJavaMigrationAnalysisResultResult, GetFleetJavaMigrationAnalysisResultOutputArgs } from "./getFleetJavaMigrationAnalysisResult";
+export const getFleetJavaMigrationAnalysisResult: typeof import("./getFleetJavaMigrationAnalysisResult").getFleetJavaMigrationAnalysisResult = null as any;
+export const getFleetJavaMigrationAnalysisResultOutput: typeof import("./getFleetJavaMigrationAnalysisResult").getFleetJavaMigrationAnalysisResultOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetJavaMigrationAnalysisResult","getFleetJavaMigrationAnalysisResultOutput"], () => require("./getFleetJavaMigrationAnalysisResult"));
+
+export { GetFleetJavaMigrationAnalysisResultsArgs, GetFleetJavaMigrationAnalysisResultsResult, GetFleetJavaMigrationAnalysisResultsOutputArgs } from "./getFleetJavaMigrationAnalysisResults";
+export const getFleetJavaMigrationAnalysisResults: typeof import("./getFleetJavaMigrationAnalysisResults").getFleetJavaMigrationAnalysisResults = null as any;
+export const getFleetJavaMigrationAnalysisResultsOutput: typeof import("./getFleetJavaMigrationAnalysisResults").getFleetJavaMigrationAnalysisResultsOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetJavaMigrationAnalysisResults","getFleetJavaMigrationAnalysisResultsOutput"], () => require("./getFleetJavaMigrationAnalysisResults"));
+
+export { GetFleetPerformanceTuningAnalysisResultArgs, GetFleetPerformanceTuningAnalysisResultResult, GetFleetPerformanceTuningAnalysisResultOutputArgs } from "./getFleetPerformanceTuningAnalysisResult";
+export const getFleetPerformanceTuningAnalysisResult: typeof import("./getFleetPerformanceTuningAnalysisResult").getFleetPerformanceTuningAnalysisResult = null as any;
+export const getFleetPerformanceTuningAnalysisResultOutput: typeof import("./getFleetPerformanceTuningAnalysisResult").getFleetPerformanceTuningAnalysisResultOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetPerformanceTuningAnalysisResult","getFleetPerformanceTuningAnalysisResultOutput"], () => require("./getFleetPerformanceTuningAnalysisResult"));
+
+export { GetFleetPerformanceTuningAnalysisResultsArgs, GetFleetPerformanceTuningAnalysisResultsResult, GetFleetPerformanceTuningAnalysisResultsOutputArgs } from "./getFleetPerformanceTuningAnalysisResults";
+export const getFleetPerformanceTuningAnalysisResults: typeof import("./getFleetPerformanceTuningAnalysisResults").getFleetPerformanceTuningAnalysisResults = null as any;
+export const getFleetPerformanceTuningAnalysisResultsOutput: typeof import("./getFleetPerformanceTuningAnalysisResults").getFleetPerformanceTuningAnalysisResultsOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetPerformanceTuningAnalysisResults","getFleetPerformanceTuningAnalysisResultsOutput"], () => require("./getFleetPerformanceTuningAnalysisResults"));
 
 export { GetFleetsArgs, GetFleetsResult, GetFleetsOutputArgs } from "./getFleets";
 export const getFleets: typeof import("./getFleets").getFleets = null as any;

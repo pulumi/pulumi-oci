@@ -6,6 +6,7 @@ package com.pulumi.oci.DataLabellingService.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetsDatasetCollectionItemDatasetFormatDetail;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetsDatasetCollectionItemDatasetSourceDetail;
+import com.pulumi.oci.DataLabellingService.outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetsDatasetCollectionItemLabelSet;
 import java.lang.Object;
@@ -16,6 +17,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDatasetsDatasetCollectionItem {
+    /**
+     * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    private Map<String,Object> additionalProperties;
     /**
      * @return A filter to return only resources that match the entire annotation format given.
      * 
@@ -62,6 +68,11 @@ public final class GetDatasetsDatasetCollectionItem {
      */
     private String id;
     /**
+     * @return Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+     * 
+     */
+    private List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration> initialImportDatasetConfigurations;
+    /**
      * @return The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
@@ -82,6 +93,11 @@ public final class GetDatasetsDatasetCollectionItem {
      */
     private String lifecycleDetails;
     /**
+     * @return The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+     * 
+     */
+    private String lifecycleSubstate;
+    /**
      * @return A filter to return only resources whose lifecycleState matches this query param.
      * 
      */
@@ -98,6 +114,13 @@ public final class GetDatasetsDatasetCollectionItem {
     private String timeUpdated;
 
     private GetDatasetsDatasetCollectionItem() {}
+    /**
+     * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Map<String,Object> additionalProperties() {
+        return this.additionalProperties;
+    }
     /**
      * @return A filter to return only resources that match the entire annotation format given.
      * 
@@ -162,6 +185,13 @@ public final class GetDatasetsDatasetCollectionItem {
         return this.id;
     }
     /**
+     * @return Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+     * 
+     */
+    public List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration> initialImportDatasetConfigurations() {
+        return this.initialImportDatasetConfigurations;
+    }
+    /**
      * @return The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
@@ -188,6 +218,13 @@ public final class GetDatasetsDatasetCollectionItem {
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+     * 
+     */
+    public String lifecycleSubstate() {
+        return this.lifecycleSubstate;
     }
     /**
      * @return A filter to return only resources whose lifecycleState matches this query param.
@@ -220,6 +257,7 @@ public final class GetDatasetsDatasetCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Map<String,Object> additionalProperties;
         private String annotationFormat;
         private String compartmentId;
         private List<GetDatasetsDatasetCollectionItemDatasetFormatDetail> datasetFormatDetails;
@@ -229,16 +267,19 @@ public final class GetDatasetsDatasetCollectionItem {
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration> initialImportDatasetConfigurations;
         private List<GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations;
         private List<GetDatasetsDatasetCollectionItemLabelSet> labelSets;
         private String labelingInstructions;
         private String lifecycleDetails;
+        private String lifecycleSubstate;
         private String state;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
         public Builder(GetDatasetsDatasetCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.additionalProperties = defaults.additionalProperties;
     	      this.annotationFormat = defaults.annotationFormat;
     	      this.compartmentId = defaults.compartmentId;
     	      this.datasetFormatDetails = defaults.datasetFormatDetails;
@@ -248,15 +289,22 @@ public final class GetDatasetsDatasetCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.initialImportDatasetConfigurations = defaults.initialImportDatasetConfigurations;
     	      this.initialRecordGenerationConfigurations = defaults.initialRecordGenerationConfigurations;
     	      this.labelSets = defaults.labelSets;
     	      this.labelingInstructions = defaults.labelingInstructions;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.lifecycleSubstate = defaults.lifecycleSubstate;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder additionalProperties(Map<String,Object> additionalProperties) {
+            this.additionalProperties = Objects.requireNonNull(additionalProperties);
+            return this;
+        }
         @CustomType.Setter
         public Builder annotationFormat(String annotationFormat) {
             this.annotationFormat = Objects.requireNonNull(annotationFormat);
@@ -309,6 +357,14 @@ public final class GetDatasetsDatasetCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder initialImportDatasetConfigurations(List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration> initialImportDatasetConfigurations) {
+            this.initialImportDatasetConfigurations = Objects.requireNonNull(initialImportDatasetConfigurations);
+            return this;
+        }
+        public Builder initialImportDatasetConfigurations(GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration... initialImportDatasetConfigurations) {
+            return initialImportDatasetConfigurations(List.of(initialImportDatasetConfigurations));
+        }
+        @CustomType.Setter
         public Builder initialRecordGenerationConfigurations(List<GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations) {
             this.initialRecordGenerationConfigurations = Objects.requireNonNull(initialRecordGenerationConfigurations);
             return this;
@@ -335,6 +391,11 @@ public final class GetDatasetsDatasetCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder lifecycleSubstate(String lifecycleSubstate) {
+            this.lifecycleSubstate = Objects.requireNonNull(lifecycleSubstate);
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -351,6 +412,7 @@ public final class GetDatasetsDatasetCollectionItem {
         }
         public GetDatasetsDatasetCollectionItem build() {
             final var o = new GetDatasetsDatasetCollectionItem();
+            o.additionalProperties = additionalProperties;
             o.annotationFormat = annotationFormat;
             o.compartmentId = compartmentId;
             o.datasetFormatDetails = datasetFormatDetails;
@@ -360,10 +422,12 @@ public final class GetDatasetsDatasetCollectionItem {
             o.displayName = displayName;
             o.freeformTags = freeformTags;
             o.id = id;
+            o.initialImportDatasetConfigurations = initialImportDatasetConfigurations;
             o.initialRecordGenerationConfigurations = initialRecordGenerationConfigurations;
             o.labelSets = labelSets;
             o.labelingInstructions = labelingInstructions;
             o.lifecycleDetails = lifecycleDetails;
+            o.lifecycleSubstate = lifecycleSubstate;
             o.state = state;
             o.timeCreated = timeCreated;
             o.timeUpdated = timeUpdated;

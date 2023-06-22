@@ -13,9 +13,13 @@ from . import outputs
 __all__ = [
     'FleetInventoryLog',
     'FleetOperationLog',
+    'GetAnnouncementsAnnouncementCollectionResult',
+    'GetAnnouncementsAnnouncementCollectionItemResult',
+    'GetAnnouncementsFilterResult',
     'GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingResult',
     'GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisResult',
     'GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogResult',
+    'GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisResult',
     'GetFleetAdvancedFeatureConfigurationJfrRecordingResult',
     'GetFleetAdvancedFeatureConfigurationLcmResult',
     'GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult',
@@ -23,14 +27,25 @@ __all__ = [
     'GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathResult',
     'GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarResult',
     'GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlResult',
+    'GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult',
+    'GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisResult',
     'GetFleetBlocklistsFilterResult',
     'GetFleetBlocklistsItemResult',
     'GetFleetBlocklistsItemTargetResult',
     'GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionResult',
     'GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult',
     'GetFleetCryptoAnalysisResultsFilterResult',
+    'GetFleetDiagnosesFilterResult',
+    'GetFleetDiagnosesFleetDiagnosisCollectionResult',
+    'GetFleetDiagnosesFleetDiagnosisCollectionItemResult',
     'GetFleetInventoryLogResult',
+    'GetFleetJavaMigrationAnalysisResultsFilterResult',
+    'GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionResult',
+    'GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemResult',
     'GetFleetOperationLogResult',
+    'GetFleetPerformanceTuningAnalysisResultsFilterResult',
+    'GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionResult',
+    'GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemResult',
     'GetFleetsFilterResult',
     'GetFleetsFleetCollectionResult',
     'GetFleetsFleetCollectionItemResult',
@@ -176,11 +191,107 @@ class FleetOperationLog(dict):
 
 
 @pulumi.output_type
+class GetAnnouncementsAnnouncementCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAnnouncementsAnnouncementCollectionItemResult']):
+        """
+        :param Sequence['GetAnnouncementsAnnouncementCollectionItemArgs'] items: List of AnnouncementSummary items
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAnnouncementsAnnouncementCollectionItemResult']:
+        """
+        List of AnnouncementSummary items
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAnnouncementsAnnouncementCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 key: int,
+                 summary: str,
+                 time_released: str,
+                 url: str):
+        """
+        :param int key: Unique id of the announcement
+        :param str summary: Summary text of the announcement
+        :param str time_released: Date time on which the announcement was released
+        :param str url: URL to the announcement web page
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "time_released", time_released)
+        pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter
+    def key(self) -> int:
+        """
+        Unique id of the announcement
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def summary(self) -> str:
+        """
+        Summary text of the announcement
+        """
+        return pulumi.get(self, "summary")
+
+    @property
+    @pulumi.getter(name="timeReleased")
+    def time_released(self) -> str:
+        """
+        Date time on which the announcement was released
+        """
+        return pulumi.get(self, "time_released")
+
+    @property
+    @pulumi.getter
+    def url(self) -> str:
+        """
+        URL to the announcement web page
+        """
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class GetAnnouncementsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingResult(dict):
     def __init__(__self__, *,
                  is_enabled: bool):
         """
-        :param bool is_enabled: Lcm flag to store enabled or disabled status
+        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
 
@@ -188,7 +299,7 @@ class GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Lcm flag to store enabled or disabled status
+        PerformanceTuningAnalysis flag to store enabled or disabled status.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -199,7 +310,7 @@ class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisResult(dict):
                  is_enabled: bool,
                  summarized_events_logs: Sequence['outputs.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogResult']):
         """
-        :param bool is_enabled: Lcm flag to store enabled or disabled status
+        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
         :param Sequence['GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs'] summarized_events_logs: Summarized events log for advanced feature.
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
@@ -209,7 +320,7 @@ class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Lcm flag to store enabled or disabled status
+        PerformanceTuningAnalysis flag to store enabled or disabled status.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -252,11 +363,11 @@ class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog
 
 
 @pulumi.output_type
-class GetFleetAdvancedFeatureConfigurationJfrRecordingResult(dict):
+class GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisResult(dict):
     def __init__(__self__, *,
                  is_enabled: bool):
         """
-        :param bool is_enabled: Lcm flag to store enabled or disabled status
+        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
 
@@ -264,7 +375,25 @@ class GetFleetAdvancedFeatureConfigurationJfrRecordingResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Lcm flag to store enabled or disabled status
+        PerformanceTuningAnalysis flag to store enabled or disabled status.
+        """
+        return pulumi.get(self, "is_enabled")
+
+
+@pulumi.output_type
+class GetFleetAdvancedFeatureConfigurationJfrRecordingResult(dict):
+    def __init__(__self__, *,
+                 is_enabled: bool):
+        """
+        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        PerformanceTuningAnalysis flag to store enabled or disabled status.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -275,7 +404,7 @@ class GetFleetAdvancedFeatureConfigurationLcmResult(dict):
                  is_enabled: bool,
                  post_installation_actions: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult']):
         """
-        :param bool is_enabled: Lcm flag to store enabled or disabled status
+        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
         :param Sequence['GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs'] post_installation_actions: List of available post actions you can execute after the successful Java installation.
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
@@ -285,7 +414,7 @@ class GetFleetAdvancedFeatureConfigurationLcmResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Lcm flag to store enabled or disabled status
+        PerformanceTuningAnalysis flag to store enabled or disabled status.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -301,19 +430,36 @@ class GetFleetAdvancedFeatureConfigurationLcmResult(dict):
 @pulumi.output_type
 class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult(dict):
     def __init__(__self__, *,
+                 add_logging_handler: bool,
                  disabled_tls_versions: Sequence[str],
+                 global_logging_level: str,
                  minimum_key_size_settings: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingResult'],
+                 proxies: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult'],
                  should_replace_certificates_operating_system: bool):
         """
+        :param bool add_logging_handler: Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
         :param Sequence[str] disabled_tls_versions: The following post JRE installation actions are supported by the field:
                * Disable TLS 1.0 , TLS 1.1
+        :param str global_logging_level: Sets the logging level in logging.properties file.
         :param Sequence['GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArgs'] minimum_key_size_settings: test
+        :param Sequence['GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArgs'] proxies: List of proxy properties to be configured in net.properties file.
         :param bool should_replace_certificates_operating_system: Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
-               * Replace JDK root certificates with a list provided by the operating system
+               * Replace JDK root certificates with a list provided by the operating system.
         """
+        pulumi.set(__self__, "add_logging_handler", add_logging_handler)
         pulumi.set(__self__, "disabled_tls_versions", disabled_tls_versions)
+        pulumi.set(__self__, "global_logging_level", global_logging_level)
         pulumi.set(__self__, "minimum_key_size_settings", minimum_key_size_settings)
+        pulumi.set(__self__, "proxies", proxies)
         pulumi.set(__self__, "should_replace_certificates_operating_system", should_replace_certificates_operating_system)
+
+    @property
+    @pulumi.getter(name="addLoggingHandler")
+    def add_logging_handler(self) -> bool:
+        """
+        Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+        """
+        return pulumi.get(self, "add_logging_handler")
 
     @property
     @pulumi.getter(name="disabledTlsVersions")
@@ -325,6 +471,14 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult(dict):
         return pulumi.get(self, "disabled_tls_versions")
 
     @property
+    @pulumi.getter(name="globalLoggingLevel")
+    def global_logging_level(self) -> str:
+        """
+        Sets the logging level in logging.properties file.
+        """
+        return pulumi.get(self, "global_logging_level")
+
+    @property
     @pulumi.getter(name="minimumKeySizeSettings")
     def minimum_key_size_settings(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingResult']:
         """
@@ -333,11 +487,19 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult(dict):
         return pulumi.get(self, "minimum_key_size_settings")
 
     @property
+    @pulumi.getter
+    def proxies(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult']:
+        """
+        List of proxy properties to be configured in net.properties file.
+        """
+        return pulumi.get(self, "proxies")
+
+    @property
     @pulumi.getter(name="shouldReplaceCertificatesOperatingSystem")
     def should_replace_certificates_operating_system(self) -> bool:
         """
         Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
-        * Replace JDK root certificates with a list provided by the operating system
+        * Replace JDK root certificates with a list provided by the operating system.
         """
         return pulumi.get(self, "should_replace_certificates_operating_system")
 
@@ -484,6 +646,130 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySiz
 
 
 @pulumi.output_type
+class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult(dict):
+    def __init__(__self__, *,
+                 ftp_proxy_host: str,
+                 ftp_proxy_port: int,
+                 http_proxy_host: str,
+                 http_proxy_port: int,
+                 https_proxy_host: str,
+                 https_proxy_port: int,
+                 socks_proxy_host: str,
+                 socks_proxy_port: int,
+                 use_system_proxies: bool):
+        """
+        :param str ftp_proxy_host: Ftp host to be set in net.properties file.
+        :param int ftp_proxy_port: Ftp port number to be set in net.properties file.
+        :param str http_proxy_host: Http host to be set in net.properties file.
+        :param int http_proxy_port: Http port number to be set in net.properties file.
+        :param str https_proxy_host: Https host to be set in net.properties file.
+        :param int https_proxy_port: Https port number to be set in net.properties file.
+        :param str socks_proxy_host: Socks host to be set in net.properties file.
+        :param int socks_proxy_port: Socks port number to be set in net.properties file.
+        :param bool use_system_proxies: Sets "java.net.useSystemProxies=true" in net.properties when they exist.
+        """
+        pulumi.set(__self__, "ftp_proxy_host", ftp_proxy_host)
+        pulumi.set(__self__, "ftp_proxy_port", ftp_proxy_port)
+        pulumi.set(__self__, "http_proxy_host", http_proxy_host)
+        pulumi.set(__self__, "http_proxy_port", http_proxy_port)
+        pulumi.set(__self__, "https_proxy_host", https_proxy_host)
+        pulumi.set(__self__, "https_proxy_port", https_proxy_port)
+        pulumi.set(__self__, "socks_proxy_host", socks_proxy_host)
+        pulumi.set(__self__, "socks_proxy_port", socks_proxy_port)
+        pulumi.set(__self__, "use_system_proxies", use_system_proxies)
+
+    @property
+    @pulumi.getter(name="ftpProxyHost")
+    def ftp_proxy_host(self) -> str:
+        """
+        Ftp host to be set in net.properties file.
+        """
+        return pulumi.get(self, "ftp_proxy_host")
+
+    @property
+    @pulumi.getter(name="ftpProxyPort")
+    def ftp_proxy_port(self) -> int:
+        """
+        Ftp port number to be set in net.properties file.
+        """
+        return pulumi.get(self, "ftp_proxy_port")
+
+    @property
+    @pulumi.getter(name="httpProxyHost")
+    def http_proxy_host(self) -> str:
+        """
+        Http host to be set in net.properties file.
+        """
+        return pulumi.get(self, "http_proxy_host")
+
+    @property
+    @pulumi.getter(name="httpProxyPort")
+    def http_proxy_port(self) -> int:
+        """
+        Http port number to be set in net.properties file.
+        """
+        return pulumi.get(self, "http_proxy_port")
+
+    @property
+    @pulumi.getter(name="httpsProxyHost")
+    def https_proxy_host(self) -> str:
+        """
+        Https host to be set in net.properties file.
+        """
+        return pulumi.get(self, "https_proxy_host")
+
+    @property
+    @pulumi.getter(name="httpsProxyPort")
+    def https_proxy_port(self) -> int:
+        """
+        Https port number to be set in net.properties file.
+        """
+        return pulumi.get(self, "https_proxy_port")
+
+    @property
+    @pulumi.getter(name="socksProxyHost")
+    def socks_proxy_host(self) -> str:
+        """
+        Socks host to be set in net.properties file.
+        """
+        return pulumi.get(self, "socks_proxy_host")
+
+    @property
+    @pulumi.getter(name="socksProxyPort")
+    def socks_proxy_port(self) -> int:
+        """
+        Socks port number to be set in net.properties file.
+        """
+        return pulumi.get(self, "socks_proxy_port")
+
+    @property
+    @pulumi.getter(name="useSystemProxies")
+    def use_system_proxies(self) -> bool:
+        """
+        Sets "java.net.useSystemProxies=true" in net.properties when they exist.
+        """
+        return pulumi.get(self, "use_system_proxies")
+
+
+@pulumi.output_type
+class GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisResult(dict):
+    def __init__(__self__, *,
+                 is_enabled: bool):
+        """
+        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        PerformanceTuningAnalysis flag to store enabled or disabled status.
+        """
+        return pulumi.get(self, "is_enabled")
+
+
+@pulumi.output_type
 class GetFleetBlocklistsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -520,7 +806,7 @@ class GetFleetBlocklistsItemResult(dict):
         """
         :param str key: The unique identifier of this blocklist record.
         :param str operation: The operation type.
-        :param str reason: The reason for why the operation is blocklisted
+        :param str reason: The reason why the operation is blocklisted.
         :param Sequence['GetFleetBlocklistsItemTargetArgs'] targets: A resource to blocklist for certain operation.
         """
         pulumi.set(__self__, "key", key)
@@ -548,7 +834,7 @@ class GetFleetBlocklistsItemResult(dict):
     @pulumi.getter
     def reason(self) -> str:
         """
-        The reason for why the operation is blocklisted
+        The reason why the operation is blocklisted.
         """
         return pulumi.get(self, "reason")
 
@@ -643,7 +929,7 @@ class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult(dict
         :param str id: The OCID to identify this analysis results.
         :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
         :param str namespace: The Object Storage namespace of this analysis result.
-        :param int non_compliant_finding_count: Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the crypto roadmap version used the the analysis.
+        :param int non_compliant_finding_count: Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
         :param str object: The Object Storage object name of this analysis result.
         :param int summarized_event_count: Total number of summarized events. Summarized events are deduplicated events of interest.
         :param str time_created: The time the result is compiled.
@@ -746,7 +1032,7 @@ class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult(dict
     @pulumi.getter(name="nonCompliantFindingCount")
     def non_compliant_finding_count(self) -> int:
         """
-        Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the crypto roadmap version used the the analysis.
+        Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
         """
         return pulumi.get(self, "non_compliant_finding_count")
 
@@ -835,6 +1121,102 @@ class GetFleetCryptoAnalysisResultsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetFleetDiagnosesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFleetDiagnosesFleetDiagnosisCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFleetDiagnosesFleetDiagnosisCollectionItemResult']):
+        """
+        :param Sequence['GetFleetDiagnosesFleetDiagnosisCollectionItemArgs'] items: A list of the fleet resource diagnosis.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFleetDiagnosesFleetDiagnosisCollectionItemResult']:
+        """
+        A list of the fleet resource diagnosis.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFleetDiagnosesFleetDiagnosisCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 resource_diagnosis: str,
+                 resource_id: str,
+                 resource_state: str,
+                 resource_type: str):
+        """
+        :param str resource_diagnosis: The diagnosis message.
+        :param str resource_id: The OCID of the external resouce needed by the fleet.
+        :param str resource_state: The state of the resource. The resource state is ACTIVE when it works properly for the fleet. In case it would cause an issue for the fleet function, the state is INACTIVE. When JMS can't locate the resource, the state is NOT_FOUND. OTHER covers other cases, such as a temporarily network issue that prevents JMS from detecting the resource. Check the resourceDiagnosis for details.
+        :param str resource_type: The type of the resource needed by the fleet. This is the role of a resource in the fleet. Use the OCID to determine the actual Oracle Cloud Infrastructure resource type such as log group or log.
+        """
+        pulumi.set(__self__, "resource_diagnosis", resource_diagnosis)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "resource_state", resource_state)
+        pulumi.set(__self__, "resource_type", resource_type)
+
+    @property
+    @pulumi.getter(name="resourceDiagnosis")
+    def resource_diagnosis(self) -> str:
+        """
+        The diagnosis message.
+        """
+        return pulumi.get(self, "resource_diagnosis")
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> str:
+        """
+        The OCID of the external resouce needed by the fleet.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter(name="resourceState")
+    def resource_state(self) -> str:
+        """
+        The state of the resource. The resource state is ACTIVE when it works properly for the fleet. In case it would cause an issue for the fleet function, the state is INACTIVE. When JMS can't locate the resource, the state is NOT_FOUND. OTHER covers other cases, such as a temporarily network issue that prevents JMS from detecting the resource. Check the resourceDiagnosis for details.
+        """
+        return pulumi.get(self, "resource_state")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> str:
+        """
+        The type of the resource needed by the fleet. This is the role of a resource in the fleet. Use the OCID to determine the actual Oracle Cloud Infrastructure resource type such as log group or log.
+        """
+        return pulumi.get(self, "resource_type")
+
+
+@pulumi.output_type
 class GetFleetInventoryLogResult(dict):
     def __init__(__self__, *,
                  log_group_id: str,
@@ -864,6 +1246,228 @@ class GetFleetInventoryLogResult(dict):
 
 
 @pulumi.output_type
+class GetFleetJavaMigrationAnalysisResultsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 application_execution_type: str,
+                 application_name: str,
+                 application_path: str,
+                 bucket: str,
+                 fleet_id: str,
+                 host_name: str,
+                 id: str,
+                 managed_instance_id: str,
+                 metadata: str,
+                 namespace: str,
+                 object_lists: Sequence[str],
+                 object_storage_upload_dir_path: str,
+                 source_jdk_version: str,
+                 target_jdk_version: str,
+                 time_created: str,
+                 work_request_id: str):
+        """
+        :param str application_execution_type: Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
+        :param str application_name: The name of the application for which the Java migration analysis was performed.
+        :param str application_path: The installation path of the application for which the Java migration analysis was performed.
+        :param str bucket: The name of the object storage bucket that contains the results of the migration analysis.
+        :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+        :param str host_name: The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+        :param str id: The OCID of the migration analysis report.
+        :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
+        :param str metadata: Additional info reserved for future use.
+        :param str namespace: The object storage namespace that contains the results of the migration analysis.
+        :param Sequence[str] object_lists: The names of the object storage objects that contain the results of the migration analysis.
+        :param str object_storage_upload_dir_path: The directory path of the object storage bucket that contains the results of the migration analysis.
+        :param str source_jdk_version: The source JDK version of the application that's currently running.
+        :param str target_jdk_version: The target JDK version of the application to be migrated.
+        :param str time_created: The time the result is compiled.
+        :param str work_request_id: The OCID of the work request of this analysis.
+        """
+        pulumi.set(__self__, "application_execution_type", application_execution_type)
+        pulumi.set(__self__, "application_name", application_name)
+        pulumi.set(__self__, "application_path", application_path)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "fleet_id", fleet_id)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object_lists", object_lists)
+        pulumi.set(__self__, "object_storage_upload_dir_path", object_storage_upload_dir_path)
+        pulumi.set(__self__, "source_jdk_version", source_jdk_version)
+        pulumi.set(__self__, "target_jdk_version", target_jdk_version)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "work_request_id", work_request_id)
+
+    @property
+    @pulumi.getter(name="applicationExecutionType")
+    def application_execution_type(self) -> str:
+        """
+        Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
+        """
+        return pulumi.get(self, "application_execution_type")
+
+    @property
+    @pulumi.getter(name="applicationName")
+    def application_name(self) -> str:
+        """
+        The name of the application for which the Java migration analysis was performed.
+        """
+        return pulumi.get(self, "application_name")
+
+    @property
+    @pulumi.getter(name="applicationPath")
+    def application_path(self) -> str:
+        """
+        The installation path of the application for which the Java migration analysis was performed.
+        """
+        return pulumi.get(self, "application_path")
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        The name of the object storage bucket that contains the results of the migration analysis.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="fleetId")
+    def fleet_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+        """
+        return pulumi.get(self, "fleet_id")
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> str:
+        """
+        The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+        """
+        return pulumi.get(self, "host_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the migration analysis report.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> str:
+        """
+        The Fleet-unique identifier of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @property
+    @pulumi.getter
+    def metadata(self) -> str:
+        """
+        Additional info reserved for future use.
+        """
+        return pulumi.get(self, "metadata")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The object storage namespace that contains the results of the migration analysis.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter(name="objectLists")
+    def object_lists(self) -> Sequence[str]:
+        """
+        The names of the object storage objects that contain the results of the migration analysis.
+        """
+        return pulumi.get(self, "object_lists")
+
+    @property
+    @pulumi.getter(name="objectStorageUploadDirPath")
+    def object_storage_upload_dir_path(self) -> str:
+        """
+        The directory path of the object storage bucket that contains the results of the migration analysis.
+        """
+        return pulumi.get(self, "object_storage_upload_dir_path")
+
+    @property
+    @pulumi.getter(name="sourceJdkVersion")
+    def source_jdk_version(self) -> str:
+        """
+        The source JDK version of the application that's currently running.
+        """
+        return pulumi.get(self, "source_jdk_version")
+
+    @property
+    @pulumi.getter(name="targetJdkVersion")
+    def target_jdk_version(self) -> str:
+        """
+        The target JDK version of the application to be migrated.
+        """
+        return pulumi.get(self, "target_jdk_version")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the result is compiled.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="workRequestId")
+    def work_request_id(self) -> str:
+        """
+        The OCID of the work request of this analysis.
+        """
+        return pulumi.get(self, "work_request_id")
+
+
+@pulumi.output_type
 class GetFleetOperationLogResult(dict):
     def __init__(__self__, *,
                  log_group_id: str,
@@ -890,6 +1494,239 @@ class GetFleetOperationLogResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
         return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetFleetPerformanceTuningAnalysisResultsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 application_id: str,
+                 application_installation_id: str,
+                 application_installation_path: str,
+                 application_name: str,
+                 bucket: str,
+                 fleet_id: str,
+                 host_name: str,
+                 id: str,
+                 managed_instance_id: str,
+                 namespace: str,
+                 object: str,
+                 result: str,
+                 time_created: str,
+                 time_finished: str,
+                 time_started: str,
+                 warning_count: int,
+                 work_request_id: str):
+        """
+        :param str application_id: The Fleet-unique identifier of the related application.
+        :param str application_installation_id: The internal identifier of the application installation for which the report has been generated.
+        :param str application_installation_path: The installation path of the application for which the report has been generated.
+        :param str application_name: The name of the application for which the report has been generated.
+        :param str bucket: The Object Storage bucket name of this analysis result.
+        :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+        :param str host_name: The hostname of the managed instance.
+        :param str id: The OCID to identify this analysis results.
+        :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
+        :param str namespace: The Object Storage namespace of this analysis result.
+        :param str object: The Object Storage object name of this analysis result.
+        :param str result: Result of the analysis based on whether warnings have been found or not.
+        :param str time_created: The time the result is compiled.
+        :param str time_finished: The time the JFR capture finished.
+        :param str time_started: The time the JFR capture started.
+        :param int warning_count: Total number of warnings reported by the analysis.
+        :param str work_request_id: The OCID of the work request to start the analysis.
+        """
+        pulumi.set(__self__, "application_id", application_id)
+        pulumi.set(__self__, "application_installation_id", application_installation_id)
+        pulumi.set(__self__, "application_installation_path", application_installation_path)
+        pulumi.set(__self__, "application_name", application_name)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "fleet_id", fleet_id)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "result", result)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "warning_count", warning_count)
+        pulumi.set(__self__, "work_request_id", work_request_id)
+
+    @property
+    @pulumi.getter(name="applicationId")
+    def application_id(self) -> str:
+        """
+        The Fleet-unique identifier of the related application.
+        """
+        return pulumi.get(self, "application_id")
+
+    @property
+    @pulumi.getter(name="applicationInstallationId")
+    def application_installation_id(self) -> str:
+        """
+        The internal identifier of the application installation for which the report has been generated.
+        """
+        return pulumi.get(self, "application_installation_id")
+
+    @property
+    @pulumi.getter(name="applicationInstallationPath")
+    def application_installation_path(self) -> str:
+        """
+        The installation path of the application for which the report has been generated.
+        """
+        return pulumi.get(self, "application_installation_path")
+
+    @property
+    @pulumi.getter(name="applicationName")
+    def application_name(self) -> str:
+        """
+        The name of the application for which the report has been generated.
+        """
+        return pulumi.get(self, "application_name")
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        The Object Storage bucket name of this analysis result.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="fleetId")
+    def fleet_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+        """
+        return pulumi.get(self, "fleet_id")
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> str:
+        """
+        The hostname of the managed instance.
+        """
+        return pulumi.get(self, "host_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID to identify this analysis results.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> str:
+        """
+        The Fleet-unique identifier of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The Object Storage namespace of this analysis result.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        The Object Storage object name of this analysis result.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def result(self) -> str:
+        """
+        Result of the analysis based on whether warnings have been found or not.
+        """
+        return pulumi.get(self, "result")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the result is compiled.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        The time the JFR capture finished.
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        The time the JFR capture started.
+        """
+        return pulumi.get(self, "time_started")
+
+    @property
+    @pulumi.getter(name="warningCount")
+    def warning_count(self) -> int:
+        """
+        Total number of warnings reported by the analysis.
+        """
+        return pulumi.get(self, "warning_count")
+
+    @property
+    @pulumi.getter(name="workRequestId")
+    def work_request_id(self) -> str:
+        """
+        The OCID of the work request to start the analysis.
+        """
+        return pulumi.get(self, "work_request_id")
 
 
 @pulumi.output_type
@@ -952,19 +1789,19 @@ class GetFleetsFleetCollectionItemResult(dict):
                  system_tags: Mapping[str, Any],
                  time_created: str):
         """
-        :param int approximate_application_count: The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
-        :param int approximate_installation_count: The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
-        :param int approximate_java_server_count: The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
-        :param int approximate_jre_count: The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
-        :param int approximate_managed_instance_count: The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        :param int approximate_application_count: The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        :param int approximate_installation_count: The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        :param int approximate_java_server_count: The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        :param int approximate_jre_count: The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        :param int approximate_managed_instance_count: The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         :param str description: The Fleet's description.
         :param str display_name: The display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         :param str id: The ID of the Fleet.
         :param Sequence['GetFleetsFleetCollectionItemInventoryLogArgs'] inventory_logs: Custom Log for inventory or operation log.
-        :param bool is_advanced_features_enabled: Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
+        :param bool is_advanced_features_enabled: Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
         :param Sequence['GetFleetsFleetCollectionItemOperationLogArgs'] operation_logs: Custom Log for inventory or operation log.
         :param str state: The state of the lifecycle.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -992,7 +1829,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     @pulumi.getter(name="approximateApplicationCount")
     def approximate_application_count(self) -> int:
         """
-        The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         """
         return pulumi.get(self, "approximate_application_count")
 
@@ -1000,7 +1837,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     @pulumi.getter(name="approximateInstallationCount")
     def approximate_installation_count(self) -> int:
         """
-        The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         """
         return pulumi.get(self, "approximate_installation_count")
 
@@ -1008,7 +1845,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     @pulumi.getter(name="approximateJavaServerCount")
     def approximate_java_server_count(self) -> int:
         """
-        The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         """
         return pulumi.get(self, "approximate_java_server_count")
 
@@ -1016,7 +1853,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     @pulumi.getter(name="approximateJreCount")
     def approximate_jre_count(self) -> int:
         """
-        The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         """
         return pulumi.get(self, "approximate_jre_count")
 
@@ -1024,7 +1861,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     @pulumi.getter(name="approximateManagedInstanceCount")
     def approximate_managed_instance_count(self) -> int:
         """
-        The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         """
         return pulumi.get(self, "approximate_managed_instance_count")
 
@@ -1064,7 +1901,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -1088,7 +1925,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     @pulumi.getter(name="isAdvancedFeaturesEnabled")
     def is_advanced_features_enabled(self) -> bool:
         """
-        Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
+        Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
         """
         return pulumi.get(self, "is_advanced_features_enabled")
 
@@ -1719,7 +2556,7 @@ class GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResul
         """
         :param str architecture: The architecture of the operating system as provided by the Java system property os.arch.
         :param str family: The operating system type, such as Windows or Linux
-        :param int managed_instance_count: Number of instances running the operating system
+        :param int managed_instance_count: Number of instances running the operating system.
         :param str name: The name of the operating system as provided by the Java system property os.name.
         :param str version: The version of the operating system as provided by the Java system property os.version.
         """
@@ -1749,7 +2586,7 @@ class GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResul
     @pulumi.getter(name="managedInstanceCount")
     def managed_instance_count(self) -> int:
         """
-        Number of instances running the operating system
+        Number of instances running the operating system.
         """
         return pulumi.get(self, "managed_instance_count")
 

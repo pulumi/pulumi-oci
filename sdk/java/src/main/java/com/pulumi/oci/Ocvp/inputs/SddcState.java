@@ -349,14 +349,14 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Indicates whether to enable HCX Enterprise for this SDDC.
+     * Indicates whether HCX Enterprise is enabled for this SDDC.
      * 
      */
     @Import(name="isHcxEnterpriseEnabled")
     private @Nullable Output<Boolean> isHcxEnterpriseEnabled;
 
     /**
-     * @return Indicates whether to enable HCX Enterprise for this SDDC.
+     * @return Indicates whether HCX Enterprise is enabled for this SDDC.
      * 
      */
     public Optional<Output<Boolean>> isHcxEnterpriseEnabled() {
@@ -1464,7 +1464,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isHcxEnterpriseEnabled Indicates whether to enable HCX Enterprise for this SDDC.
+         * @param isHcxEnterpriseEnabled Indicates whether HCX Enterprise is enabled for this SDDC.
          * 
          * @return builder
          * 
@@ -1475,7 +1475,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isHcxEnterpriseEnabled Indicates whether to enable HCX Enterprise for this SDDC.
+         * @param isHcxEnterpriseEnabled Indicates whether HCX Enterprise is enabled for this SDDC.
          * 
          * @return builder
          * 

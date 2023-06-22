@@ -22,7 +22,7 @@ public final class GetFleetBlocklistsItem {
      */
     private String operation;
     /**
-     * @return The reason for why the operation is blocklisted
+     * @return The reason why the operation is blocklisted.
      * 
      */
     private String reason;
@@ -48,7 +48,7 @@ public final class GetFleetBlocklistsItem {
         return this.operation;
     }
     /**
-     * @return The reason for why the operation is blocklisted
+     * @return The reason why the operation is blocklisted.
      * 
      */
     public String reason() {

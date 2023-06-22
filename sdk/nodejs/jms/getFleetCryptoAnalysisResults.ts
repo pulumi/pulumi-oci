@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Fleet Crypto Analysis Results in Oracle Cloud Infrastructure Jms service.
  *
- * List Crypto Event Analysis results.
+ * Lists the results of a Crypto event analysis.
  *
  * ## Example Usage
  *
@@ -97,7 +97,7 @@ export interface GetFleetCryptoAnalysisResultsResult {
 /**
  * This data source provides the list of Fleet Crypto Analysis Results in Oracle Cloud Infrastructure Jms service.
  *
- * List Crypto Event Analysis results.
+ * Lists the results of a Crypto event analysis.
  *
  * ## Example Usage
  *

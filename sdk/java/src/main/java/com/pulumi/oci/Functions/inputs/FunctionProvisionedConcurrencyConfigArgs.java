@@ -17,14 +17,14 @@ public final class FunctionProvisionedConcurrencyConfigArgs extends com.pulumi.r
     public static final FunctionProvisionedConcurrencyConfigArgs Empty = new FunctionProvisionedConcurrencyConfigArgs();
 
     /**
-     * (Updatable)
+     * (Updatable) Configuration specifying a constant amount of provisioned concurrency.
      * 
      */
     @Import(name="count")
     private @Nullable Output<Integer> count;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Configuration specifying a constant amount of provisioned concurrency.
      * 
      */
     public Optional<Output<Integer>> count() {
@@ -72,7 +72,7 @@ public final class FunctionProvisionedConcurrencyConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param count (Updatable)
+         * @param count (Updatable) Configuration specifying a constant amount of provisioned concurrency.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class FunctionProvisionedConcurrencyConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param count (Updatable)
+         * @param count (Updatable) Configuration specifying a constant amount of provisioned concurrency.
          * 
          * @return builder
          * 

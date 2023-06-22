@@ -22,7 +22,7 @@ class GetInvokeRunResult:
     """
     A collection of values returned by getInvokeRun.
     """
-    def __init__(__self__, application_id=None, application_log_configs=None, archive_uri=None, arguments=None, asynchronous=None, class_name=None, compartment_id=None, configuration=None, data_read_in_bytes=None, data_written_in_bytes=None, defined_tags=None, display_name=None, driver_shape=None, driver_shape_configs=None, execute=None, executor_shape=None, executor_shape_configs=None, file_uri=None, freeform_tags=None, id=None, idle_timeout_in_minutes=None, language=None, lifecycle_details=None, logs_bucket_uri=None, max_duration_in_minutes=None, metastore_id=None, num_executors=None, opc_request_id=None, owner_principal_id=None, owner_user_name=None, parameters=None, private_endpoint_dns_zones=None, private_endpoint_id=None, private_endpoint_max_host_count=None, private_endpoint_nsg_ids=None, private_endpoint_subnet_id=None, run_duration_in_milliseconds=None, run_id=None, spark_version=None, state=None, time_created=None, time_updated=None, total_ocpu=None, type=None, warehouse_bucket_uri=None):
+    def __init__(__self__, application_id=None, application_log_configs=None, archive_uri=None, arguments=None, asynchronous=None, class_name=None, compartment_id=None, configuration=None, data_read_in_bytes=None, data_written_in_bytes=None, defined_tags=None, display_name=None, driver_shape=None, driver_shape_configs=None, execute=None, executor_shape=None, executor_shape_configs=None, file_uri=None, freeform_tags=None, id=None, idle_timeout_in_minutes=None, language=None, lifecycle_details=None, logs_bucket_uri=None, max_duration_in_minutes=None, metastore_id=None, num_executors=None, opc_request_id=None, owner_principal_id=None, owner_user_name=None, parameters=None, pool_id=None, private_endpoint_dns_zones=None, private_endpoint_id=None, private_endpoint_max_host_count=None, private_endpoint_nsg_ids=None, private_endpoint_subnet_id=None, run_duration_in_milliseconds=None, run_id=None, spark_version=None, state=None, time_created=None, time_updated=None, total_ocpu=None, type=None, warehouse_bucket_uri=None):
         if application_id and not isinstance(application_id, str):
             raise TypeError("Expected argument 'application_id' to be a str")
         pulumi.set(__self__, "application_id", application_id)
@@ -116,6 +116,9 @@ class GetInvokeRunResult:
         if parameters and not isinstance(parameters, list):
             raise TypeError("Expected argument 'parameters' to be a list")
         pulumi.set(__self__, "parameters", parameters)
+        if pool_id and not isinstance(pool_id, str):
+            raise TypeError("Expected argument 'pool_id' to be a str")
+        pulumi.set(__self__, "pool_id", pool_id)
         if private_endpoint_dns_zones and not isinstance(private_endpoint_dns_zones, list):
             raise TypeError("Expected argument 'private_endpoint_dns_zones' to be a list")
         pulumi.set(__self__, "private_endpoint_dns_zones", private_endpoint_dns_zones)
@@ -405,6 +408,14 @@ class GetInvokeRunResult:
         return pulumi.get(self, "parameters")
 
     @property
+    @pulumi.getter(name="poolId")
+    def pool_id(self) -> str:
+        """
+        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+        """
+        return pulumi.get(self, "pool_id")
+
+    @property
     @pulumi.getter(name="privateEndpointDnsZones")
     def private_endpoint_dns_zones(self) -> Sequence[str]:
         """
@@ -477,7 +488,7 @@ class GetInvokeRunResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -485,7 +496,7 @@ class GetInvokeRunResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -551,6 +562,7 @@ class AwaitableGetInvokeRunResult(GetInvokeRunResult):
             owner_principal_id=self.owner_principal_id,
             owner_user_name=self.owner_user_name,
             parameters=self.parameters,
+            pool_id=self.pool_id,
             private_endpoint_dns_zones=self.private_endpoint_dns_zones,
             private_endpoint_id=self.private_endpoint_id,
             private_endpoint_max_host_count=self.private_endpoint_max_host_count,
@@ -623,6 +635,7 @@ def get_invoke_run(run_id: Optional[str] = None,
         owner_principal_id=__ret__.owner_principal_id,
         owner_user_name=__ret__.owner_user_name,
         parameters=__ret__.parameters,
+        pool_id=__ret__.pool_id,
         private_endpoint_dns_zones=__ret__.private_endpoint_dns_zones,
         private_endpoint_id=__ret__.private_endpoint_id,
         private_endpoint_max_host_count=__ret__.private_endpoint_max_host_count,

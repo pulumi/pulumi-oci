@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
 //
-// # Returns fleet level advanced feature configuration
+// Returns Fleet level advanced feature configuration.
 //
 // ## Example Usage
 //
@@ -58,19 +58,23 @@ type GetFleetAdvancedFeatureConfigurationArgs struct {
 type GetFleetAdvancedFeatureConfigurationResult struct {
 	// AdvancedUsageTracking configuration
 	AdvancedUsageTrackings []GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking `pulumi:"advancedUsageTrackings"`
-	// Bucket name required to store jfr and related data
+	// Bucket name required to store JFR and related data.
 	AnalyticBucketName string `pulumi:"analyticBucketName"`
-	// Namespace for the fleet advanced feature
+	// Namespace for the Fleet advanced feature.
 	AnalyticNamespace string `pulumi:"analyticNamespace"`
 	// CryptoEventAnalysis configuration
 	CryptoEventAnalyses []GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis `pulumi:"cryptoEventAnalyses"`
 	FleetId             string                                                    `pulumi:"fleetId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// JavaMigrationAnalysis configuration
+	JavaMigrationAnalyses []GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis `pulumi:"javaMigrationAnalyses"`
 	// JfrRecording configuration
 	JfrRecordings []GetFleetAdvancedFeatureConfigurationJfrRecording `pulumi:"jfrRecordings"`
-	// Enable lifecycle management and set post action configurations
+	// Enable lifecycle management and set post action configurations.
 	Lcms []GetFleetAdvancedFeatureConfigurationLcm `pulumi:"lcms"`
+	// Performance tuning analysis configuration
+	PerformanceTuningAnalyses []GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis `pulumi:"performanceTuningAnalyses"`
 	// The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeLastModified string `pulumi:"timeLastModified"`
 }
@@ -120,12 +124,12 @@ func (o GetFleetAdvancedFeatureConfigurationResultOutput) AdvancedUsageTrackings
 	}).(GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput)
 }
 
-// Bucket name required to store jfr and related data
+// Bucket name required to store JFR and related data.
 func (o GetFleetAdvancedFeatureConfigurationResultOutput) AnalyticBucketName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) string { return v.AnalyticBucketName }).(pulumi.StringOutput)
 }
 
-// Namespace for the fleet advanced feature
+// Namespace for the Fleet advanced feature.
 func (o GetFleetAdvancedFeatureConfigurationResultOutput) AnalyticNamespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) string { return v.AnalyticNamespace }).(pulumi.StringOutput)
 }
@@ -146,6 +150,13 @@ func (o GetFleetAdvancedFeatureConfigurationResultOutput) Id() pulumi.StringOutp
 	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// JavaMigrationAnalysis configuration
+func (o GetFleetAdvancedFeatureConfigurationResultOutput) JavaMigrationAnalyses() GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) []GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis {
+		return v.JavaMigrationAnalyses
+	}).(GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput)
+}
+
 // JfrRecording configuration
 func (o GetFleetAdvancedFeatureConfigurationResultOutput) JfrRecordings() GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput {
 	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) []GetFleetAdvancedFeatureConfigurationJfrRecording {
@@ -153,11 +164,18 @@ func (o GetFleetAdvancedFeatureConfigurationResultOutput) JfrRecordings() GetFle
 	}).(GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput)
 }
 
-// Enable lifecycle management and set post action configurations
+// Enable lifecycle management and set post action configurations.
 func (o GetFleetAdvancedFeatureConfigurationResultOutput) Lcms() GetFleetAdvancedFeatureConfigurationLcmArrayOutput {
 	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) []GetFleetAdvancedFeatureConfigurationLcm {
 		return v.Lcms
 	}).(GetFleetAdvancedFeatureConfigurationLcmArrayOutput)
+}
+
+// Performance tuning analysis configuration
+func (o GetFleetAdvancedFeatureConfigurationResultOutput) PerformanceTuningAnalyses() GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) []GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis {
+		return v.PerformanceTuningAnalyses
+	}).(GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput)
 }
 
 // The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).

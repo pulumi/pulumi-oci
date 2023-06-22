@@ -144,7 +144,7 @@ type Sddc struct {
 	InstanceDisplayNamePrefix pulumi.StringOutput `pulumi:"instanceDisplayNamePrefix"`
 	// For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
 	IsHcxEnabled pulumi.BoolOutput `pulumi:"isHcxEnabled"`
-	// Indicates whether to enable HCX Enterprise for this SDDC.
+	// Indicates whether HCX Enterprise is enabled for this SDDC.
 	IsHcxEnterpriseEnabled pulumi.BoolOutput `pulumi:"isHcxEnterpriseEnabled"`
 	// Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
 	IsHcxPendingDowngrade pulumi.BoolOutput `pulumi:"isHcxPendingDowngrade"`
@@ -339,7 +339,7 @@ type sddcState struct {
 	InstanceDisplayNamePrefix *string `pulumi:"instanceDisplayNamePrefix"`
 	// For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
 	IsHcxEnabled *bool `pulumi:"isHcxEnabled"`
-	// Indicates whether to enable HCX Enterprise for this SDDC.
+	// Indicates whether HCX Enterprise is enabled for this SDDC.
 	IsHcxEnterpriseEnabled *bool `pulumi:"isHcxEnterpriseEnabled"`
 	// Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
 	IsHcxPendingDowngrade *bool `pulumi:"isHcxPendingDowngrade"`
@@ -467,7 +467,7 @@ type SddcState struct {
 	InstanceDisplayNamePrefix pulumi.StringPtrInput
 	// For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
 	IsHcxEnabled pulumi.BoolPtrInput
-	// Indicates whether to enable HCX Enterprise for this SDDC.
+	// Indicates whether HCX Enterprise is enabled for this SDDC.
 	IsHcxEnterpriseEnabled pulumi.BoolPtrInput
 	// Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
 	IsHcxPendingDowngrade pulumi.BoolPtrInput
@@ -901,7 +901,7 @@ func (o SddcOutput) IsHcxEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Sddc) pulumi.BoolOutput { return v.IsHcxEnabled }).(pulumi.BoolOutput)
 }
 
-// Indicates whether to enable HCX Enterprise for this SDDC.
+// Indicates whether HCX Enterprise is enabled for this SDDC.
 func (o SddcOutput) IsHcxEnterpriseEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Sddc) pulumi.BoolOutput { return v.IsHcxEnterpriseEnabled }).(pulumi.BoolOutput)
 }

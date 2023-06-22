@@ -224,8 +224,11 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
      *             .computeInstanceId(oci_core_instance.test_instance().id())
      *             .displayName(var_.esxi_host_display_name())
+     *             .isBillingDonorsOnly(var_.esxi_host_is_billing_donors_only())
+     *             .isSwapBillingOnly(var_.esxi_host_is_swap_billing_only())
      *             .sddcId(oci_ocvp_sddc.test_sddc().id())
      *             .state(var_.esxi_host_state())
      *             .build());
@@ -274,8 +277,11 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
      *             .computeInstanceId(oci_core_instance.test_instance().id())
      *             .displayName(var_.esxi_host_display_name())
+     *             .isBillingDonorsOnly(var_.esxi_host_is_billing_donors_only())
+     *             .isSwapBillingOnly(var_.esxi_host_is_swap_billing_only())
      *             .sddcId(oci_ocvp_sddc.test_sddc().id())
      *             .state(var_.esxi_host_state())
      *             .build());
@@ -324,8 +330,11 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
      *             .computeInstanceId(oci_core_instance.test_instance().id())
      *             .displayName(var_.esxi_host_display_name())
+     *             .isBillingDonorsOnly(var_.esxi_host_is_billing_donors_only())
+     *             .isSwapBillingOnly(var_.esxi_host_is_swap_billing_only())
      *             .sddcId(oci_ocvp_sddc.test_sddc().id())
      *             .state(var_.esxi_host_state())
      *             .build());
@@ -374,8 +383,11 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
      *             .computeInstanceId(oci_core_instance.test_instance().id())
      *             .displayName(var_.esxi_host_display_name())
+     *             .isBillingDonorsOnly(var_.esxi_host_is_billing_donors_only())
+     *             .isSwapBillingOnly(var_.esxi_host_is_swap_billing_only())
      *             .sddcId(oci_ocvp_sddc.test_sddc().id())
      *             .state(var_.esxi_host_state())
      *             .build());
@@ -424,8 +436,11 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
      *             .computeInstanceId(oci_core_instance.test_instance().id())
      *             .displayName(var_.esxi_host_display_name())
+     *             .isBillingDonorsOnly(var_.esxi_host_is_billing_donors_only())
+     *             .isSwapBillingOnly(var_.esxi_host_is_swap_billing_only())
      *             .sddcId(oci_ocvp_sddc.test_sddc().id())
      *             .state(var_.esxi_host_state())
      *             .build());
@@ -474,8 +489,11 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
      *             .computeInstanceId(oci_core_instance.test_instance().id())
      *             .displayName(var_.esxi_host_display_name())
+     *             .isBillingDonorsOnly(var_.esxi_host_is_billing_donors_only())
+     *             .isSwapBillingOnly(var_.esxi_host_is_swap_billing_only())
      *             .sddcId(oci_ocvp_sddc.test_sddc().id())
      *             .state(var_.esxi_host_state())
      *             .build());

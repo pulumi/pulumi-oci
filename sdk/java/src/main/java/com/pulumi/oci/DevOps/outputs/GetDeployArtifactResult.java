@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDeployArtifactResult {
     /**
-     * @return Mode for artifact parameter substitution.
+     * @return Mode for artifact parameter substitution. Options: `&#34;NONE&#34;, &#34;SUBSTITUTE_PLACEHOLDERS&#34;` For Helm Deployments only &#34;NONE&#34; is supported.
      * 
      */
     private String argumentSubstitutionMode;
@@ -92,7 +92,7 @@ public final class GetDeployArtifactResult {
 
     private GetDeployArtifactResult() {}
     /**
-     * @return Mode for artifact parameter substitution.
+     * @return Mode for artifact parameter substitution. Options: `&#34;NONE&#34;, &#34;SUBSTITUTE_PLACEHOLDERS&#34;` For Helm Deployments only &#34;NONE&#34; is supported.
      * 
      */
     public String argumentSubstitutionMode() {

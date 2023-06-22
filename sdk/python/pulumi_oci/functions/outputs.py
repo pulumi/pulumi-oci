@@ -257,7 +257,7 @@ class FunctionProvisionedConcurrencyConfig(dict):
                  count: Optional[int] = None):
         """
         :param str strategy: (Updatable) The strategy for provisioned concurrency to be used.
-        :param int count: (Updatable)
+        :param int count: (Updatable) Configuration specifying a constant amount of provisioned concurrency.
         """
         pulumi.set(__self__, "strategy", strategy)
         if count is not None:
@@ -275,7 +275,7 @@ class FunctionProvisionedConcurrencyConfig(dict):
     @pulumi.getter
     def count(self) -> Optional[int]:
         """
-        (Updatable)
+        (Updatable) Configuration specifying a constant amount of provisioned concurrency.
         """
         return pulumi.get(self, "count")
 
@@ -459,6 +459,7 @@ class GetApplicationsApplicationResult(dict):
                  id: str,
                  image_policy_configs: Sequence['outputs.GetApplicationsApplicationImagePolicyConfigResult'],
                  network_security_group_ids: Sequence[str],
+                 shape: str,
                  state: str,
                  subnet_ids: Sequence[str],
                  syslog_url: str,
@@ -474,6 +475,7 @@ class GetApplicationsApplicationResult(dict):
         :param str id: A filter to return only applications with the specified OCID.
         :param Sequence['GetApplicationsApplicationImagePolicyConfigArgs'] image_policy_configs: Define the image signature verification policy for an application.
         :param Sequence[str] network_security_group_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
+        :param str shape: Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
         :param str state: A filter to return only applications that match the lifecycle state in this parameter. Example: `Creating`
         :param Sequence[str] subnet_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
         :param str syslog_url: A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
@@ -489,6 +491,7 @@ class GetApplicationsApplicationResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "image_policy_configs", image_policy_configs)
         pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_ids", subnet_ids)
         pulumi.set(__self__, "syslog_url", syslog_url)
@@ -559,6 +562,14 @@ class GetApplicationsApplicationResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
         """
         return pulumi.get(self, "network_security_group_ids")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+        """
+        return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter
@@ -718,6 +729,7 @@ class GetFunctionProvisionedConcurrencyConfigResult(dict):
                  count: int,
                  strategy: str):
         """
+        :param int count: Configuration specifying a constant amount of provisioned concurrency.
         :param str strategy: The strategy for provisioned concurrency to be used.
         """
         pulumi.set(__self__, "count", count)
@@ -726,6 +738,9 @@ class GetFunctionProvisionedConcurrencyConfigResult(dict):
     @property
     @pulumi.getter
     def count(self) -> int:
+        """
+        Configuration specifying a constant amount of provisioned concurrency.
+        """
         return pulumi.get(self, "count")
 
     @property
@@ -826,6 +841,7 @@ class GetFunctionsFunctionResult(dict):
                  invoke_endpoint: str,
                  memory_in_mbs: str,
                  provisioned_concurrency_configs: Sequence['outputs.GetFunctionsFunctionProvisionedConcurrencyConfigResult'],
+                 shape: str,
                  source_details: Sequence['outputs.GetFunctionsFunctionSourceDetailResult'],
                  state: str,
                  time_created: str,
@@ -845,6 +861,7 @@ class GetFunctionsFunctionResult(dict):
         :param str invoke_endpoint: The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
         :param str memory_in_mbs: Maximum usable memory for the function (MiB).
         :param Sequence['GetFunctionsFunctionProvisionedConcurrencyConfigArgs'] provisioned_concurrency_configs: Define the strategy for provisioned concurrency for the function.
+        :param str shape: The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
         :param Sequence['GetFunctionsFunctionSourceDetailArgs'] source_details: The source details for the Function. The function can be created from various sources.
         :param str state: A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
         :param str time_created: The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -864,6 +881,7 @@ class GetFunctionsFunctionResult(dict):
         pulumi.set(__self__, "invoke_endpoint", invoke_endpoint)
         pulumi.set(__self__, "memory_in_mbs", memory_in_mbs)
         pulumi.set(__self__, "provisioned_concurrency_configs", provisioned_concurrency_configs)
+        pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "source_details", source_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
@@ -968,6 +986,14 @@ class GetFunctionsFunctionResult(dict):
         return pulumi.get(self, "provisioned_concurrency_configs")
 
     @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+        """
+        return pulumi.get(self, "shape")
+
+    @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Sequence['outputs.GetFunctionsFunctionSourceDetailResult']:
         """
@@ -1022,6 +1048,7 @@ class GetFunctionsFunctionProvisionedConcurrencyConfigResult(dict):
                  count: int,
                  strategy: str):
         """
+        :param int count: Configuration specifying a constant amount of provisioned concurrency.
         :param str strategy: The strategy for provisioned concurrency to be used.
         """
         pulumi.set(__self__, "count", count)
@@ -1030,6 +1057,9 @@ class GetFunctionsFunctionProvisionedConcurrencyConfigResult(dict):
     @property
     @pulumi.getter
     def count(self) -> int:
+        """
+        Configuration specifying a constant amount of provisioned concurrency.
+        """
         return pulumi.get(self, "count")
 
     @property

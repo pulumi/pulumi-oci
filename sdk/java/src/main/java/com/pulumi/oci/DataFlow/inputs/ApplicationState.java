@@ -399,6 +399,21 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     * 
+     */
+    @Import(name="poolId")
+    private @Nullable Output<String> poolId;
+
+    /**
+     * @return (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     * 
+     */
+    public Optional<Output<String>> poolId() {
+        return Optional.ofNullable(this.poolId);
+    }
+
+    /**
      * (Updatable) The OCID of a private endpoint.
      * 
      */
@@ -444,14 +459,14 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * @return The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -459,14 +474,14 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * @return The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -537,6 +552,7 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
         this.ownerPrincipalId = $.ownerPrincipalId;
         this.ownerUserName = $.ownerUserName;
         this.parameters = $.parameters;
+        this.poolId = $.poolId;
         this.privateEndpointId = $.privateEndpointId;
         this.sparkVersion = $.sparkVersion;
         this.state = $.state;
@@ -1110,6 +1126,27 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param poolId (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder poolId(@Nullable Output<String> poolId) {
+            $.poolId = poolId;
+            return this;
+        }
+
+        /**
+         * @param poolId (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder poolId(String poolId) {
+            return poolId(Output.of(poolId));
+        }
+
+        /**
          * @param privateEndpointId (Updatable) The OCID of a private endpoint.
          * 
          * @return builder
@@ -1173,7 +1210,7 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+         * @param timeCreated The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
          * 
          * @return builder
          * 
@@ -1184,7 +1221,7 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+         * @param timeCreated The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
          * 
          * @return builder
          * 
@@ -1194,7 +1231,7 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+         * @param timeUpdated The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
          * 
          * @return builder
          * 
@@ -1205,7 +1242,7 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+         * @param timeUpdated The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
          * 
          * @return builder
          * 

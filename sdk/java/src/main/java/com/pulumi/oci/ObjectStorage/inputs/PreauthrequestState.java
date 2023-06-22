@@ -76,6 +76,21 @@ public final class PreauthrequestState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * The full Path for the object.
+     * 
+     */
+    @Import(name="fullPath")
+    private @Nullable Output<String> fullPath;
+
+    /**
+     * @return The full Path for the object.
+     * 
+     */
+    public Optional<Output<String>> fullPath() {
+        return Optional.ofNullable(this.fullPath);
+    }
+
+    /**
      * A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
      * 
      */
@@ -201,6 +216,7 @@ public final class PreauthrequestState extends com.pulumi.resources.ResourceArgs
         this.accessUri = $.accessUri;
         this.bucket = $.bucket;
         this.bucketListingAction = $.bucketListingAction;
+        this.fullPath = $.fullPath;
         this.name = $.name;
         this.namespace = $.namespace;
         this.object = $.object;
@@ -310,6 +326,27 @@ public final class PreauthrequestState extends com.pulumi.resources.ResourceArgs
          */
         public Builder bucketListingAction(String bucketListingAction) {
             return bucketListingAction(Output.of(bucketListingAction));
+        }
+
+        /**
+         * @param fullPath The full Path for the object.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fullPath(@Nullable Output<String> fullPath) {
+            $.fullPath = fullPath;
+            return this;
+        }
+
+        /**
+         * @param fullPath The full Path for the object.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fullPath(String fullPath) {
+            return fullPath(Output.of(fullPath));
         }
 
         /**

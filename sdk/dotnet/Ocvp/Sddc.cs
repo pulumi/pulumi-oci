@@ -223,7 +223,7 @@ namespace Pulumi.Oci.Ocvp
         public Output<bool> IsHcxEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates whether to enable HCX Enterprise for this SDDC.
+        /// Indicates whether HCX Enterprise is enabled for this SDDC.
         /// </summary>
         [Output("isHcxEnterpriseEnabled")]
         public Output<bool> IsHcxEnterpriseEnabled { get; private set; } = null!;
@@ -885,7 +885,7 @@ namespace Pulumi.Oci.Ocvp
         public Input<bool>? IsHcxEnabled { get; set; }
 
         /// <summary>
-        /// Indicates whether to enable HCX Enterprise for this SDDC.
+        /// Indicates whether HCX Enterprise is enabled for this SDDC.
         /// </summary>
         [Input("isHcxEnterpriseEnabled")]
         public Input<bool>? IsHcxEnterpriseEnabled { get; set; }

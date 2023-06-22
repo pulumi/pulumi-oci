@@ -161,6 +161,7 @@ class _PreauthrequestState:
                  access_uri: Optional[pulumi.Input[str]] = None,
                  bucket: Optional[pulumi.Input[str]] = None,
                  bucket_listing_action: Optional[pulumi.Input[str]] = None,
+                 full_path: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  object: Optional[pulumi.Input[str]] = None,
@@ -174,6 +175,7 @@ class _PreauthrequestState:
         :param pulumi.Input[str] access_uri: The URI to embed in the URL `https://objectstorage.${var.region}.oraclecloud.com{var.access_uri}` when using the pre-authenticated request.
         :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         :param pulumi.Input[str] bucket_listing_action: Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
+        :param pulumi.Input[str] full_path: The full Path for the object.
         :param pulumi.Input[str] name: A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
         :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
         :param pulumi.Input[str] object: Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
@@ -194,6 +196,8 @@ class _PreauthrequestState:
             pulumi.set(__self__, "bucket", bucket)
         if bucket_listing_action is not None:
             pulumi.set(__self__, "bucket_listing_action", bucket_listing_action)
+        if full_path is not None:
+            pulumi.set(__self__, "full_path", full_path)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if namespace is not None:
@@ -259,6 +263,18 @@ class _PreauthrequestState:
     @bucket_listing_action.setter
     def bucket_listing_action(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "bucket_listing_action", value)
+
+    @property
+    @pulumi.getter(name="fullPath")
+    def full_path(self) -> Optional[pulumi.Input[str]]:
+        """
+        The full Path for the object.
+        """
+        return pulumi.get(self, "full_path")
+
+    @full_path.setter
+    def full_path(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "full_path", value)
 
     @property
     @pulumi.getter
@@ -492,6 +508,7 @@ class Preauthrequest(pulumi.CustomResource):
                 raise TypeError("Missing required property 'time_expires'")
             __props__.__dict__["time_expires"] = time_expires
             __props__.__dict__["access_uri"] = None
+            __props__.__dict__["full_path"] = None
             __props__.__dict__["par_id"] = None
             __props__.__dict__["time_created"] = None
         super(Preauthrequest, __self__).__init__(
@@ -508,6 +525,7 @@ class Preauthrequest(pulumi.CustomResource):
             access_uri: Optional[pulumi.Input[str]] = None,
             bucket: Optional[pulumi.Input[str]] = None,
             bucket_listing_action: Optional[pulumi.Input[str]] = None,
+            full_path: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             namespace: Optional[pulumi.Input[str]] = None,
             object: Optional[pulumi.Input[str]] = None,
@@ -526,6 +544,7 @@ class Preauthrequest(pulumi.CustomResource):
         :param pulumi.Input[str] access_uri: The URI to embed in the URL `https://objectstorage.${var.region}.oraclecloud.com{var.access_uri}` when using the pre-authenticated request.
         :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         :param pulumi.Input[str] bucket_listing_action: Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
+        :param pulumi.Input[str] full_path: The full Path for the object.
         :param pulumi.Input[str] name: A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
         :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
         :param pulumi.Input[str] object: Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
@@ -546,6 +565,7 @@ class Preauthrequest(pulumi.CustomResource):
         __props__.__dict__["access_uri"] = access_uri
         __props__.__dict__["bucket"] = bucket
         __props__.__dict__["bucket_listing_action"] = bucket_listing_action
+        __props__.__dict__["full_path"] = full_path
         __props__.__dict__["name"] = name
         __props__.__dict__["namespace"] = namespace
         __props__.__dict__["object"] = object
@@ -586,6 +606,14 @@ class Preauthrequest(pulumi.CustomResource):
         Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
         """
         return pulumi.get(self, "bucket_listing_action")
+
+    @property
+    @pulumi.getter(name="fullPath")
+    def full_path(self) -> pulumi.Output[str]:
+        """
+        The full Path for the object.
+        """
+        return pulumi.get(self, "full_path")
 
     @property
     @pulumi.getter

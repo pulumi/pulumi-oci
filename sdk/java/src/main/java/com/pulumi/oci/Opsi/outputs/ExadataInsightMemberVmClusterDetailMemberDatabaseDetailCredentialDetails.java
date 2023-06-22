@@ -11,27 +11,79 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails {
+    /**
+     * @return Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+     * 
+     */
     private @Nullable String credentialSourceName;
+    /**
+     * @return Credential type.
+     * 
+     */
     private String credentialType;
+    /**
+     * @return The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+     * 
+     */
     private @Nullable String passwordSecretId;
+    /**
+     * @return database user role.
+     * 
+     */
     private @Nullable String role;
+    /**
+     * @return database user name.
+     * 
+     */
     private @Nullable String userName;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+     * 
+     */
+    private @Nullable String walletSecretId;
 
     private ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails() {}
+    /**
+     * @return Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+     * 
+     */
     public Optional<String> credentialSourceName() {
         return Optional.ofNullable(this.credentialSourceName);
     }
+    /**
+     * @return Credential type.
+     * 
+     */
     public String credentialType() {
         return this.credentialType;
     }
+    /**
+     * @return The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+     * 
+     */
     public Optional<String> passwordSecretId() {
         return Optional.ofNullable(this.passwordSecretId);
     }
+    /**
+     * @return database user role.
+     * 
+     */
     public Optional<String> role() {
         return Optional.ofNullable(this.role);
     }
+    /**
+     * @return database user name.
+     * 
+     */
     public Optional<String> userName() {
         return Optional.ofNullable(this.userName);
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+     * 
+     */
+    public Optional<String> walletSecretId() {
+        return Optional.ofNullable(this.walletSecretId);
     }
 
     public static Builder builder() {
@@ -48,6 +100,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCreden
         private @Nullable String passwordSecretId;
         private @Nullable String role;
         private @Nullable String userName;
+        private @Nullable String walletSecretId;
         public Builder() {}
         public Builder(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,6 +109,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCreden
     	      this.passwordSecretId = defaults.passwordSecretId;
     	      this.role = defaults.role;
     	      this.userName = defaults.userName;
+    	      this.walletSecretId = defaults.walletSecretId;
         }
 
         @CustomType.Setter
@@ -83,6 +137,11 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCreden
             this.userName = userName;
             return this;
         }
+        @CustomType.Setter
+        public Builder walletSecretId(@Nullable String walletSecretId) {
+            this.walletSecretId = walletSecretId;
+            return this;
+        }
         public ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails build() {
             final var o = new ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails();
             o.credentialSourceName = credentialSourceName;
@@ -90,6 +149,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCreden
             o.passwordSecretId = passwordSecretId;
             o.role = role;
             o.userName = userName;
+            o.walletSecretId = walletSecretId;
             return o;
         }
     }

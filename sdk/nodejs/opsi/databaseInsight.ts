@@ -52,7 +52,7 @@ export class DatabaseInsight extends pulumi.CustomResource {
      */
     public readonly connectionCredentialDetails!: pulumi.Output<outputs.Opsi.DatabaseInsightConnectionCredentialDetails>;
     /**
-     * Connection details to connect to the database. HostName, protocol, and port should be specified.
+     * Connection details of the private endpoints.
      */
     public readonly connectionDetails!: pulumi.Output<outputs.Opsi.DatabaseInsightConnectionDetails>;
     /**
@@ -291,7 +291,7 @@ export interface DatabaseInsightState {
      */
     connectionCredentialDetails?: pulumi.Input<inputs.Opsi.DatabaseInsightConnectionCredentialDetails>;
     /**
-     * Connection details to connect to the database. HostName, protocol, and port should be specified.
+     * Connection details of the private endpoints.
      */
     connectionDetails?: pulumi.Input<inputs.Opsi.DatabaseInsightConnectionDetails>;
     /**
@@ -436,7 +436,7 @@ export interface DatabaseInsightArgs {
      */
     connectionCredentialDetails?: pulumi.Input<inputs.Opsi.DatabaseInsightConnectionCredentialDetails>;
     /**
-     * Connection details to connect to the database. HostName, protocol, and port should be specified.
+     * Connection details of the private endpoints.
      */
     connectionDetails?: pulumi.Input<inputs.Opsi.DatabaseInsightConnectionDetails>;
     /**

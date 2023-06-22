@@ -71,6 +71,7 @@ namespace Pulumi.Oci.DataFlow
     ///                 Value = @var.Invoke_run_parameters_value,
     ///             },
     ///         },
+    ///         PoolId = oci_dataflow_pool.Test_pool.Id,
     ///         SparkVersion = @var.Invoke_run_spark_version,
     ///         Type = @var.Invoke_run_type,
     ///         WarehouseBucketUri = @var.Invoke_run_warehouse_bucket_uri,
@@ -271,6 +272,12 @@ namespace Pulumi.Oci.DataFlow
         public Output<ImmutableArray<Outputs.InvokeRunParameter>> Parameters { get; private set; } = null!;
 
         /// <summary>
+        /// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+        /// </summary>
+        [Output("poolId")]
+        public Output<string> PoolId { get; private set; } = null!;
+
+        /// <summary>
         /// An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
         /// </summary>
         [Output("privateEndpointDnsZones")]
@@ -319,13 +326,13 @@ namespace Pulumi.Oci.DataFlow
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        /// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        /// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -550,6 +557,12 @@ namespace Pulumi.Oci.DataFlow
             get => _parameters ?? (_parameters = new InputList<Inputs.InvokeRunParameterArgs>());
             set => _parameters = value;
         }
+
+        /// <summary>
+        /// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+        /// </summary>
+        [Input("poolId")]
+        public Input<string>? PoolId { get; set; }
 
         /// <summary>
         /// The Spark version utilized to run the application. This value may be set if applicationId is not since the Spark version will be taken from the associated application.
@@ -788,6 +801,12 @@ namespace Pulumi.Oci.DataFlow
             set => _parameters = value;
         }
 
+        /// <summary>
+        /// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+        /// </summary>
+        [Input("poolId")]
+        public Input<string>? PoolId { get; set; }
+
         [Input("privateEndpointDnsZones")]
         private InputList<string>? _privateEndpointDnsZones;
 
@@ -849,13 +868,13 @@ namespace Pulumi.Oci.DataFlow
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        /// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        /// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

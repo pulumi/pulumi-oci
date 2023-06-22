@@ -191,6 +191,21 @@ public final class FunctionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+     * 
+     */
+    @Import(name="shape")
+    private @Nullable Output<String> shape;
+
+    /**
+     * @return The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+     * 
+     */
+    public Optional<Output<String>> shape() {
+        return Optional.ofNullable(this.shape);
+    }
+
+    /**
      * The source details for the Function. The function can be created from various sources.
      * 
      */
@@ -294,6 +309,7 @@ public final class FunctionState extends com.pulumi.resources.ResourceArgs {
         this.invokeEndpoint = $.invokeEndpoint;
         this.memoryInMbs = $.memoryInMbs;
         this.provisionedConcurrencyConfig = $.provisionedConcurrencyConfig;
+        this.shape = $.shape;
         this.sourceDetails = $.sourceDetails;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
@@ -553,6 +569,27 @@ public final class FunctionState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder provisionedConcurrencyConfig(FunctionProvisionedConcurrencyConfigArgs provisionedConcurrencyConfig) {
             return provisionedConcurrencyConfig(Output.of(provisionedConcurrencyConfig));
+        }
+
+        /**
+         * @param shape The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shape(@Nullable Output<String> shape) {
+            $.shape = shape;
+            return this;
+        }
+
+        /**
+         * @param shape The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shape(String shape) {
+            return shape(Output.of(shape));
         }
 
         /**

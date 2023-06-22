@@ -14,6 +14,7 @@ utilities.lazyLoad(exports, ["Provider"], () => require("./provider"));
 // Export sub-modules:
 import * as adm from "./adm";
 import * as aianomalydetection from "./aianomalydetection";
+import * as aidocument from "./aidocument";
 import * as aivision from "./aivision";
 import * as analytics from "./analytics";
 import * as announcementsservice from "./announcementsservice";
@@ -122,6 +123,7 @@ import * as waf from "./waf";
 export {
     adm,
     aianomalydetection,
+    aidocument,
     aivision,
     analytics,
     announcementsservice,

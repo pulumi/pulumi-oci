@@ -150,6 +150,10 @@ export interface GetApplicationResult {
      */
     readonly parameters: outputs.DataFlow.GetApplicationParameter[];
     /**
+     * The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     */
+    readonly poolId: string;
+    /**
      * The OCID of a private endpoint.
      */
     readonly privateEndpointId: string;
@@ -162,11 +166,11 @@ export interface GetApplicationResult {
      */
     readonly state: string;
     /**
-     * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
     readonly timeCreated: string;
     /**
-     * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
     readonly timeUpdated: string;
     /**

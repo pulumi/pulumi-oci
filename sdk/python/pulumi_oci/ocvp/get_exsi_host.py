@@ -21,10 +21,13 @@ class GetExsiHostResult:
     """
     A collection of values returned by getExsiHost.
     """
-    def __init__(__self__, billing_contract_end_date=None, capacity_reservation_id=None, compartment_id=None, compute_availability_domain=None, compute_instance_id=None, current_sku=None, defined_tags=None, display_name=None, esxi_host_id=None, failed_esxi_host_id=None, freeform_tags=None, grace_period_end_date=None, host_ocpu_count=None, host_shape_name=None, id=None, next_sku=None, non_upgraded_esxi_host_id=None, replacement_esxi_host_id=None, sddc_id=None, state=None, time_created=None, time_updated=None, upgraded_replacement_esxi_host_id=None, vmware_software_version=None):
+    def __init__(__self__, billing_contract_end_date=None, billing_donor_host_id=None, capacity_reservation_id=None, compartment_id=None, compute_availability_domain=None, compute_instance_id=None, current_sku=None, defined_tags=None, display_name=None, esxi_host_id=None, failed_esxi_host_id=None, freeform_tags=None, grace_period_end_date=None, host_ocpu_count=None, host_shape_name=None, id=None, is_billing_continuation_in_progress=None, is_billing_swapping_in_progress=None, next_sku=None, non_upgraded_esxi_host_id=None, replacement_esxi_host_id=None, sddc_id=None, state=None, swap_billing_host_id=None, time_created=None, time_updated=None, upgraded_replacement_esxi_host_id=None, vmware_software_version=None):
         if billing_contract_end_date and not isinstance(billing_contract_end_date, str):
             raise TypeError("Expected argument 'billing_contract_end_date' to be a str")
         pulumi.set(__self__, "billing_contract_end_date", billing_contract_end_date)
+        if billing_donor_host_id and not isinstance(billing_donor_host_id, str):
+            raise TypeError("Expected argument 'billing_donor_host_id' to be a str")
+        pulumi.set(__self__, "billing_donor_host_id", billing_donor_host_id)
         if capacity_reservation_id and not isinstance(capacity_reservation_id, str):
             raise TypeError("Expected argument 'capacity_reservation_id' to be a str")
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
@@ -67,6 +70,12 @@ class GetExsiHostResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_billing_continuation_in_progress and not isinstance(is_billing_continuation_in_progress, bool):
+            raise TypeError("Expected argument 'is_billing_continuation_in_progress' to be a bool")
+        pulumi.set(__self__, "is_billing_continuation_in_progress", is_billing_continuation_in_progress)
+        if is_billing_swapping_in_progress and not isinstance(is_billing_swapping_in_progress, bool):
+            raise TypeError("Expected argument 'is_billing_swapping_in_progress' to be a bool")
+        pulumi.set(__self__, "is_billing_swapping_in_progress", is_billing_swapping_in_progress)
         if next_sku and not isinstance(next_sku, str):
             raise TypeError("Expected argument 'next_sku' to be a str")
         pulumi.set(__self__, "next_sku", next_sku)
@@ -82,6 +91,9 @@ class GetExsiHostResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if swap_billing_host_id and not isinstance(swap_billing_host_id, str):
+            raise TypeError("Expected argument 'swap_billing_host_id' to be a str")
+        pulumi.set(__self__, "swap_billing_host_id", swap_billing_host_id)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -102,6 +114,14 @@ class GetExsiHostResult:
         Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "billing_contract_end_date")
+
+    @property
+    @pulumi.getter(name="billingDonorHostId")
+    def billing_donor_host_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+        """
+        return pulumi.get(self, "billing_donor_host_id")
 
     @property
     @pulumi.getter(name="capacityReservationId")
@@ -168,7 +188,7 @@ class GetExsiHostResult:
     @pulumi.getter(name="failedEsxiHostId")
     def failed_esxi_host_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
         """
         return pulumi.get(self, "failed_esxi_host_id")
 
@@ -213,6 +233,22 @@ class GetExsiHostResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isBillingContinuationInProgress")
+    def is_billing_continuation_in_progress(self) -> bool:
+        """
+        Indicates whether this host is in the progress of billing continuation.
+        """
+        return pulumi.get(self, "is_billing_continuation_in_progress")
+
+    @property
+    @pulumi.getter(name="isBillingSwappingInProgress")
+    def is_billing_swapping_in_progress(self) -> bool:
+        """
+        Indicates whether this host is in the progress of swapping billing.
+        """
+        return pulumi.get(self, "is_billing_swapping_in_progress")
+
+    @property
     @pulumi.getter(name="nextSku")
     def next_sku(self) -> str:
         """
@@ -251,6 +287,14 @@ class GetExsiHostResult:
         The current state of the ESXi host.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="swapBillingHostId")
+    def swap_billing_host_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+        """
+        return pulumi.get(self, "swap_billing_host_id")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -292,6 +336,7 @@ class AwaitableGetExsiHostResult(GetExsiHostResult):
             yield self
         return GetExsiHostResult(
             billing_contract_end_date=self.billing_contract_end_date,
+            billing_donor_host_id=self.billing_donor_host_id,
             capacity_reservation_id=self.capacity_reservation_id,
             compartment_id=self.compartment_id,
             compute_availability_domain=self.compute_availability_domain,
@@ -306,11 +351,14 @@ class AwaitableGetExsiHostResult(GetExsiHostResult):
             host_ocpu_count=self.host_ocpu_count,
             host_shape_name=self.host_shape_name,
             id=self.id,
+            is_billing_continuation_in_progress=self.is_billing_continuation_in_progress,
+            is_billing_swapping_in_progress=self.is_billing_swapping_in_progress,
             next_sku=self.next_sku,
             non_upgraded_esxi_host_id=self.non_upgraded_esxi_host_id,
             replacement_esxi_host_id=self.replacement_esxi_host_id,
             sddc_id=self.sddc_id,
             state=self.state,
+            swap_billing_host_id=self.swap_billing_host_id,
             time_created=self.time_created,
             time_updated=self.time_updated,
             upgraded_replacement_esxi_host_id=self.upgraded_replacement_esxi_host_id,
@@ -343,6 +391,7 @@ def get_exsi_host(esxi_host_id: Optional[str] = None,
 
     return AwaitableGetExsiHostResult(
         billing_contract_end_date=__ret__.billing_contract_end_date,
+        billing_donor_host_id=__ret__.billing_donor_host_id,
         capacity_reservation_id=__ret__.capacity_reservation_id,
         compartment_id=__ret__.compartment_id,
         compute_availability_domain=__ret__.compute_availability_domain,
@@ -357,11 +406,14 @@ def get_exsi_host(esxi_host_id: Optional[str] = None,
         host_ocpu_count=__ret__.host_ocpu_count,
         host_shape_name=__ret__.host_shape_name,
         id=__ret__.id,
+        is_billing_continuation_in_progress=__ret__.is_billing_continuation_in_progress,
+        is_billing_swapping_in_progress=__ret__.is_billing_swapping_in_progress,
         next_sku=__ret__.next_sku,
         non_upgraded_esxi_host_id=__ret__.non_upgraded_esxi_host_id,
         replacement_esxi_host_id=__ret__.replacement_esxi_host_id,
         sddc_id=__ret__.sddc_id,
         state=__ret__.state,
+        swap_billing_host_id=__ret__.swap_billing_host_id,
         time_created=__ret__.time_created,
         time_updated=__ret__.time_updated,
         upgraded_replacement_esxi_host_id=__ret__.upgraded_replacement_esxi_host_id,

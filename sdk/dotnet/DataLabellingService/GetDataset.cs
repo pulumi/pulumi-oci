@@ -106,6 +106,10 @@ namespace Pulumi.Oci.DataLabellingService
     public sealed class GetDatasetResult
     {
         /// <summary>
+        /// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> AdditionalProperties;
+        /// <summary>
         /// The annotation format name required for labeling records.
         /// </summary>
         public readonly string AnnotationFormat;
@@ -143,6 +147,10 @@ namespace Pulumi.Oci.DataLabellingService
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDatasetInitialImportDatasetConfigurationResult> InitialImportDatasetConfigurations;
+        /// <summary>
         /// The initial generate records configuration. It generates records from the dataset's source.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatasetInitialRecordGenerationConfigurationResult> InitialRecordGenerationConfigurations;
@@ -159,6 +167,10 @@ namespace Pulumi.Oci.DataLabellingService
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+        /// </summary>
+        public readonly string LifecycleSubstate;
+        /// <summary>
         /// The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
         /// </summary>
         public readonly string State;
@@ -173,6 +185,8 @@ namespace Pulumi.Oci.DataLabellingService
 
         [OutputConstructor]
         private GetDatasetResult(
+            ImmutableDictionary<string, object> additionalProperties,
+
             string annotationFormat,
 
             string compartmentId,
@@ -193,6 +207,8 @@ namespace Pulumi.Oci.DataLabellingService
 
             string id,
 
+            ImmutableArray<Outputs.GetDatasetInitialImportDatasetConfigurationResult> initialImportDatasetConfigurations,
+
             ImmutableArray<Outputs.GetDatasetInitialRecordGenerationConfigurationResult> initialRecordGenerationConfigurations,
 
             ImmutableArray<Outputs.GetDatasetLabelSetResult> labelSets,
@@ -201,12 +217,15 @@ namespace Pulumi.Oci.DataLabellingService
 
             string lifecycleDetails,
 
+            string lifecycleSubstate,
+
             string state,
 
             string timeCreated,
 
             string timeUpdated)
         {
+            AdditionalProperties = additionalProperties;
             AnnotationFormat = annotationFormat;
             CompartmentId = compartmentId;
             DatasetFormatDetails = datasetFormatDetails;
@@ -217,10 +236,12 @@ namespace Pulumi.Oci.DataLabellingService
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            InitialImportDatasetConfigurations = initialImportDatasetConfigurations;
             InitialRecordGenerationConfigurations = initialRecordGenerationConfigurations;
             LabelSets = labelSets;
             LabelingInstructions = labelingInstructions;
             LifecycleDetails = lifecycleDetails;
+            LifecycleSubstate = lifecycleSubstate;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

@@ -14,6 +14,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     private String passwordSecretId;
     private String role;
     private String userName;
+    private String walletSecretId;
 
     private GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail() {}
     public String credentialSourceName() {
@@ -31,6 +32,9 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     public String userName() {
         return this.userName;
     }
+    public String walletSecretId() {
+        return this.walletSecretId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -46,6 +50,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
         private String passwordSecretId;
         private String role;
         private String userName;
+        private String walletSecretId;
         public Builder() {}
         public Builder(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -54,6 +59,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     	      this.passwordSecretId = defaults.passwordSecretId;
     	      this.role = defaults.role;
     	      this.userName = defaults.userName;
+    	      this.walletSecretId = defaults.walletSecretId;
         }
 
         @CustomType.Setter
@@ -81,6 +87,11 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
             this.userName = Objects.requireNonNull(userName);
             return this;
         }
+        @CustomType.Setter
+        public Builder walletSecretId(String walletSecretId) {
+            this.walletSecretId = Objects.requireNonNull(walletSecretId);
+            return this;
+        }
         public GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail build() {
             final var o = new GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail();
             o.credentialSourceName = credentialSourceName;
@@ -88,6 +99,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
             o.passwordSecretId = passwordSecretId;
             o.role = role;
             o.userName = userName;
+            o.walletSecretId = walletSecretId;
             return o;
         }
     }

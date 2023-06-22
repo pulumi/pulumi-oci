@@ -75,6 +75,7 @@ namespace Pulumi.Oci.DataFlow
     ///                 Value = @var.Application_parameters_value,
     ///             },
     ///         },
+    ///         PoolId = oci_dataflow_pool.Test_pool.Id,
     ///         PrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
     ///         Type = @var.Application_type,
     ///         WarehouseBucketUri = @var.Application_warehouse_bucket_uri,
@@ -245,6 +246,12 @@ namespace Pulumi.Oci.DataFlow
         public Output<ImmutableArray<Outputs.ApplicationParameter>> Parameters { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+        /// </summary>
+        [Output("poolId")]
+        public Output<string> PoolId { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The OCID of a private endpoint.
         /// </summary>
         [Output("privateEndpointId")]
@@ -263,13 +270,13 @@ namespace Pulumi.Oci.DataFlow
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        /// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        /// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -505,6 +512,12 @@ namespace Pulumi.Oci.DataFlow
         }
 
         /// <summary>
+        /// (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+        /// </summary>
+        [Input("poolId")]
+        public Input<string>? PoolId { get; set; }
+
+        /// <summary>
         /// (Updatable) The OCID of a private endpoint.
         /// </summary>
         [Input("privateEndpointId")]
@@ -721,6 +734,12 @@ namespace Pulumi.Oci.DataFlow
         }
 
         /// <summary>
+        /// (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+        /// </summary>
+        [Input("poolId")]
+        public Input<string>? PoolId { get; set; }
+
+        /// <summary>
         /// (Updatable) The OCID of a private endpoint.
         /// </summary>
         [Input("privateEndpointId")]
@@ -739,13 +758,13 @@ namespace Pulumi.Oci.DataFlow
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        /// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        /// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

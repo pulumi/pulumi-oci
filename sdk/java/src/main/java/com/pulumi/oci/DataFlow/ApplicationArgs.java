@@ -369,6 +369,21 @@ public final class ApplicationArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     * 
+     */
+    @Import(name="poolId")
+    private @Nullable Output<String> poolId;
+
+    /**
+     * @return (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     * 
+     */
+    public Optional<Output<String>> poolId() {
+        return Optional.ofNullable(this.poolId);
+    }
+
+    /**
      * (Updatable) The OCID of a private endpoint.
      * 
      */
@@ -460,6 +475,7 @@ public final class ApplicationArgs extends com.pulumi.resources.ResourceArgs {
         this.metastoreId = $.metastoreId;
         this.numExecutors = $.numExecutors;
         this.parameters = $.parameters;
+        this.poolId = $.poolId;
         this.privateEndpointId = $.privateEndpointId;
         this.sparkVersion = $.sparkVersion;
         this.type = $.type;
@@ -985,6 +1001,27 @@ public final class ApplicationArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder parameters(ApplicationParameterArgs... parameters) {
             return parameters(List.of(parameters));
+        }
+
+        /**
+         * @param poolId (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder poolId(@Nullable Output<String> poolId) {
+            $.poolId = poolId;
+            return this;
+        }
+
+        /**
+         * @param poolId (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder poolId(String poolId) {
+            return poolId(Output.of(poolId));
         }
 
         /**

@@ -18,7 +18,7 @@ public final class DatabaseInsightConnectionDetailsHost {
      */
     private @Nullable String hostIp;
     /**
-     * @return Listener port number used for connection requests.
+     * @return Listener port number used for connection requests for rivate endpoint accessed db resource.
      * 
      */
     private @Nullable Integer port;
@@ -32,7 +32,7 @@ public final class DatabaseInsightConnectionDetailsHost {
         return Optional.ofNullable(this.hostIp);
     }
     /**
-     * @return Listener port number used for connection requests.
+     * @return Listener port number used for connection requests for rivate endpoint accessed db resource.
      * 
      */
     public Optional<Integer> port() {

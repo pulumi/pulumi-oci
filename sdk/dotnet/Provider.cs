@@ -192,6 +192,12 @@ namespace Pulumi.Oci
         public Input<string>? PrivateKeyPath { get; set; }
 
         /// <summary>
+        /// (Optional) flags to enable realm specific service endpoint.
+        /// </summary>
+        [Input("realmSpecificServiceEndpointTemplateEnabled", json: true)]
+        public Input<bool>? RealmSpecificServiceEndpointTemplateEnabled { get; set; }
+
+        /// <summary>
         /// (Required) The region for API connections (e.g. us-ashburn-1).
         /// </summary>
         [Input("region")]

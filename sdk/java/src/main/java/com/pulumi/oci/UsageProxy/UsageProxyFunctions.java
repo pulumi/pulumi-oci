@@ -7,6 +7,10 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.oci.UsageProxy.inputs.GetResourceQuotasArgs;
+import com.pulumi.oci.UsageProxy.inputs.GetResourceQuotasPlainArgs;
+import com.pulumi.oci.UsageProxy.inputs.GetResourcesArgs;
+import com.pulumi.oci.UsageProxy.inputs.GetResourcesPlainArgs;
 import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductArgs;
 import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductPlainArgs;
 import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductsArgs;
@@ -23,6 +27,10 @@ import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardArgs;
 import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardPlainArgs;
 import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardsArgs;
 import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardsPlainArgs;
+import com.pulumi.oci.UsageProxy.inputs.GetUsagelimitsArgs;
+import com.pulumi.oci.UsageProxy.inputs.GetUsagelimitsPlainArgs;
+import com.pulumi.oci.UsageProxy.outputs.GetResourceQuotasResult;
+import com.pulumi.oci.UsageProxy.outputs.GetResourcesResult;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionProductResult;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionProductsResult;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRedeemableUserResult;
@@ -31,10 +39,347 @@ import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRedemptionResult;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRedemptionsResult;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRewardResult;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRewardsResult;
+import com.pulumi.oci.UsageProxy.outputs.GetUsagelimitsResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class UsageProxyFunctions {
+    /**
+     * This data source provides the list of Resource Quotas in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the resource quota details under a tenancy
+     * &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetResourceQuotasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceQuotas = UsageProxyFunctions.getResourceQuotas(GetResourceQuotasArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .serviceName(oci_core_service.test_service().name())
+     *             .serviceEntitlement(var_.resource_quota_service_entitlement())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetResourceQuotasResult> getResourceQuotas(GetResourceQuotasArgs args) {
+        return getResourceQuotas(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Resource Quotas in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the resource quota details under a tenancy
+     * &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetResourceQuotasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceQuotas = UsageProxyFunctions.getResourceQuotas(GetResourceQuotasArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .serviceName(oci_core_service.test_service().name())
+     *             .serviceEntitlement(var_.resource_quota_service_entitlement())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetResourceQuotasResult> getResourceQuotasPlain(GetResourceQuotasPlainArgs args) {
+        return getResourceQuotasPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Resource Quotas in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the resource quota details under a tenancy
+     * &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetResourceQuotasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceQuotas = UsageProxyFunctions.getResourceQuotas(GetResourceQuotasArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .serviceName(oci_core_service.test_service().name())
+     *             .serviceEntitlement(var_.resource_quota_service_entitlement())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetResourceQuotasResult> getResourceQuotas(GetResourceQuotasArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:UsageProxy/getResourceQuotas:getResourceQuotas", TypeShape.of(GetResourceQuotasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Resource Quotas in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the resource quota details under a tenancy
+     * &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetResourceQuotasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceQuotas = UsageProxyFunctions.getResourceQuotas(GetResourceQuotasArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .serviceName(oci_core_service.test_service().name())
+     *             .serviceEntitlement(var_.resource_quota_service_entitlement())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetResourceQuotasResult> getResourceQuotasPlain(GetResourceQuotasPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:UsageProxy/getResourceQuotas:getResourceQuotas", TypeShape.of(GetResourceQuotasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Resources in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the resource details for a service
+     * &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResources = UsageProxyFunctions.getResources(GetResourcesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .serviceName(oci_core_service.test_service().name())
+     *             .entitlementId(oci_usage_proxy_entitlement.test_entitlement().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetResourcesResult> getResources(GetResourcesArgs args) {
+        return getResources(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Resources in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the resource details for a service
+     * &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResources = UsageProxyFunctions.getResources(GetResourcesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .serviceName(oci_core_service.test_service().name())
+     *             .entitlementId(oci_usage_proxy_entitlement.test_entitlement().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetResourcesResult> getResourcesPlain(GetResourcesPlainArgs args) {
+        return getResourcesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Resources in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the resource details for a service
+     * &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResources = UsageProxyFunctions.getResources(GetResourcesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .serviceName(oci_core_service.test_service().name())
+     *             .entitlementId(oci_usage_proxy_entitlement.test_entitlement().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetResourcesResult> getResources(GetResourcesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:UsageProxy/getResources:getResources", TypeShape.of(GetResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Resources in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the resource details for a service
+     * &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResources = UsageProxyFunctions.getResources(GetResourcesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .serviceName(oci_core_service.test_service().name())
+     *             .entitlementId(oci_usage_proxy_entitlement.test_entitlement().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetResourcesResult> getResourcesPlain(GetResourcesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:UsageProxy/getResources:getResources", TypeShape.of(GetResourcesResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Subscription Product resource in Oracle Cloud Infrastructure Usage Proxy service.
      * 
@@ -1346,5 +1691,177 @@ public final class UsageProxyFunctions {
      */
     public static CompletableFuture<GetSubscriptionRewardsResult> getSubscriptionRewardsPlain(GetSubscriptionRewardsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:UsageProxy/getSubscriptionRewards:getSubscriptionRewards", TypeShape.of(GetSubscriptionRewardsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Usagelimits in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the list of usage limit for the subscription ID and tenant ID.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetUsagelimitsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsagelimits = UsageProxyFunctions.getUsagelimits(GetUsagelimitsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .limitType(var_.usagelimit_limit_type())
+     *             .resourceType(var_.usagelimit_resource_type())
+     *             .serviceType(var_.usagelimit_service_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetUsagelimitsResult> getUsagelimits(GetUsagelimitsArgs args) {
+        return getUsagelimits(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Usagelimits in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the list of usage limit for the subscription ID and tenant ID.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetUsagelimitsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsagelimits = UsageProxyFunctions.getUsagelimits(GetUsagelimitsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .limitType(var_.usagelimit_limit_type())
+     *             .resourceType(var_.usagelimit_resource_type())
+     *             .serviceType(var_.usagelimit_service_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetUsagelimitsResult> getUsagelimitsPlain(GetUsagelimitsPlainArgs args) {
+        return getUsagelimitsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Usagelimits in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the list of usage limit for the subscription ID and tenant ID.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetUsagelimitsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsagelimits = UsageProxyFunctions.getUsagelimits(GetUsagelimitsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .limitType(var_.usagelimit_limit_type())
+     *             .resourceType(var_.usagelimit_resource_type())
+     *             .serviceType(var_.usagelimit_service_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetUsagelimitsResult> getUsagelimits(GetUsagelimitsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:UsageProxy/getUsagelimits:getUsagelimits", TypeShape.of(GetUsagelimitsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Usagelimits in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the list of usage limit for the subscription ID and tenant ID.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetUsagelimitsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsagelimits = UsageProxyFunctions.getUsagelimits(GetUsagelimitsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .limitType(var_.usagelimit_limit_type())
+     *             .resourceType(var_.usagelimit_resource_type())
+     *             .serviceType(var_.usagelimit_service_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetUsagelimitsResult> getUsagelimitsPlain(GetUsagelimitsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:UsageProxy/getUsagelimits:getUsagelimits", TypeShape.of(GetUsagelimitsResult.class), args, Utilities.withVersion(options));
     }
 }

@@ -40,6 +40,7 @@ class ApplicationArgs:
                  max_duration_in_minutes: Optional[pulumi.Input[str]] = None,
                  metastore_id: Optional[pulumi.Input[str]] = None,
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ApplicationParameterArgs']]]] = None,
+                 pool_id: Optional[pulumi.Input[str]] = None,
                  private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  warehouse_bucket_uri: Optional[pulumi.Input[str]] = None):
@@ -69,6 +70,7 @@ class ApplicationArgs:
         :param pulumi.Input[str] max_duration_in_minutes: (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
         :param pulumi.Input[str] metastore_id: (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.
         :param pulumi.Input[Sequence[pulumi.Input['ApplicationParameterArgs']]] parameters: (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
+        :param pulumi.Input[str] pool_id: (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         :param pulumi.Input[str] private_endpoint_id: (Updatable) The OCID of a private endpoint.
         :param pulumi.Input[str] type: The Spark application processing type.
         :param pulumi.Input[str] warehouse_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
@@ -118,6 +120,8 @@ class ApplicationArgs:
             pulumi.set(__self__, "metastore_id", metastore_id)
         if parameters is not None:
             pulumi.set(__self__, "parameters", parameters)
+        if pool_id is not None:
+            pulumi.set(__self__, "pool_id", pool_id)
         if private_endpoint_id is not None:
             pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         if type is not None:
@@ -414,6 +418,18 @@ class ApplicationArgs:
         pulumi.set(self, "parameters", value)
 
     @property
+    @pulumi.getter(name="poolId")
+    def pool_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+        """
+        return pulumi.get(self, "pool_id")
+
+    @pool_id.setter
+    def pool_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "pool_id", value)
+
+    @property
     @pulumi.getter(name="privateEndpointId")
     def private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -482,6 +498,7 @@ class _ApplicationState:
                  owner_principal_id: Optional[pulumi.Input[str]] = None,
                  owner_user_name: Optional[pulumi.Input[str]] = None,
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ApplicationParameterArgs']]]] = None,
+                 pool_id: Optional[pulumi.Input[str]] = None,
                  private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  spark_version: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -516,11 +533,12 @@ class _ApplicationState:
         :param pulumi.Input[str] owner_principal_id: The OCID of the user who created the resource.
         :param pulumi.Input[str] owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         :param pulumi.Input[Sequence[pulumi.Input['ApplicationParameterArgs']]] parameters: (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
+        :param pulumi.Input[str] pool_id: (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         :param pulumi.Input[str] private_endpoint_id: (Updatable) The OCID of a private endpoint.
         :param pulumi.Input[str] spark_version: (Updatable) The Spark version utilized to run the application.
         :param pulumi.Input[str] state: The current state of this application.
-        :param pulumi.Input[str] time_created: The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] time_updated: The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param pulumi.Input[str] time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         :param pulumi.Input[str] type: The Spark application processing type.
         :param pulumi.Input[str] warehouse_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
                
@@ -578,6 +596,8 @@ class _ApplicationState:
             pulumi.set(__self__, "owner_user_name", owner_user_name)
         if parameters is not None:
             pulumi.set(__self__, "parameters", parameters)
+        if pool_id is not None:
+            pulumi.set(__self__, "pool_id", pool_id)
         if private_endpoint_id is not None:
             pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         if spark_version is not None:
@@ -894,6 +914,18 @@ class _ApplicationState:
         pulumi.set(self, "parameters", value)
 
     @property
+    @pulumi.getter(name="poolId")
+    def pool_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+        """
+        return pulumi.get(self, "pool_id")
+
+    @pool_id.setter
+    def pool_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "pool_id", value)
+
+    @property
     @pulumi.getter(name="privateEndpointId")
     def private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -933,7 +965,7 @@ class _ApplicationState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -945,7 +977,7 @@ class _ApplicationState:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -1010,6 +1042,7 @@ class Application(pulumi.CustomResource):
                  metastore_id: Optional[pulumi.Input[str]] = None,
                  num_executors: Optional[pulumi.Input[int]] = None,
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ApplicationParameterArgs']]]]] = None,
+                 pool_id: Optional[pulumi.Input[str]] = None,
                  private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  spark_version: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
@@ -1067,6 +1100,7 @@ class Application(pulumi.CustomResource):
                 name=var["application_parameters_name"],
                 value=var["application_parameters_value"],
             )],
+            pool_id=oci_dataflow_pool["test_pool"]["id"],
             private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
             type=var["application_type"],
             warehouse_bucket_uri=var["application_warehouse_bucket_uri"])
@@ -1105,6 +1139,7 @@ class Application(pulumi.CustomResource):
         :param pulumi.Input[str] metastore_id: (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.
         :param pulumi.Input[int] num_executors: (Updatable) The number of executor VMs requested.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ApplicationParameterArgs']]]] parameters: (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
+        :param pulumi.Input[str] pool_id: (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         :param pulumi.Input[str] private_endpoint_id: (Updatable) The OCID of a private endpoint.
         :param pulumi.Input[str] spark_version: (Updatable) The Spark version utilized to run the application.
         :param pulumi.Input[str] type: The Spark application processing type.
@@ -1172,6 +1207,7 @@ class Application(pulumi.CustomResource):
                 name=var["application_parameters_name"],
                 value=var["application_parameters_value"],
             )],
+            pool_id=oci_dataflow_pool["test_pool"]["id"],
             private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
             type=var["application_type"],
             warehouse_bucket_uri=var["application_warehouse_bucket_uri"])
@@ -1223,6 +1259,7 @@ class Application(pulumi.CustomResource):
                  metastore_id: Optional[pulumi.Input[str]] = None,
                  num_executors: Optional[pulumi.Input[int]] = None,
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ApplicationParameterArgs']]]]] = None,
+                 pool_id: Optional[pulumi.Input[str]] = None,
                  private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  spark_version: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
@@ -1271,6 +1308,7 @@ class Application(pulumi.CustomResource):
                 raise TypeError("Missing required property 'num_executors'")
             __props__.__dict__["num_executors"] = num_executors
             __props__.__dict__["parameters"] = parameters
+            __props__.__dict__["pool_id"] = pool_id
             __props__.__dict__["private_endpoint_id"] = private_endpoint_id
             if spark_version is None and not opts.urn:
                 raise TypeError("Missing required property 'spark_version'")
@@ -1317,6 +1355,7 @@ class Application(pulumi.CustomResource):
             owner_principal_id: Optional[pulumi.Input[str]] = None,
             owner_user_name: Optional[pulumi.Input[str]] = None,
             parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ApplicationParameterArgs']]]]] = None,
+            pool_id: Optional[pulumi.Input[str]] = None,
             private_endpoint_id: Optional[pulumi.Input[str]] = None,
             spark_version: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -1356,11 +1395,12 @@ class Application(pulumi.CustomResource):
         :param pulumi.Input[str] owner_principal_id: The OCID of the user who created the resource.
         :param pulumi.Input[str] owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ApplicationParameterArgs']]]] parameters: (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
+        :param pulumi.Input[str] pool_id: (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         :param pulumi.Input[str] private_endpoint_id: (Updatable) The OCID of a private endpoint.
         :param pulumi.Input[str] spark_version: (Updatable) The Spark version utilized to run the application.
         :param pulumi.Input[str] state: The current state of this application.
-        :param pulumi.Input[str] time_created: The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] time_updated: The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param pulumi.Input[str] time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         :param pulumi.Input[str] type: The Spark application processing type.
         :param pulumi.Input[str] warehouse_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
                
@@ -1397,6 +1437,7 @@ class Application(pulumi.CustomResource):
         __props__.__dict__["owner_principal_id"] = owner_principal_id
         __props__.__dict__["owner_user_name"] = owner_user_name
         __props__.__dict__["parameters"] = parameters
+        __props__.__dict__["pool_id"] = pool_id
         __props__.__dict__["private_endpoint_id"] = private_endpoint_id
         __props__.__dict__["spark_version"] = spark_version
         __props__.__dict__["state"] = state
@@ -1607,6 +1648,14 @@ class Application(pulumi.CustomResource):
         return pulumi.get(self, "parameters")
 
     @property
+    @pulumi.getter(name="poolId")
+    def pool_id(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+        """
+        return pulumi.get(self, "pool_id")
+
+    @property
     @pulumi.getter(name="privateEndpointId")
     def private_endpoint_id(self) -> pulumi.Output[str]:
         """
@@ -1634,7 +1683,7 @@ class Application(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -1642,7 +1691,7 @@ class Application(pulumi.CustomResource):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[str]:
         """
-        The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 

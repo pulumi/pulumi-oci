@@ -72,6 +72,7 @@ import (
 //						Value: pulumi.Any(_var.Application_parameters_value),
 //					},
 //				},
+//				PoolId:             pulumi.Any(oci_dataflow_pool.Test_pool.Id),
 //				PrivateEndpointId:  pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
 //				Type:               pulumi.Any(_var.Application_type),
 //				WarehouseBucketUri: pulumi.Any(_var.Application_warehouse_bucket_uri),
@@ -147,15 +148,17 @@ type Application struct {
 	OwnerUserName pulumi.StringOutput `pulumi:"ownerUserName"`
 	// (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
 	Parameters ApplicationParameterArrayOutput `pulumi:"parameters"`
+	// (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+	PoolId pulumi.StringOutput `pulumi:"poolId"`
 	// (Updatable) The OCID of a private endpoint.
 	PrivateEndpointId pulumi.StringOutput `pulumi:"privateEndpointId"`
 	// (Updatable) The Spark version utilized to run the application.
 	SparkVersion pulumi.StringOutput `pulumi:"sparkVersion"`
 	// The current state of this application.
 	State pulumi.StringOutput `pulumi:"state"`
-	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// The Spark application processing type.
 	Type pulumi.StringOutput `pulumi:"type"`
@@ -266,15 +269,17 @@ type applicationState struct {
 	OwnerUserName *string `pulumi:"ownerUserName"`
 	// (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
 	Parameters []ApplicationParameter `pulumi:"parameters"`
+	// (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+	PoolId *string `pulumi:"poolId"`
 	// (Updatable) The OCID of a private endpoint.
 	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// (Updatable) The Spark version utilized to run the application.
 	SparkVersion *string `pulumi:"sparkVersion"`
 	// The current state of this application.
 	State *string `pulumi:"state"`
-	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The Spark application processing type.
 	Type *string `pulumi:"type"`
@@ -336,15 +341,17 @@ type ApplicationState struct {
 	OwnerUserName pulumi.StringPtrInput
 	// (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
 	Parameters ApplicationParameterArrayInput
+	// (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+	PoolId pulumi.StringPtrInput
 	// (Updatable) The OCID of a private endpoint.
 	PrivateEndpointId pulumi.StringPtrInput
 	// (Updatable) The Spark version utilized to run the application.
 	SparkVersion pulumi.StringPtrInput
 	// The current state of this application.
 	State pulumi.StringPtrInput
-	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
-	// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeUpdated pulumi.StringPtrInput
 	// The Spark application processing type.
 	Type pulumi.StringPtrInput
@@ -406,6 +413,8 @@ type applicationArgs struct {
 	NumExecutors int `pulumi:"numExecutors"`
 	// (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
 	Parameters []ApplicationParameter `pulumi:"parameters"`
+	// (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+	PoolId *string `pulumi:"poolId"`
 	// (Updatable) The OCID of a private endpoint.
 	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// (Updatable) The Spark version utilized to run the application.
@@ -467,6 +476,8 @@ type ApplicationArgs struct {
 	NumExecutors pulumi.IntInput
 	// (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
 	Parameters ApplicationParameterArrayInput
+	// (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+	PoolId pulumi.StringPtrInput
 	// (Updatable) The OCID of a private endpoint.
 	PrivateEndpointId pulumi.StringPtrInput
 	// (Updatable) The Spark version utilized to run the application.
@@ -692,6 +703,11 @@ func (o ApplicationOutput) Parameters() ApplicationParameterArrayOutput {
 	return o.ApplyT(func(v *Application) ApplicationParameterArrayOutput { return v.Parameters }).(ApplicationParameterArrayOutput)
 }
 
+// (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+func (o ApplicationOutput) PoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.PoolId }).(pulumi.StringOutput)
+}
+
 // (Updatable) The OCID of a private endpoint.
 func (o ApplicationOutput) PrivateEndpointId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.PrivateEndpointId }).(pulumi.StringOutput)
@@ -707,12 +723,12 @@ func (o ApplicationOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 func (o ApplicationOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 func (o ApplicationOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }

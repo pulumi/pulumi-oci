@@ -22,7 +22,7 @@ class GetFunctionResult:
     """
     A collection of values returned by getFunction.
     """
-    def __init__(__self__, application_id=None, compartment_id=None, config=None, defined_tags=None, display_name=None, freeform_tags=None, function_id=None, id=None, image=None, image_digest=None, invoke_endpoint=None, memory_in_mbs=None, provisioned_concurrency_configs=None, source_details=None, state=None, time_created=None, time_updated=None, timeout_in_seconds=None, trace_configs=None):
+    def __init__(__self__, application_id=None, compartment_id=None, config=None, defined_tags=None, display_name=None, freeform_tags=None, function_id=None, id=None, image=None, image_digest=None, invoke_endpoint=None, memory_in_mbs=None, provisioned_concurrency_configs=None, shape=None, source_details=None, state=None, time_created=None, time_updated=None, timeout_in_seconds=None, trace_configs=None):
         if application_id and not isinstance(application_id, str):
             raise TypeError("Expected argument 'application_id' to be a str")
         pulumi.set(__self__, "application_id", application_id)
@@ -62,6 +62,9 @@ class GetFunctionResult:
         if provisioned_concurrency_configs and not isinstance(provisioned_concurrency_configs, list):
             raise TypeError("Expected argument 'provisioned_concurrency_configs' to be a list")
         pulumi.set(__self__, "provisioned_concurrency_configs", provisioned_concurrency_configs)
+        if shape and not isinstance(shape, str):
+            raise TypeError("Expected argument 'shape' to be a str")
+        pulumi.set(__self__, "shape", shape)
         if source_details and not isinstance(source_details, list):
             raise TypeError("Expected argument 'source_details' to be a list")
         pulumi.set(__self__, "source_details", source_details)
@@ -183,6 +186,14 @@ class GetFunctionResult:
         return pulumi.get(self, "provisioned_concurrency_configs")
 
     @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+        """
+        return pulumi.get(self, "shape")
+
+    @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Sequence['outputs.GetFunctionSourceDetailResult']:
         """
@@ -250,6 +261,7 @@ class AwaitableGetFunctionResult(GetFunctionResult):
             invoke_endpoint=self.invoke_endpoint,
             memory_in_mbs=self.memory_in_mbs,
             provisioned_concurrency_configs=self.provisioned_concurrency_configs,
+            shape=self.shape,
             source_details=self.source_details,
             state=self.state,
             time_created=self.time_created,
@@ -296,6 +308,7 @@ def get_function(function_id: Optional[str] = None,
         invoke_endpoint=__ret__.invoke_endpoint,
         memory_in_mbs=__ret__.memory_in_mbs,
         provisioned_concurrency_configs=__ret__.provisioned_concurrency_configs,
+        shape=__ret__.shape,
         source_details=__ret__.source_details,
         state=__ret__.state,
         time_created=__ret__.time_created,

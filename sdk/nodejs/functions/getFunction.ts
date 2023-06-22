@@ -94,6 +94,10 @@ export interface GetFunctionResult {
      */
     readonly provisionedConcurrencyConfigs: outputs.Functions.GetFunctionProvisionedConcurrencyConfig[];
     /**
+     * The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+     */
+    readonly shape: string;
+    /**
      * The source details for the Function. The function can be created from various sources.
      */
     readonly sourceDetails: outputs.Functions.GetFunctionSourceDetail[];

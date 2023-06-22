@@ -6,6 +6,7 @@ package com.pulumi.oci.DataLabellingService.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetDatasetFormatDetail;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetDatasetSourceDetail;
+import com.pulumi.oci.DataLabellingService.outputs.GetDatasetInitialImportDatasetConfiguration;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetInitialRecordGenerationConfiguration;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetLabelSet;
 import java.lang.Object;
@@ -16,6 +17,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDatasetResult {
+    /**
+     * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    private Map<String,Object> additionalProperties;
     /**
      * @return The annotation format name required for labeling records.
      * 
@@ -63,6 +69,11 @@ public final class GetDatasetResult {
      */
     private String id;
     /**
+     * @return Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+     * 
+     */
+    private List<GetDatasetInitialImportDatasetConfiguration> initialImportDatasetConfigurations;
+    /**
      * @return The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
@@ -83,6 +94,11 @@ public final class GetDatasetResult {
      */
     private String lifecycleDetails;
     /**
+     * @return The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+     * 
+     */
+    private String lifecycleSubstate;
+    /**
      * @return The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
      * 
      */
@@ -99,6 +115,13 @@ public final class GetDatasetResult {
     private String timeUpdated;
 
     private GetDatasetResult() {}
+    /**
+     * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Map<String,Object> additionalProperties() {
+        return this.additionalProperties;
+    }
     /**
      * @return The annotation format name required for labeling records.
      * 
@@ -166,6 +189,13 @@ public final class GetDatasetResult {
         return this.id;
     }
     /**
+     * @return Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+     * 
+     */
+    public List<GetDatasetInitialImportDatasetConfiguration> initialImportDatasetConfigurations() {
+        return this.initialImportDatasetConfigurations;
+    }
+    /**
      * @return The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
@@ -192,6 +222,13 @@ public final class GetDatasetResult {
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+     * 
+     */
+    public String lifecycleSubstate() {
+        return this.lifecycleSubstate;
     }
     /**
      * @return The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
@@ -224,6 +261,7 @@ public final class GetDatasetResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Map<String,Object> additionalProperties;
         private String annotationFormat;
         private String compartmentId;
         private List<GetDatasetDatasetFormatDetail> datasetFormatDetails;
@@ -234,16 +272,19 @@ public final class GetDatasetResult {
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private List<GetDatasetInitialImportDatasetConfiguration> initialImportDatasetConfigurations;
         private List<GetDatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations;
         private List<GetDatasetLabelSet> labelSets;
         private String labelingInstructions;
         private String lifecycleDetails;
+        private String lifecycleSubstate;
         private String state;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
         public Builder(GetDatasetResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.additionalProperties = defaults.additionalProperties;
     	      this.annotationFormat = defaults.annotationFormat;
     	      this.compartmentId = defaults.compartmentId;
     	      this.datasetFormatDetails = defaults.datasetFormatDetails;
@@ -254,15 +295,22 @@ public final class GetDatasetResult {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.initialImportDatasetConfigurations = defaults.initialImportDatasetConfigurations;
     	      this.initialRecordGenerationConfigurations = defaults.initialRecordGenerationConfigurations;
     	      this.labelSets = defaults.labelSets;
     	      this.labelingInstructions = defaults.labelingInstructions;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.lifecycleSubstate = defaults.lifecycleSubstate;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder additionalProperties(Map<String,Object> additionalProperties) {
+            this.additionalProperties = Objects.requireNonNull(additionalProperties);
+            return this;
+        }
         @CustomType.Setter
         public Builder annotationFormat(String annotationFormat) {
             this.annotationFormat = Objects.requireNonNull(annotationFormat);
@@ -320,6 +368,14 @@ public final class GetDatasetResult {
             return this;
         }
         @CustomType.Setter
+        public Builder initialImportDatasetConfigurations(List<GetDatasetInitialImportDatasetConfiguration> initialImportDatasetConfigurations) {
+            this.initialImportDatasetConfigurations = Objects.requireNonNull(initialImportDatasetConfigurations);
+            return this;
+        }
+        public Builder initialImportDatasetConfigurations(GetDatasetInitialImportDatasetConfiguration... initialImportDatasetConfigurations) {
+            return initialImportDatasetConfigurations(List.of(initialImportDatasetConfigurations));
+        }
+        @CustomType.Setter
         public Builder initialRecordGenerationConfigurations(List<GetDatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations) {
             this.initialRecordGenerationConfigurations = Objects.requireNonNull(initialRecordGenerationConfigurations);
             return this;
@@ -346,6 +402,11 @@ public final class GetDatasetResult {
             return this;
         }
         @CustomType.Setter
+        public Builder lifecycleSubstate(String lifecycleSubstate) {
+            this.lifecycleSubstate = Objects.requireNonNull(lifecycleSubstate);
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -362,6 +423,7 @@ public final class GetDatasetResult {
         }
         public GetDatasetResult build() {
             final var o = new GetDatasetResult();
+            o.additionalProperties = additionalProperties;
             o.annotationFormat = annotationFormat;
             o.compartmentId = compartmentId;
             o.datasetFormatDetails = datasetFormatDetails;
@@ -372,10 +434,12 @@ public final class GetDatasetResult {
             o.displayName = displayName;
             o.freeformTags = freeformTags;
             o.id = id;
+            o.initialImportDatasetConfigurations = initialImportDatasetConfigurations;
             o.initialRecordGenerationConfigurations = initialRecordGenerationConfigurations;
             o.labelSets = labelSets;
             o.labelingInstructions = labelingInstructions;
             o.lifecycleDetails = lifecycleDetails;
+            o.lifecycleSubstate = lifecycleSubstate;
             o.state = state;
             o.timeCreated = timeCreated;
             o.timeUpdated = timeUpdated;

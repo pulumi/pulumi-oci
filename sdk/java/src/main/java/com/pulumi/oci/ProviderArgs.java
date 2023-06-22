@@ -151,6 +151,21 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Optional) flags to enable realm specific service endpoint.
+     * 
+     */
+    @Import(name="realmSpecificServiceEndpointTemplateEnabled", json=true)
+    private @Nullable Output<Boolean> realmSpecificServiceEndpointTemplateEnabled;
+
+    /**
+     * @return (Optional) flags to enable realm specific service endpoint.
+     * 
+     */
+    public Optional<Output<Boolean>> realmSpecificServiceEndpointTemplateEnabled() {
+        return Optional.ofNullable(this.realmSpecificServiceEndpointTemplateEnabled);
+    }
+
+    /**
      * (Required) The region for API connections (e.g. us-ashburn-1).
      * 
      */
@@ -229,6 +244,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         this.privateKey = $.privateKey;
         this.privateKeyPassword = $.privateKeyPassword;
         this.privateKeyPath = $.privateKeyPath;
+        this.realmSpecificServiceEndpointTemplateEnabled = $.realmSpecificServiceEndpointTemplateEnabled;
         this.region = $.region;
         this.retryDurationSeconds = $.retryDurationSeconds;
         this.tenancyOcid = $.tenancyOcid;
@@ -442,6 +458,27 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder privateKeyPath(String privateKeyPath) {
             return privateKeyPath(Output.of(privateKeyPath));
+        }
+
+        /**
+         * @param realmSpecificServiceEndpointTemplateEnabled (Optional) flags to enable realm specific service endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder realmSpecificServiceEndpointTemplateEnabled(@Nullable Output<Boolean> realmSpecificServiceEndpointTemplateEnabled) {
+            $.realmSpecificServiceEndpointTemplateEnabled = realmSpecificServiceEndpointTemplateEnabled;
+            return this;
+        }
+
+        /**
+         * @param realmSpecificServiceEndpointTemplateEnabled (Optional) flags to enable realm specific service endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder realmSpecificServiceEndpointTemplateEnabled(Boolean realmSpecificServiceEndpointTemplateEnabled) {
+            return realmSpecificServiceEndpointTemplateEnabled(Output.of(realmSpecificServiceEndpointTemplateEnabled));
         }
 
         /**

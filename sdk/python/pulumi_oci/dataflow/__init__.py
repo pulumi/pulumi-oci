@@ -10,6 +10,8 @@ from .get_application import *
 from .get_applications import *
 from .get_invoke_run import *
 from .get_invoke_runs import *
+from .get_pool import *
+from .get_pools import *
 from .get_private_endpoint import *
 from .get_private_endpoints import *
 from .get_run_log import *
@@ -17,6 +19,7 @@ from .get_run_logs import *
 from .get_run_statement import *
 from .get_run_statements import *
 from .invoke_run import *
+from .pool import *
 from .private_endpoint import *
 from .run_statement import *
 from ._inputs import *

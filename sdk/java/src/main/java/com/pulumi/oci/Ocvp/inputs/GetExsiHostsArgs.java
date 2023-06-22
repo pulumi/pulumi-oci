@@ -6,6 +6,7 @@ package com.pulumi.oci.Ocvp.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Ocvp.inputs.GetExsiHostsFilterArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -16,6 +17,21 @@ import javax.annotation.Nullable;
 public final class GetExsiHostsArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetExsiHostsArgs Empty = new GetExsiHostsArgs();
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
+     * 
+     */
+    @Import(name="compartmentId")
+    private @Nullable Output<String> compartmentId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
+     * 
+     */
+    public Optional<Output<String>> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
@@ -55,6 +71,36 @@ public final class GetExsiHostsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.
+     * 
+     */
+    @Import(name="isBillingDonorsOnly")
+    private @Nullable Output<Boolean> isBillingDonorsOnly;
+
+    /**
+     * @return If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.
+     * 
+     */
+    public Optional<Output<Boolean>> isBillingDonorsOnly() {
+        return Optional.ofNullable(this.isBillingDonorsOnly);
+    }
+
+    /**
+     * If this flag/param is set to True, we return only active hosts.
+     * 
+     */
+    @Import(name="isSwapBillingOnly")
+    private @Nullable Output<Boolean> isSwapBillingOnly;
+
+    /**
+     * @return If this flag/param is set to True, we return only active hosts.
+     * 
+     */
+    public Optional<Output<Boolean>> isSwapBillingOnly() {
+        return Optional.ofNullable(this.isSwapBillingOnly);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
      * 
      */
@@ -87,9 +133,12 @@ public final class GetExsiHostsArgs extends com.pulumi.resources.InvokeArgs {
     private GetExsiHostsArgs() {}
 
     private GetExsiHostsArgs(GetExsiHostsArgs $) {
+        this.compartmentId = $.compartmentId;
         this.computeInstanceId = $.computeInstanceId;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.isBillingDonorsOnly = $.isBillingDonorsOnly;
+        this.isSwapBillingOnly = $.isSwapBillingOnly;
         this.sddcId = $.sddcId;
         this.state = $.state;
     }
@@ -110,6 +159,27 @@ public final class GetExsiHostsArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder(GetExsiHostsArgs defaults) {
             $ = new GetExsiHostsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(@Nullable Output<String> compartmentId) {
+            $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(String compartmentId) {
+            return compartmentId(Output.of(compartmentId));
         }
 
         /**
@@ -165,6 +235,48 @@ public final class GetExsiHostsArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder filters(GetExsiHostsFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param isBillingDonorsOnly If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isBillingDonorsOnly(@Nullable Output<Boolean> isBillingDonorsOnly) {
+            $.isBillingDonorsOnly = isBillingDonorsOnly;
+            return this;
+        }
+
+        /**
+         * @param isBillingDonorsOnly If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isBillingDonorsOnly(Boolean isBillingDonorsOnly) {
+            return isBillingDonorsOnly(Output.of(isBillingDonorsOnly));
+        }
+
+        /**
+         * @param isSwapBillingOnly If this flag/param is set to True, we return only active hosts.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSwapBillingOnly(@Nullable Output<Boolean> isSwapBillingOnly) {
+            $.isSwapBillingOnly = isSwapBillingOnly;
+            return this;
+        }
+
+        /**
+         * @param isSwapBillingOnly If this flag/param is set to True, we return only active hosts.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSwapBillingOnly(Boolean isSwapBillingOnly) {
+            return isSwapBillingOnly(Output.of(isSwapBillingOnly));
         }
 
         /**

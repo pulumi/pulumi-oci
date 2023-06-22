@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string? HostIp;
         /// <summary>
-        /// Listener port number used for connection requests.
+        /// Listener port number used for connection requests for rivate endpoint accessed db resource.
         /// </summary>
         public readonly int? Port;
 

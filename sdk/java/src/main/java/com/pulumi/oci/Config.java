@@ -77,6 +77,13 @@ public final class Config {
         return Codegen.stringProp("privateKeyPath").config(config).get();
     }
 /**
+ * (Optional) flags to enable realm specific service endpoint.
+ * 
+ */
+    public Optional<Boolean> realmSpecificServiceEndpointTemplateEnabled() {
+        return Codegen.booleanProp("realmSpecificServiceEndpointTemplateEnabled").config(config).get();
+    }
+/**
  * (Required) The region for API connections (e.g. us-ashburn-1).
  * 
  */

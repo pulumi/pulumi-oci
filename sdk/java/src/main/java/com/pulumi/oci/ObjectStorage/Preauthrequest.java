@@ -121,6 +121,20 @@ public class Preauthrequest extends com.pulumi.resources.CustomResource {
         return this.bucketListingAction;
     }
     /**
+     * The full Path for the object.
+     * 
+     */
+    @Export(name="fullPath", type=String.class, parameters={})
+    private Output<String> fullPath;
+
+    /**
+     * @return The full Path for the object.
+     * 
+     */
+    public Output<String> fullPath() {
+        return this.fullPath;
+    }
+    /**
      * A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
      * 
      */

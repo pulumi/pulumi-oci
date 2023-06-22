@@ -1158,6 +1158,649 @@ func (o InvokeRunParameterArrayOutput) Index(i pulumi.IntInput) InvokeRunParamet
 	}).(InvokeRunParameterOutput)
 }
 
+type PoolConfiguration struct {
+	// (Updatable) Maximum number of compute instances in the pool for a given compute shape.
+	Max *int `pulumi:"max"`
+	// (Updatable) Minimum number of compute instances in the pool for a given compute shape.
+	Min *int `pulumi:"min"`
+	// (Updatable) The compute shape of the resources you would like to provision.
+	Shape *string `pulumi:"shape"`
+	// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+	ShapeConfig *PoolConfigurationShapeConfig `pulumi:"shapeConfig"`
+}
+
+// PoolConfigurationInput is an input type that accepts PoolConfigurationArgs and PoolConfigurationOutput values.
+// You can construct a concrete instance of `PoolConfigurationInput` via:
+//
+//	PoolConfigurationArgs{...}
+type PoolConfigurationInput interface {
+	pulumi.Input
+
+	ToPoolConfigurationOutput() PoolConfigurationOutput
+	ToPoolConfigurationOutputWithContext(context.Context) PoolConfigurationOutput
+}
+
+type PoolConfigurationArgs struct {
+	// (Updatable) Maximum number of compute instances in the pool for a given compute shape.
+	Max pulumi.IntPtrInput `pulumi:"max"`
+	// (Updatable) Minimum number of compute instances in the pool for a given compute shape.
+	Min pulumi.IntPtrInput `pulumi:"min"`
+	// (Updatable) The compute shape of the resources you would like to provision.
+	Shape pulumi.StringPtrInput `pulumi:"shape"`
+	// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+	ShapeConfig PoolConfigurationShapeConfigPtrInput `pulumi:"shapeConfig"`
+}
+
+func (PoolConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PoolConfiguration)(nil)).Elem()
+}
+
+func (i PoolConfigurationArgs) ToPoolConfigurationOutput() PoolConfigurationOutput {
+	return i.ToPoolConfigurationOutputWithContext(context.Background())
+}
+
+func (i PoolConfigurationArgs) ToPoolConfigurationOutputWithContext(ctx context.Context) PoolConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PoolConfigurationOutput)
+}
+
+// PoolConfigurationArrayInput is an input type that accepts PoolConfigurationArray and PoolConfigurationArrayOutput values.
+// You can construct a concrete instance of `PoolConfigurationArrayInput` via:
+//
+//	PoolConfigurationArray{ PoolConfigurationArgs{...} }
+type PoolConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToPoolConfigurationArrayOutput() PoolConfigurationArrayOutput
+	ToPoolConfigurationArrayOutputWithContext(context.Context) PoolConfigurationArrayOutput
+}
+
+type PoolConfigurationArray []PoolConfigurationInput
+
+func (PoolConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PoolConfiguration)(nil)).Elem()
+}
+
+func (i PoolConfigurationArray) ToPoolConfigurationArrayOutput() PoolConfigurationArrayOutput {
+	return i.ToPoolConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i PoolConfigurationArray) ToPoolConfigurationArrayOutputWithContext(ctx context.Context) PoolConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PoolConfigurationArrayOutput)
+}
+
+type PoolConfigurationOutput struct{ *pulumi.OutputState }
+
+func (PoolConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PoolConfiguration)(nil)).Elem()
+}
+
+func (o PoolConfigurationOutput) ToPoolConfigurationOutput() PoolConfigurationOutput {
+	return o
+}
+
+func (o PoolConfigurationOutput) ToPoolConfigurationOutputWithContext(ctx context.Context) PoolConfigurationOutput {
+	return o
+}
+
+// (Updatable) Maximum number of compute instances in the pool for a given compute shape.
+func (o PoolConfigurationOutput) Max() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PoolConfiguration) *int { return v.Max }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Minimum number of compute instances in the pool for a given compute shape.
+func (o PoolConfigurationOutput) Min() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PoolConfiguration) *int { return v.Min }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The compute shape of the resources you would like to provision.
+func (o PoolConfigurationOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PoolConfiguration) *string { return v.Shape }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+func (o PoolConfigurationOutput) ShapeConfig() PoolConfigurationShapeConfigPtrOutput {
+	return o.ApplyT(func(v PoolConfiguration) *PoolConfigurationShapeConfig { return v.ShapeConfig }).(PoolConfigurationShapeConfigPtrOutput)
+}
+
+type PoolConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (PoolConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PoolConfiguration)(nil)).Elem()
+}
+
+func (o PoolConfigurationArrayOutput) ToPoolConfigurationArrayOutput() PoolConfigurationArrayOutput {
+	return o
+}
+
+func (o PoolConfigurationArrayOutput) ToPoolConfigurationArrayOutputWithContext(ctx context.Context) PoolConfigurationArrayOutput {
+	return o
+}
+
+func (o PoolConfigurationArrayOutput) Index(i pulumi.IntInput) PoolConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PoolConfiguration {
+		return vs[0].([]PoolConfiguration)[vs[1].(int)]
+	}).(PoolConfigurationOutput)
+}
+
+type PoolConfigurationShapeConfig struct {
+	// (Updatable) The amount of memory used for the driver or executors.
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
+	// (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus *float64 `pulumi:"ocpus"`
+}
+
+// PoolConfigurationShapeConfigInput is an input type that accepts PoolConfigurationShapeConfigArgs and PoolConfigurationShapeConfigOutput values.
+// You can construct a concrete instance of `PoolConfigurationShapeConfigInput` via:
+//
+//	PoolConfigurationShapeConfigArgs{...}
+type PoolConfigurationShapeConfigInput interface {
+	pulumi.Input
+
+	ToPoolConfigurationShapeConfigOutput() PoolConfigurationShapeConfigOutput
+	ToPoolConfigurationShapeConfigOutputWithContext(context.Context) PoolConfigurationShapeConfigOutput
+}
+
+type PoolConfigurationShapeConfigArgs struct {
+	// (Updatable) The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
+	// (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
+}
+
+func (PoolConfigurationShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PoolConfigurationShapeConfig)(nil)).Elem()
+}
+
+func (i PoolConfigurationShapeConfigArgs) ToPoolConfigurationShapeConfigOutput() PoolConfigurationShapeConfigOutput {
+	return i.ToPoolConfigurationShapeConfigOutputWithContext(context.Background())
+}
+
+func (i PoolConfigurationShapeConfigArgs) ToPoolConfigurationShapeConfigOutputWithContext(ctx context.Context) PoolConfigurationShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PoolConfigurationShapeConfigOutput)
+}
+
+func (i PoolConfigurationShapeConfigArgs) ToPoolConfigurationShapeConfigPtrOutput() PoolConfigurationShapeConfigPtrOutput {
+	return i.ToPoolConfigurationShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i PoolConfigurationShapeConfigArgs) ToPoolConfigurationShapeConfigPtrOutputWithContext(ctx context.Context) PoolConfigurationShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PoolConfigurationShapeConfigOutput).ToPoolConfigurationShapeConfigPtrOutputWithContext(ctx)
+}
+
+// PoolConfigurationShapeConfigPtrInput is an input type that accepts PoolConfigurationShapeConfigArgs, PoolConfigurationShapeConfigPtr and PoolConfigurationShapeConfigPtrOutput values.
+// You can construct a concrete instance of `PoolConfigurationShapeConfigPtrInput` via:
+//
+//	        PoolConfigurationShapeConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type PoolConfigurationShapeConfigPtrInput interface {
+	pulumi.Input
+
+	ToPoolConfigurationShapeConfigPtrOutput() PoolConfigurationShapeConfigPtrOutput
+	ToPoolConfigurationShapeConfigPtrOutputWithContext(context.Context) PoolConfigurationShapeConfigPtrOutput
+}
+
+type poolConfigurationShapeConfigPtrType PoolConfigurationShapeConfigArgs
+
+func PoolConfigurationShapeConfigPtr(v *PoolConfigurationShapeConfigArgs) PoolConfigurationShapeConfigPtrInput {
+	return (*poolConfigurationShapeConfigPtrType)(v)
+}
+
+func (*poolConfigurationShapeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PoolConfigurationShapeConfig)(nil)).Elem()
+}
+
+func (i *poolConfigurationShapeConfigPtrType) ToPoolConfigurationShapeConfigPtrOutput() PoolConfigurationShapeConfigPtrOutput {
+	return i.ToPoolConfigurationShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *poolConfigurationShapeConfigPtrType) ToPoolConfigurationShapeConfigPtrOutputWithContext(ctx context.Context) PoolConfigurationShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PoolConfigurationShapeConfigPtrOutput)
+}
+
+type PoolConfigurationShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (PoolConfigurationShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PoolConfigurationShapeConfig)(nil)).Elem()
+}
+
+func (o PoolConfigurationShapeConfigOutput) ToPoolConfigurationShapeConfigOutput() PoolConfigurationShapeConfigOutput {
+	return o
+}
+
+func (o PoolConfigurationShapeConfigOutput) ToPoolConfigurationShapeConfigOutputWithContext(ctx context.Context) PoolConfigurationShapeConfigOutput {
+	return o
+}
+
+func (o PoolConfigurationShapeConfigOutput) ToPoolConfigurationShapeConfigPtrOutput() PoolConfigurationShapeConfigPtrOutput {
+	return o.ToPoolConfigurationShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o PoolConfigurationShapeConfigOutput) ToPoolConfigurationShapeConfigPtrOutputWithContext(ctx context.Context) PoolConfigurationShapeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PoolConfigurationShapeConfig) *PoolConfigurationShapeConfig {
+		return &v
+	}).(PoolConfigurationShapeConfigPtrOutput)
+}
+
+// (Updatable) The amount of memory used for the driver or executors.
+func (o PoolConfigurationShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PoolConfigurationShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o PoolConfigurationShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PoolConfigurationShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
+}
+
+type PoolConfigurationShapeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (PoolConfigurationShapeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PoolConfigurationShapeConfig)(nil)).Elem()
+}
+
+func (o PoolConfigurationShapeConfigPtrOutput) ToPoolConfigurationShapeConfigPtrOutput() PoolConfigurationShapeConfigPtrOutput {
+	return o
+}
+
+func (o PoolConfigurationShapeConfigPtrOutput) ToPoolConfigurationShapeConfigPtrOutputWithContext(ctx context.Context) PoolConfigurationShapeConfigPtrOutput {
+	return o
+}
+
+func (o PoolConfigurationShapeConfigPtrOutput) Elem() PoolConfigurationShapeConfigOutput {
+	return o.ApplyT(func(v *PoolConfigurationShapeConfig) PoolConfigurationShapeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret PoolConfigurationShapeConfig
+		return ret
+	}).(PoolConfigurationShapeConfigOutput)
+}
+
+// (Updatable) The amount of memory used for the driver or executors.
+func (o PoolConfigurationShapeConfigPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *PoolConfigurationShapeConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o PoolConfigurationShapeConfigPtrOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *PoolConfigurationShapeConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.Float64PtrOutput)
+}
+
+type PoolPoolMetric struct {
+	// The number of runs that are currently running that are using this pool.
+	ActiveRunsCount *string `pulumi:"activeRunsCount"`
+	// A count of the nodes that are currently being used for each shape in this pool.
+	ActivelyUsedNodeCounts []PoolPoolMetricActivelyUsedNodeCount `pulumi:"activelyUsedNodeCounts"`
+	// The last time the mertics were updated for this.
+	TimeLastMetricsUpdated *string `pulumi:"timeLastMetricsUpdated"`
+	// The last time this pool was started.
+	TimeLastStarted *string `pulumi:"timeLastStarted"`
+	// The last time this pool was stopped.
+	TimeLastStopped *string `pulumi:"timeLastStopped"`
+	// The last time a run used this pool.
+	TimeLastUsed *string `pulumi:"timeLastUsed"`
+}
+
+// PoolPoolMetricInput is an input type that accepts PoolPoolMetricArgs and PoolPoolMetricOutput values.
+// You can construct a concrete instance of `PoolPoolMetricInput` via:
+//
+//	PoolPoolMetricArgs{...}
+type PoolPoolMetricInput interface {
+	pulumi.Input
+
+	ToPoolPoolMetricOutput() PoolPoolMetricOutput
+	ToPoolPoolMetricOutputWithContext(context.Context) PoolPoolMetricOutput
+}
+
+type PoolPoolMetricArgs struct {
+	// The number of runs that are currently running that are using this pool.
+	ActiveRunsCount pulumi.StringPtrInput `pulumi:"activeRunsCount"`
+	// A count of the nodes that are currently being used for each shape in this pool.
+	ActivelyUsedNodeCounts PoolPoolMetricActivelyUsedNodeCountArrayInput `pulumi:"activelyUsedNodeCounts"`
+	// The last time the mertics were updated for this.
+	TimeLastMetricsUpdated pulumi.StringPtrInput `pulumi:"timeLastMetricsUpdated"`
+	// The last time this pool was started.
+	TimeLastStarted pulumi.StringPtrInput `pulumi:"timeLastStarted"`
+	// The last time this pool was stopped.
+	TimeLastStopped pulumi.StringPtrInput `pulumi:"timeLastStopped"`
+	// The last time a run used this pool.
+	TimeLastUsed pulumi.StringPtrInput `pulumi:"timeLastUsed"`
+}
+
+func (PoolPoolMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PoolPoolMetric)(nil)).Elem()
+}
+
+func (i PoolPoolMetricArgs) ToPoolPoolMetricOutput() PoolPoolMetricOutput {
+	return i.ToPoolPoolMetricOutputWithContext(context.Background())
+}
+
+func (i PoolPoolMetricArgs) ToPoolPoolMetricOutputWithContext(ctx context.Context) PoolPoolMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PoolPoolMetricOutput)
+}
+
+// PoolPoolMetricArrayInput is an input type that accepts PoolPoolMetricArray and PoolPoolMetricArrayOutput values.
+// You can construct a concrete instance of `PoolPoolMetricArrayInput` via:
+//
+//	PoolPoolMetricArray{ PoolPoolMetricArgs{...} }
+type PoolPoolMetricArrayInput interface {
+	pulumi.Input
+
+	ToPoolPoolMetricArrayOutput() PoolPoolMetricArrayOutput
+	ToPoolPoolMetricArrayOutputWithContext(context.Context) PoolPoolMetricArrayOutput
+}
+
+type PoolPoolMetricArray []PoolPoolMetricInput
+
+func (PoolPoolMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PoolPoolMetric)(nil)).Elem()
+}
+
+func (i PoolPoolMetricArray) ToPoolPoolMetricArrayOutput() PoolPoolMetricArrayOutput {
+	return i.ToPoolPoolMetricArrayOutputWithContext(context.Background())
+}
+
+func (i PoolPoolMetricArray) ToPoolPoolMetricArrayOutputWithContext(ctx context.Context) PoolPoolMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PoolPoolMetricArrayOutput)
+}
+
+type PoolPoolMetricOutput struct{ *pulumi.OutputState }
+
+func (PoolPoolMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PoolPoolMetric)(nil)).Elem()
+}
+
+func (o PoolPoolMetricOutput) ToPoolPoolMetricOutput() PoolPoolMetricOutput {
+	return o
+}
+
+func (o PoolPoolMetricOutput) ToPoolPoolMetricOutputWithContext(ctx context.Context) PoolPoolMetricOutput {
+	return o
+}
+
+// The number of runs that are currently running that are using this pool.
+func (o PoolPoolMetricOutput) ActiveRunsCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PoolPoolMetric) *string { return v.ActiveRunsCount }).(pulumi.StringPtrOutput)
+}
+
+// A count of the nodes that are currently being used for each shape in this pool.
+func (o PoolPoolMetricOutput) ActivelyUsedNodeCounts() PoolPoolMetricActivelyUsedNodeCountArrayOutput {
+	return o.ApplyT(func(v PoolPoolMetric) []PoolPoolMetricActivelyUsedNodeCount { return v.ActivelyUsedNodeCounts }).(PoolPoolMetricActivelyUsedNodeCountArrayOutput)
+}
+
+// The last time the mertics were updated for this.
+func (o PoolPoolMetricOutput) TimeLastMetricsUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PoolPoolMetric) *string { return v.TimeLastMetricsUpdated }).(pulumi.StringPtrOutput)
+}
+
+// The last time this pool was started.
+func (o PoolPoolMetricOutput) TimeLastStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PoolPoolMetric) *string { return v.TimeLastStarted }).(pulumi.StringPtrOutput)
+}
+
+// The last time this pool was stopped.
+func (o PoolPoolMetricOutput) TimeLastStopped() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PoolPoolMetric) *string { return v.TimeLastStopped }).(pulumi.StringPtrOutput)
+}
+
+// The last time a run used this pool.
+func (o PoolPoolMetricOutput) TimeLastUsed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PoolPoolMetric) *string { return v.TimeLastUsed }).(pulumi.StringPtrOutput)
+}
+
+type PoolPoolMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (PoolPoolMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PoolPoolMetric)(nil)).Elem()
+}
+
+func (o PoolPoolMetricArrayOutput) ToPoolPoolMetricArrayOutput() PoolPoolMetricArrayOutput {
+	return o
+}
+
+func (o PoolPoolMetricArrayOutput) ToPoolPoolMetricArrayOutputWithContext(ctx context.Context) PoolPoolMetricArrayOutput {
+	return o
+}
+
+func (o PoolPoolMetricArrayOutput) Index(i pulumi.IntInput) PoolPoolMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PoolPoolMetric {
+		return vs[0].([]PoolPoolMetric)[vs[1].(int)]
+	}).(PoolPoolMetricOutput)
+}
+
+type PoolPoolMetricActivelyUsedNodeCount struct {
+	// The compute shape of the nodes that the count is for.
+	LogicalShape *string `pulumi:"logicalShape"`
+	// The node count of this compute shape.
+	PoolCount *int `pulumi:"poolCount"`
+}
+
+// PoolPoolMetricActivelyUsedNodeCountInput is an input type that accepts PoolPoolMetricActivelyUsedNodeCountArgs and PoolPoolMetricActivelyUsedNodeCountOutput values.
+// You can construct a concrete instance of `PoolPoolMetricActivelyUsedNodeCountInput` via:
+//
+//	PoolPoolMetricActivelyUsedNodeCountArgs{...}
+type PoolPoolMetricActivelyUsedNodeCountInput interface {
+	pulumi.Input
+
+	ToPoolPoolMetricActivelyUsedNodeCountOutput() PoolPoolMetricActivelyUsedNodeCountOutput
+	ToPoolPoolMetricActivelyUsedNodeCountOutputWithContext(context.Context) PoolPoolMetricActivelyUsedNodeCountOutput
+}
+
+type PoolPoolMetricActivelyUsedNodeCountArgs struct {
+	// The compute shape of the nodes that the count is for.
+	LogicalShape pulumi.StringPtrInput `pulumi:"logicalShape"`
+	// The node count of this compute shape.
+	PoolCount pulumi.IntPtrInput `pulumi:"poolCount"`
+}
+
+func (PoolPoolMetricActivelyUsedNodeCountArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PoolPoolMetricActivelyUsedNodeCount)(nil)).Elem()
+}
+
+func (i PoolPoolMetricActivelyUsedNodeCountArgs) ToPoolPoolMetricActivelyUsedNodeCountOutput() PoolPoolMetricActivelyUsedNodeCountOutput {
+	return i.ToPoolPoolMetricActivelyUsedNodeCountOutputWithContext(context.Background())
+}
+
+func (i PoolPoolMetricActivelyUsedNodeCountArgs) ToPoolPoolMetricActivelyUsedNodeCountOutputWithContext(ctx context.Context) PoolPoolMetricActivelyUsedNodeCountOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PoolPoolMetricActivelyUsedNodeCountOutput)
+}
+
+// PoolPoolMetricActivelyUsedNodeCountArrayInput is an input type that accepts PoolPoolMetricActivelyUsedNodeCountArray and PoolPoolMetricActivelyUsedNodeCountArrayOutput values.
+// You can construct a concrete instance of `PoolPoolMetricActivelyUsedNodeCountArrayInput` via:
+//
+//	PoolPoolMetricActivelyUsedNodeCountArray{ PoolPoolMetricActivelyUsedNodeCountArgs{...} }
+type PoolPoolMetricActivelyUsedNodeCountArrayInput interface {
+	pulumi.Input
+
+	ToPoolPoolMetricActivelyUsedNodeCountArrayOutput() PoolPoolMetricActivelyUsedNodeCountArrayOutput
+	ToPoolPoolMetricActivelyUsedNodeCountArrayOutputWithContext(context.Context) PoolPoolMetricActivelyUsedNodeCountArrayOutput
+}
+
+type PoolPoolMetricActivelyUsedNodeCountArray []PoolPoolMetricActivelyUsedNodeCountInput
+
+func (PoolPoolMetricActivelyUsedNodeCountArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PoolPoolMetricActivelyUsedNodeCount)(nil)).Elem()
+}
+
+func (i PoolPoolMetricActivelyUsedNodeCountArray) ToPoolPoolMetricActivelyUsedNodeCountArrayOutput() PoolPoolMetricActivelyUsedNodeCountArrayOutput {
+	return i.ToPoolPoolMetricActivelyUsedNodeCountArrayOutputWithContext(context.Background())
+}
+
+func (i PoolPoolMetricActivelyUsedNodeCountArray) ToPoolPoolMetricActivelyUsedNodeCountArrayOutputWithContext(ctx context.Context) PoolPoolMetricActivelyUsedNodeCountArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PoolPoolMetricActivelyUsedNodeCountArrayOutput)
+}
+
+type PoolPoolMetricActivelyUsedNodeCountOutput struct{ *pulumi.OutputState }
+
+func (PoolPoolMetricActivelyUsedNodeCountOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PoolPoolMetricActivelyUsedNodeCount)(nil)).Elem()
+}
+
+func (o PoolPoolMetricActivelyUsedNodeCountOutput) ToPoolPoolMetricActivelyUsedNodeCountOutput() PoolPoolMetricActivelyUsedNodeCountOutput {
+	return o
+}
+
+func (o PoolPoolMetricActivelyUsedNodeCountOutput) ToPoolPoolMetricActivelyUsedNodeCountOutputWithContext(ctx context.Context) PoolPoolMetricActivelyUsedNodeCountOutput {
+	return o
+}
+
+// The compute shape of the nodes that the count is for.
+func (o PoolPoolMetricActivelyUsedNodeCountOutput) LogicalShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PoolPoolMetricActivelyUsedNodeCount) *string { return v.LogicalShape }).(pulumi.StringPtrOutput)
+}
+
+// The node count of this compute shape.
+func (o PoolPoolMetricActivelyUsedNodeCountOutput) PoolCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PoolPoolMetricActivelyUsedNodeCount) *int { return v.PoolCount }).(pulumi.IntPtrOutput)
+}
+
+type PoolPoolMetricActivelyUsedNodeCountArrayOutput struct{ *pulumi.OutputState }
+
+func (PoolPoolMetricActivelyUsedNodeCountArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PoolPoolMetricActivelyUsedNodeCount)(nil)).Elem()
+}
+
+func (o PoolPoolMetricActivelyUsedNodeCountArrayOutput) ToPoolPoolMetricActivelyUsedNodeCountArrayOutput() PoolPoolMetricActivelyUsedNodeCountArrayOutput {
+	return o
+}
+
+func (o PoolPoolMetricActivelyUsedNodeCountArrayOutput) ToPoolPoolMetricActivelyUsedNodeCountArrayOutputWithContext(ctx context.Context) PoolPoolMetricActivelyUsedNodeCountArrayOutput {
+	return o
+}
+
+func (o PoolPoolMetricActivelyUsedNodeCountArrayOutput) Index(i pulumi.IntInput) PoolPoolMetricActivelyUsedNodeCountOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PoolPoolMetricActivelyUsedNodeCount {
+		return vs[0].([]PoolPoolMetricActivelyUsedNodeCount)[vs[1].(int)]
+	}).(PoolPoolMetricActivelyUsedNodeCountOutput)
+}
+
+type PoolSchedule struct {
+	// (Updatable) Day of the week SUN-SAT
+	DayOfWeek *string `pulumi:"dayOfWeek"`
+	// (Updatable) Hour of the day to start or stop pool.
+	StartTime *int `pulumi:"startTime"`
+	// (Updatable) Hour of the day to stop the pool.
+	StopTime *int `pulumi:"stopTime"`
+}
+
+// PoolScheduleInput is an input type that accepts PoolScheduleArgs and PoolScheduleOutput values.
+// You can construct a concrete instance of `PoolScheduleInput` via:
+//
+//	PoolScheduleArgs{...}
+type PoolScheduleInput interface {
+	pulumi.Input
+
+	ToPoolScheduleOutput() PoolScheduleOutput
+	ToPoolScheduleOutputWithContext(context.Context) PoolScheduleOutput
+}
+
+type PoolScheduleArgs struct {
+	// (Updatable) Day of the week SUN-SAT
+	DayOfWeek pulumi.StringPtrInput `pulumi:"dayOfWeek"`
+	// (Updatable) Hour of the day to start or stop pool.
+	StartTime pulumi.IntPtrInput `pulumi:"startTime"`
+	// (Updatable) Hour of the day to stop the pool.
+	StopTime pulumi.IntPtrInput `pulumi:"stopTime"`
+}
+
+func (PoolScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PoolSchedule)(nil)).Elem()
+}
+
+func (i PoolScheduleArgs) ToPoolScheduleOutput() PoolScheduleOutput {
+	return i.ToPoolScheduleOutputWithContext(context.Background())
+}
+
+func (i PoolScheduleArgs) ToPoolScheduleOutputWithContext(ctx context.Context) PoolScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PoolScheduleOutput)
+}
+
+// PoolScheduleArrayInput is an input type that accepts PoolScheduleArray and PoolScheduleArrayOutput values.
+// You can construct a concrete instance of `PoolScheduleArrayInput` via:
+//
+//	PoolScheduleArray{ PoolScheduleArgs{...} }
+type PoolScheduleArrayInput interface {
+	pulumi.Input
+
+	ToPoolScheduleArrayOutput() PoolScheduleArrayOutput
+	ToPoolScheduleArrayOutputWithContext(context.Context) PoolScheduleArrayOutput
+}
+
+type PoolScheduleArray []PoolScheduleInput
+
+func (PoolScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PoolSchedule)(nil)).Elem()
+}
+
+func (i PoolScheduleArray) ToPoolScheduleArrayOutput() PoolScheduleArrayOutput {
+	return i.ToPoolScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i PoolScheduleArray) ToPoolScheduleArrayOutputWithContext(ctx context.Context) PoolScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PoolScheduleArrayOutput)
+}
+
+type PoolScheduleOutput struct{ *pulumi.OutputState }
+
+func (PoolScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PoolSchedule)(nil)).Elem()
+}
+
+func (o PoolScheduleOutput) ToPoolScheduleOutput() PoolScheduleOutput {
+	return o
+}
+
+func (o PoolScheduleOutput) ToPoolScheduleOutputWithContext(ctx context.Context) PoolScheduleOutput {
+	return o
+}
+
+// (Updatable) Day of the week SUN-SAT
+func (o PoolScheduleOutput) DayOfWeek() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PoolSchedule) *string { return v.DayOfWeek }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Hour of the day to start or stop pool.
+func (o PoolScheduleOutput) StartTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PoolSchedule) *int { return v.StartTime }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Hour of the day to stop the pool.
+func (o PoolScheduleOutput) StopTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PoolSchedule) *int { return v.StopTime }).(pulumi.IntPtrOutput)
+}
+
+type PoolScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (PoolScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PoolSchedule)(nil)).Elem()
+}
+
+func (o PoolScheduleArrayOutput) ToPoolScheduleArrayOutput() PoolScheduleArrayOutput {
+	return o
+}
+
+func (o PoolScheduleArrayOutput) ToPoolScheduleArrayOutputWithContext(ctx context.Context) PoolScheduleArrayOutput {
+	return o
+}
+
+func (o PoolScheduleArrayOutput) Index(i pulumi.IntInput) PoolScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PoolSchedule {
+		return vs[0].([]PoolSchedule)[vs[1].(int)]
+	}).(PoolScheduleOutput)
+}
+
 type PrivateEndpointScanDetail struct {
 	// (Updatable) A fully-qualified domain name (FQDN).
 	Fqdn *string `pulumi:"fqdn"`
@@ -1980,15 +2623,17 @@ type GetApplicationsApplication struct {
 	OwnerUserName string `pulumi:"ownerUserName"`
 	// An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
 	Parameters []GetApplicationsApplicationParameter `pulumi:"parameters"`
+	// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+	PoolId string `pulumi:"poolId"`
 	// The OCID of a private endpoint.
 	PrivateEndpointId string `pulumi:"privateEndpointId"`
 	// The Spark version utilized to run the application.
 	SparkVersion string `pulumi:"sparkVersion"`
 	// The current state of this application.
 	State string `pulumi:"state"`
-	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The Spark application processing type.
 	Type string `pulumi:"type"`
@@ -2060,15 +2705,17 @@ type GetApplicationsApplicationArgs struct {
 	OwnerUserName pulumi.StringInput `pulumi:"ownerUserName"`
 	// An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
 	Parameters GetApplicationsApplicationParameterArrayInput `pulumi:"parameters"`
+	// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+	PoolId pulumi.StringInput `pulumi:"poolId"`
 	// The OCID of a private endpoint.
 	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
 	// The Spark version utilized to run the application.
 	SparkVersion pulumi.StringInput `pulumi:"sparkVersion"`
 	// The current state of this application.
 	State pulumi.StringInput `pulumi:"state"`
-	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// The Spark application processing type.
 	Type pulumi.StringInput `pulumi:"type"`
@@ -2263,6 +2910,11 @@ func (o GetApplicationsApplicationOutput) Parameters() GetApplicationsApplicatio
 	return o.ApplyT(func(v GetApplicationsApplication) []GetApplicationsApplicationParameter { return v.Parameters }).(GetApplicationsApplicationParameterArrayOutput)
 }
 
+// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+func (o GetApplicationsApplicationOutput) PoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) string { return v.PoolId }).(pulumi.StringOutput)
+}
+
 // The OCID of a private endpoint.
 func (o GetApplicationsApplicationOutput) PrivateEndpointId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetApplicationsApplication) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
@@ -2278,12 +2930,12 @@ func (o GetApplicationsApplicationOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetApplicationsApplication) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 func (o GetApplicationsApplicationOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetApplicationsApplication) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 func (o GetApplicationsApplicationOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetApplicationsApplication) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -3446,6 +4098,8 @@ type GetInvokeRunsRun struct {
 	OwnerUserName string `pulumi:"ownerUserName"`
 	// An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
 	Parameters []GetInvokeRunsRunParameter `pulumi:"parameters"`
+	// The ID of the pool.
+	PoolId string `pulumi:"poolId"`
 	// An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
 	PrivateEndpointDnsZones []string `pulumi:"privateEndpointDnsZones"`
 	// The OCID of a private endpoint.
@@ -3462,9 +4116,9 @@ type GetInvokeRunsRun struct {
 	SparkVersion string `pulumi:"sparkVersion"`
 	// The LifecycleState of the run.
 	State string `pulumi:"state"`
-	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The total number of oCPU requested by the run.
 	TotalOcpu int `pulumi:"totalOcpu"`
@@ -3547,6 +4201,8 @@ type GetInvokeRunsRunArgs struct {
 	OwnerUserName pulumi.StringInput `pulumi:"ownerUserName"`
 	// An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
 	Parameters GetInvokeRunsRunParameterArrayInput `pulumi:"parameters"`
+	// The ID of the pool.
+	PoolId pulumi.StringInput `pulumi:"poolId"`
 	// An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
 	PrivateEndpointDnsZones pulumi.StringArrayInput `pulumi:"privateEndpointDnsZones"`
 	// The OCID of a private endpoint.
@@ -3563,9 +4219,9 @@ type GetInvokeRunsRunArgs struct {
 	SparkVersion pulumi.StringInput `pulumi:"sparkVersion"`
 	// The LifecycleState of the run.
 	State pulumi.StringInput `pulumi:"state"`
-	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// The total number of oCPU requested by the run.
 	TotalOcpu pulumi.IntInput `pulumi:"totalOcpu"`
@@ -3780,6 +4436,11 @@ func (o GetInvokeRunsRunOutput) Parameters() GetInvokeRunsRunParameterArrayOutpu
 	return o.ApplyT(func(v GetInvokeRunsRun) []GetInvokeRunsRunParameter { return v.Parameters }).(GetInvokeRunsRunParameterArrayOutput)
 }
 
+// The ID of the pool.
+func (o GetInvokeRunsRunOutput) PoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.PoolId }).(pulumi.StringOutput)
+}
+
 // An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
 func (o GetInvokeRunsRunOutput) PrivateEndpointDnsZones() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetInvokeRunsRun) []string { return v.PrivateEndpointDnsZones }).(pulumi.StringArrayOutput)
@@ -3820,12 +4481,12 @@ func (o GetInvokeRunsRunOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 func (o GetInvokeRunsRunOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 func (o GetInvokeRunsRunOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -4289,6 +4950,1628 @@ func (o GetInvokeRunsRunParameterArrayOutput) Index(i pulumi.IntInput) GetInvoke
 	}).(GetInvokeRunsRunParameterOutput)
 }
 
+type GetPoolConfiguration struct {
+	// Maximum number of compute instances in the pool for a given compute shape.
+	Max int `pulumi:"max"`
+	// Minimum number of compute instances in the pool for a given compute shape.
+	Min int `pulumi:"min"`
+	// The compute shape of the resources you would like to provision.
+	Shape string `pulumi:"shape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	ShapeConfigs []GetPoolConfigurationShapeConfig `pulumi:"shapeConfigs"`
+}
+
+// GetPoolConfigurationInput is an input type that accepts GetPoolConfigurationArgs and GetPoolConfigurationOutput values.
+// You can construct a concrete instance of `GetPoolConfigurationInput` via:
+//
+//	GetPoolConfigurationArgs{...}
+type GetPoolConfigurationInput interface {
+	pulumi.Input
+
+	ToGetPoolConfigurationOutput() GetPoolConfigurationOutput
+	ToGetPoolConfigurationOutputWithContext(context.Context) GetPoolConfigurationOutput
+}
+
+type GetPoolConfigurationArgs struct {
+	// Maximum number of compute instances in the pool for a given compute shape.
+	Max pulumi.IntInput `pulumi:"max"`
+	// Minimum number of compute instances in the pool for a given compute shape.
+	Min pulumi.IntInput `pulumi:"min"`
+	// The compute shape of the resources you would like to provision.
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	ShapeConfigs GetPoolConfigurationShapeConfigArrayInput `pulumi:"shapeConfigs"`
+}
+
+func (GetPoolConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolConfiguration)(nil)).Elem()
+}
+
+func (i GetPoolConfigurationArgs) ToGetPoolConfigurationOutput() GetPoolConfigurationOutput {
+	return i.ToGetPoolConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetPoolConfigurationArgs) ToGetPoolConfigurationOutputWithContext(ctx context.Context) GetPoolConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolConfigurationOutput)
+}
+
+// GetPoolConfigurationArrayInput is an input type that accepts GetPoolConfigurationArray and GetPoolConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetPoolConfigurationArrayInput` via:
+//
+//	GetPoolConfigurationArray{ GetPoolConfigurationArgs{...} }
+type GetPoolConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetPoolConfigurationArrayOutput() GetPoolConfigurationArrayOutput
+	ToGetPoolConfigurationArrayOutputWithContext(context.Context) GetPoolConfigurationArrayOutput
+}
+
+type GetPoolConfigurationArray []GetPoolConfigurationInput
+
+func (GetPoolConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolConfiguration)(nil)).Elem()
+}
+
+func (i GetPoolConfigurationArray) ToGetPoolConfigurationArrayOutput() GetPoolConfigurationArrayOutput {
+	return i.ToGetPoolConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetPoolConfigurationArray) ToGetPoolConfigurationArrayOutputWithContext(ctx context.Context) GetPoolConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolConfigurationArrayOutput)
+}
+
+type GetPoolConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetPoolConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolConfiguration)(nil)).Elem()
+}
+
+func (o GetPoolConfigurationOutput) ToGetPoolConfigurationOutput() GetPoolConfigurationOutput {
+	return o
+}
+
+func (o GetPoolConfigurationOutput) ToGetPoolConfigurationOutputWithContext(ctx context.Context) GetPoolConfigurationOutput {
+	return o
+}
+
+// Maximum number of compute instances in the pool for a given compute shape.
+func (o GetPoolConfigurationOutput) Max() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPoolConfiguration) int { return v.Max }).(pulumi.IntOutput)
+}
+
+// Minimum number of compute instances in the pool for a given compute shape.
+func (o GetPoolConfigurationOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPoolConfiguration) int { return v.Min }).(pulumi.IntOutput)
+}
+
+// The compute shape of the resources you would like to provision.
+func (o GetPoolConfigurationOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolConfiguration) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// This is used to configure the shape of the driver or executor if a flexible shape is used.
+func (o GetPoolConfigurationOutput) ShapeConfigs() GetPoolConfigurationShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetPoolConfiguration) []GetPoolConfigurationShapeConfig { return v.ShapeConfigs }).(GetPoolConfigurationShapeConfigArrayOutput)
+}
+
+type GetPoolConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPoolConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolConfiguration)(nil)).Elem()
+}
+
+func (o GetPoolConfigurationArrayOutput) ToGetPoolConfigurationArrayOutput() GetPoolConfigurationArrayOutput {
+	return o
+}
+
+func (o GetPoolConfigurationArrayOutput) ToGetPoolConfigurationArrayOutputWithContext(ctx context.Context) GetPoolConfigurationArrayOutput {
+	return o
+}
+
+func (o GetPoolConfigurationArrayOutput) Index(i pulumi.IntInput) GetPoolConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolConfiguration {
+		return vs[0].([]GetPoolConfiguration)[vs[1].(int)]
+	}).(GetPoolConfigurationOutput)
+}
+
+type GetPoolConfigurationShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetPoolConfigurationShapeConfigInput is an input type that accepts GetPoolConfigurationShapeConfigArgs and GetPoolConfigurationShapeConfigOutput values.
+// You can construct a concrete instance of `GetPoolConfigurationShapeConfigInput` via:
+//
+//	GetPoolConfigurationShapeConfigArgs{...}
+type GetPoolConfigurationShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetPoolConfigurationShapeConfigOutput() GetPoolConfigurationShapeConfigOutput
+	ToGetPoolConfigurationShapeConfigOutputWithContext(context.Context) GetPoolConfigurationShapeConfigOutput
+}
+
+type GetPoolConfigurationShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetPoolConfigurationShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolConfigurationShapeConfig)(nil)).Elem()
+}
+
+func (i GetPoolConfigurationShapeConfigArgs) ToGetPoolConfigurationShapeConfigOutput() GetPoolConfigurationShapeConfigOutput {
+	return i.ToGetPoolConfigurationShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetPoolConfigurationShapeConfigArgs) ToGetPoolConfigurationShapeConfigOutputWithContext(ctx context.Context) GetPoolConfigurationShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolConfigurationShapeConfigOutput)
+}
+
+// GetPoolConfigurationShapeConfigArrayInput is an input type that accepts GetPoolConfigurationShapeConfigArray and GetPoolConfigurationShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetPoolConfigurationShapeConfigArrayInput` via:
+//
+//	GetPoolConfigurationShapeConfigArray{ GetPoolConfigurationShapeConfigArgs{...} }
+type GetPoolConfigurationShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetPoolConfigurationShapeConfigArrayOutput() GetPoolConfigurationShapeConfigArrayOutput
+	ToGetPoolConfigurationShapeConfigArrayOutputWithContext(context.Context) GetPoolConfigurationShapeConfigArrayOutput
+}
+
+type GetPoolConfigurationShapeConfigArray []GetPoolConfigurationShapeConfigInput
+
+func (GetPoolConfigurationShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolConfigurationShapeConfig)(nil)).Elem()
+}
+
+func (i GetPoolConfigurationShapeConfigArray) ToGetPoolConfigurationShapeConfigArrayOutput() GetPoolConfigurationShapeConfigArrayOutput {
+	return i.ToGetPoolConfigurationShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetPoolConfigurationShapeConfigArray) ToGetPoolConfigurationShapeConfigArrayOutputWithContext(ctx context.Context) GetPoolConfigurationShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolConfigurationShapeConfigArrayOutput)
+}
+
+type GetPoolConfigurationShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetPoolConfigurationShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolConfigurationShapeConfig)(nil)).Elem()
+}
+
+func (o GetPoolConfigurationShapeConfigOutput) ToGetPoolConfigurationShapeConfigOutput() GetPoolConfigurationShapeConfigOutput {
+	return o
+}
+
+func (o GetPoolConfigurationShapeConfigOutput) ToGetPoolConfigurationShapeConfigOutputWithContext(ctx context.Context) GetPoolConfigurationShapeConfigOutput {
+	return o
+}
+
+// The amount of memory used for the driver or executors.
+func (o GetPoolConfigurationShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPoolConfigurationShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o GetPoolConfigurationShapeConfigOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPoolConfigurationShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+type GetPoolConfigurationShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPoolConfigurationShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolConfigurationShapeConfig)(nil)).Elem()
+}
+
+func (o GetPoolConfigurationShapeConfigArrayOutput) ToGetPoolConfigurationShapeConfigArrayOutput() GetPoolConfigurationShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetPoolConfigurationShapeConfigArrayOutput) ToGetPoolConfigurationShapeConfigArrayOutputWithContext(ctx context.Context) GetPoolConfigurationShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetPoolConfigurationShapeConfigArrayOutput) Index(i pulumi.IntInput) GetPoolConfigurationShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolConfigurationShapeConfig {
+		return vs[0].([]GetPoolConfigurationShapeConfig)[vs[1].(int)]
+	}).(GetPoolConfigurationShapeConfigOutput)
+}
+
+type GetPoolPoolMetric struct {
+	// The number of runs that are currently running that are using this pool.
+	ActiveRunsCount string `pulumi:"activeRunsCount"`
+	// A count of the nodes that are currently being used for each shape in this pool.
+	ActivelyUsedNodeCounts []GetPoolPoolMetricActivelyUsedNodeCount `pulumi:"activelyUsedNodeCounts"`
+	// The last time the mertics were updated for this.
+	TimeLastMetricsUpdated string `pulumi:"timeLastMetricsUpdated"`
+	// The last time this pool was started.
+	TimeLastStarted string `pulumi:"timeLastStarted"`
+	// The last time this pool was stopped.
+	TimeLastStopped string `pulumi:"timeLastStopped"`
+	// The last time a run used this pool.
+	TimeLastUsed string `pulumi:"timeLastUsed"`
+}
+
+// GetPoolPoolMetricInput is an input type that accepts GetPoolPoolMetricArgs and GetPoolPoolMetricOutput values.
+// You can construct a concrete instance of `GetPoolPoolMetricInput` via:
+//
+//	GetPoolPoolMetricArgs{...}
+type GetPoolPoolMetricInput interface {
+	pulumi.Input
+
+	ToGetPoolPoolMetricOutput() GetPoolPoolMetricOutput
+	ToGetPoolPoolMetricOutputWithContext(context.Context) GetPoolPoolMetricOutput
+}
+
+type GetPoolPoolMetricArgs struct {
+	// The number of runs that are currently running that are using this pool.
+	ActiveRunsCount pulumi.StringInput `pulumi:"activeRunsCount"`
+	// A count of the nodes that are currently being used for each shape in this pool.
+	ActivelyUsedNodeCounts GetPoolPoolMetricActivelyUsedNodeCountArrayInput `pulumi:"activelyUsedNodeCounts"`
+	// The last time the mertics were updated for this.
+	TimeLastMetricsUpdated pulumi.StringInput `pulumi:"timeLastMetricsUpdated"`
+	// The last time this pool was started.
+	TimeLastStarted pulumi.StringInput `pulumi:"timeLastStarted"`
+	// The last time this pool was stopped.
+	TimeLastStopped pulumi.StringInput `pulumi:"timeLastStopped"`
+	// The last time a run used this pool.
+	TimeLastUsed pulumi.StringInput `pulumi:"timeLastUsed"`
+}
+
+func (GetPoolPoolMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolPoolMetric)(nil)).Elem()
+}
+
+func (i GetPoolPoolMetricArgs) ToGetPoolPoolMetricOutput() GetPoolPoolMetricOutput {
+	return i.ToGetPoolPoolMetricOutputWithContext(context.Background())
+}
+
+func (i GetPoolPoolMetricArgs) ToGetPoolPoolMetricOutputWithContext(ctx context.Context) GetPoolPoolMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolPoolMetricOutput)
+}
+
+// GetPoolPoolMetricArrayInput is an input type that accepts GetPoolPoolMetricArray and GetPoolPoolMetricArrayOutput values.
+// You can construct a concrete instance of `GetPoolPoolMetricArrayInput` via:
+//
+//	GetPoolPoolMetricArray{ GetPoolPoolMetricArgs{...} }
+type GetPoolPoolMetricArrayInput interface {
+	pulumi.Input
+
+	ToGetPoolPoolMetricArrayOutput() GetPoolPoolMetricArrayOutput
+	ToGetPoolPoolMetricArrayOutputWithContext(context.Context) GetPoolPoolMetricArrayOutput
+}
+
+type GetPoolPoolMetricArray []GetPoolPoolMetricInput
+
+func (GetPoolPoolMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolPoolMetric)(nil)).Elem()
+}
+
+func (i GetPoolPoolMetricArray) ToGetPoolPoolMetricArrayOutput() GetPoolPoolMetricArrayOutput {
+	return i.ToGetPoolPoolMetricArrayOutputWithContext(context.Background())
+}
+
+func (i GetPoolPoolMetricArray) ToGetPoolPoolMetricArrayOutputWithContext(ctx context.Context) GetPoolPoolMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolPoolMetricArrayOutput)
+}
+
+type GetPoolPoolMetricOutput struct{ *pulumi.OutputState }
+
+func (GetPoolPoolMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolPoolMetric)(nil)).Elem()
+}
+
+func (o GetPoolPoolMetricOutput) ToGetPoolPoolMetricOutput() GetPoolPoolMetricOutput {
+	return o
+}
+
+func (o GetPoolPoolMetricOutput) ToGetPoolPoolMetricOutputWithContext(ctx context.Context) GetPoolPoolMetricOutput {
+	return o
+}
+
+// The number of runs that are currently running that are using this pool.
+func (o GetPoolPoolMetricOutput) ActiveRunsCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolPoolMetric) string { return v.ActiveRunsCount }).(pulumi.StringOutput)
+}
+
+// A count of the nodes that are currently being used for each shape in this pool.
+func (o GetPoolPoolMetricOutput) ActivelyUsedNodeCounts() GetPoolPoolMetricActivelyUsedNodeCountArrayOutput {
+	return o.ApplyT(func(v GetPoolPoolMetric) []GetPoolPoolMetricActivelyUsedNodeCount { return v.ActivelyUsedNodeCounts }).(GetPoolPoolMetricActivelyUsedNodeCountArrayOutput)
+}
+
+// The last time the mertics were updated for this.
+func (o GetPoolPoolMetricOutput) TimeLastMetricsUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolPoolMetric) string { return v.TimeLastMetricsUpdated }).(pulumi.StringOutput)
+}
+
+// The last time this pool was started.
+func (o GetPoolPoolMetricOutput) TimeLastStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolPoolMetric) string { return v.TimeLastStarted }).(pulumi.StringOutput)
+}
+
+// The last time this pool was stopped.
+func (o GetPoolPoolMetricOutput) TimeLastStopped() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolPoolMetric) string { return v.TimeLastStopped }).(pulumi.StringOutput)
+}
+
+// The last time a run used this pool.
+func (o GetPoolPoolMetricOutput) TimeLastUsed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolPoolMetric) string { return v.TimeLastUsed }).(pulumi.StringOutput)
+}
+
+type GetPoolPoolMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPoolPoolMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolPoolMetric)(nil)).Elem()
+}
+
+func (o GetPoolPoolMetricArrayOutput) ToGetPoolPoolMetricArrayOutput() GetPoolPoolMetricArrayOutput {
+	return o
+}
+
+func (o GetPoolPoolMetricArrayOutput) ToGetPoolPoolMetricArrayOutputWithContext(ctx context.Context) GetPoolPoolMetricArrayOutput {
+	return o
+}
+
+func (o GetPoolPoolMetricArrayOutput) Index(i pulumi.IntInput) GetPoolPoolMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolPoolMetric {
+		return vs[0].([]GetPoolPoolMetric)[vs[1].(int)]
+	}).(GetPoolPoolMetricOutput)
+}
+
+type GetPoolPoolMetricActivelyUsedNodeCount struct {
+	// The compute shape of the nodes that the count is for.
+	LogicalShape string `pulumi:"logicalShape"`
+	// The node count of this compute shape.
+	PoolCount int `pulumi:"poolCount"`
+}
+
+// GetPoolPoolMetricActivelyUsedNodeCountInput is an input type that accepts GetPoolPoolMetricActivelyUsedNodeCountArgs and GetPoolPoolMetricActivelyUsedNodeCountOutput values.
+// You can construct a concrete instance of `GetPoolPoolMetricActivelyUsedNodeCountInput` via:
+//
+//	GetPoolPoolMetricActivelyUsedNodeCountArgs{...}
+type GetPoolPoolMetricActivelyUsedNodeCountInput interface {
+	pulumi.Input
+
+	ToGetPoolPoolMetricActivelyUsedNodeCountOutput() GetPoolPoolMetricActivelyUsedNodeCountOutput
+	ToGetPoolPoolMetricActivelyUsedNodeCountOutputWithContext(context.Context) GetPoolPoolMetricActivelyUsedNodeCountOutput
+}
+
+type GetPoolPoolMetricActivelyUsedNodeCountArgs struct {
+	// The compute shape of the nodes that the count is for.
+	LogicalShape pulumi.StringInput `pulumi:"logicalShape"`
+	// The node count of this compute shape.
+	PoolCount pulumi.IntInput `pulumi:"poolCount"`
+}
+
+func (GetPoolPoolMetricActivelyUsedNodeCountArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolPoolMetricActivelyUsedNodeCount)(nil)).Elem()
+}
+
+func (i GetPoolPoolMetricActivelyUsedNodeCountArgs) ToGetPoolPoolMetricActivelyUsedNodeCountOutput() GetPoolPoolMetricActivelyUsedNodeCountOutput {
+	return i.ToGetPoolPoolMetricActivelyUsedNodeCountOutputWithContext(context.Background())
+}
+
+func (i GetPoolPoolMetricActivelyUsedNodeCountArgs) ToGetPoolPoolMetricActivelyUsedNodeCountOutputWithContext(ctx context.Context) GetPoolPoolMetricActivelyUsedNodeCountOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolPoolMetricActivelyUsedNodeCountOutput)
+}
+
+// GetPoolPoolMetricActivelyUsedNodeCountArrayInput is an input type that accepts GetPoolPoolMetricActivelyUsedNodeCountArray and GetPoolPoolMetricActivelyUsedNodeCountArrayOutput values.
+// You can construct a concrete instance of `GetPoolPoolMetricActivelyUsedNodeCountArrayInput` via:
+//
+//	GetPoolPoolMetricActivelyUsedNodeCountArray{ GetPoolPoolMetricActivelyUsedNodeCountArgs{...} }
+type GetPoolPoolMetricActivelyUsedNodeCountArrayInput interface {
+	pulumi.Input
+
+	ToGetPoolPoolMetricActivelyUsedNodeCountArrayOutput() GetPoolPoolMetricActivelyUsedNodeCountArrayOutput
+	ToGetPoolPoolMetricActivelyUsedNodeCountArrayOutputWithContext(context.Context) GetPoolPoolMetricActivelyUsedNodeCountArrayOutput
+}
+
+type GetPoolPoolMetricActivelyUsedNodeCountArray []GetPoolPoolMetricActivelyUsedNodeCountInput
+
+func (GetPoolPoolMetricActivelyUsedNodeCountArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolPoolMetricActivelyUsedNodeCount)(nil)).Elem()
+}
+
+func (i GetPoolPoolMetricActivelyUsedNodeCountArray) ToGetPoolPoolMetricActivelyUsedNodeCountArrayOutput() GetPoolPoolMetricActivelyUsedNodeCountArrayOutput {
+	return i.ToGetPoolPoolMetricActivelyUsedNodeCountArrayOutputWithContext(context.Background())
+}
+
+func (i GetPoolPoolMetricActivelyUsedNodeCountArray) ToGetPoolPoolMetricActivelyUsedNodeCountArrayOutputWithContext(ctx context.Context) GetPoolPoolMetricActivelyUsedNodeCountArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolPoolMetricActivelyUsedNodeCountArrayOutput)
+}
+
+type GetPoolPoolMetricActivelyUsedNodeCountOutput struct{ *pulumi.OutputState }
+
+func (GetPoolPoolMetricActivelyUsedNodeCountOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolPoolMetricActivelyUsedNodeCount)(nil)).Elem()
+}
+
+func (o GetPoolPoolMetricActivelyUsedNodeCountOutput) ToGetPoolPoolMetricActivelyUsedNodeCountOutput() GetPoolPoolMetricActivelyUsedNodeCountOutput {
+	return o
+}
+
+func (o GetPoolPoolMetricActivelyUsedNodeCountOutput) ToGetPoolPoolMetricActivelyUsedNodeCountOutputWithContext(ctx context.Context) GetPoolPoolMetricActivelyUsedNodeCountOutput {
+	return o
+}
+
+// The compute shape of the nodes that the count is for.
+func (o GetPoolPoolMetricActivelyUsedNodeCountOutput) LogicalShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolPoolMetricActivelyUsedNodeCount) string { return v.LogicalShape }).(pulumi.StringOutput)
+}
+
+// The node count of this compute shape.
+func (o GetPoolPoolMetricActivelyUsedNodeCountOutput) PoolCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPoolPoolMetricActivelyUsedNodeCount) int { return v.PoolCount }).(pulumi.IntOutput)
+}
+
+type GetPoolPoolMetricActivelyUsedNodeCountArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPoolPoolMetricActivelyUsedNodeCountArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolPoolMetricActivelyUsedNodeCount)(nil)).Elem()
+}
+
+func (o GetPoolPoolMetricActivelyUsedNodeCountArrayOutput) ToGetPoolPoolMetricActivelyUsedNodeCountArrayOutput() GetPoolPoolMetricActivelyUsedNodeCountArrayOutput {
+	return o
+}
+
+func (o GetPoolPoolMetricActivelyUsedNodeCountArrayOutput) ToGetPoolPoolMetricActivelyUsedNodeCountArrayOutputWithContext(ctx context.Context) GetPoolPoolMetricActivelyUsedNodeCountArrayOutput {
+	return o
+}
+
+func (o GetPoolPoolMetricActivelyUsedNodeCountArrayOutput) Index(i pulumi.IntInput) GetPoolPoolMetricActivelyUsedNodeCountOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolPoolMetricActivelyUsedNodeCount {
+		return vs[0].([]GetPoolPoolMetricActivelyUsedNodeCount)[vs[1].(int)]
+	}).(GetPoolPoolMetricActivelyUsedNodeCountOutput)
+}
+
+type GetPoolSchedule struct {
+	// Day of the week SUN-SAT
+	DayOfWeek string `pulumi:"dayOfWeek"`
+	// Hour of the day to start or stop pool.
+	StartTime int `pulumi:"startTime"`
+	// Hour of the day to stop the pool.
+	StopTime int `pulumi:"stopTime"`
+}
+
+// GetPoolScheduleInput is an input type that accepts GetPoolScheduleArgs and GetPoolScheduleOutput values.
+// You can construct a concrete instance of `GetPoolScheduleInput` via:
+//
+//	GetPoolScheduleArgs{...}
+type GetPoolScheduleInput interface {
+	pulumi.Input
+
+	ToGetPoolScheduleOutput() GetPoolScheduleOutput
+	ToGetPoolScheduleOutputWithContext(context.Context) GetPoolScheduleOutput
+}
+
+type GetPoolScheduleArgs struct {
+	// Day of the week SUN-SAT
+	DayOfWeek pulumi.StringInput `pulumi:"dayOfWeek"`
+	// Hour of the day to start or stop pool.
+	StartTime pulumi.IntInput `pulumi:"startTime"`
+	// Hour of the day to stop the pool.
+	StopTime pulumi.IntInput `pulumi:"stopTime"`
+}
+
+func (GetPoolScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolSchedule)(nil)).Elem()
+}
+
+func (i GetPoolScheduleArgs) ToGetPoolScheduleOutput() GetPoolScheduleOutput {
+	return i.ToGetPoolScheduleOutputWithContext(context.Background())
+}
+
+func (i GetPoolScheduleArgs) ToGetPoolScheduleOutputWithContext(ctx context.Context) GetPoolScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolScheduleOutput)
+}
+
+// GetPoolScheduleArrayInput is an input type that accepts GetPoolScheduleArray and GetPoolScheduleArrayOutput values.
+// You can construct a concrete instance of `GetPoolScheduleArrayInput` via:
+//
+//	GetPoolScheduleArray{ GetPoolScheduleArgs{...} }
+type GetPoolScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetPoolScheduleArrayOutput() GetPoolScheduleArrayOutput
+	ToGetPoolScheduleArrayOutputWithContext(context.Context) GetPoolScheduleArrayOutput
+}
+
+type GetPoolScheduleArray []GetPoolScheduleInput
+
+func (GetPoolScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolSchedule)(nil)).Elem()
+}
+
+func (i GetPoolScheduleArray) ToGetPoolScheduleArrayOutput() GetPoolScheduleArrayOutput {
+	return i.ToGetPoolScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetPoolScheduleArray) ToGetPoolScheduleArrayOutputWithContext(ctx context.Context) GetPoolScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolScheduleArrayOutput)
+}
+
+type GetPoolScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetPoolScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolSchedule)(nil)).Elem()
+}
+
+func (o GetPoolScheduleOutput) ToGetPoolScheduleOutput() GetPoolScheduleOutput {
+	return o
+}
+
+func (o GetPoolScheduleOutput) ToGetPoolScheduleOutputWithContext(ctx context.Context) GetPoolScheduleOutput {
+	return o
+}
+
+// Day of the week SUN-SAT
+func (o GetPoolScheduleOutput) DayOfWeek() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolSchedule) string { return v.DayOfWeek }).(pulumi.StringOutput)
+}
+
+// Hour of the day to start or stop pool.
+func (o GetPoolScheduleOutput) StartTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPoolSchedule) int { return v.StartTime }).(pulumi.IntOutput)
+}
+
+// Hour of the day to stop the pool.
+func (o GetPoolScheduleOutput) StopTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPoolSchedule) int { return v.StopTime }).(pulumi.IntOutput)
+}
+
+type GetPoolScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPoolScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolSchedule)(nil)).Elem()
+}
+
+func (o GetPoolScheduleArrayOutput) ToGetPoolScheduleArrayOutput() GetPoolScheduleArrayOutput {
+	return o
+}
+
+func (o GetPoolScheduleArrayOutput) ToGetPoolScheduleArrayOutputWithContext(ctx context.Context) GetPoolScheduleArrayOutput {
+	return o
+}
+
+func (o GetPoolScheduleArrayOutput) Index(i pulumi.IntInput) GetPoolScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolSchedule {
+		return vs[0].([]GetPoolSchedule)[vs[1].(int)]
+	}).(GetPoolScheduleOutput)
+}
+
+type GetPoolsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPoolsFilterInput is an input type that accepts GetPoolsFilterArgs and GetPoolsFilterOutput values.
+// You can construct a concrete instance of `GetPoolsFilterInput` via:
+//
+//	GetPoolsFilterArgs{...}
+type GetPoolsFilterInput interface {
+	pulumi.Input
+
+	ToGetPoolsFilterOutput() GetPoolsFilterOutput
+	ToGetPoolsFilterOutputWithContext(context.Context) GetPoolsFilterOutput
+}
+
+type GetPoolsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPoolsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolsFilter)(nil)).Elem()
+}
+
+func (i GetPoolsFilterArgs) ToGetPoolsFilterOutput() GetPoolsFilterOutput {
+	return i.ToGetPoolsFilterOutputWithContext(context.Background())
+}
+
+func (i GetPoolsFilterArgs) ToGetPoolsFilterOutputWithContext(ctx context.Context) GetPoolsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsFilterOutput)
+}
+
+// GetPoolsFilterArrayInput is an input type that accepts GetPoolsFilterArray and GetPoolsFilterArrayOutput values.
+// You can construct a concrete instance of `GetPoolsFilterArrayInput` via:
+//
+//	GetPoolsFilterArray{ GetPoolsFilterArgs{...} }
+type GetPoolsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPoolsFilterArrayOutput() GetPoolsFilterArrayOutput
+	ToGetPoolsFilterArrayOutputWithContext(context.Context) GetPoolsFilterArrayOutput
+}
+
+type GetPoolsFilterArray []GetPoolsFilterInput
+
+func (GetPoolsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolsFilter)(nil)).Elem()
+}
+
+func (i GetPoolsFilterArray) ToGetPoolsFilterArrayOutput() GetPoolsFilterArrayOutput {
+	return i.ToGetPoolsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPoolsFilterArray) ToGetPoolsFilterArrayOutputWithContext(ctx context.Context) GetPoolsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsFilterArrayOutput)
+}
+
+type GetPoolsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPoolsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolsFilter)(nil)).Elem()
+}
+
+func (o GetPoolsFilterOutput) ToGetPoolsFilterOutput() GetPoolsFilterOutput {
+	return o
+}
+
+func (o GetPoolsFilterOutput) ToGetPoolsFilterOutputWithContext(ctx context.Context) GetPoolsFilterOutput {
+	return o
+}
+
+func (o GetPoolsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPoolsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPoolsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPoolsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPoolsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPoolsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPoolsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolsFilter)(nil)).Elem()
+}
+
+func (o GetPoolsFilterArrayOutput) ToGetPoolsFilterArrayOutput() GetPoolsFilterArrayOutput {
+	return o
+}
+
+func (o GetPoolsFilterArrayOutput) ToGetPoolsFilterArrayOutputWithContext(ctx context.Context) GetPoolsFilterArrayOutput {
+	return o
+}
+
+func (o GetPoolsFilterArrayOutput) Index(i pulumi.IntInput) GetPoolsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolsFilter {
+		return vs[0].([]GetPoolsFilter)[vs[1].(int)]
+	}).(GetPoolsFilterOutput)
+}
+
+type GetPoolsPoolCollection struct {
+	Items []GetPoolsPoolCollectionItem `pulumi:"items"`
+}
+
+// GetPoolsPoolCollectionInput is an input type that accepts GetPoolsPoolCollectionArgs and GetPoolsPoolCollectionOutput values.
+// You can construct a concrete instance of `GetPoolsPoolCollectionInput` via:
+//
+//	GetPoolsPoolCollectionArgs{...}
+type GetPoolsPoolCollectionInput interface {
+	pulumi.Input
+
+	ToGetPoolsPoolCollectionOutput() GetPoolsPoolCollectionOutput
+	ToGetPoolsPoolCollectionOutputWithContext(context.Context) GetPoolsPoolCollectionOutput
+}
+
+type GetPoolsPoolCollectionArgs struct {
+	Items GetPoolsPoolCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetPoolsPoolCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolsPoolCollection)(nil)).Elem()
+}
+
+func (i GetPoolsPoolCollectionArgs) ToGetPoolsPoolCollectionOutput() GetPoolsPoolCollectionOutput {
+	return i.ToGetPoolsPoolCollectionOutputWithContext(context.Background())
+}
+
+func (i GetPoolsPoolCollectionArgs) ToGetPoolsPoolCollectionOutputWithContext(ctx context.Context) GetPoolsPoolCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionOutput)
+}
+
+// GetPoolsPoolCollectionArrayInput is an input type that accepts GetPoolsPoolCollectionArray and GetPoolsPoolCollectionArrayOutput values.
+// You can construct a concrete instance of `GetPoolsPoolCollectionArrayInput` via:
+//
+//	GetPoolsPoolCollectionArray{ GetPoolsPoolCollectionArgs{...} }
+type GetPoolsPoolCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetPoolsPoolCollectionArrayOutput() GetPoolsPoolCollectionArrayOutput
+	ToGetPoolsPoolCollectionArrayOutputWithContext(context.Context) GetPoolsPoolCollectionArrayOutput
+}
+
+type GetPoolsPoolCollectionArray []GetPoolsPoolCollectionInput
+
+func (GetPoolsPoolCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolsPoolCollection)(nil)).Elem()
+}
+
+func (i GetPoolsPoolCollectionArray) ToGetPoolsPoolCollectionArrayOutput() GetPoolsPoolCollectionArrayOutput {
+	return i.ToGetPoolsPoolCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPoolsPoolCollectionArray) ToGetPoolsPoolCollectionArrayOutputWithContext(ctx context.Context) GetPoolsPoolCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionArrayOutput)
+}
+
+type GetPoolsPoolCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetPoolsPoolCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolsPoolCollection)(nil)).Elem()
+}
+
+func (o GetPoolsPoolCollectionOutput) ToGetPoolsPoolCollectionOutput() GetPoolsPoolCollectionOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionOutput) ToGetPoolsPoolCollectionOutputWithContext(ctx context.Context) GetPoolsPoolCollectionOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionOutput) Items() GetPoolsPoolCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollection) []GetPoolsPoolCollectionItem { return v.Items }).(GetPoolsPoolCollectionItemArrayOutput)
+}
+
+type GetPoolsPoolCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPoolsPoolCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolsPoolCollection)(nil)).Elem()
+}
+
+func (o GetPoolsPoolCollectionArrayOutput) ToGetPoolsPoolCollectionArrayOutput() GetPoolsPoolCollectionArrayOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionArrayOutput) ToGetPoolsPoolCollectionArrayOutputWithContext(ctx context.Context) GetPoolsPoolCollectionArrayOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionArrayOutput) Index(i pulumi.IntInput) GetPoolsPoolCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolsPoolCollection {
+		return vs[0].([]GetPoolsPoolCollection)[vs[1].(int)]
+	}).(GetPoolsPoolCollectionOutput)
+}
+
+type GetPoolsPoolCollectionItem struct {
+	// The OCID of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// List of PoolConfig items.
+	Configurations []GetPoolsPoolCollectionItemConfiguration `pulumi:"configurations"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A user-friendly description. Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// The query parameter for the Spark application name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+	Id string `pulumi:"id"`
+	// Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
+	IdleTimeoutInMinutes int `pulumi:"idleTimeoutInMinutes"`
+	// The detailed messages about the lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The OCID of the user who created the resource.
+	OwnerPrincipalId string `pulumi:"ownerPrincipalId"`
+	// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
+	OwnerUserName string `pulumi:"ownerUserName"`
+	// A collection of metrics related to a particular pool.
+	PoolMetrics []GetPoolsPoolCollectionItemPoolMetric `pulumi:"poolMetrics"`
+	// A list of schedules for pool to auto start and stop.
+	Schedules []GetPoolsPoolCollectionItemSchedule `pulumi:"schedules"`
+	// The LifecycleState of the pool.
+	State string `pulumi:"state"`
+	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetPoolsPoolCollectionItemInput is an input type that accepts GetPoolsPoolCollectionItemArgs and GetPoolsPoolCollectionItemOutput values.
+// You can construct a concrete instance of `GetPoolsPoolCollectionItemInput` via:
+//
+//	GetPoolsPoolCollectionItemArgs{...}
+type GetPoolsPoolCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetPoolsPoolCollectionItemOutput() GetPoolsPoolCollectionItemOutput
+	ToGetPoolsPoolCollectionItemOutputWithContext(context.Context) GetPoolsPoolCollectionItemOutput
+}
+
+type GetPoolsPoolCollectionItemArgs struct {
+	// The OCID of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// List of PoolConfig items.
+	Configurations GetPoolsPoolCollectionItemConfigurationArrayInput `pulumi:"configurations"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A user-friendly description. Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The query parameter for the Spark application name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
+	IdleTimeoutInMinutes pulumi.IntInput `pulumi:"idleTimeoutInMinutes"`
+	// The detailed messages about the lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The OCID of the user who created the resource.
+	OwnerPrincipalId pulumi.StringInput `pulumi:"ownerPrincipalId"`
+	// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
+	OwnerUserName pulumi.StringInput `pulumi:"ownerUserName"`
+	// A collection of metrics related to a particular pool.
+	PoolMetrics GetPoolsPoolCollectionItemPoolMetricArrayInput `pulumi:"poolMetrics"`
+	// A list of schedules for pool to auto start and stop.
+	Schedules GetPoolsPoolCollectionItemScheduleArrayInput `pulumi:"schedules"`
+	// The LifecycleState of the pool.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetPoolsPoolCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolsPoolCollectionItem)(nil)).Elem()
+}
+
+func (i GetPoolsPoolCollectionItemArgs) ToGetPoolsPoolCollectionItemOutput() GetPoolsPoolCollectionItemOutput {
+	return i.ToGetPoolsPoolCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetPoolsPoolCollectionItemArgs) ToGetPoolsPoolCollectionItemOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemOutput)
+}
+
+// GetPoolsPoolCollectionItemArrayInput is an input type that accepts GetPoolsPoolCollectionItemArray and GetPoolsPoolCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetPoolsPoolCollectionItemArrayInput` via:
+//
+//	GetPoolsPoolCollectionItemArray{ GetPoolsPoolCollectionItemArgs{...} }
+type GetPoolsPoolCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetPoolsPoolCollectionItemArrayOutput() GetPoolsPoolCollectionItemArrayOutput
+	ToGetPoolsPoolCollectionItemArrayOutputWithContext(context.Context) GetPoolsPoolCollectionItemArrayOutput
+}
+
+type GetPoolsPoolCollectionItemArray []GetPoolsPoolCollectionItemInput
+
+func (GetPoolsPoolCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolsPoolCollectionItem)(nil)).Elem()
+}
+
+func (i GetPoolsPoolCollectionItemArray) ToGetPoolsPoolCollectionItemArrayOutput() GetPoolsPoolCollectionItemArrayOutput {
+	return i.ToGetPoolsPoolCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetPoolsPoolCollectionItemArray) ToGetPoolsPoolCollectionItemArrayOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemArrayOutput)
+}
+
+type GetPoolsPoolCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetPoolsPoolCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolsPoolCollectionItem)(nil)).Elem()
+}
+
+func (o GetPoolsPoolCollectionItemOutput) ToGetPoolsPoolCollectionItemOutput() GetPoolsPoolCollectionItemOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionItemOutput) ToGetPoolsPoolCollectionItemOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemOutput {
+	return o
+}
+
+// The OCID of the compartment.
+func (o GetPoolsPoolCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// List of PoolConfig items.
+func (o GetPoolsPoolCollectionItemOutput) Configurations() GetPoolsPoolCollectionItemConfigurationArrayOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) []GetPoolsPoolCollectionItemConfiguration { return v.Configurations }).(GetPoolsPoolCollectionItemConfigurationArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetPoolsPoolCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A user-friendly description. Avoid entering confidential information.
+func (o GetPoolsPoolCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The query parameter for the Spark application name.
+func (o GetPoolsPoolCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetPoolsPoolCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+func (o GetPoolsPoolCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
+func (o GetPoolsPoolCollectionItemOutput) IdleTimeoutInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) int { return v.IdleTimeoutInMinutes }).(pulumi.IntOutput)
+}
+
+// The detailed messages about the lifecycle state.
+func (o GetPoolsPoolCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The OCID of the user who created the resource.
+func (o GetPoolsPoolCollectionItemOutput) OwnerPrincipalId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) string { return v.OwnerPrincipalId }).(pulumi.StringOutput)
+}
+
+// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
+func (o GetPoolsPoolCollectionItemOutput) OwnerUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) string { return v.OwnerUserName }).(pulumi.StringOutput)
+}
+
+// A collection of metrics related to a particular pool.
+func (o GetPoolsPoolCollectionItemOutput) PoolMetrics() GetPoolsPoolCollectionItemPoolMetricArrayOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) []GetPoolsPoolCollectionItemPoolMetric { return v.PoolMetrics }).(GetPoolsPoolCollectionItemPoolMetricArrayOutput)
+}
+
+// A list of schedules for pool to auto start and stop.
+func (o GetPoolsPoolCollectionItemOutput) Schedules() GetPoolsPoolCollectionItemScheduleArrayOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) []GetPoolsPoolCollectionItemSchedule { return v.Schedules }).(GetPoolsPoolCollectionItemScheduleArrayOutput)
+}
+
+// The LifecycleState of the pool.
+func (o GetPoolsPoolCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+func (o GetPoolsPoolCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+func (o GetPoolsPoolCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetPoolsPoolCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPoolsPoolCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolsPoolCollectionItem)(nil)).Elem()
+}
+
+func (o GetPoolsPoolCollectionItemArrayOutput) ToGetPoolsPoolCollectionItemArrayOutput() GetPoolsPoolCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionItemArrayOutput) ToGetPoolsPoolCollectionItemArrayOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPoolsPoolCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolsPoolCollectionItem {
+		return vs[0].([]GetPoolsPoolCollectionItem)[vs[1].(int)]
+	}).(GetPoolsPoolCollectionItemOutput)
+}
+
+type GetPoolsPoolCollectionItemConfiguration struct {
+	// Maximum number of compute instances in the pool for a given compute shape.
+	Max int `pulumi:"max"`
+	// Minimum number of compute instances in the pool for a given compute shape.
+	Min int `pulumi:"min"`
+	// The compute shape of the resources you would like to provision.
+	Shape string `pulumi:"shape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	ShapeConfigs []GetPoolsPoolCollectionItemConfigurationShapeConfig `pulumi:"shapeConfigs"`
+}
+
+// GetPoolsPoolCollectionItemConfigurationInput is an input type that accepts GetPoolsPoolCollectionItemConfigurationArgs and GetPoolsPoolCollectionItemConfigurationOutput values.
+// You can construct a concrete instance of `GetPoolsPoolCollectionItemConfigurationInput` via:
+//
+//	GetPoolsPoolCollectionItemConfigurationArgs{...}
+type GetPoolsPoolCollectionItemConfigurationInput interface {
+	pulumi.Input
+
+	ToGetPoolsPoolCollectionItemConfigurationOutput() GetPoolsPoolCollectionItemConfigurationOutput
+	ToGetPoolsPoolCollectionItemConfigurationOutputWithContext(context.Context) GetPoolsPoolCollectionItemConfigurationOutput
+}
+
+type GetPoolsPoolCollectionItemConfigurationArgs struct {
+	// Maximum number of compute instances in the pool for a given compute shape.
+	Max pulumi.IntInput `pulumi:"max"`
+	// Minimum number of compute instances in the pool for a given compute shape.
+	Min pulumi.IntInput `pulumi:"min"`
+	// The compute shape of the resources you would like to provision.
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	ShapeConfigs GetPoolsPoolCollectionItemConfigurationShapeConfigArrayInput `pulumi:"shapeConfigs"`
+}
+
+func (GetPoolsPoolCollectionItemConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolsPoolCollectionItemConfiguration)(nil)).Elem()
+}
+
+func (i GetPoolsPoolCollectionItemConfigurationArgs) ToGetPoolsPoolCollectionItemConfigurationOutput() GetPoolsPoolCollectionItemConfigurationOutput {
+	return i.ToGetPoolsPoolCollectionItemConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetPoolsPoolCollectionItemConfigurationArgs) ToGetPoolsPoolCollectionItemConfigurationOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemConfigurationOutput)
+}
+
+// GetPoolsPoolCollectionItemConfigurationArrayInput is an input type that accepts GetPoolsPoolCollectionItemConfigurationArray and GetPoolsPoolCollectionItemConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetPoolsPoolCollectionItemConfigurationArrayInput` via:
+//
+//	GetPoolsPoolCollectionItemConfigurationArray{ GetPoolsPoolCollectionItemConfigurationArgs{...} }
+type GetPoolsPoolCollectionItemConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetPoolsPoolCollectionItemConfigurationArrayOutput() GetPoolsPoolCollectionItemConfigurationArrayOutput
+	ToGetPoolsPoolCollectionItemConfigurationArrayOutputWithContext(context.Context) GetPoolsPoolCollectionItemConfigurationArrayOutput
+}
+
+type GetPoolsPoolCollectionItemConfigurationArray []GetPoolsPoolCollectionItemConfigurationInput
+
+func (GetPoolsPoolCollectionItemConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolsPoolCollectionItemConfiguration)(nil)).Elem()
+}
+
+func (i GetPoolsPoolCollectionItemConfigurationArray) ToGetPoolsPoolCollectionItemConfigurationArrayOutput() GetPoolsPoolCollectionItemConfigurationArrayOutput {
+	return i.ToGetPoolsPoolCollectionItemConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetPoolsPoolCollectionItemConfigurationArray) ToGetPoolsPoolCollectionItemConfigurationArrayOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemConfigurationArrayOutput)
+}
+
+type GetPoolsPoolCollectionItemConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetPoolsPoolCollectionItemConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolsPoolCollectionItemConfiguration)(nil)).Elem()
+}
+
+func (o GetPoolsPoolCollectionItemConfigurationOutput) ToGetPoolsPoolCollectionItemConfigurationOutput() GetPoolsPoolCollectionItemConfigurationOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionItemConfigurationOutput) ToGetPoolsPoolCollectionItemConfigurationOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemConfigurationOutput {
+	return o
+}
+
+// Maximum number of compute instances in the pool for a given compute shape.
+func (o GetPoolsPoolCollectionItemConfigurationOutput) Max() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemConfiguration) int { return v.Max }).(pulumi.IntOutput)
+}
+
+// Minimum number of compute instances in the pool for a given compute shape.
+func (o GetPoolsPoolCollectionItemConfigurationOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemConfiguration) int { return v.Min }).(pulumi.IntOutput)
+}
+
+// The compute shape of the resources you would like to provision.
+func (o GetPoolsPoolCollectionItemConfigurationOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemConfiguration) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// This is used to configure the shape of the driver or executor if a flexible shape is used.
+func (o GetPoolsPoolCollectionItemConfigurationOutput) ShapeConfigs() GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemConfiguration) []GetPoolsPoolCollectionItemConfigurationShapeConfig {
+		return v.ShapeConfigs
+	}).(GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput)
+}
+
+type GetPoolsPoolCollectionItemConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPoolsPoolCollectionItemConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolsPoolCollectionItemConfiguration)(nil)).Elem()
+}
+
+func (o GetPoolsPoolCollectionItemConfigurationArrayOutput) ToGetPoolsPoolCollectionItemConfigurationArrayOutput() GetPoolsPoolCollectionItemConfigurationArrayOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionItemConfigurationArrayOutput) ToGetPoolsPoolCollectionItemConfigurationArrayOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemConfigurationArrayOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionItemConfigurationArrayOutput) Index(i pulumi.IntInput) GetPoolsPoolCollectionItemConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolsPoolCollectionItemConfiguration {
+		return vs[0].([]GetPoolsPoolCollectionItemConfiguration)[vs[1].(int)]
+	}).(GetPoolsPoolCollectionItemConfigurationOutput)
+}
+
+type GetPoolsPoolCollectionItemConfigurationShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetPoolsPoolCollectionItemConfigurationShapeConfigInput is an input type that accepts GetPoolsPoolCollectionItemConfigurationShapeConfigArgs and GetPoolsPoolCollectionItemConfigurationShapeConfigOutput values.
+// You can construct a concrete instance of `GetPoolsPoolCollectionItemConfigurationShapeConfigInput` via:
+//
+//	GetPoolsPoolCollectionItemConfigurationShapeConfigArgs{...}
+type GetPoolsPoolCollectionItemConfigurationShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetPoolsPoolCollectionItemConfigurationShapeConfigOutput() GetPoolsPoolCollectionItemConfigurationShapeConfigOutput
+	ToGetPoolsPoolCollectionItemConfigurationShapeConfigOutputWithContext(context.Context) GetPoolsPoolCollectionItemConfigurationShapeConfigOutput
+}
+
+type GetPoolsPoolCollectionItemConfigurationShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetPoolsPoolCollectionItemConfigurationShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolsPoolCollectionItemConfigurationShapeConfig)(nil)).Elem()
+}
+
+func (i GetPoolsPoolCollectionItemConfigurationShapeConfigArgs) ToGetPoolsPoolCollectionItemConfigurationShapeConfigOutput() GetPoolsPoolCollectionItemConfigurationShapeConfigOutput {
+	return i.ToGetPoolsPoolCollectionItemConfigurationShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetPoolsPoolCollectionItemConfigurationShapeConfigArgs) ToGetPoolsPoolCollectionItemConfigurationShapeConfigOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemConfigurationShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemConfigurationShapeConfigOutput)
+}
+
+// GetPoolsPoolCollectionItemConfigurationShapeConfigArrayInput is an input type that accepts GetPoolsPoolCollectionItemConfigurationShapeConfigArray and GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetPoolsPoolCollectionItemConfigurationShapeConfigArrayInput` via:
+//
+//	GetPoolsPoolCollectionItemConfigurationShapeConfigArray{ GetPoolsPoolCollectionItemConfigurationShapeConfigArgs{...} }
+type GetPoolsPoolCollectionItemConfigurationShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput() GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput
+	ToGetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutputWithContext(context.Context) GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput
+}
+
+type GetPoolsPoolCollectionItemConfigurationShapeConfigArray []GetPoolsPoolCollectionItemConfigurationShapeConfigInput
+
+func (GetPoolsPoolCollectionItemConfigurationShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolsPoolCollectionItemConfigurationShapeConfig)(nil)).Elem()
+}
+
+func (i GetPoolsPoolCollectionItemConfigurationShapeConfigArray) ToGetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput() GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput {
+	return i.ToGetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetPoolsPoolCollectionItemConfigurationShapeConfigArray) ToGetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput)
+}
+
+type GetPoolsPoolCollectionItemConfigurationShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetPoolsPoolCollectionItemConfigurationShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolsPoolCollectionItemConfigurationShapeConfig)(nil)).Elem()
+}
+
+func (o GetPoolsPoolCollectionItemConfigurationShapeConfigOutput) ToGetPoolsPoolCollectionItemConfigurationShapeConfigOutput() GetPoolsPoolCollectionItemConfigurationShapeConfigOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionItemConfigurationShapeConfigOutput) ToGetPoolsPoolCollectionItemConfigurationShapeConfigOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemConfigurationShapeConfigOutput {
+	return o
+}
+
+// The amount of memory used for the driver or executors.
+func (o GetPoolsPoolCollectionItemConfigurationShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemConfigurationShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o GetPoolsPoolCollectionItemConfigurationShapeConfigOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemConfigurationShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+type GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolsPoolCollectionItemConfigurationShapeConfig)(nil)).Elem()
+}
+
+func (o GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput) ToGetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput() GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput) ToGetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput) Index(i pulumi.IntInput) GetPoolsPoolCollectionItemConfigurationShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolsPoolCollectionItemConfigurationShapeConfig {
+		return vs[0].([]GetPoolsPoolCollectionItemConfigurationShapeConfig)[vs[1].(int)]
+	}).(GetPoolsPoolCollectionItemConfigurationShapeConfigOutput)
+}
+
+type GetPoolsPoolCollectionItemPoolMetric struct {
+	// The number of runs that are currently running that are using this pool.
+	ActiveRunsCount string `pulumi:"activeRunsCount"`
+	// A count of the nodes that are currently being used for each shape in this pool.
+	ActivelyUsedNodeCounts []GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount `pulumi:"activelyUsedNodeCounts"`
+	// The last time the mertics were updated for this.
+	TimeLastMetricsUpdated string `pulumi:"timeLastMetricsUpdated"`
+	// The last time this pool was started.
+	TimeLastStarted string `pulumi:"timeLastStarted"`
+	// The last time this pool was stopped.
+	TimeLastStopped string `pulumi:"timeLastStopped"`
+	// The last time a run used this pool.
+	TimeLastUsed string `pulumi:"timeLastUsed"`
+}
+
+// GetPoolsPoolCollectionItemPoolMetricInput is an input type that accepts GetPoolsPoolCollectionItemPoolMetricArgs and GetPoolsPoolCollectionItemPoolMetricOutput values.
+// You can construct a concrete instance of `GetPoolsPoolCollectionItemPoolMetricInput` via:
+//
+//	GetPoolsPoolCollectionItemPoolMetricArgs{...}
+type GetPoolsPoolCollectionItemPoolMetricInput interface {
+	pulumi.Input
+
+	ToGetPoolsPoolCollectionItemPoolMetricOutput() GetPoolsPoolCollectionItemPoolMetricOutput
+	ToGetPoolsPoolCollectionItemPoolMetricOutputWithContext(context.Context) GetPoolsPoolCollectionItemPoolMetricOutput
+}
+
+type GetPoolsPoolCollectionItemPoolMetricArgs struct {
+	// The number of runs that are currently running that are using this pool.
+	ActiveRunsCount pulumi.StringInput `pulumi:"activeRunsCount"`
+	// A count of the nodes that are currently being used for each shape in this pool.
+	ActivelyUsedNodeCounts GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayInput `pulumi:"activelyUsedNodeCounts"`
+	// The last time the mertics were updated for this.
+	TimeLastMetricsUpdated pulumi.StringInput `pulumi:"timeLastMetricsUpdated"`
+	// The last time this pool was started.
+	TimeLastStarted pulumi.StringInput `pulumi:"timeLastStarted"`
+	// The last time this pool was stopped.
+	TimeLastStopped pulumi.StringInput `pulumi:"timeLastStopped"`
+	// The last time a run used this pool.
+	TimeLastUsed pulumi.StringInput `pulumi:"timeLastUsed"`
+}
+
+func (GetPoolsPoolCollectionItemPoolMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolsPoolCollectionItemPoolMetric)(nil)).Elem()
+}
+
+func (i GetPoolsPoolCollectionItemPoolMetricArgs) ToGetPoolsPoolCollectionItemPoolMetricOutput() GetPoolsPoolCollectionItemPoolMetricOutput {
+	return i.ToGetPoolsPoolCollectionItemPoolMetricOutputWithContext(context.Background())
+}
+
+func (i GetPoolsPoolCollectionItemPoolMetricArgs) ToGetPoolsPoolCollectionItemPoolMetricOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemPoolMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemPoolMetricOutput)
+}
+
+// GetPoolsPoolCollectionItemPoolMetricArrayInput is an input type that accepts GetPoolsPoolCollectionItemPoolMetricArray and GetPoolsPoolCollectionItemPoolMetricArrayOutput values.
+// You can construct a concrete instance of `GetPoolsPoolCollectionItemPoolMetricArrayInput` via:
+//
+//	GetPoolsPoolCollectionItemPoolMetricArray{ GetPoolsPoolCollectionItemPoolMetricArgs{...} }
+type GetPoolsPoolCollectionItemPoolMetricArrayInput interface {
+	pulumi.Input
+
+	ToGetPoolsPoolCollectionItemPoolMetricArrayOutput() GetPoolsPoolCollectionItemPoolMetricArrayOutput
+	ToGetPoolsPoolCollectionItemPoolMetricArrayOutputWithContext(context.Context) GetPoolsPoolCollectionItemPoolMetricArrayOutput
+}
+
+type GetPoolsPoolCollectionItemPoolMetricArray []GetPoolsPoolCollectionItemPoolMetricInput
+
+func (GetPoolsPoolCollectionItemPoolMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolsPoolCollectionItemPoolMetric)(nil)).Elem()
+}
+
+func (i GetPoolsPoolCollectionItemPoolMetricArray) ToGetPoolsPoolCollectionItemPoolMetricArrayOutput() GetPoolsPoolCollectionItemPoolMetricArrayOutput {
+	return i.ToGetPoolsPoolCollectionItemPoolMetricArrayOutputWithContext(context.Background())
+}
+
+func (i GetPoolsPoolCollectionItemPoolMetricArray) ToGetPoolsPoolCollectionItemPoolMetricArrayOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemPoolMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemPoolMetricArrayOutput)
+}
+
+type GetPoolsPoolCollectionItemPoolMetricOutput struct{ *pulumi.OutputState }
+
+func (GetPoolsPoolCollectionItemPoolMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolsPoolCollectionItemPoolMetric)(nil)).Elem()
+}
+
+func (o GetPoolsPoolCollectionItemPoolMetricOutput) ToGetPoolsPoolCollectionItemPoolMetricOutput() GetPoolsPoolCollectionItemPoolMetricOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionItemPoolMetricOutput) ToGetPoolsPoolCollectionItemPoolMetricOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemPoolMetricOutput {
+	return o
+}
+
+// The number of runs that are currently running that are using this pool.
+func (o GetPoolsPoolCollectionItemPoolMetricOutput) ActiveRunsCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetric) string { return v.ActiveRunsCount }).(pulumi.StringOutput)
+}
+
+// A count of the nodes that are currently being used for each shape in this pool.
+func (o GetPoolsPoolCollectionItemPoolMetricOutput) ActivelyUsedNodeCounts() GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetric) []GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount {
+		return v.ActivelyUsedNodeCounts
+	}).(GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput)
+}
+
+// The last time the mertics were updated for this.
+func (o GetPoolsPoolCollectionItemPoolMetricOutput) TimeLastMetricsUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetric) string { return v.TimeLastMetricsUpdated }).(pulumi.StringOutput)
+}
+
+// The last time this pool was started.
+func (o GetPoolsPoolCollectionItemPoolMetricOutput) TimeLastStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetric) string { return v.TimeLastStarted }).(pulumi.StringOutput)
+}
+
+// The last time this pool was stopped.
+func (o GetPoolsPoolCollectionItemPoolMetricOutput) TimeLastStopped() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetric) string { return v.TimeLastStopped }).(pulumi.StringOutput)
+}
+
+// The last time a run used this pool.
+func (o GetPoolsPoolCollectionItemPoolMetricOutput) TimeLastUsed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetric) string { return v.TimeLastUsed }).(pulumi.StringOutput)
+}
+
+type GetPoolsPoolCollectionItemPoolMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPoolsPoolCollectionItemPoolMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolsPoolCollectionItemPoolMetric)(nil)).Elem()
+}
+
+func (o GetPoolsPoolCollectionItemPoolMetricArrayOutput) ToGetPoolsPoolCollectionItemPoolMetricArrayOutput() GetPoolsPoolCollectionItemPoolMetricArrayOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionItemPoolMetricArrayOutput) ToGetPoolsPoolCollectionItemPoolMetricArrayOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemPoolMetricArrayOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionItemPoolMetricArrayOutput) Index(i pulumi.IntInput) GetPoolsPoolCollectionItemPoolMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolsPoolCollectionItemPoolMetric {
+		return vs[0].([]GetPoolsPoolCollectionItemPoolMetric)[vs[1].(int)]
+	}).(GetPoolsPoolCollectionItemPoolMetricOutput)
+}
+
+type GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount struct {
+	// The compute shape of the nodes that the count is for.
+	LogicalShape string `pulumi:"logicalShape"`
+	// The node count of this compute shape.
+	PoolCount int `pulumi:"poolCount"`
+}
+
+// GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountInput is an input type that accepts GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArgs and GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput values.
+// You can construct a concrete instance of `GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountInput` via:
+//
+//	GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArgs{...}
+type GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountInput interface {
+	pulumi.Input
+
+	ToGetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput() GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput
+	ToGetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutputWithContext(context.Context) GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput
+}
+
+type GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArgs struct {
+	// The compute shape of the nodes that the count is for.
+	LogicalShape pulumi.StringInput `pulumi:"logicalShape"`
+	// The node count of this compute shape.
+	PoolCount pulumi.IntInput `pulumi:"poolCount"`
+}
+
+func (GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount)(nil)).Elem()
+}
+
+func (i GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArgs) ToGetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput() GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput {
+	return i.ToGetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutputWithContext(context.Background())
+}
+
+func (i GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArgs) ToGetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput)
+}
+
+// GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayInput is an input type that accepts GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArray and GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput values.
+// You can construct a concrete instance of `GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayInput` via:
+//
+//	GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArray{ GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArgs{...} }
+type GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayInput interface {
+	pulumi.Input
+
+	ToGetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput() GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput
+	ToGetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutputWithContext(context.Context) GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput
+}
+
+type GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArray []GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountInput
+
+func (GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount)(nil)).Elem()
+}
+
+func (i GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArray) ToGetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput() GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput {
+	return i.ToGetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutputWithContext(context.Background())
+}
+
+func (i GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArray) ToGetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput)
+}
+
+type GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput struct{ *pulumi.OutputState }
+
+func (GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount)(nil)).Elem()
+}
+
+func (o GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput) ToGetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput() GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput) ToGetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput {
+	return o
+}
+
+// The compute shape of the nodes that the count is for.
+func (o GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput) LogicalShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount) string { return v.LogicalShape }).(pulumi.StringOutput)
+}
+
+// The node count of this compute shape.
+func (o GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput) PoolCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount) int { return v.PoolCount }).(pulumi.IntOutput)
+}
+
+type GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount)(nil)).Elem()
+}
+
+func (o GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput) ToGetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput() GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput) ToGetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput) Index(i pulumi.IntInput) GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount {
+		return vs[0].([]GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount)[vs[1].(int)]
+	}).(GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput)
+}
+
+type GetPoolsPoolCollectionItemSchedule struct {
+	// Day of the week SUN-SAT
+	DayOfWeek string `pulumi:"dayOfWeek"`
+	// Hour of the day to start or stop pool.
+	StartTime int `pulumi:"startTime"`
+	// Hour of the day to stop the pool.
+	StopTime int `pulumi:"stopTime"`
+}
+
+// GetPoolsPoolCollectionItemScheduleInput is an input type that accepts GetPoolsPoolCollectionItemScheduleArgs and GetPoolsPoolCollectionItemScheduleOutput values.
+// You can construct a concrete instance of `GetPoolsPoolCollectionItemScheduleInput` via:
+//
+//	GetPoolsPoolCollectionItemScheduleArgs{...}
+type GetPoolsPoolCollectionItemScheduleInput interface {
+	pulumi.Input
+
+	ToGetPoolsPoolCollectionItemScheduleOutput() GetPoolsPoolCollectionItemScheduleOutput
+	ToGetPoolsPoolCollectionItemScheduleOutputWithContext(context.Context) GetPoolsPoolCollectionItemScheduleOutput
+}
+
+type GetPoolsPoolCollectionItemScheduleArgs struct {
+	// Day of the week SUN-SAT
+	DayOfWeek pulumi.StringInput `pulumi:"dayOfWeek"`
+	// Hour of the day to start or stop pool.
+	StartTime pulumi.IntInput `pulumi:"startTime"`
+	// Hour of the day to stop the pool.
+	StopTime pulumi.IntInput `pulumi:"stopTime"`
+}
+
+func (GetPoolsPoolCollectionItemScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolsPoolCollectionItemSchedule)(nil)).Elem()
+}
+
+func (i GetPoolsPoolCollectionItemScheduleArgs) ToGetPoolsPoolCollectionItemScheduleOutput() GetPoolsPoolCollectionItemScheduleOutput {
+	return i.ToGetPoolsPoolCollectionItemScheduleOutputWithContext(context.Background())
+}
+
+func (i GetPoolsPoolCollectionItemScheduleArgs) ToGetPoolsPoolCollectionItemScheduleOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemScheduleOutput)
+}
+
+// GetPoolsPoolCollectionItemScheduleArrayInput is an input type that accepts GetPoolsPoolCollectionItemScheduleArray and GetPoolsPoolCollectionItemScheduleArrayOutput values.
+// You can construct a concrete instance of `GetPoolsPoolCollectionItemScheduleArrayInput` via:
+//
+//	GetPoolsPoolCollectionItemScheduleArray{ GetPoolsPoolCollectionItemScheduleArgs{...} }
+type GetPoolsPoolCollectionItemScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetPoolsPoolCollectionItemScheduleArrayOutput() GetPoolsPoolCollectionItemScheduleArrayOutput
+	ToGetPoolsPoolCollectionItemScheduleArrayOutputWithContext(context.Context) GetPoolsPoolCollectionItemScheduleArrayOutput
+}
+
+type GetPoolsPoolCollectionItemScheduleArray []GetPoolsPoolCollectionItemScheduleInput
+
+func (GetPoolsPoolCollectionItemScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolsPoolCollectionItemSchedule)(nil)).Elem()
+}
+
+func (i GetPoolsPoolCollectionItemScheduleArray) ToGetPoolsPoolCollectionItemScheduleArrayOutput() GetPoolsPoolCollectionItemScheduleArrayOutput {
+	return i.ToGetPoolsPoolCollectionItemScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetPoolsPoolCollectionItemScheduleArray) ToGetPoolsPoolCollectionItemScheduleArrayOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemScheduleArrayOutput)
+}
+
+type GetPoolsPoolCollectionItemScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetPoolsPoolCollectionItemScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoolsPoolCollectionItemSchedule)(nil)).Elem()
+}
+
+func (o GetPoolsPoolCollectionItemScheduleOutput) ToGetPoolsPoolCollectionItemScheduleOutput() GetPoolsPoolCollectionItemScheduleOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionItemScheduleOutput) ToGetPoolsPoolCollectionItemScheduleOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemScheduleOutput {
+	return o
+}
+
+// Day of the week SUN-SAT
+func (o GetPoolsPoolCollectionItemScheduleOutput) DayOfWeek() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemSchedule) string { return v.DayOfWeek }).(pulumi.StringOutput)
+}
+
+// Hour of the day to start or stop pool.
+func (o GetPoolsPoolCollectionItemScheduleOutput) StartTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemSchedule) int { return v.StartTime }).(pulumi.IntOutput)
+}
+
+// Hour of the day to stop the pool.
+func (o GetPoolsPoolCollectionItemScheduleOutput) StopTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemSchedule) int { return v.StopTime }).(pulumi.IntOutput)
+}
+
+type GetPoolsPoolCollectionItemScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPoolsPoolCollectionItemScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoolsPoolCollectionItemSchedule)(nil)).Elem()
+}
+
+func (o GetPoolsPoolCollectionItemScheduleArrayOutput) ToGetPoolsPoolCollectionItemScheduleArrayOutput() GetPoolsPoolCollectionItemScheduleArrayOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionItemScheduleArrayOutput) ToGetPoolsPoolCollectionItemScheduleArrayOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemScheduleArrayOutput {
+	return o
+}
+
+func (o GetPoolsPoolCollectionItemScheduleArrayOutput) Index(i pulumi.IntInput) GetPoolsPoolCollectionItemScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolsPoolCollectionItemSchedule {
+		return vs[0].([]GetPoolsPoolCollectionItemSchedule)[vs[1].(int)]
+	}).(GetPoolsPoolCollectionItemScheduleOutput)
+}
+
 type GetPrivateEndpointScanDetail struct {
 	// A fully-qualified domain name (FQDN).
 	Fqdn string `pulumi:"fqdn"`
@@ -4628,9 +6911,9 @@ type GetPrivateEndpointsPrivateEndpointCollectionItem struct {
 	State string `pulumi:"state"`
 	// The OCID of a subnet.
 	SubnetId string `pulumi:"subnetId"`
-	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -4676,9 +6959,9 @@ type GetPrivateEndpointsPrivateEndpointCollectionItemArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// The OCID of a subnet.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 }
 
@@ -4810,12 +7093,12 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) SubnetId() pulum
 	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -5633,7 +7916,7 @@ type GetRunStatementsStatementCollectionItem struct {
 	State string `pulumi:"state"`
 	// The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
 	TimeCompleted string `pulumi:"timeCompleted"`
-	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 }
 
@@ -5663,7 +7946,7 @@ type GetRunStatementsStatementCollectionItemArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
 	TimeCompleted pulumi.StringInput `pulumi:"timeCompleted"`
-	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 }
 
@@ -5755,7 +8038,7 @@ func (o GetRunStatementsStatementCollectionItemOutput) TimeCompleted() pulumi.St
 	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) string { return v.TimeCompleted }).(pulumi.StringOutput)
 }
 
-// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 func (o GetRunStatementsStatementCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
@@ -6038,6 +8321,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InvokeRunExecutorShapeConfigPtrInput)(nil)).Elem(), InvokeRunExecutorShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InvokeRunParameterInput)(nil)).Elem(), InvokeRunParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InvokeRunParameterArrayInput)(nil)).Elem(), InvokeRunParameterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PoolConfigurationInput)(nil)).Elem(), PoolConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PoolConfigurationArrayInput)(nil)).Elem(), PoolConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PoolConfigurationShapeConfigInput)(nil)).Elem(), PoolConfigurationShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PoolConfigurationShapeConfigPtrInput)(nil)).Elem(), PoolConfigurationShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PoolPoolMetricInput)(nil)).Elem(), PoolPoolMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PoolPoolMetricArrayInput)(nil)).Elem(), PoolPoolMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PoolPoolMetricActivelyUsedNodeCountInput)(nil)).Elem(), PoolPoolMetricActivelyUsedNodeCountArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PoolPoolMetricActivelyUsedNodeCountArrayInput)(nil)).Elem(), PoolPoolMetricActivelyUsedNodeCountArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PoolScheduleInput)(nil)).Elem(), PoolScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PoolScheduleArrayInput)(nil)).Elem(), PoolScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PrivateEndpointScanDetailInput)(nil)).Elem(), PrivateEndpointScanDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PrivateEndpointScanDetailArrayInput)(nil)).Elem(), PrivateEndpointScanDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RunStatementOutputTypeInput)(nil)).Elem(), RunStatementOutputTypeArgs{})
@@ -6084,6 +8377,32 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunsRunExecutorShapeConfigArrayInput)(nil)).Elem(), GetInvokeRunsRunExecutorShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunsRunParameterInput)(nil)).Elem(), GetInvokeRunsRunParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunsRunParameterArrayInput)(nil)).Elem(), GetInvokeRunsRunParameterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolConfigurationInput)(nil)).Elem(), GetPoolConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolConfigurationArrayInput)(nil)).Elem(), GetPoolConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolConfigurationShapeConfigInput)(nil)).Elem(), GetPoolConfigurationShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolConfigurationShapeConfigArrayInput)(nil)).Elem(), GetPoolConfigurationShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolPoolMetricInput)(nil)).Elem(), GetPoolPoolMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolPoolMetricArrayInput)(nil)).Elem(), GetPoolPoolMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolPoolMetricActivelyUsedNodeCountInput)(nil)).Elem(), GetPoolPoolMetricActivelyUsedNodeCountArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolPoolMetricActivelyUsedNodeCountArrayInput)(nil)).Elem(), GetPoolPoolMetricActivelyUsedNodeCountArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolScheduleInput)(nil)).Elem(), GetPoolScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolScheduleArrayInput)(nil)).Elem(), GetPoolScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolsFilterInput)(nil)).Elem(), GetPoolsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolsFilterArrayInput)(nil)).Elem(), GetPoolsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolsPoolCollectionInput)(nil)).Elem(), GetPoolsPoolCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolsPoolCollectionArrayInput)(nil)).Elem(), GetPoolsPoolCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolsPoolCollectionItemInput)(nil)).Elem(), GetPoolsPoolCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolsPoolCollectionItemArrayInput)(nil)).Elem(), GetPoolsPoolCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolsPoolCollectionItemConfigurationInput)(nil)).Elem(), GetPoolsPoolCollectionItemConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolsPoolCollectionItemConfigurationArrayInput)(nil)).Elem(), GetPoolsPoolCollectionItemConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolsPoolCollectionItemConfigurationShapeConfigInput)(nil)).Elem(), GetPoolsPoolCollectionItemConfigurationShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolsPoolCollectionItemConfigurationShapeConfigArrayInput)(nil)).Elem(), GetPoolsPoolCollectionItemConfigurationShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolsPoolCollectionItemPoolMetricInput)(nil)).Elem(), GetPoolsPoolCollectionItemPoolMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolsPoolCollectionItemPoolMetricArrayInput)(nil)).Elem(), GetPoolsPoolCollectionItemPoolMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountInput)(nil)).Elem(), GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayInput)(nil)).Elem(), GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolsPoolCollectionItemScheduleInput)(nil)).Elem(), GetPoolsPoolCollectionItemScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolsPoolCollectionItemScheduleArrayInput)(nil)).Elem(), GetPoolsPoolCollectionItemScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointScanDetailInput)(nil)).Elem(), GetPrivateEndpointScanDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointScanDetailArrayInput)(nil)).Elem(), GetPrivateEndpointScanDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsFilterInput)(nil)).Elem(), GetPrivateEndpointsFilterArgs{})
@@ -6128,6 +8447,16 @@ func init() {
 	pulumi.RegisterOutputType(InvokeRunExecutorShapeConfigPtrOutput{})
 	pulumi.RegisterOutputType(InvokeRunParameterOutput{})
 	pulumi.RegisterOutputType(InvokeRunParameterArrayOutput{})
+	pulumi.RegisterOutputType(PoolConfigurationOutput{})
+	pulumi.RegisterOutputType(PoolConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(PoolConfigurationShapeConfigOutput{})
+	pulumi.RegisterOutputType(PoolConfigurationShapeConfigPtrOutput{})
+	pulumi.RegisterOutputType(PoolPoolMetricOutput{})
+	pulumi.RegisterOutputType(PoolPoolMetricArrayOutput{})
+	pulumi.RegisterOutputType(PoolPoolMetricActivelyUsedNodeCountOutput{})
+	pulumi.RegisterOutputType(PoolPoolMetricActivelyUsedNodeCountArrayOutput{})
+	pulumi.RegisterOutputType(PoolScheduleOutput{})
+	pulumi.RegisterOutputType(PoolScheduleArrayOutput{})
 	pulumi.RegisterOutputType(PrivateEndpointScanDetailOutput{})
 	pulumi.RegisterOutputType(PrivateEndpointScanDetailArrayOutput{})
 	pulumi.RegisterOutputType(RunStatementOutputTypeOutput{})
@@ -6174,6 +8503,32 @@ func init() {
 	pulumi.RegisterOutputType(GetInvokeRunsRunExecutorShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetInvokeRunsRunParameterOutput{})
 	pulumi.RegisterOutputType(GetInvokeRunsRunParameterArrayOutput{})
+	pulumi.RegisterOutputType(GetPoolConfigurationOutput{})
+	pulumi.RegisterOutputType(GetPoolConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetPoolConfigurationShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetPoolConfigurationShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetPoolPoolMetricOutput{})
+	pulumi.RegisterOutputType(GetPoolPoolMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetPoolPoolMetricActivelyUsedNodeCountOutput{})
+	pulumi.RegisterOutputType(GetPoolPoolMetricActivelyUsedNodeCountArrayOutput{})
+	pulumi.RegisterOutputType(GetPoolScheduleOutput{})
+	pulumi.RegisterOutputType(GetPoolScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetPoolsFilterOutput{})
+	pulumi.RegisterOutputType(GetPoolsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPoolsPoolCollectionOutput{})
+	pulumi.RegisterOutputType(GetPoolsPoolCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetPoolsPoolCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetPoolsPoolCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPoolsPoolCollectionItemConfigurationOutput{})
+	pulumi.RegisterOutputType(GetPoolsPoolCollectionItemConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetPoolsPoolCollectionItemConfigurationShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetPoolsPoolCollectionItemPoolMetricOutput{})
+	pulumi.RegisterOutputType(GetPoolsPoolCollectionItemPoolMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput{})
+	pulumi.RegisterOutputType(GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput{})
+	pulumi.RegisterOutputType(GetPoolsPoolCollectionItemScheduleOutput{})
+	pulumi.RegisterOutputType(GetPoolsPoolCollectionItemScheduleArrayOutput{})
 	pulumi.RegisterOutputType(GetPrivateEndpointScanDetailOutput{})
 	pulumi.RegisterOutputType(GetPrivateEndpointScanDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPrivateEndpointsFilterOutput{})

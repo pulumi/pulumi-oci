@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Fleet Crypto Analysis Result resource in Oracle Cloud Infrastructure Jms service.
 //
-// Retrieve metadata of the Crypto Event Analysis result.
+// Retrieve the metadata for the result of a Crypto event analysis.
 //
 // ## Example Usage
 //
@@ -78,7 +78,7 @@ type GetFleetCryptoAnalysisResultResult struct {
 	ManagedInstanceId string `pulumi:"managedInstanceId"`
 	// The Object Storage namespace of this analysis result.
 	Namespace string `pulumi:"namespace"`
-	// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the crypto roadmap version used the the analysis.
+	// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
 	NonCompliantFindingCount int `pulumi:"nonCompliantFindingCount"`
 	// The Object Storage object name of this analysis result.
 	Object string `pulumi:"object"`
@@ -185,7 +185,7 @@ func (o GetFleetCryptoAnalysisResultResultOutput) Namespace() pulumi.StringOutpu
 	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the crypto roadmap version used the the analysis.
+// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
 func (o GetFleetCryptoAnalysisResultResultOutput) NonCompliantFindingCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) int { return v.NonCompliantFindingCount }).(pulumi.IntOutput)
 }

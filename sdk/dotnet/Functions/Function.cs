@@ -140,6 +140,12 @@ namespace Pulumi.Oci.Functions
         public Output<Outputs.FunctionProvisionedConcurrencyConfig> ProvisionedConcurrencyConfig { get; private set; } = null!;
 
         /// <summary>
+        /// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+        /// </summary>
+        [Output("shape")]
+        public Output<string> Shape { get; private set; } = null!;
+
+        /// <summary>
         /// The source details for the Function. The function can be created from various sources.
         /// </summary>
         [Output("sourceDetails")]
@@ -406,6 +412,12 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         [Input("provisionedConcurrencyConfig")]
         public Input<Inputs.FunctionProvisionedConcurrencyConfigGetArgs>? ProvisionedConcurrencyConfig { get; set; }
+
+        /// <summary>
+        /// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+        /// </summary>
+        [Input("shape")]
+        public Input<string>? Shape { get; set; }
 
         /// <summary>
         /// The source details for the Function. The function can be created from various sources.

@@ -110,6 +110,10 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string BillingContractEndDate;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+        /// </summary>
+        public readonly string BillingDonorHostId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         /// </summary>
         public readonly string CapacityReservationId;
@@ -139,7 +143,7 @@ namespace Pulumi.Oci.Ocvp
         public readonly string DisplayName;
         public readonly string EsxiHostId;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
         /// </summary>
         public readonly string FailedEsxiHostId;
         /// <summary>
@@ -163,6 +167,14 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Indicates whether this host is in the progress of billing continuation.
+        /// </summary>
+        public readonly bool IsBillingContinuationInProgress;
+        /// <summary>
+        /// Indicates whether this host is in the progress of swapping billing.
+        /// </summary>
+        public readonly bool IsBillingSwappingInProgress;
+        /// <summary>
         /// The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         /// </summary>
         public readonly string NextSku;
@@ -183,6 +195,10 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+        /// </summary>
+        public readonly string SwapBillingHostId;
+        /// <summary>
         /// The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
@@ -202,6 +218,8 @@ namespace Pulumi.Oci.Ocvp
         [OutputConstructor]
         private GetExsiHostResult(
             string billingContractEndDate,
+
+            string billingDonorHostId,
 
             string capacityReservationId,
 
@@ -231,6 +249,10 @@ namespace Pulumi.Oci.Ocvp
 
             string id,
 
+            bool isBillingContinuationInProgress,
+
+            bool isBillingSwappingInProgress,
+
             string nextSku,
 
             string nonUpgradedEsxiHostId,
@@ -241,6 +263,8 @@ namespace Pulumi.Oci.Ocvp
 
             string state,
 
+            string swapBillingHostId,
+
             string timeCreated,
 
             string timeUpdated,
@@ -250,6 +274,7 @@ namespace Pulumi.Oci.Ocvp
             string vmwareSoftwareVersion)
         {
             BillingContractEndDate = billingContractEndDate;
+            BillingDonorHostId = billingDonorHostId;
             CapacityReservationId = capacityReservationId;
             CompartmentId = compartmentId;
             ComputeAvailabilityDomain = computeAvailabilityDomain;
@@ -264,11 +289,14 @@ namespace Pulumi.Oci.Ocvp
             HostOcpuCount = hostOcpuCount;
             HostShapeName = hostShapeName;
             Id = id;
+            IsBillingContinuationInProgress = isBillingContinuationInProgress;
+            IsBillingSwappingInProgress = isBillingSwappingInProgress;
             NextSku = nextSku;
             NonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
             ReplacementEsxiHostId = replacementEsxiHostId;
             SddcId = sddcId;
             State = state;
+            SwapBillingHostId = swapBillingHostId;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
             UpgradedReplacementEsxiHostId = upgradedReplacementEsxiHostId;

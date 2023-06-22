@@ -25,6 +25,7 @@ class DatasetArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 initial_import_dataset_configuration: Optional[pulumi.Input['DatasetInitialImportDatasetConfigurationArgs']] = None,
                  initial_record_generation_configuration: Optional[pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs']] = None,
                  labeling_instructions: Optional[pulumi.Input[str]] = None):
         """
@@ -38,6 +39,7 @@ class DatasetArgs:
         :param pulumi.Input[str] description: (Updatable) A user provided description of the dataset
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input['DatasetInitialImportDatasetConfigurationArgs'] initial_import_dataset_configuration: Initial import dataset configuration. Allows user to create dataset from existing dataset files.
         :param pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs'] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
         :param pulumi.Input[str] labeling_instructions: (Updatable) The labeling instructions for human labelers in rich text format
                
@@ -58,6 +60,8 @@ class DatasetArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if initial_import_dataset_configuration is not None:
+            pulumi.set(__self__, "initial_import_dataset_configuration", initial_import_dataset_configuration)
         if initial_record_generation_configuration is not None:
             pulumi.set(__self__, "initial_record_generation_configuration", initial_record_generation_configuration)
         if labeling_instructions is not None:
@@ -172,6 +176,18 @@ class DatasetArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="initialImportDatasetConfiguration")
+    def initial_import_dataset_configuration(self) -> Optional[pulumi.Input['DatasetInitialImportDatasetConfigurationArgs']]:
+        """
+        Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+        """
+        return pulumi.get(self, "initial_import_dataset_configuration")
+
+    @initial_import_dataset_configuration.setter
+    def initial_import_dataset_configuration(self, value: Optional[pulumi.Input['DatasetInitialImportDatasetConfigurationArgs']]):
+        pulumi.set(self, "initial_import_dataset_configuration", value)
+
+    @property
     @pulumi.getter(name="initialRecordGenerationConfiguration")
     def initial_record_generation_configuration(self) -> Optional[pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs']]:
         """
@@ -203,6 +219,7 @@ class DatasetArgs:
 @pulumi.input_type
 class _DatasetState:
     def __init__(__self__, *,
+                 additional_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  annotation_format: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  dataset_format_details: Optional[pulumi.Input['DatasetDatasetFormatDetailsArgs']] = None,
@@ -211,15 +228,18 @@ class _DatasetState:
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 initial_import_dataset_configuration: Optional[pulumi.Input['DatasetInitialImportDatasetConfigurationArgs']] = None,
                  initial_record_generation_configuration: Optional[pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs']] = None,
                  label_set: Optional[pulumi.Input['DatasetLabelSetArgs']] = None,
                  labeling_instructions: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 lifecycle_substate: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Dataset resources.
+        :param pulumi.Input[Mapping[str, Any]] additional_properties: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[str] annotation_format: The annotation format name required for labeling records.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment of the resource.
         :param pulumi.Input['DatasetDatasetFormatDetailsArgs'] dataset_format_details: It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
@@ -228,6 +248,7 @@ class _DatasetState:
         :param pulumi.Input[str] description: (Updatable) A user provided description of the dataset
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input['DatasetInitialImportDatasetConfigurationArgs'] initial_import_dataset_configuration: Initial import dataset configuration. Allows user to create dataset from existing dataset files.
         :param pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs'] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
         :param pulumi.Input['DatasetLabelSetArgs'] label_set: An ordered collection of labels that are unique by name.
         :param pulumi.Input[str] labeling_instructions: (Updatable) The labeling instructions for human labelers in rich text format
@@ -236,10 +257,13 @@ class _DatasetState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
+        :param pulumi.Input[str] lifecycle_substate: The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
         :param pulumi.Input[str] state: The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the timestamp format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the resource was last updated, in the timestamp format defined by RFC3339.
         """
+        if additional_properties is not None:
+            pulumi.set(__self__, "additional_properties", additional_properties)
         if annotation_format is not None:
             pulumi.set(__self__, "annotation_format", annotation_format)
         if compartment_id is not None:
@@ -256,6 +280,8 @@ class _DatasetState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if initial_import_dataset_configuration is not None:
+            pulumi.set(__self__, "initial_import_dataset_configuration", initial_import_dataset_configuration)
         if initial_record_generation_configuration is not None:
             pulumi.set(__self__, "initial_record_generation_configuration", initial_record_generation_configuration)
         if label_set is not None:
@@ -264,12 +290,26 @@ class _DatasetState:
             pulumi.set(__self__, "labeling_instructions", labeling_instructions)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if lifecycle_substate is not None:
+            pulumi.set(__self__, "lifecycle_substate", lifecycle_substate)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="additionalProperties")
+    def additional_properties(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_properties")
+
+    @additional_properties.setter
+    def additional_properties(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "additional_properties", value)
 
     @property
     @pulumi.getter(name="annotationFormat")
@@ -368,6 +408,18 @@ class _DatasetState:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="initialImportDatasetConfiguration")
+    def initial_import_dataset_configuration(self) -> Optional[pulumi.Input['DatasetInitialImportDatasetConfigurationArgs']]:
+        """
+        Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+        """
+        return pulumi.get(self, "initial_import_dataset_configuration")
+
+    @initial_import_dataset_configuration.setter
+    def initial_import_dataset_configuration(self, value: Optional[pulumi.Input['DatasetInitialImportDatasetConfigurationArgs']]):
+        pulumi.set(self, "initial_import_dataset_configuration", value)
+
+    @property
     @pulumi.getter(name="initialRecordGenerationConfiguration")
     def initial_record_generation_configuration(self) -> Optional[pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs']]:
         """
@@ -420,6 +472,18 @@ class _DatasetState:
         pulumi.set(self, "lifecycle_details", value)
 
     @property
+    @pulumi.getter(name="lifecycleSubstate")
+    def lifecycle_substate(self) -> Optional[pulumi.Input[str]]:
+        """
+        The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+        """
+        return pulumi.get(self, "lifecycle_substate")
+
+    @lifecycle_substate.setter
+    def lifecycle_substate(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lifecycle_substate", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
@@ -469,6 +533,7 @@ class Dataset(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 initial_import_dataset_configuration: Optional[pulumi.Input[pulumi.InputType['DatasetInitialImportDatasetConfigurationArgs']]] = None,
                  initial_record_generation_configuration: Optional[pulumi.Input[pulumi.InputType['DatasetInitialRecordGenerationConfigurationArgs']]] = None,
                  label_set: Optional[pulumi.Input[pulumi.InputType['DatasetLabelSetArgs']]] = None,
                  labeling_instructions: Optional[pulumi.Input[str]] = None,
@@ -513,6 +578,18 @@ class Dataset(pulumi.CustomResource):
             description=var["dataset_description"],
             display_name=var["dataset_display_name"],
             freeform_tags=var["dataset_freeform_tags"],
+            initial_import_dataset_configuration=oci.data_labelling_service.DatasetInitialImportDatasetConfigurationArgs(
+                import_format=oci.data_labelling_service.DatasetInitialImportDatasetConfigurationImportFormatArgs(
+                    name=var["dataset_initial_import_dataset_configuration_import_format_name"],
+                    version=var["dataset_initial_import_dataset_configuration_import_format_version"],
+                ),
+                import_metadata_path=oci.data_labelling_service.DatasetInitialImportDatasetConfigurationImportMetadataPathArgs(
+                    bucket=var["dataset_initial_import_dataset_configuration_import_metadata_path_bucket"],
+                    namespace=var["dataset_initial_import_dataset_configuration_import_metadata_path_namespace"],
+                    path=var["dataset_initial_import_dataset_configuration_import_metadata_path_path"],
+                    source_type=var["dataset_initial_import_dataset_configuration_import_metadata_path_source_type"],
+                ),
+            ),
             initial_record_generation_configuration=oci.data_labelling_service.DatasetInitialRecordGenerationConfigurationArgs(),
             labeling_instructions=var["dataset_labeling_instructions"])
         ```
@@ -535,6 +612,7 @@ class Dataset(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) A user provided description of the dataset
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[pulumi.InputType['DatasetInitialImportDatasetConfigurationArgs']] initial_import_dataset_configuration: Initial import dataset configuration. Allows user to create dataset from existing dataset files.
         :param pulumi.Input[pulumi.InputType['DatasetInitialRecordGenerationConfigurationArgs']] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
         :param pulumi.Input[pulumi.InputType['DatasetLabelSetArgs']] label_set: An ordered collection of labels that are unique by name.
         :param pulumi.Input[str] labeling_instructions: (Updatable) The labeling instructions for human labelers in rich text format
@@ -589,6 +667,18 @@ class Dataset(pulumi.CustomResource):
             description=var["dataset_description"],
             display_name=var["dataset_display_name"],
             freeform_tags=var["dataset_freeform_tags"],
+            initial_import_dataset_configuration=oci.data_labelling_service.DatasetInitialImportDatasetConfigurationArgs(
+                import_format=oci.data_labelling_service.DatasetInitialImportDatasetConfigurationImportFormatArgs(
+                    name=var["dataset_initial_import_dataset_configuration_import_format_name"],
+                    version=var["dataset_initial_import_dataset_configuration_import_format_version"],
+                ),
+                import_metadata_path=oci.data_labelling_service.DatasetInitialImportDatasetConfigurationImportMetadataPathArgs(
+                    bucket=var["dataset_initial_import_dataset_configuration_import_metadata_path_bucket"],
+                    namespace=var["dataset_initial_import_dataset_configuration_import_metadata_path_namespace"],
+                    path=var["dataset_initial_import_dataset_configuration_import_metadata_path_path"],
+                    source_type=var["dataset_initial_import_dataset_configuration_import_metadata_path_source_type"],
+                ),
+            ),
             initial_record_generation_configuration=oci.data_labelling_service.DatasetInitialRecordGenerationConfigurationArgs(),
             labeling_instructions=var["dataset_labeling_instructions"])
         ```
@@ -624,6 +714,7 @@ class Dataset(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 initial_import_dataset_configuration: Optional[pulumi.Input[pulumi.InputType['DatasetInitialImportDatasetConfigurationArgs']]] = None,
                  initial_record_generation_configuration: Optional[pulumi.Input[pulumi.InputType['DatasetInitialRecordGenerationConfigurationArgs']]] = None,
                  label_set: Optional[pulumi.Input[pulumi.InputType['DatasetLabelSetArgs']]] = None,
                  labeling_instructions: Optional[pulumi.Input[str]] = None,
@@ -652,12 +743,15 @@ class Dataset(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["initial_import_dataset_configuration"] = initial_import_dataset_configuration
             __props__.__dict__["initial_record_generation_configuration"] = initial_record_generation_configuration
             if label_set is None and not opts.urn:
                 raise TypeError("Missing required property 'label_set'")
             __props__.__dict__["label_set"] = label_set
             __props__.__dict__["labeling_instructions"] = labeling_instructions
+            __props__.__dict__["additional_properties"] = None
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["lifecycle_substate"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
@@ -671,6 +765,7 @@ class Dataset(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            additional_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             annotation_format: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             dataset_format_details: Optional[pulumi.Input[pulumi.InputType['DatasetDatasetFormatDetailsArgs']]] = None,
@@ -679,10 +774,12 @@ class Dataset(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            initial_import_dataset_configuration: Optional[pulumi.Input[pulumi.InputType['DatasetInitialImportDatasetConfigurationArgs']]] = None,
             initial_record_generation_configuration: Optional[pulumi.Input[pulumi.InputType['DatasetInitialRecordGenerationConfigurationArgs']]] = None,
             label_set: Optional[pulumi.Input[pulumi.InputType['DatasetLabelSetArgs']]] = None,
             labeling_instructions: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            lifecycle_substate: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'Dataset':
@@ -693,6 +790,7 @@ class Dataset(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Mapping[str, Any]] additional_properties: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[str] annotation_format: The annotation format name required for labeling records.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment of the resource.
         :param pulumi.Input[pulumi.InputType['DatasetDatasetFormatDetailsArgs']] dataset_format_details: It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
@@ -701,6 +799,7 @@ class Dataset(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) A user provided description of the dataset
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[pulumi.InputType['DatasetInitialImportDatasetConfigurationArgs']] initial_import_dataset_configuration: Initial import dataset configuration. Allows user to create dataset from existing dataset files.
         :param pulumi.Input[pulumi.InputType['DatasetInitialRecordGenerationConfigurationArgs']] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
         :param pulumi.Input[pulumi.InputType['DatasetLabelSetArgs']] label_set: An ordered collection of labels that are unique by name.
         :param pulumi.Input[str] labeling_instructions: (Updatable) The labeling instructions for human labelers in rich text format
@@ -709,6 +808,7 @@ class Dataset(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
+        :param pulumi.Input[str] lifecycle_substate: The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
         :param pulumi.Input[str] state: The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the timestamp format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the resource was last updated, in the timestamp format defined by RFC3339.
@@ -717,6 +817,7 @@ class Dataset(pulumi.CustomResource):
 
         __props__ = _DatasetState.__new__(_DatasetState)
 
+        __props__.__dict__["additional_properties"] = additional_properties
         __props__.__dict__["annotation_format"] = annotation_format
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["dataset_format_details"] = dataset_format_details
@@ -725,14 +826,24 @@ class Dataset(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["initial_import_dataset_configuration"] = initial_import_dataset_configuration
         __props__.__dict__["initial_record_generation_configuration"] = initial_record_generation_configuration
         __props__.__dict__["label_set"] = label_set
         __props__.__dict__["labeling_instructions"] = labeling_instructions
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["lifecycle_substate"] = lifecycle_substate
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return Dataset(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="additionalProperties")
+    def additional_properties(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_properties")
 
     @property
     @pulumi.getter(name="annotationFormat")
@@ -799,6 +910,14 @@ class Dataset(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="initialImportDatasetConfiguration")
+    def initial_import_dataset_configuration(self) -> pulumi.Output['outputs.DatasetInitialImportDatasetConfiguration']:
+        """
+        Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+        """
+        return pulumi.get(self, "initial_import_dataset_configuration")
+
+    @property
     @pulumi.getter(name="initialRecordGenerationConfiguration")
     def initial_record_generation_configuration(self) -> pulumi.Output['outputs.DatasetInitialRecordGenerationConfiguration']:
         """
@@ -833,6 +952,14 @@ class Dataset(pulumi.CustomResource):
         A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="lifecycleSubstate")
+    def lifecycle_substate(self) -> pulumi.Output[str]:
+        """
+        The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+        """
+        return pulumi.get(self, "lifecycle_substate")
 
     @property
     @pulumi.getter

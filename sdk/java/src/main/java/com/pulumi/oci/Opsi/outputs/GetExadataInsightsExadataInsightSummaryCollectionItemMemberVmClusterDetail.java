@@ -16,6 +16,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
      * 
      */
     private String compartmentId;
+    private String dbmPrivateEndpointId;
     private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails;
     private String opsiPrivateEndpointId;
     private String vmclusterId;
@@ -27,6 +28,9 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    public String dbmPrivateEndpointId() {
+        return this.dbmPrivateEndpointId;
     }
     public List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails() {
         return this.memberDatabaseDetails;
@@ -48,6 +52,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private String dbmPrivateEndpointId;
         private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails;
         private String opsiPrivateEndpointId;
         private String vmclusterId;
@@ -55,6 +60,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
         public Builder(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.dbmPrivateEndpointId = defaults.dbmPrivateEndpointId;
     	      this.memberDatabaseDetails = defaults.memberDatabaseDetails;
     	      this.opsiPrivateEndpointId = defaults.opsiPrivateEndpointId;
     	      this.vmclusterId = defaults.vmclusterId;
@@ -63,6 +69,11 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dbmPrivateEndpointId(String dbmPrivateEndpointId) {
+            this.dbmPrivateEndpointId = Objects.requireNonNull(dbmPrivateEndpointId);
             return this;
         }
         @CustomType.Setter
@@ -86,6 +97,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
         public GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail build() {
             final var o = new GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail();
             o.compartmentId = compartmentId;
+            o.dbmPrivateEndpointId = dbmPrivateEndpointId;
             o.memberDatabaseDetails = memberDatabaseDetails;
             o.opsiPrivateEndpointId = opsiPrivateEndpointId;
             o.vmclusterId = vmclusterId;

@@ -14,16 +14,31 @@ namespace Pulumi.Oci.Opsi.Outputs
     public sealed class ExadataInsightMemberVmClusterDetail
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier of Exadata insight
+        /// (Updatable) Compartment Identifier of database
         /// </summary>
         public readonly string? CompartmentId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+        /// </summary>
+        public readonly string? DbmPrivateEndpointId;
+        /// <summary>
+        /// The databases that belong to the VM Cluster
+        /// </summary>
         public readonly ImmutableArray<Outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetail> MemberDatabaseDetails;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+        /// </summary>
         public readonly string? OpsiPrivateEndpointId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
+        /// </summary>
         public readonly string? VmclusterId;
 
         [OutputConstructor]
         private ExadataInsightMemberVmClusterDetail(
             string? compartmentId,
+
+            string? dbmPrivateEndpointId,
 
             ImmutableArray<Outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails,
 
@@ -32,6 +47,7 @@ namespace Pulumi.Oci.Opsi.Outputs
             string? vmclusterId)
         {
             CompartmentId = compartmentId;
+            DbmPrivateEndpointId = dbmPrivateEndpointId;
             MemberDatabaseDetails = memberDatabaseDetails;
             OpsiPrivateEndpointId = opsiPrivateEndpointId;
             VmclusterId = vmclusterId;

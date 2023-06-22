@@ -37,6 +37,7 @@ class InvokeRunArgs:
                  metastore_id: Optional[pulumi.Input[str]] = None,
                  num_executors: Optional[pulumi.Input[int]] = None,
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input['InvokeRunParameterArgs']]]] = None,
+                 pool_id: Optional[pulumi.Input[str]] = None,
                  spark_version: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  warehouse_bucket_uri: Optional[pulumi.Input[str]] = None):
@@ -62,6 +63,7 @@ class InvokeRunArgs:
         :param pulumi.Input[str] metastore_id: The OCID of Oracle Cloud Infrastructure Hive Metastore.
         :param pulumi.Input[int] num_executors: The number of executor VMs requested.
         :param pulumi.Input[Sequence[pulumi.Input['InvokeRunParameterArgs']]] parameters: An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
+        :param pulumi.Input[str] pool_id: The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         :param pulumi.Input[str] spark_version: The Spark version utilized to run the application. This value may be set if applicationId is not since the Spark version will be taken from the associated application.
         :param pulumi.Input[str] type: The Spark application processing type.
         :param pulumi.Input[str] warehouse_bucket_uri: An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
@@ -111,6 +113,8 @@ class InvokeRunArgs:
             pulumi.set(__self__, "num_executors", num_executors)
         if parameters is not None:
             pulumi.set(__self__, "parameters", parameters)
+        if pool_id is not None:
+            pulumi.set(__self__, "pool_id", pool_id)
         if spark_version is not None:
             pulumi.set(__self__, "spark_version", spark_version)
         if type is not None:
@@ -368,6 +372,18 @@ class InvokeRunArgs:
         pulumi.set(self, "parameters", value)
 
     @property
+    @pulumi.getter(name="poolId")
+    def pool_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+        """
+        return pulumi.get(self, "pool_id")
+
+    @pool_id.setter
+    def pool_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "pool_id", value)
+
+    @property
     @pulumi.getter(name="sparkVersion")
     def spark_version(self) -> Optional[pulumi.Input[str]]:
         """
@@ -441,6 +457,7 @@ class _InvokeRunState:
                  owner_principal_id: Optional[pulumi.Input[str]] = None,
                  owner_user_name: Optional[pulumi.Input[str]] = None,
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input['InvokeRunParameterArgs']]]] = None,
+                 pool_id: Optional[pulumi.Input[str]] = None,
                  private_endpoint_dns_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  private_endpoint_max_host_count: Optional[pulumi.Input[int]] = None,
@@ -485,6 +502,7 @@ class _InvokeRunState:
         :param pulumi.Input[str] owner_principal_id: The OCID of the user who created the resource.
         :param pulumi.Input[str] owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         :param pulumi.Input[Sequence[pulumi.Input['InvokeRunParameterArgs']]] parameters: An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
+        :param pulumi.Input[str] pool_id: The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] private_endpoint_dns_zones: An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
         :param pulumi.Input[str] private_endpoint_id: The OCID of a private endpoint.
         :param pulumi.Input[int] private_endpoint_max_host_count: The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
@@ -493,8 +511,8 @@ class _InvokeRunState:
         :param pulumi.Input[str] run_duration_in_milliseconds: The duration of the run in milliseconds.
         :param pulumi.Input[str] spark_version: The Spark version utilized to run the application. This value may be set if applicationId is not since the Spark version will be taken from the associated application.
         :param pulumi.Input[str] state: The current state of this run.
-        :param pulumi.Input[str] time_created: The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] time_updated: The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param pulumi.Input[str] time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         :param pulumi.Input[int] total_ocpu: The total number of oCPU requested by the run.
         :param pulumi.Input[str] type: The Spark application processing type.
         :param pulumi.Input[str] warehouse_bucket_uri: An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
@@ -563,6 +581,8 @@ class _InvokeRunState:
             pulumi.set(__self__, "owner_user_name", owner_user_name)
         if parameters is not None:
             pulumi.set(__self__, "parameters", parameters)
+        if pool_id is not None:
+            pulumi.set(__self__, "pool_id", pool_id)
         if private_endpoint_dns_zones is not None:
             pulumi.set(__self__, "private_endpoint_dns_zones", private_endpoint_dns_zones)
         if private_endpoint_id is not None:
@@ -948,6 +968,18 @@ class _InvokeRunState:
         pulumi.set(self, "parameters", value)
 
     @property
+    @pulumi.getter(name="poolId")
+    def pool_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+        """
+        return pulumi.get(self, "pool_id")
+
+    @pool_id.setter
+    def pool_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "pool_id", value)
+
+    @property
     @pulumi.getter(name="privateEndpointDnsZones")
     def private_endpoint_dns_zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -1047,7 +1079,7 @@ class _InvokeRunState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -1059,7 +1091,7 @@ class _InvokeRunState:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -1134,6 +1166,7 @@ class InvokeRun(pulumi.CustomResource):
                  metastore_id: Optional[pulumi.Input[str]] = None,
                  num_executors: Optional[pulumi.Input[int]] = None,
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InvokeRunParameterArgs']]]]] = None,
+                 pool_id: Optional[pulumi.Input[str]] = None,
                  spark_version: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  warehouse_bucket_uri: Optional[pulumi.Input[str]] = None,
@@ -1186,6 +1219,7 @@ class InvokeRun(pulumi.CustomResource):
                 name=var["invoke_run_parameters_name"],
                 value=var["invoke_run_parameters_value"],
             )],
+            pool_id=oci_dataflow_pool["test_pool"]["id"],
             spark_version=var["invoke_run_spark_version"],
             type=var["invoke_run_type"],
             warehouse_bucket_uri=var["invoke_run_warehouse_bucket_uri"])
@@ -1224,6 +1258,7 @@ class InvokeRun(pulumi.CustomResource):
         :param pulumi.Input[str] metastore_id: The OCID of Oracle Cloud Infrastructure Hive Metastore.
         :param pulumi.Input[int] num_executors: The number of executor VMs requested.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InvokeRunParameterArgs']]]] parameters: An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
+        :param pulumi.Input[str] pool_id: The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         :param pulumi.Input[str] spark_version: The Spark version utilized to run the application. This value may be set if applicationId is not since the Spark version will be taken from the associated application.
         :param pulumi.Input[str] type: The Spark application processing type.
         :param pulumi.Input[str] warehouse_bucket_uri: An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
@@ -1286,6 +1321,7 @@ class InvokeRun(pulumi.CustomResource):
                 name=var["invoke_run_parameters_name"],
                 value=var["invoke_run_parameters_value"],
             )],
+            pool_id=oci_dataflow_pool["test_pool"]["id"],
             spark_version=var["invoke_run_spark_version"],
             type=var["invoke_run_type"],
             warehouse_bucket_uri=var["invoke_run_warehouse_bucket_uri"])
@@ -1338,6 +1374,7 @@ class InvokeRun(pulumi.CustomResource):
                  metastore_id: Optional[pulumi.Input[str]] = None,
                  num_executors: Optional[pulumi.Input[int]] = None,
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InvokeRunParameterArgs']]]]] = None,
+                 pool_id: Optional[pulumi.Input[str]] = None,
                  spark_version: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  warehouse_bucket_uri: Optional[pulumi.Input[str]] = None,
@@ -1373,6 +1410,7 @@ class InvokeRun(pulumi.CustomResource):
             __props__.__dict__["metastore_id"] = metastore_id
             __props__.__dict__["num_executors"] = num_executors
             __props__.__dict__["parameters"] = parameters
+            __props__.__dict__["pool_id"] = pool_id
             __props__.__dict__["spark_version"] = spark_version
             __props__.__dict__["type"] = type
             __props__.__dict__["warehouse_bucket_uri"] = warehouse_bucket_uri
@@ -1435,6 +1473,7 @@ class InvokeRun(pulumi.CustomResource):
             owner_principal_id: Optional[pulumi.Input[str]] = None,
             owner_user_name: Optional[pulumi.Input[str]] = None,
             parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InvokeRunParameterArgs']]]]] = None,
+            pool_id: Optional[pulumi.Input[str]] = None,
             private_endpoint_dns_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             private_endpoint_id: Optional[pulumi.Input[str]] = None,
             private_endpoint_max_host_count: Optional[pulumi.Input[int]] = None,
@@ -1484,6 +1523,7 @@ class InvokeRun(pulumi.CustomResource):
         :param pulumi.Input[str] owner_principal_id: The OCID of the user who created the resource.
         :param pulumi.Input[str] owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InvokeRunParameterArgs']]]] parameters: An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
+        :param pulumi.Input[str] pool_id: The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] private_endpoint_dns_zones: An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
         :param pulumi.Input[str] private_endpoint_id: The OCID of a private endpoint.
         :param pulumi.Input[int] private_endpoint_max_host_count: The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
@@ -1492,8 +1532,8 @@ class InvokeRun(pulumi.CustomResource):
         :param pulumi.Input[str] run_duration_in_milliseconds: The duration of the run in milliseconds.
         :param pulumi.Input[str] spark_version: The Spark version utilized to run the application. This value may be set if applicationId is not since the Spark version will be taken from the associated application.
         :param pulumi.Input[str] state: The current state of this run.
-        :param pulumi.Input[str] time_created: The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] time_updated: The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param pulumi.Input[str] time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         :param pulumi.Input[int] total_ocpu: The total number of oCPU requested by the run.
         :param pulumi.Input[str] type: The Spark application processing type.
         :param pulumi.Input[str] warehouse_bucket_uri: An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
@@ -1536,6 +1576,7 @@ class InvokeRun(pulumi.CustomResource):
         __props__.__dict__["owner_principal_id"] = owner_principal_id
         __props__.__dict__["owner_user_name"] = owner_user_name
         __props__.__dict__["parameters"] = parameters
+        __props__.__dict__["pool_id"] = pool_id
         __props__.__dict__["private_endpoint_dns_zones"] = private_endpoint_dns_zones
         __props__.__dict__["private_endpoint_id"] = private_endpoint_id
         __props__.__dict__["private_endpoint_max_host_count"] = private_endpoint_max_host_count
@@ -1789,6 +1830,14 @@ class InvokeRun(pulumi.CustomResource):
         return pulumi.get(self, "parameters")
 
     @property
+    @pulumi.getter(name="poolId")
+    def pool_id(self) -> pulumi.Output[str]:
+        """
+        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+        """
+        return pulumi.get(self, "pool_id")
+
+    @property
     @pulumi.getter(name="privateEndpointDnsZones")
     def private_endpoint_dns_zones(self) -> pulumi.Output[Sequence[str]]:
         """
@@ -1856,7 +1905,7 @@ class InvokeRun(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -1864,7 +1913,7 @@ class InvokeRun(pulumi.CustomResource):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[str]:
         """
-        The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 

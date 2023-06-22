@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// This data source provides the list of Fleet Crypto Analysis Results in Oracle Cloud Infrastructure Jms service.
         /// 
-        /// List Crypto Event Analysis results.
+        /// Lists the results of a Crypto event analysis.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -48,7 +48,7 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// This data source provides the list of Fleet Crypto Analysis Results in Oracle Cloud Infrastructure Jms service.
         /// 
-        /// List Crypto Event Analysis results.
+        /// Lists the results of a Crypto event analysis.
         /// 
         /// {{% examples %}}
         /// ## Example Usage

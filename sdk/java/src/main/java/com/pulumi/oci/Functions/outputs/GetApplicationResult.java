@@ -56,6 +56,11 @@ public final class GetApplicationResult {
      */
     private List<String> networkSecurityGroupIds;
     /**
+     * @return Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+     * 
+     */
+    private String shape;
+    /**
      * @return The current state of the application.
      * 
      */
@@ -147,6 +152,13 @@ public final class GetApplicationResult {
         return this.networkSecurityGroupIds;
     }
     /**
+     * @return Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+     * 
+     */
+    public String shape() {
+        return this.shape;
+    }
+    /**
      * @return The current state of the application.
      * 
      */
@@ -207,6 +219,7 @@ public final class GetApplicationResult {
         private String id;
         private List<GetApplicationImagePolicyConfig> imagePolicyConfigs;
         private List<String> networkSecurityGroupIds;
+        private String shape;
         private String state;
         private List<String> subnetIds;
         private String syslogUrl;
@@ -225,6 +238,7 @@ public final class GetApplicationResult {
     	      this.id = defaults.id;
     	      this.imagePolicyConfigs = defaults.imagePolicyConfigs;
     	      this.networkSecurityGroupIds = defaults.networkSecurityGroupIds;
+    	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.subnetIds = defaults.subnetIds;
     	      this.syslogUrl = defaults.syslogUrl;
@@ -285,6 +299,11 @@ public final class GetApplicationResult {
             return networkSecurityGroupIds(List.of(networkSecurityGroupIds));
         }
         @CustomType.Setter
+        public Builder shape(String shape) {
+            this.shape = Objects.requireNonNull(shape);
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -331,6 +350,7 @@ public final class GetApplicationResult {
             o.id = id;
             o.imagePolicyConfigs = imagePolicyConfigs;
             o.networkSecurityGroupIds = networkSecurityGroupIds;
+            o.shape = shape;
             o.state = state;
             o.subnetIds = subnetIds;
             o.syslogUrl = syslogUrl;

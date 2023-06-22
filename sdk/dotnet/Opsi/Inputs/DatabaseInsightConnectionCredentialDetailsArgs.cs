@@ -42,6 +42,12 @@ namespace Pulumi.Oci.Opsi.Inputs
         [Input("userName")]
         public Input<string>? UserName { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+        /// </summary>
+        [Input("walletSecretId")]
+        public Input<string>? WalletSecretId { get; set; }
+
         public DatabaseInsightConnectionCredentialDetailsArgs()
         {
         }

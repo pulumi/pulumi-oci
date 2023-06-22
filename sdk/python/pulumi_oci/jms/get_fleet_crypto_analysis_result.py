@@ -158,7 +158,7 @@ class GetFleetCryptoAnalysisResultResult:
     @pulumi.getter(name="nonCompliantFindingCount")
     def non_compliant_finding_count(self) -> int:
         """
-        Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the crypto roadmap version used the the analysis.
+        Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
         """
         return pulumi.get(self, "non_compliant_finding_count")
 
@@ -251,7 +251,7 @@ def get_fleet_crypto_analysis_result(crypto_analysis_result_id: Optional[str] = 
     """
     This data source provides details about a specific Fleet Crypto Analysis Result resource in Oracle Cloud Infrastructure Jms service.
 
-    Retrieve metadata of the Crypto Event Analysis result.
+    Retrieve the metadata for the result of a Crypto event analysis.
 
     ## Example Usage
 
@@ -301,7 +301,7 @@ def get_fleet_crypto_analysis_result_output(crypto_analysis_result_id: Optional[
     """
     This data source provides details about a specific Fleet Crypto Analysis Result resource in Oracle Cloud Infrastructure Jms service.
 
-    Retrieve metadata of the Crypto Event Analysis result.
+    Retrieve the metadata for the result of a Crypto event analysis.
 
     ## Example Usage
 

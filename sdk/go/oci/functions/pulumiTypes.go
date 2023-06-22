@@ -432,7 +432,7 @@ func (o ApplicationTraceConfigPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
 }
 
 type FunctionProvisionedConcurrencyConfig struct {
-	// (Updatable)
+	// (Updatable) Configuration specifying a constant amount of provisioned concurrency.
 	Count *int `pulumi:"count"`
 	// (Updatable) The strategy for provisioned concurrency to be used.
 	Strategy string `pulumi:"strategy"`
@@ -450,7 +450,7 @@ type FunctionProvisionedConcurrencyConfigInput interface {
 }
 
 type FunctionProvisionedConcurrencyConfigArgs struct {
-	// (Updatable)
+	// (Updatable) Configuration specifying a constant amount of provisioned concurrency.
 	Count pulumi.IntPtrInput `pulumi:"count"`
 	// (Updatable) The strategy for provisioned concurrency to be used.
 	Strategy pulumi.StringInput `pulumi:"strategy"`
@@ -533,7 +533,7 @@ func (o FunctionProvisionedConcurrencyConfigOutput) ToFunctionProvisionedConcurr
 	}).(FunctionProvisionedConcurrencyConfigPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Configuration specifying a constant amount of provisioned concurrency.
 func (o FunctionProvisionedConcurrencyConfigOutput) Count() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v FunctionProvisionedConcurrencyConfig) *int { return v.Count }).(pulumi.IntPtrOutput)
 }
@@ -567,7 +567,7 @@ func (o FunctionProvisionedConcurrencyConfigPtrOutput) Elem() FunctionProvisione
 	}).(FunctionProvisionedConcurrencyConfigOutput)
 }
 
-// (Updatable)
+// (Updatable) Configuration specifying a constant amount of provisioned concurrency.
 func (o FunctionProvisionedConcurrencyConfigPtrOutput) Count() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *FunctionProvisionedConcurrencyConfig) *int {
 		if v == nil {
@@ -1220,6 +1220,8 @@ type GetApplicationsApplication struct {
 	ImagePolicyConfigs []GetApplicationsApplicationImagePolicyConfig `pulumi:"imagePolicyConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
+	// Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+	Shape string `pulumi:"shape"`
 	// A filter to return only applications that match the lifecycle state in this parameter. Example: `Creating`
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
@@ -1262,6 +1264,8 @@ type GetApplicationsApplicationArgs struct {
 	ImagePolicyConfigs GetApplicationsApplicationImagePolicyConfigArrayInput `pulumi:"imagePolicyConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
+	// Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+	Shape pulumi.StringInput `pulumi:"shape"`
 	// A filter to return only applications that match the lifecycle state in this parameter. Example: `Creating`
 	State pulumi.StringInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
@@ -1367,6 +1371,11 @@ func (o GetApplicationsApplicationOutput) ImagePolicyConfigs() GetApplicationsAp
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 func (o GetApplicationsApplicationOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetApplicationsApplication) []string { return v.NetworkSecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+func (o GetApplicationsApplicationOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) string { return v.Shape }).(pulumi.StringOutput)
 }
 
 // A filter to return only applications that match the lifecycle state in this parameter. Example: `Creating`
@@ -1837,6 +1846,7 @@ func (o GetApplicationsFilterArrayOutput) Index(i pulumi.IntInput) GetApplicatio
 }
 
 type GetFunctionProvisionedConcurrencyConfig struct {
+	// Configuration specifying a constant amount of provisioned concurrency.
 	Count int `pulumi:"count"`
 	// The strategy for provisioned concurrency to be used.
 	Strategy string `pulumi:"strategy"`
@@ -1854,6 +1864,7 @@ type GetFunctionProvisionedConcurrencyConfigInput interface {
 }
 
 type GetFunctionProvisionedConcurrencyConfigArgs struct {
+	// Configuration specifying a constant amount of provisioned concurrency.
 	Count pulumi.IntInput `pulumi:"count"`
 	// The strategy for provisioned concurrency to be used.
 	Strategy pulumi.StringInput `pulumi:"strategy"`
@@ -1910,6 +1921,7 @@ func (o GetFunctionProvisionedConcurrencyConfigOutput) ToGetFunctionProvisionedC
 	return o
 }
 
+// Configuration specifying a constant amount of provisioned concurrency.
 func (o GetFunctionProvisionedConcurrencyConfigOutput) Count() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFunctionProvisionedConcurrencyConfig) int { return v.Count }).(pulumi.IntOutput)
 }
@@ -2273,6 +2285,8 @@ type GetFunctionsFunction struct {
 	MemoryInMbs string `pulumi:"memoryInMbs"`
 	// Define the strategy for provisioned concurrency for the function.
 	ProvisionedConcurrencyConfigs []GetFunctionsFunctionProvisionedConcurrencyConfig `pulumi:"provisionedConcurrencyConfigs"`
+	// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+	Shape string `pulumi:"shape"`
 	// The source details for the Function. The function can be created from various sources.
 	SourceDetails []GetFunctionsFunctionSourceDetail `pulumi:"sourceDetails"`
 	// A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
@@ -2323,6 +2337,8 @@ type GetFunctionsFunctionArgs struct {
 	MemoryInMbs pulumi.StringInput `pulumi:"memoryInMbs"`
 	// Define the strategy for provisioned concurrency for the function.
 	ProvisionedConcurrencyConfigs GetFunctionsFunctionProvisionedConcurrencyConfigArrayInput `pulumi:"provisionedConcurrencyConfigs"`
+	// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+	Shape pulumi.StringInput `pulumi:"shape"`
 	// The source details for the Function. The function can be created from various sources.
 	SourceDetails GetFunctionsFunctionSourceDetailArrayInput `pulumi:"sourceDetails"`
 	// A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
@@ -2450,6 +2466,11 @@ func (o GetFunctionsFunctionOutput) ProvisionedConcurrencyConfigs() GetFunctions
 	}).(GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput)
 }
 
+// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+func (o GetFunctionsFunctionOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) string { return v.Shape }).(pulumi.StringOutput)
+}
+
 // The source details for the Function. The function can be created from various sources.
 func (o GetFunctionsFunctionOutput) SourceDetails() GetFunctionsFunctionSourceDetailArrayOutput {
 	return o.ApplyT(func(v GetFunctionsFunction) []GetFunctionsFunctionSourceDetail { return v.SourceDetails }).(GetFunctionsFunctionSourceDetailArrayOutput)
@@ -2501,6 +2522,7 @@ func (o GetFunctionsFunctionArrayOutput) Index(i pulumi.IntInput) GetFunctionsFu
 }
 
 type GetFunctionsFunctionProvisionedConcurrencyConfig struct {
+	// Configuration specifying a constant amount of provisioned concurrency.
 	Count int `pulumi:"count"`
 	// The strategy for provisioned concurrency to be used.
 	Strategy string `pulumi:"strategy"`
@@ -2518,6 +2540,7 @@ type GetFunctionsFunctionProvisionedConcurrencyConfigInput interface {
 }
 
 type GetFunctionsFunctionProvisionedConcurrencyConfigArgs struct {
+	// Configuration specifying a constant amount of provisioned concurrency.
 	Count pulumi.IntInput `pulumi:"count"`
 	// The strategy for provisioned concurrency to be used.
 	Strategy pulumi.StringInput `pulumi:"strategy"`
@@ -2574,6 +2597,7 @@ func (o GetFunctionsFunctionProvisionedConcurrencyConfigOutput) ToGetFunctionsFu
 	return o
 }
 
+// Configuration specifying a constant amount of provisioned concurrency.
 func (o GetFunctionsFunctionProvisionedConcurrencyConfigOutput) Count() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFunctionsFunctionProvisionedConcurrencyConfig) int { return v.Count }).(pulumi.IntOutput)
 }

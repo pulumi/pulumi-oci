@@ -36,6 +36,11 @@ public final class DatabaseInsightCredentialDetails {
      * 
      */
     private @Nullable String userName;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+     * 
+     */
+    private @Nullable String walletSecretId;
 
     private DatabaseInsightCredentialDetails() {}
     /**
@@ -73,6 +78,13 @@ public final class DatabaseInsightCredentialDetails {
     public Optional<String> userName() {
         return Optional.ofNullable(this.userName);
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+     * 
+     */
+    public Optional<String> walletSecretId() {
+        return Optional.ofNullable(this.walletSecretId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -88,6 +100,7 @@ public final class DatabaseInsightCredentialDetails {
         private @Nullable String passwordSecretId;
         private @Nullable String role;
         private @Nullable String userName;
+        private @Nullable String walletSecretId;
         public Builder() {}
         public Builder(DatabaseInsightCredentialDetails defaults) {
     	      Objects.requireNonNull(defaults);
@@ -96,6 +109,7 @@ public final class DatabaseInsightCredentialDetails {
     	      this.passwordSecretId = defaults.passwordSecretId;
     	      this.role = defaults.role;
     	      this.userName = defaults.userName;
+    	      this.walletSecretId = defaults.walletSecretId;
         }
 
         @CustomType.Setter
@@ -123,6 +137,11 @@ public final class DatabaseInsightCredentialDetails {
             this.userName = userName;
             return this;
         }
+        @CustomType.Setter
+        public Builder walletSecretId(@Nullable String walletSecretId) {
+            this.walletSecretId = walletSecretId;
+            return this;
+        }
         public DatabaseInsightCredentialDetails build() {
             final var o = new DatabaseInsightCredentialDetails();
             o.credentialSourceName = credentialSourceName;
@@ -130,6 +149,7 @@ public final class DatabaseInsightCredentialDetails {
             o.passwordSecretId = passwordSecretId;
             o.role = role;
             o.userName = userName;
+            o.walletSecretId = walletSecretId;
             return o;
         }
     }

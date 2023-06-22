@@ -22,7 +22,7 @@ class GetApplicationResult:
     """
     A collection of values returned by getApplication.
     """
-    def __init__(__self__, application_id=None, compartment_id=None, config=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, image_policy_configs=None, network_security_group_ids=None, state=None, subnet_ids=None, syslog_url=None, time_created=None, time_updated=None, trace_configs=None):
+    def __init__(__self__, application_id=None, compartment_id=None, config=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, image_policy_configs=None, network_security_group_ids=None, shape=None, state=None, subnet_ids=None, syslog_url=None, time_created=None, time_updated=None, trace_configs=None):
         if application_id and not isinstance(application_id, str):
             raise TypeError("Expected argument 'application_id' to be a str")
         pulumi.set(__self__, "application_id", application_id)
@@ -50,6 +50,9 @@ class GetApplicationResult:
         if network_security_group_ids and not isinstance(network_security_group_ids, list):
             raise TypeError("Expected argument 'network_security_group_ids' to be a list")
         pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        if shape and not isinstance(shape, str):
+            raise TypeError("Expected argument 'shape' to be a str")
+        pulumi.set(__self__, "shape", shape)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -140,6 +143,14 @@ class GetApplicationResult:
 
     @property
     @pulumi.getter
+    def shape(self) -> str:
+        """
+        Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+        """
+        return pulumi.get(self, "shape")
+
+    @property
+    @pulumi.getter
     def state(self) -> str:
         """
         The current state of the application.
@@ -202,6 +213,7 @@ class AwaitableGetApplicationResult(GetApplicationResult):
             id=self.id,
             image_policy_configs=self.image_policy_configs,
             network_security_group_ids=self.network_security_group_ids,
+            shape=self.shape,
             state=self.state,
             subnet_ids=self.subnet_ids,
             syslog_url=self.syslog_url,
@@ -244,6 +256,7 @@ def get_application(application_id: Optional[str] = None,
         id=__ret__.id,
         image_policy_configs=__ret__.image_policy_configs,
         network_security_group_ids=__ret__.network_security_group_ids,
+        shape=__ret__.shape,
         state=__ret__.state,
         subnet_ids=__ret__.subnet_ids,
         syslog_url=__ret__.syslog_url,

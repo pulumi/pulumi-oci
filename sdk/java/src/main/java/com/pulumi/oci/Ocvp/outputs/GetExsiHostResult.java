@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
@@ -17,6 +18,11 @@ public final class GetExsiHostResult {
      * 
      */
     private String billingContractEndDate;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+     * 
+     */
+    private String billingDonorHostId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      * 
@@ -54,7 +60,7 @@ public final class GetExsiHostResult {
     private String displayName;
     private String esxiHostId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
      * 
      */
     private String failedEsxiHostId;
@@ -84,6 +90,16 @@ public final class GetExsiHostResult {
      */
     private String id;
     /**
+     * @return Indicates whether this host is in the progress of billing continuation.
+     * 
+     */
+    private Boolean isBillingContinuationInProgress;
+    /**
+     * @return Indicates whether this host is in the progress of swapping billing.
+     * 
+     */
+    private Boolean isBillingSwappingInProgress;
+    /**
      * @return The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      * 
      */
@@ -108,6 +124,11 @@ public final class GetExsiHostResult {
      * 
      */
     private String state;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+     * 
+     */
+    private String swapBillingHostId;
     /**
      * @return The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
@@ -136,6 +157,13 @@ public final class GetExsiHostResult {
      */
     public String billingContractEndDate() {
         return this.billingContractEndDate;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+     * 
+     */
+    public String billingDonorHostId() {
+        return this.billingDonorHostId;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
@@ -190,7 +218,7 @@ public final class GetExsiHostResult {
         return this.esxiHostId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
      * 
      */
     public String failedEsxiHostId() {
@@ -232,6 +260,20 @@ public final class GetExsiHostResult {
         return this.id;
     }
     /**
+     * @return Indicates whether this host is in the progress of billing continuation.
+     * 
+     */
+    public Boolean isBillingContinuationInProgress() {
+        return this.isBillingContinuationInProgress;
+    }
+    /**
+     * @return Indicates whether this host is in the progress of swapping billing.
+     * 
+     */
+    public Boolean isBillingSwappingInProgress() {
+        return this.isBillingSwappingInProgress;
+    }
+    /**
      * @return The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      * 
      */
@@ -265,6 +307,13 @@ public final class GetExsiHostResult {
      */
     public String state() {
         return this.state;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+     * 
+     */
+    public String swapBillingHostId() {
+        return this.swapBillingHostId;
     }
     /**
      * @return The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -305,6 +354,7 @@ public final class GetExsiHostResult {
     @CustomType.Builder
     public static final class Builder {
         private String billingContractEndDate;
+        private String billingDonorHostId;
         private String capacityReservationId;
         private String compartmentId;
         private String computeAvailabilityDomain;
@@ -319,11 +369,14 @@ public final class GetExsiHostResult {
         private Double hostOcpuCount;
         private String hostShapeName;
         private String id;
+        private Boolean isBillingContinuationInProgress;
+        private Boolean isBillingSwappingInProgress;
         private String nextSku;
         private String nonUpgradedEsxiHostId;
         private String replacementEsxiHostId;
         private String sddcId;
         private String state;
+        private String swapBillingHostId;
         private String timeCreated;
         private String timeUpdated;
         private String upgradedReplacementEsxiHostId;
@@ -332,6 +385,7 @@ public final class GetExsiHostResult {
         public Builder(GetExsiHostResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.billingContractEndDate = defaults.billingContractEndDate;
+    	      this.billingDonorHostId = defaults.billingDonorHostId;
     	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeAvailabilityDomain = defaults.computeAvailabilityDomain;
@@ -346,11 +400,14 @@ public final class GetExsiHostResult {
     	      this.hostOcpuCount = defaults.hostOcpuCount;
     	      this.hostShapeName = defaults.hostShapeName;
     	      this.id = defaults.id;
+    	      this.isBillingContinuationInProgress = defaults.isBillingContinuationInProgress;
+    	      this.isBillingSwappingInProgress = defaults.isBillingSwappingInProgress;
     	      this.nextSku = defaults.nextSku;
     	      this.nonUpgradedEsxiHostId = defaults.nonUpgradedEsxiHostId;
     	      this.replacementEsxiHostId = defaults.replacementEsxiHostId;
     	      this.sddcId = defaults.sddcId;
     	      this.state = defaults.state;
+    	      this.swapBillingHostId = defaults.swapBillingHostId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.upgradedReplacementEsxiHostId = defaults.upgradedReplacementEsxiHostId;
@@ -360,6 +417,11 @@ public final class GetExsiHostResult {
         @CustomType.Setter
         public Builder billingContractEndDate(String billingContractEndDate) {
             this.billingContractEndDate = Objects.requireNonNull(billingContractEndDate);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder billingDonorHostId(String billingDonorHostId) {
+            this.billingDonorHostId = Objects.requireNonNull(billingDonorHostId);
             return this;
         }
         @CustomType.Setter
@@ -433,6 +495,16 @@ public final class GetExsiHostResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isBillingContinuationInProgress(Boolean isBillingContinuationInProgress) {
+            this.isBillingContinuationInProgress = Objects.requireNonNull(isBillingContinuationInProgress);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isBillingSwappingInProgress(Boolean isBillingSwappingInProgress) {
+            this.isBillingSwappingInProgress = Objects.requireNonNull(isBillingSwappingInProgress);
+            return this;
+        }
+        @CustomType.Setter
         public Builder nextSku(String nextSku) {
             this.nextSku = Objects.requireNonNull(nextSku);
             return this;
@@ -458,6 +530,11 @@ public final class GetExsiHostResult {
             return this;
         }
         @CustomType.Setter
+        public Builder swapBillingHostId(String swapBillingHostId) {
+            this.swapBillingHostId = Objects.requireNonNull(swapBillingHostId);
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
@@ -480,6 +557,7 @@ public final class GetExsiHostResult {
         public GetExsiHostResult build() {
             final var o = new GetExsiHostResult();
             o.billingContractEndDate = billingContractEndDate;
+            o.billingDonorHostId = billingDonorHostId;
             o.capacityReservationId = capacityReservationId;
             o.compartmentId = compartmentId;
             o.computeAvailabilityDomain = computeAvailabilityDomain;
@@ -494,11 +572,14 @@ public final class GetExsiHostResult {
             o.hostOcpuCount = hostOcpuCount;
             o.hostShapeName = hostShapeName;
             o.id = id;
+            o.isBillingContinuationInProgress = isBillingContinuationInProgress;
+            o.isBillingSwappingInProgress = isBillingSwappingInProgress;
             o.nextSku = nextSku;
             o.nonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
             o.replacementEsxiHostId = replacementEsxiHostId;
             o.sddcId = sddcId;
             o.state = state;
+            o.swapBillingHostId = swapBillingHostId;
             o.timeCreated = timeCreated;
             o.timeUpdated = timeUpdated;
             o.upgradedReplacementEsxiHostId = upgradedReplacementEsxiHostId;

@@ -100,6 +100,8 @@ type Function struct {
 	MemoryInMbs pulumi.StringOutput `pulumi:"memoryInMbs"`
 	// (Updatable) Define the strategy for provisioned concurrency for the function.
 	ProvisionedConcurrencyConfig FunctionProvisionedConcurrencyConfigOutput `pulumi:"provisionedConcurrencyConfig"`
+	// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+	Shape pulumi.StringOutput `pulumi:"shape"`
 	// The source details for the Function. The function can be created from various sources.
 	SourceDetails FunctionSourceDetailsOutput `pulumi:"sourceDetails"`
 	// The current state of the function.
@@ -176,6 +178,8 @@ type functionState struct {
 	MemoryInMbs *string `pulumi:"memoryInMbs"`
 	// (Updatable) Define the strategy for provisioned concurrency for the function.
 	ProvisionedConcurrencyConfig *FunctionProvisionedConcurrencyConfig `pulumi:"provisionedConcurrencyConfig"`
+	// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+	Shape *string `pulumi:"shape"`
 	// The source details for the Function. The function can be created from various sources.
 	SourceDetails *FunctionSourceDetails `pulumi:"sourceDetails"`
 	// The current state of the function.
@@ -215,6 +219,8 @@ type FunctionState struct {
 	MemoryInMbs pulumi.StringPtrInput
 	// (Updatable) Define the strategy for provisioned concurrency for the function.
 	ProvisionedConcurrencyConfig FunctionProvisionedConcurrencyConfigPtrInput
+	// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+	Shape pulumi.StringPtrInput
 	// The source details for the Function. The function can be created from various sources.
 	SourceDetails FunctionSourceDetailsPtrInput
 	// The current state of the function.
@@ -434,6 +440,11 @@ func (o FunctionOutput) MemoryInMbs() pulumi.StringOutput {
 // (Updatable) Define the strategy for provisioned concurrency for the function.
 func (o FunctionOutput) ProvisionedConcurrencyConfig() FunctionProvisionedConcurrencyConfigOutput {
 	return o.ApplyT(func(v *Function) FunctionProvisionedConcurrencyConfigOutput { return v.ProvisionedConcurrencyConfig }).(FunctionProvisionedConcurrencyConfigOutput)
+}
+
+// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+func (o FunctionOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v *Function) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
 }
 
 // The source details for the Function. The function can be created from various sources.

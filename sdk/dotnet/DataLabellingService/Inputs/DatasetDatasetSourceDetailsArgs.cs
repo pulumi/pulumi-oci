@@ -13,13 +13,13 @@ namespace Pulumi.Oci.DataLabellingService.Inputs
     public sealed class DatasetDatasetSourceDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The object storage bucket that contains the dataset data source.
+        /// Bucket name
         /// </summary>
         [Input("bucket", required: true)]
         public Input<string> Bucket { get; set; } = null!;
 
         /// <summary>
-        /// The namespace of the bucket that contains the dataset data source.
+        /// Bucket namespace name
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
@@ -31,7 +31,7 @@ namespace Pulumi.Oci.DataLabellingService.Inputs
         public Input<string>? Prefix { get; set; }
 
         /// <summary>
-        /// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+        /// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
         /// </summary>
         [Input("sourceType", required: true)]
         public Input<string> SourceType { get; set; } = null!;

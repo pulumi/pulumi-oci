@@ -26,8 +26,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testEsxiHosts = oci.Ocvp.getExsiHosts({
+ *     compartmentId: _var.compartment_id,
  *     computeInstanceId: oci_core_instance.test_instance.id,
  *     displayName: _var.esxi_host_display_name,
+ *     isBillingDonorsOnly: _var.esxi_host_is_billing_donors_only,
+ *     isSwapBillingOnly: _var.esxi_host_is_swap_billing_only,
  *     sddcId: oci_ocvp_sddc.test_sddc.id,
  *     state: _var.esxi_host_state,
  * });
@@ -38,9 +41,12 @@ export function getExsiHosts(args?: GetExsiHostsArgs, opts?: pulumi.InvokeOption
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ocvp/getExsiHosts:getExsiHosts", {
+        "compartmentId": args.compartmentId,
         "computeInstanceId": args.computeInstanceId,
         "displayName": args.displayName,
         "filters": args.filters,
+        "isBillingDonorsOnly": args.isBillingDonorsOnly,
+        "isSwapBillingOnly": args.isSwapBillingOnly,
         "sddcId": args.sddcId,
         "state": args.state,
     }, opts);
@@ -51,6 +57,10 @@ export function getExsiHosts(args?: GetExsiHostsArgs, opts?: pulumi.InvokeOption
  */
 export interface GetExsiHostsArgs {
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
+     */
+    compartmentId?: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
      */
     computeInstanceId?: string;
@@ -59,6 +69,14 @@ export interface GetExsiHostsArgs {
      */
     displayName?: string;
     filters?: inputs.Ocvp.GetExsiHostsFilter[];
+    /**
+     * If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.
+     */
+    isBillingDonorsOnly?: boolean;
+    /**
+     * If this flag/param is set to True, we return only active hosts.
+     */
+    isSwapBillingOnly?: boolean;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
      */
@@ -73,6 +91,10 @@ export interface GetExsiHostsArgs {
  * A collection of values returned by getExsiHosts.
  */
 export interface GetExsiHostsResult {
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+     */
+    readonly compartmentId?: string;
     /**
      * In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
      */
@@ -90,6 +112,8 @@ export interface GetExsiHostsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly isBillingDonorsOnly?: boolean;
+    readonly isSwapBillingOnly?: boolean;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
      */
@@ -119,8 +143,11 @@ export interface GetExsiHostsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testEsxiHosts = oci.Ocvp.getExsiHosts({
+ *     compartmentId: _var.compartment_id,
  *     computeInstanceId: oci_core_instance.test_instance.id,
  *     displayName: _var.esxi_host_display_name,
+ *     isBillingDonorsOnly: _var.esxi_host_is_billing_donors_only,
+ *     isSwapBillingOnly: _var.esxi_host_is_swap_billing_only,
  *     sddcId: oci_ocvp_sddc.test_sddc.id,
  *     state: _var.esxi_host_state,
  * });
@@ -135,6 +162,10 @@ export function getExsiHostsOutput(args?: GetExsiHostsOutputArgs, opts?: pulumi.
  */
 export interface GetExsiHostsOutputArgs {
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
+     */
+    compartmentId?: pulumi.Input<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
      */
     computeInstanceId?: pulumi.Input<string>;
@@ -143,6 +174,14 @@ export interface GetExsiHostsOutputArgs {
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetExsiHostsFilterArgs>[]>;
+    /**
+     * If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.
+     */
+    isBillingDonorsOnly?: pulumi.Input<boolean>;
+    /**
+     * If this flag/param is set to True, we return only active hosts.
+     */
+    isSwapBillingOnly?: pulumi.Input<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
      */

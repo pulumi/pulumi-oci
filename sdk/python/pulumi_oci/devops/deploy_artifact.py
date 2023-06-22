@@ -26,7 +26,7 @@ class DeployArtifactArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a DeployArtifact resource.
-        :param pulumi.Input[str] argument_substitution_mode: (Updatable) Mode for artifact parameter substitution.
+        :param pulumi.Input[str] argument_substitution_mode: (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         :param pulumi.Input['DeployArtifactDeployArtifactSourceArgs'] deploy_artifact_source: (Updatable) Specifies source of an artifact.
         :param pulumi.Input[str] deploy_artifact_type: (Updatable) Type of the deployment artifact.
         :param pulumi.Input[str] project_id: The OCID of a project.
@@ -56,7 +56,7 @@ class DeployArtifactArgs:
     @pulumi.getter(name="argumentSubstitutionMode")
     def argument_substitution_mode(self) -> pulumi.Input[str]:
         """
-        (Updatable) Mode for artifact parameter substitution.
+        (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         """
         return pulumi.get(self, "argument_substitution_mode")
 
@@ -172,7 +172,7 @@ class _DeployArtifactState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DeployArtifact resources.
-        :param pulumi.Input[str] argument_substitution_mode: (Updatable) Mode for artifact parameter substitution.
+        :param pulumi.Input[str] argument_substitution_mode: (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         :param pulumi.Input[str] compartment_id: The OCID of a compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input['DeployArtifactDeployArtifactSourceArgs'] deploy_artifact_source: (Updatable) Specifies source of an artifact.
@@ -224,7 +224,7 @@ class _DeployArtifactState:
     @pulumi.getter(name="argumentSubstitutionMode")
     def argument_substitution_mode(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Mode for artifact parameter substitution.
+        (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         """
         return pulumi.get(self, "argument_substitution_mode")
 
@@ -458,7 +458,7 @@ class DeployArtifact(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] argument_substitution_mode: (Updatable) Mode for artifact parameter substitution.
+        :param pulumi.Input[str] argument_substitution_mode: (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[pulumi.InputType['DeployArtifactDeployArtifactSourceArgs']] deploy_artifact_source: (Updatable) Specifies source of an artifact.
         :param pulumi.Input[str] deploy_artifact_type: (Updatable) Type of the deployment artifact.
@@ -611,7 +611,7 @@ class DeployArtifact(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] argument_substitution_mode: (Updatable) Mode for artifact parameter substitution.
+        :param pulumi.Input[str] argument_substitution_mode: (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         :param pulumi.Input[str] compartment_id: The OCID of a compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[pulumi.InputType['DeployArtifactDeployArtifactSourceArgs']] deploy_artifact_source: (Updatable) Specifies source of an artifact.
@@ -654,7 +654,7 @@ class DeployArtifact(pulumi.CustomResource):
     @pulumi.getter(name="argumentSubstitutionMode")
     def argument_substitution_mode(self) -> pulumi.Output[str]:
         """
-        (Updatable) Mode for artifact parameter substitution.
+        (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         """
         return pulumi.get(self, "argument_substitution_mode")
 

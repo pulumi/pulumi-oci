@@ -47,6 +47,10 @@ export interface GetExsiHostResult {
      */
     readonly billingContractEndDate: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+     */
+    readonly billingDonorHostId: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      */
     readonly capacityReservationId: string;
@@ -76,7 +80,7 @@ export interface GetExsiHostResult {
     readonly displayName: string;
     readonly esxiHostId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
      */
     readonly failedEsxiHostId: string;
     /**
@@ -100,6 +104,14 @@ export interface GetExsiHostResult {
      */
     readonly id: string;
     /**
+     * Indicates whether this host is in the progress of billing continuation.
+     */
+    readonly isBillingContinuationInProgress: boolean;
+    /**
+     * Indicates whether this host is in the progress of swapping billing.
+     */
+    readonly isBillingSwappingInProgress: boolean;
+    /**
      * The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      */
     readonly nextSku: string;
@@ -119,6 +131,10 @@ export interface GetExsiHostResult {
      * The current state of the ESXi host.
      */
     readonly state: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+     */
+    readonly swapBillingHostId: string;
     /**
      * The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */

@@ -54,6 +54,11 @@ func GetPrivateKeyPath(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:privateKeyPath")
 }
 
+// (Optional) flags to enable realm specific service endpoint.
+func GetRealmSpecificServiceEndpointTemplateEnabled(ctx *pulumi.Context) bool {
+	return config.GetBool(ctx, "oci:realmSpecificServiceEndpointTemplateEnabled")
+}
+
 // (Required) The region for API connections (e.g. us-ashburn-1).
 func GetRegion(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:region")

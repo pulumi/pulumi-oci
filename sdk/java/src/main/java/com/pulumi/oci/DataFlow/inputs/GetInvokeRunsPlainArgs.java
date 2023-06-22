@@ -99,6 +99,21 @@ public final class GetInvokeRunsPlainArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
+     * The ID of the pool.
+     * 
+     */
+    @Import(name="poolId")
+    private @Nullable String poolId;
+
+    /**
+     * @return The ID of the pool.
+     * 
+     */
+    public Optional<String> poolId() {
+        return Optional.ofNullable(this.poolId);
+    }
+
+    /**
      * The LifecycleState of the run.
      * 
      */
@@ -137,6 +152,7 @@ public final class GetInvokeRunsPlainArgs extends com.pulumi.resources.InvokeArg
         this.displayNameStartsWith = $.displayNameStartsWith;
         this.filters = $.filters;
         this.ownerPrincipalId = $.ownerPrincipalId;
+        this.poolId = $.poolId;
         this.state = $.state;
         this.timeCreatedGreaterThan = $.timeCreatedGreaterThan;
     }
@@ -220,6 +236,17 @@ public final class GetInvokeRunsPlainArgs extends com.pulumi.resources.InvokeArg
          */
         public Builder ownerPrincipalId(@Nullable String ownerPrincipalId) {
             $.ownerPrincipalId = ownerPrincipalId;
+            return this;
+        }
+
+        /**
+         * @param poolId The ID of the pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder poolId(@Nullable String poolId) {
+            $.poolId = poolId;
             return this;
         }
 

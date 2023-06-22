@@ -628,7 +628,7 @@ class _SddcState:
                
                For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
         :param pulumi.Input[bool] is_hcx_enabled: For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
-        :param pulumi.Input[bool] is_hcx_enterprise_enabled: Indicates whether to enable HCX Enterprise for this SDDC.
+        :param pulumi.Input[bool] is_hcx_enterprise_enabled: Indicates whether HCX Enterprise is enabled for this SDDC.
         :param pulumi.Input[bool] is_hcx_pending_downgrade: Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
         :param pulumi.Input[bool] is_shielded_instance_enabled: Indicates whether shielded instance is enabled for this SDDC.
         :param pulumi.Input[bool] is_single_host_sddc: Indicates whether this SDDC is designated for only single ESXi host.
@@ -1049,7 +1049,7 @@ class _SddcState:
     @pulumi.getter(name="isHcxEnterpriseEnabled")
     def is_hcx_enterprise_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Indicates whether to enable HCX Enterprise for this SDDC.
+        Indicates whether HCX Enterprise is enabled for this SDDC.
         """
         return pulumi.get(self, "is_hcx_enterprise_enabled")
 
@@ -1957,7 +1957,7 @@ class Sddc(pulumi.CustomResource):
                
                For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
         :param pulumi.Input[bool] is_hcx_enabled: For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
-        :param pulumi.Input[bool] is_hcx_enterprise_enabled: Indicates whether to enable HCX Enterprise for this SDDC.
+        :param pulumi.Input[bool] is_hcx_enterprise_enabled: Indicates whether HCX Enterprise is enabled for this SDDC.
         :param pulumi.Input[bool] is_hcx_pending_downgrade: Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
         :param pulumi.Input[bool] is_shielded_instance_enabled: Indicates whether shielded instance is enabled for this SDDC.
         :param pulumi.Input[bool] is_single_host_sddc: Indicates whether this SDDC is designated for only single ESXi host.
@@ -2241,7 +2241,7 @@ class Sddc(pulumi.CustomResource):
     @pulumi.getter(name="isHcxEnterpriseEnabled")
     def is_hcx_enterprise_enabled(self) -> pulumi.Output[bool]:
         """
-        Indicates whether to enable HCX Enterprise for this SDDC.
+        Indicates whether HCX Enterprise is enabled for this SDDC.
         """
         return pulumi.get(self, "is_hcx_enterprise_enabled")
 

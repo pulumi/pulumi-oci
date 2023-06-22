@@ -45,7 +45,7 @@ export interface GetDeployArtifactArgs {
  */
 export interface GetDeployArtifactResult {
     /**
-     * Mode for artifact parameter substitution.
+     * Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
      */
     readonly argumentSubstitutionMode: string;
     /**

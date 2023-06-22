@@ -14,6 +14,10 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
     public sealed class GetDatasetsDatasetCollectionItemResult
     {
         /// <summary>
+        /// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> AdditionalProperties;
+        /// <summary>
         /// A filter to return only resources that match the entire annotation format given.
         /// </summary>
         public readonly string AnnotationFormat;
@@ -50,6 +54,10 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationResult> InitialImportDatasetConfigurations;
+        /// <summary>
         /// The initial generate records configuration. It generates records from the dataset's source.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationResult> InitialRecordGenerationConfigurations;
@@ -66,6 +74,10 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+        /// </summary>
+        public readonly string LifecycleSubstate;
+        /// <summary>
         /// A filter to return only resources whose lifecycleState matches this query param.
         /// </summary>
         public readonly string State;
@@ -80,6 +92,8 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
 
         [OutputConstructor]
         private GetDatasetsDatasetCollectionItemResult(
+            ImmutableDictionary<string, object> additionalProperties,
+
             string annotationFormat,
 
             string compartmentId,
@@ -98,6 +112,8 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
 
             string id,
 
+            ImmutableArray<Outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationResult> initialImportDatasetConfigurations,
+
             ImmutableArray<Outputs.GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationResult> initialRecordGenerationConfigurations,
 
             ImmutableArray<Outputs.GetDatasetsDatasetCollectionItemLabelSetResult> labelSets,
@@ -106,12 +122,15 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
 
             string lifecycleDetails,
 
+            string lifecycleSubstate,
+
             string state,
 
             string timeCreated,
 
             string timeUpdated)
         {
+            AdditionalProperties = additionalProperties;
             AnnotationFormat = annotationFormat;
             CompartmentId = compartmentId;
             DatasetFormatDetails = datasetFormatDetails;
@@ -121,10 +140,12 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            InitialImportDatasetConfigurations = initialImportDatasetConfigurations;
             InitialRecordGenerationConfigurations = initialRecordGenerationConfigurations;
             LabelSets = labelSets;
             LabelingInstructions = labelingInstructions;
             LifecycleDetails = lifecycleDetails;
+            LifecycleSubstate = lifecycleSubstate;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

@@ -31,6 +31,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Opsi.DatabaseInsight;
  * import com.pulumi.oci.Opsi.DatabaseInsightArgs;
+ * import com.pulumi.oci.Opsi.inputs.DatabaseInsightConnectionDetailsArgs;
  * import com.pulumi.oci.Opsi.inputs.DatabaseInsightCredentialDetailsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -48,12 +49,21 @@ import javax.annotation.Nullable;
  *         var testDatabaseInsight = new DatabaseInsight(&#34;testDatabaseInsight&#34;, DatabaseInsightArgs.builder()        
  *             .compartmentId(var_.compartment_id())
  *             .entitySource(var_.database_insight_entity_source())
+ *             .connectionDetails(DatabaseInsightConnectionDetailsArgs.builder()
+ *                 .hosts(DatabaseInsightConnectionDetailsHostArgs.builder()
+ *                     .hostIp(var_.database_insight_connection_details_hosts_host_ip())
+ *                     .port(var_.database_insight_connection_details_hosts_port())
+ *                     .build())
+ *                 .protocol(var_.database_insight_connection_details_protocol())
+ *                 .serviceName(oci_core_service.test_service().name())
+ *                 .build())
  *             .credentialDetails(DatabaseInsightCredentialDetailsArgs.builder()
  *                 .credentialType(var_.database_insight_credential_details_credential_type())
  *                 .credentialSourceName(var_.database_insight_credential_details_credential_source_name())
  *                 .passwordSecretId(oci_vault_secret.test_secret().id())
  *                 .role(var_.database_insight_credential_details_role())
  *                 .userName(oci_identity_user.test_user().name())
+ *                 .walletSecretId(oci_vault_secret.test_secret().id())
  *                 .build())
  *             .databaseId(oci_database_database.test_database().id())
  *             .databaseResourceType(var_.database_insight_database_resource_type())
@@ -114,14 +124,14 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
         return this.connectionCredentialDetails;
     }
     /**
-     * Connection details to connect to the database. HostName, protocol, and port should be specified.
+     * Connection details of the private endpoints.
      * 
      */
     @Export(name="connectionDetails", type=DatabaseInsightConnectionDetails.class, parameters={})
     private Output<DatabaseInsightConnectionDetails> connectionDetails;
 
     /**
-     * @return Connection details to connect to the database. HostName, protocol, and port should be specified.
+     * @return Connection details of the private endpoints.
      * 
      */
     public Output<DatabaseInsightConnectionDetails> connectionDetails() {

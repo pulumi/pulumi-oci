@@ -56,6 +56,8 @@ type LookupDatasetArgs struct {
 
 // A collection of values returned by getDataset.
 type LookupDatasetResult struct {
+	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+	AdditionalProperties map[string]interface{} `pulumi:"additionalProperties"`
 	// The annotation format name required for labeling records.
 	AnnotationFormat string `pulumi:"annotationFormat"`
 	// The OCID of the compartment of the resource.
@@ -75,6 +77,8 @@ type LookupDatasetResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the Dataset.
 	Id string `pulumi:"id"`
+	// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+	InitialImportDatasetConfigurations []GetDatasetInitialImportDatasetConfiguration `pulumi:"initialImportDatasetConfigurations"`
 	// The initial generate records configuration. It generates records from the dataset's source.
 	InitialRecordGenerationConfigurations []GetDatasetInitialRecordGenerationConfiguration `pulumi:"initialRecordGenerationConfigurations"`
 	// An ordered collection of labels that are unique by name.
@@ -83,6 +87,8 @@ type LookupDatasetResult struct {
 	LabelingInstructions string `pulumi:"labelingInstructions"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+	LifecycleSubstate string `pulumi:"lifecycleSubstate"`
 	// The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
 	State string `pulumi:"state"`
 	// The date and time the resource was created, in the timestamp format defined by RFC3339.
@@ -127,6 +133,11 @@ func (o LookupDatasetResultOutput) ToLookupDatasetResultOutput() LookupDatasetRe
 
 func (o LookupDatasetResultOutput) ToLookupDatasetResultOutputWithContext(ctx context.Context) LookupDatasetResultOutput {
 	return o
+}
+
+// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+func (o LookupDatasetResultOutput) AdditionalProperties() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupDatasetResult) map[string]interface{} { return v.AdditionalProperties }).(pulumi.MapOutput)
 }
 
 // The annotation format name required for labeling records.
@@ -178,6 +189,13 @@ func (o LookupDatasetResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatasetResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+func (o LookupDatasetResultOutput) InitialImportDatasetConfigurations() GetDatasetInitialImportDatasetConfigurationArrayOutput {
+	return o.ApplyT(func(v LookupDatasetResult) []GetDatasetInitialImportDatasetConfiguration {
+		return v.InitialImportDatasetConfigurations
+	}).(GetDatasetInitialImportDatasetConfigurationArrayOutput)
+}
+
 // The initial generate records configuration. It generates records from the dataset's source.
 func (o LookupDatasetResultOutput) InitialRecordGenerationConfigurations() GetDatasetInitialRecordGenerationConfigurationArrayOutput {
 	return o.ApplyT(func(v LookupDatasetResult) []GetDatasetInitialRecordGenerationConfiguration {
@@ -198,6 +216,11 @@ func (o LookupDatasetResultOutput) LabelingInstructions() pulumi.StringOutput {
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
 func (o LookupDatasetResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatasetResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+func (o LookupDatasetResultOutput) LifecycleSubstate() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDatasetResult) string { return v.LifecycleSubstate }).(pulumi.StringOutput)
 }
 
 // The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.

@@ -57,7 +57,7 @@ public final class GetFleetCryptoAnalysisResultResult {
      */
     private String namespace;
     /**
-     * @return Total number of non-compliant findings with the analysis. A non-compliant finding means the application won&#39;t work properly with the changes introduced by the crypto roadmap version used the the analysis.
+     * @return Total number of non-compliant findings with the analysis. A non-compliant finding means the application won&#39;t work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
      * 
      */
     private Integer nonCompliantFindingCount;
@@ -165,7 +165,7 @@ public final class GetFleetCryptoAnalysisResultResult {
         return this.namespace;
     }
     /**
-     * @return Total number of non-compliant findings with the analysis. A non-compliant finding means the application won&#39;t work properly with the changes introduced by the crypto roadmap version used the the analysis.
+     * @return Total number of non-compliant findings with the analysis. A non-compliant finding means the application won&#39;t work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
      * 
      */
     public Integer nonCompliantFindingCount() {

@@ -46,6 +46,7 @@ namespace Pulumi.Oci.Functions
     ///                 },
     ///             },
     ///         },
+    ///         Shape = @var.Application_shape,
     ///         SyslogUrl = @var.Application_syslog_url,
     ///         TraceConfig = new Oci.Functions.Inputs.ApplicationTraceConfigArgs
     ///         {
@@ -111,6 +112,12 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         [Output("networkSecurityGroupIds")]
         public Output<ImmutableArray<string>> NetworkSecurityGroupIds { get; private set; } = null!;
+
+        /// <summary>
+        /// Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+        /// </summary>
+        [Output("shape")]
+        public Output<string> Shape { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the application.
@@ -262,6 +269,12 @@ namespace Pulumi.Oci.Functions
             set => _networkSecurityGroupIds = value;
         }
 
+        /// <summary>
+        /// Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+        /// </summary>
+        [Input("shape")]
+        public Input<string>? Shape { get; set; }
+
         [Input("subnetIds", required: true)]
         private InputList<string>? _subnetIds;
 
@@ -361,6 +374,12 @@ namespace Pulumi.Oci.Functions
             get => _networkSecurityGroupIds ?? (_networkSecurityGroupIds = new InputList<string>());
             set => _networkSecurityGroupIds = value;
         }
+
+        /// <summary>
+        /// Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+        /// </summary>
+        [Input("shape")]
+        public Input<string>? Shape { get; set; }
 
         /// <summary>
         /// The current state of the application.

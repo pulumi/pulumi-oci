@@ -2780,6 +2780,7 @@ type GetPreauthrequestsPreauthenticatedRequest struct {
 	Bucket string `pulumi:"bucket"`
 	// Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
 	BucketListingAction string `pulumi:"bucketListingAction"`
+	FullPath            string `pulumi:"fullPath"`
 	// The unique identifier to use when directly addressing the pre-authenticated request.
 	Id string `pulumi:"id"`
 	// The user-provided name of the pre-authenticated request.
@@ -2819,6 +2820,7 @@ type GetPreauthrequestsPreauthenticatedRequestArgs struct {
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
 	BucketListingAction pulumi.StringInput `pulumi:"bucketListingAction"`
+	FullPath            pulumi.StringInput `pulumi:"fullPath"`
 	// The unique identifier to use when directly addressing the pre-authenticated request.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The user-provided name of the pre-authenticated request.
@@ -2907,6 +2909,10 @@ func (o GetPreauthrequestsPreauthenticatedRequestOutput) Bucket() pulumi.StringO
 // Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
 func (o GetPreauthrequestsPreauthenticatedRequestOutput) BucketListingAction() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) string { return v.BucketListingAction }).(pulumi.StringOutput)
+}
+
+func (o GetPreauthrequestsPreauthenticatedRequestOutput) FullPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) string { return v.FullPath }).(pulumi.StringOutput)
 }
 
 // The unique identifier to use when directly addressing the pre-authenticated request.

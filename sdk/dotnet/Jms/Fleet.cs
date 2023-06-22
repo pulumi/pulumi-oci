@@ -71,31 +71,31 @@ namespace Pulumi.Oci.Jms
     public partial class Fleet : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        /// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         [Output("approximateApplicationCount")]
         public Output<int> ApproximateApplicationCount { get; private set; } = null!;
 
         /// <summary>
-        /// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        /// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         [Output("approximateInstallationCount")]
         public Output<int> ApproximateInstallationCount { get; private set; } = null!;
 
         /// <summary>
-        /// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        /// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         [Output("approximateJavaServerCount")]
         public Output<int> ApproximateJavaServerCount { get; private set; } = null!;
 
         /// <summary>
-        /// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        /// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         [Output("approximateJreCount")]
         public Output<int> ApproximateJreCount { get; private set; } = null!;
 
         /// <summary>
-        /// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        /// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         [Output("approximateManagedInstanceCount")]
         public Output<int> ApproximateManagedInstanceCount { get; private set; } = null!;
@@ -125,7 +125,7 @@ namespace Pulumi.Oci.Jms
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
@@ -137,7 +137,7 @@ namespace Pulumi.Oci.Jms
         public Output<Outputs.FleetInventoryLog> InventoryLog { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
+        /// (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
         /// </summary>
         [Output("isAdvancedFeaturesEnabled")]
         public Output<bool> IsAdvancedFeaturesEnabled { get; private set; } = null!;
@@ -246,7 +246,7 @@ namespace Pulumi.Oci.Jms
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -261,7 +261,7 @@ namespace Pulumi.Oci.Jms
         public Input<Inputs.FleetInventoryLogArgs> InventoryLog { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
+        /// (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
         /// </summary>
         [Input("isAdvancedFeaturesEnabled")]
         public Input<bool>? IsAdvancedFeaturesEnabled { get; set; }
@@ -281,31 +281,31 @@ namespace Pulumi.Oci.Jms
     public sealed class FleetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        /// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         [Input("approximateApplicationCount")]
         public Input<int>? ApproximateApplicationCount { get; set; }
 
         /// <summary>
-        /// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        /// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         [Input("approximateInstallationCount")]
         public Input<int>? ApproximateInstallationCount { get; set; }
 
         /// <summary>
-        /// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        /// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         [Input("approximateJavaServerCount")]
         public Input<int>? ApproximateJavaServerCount { get; set; }
 
         /// <summary>
-        /// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        /// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         [Input("approximateJreCount")]
         public Input<int>? ApproximateJreCount { get; set; }
 
         /// <summary>
-        /// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        /// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         [Input("approximateManagedInstanceCount")]
         public Input<int>? ApproximateManagedInstanceCount { get; set; }
@@ -344,7 +344,7 @@ namespace Pulumi.Oci.Jms
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -359,7 +359,7 @@ namespace Pulumi.Oci.Jms
         public Input<Inputs.FleetInventoryLogGetArgs>? InventoryLog { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
+        /// (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
         /// </summary>
         [Input("isAdvancedFeaturesEnabled")]
         public Input<bool>? IsAdvancedFeaturesEnabled { get; set; }

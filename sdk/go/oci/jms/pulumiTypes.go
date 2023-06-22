@@ -346,8 +346,337 @@ func (o FleetOperationLogPtrOutput) LogId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type GetAnnouncementsAnnouncementCollection struct {
+	// List of AnnouncementSummary items
+	Items []GetAnnouncementsAnnouncementCollectionItem `pulumi:"items"`
+}
+
+// GetAnnouncementsAnnouncementCollectionInput is an input type that accepts GetAnnouncementsAnnouncementCollectionArgs and GetAnnouncementsAnnouncementCollectionOutput values.
+// You can construct a concrete instance of `GetAnnouncementsAnnouncementCollectionInput` via:
+//
+//	GetAnnouncementsAnnouncementCollectionArgs{...}
+type GetAnnouncementsAnnouncementCollectionInput interface {
+	pulumi.Input
+
+	ToGetAnnouncementsAnnouncementCollectionOutput() GetAnnouncementsAnnouncementCollectionOutput
+	ToGetAnnouncementsAnnouncementCollectionOutputWithContext(context.Context) GetAnnouncementsAnnouncementCollectionOutput
+}
+
+type GetAnnouncementsAnnouncementCollectionArgs struct {
+	// List of AnnouncementSummary items
+	Items GetAnnouncementsAnnouncementCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetAnnouncementsAnnouncementCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAnnouncementsAnnouncementCollection)(nil)).Elem()
+}
+
+func (i GetAnnouncementsAnnouncementCollectionArgs) ToGetAnnouncementsAnnouncementCollectionOutput() GetAnnouncementsAnnouncementCollectionOutput {
+	return i.ToGetAnnouncementsAnnouncementCollectionOutputWithContext(context.Background())
+}
+
+func (i GetAnnouncementsAnnouncementCollectionArgs) ToGetAnnouncementsAnnouncementCollectionOutputWithContext(ctx context.Context) GetAnnouncementsAnnouncementCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementsAnnouncementCollectionOutput)
+}
+
+// GetAnnouncementsAnnouncementCollectionArrayInput is an input type that accepts GetAnnouncementsAnnouncementCollectionArray and GetAnnouncementsAnnouncementCollectionArrayOutput values.
+// You can construct a concrete instance of `GetAnnouncementsAnnouncementCollectionArrayInput` via:
+//
+//	GetAnnouncementsAnnouncementCollectionArray{ GetAnnouncementsAnnouncementCollectionArgs{...} }
+type GetAnnouncementsAnnouncementCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAnnouncementsAnnouncementCollectionArrayOutput() GetAnnouncementsAnnouncementCollectionArrayOutput
+	ToGetAnnouncementsAnnouncementCollectionArrayOutputWithContext(context.Context) GetAnnouncementsAnnouncementCollectionArrayOutput
+}
+
+type GetAnnouncementsAnnouncementCollectionArray []GetAnnouncementsAnnouncementCollectionInput
+
+func (GetAnnouncementsAnnouncementCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAnnouncementsAnnouncementCollection)(nil)).Elem()
+}
+
+func (i GetAnnouncementsAnnouncementCollectionArray) ToGetAnnouncementsAnnouncementCollectionArrayOutput() GetAnnouncementsAnnouncementCollectionArrayOutput {
+	return i.ToGetAnnouncementsAnnouncementCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAnnouncementsAnnouncementCollectionArray) ToGetAnnouncementsAnnouncementCollectionArrayOutputWithContext(ctx context.Context) GetAnnouncementsAnnouncementCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementsAnnouncementCollectionArrayOutput)
+}
+
+type GetAnnouncementsAnnouncementCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetAnnouncementsAnnouncementCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAnnouncementsAnnouncementCollection)(nil)).Elem()
+}
+
+func (o GetAnnouncementsAnnouncementCollectionOutput) ToGetAnnouncementsAnnouncementCollectionOutput() GetAnnouncementsAnnouncementCollectionOutput {
+	return o
+}
+
+func (o GetAnnouncementsAnnouncementCollectionOutput) ToGetAnnouncementsAnnouncementCollectionOutputWithContext(ctx context.Context) GetAnnouncementsAnnouncementCollectionOutput {
+	return o
+}
+
+// List of AnnouncementSummary items
+func (o GetAnnouncementsAnnouncementCollectionOutput) Items() GetAnnouncementsAnnouncementCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetAnnouncementsAnnouncementCollection) []GetAnnouncementsAnnouncementCollectionItem {
+		return v.Items
+	}).(GetAnnouncementsAnnouncementCollectionItemArrayOutput)
+}
+
+type GetAnnouncementsAnnouncementCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAnnouncementsAnnouncementCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAnnouncementsAnnouncementCollection)(nil)).Elem()
+}
+
+func (o GetAnnouncementsAnnouncementCollectionArrayOutput) ToGetAnnouncementsAnnouncementCollectionArrayOutput() GetAnnouncementsAnnouncementCollectionArrayOutput {
+	return o
+}
+
+func (o GetAnnouncementsAnnouncementCollectionArrayOutput) ToGetAnnouncementsAnnouncementCollectionArrayOutputWithContext(ctx context.Context) GetAnnouncementsAnnouncementCollectionArrayOutput {
+	return o
+}
+
+func (o GetAnnouncementsAnnouncementCollectionArrayOutput) Index(i pulumi.IntInput) GetAnnouncementsAnnouncementCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnnouncementsAnnouncementCollection {
+		return vs[0].([]GetAnnouncementsAnnouncementCollection)[vs[1].(int)]
+	}).(GetAnnouncementsAnnouncementCollectionOutput)
+}
+
+type GetAnnouncementsAnnouncementCollectionItem struct {
+	// Unique id of the announcement
+	Key int `pulumi:"key"`
+	// Summary text of the announcement
+	Summary string `pulumi:"summary"`
+	// Date time on which the announcement was released
+	TimeReleased string `pulumi:"timeReleased"`
+	// URL to the announcement web page
+	Url string `pulumi:"url"`
+}
+
+// GetAnnouncementsAnnouncementCollectionItemInput is an input type that accepts GetAnnouncementsAnnouncementCollectionItemArgs and GetAnnouncementsAnnouncementCollectionItemOutput values.
+// You can construct a concrete instance of `GetAnnouncementsAnnouncementCollectionItemInput` via:
+//
+//	GetAnnouncementsAnnouncementCollectionItemArgs{...}
+type GetAnnouncementsAnnouncementCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetAnnouncementsAnnouncementCollectionItemOutput() GetAnnouncementsAnnouncementCollectionItemOutput
+	ToGetAnnouncementsAnnouncementCollectionItemOutputWithContext(context.Context) GetAnnouncementsAnnouncementCollectionItemOutput
+}
+
+type GetAnnouncementsAnnouncementCollectionItemArgs struct {
+	// Unique id of the announcement
+	Key pulumi.IntInput `pulumi:"key"`
+	// Summary text of the announcement
+	Summary pulumi.StringInput `pulumi:"summary"`
+	// Date time on which the announcement was released
+	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
+	// URL to the announcement web page
+	Url pulumi.StringInput `pulumi:"url"`
+}
+
+func (GetAnnouncementsAnnouncementCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAnnouncementsAnnouncementCollectionItem)(nil)).Elem()
+}
+
+func (i GetAnnouncementsAnnouncementCollectionItemArgs) ToGetAnnouncementsAnnouncementCollectionItemOutput() GetAnnouncementsAnnouncementCollectionItemOutput {
+	return i.ToGetAnnouncementsAnnouncementCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetAnnouncementsAnnouncementCollectionItemArgs) ToGetAnnouncementsAnnouncementCollectionItemOutputWithContext(ctx context.Context) GetAnnouncementsAnnouncementCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementsAnnouncementCollectionItemOutput)
+}
+
+// GetAnnouncementsAnnouncementCollectionItemArrayInput is an input type that accepts GetAnnouncementsAnnouncementCollectionItemArray and GetAnnouncementsAnnouncementCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetAnnouncementsAnnouncementCollectionItemArrayInput` via:
+//
+//	GetAnnouncementsAnnouncementCollectionItemArray{ GetAnnouncementsAnnouncementCollectionItemArgs{...} }
+type GetAnnouncementsAnnouncementCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetAnnouncementsAnnouncementCollectionItemArrayOutput() GetAnnouncementsAnnouncementCollectionItemArrayOutput
+	ToGetAnnouncementsAnnouncementCollectionItemArrayOutputWithContext(context.Context) GetAnnouncementsAnnouncementCollectionItemArrayOutput
+}
+
+type GetAnnouncementsAnnouncementCollectionItemArray []GetAnnouncementsAnnouncementCollectionItemInput
+
+func (GetAnnouncementsAnnouncementCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAnnouncementsAnnouncementCollectionItem)(nil)).Elem()
+}
+
+func (i GetAnnouncementsAnnouncementCollectionItemArray) ToGetAnnouncementsAnnouncementCollectionItemArrayOutput() GetAnnouncementsAnnouncementCollectionItemArrayOutput {
+	return i.ToGetAnnouncementsAnnouncementCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetAnnouncementsAnnouncementCollectionItemArray) ToGetAnnouncementsAnnouncementCollectionItemArrayOutputWithContext(ctx context.Context) GetAnnouncementsAnnouncementCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementsAnnouncementCollectionItemArrayOutput)
+}
+
+type GetAnnouncementsAnnouncementCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetAnnouncementsAnnouncementCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAnnouncementsAnnouncementCollectionItem)(nil)).Elem()
+}
+
+func (o GetAnnouncementsAnnouncementCollectionItemOutput) ToGetAnnouncementsAnnouncementCollectionItemOutput() GetAnnouncementsAnnouncementCollectionItemOutput {
+	return o
+}
+
+func (o GetAnnouncementsAnnouncementCollectionItemOutput) ToGetAnnouncementsAnnouncementCollectionItemOutputWithContext(ctx context.Context) GetAnnouncementsAnnouncementCollectionItemOutput {
+	return o
+}
+
+// Unique id of the announcement
+func (o GetAnnouncementsAnnouncementCollectionItemOutput) Key() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAnnouncementsAnnouncementCollectionItem) int { return v.Key }).(pulumi.IntOutput)
+}
+
+// Summary text of the announcement
+func (o GetAnnouncementsAnnouncementCollectionItemOutput) Summary() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnnouncementsAnnouncementCollectionItem) string { return v.Summary }).(pulumi.StringOutput)
+}
+
+// Date time on which the announcement was released
+func (o GetAnnouncementsAnnouncementCollectionItemOutput) TimeReleased() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnnouncementsAnnouncementCollectionItem) string { return v.TimeReleased }).(pulumi.StringOutput)
+}
+
+// URL to the announcement web page
+func (o GetAnnouncementsAnnouncementCollectionItemOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnnouncementsAnnouncementCollectionItem) string { return v.Url }).(pulumi.StringOutput)
+}
+
+type GetAnnouncementsAnnouncementCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAnnouncementsAnnouncementCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAnnouncementsAnnouncementCollectionItem)(nil)).Elem()
+}
+
+func (o GetAnnouncementsAnnouncementCollectionItemArrayOutput) ToGetAnnouncementsAnnouncementCollectionItemArrayOutput() GetAnnouncementsAnnouncementCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAnnouncementsAnnouncementCollectionItemArrayOutput) ToGetAnnouncementsAnnouncementCollectionItemArrayOutputWithContext(ctx context.Context) GetAnnouncementsAnnouncementCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAnnouncementsAnnouncementCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAnnouncementsAnnouncementCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnnouncementsAnnouncementCollectionItem {
+		return vs[0].([]GetAnnouncementsAnnouncementCollectionItem)[vs[1].(int)]
+	}).(GetAnnouncementsAnnouncementCollectionItemOutput)
+}
+
+type GetAnnouncementsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAnnouncementsFilterInput is an input type that accepts GetAnnouncementsFilterArgs and GetAnnouncementsFilterOutput values.
+// You can construct a concrete instance of `GetAnnouncementsFilterInput` via:
+//
+//	GetAnnouncementsFilterArgs{...}
+type GetAnnouncementsFilterInput interface {
+	pulumi.Input
+
+	ToGetAnnouncementsFilterOutput() GetAnnouncementsFilterOutput
+	ToGetAnnouncementsFilterOutputWithContext(context.Context) GetAnnouncementsFilterOutput
+}
+
+type GetAnnouncementsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAnnouncementsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAnnouncementsFilter)(nil)).Elem()
+}
+
+func (i GetAnnouncementsFilterArgs) ToGetAnnouncementsFilterOutput() GetAnnouncementsFilterOutput {
+	return i.ToGetAnnouncementsFilterOutputWithContext(context.Background())
+}
+
+func (i GetAnnouncementsFilterArgs) ToGetAnnouncementsFilterOutputWithContext(ctx context.Context) GetAnnouncementsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementsFilterOutput)
+}
+
+// GetAnnouncementsFilterArrayInput is an input type that accepts GetAnnouncementsFilterArray and GetAnnouncementsFilterArrayOutput values.
+// You can construct a concrete instance of `GetAnnouncementsFilterArrayInput` via:
+//
+//	GetAnnouncementsFilterArray{ GetAnnouncementsFilterArgs{...} }
+type GetAnnouncementsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAnnouncementsFilterArrayOutput() GetAnnouncementsFilterArrayOutput
+	ToGetAnnouncementsFilterArrayOutputWithContext(context.Context) GetAnnouncementsFilterArrayOutput
+}
+
+type GetAnnouncementsFilterArray []GetAnnouncementsFilterInput
+
+func (GetAnnouncementsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAnnouncementsFilter)(nil)).Elem()
+}
+
+func (i GetAnnouncementsFilterArray) ToGetAnnouncementsFilterArrayOutput() GetAnnouncementsFilterArrayOutput {
+	return i.ToGetAnnouncementsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAnnouncementsFilterArray) ToGetAnnouncementsFilterArrayOutputWithContext(ctx context.Context) GetAnnouncementsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementsFilterArrayOutput)
+}
+
+type GetAnnouncementsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAnnouncementsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAnnouncementsFilter)(nil)).Elem()
+}
+
+func (o GetAnnouncementsFilterOutput) ToGetAnnouncementsFilterOutput() GetAnnouncementsFilterOutput {
+	return o
+}
+
+func (o GetAnnouncementsFilterOutput) ToGetAnnouncementsFilterOutputWithContext(ctx context.Context) GetAnnouncementsFilterOutput {
+	return o
+}
+
+func (o GetAnnouncementsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnnouncementsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAnnouncementsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAnnouncementsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAnnouncementsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAnnouncementsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAnnouncementsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAnnouncementsFilter)(nil)).Elem()
+}
+
+func (o GetAnnouncementsFilterArrayOutput) ToGetAnnouncementsFilterArrayOutput() GetAnnouncementsFilterArrayOutput {
+	return o
+}
+
+func (o GetAnnouncementsFilterArrayOutput) ToGetAnnouncementsFilterArrayOutputWithContext(ctx context.Context) GetAnnouncementsFilterArrayOutput {
+	return o
+}
+
+func (o GetAnnouncementsFilterArrayOutput) Index(i pulumi.IntInput) GetAnnouncementsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnnouncementsFilter {
+		return vs[0].([]GetAnnouncementsFilter)[vs[1].(int)]
+	}).(GetAnnouncementsFilterOutput)
+}
+
 type GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking struct {
-	// Lcm flag to store enabled or disabled status
+	// PerformanceTuningAnalysis flag to store enabled or disabled status.
 	IsEnabled bool `pulumi:"isEnabled"`
 }
 
@@ -363,7 +692,7 @@ type GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingInput interface {
 }
 
 type GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs struct {
-	// Lcm flag to store enabled or disabled status
+	// PerformanceTuningAnalysis flag to store enabled or disabled status.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 }
 
@@ -418,7 +747,7 @@ func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) ToGetFl
 	return o
 }
 
-// Lcm flag to store enabled or disabled status
+// PerformanceTuningAnalysis flag to store enabled or disabled status.
 func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -444,7 +773,7 @@ func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput) In
 }
 
 type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis struct {
-	// Lcm flag to store enabled or disabled status
+	// PerformanceTuningAnalysis flag to store enabled or disabled status.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// Summarized events log for advanced feature.
 	SummarizedEventsLogs []GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog `pulumi:"summarizedEventsLogs"`
@@ -462,7 +791,7 @@ type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisInput interface {
 }
 
 type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs struct {
-	// Lcm flag to store enabled or disabled status
+	// PerformanceTuningAnalysis flag to store enabled or disabled status.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// Summarized events log for advanced feature.
 	SummarizedEventsLogs GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayInput `pulumi:"summarizedEventsLogs"`
@@ -519,7 +848,7 @@ func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) ToGetFlee
 	return o
 }
 
-// Lcm flag to store enabled or disabled status
+// PerformanceTuningAnalysis flag to store enabled or disabled status.
 func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -661,8 +990,105 @@ func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsL
 	}).(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput)
 }
 
+type GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis struct {
+	// PerformanceTuningAnalysis flag to store enabled or disabled status.
+	IsEnabled bool `pulumi:"isEnabled"`
+}
+
+// GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisInput is an input type that accepts GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs and GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs{...}
+type GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput() GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput
+	ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs struct {
+	// PerformanceTuningAnalysis flag to store enabled or disabled status.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+}
+
+func (GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs) ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput() GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs) ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput)
+}
+
+// GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArray and GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArray{ GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs{...} }
+type GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput() GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput
+	ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArray []GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisInput
+
+func (GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArray) ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput() GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArray) ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput() GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput {
+	return o
+}
+
+// PerformanceTuningAnalysis flag to store enabled or disabled status.
+func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput) ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput() GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput) ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis {
+		return vs[0].([]GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis)[vs[1].(int)]
+	}).(GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput)
+}
+
 type GetFleetAdvancedFeatureConfigurationJfrRecording struct {
-	// Lcm flag to store enabled or disabled status
+	// PerformanceTuningAnalysis flag to store enabled or disabled status.
 	IsEnabled bool `pulumi:"isEnabled"`
 }
 
@@ -678,7 +1104,7 @@ type GetFleetAdvancedFeatureConfigurationJfrRecordingInput interface {
 }
 
 type GetFleetAdvancedFeatureConfigurationJfrRecordingArgs struct {
-	// Lcm flag to store enabled or disabled status
+	// PerformanceTuningAnalysis flag to store enabled or disabled status.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 }
 
@@ -733,7 +1159,7 @@ func (o GetFleetAdvancedFeatureConfigurationJfrRecordingOutput) ToGetFleetAdvanc
 	return o
 }
 
-// Lcm flag to store enabled or disabled status
+// PerformanceTuningAnalysis flag to store enabled or disabled status.
 func (o GetFleetAdvancedFeatureConfigurationJfrRecordingOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationJfrRecording) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -759,7 +1185,7 @@ func (o GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput) Index(i pul
 }
 
 type GetFleetAdvancedFeatureConfigurationLcm struct {
-	// Lcm flag to store enabled or disabled status
+	// PerformanceTuningAnalysis flag to store enabled or disabled status.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// List of available post actions you can execute after the successful Java installation.
 	PostInstallationActions []GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction `pulumi:"postInstallationActions"`
@@ -777,7 +1203,7 @@ type GetFleetAdvancedFeatureConfigurationLcmInput interface {
 }
 
 type GetFleetAdvancedFeatureConfigurationLcmArgs struct {
-	// Lcm flag to store enabled or disabled status
+	// PerformanceTuningAnalysis flag to store enabled or disabled status.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// List of available post actions you can execute after the successful Java installation.
 	PostInstallationActions GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayInput `pulumi:"postInstallationActions"`
@@ -834,7 +1260,7 @@ func (o GetFleetAdvancedFeatureConfigurationLcmOutput) ToGetFleetAdvancedFeature
 	return o
 }
 
-// Lcm flag to store enabled or disabled status
+// PerformanceTuningAnalysis flag to store enabled or disabled status.
 func (o GetFleetAdvancedFeatureConfigurationLcmOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcm) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -867,13 +1293,19 @@ func (o GetFleetAdvancedFeatureConfigurationLcmArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction struct {
+	// Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+	AddLoggingHandler bool `pulumi:"addLoggingHandler"`
 	// The following post JRE installation actions are supported by the field:
 	// * Disable TLS 1.0 , TLS 1.1
 	DisabledTlsVersions []string `pulumi:"disabledTlsVersions"`
+	// Sets the logging level in logging.properties file.
+	GlobalLoggingLevel string `pulumi:"globalLoggingLevel"`
 	// test
 	MinimumKeySizeSettings []GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting `pulumi:"minimumKeySizeSettings"`
+	// List of proxy properties to be configured in net.properties file.
+	Proxies []GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy `pulumi:"proxies"`
 	// Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
-	// * Replace JDK root certificates with a list provided by the operating system
+	// * Replace JDK root certificates with a list provided by the operating system.
 	ShouldReplaceCertificatesOperatingSystem bool `pulumi:"shouldReplaceCertificatesOperatingSystem"`
 }
 
@@ -889,13 +1321,19 @@ type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionInput interfac
 }
 
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs struct {
+	// Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+	AddLoggingHandler pulumi.BoolInput `pulumi:"addLoggingHandler"`
 	// The following post JRE installation actions are supported by the field:
 	// * Disable TLS 1.0 , TLS 1.1
 	DisabledTlsVersions pulumi.StringArrayInput `pulumi:"disabledTlsVersions"`
+	// Sets the logging level in logging.properties file.
+	GlobalLoggingLevel pulumi.StringInput `pulumi:"globalLoggingLevel"`
 	// test
 	MinimumKeySizeSettings GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayInput `pulumi:"minimumKeySizeSettings"`
+	// List of proxy properties to be configured in net.properties file.
+	Proxies GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayInput `pulumi:"proxies"`
 	// Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
-	// * Replace JDK root certificates with a list provided by the operating system
+	// * Replace JDK root certificates with a list provided by the operating system.
 	ShouldReplaceCertificatesOperatingSystem pulumi.BoolInput `pulumi:"shouldReplaceCertificatesOperatingSystem"`
 }
 
@@ -950,12 +1388,24 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) ToG
 	return o
 }
 
+// Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) AddLoggingHandler() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction) bool { return v.AddLoggingHandler }).(pulumi.BoolOutput)
+}
+
 // The following post JRE installation actions are supported by the field:
 // * Disable TLS 1.0 , TLS 1.1
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) DisabledTlsVersions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction) []string {
 		return v.DisabledTlsVersions
 	}).(pulumi.StringArrayOutput)
+}
+
+// Sets the logging level in logging.properties file.
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) GlobalLoggingLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction) string {
+		return v.GlobalLoggingLevel
+	}).(pulumi.StringOutput)
 }
 
 // test
@@ -965,8 +1415,15 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) Min
 	}).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput)
 }
 
+// List of proxy properties to be configured in net.properties file.
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) Proxies() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction) []GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy {
+		return v.Proxies
+	}).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput)
+}
+
 // Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
-// * Replace JDK root certificates with a list provided by the operating system
+// * Replace JDK root certificates with a list provided by the operating system.
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) ShouldReplaceCertificatesOperatingSystem() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction) bool {
 		return v.ShouldReplaceCertificatesOperatingSystem
@@ -1465,6 +1922,286 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	}).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput)
 }
 
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy struct {
+	// Ftp host to be set in net.properties file.
+	FtpProxyHost string `pulumi:"ftpProxyHost"`
+	// Ftp port number to be set in net.properties file.
+	FtpProxyPort int `pulumi:"ftpProxyPort"`
+	// Http host to be set in net.properties file.
+	HttpProxyHost string `pulumi:"httpProxyHost"`
+	// Http port number to be set in net.properties file.
+	HttpProxyPort int `pulumi:"httpProxyPort"`
+	// Https host to be set in net.properties file.
+	HttpsProxyHost string `pulumi:"httpsProxyHost"`
+	// Https port number to be set in net.properties file.
+	HttpsProxyPort int `pulumi:"httpsProxyPort"`
+	// Socks host to be set in net.properties file.
+	SocksProxyHost string `pulumi:"socksProxyHost"`
+	// Socks port number to be set in net.properties file.
+	SocksProxyPort int `pulumi:"socksProxyPort"`
+	// Sets "java.net.useSystemProxies=true" in net.properties when they exist.
+	UseSystemProxies bool `pulumi:"useSystemProxies"`
+}
+
+// GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArgs and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArgs{...}
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArgs struct {
+	// Ftp host to be set in net.properties file.
+	FtpProxyHost pulumi.StringInput `pulumi:"ftpProxyHost"`
+	// Ftp port number to be set in net.properties file.
+	FtpProxyPort pulumi.IntInput `pulumi:"ftpProxyPort"`
+	// Http host to be set in net.properties file.
+	HttpProxyHost pulumi.StringInput `pulumi:"httpProxyHost"`
+	// Http port number to be set in net.properties file.
+	HttpProxyPort pulumi.IntInput `pulumi:"httpProxyPort"`
+	// Https host to be set in net.properties file.
+	HttpsProxyHost pulumi.StringInput `pulumi:"httpsProxyHost"`
+	// Https port number to be set in net.properties file.
+	HttpsProxyPort pulumi.IntInput `pulumi:"httpsProxyPort"`
+	// Socks host to be set in net.properties file.
+	SocksProxyHost pulumi.StringInput `pulumi:"socksProxyHost"`
+	// Socks port number to be set in net.properties file.
+	SocksProxyPort pulumi.IntInput `pulumi:"socksProxyPort"`
+	// Sets "java.net.useSystemProxies=true" in net.properties when they exist.
+	UseSystemProxies pulumi.BoolInput `pulumi:"useSystemProxies"`
+}
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArgs) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArgs) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput)
+}
+
+// GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArray and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArray{ GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArgs{...} }
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput
+	ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArray []GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyInput
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArray) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArray) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput {
+	return o
+}
+
+// Ftp host to be set in net.properties file.
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) FtpProxyHost() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) string {
+		return v.FtpProxyHost
+	}).(pulumi.StringOutput)
+}
+
+// Ftp port number to be set in net.properties file.
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) FtpProxyPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) int { return v.FtpProxyPort }).(pulumi.IntOutput)
+}
+
+// Http host to be set in net.properties file.
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) HttpProxyHost() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) string {
+		return v.HttpProxyHost
+	}).(pulumi.StringOutput)
+}
+
+// Http port number to be set in net.properties file.
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) HttpProxyPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) int { return v.HttpProxyPort }).(pulumi.IntOutput)
+}
+
+// Https host to be set in net.properties file.
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) HttpsProxyHost() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) string {
+		return v.HttpsProxyHost
+	}).(pulumi.StringOutput)
+}
+
+// Https port number to be set in net.properties file.
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) HttpsProxyPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) int {
+		return v.HttpsProxyPort
+	}).(pulumi.IntOutput)
+}
+
+// Socks host to be set in net.properties file.
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) SocksProxyHost() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) string {
+		return v.SocksProxyHost
+	}).(pulumi.StringOutput)
+}
+
+// Socks port number to be set in net.properties file.
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) SocksProxyPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) int {
+		return v.SocksProxyPort
+	}).(pulumi.IntOutput)
+}
+
+// Sets "java.net.useSystemProxies=true" in net.properties when they exist.
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) UseSystemProxies() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy) bool {
+		return v.UseSystemProxies
+	}).(pulumi.BoolOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput() GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy {
+		return vs[0].([]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy)[vs[1].(int)]
+	}).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis struct {
+	// PerformanceTuningAnalysis flag to store enabled or disabled status.
+	IsEnabled bool `pulumi:"isEnabled"`
+}
+
+// GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisInput is an input type that accepts GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs and GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs{...}
+type GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput() GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput
+	ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs struct {
+	// PerformanceTuningAnalysis flag to store enabled or disabled status.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+}
+
+func (GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs) ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput() GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs) ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput)
+}
+
+// GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArray and GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput values.
+// You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayInput` via:
+//
+//	GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArray{ GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs{...} }
+type GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput() GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput
+	ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutputWithContext(context.Context) GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput
+}
+
+type GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArray []GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisInput
+
+func (GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis)(nil)).Elem()
+}
+
+func (i GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArray) ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput() GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput {
+	return i.ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArray) ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput() GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput {
+	return o
+}
+
+// PerformanceTuningAnalysis flag to store enabled or disabled status.
+func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis)(nil)).Elem()
+}
+
+func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput) ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput() GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput) ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput {
+	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis {
+		return vs[0].([]GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis)[vs[1].(int)]
+	}).(GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput)
+}
+
 type GetFleetBlocklistsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -1576,7 +2313,7 @@ type GetFleetBlocklistsItem struct {
 	Key string `pulumi:"key"`
 	// The operation type.
 	Operation string `pulumi:"operation"`
-	// The reason for why the operation is blocklisted
+	// The reason why the operation is blocklisted.
 	Reason string `pulumi:"reason"`
 	// A resource to blocklist for certain operation.
 	Targets []GetFleetBlocklistsItemTarget `pulumi:"targets"`
@@ -1598,7 +2335,7 @@ type GetFleetBlocklistsItemArgs struct {
 	Key pulumi.StringInput `pulumi:"key"`
 	// The operation type.
 	Operation pulumi.StringInput `pulumi:"operation"`
-	// The reason for why the operation is blocklisted
+	// The reason why the operation is blocklisted.
 	Reason pulumi.StringInput `pulumi:"reason"`
 	// A resource to blocklist for certain operation.
 	Targets GetFleetBlocklistsItemTargetArrayInput `pulumi:"targets"`
@@ -1665,7 +2402,7 @@ func (o GetFleetBlocklistsItemOutput) Operation() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetBlocklistsItem) string { return v.Operation }).(pulumi.StringOutput)
 }
 
-// The reason for why the operation is blocklisted
+// The reason why the operation is blocklisted.
 func (o GetFleetBlocklistsItemOutput) Reason() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetBlocklistsItem) string { return v.Reason }).(pulumi.StringOutput)
 }
@@ -1925,7 +2662,7 @@ type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem struct {
 	ManagedInstanceId string `pulumi:"managedInstanceId"`
 	// The Object Storage namespace of this analysis result.
 	Namespace string `pulumi:"namespace"`
-	// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the crypto roadmap version used the the analysis.
+	// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
 	NonCompliantFindingCount int `pulumi:"nonCompliantFindingCount"`
 	// The Object Storage object name of this analysis result.
 	Object string `pulumi:"object"`
@@ -1973,7 +2710,7 @@ type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs struct 
 	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
 	// The Object Storage namespace of this analysis result.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the crypto roadmap version used the the analysis.
+	// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
 	NonCompliantFindingCount pulumi.IntInput `pulumi:"nonCompliantFindingCount"`
 	// The Object Storage object name of this analysis result.
 	Object pulumi.StringInput `pulumi:"object"`
@@ -2093,7 +2830,7 @@ func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) N
 	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the crypto roadmap version used the the analysis.
+// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
 func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) NonCompliantFindingCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) int {
 		return v.NonCompliantFindingCount
@@ -2265,6 +3002,335 @@ func (o GetFleetCryptoAnalysisResultsFilterArrayOutput) Index(i pulumi.IntInput)
 	}).(GetFleetCryptoAnalysisResultsFilterOutput)
 }
 
+type GetFleetDiagnosesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFleetDiagnosesFilterInput is an input type that accepts GetFleetDiagnosesFilterArgs and GetFleetDiagnosesFilterOutput values.
+// You can construct a concrete instance of `GetFleetDiagnosesFilterInput` via:
+//
+//	GetFleetDiagnosesFilterArgs{...}
+type GetFleetDiagnosesFilterInput interface {
+	pulumi.Input
+
+	ToGetFleetDiagnosesFilterOutput() GetFleetDiagnosesFilterOutput
+	ToGetFleetDiagnosesFilterOutputWithContext(context.Context) GetFleetDiagnosesFilterOutput
+}
+
+type GetFleetDiagnosesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFleetDiagnosesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetDiagnosesFilter)(nil)).Elem()
+}
+
+func (i GetFleetDiagnosesFilterArgs) ToGetFleetDiagnosesFilterOutput() GetFleetDiagnosesFilterOutput {
+	return i.ToGetFleetDiagnosesFilterOutputWithContext(context.Background())
+}
+
+func (i GetFleetDiagnosesFilterArgs) ToGetFleetDiagnosesFilterOutputWithContext(ctx context.Context) GetFleetDiagnosesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDiagnosesFilterOutput)
+}
+
+// GetFleetDiagnosesFilterArrayInput is an input type that accepts GetFleetDiagnosesFilterArray and GetFleetDiagnosesFilterArrayOutput values.
+// You can construct a concrete instance of `GetFleetDiagnosesFilterArrayInput` via:
+//
+//	GetFleetDiagnosesFilterArray{ GetFleetDiagnosesFilterArgs{...} }
+type GetFleetDiagnosesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetDiagnosesFilterArrayOutput() GetFleetDiagnosesFilterArrayOutput
+	ToGetFleetDiagnosesFilterArrayOutputWithContext(context.Context) GetFleetDiagnosesFilterArrayOutput
+}
+
+type GetFleetDiagnosesFilterArray []GetFleetDiagnosesFilterInput
+
+func (GetFleetDiagnosesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetDiagnosesFilter)(nil)).Elem()
+}
+
+func (i GetFleetDiagnosesFilterArray) ToGetFleetDiagnosesFilterArrayOutput() GetFleetDiagnosesFilterArrayOutput {
+	return i.ToGetFleetDiagnosesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetDiagnosesFilterArray) ToGetFleetDiagnosesFilterArrayOutputWithContext(ctx context.Context) GetFleetDiagnosesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDiagnosesFilterArrayOutput)
+}
+
+type GetFleetDiagnosesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFleetDiagnosesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetDiagnosesFilter)(nil)).Elem()
+}
+
+func (o GetFleetDiagnosesFilterOutput) ToGetFleetDiagnosesFilterOutput() GetFleetDiagnosesFilterOutput {
+	return o
+}
+
+func (o GetFleetDiagnosesFilterOutput) ToGetFleetDiagnosesFilterOutputWithContext(ctx context.Context) GetFleetDiagnosesFilterOutput {
+	return o
+}
+
+func (o GetFleetDiagnosesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetDiagnosesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFleetDiagnosesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetDiagnosesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFleetDiagnosesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetDiagnosesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFleetDiagnosesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetDiagnosesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetDiagnosesFilter)(nil)).Elem()
+}
+
+func (o GetFleetDiagnosesFilterArrayOutput) ToGetFleetDiagnosesFilterArrayOutput() GetFleetDiagnosesFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetDiagnosesFilterArrayOutput) ToGetFleetDiagnosesFilterArrayOutputWithContext(ctx context.Context) GetFleetDiagnosesFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetDiagnosesFilterArrayOutput) Index(i pulumi.IntInput) GetFleetDiagnosesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetDiagnosesFilter {
+		return vs[0].([]GetFleetDiagnosesFilter)[vs[1].(int)]
+	}).(GetFleetDiagnosesFilterOutput)
+}
+
+type GetFleetDiagnosesFleetDiagnosisCollection struct {
+	// A list of the fleet resource diagnosis.
+	Items []GetFleetDiagnosesFleetDiagnosisCollectionItem `pulumi:"items"`
+}
+
+// GetFleetDiagnosesFleetDiagnosisCollectionInput is an input type that accepts GetFleetDiagnosesFleetDiagnosisCollectionArgs and GetFleetDiagnosesFleetDiagnosisCollectionOutput values.
+// You can construct a concrete instance of `GetFleetDiagnosesFleetDiagnosisCollectionInput` via:
+//
+//	GetFleetDiagnosesFleetDiagnosisCollectionArgs{...}
+type GetFleetDiagnosesFleetDiagnosisCollectionInput interface {
+	pulumi.Input
+
+	ToGetFleetDiagnosesFleetDiagnosisCollectionOutput() GetFleetDiagnosesFleetDiagnosisCollectionOutput
+	ToGetFleetDiagnosesFleetDiagnosisCollectionOutputWithContext(context.Context) GetFleetDiagnosesFleetDiagnosisCollectionOutput
+}
+
+type GetFleetDiagnosesFleetDiagnosisCollectionArgs struct {
+	// A list of the fleet resource diagnosis.
+	Items GetFleetDiagnosesFleetDiagnosisCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFleetDiagnosesFleetDiagnosisCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetDiagnosesFleetDiagnosisCollection)(nil)).Elem()
+}
+
+func (i GetFleetDiagnosesFleetDiagnosisCollectionArgs) ToGetFleetDiagnosesFleetDiagnosisCollectionOutput() GetFleetDiagnosesFleetDiagnosisCollectionOutput {
+	return i.ToGetFleetDiagnosesFleetDiagnosisCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFleetDiagnosesFleetDiagnosisCollectionArgs) ToGetFleetDiagnosesFleetDiagnosisCollectionOutputWithContext(ctx context.Context) GetFleetDiagnosesFleetDiagnosisCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDiagnosesFleetDiagnosisCollectionOutput)
+}
+
+// GetFleetDiagnosesFleetDiagnosisCollectionArrayInput is an input type that accepts GetFleetDiagnosesFleetDiagnosisCollectionArray and GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFleetDiagnosesFleetDiagnosisCollectionArrayInput` via:
+//
+//	GetFleetDiagnosesFleetDiagnosisCollectionArray{ GetFleetDiagnosesFleetDiagnosisCollectionArgs{...} }
+type GetFleetDiagnosesFleetDiagnosisCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetDiagnosesFleetDiagnosisCollectionArrayOutput() GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput
+	ToGetFleetDiagnosesFleetDiagnosisCollectionArrayOutputWithContext(context.Context) GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput
+}
+
+type GetFleetDiagnosesFleetDiagnosisCollectionArray []GetFleetDiagnosesFleetDiagnosisCollectionInput
+
+func (GetFleetDiagnosesFleetDiagnosisCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetDiagnosesFleetDiagnosisCollection)(nil)).Elem()
+}
+
+func (i GetFleetDiagnosesFleetDiagnosisCollectionArray) ToGetFleetDiagnosesFleetDiagnosisCollectionArrayOutput() GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput {
+	return i.ToGetFleetDiagnosesFleetDiagnosisCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetDiagnosesFleetDiagnosisCollectionArray) ToGetFleetDiagnosesFleetDiagnosisCollectionArrayOutputWithContext(ctx context.Context) GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput)
+}
+
+type GetFleetDiagnosesFleetDiagnosisCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFleetDiagnosesFleetDiagnosisCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetDiagnosesFleetDiagnosisCollection)(nil)).Elem()
+}
+
+func (o GetFleetDiagnosesFleetDiagnosisCollectionOutput) ToGetFleetDiagnosesFleetDiagnosisCollectionOutput() GetFleetDiagnosesFleetDiagnosisCollectionOutput {
+	return o
+}
+
+func (o GetFleetDiagnosesFleetDiagnosisCollectionOutput) ToGetFleetDiagnosesFleetDiagnosisCollectionOutputWithContext(ctx context.Context) GetFleetDiagnosesFleetDiagnosisCollectionOutput {
+	return o
+}
+
+// A list of the fleet resource diagnosis.
+func (o GetFleetDiagnosesFleetDiagnosisCollectionOutput) Items() GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFleetDiagnosesFleetDiagnosisCollection) []GetFleetDiagnosesFleetDiagnosisCollectionItem {
+		return v.Items
+	}).(GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput)
+}
+
+type GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetDiagnosesFleetDiagnosisCollection)(nil)).Elem()
+}
+
+func (o GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput) ToGetFleetDiagnosesFleetDiagnosisCollectionArrayOutput() GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput) ToGetFleetDiagnosesFleetDiagnosisCollectionArrayOutputWithContext(ctx context.Context) GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetDiagnosesFleetDiagnosisCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetDiagnosesFleetDiagnosisCollection {
+		return vs[0].([]GetFleetDiagnosesFleetDiagnosisCollection)[vs[1].(int)]
+	}).(GetFleetDiagnosesFleetDiagnosisCollectionOutput)
+}
+
+type GetFleetDiagnosesFleetDiagnosisCollectionItem struct {
+	// The diagnosis message.
+	ResourceDiagnosis string `pulumi:"resourceDiagnosis"`
+	// The OCID of the external resouce needed by the fleet.
+	ResourceId string `pulumi:"resourceId"`
+	// The state of the resource. The resource state is ACTIVE when it works properly for the fleet. In case it would cause an issue for the fleet function, the state is INACTIVE. When JMS can't locate the resource, the state is NOT_FOUND. OTHER covers other cases, such as a temporarily network issue that prevents JMS from detecting the resource. Check the resourceDiagnosis for details.
+	ResourceState string `pulumi:"resourceState"`
+	// The type of the resource needed by the fleet. This is the role of a resource in the fleet. Use the OCID to determine the actual Oracle Cloud Infrastructure resource type such as log group or log.
+	ResourceType string `pulumi:"resourceType"`
+}
+
+// GetFleetDiagnosesFleetDiagnosisCollectionItemInput is an input type that accepts GetFleetDiagnosesFleetDiagnosisCollectionItemArgs and GetFleetDiagnosesFleetDiagnosisCollectionItemOutput values.
+// You can construct a concrete instance of `GetFleetDiagnosesFleetDiagnosisCollectionItemInput` via:
+//
+//	GetFleetDiagnosesFleetDiagnosisCollectionItemArgs{...}
+type GetFleetDiagnosesFleetDiagnosisCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFleetDiagnosesFleetDiagnosisCollectionItemOutput() GetFleetDiagnosesFleetDiagnosisCollectionItemOutput
+	ToGetFleetDiagnosesFleetDiagnosisCollectionItemOutputWithContext(context.Context) GetFleetDiagnosesFleetDiagnosisCollectionItemOutput
+}
+
+type GetFleetDiagnosesFleetDiagnosisCollectionItemArgs struct {
+	// The diagnosis message.
+	ResourceDiagnosis pulumi.StringInput `pulumi:"resourceDiagnosis"`
+	// The OCID of the external resouce needed by the fleet.
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// The state of the resource. The resource state is ACTIVE when it works properly for the fleet. In case it would cause an issue for the fleet function, the state is INACTIVE. When JMS can't locate the resource, the state is NOT_FOUND. OTHER covers other cases, such as a temporarily network issue that prevents JMS from detecting the resource. Check the resourceDiagnosis for details.
+	ResourceState pulumi.StringInput `pulumi:"resourceState"`
+	// The type of the resource needed by the fleet. This is the role of a resource in the fleet. Use the OCID to determine the actual Oracle Cloud Infrastructure resource type such as log group or log.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+}
+
+func (GetFleetDiagnosesFleetDiagnosisCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetDiagnosesFleetDiagnosisCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetDiagnosesFleetDiagnosisCollectionItemArgs) ToGetFleetDiagnosesFleetDiagnosisCollectionItemOutput() GetFleetDiagnosesFleetDiagnosisCollectionItemOutput {
+	return i.ToGetFleetDiagnosesFleetDiagnosisCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFleetDiagnosesFleetDiagnosisCollectionItemArgs) ToGetFleetDiagnosesFleetDiagnosisCollectionItemOutputWithContext(ctx context.Context) GetFleetDiagnosesFleetDiagnosisCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDiagnosesFleetDiagnosisCollectionItemOutput)
+}
+
+// GetFleetDiagnosesFleetDiagnosisCollectionItemArrayInput is an input type that accepts GetFleetDiagnosesFleetDiagnosisCollectionItemArray and GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFleetDiagnosesFleetDiagnosisCollectionItemArrayInput` via:
+//
+//	GetFleetDiagnosesFleetDiagnosisCollectionItemArray{ GetFleetDiagnosesFleetDiagnosisCollectionItemArgs{...} }
+type GetFleetDiagnosesFleetDiagnosisCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput() GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput
+	ToGetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutputWithContext(context.Context) GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput
+}
+
+type GetFleetDiagnosesFleetDiagnosisCollectionItemArray []GetFleetDiagnosesFleetDiagnosisCollectionItemInput
+
+func (GetFleetDiagnosesFleetDiagnosisCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetDiagnosesFleetDiagnosisCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetDiagnosesFleetDiagnosisCollectionItemArray) ToGetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput() GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput {
+	return i.ToGetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetDiagnosesFleetDiagnosisCollectionItemArray) ToGetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput)
+}
+
+type GetFleetDiagnosesFleetDiagnosisCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetDiagnosesFleetDiagnosisCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ToGetFleetDiagnosesFleetDiagnosisCollectionItemOutput() GetFleetDiagnosesFleetDiagnosisCollectionItemOutput {
+	return o
+}
+
+func (o GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ToGetFleetDiagnosesFleetDiagnosisCollectionItemOutputWithContext(ctx context.Context) GetFleetDiagnosesFleetDiagnosisCollectionItemOutput {
+	return o
+}
+
+// The diagnosis message.
+func (o GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ResourceDiagnosis() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetDiagnosesFleetDiagnosisCollectionItem) string { return v.ResourceDiagnosis }).(pulumi.StringOutput)
+}
+
+// The OCID of the external resouce needed by the fleet.
+func (o GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetDiagnosesFleetDiagnosisCollectionItem) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+// The state of the resource. The resource state is ACTIVE when it works properly for the fleet. In case it would cause an issue for the fleet function, the state is INACTIVE. When JMS can't locate the resource, the state is NOT_FOUND. OTHER covers other cases, such as a temporarily network issue that prevents JMS from detecting the resource. Check the resourceDiagnosis for details.
+func (o GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ResourceState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetDiagnosesFleetDiagnosisCollectionItem) string { return v.ResourceState }).(pulumi.StringOutput)
+}
+
+// The type of the resource needed by the fleet. This is the role of a resource in the fleet. Use the OCID to determine the actual Oracle Cloud Infrastructure resource type such as log group or log.
+func (o GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetDiagnosesFleetDiagnosisCollectionItem) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+type GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetDiagnosesFleetDiagnosisCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput) ToGetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput() GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput) ToGetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetDiagnosesFleetDiagnosisCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetDiagnosesFleetDiagnosisCollectionItem {
+		return vs[0].([]GetFleetDiagnosesFleetDiagnosisCollectionItem)[vs[1].(int)]
+	}).(GetFleetDiagnosesFleetDiagnosisCollectionItemOutput)
+}
+
 type GetFleetInventoryLog struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
 	LogGroupId string `pulumi:"logGroupId"`
@@ -2371,6 +3437,472 @@ func (o GetFleetInventoryLogArrayOutput) Index(i pulumi.IntInput) GetFleetInvent
 	}).(GetFleetInventoryLogOutput)
 }
 
+type GetFleetJavaMigrationAnalysisResultsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFleetJavaMigrationAnalysisResultsFilterInput is an input type that accepts GetFleetJavaMigrationAnalysisResultsFilterArgs and GetFleetJavaMigrationAnalysisResultsFilterOutput values.
+// You can construct a concrete instance of `GetFleetJavaMigrationAnalysisResultsFilterInput` via:
+//
+//	GetFleetJavaMigrationAnalysisResultsFilterArgs{...}
+type GetFleetJavaMigrationAnalysisResultsFilterInput interface {
+	pulumi.Input
+
+	ToGetFleetJavaMigrationAnalysisResultsFilterOutput() GetFleetJavaMigrationAnalysisResultsFilterOutput
+	ToGetFleetJavaMigrationAnalysisResultsFilterOutputWithContext(context.Context) GetFleetJavaMigrationAnalysisResultsFilterOutput
+}
+
+type GetFleetJavaMigrationAnalysisResultsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFleetJavaMigrationAnalysisResultsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetJavaMigrationAnalysisResultsFilter)(nil)).Elem()
+}
+
+func (i GetFleetJavaMigrationAnalysisResultsFilterArgs) ToGetFleetJavaMigrationAnalysisResultsFilterOutput() GetFleetJavaMigrationAnalysisResultsFilterOutput {
+	return i.ToGetFleetJavaMigrationAnalysisResultsFilterOutputWithContext(context.Background())
+}
+
+func (i GetFleetJavaMigrationAnalysisResultsFilterArgs) ToGetFleetJavaMigrationAnalysisResultsFilterOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetJavaMigrationAnalysisResultsFilterOutput)
+}
+
+// GetFleetJavaMigrationAnalysisResultsFilterArrayInput is an input type that accepts GetFleetJavaMigrationAnalysisResultsFilterArray and GetFleetJavaMigrationAnalysisResultsFilterArrayOutput values.
+// You can construct a concrete instance of `GetFleetJavaMigrationAnalysisResultsFilterArrayInput` via:
+//
+//	GetFleetJavaMigrationAnalysisResultsFilterArray{ GetFleetJavaMigrationAnalysisResultsFilterArgs{...} }
+type GetFleetJavaMigrationAnalysisResultsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetJavaMigrationAnalysisResultsFilterArrayOutput() GetFleetJavaMigrationAnalysisResultsFilterArrayOutput
+	ToGetFleetJavaMigrationAnalysisResultsFilterArrayOutputWithContext(context.Context) GetFleetJavaMigrationAnalysisResultsFilterArrayOutput
+}
+
+type GetFleetJavaMigrationAnalysisResultsFilterArray []GetFleetJavaMigrationAnalysisResultsFilterInput
+
+func (GetFleetJavaMigrationAnalysisResultsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetJavaMigrationAnalysisResultsFilter)(nil)).Elem()
+}
+
+func (i GetFleetJavaMigrationAnalysisResultsFilterArray) ToGetFleetJavaMigrationAnalysisResultsFilterArrayOutput() GetFleetJavaMigrationAnalysisResultsFilterArrayOutput {
+	return i.ToGetFleetJavaMigrationAnalysisResultsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetJavaMigrationAnalysisResultsFilterArray) ToGetFleetJavaMigrationAnalysisResultsFilterArrayOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetJavaMigrationAnalysisResultsFilterArrayOutput)
+}
+
+type GetFleetJavaMigrationAnalysisResultsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFleetJavaMigrationAnalysisResultsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetJavaMigrationAnalysisResultsFilter)(nil)).Elem()
+}
+
+func (o GetFleetJavaMigrationAnalysisResultsFilterOutput) ToGetFleetJavaMigrationAnalysisResultsFilterOutput() GetFleetJavaMigrationAnalysisResultsFilterOutput {
+	return o
+}
+
+func (o GetFleetJavaMigrationAnalysisResultsFilterOutput) ToGetFleetJavaMigrationAnalysisResultsFilterOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsFilterOutput {
+	return o
+}
+
+func (o GetFleetJavaMigrationAnalysisResultsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFleetJavaMigrationAnalysisResultsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFleetJavaMigrationAnalysisResultsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFleetJavaMigrationAnalysisResultsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetJavaMigrationAnalysisResultsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetJavaMigrationAnalysisResultsFilter)(nil)).Elem()
+}
+
+func (o GetFleetJavaMigrationAnalysisResultsFilterArrayOutput) ToGetFleetJavaMigrationAnalysisResultsFilterArrayOutput() GetFleetJavaMigrationAnalysisResultsFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetJavaMigrationAnalysisResultsFilterArrayOutput) ToGetFleetJavaMigrationAnalysisResultsFilterArrayOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetJavaMigrationAnalysisResultsFilterArrayOutput) Index(i pulumi.IntInput) GetFleetJavaMigrationAnalysisResultsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetJavaMigrationAnalysisResultsFilter {
+		return vs[0].([]GetFleetJavaMigrationAnalysisResultsFilter)[vs[1].(int)]
+	}).(GetFleetJavaMigrationAnalysisResultsFilterOutput)
+}
+
+type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection struct {
+	Items []GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem `pulumi:"items"`
+}
+
+// GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionInput is an input type that accepts GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArgs and GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput values.
+// You can construct a concrete instance of `GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionInput` via:
+//
+//	GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArgs{...}
+type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionInput interface {
+	pulumi.Input
+
+	ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput() GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput
+	ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutputWithContext(context.Context) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput
+}
+
+type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArgs struct {
+	Items GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection)(nil)).Elem()
+}
+
+func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArgs) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput() GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput {
+	return i.ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArgs) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput)
+}
+
+// GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayInput is an input type that accepts GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArray and GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayInput` via:
+//
+//	GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArray{ GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArgs{...} }
+type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput() GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput
+	ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutputWithContext(context.Context) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput
+}
+
+type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArray []GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionInput
+
+func (GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection)(nil)).Elem()
+}
+
+func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArray) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput() GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput {
+	return i.ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArray) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput)
+}
+
+type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection)(nil)).Elem()
+}
+
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput() GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput {
+	return o
+}
+
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput {
+	return o
+}
+
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput) Items() GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection) []GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem {
+		return v.Items
+	}).(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput)
+}
+
+type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection)(nil)).Elem()
+}
+
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput() GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection {
+		return vs[0].([]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection)[vs[1].(int)]
+	}).(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput)
+}
+
+type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem struct {
+	// Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
+	ApplicationExecutionType string `pulumi:"applicationExecutionType"`
+	// The name of the application for which the Java migration analysis was performed.
+	ApplicationName string `pulumi:"applicationName"`
+	// The installation path of the application for which the Java migration analysis was performed.
+	ApplicationPath string `pulumi:"applicationPath"`
+	// The name of the object storage bucket that contains the results of the migration analysis.
+	Bucket string `pulumi:"bucket"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+	FleetId string `pulumi:"fleetId"`
+	// The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+	HostName string `pulumi:"hostName"`
+	// The OCID of the migration analysis report.
+	Id string `pulumi:"id"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	// Additional info reserved for future use.
+	Metadata string `pulumi:"metadata"`
+	// The object storage namespace that contains the results of the migration analysis.
+	Namespace string `pulumi:"namespace"`
+	// The names of the object storage objects that contain the results of the migration analysis.
+	ObjectLists []string `pulumi:"objectLists"`
+	// The directory path of the object storage bucket that contains the results of the migration analysis.
+	ObjectStorageUploadDirPath string `pulumi:"objectStorageUploadDirPath"`
+	// The source JDK version of the application that's currently running.
+	SourceJdkVersion string `pulumi:"sourceJdkVersion"`
+	// The target JDK version of the application to be migrated.
+	TargetJdkVersion string `pulumi:"targetJdkVersion"`
+	// The time the result is compiled.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The OCID of the work request of this analysis.
+	WorkRequestId string `pulumi:"workRequestId"`
+}
+
+// GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemInput is an input type that accepts GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArgs and GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput values.
+// You can construct a concrete instance of `GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemInput` via:
+//
+//	GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArgs{...}
+type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput() GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput
+	ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutputWithContext(context.Context) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput
+}
+
+type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArgs struct {
+	// Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
+	ApplicationExecutionType pulumi.StringInput `pulumi:"applicationExecutionType"`
+	// The name of the application for which the Java migration analysis was performed.
+	ApplicationName pulumi.StringInput `pulumi:"applicationName"`
+	// The installation path of the application for which the Java migration analysis was performed.
+	ApplicationPath pulumi.StringInput `pulumi:"applicationPath"`
+	// The name of the object storage bucket that contains the results of the migration analysis.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+	FleetId pulumi.StringInput `pulumi:"fleetId"`
+	// The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+	HostName pulumi.StringInput `pulumi:"hostName"`
+	// The OCID of the migration analysis report.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+	// Additional info reserved for future use.
+	Metadata pulumi.StringInput `pulumi:"metadata"`
+	// The object storage namespace that contains the results of the migration analysis.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The names of the object storage objects that contain the results of the migration analysis.
+	ObjectLists pulumi.StringArrayInput `pulumi:"objectLists"`
+	// The directory path of the object storage bucket that contains the results of the migration analysis.
+	ObjectStorageUploadDirPath pulumi.StringInput `pulumi:"objectStorageUploadDirPath"`
+	// The source JDK version of the application that's currently running.
+	SourceJdkVersion pulumi.StringInput `pulumi:"sourceJdkVersion"`
+	// The target JDK version of the application to be migrated.
+	TargetJdkVersion pulumi.StringInput `pulumi:"targetJdkVersion"`
+	// The time the result is compiled.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The OCID of the work request of this analysis.
+	WorkRequestId pulumi.StringInput `pulumi:"workRequestId"`
+}
+
+func (GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArgs) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput() GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput {
+	return i.ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArgs) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput)
+}
+
+// GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayInput is an input type that accepts GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArray and GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayInput` via:
+//
+//	GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArray{ GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArgs{...} }
+type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput() GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput
+	ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutputWithContext(context.Context) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput
+}
+
+type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArray []GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemInput
+
+func (GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArray) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput() GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput {
+	return i.ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArray) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput)
+}
+
+type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput() GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput {
+	return o
+}
+
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput {
+	return o
+}
+
+// Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ApplicationExecutionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+		return v.ApplicationExecutionType
+	}).(pulumi.StringOutput)
+}
+
+// The name of the application for which the Java migration analysis was performed.
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ApplicationName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+		return v.ApplicationName
+	}).(pulumi.StringOutput)
+}
+
+// The installation path of the application for which the Java migration analysis was performed.
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ApplicationPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+		return v.ApplicationPath
+	}).(pulumi.StringOutput)
+}
+
+// The name of the object storage bucket that contains the results of the migration analysis.
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+		return v.Bucket
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) FleetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+		return v.FleetId
+	}).(pulumi.StringOutput)
+}
+
+// The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) HostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+		return v.HostName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the migration analysis report.
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// The Fleet-unique identifier of the related managed instance.
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+		return v.ManagedInstanceId
+	}).(pulumi.StringOutput)
+}
+
+// Additional info reserved for future use.
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) Metadata() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+		return v.Metadata
+	}).(pulumi.StringOutput)
+}
+
+// The object storage namespace that contains the results of the migration analysis.
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// The names of the object storage objects that contain the results of the migration analysis.
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ObjectLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) []string {
+		return v.ObjectLists
+	}).(pulumi.StringArrayOutput)
+}
+
+// The directory path of the object storage bucket that contains the results of the migration analysis.
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ObjectStorageUploadDirPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+		return v.ObjectStorageUploadDirPath
+	}).(pulumi.StringOutput)
+}
+
+// The source JDK version of the application that's currently running.
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) SourceJdkVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+		return v.SourceJdkVersion
+	}).(pulumi.StringOutput)
+}
+
+// The target JDK version of the application to be migrated.
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) TargetJdkVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+		return v.TargetJdkVersion
+	}).(pulumi.StringOutput)
+}
+
+// The time the result is compiled.
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the work request of this analysis.
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) WorkRequestId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+		return v.WorkRequestId
+	}).(pulumi.StringOutput)
+}
+
+type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput() GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem {
+		return vs[0].([]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem)[vs[1].(int)]
+	}).(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput)
+}
+
 type GetFleetOperationLog struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
 	LogGroupId string `pulumi:"logGroupId"`
@@ -2475,6 +4007,483 @@ func (o GetFleetOperationLogArrayOutput) Index(i pulumi.IntInput) GetFleetOperat
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetOperationLog {
 		return vs[0].([]GetFleetOperationLog)[vs[1].(int)]
 	}).(GetFleetOperationLogOutput)
+}
+
+type GetFleetPerformanceTuningAnalysisResultsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFleetPerformanceTuningAnalysisResultsFilterInput is an input type that accepts GetFleetPerformanceTuningAnalysisResultsFilterArgs and GetFleetPerformanceTuningAnalysisResultsFilterOutput values.
+// You can construct a concrete instance of `GetFleetPerformanceTuningAnalysisResultsFilterInput` via:
+//
+//	GetFleetPerformanceTuningAnalysisResultsFilterArgs{...}
+type GetFleetPerformanceTuningAnalysisResultsFilterInput interface {
+	pulumi.Input
+
+	ToGetFleetPerformanceTuningAnalysisResultsFilterOutput() GetFleetPerformanceTuningAnalysisResultsFilterOutput
+	ToGetFleetPerformanceTuningAnalysisResultsFilterOutputWithContext(context.Context) GetFleetPerformanceTuningAnalysisResultsFilterOutput
+}
+
+type GetFleetPerformanceTuningAnalysisResultsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFleetPerformanceTuningAnalysisResultsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetPerformanceTuningAnalysisResultsFilter)(nil)).Elem()
+}
+
+func (i GetFleetPerformanceTuningAnalysisResultsFilterArgs) ToGetFleetPerformanceTuningAnalysisResultsFilterOutput() GetFleetPerformanceTuningAnalysisResultsFilterOutput {
+	return i.ToGetFleetPerformanceTuningAnalysisResultsFilterOutputWithContext(context.Background())
+}
+
+func (i GetFleetPerformanceTuningAnalysisResultsFilterArgs) ToGetFleetPerformanceTuningAnalysisResultsFilterOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetPerformanceTuningAnalysisResultsFilterOutput)
+}
+
+// GetFleetPerformanceTuningAnalysisResultsFilterArrayInput is an input type that accepts GetFleetPerformanceTuningAnalysisResultsFilterArray and GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput values.
+// You can construct a concrete instance of `GetFleetPerformanceTuningAnalysisResultsFilterArrayInput` via:
+//
+//	GetFleetPerformanceTuningAnalysisResultsFilterArray{ GetFleetPerformanceTuningAnalysisResultsFilterArgs{...} }
+type GetFleetPerformanceTuningAnalysisResultsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetPerformanceTuningAnalysisResultsFilterArrayOutput() GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput
+	ToGetFleetPerformanceTuningAnalysisResultsFilterArrayOutputWithContext(context.Context) GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput
+}
+
+type GetFleetPerformanceTuningAnalysisResultsFilterArray []GetFleetPerformanceTuningAnalysisResultsFilterInput
+
+func (GetFleetPerformanceTuningAnalysisResultsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetPerformanceTuningAnalysisResultsFilter)(nil)).Elem()
+}
+
+func (i GetFleetPerformanceTuningAnalysisResultsFilterArray) ToGetFleetPerformanceTuningAnalysisResultsFilterArrayOutput() GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput {
+	return i.ToGetFleetPerformanceTuningAnalysisResultsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetPerformanceTuningAnalysisResultsFilterArray) ToGetFleetPerformanceTuningAnalysisResultsFilterArrayOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput)
+}
+
+type GetFleetPerformanceTuningAnalysisResultsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFleetPerformanceTuningAnalysisResultsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetPerformanceTuningAnalysisResultsFilter)(nil)).Elem()
+}
+
+func (o GetFleetPerformanceTuningAnalysisResultsFilterOutput) ToGetFleetPerformanceTuningAnalysisResultsFilterOutput() GetFleetPerformanceTuningAnalysisResultsFilterOutput {
+	return o
+}
+
+func (o GetFleetPerformanceTuningAnalysisResultsFilterOutput) ToGetFleetPerformanceTuningAnalysisResultsFilterOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsFilterOutput {
+	return o
+}
+
+func (o GetFleetPerformanceTuningAnalysisResultsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFleetPerformanceTuningAnalysisResultsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFleetPerformanceTuningAnalysisResultsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetPerformanceTuningAnalysisResultsFilter)(nil)).Elem()
+}
+
+func (o GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput) ToGetFleetPerformanceTuningAnalysisResultsFilterArrayOutput() GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput) ToGetFleetPerformanceTuningAnalysisResultsFilterArrayOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput) Index(i pulumi.IntInput) GetFleetPerformanceTuningAnalysisResultsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetPerformanceTuningAnalysisResultsFilter {
+		return vs[0].([]GetFleetPerformanceTuningAnalysisResultsFilter)[vs[1].(int)]
+	}).(GetFleetPerformanceTuningAnalysisResultsFilterOutput)
+}
+
+type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection struct {
+	Items []GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem `pulumi:"items"`
+}
+
+// GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionInput is an input type that accepts GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArgs and GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput values.
+// You can construct a concrete instance of `GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionInput` via:
+//
+//	GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArgs{...}
+type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionInput interface {
+	pulumi.Input
+
+	ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput() GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput
+	ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutputWithContext(context.Context) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput
+}
+
+type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArgs struct {
+	Items GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection)(nil)).Elem()
+}
+
+func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArgs) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput() GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput {
+	return i.ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArgs) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput)
+}
+
+// GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayInput is an input type that accepts GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArray and GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayInput` via:
+//
+//	GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArray{ GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArgs{...} }
+type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput() GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput
+	ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutputWithContext(context.Context) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput
+}
+
+type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArray []GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionInput
+
+func (GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection)(nil)).Elem()
+}
+
+func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArray) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput() GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput {
+	return i.ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArray) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput)
+}
+
+type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection)(nil)).Elem()
+}
+
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput() GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput {
+	return o
+}
+
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput {
+	return o
+}
+
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput) Items() GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection) []GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem {
+		return v.Items
+	}).(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput)
+}
+
+type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection)(nil)).Elem()
+}
+
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput() GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection {
+		return vs[0].([]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection)[vs[1].(int)]
+	}).(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput)
+}
+
+type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem struct {
+	// The Fleet-unique identifier of the related application.
+	ApplicationId string `pulumi:"applicationId"`
+	// The internal identifier of the application installation for which the report has been generated.
+	ApplicationInstallationId string `pulumi:"applicationInstallationId"`
+	// The installation path of the application for which the report has been generated.
+	ApplicationInstallationPath string `pulumi:"applicationInstallationPath"`
+	// The name of the application for which the report has been generated.
+	ApplicationName string `pulumi:"applicationName"`
+	// The Object Storage bucket name of this analysis result.
+	Bucket string `pulumi:"bucket"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+	FleetId string `pulumi:"fleetId"`
+	// The hostname of the managed instance.
+	HostName string `pulumi:"hostName"`
+	// The OCID to identify this analysis results.
+	Id string `pulumi:"id"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	// The Object Storage namespace of this analysis result.
+	Namespace string `pulumi:"namespace"`
+	// The Object Storage object name of this analysis result.
+	Object string `pulumi:"object"`
+	// Result of the analysis based on whether warnings have been found or not.
+	Result string `pulumi:"result"`
+	// The time the result is compiled.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the JFR capture finished.
+	TimeFinished string `pulumi:"timeFinished"`
+	// The time the JFR capture started.
+	TimeStarted string `pulumi:"timeStarted"`
+	// Total number of warnings reported by the analysis.
+	WarningCount int `pulumi:"warningCount"`
+	// The OCID of the work request to start the analysis.
+	WorkRequestId string `pulumi:"workRequestId"`
+}
+
+// GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemInput is an input type that accepts GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArgs and GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput values.
+// You can construct a concrete instance of `GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemInput` via:
+//
+//	GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArgs{...}
+type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput() GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput
+	ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutputWithContext(context.Context) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput
+}
+
+type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArgs struct {
+	// The Fleet-unique identifier of the related application.
+	ApplicationId pulumi.StringInput `pulumi:"applicationId"`
+	// The internal identifier of the application installation for which the report has been generated.
+	ApplicationInstallationId pulumi.StringInput `pulumi:"applicationInstallationId"`
+	// The installation path of the application for which the report has been generated.
+	ApplicationInstallationPath pulumi.StringInput `pulumi:"applicationInstallationPath"`
+	// The name of the application for which the report has been generated.
+	ApplicationName pulumi.StringInput `pulumi:"applicationName"`
+	// The Object Storage bucket name of this analysis result.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+	FleetId pulumi.StringInput `pulumi:"fleetId"`
+	// The hostname of the managed instance.
+	HostName pulumi.StringInput `pulumi:"hostName"`
+	// The OCID to identify this analysis results.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+	// The Object Storage namespace of this analysis result.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The Object Storage object name of this analysis result.
+	Object pulumi.StringInput `pulumi:"object"`
+	// Result of the analysis based on whether warnings have been found or not.
+	Result pulumi.StringInput `pulumi:"result"`
+	// The time the result is compiled.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the JFR capture finished.
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// The time the JFR capture started.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// Total number of warnings reported by the analysis.
+	WarningCount pulumi.IntInput `pulumi:"warningCount"`
+	// The OCID of the work request to start the analysis.
+	WorkRequestId pulumi.StringInput `pulumi:"workRequestId"`
+}
+
+func (GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArgs) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput() GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput {
+	return i.ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArgs) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput)
+}
+
+// GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayInput is an input type that accepts GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArray and GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayInput` via:
+//
+//	GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArray{ GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArgs{...} }
+type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput() GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput
+	ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutputWithContext(context.Context) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput
+}
+
+type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArray []GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemInput
+
+func (GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArray) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput() GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput {
+	return i.ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArray) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput)
+}
+
+type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput() GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput {
+	return o
+}
+
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput {
+	return o
+}
+
+// The Fleet-unique identifier of the related application.
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ApplicationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+		return v.ApplicationId
+	}).(pulumi.StringOutput)
+}
+
+// The internal identifier of the application installation for which the report has been generated.
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ApplicationInstallationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+		return v.ApplicationInstallationId
+	}).(pulumi.StringOutput)
+}
+
+// The installation path of the application for which the report has been generated.
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ApplicationInstallationPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+		return v.ApplicationInstallationPath
+	}).(pulumi.StringOutput)
+}
+
+// The name of the application for which the report has been generated.
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ApplicationName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+		return v.ApplicationName
+	}).(pulumi.StringOutput)
+}
+
+// The Object Storage bucket name of this analysis result.
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+		return v.Bucket
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) FleetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+		return v.FleetId
+	}).(pulumi.StringOutput)
+}
+
+// The hostname of the managed instance.
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) HostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+		return v.HostName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID to identify this analysis results.
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// The Fleet-unique identifier of the related managed instance.
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+		return v.ManagedInstanceId
+	}).(pulumi.StringOutput)
+}
+
+// The Object Storage namespace of this analysis result.
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// The Object Storage object name of this analysis result.
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+		return v.Object
+	}).(pulumi.StringOutput)
+}
+
+// Result of the analysis based on whether warnings have been found or not.
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) Result() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+		return v.Result
+	}).(pulumi.StringOutput)
+}
+
+// The time the result is compiled.
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The time the JFR capture finished.
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+		return v.TimeFinished
+	}).(pulumi.StringOutput)
+}
+
+// The time the JFR capture started.
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+		return v.TimeStarted
+	}).(pulumi.StringOutput)
+}
+
+// Total number of warnings reported by the analysis.
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) WarningCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) int {
+		return v.WarningCount
+	}).(pulumi.IntOutput)
+}
+
+// The OCID of the work request to start the analysis.
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) WorkRequestId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
+		return v.WorkRequestId
+	}).(pulumi.StringOutput)
+}
+
+type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput() GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem {
+		return vs[0].([]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem)[vs[1].(int)]
+	}).(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput)
 }
 
 type GetFleetsFilter struct {
@@ -2678,15 +4687,15 @@ func (o GetFleetsFleetCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetsF
 }
 
 type GetFleetsFleetCollectionItem struct {
-	// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateApplicationCount int `pulumi:"approximateApplicationCount"`
-	// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateInstallationCount int `pulumi:"approximateInstallationCount"`
-	// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateJavaServerCount int `pulumi:"approximateJavaServerCount"`
-	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateJreCount int `pulumi:"approximateJreCount"`
-	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateManagedInstanceCount int `pulumi:"approximateManagedInstanceCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -2696,13 +4705,13 @@ type GetFleetsFleetCollectionItem struct {
 	Description string `pulumi:"description"`
 	// The display name.
 	DisplayName string `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The ID of the Fleet.
 	Id string `pulumi:"id"`
 	// Custom Log for inventory or operation log.
 	InventoryLogs []GetFleetsFleetCollectionItemInventoryLog `pulumi:"inventoryLogs"`
-	// Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
+	// Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
 	IsAdvancedFeaturesEnabled bool `pulumi:"isAdvancedFeaturesEnabled"`
 	// Custom Log for inventory or operation log.
 	OperationLogs []GetFleetsFleetCollectionItemOperationLog `pulumi:"operationLogs"`
@@ -2726,15 +4735,15 @@ type GetFleetsFleetCollectionItemInput interface {
 }
 
 type GetFleetsFleetCollectionItemArgs struct {
-	// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateApplicationCount pulumi.IntInput `pulumi:"approximateApplicationCount"`
-	// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateInstallationCount pulumi.IntInput `pulumi:"approximateInstallationCount"`
-	// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateJavaServerCount pulumi.IntInput `pulumi:"approximateJavaServerCount"`
-	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateJreCount pulumi.IntInput `pulumi:"approximateJreCount"`
-	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateManagedInstanceCount pulumi.IntInput `pulumi:"approximateManagedInstanceCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
@@ -2744,13 +4753,13 @@ type GetFleetsFleetCollectionItemArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// The display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The ID of the Fleet.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Custom Log for inventory or operation log.
 	InventoryLogs GetFleetsFleetCollectionItemInventoryLogArrayInput `pulumi:"inventoryLogs"`
-	// Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
+	// Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
 	IsAdvancedFeaturesEnabled pulumi.BoolInput `pulumi:"isAdvancedFeaturesEnabled"`
 	// Custom Log for inventory or operation log.
 	OperationLogs GetFleetsFleetCollectionItemOperationLogArrayInput `pulumi:"operationLogs"`
@@ -2813,27 +4822,27 @@ func (o GetFleetsFleetCollectionItemOutput) ToGetFleetsFleetCollectionItemOutput
 	return o
 }
 
-// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 func (o GetFleetsFleetCollectionItemOutput) ApproximateApplicationCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFleetsFleetCollectionItem) int { return v.ApproximateApplicationCount }).(pulumi.IntOutput)
 }
 
-// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 func (o GetFleetsFleetCollectionItemOutput) ApproximateInstallationCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFleetsFleetCollectionItem) int { return v.ApproximateInstallationCount }).(pulumi.IntOutput)
 }
 
-// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 func (o GetFleetsFleetCollectionItemOutput) ApproximateJavaServerCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFleetsFleetCollectionItem) int { return v.ApproximateJavaServerCount }).(pulumi.IntOutput)
 }
 
-// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 func (o GetFleetsFleetCollectionItemOutput) ApproximateJreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFleetsFleetCollectionItem) int { return v.ApproximateJreCount }).(pulumi.IntOutput)
 }
 
-// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 func (o GetFleetsFleetCollectionItemOutput) ApproximateManagedInstanceCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFleetsFleetCollectionItem) int { return v.ApproximateManagedInstanceCount }).(pulumi.IntOutput)
 }
@@ -2858,7 +4867,7 @@ func (o GetFleetsFleetCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetsFleetCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
 func (o GetFleetsFleetCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetFleetsFleetCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -2875,7 +4884,7 @@ func (o GetFleetsFleetCollectionItemOutput) InventoryLogs() GetFleetsFleetCollec
 	}).(GetFleetsFleetCollectionItemInventoryLogArrayOutput)
 }
 
-// Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
+// Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
 func (o GetFleetsFleetCollectionItemOutput) IsAdvancedFeaturesEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFleetsFleetCollectionItem) bool { return v.IsAdvancedFeaturesEnabled }).(pulumi.BoolOutput)
 }
@@ -4403,7 +6412,7 @@ type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem struc
 	Architecture string `pulumi:"architecture"`
 	// The operating system type, such as Windows or Linux
 	Family string `pulumi:"family"`
-	// Number of instances running the operating system
+	// Number of instances running the operating system.
 	ManagedInstanceCount int `pulumi:"managedInstanceCount"`
 	// The name of the operating system as provided by the Java system property os.name.
 	Name string `pulumi:"name"`
@@ -4427,7 +6436,7 @@ type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs s
 	Architecture pulumi.StringInput `pulumi:"architecture"`
 	// The operating system type, such as Windows or Linux
 	Family pulumi.StringInput `pulumi:"family"`
-	// Number of instances running the operating system
+	// Number of instances running the operating system.
 	ManagedInstanceCount pulumi.IntInput `pulumi:"managedInstanceCount"`
 	// The name of the operating system as provided by the Java system property os.name.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -4498,7 +6507,7 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOut
 	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) string { return v.Family }).(pulumi.StringOutput)
 }
 
-// Number of instances running the operating system
+// Number of instances running the operating system.
 func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) ManagedInstanceCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) int {
 		return v.ManagedInstanceCount
@@ -6431,12 +8440,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetInventoryLogPtrInput)(nil)).Elem(), FleetInventoryLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetOperationLogInput)(nil)).Elem(), FleetOperationLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetOperationLogPtrInput)(nil)).Elem(), FleetOperationLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAnnouncementsAnnouncementCollectionInput)(nil)).Elem(), GetAnnouncementsAnnouncementCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAnnouncementsAnnouncementCollectionArrayInput)(nil)).Elem(), GetAnnouncementsAnnouncementCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAnnouncementsAnnouncementCollectionItemInput)(nil)).Elem(), GetAnnouncementsAnnouncementCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAnnouncementsAnnouncementCollectionItemArrayInput)(nil)).Elem(), GetAnnouncementsAnnouncementCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAnnouncementsFilterInput)(nil)).Elem(), GetAnnouncementsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAnnouncementsFilterArrayInput)(nil)).Elem(), GetAnnouncementsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationJfrRecordingInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationJfrRecordingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationJfrRecordingArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationJfrRecordingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationLcmArgs{})
@@ -6451,6 +8468,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayInput)(nil)).Elem(), GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetBlocklistsFilterInput)(nil)).Elem(), GetFleetBlocklistsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetBlocklistsFilterArrayInput)(nil)).Elem(), GetFleetBlocklistsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetBlocklistsItemInput)(nil)).Elem(), GetFleetBlocklistsItemArgs{})
@@ -6463,10 +8484,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayInput)(nil)).Elem(), GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetCryptoAnalysisResultsFilterInput)(nil)).Elem(), GetFleetCryptoAnalysisResultsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetCryptoAnalysisResultsFilterArrayInput)(nil)).Elem(), GetFleetCryptoAnalysisResultsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetDiagnosesFilterInput)(nil)).Elem(), GetFleetDiagnosesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetDiagnosesFilterArrayInput)(nil)).Elem(), GetFleetDiagnosesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetDiagnosesFleetDiagnosisCollectionInput)(nil)).Elem(), GetFleetDiagnosesFleetDiagnosisCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetDiagnosesFleetDiagnosisCollectionArrayInput)(nil)).Elem(), GetFleetDiagnosesFleetDiagnosisCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetDiagnosesFleetDiagnosisCollectionItemInput)(nil)).Elem(), GetFleetDiagnosesFleetDiagnosisCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetDiagnosesFleetDiagnosisCollectionItemArrayInput)(nil)).Elem(), GetFleetDiagnosesFleetDiagnosisCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetInventoryLogInput)(nil)).Elem(), GetFleetInventoryLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetInventoryLogArrayInput)(nil)).Elem(), GetFleetInventoryLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetJavaMigrationAnalysisResultsFilterInput)(nil)).Elem(), GetFleetJavaMigrationAnalysisResultsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetJavaMigrationAnalysisResultsFilterArrayInput)(nil)).Elem(), GetFleetJavaMigrationAnalysisResultsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionInput)(nil)).Elem(), GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayInput)(nil)).Elem(), GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemInput)(nil)).Elem(), GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayInput)(nil)).Elem(), GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetOperationLogInput)(nil)).Elem(), GetFleetOperationLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetOperationLogArrayInput)(nil)).Elem(), GetFleetOperationLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetPerformanceTuningAnalysisResultsFilterInput)(nil)).Elem(), GetFleetPerformanceTuningAnalysisResultsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetPerformanceTuningAnalysisResultsFilterArrayInput)(nil)).Elem(), GetFleetPerformanceTuningAnalysisResultsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionInput)(nil)).Elem(), GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayInput)(nil)).Elem(), GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemInput)(nil)).Elem(), GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayInput)(nil)).Elem(), GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetsFilterInput)(nil)).Elem(), GetFleetsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetsFilterArrayInput)(nil)).Elem(), GetFleetsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetsFleetCollectionInput)(nil)).Elem(), GetFleetsFleetCollectionArgs{})
@@ -6531,12 +8570,20 @@ func init() {
 	pulumi.RegisterOutputType(FleetInventoryLogPtrOutput{})
 	pulumi.RegisterOutputType(FleetOperationLogOutput{})
 	pulumi.RegisterOutputType(FleetOperationLogPtrOutput{})
+	pulumi.RegisterOutputType(GetAnnouncementsAnnouncementCollectionOutput{})
+	pulumi.RegisterOutputType(GetAnnouncementsAnnouncementCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAnnouncementsAnnouncementCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetAnnouncementsAnnouncementCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAnnouncementsFilterOutput{})
+	pulumi.RegisterOutputType(GetAnnouncementsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput{})
 	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput{})
 	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput{})
 	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationJfrRecordingOutput{})
 	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationLcmOutput{})
@@ -6551,6 +8598,10 @@ func init() {
 	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput{})
 	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput{})
+	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetBlocklistsFilterOutput{})
 	pulumi.RegisterOutputType(GetFleetBlocklistsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetBlocklistsItemOutput{})
@@ -6563,10 +8614,28 @@ func init() {
 	pulumi.RegisterOutputType(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetCryptoAnalysisResultsFilterOutput{})
 	pulumi.RegisterOutputType(GetFleetCryptoAnalysisResultsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetDiagnosesFilterOutput{})
+	pulumi.RegisterOutputType(GetFleetDiagnosesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetDiagnosesFleetDiagnosisCollectionOutput{})
+	pulumi.RegisterOutputType(GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetDiagnosesFleetDiagnosisCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetInventoryLogOutput{})
 	pulumi.RegisterOutputType(GetFleetInventoryLogArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetJavaMigrationAnalysisResultsFilterOutput{})
+	pulumi.RegisterOutputType(GetFleetJavaMigrationAnalysisResultsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput{})
+	pulumi.RegisterOutputType(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetOperationLogOutput{})
 	pulumi.RegisterOutputType(GetFleetOperationLogArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetPerformanceTuningAnalysisResultsFilterOutput{})
+	pulumi.RegisterOutputType(GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput{})
+	pulumi.RegisterOutputType(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetsFilterOutput{})
 	pulumi.RegisterOutputType(GetFleetsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetsFleetCollectionOutput{})

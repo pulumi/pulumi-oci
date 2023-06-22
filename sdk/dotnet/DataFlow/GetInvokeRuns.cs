@@ -36,6 +36,7 @@ namespace Pulumi.Oci.DataFlow
         ///         DisplayName = @var.Invoke_run_display_name,
         ///         DisplayNameStartsWith = @var.Invoke_run_display_name_starts_with,
         ///         OwnerPrincipalId = oci_dataflow_owner_principal.Test_owner_principal.Id,
+        ///         PoolId = oci_dataflow_pool.Test_pool.Id,
         ///         State = @var.Invoke_run_state,
         ///         TimeCreatedGreaterThan = @var.Invoke_run_time_created_greater_than,
         ///     });
@@ -73,6 +74,7 @@ namespace Pulumi.Oci.DataFlow
         ///         DisplayName = @var.Invoke_run_display_name,
         ///         DisplayNameStartsWith = @var.Invoke_run_display_name_starts_with,
         ///         OwnerPrincipalId = oci_dataflow_owner_principal.Test_owner_principal.Id,
+        ///         PoolId = oci_dataflow_pool.Test_pool.Id,
         ///         State = @var.Invoke_run_state,
         ///         TimeCreatedGreaterThan = @var.Invoke_run_time_created_greater_than,
         ///     });
@@ -126,6 +128,12 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         [Input("ownerPrincipalId")]
         public string? OwnerPrincipalId { get; set; }
+
+        /// <summary>
+        /// The ID of the pool.
+        /// </summary>
+        [Input("poolId")]
+        public string? PoolId { get; set; }
 
         /// <summary>
         /// The LifecycleState of the run.
@@ -186,6 +194,12 @@ namespace Pulumi.Oci.DataFlow
         public Input<string>? OwnerPrincipalId { get; set; }
 
         /// <summary>
+        /// The ID of the pool.
+        /// </summary>
+        [Input("poolId")]
+        public Input<string>? PoolId { get; set; }
+
+        /// <summary>
         /// The LifecycleState of the run.
         /// </summary>
         [Input("state")]
@@ -230,6 +244,10 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         public readonly string? OwnerPrincipalId;
         /// <summary>
+        /// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+        /// </summary>
+        public readonly string? PoolId;
+        /// <summary>
         /// The list of runs.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInvokeRunsRunResult> Runs;
@@ -255,6 +273,8 @@ namespace Pulumi.Oci.DataFlow
 
             string? ownerPrincipalId,
 
+            string? poolId,
+
             ImmutableArray<Outputs.GetInvokeRunsRunResult> runs,
 
             string? state,
@@ -268,6 +288,7 @@ namespace Pulumi.Oci.DataFlow
             Filters = filters;
             Id = id;
             OwnerPrincipalId = ownerPrincipalId;
+            PoolId = poolId;
             Runs = runs;
             State = state;
             TimeCreatedGreaterThan = timeCreatedGreaterThan;

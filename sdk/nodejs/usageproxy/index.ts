@@ -5,6 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { GetResourceQuotasArgs, GetResourceQuotasResult, GetResourceQuotasOutputArgs } from "./getResourceQuotas";
+export const getResourceQuotas: typeof import("./getResourceQuotas").getResourceQuotas = null as any;
+export const getResourceQuotasOutput: typeof import("./getResourceQuotas").getResourceQuotasOutput = null as any;
+utilities.lazyLoad(exports, ["getResourceQuotas","getResourceQuotasOutput"], () => require("./getResourceQuotas"));
+
+export { GetResourcesArgs, GetResourcesResult, GetResourcesOutputArgs } from "./getResources";
+export const getResources: typeof import("./getResources").getResources = null as any;
+export const getResourcesOutput: typeof import("./getResources").getResourcesOutput = null as any;
+utilities.lazyLoad(exports, ["getResources","getResourcesOutput"], () => require("./getResources"));
+
 export { GetSubscriptionProductArgs, GetSubscriptionProductResult, GetSubscriptionProductOutputArgs } from "./getSubscriptionProduct";
 export const getSubscriptionProduct: typeof import("./getSubscriptionProduct").getSubscriptionProduct = null as any;
 export const getSubscriptionProductOutput: typeof import("./getSubscriptionProduct").getSubscriptionProductOutput = null as any;
@@ -44,6 +54,11 @@ export { GetSubscriptionRewardsArgs, GetSubscriptionRewardsResult, GetSubscripti
 export const getSubscriptionRewards: typeof import("./getSubscriptionRewards").getSubscriptionRewards = null as any;
 export const getSubscriptionRewardsOutput: typeof import("./getSubscriptionRewards").getSubscriptionRewardsOutput = null as any;
 utilities.lazyLoad(exports, ["getSubscriptionRewards","getSubscriptionRewardsOutput"], () => require("./getSubscriptionRewards"));
+
+export { GetUsagelimitsArgs, GetUsagelimitsResult, GetUsagelimitsOutputArgs } from "./getUsagelimits";
+export const getUsagelimits: typeof import("./getUsagelimits").getUsagelimits = null as any;
+export const getUsagelimitsOutput: typeof import("./getUsagelimits").getUsagelimitsOutput = null as any;
+utilities.lazyLoad(exports, ["getUsagelimits","getUsagelimitsOutput"], () => require("./getUsagelimits"));
 
 export { SubscriptionRedeemableUserArgs, SubscriptionRedeemableUserState } from "./subscriptionRedeemableUser";
 export type SubscriptionRedeemableUser = import("./subscriptionRedeemableUser").SubscriptionRedeemableUser;

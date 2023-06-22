@@ -34,6 +34,7 @@ import (
 //				DisplayName:            pulumi.StringRef(_var.Invoke_run_display_name),
 //				DisplayNameStartsWith:  pulumi.StringRef(_var.Invoke_run_display_name_starts_with),
 //				OwnerPrincipalId:       pulumi.StringRef(oci_dataflow_owner_principal.Test_owner_principal.Id),
+//				PoolId:                 pulumi.StringRef(oci_dataflow_pool.Test_pool.Id),
 //				State:                  pulumi.StringRef(_var.Invoke_run_state),
 //				TimeCreatedGreaterThan: pulumi.StringRef(_var.Invoke_run_time_created_greater_than),
 //			}, nil)
@@ -67,6 +68,8 @@ type GetInvokeRunsArgs struct {
 	Filters               []GetInvokeRunsFilter `pulumi:"filters"`
 	// The OCID of the user who created the resource.
 	OwnerPrincipalId *string `pulumi:"ownerPrincipalId"`
+	// The ID of the pool.
+	PoolId *string `pulumi:"poolId"`
 	// The LifecycleState of the run.
 	State *string `pulumi:"state"`
 	// The epoch time that the resource was created.
@@ -87,6 +90,8 @@ type GetInvokeRunsResult struct {
 	Id string `pulumi:"id"`
 	// The OCID of the user who created the resource.
 	OwnerPrincipalId *string `pulumi:"ownerPrincipalId"`
+	// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+	PoolId *string `pulumi:"poolId"`
 	// The list of runs.
 	Runs []GetInvokeRunsRun `pulumi:"runs"`
 	// The current state of this run.
@@ -120,6 +125,8 @@ type GetInvokeRunsOutputArgs struct {
 	Filters               GetInvokeRunsFilterArrayInput `pulumi:"filters"`
 	// The OCID of the user who created the resource.
 	OwnerPrincipalId pulumi.StringPtrInput `pulumi:"ownerPrincipalId"`
+	// The ID of the pool.
+	PoolId pulumi.StringPtrInput `pulumi:"poolId"`
 	// The LifecycleState of the run.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// The epoch time that the resource was created.
@@ -176,6 +183,11 @@ func (o GetInvokeRunsResultOutput) Id() pulumi.StringOutput {
 // The OCID of the user who created the resource.
 func (o GetInvokeRunsResultOutput) OwnerPrincipalId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetInvokeRunsResult) *string { return v.OwnerPrincipalId }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+func (o GetInvokeRunsResultOutput) PoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsResult) *string { return v.PoolId }).(pulumi.StringPtrOutput)
 }
 
 // The list of runs.

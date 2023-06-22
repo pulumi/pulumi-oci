@@ -23,7 +23,10 @@ class GetExsiHostsResult:
     """
     A collection of values returned by getExsiHosts.
     """
-    def __init__(__self__, compute_instance_id=None, display_name=None, esxi_host_collections=None, filters=None, id=None, sddc_id=None, state=None):
+    def __init__(__self__, compartment_id=None, compute_instance_id=None, display_name=None, esxi_host_collections=None, filters=None, id=None, is_billing_donors_only=None, is_swap_billing_only=None, sddc_id=None, state=None):
+        if compartment_id and not isinstance(compartment_id, str):
+            raise TypeError("Expected argument 'compartment_id' to be a str")
+        pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_instance_id and not isinstance(compute_instance_id, str):
             raise TypeError("Expected argument 'compute_instance_id' to be a str")
         pulumi.set(__self__, "compute_instance_id", compute_instance_id)
@@ -39,12 +42,26 @@ class GetExsiHostsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_billing_donors_only and not isinstance(is_billing_donors_only, bool):
+            raise TypeError("Expected argument 'is_billing_donors_only' to be a bool")
+        pulumi.set(__self__, "is_billing_donors_only", is_billing_donors_only)
+        if is_swap_billing_only and not isinstance(is_swap_billing_only, bool):
+            raise TypeError("Expected argument 'is_swap_billing_only' to be a bool")
+        pulumi.set(__self__, "is_swap_billing_only", is_swap_billing_only)
         if sddc_id and not isinstance(sddc_id, str):
             raise TypeError("Expected argument 'sddc_id' to be a str")
         pulumi.set(__self__, "sddc_id", sddc_id)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+        """
+        return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeInstanceId")
@@ -84,6 +101,16 @@ class GetExsiHostsResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isBillingDonorsOnly")
+    def is_billing_donors_only(self) -> Optional[bool]:
+        return pulumi.get(self, "is_billing_donors_only")
+
+    @property
+    @pulumi.getter(name="isSwapBillingOnly")
+    def is_swap_billing_only(self) -> Optional[bool]:
+        return pulumi.get(self, "is_swap_billing_only")
+
+    @property
     @pulumi.getter(name="sddcId")
     def sddc_id(self) -> Optional[str]:
         """
@@ -106,18 +133,24 @@ class AwaitableGetExsiHostsResult(GetExsiHostsResult):
         if False:
             yield self
         return GetExsiHostsResult(
+            compartment_id=self.compartment_id,
             compute_instance_id=self.compute_instance_id,
             display_name=self.display_name,
             esxi_host_collections=self.esxi_host_collections,
             filters=self.filters,
             id=self.id,
+            is_billing_donors_only=self.is_billing_donors_only,
+            is_swap_billing_only=self.is_swap_billing_only,
             sddc_id=self.sddc_id,
             state=self.state)
 
 
-def get_exsi_hosts(compute_instance_id: Optional[str] = None,
+def get_exsi_hosts(compartment_id: Optional[str] = None,
+                   compute_instance_id: Optional[str] = None,
                    display_name: Optional[str] = None,
                    filters: Optional[Sequence[pulumi.InputType['GetExsiHostsFilterArgs']]] = None,
+                   is_billing_donors_only: Optional[bool] = None,
+                   is_swap_billing_only: Optional[bool] = None,
                    sddc_id: Optional[str] = None,
                    state: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExsiHostsResult:
@@ -140,41 +173,56 @@ def get_exsi_hosts(compute_instance_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(compute_instance_id=oci_core_instance["test_instance"]["id"],
+    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(compartment_id=var["compartment_id"],
+        compute_instance_id=oci_core_instance["test_instance"]["id"],
         display_name=var["esxi_host_display_name"],
+        is_billing_donors_only=var["esxi_host_is_billing_donors_only"],
+        is_swap_billing_only=var["esxi_host_is_swap_billing_only"],
         sddc_id=oci_ocvp_sddc["test_sddc"]["id"],
         state=var["esxi_host_state"])
     ```
 
 
+    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
     :param str compute_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
     :param str display_name: A filter to return only resources that match the given display name exactly.
+    :param bool is_billing_donors_only: If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.
+    :param bool is_swap_billing_only: If this flag/param is set to True, we return only active hosts.
     :param str sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
     :param str state: The lifecycle state of the resource.
     """
     __args__ = dict()
+    __args__['compartmentId'] = compartment_id
     __args__['computeInstanceId'] = compute_instance_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['isBillingDonorsOnly'] = is_billing_donors_only
+    __args__['isSwapBillingOnly'] = is_swap_billing_only
     __args__['sddcId'] = sddc_id
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Ocvp/getExsiHosts:getExsiHosts', __args__, opts=opts, typ=GetExsiHostsResult).value
 
     return AwaitableGetExsiHostsResult(
+        compartment_id=__ret__.compartment_id,
         compute_instance_id=__ret__.compute_instance_id,
         display_name=__ret__.display_name,
         esxi_host_collections=__ret__.esxi_host_collections,
         filters=__ret__.filters,
         id=__ret__.id,
+        is_billing_donors_only=__ret__.is_billing_donors_only,
+        is_swap_billing_only=__ret__.is_swap_billing_only,
         sddc_id=__ret__.sddc_id,
         state=__ret__.state)
 
 
 @_utilities.lift_output_func(get_exsi_hosts)
-def get_exsi_hosts_output(compute_instance_id: Optional[pulumi.Input[Optional[str]]] = None,
+def get_exsi_hosts_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
+                          compute_instance_id: Optional[pulumi.Input[Optional[str]]] = None,
                           display_name: Optional[pulumi.Input[Optional[str]]] = None,
                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExsiHostsFilterArgs']]]]] = None,
+                          is_billing_donors_only: Optional[pulumi.Input[Optional[bool]]] = None,
+                          is_swap_billing_only: Optional[pulumi.Input[Optional[bool]]] = None,
                           sddc_id: Optional[pulumi.Input[Optional[str]]] = None,
                           state: Optional[pulumi.Input[Optional[str]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExsiHostsResult]:
@@ -197,15 +245,21 @@ def get_exsi_hosts_output(compute_instance_id: Optional[pulumi.Input[Optional[st
     import pulumi
     import pulumi_oci as oci
 
-    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(compute_instance_id=oci_core_instance["test_instance"]["id"],
+    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(compartment_id=var["compartment_id"],
+        compute_instance_id=oci_core_instance["test_instance"]["id"],
         display_name=var["esxi_host_display_name"],
+        is_billing_donors_only=var["esxi_host_is_billing_donors_only"],
+        is_swap_billing_only=var["esxi_host_is_swap_billing_only"],
         sddc_id=oci_ocvp_sddc["test_sddc"]["id"],
         state=var["esxi_host_state"])
     ```
 
 
+    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
     :param str compute_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
     :param str display_name: A filter to return only resources that match the given display name exactly.
+    :param bool is_billing_donors_only: If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.
+    :param bool is_swap_billing_only: If this flag/param is set to True, we return only active hosts.
     :param str sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
     :param str state: The lifecycle state of the resource.
     """

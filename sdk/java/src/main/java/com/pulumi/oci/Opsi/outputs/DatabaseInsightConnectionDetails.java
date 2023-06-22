@@ -25,7 +25,7 @@ public final class DatabaseInsightConnectionDetails {
      */
     private @Nullable List<DatabaseInsightConnectionDetailsHost> hosts;
     /**
-     * @return Listener port number used for connection requests.
+     * @return Listener port number used for connection requests for rivate endpoint accessed db resource.
      * 
      */
     private @Nullable Integer port;
@@ -56,7 +56,7 @@ public final class DatabaseInsightConnectionDetails {
         return this.hosts == null ? List.of() : this.hosts;
     }
     /**
-     * @return Listener port number used for connection requests.
+     * @return Listener port number used for connection requests for rivate endpoint accessed db resource.
      * 
      */
     public Optional<Integer> port() {

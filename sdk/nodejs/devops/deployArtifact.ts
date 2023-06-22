@@ -85,7 +85,7 @@ export class DeployArtifact extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) Mode for artifact parameter substitution.
+     * (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
      */
     public readonly argumentSubstitutionMode!: pulumi.Output<string>;
     /**
@@ -211,7 +211,7 @@ export class DeployArtifact extends pulumi.CustomResource {
  */
 export interface DeployArtifactState {
     /**
-     * (Updatable) Mode for artifact parameter substitution.
+     * (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
      */
     argumentSubstitutionMode?: pulumi.Input<string>;
     /**
@@ -277,7 +277,7 @@ export interface DeployArtifactState {
  */
 export interface DeployArtifactArgs {
     /**
-     * (Updatable) Mode for artifact parameter substitution.
+     * (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
      */
     argumentSubstitutionMode: pulumi.Input<string>;
     /**

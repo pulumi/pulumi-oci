@@ -228,6 +228,7 @@ class _FunctionState:
                  invoke_endpoint: Optional[pulumi.Input[str]] = None,
                  memory_in_mbs: Optional[pulumi.Input[str]] = None,
                  provisioned_concurrency_config: Optional[pulumi.Input['FunctionProvisionedConcurrencyConfigArgs']] = None,
+                 shape: Optional[pulumi.Input[str]] = None,
                  source_details: Optional[pulumi.Input['FunctionSourceDetailsArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
@@ -249,6 +250,7 @@ class _FunctionState:
         :param pulumi.Input[str] invoke_endpoint: The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
         :param pulumi.Input[str] memory_in_mbs: (Updatable) Maximum usable memory for the function (MiB).
         :param pulumi.Input['FunctionProvisionedConcurrencyConfigArgs'] provisioned_concurrency_config: (Updatable) Define the strategy for provisioned concurrency for the function.
+        :param pulumi.Input[str] shape: The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
         :param pulumi.Input['FunctionSourceDetailsArgs'] source_details: The source details for the Function. The function can be created from various sources.
         :param pulumi.Input[str] state: The current state of the function.
         :param pulumi.Input[str] time_created: The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -278,6 +280,8 @@ class _FunctionState:
             pulumi.set(__self__, "memory_in_mbs", memory_in_mbs)
         if provisioned_concurrency_config is not None:
             pulumi.set(__self__, "provisioned_concurrency_config", provisioned_concurrency_config)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
         if source_details is not None:
             pulumi.set(__self__, "source_details", source_details)
         if state is not None:
@@ -424,6 +428,18 @@ class _FunctionState:
     @provisioned_concurrency_config.setter
     def provisioned_concurrency_config(self, value: Optional[pulumi.Input['FunctionProvisionedConcurrencyConfigArgs']]):
         pulumi.set(self, "provisioned_concurrency_config", value)
+
+    @property
+    @pulumi.getter
+    def shape(self) -> Optional[pulumi.Input[str]]:
+        """
+        The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+        """
+        return pulumi.get(self, "shape")
+
+    @shape.setter
+    def shape(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "shape", value)
 
     @property
     @pulumi.getter(name="sourceDetails")
@@ -687,6 +703,7 @@ class Function(pulumi.CustomResource):
             __props__.__dict__["trace_config"] = trace_config
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["invoke_endpoint"] = None
+            __props__.__dict__["shape"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
@@ -711,6 +728,7 @@ class Function(pulumi.CustomResource):
             invoke_endpoint: Optional[pulumi.Input[str]] = None,
             memory_in_mbs: Optional[pulumi.Input[str]] = None,
             provisioned_concurrency_config: Optional[pulumi.Input[pulumi.InputType['FunctionProvisionedConcurrencyConfigArgs']]] = None,
+            shape: Optional[pulumi.Input[str]] = None,
             source_details: Optional[pulumi.Input[pulumi.InputType['FunctionSourceDetailsArgs']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -737,6 +755,7 @@ class Function(pulumi.CustomResource):
         :param pulumi.Input[str] invoke_endpoint: The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
         :param pulumi.Input[str] memory_in_mbs: (Updatable) Maximum usable memory for the function (MiB).
         :param pulumi.Input[pulumi.InputType['FunctionProvisionedConcurrencyConfigArgs']] provisioned_concurrency_config: (Updatable) Define the strategy for provisioned concurrency for the function.
+        :param pulumi.Input[str] shape: The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
         :param pulumi.Input[pulumi.InputType['FunctionSourceDetailsArgs']] source_details: The source details for the Function. The function can be created from various sources.
         :param pulumi.Input[str] state: The current state of the function.
         :param pulumi.Input[str] time_created: The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -759,6 +778,7 @@ class Function(pulumi.CustomResource):
         __props__.__dict__["invoke_endpoint"] = invoke_endpoint
         __props__.__dict__["memory_in_mbs"] = memory_in_mbs
         __props__.__dict__["provisioned_concurrency_config"] = provisioned_concurrency_config
+        __props__.__dict__["shape"] = shape
         __props__.__dict__["source_details"] = source_details
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
@@ -856,6 +876,14 @@ class Function(pulumi.CustomResource):
         (Updatable) Define the strategy for provisioned concurrency for the function.
         """
         return pulumi.get(self, "provisioned_concurrency_config")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> pulumi.Output[str]:
+        """
+        The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+        """
+        return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="sourceDetails")

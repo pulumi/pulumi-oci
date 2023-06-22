@@ -15,6 +15,7 @@ __all__ = ['EsxiHostArgs', 'EsxiHost']
 class EsxiHostArgs:
     def __init__(__self__, *,
                  sddc_id: pulumi.Input[str],
+                 billing_donor_host_id: Optional[pulumi.Input[str]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[str]] = None,
                  compute_availability_domain: Optional[pulumi.Input[str]] = None,
                  current_sku: Optional[pulumi.Input[str]] = None,
@@ -25,7 +26,8 @@ class EsxiHostArgs:
                  host_ocpu_count: Optional[pulumi.Input[float]] = None,
                  host_shape_name: Optional[pulumi.Input[str]] = None,
                  next_sku: Optional[pulumi.Input[str]] = None,
-                 non_upgraded_esxi_host_id: Optional[pulumi.Input[str]] = None):
+                 non_upgraded_esxi_host_id: Optional[pulumi.Input[str]] = None,
+                 swap_billing_host_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a EsxiHost resource.
         :param pulumi.Input[str] sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. 
@@ -33,9 +35,10 @@ class EsxiHostArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] billing_donor_host_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         :param pulumi.Input[str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param pulumi.Input[str] compute_availability_domain: The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
-        :param pulumi.Input[str] current_sku: The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        :param pulumi.Input[str] current_sku: The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
                
@@ -46,10 +49,13 @@ class EsxiHostArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[float] host_ocpu_count: The OCPU count of the ESXi host.
         :param pulumi.Input[str] host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
-        :param pulumi.Input[str] next_sku: (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        :param pulumi.Input[str] next_sku: The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[str] non_upgraded_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
+        :param pulumi.Input[str] swap_billing_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
         """
         pulumi.set(__self__, "sddc_id", sddc_id)
+        if billing_donor_host_id is not None:
+            pulumi.set(__self__, "billing_donor_host_id", billing_donor_host_id)
         if capacity_reservation_id is not None:
             pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compute_availability_domain is not None:
@@ -72,6 +78,8 @@ class EsxiHostArgs:
             pulumi.set(__self__, "next_sku", next_sku)
         if non_upgraded_esxi_host_id is not None:
             pulumi.set(__self__, "non_upgraded_esxi_host_id", non_upgraded_esxi_host_id)
+        if swap_billing_host_id is not None:
+            pulumi.set(__self__, "swap_billing_host_id", swap_billing_host_id)
 
     @property
     @pulumi.getter(name="sddcId")
@@ -88,6 +96,18 @@ class EsxiHostArgs:
     @sddc_id.setter
     def sddc_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "sddc_id", value)
+
+    @property
+    @pulumi.getter(name="billingDonorHostId")
+    def billing_donor_host_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+        """
+        return pulumi.get(self, "billing_donor_host_id")
+
+    @billing_donor_host_id.setter
+    def billing_donor_host_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "billing_donor_host_id", value)
 
     @property
     @pulumi.getter(name="capacityReservationId")
@@ -117,7 +137,7 @@ class EsxiHostArgs:
     @pulumi.getter(name="currentSku")
     def current_sku(self) -> Optional[pulumi.Input[str]]:
         """
-        The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         """
         return pulumi.get(self, "current_sku")
 
@@ -205,7 +225,7 @@ class EsxiHostArgs:
     @pulumi.getter(name="nextSku")
     def next_sku(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         """
         return pulumi.get(self, "next_sku")
 
@@ -225,11 +245,24 @@ class EsxiHostArgs:
     def non_upgraded_esxi_host_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "non_upgraded_esxi_host_id", value)
 
+    @property
+    @pulumi.getter(name="swapBillingHostId")
+    def swap_billing_host_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+        """
+        return pulumi.get(self, "swap_billing_host_id")
+
+    @swap_billing_host_id.setter
+    def swap_billing_host_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "swap_billing_host_id", value)
+
 
 @pulumi.input_type
 class _EsxiHostState:
     def __init__(__self__, *,
                  billing_contract_end_date: Optional[pulumi.Input[str]] = None,
+                 billing_donor_host_id: Optional[pulumi.Input[str]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_availability_domain: Optional[pulumi.Input[str]] = None,
@@ -242,11 +275,14 @@ class _EsxiHostState:
                  grace_period_end_date: Optional[pulumi.Input[str]] = None,
                  host_ocpu_count: Optional[pulumi.Input[float]] = None,
                  host_shape_name: Optional[pulumi.Input[str]] = None,
+                 is_billing_continuation_in_progress: Optional[pulumi.Input[bool]] = None,
+                 is_billing_swapping_in_progress: Optional[pulumi.Input[bool]] = None,
                  next_sku: Optional[pulumi.Input[str]] = None,
                  non_upgraded_esxi_host_id: Optional[pulumi.Input[str]] = None,
                  replacement_esxi_host_id: Optional[pulumi.Input[str]] = None,
                  sddc_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 swap_billing_host_id: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  upgraded_replacement_esxi_host_id: Optional[pulumi.Input[str]] = None,
@@ -254,11 +290,12 @@ class _EsxiHostState:
         """
         Input properties used for looking up and filtering EsxiHost resources.
         :param pulumi.Input[str] billing_contract_end_date: Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[str] billing_donor_host_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         :param pulumi.Input[str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
         :param pulumi.Input[str] compute_availability_domain: The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
         :param pulumi.Input[str] compute_instance_id: In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
-        :param pulumi.Input[str] current_sku: The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        :param pulumi.Input[str] current_sku: The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
                
@@ -270,7 +307,9 @@ class _EsxiHostState:
         :param pulumi.Input[str] grace_period_end_date: The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
         :param pulumi.Input[float] host_ocpu_count: The OCPU count of the ESXi host.
         :param pulumi.Input[str] host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
-        :param pulumi.Input[str] next_sku: (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        :param pulumi.Input[bool] is_billing_continuation_in_progress: Indicates whether this host is in the progress of billing continuation.
+        :param pulumi.Input[bool] is_billing_swapping_in_progress: Indicates whether this host is in the progress of swapping billing.
+        :param pulumi.Input[str] next_sku: The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[str] non_upgraded_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         :param pulumi.Input[str] replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
         :param pulumi.Input[str] sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. 
@@ -279,6 +318,7 @@ class _EsxiHostState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the ESXi host.
+        :param pulumi.Input[str] swap_billing_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
         :param pulumi.Input[str] time_created: The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] upgraded_replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
@@ -286,6 +326,8 @@ class _EsxiHostState:
         """
         if billing_contract_end_date is not None:
             pulumi.set(__self__, "billing_contract_end_date", billing_contract_end_date)
+        if billing_donor_host_id is not None:
+            pulumi.set(__self__, "billing_donor_host_id", billing_donor_host_id)
         if capacity_reservation_id is not None:
             pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compartment_id is not None:
@@ -310,6 +352,10 @@ class _EsxiHostState:
             pulumi.set(__self__, "host_ocpu_count", host_ocpu_count)
         if host_shape_name is not None:
             pulumi.set(__self__, "host_shape_name", host_shape_name)
+        if is_billing_continuation_in_progress is not None:
+            pulumi.set(__self__, "is_billing_continuation_in_progress", is_billing_continuation_in_progress)
+        if is_billing_swapping_in_progress is not None:
+            pulumi.set(__self__, "is_billing_swapping_in_progress", is_billing_swapping_in_progress)
         if next_sku is not None:
             pulumi.set(__self__, "next_sku", next_sku)
         if non_upgraded_esxi_host_id is not None:
@@ -320,6 +366,8 @@ class _EsxiHostState:
             pulumi.set(__self__, "sddc_id", sddc_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if swap_billing_host_id is not None:
+            pulumi.set(__self__, "swap_billing_host_id", swap_billing_host_id)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -340,6 +388,18 @@ class _EsxiHostState:
     @billing_contract_end_date.setter
     def billing_contract_end_date(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "billing_contract_end_date", value)
+
+    @property
+    @pulumi.getter(name="billingDonorHostId")
+    def billing_donor_host_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+        """
+        return pulumi.get(self, "billing_donor_host_id")
+
+    @billing_donor_host_id.setter
+    def billing_donor_host_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "billing_donor_host_id", value)
 
     @property
     @pulumi.getter(name="capacityReservationId")
@@ -393,7 +453,7 @@ class _EsxiHostState:
     @pulumi.getter(name="currentSku")
     def current_sku(self) -> Optional[pulumi.Input[str]]:
         """
-        The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         """
         return pulumi.get(self, "current_sku")
 
@@ -490,10 +550,34 @@ class _EsxiHostState:
         pulumi.set(self, "host_shape_name", value)
 
     @property
+    @pulumi.getter(name="isBillingContinuationInProgress")
+    def is_billing_continuation_in_progress(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether this host is in the progress of billing continuation.
+        """
+        return pulumi.get(self, "is_billing_continuation_in_progress")
+
+    @is_billing_continuation_in_progress.setter
+    def is_billing_continuation_in_progress(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_billing_continuation_in_progress", value)
+
+    @property
+    @pulumi.getter(name="isBillingSwappingInProgress")
+    def is_billing_swapping_in_progress(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether this host is in the progress of swapping billing.
+        """
+        return pulumi.get(self, "is_billing_swapping_in_progress")
+
+    @is_billing_swapping_in_progress.setter
+    def is_billing_swapping_in_progress(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_billing_swapping_in_progress", value)
+
+    @property
     @pulumi.getter(name="nextSku")
     def next_sku(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         """
         return pulumi.get(self, "next_sku")
 
@@ -554,6 +638,18 @@ class _EsxiHostState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="swapBillingHostId")
+    def swap_billing_host_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+        """
+        return pulumi.get(self, "swap_billing_host_id")
+
+    @swap_billing_host_id.setter
+    def swap_billing_host_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "swap_billing_host_id", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
@@ -607,6 +703,7 @@ class EsxiHost(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 billing_donor_host_id: Optional[pulumi.Input[str]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[str]] = None,
                  compute_availability_domain: Optional[pulumi.Input[str]] = None,
                  current_sku: Optional[pulumi.Input[str]] = None,
@@ -619,6 +716,7 @@ class EsxiHost(pulumi.CustomResource):
                  next_sku: Optional[pulumi.Input[str]] = None,
                  non_upgraded_esxi_host_id: Optional[pulumi.Input[str]] = None,
                  sddc_id: Optional[pulumi.Input[str]] = None,
+                 swap_billing_host_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Esxi Host resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -640,9 +738,10 @@ class EsxiHost(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] billing_donor_host_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         :param pulumi.Input[str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param pulumi.Input[str] compute_availability_domain: The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
-        :param pulumi.Input[str] current_sku: The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        :param pulumi.Input[str] current_sku: The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
                
@@ -653,13 +752,14 @@ class EsxiHost(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[float] host_ocpu_count: The OCPU count of the ESXi host.
         :param pulumi.Input[str] host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
-        :param pulumi.Input[str] next_sku: (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        :param pulumi.Input[str] next_sku: The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[str] non_upgraded_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         :param pulumi.Input[str] sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] swap_billing_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
         """
         ...
     @overload
@@ -700,6 +800,7 @@ class EsxiHost(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 billing_donor_host_id: Optional[pulumi.Input[str]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[str]] = None,
                  compute_availability_domain: Optional[pulumi.Input[str]] = None,
                  current_sku: Optional[pulumi.Input[str]] = None,
@@ -712,6 +813,7 @@ class EsxiHost(pulumi.CustomResource):
                  next_sku: Optional[pulumi.Input[str]] = None,
                  non_upgraded_esxi_host_id: Optional[pulumi.Input[str]] = None,
                  sddc_id: Optional[pulumi.Input[str]] = None,
+                 swap_billing_host_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -721,6 +823,7 @@ class EsxiHost(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = EsxiHostArgs.__new__(EsxiHostArgs)
 
+            __props__.__dict__["billing_donor_host_id"] = billing_donor_host_id
             __props__.__dict__["capacity_reservation_id"] = capacity_reservation_id
             __props__.__dict__["compute_availability_domain"] = compute_availability_domain
             __props__.__dict__["current_sku"] = current_sku
@@ -735,10 +838,13 @@ class EsxiHost(pulumi.CustomResource):
             if sddc_id is None and not opts.urn:
                 raise TypeError("Missing required property 'sddc_id'")
             __props__.__dict__["sddc_id"] = sddc_id
+            __props__.__dict__["swap_billing_host_id"] = swap_billing_host_id
             __props__.__dict__["billing_contract_end_date"] = None
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["compute_instance_id"] = None
             __props__.__dict__["grace_period_end_date"] = None
+            __props__.__dict__["is_billing_continuation_in_progress"] = None
+            __props__.__dict__["is_billing_swapping_in_progress"] = None
             __props__.__dict__["replacement_esxi_host_id"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
@@ -756,6 +862,7 @@ class EsxiHost(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             billing_contract_end_date: Optional[pulumi.Input[str]] = None,
+            billing_donor_host_id: Optional[pulumi.Input[str]] = None,
             capacity_reservation_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             compute_availability_domain: Optional[pulumi.Input[str]] = None,
@@ -768,11 +875,14 @@ class EsxiHost(pulumi.CustomResource):
             grace_period_end_date: Optional[pulumi.Input[str]] = None,
             host_ocpu_count: Optional[pulumi.Input[float]] = None,
             host_shape_name: Optional[pulumi.Input[str]] = None,
+            is_billing_continuation_in_progress: Optional[pulumi.Input[bool]] = None,
+            is_billing_swapping_in_progress: Optional[pulumi.Input[bool]] = None,
             next_sku: Optional[pulumi.Input[str]] = None,
             non_upgraded_esxi_host_id: Optional[pulumi.Input[str]] = None,
             replacement_esxi_host_id: Optional[pulumi.Input[str]] = None,
             sddc_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            swap_billing_host_id: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             upgraded_replacement_esxi_host_id: Optional[pulumi.Input[str]] = None,
@@ -785,11 +895,12 @@ class EsxiHost(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] billing_contract_end_date: Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[str] billing_donor_host_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         :param pulumi.Input[str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
         :param pulumi.Input[str] compute_availability_domain: The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
         :param pulumi.Input[str] compute_instance_id: In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
-        :param pulumi.Input[str] current_sku: The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        :param pulumi.Input[str] current_sku: The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
                
@@ -801,7 +912,9 @@ class EsxiHost(pulumi.CustomResource):
         :param pulumi.Input[str] grace_period_end_date: The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
         :param pulumi.Input[float] host_ocpu_count: The OCPU count of the ESXi host.
         :param pulumi.Input[str] host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
-        :param pulumi.Input[str] next_sku: (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        :param pulumi.Input[bool] is_billing_continuation_in_progress: Indicates whether this host is in the progress of billing continuation.
+        :param pulumi.Input[bool] is_billing_swapping_in_progress: Indicates whether this host is in the progress of swapping billing.
+        :param pulumi.Input[str] next_sku: The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[str] non_upgraded_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         :param pulumi.Input[str] replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
         :param pulumi.Input[str] sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. 
@@ -810,6 +923,7 @@ class EsxiHost(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the ESXi host.
+        :param pulumi.Input[str] swap_billing_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
         :param pulumi.Input[str] time_created: The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] upgraded_replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
@@ -820,6 +934,7 @@ class EsxiHost(pulumi.CustomResource):
         __props__ = _EsxiHostState.__new__(_EsxiHostState)
 
         __props__.__dict__["billing_contract_end_date"] = billing_contract_end_date
+        __props__.__dict__["billing_donor_host_id"] = billing_donor_host_id
         __props__.__dict__["capacity_reservation_id"] = capacity_reservation_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute_availability_domain"] = compute_availability_domain
@@ -832,11 +947,14 @@ class EsxiHost(pulumi.CustomResource):
         __props__.__dict__["grace_period_end_date"] = grace_period_end_date
         __props__.__dict__["host_ocpu_count"] = host_ocpu_count
         __props__.__dict__["host_shape_name"] = host_shape_name
+        __props__.__dict__["is_billing_continuation_in_progress"] = is_billing_continuation_in_progress
+        __props__.__dict__["is_billing_swapping_in_progress"] = is_billing_swapping_in_progress
         __props__.__dict__["next_sku"] = next_sku
         __props__.__dict__["non_upgraded_esxi_host_id"] = non_upgraded_esxi_host_id
         __props__.__dict__["replacement_esxi_host_id"] = replacement_esxi_host_id
         __props__.__dict__["sddc_id"] = sddc_id
         __props__.__dict__["state"] = state
+        __props__.__dict__["swap_billing_host_id"] = swap_billing_host_id
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["upgraded_replacement_esxi_host_id"] = upgraded_replacement_esxi_host_id
@@ -850,6 +968,14 @@ class EsxiHost(pulumi.CustomResource):
         Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "billing_contract_end_date")
+
+    @property
+    @pulumi.getter(name="billingDonorHostId")
+    def billing_donor_host_id(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+        """
+        return pulumi.get(self, "billing_donor_host_id")
 
     @property
     @pulumi.getter(name="capacityReservationId")
@@ -887,7 +1013,7 @@ class EsxiHost(pulumi.CustomResource):
     @pulumi.getter(name="currentSku")
     def current_sku(self) -> pulumi.Output[str]:
         """
-        The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         """
         return pulumi.get(self, "current_sku")
 
@@ -952,10 +1078,26 @@ class EsxiHost(pulumi.CustomResource):
         return pulumi.get(self, "host_shape_name")
 
     @property
+    @pulumi.getter(name="isBillingContinuationInProgress")
+    def is_billing_continuation_in_progress(self) -> pulumi.Output[bool]:
+        """
+        Indicates whether this host is in the progress of billing continuation.
+        """
+        return pulumi.get(self, "is_billing_continuation_in_progress")
+
+    @property
+    @pulumi.getter(name="isBillingSwappingInProgress")
+    def is_billing_swapping_in_progress(self) -> pulumi.Output[bool]:
+        """
+        Indicates whether this host is in the progress of swapping billing.
+        """
+        return pulumi.get(self, "is_billing_swapping_in_progress")
+
+    @property
     @pulumi.getter(name="nextSku")
     def next_sku(self) -> pulumi.Output[str]:
         """
-        (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         """
         return pulumi.get(self, "next_sku")
 
@@ -994,6 +1136,14 @@ class EsxiHost(pulumi.CustomResource):
         The current state of the ESXi host.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="swapBillingHostId")
+    def swap_billing_host_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+        """
+        return pulumi.get(self, "swap_billing_host_id")
 
     @property
     @pulumi.getter(name="timeCreated")

@@ -14,30 +14,51 @@ namespace Pulumi.Oci.Jms.Outputs
     public sealed class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult
     {
         /// <summary>
+        /// Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+        /// </summary>
+        public readonly bool AddLoggingHandler;
+        /// <summary>
         /// The following post JRE installation actions are supported by the field:
         /// * Disable TLS 1.0 , TLS 1.1
         /// </summary>
         public readonly ImmutableArray<string> DisabledTlsVersions;
         /// <summary>
+        /// Sets the logging level in logging.properties file.
+        /// </summary>
+        public readonly string GlobalLoggingLevel;
+        /// <summary>
         /// test
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingResult> MinimumKeySizeSettings;
         /// <summary>
+        /// List of proxy properties to be configured in net.properties file.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult> Proxies;
+        /// <summary>
         /// Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
-        /// * Replace JDK root certificates with a list provided by the operating system
+        /// * Replace JDK root certificates with a list provided by the operating system.
         /// </summary>
         public readonly bool ShouldReplaceCertificatesOperatingSystem;
 
         [OutputConstructor]
         private GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult(
+            bool addLoggingHandler,
+
             ImmutableArray<string> disabledTlsVersions,
+
+            string globalLoggingLevel,
 
             ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingResult> minimumKeySizeSettings,
 
+            ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult> proxies,
+
             bool shouldReplaceCertificatesOperatingSystem)
         {
+            AddLoggingHandler = addLoggingHandler;
             DisabledTlsVersions = disabledTlsVersions;
+            GlobalLoggingLevel = globalLoggingLevel;
             MinimumKeySizeSettings = minimumKeySizeSettings;
+            Proxies = proxies;
             ShouldReplaceCertificatesOperatingSystem = shouldReplaceCertificatesOperatingSystem;
         }
     }

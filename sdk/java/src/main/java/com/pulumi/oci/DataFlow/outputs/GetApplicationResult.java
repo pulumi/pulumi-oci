@@ -149,6 +149,11 @@ public final class GetApplicationResult {
      */
     private List<GetApplicationParameter> parameters;
     /**
+     * @return The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     * 
+     */
+    private String poolId;
+    /**
      * @return The OCID of a private endpoint.
      * 
      */
@@ -164,12 +169,12 @@ public final class GetApplicationResult {
      */
     private String state;
     /**
-     * @return The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * @return The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * @return The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     private String timeUpdated;
@@ -371,6 +376,13 @@ public final class GetApplicationResult {
         return this.parameters;
     }
     /**
+     * @return The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     * 
+     */
+    public String poolId() {
+        return this.poolId;
+    }
+    /**
      * @return The OCID of a private endpoint.
      * 
      */
@@ -392,14 +404,14 @@ public final class GetApplicationResult {
         return this.state;
     }
     /**
-     * @return The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * @return The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * @return The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     public String timeUpdated() {
@@ -456,6 +468,7 @@ public final class GetApplicationResult {
         private String ownerPrincipalId;
         private String ownerUserName;
         private List<GetApplicationParameter> parameters;
+        private String poolId;
         private String privateEndpointId;
         private String sparkVersion;
         private String state;
@@ -493,6 +506,7 @@ public final class GetApplicationResult {
     	      this.ownerPrincipalId = defaults.ownerPrincipalId;
     	      this.ownerUserName = defaults.ownerUserName;
     	      this.parameters = defaults.parameters;
+    	      this.poolId = defaults.poolId;
     	      this.privateEndpointId = defaults.privateEndpointId;
     	      this.sparkVersion = defaults.sparkVersion;
     	      this.state = defaults.state;
@@ -653,6 +667,11 @@ public final class GetApplicationResult {
             return parameters(List.of(parameters));
         }
         @CustomType.Setter
+        public Builder poolId(String poolId) {
+            this.poolId = Objects.requireNonNull(poolId);
+            return this;
+        }
+        @CustomType.Setter
         public Builder privateEndpointId(String privateEndpointId) {
             this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
             return this;
@@ -716,6 +735,7 @@ public final class GetApplicationResult {
             o.ownerPrincipalId = ownerPrincipalId;
             o.ownerUserName = ownerUserName;
             o.parameters = parameters;
+            o.poolId = poolId;
             o.privateEndpointId = privateEndpointId;
             o.sparkVersion = sparkVersion;
             o.state = state;

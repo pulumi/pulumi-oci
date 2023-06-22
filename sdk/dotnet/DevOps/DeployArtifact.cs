@@ -74,7 +74,7 @@ namespace Pulumi.Oci.DevOps
     public partial class DeployArtifact : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Mode for artifact parameter substitution.
+        /// (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         /// </summary>
         [Output("argumentSubstitutionMode")]
         public Output<string> ArgumentSubstitutionMode { get; private set; } = null!;
@@ -208,7 +208,7 @@ namespace Pulumi.Oci.DevOps
     public sealed class DeployArtifactArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Mode for artifact parameter substitution.
+        /// (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         /// </summary>
         [Input("argumentSubstitutionMode", required: true)]
         public Input<string> ArgumentSubstitutionMode { get; set; } = null!;
@@ -280,7 +280,7 @@ namespace Pulumi.Oci.DevOps
     public sealed class DeployArtifactState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Mode for artifact parameter substitution.
+        /// (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         /// </summary>
         [Input("argumentSubstitutionMode")]
         public Input<string>? ArgumentSubstitutionMode { get; set; }

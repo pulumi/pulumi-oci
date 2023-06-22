@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Opsi.Inputs
         public Input<string>? HostIp { get; set; }
 
         /// <summary>
-        /// Listener port number used for connection requests.
+        /// Listener port number used for connection requests for rivate endpoint accessed db resource.
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }

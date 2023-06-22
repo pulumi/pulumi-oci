@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     displayName: _var.invoke_run_display_name,
  *     displayNameStartsWith: _var.invoke_run_display_name_starts_with,
  *     ownerPrincipalId: oci_dataflow_owner_principal.test_owner_principal.id,
+ *     poolId: oci_dataflow_pool.test_pool.id,
  *     state: _var.invoke_run_state,
  *     timeCreatedGreaterThan: _var.invoke_run_time_created_greater_than,
  * });
@@ -38,6 +39,7 @@ export function getInvokeRuns(args: GetInvokeRunsArgs, opts?: pulumi.InvokeOptio
         "displayNameStartsWith": args.displayNameStartsWith,
         "filters": args.filters,
         "ownerPrincipalId": args.ownerPrincipalId,
+        "poolId": args.poolId,
         "state": args.state,
         "timeCreatedGreaterThan": args.timeCreatedGreaterThan,
     }, opts);
@@ -68,6 +70,10 @@ export interface GetInvokeRunsArgs {
      * The OCID of the user who created the resource.
      */
     ownerPrincipalId?: string;
+    /**
+     * The ID of the pool.
+     */
+    poolId?: string;
     /**
      * The LifecycleState of the run.
      */
@@ -105,6 +111,10 @@ export interface GetInvokeRunsResult {
      */
     readonly ownerPrincipalId?: string;
     /**
+     * The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     */
+    readonly poolId?: string;
+    /**
      * The list of runs.
      */
     readonly runs: outputs.DataFlow.GetInvokeRunsRun[];
@@ -131,6 +141,7 @@ export interface GetInvokeRunsResult {
  *     displayName: _var.invoke_run_display_name,
  *     displayNameStartsWith: _var.invoke_run_display_name_starts_with,
  *     ownerPrincipalId: oci_dataflow_owner_principal.test_owner_principal.id,
+ *     poolId: oci_dataflow_pool.test_pool.id,
  *     state: _var.invoke_run_state,
  *     timeCreatedGreaterThan: _var.invoke_run_time_created_greater_than,
  * });
@@ -165,6 +176,10 @@ export interface GetInvokeRunsOutputArgs {
      * The OCID of the user who created the resource.
      */
     ownerPrincipalId?: pulumi.Input<string>;
+    /**
+     * The ID of the pool.
+     */
+    poolId?: pulumi.Input<string>;
     /**
      * The LifecycleState of the run.
      */

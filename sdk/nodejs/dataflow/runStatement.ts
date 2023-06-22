@@ -88,7 +88,7 @@ export class RunStatement extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCompleted!: pulumi.Output<string>;
     /**
-     * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
 
@@ -166,7 +166,7 @@ export interface RunStatementState {
      */
     timeCompleted?: pulumi.Input<string>;
     /**
-     * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
     timeCreated?: pulumi.Input<string>;
 }

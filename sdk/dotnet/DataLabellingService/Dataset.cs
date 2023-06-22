@@ -62,6 +62,21 @@ namespace Pulumi.Oci.DataLabellingService
     ///         Description = @var.Dataset_description,
     ///         DisplayName = @var.Dataset_display_name,
     ///         FreeformTags = @var.Dataset_freeform_tags,
+    ///         InitialImportDatasetConfiguration = new Oci.DataLabellingService.Inputs.DatasetInitialImportDatasetConfigurationArgs
+    ///         {
+    ///             ImportFormat = new Oci.DataLabellingService.Inputs.DatasetInitialImportDatasetConfigurationImportFormatArgs
+    ///             {
+    ///                 Name = @var.Dataset_initial_import_dataset_configuration_import_format_name,
+    ///                 Version = @var.Dataset_initial_import_dataset_configuration_import_format_version,
+    ///             },
+    ///             ImportMetadataPath = new Oci.DataLabellingService.Inputs.DatasetInitialImportDatasetConfigurationImportMetadataPathArgs
+    ///             {
+    ///                 Bucket = @var.Dataset_initial_import_dataset_configuration_import_metadata_path_bucket,
+    ///                 Namespace = @var.Dataset_initial_import_dataset_configuration_import_metadata_path_namespace,
+    ///                 Path = @var.Dataset_initial_import_dataset_configuration_import_metadata_path_path,
+    ///                 SourceType = @var.Dataset_initial_import_dataset_configuration_import_metadata_path_source_type,
+    ///             },
+    ///         },
     ///         InitialRecordGenerationConfiguration = null,
     ///         LabelingInstructions = @var.Dataset_labeling_instructions,
     ///     });
@@ -80,6 +95,12 @@ namespace Pulumi.Oci.DataLabellingService
     [OciResourceType("oci:DataLabellingService/dataset:Dataset")]
     public partial class Dataset : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        /// </summary>
+        [Output("additionalProperties")]
+        public Output<ImmutableDictionary<string, object>> AdditionalProperties { get; private set; } = null!;
+
         /// <summary>
         /// The annotation format name required for labeling records.
         /// </summary>
@@ -129,6 +150,12 @@ namespace Pulumi.Oci.DataLabellingService
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+        /// </summary>
+        [Output("initialImportDatasetConfiguration")]
+        public Output<Outputs.DatasetInitialImportDatasetConfiguration> InitialImportDatasetConfiguration { get; private set; } = null!;
+
+        /// <summary>
         /// The initial generate records configuration. It generates records from the dataset's source.
         /// </summary>
         [Output("initialRecordGenerationConfiguration")]
@@ -155,6 +182,12 @@ namespace Pulumi.Oci.DataLabellingService
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+        /// </summary>
+        [Output("lifecycleSubstate")]
+        public Output<string> LifecycleSubstate { get; private set; } = null!;
 
         /// <summary>
         /// The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
@@ -281,6 +314,12 @@ namespace Pulumi.Oci.DataLabellingService
         }
 
         /// <summary>
+        /// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+        /// </summary>
+        [Input("initialImportDatasetConfiguration")]
+        public Input<Inputs.DatasetInitialImportDatasetConfigurationArgs>? InitialImportDatasetConfiguration { get; set; }
+
+        /// <summary>
         /// The initial generate records configuration. It generates records from the dataset's source.
         /// </summary>
         [Input("initialRecordGenerationConfiguration")]
@@ -310,6 +349,18 @@ namespace Pulumi.Oci.DataLabellingService
 
     public sealed class DatasetState : global::Pulumi.ResourceArgs
     {
+        [Input("additionalProperties")]
+        private InputMap<object>? _additionalProperties;
+
+        /// <summary>
+        /// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        /// </summary>
+        public InputMap<object> AdditionalProperties
+        {
+            get => _additionalProperties ?? (_additionalProperties = new InputMap<object>());
+            set => _additionalProperties = value;
+        }
+
         /// <summary>
         /// The annotation format name required for labeling records.
         /// </summary>
@@ -371,6 +422,12 @@ namespace Pulumi.Oci.DataLabellingService
         }
 
         /// <summary>
+        /// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+        /// </summary>
+        [Input("initialImportDatasetConfiguration")]
+        public Input<Inputs.DatasetInitialImportDatasetConfigurationGetArgs>? InitialImportDatasetConfiguration { get; set; }
+
+        /// <summary>
         /// The initial generate records configuration. It generates records from the dataset's source.
         /// </summary>
         [Input("initialRecordGenerationConfiguration")]
@@ -397,6 +454,12 @@ namespace Pulumi.Oci.DataLabellingService
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        /// <summary>
+        /// The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+        /// </summary>
+        [Input("lifecycleSubstate")]
+        public Input<string>? LifecycleSubstate { get; set; }
 
         /// <summary>
         /// The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.

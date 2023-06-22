@@ -128,6 +128,10 @@ export class Function extends pulumi.CustomResource {
      */
     public readonly provisionedConcurrencyConfig!: pulumi.Output<outputs.Functions.FunctionProvisionedConcurrencyConfig>;
     /**
+     * The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+     */
+    public /*out*/ readonly shape!: pulumi.Output<string>;
+    /**
      * The source details for the Function. The function can be created from various sources.
      */
     public readonly sourceDetails!: pulumi.Output<outputs.Functions.FunctionSourceDetails>;
@@ -176,6 +180,7 @@ export class Function extends pulumi.CustomResource {
             resourceInputs["invokeEndpoint"] = state ? state.invokeEndpoint : undefined;
             resourceInputs["memoryInMbs"] = state ? state.memoryInMbs : undefined;
             resourceInputs["provisionedConcurrencyConfig"] = state ? state.provisionedConcurrencyConfig : undefined;
+            resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["sourceDetails"] = state ? state.sourceDetails : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -207,6 +212,7 @@ export class Function extends pulumi.CustomResource {
             resourceInputs["traceConfig"] = args ? args.traceConfig : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["invokeEndpoint"] = undefined /*out*/;
+            resourceInputs["shape"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -266,6 +272,10 @@ export interface FunctionState {
      * (Updatable) Define the strategy for provisioned concurrency for the function.
      */
     provisionedConcurrencyConfig?: pulumi.Input<inputs.Functions.FunctionProvisionedConcurrencyConfig>;
+    /**
+     * The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+     */
+    shape?: pulumi.Input<string>;
     /**
      * The source details for the Function. The function can be created from various sources.
      */

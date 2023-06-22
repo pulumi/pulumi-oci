@@ -90,6 +90,21 @@ public final class DatabaseInsightCredentialDetailsArgs extends com.pulumi.resou
         return Optional.ofNullable(this.userName);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+     * 
+     */
+    @Import(name="walletSecretId")
+    private @Nullable Output<String> walletSecretId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+     * 
+     */
+    public Optional<Output<String>> walletSecretId() {
+        return Optional.ofNullable(this.walletSecretId);
+    }
+
     private DatabaseInsightCredentialDetailsArgs() {}
 
     private DatabaseInsightCredentialDetailsArgs(DatabaseInsightCredentialDetailsArgs $) {
@@ -98,6 +113,7 @@ public final class DatabaseInsightCredentialDetailsArgs extends com.pulumi.resou
         this.passwordSecretId = $.passwordSecretId;
         this.role = $.role;
         this.userName = $.userName;
+        this.walletSecretId = $.walletSecretId;
     }
 
     public static Builder builder() {
@@ -221,6 +237,27 @@ public final class DatabaseInsightCredentialDetailsArgs extends com.pulumi.resou
          */
         public Builder userName(String userName) {
             return userName(Output.of(userName));
+        }
+
+        /**
+         * @param walletSecretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder walletSecretId(@Nullable Output<String> walletSecretId) {
+            $.walletSecretId = walletSecretId;
+            return this;
+        }
+
+        /**
+         * @param walletSecretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder walletSecretId(String walletSecretId) {
+            return walletSecretId(Output.of(walletSecretId));
         }
 
         public DatabaseInsightCredentialDetailsArgs build() {

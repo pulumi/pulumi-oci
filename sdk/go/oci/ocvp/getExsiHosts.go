@@ -37,10 +37,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Ocvp.GetExsiHosts(ctx, &ocvp.GetExsiHostsArgs{
-//				ComputeInstanceId: pulumi.StringRef(oci_core_instance.Test_instance.Id),
-//				DisplayName:       pulumi.StringRef(_var.Esxi_host_display_name),
-//				SddcId:            pulumi.StringRef(oci_ocvp_sddc.Test_sddc.Id),
-//				State:             pulumi.StringRef(_var.Esxi_host_state),
+//				CompartmentId:       pulumi.StringRef(_var.Compartment_id),
+//				ComputeInstanceId:   pulumi.StringRef(oci_core_instance.Test_instance.Id),
+//				DisplayName:         pulumi.StringRef(_var.Esxi_host_display_name),
+//				IsBillingDonorsOnly: pulumi.BoolRef(_var.Esxi_host_is_billing_donors_only),
+//				IsSwapBillingOnly:   pulumi.BoolRef(_var.Esxi_host_is_swap_billing_only),
+//				SddcId:              pulumi.StringRef(oci_ocvp_sddc.Test_sddc.Id),
+//				State:               pulumi.StringRef(_var.Esxi_host_state),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -61,11 +64,17 @@ func GetExsiHosts(ctx *pulumi.Context, args *GetExsiHostsArgs, opts ...pulumi.In
 
 // A collection of arguments for invoking getExsiHosts.
 type GetExsiHostsArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
 	ComputeInstanceId *string `pulumi:"computeInstanceId"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName *string              `pulumi:"displayName"`
 	Filters     []GetExsiHostsFilter `pulumi:"filters"`
+	// If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.
+	IsBillingDonorsOnly *bool `pulumi:"isBillingDonorsOnly"`
+	// If this flag/param is set to True, we return only active hosts.
+	IsSwapBillingOnly *bool `pulumi:"isSwapBillingOnly"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
 	SddcId *string `pulumi:"sddcId"`
 	// The lifecycle state of the resource.
@@ -74,6 +83,8 @@ type GetExsiHostsArgs struct {
 
 // A collection of values returned by getExsiHosts.
 type GetExsiHostsResult struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+	CompartmentId *string `pulumi:"compartmentId"`
 	// In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
 	ComputeInstanceId *string `pulumi:"computeInstanceId"`
 	// A descriptive name for the ESXi host. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -82,7 +93,9 @@ type GetExsiHostsResult struct {
 	EsxiHostCollections []GetExsiHostsEsxiHostCollection `pulumi:"esxiHostCollections"`
 	Filters             []GetExsiHostsFilter             `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id                  string `pulumi:"id"`
+	IsBillingDonorsOnly *bool  `pulumi:"isBillingDonorsOnly"`
+	IsSwapBillingOnly   *bool  `pulumi:"isSwapBillingOnly"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
 	SddcId *string `pulumi:"sddcId"`
 	// The current state of the ESXi host.
@@ -104,11 +117,17 @@ func GetExsiHostsOutput(ctx *pulumi.Context, args GetExsiHostsOutputArgs, opts .
 
 // A collection of arguments for invoking getExsiHosts.
 type GetExsiHostsOutputArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
 	ComputeInstanceId pulumi.StringPtrInput `pulumi:"computeInstanceId"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringPtrInput        `pulumi:"displayName"`
 	Filters     GetExsiHostsFilterArrayInput `pulumi:"filters"`
+	// If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.
+	IsBillingDonorsOnly pulumi.BoolPtrInput `pulumi:"isBillingDonorsOnly"`
+	// If this flag/param is set to True, we return only active hosts.
+	IsSwapBillingOnly pulumi.BoolPtrInput `pulumi:"isSwapBillingOnly"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
 	SddcId pulumi.StringPtrInput `pulumi:"sddcId"`
 	// The lifecycle state of the resource.
@@ -134,6 +153,11 @@ func (o GetExsiHostsResultOutput) ToGetExsiHostsResultOutputWithContext(ctx cont
 	return o
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+func (o GetExsiHostsResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
 // In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
 func (o GetExsiHostsResultOutput) ComputeInstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetExsiHostsResult) *string { return v.ComputeInstanceId }).(pulumi.StringPtrOutput)
@@ -156,6 +180,14 @@ func (o GetExsiHostsResultOutput) Filters() GetExsiHostsFilterArrayOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o GetExsiHostsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetExsiHostsResultOutput) IsBillingDonorsOnly() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsResult) *bool { return v.IsBillingDonorsOnly }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetExsiHostsResultOutput) IsSwapBillingOnly() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsResult) *bool { return v.IsSwapBillingOnly }).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.

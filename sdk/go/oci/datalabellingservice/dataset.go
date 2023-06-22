@@ -56,10 +56,22 @@ import (
 //						},
 //					},
 //				},
-//				DefinedTags:                          pulumi.Any(_var.Dataset_defined_tags),
-//				Description:                          pulumi.Any(_var.Dataset_description),
-//				DisplayName:                          pulumi.Any(_var.Dataset_display_name),
-//				FreeformTags:                         pulumi.Any(_var.Dataset_freeform_tags),
+//				DefinedTags:  pulumi.Any(_var.Dataset_defined_tags),
+//				Description:  pulumi.Any(_var.Dataset_description),
+//				DisplayName:  pulumi.Any(_var.Dataset_display_name),
+//				FreeformTags: pulumi.Any(_var.Dataset_freeform_tags),
+//				InitialImportDatasetConfiguration: &datalabellingservice.DatasetInitialImportDatasetConfigurationArgs{
+//					ImportFormat: &datalabellingservice.DatasetInitialImportDatasetConfigurationImportFormatArgs{
+//						Name:    pulumi.Any(_var.Dataset_initial_import_dataset_configuration_import_format_name),
+//						Version: pulumi.Any(_var.Dataset_initial_import_dataset_configuration_import_format_version),
+//					},
+//					ImportMetadataPath: &datalabellingservice.DatasetInitialImportDatasetConfigurationImportMetadataPathArgs{
+//						Bucket:     pulumi.Any(_var.Dataset_initial_import_dataset_configuration_import_metadata_path_bucket),
+//						Namespace:  pulumi.Any(_var.Dataset_initial_import_dataset_configuration_import_metadata_path_namespace),
+//						Path:       pulumi.Any(_var.Dataset_initial_import_dataset_configuration_import_metadata_path_path),
+//						SourceType: pulumi.Any(_var.Dataset_initial_import_dataset_configuration_import_metadata_path_source_type),
+//					},
+//				},
 //				InitialRecordGenerationConfiguration: nil,
 //				LabelingInstructions:                 pulumi.Any(_var.Dataset_labeling_instructions),
 //			})
@@ -84,6 +96,8 @@ import (
 type Dataset struct {
 	pulumi.CustomResourceState
 
+	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+	AdditionalProperties pulumi.MapOutput `pulumi:"additionalProperties"`
 	// The annotation format name required for labeling records.
 	AnnotationFormat pulumi.StringOutput `pulumi:"annotationFormat"`
 	// (Updatable) The OCID of the compartment of the resource.
@@ -100,6 +114,8 @@ type Dataset struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+	InitialImportDatasetConfiguration DatasetInitialImportDatasetConfigurationOutput `pulumi:"initialImportDatasetConfiguration"`
 	// The initial generate records configuration. It generates records from the dataset's source.
 	InitialRecordGenerationConfiguration DatasetInitialRecordGenerationConfigurationOutput `pulumi:"initialRecordGenerationConfiguration"`
 	// An ordered collection of labels that are unique by name.
@@ -111,6 +127,8 @@ type Dataset struct {
 	LabelingInstructions pulumi.StringOutput `pulumi:"labelingInstructions"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+	LifecycleSubstate pulumi.StringOutput `pulumi:"lifecycleSubstate"`
 	// The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the resource was created, in the timestamp format defined by RFC3339.
@@ -163,6 +181,8 @@ func GetDataset(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Dataset resources.
 type datasetState struct {
+	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+	AdditionalProperties map[string]interface{} `pulumi:"additionalProperties"`
 	// The annotation format name required for labeling records.
 	AnnotationFormat *string `pulumi:"annotationFormat"`
 	// (Updatable) The OCID of the compartment of the resource.
@@ -179,6 +199,8 @@ type datasetState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+	InitialImportDatasetConfiguration *DatasetInitialImportDatasetConfiguration `pulumi:"initialImportDatasetConfiguration"`
 	// The initial generate records configuration. It generates records from the dataset's source.
 	InitialRecordGenerationConfiguration *DatasetInitialRecordGenerationConfiguration `pulumi:"initialRecordGenerationConfiguration"`
 	// An ordered collection of labels that are unique by name.
@@ -190,6 +212,8 @@ type datasetState struct {
 	LabelingInstructions *string `pulumi:"labelingInstructions"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+	LifecycleSubstate *string `pulumi:"lifecycleSubstate"`
 	// The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
 	State *string `pulumi:"state"`
 	// The date and time the resource was created, in the timestamp format defined by RFC3339.
@@ -199,6 +223,8 @@ type datasetState struct {
 }
 
 type DatasetState struct {
+	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+	AdditionalProperties pulumi.MapInput
 	// The annotation format name required for labeling records.
 	AnnotationFormat pulumi.StringPtrInput
 	// (Updatable) The OCID of the compartment of the resource.
@@ -215,6 +241,8 @@ type DatasetState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+	InitialImportDatasetConfiguration DatasetInitialImportDatasetConfigurationPtrInput
 	// The initial generate records configuration. It generates records from the dataset's source.
 	InitialRecordGenerationConfiguration DatasetInitialRecordGenerationConfigurationPtrInput
 	// An ordered collection of labels that are unique by name.
@@ -226,6 +254,8 @@ type DatasetState struct {
 	LabelingInstructions pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
 	LifecycleDetails pulumi.StringPtrInput
+	// The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+	LifecycleSubstate pulumi.StringPtrInput
 	// The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
 	State pulumi.StringPtrInput
 	// The date and time the resource was created, in the timestamp format defined by RFC3339.
@@ -255,6 +285,8 @@ type datasetArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+	InitialImportDatasetConfiguration *DatasetInitialImportDatasetConfiguration `pulumi:"initialImportDatasetConfiguration"`
 	// The initial generate records configuration. It generates records from the dataset's source.
 	InitialRecordGenerationConfiguration *DatasetInitialRecordGenerationConfiguration `pulumi:"initialRecordGenerationConfiguration"`
 	// An ordered collection of labels that are unique by name.
@@ -284,6 +316,8 @@ type DatasetArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+	InitialImportDatasetConfiguration DatasetInitialImportDatasetConfigurationPtrInput
 	// The initial generate records configuration. It generates records from the dataset's source.
 	InitialRecordGenerationConfiguration DatasetInitialRecordGenerationConfigurationPtrInput
 	// An ordered collection of labels that are unique by name.
@@ -382,6 +416,11 @@ func (o DatasetOutput) ToDatasetOutputWithContext(ctx context.Context) DatasetOu
 	return o
 }
 
+// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+func (o DatasetOutput) AdditionalProperties() pulumi.MapOutput {
+	return o.ApplyT(func(v *Dataset) pulumi.MapOutput { return v.AdditionalProperties }).(pulumi.MapOutput)
+}
+
 // The annotation format name required for labeling records.
 func (o DatasetOutput) AnnotationFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v *Dataset) pulumi.StringOutput { return v.AnnotationFormat }).(pulumi.StringOutput)
@@ -422,6 +461,13 @@ func (o DatasetOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Dataset) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
+// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+func (o DatasetOutput) InitialImportDatasetConfiguration() DatasetInitialImportDatasetConfigurationOutput {
+	return o.ApplyT(func(v *Dataset) DatasetInitialImportDatasetConfigurationOutput {
+		return v.InitialImportDatasetConfiguration
+	}).(DatasetInitialImportDatasetConfigurationOutput)
+}
+
 // The initial generate records configuration. It generates records from the dataset's source.
 func (o DatasetOutput) InitialRecordGenerationConfiguration() DatasetInitialRecordGenerationConfigurationOutput {
 	return o.ApplyT(func(v *Dataset) DatasetInitialRecordGenerationConfigurationOutput {
@@ -445,6 +491,11 @@ func (o DatasetOutput) LabelingInstructions() pulumi.StringOutput {
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
 func (o DatasetOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Dataset) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+func (o DatasetOutput) LifecycleSubstate() pulumi.StringOutput {
+	return o.ApplyT(func(v *Dataset) pulumi.StringOutput { return v.LifecycleSubstate }).(pulumi.StringOutput)
 }
 
 // The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.

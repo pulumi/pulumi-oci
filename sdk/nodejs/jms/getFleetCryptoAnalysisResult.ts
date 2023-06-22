@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Fleet Crypto Analysis Result resource in Oracle Cloud Infrastructure Jms service.
  *
- * Retrieve metadata of the Crypto Event Analysis result.
+ * Retrieve the metadata for the result of a Crypto event analysis.
  *
  * ## Example Usage
  *
@@ -86,7 +86,7 @@ export interface GetFleetCryptoAnalysisResultResult {
      */
     readonly namespace: string;
     /**
-     * Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the crypto roadmap version used the the analysis.
+     * Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
      */
     readonly nonCompliantFindingCount: number;
     /**
@@ -121,7 +121,7 @@ export interface GetFleetCryptoAnalysisResultResult {
 /**
  * This data source provides details about a specific Fleet Crypto Analysis Result resource in Oracle Cloud Infrastructure Jms service.
  *
- * Retrieve metadata of the Crypto Event Analysis result.
+ * Retrieve the metadata for the result of a Crypto event analysis.
  *
  * ## Example Usage
  *

@@ -78,6 +78,10 @@ export class Preauthrequest extends pulumi.CustomResource {
      */
     public readonly bucketListingAction!: pulumi.Output<string>;
     /**
+     * The full Path for the object.
+     */
+    public /*out*/ readonly fullPath!: pulumi.Output<string>;
+    /**
      * A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
      */
     public readonly name!: pulumi.Output<string>;
@@ -129,6 +133,7 @@ export class Preauthrequest extends pulumi.CustomResource {
             resourceInputs["accessUri"] = state ? state.accessUri : undefined;
             resourceInputs["bucket"] = state ? state.bucket : undefined;
             resourceInputs["bucketListingAction"] = state ? state.bucketListingAction : undefined;
+            resourceInputs["fullPath"] = state ? state.fullPath : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["namespace"] = state ? state.namespace : undefined;
             resourceInputs["object"] = state ? state.object : undefined;
@@ -159,6 +164,7 @@ export class Preauthrequest extends pulumi.CustomResource {
             resourceInputs["objectName"] = args ? args.objectName : undefined;
             resourceInputs["timeExpires"] = args ? args.timeExpires : undefined;
             resourceInputs["accessUri"] = undefined /*out*/;
+            resourceInputs["fullPath"] = undefined /*out*/;
             resourceInputs["parId"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
@@ -187,6 +193,10 @@ export interface PreauthrequestState {
      * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
      */
     bucketListingAction?: pulumi.Input<string>;
+    /**
+     * The full Path for the object.
+     */
+    fullPath?: pulumi.Input<string>;
     /**
      * A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
      */

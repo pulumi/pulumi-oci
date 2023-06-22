@@ -17,6 +17,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
+        public readonly ImmutableArray<Outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult> ConnectionDetails;
         public readonly ImmutableArray<Outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult> CredentialDetails;
         public readonly string DatabaseId;
         public readonly string DatabaseResourceType;
@@ -45,6 +46,8 @@ namespace Pulumi.Oci.Opsi.Outputs
         private GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailResult(
             string compartmentId,
 
+            ImmutableArray<Outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult> connectionDetails,
+
             ImmutableArray<Outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult> credentialDetails,
 
             string databaseId,
@@ -68,6 +71,7 @@ namespace Pulumi.Oci.Opsi.Outputs
             ImmutableDictionary<string, object> systemTags)
         {
             CompartmentId = compartmentId;
+            ConnectionDetails = connectionDetails;
             CredentialDetails = credentialDetails;
             DatabaseId = databaseId;
             DatabaseResourceType = databaseResourceType;

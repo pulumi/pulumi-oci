@@ -16,6 +16,8 @@ __all__ = [
     'DatabaseInsightCredentialDetailsArgs',
     'ExadataInsightMemberVmClusterDetailArgs',
     'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs',
+    'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs',
+    'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs',
     'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs',
     'OpsiConfigurationConfigItemArgs',
     'OpsiConfigurationConfigItemMetadataArgs',
@@ -40,13 +42,15 @@ class DatabaseInsightConnectionCredentialDetailsArgs:
                  credential_type: Optional[pulumi.Input[str]] = None,
                  password_secret_id: Optional[pulumi.Input[str]] = None,
                  role: Optional[pulumi.Input[str]] = None,
-                 user_name: Optional[pulumi.Input[str]] = None):
+                 user_name: Optional[pulumi.Input[str]] = None,
+                 wallet_secret_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] credential_source_name: Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
         :param pulumi.Input[str] credential_type: Credential type.
         :param pulumi.Input[str] password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
         :param pulumi.Input[str] role: database user role.
         :param pulumi.Input[str] user_name: database user name.
+        :param pulumi.Input[str] wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
         """
         if credential_source_name is not None:
             pulumi.set(__self__, "credential_source_name", credential_source_name)
@@ -58,6 +62,8 @@ class DatabaseInsightConnectionCredentialDetailsArgs:
             pulumi.set(__self__, "role", role)
         if user_name is not None:
             pulumi.set(__self__, "user_name", user_name)
+        if wallet_secret_id is not None:
+            pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialSourceName")
@@ -119,6 +125,18 @@ class DatabaseInsightConnectionCredentialDetailsArgs:
     def user_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "user_name", value)
 
+    @property
+    @pulumi.getter(name="walletSecretId")
+    def wallet_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+        """
+        return pulumi.get(self, "wallet_secret_id")
+
+    @wallet_secret_id.setter
+    def wallet_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "wallet_secret_id", value)
+
 
 @pulumi.input_type
 class DatabaseInsightConnectionDetailsArgs:
@@ -131,7 +149,7 @@ class DatabaseInsightConnectionDetailsArgs:
         """
         :param pulumi.Input[str] host_name: Name of the listener host that will be used to create the connect string to the database.
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseInsightConnectionDetailsHostArgs']]] hosts: List of hosts and port for private endpoint accessed database resource.
-        :param pulumi.Input[int] port: Listener port number used for connection requests.
+        :param pulumi.Input[int] port: Listener port number used for connection requests for rivate endpoint accessed db resource.
         :param pulumi.Input[str] protocol: Protocol used for connection requests for private endpoint accssed database resource.
         :param pulumi.Input[str] service_name: Database service name used for connection requests.
         """
@@ -174,7 +192,7 @@ class DatabaseInsightConnectionDetailsArgs:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
         """
-        Listener port number used for connection requests.
+        Listener port number used for connection requests for rivate endpoint accessed db resource.
         """
         return pulumi.get(self, "port")
 
@@ -214,7 +232,7 @@ class DatabaseInsightConnectionDetailsHostArgs:
                  port: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[str] host_ip: Host IP used for connection requests for Cloud DB resource.
-        :param pulumi.Input[int] port: Listener port number used for connection requests.
+        :param pulumi.Input[int] port: Listener port number used for connection requests for rivate endpoint accessed db resource.
         """
         if host_ip is not None:
             pulumi.set(__self__, "host_ip", host_ip)
@@ -237,7 +255,7 @@ class DatabaseInsightConnectionDetailsHostArgs:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
         """
-        Listener port number used for connection requests.
+        Listener port number used for connection requests for rivate endpoint accessed db resource.
         """
         return pulumi.get(self, "port")
 
@@ -253,13 +271,15 @@ class DatabaseInsightCredentialDetailsArgs:
                  credential_source_name: Optional[pulumi.Input[str]] = None,
                  password_secret_id: Optional[pulumi.Input[str]] = None,
                  role: Optional[pulumi.Input[str]] = None,
-                 user_name: Optional[pulumi.Input[str]] = None):
+                 user_name: Optional[pulumi.Input[str]] = None,
+                 wallet_secret_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] credential_type: Credential type.
         :param pulumi.Input[str] credential_source_name: Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
         :param pulumi.Input[str] password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
         :param pulumi.Input[str] role: database user role.
         :param pulumi.Input[str] user_name: database user name.
+        :param pulumi.Input[str] wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
         """
         pulumi.set(__self__, "credential_type", credential_type)
         if credential_source_name is not None:
@@ -270,6 +290,8 @@ class DatabaseInsightCredentialDetailsArgs:
             pulumi.set(__self__, "role", role)
         if user_name is not None:
             pulumi.set(__self__, "user_name", user_name)
+        if wallet_secret_id is not None:
+            pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialType")
@@ -331,19 +353,38 @@ class DatabaseInsightCredentialDetailsArgs:
     def user_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "user_name", value)
 
+    @property
+    @pulumi.getter(name="walletSecretId")
+    def wallet_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+        """
+        return pulumi.get(self, "wallet_secret_id")
+
+    @wallet_secret_id.setter
+    def wallet_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "wallet_secret_id", value)
+
 
 @pulumi.input_type
 class ExadataInsightMemberVmClusterDetailArgs:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 dbm_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  member_database_details: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]]] = None,
                  opsi_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  vmcluster_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of Exadata insight
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of database
+        :param pulumi.Input[str] dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+        :param pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]] member_database_details: The databases that belong to the VM Cluster
+        :param pulumi.Input[str] opsi_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+        :param pulumi.Input[str] vmcluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if dbm_private_endpoint_id is not None:
+            pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
         if member_database_details is not None:
             pulumi.set(__self__, "member_database_details", member_database_details)
         if opsi_private_endpoint_id is not None:
@@ -355,7 +396,7 @@ class ExadataInsightMemberVmClusterDetailArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Compartment Identifier of Exadata insight
+        (Updatable) Compartment Identifier of database
         """
         return pulumi.get(self, "compartment_id")
 
@@ -364,8 +405,23 @@ class ExadataInsightMemberVmClusterDetailArgs:
         pulumi.set(self, "compartment_id", value)
 
     @property
+    @pulumi.getter(name="dbmPrivateEndpointId")
+    def dbm_private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+        """
+        return pulumi.get(self, "dbm_private_endpoint_id")
+
+    @dbm_private_endpoint_id.setter
+    def dbm_private_endpoint_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dbm_private_endpoint_id", value)
+
+    @property
     @pulumi.getter(name="memberDatabaseDetails")
     def member_database_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]]]:
+        """
+        The databases that belong to the VM Cluster
+        """
         return pulumi.get(self, "member_database_details")
 
     @member_database_details.setter
@@ -375,6 +431,9 @@ class ExadataInsightMemberVmClusterDetailArgs:
     @property
     @pulumi.getter(name="opsiPrivateEndpointId")
     def opsi_private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+        """
         return pulumi.get(self, "opsi_private_endpoint_id")
 
     @opsi_private_endpoint_id.setter
@@ -384,6 +443,9 @@ class ExadataInsightMemberVmClusterDetailArgs:
     @property
     @pulumi.getter(name="vmclusterId")
     def vmcluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
+        """
         return pulumi.get(self, "vmcluster_id")
 
     @vmcluster_id.setter
@@ -395,6 +457,7 @@ class ExadataInsightMemberVmClusterDetailArgs:
 class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 connection_details: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs']] = None,
                  credential_details: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs']] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_resource_type: Optional[pulumi.Input[str]] = None,
@@ -407,14 +470,24 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
                  service_name: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of Exadata insight
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] entity_source: (Updatable) Source of the Exadata system.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of database
+        :param pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs'] connection_details: Connection details of the private endpoints.
+        :param pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs'] credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
+        :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+        :param pulumi.Input[str] database_resource_type: Oracle Cloud Infrastructure database resource type
+        :param pulumi.Input[str] dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] deployment_type: Database Deployment Type
+        :param pulumi.Input[str] entity_source: Source of the database entity.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] opsi_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+        :param pulumi.Input[str] service_name: Database service name used for connection requests.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if connection_details is not None:
+            pulumi.set(__self__, "connection_details", connection_details)
         if credential_details is not None:
             pulumi.set(__self__, "credential_details", credential_details)
         if database_id is not None:
@@ -442,7 +515,7 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Compartment Identifier of Exadata insight
+        (Updatable) Compartment Identifier of database
         """
         return pulumi.get(self, "compartment_id")
 
@@ -451,8 +524,23 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
         pulumi.set(self, "compartment_id", value)
 
     @property
+    @pulumi.getter(name="connectionDetails")
+    def connection_details(self) -> Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs']]:
+        """
+        Connection details of the private endpoints.
+        """
+        return pulumi.get(self, "connection_details")
+
+    @connection_details.setter
+    def connection_details(self, value: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs']]):
+        pulumi.set(self, "connection_details", value)
+
+    @property
     @pulumi.getter(name="credentialDetails")
     def credential_details(self) -> Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs']]:
+        """
+        User credential details to connect to the database. This is supplied via the External Database Service.
+        """
         return pulumi.get(self, "credential_details")
 
     @credential_details.setter
@@ -462,6 +550,9 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+        """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
@@ -471,6 +562,9 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @property
     @pulumi.getter(name="databaseResourceType")
     def database_resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Oracle Cloud Infrastructure database resource type
+        """
         return pulumi.get(self, "database_resource_type")
 
     @database_resource_type.setter
@@ -480,6 +574,9 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @property
     @pulumi.getter(name="dbmPrivateEndpointId")
     def dbm_private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+        """
         return pulumi.get(self, "dbm_private_endpoint_id")
 
     @dbm_private_endpoint_id.setter
@@ -490,7 +587,7 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -501,6 +598,9 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Database Deployment Type
+        """
         return pulumi.get(self, "deployment_type")
 
     @deployment_type.setter
@@ -511,7 +611,7 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @pulumi.getter(name="entitySource")
     def entity_source(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Source of the Exadata system.
+        Source of the database entity.
         """
         return pulumi.get(self, "entity_source")
 
@@ -523,7 +623,7 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -534,6 +634,9 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @property
     @pulumi.getter(name="opsiPrivateEndpointId")
     def opsi_private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+        """
         return pulumi.get(self, "opsi_private_endpoint_id")
 
     @opsi_private_endpoint_id.setter
@@ -543,6 +646,9 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Database service name used for connection requests.
+        """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
@@ -563,13 +669,116 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
 
 
 @pulumi.input_type
+class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs:
+    def __init__(__self__, *,
+                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs']]]] = None,
+                 protocol: Optional[pulumi.Input[str]] = None,
+                 service_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs']]] hosts: List of hosts and port for private endpoint accessed database resource.
+        :param pulumi.Input[str] protocol: Protocol used for connection requests for private endpoint accssed database resource.
+        :param pulumi.Input[str] service_name: Database service name used for connection requests.
+        """
+        if hosts is not None:
+            pulumi.set(__self__, "hosts", hosts)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+
+    @property
+    @pulumi.getter
+    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs']]]]:
+        """
+        List of hosts and port for private endpoint accessed database resource.
+        """
+        return pulumi.get(self, "hosts")
+
+    @hosts.setter
+    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs']]]]):
+        pulumi.set(self, "hosts", value)
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[pulumi.Input[str]]:
+        """
+        Protocol used for connection requests for private endpoint accssed database resource.
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "protocol", value)
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Database service name used for connection requests.
+        """
+        return pulumi.get(self, "service_name")
+
+    @service_name.setter
+    def service_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service_name", value)
+
+
+@pulumi.input_type
+class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs:
+    def __init__(__self__, *,
+                 host_ip: Optional[pulumi.Input[str]] = None,
+                 port: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] host_ip: Host IP used for connection requests for Cloud DB resource.
+        :param pulumi.Input[int] port: Listener port number used for connection requests for rivate endpoint accessed db resource.
+        """
+        if host_ip is not None:
+            pulumi.set(__self__, "host_ip", host_ip)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter(name="hostIp")
+    def host_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        Host IP used for connection requests for Cloud DB resource.
+        """
+        return pulumi.get(self, "host_ip")
+
+    @host_ip.setter
+    def host_ip(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host_ip", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[int]]:
+        """
+        Listener port number used for connection requests for rivate endpoint accessed db resource.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "port", value)
+
+
+@pulumi.input_type
 class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs:
     def __init__(__self__, *,
                  credential_type: pulumi.Input[str],
                  credential_source_name: Optional[pulumi.Input[str]] = None,
                  password_secret_id: Optional[pulumi.Input[str]] = None,
                  role: Optional[pulumi.Input[str]] = None,
-                 user_name: Optional[pulumi.Input[str]] = None):
+                 user_name: Optional[pulumi.Input[str]] = None,
+                 wallet_secret_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] credential_type: Credential type.
+        :param pulumi.Input[str] credential_source_name: Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+        :param pulumi.Input[str] password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+        :param pulumi.Input[str] role: database user role.
+        :param pulumi.Input[str] user_name: database user name.
+        :param pulumi.Input[str] wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+        """
         pulumi.set(__self__, "credential_type", credential_type)
         if credential_source_name is not None:
             pulumi.set(__self__, "credential_source_name", credential_source_name)
@@ -579,10 +788,15 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
             pulumi.set(__self__, "role", role)
         if user_name is not None:
             pulumi.set(__self__, "user_name", user_name)
+        if wallet_secret_id is not None:
+            pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> pulumi.Input[str]:
+        """
+        Credential type.
+        """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
@@ -592,6 +806,9 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
     @property
     @pulumi.getter(name="credentialSourceName")
     def credential_source_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+        """
         return pulumi.get(self, "credential_source_name")
 
     @credential_source_name.setter
@@ -601,6 +818,9 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+        """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
@@ -610,6 +830,9 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
     @property
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        database user role.
+        """
         return pulumi.get(self, "role")
 
     @role.setter
@@ -619,11 +842,26 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        database user name.
+        """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
     def user_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "user_name", value)
+
+    @property
+    @pulumi.getter(name="walletSecretId")
+    def wallet_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+        """
+        return pulumi.get(self, "wallet_secret_id")
+
+    @wallet_secret_id.setter
+    def wallet_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "wallet_secret_id", value)
 
 
 @pulumi.input_type

@@ -45,6 +45,7 @@ import (
 //						},
 //					},
 //				},
+//				Shape:     pulumi.Any(_var.Application_shape),
 //				SyslogUrl: pulumi.Any(_var.Application_syslog_url),
 //				TraceConfig: &functions.ApplicationTraceConfigArgs{
 //					DomainId:  pulumi.Any(oci_functions_domain.Test_domain.Id),
@@ -88,6 +89,8 @@ type Application struct {
 	ImagePolicyConfig ApplicationImagePolicyConfigOutput `pulumi:"imagePolicyConfig"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 	NetworkSecurityGroupIds pulumi.StringArrayOutput `pulumi:"networkSecurityGroupIds"`
+	// Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+	Shape pulumi.StringOutput `pulumi:"shape"`
 	// The current state of the application.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
@@ -156,6 +159,8 @@ type applicationState struct {
 	ImagePolicyConfig *ApplicationImagePolicyConfig `pulumi:"imagePolicyConfig"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
+	// Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+	Shape *string `pulumi:"shape"`
 	// The current state of the application.
 	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
@@ -187,6 +192,8 @@ type ApplicationState struct {
 	ImagePolicyConfig ApplicationImagePolicyConfigPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 	NetworkSecurityGroupIds pulumi.StringArrayInput
+	// Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+	Shape pulumi.StringPtrInput
 	// The current state of the application.
 	State pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
@@ -222,6 +229,8 @@ type applicationArgs struct {
 	ImagePolicyConfig *ApplicationImagePolicyConfig `pulumi:"imagePolicyConfig"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
+	// Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+	Shape *string `pulumi:"shape"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
 	SubnetIds []string `pulumi:"subnetIds"`
 	// (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
@@ -248,6 +257,8 @@ type ApplicationArgs struct {
 	ImagePolicyConfig ApplicationImagePolicyConfigPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 	NetworkSecurityGroupIds pulumi.StringArrayInput
+	// Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+	Shape pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
 	SubnetIds pulumi.StringArrayInput
 	// (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
@@ -378,6 +389,11 @@ func (o ApplicationOutput) ImagePolicyConfig() ApplicationImagePolicyConfigOutpu
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 func (o ApplicationOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Application) pulumi.StringArrayOutput { return v.NetworkSecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+func (o ApplicationOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
 }
 
 // The current state of the application.

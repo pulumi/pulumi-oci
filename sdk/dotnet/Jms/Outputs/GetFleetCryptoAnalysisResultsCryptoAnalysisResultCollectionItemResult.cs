@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string Namespace;
         /// <summary>
-        /// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the crypto roadmap version used the the analysis.
+        /// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
         /// </summary>
         public readonly int NonCompliantFindingCount;
         /// <summary>

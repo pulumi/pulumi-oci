@@ -42,6 +42,47 @@ import (
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				IsAutoSyncEnabled: pulumi.Any(_var.Exadata_insight_is_auto_sync_enabled),
+//				MemberVmClusterDetails: opsi.ExadataInsightMemberVmClusterDetailArray{
+//					&opsi.ExadataInsightMemberVmClusterDetailArgs{
+//						CompartmentId:        pulumi.Any(_var.Compartment_id),
+//						DbmPrivateEndpointId: pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
+//						MemberDatabaseDetails: opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray{
+//							&opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs{
+//								CompartmentId: pulumi.Any(_var.Compartment_id),
+//								ConnectionDetails: &opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs{
+//									Hosts: opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArray{
+//										&opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs{
+//											HostIp: pulumi.Any(_var.Exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_host_ip),
+//											Port:   pulumi.Any(_var.Exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port),
+//										},
+//									},
+//									Protocol:    pulumi.Any(_var.Exadata_insight_member_vm_cluster_details_member_database_details_connection_details_protocol),
+//									ServiceName: pulumi.Any(oci_core_service.Test_service.Name),
+//								},
+//								CredentialDetails: &opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs{
+//									CredentialType:       pulumi.Any(_var.Exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_type),
+//									CredentialSourceName: pulumi.Any(_var.Exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_source_name),
+//									PasswordSecretId:     pulumi.Any(oci_vault_secret.Test_secret.Id),
+//									Role:                 pulumi.Any(_var.Exadata_insight_member_vm_cluster_details_member_database_details_credential_details_role),
+//									UserName:             pulumi.Any(oci_identity_user.Test_user.Name),
+//									WalletSecretId:       pulumi.Any(oci_vault_secret.Test_secret.Id),
+//								},
+//								DatabaseId:            pulumi.Any(oci_database_database.Test_database.Id),
+//								DatabaseResourceType:  pulumi.Any(_var.Exadata_insight_member_vm_cluster_details_member_database_details_database_resource_type),
+//								DbmPrivateEndpointId:  pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
+//								DefinedTags:           pulumi.Any(_var.Exadata_insight_member_vm_cluster_details_member_database_details_defined_tags),
+//								DeploymentType:        pulumi.Any(_var.Exadata_insight_member_vm_cluster_details_member_database_details_deployment_type),
+//								EntitySource:          pulumi.Any(_var.Exadata_insight_member_vm_cluster_details_member_database_details_entity_source),
+//								FreeformTags:          pulumi.Any(_var.Exadata_insight_member_vm_cluster_details_member_database_details_freeform_tags),
+//								OpsiPrivateEndpointId: pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
+//								ServiceName:           pulumi.Any(oci_core_service.Test_service.Name),
+//								SystemTags:            pulumi.Any(_var.Exadata_insight_member_vm_cluster_details_member_database_details_system_tags),
+//							},
+//						},
+//						OpsiPrivateEndpointId: pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
+//						VmclusterId:           pulumi.Any(oci_opsi_vmcluster.Test_vmcluster.Id),
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -64,9 +105,9 @@ import (
 type ExadataInsight struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Compartment Identifier of Exadata insight
+	// (Updatable) Compartment Identifier of database
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId pulumi.StringOutput `pulumi:"enterpriseManagerBridgeId"`
@@ -80,7 +121,7 @@ type ExadataInsight struct {
 	EnterpriseManagerEntityType pulumi.StringOutput `pulumi:"enterpriseManagerEntityType"`
 	// Enterprise Manager Unique Identifier
 	EnterpriseManagerIdentifier pulumi.StringOutput `pulumi:"enterpriseManagerIdentifier"`
-	// (Updatable) Source of the Exadata system.
+	// Source of the database entity.
 	EntitySource pulumi.StringOutput `pulumi:"entitySource"`
 	// The user-friendly name for the Exadata system. The name does not have to be unique.
 	ExadataDisplayName       pulumi.StringOutput `pulumi:"exadataDisplayName"`
@@ -93,7 +134,7 @@ type ExadataInsight struct {
 	ExadataShape    pulumi.StringOutput `pulumi:"exadataShape"`
 	// Operations Insights internal representation of the the Exadata system type.
 	ExadataType pulumi.StringOutput `pulumi:"exadataType"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
 	IsAutoSyncEnabled pulumi.BoolOutput `pulumi:"isAutoSyncEnabled"`
@@ -152,9 +193,9 @@ func GetExadataInsight(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ExadataInsight resources.
 type exadataInsightState struct {
-	// (Updatable) Compartment Identifier of Exadata insight
+	// (Updatable) Compartment Identifier of database
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId *string `pulumi:"enterpriseManagerBridgeId"`
@@ -168,7 +209,7 @@ type exadataInsightState struct {
 	EnterpriseManagerEntityType *string `pulumi:"enterpriseManagerEntityType"`
 	// Enterprise Manager Unique Identifier
 	EnterpriseManagerIdentifier *string `pulumi:"enterpriseManagerIdentifier"`
-	// (Updatable) Source of the Exadata system.
+	// Source of the database entity.
 	EntitySource *string `pulumi:"entitySource"`
 	// The user-friendly name for the Exadata system. The name does not have to be unique.
 	ExadataDisplayName       *string `pulumi:"exadataDisplayName"`
@@ -181,7 +222,7 @@ type exadataInsightState struct {
 	ExadataShape    *string `pulumi:"exadataShape"`
 	// Operations Insights internal representation of the the Exadata system type.
 	ExadataType *string `pulumi:"exadataType"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
 	IsAutoSyncEnabled *bool `pulumi:"isAutoSyncEnabled"`
@@ -206,9 +247,9 @@ type exadataInsightState struct {
 }
 
 type ExadataInsightState struct {
-	// (Updatable) Compartment Identifier of Exadata insight
+	// (Updatable) Compartment Identifier of database
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId pulumi.StringPtrInput
@@ -222,7 +263,7 @@ type ExadataInsightState struct {
 	EnterpriseManagerEntityType pulumi.StringPtrInput
 	// Enterprise Manager Unique Identifier
 	EnterpriseManagerIdentifier pulumi.StringPtrInput
-	// (Updatable) Source of the Exadata system.
+	// Source of the database entity.
 	EntitySource pulumi.StringPtrInput
 	// The user-friendly name for the Exadata system. The name does not have to be unique.
 	ExadataDisplayName       pulumi.StringPtrInput
@@ -235,7 +276,7 @@ type ExadataInsightState struct {
 	ExadataShape    pulumi.StringPtrInput
 	// Operations Insights internal representation of the the Exadata system type.
 	ExadataType pulumi.StringPtrInput
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
 	IsAutoSyncEnabled pulumi.BoolPtrInput
@@ -264,9 +305,9 @@ func (ExadataInsightState) ElementType() reflect.Type {
 }
 
 type exadataInsightArgs struct {
-	// (Updatable) Compartment Identifier of Exadata insight
+	// (Updatable) Compartment Identifier of database
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId *string `pulumi:"enterpriseManagerBridgeId"`
@@ -274,10 +315,10 @@ type exadataInsightArgs struct {
 	EnterpriseManagerEntityIdentifier *string `pulumi:"enterpriseManagerEntityIdentifier"`
 	// Enterprise Manager Unique Identifier
 	EnterpriseManagerIdentifier *string `pulumi:"enterpriseManagerIdentifier"`
-	// (Updatable) Source of the Exadata system.
+	// Source of the database entity.
 	EntitySource   string  `pulumi:"entitySource"`
 	ExadataInfraId *string `pulumi:"exadataInfraId"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
 	IsAutoSyncEnabled      *bool                                 `pulumi:"isAutoSyncEnabled"`
@@ -291,9 +332,9 @@ type exadataInsightArgs struct {
 
 // The set of arguments for constructing a ExadataInsight resource.
 type ExadataInsightArgs struct {
-	// (Updatable) Compartment Identifier of Exadata insight
+	// (Updatable) Compartment Identifier of database
 	CompartmentId pulumi.StringInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId pulumi.StringPtrInput
@@ -301,10 +342,10 @@ type ExadataInsightArgs struct {
 	EnterpriseManagerEntityIdentifier pulumi.StringPtrInput
 	// Enterprise Manager Unique Identifier
 	EnterpriseManagerIdentifier pulumi.StringPtrInput
-	// (Updatable) Source of the Exadata system.
+	// Source of the database entity.
 	EntitySource   pulumi.StringInput
 	ExadataInfraId pulumi.StringPtrInput
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
 	IsAutoSyncEnabled      pulumi.BoolPtrInput
@@ -403,12 +444,12 @@ func (o ExadataInsightOutput) ToExadataInsightOutputWithContext(ctx context.Cont
 	return o
 }
 
-// (Updatable) Compartment Identifier of Exadata insight
+// (Updatable) Compartment Identifier of database
 func (o ExadataInsightOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInsight) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o ExadataInsightOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *ExadataInsight) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
@@ -443,7 +484,7 @@ func (o ExadataInsightOutput) EnterpriseManagerIdentifier() pulumi.StringOutput 
 	return o.ApplyT(func(v *ExadataInsight) pulumi.StringOutput { return v.EnterpriseManagerIdentifier }).(pulumi.StringOutput)
 }
 
-// (Updatable) Source of the Exadata system.
+// Source of the database entity.
 func (o ExadataInsightOutput) EntitySource() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInsight) pulumi.StringOutput { return v.EntitySource }).(pulumi.StringOutput)
 }
@@ -480,7 +521,7 @@ func (o ExadataInsightOutput) ExadataType() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInsight) pulumi.StringOutput { return v.ExadataType }).(pulumi.StringOutput)
 }
 
-// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o ExadataInsightOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *ExadataInsight) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }

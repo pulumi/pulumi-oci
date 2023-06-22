@@ -19,14 +19,14 @@ public final class DeployArtifactState extends com.pulumi.resources.ResourceArgs
     public static final DeployArtifactState Empty = new DeployArtifactState();
 
     /**
-     * (Updatable) Mode for artifact parameter substitution.
+     * (Updatable) Mode for artifact parameter substitution. Options: `&#34;NONE&#34;, &#34;SUBSTITUTE_PLACEHOLDERS&#34;` For Helm Deployments only &#34;NONE&#34; is supported.
      * 
      */
     @Import(name="argumentSubstitutionMode")
     private @Nullable Output<String> argumentSubstitutionMode;
 
     /**
-     * @return (Updatable) Mode for artifact parameter substitution.
+     * @return (Updatable) Mode for artifact parameter substitution. Options: `&#34;NONE&#34;, &#34;SUBSTITUTE_PLACEHOLDERS&#34;` For Helm Deployments only &#34;NONE&#34; is supported.
      * 
      */
     public Optional<Output<String>> argumentSubstitutionMode() {
@@ -272,7 +272,7 @@ public final class DeployArtifactState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param argumentSubstitutionMode (Updatable) Mode for artifact parameter substitution.
+         * @param argumentSubstitutionMode (Updatable) Mode for artifact parameter substitution. Options: `&#34;NONE&#34;, &#34;SUBSTITUTE_PLACEHOLDERS&#34;` For Helm Deployments only &#34;NONE&#34; is supported.
          * 
          * @return builder
          * 
@@ -283,7 +283,7 @@ public final class DeployArtifactState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param argumentSubstitutionMode (Updatable) Mode for artifact parameter substitution.
+         * @param argumentSubstitutionMode (Updatable) Mode for artifact parameter substitution. Options: `&#34;NONE&#34;, &#34;SUBSTITUTE_PLACEHOLDERS&#34;` For Helm Deployments only &#34;NONE&#34; is supported.
          * 
          * @return builder
          * 

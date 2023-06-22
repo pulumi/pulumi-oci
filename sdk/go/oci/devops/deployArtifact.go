@@ -79,7 +79,7 @@ import (
 type DeployArtifact struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Mode for artifact parameter substitution.
+	// (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
 	ArgumentSubstitutionMode pulumi.StringOutput `pulumi:"argumentSubstitutionMode"`
 	// The OCID of a compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -153,7 +153,7 @@ func GetDeployArtifact(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DeployArtifact resources.
 type deployArtifactState struct {
-	// (Updatable) Mode for artifact parameter substitution.
+	// (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
 	ArgumentSubstitutionMode *string `pulumi:"argumentSubstitutionMode"`
 	// The OCID of a compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -187,7 +187,7 @@ type deployArtifactState struct {
 }
 
 type DeployArtifactState struct {
-	// (Updatable) Mode for artifact parameter substitution.
+	// (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
 	ArgumentSubstitutionMode pulumi.StringPtrInput
 	// The OCID of a compartment.
 	CompartmentId pulumi.StringPtrInput
@@ -225,7 +225,7 @@ func (DeployArtifactState) ElementType() reflect.Type {
 }
 
 type deployArtifactArgs struct {
-	// (Updatable) Mode for artifact parameter substitution.
+	// (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
 	ArgumentSubstitutionMode string `pulumi:"argumentSubstitutionMode"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -248,7 +248,7 @@ type deployArtifactArgs struct {
 
 // The set of arguments for constructing a DeployArtifact resource.
 type DeployArtifactArgs struct {
-	// (Updatable) Mode for artifact parameter substitution.
+	// (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
 	ArgumentSubstitutionMode pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -356,7 +356,7 @@ func (o DeployArtifactOutput) ToDeployArtifactOutputWithContext(ctx context.Cont
 	return o
 }
 
-// (Updatable) Mode for artifact parameter substitution.
+// (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
 func (o DeployArtifactOutput) ArgumentSubstitutionMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeployArtifact) pulumi.StringOutput { return v.ArgumentSubstitutionMode }).(pulumi.StringOutput)
 }

@@ -78,6 +78,13 @@ class _ExportableConfig(types.ModuleType):
         return __config__.get('privateKeyPath')
 
     @property
+    def realm_specific_service_endpoint_template_enabled(self) -> Optional[bool]:
+        """
+        (Optional) flags to enable realm specific service endpoint.
+        """
+        return __config__.get_bool('realmSpecificServiceEndpointTemplateEnabled')
+
+    @property
     def region(self) -> Optional[str]:
         """
         (Required) The region for API connections (e.g. us-ashburn-1).

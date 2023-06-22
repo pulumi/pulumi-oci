@@ -398,7 +398,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.dataStorageSizeInGb;
     }
     /**
-     * (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. For Autonomous Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. For Autonomous Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.  A full Exadata service is allocated when the Autonomous Database size is set to the upper limit (384 TB).
      * 
      * **Note:** This parameter cannot be used with the `dataStorageSizeInGBs` parameter. This input is ignored for Always Free resources.
      * 
@@ -407,7 +407,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     private Output<Integer> dataStorageSizeInTbs;
 
     /**
-     * @return (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. For Autonomous Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * @return (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. For Autonomous Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.  A full Exadata service is allocated when the Autonomous Database size is set to the upper limit (384 TB).
      * 
      * **Note:** This parameter cannot be used with the `dataStorageSizeInGBs` parameter. This input is ignored for Always Free resources.
      * 
@@ -458,14 +458,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.dataguardRegionType;
     }
     /**
-     * (Updatable) The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+     * (Updatable) Specify the database name; it must consist of letters and numbers only. The maximum length is 30 characters. The same database name cannot be used for multiple Autonomous Databases in the same tenancy in the same region.
      * 
      */
     @Export(name="dbName", type=String.class, parameters={})
     private Output<String> dbName;
 
     /**
-     * @return (Updatable) The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+     * @return (Updatable) Specify the database name; it must consist of letters and numbers only. The maximum length is 30 characters. The same database name cannot be used for multiple Autonomous Databases in the same tenancy in the same region.
      * 
      */
     public Output<String> dbName() {
@@ -1366,6 +1366,8 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * 
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
      * 
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+     * 
      */
     @Export(name="standbyWhitelistedIps", type=List.class, parameters={String.class})
     private Output<List<String>> standbyWhitelistedIps;
@@ -1376,6 +1378,8 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
      * 
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+     * 
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      * 
      */
     public Output<List<String>> standbyWhitelistedIps() {
@@ -1768,6 +1772,8 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * 
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[&#34;&#34;]`.
      * 
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[&#34;&#34;]`.
+     * 
      */
     @Export(name="whitelistedIps", type=List.class, parameters={String.class})
     private Output</* @Nullable */ List<String>> whitelistedIps;
@@ -1778,6 +1784,8 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
      * 
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+     * 
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[&#34;&#34;]`.
      * 
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[&#34;&#34;]`.
      * 

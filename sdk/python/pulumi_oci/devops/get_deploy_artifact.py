@@ -76,7 +76,7 @@ class GetDeployArtifactResult:
     @pulumi.getter(name="argumentSubstitutionMode")
     def argument_substitution_mode(self) -> str:
         """
-        Mode for artifact parameter substitution.
+        Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         """
         return pulumi.get(self, "argument_substitution_mode")
 

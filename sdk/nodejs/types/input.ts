@@ -465,6 +465,318 @@ export namespace AiAnomalyDetection {
     }
 }
 
+export namespace AiDocument {
+    export interface GetModelsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetModelsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetProjectsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetProjectsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ModelMetric {
+        /**
+         * Summary of count of samples used during model training.
+         */
+        datasetSummaries?: pulumi.Input<pulumi.Input<inputs.AiDocument.ModelMetricDatasetSummary>[]>;
+        /**
+         * List of metrics entries per label.
+         */
+        labelMetricsReports?: pulumi.Input<pulumi.Input<inputs.AiDocument.ModelMetricLabelMetricsReport>[]>;
+        /**
+         * The type of the Document model.
+         */
+        modelType?: pulumi.Input<string>;
+        /**
+         * Overall Metrics report for Document Classification Model.
+         */
+        overallMetricsReports?: pulumi.Input<pulumi.Input<inputs.AiDocument.ModelMetricOverallMetricsReport>[]>;
+    }
+
+    export interface ModelMetricDatasetSummary {
+        /**
+         * Number of samples used for testing the model.
+         */
+        testSampleCount?: pulumi.Input<number>;
+        /**
+         * Number of samples used for training the model.
+         */
+        trainingSampleCount?: pulumi.Input<number>;
+        /**
+         * Number of samples used for validating the model.
+         */
+        validationSampleCount?: pulumi.Input<number>;
+    }
+
+    export interface ModelMetricLabelMetricsReport {
+        /**
+         * List of document classification confidence report.
+         */
+        confidenceEntries?: pulumi.Input<pulumi.Input<inputs.AiDocument.ModelMetricLabelMetricsReportConfidenceEntry>[]>;
+        /**
+         * Total test documents in the label.
+         */
+        documentCount?: pulumi.Input<number>;
+        /**
+         * Label name
+         */
+        label?: pulumi.Input<string>;
+        /**
+         * Mean average precision under different thresholds
+         */
+        meanAveragePrecision?: pulumi.Input<number>;
+    }
+
+    export interface ModelMetricLabelMetricsReportConfidenceEntry {
+        /**
+         * accuracy under the threshold
+         */
+        accuracy?: pulumi.Input<number>;
+        /**
+         * f1Score under the threshold
+         */
+        f1score?: pulumi.Input<number>;
+        /**
+         * Precision under the threshold
+         */
+        precision?: pulumi.Input<number>;
+        /**
+         * Recall under the threshold
+         */
+        recall?: pulumi.Input<number>;
+        /**
+         * Threshold used to calculate precision and recall.
+         */
+        threshold?: pulumi.Input<number>;
+    }
+
+    export interface ModelMetricOverallMetricsReport {
+        /**
+         * List of document classification confidence report.
+         */
+        confidenceEntries?: pulumi.Input<pulumi.Input<inputs.AiDocument.ModelMetricOverallMetricsReportConfidenceEntry>[]>;
+        /**
+         * Total test documents in the label.
+         */
+        documentCount?: pulumi.Input<number>;
+        /**
+         * Mean average precision under different thresholds
+         */
+        meanAveragePrecision?: pulumi.Input<number>;
+    }
+
+    export interface ModelMetricOverallMetricsReportConfidenceEntry {
+        /**
+         * accuracy under the threshold
+         */
+        accuracy?: pulumi.Input<number>;
+        /**
+         * f1Score under the threshold
+         */
+        f1score?: pulumi.Input<number>;
+        /**
+         * Precision under the threshold
+         */
+        precision?: pulumi.Input<number>;
+        /**
+         * Recall under the threshold
+         */
+        recall?: pulumi.Input<number>;
+        /**
+         * Threshold used to calculate precision and recall.
+         */
+        threshold?: pulumi.Input<number>;
+    }
+
+    export interface ModelTestingDataset {
+        /**
+         * The name of the Object Storage bucket that contains the input data file.
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * OCID of the Data Labeling dataset.
+         */
+        datasetId?: pulumi.Input<string>;
+        /**
+         * The dataset type, based on where it is stored.
+         */
+        datasetType: pulumi.Input<string>;
+        /**
+         * The namespace name of the Object Storage bucket that contains the input data file.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * The object name of the input data file.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        object?: pulumi.Input<string>;
+    }
+
+    export interface ModelTrainingDataset {
+        /**
+         * The name of the Object Storage bucket that contains the input data file.
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * OCID of the Data Labeling dataset.
+         */
+        datasetId?: pulumi.Input<string>;
+        /**
+         * The dataset type, based on where it is stored.
+         */
+        datasetType: pulumi.Input<string>;
+        /**
+         * The namespace name of the Object Storage bucket that contains the input data file.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * The object name of the input data file.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        object?: pulumi.Input<string>;
+    }
+
+    export interface ModelValidationDataset {
+        /**
+         * The name of the Object Storage bucket that contains the input data file.
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * OCID of the Data Labeling dataset.
+         */
+        datasetId?: pulumi.Input<string>;
+        /**
+         * The dataset type, based on where it is stored.
+         */
+        datasetType: pulumi.Input<string>;
+        /**
+         * The namespace name of the Object Storage bucket that contains the input data file.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * The object name of the input data file.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        object?: pulumi.Input<string>;
+    }
+
+    export interface ProcessorJobInputLocation {
+        /**
+         * Raw document data with Base64 encoding.
+         */
+        data?: pulumi.Input<string>;
+        /**
+         * The list of ObjectLocations.
+         */
+        objectLocations?: pulumi.Input<pulumi.Input<inputs.AiDocument.ProcessorJobInputLocationObjectLocation>[]>;
+        /**
+         * The type of input location. The allowed values are:
+         */
+        sourceType: pulumi.Input<string>;
+    }
+
+    export interface ProcessorJobInputLocationObjectLocation {
+        /**
+         * The Object Storage bucket name.
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * The Object Storage namespace.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * The Object Storage object name.
+         */
+        object?: pulumi.Input<string>;
+    }
+
+    export interface ProcessorJobOutputLocation {
+        /**
+         * The Object Storage bucket name.
+         */
+        bucket: pulumi.Input<string>;
+        /**
+         * The Object Storage namespace.
+         */
+        namespace: pulumi.Input<string>;
+        /**
+         * The Object Storage folder name.
+         */
+        prefix: pulumi.Input<string>;
+    }
+
+    export interface ProcessorJobProcessorConfig {
+        /**
+         * The document type.
+         */
+        documentType?: pulumi.Input<string>;
+        /**
+         * The types of document analysis requested.
+         */
+        features: pulumi.Input<pulumi.Input<inputs.AiDocument.ProcessorJobProcessorConfigFeature>[]>;
+        /**
+         * Whether or not to generate a ZIP file containing the results.
+         */
+        isZipOutputEnabled?: pulumi.Input<boolean>;
+        /**
+         * The document language, abbreviated according to the BCP 47 Language-Tag syntax.
+         */
+        language?: pulumi.Input<string>;
+        /**
+         * The type of the processor.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        processorType: pulumi.Input<string>;
+    }
+
+    export interface ProcessorJobProcessorConfigFeature {
+        /**
+         * The type of document analysis requested. The allowed values are:
+         */
+        featureType: pulumi.Input<string>;
+        /**
+         * Whether or not to generate a searchable PDF file.
+         */
+        generateSearchablePdf?: pulumi.Input<boolean>;
+        /**
+         * The maximum number of results to return.
+         */
+        maxResults?: pulumi.Input<number>;
+        /**
+         * The custom model ID.
+         */
+        modelId?: pulumi.Input<string>;
+    }
+}
+
 export namespace AiVision {
     export interface GetModelsFilter {
         name: string;
@@ -13788,6 +14100,18 @@ export namespace DataFlow {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetPoolsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPoolsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetPrivateEndpointsFilter {
         name: string;
         regex?: boolean;
@@ -13866,6 +14190,89 @@ export namespace DataFlow {
          * The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
          */
         value: pulumi.Input<string>;
+    }
+
+    export interface PoolConfiguration {
+        /**
+         * (Updatable) Maximum number of compute instances in the pool for a given compute shape.
+         */
+        max?: pulumi.Input<number>;
+        /**
+         * (Updatable) Minimum number of compute instances in the pool for a given compute shape.
+         */
+        min?: pulumi.Input<number>;
+        /**
+         * (Updatable) The compute shape of the resources you would like to provision.
+         */
+        shape?: pulumi.Input<string>;
+        /**
+         * (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+         */
+        shapeConfig?: pulumi.Input<inputs.DataFlow.PoolConfigurationShapeConfig>;
+    }
+
+    export interface PoolConfigurationShapeConfig {
+        /**
+         * (Updatable) The amount of memory used for the driver or executors.
+         */
+        memoryInGbs?: pulumi.Input<number>;
+        /**
+         * (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+         */
+        ocpus?: pulumi.Input<number>;
+    }
+
+    export interface PoolPoolMetric {
+        /**
+         * The number of runs that are currently running that are using this pool.
+         */
+        activeRunsCount?: pulumi.Input<string>;
+        /**
+         * A count of the nodes that are currently being used for each shape in this pool.
+         */
+        activelyUsedNodeCounts?: pulumi.Input<pulumi.Input<inputs.DataFlow.PoolPoolMetricActivelyUsedNodeCount>[]>;
+        /**
+         * The last time the mertics were updated for this.
+         */
+        timeLastMetricsUpdated?: pulumi.Input<string>;
+        /**
+         * The last time this pool was started.
+         */
+        timeLastStarted?: pulumi.Input<string>;
+        /**
+         * The last time this pool was stopped.
+         */
+        timeLastStopped?: pulumi.Input<string>;
+        /**
+         * The last time a run used this pool.
+         */
+        timeLastUsed?: pulumi.Input<string>;
+    }
+
+    export interface PoolPoolMetricActivelyUsedNodeCount {
+        /**
+         * The compute shape of the nodes that the count is for.
+         */
+        logicalShape?: pulumi.Input<string>;
+        /**
+         * The node count of this compute shape.
+         */
+        poolCount?: pulumi.Input<number>;
+    }
+
+    export interface PoolSchedule {
+        /**
+         * (Updatable) Day of the week SUN-SAT
+         */
+        dayOfWeek?: pulumi.Input<string>;
+        /**
+         * (Updatable) Hour of the day to start or stop pool.
+         */
+        startTime?: pulumi.Input<number>;
+        /**
+         * (Updatable) Hour of the day to stop the pool.
+         */
+        stopTime?: pulumi.Input<number>;
     }
 
     export interface PrivateEndpointScanDetail {
@@ -14279,11 +14686,11 @@ export namespace DataLabellingService {
 
     export interface DatasetDatasetSourceDetails {
         /**
-         * The object storage bucket that contains the dataset data source.
+         * Bucket name
          */
         bucket: pulumi.Input<string>;
         /**
-         * The namespace of the bucket that contains the dataset data source.
+         * Bucket namespace name
          */
         namespace: pulumi.Input<string>;
         /**
@@ -14291,7 +14698,48 @@ export namespace DataLabellingService {
          */
         prefix?: pulumi.Input<string>;
         /**
-         * The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+         * The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+         */
+        sourceType: pulumi.Input<string>;
+    }
+
+    export interface DatasetInitialImportDatasetConfiguration {
+        /**
+         * File format details used for importing dataset
+         */
+        importFormat: pulumi.Input<inputs.DataLabellingService.DatasetInitialImportDatasetConfigurationImportFormat>;
+        /**
+         * Object storage path for the metadata file
+         */
+        importMetadataPath: pulumi.Input<inputs.DataLabellingService.DatasetInitialImportDatasetConfigurationImportMetadataPath>;
+    }
+
+    export interface DatasetInitialImportDatasetConfigurationImportFormat {
+        /**
+         * An unique name for a label within its dataset.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * Version of import format
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DatasetInitialImportDatasetConfigurationImportMetadataPath {
+        /**
+         * Bucket name
+         */
+        bucket: pulumi.Input<string>;
+        /**
+         * Bucket namespace name
+         */
+        namespace: pulumi.Input<string>;
+        /**
+         * Path for the metadata file.
+         */
+        path: pulumi.Input<string>;
+        /**
+         * The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
          */
         sourceType: pulumi.Input<string>;
     }
@@ -25343,7 +25791,7 @@ export namespace Functions {
 
     export interface FunctionProvisionedConcurrencyConfig {
         /**
-         * (Updatable)
+         * (Updatable) Configuration specifying a constant amount of provisioned concurrency.
          */
         count?: pulumi.Input<number>;
         /**
@@ -40306,6 +40754,18 @@ export namespace Jms {
         logId: pulumi.Input<string>;
     }
 
+    export interface GetAnnouncementsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAnnouncementsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetFleetBlocklistsFilter {
         name: string;
         regex?: boolean;
@@ -40325,6 +40785,42 @@ export namespace Jms {
     }
 
     export interface GetFleetCryptoAnalysisResultsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFleetDiagnosesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFleetDiagnosesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFleetJavaMigrationAnalysisResultsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFleetJavaMigrationAnalysisResultsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFleetPerformanceTuningAnalysisResultsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFleetPerformanceTuningAnalysisResultsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -46132,6 +46628,10 @@ export namespace Opsi {
          * database user name.
          */
         userName?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+         */
+        walletSecretId?: pulumi.Input<string>;
     }
 
     export interface DatabaseInsightConnectionDetails {
@@ -46144,7 +46644,7 @@ export namespace Opsi {
          */
         hosts?: pulumi.Input<pulumi.Input<inputs.Opsi.DatabaseInsightConnectionDetailsHost>[]>;
         /**
-         * Listener port number used for connection requests.
+         * Listener port number used for connection requests for rivate endpoint accessed db resource.
          */
         port?: pulumi.Input<number>;
         /**
@@ -46163,7 +46663,7 @@ export namespace Opsi {
          */
         hostIp?: pulumi.Input<string>;
         /**
-         * Listener port number used for connection requests.
+         * Listener port number used for connection requests for rivate endpoint accessed db resource.
          */
         port?: pulumi.Input<number>;
     }
@@ -46189,41 +46689,83 @@ export namespace Opsi {
          * database user name.
          */
         userName?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+         */
+        walletSecretId?: pulumi.Input<string>;
     }
 
     export interface ExadataInsightMemberVmClusterDetail {
         /**
-         * (Updatable) Compartment Identifier of Exadata insight
+         * (Updatable) Compartment Identifier of database
          */
         compartmentId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+         */
+        dbmPrivateEndpointId?: pulumi.Input<string>;
+        /**
+         * The databases that belong to the VM Cluster
+         */
         memberDatabaseDetails?: pulumi.Input<pulumi.Input<inputs.Opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetail>[]>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+         */
         opsiPrivateEndpointId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
+         */
         vmclusterId?: pulumi.Input<string>;
     }
 
     export interface ExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
         /**
-         * (Updatable) Compartment Identifier of Exadata insight
+         * (Updatable) Compartment Identifier of database
          */
         compartmentId?: pulumi.Input<string>;
+        /**
+         * Connection details of the private endpoints.
+         */
+        connectionDetails?: pulumi.Input<inputs.Opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails>;
+        /**
+         * User credential details to connect to the database. This is supplied via the External Database Service.
+         */
         credentialDetails?: pulumi.Input<inputs.Opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+         */
         databaseId?: pulumi.Input<string>;
+        /**
+         * Oracle Cloud Infrastructure database resource type
+         */
         databaseResourceType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+         */
         dbmPrivateEndpointId?: pulumi.Input<string>;
         /**
-         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
         definedTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * Database Deployment Type
+         */
         deploymentType?: pulumi.Input<string>;
         /**
-         * (Updatable) Source of the Exadata system.
+         * Source of the database entity.
          */
         entitySource?: pulumi.Input<string>;
         /**
-         * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
          */
         freeformTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+         */
         opsiPrivateEndpointId?: pulumi.Input<string>;
+        /**
+         * Database service name used for connection requests.
+         */
         serviceName?: pulumi.Input<string>;
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -46231,12 +46773,57 @@ export namespace Opsi {
         systemTags?: pulumi.Input<{[key: string]: any}>;
     }
 
+    export interface ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails {
+        /**
+         * List of hosts and port for private endpoint accessed database resource.
+         */
+        hosts?: pulumi.Input<pulumi.Input<inputs.Opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost>[]>;
+        /**
+         * Protocol used for connection requests for private endpoint accssed database resource.
+         */
+        protocol?: pulumi.Input<string>;
+        /**
+         * Database service name used for connection requests.
+         */
+        serviceName?: pulumi.Input<string>;
+    }
+
+    export interface ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost {
+        /**
+         * Host IP used for connection requests for Cloud DB resource.
+         */
+        hostIp?: pulumi.Input<string>;
+        /**
+         * Listener port number used for connection requests for rivate endpoint accessed db resource.
+         */
+        port?: pulumi.Input<number>;
+    }
+
     export interface ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails {
+        /**
+         * Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+         */
         credentialSourceName?: pulumi.Input<string>;
+        /**
+         * Credential type.
+         */
         credentialType: pulumi.Input<string>;
+        /**
+         * The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+         */
         passwordSecretId?: pulumi.Input<string>;
+        /**
+         * database user role.
+         */
         role?: pulumi.Input<string>;
+        /**
+         * database user name.
+         */
         userName?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+         */
+        walletSecretId?: pulumi.Input<string>;
     }
 
     export interface GetAwrHubAwrSnapshotsFilter {
@@ -48985,6 +49572,42 @@ export namespace Streaming {
 }
 
 export namespace UsageProxy {
+    export interface GetResourceQuotasFilter {
+        /**
+         * The resource name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetResourceQuotasFilterArgs {
+        /**
+         * The resource name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetResourcesFilter {
+        /**
+         * Name of the resource.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetResourcesFilterArgs {
+        /**
+         * Name of the resource.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetSubscriptionProductsFilter {
         name: string;
         regex?: boolean;
@@ -49028,6 +49651,18 @@ export namespace UsageProxy {
     }
 
     export interface GetSubscriptionRewardsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetUsagelimitsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetUsagelimitsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;

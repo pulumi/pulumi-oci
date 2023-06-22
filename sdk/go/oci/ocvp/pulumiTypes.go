@@ -455,9 +455,11 @@ func (o SddcVsphereUpgradeObjectArrayOutput) Index(i pulumi.IntInput) SddcVspher
 type GetExsiHostsEsxiHostCollection struct {
 	// Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
 	BillingContractEndDate string `pulumi:"billingContractEndDate"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+	BillingDonorHostId string `pulumi:"billingDonorHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId string `pulumi:"capacityReservationId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The availability domain of the ESXi host.
 	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
@@ -469,7 +471,7 @@ type GetExsiHostsEsxiHostCollection struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
 	FailedEsxiHostId string `pulumi:"failedEsxiHostId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -481,6 +483,10 @@ type GetExsiHostsEsxiHostCollection struct {
 	HostShapeName string `pulumi:"hostShapeName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
 	Id string `pulumi:"id"`
+	// Indicates whether this host is in the progress of billing continuation.
+	IsBillingContinuationInProgress bool `pulumi:"isBillingContinuationInProgress"`
+	// Indicates whether this host is in the progress of swapping billing.
+	IsBillingSwappingInProgress bool `pulumi:"isBillingSwappingInProgress"`
 	// The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	NextSku string `pulumi:"nextSku"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
@@ -491,6 +497,8 @@ type GetExsiHostsEsxiHostCollection struct {
 	SddcId string `pulumi:"sddcId"`
 	// The lifecycle state of the resource.
 	State string `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+	SwapBillingHostId string `pulumi:"swapBillingHostId"`
 	// The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -515,9 +523,11 @@ type GetExsiHostsEsxiHostCollectionInput interface {
 type GetExsiHostsEsxiHostCollectionArgs struct {
 	// Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
 	BillingContractEndDate pulumi.StringInput `pulumi:"billingContractEndDate"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+	BillingDonorHostId pulumi.StringInput `pulumi:"billingDonorHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The availability domain of the ESXi host.
 	ComputeAvailabilityDomain pulumi.StringInput `pulumi:"computeAvailabilityDomain"`
@@ -529,7 +539,7 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
 	FailedEsxiHostId pulumi.StringInput `pulumi:"failedEsxiHostId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
@@ -541,6 +551,10 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	HostShapeName pulumi.StringInput `pulumi:"hostShapeName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates whether this host is in the progress of billing continuation.
+	IsBillingContinuationInProgress pulumi.BoolInput `pulumi:"isBillingContinuationInProgress"`
+	// Indicates whether this host is in the progress of swapping billing.
+	IsBillingSwappingInProgress pulumi.BoolInput `pulumi:"isBillingSwappingInProgress"`
 	// The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	NextSku pulumi.StringInput `pulumi:"nextSku"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
@@ -551,6 +565,8 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	SddcId pulumi.StringInput `pulumi:"sddcId"`
 	// The lifecycle state of the resource.
 	State pulumi.StringInput `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+	SwapBillingHostId pulumi.StringInput `pulumi:"swapBillingHostId"`
 	// The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -617,12 +633,17 @@ func (o GetExsiHostsEsxiHostCollectionOutput) BillingContractEndDate() pulumi.St
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.BillingContractEndDate }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+func (o GetExsiHostsEsxiHostCollectionOutput) BillingDonorHostId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.BillingDonorHostId }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 func (o GetExsiHostsEsxiHostCollectionOutput) CapacityReservationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.CapacityReservationId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
 func (o GetExsiHostsEsxiHostCollectionOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -652,7 +673,7 @@ func (o GetExsiHostsEsxiHostCollectionOutput) DisplayName() pulumi.StringOutput 
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
 func (o GetExsiHostsEsxiHostCollectionOutput) FailedEsxiHostId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.FailedEsxiHostId }).(pulumi.StringOutput)
 }
@@ -682,6 +703,16 @@ func (o GetExsiHostsEsxiHostCollectionOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Indicates whether this host is in the progress of billing continuation.
+func (o GetExsiHostsEsxiHostCollectionOutput) IsBillingContinuationInProgress() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) bool { return v.IsBillingContinuationInProgress }).(pulumi.BoolOutput)
+}
+
+// Indicates whether this host is in the progress of swapping billing.
+func (o GetExsiHostsEsxiHostCollectionOutput) IsBillingSwappingInProgress() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) bool { return v.IsBillingSwappingInProgress }).(pulumi.BoolOutput)
+}
+
 // The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 func (o GetExsiHostsEsxiHostCollectionOutput) NextSku() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.NextSku }).(pulumi.StringOutput)
@@ -705,6 +736,11 @@ func (o GetExsiHostsEsxiHostCollectionOutput) SddcId() pulumi.StringOutput {
 // The lifecycle state of the resource.
 func (o GetExsiHostsEsxiHostCollectionOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+func (o GetExsiHostsEsxiHostCollectionOutput) SwapBillingHostId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.SwapBillingHostId }).(pulumi.StringOutput)
 }
 
 // The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

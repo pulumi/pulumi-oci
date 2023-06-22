@@ -17,27 +17,27 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetsFleetCollectionItem {
     /**
-     * @return The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * @return The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     private Integer approximateApplicationCount;
     /**
-     * @return The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * @return The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     private Integer approximateInstallationCount;
     /**
-     * @return The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * @return The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     private Integer approximateJavaServerCount;
     /**
-     * @return The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * @return The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     private Integer approximateJreCount;
     /**
-     * @return The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * @return The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     private Integer approximateManagedInstanceCount;
@@ -62,7 +62,7 @@ public final class GetFleetsFleetCollectionItem {
      */
     private String displayName;
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      * 
      */
     private Map<String,Object> freeformTags;
@@ -77,7 +77,7 @@ public final class GetFleetsFleetCollectionItem {
      */
     private List<GetFleetsFleetCollectionItemInventoryLog> inventoryLogs;
     /**
-     * @return Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
+     * @return Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
      * 
      */
     private Boolean isAdvancedFeaturesEnabled;
@@ -104,35 +104,35 @@ public final class GetFleetsFleetCollectionItem {
 
     private GetFleetsFleetCollectionItem() {}
     /**
-     * @return The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * @return The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     public Integer approximateApplicationCount() {
         return this.approximateApplicationCount;
     }
     /**
-     * @return The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * @return The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     public Integer approximateInstallationCount() {
         return this.approximateInstallationCount;
     }
     /**
-     * @return The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * @return The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     public Integer approximateJavaServerCount() {
         return this.approximateJavaServerCount;
     }
     /**
-     * @return The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * @return The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     public Integer approximateJreCount() {
         return this.approximateJreCount;
     }
     /**
-     * @return The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * @return The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     public Integer approximateManagedInstanceCount() {
@@ -167,7 +167,7 @@ public final class GetFleetsFleetCollectionItem {
         return this.displayName;
     }
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      * 
      */
     public Map<String,Object> freeformTags() {
@@ -188,7 +188,7 @@ public final class GetFleetsFleetCollectionItem {
         return this.inventoryLogs;
     }
     /**
-     * @return Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
+     * @return Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
      * 
      */
     public Boolean isAdvancedFeaturesEnabled() {

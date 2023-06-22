@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataLabellingService.inputs.DatasetDatasetFormatDetailsArgs;
 import com.pulumi.oci.DataLabellingService.inputs.DatasetDatasetSourceDetailsArgs;
+import com.pulumi.oci.DataLabellingService.inputs.DatasetInitialImportDatasetConfigurationArgs;
 import com.pulumi.oci.DataLabellingService.inputs.DatasetInitialRecordGenerationConfigurationArgs;
 import com.pulumi.oci.DataLabellingService.inputs.DatasetLabelSetArgs;
 import java.lang.Object;
@@ -20,6 +21,21 @@ import javax.annotation.Nullable;
 public final class DatasetState extends com.pulumi.resources.ResourceArgs {
 
     public static final DatasetState Empty = new DatasetState();
+
+    /**
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    @Import(name="additionalProperties")
+    private @Nullable Output<Map<String,Object>> additionalProperties;
+
+    /**
+     * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> additionalProperties() {
+        return Optional.ofNullable(this.additionalProperties);
+    }
 
     /**
      * The annotation format name required for labeling records.
@@ -142,6 +158,21 @@ public final class DatasetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+     * 
+     */
+    @Import(name="initialImportDatasetConfiguration")
+    private @Nullable Output<DatasetInitialImportDatasetConfigurationArgs> initialImportDatasetConfiguration;
+
+    /**
+     * @return Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+     * 
+     */
+    public Optional<Output<DatasetInitialImportDatasetConfigurationArgs>> initialImportDatasetConfiguration() {
+        return Optional.ofNullable(this.initialImportDatasetConfiguration);
+    }
+
+    /**
      * The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
@@ -208,6 +239,21 @@ public final class DatasetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+     * 
+     */
+    @Import(name="lifecycleSubstate")
+    private @Nullable Output<String> lifecycleSubstate;
+
+    /**
+     * @return The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+     * 
+     */
+    public Optional<Output<String>> lifecycleSubstate() {
+        return Optional.ofNullable(this.lifecycleSubstate);
+    }
+
+    /**
      * The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
      * 
      */
@@ -255,6 +301,7 @@ public final class DatasetState extends com.pulumi.resources.ResourceArgs {
     private DatasetState() {}
 
     private DatasetState(DatasetState $) {
+        this.additionalProperties = $.additionalProperties;
         this.annotationFormat = $.annotationFormat;
         this.compartmentId = $.compartmentId;
         this.datasetFormatDetails = $.datasetFormatDetails;
@@ -263,10 +310,12 @@ public final class DatasetState extends com.pulumi.resources.ResourceArgs {
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.initialImportDatasetConfiguration = $.initialImportDatasetConfiguration;
         this.initialRecordGenerationConfiguration = $.initialRecordGenerationConfiguration;
         this.labelSet = $.labelSet;
         this.labelingInstructions = $.labelingInstructions;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.lifecycleSubstate = $.lifecycleSubstate;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
@@ -288,6 +337,27 @@ public final class DatasetState extends com.pulumi.resources.ResourceArgs {
 
         public Builder(DatasetState defaults) {
             $ = new DatasetState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param additionalProperties A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalProperties(@Nullable Output<Map<String,Object>> additionalProperties) {
+            $.additionalProperties = additionalProperties;
+            return this;
+        }
+
+        /**
+         * @param additionalProperties A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalProperties(Map<String,Object> additionalProperties) {
+            return additionalProperties(Output.of(additionalProperties));
         }
 
         /**
@@ -459,6 +529,27 @@ public final class DatasetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param initialImportDatasetConfiguration Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialImportDatasetConfiguration(@Nullable Output<DatasetInitialImportDatasetConfigurationArgs> initialImportDatasetConfiguration) {
+            $.initialImportDatasetConfiguration = initialImportDatasetConfiguration;
+            return this;
+        }
+
+        /**
+         * @param initialImportDatasetConfiguration Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialImportDatasetConfiguration(DatasetInitialImportDatasetConfigurationArgs initialImportDatasetConfiguration) {
+            return initialImportDatasetConfiguration(Output.of(initialImportDatasetConfiguration));
+        }
+
+        /**
          * @param initialRecordGenerationConfiguration The initial generate records configuration. It generates records from the dataset&#39;s source.
          * 
          * @return builder
@@ -546,6 +637,27 @@ public final class DatasetState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param lifecycleSubstate The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleSubstate(@Nullable Output<String> lifecycleSubstate) {
+            $.lifecycleSubstate = lifecycleSubstate;
+            return this;
+        }
+
+        /**
+         * @param lifecycleSubstate The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleSubstate(String lifecycleSubstate) {
+            return lifecycleSubstate(Output.of(lifecycleSubstate));
         }
 
         /**

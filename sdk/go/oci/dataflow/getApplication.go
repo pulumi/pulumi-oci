@@ -109,15 +109,17 @@ type LookupApplicationResult struct {
 	OwnerUserName string `pulumi:"ownerUserName"`
 	// An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
 	Parameters []GetApplicationParameter `pulumi:"parameters"`
+	// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+	PoolId string `pulumi:"poolId"`
 	// The OCID of a private endpoint.
 	PrivateEndpointId string `pulumi:"privateEndpointId"`
 	// The Spark version utilized to run the application.
 	SparkVersion string `pulumi:"sparkVersion"`
 	// The current state of this application.
 	State string `pulumi:"state"`
-	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The Spark application processing type.
 	Type string `pulumi:"type"`
@@ -297,6 +299,11 @@ func (o LookupApplicationResultOutput) Parameters() GetApplicationParameterArray
 	return o.ApplyT(func(v LookupApplicationResult) []GetApplicationParameter { return v.Parameters }).(GetApplicationParameterArrayOutput)
 }
 
+// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+func (o LookupApplicationResultOutput) PoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupApplicationResult) string { return v.PoolId }).(pulumi.StringOutput)
+}
+
 // The OCID of a private endpoint.
 func (o LookupApplicationResultOutput) PrivateEndpointId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApplicationResult) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
@@ -312,12 +319,12 @@ func (o LookupApplicationResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApplicationResult) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 func (o LookupApplicationResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApplicationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 func (o LookupApplicationResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApplicationResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }

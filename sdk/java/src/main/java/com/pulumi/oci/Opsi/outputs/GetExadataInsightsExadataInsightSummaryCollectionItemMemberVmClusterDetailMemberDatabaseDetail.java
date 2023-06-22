@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Opsi.outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail;
 import com.pulumi.oci.Opsi.outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail;
 import java.lang.Object;
 import java.lang.String;
@@ -18,6 +19,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
      * 
      */
     private String compartmentId;
+    private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail> connectionDetails;
     private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail> credentialDetails;
     private String databaseId;
     private String databaseResourceType;
@@ -53,6 +55,9 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    public List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail> connectionDetails() {
+        return this.connectionDetails;
     }
     public List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail> credentialDetails() {
         return this.credentialDetails;
@@ -114,6 +119,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail> connectionDetails;
         private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail> credentialDetails;
         private String databaseId;
         private String databaseResourceType;
@@ -129,6 +135,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
         public Builder(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.connectionDetails = defaults.connectionDetails;
     	      this.credentialDetails = defaults.credentialDetails;
     	      this.databaseId = defaults.databaseId;
     	      this.databaseResourceType = defaults.databaseResourceType;
@@ -146,6 +153,14 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
+        }
+        @CustomType.Setter
+        public Builder connectionDetails(List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail> connectionDetails) {
+            this.connectionDetails = Objects.requireNonNull(connectionDetails);
+            return this;
+        }
+        public Builder connectionDetails(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail... connectionDetails) {
+            return connectionDetails(List.of(connectionDetails));
         }
         @CustomType.Setter
         public Builder credentialDetails(List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail> credentialDetails) {
@@ -208,6 +223,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
         public GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail build() {
             final var o = new GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail();
             o.compartmentId = compartmentId;
+            o.connectionDetails = connectionDetails;
             o.credentialDetails = credentialDetails;
             o.databaseId = databaseId;
             o.databaseResourceType = databaseResourceType;

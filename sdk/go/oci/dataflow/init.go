@@ -25,6 +25,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Application{}
 	case "oci:DataFlow/invokeRun:InvokeRun":
 		r = &InvokeRun{}
+	case "oci:DataFlow/pool:Pool":
+		r = &Pool{}
 	case "oci:DataFlow/privateEndpoint:PrivateEndpoint":
 		r = &PrivateEndpoint{}
 	case "oci:DataFlow/runStatement:RunStatement":
@@ -50,6 +52,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataFlow/invokeRun",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataFlow/pool",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

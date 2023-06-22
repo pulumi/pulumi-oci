@@ -102,6 +102,17 @@ Object.defineProperty(exports, "privateKeyPath", {
 });
 
 /**
+ * (Optional) flags to enable realm specific service endpoint.
+ */
+export declare const realmSpecificServiceEndpointTemplateEnabled: boolean | undefined;
+Object.defineProperty(exports, "realmSpecificServiceEndpointTemplateEnabled", {
+    get() {
+        return __config.getObject<boolean>("realmSpecificServiceEndpointTemplateEnabled");
+    },
+    enumerable: true,
+});
+
+/**
  * (Required) The region for API connections (e.g. us-ashburn-1).
  */
 export declare const region: string | undefined;

@@ -22,7 +22,10 @@ class GetDatasetResult:
     """
     A collection of values returned by getDataset.
     """
-    def __init__(__self__, annotation_format=None, compartment_id=None, dataset_format_details=None, dataset_id=None, dataset_source_details=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, initial_record_generation_configurations=None, label_sets=None, labeling_instructions=None, lifecycle_details=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, additional_properties=None, annotation_format=None, compartment_id=None, dataset_format_details=None, dataset_id=None, dataset_source_details=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, initial_import_dataset_configurations=None, initial_record_generation_configurations=None, label_sets=None, labeling_instructions=None, lifecycle_details=None, lifecycle_substate=None, state=None, time_created=None, time_updated=None):
+        if additional_properties and not isinstance(additional_properties, dict):
+            raise TypeError("Expected argument 'additional_properties' to be a dict")
+        pulumi.set(__self__, "additional_properties", additional_properties)
         if annotation_format and not isinstance(annotation_format, str):
             raise TypeError("Expected argument 'annotation_format' to be a str")
         pulumi.set(__self__, "annotation_format", annotation_format)
@@ -53,6 +56,9 @@ class GetDatasetResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if initial_import_dataset_configurations and not isinstance(initial_import_dataset_configurations, list):
+            raise TypeError("Expected argument 'initial_import_dataset_configurations' to be a list")
+        pulumi.set(__self__, "initial_import_dataset_configurations", initial_import_dataset_configurations)
         if initial_record_generation_configurations and not isinstance(initial_record_generation_configurations, list):
             raise TypeError("Expected argument 'initial_record_generation_configurations' to be a list")
         pulumi.set(__self__, "initial_record_generation_configurations", initial_record_generation_configurations)
@@ -65,6 +71,9 @@ class GetDatasetResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if lifecycle_substate and not isinstance(lifecycle_substate, str):
+            raise TypeError("Expected argument 'lifecycle_substate' to be a str")
+        pulumi.set(__self__, "lifecycle_substate", lifecycle_substate)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -74,6 +83,14 @@ class GetDatasetResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="additionalProperties")
+    def additional_properties(self) -> Mapping[str, Any]:
+        """
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_properties")
 
     @property
     @pulumi.getter(name="annotationFormat")
@@ -153,6 +170,14 @@ class GetDatasetResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="initialImportDatasetConfigurations")
+    def initial_import_dataset_configurations(self) -> Sequence['outputs.GetDatasetInitialImportDatasetConfigurationResult']:
+        """
+        Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+        """
+        return pulumi.get(self, "initial_import_dataset_configurations")
+
+    @property
     @pulumi.getter(name="initialRecordGenerationConfigurations")
     def initial_record_generation_configurations(self) -> Sequence['outputs.GetDatasetInitialRecordGenerationConfigurationResult']:
         """
@@ -185,6 +210,14 @@ class GetDatasetResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="lifecycleSubstate")
+    def lifecycle_substate(self) -> str:
+        """
+        The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+        """
+        return pulumi.get(self, "lifecycle_substate")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -215,6 +248,7 @@ class AwaitableGetDatasetResult(GetDatasetResult):
         if False:
             yield self
         return GetDatasetResult(
+            additional_properties=self.additional_properties,
             annotation_format=self.annotation_format,
             compartment_id=self.compartment_id,
             dataset_format_details=self.dataset_format_details,
@@ -225,10 +259,12 @@ class AwaitableGetDatasetResult(GetDatasetResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            initial_import_dataset_configurations=self.initial_import_dataset_configurations,
             initial_record_generation_configurations=self.initial_record_generation_configurations,
             label_sets=self.label_sets,
             labeling_instructions=self.labeling_instructions,
             lifecycle_details=self.lifecycle_details,
+            lifecycle_substate=self.lifecycle_substate,
             state=self.state,
             time_created=self.time_created,
             time_updated=self.time_updated)
@@ -259,6 +295,7 @@ def get_dataset(dataset_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataLabellingService/getDataset:getDataset', __args__, opts=opts, typ=GetDatasetResult).value
 
     return AwaitableGetDatasetResult(
+        additional_properties=__ret__.additional_properties,
         annotation_format=__ret__.annotation_format,
         compartment_id=__ret__.compartment_id,
         dataset_format_details=__ret__.dataset_format_details,
@@ -269,10 +306,12 @@ def get_dataset(dataset_id: Optional[str] = None,
         display_name=__ret__.display_name,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
+        initial_import_dataset_configurations=__ret__.initial_import_dataset_configurations,
         initial_record_generation_configurations=__ret__.initial_record_generation_configurations,
         label_sets=__ret__.label_sets,
         labeling_instructions=__ret__.labeling_instructions,
         lifecycle_details=__ret__.lifecycle_details,
+        lifecycle_substate=__ret__.lifecycle_substate,
         state=__ret__.state,
         time_created=__ret__.time_created,
         time_updated=__ret__.time_updated)

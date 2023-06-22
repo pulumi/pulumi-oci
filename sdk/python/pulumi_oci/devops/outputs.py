@@ -7900,7 +7900,7 @@ class GetDeployArtifactsDeployArtifactCollectionItemResult(dict):
                  time_created: str,
                  time_updated: str):
         """
-        :param str argument_substitution_mode: Mode for artifact parameter substitution.
+        :param str argument_substitution_mode: Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         :param str compartment_id: The OCID of the compartment in which to list resources.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param Sequence['GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArgs'] deploy_artifact_sources: Specifies source of an artifact.
@@ -7936,7 +7936,7 @@ class GetDeployArtifactsDeployArtifactCollectionItemResult(dict):
     @pulumi.getter(name="argumentSubstitutionMode")
     def argument_substitution_mode(self) -> str:
         """
-        Mode for artifact parameter substitution.
+        Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         """
         return pulumi.get(self, "argument_substitution_mode")
 

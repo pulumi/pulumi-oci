@@ -22,14 +22,14 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
     public static final FleetState Empty = new FleetState();
 
     /**
-     * The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     @Import(name="approximateApplicationCount")
     private @Nullable Output<Integer> approximateApplicationCount;
 
     /**
-     * @return The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * @return The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     public Optional<Output<Integer>> approximateApplicationCount() {
@@ -37,14 +37,14 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     @Import(name="approximateInstallationCount")
     private @Nullable Output<Integer> approximateInstallationCount;
 
     /**
-     * @return The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * @return The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     public Optional<Output<Integer>> approximateInstallationCount() {
@@ -52,14 +52,14 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     @Import(name="approximateJavaServerCount")
     private @Nullable Output<Integer> approximateJavaServerCount;
 
     /**
-     * @return The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * @return The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     public Optional<Output<Integer>> approximateJavaServerCount() {
@@ -67,14 +67,14 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     @Import(name="approximateJreCount")
     private @Nullable Output<Integer> approximateJreCount;
 
     /**
-     * @return The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * @return The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     public Optional<Output<Integer>> approximateJreCount() {
@@ -82,14 +82,14 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     @Import(name="approximateManagedInstanceCount")
     private @Nullable Output<Integer> approximateManagedInstanceCount;
 
     /**
-     * @return The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * @return The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     public Optional<Output<Integer>> approximateManagedInstanceCount() {
@@ -157,14 +157,14 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -187,14 +187,14 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
+     * (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
      * 
      */
     @Import(name="isAdvancedFeaturesEnabled")
     private @Nullable Output<Boolean> isAdvancedFeaturesEnabled;
 
     /**
-     * @return (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
+     * @return (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
      * 
      */
     public Optional<Output<Boolean>> isAdvancedFeaturesEnabled() {
@@ -301,7 +301,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param approximateApplicationCount The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+         * @param approximateApplicationCount The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
          * 
          * @return builder
          * 
@@ -312,7 +312,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param approximateApplicationCount The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+         * @param approximateApplicationCount The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
          * 
          * @return builder
          * 
@@ -322,7 +322,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param approximateInstallationCount The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+         * @param approximateInstallationCount The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
          * 
          * @return builder
          * 
@@ -333,7 +333,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param approximateInstallationCount The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+         * @param approximateInstallationCount The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
          * 
          * @return builder
          * 
@@ -343,7 +343,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param approximateJavaServerCount The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+         * @param approximateJavaServerCount The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
          * 
          * @return builder
          * 
@@ -354,7 +354,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param approximateJavaServerCount The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+         * @param approximateJavaServerCount The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
          * 
          * @return builder
          * 
@@ -364,7 +364,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param approximateJreCount The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+         * @param approximateJreCount The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
          * 
          * @return builder
          * 
@@ -375,7 +375,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param approximateJreCount The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+         * @param approximateJreCount The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
          * 
          * @return builder
          * 
@@ -385,7 +385,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param approximateManagedInstanceCount The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+         * @param approximateManagedInstanceCount The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
          * 
          * @return builder
          * 
@@ -396,7 +396,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param approximateManagedInstanceCount The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+         * @param approximateManagedInstanceCount The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
          * 
          * @return builder
          * 
@@ -490,7 +490,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
          * 
          * @return builder
          * 
@@ -501,7 +501,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
          * 
          * @return builder
          * 
@@ -532,7 +532,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isAdvancedFeaturesEnabled (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
+         * @param isAdvancedFeaturesEnabled (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
          * 
          * @return builder
          * 
@@ -543,7 +543,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isAdvancedFeaturesEnabled (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
+         * @param isAdvancedFeaturesEnabled (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
          * 
          * @return builder
          * 

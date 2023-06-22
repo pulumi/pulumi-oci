@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataLabellingService.inputs.DatasetDatasetFormatDetailsArgs;
 import com.pulumi.oci.DataLabellingService.inputs.DatasetDatasetSourceDetailsArgs;
+import com.pulumi.oci.DataLabellingService.inputs.DatasetInitialImportDatasetConfigurationArgs;
 import com.pulumi.oci.DataLabellingService.inputs.DatasetInitialRecordGenerationConfigurationArgs;
 import com.pulumi.oci.DataLabellingService.inputs.DatasetLabelSetArgs;
 import java.lang.Object;
@@ -142,6 +143,21 @@ public final class DatasetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+     * 
+     */
+    @Import(name="initialImportDatasetConfiguration")
+    private @Nullable Output<DatasetInitialImportDatasetConfigurationArgs> initialImportDatasetConfiguration;
+
+    /**
+     * @return Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+     * 
+     */
+    public Optional<Output<DatasetInitialImportDatasetConfigurationArgs>> initialImportDatasetConfiguration() {
+        return Optional.ofNullable(this.initialImportDatasetConfiguration);
+    }
+
+    /**
      * The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
@@ -203,6 +219,7 @@ public final class DatasetArgs extends com.pulumi.resources.ResourceArgs {
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.initialImportDatasetConfiguration = $.initialImportDatasetConfiguration;
         this.initialRecordGenerationConfiguration = $.initialRecordGenerationConfiguration;
         this.labelSet = $.labelSet;
         this.labelingInstructions = $.labelingInstructions;
@@ -392,6 +409,27 @@ public final class DatasetArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param initialImportDatasetConfiguration Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialImportDatasetConfiguration(@Nullable Output<DatasetInitialImportDatasetConfigurationArgs> initialImportDatasetConfiguration) {
+            $.initialImportDatasetConfiguration = initialImportDatasetConfiguration;
+            return this;
+        }
+
+        /**
+         * @param initialImportDatasetConfiguration Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialImportDatasetConfiguration(DatasetInitialImportDatasetConfigurationArgs initialImportDatasetConfiguration) {
+            return initialImportDatasetConfiguration(Output.of(initialImportDatasetConfiguration));
         }
 
         /**

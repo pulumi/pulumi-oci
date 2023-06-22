@@ -22,6 +22,7 @@ class ProviderArgs:
                  private_key: Optional[pulumi.Input[str]] = None,
                  private_key_password: Optional[pulumi.Input[str]] = None,
                  private_key_path: Optional[pulumi.Input[str]] = None,
+                 realm_specific_service_endpoint_template_enabled: Optional[pulumi.Input[bool]] = None,
                  region: Optional[pulumi.Input[str]] = None,
                  retry_duration_seconds: Optional[pulumi.Input[int]] = None,
                  tenancy_ocid: Optional[pulumi.Input[str]] = None,
@@ -42,6 +43,7 @@ class ProviderArgs:
         :param pulumi.Input[str] private_key_password: (Optional) The password used to secure the private key.
         :param pulumi.Input[str] private_key_path: (Optional) The path to the user's PEM formatted private key. A private_key or a private_key_path must be provided if
                auth is set to 'ApiKey', ignored otherwise.
+        :param pulumi.Input[bool] realm_specific_service_endpoint_template_enabled: (Optional) flags to enable realm specific service endpoint.
         :param pulumi.Input[str] region: (Required) The region for API connections (e.g. us-ashburn-1).
         :param pulumi.Input[int] retry_duration_seconds: (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
                duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field
@@ -67,6 +69,8 @@ class ProviderArgs:
             pulumi.set(__self__, "private_key_password", private_key_password)
         if private_key_path is not None:
             pulumi.set(__self__, "private_key_path", private_key_path)
+        if realm_specific_service_endpoint_template_enabled is not None:
+            pulumi.set(__self__, "realm_specific_service_endpoint_template_enabled", realm_specific_service_endpoint_template_enabled)
         if region is not None:
             pulumi.set(__self__, "region", region)
         if retry_duration_seconds is not None:
@@ -179,6 +183,18 @@ class ProviderArgs:
         pulumi.set(self, "private_key_path", value)
 
     @property
+    @pulumi.getter(name="realmSpecificServiceEndpointTemplateEnabled")
+    def realm_specific_service_endpoint_template_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Optional) flags to enable realm specific service endpoint.
+        """
+        return pulumi.get(self, "realm_specific_service_endpoint_template_enabled")
+
+    @realm_specific_service_endpoint_template_enabled.setter
+    def realm_specific_service_endpoint_template_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "realm_specific_service_endpoint_template_enabled", value)
+
+    @property
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[str]]:
         """
@@ -244,6 +260,7 @@ class Provider(pulumi.ProviderResource):
                  private_key: Optional[pulumi.Input[str]] = None,
                  private_key_password: Optional[pulumi.Input[str]] = None,
                  private_key_path: Optional[pulumi.Input[str]] = None,
+                 realm_specific_service_endpoint_template_enabled: Optional[pulumi.Input[bool]] = None,
                  region: Optional[pulumi.Input[str]] = None,
                  retry_duration_seconds: Optional[pulumi.Input[int]] = None,
                  tenancy_ocid: Optional[pulumi.Input[str]] = None,
@@ -271,6 +288,7 @@ class Provider(pulumi.ProviderResource):
         :param pulumi.Input[str] private_key_password: (Optional) The password used to secure the private key.
         :param pulumi.Input[str] private_key_path: (Optional) The path to the user's PEM formatted private key. A private_key or a private_key_path must be provided if
                auth is set to 'ApiKey', ignored otherwise.
+        :param pulumi.Input[bool] realm_specific_service_endpoint_template_enabled: (Optional) flags to enable realm specific service endpoint.
         :param pulumi.Input[str] region: (Required) The region for API connections (e.g. us-ashburn-1).
         :param pulumi.Input[int] retry_duration_seconds: (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
                duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field
@@ -315,6 +333,7 @@ class Provider(pulumi.ProviderResource):
                  private_key: Optional[pulumi.Input[str]] = None,
                  private_key_password: Optional[pulumi.Input[str]] = None,
                  private_key_path: Optional[pulumi.Input[str]] = None,
+                 realm_specific_service_endpoint_template_enabled: Optional[pulumi.Input[bool]] = None,
                  region: Optional[pulumi.Input[str]] = None,
                  retry_duration_seconds: Optional[pulumi.Input[int]] = None,
                  tenancy_ocid: Optional[pulumi.Input[str]] = None,
@@ -336,6 +355,7 @@ class Provider(pulumi.ProviderResource):
             __props__.__dict__["private_key"] = None if private_key is None else pulumi.Output.secret(private_key)
             __props__.__dict__["private_key_password"] = None if private_key_password is None else pulumi.Output.secret(private_key_password)
             __props__.__dict__["private_key_path"] = private_key_path
+            __props__.__dict__["realm_specific_service_endpoint_template_enabled"] = pulumi.Output.from_input(realm_specific_service_endpoint_template_enabled).apply(pulumi.runtime.to_json) if realm_specific_service_endpoint_template_enabled is not None else None
             __props__.__dict__["region"] = region
             __props__.__dict__["retry_duration_seconds"] = pulumi.Output.from_input(retry_duration_seconds).apply(pulumi.runtime.to_json) if retry_duration_seconds is not None else None
             __props__.__dict__["tenancy_ocid"] = tenancy_ocid

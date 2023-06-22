@@ -57,6 +57,7 @@ import javax.annotation.Nullable;
  *                     .kmsKeyId(oci_kms_key.test_key().id())
  *                     .build())
  *                 .build())
+ *             .shape(var_.application_shape())
  *             .syslogUrl(var_.application_syslog_url())
  *             .traceConfig(ApplicationTraceConfigArgs.builder()
  *                 .domainId(oci_functions_domain.test_domain().id())
@@ -180,6 +181,20 @@ public class Application extends com.pulumi.resources.CustomResource {
      */
     public Output<List<String>> networkSecurityGroupIds() {
         return this.networkSecurityGroupIds;
+    }
+    /**
+     * Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+     * 
+     */
+    @Export(name="shape", type=String.class, parameters={})
+    private Output<String> shape;
+
+    /**
+     * @return Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+     * 
+     */
+    public Output<String> shape() {
+        return this.shape;
     }
     /**
      * The current state of the application.

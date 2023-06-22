@@ -145,7 +145,7 @@ class FunctionProvisionedConcurrencyConfigArgs:
                  count: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[str] strategy: (Updatable) The strategy for provisioned concurrency to be used.
-        :param pulumi.Input[int] count: (Updatable)
+        :param pulumi.Input[int] count: (Updatable) Configuration specifying a constant amount of provisioned concurrency.
         """
         pulumi.set(__self__, "strategy", strategy)
         if count is not None:
@@ -167,7 +167,7 @@ class FunctionProvisionedConcurrencyConfigArgs:
     @pulumi.getter
     def count(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable)
+        (Updatable) Configuration specifying a constant amount of provisioned concurrency.
         """
         return pulumi.get(self, "count")
 

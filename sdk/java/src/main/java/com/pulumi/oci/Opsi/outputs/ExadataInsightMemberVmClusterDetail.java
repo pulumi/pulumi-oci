@@ -14,28 +14,64 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ExadataInsightMemberVmClusterDetail {
     /**
-     * @return (Updatable) Compartment Identifier of Exadata insight
+     * @return (Updatable) Compartment Identifier of database
      * 
      */
     private @Nullable String compartmentId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+     * 
+     */
+    private @Nullable String dbmPrivateEndpointId;
+    /**
+     * @return The databases that belong to the VM Cluster
+     * 
+     */
     private @Nullable List<ExadataInsightMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+     * 
+     */
     private @Nullable String opsiPrivateEndpointId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
+     * 
+     */
     private @Nullable String vmclusterId;
 
     private ExadataInsightMemberVmClusterDetail() {}
     /**
-     * @return (Updatable) Compartment Identifier of Exadata insight
+     * @return (Updatable) Compartment Identifier of database
      * 
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+     * 
+     */
+    public Optional<String> dbmPrivateEndpointId() {
+        return Optional.ofNullable(this.dbmPrivateEndpointId);
+    }
+    /**
+     * @return The databases that belong to the VM Cluster
+     * 
+     */
     public List<ExadataInsightMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails() {
         return this.memberDatabaseDetails == null ? List.of() : this.memberDatabaseDetails;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+     * 
+     */
     public Optional<String> opsiPrivateEndpointId() {
         return Optional.ofNullable(this.opsiPrivateEndpointId);
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
+     * 
+     */
     public Optional<String> vmclusterId() {
         return Optional.ofNullable(this.vmclusterId);
     }
@@ -50,6 +86,7 @@ public final class ExadataInsightMemberVmClusterDetail {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
+        private @Nullable String dbmPrivateEndpointId;
         private @Nullable List<ExadataInsightMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails;
         private @Nullable String opsiPrivateEndpointId;
         private @Nullable String vmclusterId;
@@ -57,6 +94,7 @@ public final class ExadataInsightMemberVmClusterDetail {
         public Builder(ExadataInsightMemberVmClusterDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.dbmPrivateEndpointId = defaults.dbmPrivateEndpointId;
     	      this.memberDatabaseDetails = defaults.memberDatabaseDetails;
     	      this.opsiPrivateEndpointId = defaults.opsiPrivateEndpointId;
     	      this.vmclusterId = defaults.vmclusterId;
@@ -65,6 +103,11 @@ public final class ExadataInsightMemberVmClusterDetail {
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dbmPrivateEndpointId(@Nullable String dbmPrivateEndpointId) {
+            this.dbmPrivateEndpointId = dbmPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
@@ -88,6 +131,7 @@ public final class ExadataInsightMemberVmClusterDetail {
         public ExadataInsightMemberVmClusterDetail build() {
             final var o = new ExadataInsightMemberVmClusterDetail();
             o.compartmentId = compartmentId;
+            o.dbmPrivateEndpointId = dbmPrivateEndpointId;
             o.memberDatabaseDetails = memberDatabaseDetails;
             o.opsiPrivateEndpointId = opsiPrivateEndpointId;
             o.vmclusterId = vmclusterId;

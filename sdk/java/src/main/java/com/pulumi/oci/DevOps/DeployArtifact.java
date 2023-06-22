@@ -87,14 +87,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:DevOps/deployArtifact:DeployArtifact")
 public class DeployArtifact extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Mode for artifact parameter substitution.
+     * (Updatable) Mode for artifact parameter substitution. Options: `&#34;NONE&#34;, &#34;SUBSTITUTE_PLACEHOLDERS&#34;` For Helm Deployments only &#34;NONE&#34; is supported.
      * 
      */
     @Export(name="argumentSubstitutionMode", type=String.class, parameters={})
     private Output<String> argumentSubstitutionMode;
 
     /**
-     * @return (Updatable) Mode for artifact parameter substitution.
+     * @return (Updatable) Mode for artifact parameter substitution. Options: `&#34;NONE&#34;, &#34;SUBSTITUTE_PLACEHOLDERS&#34;` For Helm Deployments only &#34;NONE&#34; is supported.
      * 
      */
     public Output<String> argumentSubstitutionMode() {

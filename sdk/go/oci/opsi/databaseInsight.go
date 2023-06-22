@@ -27,7 +27,7 @@ type DatabaseInsight struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// User credential details to connect to the database. This is supplied via the External Database Service.
 	ConnectionCredentialDetails DatabaseInsightConnectionCredentialDetailsOutput `pulumi:"connectionCredentialDetails"`
-	// Connection details to connect to the database. HostName, protocol, and port should be specified.
+	// Connection details of the private endpoints.
 	ConnectionDetails DatabaseInsightConnectionDetailsOutput `pulumi:"connectionDetails"`
 	// User credential details to connect to the database. This is supplied via the External Database Service.
 	CredentialDetails DatabaseInsightCredentialDetailsPtrOutput `pulumi:"credentialDetails"`
@@ -135,7 +135,7 @@ type databaseInsightState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// User credential details to connect to the database. This is supplied via the External Database Service.
 	ConnectionCredentialDetails *DatabaseInsightConnectionCredentialDetails `pulumi:"connectionCredentialDetails"`
-	// Connection details to connect to the database. HostName, protocol, and port should be specified.
+	// Connection details of the private endpoints.
 	ConnectionDetails *DatabaseInsightConnectionDetails `pulumi:"connectionDetails"`
 	// User credential details to connect to the database. This is supplied via the External Database Service.
 	CredentialDetails *DatabaseInsightCredentialDetails `pulumi:"credentialDetails"`
@@ -209,7 +209,7 @@ type DatabaseInsightState struct {
 	CompartmentId pulumi.StringPtrInput
 	// User credential details to connect to the database. This is supplied via the External Database Service.
 	ConnectionCredentialDetails DatabaseInsightConnectionCredentialDetailsPtrInput
-	// Connection details to connect to the database. HostName, protocol, and port should be specified.
+	// Connection details of the private endpoints.
 	ConnectionDetails DatabaseInsightConnectionDetailsPtrInput
 	// User credential details to connect to the database. This is supplied via the External Database Service.
 	CredentialDetails DatabaseInsightCredentialDetailsPtrInput
@@ -287,7 +287,7 @@ type databaseInsightArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// User credential details to connect to the database. This is supplied via the External Database Service.
 	ConnectionCredentialDetails *DatabaseInsightConnectionCredentialDetails `pulumi:"connectionCredentialDetails"`
-	// Connection details to connect to the database. HostName, protocol, and port should be specified.
+	// Connection details of the private endpoints.
 	ConnectionDetails *DatabaseInsightConnectionDetails `pulumi:"connectionDetails"`
 	// User credential details to connect to the database. This is supplied via the External Database Service.
 	CredentialDetails *DatabaseInsightCredentialDetails `pulumi:"credentialDetails"`
@@ -332,7 +332,7 @@ type DatabaseInsightArgs struct {
 	CompartmentId pulumi.StringInput
 	// User credential details to connect to the database. This is supplied via the External Database Service.
 	ConnectionCredentialDetails DatabaseInsightConnectionCredentialDetailsPtrInput
-	// Connection details to connect to the database. HostName, protocol, and port should be specified.
+	// Connection details of the private endpoints.
 	ConnectionDetails DatabaseInsightConnectionDetailsPtrInput
 	// User credential details to connect to the database. This is supplied via the External Database Service.
 	CredentialDetails DatabaseInsightCredentialDetailsPtrInput
@@ -470,7 +470,7 @@ func (o DatabaseInsightOutput) ConnectionCredentialDetails() DatabaseInsightConn
 	}).(DatabaseInsightConnectionCredentialDetailsOutput)
 }
 
-// Connection details to connect to the database. HostName, protocol, and port should be specified.
+// Connection details of the private endpoints.
 func (o DatabaseInsightOutput) ConnectionDetails() DatabaseInsightConnectionDetailsOutput {
 	return o.ApplyT(func(v *DatabaseInsight) DatabaseInsightConnectionDetailsOutput { return v.ConnectionDetails }).(DatabaseInsightConnectionDetailsOutput)
 }

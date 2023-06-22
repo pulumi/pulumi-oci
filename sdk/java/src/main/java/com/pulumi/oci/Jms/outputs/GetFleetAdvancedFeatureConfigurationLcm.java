@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetAdvancedFeatureConfigurationLcm {
     /**
-     * @return Lcm flag to store enabled or disabled status
+     * @return PerformanceTuningAnalysis flag to store enabled or disabled status.
      * 
      */
     private Boolean isEnabled;
@@ -24,7 +24,7 @@ public final class GetFleetAdvancedFeatureConfigurationLcm {
 
     private GetFleetAdvancedFeatureConfigurationLcm() {}
     /**
-     * @return Lcm flag to store enabled or disabled status
+     * @return PerformanceTuningAnalysis flag to store enabled or disabled status.
      * 
      */
     public Boolean isEnabled() {

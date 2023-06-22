@@ -62,6 +62,10 @@ namespace Pulumi.Oci.Functions.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFunctionsFunctionProvisionedConcurrencyConfigResult> ProvisionedConcurrencyConfigs;
         /// <summary>
+        /// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+        /// </summary>
+        public readonly string Shape;
+        /// <summary>
         /// The source details for the Function. The function can be created from various sources.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFunctionsFunctionSourceDetailResult> SourceDetails;
@@ -112,6 +116,8 @@ namespace Pulumi.Oci.Functions.Outputs
 
             ImmutableArray<Outputs.GetFunctionsFunctionProvisionedConcurrencyConfigResult> provisionedConcurrencyConfigs,
 
+            string shape,
+
             ImmutableArray<Outputs.GetFunctionsFunctionSourceDetailResult> sourceDetails,
 
             string state,
@@ -136,6 +142,7 @@ namespace Pulumi.Oci.Functions.Outputs
             InvokeEndpoint = invokeEndpoint;
             MemoryInMbs = memoryInMbs;
             ProvisionedConcurrencyConfigs = provisionedConcurrencyConfigs;
+            Shape = shape;
             SourceDetails = sourceDetails;
             State = state;
             TimeCreated = timeCreated;

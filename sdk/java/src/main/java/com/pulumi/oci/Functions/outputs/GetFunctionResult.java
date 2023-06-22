@@ -78,6 +78,11 @@ public final class GetFunctionResult {
      */
     private List<GetFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs;
     /**
+     * @return The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+     * 
+     */
+    private String shape;
+    /**
      * @return The source details for the Function. The function can be created from various sources.
      * 
      */
@@ -197,6 +202,13 @@ public final class GetFunctionResult {
         return this.provisionedConcurrencyConfigs;
     }
     /**
+     * @return The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+     * 
+     */
+    public String shape() {
+        return this.shape;
+    }
+    /**
      * @return The source details for the Function. The function can be created from various sources.
      * 
      */
@@ -261,6 +273,7 @@ public final class GetFunctionResult {
         private String invokeEndpoint;
         private String memoryInMbs;
         private List<GetFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs;
+        private String shape;
         private List<GetFunctionSourceDetail> sourceDetails;
         private String state;
         private String timeCreated;
@@ -283,6 +296,7 @@ public final class GetFunctionResult {
     	      this.invokeEndpoint = defaults.invokeEndpoint;
     	      this.memoryInMbs = defaults.memoryInMbs;
     	      this.provisionedConcurrencyConfigs = defaults.provisionedConcurrencyConfigs;
+    	      this.shape = defaults.shape;
     	      this.sourceDetails = defaults.sourceDetails;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -360,6 +374,11 @@ public final class GetFunctionResult {
             return provisionedConcurrencyConfigs(List.of(provisionedConcurrencyConfigs));
         }
         @CustomType.Setter
+        public Builder shape(String shape) {
+            this.shape = Objects.requireNonNull(shape);
+            return this;
+        }
+        @CustomType.Setter
         public Builder sourceDetails(List<GetFunctionSourceDetail> sourceDetails) {
             this.sourceDetails = Objects.requireNonNull(sourceDetails);
             return this;
@@ -410,6 +429,7 @@ public final class GetFunctionResult {
             o.invokeEndpoint = invokeEndpoint;
             o.memoryInMbs = memoryInMbs;
             o.provisionedConcurrencyConfigs = provisionedConcurrencyConfigs;
+            o.shape = shape;
             o.sourceDetails = sourceDetails;
             o.state = state;
             o.timeCreated = timeCreated;

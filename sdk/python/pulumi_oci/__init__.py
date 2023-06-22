@@ -13,6 +13,8 @@ if typing.TYPE_CHECKING:
     adm = __adm
     import pulumi_oci.aianomalydetection as __aianomalydetection
     aianomalydetection = __aianomalydetection
+    import pulumi_oci.aidocument as __aidocument
+    aidocument = __aidocument
     import pulumi_oci.aivision as __aivision
     aivision = __aivision
     import pulumi_oci.analytics as __analytics
@@ -222,6 +224,7 @@ if typing.TYPE_CHECKING:
 else:
     adm = _utilities.lazy_import('pulumi_oci.adm')
     aianomalydetection = _utilities.lazy_import('pulumi_oci.aianomalydetection')
+    aidocument = _utilities.lazy_import('pulumi_oci.aidocument')
     aivision = _utilities.lazy_import('pulumi_oci.aivision')
     analytics = _utilities.lazy_import('pulumi_oci.analytics')
     announcementsservice = _utilities.lazy_import('pulumi_oci.announcementsservice')
@@ -383,6 +386,30 @@ _utilities.register(
   "fqn": "pulumi_oci.aianomalydetection",
   "classes": {
    "oci:AiAnomalyDetection/project:Project": "Project"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "AiDocument/model",
+  "fqn": "pulumi_oci.aidocument",
+  "classes": {
+   "oci:AiDocument/model:Model": "Model"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "AiDocument/processorJob",
+  "fqn": "pulumi_oci.aidocument",
+  "classes": {
+   "oci:AiDocument/processorJob:ProcessorJob": "ProcessorJob"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "AiDocument/project",
+  "fqn": "pulumi_oci.aidocument",
+  "classes": {
+   "oci:AiDocument/project:Project": "Project"
   }
  },
  {
@@ -1519,6 +1546,14 @@ _utilities.register(
   "fqn": "pulumi_oci.dataflow",
   "classes": {
    "oci:DataFlow/invokeRun:InvokeRun": "InvokeRun"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataFlow/pool",
+  "fqn": "pulumi_oci.dataflow",
+  "classes": {
+   "oci:DataFlow/pool:Pool": "Pool"
   }
  },
  {

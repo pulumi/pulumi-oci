@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Functions.Outputs
     public sealed class FunctionProvisionedConcurrencyConfig
     {
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Configuration specifying a constant amount of provisioned concurrency.
         /// </summary>
         public readonly int? Count;
         /// <summary>

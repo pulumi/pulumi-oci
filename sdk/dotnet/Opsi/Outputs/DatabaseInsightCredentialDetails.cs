@@ -33,6 +33,10 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// database user name.
         /// </summary>
         public readonly string? UserName;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+        /// </summary>
+        public readonly string? WalletSecretId;
 
         [OutputConstructor]
         private DatabaseInsightCredentialDetails(
@@ -44,13 +48,16 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             string? role,
 
-            string? userName)
+            string? userName,
+
+            string? walletSecretId)
         {
             CredentialSourceName = credentialSourceName;
             CredentialType = credentialType;
             PasswordSecretId = passwordSecretId;
             Role = role;
             UserName = userName;
+            WalletSecretId = walletSecretId;
         }
     }
 }

@@ -55,6 +55,10 @@ export class EsxiHost extends pulumi.CustomResource {
      */
     public /*out*/ readonly billingContractEndDate!: pulumi.Output<string>;
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+     */
+    public readonly billingDonorHostId!: pulumi.Output<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      */
     public readonly capacityReservationId!: pulumi.Output<string>;
@@ -71,7 +75,7 @@ export class EsxiHost extends pulumi.CustomResource {
      */
     public /*out*/ readonly computeInstanceId!: pulumi.Output<string>;
     /**
-     * The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      */
     public readonly currentSku!: pulumi.Output<string>;
     /**
@@ -107,7 +111,15 @@ export class EsxiHost extends pulumi.CustomResource {
      */
     public readonly hostShapeName!: pulumi.Output<string>;
     /**
-     * (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * Indicates whether this host is in the progress of billing continuation.
+     */
+    public /*out*/ readonly isBillingContinuationInProgress!: pulumi.Output<boolean>;
+    /**
+     * Indicates whether this host is in the progress of swapping billing.
+     */
+    public /*out*/ readonly isBillingSwappingInProgress!: pulumi.Output<boolean>;
+    /**
+     * The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      */
     public readonly nextSku!: pulumi.Output<string>;
     /**
@@ -130,6 +142,10 @@ export class EsxiHost extends pulumi.CustomResource {
      * The current state of the ESXi host.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+     */
+    public readonly swapBillingHostId!: pulumi.Output<string>;
     /**
      * The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
@@ -161,6 +177,7 @@ export class EsxiHost extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as EsxiHostState | undefined;
             resourceInputs["billingContractEndDate"] = state ? state.billingContractEndDate : undefined;
+            resourceInputs["billingDonorHostId"] = state ? state.billingDonorHostId : undefined;
             resourceInputs["capacityReservationId"] = state ? state.capacityReservationId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["computeAvailabilityDomain"] = state ? state.computeAvailabilityDomain : undefined;
@@ -173,11 +190,14 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["gracePeriodEndDate"] = state ? state.gracePeriodEndDate : undefined;
             resourceInputs["hostOcpuCount"] = state ? state.hostOcpuCount : undefined;
             resourceInputs["hostShapeName"] = state ? state.hostShapeName : undefined;
+            resourceInputs["isBillingContinuationInProgress"] = state ? state.isBillingContinuationInProgress : undefined;
+            resourceInputs["isBillingSwappingInProgress"] = state ? state.isBillingSwappingInProgress : undefined;
             resourceInputs["nextSku"] = state ? state.nextSku : undefined;
             resourceInputs["nonUpgradedEsxiHostId"] = state ? state.nonUpgradedEsxiHostId : undefined;
             resourceInputs["replacementEsxiHostId"] = state ? state.replacementEsxiHostId : undefined;
             resourceInputs["sddcId"] = state ? state.sddcId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["swapBillingHostId"] = state ? state.swapBillingHostId : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
             resourceInputs["upgradedReplacementEsxiHostId"] = state ? state.upgradedReplacementEsxiHostId : undefined;
@@ -187,6 +207,7 @@ export class EsxiHost extends pulumi.CustomResource {
             if ((!args || args.sddcId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'sddcId'");
             }
+            resourceInputs["billingDonorHostId"] = args ? args.billingDonorHostId : undefined;
             resourceInputs["capacityReservationId"] = args ? args.capacityReservationId : undefined;
             resourceInputs["computeAvailabilityDomain"] = args ? args.computeAvailabilityDomain : undefined;
             resourceInputs["currentSku"] = args ? args.currentSku : undefined;
@@ -199,10 +220,13 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["nextSku"] = args ? args.nextSku : undefined;
             resourceInputs["nonUpgradedEsxiHostId"] = args ? args.nonUpgradedEsxiHostId : undefined;
             resourceInputs["sddcId"] = args ? args.sddcId : undefined;
+            resourceInputs["swapBillingHostId"] = args ? args.swapBillingHostId : undefined;
             resourceInputs["billingContractEndDate"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["computeInstanceId"] = undefined /*out*/;
             resourceInputs["gracePeriodEndDate"] = undefined /*out*/;
+            resourceInputs["isBillingContinuationInProgress"] = undefined /*out*/;
+            resourceInputs["isBillingSwappingInProgress"] = undefined /*out*/;
             resourceInputs["replacementEsxiHostId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -224,6 +248,10 @@ export interface EsxiHostState {
      */
     billingContractEndDate?: pulumi.Input<string>;
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+     */
+    billingDonorHostId?: pulumi.Input<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      */
     capacityReservationId?: pulumi.Input<string>;
@@ -240,7 +268,7 @@ export interface EsxiHostState {
      */
     computeInstanceId?: pulumi.Input<string>;
     /**
-     * The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      */
     currentSku?: pulumi.Input<string>;
     /**
@@ -276,7 +304,15 @@ export interface EsxiHostState {
      */
     hostShapeName?: pulumi.Input<string>;
     /**
-     * (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * Indicates whether this host is in the progress of billing continuation.
+     */
+    isBillingContinuationInProgress?: pulumi.Input<boolean>;
+    /**
+     * Indicates whether this host is in the progress of swapping billing.
+     */
+    isBillingSwappingInProgress?: pulumi.Input<boolean>;
+    /**
+     * The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      */
     nextSku?: pulumi.Input<string>;
     /**
@@ -300,6 +336,10 @@ export interface EsxiHostState {
      */
     state?: pulumi.Input<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+     */
+    swapBillingHostId?: pulumi.Input<string>;
+    /**
      * The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     timeCreated?: pulumi.Input<string>;
@@ -322,6 +362,10 @@ export interface EsxiHostState {
  */
 export interface EsxiHostArgs {
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+     */
+    billingDonorHostId?: pulumi.Input<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      */
     capacityReservationId?: pulumi.Input<string>;
@@ -330,7 +374,7 @@ export interface EsxiHostArgs {
      */
     computeAvailabilityDomain?: pulumi.Input<string>;
     /**
-     * The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      */
     currentSku?: pulumi.Input<string>;
     /**
@@ -362,7 +406,7 @@ export interface EsxiHostArgs {
      */
     hostShapeName?: pulumi.Input<string>;
     /**
-     * (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      */
     nextSku?: pulumi.Input<string>;
     /**
@@ -377,4 +421,8 @@ export interface EsxiHostArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     sddcId: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+     */
+    swapBillingHostId?: pulumi.Input<string>;
 }

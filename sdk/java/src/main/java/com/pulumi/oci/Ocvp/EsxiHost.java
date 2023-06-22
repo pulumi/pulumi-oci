@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Ocvp.EsxiHostArgs;
 import com.pulumi.oci.Ocvp.inputs.EsxiHostState;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
@@ -50,6 +51,20 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      */
     public Output<String> billingContractEndDate() {
         return this.billingContractEndDate;
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+     * 
+     */
+    @Export(name="billingDonorHostId", type=String.class, parameters={})
+    private Output<String> billingDonorHostId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+     * 
+     */
+    public Output<String> billingDonorHostId() {
+        return this.billingDonorHostId;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
@@ -108,14 +123,14 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
         return this.computeInstanceId;
     }
     /**
-     * The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      * 
      */
     @Export(name="currentSku", type=String.class, parameters={})
     private Output<String> currentSku;
 
     /**
-     * @return The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * @return The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      * 
      */
     public Output<String> currentSku() {
@@ -228,14 +243,42 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
         return this.hostShapeName;
     }
     /**
-     * (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * Indicates whether this host is in the progress of billing continuation.
+     * 
+     */
+    @Export(name="isBillingContinuationInProgress", type=Boolean.class, parameters={})
+    private Output<Boolean> isBillingContinuationInProgress;
+
+    /**
+     * @return Indicates whether this host is in the progress of billing continuation.
+     * 
+     */
+    public Output<Boolean> isBillingContinuationInProgress() {
+        return this.isBillingContinuationInProgress;
+    }
+    /**
+     * Indicates whether this host is in the progress of swapping billing.
+     * 
+     */
+    @Export(name="isBillingSwappingInProgress", type=Boolean.class, parameters={})
+    private Output<Boolean> isBillingSwappingInProgress;
+
+    /**
+     * @return Indicates whether this host is in the progress of swapping billing.
+     * 
+     */
+    public Output<Boolean> isBillingSwappingInProgress() {
+        return this.isBillingSwappingInProgress;
+    }
+    /**
+     * The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      * 
      */
     @Export(name="nextSku", type=String.class, parameters={})
     private Output<String> nextSku;
 
     /**
-     * @return (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * @return The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      * 
      */
     public Output<String> nextSku() {
@@ -302,6 +345,20 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+     * 
+     */
+    @Export(name="swapBillingHostId", type=String.class, parameters={})
+    private Output<String> swapBillingHostId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+     * 
+     */
+    public Output<String> swapBillingHostId() {
+        return this.swapBillingHostId;
     }
     /**
      * The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

@@ -69,7 +69,7 @@ type RunStatement struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
 	TimeCompleted pulumi.StringOutput `pulumi:"timeCompleted"`
-	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 }
 
@@ -123,7 +123,7 @@ type runStatementState struct {
 	State *string `pulumi:"state"`
 	// The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
 	TimeCompleted *string `pulumi:"timeCompleted"`
-	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 }
 
@@ -143,7 +143,7 @@ type RunStatementState struct {
 	State pulumi.StringPtrInput
 	// The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
 	TimeCompleted pulumi.StringPtrInput
-	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 }
 
@@ -292,7 +292,7 @@ func (o RunStatementOutput) TimeCompleted() pulumi.StringOutput {
 	return o.ApplyT(func(v *RunStatement) pulumi.StringOutput { return v.TimeCompleted }).(pulumi.StringOutput)
 }
 
-// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 func (o RunStatementOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *RunStatement) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }

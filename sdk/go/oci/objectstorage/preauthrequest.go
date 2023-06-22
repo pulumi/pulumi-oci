@@ -66,6 +66,8 @@ type Preauthrequest struct {
 	Bucket pulumi.StringOutput `pulumi:"bucket"`
 	// Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
 	BucketListingAction pulumi.StringOutput `pulumi:"bucketListingAction"`
+	// The full Path for the object.
+	FullPath pulumi.StringOutput `pulumi:"fullPath"`
 	// A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The Object Storage namespace used for the request.
@@ -136,6 +138,8 @@ type preauthrequestState struct {
 	Bucket *string `pulumi:"bucket"`
 	// Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
 	BucketListingAction *string `pulumi:"bucketListingAction"`
+	// The full Path for the object.
+	FullPath *string `pulumi:"fullPath"`
 	// A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
 	Name *string `pulumi:"name"`
 	// The Object Storage namespace used for the request.
@@ -166,6 +170,8 @@ type PreauthrequestState struct {
 	Bucket pulumi.StringPtrInput
 	// Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
 	BucketListingAction pulumi.StringPtrInput
+	// The full Path for the object.
+	FullPath pulumi.StringPtrInput
 	// A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
 	Name pulumi.StringPtrInput
 	// The Object Storage namespace used for the request.
@@ -345,6 +351,11 @@ func (o PreauthrequestOutput) Bucket() pulumi.StringOutput {
 // Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
 func (o PreauthrequestOutput) BucketListingAction() pulumi.StringOutput {
 	return o.ApplyT(func(v *Preauthrequest) pulumi.StringOutput { return v.BucketListingAction }).(pulumi.StringOutput)
+}
+
+// The full Path for the object.
+func (o PreauthrequestOutput) FullPath() pulumi.StringOutput {
+	return o.ApplyT(func(v *Preauthrequest) pulumi.StringOutput { return v.FullPath }).(pulumi.StringOutput)
 }
 
 // A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.

@@ -49,14 +49,14 @@ public final class DatabaseInsightConnectionDetailsArgs extends com.pulumi.resou
     }
 
     /**
-     * Listener port number used for connection requests.
+     * Listener port number used for connection requests for rivate endpoint accessed db resource.
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return Listener port number used for connection requests.
+     * @return Listener port number used for connection requests for rivate endpoint accessed db resource.
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -174,7 +174,7 @@ public final class DatabaseInsightConnectionDetailsArgs extends com.pulumi.resou
         }
 
         /**
-         * @param port Listener port number used for connection requests.
+         * @param port Listener port number used for connection requests for rivate endpoint accessed db resource.
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class DatabaseInsightConnectionDetailsArgs extends com.pulumi.resou
         }
 
         /**
-         * @param port Listener port number used for connection requests.
+         * @param port Listener port number used for connection requests for rivate endpoint accessed db resource.
          * 
          * @return builder
          * 

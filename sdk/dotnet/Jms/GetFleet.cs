@@ -106,23 +106,23 @@ namespace Pulumi.Oci.Jms
     public sealed class GetFleetResult
     {
         /// <summary>
-        /// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        /// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         public readonly int ApproximateApplicationCount;
         /// <summary>
-        /// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        /// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         public readonly int ApproximateInstallationCount;
         /// <summary>
-        /// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        /// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         public readonly int ApproximateJavaServerCount;
         /// <summary>
-        /// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        /// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         public readonly int ApproximateJreCount;
         /// <summary>
-        /// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        /// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         public readonly int ApproximateManagedInstanceCount;
         /// <summary>
@@ -143,7 +143,7 @@ namespace Pulumi.Oci.Jms
         public readonly string DisplayName;
         public readonly string FleetId;
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+        /// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetInventoryLogResult> InventoryLogs;
         /// <summary>
-        /// Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
+        /// Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
         /// </summary>
         public readonly bool IsAdvancedFeaturesEnabled;
         /// <summary>

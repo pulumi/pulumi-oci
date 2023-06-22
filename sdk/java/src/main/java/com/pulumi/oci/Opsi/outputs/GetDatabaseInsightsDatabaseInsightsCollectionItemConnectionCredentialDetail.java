@@ -34,6 +34,11 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCr
      * 
      */
     private String userName;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+     * 
+     */
+    private String walletSecretId;
 
     private GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail() {}
     /**
@@ -71,6 +76,13 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCr
     public String userName() {
         return this.userName;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+     * 
+     */
+    public String walletSecretId() {
+        return this.walletSecretId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -86,6 +98,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCr
         private String passwordSecretId;
         private String role;
         private String userName;
+        private String walletSecretId;
         public Builder() {}
         public Builder(GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -94,6 +107,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCr
     	      this.passwordSecretId = defaults.passwordSecretId;
     	      this.role = defaults.role;
     	      this.userName = defaults.userName;
+    	      this.walletSecretId = defaults.walletSecretId;
         }
 
         @CustomType.Setter
@@ -121,6 +135,11 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCr
             this.userName = Objects.requireNonNull(userName);
             return this;
         }
+        @CustomType.Setter
+        public Builder walletSecretId(String walletSecretId) {
+            this.walletSecretId = Objects.requireNonNull(walletSecretId);
+            return this;
+        }
         public GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail build() {
             final var o = new GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail();
             o.credentialSourceName = credentialSourceName;
@@ -128,6 +147,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCr
             o.passwordSecretId = passwordSecretId;
             o.role = role;
             o.userName = userName;
+            o.walletSecretId = walletSecretId;
             return o;
         }
     }

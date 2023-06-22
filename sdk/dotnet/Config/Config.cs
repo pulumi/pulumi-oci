@@ -118,6 +118,16 @@ namespace Pulumi.Oci
             set => _privateKeyPath.Set(value);
         }
 
+        private static readonly __Value<bool?> _realmSpecificServiceEndpointTemplateEnabled = new __Value<bool?>(() => __config.GetBoolean("realmSpecificServiceEndpointTemplateEnabled"));
+        /// <summary>
+        /// (Optional) flags to enable realm specific service endpoint.
+        /// </summary>
+        public static bool? RealmSpecificServiceEndpointTemplateEnabled
+        {
+            get => _realmSpecificServiceEndpointTemplateEnabled.Get();
+            set => _realmSpecificServiceEndpointTemplateEnabled.Set(value);
+        }
+
         private static readonly __Value<string?> _region = new __Value<string?>(() => __config.Get("region"));
         /// <summary>
         /// (Required) The region for API connections (e.g. us-ashburn-1).

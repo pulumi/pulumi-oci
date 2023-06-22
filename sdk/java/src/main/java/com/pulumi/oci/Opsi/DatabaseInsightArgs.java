@@ -51,14 +51,14 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Connection details to connect to the database. HostName, protocol, and port should be specified.
+     * Connection details of the private endpoints.
      * 
      */
     @Import(name="connectionDetails")
     private @Nullable Output<DatabaseInsightConnectionDetailsArgs> connectionDetails;
 
     /**
-     * @return Connection details to connect to the database. HostName, protocol, and port should be specified.
+     * @return Connection details of the private endpoints.
      * 
      */
     public Optional<Output<DatabaseInsightConnectionDetailsArgs>> connectionDetails() {
@@ -396,7 +396,7 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param connectionDetails Connection details to connect to the database. HostName, protocol, and port should be specified.
+         * @param connectionDetails Connection details of the private endpoints.
          * 
          * @return builder
          * 
@@ -407,7 +407,7 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param connectionDetails Connection details to connect to the database. HostName, protocol, and port should be specified.
+         * @param connectionDetails Connection details of the private endpoints.
          * 
          * @return builder
          * 

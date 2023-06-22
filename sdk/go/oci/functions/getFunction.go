@@ -81,6 +81,8 @@ type LookupFunctionResult struct {
 	MemoryInMbs string `pulumi:"memoryInMbs"`
 	// Define the strategy for provisioned concurrency for the function.
 	ProvisionedConcurrencyConfigs []GetFunctionProvisionedConcurrencyConfig `pulumi:"provisionedConcurrencyConfigs"`
+	// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+	Shape string `pulumi:"shape"`
 	// The source details for the Function. The function can be created from various sources.
 	SourceDetails []GetFunctionSourceDetail `pulumi:"sourceDetails"`
 	// The current state of the function.
@@ -197,6 +199,11 @@ func (o LookupFunctionResultOutput) ProvisionedConcurrencyConfigs() GetFunctionP
 	return o.ApplyT(func(v LookupFunctionResult) []GetFunctionProvisionedConcurrencyConfig {
 		return v.ProvisionedConcurrencyConfigs
 	}).(GetFunctionProvisionedConcurrencyConfigArrayOutput)
+}
+
+// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+func (o LookupFunctionResultOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupFunctionResult) string { return v.Shape }).(pulumi.StringOutput)
 }
 
 // The source details for the Function. The function can be created from various sources.

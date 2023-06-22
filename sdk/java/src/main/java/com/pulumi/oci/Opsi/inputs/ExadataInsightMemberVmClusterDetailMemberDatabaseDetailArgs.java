@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Opsi.inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs;
 import com.pulumi.oci.Opsi.inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -19,79 +20,134 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
     public static final ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs Empty = new ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs();
 
     /**
-     * (Updatable) Compartment Identifier of Exadata insight
+     * (Updatable) Compartment Identifier of database
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier of Exadata insight
+     * @return (Updatable) Compartment Identifier of database
      * 
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
 
+    /**
+     * Connection details of the private endpoints.
+     * 
+     */
+    @Import(name="connectionDetails")
+    private @Nullable Output<ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs> connectionDetails;
+
+    /**
+     * @return Connection details of the private endpoints.
+     * 
+     */
+    public Optional<Output<ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs>> connectionDetails() {
+        return Optional.ofNullable(this.connectionDetails);
+    }
+
+    /**
+     * User credential details to connect to the database. This is supplied via the External Database Service.
+     * 
+     */
     @Import(name="credentialDetails")
     private @Nullable Output<ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs> credentialDetails;
 
+    /**
+     * @return User credential details to connect to the database. This is supplied via the External Database Service.
+     * 
+     */
     public Optional<Output<ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs>> credentialDetails() {
         return Optional.ofNullable(this.credentialDetails);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+     * 
+     */
     @Import(name="databaseId")
     private @Nullable Output<String> databaseId;
 
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+     * 
+     */
     public Optional<Output<String>> databaseId() {
         return Optional.ofNullable(this.databaseId);
     }
 
+    /**
+     * Oracle Cloud Infrastructure database resource type
+     * 
+     */
     @Import(name="databaseResourceType")
     private @Nullable Output<String> databaseResourceType;
 
+    /**
+     * @return Oracle Cloud Infrastructure database resource type
+     * 
+     */
     public Optional<Output<String>> databaseResourceType() {
         return Optional.ofNullable(this.databaseResourceType);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+     * 
+     */
     @Import(name="dbmPrivateEndpointId")
     private @Nullable Output<String> dbmPrivateEndpointId;
 
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+     * 
+     */
     public Optional<Output<String>> dbmPrivateEndpointId() {
         return Optional.ofNullable(this.dbmPrivateEndpointId);
     }
 
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,Object>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
     }
 
+    /**
+     * Database Deployment Type
+     * 
+     */
     @Import(name="deploymentType")
     private @Nullable Output<String> deploymentType;
 
+    /**
+     * @return Database Deployment Type
+     * 
+     */
     public Optional<Output<String>> deploymentType() {
         return Optional.ofNullable(this.deploymentType);
     }
 
     /**
-     * (Updatable) Source of the Exadata system.
+     * Source of the database entity.
      * 
      */
     @Import(name="entitySource")
     private @Nullable Output<String> entitySource;
 
     /**
-     * @return (Updatable) Source of the Exadata system.
+     * @return Source of the database entity.
      * 
      */
     public Optional<Output<String>> entitySource() {
@@ -99,30 +155,46 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
     }
 
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+     * 
+     */
     @Import(name="opsiPrivateEndpointId")
     private @Nullable Output<String> opsiPrivateEndpointId;
 
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+     * 
+     */
     public Optional<Output<String>> opsiPrivateEndpointId() {
         return Optional.ofNullable(this.opsiPrivateEndpointId);
     }
 
+    /**
+     * Database service name used for connection requests.
+     * 
+     */
     @Import(name="serviceName")
     private @Nullable Output<String> serviceName;
 
+    /**
+     * @return Database service name used for connection requests.
+     * 
+     */
     public Optional<Output<String>> serviceName() {
         return Optional.ofNullable(this.serviceName);
     }
@@ -146,6 +218,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
 
     private ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs $) {
         this.compartmentId = $.compartmentId;
+        this.connectionDetails = $.connectionDetails;
         this.credentialDetails = $.credentialDetails;
         this.databaseId = $.databaseId;
         this.databaseResourceType = $.databaseResourceType;
@@ -178,7 +251,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier of Exadata insight
+         * @param compartmentId (Updatable) Compartment Identifier of database
          * 
          * @return builder
          * 
@@ -189,7 +262,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier of Exadata insight
+         * @param compartmentId (Updatable) Compartment Identifier of database
          * 
          * @return builder
          * 
@@ -198,44 +271,113 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
             return compartmentId(Output.of(compartmentId));
         }
 
+        /**
+         * @param connectionDetails Connection details of the private endpoints.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectionDetails(@Nullable Output<ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs> connectionDetails) {
+            $.connectionDetails = connectionDetails;
+            return this;
+        }
+
+        /**
+         * @param connectionDetails Connection details of the private endpoints.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectionDetails(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs connectionDetails) {
+            return connectionDetails(Output.of(connectionDetails));
+        }
+
+        /**
+         * @param credentialDetails User credential details to connect to the database. This is supplied via the External Database Service.
+         * 
+         * @return builder
+         * 
+         */
         public Builder credentialDetails(@Nullable Output<ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs> credentialDetails) {
             $.credentialDetails = credentialDetails;
             return this;
         }
 
+        /**
+         * @param credentialDetails User credential details to connect to the database. This is supplied via the External Database Service.
+         * 
+         * @return builder
+         * 
+         */
         public Builder credentialDetails(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs credentialDetails) {
             return credentialDetails(Output.of(credentialDetails));
         }
 
+        /**
+         * @param databaseId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+         * 
+         * @return builder
+         * 
+         */
         public Builder databaseId(@Nullable Output<String> databaseId) {
             $.databaseId = databaseId;
             return this;
         }
 
+        /**
+         * @param databaseId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+         * 
+         * @return builder
+         * 
+         */
         public Builder databaseId(String databaseId) {
             return databaseId(Output.of(databaseId));
         }
 
+        /**
+         * @param databaseResourceType Oracle Cloud Infrastructure database resource type
+         * 
+         * @return builder
+         * 
+         */
         public Builder databaseResourceType(@Nullable Output<String> databaseResourceType) {
             $.databaseResourceType = databaseResourceType;
             return this;
         }
 
+        /**
+         * @param databaseResourceType Oracle Cloud Infrastructure database resource type
+         * 
+         * @return builder
+         * 
+         */
         public Builder databaseResourceType(String databaseResourceType) {
             return databaseResourceType(Output.of(databaseResourceType));
         }
 
+        /**
+         * @param dbmPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+         * 
+         * @return builder
+         * 
+         */
         public Builder dbmPrivateEndpointId(@Nullable Output<String> dbmPrivateEndpointId) {
             $.dbmPrivateEndpointId = dbmPrivateEndpointId;
             return this;
         }
 
+        /**
+         * @param dbmPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+         * 
+         * @return builder
+         * 
+         */
         public Builder dbmPrivateEndpointId(String dbmPrivateEndpointId) {
             return dbmPrivateEndpointId(Output.of(dbmPrivateEndpointId));
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -246,7 +388,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -255,17 +397,29 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
             return definedTags(Output.of(definedTags));
         }
 
+        /**
+         * @param deploymentType Database Deployment Type
+         * 
+         * @return builder
+         * 
+         */
         public Builder deploymentType(@Nullable Output<String> deploymentType) {
             $.deploymentType = deploymentType;
             return this;
         }
 
+        /**
+         * @param deploymentType Database Deployment Type
+         * 
+         * @return builder
+         * 
+         */
         public Builder deploymentType(String deploymentType) {
             return deploymentType(Output.of(deploymentType));
         }
 
         /**
-         * @param entitySource (Updatable) Source of the Exadata system.
+         * @param entitySource Source of the database entity.
          * 
          * @return builder
          * 
@@ -276,7 +430,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
         }
 
         /**
-         * @param entitySource (Updatable) Source of the Exadata system.
+         * @param entitySource Source of the database entity.
          * 
          * @return builder
          * 
@@ -286,7 +440,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -297,7 +451,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -306,20 +460,44 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
             return freeformTags(Output.of(freeformTags));
         }
 
+        /**
+         * @param opsiPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+         * 
+         * @return builder
+         * 
+         */
         public Builder opsiPrivateEndpointId(@Nullable Output<String> opsiPrivateEndpointId) {
             $.opsiPrivateEndpointId = opsiPrivateEndpointId;
             return this;
         }
 
+        /**
+         * @param opsiPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+         * 
+         * @return builder
+         * 
+         */
         public Builder opsiPrivateEndpointId(String opsiPrivateEndpointId) {
             return opsiPrivateEndpointId(Output.of(opsiPrivateEndpointId));
         }
 
+        /**
+         * @param serviceName Database service name used for connection requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder serviceName(@Nullable Output<String> serviceName) {
             $.serviceName = serviceName;
             return this;
         }
 
+        /**
+         * @param serviceName Database service name used for connection requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder serviceName(String serviceName) {
             return serviceName(Output.of(serviceName));
         }

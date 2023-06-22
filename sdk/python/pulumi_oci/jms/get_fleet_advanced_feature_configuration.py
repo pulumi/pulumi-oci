@@ -22,7 +22,7 @@ class GetFleetAdvancedFeatureConfigurationResult:
     """
     A collection of values returned by getFleetAdvancedFeatureConfiguration.
     """
-    def __init__(__self__, advanced_usage_trackings=None, analytic_bucket_name=None, analytic_namespace=None, crypto_event_analyses=None, fleet_id=None, id=None, jfr_recordings=None, lcms=None, time_last_modified=None):
+    def __init__(__self__, advanced_usage_trackings=None, analytic_bucket_name=None, analytic_namespace=None, crypto_event_analyses=None, fleet_id=None, id=None, java_migration_analyses=None, jfr_recordings=None, lcms=None, performance_tuning_analyses=None, time_last_modified=None):
         if advanced_usage_trackings and not isinstance(advanced_usage_trackings, list):
             raise TypeError("Expected argument 'advanced_usage_trackings' to be a list")
         pulumi.set(__self__, "advanced_usage_trackings", advanced_usage_trackings)
@@ -41,12 +41,18 @@ class GetFleetAdvancedFeatureConfigurationResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if java_migration_analyses and not isinstance(java_migration_analyses, list):
+            raise TypeError("Expected argument 'java_migration_analyses' to be a list")
+        pulumi.set(__self__, "java_migration_analyses", java_migration_analyses)
         if jfr_recordings and not isinstance(jfr_recordings, list):
             raise TypeError("Expected argument 'jfr_recordings' to be a list")
         pulumi.set(__self__, "jfr_recordings", jfr_recordings)
         if lcms and not isinstance(lcms, list):
             raise TypeError("Expected argument 'lcms' to be a list")
         pulumi.set(__self__, "lcms", lcms)
+        if performance_tuning_analyses and not isinstance(performance_tuning_analyses, list):
+            raise TypeError("Expected argument 'performance_tuning_analyses' to be a list")
+        pulumi.set(__self__, "performance_tuning_analyses", performance_tuning_analyses)
         if time_last_modified and not isinstance(time_last_modified, str):
             raise TypeError("Expected argument 'time_last_modified' to be a str")
         pulumi.set(__self__, "time_last_modified", time_last_modified)
@@ -63,7 +69,7 @@ class GetFleetAdvancedFeatureConfigurationResult:
     @pulumi.getter(name="analyticBucketName")
     def analytic_bucket_name(self) -> str:
         """
-        Bucket name required to store jfr and related data
+        Bucket name required to store JFR and related data.
         """
         return pulumi.get(self, "analytic_bucket_name")
 
@@ -71,7 +77,7 @@ class GetFleetAdvancedFeatureConfigurationResult:
     @pulumi.getter(name="analyticNamespace")
     def analytic_namespace(self) -> str:
         """
-        Namespace for the fleet advanced feature
+        Namespace for the Fleet advanced feature.
         """
         return pulumi.get(self, "analytic_namespace")
 
@@ -97,6 +103,14 @@ class GetFleetAdvancedFeatureConfigurationResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="javaMigrationAnalyses")
+    def java_migration_analyses(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisResult']:
+        """
+        JavaMigrationAnalysis configuration
+        """
+        return pulumi.get(self, "java_migration_analyses")
+
+    @property
     @pulumi.getter(name="jfrRecordings")
     def jfr_recordings(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationJfrRecordingResult']:
         """
@@ -108,9 +122,17 @@ class GetFleetAdvancedFeatureConfigurationResult:
     @pulumi.getter
     def lcms(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmResult']:
         """
-        Enable lifecycle management and set post action configurations
+        Enable lifecycle management and set post action configurations.
         """
         return pulumi.get(self, "lcms")
+
+    @property
+    @pulumi.getter(name="performanceTuningAnalyses")
+    def performance_tuning_analyses(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisResult']:
+        """
+        Performance tuning analysis configuration
+        """
+        return pulumi.get(self, "performance_tuning_analyses")
 
     @property
     @pulumi.getter(name="timeLastModified")
@@ -133,8 +155,10 @@ class AwaitableGetFleetAdvancedFeatureConfigurationResult(GetFleetAdvancedFeatur
             crypto_event_analyses=self.crypto_event_analyses,
             fleet_id=self.fleet_id,
             id=self.id,
+            java_migration_analyses=self.java_migration_analyses,
             jfr_recordings=self.jfr_recordings,
             lcms=self.lcms,
+            performance_tuning_analyses=self.performance_tuning_analyses,
             time_last_modified=self.time_last_modified)
 
 
@@ -143,7 +167,7 @@ def get_fleet_advanced_feature_configuration(fleet_id: Optional[str] = None,
     """
     This data source provides details about a specific Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
 
-    Returns fleet level advanced feature configuration
+    Returns Fleet level advanced feature configuration.
 
     ## Example Usage
 
@@ -169,8 +193,10 @@ def get_fleet_advanced_feature_configuration(fleet_id: Optional[str] = None,
         crypto_event_analyses=__ret__.crypto_event_analyses,
         fleet_id=__ret__.fleet_id,
         id=__ret__.id,
+        java_migration_analyses=__ret__.java_migration_analyses,
         jfr_recordings=__ret__.jfr_recordings,
         lcms=__ret__.lcms,
+        performance_tuning_analyses=__ret__.performance_tuning_analyses,
         time_last_modified=__ret__.time_last_modified)
 
 
@@ -180,7 +206,7 @@ def get_fleet_advanced_feature_configuration_output(fleet_id: Optional[pulumi.In
     """
     This data source provides details about a specific Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
 
-    Returns fleet level advanced feature configuration
+    Returns Fleet level advanced feature configuration.
 
     ## Example Usage
 

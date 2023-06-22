@@ -13,6 +13,9 @@ namespace Pulumi.Oci.Functions.Outputs
     [OutputType]
     public sealed class GetFunctionProvisionedConcurrencyConfigResult
     {
+        /// <summary>
+        /// Configuration specifying a constant amount of provisioned concurrency.
+        /// </summary>
         public readonly int Count;
         /// <summary>
         /// The strategy for provisioned concurrency to be used.

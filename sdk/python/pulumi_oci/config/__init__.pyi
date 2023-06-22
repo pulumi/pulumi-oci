@@ -55,6 +55,11 @@ privateKeyPath: Optional[str]
 auth is set to 'ApiKey', ignored otherwise.
 """
 
+realmSpecificServiceEndpointTemplateEnabled: Optional[bool]
+"""
+(Optional) flags to enable realm specific service endpoint.
+"""
+
 region: Optional[str]
 """
 (Required) The region for API connections (e.g. us-ashburn-1).

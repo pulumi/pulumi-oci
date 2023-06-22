@@ -40,6 +40,55 @@ namespace Pulumi.Oci.Opsi
     ///             { "bar-key", "value" },
     ///         },
     ///         IsAutoSyncEnabled = @var.Exadata_insight_is_auto_sync_enabled,
+    ///         MemberVmClusterDetails = new[]
+    ///         {
+    ///             new Oci.Opsi.Inputs.ExadataInsightMemberVmClusterDetailArgs
+    ///             {
+    ///                 CompartmentId = @var.Compartment_id,
+    ///                 DbmPrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+    ///                 MemberDatabaseDetails = new[]
+    ///                 {
+    ///                     new Oci.Opsi.Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs
+    ///                     {
+    ///                         CompartmentId = @var.Compartment_id,
+    ///                         ConnectionDetails = new Oci.Opsi.Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs
+    ///                         {
+    ///                             Hosts = new[]
+    ///                             {
+    ///                                 new Oci.Opsi.Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs
+    ///                                 {
+    ///                                     HostIp = @var.Exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_host_ip,
+    ///                                     Port = @var.Exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port,
+    ///                                 },
+    ///                             },
+    ///                             Protocol = @var.Exadata_insight_member_vm_cluster_details_member_database_details_connection_details_protocol,
+    ///                             ServiceName = oci_core_service.Test_service.Name,
+    ///                         },
+    ///                         CredentialDetails = new Oci.Opsi.Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs
+    ///                         {
+    ///                             CredentialType = @var.Exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_type,
+    ///                             CredentialSourceName = @var.Exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_source_name,
+    ///                             PasswordSecretId = oci_vault_secret.Test_secret.Id,
+    ///                             Role = @var.Exadata_insight_member_vm_cluster_details_member_database_details_credential_details_role,
+    ///                             UserName = oci_identity_user.Test_user.Name,
+    ///                             WalletSecretId = oci_vault_secret.Test_secret.Id,
+    ///                         },
+    ///                         DatabaseId = oci_database_database.Test_database.Id,
+    ///                         DatabaseResourceType = @var.Exadata_insight_member_vm_cluster_details_member_database_details_database_resource_type,
+    ///                         DbmPrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+    ///                         DefinedTags = @var.Exadata_insight_member_vm_cluster_details_member_database_details_defined_tags,
+    ///                         DeploymentType = @var.Exadata_insight_member_vm_cluster_details_member_database_details_deployment_type,
+    ///                         EntitySource = @var.Exadata_insight_member_vm_cluster_details_member_database_details_entity_source,
+    ///                         FreeformTags = @var.Exadata_insight_member_vm_cluster_details_member_database_details_freeform_tags,
+    ///                         OpsiPrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+    ///                         ServiceName = oci_core_service.Test_service.Name,
+    ///                         SystemTags = @var.Exadata_insight_member_vm_cluster_details_member_database_details_system_tags,
+    ///                     },
+    ///                 },
+    ///                 OpsiPrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+    ///                 VmclusterId = oci_opsi_vmcluster.Test_vmcluster.Id,
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });
@@ -57,13 +106,13 @@ namespace Pulumi.Oci.Opsi
     public partial class ExadataInsight : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier of Exadata insight
+        /// (Updatable) Compartment Identifier of database
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
@@ -105,7 +154,7 @@ namespace Pulumi.Oci.Opsi
         public Output<string> EnterpriseManagerIdentifier { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Source of the Exadata system.
+        /// Source of the database entity.
         /// </summary>
         [Output("entitySource")]
         public Output<string> EntitySource { get; private set; } = null!;
@@ -144,7 +193,7 @@ namespace Pulumi.Oci.Opsi
         public Output<string> ExadataType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
@@ -178,7 +227,6 @@ namespace Pulumi.Oci.Opsi
 
         /// <summary>
         /// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -251,7 +299,7 @@ namespace Pulumi.Oci.Opsi
     public sealed class ExadataInsightArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier of Exadata insight
+        /// (Updatable) Compartment Identifier of database
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -260,7 +308,7 @@ namespace Pulumi.Oci.Opsi
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -287,7 +335,7 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? EnterpriseManagerIdentifier { get; set; }
 
         /// <summary>
-        /// (Updatable) Source of the Exadata system.
+        /// Source of the database entity.
         /// </summary>
         [Input("entitySource", required: true)]
         public Input<string> EntitySource { get; set; } = null!;
@@ -299,7 +347,7 @@ namespace Pulumi.Oci.Opsi
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -324,7 +372,6 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -340,7 +387,7 @@ namespace Pulumi.Oci.Opsi
     public sealed class ExadataInsightState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier of Exadata insight
+        /// (Updatable) Compartment Identifier of database
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -349,7 +396,7 @@ namespace Pulumi.Oci.Opsi
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -394,7 +441,7 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? EnterpriseManagerIdentifier { get; set; }
 
         /// <summary>
-        /// (Updatable) Source of the Exadata system.
+        /// Source of the database entity.
         /// </summary>
         [Input("entitySource")]
         public Input<string>? EntitySource { get; set; }
@@ -436,7 +483,7 @@ namespace Pulumi.Oci.Opsi
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -478,7 +525,6 @@ namespace Pulumi.Oci.Opsi
 
         /// <summary>
         /// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

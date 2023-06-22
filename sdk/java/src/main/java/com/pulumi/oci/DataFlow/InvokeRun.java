@@ -87,6 +87,7 @@ import javax.annotation.Nullable;
  *                 .name(var_.invoke_run_parameters_name())
  *                 .value(var_.invoke_run_parameters_value())
  *                 .build())
+ *             .poolId(oci_dataflow_pool.test_pool().id())
  *             .sparkVersion(var_.invoke_run_spark_version())
  *             .type(var_.invoke_run_type())
  *             .warehouseBucketUri(var_.invoke_run_warehouse_bucket_uri())
@@ -523,6 +524,20 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
         return this.parameters;
     }
     /**
+     * The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     * 
+     */
+    @Export(name="poolId", type=String.class, parameters={})
+    private Output<String> poolId;
+
+    /**
+     * @return The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     * 
+     */
+    public Output<String> poolId() {
+        return this.poolId;
+    }
+    /**
      * An array of DNS zone names. Example: `[ &#34;app.examplecorp.com&#34;, &#34;app.examplecorp2.com&#34; ]`
      * 
      */
@@ -635,28 +650,28 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
         return this.state;
     }
     /**
-     * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", type=String.class, parameters={})
     private Output<String> timeCreated;
 
     /**
-     * @return The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * @return The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     @Export(name="timeUpdated", type=String.class, parameters={})
     private Output<String> timeUpdated;
 
     /**
-     * @return The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * @return The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     public Output<String> timeUpdated() {

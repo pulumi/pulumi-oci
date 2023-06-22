@@ -16,14 +16,14 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
     public static final DatasetDatasetSourceDetailsArgs Empty = new DatasetDatasetSourceDetailsArgs();
 
     /**
-     * The object storage bucket that contains the dataset data source.
+     * Bucket name
      * 
      */
     @Import(name="bucket", required=true)
     private Output<String> bucket;
 
     /**
-     * @return The object storage bucket that contains the dataset data source.
+     * @return Bucket name
      * 
      */
     public Output<String> bucket() {
@@ -31,14 +31,14 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
     }
 
     /**
-     * The namespace of the bucket that contains the dataset data source.
+     * Bucket namespace name
      * 
      */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
     /**
-     * @return The namespace of the bucket that contains the dataset data source.
+     * @return Bucket namespace name
      * 
      */
     public Output<String> namespace() {
@@ -61,14 +61,14 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
     }
 
     /**
-     * The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+     * The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
      * 
      */
     @Import(name="sourceType", required=true)
     private Output<String> sourceType;
 
     /**
-     * @return The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+     * @return The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
      * 
      */
     public Output<String> sourceType() {
@@ -103,7 +103,7 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param bucket The object storage bucket that contains the dataset data source.
+         * @param bucket Bucket name
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param bucket The object storage bucket that contains the dataset data source.
+         * @param bucket Bucket name
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param namespace The namespace of the bucket that contains the dataset data source.
+         * @param namespace Bucket namespace name
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param namespace The namespace of the bucket that contains the dataset data source.
+         * @param namespace Bucket namespace name
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param sourceType The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+         * @param sourceType The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param sourceType The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+         * @param sourceType The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
          * 
          * @return builder
          * 

@@ -401,13 +401,13 @@ func (o DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput) LineDelimiter(
 }
 
 type DatasetDatasetSourceDetails struct {
-	// The object storage bucket that contains the dataset data source.
+	// Bucket name
 	Bucket string `pulumi:"bucket"`
-	// The namespace of the bucket that contains the dataset data source.
+	// Bucket namespace name
 	Namespace string `pulumi:"namespace"`
 	// A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
 	Prefix *string `pulumi:"prefix"`
-	// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+	// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
 	SourceType string `pulumi:"sourceType"`
 }
 
@@ -423,13 +423,13 @@ type DatasetDatasetSourceDetailsInput interface {
 }
 
 type DatasetDatasetSourceDetailsArgs struct {
-	// The object storage bucket that contains the dataset data source.
+	// Bucket name
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The namespace of the bucket that contains the dataset data source.
+	// Bucket namespace name
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
 	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
-	// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+	// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
 
@@ -510,12 +510,12 @@ func (o DatasetDatasetSourceDetailsOutput) ToDatasetDatasetSourceDetailsPtrOutpu
 	}).(DatasetDatasetSourceDetailsPtrOutput)
 }
 
-// The object storage bucket that contains the dataset data source.
+// Bucket name
 func (o DatasetDatasetSourceDetailsOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v DatasetDatasetSourceDetails) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The namespace of the bucket that contains the dataset data source.
+// Bucket namespace name
 func (o DatasetDatasetSourceDetailsOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v DatasetDatasetSourceDetails) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -525,7 +525,7 @@ func (o DatasetDatasetSourceDetailsOutput) Prefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatasetDatasetSourceDetails) *string { return v.Prefix }).(pulumi.StringPtrOutput)
 }
 
-// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
 func (o DatasetDatasetSourceDetailsOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v DatasetDatasetSourceDetails) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -554,7 +554,7 @@ func (o DatasetDatasetSourceDetailsPtrOutput) Elem() DatasetDatasetSourceDetails
 	}).(DatasetDatasetSourceDetailsOutput)
 }
 
-// The object storage bucket that contains the dataset data source.
+// Bucket name
 func (o DatasetDatasetSourceDetailsPtrOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatasetDatasetSourceDetails) *string {
 		if v == nil {
@@ -564,7 +564,7 @@ func (o DatasetDatasetSourceDetailsPtrOutput) Bucket() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The namespace of the bucket that contains the dataset data source.
+// Bucket namespace name
 func (o DatasetDatasetSourceDetailsPtrOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatasetDatasetSourceDetails) *string {
 		if v == nil {
@@ -584,9 +584,519 @@ func (o DatasetDatasetSourceDetailsPtrOutput) Prefix() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
 func (o DatasetDatasetSourceDetailsPtrOutput) SourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatasetDatasetSourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SourceType
+	}).(pulumi.StringPtrOutput)
+}
+
+type DatasetInitialImportDatasetConfiguration struct {
+	// File format details used for importing dataset
+	ImportFormat DatasetInitialImportDatasetConfigurationImportFormat `pulumi:"importFormat"`
+	// Object storage path for the metadata file
+	ImportMetadataPath DatasetInitialImportDatasetConfigurationImportMetadataPath `pulumi:"importMetadataPath"`
+}
+
+// DatasetInitialImportDatasetConfigurationInput is an input type that accepts DatasetInitialImportDatasetConfigurationArgs and DatasetInitialImportDatasetConfigurationOutput values.
+// You can construct a concrete instance of `DatasetInitialImportDatasetConfigurationInput` via:
+//
+//	DatasetInitialImportDatasetConfigurationArgs{...}
+type DatasetInitialImportDatasetConfigurationInput interface {
+	pulumi.Input
+
+	ToDatasetInitialImportDatasetConfigurationOutput() DatasetInitialImportDatasetConfigurationOutput
+	ToDatasetInitialImportDatasetConfigurationOutputWithContext(context.Context) DatasetInitialImportDatasetConfigurationOutput
+}
+
+type DatasetInitialImportDatasetConfigurationArgs struct {
+	// File format details used for importing dataset
+	ImportFormat DatasetInitialImportDatasetConfigurationImportFormatInput `pulumi:"importFormat"`
+	// Object storage path for the metadata file
+	ImportMetadataPath DatasetInitialImportDatasetConfigurationImportMetadataPathInput `pulumi:"importMetadataPath"`
+}
+
+func (DatasetInitialImportDatasetConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatasetInitialImportDatasetConfiguration)(nil)).Elem()
+}
+
+func (i DatasetInitialImportDatasetConfigurationArgs) ToDatasetInitialImportDatasetConfigurationOutput() DatasetInitialImportDatasetConfigurationOutput {
+	return i.ToDatasetInitialImportDatasetConfigurationOutputWithContext(context.Background())
+}
+
+func (i DatasetInitialImportDatasetConfigurationArgs) ToDatasetInitialImportDatasetConfigurationOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatasetInitialImportDatasetConfigurationOutput)
+}
+
+func (i DatasetInitialImportDatasetConfigurationArgs) ToDatasetInitialImportDatasetConfigurationPtrOutput() DatasetInitialImportDatasetConfigurationPtrOutput {
+	return i.ToDatasetInitialImportDatasetConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i DatasetInitialImportDatasetConfigurationArgs) ToDatasetInitialImportDatasetConfigurationPtrOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatasetInitialImportDatasetConfigurationOutput).ToDatasetInitialImportDatasetConfigurationPtrOutputWithContext(ctx)
+}
+
+// DatasetInitialImportDatasetConfigurationPtrInput is an input type that accepts DatasetInitialImportDatasetConfigurationArgs, DatasetInitialImportDatasetConfigurationPtr and DatasetInitialImportDatasetConfigurationPtrOutput values.
+// You can construct a concrete instance of `DatasetInitialImportDatasetConfigurationPtrInput` via:
+//
+//	        DatasetInitialImportDatasetConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type DatasetInitialImportDatasetConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToDatasetInitialImportDatasetConfigurationPtrOutput() DatasetInitialImportDatasetConfigurationPtrOutput
+	ToDatasetInitialImportDatasetConfigurationPtrOutputWithContext(context.Context) DatasetInitialImportDatasetConfigurationPtrOutput
+}
+
+type datasetInitialImportDatasetConfigurationPtrType DatasetInitialImportDatasetConfigurationArgs
+
+func DatasetInitialImportDatasetConfigurationPtr(v *DatasetInitialImportDatasetConfigurationArgs) DatasetInitialImportDatasetConfigurationPtrInput {
+	return (*datasetInitialImportDatasetConfigurationPtrType)(v)
+}
+
+func (*datasetInitialImportDatasetConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatasetInitialImportDatasetConfiguration)(nil)).Elem()
+}
+
+func (i *datasetInitialImportDatasetConfigurationPtrType) ToDatasetInitialImportDatasetConfigurationPtrOutput() DatasetInitialImportDatasetConfigurationPtrOutput {
+	return i.ToDatasetInitialImportDatasetConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *datasetInitialImportDatasetConfigurationPtrType) ToDatasetInitialImportDatasetConfigurationPtrOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatasetInitialImportDatasetConfigurationPtrOutput)
+}
+
+type DatasetInitialImportDatasetConfigurationOutput struct{ *pulumi.OutputState }
+
+func (DatasetInitialImportDatasetConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatasetInitialImportDatasetConfiguration)(nil)).Elem()
+}
+
+func (o DatasetInitialImportDatasetConfigurationOutput) ToDatasetInitialImportDatasetConfigurationOutput() DatasetInitialImportDatasetConfigurationOutput {
+	return o
+}
+
+func (o DatasetInitialImportDatasetConfigurationOutput) ToDatasetInitialImportDatasetConfigurationOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationOutput {
+	return o
+}
+
+func (o DatasetInitialImportDatasetConfigurationOutput) ToDatasetInitialImportDatasetConfigurationPtrOutput() DatasetInitialImportDatasetConfigurationPtrOutput {
+	return o.ToDatasetInitialImportDatasetConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o DatasetInitialImportDatasetConfigurationOutput) ToDatasetInitialImportDatasetConfigurationPtrOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatasetInitialImportDatasetConfiguration) *DatasetInitialImportDatasetConfiguration {
+		return &v
+	}).(DatasetInitialImportDatasetConfigurationPtrOutput)
+}
+
+// File format details used for importing dataset
+func (o DatasetInitialImportDatasetConfigurationOutput) ImportFormat() DatasetInitialImportDatasetConfigurationImportFormatOutput {
+	return o.ApplyT(func(v DatasetInitialImportDatasetConfiguration) DatasetInitialImportDatasetConfigurationImportFormat {
+		return v.ImportFormat
+	}).(DatasetInitialImportDatasetConfigurationImportFormatOutput)
+}
+
+// Object storage path for the metadata file
+func (o DatasetInitialImportDatasetConfigurationOutput) ImportMetadataPath() DatasetInitialImportDatasetConfigurationImportMetadataPathOutput {
+	return o.ApplyT(func(v DatasetInitialImportDatasetConfiguration) DatasetInitialImportDatasetConfigurationImportMetadataPath {
+		return v.ImportMetadataPath
+	}).(DatasetInitialImportDatasetConfigurationImportMetadataPathOutput)
+}
+
+type DatasetInitialImportDatasetConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (DatasetInitialImportDatasetConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatasetInitialImportDatasetConfiguration)(nil)).Elem()
+}
+
+func (o DatasetInitialImportDatasetConfigurationPtrOutput) ToDatasetInitialImportDatasetConfigurationPtrOutput() DatasetInitialImportDatasetConfigurationPtrOutput {
+	return o
+}
+
+func (o DatasetInitialImportDatasetConfigurationPtrOutput) ToDatasetInitialImportDatasetConfigurationPtrOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationPtrOutput {
+	return o
+}
+
+func (o DatasetInitialImportDatasetConfigurationPtrOutput) Elem() DatasetInitialImportDatasetConfigurationOutput {
+	return o.ApplyT(func(v *DatasetInitialImportDatasetConfiguration) DatasetInitialImportDatasetConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret DatasetInitialImportDatasetConfiguration
+		return ret
+	}).(DatasetInitialImportDatasetConfigurationOutput)
+}
+
+// File format details used for importing dataset
+func (o DatasetInitialImportDatasetConfigurationPtrOutput) ImportFormat() DatasetInitialImportDatasetConfigurationImportFormatPtrOutput {
+	return o.ApplyT(func(v *DatasetInitialImportDatasetConfiguration) *DatasetInitialImportDatasetConfigurationImportFormat {
+		if v == nil {
+			return nil
+		}
+		return &v.ImportFormat
+	}).(DatasetInitialImportDatasetConfigurationImportFormatPtrOutput)
+}
+
+// Object storage path for the metadata file
+func (o DatasetInitialImportDatasetConfigurationPtrOutput) ImportMetadataPath() DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput {
+	return o.ApplyT(func(v *DatasetInitialImportDatasetConfiguration) *DatasetInitialImportDatasetConfigurationImportMetadataPath {
+		if v == nil {
+			return nil
+		}
+		return &v.ImportMetadataPath
+	}).(DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput)
+}
+
+type DatasetInitialImportDatasetConfigurationImportFormat struct {
+	// An unique name for a label within its dataset.
+	Name string `pulumi:"name"`
+	// Version of import format
+	Version *string `pulumi:"version"`
+}
+
+// DatasetInitialImportDatasetConfigurationImportFormatInput is an input type that accepts DatasetInitialImportDatasetConfigurationImportFormatArgs and DatasetInitialImportDatasetConfigurationImportFormatOutput values.
+// You can construct a concrete instance of `DatasetInitialImportDatasetConfigurationImportFormatInput` via:
+//
+//	DatasetInitialImportDatasetConfigurationImportFormatArgs{...}
+type DatasetInitialImportDatasetConfigurationImportFormatInput interface {
+	pulumi.Input
+
+	ToDatasetInitialImportDatasetConfigurationImportFormatOutput() DatasetInitialImportDatasetConfigurationImportFormatOutput
+	ToDatasetInitialImportDatasetConfigurationImportFormatOutputWithContext(context.Context) DatasetInitialImportDatasetConfigurationImportFormatOutput
+}
+
+type DatasetInitialImportDatasetConfigurationImportFormatArgs struct {
+	// An unique name for a label within its dataset.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Version of import format
+	Version pulumi.StringPtrInput `pulumi:"version"`
+}
+
+func (DatasetInitialImportDatasetConfigurationImportFormatArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatasetInitialImportDatasetConfigurationImportFormat)(nil)).Elem()
+}
+
+func (i DatasetInitialImportDatasetConfigurationImportFormatArgs) ToDatasetInitialImportDatasetConfigurationImportFormatOutput() DatasetInitialImportDatasetConfigurationImportFormatOutput {
+	return i.ToDatasetInitialImportDatasetConfigurationImportFormatOutputWithContext(context.Background())
+}
+
+func (i DatasetInitialImportDatasetConfigurationImportFormatArgs) ToDatasetInitialImportDatasetConfigurationImportFormatOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationImportFormatOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatasetInitialImportDatasetConfigurationImportFormatOutput)
+}
+
+func (i DatasetInitialImportDatasetConfigurationImportFormatArgs) ToDatasetInitialImportDatasetConfigurationImportFormatPtrOutput() DatasetInitialImportDatasetConfigurationImportFormatPtrOutput {
+	return i.ToDatasetInitialImportDatasetConfigurationImportFormatPtrOutputWithContext(context.Background())
+}
+
+func (i DatasetInitialImportDatasetConfigurationImportFormatArgs) ToDatasetInitialImportDatasetConfigurationImportFormatPtrOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationImportFormatPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatasetInitialImportDatasetConfigurationImportFormatOutput).ToDatasetInitialImportDatasetConfigurationImportFormatPtrOutputWithContext(ctx)
+}
+
+// DatasetInitialImportDatasetConfigurationImportFormatPtrInput is an input type that accepts DatasetInitialImportDatasetConfigurationImportFormatArgs, DatasetInitialImportDatasetConfigurationImportFormatPtr and DatasetInitialImportDatasetConfigurationImportFormatPtrOutput values.
+// You can construct a concrete instance of `DatasetInitialImportDatasetConfigurationImportFormatPtrInput` via:
+//
+//	        DatasetInitialImportDatasetConfigurationImportFormatArgs{...}
+//
+//	or:
+//
+//	        nil
+type DatasetInitialImportDatasetConfigurationImportFormatPtrInput interface {
+	pulumi.Input
+
+	ToDatasetInitialImportDatasetConfigurationImportFormatPtrOutput() DatasetInitialImportDatasetConfigurationImportFormatPtrOutput
+	ToDatasetInitialImportDatasetConfigurationImportFormatPtrOutputWithContext(context.Context) DatasetInitialImportDatasetConfigurationImportFormatPtrOutput
+}
+
+type datasetInitialImportDatasetConfigurationImportFormatPtrType DatasetInitialImportDatasetConfigurationImportFormatArgs
+
+func DatasetInitialImportDatasetConfigurationImportFormatPtr(v *DatasetInitialImportDatasetConfigurationImportFormatArgs) DatasetInitialImportDatasetConfigurationImportFormatPtrInput {
+	return (*datasetInitialImportDatasetConfigurationImportFormatPtrType)(v)
+}
+
+func (*datasetInitialImportDatasetConfigurationImportFormatPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatasetInitialImportDatasetConfigurationImportFormat)(nil)).Elem()
+}
+
+func (i *datasetInitialImportDatasetConfigurationImportFormatPtrType) ToDatasetInitialImportDatasetConfigurationImportFormatPtrOutput() DatasetInitialImportDatasetConfigurationImportFormatPtrOutput {
+	return i.ToDatasetInitialImportDatasetConfigurationImportFormatPtrOutputWithContext(context.Background())
+}
+
+func (i *datasetInitialImportDatasetConfigurationImportFormatPtrType) ToDatasetInitialImportDatasetConfigurationImportFormatPtrOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationImportFormatPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatasetInitialImportDatasetConfigurationImportFormatPtrOutput)
+}
+
+type DatasetInitialImportDatasetConfigurationImportFormatOutput struct{ *pulumi.OutputState }
+
+func (DatasetInitialImportDatasetConfigurationImportFormatOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatasetInitialImportDatasetConfigurationImportFormat)(nil)).Elem()
+}
+
+func (o DatasetInitialImportDatasetConfigurationImportFormatOutput) ToDatasetInitialImportDatasetConfigurationImportFormatOutput() DatasetInitialImportDatasetConfigurationImportFormatOutput {
+	return o
+}
+
+func (o DatasetInitialImportDatasetConfigurationImportFormatOutput) ToDatasetInitialImportDatasetConfigurationImportFormatOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationImportFormatOutput {
+	return o
+}
+
+func (o DatasetInitialImportDatasetConfigurationImportFormatOutput) ToDatasetInitialImportDatasetConfigurationImportFormatPtrOutput() DatasetInitialImportDatasetConfigurationImportFormatPtrOutput {
+	return o.ToDatasetInitialImportDatasetConfigurationImportFormatPtrOutputWithContext(context.Background())
+}
+
+func (o DatasetInitialImportDatasetConfigurationImportFormatOutput) ToDatasetInitialImportDatasetConfigurationImportFormatPtrOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationImportFormatPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatasetInitialImportDatasetConfigurationImportFormat) *DatasetInitialImportDatasetConfigurationImportFormat {
+		return &v
+	}).(DatasetInitialImportDatasetConfigurationImportFormatPtrOutput)
+}
+
+// An unique name for a label within its dataset.
+func (o DatasetInitialImportDatasetConfigurationImportFormatOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v DatasetInitialImportDatasetConfigurationImportFormat) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Version of import format
+func (o DatasetInitialImportDatasetConfigurationImportFormatOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatasetInitialImportDatasetConfigurationImportFormat) *string { return v.Version }).(pulumi.StringPtrOutput)
+}
+
+type DatasetInitialImportDatasetConfigurationImportFormatPtrOutput struct{ *pulumi.OutputState }
+
+func (DatasetInitialImportDatasetConfigurationImportFormatPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatasetInitialImportDatasetConfigurationImportFormat)(nil)).Elem()
+}
+
+func (o DatasetInitialImportDatasetConfigurationImportFormatPtrOutput) ToDatasetInitialImportDatasetConfigurationImportFormatPtrOutput() DatasetInitialImportDatasetConfigurationImportFormatPtrOutput {
+	return o
+}
+
+func (o DatasetInitialImportDatasetConfigurationImportFormatPtrOutput) ToDatasetInitialImportDatasetConfigurationImportFormatPtrOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationImportFormatPtrOutput {
+	return o
+}
+
+func (o DatasetInitialImportDatasetConfigurationImportFormatPtrOutput) Elem() DatasetInitialImportDatasetConfigurationImportFormatOutput {
+	return o.ApplyT(func(v *DatasetInitialImportDatasetConfigurationImportFormat) DatasetInitialImportDatasetConfigurationImportFormat {
+		if v != nil {
+			return *v
+		}
+		var ret DatasetInitialImportDatasetConfigurationImportFormat
+		return ret
+	}).(DatasetInitialImportDatasetConfigurationImportFormatOutput)
+}
+
+// An unique name for a label within its dataset.
+func (o DatasetInitialImportDatasetConfigurationImportFormatPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatasetInitialImportDatasetConfigurationImportFormat) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// Version of import format
+func (o DatasetInitialImportDatasetConfigurationImportFormatPtrOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatasetInitialImportDatasetConfigurationImportFormat) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Version
+	}).(pulumi.StringPtrOutput)
+}
+
+type DatasetInitialImportDatasetConfigurationImportMetadataPath struct {
+	// Bucket name
+	Bucket string `pulumi:"bucket"`
+	// Bucket namespace name
+	Namespace string `pulumi:"namespace"`
+	// Path for the metadata file.
+	Path string `pulumi:"path"`
+	// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+	SourceType string `pulumi:"sourceType"`
+}
+
+// DatasetInitialImportDatasetConfigurationImportMetadataPathInput is an input type that accepts DatasetInitialImportDatasetConfigurationImportMetadataPathArgs and DatasetInitialImportDatasetConfigurationImportMetadataPathOutput values.
+// You can construct a concrete instance of `DatasetInitialImportDatasetConfigurationImportMetadataPathInput` via:
+//
+//	DatasetInitialImportDatasetConfigurationImportMetadataPathArgs{...}
+type DatasetInitialImportDatasetConfigurationImportMetadataPathInput interface {
+	pulumi.Input
+
+	ToDatasetInitialImportDatasetConfigurationImportMetadataPathOutput() DatasetInitialImportDatasetConfigurationImportMetadataPathOutput
+	ToDatasetInitialImportDatasetConfigurationImportMetadataPathOutputWithContext(context.Context) DatasetInitialImportDatasetConfigurationImportMetadataPathOutput
+}
+
+type DatasetInitialImportDatasetConfigurationImportMetadataPathArgs struct {
+	// Bucket name
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Bucket namespace name
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Path for the metadata file.
+	Path pulumi.StringInput `pulumi:"path"`
+	// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
+}
+
+func (DatasetInitialImportDatasetConfigurationImportMetadataPathArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatasetInitialImportDatasetConfigurationImportMetadataPath)(nil)).Elem()
+}
+
+func (i DatasetInitialImportDatasetConfigurationImportMetadataPathArgs) ToDatasetInitialImportDatasetConfigurationImportMetadataPathOutput() DatasetInitialImportDatasetConfigurationImportMetadataPathOutput {
+	return i.ToDatasetInitialImportDatasetConfigurationImportMetadataPathOutputWithContext(context.Background())
+}
+
+func (i DatasetInitialImportDatasetConfigurationImportMetadataPathArgs) ToDatasetInitialImportDatasetConfigurationImportMetadataPathOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationImportMetadataPathOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatasetInitialImportDatasetConfigurationImportMetadataPathOutput)
+}
+
+func (i DatasetInitialImportDatasetConfigurationImportMetadataPathArgs) ToDatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput() DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput {
+	return i.ToDatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutputWithContext(context.Background())
+}
+
+func (i DatasetInitialImportDatasetConfigurationImportMetadataPathArgs) ToDatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatasetInitialImportDatasetConfigurationImportMetadataPathOutput).ToDatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutputWithContext(ctx)
+}
+
+// DatasetInitialImportDatasetConfigurationImportMetadataPathPtrInput is an input type that accepts DatasetInitialImportDatasetConfigurationImportMetadataPathArgs, DatasetInitialImportDatasetConfigurationImportMetadataPathPtr and DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput values.
+// You can construct a concrete instance of `DatasetInitialImportDatasetConfigurationImportMetadataPathPtrInput` via:
+//
+//	        DatasetInitialImportDatasetConfigurationImportMetadataPathArgs{...}
+//
+//	or:
+//
+//	        nil
+type DatasetInitialImportDatasetConfigurationImportMetadataPathPtrInput interface {
+	pulumi.Input
+
+	ToDatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput() DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput
+	ToDatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutputWithContext(context.Context) DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput
+}
+
+type datasetInitialImportDatasetConfigurationImportMetadataPathPtrType DatasetInitialImportDatasetConfigurationImportMetadataPathArgs
+
+func DatasetInitialImportDatasetConfigurationImportMetadataPathPtr(v *DatasetInitialImportDatasetConfigurationImportMetadataPathArgs) DatasetInitialImportDatasetConfigurationImportMetadataPathPtrInput {
+	return (*datasetInitialImportDatasetConfigurationImportMetadataPathPtrType)(v)
+}
+
+func (*datasetInitialImportDatasetConfigurationImportMetadataPathPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatasetInitialImportDatasetConfigurationImportMetadataPath)(nil)).Elem()
+}
+
+func (i *datasetInitialImportDatasetConfigurationImportMetadataPathPtrType) ToDatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput() DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput {
+	return i.ToDatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutputWithContext(context.Background())
+}
+
+func (i *datasetInitialImportDatasetConfigurationImportMetadataPathPtrType) ToDatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput)
+}
+
+type DatasetInitialImportDatasetConfigurationImportMetadataPathOutput struct{ *pulumi.OutputState }
+
+func (DatasetInitialImportDatasetConfigurationImportMetadataPathOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatasetInitialImportDatasetConfigurationImportMetadataPath)(nil)).Elem()
+}
+
+func (o DatasetInitialImportDatasetConfigurationImportMetadataPathOutput) ToDatasetInitialImportDatasetConfigurationImportMetadataPathOutput() DatasetInitialImportDatasetConfigurationImportMetadataPathOutput {
+	return o
+}
+
+func (o DatasetInitialImportDatasetConfigurationImportMetadataPathOutput) ToDatasetInitialImportDatasetConfigurationImportMetadataPathOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationImportMetadataPathOutput {
+	return o
+}
+
+func (o DatasetInitialImportDatasetConfigurationImportMetadataPathOutput) ToDatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput() DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput {
+	return o.ToDatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutputWithContext(context.Background())
+}
+
+func (o DatasetInitialImportDatasetConfigurationImportMetadataPathOutput) ToDatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatasetInitialImportDatasetConfigurationImportMetadataPath) *DatasetInitialImportDatasetConfigurationImportMetadataPath {
+		return &v
+	}).(DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput)
+}
+
+// Bucket name
+func (o DatasetInitialImportDatasetConfigurationImportMetadataPathOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v DatasetInitialImportDatasetConfigurationImportMetadataPath) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Bucket namespace name
+func (o DatasetInitialImportDatasetConfigurationImportMetadataPathOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v DatasetInitialImportDatasetConfigurationImportMetadataPath) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Path for the metadata file.
+func (o DatasetInitialImportDatasetConfigurationImportMetadataPathOutput) Path() pulumi.StringOutput {
+	return o.ApplyT(func(v DatasetInitialImportDatasetConfigurationImportMetadataPath) string { return v.Path }).(pulumi.StringOutput)
+}
+
+// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+func (o DatasetInitialImportDatasetConfigurationImportMetadataPathOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v DatasetInitialImportDatasetConfigurationImportMetadataPath) string { return v.SourceType }).(pulumi.StringOutput)
+}
+
+type DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput struct{ *pulumi.OutputState }
+
+func (DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatasetInitialImportDatasetConfigurationImportMetadataPath)(nil)).Elem()
+}
+
+func (o DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput) ToDatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput() DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput {
+	return o
+}
+
+func (o DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput) ToDatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput {
+	return o
+}
+
+func (o DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput) Elem() DatasetInitialImportDatasetConfigurationImportMetadataPathOutput {
+	return o.ApplyT(func(v *DatasetInitialImportDatasetConfigurationImportMetadataPath) DatasetInitialImportDatasetConfigurationImportMetadataPath {
+		if v != nil {
+			return *v
+		}
+		var ret DatasetInitialImportDatasetConfigurationImportMetadataPath
+		return ret
+	}).(DatasetInitialImportDatasetConfigurationImportMetadataPathOutput)
+}
+
+// Bucket name
+func (o DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatasetInitialImportDatasetConfigurationImportMetadataPath) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// Bucket namespace name
+func (o DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatasetInitialImportDatasetConfigurationImportMetadataPath) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// Path for the metadata file.
+func (o DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatasetInitialImportDatasetConfigurationImportMetadataPath) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Path
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+func (o DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatasetInitialImportDatasetConfigurationImportMetadataPath) *string {
 		if v == nil {
 			return nil
 		}
@@ -1599,13 +2109,13 @@ func (o GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput) Index(i pu
 }
 
 type GetDatasetDatasetSourceDetail struct {
-	// The object storage bucket that contains the dataset data source.
+	// Bucket name
 	Bucket string `pulumi:"bucket"`
-	// The namespace of the bucket that contains the dataset data source.
+	// Bucket namespace name
 	Namespace string `pulumi:"namespace"`
 	// A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
 	Prefix string `pulumi:"prefix"`
-	// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+	// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
 	SourceType string `pulumi:"sourceType"`
 }
 
@@ -1621,13 +2131,13 @@ type GetDatasetDatasetSourceDetailInput interface {
 }
 
 type GetDatasetDatasetSourceDetailArgs struct {
-	// The object storage bucket that contains the dataset data source.
+	// Bucket name
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The namespace of the bucket that contains the dataset data source.
+	// Bucket namespace name
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
 	Prefix pulumi.StringInput `pulumi:"prefix"`
-	// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+	// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
 
@@ -1682,12 +2192,12 @@ func (o GetDatasetDatasetSourceDetailOutput) ToGetDatasetDatasetSourceDetailOutp
 	return o
 }
 
-// The object storage bucket that contains the dataset data source.
+// Bucket name
 func (o GetDatasetDatasetSourceDetailOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetDatasetSourceDetail) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The namespace of the bucket that contains the dataset data source.
+// Bucket namespace name
 func (o GetDatasetDatasetSourceDetailOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetDatasetSourceDetail) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -1697,7 +2207,7 @@ func (o GetDatasetDatasetSourceDetailOutput) Prefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetDatasetSourceDetail) string { return v.Prefix }).(pulumi.StringOutput)
 }
 
-// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
 func (o GetDatasetDatasetSourceDetailOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetDatasetSourceDetail) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -1720,6 +2230,346 @@ func (o GetDatasetDatasetSourceDetailArrayOutput) Index(i pulumi.IntInput) GetDa
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatasetDatasetSourceDetail {
 		return vs[0].([]GetDatasetDatasetSourceDetail)[vs[1].(int)]
 	}).(GetDatasetDatasetSourceDetailOutput)
+}
+
+type GetDatasetInitialImportDatasetConfiguration struct {
+	// File format details used for importing dataset
+	ImportFormats []GetDatasetInitialImportDatasetConfigurationImportFormat `pulumi:"importFormats"`
+	// Object storage path for the metadata file
+	ImportMetadataPaths []GetDatasetInitialImportDatasetConfigurationImportMetadataPath `pulumi:"importMetadataPaths"`
+}
+
+// GetDatasetInitialImportDatasetConfigurationInput is an input type that accepts GetDatasetInitialImportDatasetConfigurationArgs and GetDatasetInitialImportDatasetConfigurationOutput values.
+// You can construct a concrete instance of `GetDatasetInitialImportDatasetConfigurationInput` via:
+//
+//	GetDatasetInitialImportDatasetConfigurationArgs{...}
+type GetDatasetInitialImportDatasetConfigurationInput interface {
+	pulumi.Input
+
+	ToGetDatasetInitialImportDatasetConfigurationOutput() GetDatasetInitialImportDatasetConfigurationOutput
+	ToGetDatasetInitialImportDatasetConfigurationOutputWithContext(context.Context) GetDatasetInitialImportDatasetConfigurationOutput
+}
+
+type GetDatasetInitialImportDatasetConfigurationArgs struct {
+	// File format details used for importing dataset
+	ImportFormats GetDatasetInitialImportDatasetConfigurationImportFormatArrayInput `pulumi:"importFormats"`
+	// Object storage path for the metadata file
+	ImportMetadataPaths GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayInput `pulumi:"importMetadataPaths"`
+}
+
+func (GetDatasetInitialImportDatasetConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatasetInitialImportDatasetConfiguration)(nil)).Elem()
+}
+
+func (i GetDatasetInitialImportDatasetConfigurationArgs) ToGetDatasetInitialImportDatasetConfigurationOutput() GetDatasetInitialImportDatasetConfigurationOutput {
+	return i.ToGetDatasetInitialImportDatasetConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetDatasetInitialImportDatasetConfigurationArgs) ToGetDatasetInitialImportDatasetConfigurationOutputWithContext(ctx context.Context) GetDatasetInitialImportDatasetConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetInitialImportDatasetConfigurationOutput)
+}
+
+// GetDatasetInitialImportDatasetConfigurationArrayInput is an input type that accepts GetDatasetInitialImportDatasetConfigurationArray and GetDatasetInitialImportDatasetConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetDatasetInitialImportDatasetConfigurationArrayInput` via:
+//
+//	GetDatasetInitialImportDatasetConfigurationArray{ GetDatasetInitialImportDatasetConfigurationArgs{...} }
+type GetDatasetInitialImportDatasetConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetDatasetInitialImportDatasetConfigurationArrayOutput() GetDatasetInitialImportDatasetConfigurationArrayOutput
+	ToGetDatasetInitialImportDatasetConfigurationArrayOutputWithContext(context.Context) GetDatasetInitialImportDatasetConfigurationArrayOutput
+}
+
+type GetDatasetInitialImportDatasetConfigurationArray []GetDatasetInitialImportDatasetConfigurationInput
+
+func (GetDatasetInitialImportDatasetConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatasetInitialImportDatasetConfiguration)(nil)).Elem()
+}
+
+func (i GetDatasetInitialImportDatasetConfigurationArray) ToGetDatasetInitialImportDatasetConfigurationArrayOutput() GetDatasetInitialImportDatasetConfigurationArrayOutput {
+	return i.ToGetDatasetInitialImportDatasetConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatasetInitialImportDatasetConfigurationArray) ToGetDatasetInitialImportDatasetConfigurationArrayOutputWithContext(ctx context.Context) GetDatasetInitialImportDatasetConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetInitialImportDatasetConfigurationArrayOutput)
+}
+
+type GetDatasetInitialImportDatasetConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetDatasetInitialImportDatasetConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatasetInitialImportDatasetConfiguration)(nil)).Elem()
+}
+
+func (o GetDatasetInitialImportDatasetConfigurationOutput) ToGetDatasetInitialImportDatasetConfigurationOutput() GetDatasetInitialImportDatasetConfigurationOutput {
+	return o
+}
+
+func (o GetDatasetInitialImportDatasetConfigurationOutput) ToGetDatasetInitialImportDatasetConfigurationOutputWithContext(ctx context.Context) GetDatasetInitialImportDatasetConfigurationOutput {
+	return o
+}
+
+// File format details used for importing dataset
+func (o GetDatasetInitialImportDatasetConfigurationOutput) ImportFormats() GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput {
+	return o.ApplyT(func(v GetDatasetInitialImportDatasetConfiguration) []GetDatasetInitialImportDatasetConfigurationImportFormat {
+		return v.ImportFormats
+	}).(GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput)
+}
+
+// Object storage path for the metadata file
+func (o GetDatasetInitialImportDatasetConfigurationOutput) ImportMetadataPaths() GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput {
+	return o.ApplyT(func(v GetDatasetInitialImportDatasetConfiguration) []GetDatasetInitialImportDatasetConfigurationImportMetadataPath {
+		return v.ImportMetadataPaths
+	}).(GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput)
+}
+
+type GetDatasetInitialImportDatasetConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatasetInitialImportDatasetConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatasetInitialImportDatasetConfiguration)(nil)).Elem()
+}
+
+func (o GetDatasetInitialImportDatasetConfigurationArrayOutput) ToGetDatasetInitialImportDatasetConfigurationArrayOutput() GetDatasetInitialImportDatasetConfigurationArrayOutput {
+	return o
+}
+
+func (o GetDatasetInitialImportDatasetConfigurationArrayOutput) ToGetDatasetInitialImportDatasetConfigurationArrayOutputWithContext(ctx context.Context) GetDatasetInitialImportDatasetConfigurationArrayOutput {
+	return o
+}
+
+func (o GetDatasetInitialImportDatasetConfigurationArrayOutput) Index(i pulumi.IntInput) GetDatasetInitialImportDatasetConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatasetInitialImportDatasetConfiguration {
+		return vs[0].([]GetDatasetInitialImportDatasetConfiguration)[vs[1].(int)]
+	}).(GetDatasetInitialImportDatasetConfigurationOutput)
+}
+
+type GetDatasetInitialImportDatasetConfigurationImportFormat struct {
+	// An unique name for a label within its dataset.
+	Name string `pulumi:"name"`
+	// Version of import format
+	Version string `pulumi:"version"`
+}
+
+// GetDatasetInitialImportDatasetConfigurationImportFormatInput is an input type that accepts GetDatasetInitialImportDatasetConfigurationImportFormatArgs and GetDatasetInitialImportDatasetConfigurationImportFormatOutput values.
+// You can construct a concrete instance of `GetDatasetInitialImportDatasetConfigurationImportFormatInput` via:
+//
+//	GetDatasetInitialImportDatasetConfigurationImportFormatArgs{...}
+type GetDatasetInitialImportDatasetConfigurationImportFormatInput interface {
+	pulumi.Input
+
+	ToGetDatasetInitialImportDatasetConfigurationImportFormatOutput() GetDatasetInitialImportDatasetConfigurationImportFormatOutput
+	ToGetDatasetInitialImportDatasetConfigurationImportFormatOutputWithContext(context.Context) GetDatasetInitialImportDatasetConfigurationImportFormatOutput
+}
+
+type GetDatasetInitialImportDatasetConfigurationImportFormatArgs struct {
+	// An unique name for a label within its dataset.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Version of import format
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetDatasetInitialImportDatasetConfigurationImportFormatArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatasetInitialImportDatasetConfigurationImportFormat)(nil)).Elem()
+}
+
+func (i GetDatasetInitialImportDatasetConfigurationImportFormatArgs) ToGetDatasetInitialImportDatasetConfigurationImportFormatOutput() GetDatasetInitialImportDatasetConfigurationImportFormatOutput {
+	return i.ToGetDatasetInitialImportDatasetConfigurationImportFormatOutputWithContext(context.Background())
+}
+
+func (i GetDatasetInitialImportDatasetConfigurationImportFormatArgs) ToGetDatasetInitialImportDatasetConfigurationImportFormatOutputWithContext(ctx context.Context) GetDatasetInitialImportDatasetConfigurationImportFormatOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetInitialImportDatasetConfigurationImportFormatOutput)
+}
+
+// GetDatasetInitialImportDatasetConfigurationImportFormatArrayInput is an input type that accepts GetDatasetInitialImportDatasetConfigurationImportFormatArray and GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput values.
+// You can construct a concrete instance of `GetDatasetInitialImportDatasetConfigurationImportFormatArrayInput` via:
+//
+//	GetDatasetInitialImportDatasetConfigurationImportFormatArray{ GetDatasetInitialImportDatasetConfigurationImportFormatArgs{...} }
+type GetDatasetInitialImportDatasetConfigurationImportFormatArrayInput interface {
+	pulumi.Input
+
+	ToGetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput() GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput
+	ToGetDatasetInitialImportDatasetConfigurationImportFormatArrayOutputWithContext(context.Context) GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput
+}
+
+type GetDatasetInitialImportDatasetConfigurationImportFormatArray []GetDatasetInitialImportDatasetConfigurationImportFormatInput
+
+func (GetDatasetInitialImportDatasetConfigurationImportFormatArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatasetInitialImportDatasetConfigurationImportFormat)(nil)).Elem()
+}
+
+func (i GetDatasetInitialImportDatasetConfigurationImportFormatArray) ToGetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput() GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput {
+	return i.ToGetDatasetInitialImportDatasetConfigurationImportFormatArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatasetInitialImportDatasetConfigurationImportFormatArray) ToGetDatasetInitialImportDatasetConfigurationImportFormatArrayOutputWithContext(ctx context.Context) GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput)
+}
+
+type GetDatasetInitialImportDatasetConfigurationImportFormatOutput struct{ *pulumi.OutputState }
+
+func (GetDatasetInitialImportDatasetConfigurationImportFormatOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatasetInitialImportDatasetConfigurationImportFormat)(nil)).Elem()
+}
+
+func (o GetDatasetInitialImportDatasetConfigurationImportFormatOutput) ToGetDatasetInitialImportDatasetConfigurationImportFormatOutput() GetDatasetInitialImportDatasetConfigurationImportFormatOutput {
+	return o
+}
+
+func (o GetDatasetInitialImportDatasetConfigurationImportFormatOutput) ToGetDatasetInitialImportDatasetConfigurationImportFormatOutputWithContext(ctx context.Context) GetDatasetInitialImportDatasetConfigurationImportFormatOutput {
+	return o
+}
+
+// An unique name for a label within its dataset.
+func (o GetDatasetInitialImportDatasetConfigurationImportFormatOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetInitialImportDatasetConfigurationImportFormat) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Version of import format
+func (o GetDatasetInitialImportDatasetConfigurationImportFormatOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetInitialImportDatasetConfigurationImportFormat) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatasetInitialImportDatasetConfigurationImportFormat)(nil)).Elem()
+}
+
+func (o GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput) ToGetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput() GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput {
+	return o
+}
+
+func (o GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput) ToGetDatasetInitialImportDatasetConfigurationImportFormatArrayOutputWithContext(ctx context.Context) GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput {
+	return o
+}
+
+func (o GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput) Index(i pulumi.IntInput) GetDatasetInitialImportDatasetConfigurationImportFormatOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatasetInitialImportDatasetConfigurationImportFormat {
+		return vs[0].([]GetDatasetInitialImportDatasetConfigurationImportFormat)[vs[1].(int)]
+	}).(GetDatasetInitialImportDatasetConfigurationImportFormatOutput)
+}
+
+type GetDatasetInitialImportDatasetConfigurationImportMetadataPath struct {
+	// Bucket name
+	Bucket string `pulumi:"bucket"`
+	// Bucket namespace name
+	Namespace string `pulumi:"namespace"`
+	// Path for the metadata file.
+	Path string `pulumi:"path"`
+	// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+	SourceType string `pulumi:"sourceType"`
+}
+
+// GetDatasetInitialImportDatasetConfigurationImportMetadataPathInput is an input type that accepts GetDatasetInitialImportDatasetConfigurationImportMetadataPathArgs and GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput values.
+// You can construct a concrete instance of `GetDatasetInitialImportDatasetConfigurationImportMetadataPathInput` via:
+//
+//	GetDatasetInitialImportDatasetConfigurationImportMetadataPathArgs{...}
+type GetDatasetInitialImportDatasetConfigurationImportMetadataPathInput interface {
+	pulumi.Input
+
+	ToGetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput() GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput
+	ToGetDatasetInitialImportDatasetConfigurationImportMetadataPathOutputWithContext(context.Context) GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput
+}
+
+type GetDatasetInitialImportDatasetConfigurationImportMetadataPathArgs struct {
+	// Bucket name
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Bucket namespace name
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Path for the metadata file.
+	Path pulumi.StringInput `pulumi:"path"`
+	// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
+}
+
+func (GetDatasetInitialImportDatasetConfigurationImportMetadataPathArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatasetInitialImportDatasetConfigurationImportMetadataPath)(nil)).Elem()
+}
+
+func (i GetDatasetInitialImportDatasetConfigurationImportMetadataPathArgs) ToGetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput() GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput {
+	return i.ToGetDatasetInitialImportDatasetConfigurationImportMetadataPathOutputWithContext(context.Background())
+}
+
+func (i GetDatasetInitialImportDatasetConfigurationImportMetadataPathArgs) ToGetDatasetInitialImportDatasetConfigurationImportMetadataPathOutputWithContext(ctx context.Context) GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput)
+}
+
+// GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayInput is an input type that accepts GetDatasetInitialImportDatasetConfigurationImportMetadataPathArray and GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput values.
+// You can construct a concrete instance of `GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayInput` via:
+//
+//	GetDatasetInitialImportDatasetConfigurationImportMetadataPathArray{ GetDatasetInitialImportDatasetConfigurationImportMetadataPathArgs{...} }
+type GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayInput interface {
+	pulumi.Input
+
+	ToGetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput() GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput
+	ToGetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutputWithContext(context.Context) GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput
+}
+
+type GetDatasetInitialImportDatasetConfigurationImportMetadataPathArray []GetDatasetInitialImportDatasetConfigurationImportMetadataPathInput
+
+func (GetDatasetInitialImportDatasetConfigurationImportMetadataPathArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatasetInitialImportDatasetConfigurationImportMetadataPath)(nil)).Elem()
+}
+
+func (i GetDatasetInitialImportDatasetConfigurationImportMetadataPathArray) ToGetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput() GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput {
+	return i.ToGetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatasetInitialImportDatasetConfigurationImportMetadataPathArray) ToGetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutputWithContext(ctx context.Context) GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput)
+}
+
+type GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput struct{ *pulumi.OutputState }
+
+func (GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatasetInitialImportDatasetConfigurationImportMetadataPath)(nil)).Elem()
+}
+
+func (o GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput) ToGetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput() GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput {
+	return o
+}
+
+func (o GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput) ToGetDatasetInitialImportDatasetConfigurationImportMetadataPathOutputWithContext(ctx context.Context) GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput {
+	return o
+}
+
+// Bucket name
+func (o GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetInitialImportDatasetConfigurationImportMetadataPath) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Bucket namespace name
+func (o GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetInitialImportDatasetConfigurationImportMetadataPath) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Path for the metadata file.
+func (o GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput) Path() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetInitialImportDatasetConfigurationImportMetadataPath) string { return v.Path }).(pulumi.StringOutput)
+}
+
+// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+func (o GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetInitialImportDatasetConfigurationImportMetadataPath) string { return v.SourceType }).(pulumi.StringOutput)
+}
+
+type GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatasetInitialImportDatasetConfigurationImportMetadataPath)(nil)).Elem()
+}
+
+func (o GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput) ToGetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput() GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput {
+	return o
+}
+
+func (o GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput) ToGetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutputWithContext(ctx context.Context) GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput {
+	return o
+}
+
+func (o GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput) Index(i pulumi.IntInput) GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatasetInitialImportDatasetConfigurationImportMetadataPath {
+		return vs[0].([]GetDatasetInitialImportDatasetConfigurationImportMetadataPath)[vs[1].(int)]
+	}).(GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput)
 }
 
 type GetDatasetInitialRecordGenerationConfiguration struct {
@@ -2102,6 +2952,8 @@ func (o GetDatasetsDatasetCollectionArrayOutput) Index(i pulumi.IntInput) GetDat
 }
 
 type GetDatasetsDatasetCollectionItem struct {
+	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+	AdditionalProperties map[string]interface{} `pulumi:"additionalProperties"`
 	// A filter to return only resources that match the entire annotation format given.
 	AnnotationFormat string `pulumi:"annotationFormat"`
 	// The ID of the compartment in which to list resources.
@@ -2120,6 +2972,8 @@ type GetDatasetsDatasetCollectionItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique Dataset OCID
 	Id string `pulumi:"id"`
+	// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+	InitialImportDatasetConfigurations []GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration `pulumi:"initialImportDatasetConfigurations"`
 	// The initial generate records configuration. It generates records from the dataset's source.
 	InitialRecordGenerationConfigurations []GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration `pulumi:"initialRecordGenerationConfigurations"`
 	// An ordered collection of labels that are unique by name.
@@ -2128,6 +2982,8 @@ type GetDatasetsDatasetCollectionItem struct {
 	LabelingInstructions string `pulumi:"labelingInstructions"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+	LifecycleSubstate string `pulumi:"lifecycleSubstate"`
 	// A filter to return only resources whose lifecycleState matches this query param.
 	State string `pulumi:"state"`
 	// The date and time the resource was created, in the timestamp format defined by RFC3339.
@@ -2148,6 +3004,8 @@ type GetDatasetsDatasetCollectionItemInput interface {
 }
 
 type GetDatasetsDatasetCollectionItemArgs struct {
+	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+	AdditionalProperties pulumi.MapInput `pulumi:"additionalProperties"`
 	// A filter to return only resources that match the entire annotation format given.
 	AnnotationFormat pulumi.StringInput `pulumi:"annotationFormat"`
 	// The ID of the compartment in which to list resources.
@@ -2166,6 +3024,8 @@ type GetDatasetsDatasetCollectionItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique Dataset OCID
 	Id pulumi.StringInput `pulumi:"id"`
+	// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+	InitialImportDatasetConfigurations GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayInput `pulumi:"initialImportDatasetConfigurations"`
 	// The initial generate records configuration. It generates records from the dataset's source.
 	InitialRecordGenerationConfigurations GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayInput `pulumi:"initialRecordGenerationConfigurations"`
 	// An ordered collection of labels that are unique by name.
@@ -2174,6 +3034,8 @@ type GetDatasetsDatasetCollectionItemArgs struct {
 	LabelingInstructions pulumi.StringInput `pulumi:"labelingInstructions"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+	LifecycleSubstate pulumi.StringInput `pulumi:"lifecycleSubstate"`
 	// A filter to return only resources whose lifecycleState matches this query param.
 	State pulumi.StringInput `pulumi:"state"`
 	// The date and time the resource was created, in the timestamp format defined by RFC3339.
@@ -2233,6 +3095,11 @@ func (o GetDatasetsDatasetCollectionItemOutput) ToGetDatasetsDatasetCollectionIt
 	return o
 }
 
+// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+func (o GetDatasetsDatasetCollectionItemOutput) AdditionalProperties() pulumi.MapOutput {
+	return o.ApplyT(func(v GetDatasetsDatasetCollectionItem) map[string]interface{} { return v.AdditionalProperties }).(pulumi.MapOutput)
+}
+
 // A filter to return only resources that match the entire annotation format given.
 func (o GetDatasetsDatasetCollectionItemOutput) AnnotationFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetsDatasetCollectionItem) string { return v.AnnotationFormat }).(pulumi.StringOutput)
@@ -2282,6 +3149,13 @@ func (o GetDatasetsDatasetCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetsDatasetCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+func (o GetDatasetsDatasetCollectionItemOutput) InitialImportDatasetConfigurations() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput {
+	return o.ApplyT(func(v GetDatasetsDatasetCollectionItem) []GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration {
+		return v.InitialImportDatasetConfigurations
+	}).(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput)
+}
+
 // The initial generate records configuration. It generates records from the dataset's source.
 func (o GetDatasetsDatasetCollectionItemOutput) InitialRecordGenerationConfigurations() GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayOutput {
 	return o.ApplyT(func(v GetDatasetsDatasetCollectionItem) []GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration {
@@ -2304,6 +3178,11 @@ func (o GetDatasetsDatasetCollectionItemOutput) LabelingInstructions() pulumi.St
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
 func (o GetDatasetsDatasetCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetsDatasetCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+func (o GetDatasetsDatasetCollectionItemOutput) LifecycleSubstate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetsDatasetCollectionItem) string { return v.LifecycleSubstate }).(pulumi.StringOutput)
 }
 
 // A filter to return only resources whose lifecycleState matches this query param.
@@ -2604,13 +3483,13 @@ func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataA
 }
 
 type GetDatasetsDatasetCollectionItemDatasetSourceDetail struct {
-	// The object storage bucket that contains the dataset data source.
+	// Bucket name
 	Bucket string `pulumi:"bucket"`
-	// The namespace of the bucket that contains the dataset data source.
+	// Bucket namespace name
 	Namespace string `pulumi:"namespace"`
 	// A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
 	Prefix string `pulumi:"prefix"`
-	// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+	// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
 	SourceType string `pulumi:"sourceType"`
 }
 
@@ -2626,13 +3505,13 @@ type GetDatasetsDatasetCollectionItemDatasetSourceDetailInput interface {
 }
 
 type GetDatasetsDatasetCollectionItemDatasetSourceDetailArgs struct {
-	// The object storage bucket that contains the dataset data source.
+	// Bucket name
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The namespace of the bucket that contains the dataset data source.
+	// Bucket namespace name
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
 	Prefix pulumi.StringInput `pulumi:"prefix"`
-	// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+	// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
 
@@ -2687,12 +3566,12 @@ func (o GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput) ToGetDatasets
 	return o
 }
 
-// The object storage bucket that contains the dataset data source.
+// Bucket name
 func (o GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemDatasetSourceDetail) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The namespace of the bucket that contains the dataset data source.
+// Bucket namespace name
 func (o GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemDatasetSourceDetail) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -2702,7 +3581,7 @@ func (o GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput) Prefix() pulu
 	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemDatasetSourceDetail) string { return v.Prefix }).(pulumi.StringOutput)
 }
 
-// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
 func (o GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemDatasetSourceDetail) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -2725,6 +3604,358 @@ func (o GetDatasetsDatasetCollectionItemDatasetSourceDetailArrayOutput) Index(i 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatasetsDatasetCollectionItemDatasetSourceDetail {
 		return vs[0].([]GetDatasetsDatasetCollectionItemDatasetSourceDetail)[vs[1].(int)]
 	}).(GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput)
+}
+
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration struct {
+	// File format details used for importing dataset
+	ImportFormats []GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat `pulumi:"importFormats"`
+	// Object storage path for the metadata file
+	ImportMetadataPaths []GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath `pulumi:"importMetadataPaths"`
+}
+
+// GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationInput is an input type that accepts GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArgs and GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput values.
+// You can construct a concrete instance of `GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationInput` via:
+//
+//	GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArgs{...}
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationInput interface {
+	pulumi.Input
+
+	ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput
+	ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutputWithContext(context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput
+}
+
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArgs struct {
+	// File format details used for importing dataset
+	ImportFormats GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayInput `pulumi:"importFormats"`
+	// Object storage path for the metadata file
+	ImportMetadataPaths GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayInput `pulumi:"importMetadataPaths"`
+}
+
+func (GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration)(nil)).Elem()
+}
+
+func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArgs) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput {
+	return i.ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArgs) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput)
+}
+
+// GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArray and GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayInput` via:
+//
+//	GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArray{ GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArgs{...} }
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput
+	ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutputWithContext(context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput
+}
+
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArray []GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationInput
+
+func (GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration)(nil)).Elem()
+}
+
+func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArray) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput {
+	return i.ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArray) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput)
+}
+
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration)(nil)).Elem()
+}
+
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput {
+	return o
+}
+
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput {
+	return o
+}
+
+// File format details used for importing dataset
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput) ImportFormats() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput {
+	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration) []GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat {
+		return v.ImportFormats
+	}).(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput)
+}
+
+// Object storage path for the metadata file
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput) ImportMetadataPaths() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput {
+	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration) []GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath {
+		return v.ImportMetadataPaths
+	}).(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput)
+}
+
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration)(nil)).Elem()
+}
+
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput {
+	return o
+}
+
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput {
+	return o
+}
+
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput) Index(i pulumi.IntInput) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration {
+		return vs[0].([]GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration)[vs[1].(int)]
+	}).(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput)
+}
+
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat struct {
+	// An unique name for a label within its dataset.
+	Name string `pulumi:"name"`
+	// Version of import format
+	Version string `pulumi:"version"`
+}
+
+// GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatInput is an input type that accepts GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArgs and GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput values.
+// You can construct a concrete instance of `GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatInput` via:
+//
+//	GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArgs{...}
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatInput interface {
+	pulumi.Input
+
+	ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput
+	ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutputWithContext(context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput
+}
+
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArgs struct {
+	// An unique name for a label within its dataset.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Version of import format
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat)(nil)).Elem()
+}
+
+func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArgs) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput {
+	return i.ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutputWithContext(context.Background())
+}
+
+func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArgs) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput)
+}
+
+// GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArray and GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput values.
+// You can construct a concrete instance of `GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayInput` via:
+//
+//	GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArray{ GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArgs{...} }
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayInput interface {
+	pulumi.Input
+
+	ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput
+	ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutputWithContext(context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput
+}
+
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArray []GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatInput
+
+func (GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat)(nil)).Elem()
+}
+
+func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArray) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput {
+	return i.ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArray) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput)
+}
+
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput struct{ *pulumi.OutputState }
+
+func (GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat)(nil)).Elem()
+}
+
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput {
+	return o
+}
+
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput {
+	return o
+}
+
+// An unique name for a label within its dataset.
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// Version of import format
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat) string {
+		return v.Version
+	}).(pulumi.StringOutput)
+}
+
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat)(nil)).Elem()
+}
+
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput {
+	return o
+}
+
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput {
+	return o
+}
+
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput) Index(i pulumi.IntInput) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat {
+		return vs[0].([]GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat)[vs[1].(int)]
+	}).(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput)
+}
+
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath struct {
+	// Bucket name
+	Bucket string `pulumi:"bucket"`
+	// Bucket namespace name
+	Namespace string `pulumi:"namespace"`
+	// Path for the metadata file.
+	Path string `pulumi:"path"`
+	// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+	SourceType string `pulumi:"sourceType"`
+}
+
+// GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathInput is an input type that accepts GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArgs and GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput values.
+// You can construct a concrete instance of `GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathInput` via:
+//
+//	GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArgs{...}
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathInput interface {
+	pulumi.Input
+
+	ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput
+	ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutputWithContext(context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput
+}
+
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArgs struct {
+	// Bucket name
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Bucket namespace name
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Path for the metadata file.
+	Path pulumi.StringInput `pulumi:"path"`
+	// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
+}
+
+func (GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath)(nil)).Elem()
+}
+
+func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArgs) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput {
+	return i.ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutputWithContext(context.Background())
+}
+
+func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArgs) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput)
+}
+
+// GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArray and GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput values.
+// You can construct a concrete instance of `GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayInput` via:
+//
+//	GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArray{ GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArgs{...} }
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayInput interface {
+	pulumi.Input
+
+	ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput
+	ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutputWithContext(context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput
+}
+
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArray []GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathInput
+
+func (GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath)(nil)).Elem()
+}
+
+func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArray) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput {
+	return i.ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArray) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput)
+}
+
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput struct{ *pulumi.OutputState }
+
+func (GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath)(nil)).Elem()
+}
+
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput {
+	return o
+}
+
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput {
+	return o
+}
+
+// Bucket name
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath) string {
+		return v.Bucket
+	}).(pulumi.StringOutput)
+}
+
+// Bucket namespace name
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// Path for the metadata file.
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput) Path() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath) string {
+		return v.Path
+	}).(pulumi.StringOutput)
+}
+
+// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath) string {
+		return v.SourceType
+	}).(pulumi.StringOutput)
+}
+
+type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath)(nil)).Elem()
+}
+
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput() GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput {
+	return o
+}
+
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput {
+	return o
+}
+
+func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput) Index(i pulumi.IntInput) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath {
+		return vs[0].([]GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath)[vs[1].(int)]
+	}).(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput)
 }
 
 type GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration struct {
@@ -3127,6 +4358,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DatasetDatasetFormatDetailsTextFileTypeMetadataPtrInput)(nil)).Elem(), DatasetDatasetFormatDetailsTextFileTypeMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatasetDatasetSourceDetailsInput)(nil)).Elem(), DatasetDatasetSourceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatasetDatasetSourceDetailsPtrInput)(nil)).Elem(), DatasetDatasetSourceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatasetInitialImportDatasetConfigurationInput)(nil)).Elem(), DatasetInitialImportDatasetConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatasetInitialImportDatasetConfigurationPtrInput)(nil)).Elem(), DatasetInitialImportDatasetConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatasetInitialImportDatasetConfigurationImportFormatInput)(nil)).Elem(), DatasetInitialImportDatasetConfigurationImportFormatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatasetInitialImportDatasetConfigurationImportFormatPtrInput)(nil)).Elem(), DatasetInitialImportDatasetConfigurationImportFormatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatasetInitialImportDatasetConfigurationImportMetadataPathInput)(nil)).Elem(), DatasetInitialImportDatasetConfigurationImportMetadataPathArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatasetInitialImportDatasetConfigurationImportMetadataPathPtrInput)(nil)).Elem(), DatasetInitialImportDatasetConfigurationImportMetadataPathArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatasetInitialRecordGenerationConfigurationInput)(nil)).Elem(), DatasetInitialRecordGenerationConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatasetInitialRecordGenerationConfigurationPtrInput)(nil)).Elem(), DatasetInitialRecordGenerationConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatasetLabelSetInput)(nil)).Elem(), DatasetLabelSetArgs{})
@@ -3147,6 +4384,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayInput)(nil)).Elem(), GetDatasetDatasetFormatDetailTextFileTypeMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetDatasetSourceDetailInput)(nil)).Elem(), GetDatasetDatasetSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetDatasetSourceDetailArrayInput)(nil)).Elem(), GetDatasetDatasetSourceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetInitialImportDatasetConfigurationInput)(nil)).Elem(), GetDatasetInitialImportDatasetConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetInitialImportDatasetConfigurationArrayInput)(nil)).Elem(), GetDatasetInitialImportDatasetConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetInitialImportDatasetConfigurationImportFormatInput)(nil)).Elem(), GetDatasetInitialImportDatasetConfigurationImportFormatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetInitialImportDatasetConfigurationImportFormatArrayInput)(nil)).Elem(), GetDatasetInitialImportDatasetConfigurationImportFormatArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetInitialImportDatasetConfigurationImportMetadataPathInput)(nil)).Elem(), GetDatasetInitialImportDatasetConfigurationImportMetadataPathArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayInput)(nil)).Elem(), GetDatasetInitialImportDatasetConfigurationImportMetadataPathArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetInitialRecordGenerationConfigurationInput)(nil)).Elem(), GetDatasetInitialRecordGenerationConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetInitialRecordGenerationConfigurationArrayInput)(nil)).Elem(), GetDatasetInitialRecordGenerationConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetLabelSetInput)(nil)).Elem(), GetDatasetLabelSetArgs{})
@@ -3163,6 +4406,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayInput)(nil)).Elem(), GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsDatasetCollectionItemDatasetSourceDetailInput)(nil)).Elem(), GetDatasetsDatasetCollectionItemDatasetSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsDatasetCollectionItemDatasetSourceDetailArrayInput)(nil)).Elem(), GetDatasetsDatasetCollectionItemDatasetSourceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationInput)(nil)).Elem(), GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayInput)(nil)).Elem(), GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatInput)(nil)).Elem(), GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayInput)(nil)).Elem(), GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathInput)(nil)).Elem(), GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayInput)(nil)).Elem(), GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationInput)(nil)).Elem(), GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayInput)(nil)).Elem(), GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsDatasetCollectionItemLabelSetInput)(nil)).Elem(), GetDatasetsDatasetCollectionItemLabelSetArgs{})
@@ -3177,6 +4426,12 @@ func init() {
 	pulumi.RegisterOutputType(DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput{})
 	pulumi.RegisterOutputType(DatasetDatasetSourceDetailsOutput{})
 	pulumi.RegisterOutputType(DatasetDatasetSourceDetailsPtrOutput{})
+	pulumi.RegisterOutputType(DatasetInitialImportDatasetConfigurationOutput{})
+	pulumi.RegisterOutputType(DatasetInitialImportDatasetConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(DatasetInitialImportDatasetConfigurationImportFormatOutput{})
+	pulumi.RegisterOutputType(DatasetInitialImportDatasetConfigurationImportFormatPtrOutput{})
+	pulumi.RegisterOutputType(DatasetInitialImportDatasetConfigurationImportMetadataPathOutput{})
+	pulumi.RegisterOutputType(DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput{})
 	pulumi.RegisterOutputType(DatasetInitialRecordGenerationConfigurationOutput{})
 	pulumi.RegisterOutputType(DatasetInitialRecordGenerationConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(DatasetLabelSetOutput{})
@@ -3197,6 +4452,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetDatasetDatasetSourceDetailOutput{})
 	pulumi.RegisterOutputType(GetDatasetDatasetSourceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatasetInitialImportDatasetConfigurationOutput{})
+	pulumi.RegisterOutputType(GetDatasetInitialImportDatasetConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetDatasetInitialImportDatasetConfigurationImportFormatOutput{})
+	pulumi.RegisterOutputType(GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput{})
+	pulumi.RegisterOutputType(GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput{})
+	pulumi.RegisterOutputType(GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput{})
 	pulumi.RegisterOutputType(GetDatasetInitialRecordGenerationConfigurationOutput{})
 	pulumi.RegisterOutputType(GetDatasetInitialRecordGenerationConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetDatasetLabelSetOutput{})
@@ -3213,6 +4474,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput{})
 	pulumi.RegisterOutputType(GetDatasetsDatasetCollectionItemDatasetSourceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput{})
+	pulumi.RegisterOutputType(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput{})
+	pulumi.RegisterOutputType(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput{})
+	pulumi.RegisterOutputType(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput{})
+	pulumi.RegisterOutputType(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput{})
 	pulumi.RegisterOutputType(GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationOutput{})
 	pulumi.RegisterOutputType(GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetDatasetsDatasetCollectionItemLabelSetOutput{})

@@ -10,6 +10,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetFunctionProvisionedConcurrencyConfig {
+    /**
+     * @return Configuration specifying a constant amount of provisioned concurrency.
+     * 
+     */
     private Integer count;
     /**
      * @return The strategy for provisioned concurrency to be used.
@@ -18,6 +22,10 @@ public final class GetFunctionProvisionedConcurrencyConfig {
     private String strategy;
 
     private GetFunctionProvisionedConcurrencyConfig() {}
+    /**
+     * @return Configuration specifying a constant amount of provisioned concurrency.
+     * 
+     */
     public Integer count() {
         return this.count;
     }

@@ -246,6 +246,20 @@ public class Function extends com.pulumi.resources.CustomResource {
         return this.provisionedConcurrencyConfig;
     }
     /**
+     * The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+     * 
+     */
+    @Export(name="shape", type=String.class, parameters={})
+    private Output<String> shape;
+
+    /**
+     * @return The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+     * 
+     */
+    public Output<String> shape() {
+        return this.shape;
+    }
+    /**
      * The source details for the Function. The function can be created from various sources.
      * 
      */

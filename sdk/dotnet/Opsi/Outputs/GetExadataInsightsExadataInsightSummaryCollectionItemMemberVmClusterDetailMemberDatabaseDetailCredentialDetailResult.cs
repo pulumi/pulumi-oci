@@ -18,6 +18,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         public readonly string PasswordSecretId;
         public readonly string Role;
         public readonly string UserName;
+        public readonly string WalletSecretId;
 
         [OutputConstructor]
         private GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult(
@@ -29,13 +30,16 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             string role,
 
-            string userName)
+            string userName,
+
+            string walletSecretId)
         {
             CredentialSourceName = credentialSourceName;
             CredentialType = credentialType;
             PasswordSecretId = passwordSecretId;
             Role = role;
             UserName = userName;
+            WalletSecretId = walletSecretId;
         }
     }
 }

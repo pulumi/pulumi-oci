@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// This data source provides details about a specific Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
         /// 
-        /// Returns fleet level advanced feature configuration
+        /// Returns Fleet level advanced feature configuration.
         /// 
         /// 
         /// {{% examples %}}
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// This data source provides details about a specific Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
         /// 
-        /// Returns fleet level advanced feature configuration
+        /// Returns Fleet level advanced feature configuration.
         /// 
         /// 
         /// {{% examples %}}
@@ -112,11 +112,11 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingResult> AdvancedUsageTrackings;
         /// <summary>
-        /// Bucket name required to store jfr and related data
+        /// Bucket name required to store JFR and related data.
         /// </summary>
         public readonly string AnalyticBucketName;
         /// <summary>
-        /// Namespace for the fleet advanced feature
+        /// Namespace for the Fleet advanced feature.
         /// </summary>
         public readonly string AnalyticNamespace;
         /// <summary>
@@ -129,13 +129,21 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// JavaMigrationAnalysis configuration
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisResult> JavaMigrationAnalyses;
+        /// <summary>
         /// JfrRecording configuration
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationJfrRecordingResult> JfrRecordings;
         /// <summary>
-        /// Enable lifecycle management and set post action configurations
+        /// Enable lifecycle management and set post action configurations.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationLcmResult> Lcms;
+        /// <summary>
+        /// Performance tuning analysis configuration
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisResult> PerformanceTuningAnalyses;
         /// <summary>
         /// The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
@@ -155,9 +163,13 @@ namespace Pulumi.Oci.Jms
 
             string id,
 
+            ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisResult> javaMigrationAnalyses,
+
             ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationJfrRecordingResult> jfrRecordings,
 
             ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationLcmResult> lcms,
+
+            ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisResult> performanceTuningAnalyses,
 
             string timeLastModified)
         {
@@ -167,8 +179,10 @@ namespace Pulumi.Oci.Jms
             CryptoEventAnalyses = cryptoEventAnalyses;
             FleetId = fleetId;
             Id = id;
+            JavaMigrationAnalyses = javaMigrationAnalyses;
             JfrRecordings = jfrRecordings;
             Lcms = lcms;
+            PerformanceTuningAnalyses = performanceTuningAnalyses;
             TimeLastModified = timeLastModified;
         }
     }

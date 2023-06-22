@@ -21,7 +21,7 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemOperati
      */
     private String family;
     /**
-     * @return Number of instances running the operating system
+     * @return Number of instances running the operating system.
      * 
      */
     private Integer managedInstanceCount;
@@ -52,7 +52,7 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemOperati
         return this.family;
     }
     /**
-     * @return Number of instances running the operating system
+     * @return Number of instances running the operating system.
      * 
      */
     public Integer managedInstanceCount() {

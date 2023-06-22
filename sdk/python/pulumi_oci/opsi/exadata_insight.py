@@ -29,16 +29,15 @@ class ExadataInsightArgs:
                  status: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ExadataInsight resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of Exadata insight
-        :param pulumi.Input[str] entity_source: (Updatable) Source of the Exadata system.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of database
+        :param pulumi.Input[str] entity_source: Source of the database entity.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID
         :param pulumi.Input[str] enterprise_manager_entity_identifier: Enterprise Manager Entity Unique Identifier
         :param pulumi.Input[str] enterprise_manager_identifier: Enterprise Manager Unique Identifier
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_auto_sync_enabled: (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
         :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -68,7 +67,7 @@ class ExadataInsightArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) Compartment Identifier of Exadata insight
+        (Updatable) Compartment Identifier of database
         """
         return pulumi.get(self, "compartment_id")
 
@@ -80,7 +79,7 @@ class ExadataInsightArgs:
     @pulumi.getter(name="entitySource")
     def entity_source(self) -> pulumi.Input[str]:
         """
-        (Updatable) Source of the Exadata system.
+        Source of the database entity.
         """
         return pulumi.get(self, "entity_source")
 
@@ -92,7 +91,7 @@ class ExadataInsightArgs:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -149,7 +148,7 @@ class ExadataInsightArgs:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -183,7 +182,6 @@ class ExadataInsightArgs:
     def status(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -226,26 +224,25 @@ class _ExadataInsightState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ExadataInsight resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of Exadata insight
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of database
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID
         :param pulumi.Input[str] enterprise_manager_entity_display_name: Enterprise Manager Entity Display Name
         :param pulumi.Input[str] enterprise_manager_entity_identifier: Enterprise Manager Entity Unique Identifier
         :param pulumi.Input[str] enterprise_manager_entity_name: Enterprise Manager Entity Name
         :param pulumi.Input[str] enterprise_manager_entity_type: Enterprise Manager Entity Type
         :param pulumi.Input[str] enterprise_manager_identifier: Enterprise Manager Unique Identifier
-        :param pulumi.Input[str] entity_source: (Updatable) Source of the Exadata system.
+        :param pulumi.Input[str] entity_source: Source of the database entity.
         :param pulumi.Input[str] exadata_display_name: The user-friendly name for the Exadata system. The name does not have to be unique.
         :param pulumi.Input[str] exadata_name: The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
         :param pulumi.Input[str] exadata_rack_type: Exadata rack type.
         :param pulumi.Input[str] exadata_type: Operations Insights internal representation of the the Exadata system type.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_auto_sync_enabled: (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
         :param pulumi.Input[bool] is_virtualized_exadata: true if virtualization is used in the Exadata system
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] state: The current state of the Exadata insight.
         :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -310,7 +307,7 @@ class _ExadataInsightState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Compartment Identifier of Exadata insight
+        (Updatable) Compartment Identifier of database
         """
         return pulumi.get(self, "compartment_id")
 
@@ -322,7 +319,7 @@ class _ExadataInsightState:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -406,7 +403,7 @@ class _ExadataInsightState:
     @pulumi.getter(name="entitySource")
     def entity_source(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Source of the Exadata system.
+        Source of the database entity.
         """
         return pulumi.get(self, "entity_source")
 
@@ -493,7 +490,7 @@ class _ExadataInsightState:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -563,7 +560,6 @@ class _ExadataInsightState:
     def status(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -651,7 +647,42 @@ class ExadataInsight(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_auto_sync_enabled=var["exadata_insight_is_auto_sync_enabled"])
+            is_auto_sync_enabled=var["exadata_insight_is_auto_sync_enabled"],
+            member_vm_cluster_details=[oci.opsi.ExadataInsightMemberVmClusterDetailArgs(
+                compartment_id=var["compartment_id"],
+                dbm_private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
+                member_database_details=[oci.opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs(
+                    compartment_id=var["compartment_id"],
+                    connection_details=oci.opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs(
+                        hosts=[oci.opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs(
+                            host_ip=var["exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_host_ip"],
+                            port=var["exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port"],
+                        )],
+                        protocol=var["exadata_insight_member_vm_cluster_details_member_database_details_connection_details_protocol"],
+                        service_name=oci_core_service["test_service"]["name"],
+                    ),
+                    credential_details=oci.opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs(
+                        credential_type=var["exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_type"],
+                        credential_source_name=var["exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_source_name"],
+                        password_secret_id=oci_vault_secret["test_secret"]["id"],
+                        role=var["exadata_insight_member_vm_cluster_details_member_database_details_credential_details_role"],
+                        user_name=oci_identity_user["test_user"]["name"],
+                        wallet_secret_id=oci_vault_secret["test_secret"]["id"],
+                    ),
+                    database_id=oci_database_database["test_database"]["id"],
+                    database_resource_type=var["exadata_insight_member_vm_cluster_details_member_database_details_database_resource_type"],
+                    dbm_private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
+                    defined_tags=var["exadata_insight_member_vm_cluster_details_member_database_details_defined_tags"],
+                    deployment_type=var["exadata_insight_member_vm_cluster_details_member_database_details_deployment_type"],
+                    entity_source=var["exadata_insight_member_vm_cluster_details_member_database_details_entity_source"],
+                    freeform_tags=var["exadata_insight_member_vm_cluster_details_member_database_details_freeform_tags"],
+                    opsi_private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
+                    service_name=oci_core_service["test_service"]["name"],
+                    system_tags=var["exadata_insight_member_vm_cluster_details_member_database_details_system_tags"],
+                )],
+                opsi_private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
+                vmcluster_id=oci_opsi_vmcluster["test_vmcluster"]["id"],
+            )])
         ```
 
         ## Import
@@ -664,16 +695,15 @@ class ExadataInsight(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of Exadata insight
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of database
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID
         :param pulumi.Input[str] enterprise_manager_entity_identifier: Enterprise Manager Entity Unique Identifier
         :param pulumi.Input[str] enterprise_manager_identifier: Enterprise Manager Unique Identifier
-        :param pulumi.Input[str] entity_source: (Updatable) Source of the Exadata system.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] entity_source: Source of the database entity.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_auto_sync_enabled: (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
         :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -707,7 +737,42 @@ class ExadataInsight(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_auto_sync_enabled=var["exadata_insight_is_auto_sync_enabled"])
+            is_auto_sync_enabled=var["exadata_insight_is_auto_sync_enabled"],
+            member_vm_cluster_details=[oci.opsi.ExadataInsightMemberVmClusterDetailArgs(
+                compartment_id=var["compartment_id"],
+                dbm_private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
+                member_database_details=[oci.opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs(
+                    compartment_id=var["compartment_id"],
+                    connection_details=oci.opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs(
+                        hosts=[oci.opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs(
+                            host_ip=var["exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_host_ip"],
+                            port=var["exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port"],
+                        )],
+                        protocol=var["exadata_insight_member_vm_cluster_details_member_database_details_connection_details_protocol"],
+                        service_name=oci_core_service["test_service"]["name"],
+                    ),
+                    credential_details=oci.opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs(
+                        credential_type=var["exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_type"],
+                        credential_source_name=var["exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_source_name"],
+                        password_secret_id=oci_vault_secret["test_secret"]["id"],
+                        role=var["exadata_insight_member_vm_cluster_details_member_database_details_credential_details_role"],
+                        user_name=oci_identity_user["test_user"]["name"],
+                        wallet_secret_id=oci_vault_secret["test_secret"]["id"],
+                    ),
+                    database_id=oci_database_database["test_database"]["id"],
+                    database_resource_type=var["exadata_insight_member_vm_cluster_details_member_database_details_database_resource_type"],
+                    dbm_private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
+                    defined_tags=var["exadata_insight_member_vm_cluster_details_member_database_details_defined_tags"],
+                    deployment_type=var["exadata_insight_member_vm_cluster_details_member_database_details_deployment_type"],
+                    entity_source=var["exadata_insight_member_vm_cluster_details_member_database_details_entity_source"],
+                    freeform_tags=var["exadata_insight_member_vm_cluster_details_member_database_details_freeform_tags"],
+                    opsi_private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
+                    service_name=oci_core_service["test_service"]["name"],
+                    system_tags=var["exadata_insight_member_vm_cluster_details_member_database_details_system_tags"],
+                )],
+                opsi_private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
+                vmcluster_id=oci_opsi_vmcluster["test_vmcluster"]["id"],
+            )])
         ```
 
         ## Import
@@ -826,26 +891,25 @@ class ExadataInsight(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of Exadata insight
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of database
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID
         :param pulumi.Input[str] enterprise_manager_entity_display_name: Enterprise Manager Entity Display Name
         :param pulumi.Input[str] enterprise_manager_entity_identifier: Enterprise Manager Entity Unique Identifier
         :param pulumi.Input[str] enterprise_manager_entity_name: Enterprise Manager Entity Name
         :param pulumi.Input[str] enterprise_manager_entity_type: Enterprise Manager Entity Type
         :param pulumi.Input[str] enterprise_manager_identifier: Enterprise Manager Unique Identifier
-        :param pulumi.Input[str] entity_source: (Updatable) Source of the Exadata system.
+        :param pulumi.Input[str] entity_source: Source of the database entity.
         :param pulumi.Input[str] exadata_display_name: The user-friendly name for the Exadata system. The name does not have to be unique.
         :param pulumi.Input[str] exadata_name: The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
         :param pulumi.Input[str] exadata_rack_type: Exadata rack type.
         :param pulumi.Input[str] exadata_type: Operations Insights internal representation of the the Exadata system type.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_auto_sync_enabled: (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
         :param pulumi.Input[bool] is_virtualized_exadata: true if virtualization is used in the Exadata system
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] state: The current state of the Exadata insight.
         :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -889,7 +953,7 @@ class ExadataInsight(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) Compartment Identifier of Exadata insight
+        (Updatable) Compartment Identifier of database
         """
         return pulumi.get(self, "compartment_id")
 
@@ -897,7 +961,7 @@ class ExadataInsight(pulumi.CustomResource):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -953,7 +1017,7 @@ class ExadataInsight(pulumi.CustomResource):
     @pulumi.getter(name="entitySource")
     def entity_source(self) -> pulumi.Output[str]:
         """
-        (Updatable) Source of the Exadata system.
+        Source of the database entity.
         """
         return pulumi.get(self, "entity_source")
 
@@ -1008,7 +1072,7 @@ class ExadataInsight(pulumi.CustomResource):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -1054,7 +1118,6 @@ class ExadataInsight(pulumi.CustomResource):
     def status(self) -> pulumi.Output[str]:
         """
         (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

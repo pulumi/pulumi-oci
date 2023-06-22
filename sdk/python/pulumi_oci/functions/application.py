@@ -24,6 +24,7 @@ class ApplicationArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  image_policy_config: Optional[pulumi.Input['ApplicationImagePolicyConfigArgs']] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 shape: Optional[pulumi.Input[str]] = None,
                  syslog_url: Optional[pulumi.Input[str]] = None,
                  trace_config: Optional[pulumi.Input['ApplicationTraceConfigArgs']] = None):
         """
@@ -38,6 +39,7 @@ class ApplicationArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input['ApplicationImagePolicyConfigArgs'] image_policy_config: (Updatable) Define the image signature verification policy for an application.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
+        :param pulumi.Input[str] shape: Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
         :param pulumi.Input[str] syslog_url: (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
         :param pulumi.Input['ApplicationTraceConfigArgs'] trace_config: (Updatable) Define the tracing configuration for an application.
         """
@@ -54,6 +56,8 @@ class ApplicationArgs:
             pulumi.set(__self__, "image_policy_config", image_policy_config)
         if network_security_group_ids is not None:
             pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
         if syslog_url is not None:
             pulumi.set(__self__, "syslog_url", syslog_url)
         if trace_config is not None:
@@ -158,6 +162,18 @@ class ApplicationArgs:
         pulumi.set(self, "network_security_group_ids", value)
 
     @property
+    @pulumi.getter
+    def shape(self) -> Optional[pulumi.Input[str]]:
+        """
+        Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+        """
+        return pulumi.get(self, "shape")
+
+    @shape.setter
+    def shape(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "shape", value)
+
+    @property
     @pulumi.getter(name="syslogUrl")
     def syslog_url(self) -> Optional[pulumi.Input[str]]:
         """
@@ -192,6 +208,7 @@ class _ApplicationState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  image_policy_config: Optional[pulumi.Input['ApplicationImagePolicyConfigArgs']] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 shape: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  syslog_url: Optional[pulumi.Input[str]] = None,
@@ -209,6 +226,7 @@ class _ApplicationState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input['ApplicationImagePolicyConfigArgs'] image_policy_config: (Updatable) Define the image signature verification policy for an application.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
+        :param pulumi.Input[str] shape: Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
         :param pulumi.Input[str] state: The current state of the application.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
         :param pulumi.Input[str] syslog_url: (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
@@ -230,6 +248,8 @@ class _ApplicationState:
             pulumi.set(__self__, "image_policy_config", image_policy_config)
         if network_security_group_ids is not None:
             pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if subnet_ids is not None:
@@ -331,6 +351,18 @@ class _ApplicationState:
 
     @property
     @pulumi.getter
+    def shape(self) -> Optional[pulumi.Input[str]]:
+        """
+        Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+        """
+        return pulumi.get(self, "shape")
+
+    @shape.setter
+    def shape(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "shape", value)
+
+    @property
+    @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
         The current state of the application.
@@ -414,6 +446,7 @@ class Application(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  image_policy_config: Optional[pulumi.Input[pulumi.InputType['ApplicationImagePolicyConfigArgs']]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 shape: Optional[pulumi.Input[str]] = None,
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  syslog_url: Optional[pulumi.Input[str]] = None,
                  trace_config: Optional[pulumi.Input[pulumi.InputType['ApplicationTraceConfigArgs']]] = None,
@@ -443,6 +476,7 @@ class Application(pulumi.CustomResource):
                     kms_key_id=oci_kms_key["test_key"]["id"],
                 )],
             ),
+            shape=var["application_shape"],
             syslog_url=var["application_syslog_url"],
             trace_config=oci.functions.ApplicationTraceConfigArgs(
                 domain_id=oci_functions_domain["test_domain"]["id"],
@@ -469,6 +503,7 @@ class Application(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[pulumi.InputType['ApplicationImagePolicyConfigArgs']] image_policy_config: (Updatable) Define the image signature verification policy for an application.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
+        :param pulumi.Input[str] shape: Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
         :param pulumi.Input[str] syslog_url: (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
         :param pulumi.Input[pulumi.InputType['ApplicationTraceConfigArgs']] trace_config: (Updatable) Define the tracing configuration for an application.
@@ -504,6 +539,7 @@ class Application(pulumi.CustomResource):
                     kms_key_id=oci_kms_key["test_key"]["id"],
                 )],
             ),
+            shape=var["application_shape"],
             syslog_url=var["application_syslog_url"],
             trace_config=oci.functions.ApplicationTraceConfigArgs(
                 domain_id=oci_functions_domain["test_domain"]["id"],
@@ -541,6 +577,7 @@ class Application(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  image_policy_config: Optional[pulumi.Input[pulumi.InputType['ApplicationImagePolicyConfigArgs']]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 shape: Optional[pulumi.Input[str]] = None,
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  syslog_url: Optional[pulumi.Input[str]] = None,
                  trace_config: Optional[pulumi.Input[pulumi.InputType['ApplicationTraceConfigArgs']]] = None,
@@ -564,6 +601,7 @@ class Application(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["image_policy_config"] = image_policy_config
             __props__.__dict__["network_security_group_ids"] = network_security_group_ids
+            __props__.__dict__["shape"] = shape
             if subnet_ids is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_ids'")
             __props__.__dict__["subnet_ids"] = subnet_ids
@@ -589,6 +627,7 @@ class Application(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             image_policy_config: Optional[pulumi.Input[pulumi.InputType['ApplicationImagePolicyConfigArgs']]] = None,
             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            shape: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             syslog_url: Optional[pulumi.Input[str]] = None,
@@ -611,6 +650,7 @@ class Application(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[pulumi.InputType['ApplicationImagePolicyConfigArgs']] image_policy_config: (Updatable) Define the image signature verification policy for an application.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
+        :param pulumi.Input[str] shape: Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
         :param pulumi.Input[str] state: The current state of the application.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
         :param pulumi.Input[str] syslog_url: (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
@@ -629,6 +669,7 @@ class Application(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["image_policy_config"] = image_policy_config
         __props__.__dict__["network_security_group_ids"] = network_security_group_ids
+        __props__.__dict__["shape"] = shape
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_ids"] = subnet_ids
         __props__.__dict__["syslog_url"] = syslog_url
@@ -694,6 +735,14 @@ class Application(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
         """
         return pulumi.get(self, "network_security_group_ids")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> pulumi.Output[str]:
+        """
+        Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+        """
+        return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter

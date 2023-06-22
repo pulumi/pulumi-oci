@@ -56,7 +56,7 @@ type LookupDeployArtifactArgs struct {
 
 // A collection of values returned by getDeployArtifact.
 type LookupDeployArtifactResult struct {
-	// Mode for artifact parameter substitution.
+	// Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
 	ArgumentSubstitutionMode string `pulumi:"argumentSubstitutionMode"`
 	// The OCID of a compartment.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -127,7 +127,7 @@ func (o LookupDeployArtifactResultOutput) ToLookupDeployArtifactResultOutputWith
 	return o
 }
 
-// Mode for artifact parameter substitution.
+// Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
 func (o LookupDeployArtifactResultOutput) ArgumentSubstitutionMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeployArtifactResult) string { return v.ArgumentSubstitutionMode }).(pulumi.StringOutput)
 }

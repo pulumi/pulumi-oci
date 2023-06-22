@@ -1409,6 +1409,7 @@ class GetPreauthrequestsPreauthenticatedRequestResult(dict):
                  access_uri: str,
                  bucket: str,
                  bucket_listing_action: str,
+                 full_path: str,
                  id: str,
                  name: str,
                  namespace: str,
@@ -1434,6 +1435,7 @@ class GetPreauthrequestsPreauthenticatedRequestResult(dict):
         pulumi.set(__self__, "access_uri", access_uri)
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "bucket_listing_action", bucket_listing_action)
+        pulumi.set(__self__, "full_path", full_path)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "namespace", namespace)
@@ -1474,6 +1476,11 @@ class GetPreauthrequestsPreauthenticatedRequestResult(dict):
         Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
         """
         return pulumi.get(self, "bucket_listing_action")
+
+    @property
+    @pulumi.getter(name="fullPath")
+    def full_path(self) -> str:
+        return pulumi.get(self, "full_path")
 
     @property
     @pulumi.getter

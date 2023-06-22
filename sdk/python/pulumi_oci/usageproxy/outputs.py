@@ -12,6 +12,13 @@ from . import outputs
 
 __all__ = [
     'SubscriptionRedeemableUserItem',
+    'GetResourceQuotasFilterResult',
+    'GetResourceQuotasResourceQuotumCollectionResult',
+    'GetResourceQuotasResourceQuotumCollectionItemResult',
+    'GetResourcesFilterResult',
+    'GetResourcesResourcesCollectionResult',
+    'GetResourcesResourcesCollectionItemResult',
+    'GetResourcesResourcesCollectionItemSkusResult',
     'GetSubscriptionProductItemResult',
     'GetSubscriptionProductsFilterResult',
     'GetSubscriptionProductsProductCollectionResult',
@@ -34,6 +41,9 @@ __all__ = [
     'GetSubscriptionRewardsRewardCollectionItemResult',
     'GetSubscriptionRewardsRewardCollectionItemItemResult',
     'GetSubscriptionRewardsRewardCollectionItemSummaryResult',
+    'GetUsagelimitsFilterResult',
+    'GetUsagelimitsUsageLimitCollectionResult',
+    'GetUsagelimitsUsageLimitCollectionItemResult',
 ]
 
 @pulumi.output_type
@@ -97,6 +107,382 @@ class SubscriptionRedeemableUserItem(dict):
         The last name of the user that can redeem rewards.
         """
         return pulumi.get(self, "last_name")
+
+
+@pulumi.output_type
+class GetResourceQuotasFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The resource name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetResourceQuotasResourceQuotumCollectionResult(dict):
+    def __init__(__self__, *,
+                 is_allowed: bool,
+                 items: Sequence['outputs.GetResourceQuotasResourceQuotumCollectionItemResult']):
+        """
+        :param bool is_allowed: Used to indicate if further quota consumption isAllowed.
+        :param Sequence['GetResourceQuotasResourceQuotumCollectionItemArgs'] items: The list of resource quota details.
+        """
+        pulumi.set(__self__, "is_allowed", is_allowed)
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter(name="isAllowed")
+    def is_allowed(self) -> bool:
+        """
+        Used to indicate if further quota consumption isAllowed.
+        """
+        return pulumi.get(self, "is_allowed")
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetResourceQuotasResourceQuotumCollectionItemResult']:
+        """
+        The list of resource quota details.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetResourceQuotasResourceQuotumCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 affected_resource: str,
+                 balance: float,
+                 is_allowed: bool,
+                 is_dependency: bool,
+                 is_overage: bool,
+                 name: str,
+                 purchased_limit: float,
+                 service: str):
+        """
+        :param str affected_resource: The affected resource name.
+        :param float balance: The quota balance.
+        :param bool is_allowed: Used to indicate if further quota consumption isAllowed.
+        :param bool is_dependency: Used to indicate any resource dependencies.
+        :param bool is_overage: Used to indicate if overages are incurred.
+        :param str name: The resource name.
+        :param float purchased_limit: The purchased quota limit.
+        :param str service: The service name.
+        """
+        pulumi.set(__self__, "affected_resource", affected_resource)
+        pulumi.set(__self__, "balance", balance)
+        pulumi.set(__self__, "is_allowed", is_allowed)
+        pulumi.set(__self__, "is_dependency", is_dependency)
+        pulumi.set(__self__, "is_overage", is_overage)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "purchased_limit", purchased_limit)
+        pulumi.set(__self__, "service", service)
+
+    @property
+    @pulumi.getter(name="affectedResource")
+    def affected_resource(self) -> str:
+        """
+        The affected resource name.
+        """
+        return pulumi.get(self, "affected_resource")
+
+    @property
+    @pulumi.getter
+    def balance(self) -> float:
+        """
+        The quota balance.
+        """
+        return pulumi.get(self, "balance")
+
+    @property
+    @pulumi.getter(name="isAllowed")
+    def is_allowed(self) -> bool:
+        """
+        Used to indicate if further quota consumption isAllowed.
+        """
+        return pulumi.get(self, "is_allowed")
+
+    @property
+    @pulumi.getter(name="isDependency")
+    def is_dependency(self) -> bool:
+        """
+        Used to indicate any resource dependencies.
+        """
+        return pulumi.get(self, "is_dependency")
+
+    @property
+    @pulumi.getter(name="isOverage")
+    def is_overage(self) -> bool:
+        """
+        Used to indicate if overages are incurred.
+        """
+        return pulumi.get(self, "is_overage")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="purchasedLimit")
+    def purchased_limit(self) -> float:
+        """
+        The purchased quota limit.
+        """
+        return pulumi.get(self, "purchased_limit")
+
+    @property
+    @pulumi.getter
+    def service(self) -> str:
+        """
+        The service name.
+        """
+        return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class GetResourcesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Name of the resource.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the resource.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetResourcesResourcesCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetResourcesResourcesCollectionItemResult']):
+        """
+        :param Sequence['GetResourcesResourcesCollectionItemArgs'] items: The list of resource details for a service.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetResourcesResourcesCollectionItemResult']:
+        """
+        The list of resource details for a service.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetResourcesResourcesCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 child_resources: Sequence[str],
+                 daily_unit_display_name: str,
+                 description: str,
+                 hourly_unit_display_name: str,
+                 instance_type: str,
+                 is_purchased: bool,
+                 name: str,
+                 raw_unit_display_name: str,
+                 servicename: str,
+                 skuses: Sequence['outputs.GetResourcesResourcesCollectionItemSkusResult'],
+                 usage_data_type: str):
+        """
+        :param Sequence[str] child_resources: The details of any child resources.
+        :param str daily_unit_display_name: Units to be used for daily aggregated data.
+        :param str description: Description of the resource.
+        :param str hourly_unit_display_name: Units to be used for hourly aggregated data.
+        :param str instance_type: Instance type for the resource.
+        :param bool is_purchased: Indicates if the SKU was purchased
+        :param str name: Name of the resource.
+        :param str raw_unit_display_name: Default units to use when unspecified.
+        :param str servicename: Name of the service.
+        :param Sequence['GetResourcesResourcesCollectionItemSkusArgs'] skuses: The details of resource Skus.
+        :param str usage_data_type: Usage data type of the resource.
+        """
+        pulumi.set(__self__, "child_resources", child_resources)
+        pulumi.set(__self__, "daily_unit_display_name", daily_unit_display_name)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "hourly_unit_display_name", hourly_unit_display_name)
+        pulumi.set(__self__, "instance_type", instance_type)
+        pulumi.set(__self__, "is_purchased", is_purchased)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "raw_unit_display_name", raw_unit_display_name)
+        pulumi.set(__self__, "servicename", servicename)
+        pulumi.set(__self__, "skuses", skuses)
+        pulumi.set(__self__, "usage_data_type", usage_data_type)
+
+    @property
+    @pulumi.getter(name="childResources")
+    def child_resources(self) -> Sequence[str]:
+        """
+        The details of any child resources.
+        """
+        return pulumi.get(self, "child_resources")
+
+    @property
+    @pulumi.getter(name="dailyUnitDisplayName")
+    def daily_unit_display_name(self) -> str:
+        """
+        Units to be used for daily aggregated data.
+        """
+        return pulumi.get(self, "daily_unit_display_name")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of the resource.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="hourlyUnitDisplayName")
+    def hourly_unit_display_name(self) -> str:
+        """
+        Units to be used for hourly aggregated data.
+        """
+        return pulumi.get(self, "hourly_unit_display_name")
+
+    @property
+    @pulumi.getter(name="instanceType")
+    def instance_type(self) -> str:
+        """
+        Instance type for the resource.
+        """
+        return pulumi.get(self, "instance_type")
+
+    @property
+    @pulumi.getter(name="isPurchased")
+    def is_purchased(self) -> bool:
+        """
+        Indicates if the SKU was purchased
+        """
+        return pulumi.get(self, "is_purchased")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the resource.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="rawUnitDisplayName")
+    def raw_unit_display_name(self) -> str:
+        """
+        Default units to use when unspecified.
+        """
+        return pulumi.get(self, "raw_unit_display_name")
+
+    @property
+    @pulumi.getter
+    def servicename(self) -> str:
+        """
+        Name of the service.
+        """
+        return pulumi.get(self, "servicename")
+
+    @property
+    @pulumi.getter
+    def skuses(self) -> Sequence['outputs.GetResourcesResourcesCollectionItemSkusResult']:
+        """
+        The details of resource Skus.
+        """
+        return pulumi.get(self, "skuses")
+
+    @property
+    @pulumi.getter(name="usageDataType")
+    def usage_data_type(self) -> str:
+        """
+        Usage data type of the resource.
+        """
+        return pulumi.get(self, "usage_data_type")
+
+
+@pulumi.output_type
+class GetResourcesResourcesCollectionItemSkusResult(dict):
+    def __init__(__self__, *,
+                 cloud_credit_type: str,
+                 sku_id: str,
+                 sku_type: str):
+        """
+        :param str cloud_credit_type: The cloud credit type for the resource.
+        :param str sku_id: The Sku Id for the resource.
+        :param str sku_type: The Sku type for the resource.
+        """
+        pulumi.set(__self__, "cloud_credit_type", cloud_credit_type)
+        pulumi.set(__self__, "sku_id", sku_id)
+        pulumi.set(__self__, "sku_type", sku_type)
+
+    @property
+    @pulumi.getter(name="cloudCreditType")
+    def cloud_credit_type(self) -> str:
+        """
+        The cloud credit type for the resource.
+        """
+        return pulumi.get(self, "cloud_credit_type")
+
+    @property
+    @pulumi.getter(name="skuId")
+    def sku_id(self) -> str:
+        """
+        The Sku Id for the resource.
+        """
+        return pulumi.get(self, "sku_id")
+
+    @property
+    @pulumi.getter(name="skuType")
+    def sku_type(self) -> str:
+        """
+        The Sku type for the resource.
+        """
+        return pulumi.get(self, "sku_type")
 
 
 @pulumi.output_type
@@ -1251,5 +1637,229 @@ class GetSubscriptionRewardsRewardCollectionItemSummaryResult(dict):
         The total number of available rewards for a given subscription ID.
         """
         return pulumi.get(self, "total_rewards_available")
+
+
+@pulumi.output_type
+class GetUsagelimitsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetUsagelimitsUsageLimitCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetUsagelimitsUsageLimitCollectionItemResult']):
+        """
+        :param Sequence['GetUsagelimitsUsageLimitCollectionItemArgs'] items: The list of usage limits.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetUsagelimitsUsageLimitCollectionItemResult']:
+        """
+        The list of usage limits.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetUsagelimitsUsageLimitCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 action: str,
+                 alert_level: float,
+                 created_by: str,
+                 entitlement_id: str,
+                 id: str,
+                 limit: str,
+                 limit_type: str,
+                 max_hard_limit: str,
+                 modified_by: str,
+                 resource_name: str,
+                 service_name: str,
+                 sku_part_id: str,
+                 state: str,
+                 time_created: str,
+                 time_modified: str,
+                 value_type: str):
+        """
+        :param str action: The action when usage limit is hit
+        :param float alert_level: The alert level of the usage limit
+        :param str created_by: The user who created the limit
+        :param str entitlement_id: Entitlement ID of the usage limit
+        :param str id: The usage limit ID
+        :param str limit_type: Hard or soft limit. Hard limits lead to breaches, soft to alerts.
+        :param str max_hard_limit: The maximum hard limit set for the usage limit
+        :param str modified_by: The user who modified the limit
+        :param str resource_name: The resource for which the limit is defined
+        :param str service_name: The service for which the limit is defined
+        :param str sku_part_id: The SKU for which the usage limit is set
+        :param str state: The usage limit lifecycle state.
+        :param str time_created: Time when the usage limit was created
+        :param str time_modified: Time when the usage limit was modified
+        :param str value_type: The value type of the usage limit
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "alert_level", alert_level)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "entitlement_id", entitlement_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "limit", limit)
+        pulumi.set(__self__, "limit_type", limit_type)
+        pulumi.set(__self__, "max_hard_limit", max_hard_limit)
+        pulumi.set(__self__, "modified_by", modified_by)
+        pulumi.set(__self__, "resource_name", resource_name)
+        pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "sku_part_id", sku_part_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_modified", time_modified)
+        pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter
+    def action(self) -> str:
+        """
+        The action when usage limit is hit
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="alertLevel")
+    def alert_level(self) -> float:
+        """
+        The alert level of the usage limit
+        """
+        return pulumi.get(self, "alert_level")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        """
+        The user who created the limit
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="entitlementId")
+    def entitlement_id(self) -> str:
+        """
+        Entitlement ID of the usage limit
+        """
+        return pulumi.get(self, "entitlement_id")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The usage limit ID
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def limit(self) -> str:
+        return pulumi.get(self, "limit")
+
+    @property
+    @pulumi.getter(name="limitType")
+    def limit_type(self) -> str:
+        """
+        Hard or soft limit. Hard limits lead to breaches, soft to alerts.
+        """
+        return pulumi.get(self, "limit_type")
+
+    @property
+    @pulumi.getter(name="maxHardLimit")
+    def max_hard_limit(self) -> str:
+        """
+        The maximum hard limit set for the usage limit
+        """
+        return pulumi.get(self, "max_hard_limit")
+
+    @property
+    @pulumi.getter(name="modifiedBy")
+    def modified_by(self) -> str:
+        """
+        The user who modified the limit
+        """
+        return pulumi.get(self, "modified_by")
+
+    @property
+    @pulumi.getter(name="resourceName")
+    def resource_name(self) -> str:
+        """
+        The resource for which the limit is defined
+        """
+        return pulumi.get(self, "resource_name")
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> str:
+        """
+        The service for which the limit is defined
+        """
+        return pulumi.get(self, "service_name")
+
+    @property
+    @pulumi.getter(name="skuPartId")
+    def sku_part_id(self) -> str:
+        """
+        The SKU for which the usage limit is set
+        """
+        return pulumi.get(self, "sku_part_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The usage limit lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        Time when the usage limit was created
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeModified")
+    def time_modified(self) -> str:
+        """
+        Time when the usage limit was modified
+        """
+        return pulumi.get(self, "time_modified")
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> str:
+        """
+        The value type of the usage limit
+        """
+        return pulumi.get(self, "value_type")
 
 

@@ -13,22 +13,38 @@ namespace Pulumi.Oci.Opsi.Inputs
     public sealed class ExadataInsightMemberVmClusterDetailArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier of Exadata insight
+        /// (Updatable) Compartment Identifier of database
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+        /// </summary>
+        [Input("dbmPrivateEndpointId")]
+        public Input<string>? DbmPrivateEndpointId { get; set; }
+
         [Input("memberDatabaseDetails")]
         private InputList<Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs>? _memberDatabaseDetails;
+
+        /// <summary>
+        /// The databases that belong to the VM Cluster
+        /// </summary>
         public InputList<Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs> MemberDatabaseDetails
         {
             get => _memberDatabaseDetails ?? (_memberDatabaseDetails = new InputList<Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs>());
             set => _memberDatabaseDetails = value;
         }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+        /// </summary>
         [Input("opsiPrivateEndpointId")]
         public Input<string>? OpsiPrivateEndpointId { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
+        /// </summary>
         [Input("vmclusterId")]
         public Input<string>? VmclusterId { get; set; }
 

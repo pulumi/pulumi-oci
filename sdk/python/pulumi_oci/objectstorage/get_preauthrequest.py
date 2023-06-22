@@ -21,7 +21,7 @@ class GetPreauthrequestResult:
     """
     A collection of values returned by getPreauthrequest.
     """
-    def __init__(__self__, access_type=None, access_uri=None, bucket=None, bucket_listing_action=None, id=None, name=None, namespace=None, object=None, object_name=None, par_id=None, time_created=None, time_expires=None):
+    def __init__(__self__, access_type=None, access_uri=None, bucket=None, bucket_listing_action=None, full_path=None, id=None, name=None, namespace=None, object=None, object_name=None, par_id=None, time_created=None, time_expires=None):
         if access_type and not isinstance(access_type, str):
             raise TypeError("Expected argument 'access_type' to be a str")
         pulumi.set(__self__, "access_type", access_type)
@@ -34,6 +34,9 @@ class GetPreauthrequestResult:
         if bucket_listing_action and not isinstance(bucket_listing_action, str):
             raise TypeError("Expected argument 'bucket_listing_action' to be a str")
         pulumi.set(__self__, "bucket_listing_action", bucket_listing_action)
+        if full_path and not isinstance(full_path, str):
+            raise TypeError("Expected argument 'full_path' to be a str")
+        pulumi.set(__self__, "full_path", full_path)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -94,6 +97,11 @@ class GetPreauthrequestResult:
         Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
         """
         return pulumi.get(self, "bucket_listing_action")
+
+    @property
+    @pulumi.getter(name="fullPath")
+    def full_path(self) -> str:
+        return pulumi.get(self, "full_path")
 
     @property
     @pulumi.getter
@@ -167,6 +175,7 @@ class AwaitableGetPreauthrequestResult(GetPreauthrequestResult):
             access_uri=self.access_uri,
             bucket=self.bucket,
             bucket_listing_action=self.bucket_listing_action,
+            full_path=self.full_path,
             id=self.id,
             name=self.name,
             namespace=self.namespace,
@@ -214,6 +223,7 @@ def get_preauthrequest(bucket: Optional[str] = None,
         access_uri=__ret__.access_uri,
         bucket=__ret__.bucket,
         bucket_listing_action=__ret__.bucket_listing_action,
+        full_path=__ret__.full_path,
         id=__ret__.id,
         name=__ret__.name,
         namespace=__ret__.namespace,

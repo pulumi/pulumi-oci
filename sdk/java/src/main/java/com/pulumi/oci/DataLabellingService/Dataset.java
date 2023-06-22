@@ -11,6 +11,7 @@ import com.pulumi.oci.DataLabellingService.DatasetArgs;
 import com.pulumi.oci.DataLabellingService.inputs.DatasetState;
 import com.pulumi.oci.DataLabellingService.outputs.DatasetDatasetFormatDetails;
 import com.pulumi.oci.DataLabellingService.outputs.DatasetDatasetSourceDetails;
+import com.pulumi.oci.DataLabellingService.outputs.DatasetInitialImportDatasetConfiguration;
 import com.pulumi.oci.DataLabellingService.outputs.DatasetInitialRecordGenerationConfiguration;
 import com.pulumi.oci.DataLabellingService.outputs.DatasetLabelSet;
 import com.pulumi.oci.Utilities;
@@ -37,6 +38,9 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataLabellingService.inputs.DatasetDatasetFormatDetailsTextFileTypeMetadataArgs;
  * import com.pulumi.oci.DataLabellingService.inputs.DatasetDatasetSourceDetailsArgs;
  * import com.pulumi.oci.DataLabellingService.inputs.DatasetLabelSetArgs;
+ * import com.pulumi.oci.DataLabellingService.inputs.DatasetInitialImportDatasetConfigurationArgs;
+ * import com.pulumi.oci.DataLabellingService.inputs.DatasetInitialImportDatasetConfigurationImportFormatArgs;
+ * import com.pulumi.oci.DataLabellingService.inputs.DatasetInitialImportDatasetConfigurationImportMetadataPathArgs;
  * import com.pulumi.oci.DataLabellingService.inputs.DatasetInitialRecordGenerationConfigurationArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -80,6 +84,18 @@ import javax.annotation.Nullable;
  *             .description(var_.dataset_description())
  *             .displayName(var_.dataset_display_name())
  *             .freeformTags(var_.dataset_freeform_tags())
+ *             .initialImportDatasetConfiguration(DatasetInitialImportDatasetConfigurationArgs.builder()
+ *                 .importFormat(DatasetInitialImportDatasetConfigurationImportFormatArgs.builder()
+ *                     .name(var_.dataset_initial_import_dataset_configuration_import_format_name())
+ *                     .version(var_.dataset_initial_import_dataset_configuration_import_format_version())
+ *                     .build())
+ *                 .importMetadataPath(DatasetInitialImportDatasetConfigurationImportMetadataPathArgs.builder()
+ *                     .bucket(var_.dataset_initial_import_dataset_configuration_import_metadata_path_bucket())
+ *                     .namespace(var_.dataset_initial_import_dataset_configuration_import_metadata_path_namespace())
+ *                     .path(var_.dataset_initial_import_dataset_configuration_import_metadata_path_path())
+ *                     .sourceType(var_.dataset_initial_import_dataset_configuration_import_metadata_path_source_type())
+ *                     .build())
+ *                 .build())
  *             .initialRecordGenerationConfiguration()
  *             .labelingInstructions(var_.dataset_labeling_instructions())
  *             .build());
@@ -99,6 +115,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:DataLabellingService/dataset:Dataset")
 public class Dataset extends com.pulumi.resources.CustomResource {
+    /**
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    @Export(name="additionalProperties", type=Map.class, parameters={String.class, Object.class})
+    private Output<Map<String,Object>> additionalProperties;
+
+    /**
+     * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> additionalProperties() {
+        return this.additionalProperties;
+    }
     /**
      * The annotation format name required for labeling records.
      * 
@@ -212,6 +242,20 @@ public class Dataset extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+     * 
+     */
+    @Export(name="initialImportDatasetConfiguration", type=DatasetInitialImportDatasetConfiguration.class, parameters={})
+    private Output<DatasetInitialImportDatasetConfiguration> initialImportDatasetConfiguration;
+
+    /**
+     * @return Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+     * 
+     */
+    public Output<DatasetInitialImportDatasetConfiguration> initialImportDatasetConfiguration() {
+        return this.initialImportDatasetConfiguration;
+    }
+    /**
      * The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
@@ -272,6 +316,20 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+     * 
+     */
+    @Export(name="lifecycleSubstate", type=String.class, parameters={})
+    private Output<String> lifecycleSubstate;
+
+    /**
+     * @return The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+     * 
+     */
+    public Output<String> lifecycleSubstate() {
+        return this.lifecycleSubstate;
     }
     /**
      * The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.

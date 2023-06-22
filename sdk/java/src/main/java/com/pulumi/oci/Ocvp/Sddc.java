@@ -413,14 +413,14 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return this.isHcxEnabled;
     }
     /**
-     * Indicates whether to enable HCX Enterprise for this SDDC.
+     * Indicates whether HCX Enterprise is enabled for this SDDC.
      * 
      */
     @Export(name="isHcxEnterpriseEnabled", type=Boolean.class, parameters={})
     private Output<Boolean> isHcxEnterpriseEnabled;
 
     /**
-     * @return Indicates whether to enable HCX Enterprise for this SDDC.
+     * @return Indicates whether HCX Enterprise is enabled for this SDDC.
      * 
      */
     public Output<Boolean> isHcxEnterpriseEnabled() {

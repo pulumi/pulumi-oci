@@ -58,6 +58,7 @@ import * as utilities from "../utilities";
  *         name: _var.application_parameters_name,
  *         value: _var.application_parameters_value,
  *     }],
+ *     poolId: oci_dataflow_pool.test_pool.id,
  *     privateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
  *     type: _var.application_type,
  *     warehouseBucketUri: _var.application_warehouse_bucket_uri,
@@ -201,6 +202,10 @@ export class Application extends pulumi.CustomResource {
      */
     public readonly parameters!: pulumi.Output<outputs.DataFlow.ApplicationParameter[]>;
     /**
+     * (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     */
+    public readonly poolId!: pulumi.Output<string>;
+    /**
      * (Updatable) The OCID of a private endpoint.
      */
     public readonly privateEndpointId!: pulumi.Output<string>;
@@ -213,11 +218,11 @@ export class Application extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
-     * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
@@ -271,6 +276,7 @@ export class Application extends pulumi.CustomResource {
             resourceInputs["ownerPrincipalId"] = state ? state.ownerPrincipalId : undefined;
             resourceInputs["ownerUserName"] = state ? state.ownerUserName : undefined;
             resourceInputs["parameters"] = state ? state.parameters : undefined;
+            resourceInputs["poolId"] = state ? state.poolId : undefined;
             resourceInputs["privateEndpointId"] = state ? state.privateEndpointId : undefined;
             resourceInputs["sparkVersion"] = state ? state.sparkVersion : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -324,6 +330,7 @@ export class Application extends pulumi.CustomResource {
             resourceInputs["metastoreId"] = args ? args.metastoreId : undefined;
             resourceInputs["numExecutors"] = args ? args.numExecutors : undefined;
             resourceInputs["parameters"] = args ? args.parameters : undefined;
+            resourceInputs["poolId"] = args ? args.poolId : undefined;
             resourceInputs["privateEndpointId"] = args ? args.privateEndpointId : undefined;
             resourceInputs["sparkVersion"] = args ? args.sparkVersion : undefined;
             resourceInputs["type"] = args ? args.type : undefined;
@@ -444,6 +451,10 @@ export interface ApplicationState {
      */
     parameters?: pulumi.Input<pulumi.Input<inputs.DataFlow.ApplicationParameter>[]>;
     /**
+     * (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     */
+    poolId?: pulumi.Input<string>;
+    /**
      * (Updatable) The OCID of a private endpoint.
      */
     privateEndpointId?: pulumi.Input<string>;
@@ -456,11 +467,11 @@ export interface ApplicationState {
      */
     state?: pulumi.Input<string>;
     /**
-     * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
     timeUpdated?: pulumi.Input<string>;
     /**
@@ -573,6 +584,10 @@ export interface ApplicationArgs {
      * (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
      */
     parameters?: pulumi.Input<pulumi.Input<inputs.DataFlow.ApplicationParameter>[]>;
+    /**
+     * (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     */
+    poolId?: pulumi.Input<string>;
     /**
      * (Updatable) The OCID of a private endpoint.
      */

@@ -20946,7 +20946,7 @@ func (o GetDeployArtifactsDeployArtifactCollectionArrayOutput) Index(i pulumi.In
 }
 
 type GetDeployArtifactsDeployArtifactCollectionItem struct {
-	// Mode for artifact parameter substitution.
+	// Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
 	ArgumentSubstitutionMode string `pulumi:"argumentSubstitutionMode"`
 	// The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -20990,7 +20990,7 @@ type GetDeployArtifactsDeployArtifactCollectionItemInput interface {
 }
 
 type GetDeployArtifactsDeployArtifactCollectionItemArgs struct {
-	// Mode for artifact parameter substitution.
+	// Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
 	ArgumentSubstitutionMode pulumi.StringInput `pulumi:"argumentSubstitutionMode"`
 	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
@@ -21073,7 +21073,7 @@ func (o GetDeployArtifactsDeployArtifactCollectionItemOutput) ToGetDeployArtifac
 	return o
 }
 
-// Mode for artifact parameter substitution.
+// Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
 func (o GetDeployArtifactsDeployArtifactCollectionItemOutput) ArgumentSubstitutionMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployArtifactsDeployArtifactCollectionItem) string { return v.ArgumentSubstitutionMode }).(pulumi.StringOutput)
 }

@@ -125,6 +125,891 @@ func (o SubscriptionRedeemableUserItemArrayOutput) Index(i pulumi.IntInput) Subs
 	}).(SubscriptionRedeemableUserItemOutput)
 }
 
+type GetResourceQuotasFilter struct {
+	// The resource name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetResourceQuotasFilterInput is an input type that accepts GetResourceQuotasFilterArgs and GetResourceQuotasFilterOutput values.
+// You can construct a concrete instance of `GetResourceQuotasFilterInput` via:
+//
+//	GetResourceQuotasFilterArgs{...}
+type GetResourceQuotasFilterInput interface {
+	pulumi.Input
+
+	ToGetResourceQuotasFilterOutput() GetResourceQuotasFilterOutput
+	ToGetResourceQuotasFilterOutputWithContext(context.Context) GetResourceQuotasFilterOutput
+}
+
+type GetResourceQuotasFilterArgs struct {
+	// The resource name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetResourceQuotasFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceQuotasFilter)(nil)).Elem()
+}
+
+func (i GetResourceQuotasFilterArgs) ToGetResourceQuotasFilterOutput() GetResourceQuotasFilterOutput {
+	return i.ToGetResourceQuotasFilterOutputWithContext(context.Background())
+}
+
+func (i GetResourceQuotasFilterArgs) ToGetResourceQuotasFilterOutputWithContext(ctx context.Context) GetResourceQuotasFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceQuotasFilterOutput)
+}
+
+// GetResourceQuotasFilterArrayInput is an input type that accepts GetResourceQuotasFilterArray and GetResourceQuotasFilterArrayOutput values.
+// You can construct a concrete instance of `GetResourceQuotasFilterArrayInput` via:
+//
+//	GetResourceQuotasFilterArray{ GetResourceQuotasFilterArgs{...} }
+type GetResourceQuotasFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceQuotasFilterArrayOutput() GetResourceQuotasFilterArrayOutput
+	ToGetResourceQuotasFilterArrayOutputWithContext(context.Context) GetResourceQuotasFilterArrayOutput
+}
+
+type GetResourceQuotasFilterArray []GetResourceQuotasFilterInput
+
+func (GetResourceQuotasFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceQuotasFilter)(nil)).Elem()
+}
+
+func (i GetResourceQuotasFilterArray) ToGetResourceQuotasFilterArrayOutput() GetResourceQuotasFilterArrayOutput {
+	return i.ToGetResourceQuotasFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceQuotasFilterArray) ToGetResourceQuotasFilterArrayOutputWithContext(ctx context.Context) GetResourceQuotasFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceQuotasFilterArrayOutput)
+}
+
+type GetResourceQuotasFilterOutput struct{ *pulumi.OutputState }
+
+func (GetResourceQuotasFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceQuotasFilter)(nil)).Elem()
+}
+
+func (o GetResourceQuotasFilterOutput) ToGetResourceQuotasFilterOutput() GetResourceQuotasFilterOutput {
+	return o
+}
+
+func (o GetResourceQuotasFilterOutput) ToGetResourceQuotasFilterOutputWithContext(ctx context.Context) GetResourceQuotasFilterOutput {
+	return o
+}
+
+// The resource name.
+func (o GetResourceQuotasFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceQuotasFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetResourceQuotasFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetResourceQuotasFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetResourceQuotasFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetResourceQuotasFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetResourceQuotasFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceQuotasFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceQuotasFilter)(nil)).Elem()
+}
+
+func (o GetResourceQuotasFilterArrayOutput) ToGetResourceQuotasFilterArrayOutput() GetResourceQuotasFilterArrayOutput {
+	return o
+}
+
+func (o GetResourceQuotasFilterArrayOutput) ToGetResourceQuotasFilterArrayOutputWithContext(ctx context.Context) GetResourceQuotasFilterArrayOutput {
+	return o
+}
+
+func (o GetResourceQuotasFilterArrayOutput) Index(i pulumi.IntInput) GetResourceQuotasFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceQuotasFilter {
+		return vs[0].([]GetResourceQuotasFilter)[vs[1].(int)]
+	}).(GetResourceQuotasFilterOutput)
+}
+
+type GetResourceQuotasResourceQuotumCollection struct {
+	// Used to indicate if further quota consumption isAllowed.
+	IsAllowed bool `pulumi:"isAllowed"`
+	// The list of resource quota details.
+	Items []GetResourceQuotasResourceQuotumCollectionItem `pulumi:"items"`
+}
+
+// GetResourceQuotasResourceQuotumCollectionInput is an input type that accepts GetResourceQuotasResourceQuotumCollectionArgs and GetResourceQuotasResourceQuotumCollectionOutput values.
+// You can construct a concrete instance of `GetResourceQuotasResourceQuotumCollectionInput` via:
+//
+//	GetResourceQuotasResourceQuotumCollectionArgs{...}
+type GetResourceQuotasResourceQuotumCollectionInput interface {
+	pulumi.Input
+
+	ToGetResourceQuotasResourceQuotumCollectionOutput() GetResourceQuotasResourceQuotumCollectionOutput
+	ToGetResourceQuotasResourceQuotumCollectionOutputWithContext(context.Context) GetResourceQuotasResourceQuotumCollectionOutput
+}
+
+type GetResourceQuotasResourceQuotumCollectionArgs struct {
+	// Used to indicate if further quota consumption isAllowed.
+	IsAllowed pulumi.BoolInput `pulumi:"isAllowed"`
+	// The list of resource quota details.
+	Items GetResourceQuotasResourceQuotumCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetResourceQuotasResourceQuotumCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceQuotasResourceQuotumCollection)(nil)).Elem()
+}
+
+func (i GetResourceQuotasResourceQuotumCollectionArgs) ToGetResourceQuotasResourceQuotumCollectionOutput() GetResourceQuotasResourceQuotumCollectionOutput {
+	return i.ToGetResourceQuotasResourceQuotumCollectionOutputWithContext(context.Background())
+}
+
+func (i GetResourceQuotasResourceQuotumCollectionArgs) ToGetResourceQuotasResourceQuotumCollectionOutputWithContext(ctx context.Context) GetResourceQuotasResourceQuotumCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceQuotasResourceQuotumCollectionOutput)
+}
+
+// GetResourceQuotasResourceQuotumCollectionArrayInput is an input type that accepts GetResourceQuotasResourceQuotumCollectionArray and GetResourceQuotasResourceQuotumCollectionArrayOutput values.
+// You can construct a concrete instance of `GetResourceQuotasResourceQuotumCollectionArrayInput` via:
+//
+//	GetResourceQuotasResourceQuotumCollectionArray{ GetResourceQuotasResourceQuotumCollectionArgs{...} }
+type GetResourceQuotasResourceQuotumCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceQuotasResourceQuotumCollectionArrayOutput() GetResourceQuotasResourceQuotumCollectionArrayOutput
+	ToGetResourceQuotasResourceQuotumCollectionArrayOutputWithContext(context.Context) GetResourceQuotasResourceQuotumCollectionArrayOutput
+}
+
+type GetResourceQuotasResourceQuotumCollectionArray []GetResourceQuotasResourceQuotumCollectionInput
+
+func (GetResourceQuotasResourceQuotumCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceQuotasResourceQuotumCollection)(nil)).Elem()
+}
+
+func (i GetResourceQuotasResourceQuotumCollectionArray) ToGetResourceQuotasResourceQuotumCollectionArrayOutput() GetResourceQuotasResourceQuotumCollectionArrayOutput {
+	return i.ToGetResourceQuotasResourceQuotumCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceQuotasResourceQuotumCollectionArray) ToGetResourceQuotasResourceQuotumCollectionArrayOutputWithContext(ctx context.Context) GetResourceQuotasResourceQuotumCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceQuotasResourceQuotumCollectionArrayOutput)
+}
+
+type GetResourceQuotasResourceQuotumCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetResourceQuotasResourceQuotumCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceQuotasResourceQuotumCollection)(nil)).Elem()
+}
+
+func (o GetResourceQuotasResourceQuotumCollectionOutput) ToGetResourceQuotasResourceQuotumCollectionOutput() GetResourceQuotasResourceQuotumCollectionOutput {
+	return o
+}
+
+func (o GetResourceQuotasResourceQuotumCollectionOutput) ToGetResourceQuotasResourceQuotumCollectionOutputWithContext(ctx context.Context) GetResourceQuotasResourceQuotumCollectionOutput {
+	return o
+}
+
+// Used to indicate if further quota consumption isAllowed.
+func (o GetResourceQuotasResourceQuotumCollectionOutput) IsAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollection) bool { return v.IsAllowed }).(pulumi.BoolOutput)
+}
+
+// The list of resource quota details.
+func (o GetResourceQuotasResourceQuotumCollectionOutput) Items() GetResourceQuotasResourceQuotumCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollection) []GetResourceQuotasResourceQuotumCollectionItem {
+		return v.Items
+	}).(GetResourceQuotasResourceQuotumCollectionItemArrayOutput)
+}
+
+type GetResourceQuotasResourceQuotumCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceQuotasResourceQuotumCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceQuotasResourceQuotumCollection)(nil)).Elem()
+}
+
+func (o GetResourceQuotasResourceQuotumCollectionArrayOutput) ToGetResourceQuotasResourceQuotumCollectionArrayOutput() GetResourceQuotasResourceQuotumCollectionArrayOutput {
+	return o
+}
+
+func (o GetResourceQuotasResourceQuotumCollectionArrayOutput) ToGetResourceQuotasResourceQuotumCollectionArrayOutputWithContext(ctx context.Context) GetResourceQuotasResourceQuotumCollectionArrayOutput {
+	return o
+}
+
+func (o GetResourceQuotasResourceQuotumCollectionArrayOutput) Index(i pulumi.IntInput) GetResourceQuotasResourceQuotumCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceQuotasResourceQuotumCollection {
+		return vs[0].([]GetResourceQuotasResourceQuotumCollection)[vs[1].(int)]
+	}).(GetResourceQuotasResourceQuotumCollectionOutput)
+}
+
+type GetResourceQuotasResourceQuotumCollectionItem struct {
+	// The affected resource name.
+	AffectedResource string `pulumi:"affectedResource"`
+	// The quota balance.
+	Balance float64 `pulumi:"balance"`
+	// Used to indicate if further quota consumption isAllowed.
+	IsAllowed bool `pulumi:"isAllowed"`
+	// Used to indicate any resource dependencies.
+	IsDependency bool `pulumi:"isDependency"`
+	// Used to indicate if overages are incurred.
+	IsOverage bool `pulumi:"isOverage"`
+	// The resource name.
+	Name string `pulumi:"name"`
+	// The purchased quota limit.
+	PurchasedLimit float64 `pulumi:"purchasedLimit"`
+	// The service name.
+	Service string `pulumi:"service"`
+}
+
+// GetResourceQuotasResourceQuotumCollectionItemInput is an input type that accepts GetResourceQuotasResourceQuotumCollectionItemArgs and GetResourceQuotasResourceQuotumCollectionItemOutput values.
+// You can construct a concrete instance of `GetResourceQuotasResourceQuotumCollectionItemInput` via:
+//
+//	GetResourceQuotasResourceQuotumCollectionItemArgs{...}
+type GetResourceQuotasResourceQuotumCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetResourceQuotasResourceQuotumCollectionItemOutput() GetResourceQuotasResourceQuotumCollectionItemOutput
+	ToGetResourceQuotasResourceQuotumCollectionItemOutputWithContext(context.Context) GetResourceQuotasResourceQuotumCollectionItemOutput
+}
+
+type GetResourceQuotasResourceQuotumCollectionItemArgs struct {
+	// The affected resource name.
+	AffectedResource pulumi.StringInput `pulumi:"affectedResource"`
+	// The quota balance.
+	Balance pulumi.Float64Input `pulumi:"balance"`
+	// Used to indicate if further quota consumption isAllowed.
+	IsAllowed pulumi.BoolInput `pulumi:"isAllowed"`
+	// Used to indicate any resource dependencies.
+	IsDependency pulumi.BoolInput `pulumi:"isDependency"`
+	// Used to indicate if overages are incurred.
+	IsOverage pulumi.BoolInput `pulumi:"isOverage"`
+	// The resource name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The purchased quota limit.
+	PurchasedLimit pulumi.Float64Input `pulumi:"purchasedLimit"`
+	// The service name.
+	Service pulumi.StringInput `pulumi:"service"`
+}
+
+func (GetResourceQuotasResourceQuotumCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceQuotasResourceQuotumCollectionItem)(nil)).Elem()
+}
+
+func (i GetResourceQuotasResourceQuotumCollectionItemArgs) ToGetResourceQuotasResourceQuotumCollectionItemOutput() GetResourceQuotasResourceQuotumCollectionItemOutput {
+	return i.ToGetResourceQuotasResourceQuotumCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetResourceQuotasResourceQuotumCollectionItemArgs) ToGetResourceQuotasResourceQuotumCollectionItemOutputWithContext(ctx context.Context) GetResourceQuotasResourceQuotumCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceQuotasResourceQuotumCollectionItemOutput)
+}
+
+// GetResourceQuotasResourceQuotumCollectionItemArrayInput is an input type that accepts GetResourceQuotasResourceQuotumCollectionItemArray and GetResourceQuotasResourceQuotumCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetResourceQuotasResourceQuotumCollectionItemArrayInput` via:
+//
+//	GetResourceQuotasResourceQuotumCollectionItemArray{ GetResourceQuotasResourceQuotumCollectionItemArgs{...} }
+type GetResourceQuotasResourceQuotumCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceQuotasResourceQuotumCollectionItemArrayOutput() GetResourceQuotasResourceQuotumCollectionItemArrayOutput
+	ToGetResourceQuotasResourceQuotumCollectionItemArrayOutputWithContext(context.Context) GetResourceQuotasResourceQuotumCollectionItemArrayOutput
+}
+
+type GetResourceQuotasResourceQuotumCollectionItemArray []GetResourceQuotasResourceQuotumCollectionItemInput
+
+func (GetResourceQuotasResourceQuotumCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceQuotasResourceQuotumCollectionItem)(nil)).Elem()
+}
+
+func (i GetResourceQuotasResourceQuotumCollectionItemArray) ToGetResourceQuotasResourceQuotumCollectionItemArrayOutput() GetResourceQuotasResourceQuotumCollectionItemArrayOutput {
+	return i.ToGetResourceQuotasResourceQuotumCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceQuotasResourceQuotumCollectionItemArray) ToGetResourceQuotasResourceQuotumCollectionItemArrayOutputWithContext(ctx context.Context) GetResourceQuotasResourceQuotumCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceQuotasResourceQuotumCollectionItemArrayOutput)
+}
+
+type GetResourceQuotasResourceQuotumCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetResourceQuotasResourceQuotumCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceQuotasResourceQuotumCollectionItem)(nil)).Elem()
+}
+
+func (o GetResourceQuotasResourceQuotumCollectionItemOutput) ToGetResourceQuotasResourceQuotumCollectionItemOutput() GetResourceQuotasResourceQuotumCollectionItemOutput {
+	return o
+}
+
+func (o GetResourceQuotasResourceQuotumCollectionItemOutput) ToGetResourceQuotasResourceQuotumCollectionItemOutputWithContext(ctx context.Context) GetResourceQuotasResourceQuotumCollectionItemOutput {
+	return o
+}
+
+// The affected resource name.
+func (o GetResourceQuotasResourceQuotumCollectionItemOutput) AffectedResource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) string { return v.AffectedResource }).(pulumi.StringOutput)
+}
+
+// The quota balance.
+func (o GetResourceQuotasResourceQuotumCollectionItemOutput) Balance() pulumi.Float64Output {
+	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) float64 { return v.Balance }).(pulumi.Float64Output)
+}
+
+// Used to indicate if further quota consumption isAllowed.
+func (o GetResourceQuotasResourceQuotumCollectionItemOutput) IsAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) bool { return v.IsAllowed }).(pulumi.BoolOutput)
+}
+
+// Used to indicate any resource dependencies.
+func (o GetResourceQuotasResourceQuotumCollectionItemOutput) IsDependency() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) bool { return v.IsDependency }).(pulumi.BoolOutput)
+}
+
+// Used to indicate if overages are incurred.
+func (o GetResourceQuotasResourceQuotumCollectionItemOutput) IsOverage() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) bool { return v.IsOverage }).(pulumi.BoolOutput)
+}
+
+// The resource name.
+func (o GetResourceQuotasResourceQuotumCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The purchased quota limit.
+func (o GetResourceQuotasResourceQuotumCollectionItemOutput) PurchasedLimit() pulumi.Float64Output {
+	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) float64 { return v.PurchasedLimit }).(pulumi.Float64Output)
+}
+
+// The service name.
+func (o GetResourceQuotasResourceQuotumCollectionItemOutput) Service() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) string { return v.Service }).(pulumi.StringOutput)
+}
+
+type GetResourceQuotasResourceQuotumCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceQuotasResourceQuotumCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceQuotasResourceQuotumCollectionItem)(nil)).Elem()
+}
+
+func (o GetResourceQuotasResourceQuotumCollectionItemArrayOutput) ToGetResourceQuotasResourceQuotumCollectionItemArrayOutput() GetResourceQuotasResourceQuotumCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetResourceQuotasResourceQuotumCollectionItemArrayOutput) ToGetResourceQuotasResourceQuotumCollectionItemArrayOutputWithContext(ctx context.Context) GetResourceQuotasResourceQuotumCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetResourceQuotasResourceQuotumCollectionItemArrayOutput) Index(i pulumi.IntInput) GetResourceQuotasResourceQuotumCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceQuotasResourceQuotumCollectionItem {
+		return vs[0].([]GetResourceQuotasResourceQuotumCollectionItem)[vs[1].(int)]
+	}).(GetResourceQuotasResourceQuotumCollectionItemOutput)
+}
+
+type GetResourcesFilter struct {
+	// Name of the resource.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetResourcesFilterInput is an input type that accepts GetResourcesFilterArgs and GetResourcesFilterOutput values.
+// You can construct a concrete instance of `GetResourcesFilterInput` via:
+//
+//	GetResourcesFilterArgs{...}
+type GetResourcesFilterInput interface {
+	pulumi.Input
+
+	ToGetResourcesFilterOutput() GetResourcesFilterOutput
+	ToGetResourcesFilterOutputWithContext(context.Context) GetResourcesFilterOutput
+}
+
+type GetResourcesFilterArgs struct {
+	// Name of the resource.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetResourcesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourcesFilter)(nil)).Elem()
+}
+
+func (i GetResourcesFilterArgs) ToGetResourcesFilterOutput() GetResourcesFilterOutput {
+	return i.ToGetResourcesFilterOutputWithContext(context.Background())
+}
+
+func (i GetResourcesFilterArgs) ToGetResourcesFilterOutputWithContext(ctx context.Context) GetResourcesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourcesFilterOutput)
+}
+
+// GetResourcesFilterArrayInput is an input type that accepts GetResourcesFilterArray and GetResourcesFilterArrayOutput values.
+// You can construct a concrete instance of `GetResourcesFilterArrayInput` via:
+//
+//	GetResourcesFilterArray{ GetResourcesFilterArgs{...} }
+type GetResourcesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetResourcesFilterArrayOutput() GetResourcesFilterArrayOutput
+	ToGetResourcesFilterArrayOutputWithContext(context.Context) GetResourcesFilterArrayOutput
+}
+
+type GetResourcesFilterArray []GetResourcesFilterInput
+
+func (GetResourcesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourcesFilter)(nil)).Elem()
+}
+
+func (i GetResourcesFilterArray) ToGetResourcesFilterArrayOutput() GetResourcesFilterArrayOutput {
+	return i.ToGetResourcesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourcesFilterArray) ToGetResourcesFilterArrayOutputWithContext(ctx context.Context) GetResourcesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourcesFilterArrayOutput)
+}
+
+type GetResourcesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetResourcesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourcesFilter)(nil)).Elem()
+}
+
+func (o GetResourcesFilterOutput) ToGetResourcesFilterOutput() GetResourcesFilterOutput {
+	return o
+}
+
+func (o GetResourcesFilterOutput) ToGetResourcesFilterOutputWithContext(ctx context.Context) GetResourcesFilterOutput {
+	return o
+}
+
+// Name of the resource.
+func (o GetResourcesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourcesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetResourcesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetResourcesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetResourcesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetResourcesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetResourcesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourcesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourcesFilter)(nil)).Elem()
+}
+
+func (o GetResourcesFilterArrayOutput) ToGetResourcesFilterArrayOutput() GetResourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetResourcesFilterArrayOutput) ToGetResourcesFilterArrayOutputWithContext(ctx context.Context) GetResourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetResourcesFilterArrayOutput) Index(i pulumi.IntInput) GetResourcesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourcesFilter {
+		return vs[0].([]GetResourcesFilter)[vs[1].(int)]
+	}).(GetResourcesFilterOutput)
+}
+
+type GetResourcesResourcesCollection struct {
+	// The list of resource details for a service.
+	Items []GetResourcesResourcesCollectionItem `pulumi:"items"`
+}
+
+// GetResourcesResourcesCollectionInput is an input type that accepts GetResourcesResourcesCollectionArgs and GetResourcesResourcesCollectionOutput values.
+// You can construct a concrete instance of `GetResourcesResourcesCollectionInput` via:
+//
+//	GetResourcesResourcesCollectionArgs{...}
+type GetResourcesResourcesCollectionInput interface {
+	pulumi.Input
+
+	ToGetResourcesResourcesCollectionOutput() GetResourcesResourcesCollectionOutput
+	ToGetResourcesResourcesCollectionOutputWithContext(context.Context) GetResourcesResourcesCollectionOutput
+}
+
+type GetResourcesResourcesCollectionArgs struct {
+	// The list of resource details for a service.
+	Items GetResourcesResourcesCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetResourcesResourcesCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourcesResourcesCollection)(nil)).Elem()
+}
+
+func (i GetResourcesResourcesCollectionArgs) ToGetResourcesResourcesCollectionOutput() GetResourcesResourcesCollectionOutput {
+	return i.ToGetResourcesResourcesCollectionOutputWithContext(context.Background())
+}
+
+func (i GetResourcesResourcesCollectionArgs) ToGetResourcesResourcesCollectionOutputWithContext(ctx context.Context) GetResourcesResourcesCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourcesResourcesCollectionOutput)
+}
+
+// GetResourcesResourcesCollectionArrayInput is an input type that accepts GetResourcesResourcesCollectionArray and GetResourcesResourcesCollectionArrayOutput values.
+// You can construct a concrete instance of `GetResourcesResourcesCollectionArrayInput` via:
+//
+//	GetResourcesResourcesCollectionArray{ GetResourcesResourcesCollectionArgs{...} }
+type GetResourcesResourcesCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetResourcesResourcesCollectionArrayOutput() GetResourcesResourcesCollectionArrayOutput
+	ToGetResourcesResourcesCollectionArrayOutputWithContext(context.Context) GetResourcesResourcesCollectionArrayOutput
+}
+
+type GetResourcesResourcesCollectionArray []GetResourcesResourcesCollectionInput
+
+func (GetResourcesResourcesCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourcesResourcesCollection)(nil)).Elem()
+}
+
+func (i GetResourcesResourcesCollectionArray) ToGetResourcesResourcesCollectionArrayOutput() GetResourcesResourcesCollectionArrayOutput {
+	return i.ToGetResourcesResourcesCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourcesResourcesCollectionArray) ToGetResourcesResourcesCollectionArrayOutputWithContext(ctx context.Context) GetResourcesResourcesCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourcesResourcesCollectionArrayOutput)
+}
+
+type GetResourcesResourcesCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetResourcesResourcesCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourcesResourcesCollection)(nil)).Elem()
+}
+
+func (o GetResourcesResourcesCollectionOutput) ToGetResourcesResourcesCollectionOutput() GetResourcesResourcesCollectionOutput {
+	return o
+}
+
+func (o GetResourcesResourcesCollectionOutput) ToGetResourcesResourcesCollectionOutputWithContext(ctx context.Context) GetResourcesResourcesCollectionOutput {
+	return o
+}
+
+// The list of resource details for a service.
+func (o GetResourcesResourcesCollectionOutput) Items() GetResourcesResourcesCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollection) []GetResourcesResourcesCollectionItem { return v.Items }).(GetResourcesResourcesCollectionItemArrayOutput)
+}
+
+type GetResourcesResourcesCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourcesResourcesCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourcesResourcesCollection)(nil)).Elem()
+}
+
+func (o GetResourcesResourcesCollectionArrayOutput) ToGetResourcesResourcesCollectionArrayOutput() GetResourcesResourcesCollectionArrayOutput {
+	return o
+}
+
+func (o GetResourcesResourcesCollectionArrayOutput) ToGetResourcesResourcesCollectionArrayOutputWithContext(ctx context.Context) GetResourcesResourcesCollectionArrayOutput {
+	return o
+}
+
+func (o GetResourcesResourcesCollectionArrayOutput) Index(i pulumi.IntInput) GetResourcesResourcesCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourcesResourcesCollection {
+		return vs[0].([]GetResourcesResourcesCollection)[vs[1].(int)]
+	}).(GetResourcesResourcesCollectionOutput)
+}
+
+type GetResourcesResourcesCollectionItem struct {
+	// The details of any child resources.
+	ChildResources []string `pulumi:"childResources"`
+	// Units to be used for daily aggregated data.
+	DailyUnitDisplayName string `pulumi:"dailyUnitDisplayName"`
+	// Description of the resource.
+	Description string `pulumi:"description"`
+	// Units to be used for hourly aggregated data.
+	HourlyUnitDisplayName string `pulumi:"hourlyUnitDisplayName"`
+	// Instance type for the resource.
+	InstanceType string `pulumi:"instanceType"`
+	// Indicates if the SKU was purchased
+	IsPurchased bool `pulumi:"isPurchased"`
+	// Name of the resource.
+	Name string `pulumi:"name"`
+	// Default units to use when unspecified.
+	RawUnitDisplayName string `pulumi:"rawUnitDisplayName"`
+	// Name of the service.
+	Servicename string `pulumi:"servicename"`
+	// The details of resource Skus.
+	Skuses []GetResourcesResourcesCollectionItemSkus `pulumi:"skuses"`
+	// Usage data type of the resource.
+	UsageDataType string `pulumi:"usageDataType"`
+}
+
+// GetResourcesResourcesCollectionItemInput is an input type that accepts GetResourcesResourcesCollectionItemArgs and GetResourcesResourcesCollectionItemOutput values.
+// You can construct a concrete instance of `GetResourcesResourcesCollectionItemInput` via:
+//
+//	GetResourcesResourcesCollectionItemArgs{...}
+type GetResourcesResourcesCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetResourcesResourcesCollectionItemOutput() GetResourcesResourcesCollectionItemOutput
+	ToGetResourcesResourcesCollectionItemOutputWithContext(context.Context) GetResourcesResourcesCollectionItemOutput
+}
+
+type GetResourcesResourcesCollectionItemArgs struct {
+	// The details of any child resources.
+	ChildResources pulumi.StringArrayInput `pulumi:"childResources"`
+	// Units to be used for daily aggregated data.
+	DailyUnitDisplayName pulumi.StringInput `pulumi:"dailyUnitDisplayName"`
+	// Description of the resource.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Units to be used for hourly aggregated data.
+	HourlyUnitDisplayName pulumi.StringInput `pulumi:"hourlyUnitDisplayName"`
+	// Instance type for the resource.
+	InstanceType pulumi.StringInput `pulumi:"instanceType"`
+	// Indicates if the SKU was purchased
+	IsPurchased pulumi.BoolInput `pulumi:"isPurchased"`
+	// Name of the resource.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Default units to use when unspecified.
+	RawUnitDisplayName pulumi.StringInput `pulumi:"rawUnitDisplayName"`
+	// Name of the service.
+	Servicename pulumi.StringInput `pulumi:"servicename"`
+	// The details of resource Skus.
+	Skuses GetResourcesResourcesCollectionItemSkusArrayInput `pulumi:"skuses"`
+	// Usage data type of the resource.
+	UsageDataType pulumi.StringInput `pulumi:"usageDataType"`
+}
+
+func (GetResourcesResourcesCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourcesResourcesCollectionItem)(nil)).Elem()
+}
+
+func (i GetResourcesResourcesCollectionItemArgs) ToGetResourcesResourcesCollectionItemOutput() GetResourcesResourcesCollectionItemOutput {
+	return i.ToGetResourcesResourcesCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetResourcesResourcesCollectionItemArgs) ToGetResourcesResourcesCollectionItemOutputWithContext(ctx context.Context) GetResourcesResourcesCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourcesResourcesCollectionItemOutput)
+}
+
+// GetResourcesResourcesCollectionItemArrayInput is an input type that accepts GetResourcesResourcesCollectionItemArray and GetResourcesResourcesCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetResourcesResourcesCollectionItemArrayInput` via:
+//
+//	GetResourcesResourcesCollectionItemArray{ GetResourcesResourcesCollectionItemArgs{...} }
+type GetResourcesResourcesCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetResourcesResourcesCollectionItemArrayOutput() GetResourcesResourcesCollectionItemArrayOutput
+	ToGetResourcesResourcesCollectionItemArrayOutputWithContext(context.Context) GetResourcesResourcesCollectionItemArrayOutput
+}
+
+type GetResourcesResourcesCollectionItemArray []GetResourcesResourcesCollectionItemInput
+
+func (GetResourcesResourcesCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourcesResourcesCollectionItem)(nil)).Elem()
+}
+
+func (i GetResourcesResourcesCollectionItemArray) ToGetResourcesResourcesCollectionItemArrayOutput() GetResourcesResourcesCollectionItemArrayOutput {
+	return i.ToGetResourcesResourcesCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourcesResourcesCollectionItemArray) ToGetResourcesResourcesCollectionItemArrayOutputWithContext(ctx context.Context) GetResourcesResourcesCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourcesResourcesCollectionItemArrayOutput)
+}
+
+type GetResourcesResourcesCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetResourcesResourcesCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourcesResourcesCollectionItem)(nil)).Elem()
+}
+
+func (o GetResourcesResourcesCollectionItemOutput) ToGetResourcesResourcesCollectionItemOutput() GetResourcesResourcesCollectionItemOutput {
+	return o
+}
+
+func (o GetResourcesResourcesCollectionItemOutput) ToGetResourcesResourcesCollectionItemOutputWithContext(ctx context.Context) GetResourcesResourcesCollectionItemOutput {
+	return o
+}
+
+// The details of any child resources.
+func (o GetResourcesResourcesCollectionItemOutput) ChildResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) []string { return v.ChildResources }).(pulumi.StringArrayOutput)
+}
+
+// Units to be used for daily aggregated data.
+func (o GetResourcesResourcesCollectionItemOutput) DailyUnitDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) string { return v.DailyUnitDisplayName }).(pulumi.StringOutput)
+}
+
+// Description of the resource.
+func (o GetResourcesResourcesCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Units to be used for hourly aggregated data.
+func (o GetResourcesResourcesCollectionItemOutput) HourlyUnitDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) string { return v.HourlyUnitDisplayName }).(pulumi.StringOutput)
+}
+
+// Instance type for the resource.
+func (o GetResourcesResourcesCollectionItemOutput) InstanceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) string { return v.InstanceType }).(pulumi.StringOutput)
+}
+
+// Indicates if the SKU was purchased
+func (o GetResourcesResourcesCollectionItemOutput) IsPurchased() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) bool { return v.IsPurchased }).(pulumi.BoolOutput)
+}
+
+// Name of the resource.
+func (o GetResourcesResourcesCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Default units to use when unspecified.
+func (o GetResourcesResourcesCollectionItemOutput) RawUnitDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) string { return v.RawUnitDisplayName }).(pulumi.StringOutput)
+}
+
+// Name of the service.
+func (o GetResourcesResourcesCollectionItemOutput) Servicename() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) string { return v.Servicename }).(pulumi.StringOutput)
+}
+
+// The details of resource Skus.
+func (o GetResourcesResourcesCollectionItemOutput) Skuses() GetResourcesResourcesCollectionItemSkusArrayOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) []GetResourcesResourcesCollectionItemSkus { return v.Skuses }).(GetResourcesResourcesCollectionItemSkusArrayOutput)
+}
+
+// Usage data type of the resource.
+func (o GetResourcesResourcesCollectionItemOutput) UsageDataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) string { return v.UsageDataType }).(pulumi.StringOutput)
+}
+
+type GetResourcesResourcesCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourcesResourcesCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourcesResourcesCollectionItem)(nil)).Elem()
+}
+
+func (o GetResourcesResourcesCollectionItemArrayOutput) ToGetResourcesResourcesCollectionItemArrayOutput() GetResourcesResourcesCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetResourcesResourcesCollectionItemArrayOutput) ToGetResourcesResourcesCollectionItemArrayOutputWithContext(ctx context.Context) GetResourcesResourcesCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetResourcesResourcesCollectionItemArrayOutput) Index(i pulumi.IntInput) GetResourcesResourcesCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourcesResourcesCollectionItem {
+		return vs[0].([]GetResourcesResourcesCollectionItem)[vs[1].(int)]
+	}).(GetResourcesResourcesCollectionItemOutput)
+}
+
+type GetResourcesResourcesCollectionItemSkus struct {
+	// The cloud credit type for the resource.
+	CloudCreditType string `pulumi:"cloudCreditType"`
+	// The Sku Id for the resource.
+	SkuId string `pulumi:"skuId"`
+	// The Sku type for the resource.
+	SkuType string `pulumi:"skuType"`
+}
+
+// GetResourcesResourcesCollectionItemSkusInput is an input type that accepts GetResourcesResourcesCollectionItemSkusArgs and GetResourcesResourcesCollectionItemSkusOutput values.
+// You can construct a concrete instance of `GetResourcesResourcesCollectionItemSkusInput` via:
+//
+//	GetResourcesResourcesCollectionItemSkusArgs{...}
+type GetResourcesResourcesCollectionItemSkusInput interface {
+	pulumi.Input
+
+	ToGetResourcesResourcesCollectionItemSkusOutput() GetResourcesResourcesCollectionItemSkusOutput
+	ToGetResourcesResourcesCollectionItemSkusOutputWithContext(context.Context) GetResourcesResourcesCollectionItemSkusOutput
+}
+
+type GetResourcesResourcesCollectionItemSkusArgs struct {
+	// The cloud credit type for the resource.
+	CloudCreditType pulumi.StringInput `pulumi:"cloudCreditType"`
+	// The Sku Id for the resource.
+	SkuId pulumi.StringInput `pulumi:"skuId"`
+	// The Sku type for the resource.
+	SkuType pulumi.StringInput `pulumi:"skuType"`
+}
+
+func (GetResourcesResourcesCollectionItemSkusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourcesResourcesCollectionItemSkus)(nil)).Elem()
+}
+
+func (i GetResourcesResourcesCollectionItemSkusArgs) ToGetResourcesResourcesCollectionItemSkusOutput() GetResourcesResourcesCollectionItemSkusOutput {
+	return i.ToGetResourcesResourcesCollectionItemSkusOutputWithContext(context.Background())
+}
+
+func (i GetResourcesResourcesCollectionItemSkusArgs) ToGetResourcesResourcesCollectionItemSkusOutputWithContext(ctx context.Context) GetResourcesResourcesCollectionItemSkusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourcesResourcesCollectionItemSkusOutput)
+}
+
+// GetResourcesResourcesCollectionItemSkusArrayInput is an input type that accepts GetResourcesResourcesCollectionItemSkusArray and GetResourcesResourcesCollectionItemSkusArrayOutput values.
+// You can construct a concrete instance of `GetResourcesResourcesCollectionItemSkusArrayInput` via:
+//
+//	GetResourcesResourcesCollectionItemSkusArray{ GetResourcesResourcesCollectionItemSkusArgs{...} }
+type GetResourcesResourcesCollectionItemSkusArrayInput interface {
+	pulumi.Input
+
+	ToGetResourcesResourcesCollectionItemSkusArrayOutput() GetResourcesResourcesCollectionItemSkusArrayOutput
+	ToGetResourcesResourcesCollectionItemSkusArrayOutputWithContext(context.Context) GetResourcesResourcesCollectionItemSkusArrayOutput
+}
+
+type GetResourcesResourcesCollectionItemSkusArray []GetResourcesResourcesCollectionItemSkusInput
+
+func (GetResourcesResourcesCollectionItemSkusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourcesResourcesCollectionItemSkus)(nil)).Elem()
+}
+
+func (i GetResourcesResourcesCollectionItemSkusArray) ToGetResourcesResourcesCollectionItemSkusArrayOutput() GetResourcesResourcesCollectionItemSkusArrayOutput {
+	return i.ToGetResourcesResourcesCollectionItemSkusArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourcesResourcesCollectionItemSkusArray) ToGetResourcesResourcesCollectionItemSkusArrayOutputWithContext(ctx context.Context) GetResourcesResourcesCollectionItemSkusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourcesResourcesCollectionItemSkusArrayOutput)
+}
+
+type GetResourcesResourcesCollectionItemSkusOutput struct{ *pulumi.OutputState }
+
+func (GetResourcesResourcesCollectionItemSkusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourcesResourcesCollectionItemSkus)(nil)).Elem()
+}
+
+func (o GetResourcesResourcesCollectionItemSkusOutput) ToGetResourcesResourcesCollectionItemSkusOutput() GetResourcesResourcesCollectionItemSkusOutput {
+	return o
+}
+
+func (o GetResourcesResourcesCollectionItemSkusOutput) ToGetResourcesResourcesCollectionItemSkusOutputWithContext(ctx context.Context) GetResourcesResourcesCollectionItemSkusOutput {
+	return o
+}
+
+// The cloud credit type for the resource.
+func (o GetResourcesResourcesCollectionItemSkusOutput) CloudCreditType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItemSkus) string { return v.CloudCreditType }).(pulumi.StringOutput)
+}
+
+// The Sku Id for the resource.
+func (o GetResourcesResourcesCollectionItemSkusOutput) SkuId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItemSkus) string { return v.SkuId }).(pulumi.StringOutput)
+}
+
+// The Sku type for the resource.
+func (o GetResourcesResourcesCollectionItemSkusOutput) SkuType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItemSkus) string { return v.SkuType }).(pulumi.StringOutput)
+}
+
+type GetResourcesResourcesCollectionItemSkusArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourcesResourcesCollectionItemSkusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourcesResourcesCollectionItemSkus)(nil)).Elem()
+}
+
+func (o GetResourcesResourcesCollectionItemSkusArrayOutput) ToGetResourcesResourcesCollectionItemSkusArrayOutput() GetResourcesResourcesCollectionItemSkusArrayOutput {
+	return o
+}
+
+func (o GetResourcesResourcesCollectionItemSkusArrayOutput) ToGetResourcesResourcesCollectionItemSkusArrayOutputWithContext(ctx context.Context) GetResourcesResourcesCollectionItemSkusArrayOutput {
+	return o
+}
+
+func (o GetResourcesResourcesCollectionItemSkusArrayOutput) Index(i pulumi.IntInput) GetResourcesResourcesCollectionItemSkusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourcesResourcesCollectionItemSkus {
+		return vs[0].([]GetResourcesResourcesCollectionItemSkus)[vs[1].(int)]
+	}).(GetResourcesResourcesCollectionItemSkusOutput)
+}
+
 type GetSubscriptionProductItem struct {
 	// The earned rewards for the product.
 	EarnedRewards float64 `pulumi:"earnedRewards"`
@@ -2904,9 +3789,455 @@ func (o GetSubscriptionRewardsRewardCollectionItemSummaryArrayOutput) Index(i pu
 	}).(GetSubscriptionRewardsRewardCollectionItemSummaryOutput)
 }
 
+type GetUsagelimitsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetUsagelimitsFilterInput is an input type that accepts GetUsagelimitsFilterArgs and GetUsagelimitsFilterOutput values.
+// You can construct a concrete instance of `GetUsagelimitsFilterInput` via:
+//
+//	GetUsagelimitsFilterArgs{...}
+type GetUsagelimitsFilterInput interface {
+	pulumi.Input
+
+	ToGetUsagelimitsFilterOutput() GetUsagelimitsFilterOutput
+	ToGetUsagelimitsFilterOutputWithContext(context.Context) GetUsagelimitsFilterOutput
+}
+
+type GetUsagelimitsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetUsagelimitsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagelimitsFilter)(nil)).Elem()
+}
+
+func (i GetUsagelimitsFilterArgs) ToGetUsagelimitsFilterOutput() GetUsagelimitsFilterOutput {
+	return i.ToGetUsagelimitsFilterOutputWithContext(context.Background())
+}
+
+func (i GetUsagelimitsFilterArgs) ToGetUsagelimitsFilterOutputWithContext(ctx context.Context) GetUsagelimitsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagelimitsFilterOutput)
+}
+
+// GetUsagelimitsFilterArrayInput is an input type that accepts GetUsagelimitsFilterArray and GetUsagelimitsFilterArrayOutput values.
+// You can construct a concrete instance of `GetUsagelimitsFilterArrayInput` via:
+//
+//	GetUsagelimitsFilterArray{ GetUsagelimitsFilterArgs{...} }
+type GetUsagelimitsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetUsagelimitsFilterArrayOutput() GetUsagelimitsFilterArrayOutput
+	ToGetUsagelimitsFilterArrayOutputWithContext(context.Context) GetUsagelimitsFilterArrayOutput
+}
+
+type GetUsagelimitsFilterArray []GetUsagelimitsFilterInput
+
+func (GetUsagelimitsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagelimitsFilter)(nil)).Elem()
+}
+
+func (i GetUsagelimitsFilterArray) ToGetUsagelimitsFilterArrayOutput() GetUsagelimitsFilterArrayOutput {
+	return i.ToGetUsagelimitsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsagelimitsFilterArray) ToGetUsagelimitsFilterArrayOutputWithContext(ctx context.Context) GetUsagelimitsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagelimitsFilterArrayOutput)
+}
+
+type GetUsagelimitsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetUsagelimitsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagelimitsFilter)(nil)).Elem()
+}
+
+func (o GetUsagelimitsFilterOutput) ToGetUsagelimitsFilterOutput() GetUsagelimitsFilterOutput {
+	return o
+}
+
+func (o GetUsagelimitsFilterOutput) ToGetUsagelimitsFilterOutputWithContext(ctx context.Context) GetUsagelimitsFilterOutput {
+	return o
+}
+
+func (o GetUsagelimitsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagelimitsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetUsagelimitsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetUsagelimitsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetUsagelimitsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUsagelimitsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetUsagelimitsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsagelimitsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagelimitsFilter)(nil)).Elem()
+}
+
+func (o GetUsagelimitsFilterArrayOutput) ToGetUsagelimitsFilterArrayOutput() GetUsagelimitsFilterArrayOutput {
+	return o
+}
+
+func (o GetUsagelimitsFilterArrayOutput) ToGetUsagelimitsFilterArrayOutputWithContext(ctx context.Context) GetUsagelimitsFilterArrayOutput {
+	return o
+}
+
+func (o GetUsagelimitsFilterArrayOutput) Index(i pulumi.IntInput) GetUsagelimitsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsagelimitsFilter {
+		return vs[0].([]GetUsagelimitsFilter)[vs[1].(int)]
+	}).(GetUsagelimitsFilterOutput)
+}
+
+type GetUsagelimitsUsageLimitCollection struct {
+	// The list of usage limits.
+	Items []GetUsagelimitsUsageLimitCollectionItem `pulumi:"items"`
+}
+
+// GetUsagelimitsUsageLimitCollectionInput is an input type that accepts GetUsagelimitsUsageLimitCollectionArgs and GetUsagelimitsUsageLimitCollectionOutput values.
+// You can construct a concrete instance of `GetUsagelimitsUsageLimitCollectionInput` via:
+//
+//	GetUsagelimitsUsageLimitCollectionArgs{...}
+type GetUsagelimitsUsageLimitCollectionInput interface {
+	pulumi.Input
+
+	ToGetUsagelimitsUsageLimitCollectionOutput() GetUsagelimitsUsageLimitCollectionOutput
+	ToGetUsagelimitsUsageLimitCollectionOutputWithContext(context.Context) GetUsagelimitsUsageLimitCollectionOutput
+}
+
+type GetUsagelimitsUsageLimitCollectionArgs struct {
+	// The list of usage limits.
+	Items GetUsagelimitsUsageLimitCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetUsagelimitsUsageLimitCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagelimitsUsageLimitCollection)(nil)).Elem()
+}
+
+func (i GetUsagelimitsUsageLimitCollectionArgs) ToGetUsagelimitsUsageLimitCollectionOutput() GetUsagelimitsUsageLimitCollectionOutput {
+	return i.ToGetUsagelimitsUsageLimitCollectionOutputWithContext(context.Background())
+}
+
+func (i GetUsagelimitsUsageLimitCollectionArgs) ToGetUsagelimitsUsageLimitCollectionOutputWithContext(ctx context.Context) GetUsagelimitsUsageLimitCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagelimitsUsageLimitCollectionOutput)
+}
+
+// GetUsagelimitsUsageLimitCollectionArrayInput is an input type that accepts GetUsagelimitsUsageLimitCollectionArray and GetUsagelimitsUsageLimitCollectionArrayOutput values.
+// You can construct a concrete instance of `GetUsagelimitsUsageLimitCollectionArrayInput` via:
+//
+//	GetUsagelimitsUsageLimitCollectionArray{ GetUsagelimitsUsageLimitCollectionArgs{...} }
+type GetUsagelimitsUsageLimitCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetUsagelimitsUsageLimitCollectionArrayOutput() GetUsagelimitsUsageLimitCollectionArrayOutput
+	ToGetUsagelimitsUsageLimitCollectionArrayOutputWithContext(context.Context) GetUsagelimitsUsageLimitCollectionArrayOutput
+}
+
+type GetUsagelimitsUsageLimitCollectionArray []GetUsagelimitsUsageLimitCollectionInput
+
+func (GetUsagelimitsUsageLimitCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagelimitsUsageLimitCollection)(nil)).Elem()
+}
+
+func (i GetUsagelimitsUsageLimitCollectionArray) ToGetUsagelimitsUsageLimitCollectionArrayOutput() GetUsagelimitsUsageLimitCollectionArrayOutput {
+	return i.ToGetUsagelimitsUsageLimitCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsagelimitsUsageLimitCollectionArray) ToGetUsagelimitsUsageLimitCollectionArrayOutputWithContext(ctx context.Context) GetUsagelimitsUsageLimitCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagelimitsUsageLimitCollectionArrayOutput)
+}
+
+type GetUsagelimitsUsageLimitCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetUsagelimitsUsageLimitCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagelimitsUsageLimitCollection)(nil)).Elem()
+}
+
+func (o GetUsagelimitsUsageLimitCollectionOutput) ToGetUsagelimitsUsageLimitCollectionOutput() GetUsagelimitsUsageLimitCollectionOutput {
+	return o
+}
+
+func (o GetUsagelimitsUsageLimitCollectionOutput) ToGetUsagelimitsUsageLimitCollectionOutputWithContext(ctx context.Context) GetUsagelimitsUsageLimitCollectionOutput {
+	return o
+}
+
+// The list of usage limits.
+func (o GetUsagelimitsUsageLimitCollectionOutput) Items() GetUsagelimitsUsageLimitCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollection) []GetUsagelimitsUsageLimitCollectionItem { return v.Items }).(GetUsagelimitsUsageLimitCollectionItemArrayOutput)
+}
+
+type GetUsagelimitsUsageLimitCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsagelimitsUsageLimitCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagelimitsUsageLimitCollection)(nil)).Elem()
+}
+
+func (o GetUsagelimitsUsageLimitCollectionArrayOutput) ToGetUsagelimitsUsageLimitCollectionArrayOutput() GetUsagelimitsUsageLimitCollectionArrayOutput {
+	return o
+}
+
+func (o GetUsagelimitsUsageLimitCollectionArrayOutput) ToGetUsagelimitsUsageLimitCollectionArrayOutputWithContext(ctx context.Context) GetUsagelimitsUsageLimitCollectionArrayOutput {
+	return o
+}
+
+func (o GetUsagelimitsUsageLimitCollectionArrayOutput) Index(i pulumi.IntInput) GetUsagelimitsUsageLimitCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsagelimitsUsageLimitCollection {
+		return vs[0].([]GetUsagelimitsUsageLimitCollection)[vs[1].(int)]
+	}).(GetUsagelimitsUsageLimitCollectionOutput)
+}
+
+type GetUsagelimitsUsageLimitCollectionItem struct {
+	// The action when usage limit is hit
+	Action string `pulumi:"action"`
+	// The alert level of the usage limit
+	AlertLevel float64 `pulumi:"alertLevel"`
+	// The user who created the limit
+	CreatedBy string `pulumi:"createdBy"`
+	// Entitlement ID of the usage limit
+	EntitlementId string `pulumi:"entitlementId"`
+	// The usage limit ID
+	Id    string `pulumi:"id"`
+	Limit string `pulumi:"limit"`
+	// Hard or soft limit. Hard limits lead to breaches, soft to alerts.
+	LimitType string `pulumi:"limitType"`
+	// The maximum hard limit set for the usage limit
+	MaxHardLimit string `pulumi:"maxHardLimit"`
+	// The user who modified the limit
+	ModifiedBy string `pulumi:"modifiedBy"`
+	// The resource for which the limit is defined
+	ResourceName string `pulumi:"resourceName"`
+	// The service for which the limit is defined
+	ServiceName string `pulumi:"serviceName"`
+	// The SKU for which the usage limit is set
+	SkuPartId string `pulumi:"skuPartId"`
+	// The usage limit lifecycle state.
+	State string `pulumi:"state"`
+	// Time when the usage limit was created
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time when the usage limit was modified
+	TimeModified string `pulumi:"timeModified"`
+	// The value type of the usage limit
+	ValueType string `pulumi:"valueType"`
+}
+
+// GetUsagelimitsUsageLimitCollectionItemInput is an input type that accepts GetUsagelimitsUsageLimitCollectionItemArgs and GetUsagelimitsUsageLimitCollectionItemOutput values.
+// You can construct a concrete instance of `GetUsagelimitsUsageLimitCollectionItemInput` via:
+//
+//	GetUsagelimitsUsageLimitCollectionItemArgs{...}
+type GetUsagelimitsUsageLimitCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetUsagelimitsUsageLimitCollectionItemOutput() GetUsagelimitsUsageLimitCollectionItemOutput
+	ToGetUsagelimitsUsageLimitCollectionItemOutputWithContext(context.Context) GetUsagelimitsUsageLimitCollectionItemOutput
+}
+
+type GetUsagelimitsUsageLimitCollectionItemArgs struct {
+	// The action when usage limit is hit
+	Action pulumi.StringInput `pulumi:"action"`
+	// The alert level of the usage limit
+	AlertLevel pulumi.Float64Input `pulumi:"alertLevel"`
+	// The user who created the limit
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// Entitlement ID of the usage limit
+	EntitlementId pulumi.StringInput `pulumi:"entitlementId"`
+	// The usage limit ID
+	Id    pulumi.StringInput `pulumi:"id"`
+	Limit pulumi.StringInput `pulumi:"limit"`
+	// Hard or soft limit. Hard limits lead to breaches, soft to alerts.
+	LimitType pulumi.StringInput `pulumi:"limitType"`
+	// The maximum hard limit set for the usage limit
+	MaxHardLimit pulumi.StringInput `pulumi:"maxHardLimit"`
+	// The user who modified the limit
+	ModifiedBy pulumi.StringInput `pulumi:"modifiedBy"`
+	// The resource for which the limit is defined
+	ResourceName pulumi.StringInput `pulumi:"resourceName"`
+	// The service for which the limit is defined
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// The SKU for which the usage limit is set
+	SkuPartId pulumi.StringInput `pulumi:"skuPartId"`
+	// The usage limit lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// Time when the usage limit was created
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time when the usage limit was modified
+	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+	// The value type of the usage limit
+	ValueType pulumi.StringInput `pulumi:"valueType"`
+}
+
+func (GetUsagelimitsUsageLimitCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagelimitsUsageLimitCollectionItem)(nil)).Elem()
+}
+
+func (i GetUsagelimitsUsageLimitCollectionItemArgs) ToGetUsagelimitsUsageLimitCollectionItemOutput() GetUsagelimitsUsageLimitCollectionItemOutput {
+	return i.ToGetUsagelimitsUsageLimitCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetUsagelimitsUsageLimitCollectionItemArgs) ToGetUsagelimitsUsageLimitCollectionItemOutputWithContext(ctx context.Context) GetUsagelimitsUsageLimitCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagelimitsUsageLimitCollectionItemOutput)
+}
+
+// GetUsagelimitsUsageLimitCollectionItemArrayInput is an input type that accepts GetUsagelimitsUsageLimitCollectionItemArray and GetUsagelimitsUsageLimitCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetUsagelimitsUsageLimitCollectionItemArrayInput` via:
+//
+//	GetUsagelimitsUsageLimitCollectionItemArray{ GetUsagelimitsUsageLimitCollectionItemArgs{...} }
+type GetUsagelimitsUsageLimitCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetUsagelimitsUsageLimitCollectionItemArrayOutput() GetUsagelimitsUsageLimitCollectionItemArrayOutput
+	ToGetUsagelimitsUsageLimitCollectionItemArrayOutputWithContext(context.Context) GetUsagelimitsUsageLimitCollectionItemArrayOutput
+}
+
+type GetUsagelimitsUsageLimitCollectionItemArray []GetUsagelimitsUsageLimitCollectionItemInput
+
+func (GetUsagelimitsUsageLimitCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagelimitsUsageLimitCollectionItem)(nil)).Elem()
+}
+
+func (i GetUsagelimitsUsageLimitCollectionItemArray) ToGetUsagelimitsUsageLimitCollectionItemArrayOutput() GetUsagelimitsUsageLimitCollectionItemArrayOutput {
+	return i.ToGetUsagelimitsUsageLimitCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsagelimitsUsageLimitCollectionItemArray) ToGetUsagelimitsUsageLimitCollectionItemArrayOutputWithContext(ctx context.Context) GetUsagelimitsUsageLimitCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagelimitsUsageLimitCollectionItemArrayOutput)
+}
+
+type GetUsagelimitsUsageLimitCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetUsagelimitsUsageLimitCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagelimitsUsageLimitCollectionItem)(nil)).Elem()
+}
+
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) ToGetUsagelimitsUsageLimitCollectionItemOutput() GetUsagelimitsUsageLimitCollectionItemOutput {
+	return o
+}
+
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) ToGetUsagelimitsUsageLimitCollectionItemOutputWithContext(ctx context.Context) GetUsagelimitsUsageLimitCollectionItemOutput {
+	return o
+}
+
+// The action when usage limit is hit
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// The alert level of the usage limit
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) AlertLevel() pulumi.Float64Output {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) float64 { return v.AlertLevel }).(pulumi.Float64Output)
+}
+
+// The user who created the limit
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// Entitlement ID of the usage limit
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) EntitlementId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.EntitlementId }).(pulumi.StringOutput)
+}
+
+// The usage limit ID
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) Limit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.Limit }).(pulumi.StringOutput)
+}
+
+// Hard or soft limit. Hard limits lead to breaches, soft to alerts.
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) LimitType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.LimitType }).(pulumi.StringOutput)
+}
+
+// The maximum hard limit set for the usage limit
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) MaxHardLimit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.MaxHardLimit }).(pulumi.StringOutput)
+}
+
+// The user who modified the limit
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) ModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.ModifiedBy }).(pulumi.StringOutput)
+}
+
+// The resource for which the limit is defined
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) ResourceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.ResourceName }).(pulumi.StringOutput)
+}
+
+// The service for which the limit is defined
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+// The SKU for which the usage limit is set
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) SkuPartId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.SkuPartId }).(pulumi.StringOutput)
+}
+
+// The usage limit lifecycle state.
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Time when the usage limit was created
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Time when the usage limit was modified
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) TimeModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.TimeModified }).(pulumi.StringOutput)
+}
+
+// The value type of the usage limit
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) ValueType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.ValueType }).(pulumi.StringOutput)
+}
+
+type GetUsagelimitsUsageLimitCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsagelimitsUsageLimitCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagelimitsUsageLimitCollectionItem)(nil)).Elem()
+}
+
+func (o GetUsagelimitsUsageLimitCollectionItemArrayOutput) ToGetUsagelimitsUsageLimitCollectionItemArrayOutput() GetUsagelimitsUsageLimitCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetUsagelimitsUsageLimitCollectionItemArrayOutput) ToGetUsagelimitsUsageLimitCollectionItemArrayOutputWithContext(ctx context.Context) GetUsagelimitsUsageLimitCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetUsagelimitsUsageLimitCollectionItemArrayOutput) Index(i pulumi.IntInput) GetUsagelimitsUsageLimitCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsagelimitsUsageLimitCollectionItem {
+		return vs[0].([]GetUsagelimitsUsageLimitCollectionItem)[vs[1].(int)]
+	}).(GetUsagelimitsUsageLimitCollectionItemOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SubscriptionRedeemableUserItemInput)(nil)).Elem(), SubscriptionRedeemableUserItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SubscriptionRedeemableUserItemArrayInput)(nil)).Elem(), SubscriptionRedeemableUserItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceQuotasFilterInput)(nil)).Elem(), GetResourceQuotasFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceQuotasFilterArrayInput)(nil)).Elem(), GetResourceQuotasFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceQuotasResourceQuotumCollectionInput)(nil)).Elem(), GetResourceQuotasResourceQuotumCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceQuotasResourceQuotumCollectionArrayInput)(nil)).Elem(), GetResourceQuotasResourceQuotumCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceQuotasResourceQuotumCollectionItemInput)(nil)).Elem(), GetResourceQuotasResourceQuotumCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceQuotasResourceQuotumCollectionItemArrayInput)(nil)).Elem(), GetResourceQuotasResourceQuotumCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourcesFilterInput)(nil)).Elem(), GetResourcesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourcesFilterArrayInput)(nil)).Elem(), GetResourcesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourcesResourcesCollectionInput)(nil)).Elem(), GetResourcesResourcesCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourcesResourcesCollectionArrayInput)(nil)).Elem(), GetResourcesResourcesCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourcesResourcesCollectionItemInput)(nil)).Elem(), GetResourcesResourcesCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourcesResourcesCollectionItemArrayInput)(nil)).Elem(), GetResourcesResourcesCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourcesResourcesCollectionItemSkusInput)(nil)).Elem(), GetResourcesResourcesCollectionItemSkusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourcesResourcesCollectionItemSkusArrayInput)(nil)).Elem(), GetResourcesResourcesCollectionItemSkusArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionProductItemInput)(nil)).Elem(), GetSubscriptionProductItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionProductItemArrayInput)(nil)).Elem(), GetSubscriptionProductItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionProductsFilterInput)(nil)).Elem(), GetSubscriptionProductsFilterArgs{})
@@ -2951,8 +4282,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionRewardsRewardCollectionItemItemArrayInput)(nil)).Elem(), GetSubscriptionRewardsRewardCollectionItemItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionRewardsRewardCollectionItemSummaryInput)(nil)).Elem(), GetSubscriptionRewardsRewardCollectionItemSummaryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionRewardsRewardCollectionItemSummaryArrayInput)(nil)).Elem(), GetSubscriptionRewardsRewardCollectionItemSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagelimitsFilterInput)(nil)).Elem(), GetUsagelimitsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagelimitsFilterArrayInput)(nil)).Elem(), GetUsagelimitsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagelimitsUsageLimitCollectionInput)(nil)).Elem(), GetUsagelimitsUsageLimitCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagelimitsUsageLimitCollectionArrayInput)(nil)).Elem(), GetUsagelimitsUsageLimitCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagelimitsUsageLimitCollectionItemInput)(nil)).Elem(), GetUsagelimitsUsageLimitCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagelimitsUsageLimitCollectionItemArrayInput)(nil)).Elem(), GetUsagelimitsUsageLimitCollectionItemArray{})
 	pulumi.RegisterOutputType(SubscriptionRedeemableUserItemOutput{})
 	pulumi.RegisterOutputType(SubscriptionRedeemableUserItemArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceQuotasFilterOutput{})
+	pulumi.RegisterOutputType(GetResourceQuotasFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceQuotasResourceQuotumCollectionOutput{})
+	pulumi.RegisterOutputType(GetResourceQuotasResourceQuotumCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceQuotasResourceQuotumCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetResourceQuotasResourceQuotumCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetResourcesFilterOutput{})
+	pulumi.RegisterOutputType(GetResourcesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetResourcesResourcesCollectionOutput{})
+	pulumi.RegisterOutputType(GetResourcesResourcesCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetResourcesResourcesCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetResourcesResourcesCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetResourcesResourcesCollectionItemSkusOutput{})
+	pulumi.RegisterOutputType(GetResourcesResourcesCollectionItemSkusArrayOutput{})
 	pulumi.RegisterOutputType(GetSubscriptionProductItemOutput{})
 	pulumi.RegisterOutputType(GetSubscriptionProductItemArrayOutput{})
 	pulumi.RegisterOutputType(GetSubscriptionProductsFilterOutput{})
@@ -2997,4 +4348,10 @@ func init() {
 	pulumi.RegisterOutputType(GetSubscriptionRewardsRewardCollectionItemItemArrayOutput{})
 	pulumi.RegisterOutputType(GetSubscriptionRewardsRewardCollectionItemSummaryOutput{})
 	pulumi.RegisterOutputType(GetSubscriptionRewardsRewardCollectionItemSummaryArrayOutput{})
+	pulumi.RegisterOutputType(GetUsagelimitsFilterOutput{})
+	pulumi.RegisterOutputType(GetUsagelimitsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetUsagelimitsUsageLimitCollectionOutput{})
+	pulumi.RegisterOutputType(GetUsagelimitsUsageLimitCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetUsagelimitsUsageLimitCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetUsagelimitsUsageLimitCollectionItemArrayOutput{})
 }

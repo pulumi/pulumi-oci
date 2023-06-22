@@ -32,6 +32,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Opsi.ExadataInsight;
  * import com.pulumi.oci.Opsi.ExadataInsightArgs;
+ * import com.pulumi.oci.Opsi.inputs.ExadataInsightMemberVmClusterDetailArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -54,6 +55,41 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .isAutoSyncEnabled(var_.exadata_insight_is_auto_sync_enabled())
+ *             .memberVmClusterDetails(ExadataInsightMemberVmClusterDetailArgs.builder()
+ *                 .compartmentId(var_.compartment_id())
+ *                 .dbmPrivateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+ *                 .memberDatabaseDetails(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs.builder()
+ *                     .compartmentId(var_.compartment_id())
+ *                     .connectionDetails(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs.builder()
+ *                         .hosts(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs.builder()
+ *                             .hostIp(var_.exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_host_ip())
+ *                             .port(var_.exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port())
+ *                             .build())
+ *                         .protocol(var_.exadata_insight_member_vm_cluster_details_member_database_details_connection_details_protocol())
+ *                         .serviceName(oci_core_service.test_service().name())
+ *                         .build())
+ *                     .credentialDetails(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs.builder()
+ *                         .credentialType(var_.exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_type())
+ *                         .credentialSourceName(var_.exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_source_name())
+ *                         .passwordSecretId(oci_vault_secret.test_secret().id())
+ *                         .role(var_.exadata_insight_member_vm_cluster_details_member_database_details_credential_details_role())
+ *                         .userName(oci_identity_user.test_user().name())
+ *                         .walletSecretId(oci_vault_secret.test_secret().id())
+ *                         .build())
+ *                     .databaseId(oci_database_database.test_database().id())
+ *                     .databaseResourceType(var_.exadata_insight_member_vm_cluster_details_member_database_details_database_resource_type())
+ *                     .dbmPrivateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+ *                     .definedTags(var_.exadata_insight_member_vm_cluster_details_member_database_details_defined_tags())
+ *                     .deploymentType(var_.exadata_insight_member_vm_cluster_details_member_database_details_deployment_type())
+ *                     .entitySource(var_.exadata_insight_member_vm_cluster_details_member_database_details_entity_source())
+ *                     .freeformTags(var_.exadata_insight_member_vm_cluster_details_member_database_details_freeform_tags())
+ *                     .opsiPrivateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+ *                     .serviceName(oci_core_service.test_service().name())
+ *                     .systemTags(var_.exadata_insight_member_vm_cluster_details_member_database_details_system_tags())
+ *                     .build())
+ *                 .opsiPrivateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+ *                 .vmclusterId(oci_opsi_vmcluster.test_vmcluster().id())
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -72,28 +108,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Opsi/exadataInsight:ExadataInsight")
 public class ExadataInsight extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Compartment Identifier of Exadata insight
+     * (Updatable) Compartment Identifier of database
      * 
      */
     @Export(name="compartmentId", type=String.class, parameters={})
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier of Exadata insight
+     * @return (Updatable) Compartment Identifier of database
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,Object>> definedTags() {
@@ -184,14 +220,14 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
         return this.enterpriseManagerIdentifier;
     }
     /**
-     * (Updatable) Source of the Exadata system.
+     * Source of the database entity.
      * 
      */
     @Export(name="entitySource", type=String.class, parameters={})
     private Output<String> entitySource;
 
     /**
-     * @return (Updatable) Source of the Exadata system.
+     * @return Source of the database entity.
      * 
      */
     public Output<String> entitySource() {
@@ -272,14 +308,14 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
         return this.exadataType;
     }
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,Object>> freeformTags() {

@@ -170,6 +170,11 @@ public final class GetInvokeRunResult {
      */
     private List<GetInvokeRunParameter> parameters;
     /**
+     * @return The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     * 
+     */
+    private String poolId;
+    /**
      * @return An array of DNS zone names. Example: `[ &#34;app.examplecorp.com&#34;, &#34;app.examplecorp2.com&#34; ]`
      * 
      */
@@ -211,12 +216,12 @@ public final class GetInvokeRunResult {
      */
     private String state;
     /**
-     * @return The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * @return The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * @return The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     private String timeUpdated;
@@ -451,6 +456,13 @@ public final class GetInvokeRunResult {
         return this.parameters;
     }
     /**
+     * @return The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     * 
+     */
+    public String poolId() {
+        return this.poolId;
+    }
+    /**
      * @return An array of DNS zone names. Example: `[ &#34;app.examplecorp.com&#34;, &#34;app.examplecorp2.com&#34; ]`
      * 
      */
@@ -510,14 +522,14 @@ public final class GetInvokeRunResult {
         return this.state;
     }
     /**
-     * @return The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * @return The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * @return The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     public String timeUpdated() {
@@ -585,6 +597,7 @@ public final class GetInvokeRunResult {
         private String ownerPrincipalId;
         private String ownerUserName;
         private List<GetInvokeRunParameter> parameters;
+        private String poolId;
         private List<String> privateEndpointDnsZones;
         private String privateEndpointId;
         private Integer privateEndpointMaxHostCount;
@@ -633,6 +646,7 @@ public final class GetInvokeRunResult {
     	      this.ownerPrincipalId = defaults.ownerPrincipalId;
     	      this.ownerUserName = defaults.ownerUserName;
     	      this.parameters = defaults.parameters;
+    	      this.poolId = defaults.poolId;
     	      this.privateEndpointDnsZones = defaults.privateEndpointDnsZones;
     	      this.privateEndpointId = defaults.privateEndpointId;
     	      this.privateEndpointMaxHostCount = defaults.privateEndpointMaxHostCount;
@@ -820,6 +834,11 @@ public final class GetInvokeRunResult {
             return parameters(List.of(parameters));
         }
         @CustomType.Setter
+        public Builder poolId(String poolId) {
+            this.poolId = Objects.requireNonNull(poolId);
+            return this;
+        }
+        @CustomType.Setter
         public Builder privateEndpointDnsZones(List<String> privateEndpointDnsZones) {
             this.privateEndpointDnsZones = Objects.requireNonNull(privateEndpointDnsZones);
             return this;
@@ -928,6 +947,7 @@ public final class GetInvokeRunResult {
             o.ownerPrincipalId = ownerPrincipalId;
             o.ownerUserName = ownerUserName;
             o.parameters = parameters;
+            o.poolId = poolId;
             o.privateEndpointDnsZones = privateEndpointDnsZones;
             o.privateEndpointId = privateEndpointId;
             o.privateEndpointMaxHostCount = privateEndpointMaxHostCount;

@@ -30,6 +30,41 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     isAutoSyncEnabled: _var.exadata_insight_is_auto_sync_enabled,
+ *     memberVmClusterDetails: [{
+ *         compartmentId: _var.compartment_id,
+ *         dbmPrivateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
+ *         memberDatabaseDetails: [{
+ *             compartmentId: _var.compartment_id,
+ *             connectionDetails: {
+ *                 hosts: [{
+ *                     hostIp: _var.exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_host_ip,
+ *                     port: _var.exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port,
+ *                 }],
+ *                 protocol: _var.exadata_insight_member_vm_cluster_details_member_database_details_connection_details_protocol,
+ *                 serviceName: oci_core_service.test_service.name,
+ *             },
+ *             credentialDetails: {
+ *                 credentialType: _var.exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_type,
+ *                 credentialSourceName: _var.exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_source_name,
+ *                 passwordSecretId: oci_vault_secret.test_secret.id,
+ *                 role: _var.exadata_insight_member_vm_cluster_details_member_database_details_credential_details_role,
+ *                 userName: oci_identity_user.test_user.name,
+ *                 walletSecretId: oci_vault_secret.test_secret.id,
+ *             },
+ *             databaseId: oci_database_database.test_database.id,
+ *             databaseResourceType: _var.exadata_insight_member_vm_cluster_details_member_database_details_database_resource_type,
+ *             dbmPrivateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
+ *             definedTags: _var.exadata_insight_member_vm_cluster_details_member_database_details_defined_tags,
+ *             deploymentType: _var.exadata_insight_member_vm_cluster_details_member_database_details_deployment_type,
+ *             entitySource: _var.exadata_insight_member_vm_cluster_details_member_database_details_entity_source,
+ *             freeformTags: _var.exadata_insight_member_vm_cluster_details_member_database_details_freeform_tags,
+ *             opsiPrivateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
+ *             serviceName: oci_core_service.test_service.name,
+ *             systemTags: _var.exadata_insight_member_vm_cluster_details_member_database_details_system_tags,
+ *         }],
+ *         opsiPrivateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
+ *         vmclusterId: oci_opsi_vmcluster.test_vmcluster.id,
+ *     }],
  * });
  * ```
  *
@@ -70,11 +105,11 @@ export class ExadataInsight extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) Compartment Identifier of Exadata insight
+     * (Updatable) Compartment Identifier of database
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -102,7 +137,7 @@ export class ExadataInsight extends pulumi.CustomResource {
      */
     public readonly enterpriseManagerIdentifier!: pulumi.Output<string>;
     /**
-     * (Updatable) Source of the Exadata system.
+     * Source of the database entity.
      */
     public readonly entitySource!: pulumi.Output<string>;
     /**
@@ -125,7 +160,7 @@ export class ExadataInsight extends pulumi.CustomResource {
      */
     public /*out*/ readonly exadataType!: pulumi.Output<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -147,7 +182,6 @@ export class ExadataInsight extends pulumi.CustomResource {
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
      * (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -250,11 +284,11 @@ export class ExadataInsight extends pulumi.CustomResource {
  */
 export interface ExadataInsightState {
     /**
-     * (Updatable) Compartment Identifier of Exadata insight
+     * (Updatable) Compartment Identifier of database
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -282,7 +316,7 @@ export interface ExadataInsightState {
      */
     enterpriseManagerIdentifier?: pulumi.Input<string>;
     /**
-     * (Updatable) Source of the Exadata system.
+     * Source of the database entity.
      */
     entitySource?: pulumi.Input<string>;
     /**
@@ -305,7 +339,7 @@ export interface ExadataInsightState {
      */
     exadataType?: pulumi.Input<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -327,7 +361,6 @@ export interface ExadataInsightState {
     state?: pulumi.Input<string>;
     /**
      * (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -352,11 +385,11 @@ export interface ExadataInsightState {
  */
 export interface ExadataInsightArgs {
     /**
-     * (Updatable) Compartment Identifier of Exadata insight
+     * (Updatable) Compartment Identifier of database
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -372,12 +405,12 @@ export interface ExadataInsightArgs {
      */
     enterpriseManagerIdentifier?: pulumi.Input<string>;
     /**
-     * (Updatable) Source of the Exadata system.
+     * Source of the database entity.
      */
     entitySource: pulumi.Input<string>;
     exadataInfraId?: pulumi.Input<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -387,7 +420,6 @@ export interface ExadataInsightArgs {
     memberVmClusterDetails?: pulumi.Input<pulumi.Input<inputs.Opsi.ExadataInsightMemberVmClusterDetail>[]>;
     /**
      * (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

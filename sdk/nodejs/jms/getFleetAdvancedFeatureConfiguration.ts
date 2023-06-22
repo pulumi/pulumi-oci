@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
  *
- * Returns fleet level advanced feature configuration
+ * Returns Fleet level advanced feature configuration.
  *
  * ## Example Usage
  *
@@ -49,11 +49,11 @@ export interface GetFleetAdvancedFeatureConfigurationResult {
      */
     readonly advancedUsageTrackings: outputs.Jms.GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking[];
     /**
-     * Bucket name required to store jfr and related data
+     * Bucket name required to store JFR and related data.
      */
     readonly analyticBucketName: string;
     /**
-     * Namespace for the fleet advanced feature
+     * Namespace for the Fleet advanced feature.
      */
     readonly analyticNamespace: string;
     /**
@@ -66,13 +66,21 @@ export interface GetFleetAdvancedFeatureConfigurationResult {
      */
     readonly id: string;
     /**
+     * JavaMigrationAnalysis configuration
+     */
+    readonly javaMigrationAnalyses: outputs.Jms.GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis[];
+    /**
      * JfrRecording configuration
      */
     readonly jfrRecordings: outputs.Jms.GetFleetAdvancedFeatureConfigurationJfrRecording[];
     /**
-     * Enable lifecycle management and set post action configurations
+     * Enable lifecycle management and set post action configurations.
      */
     readonly lcms: outputs.Jms.GetFleetAdvancedFeatureConfigurationLcm[];
+    /**
+     * Performance tuning analysis configuration
+     */
+    readonly performanceTuningAnalyses: outputs.Jms.GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis[];
     /**
      * The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
@@ -81,7 +89,7 @@ export interface GetFleetAdvancedFeatureConfigurationResult {
 /**
  * This data source provides details about a specific Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
  *
- * Returns fleet level advanced feature configuration
+ * Returns Fleet level advanced feature configuration.
  *
  * ## Example Usage
  *

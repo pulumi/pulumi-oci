@@ -70,6 +70,7 @@ export interface GetPreauthrequestResult {
      * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
      */
     readonly bucketListingAction: string;
+    readonly fullPath: string;
     /**
      * The unique identifier to use when directly addressing the pre-authenticated request.
      */

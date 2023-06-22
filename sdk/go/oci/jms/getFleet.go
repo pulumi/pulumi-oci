@@ -56,15 +56,15 @@ type LookupFleetArgs struct {
 
 // A collection of values returned by getFleet.
 type LookupFleetResult struct {
-	// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateApplicationCount int `pulumi:"approximateApplicationCount"`
-	// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateInstallationCount int `pulumi:"approximateInstallationCount"`
-	// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateJavaServerCount int `pulumi:"approximateJavaServerCount"`
-	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateJreCount int `pulumi:"approximateJreCount"`
-	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateManagedInstanceCount int `pulumi:"approximateManagedInstanceCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -75,13 +75,13 @@ type LookupFleetResult struct {
 	// The name of the Fleet.
 	DisplayName string `pulumi:"displayName"`
 	FleetId     string `pulumi:"fleetId"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	Id string `pulumi:"id"`
 	// Custom Log for inventory or operation log.
 	InventoryLogs []GetFleetInventoryLog `pulumi:"inventoryLogs"`
-	// Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
+	// Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
 	IsAdvancedFeaturesEnabled bool `pulumi:"isAdvancedFeaturesEnabled"`
 	// Custom Log for inventory or operation log.
 	OperationLogs []GetFleetOperationLog `pulumi:"operationLogs"`
@@ -131,27 +131,27 @@ func (o LookupFleetResultOutput) ToLookupFleetResultOutputWithContext(ctx contex
 	return o
 }
 
-// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 func (o LookupFleetResultOutput) ApproximateApplicationCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupFleetResult) int { return v.ApproximateApplicationCount }).(pulumi.IntOutput)
 }
 
-// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 func (o LookupFleetResultOutput) ApproximateInstallationCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupFleetResult) int { return v.ApproximateInstallationCount }).(pulumi.IntOutput)
 }
 
-// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 func (o LookupFleetResultOutput) ApproximateJavaServerCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupFleetResult) int { return v.ApproximateJavaServerCount }).(pulumi.IntOutput)
 }
 
-// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 func (o LookupFleetResultOutput) ApproximateJreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupFleetResult) int { return v.ApproximateJreCount }).(pulumi.IntOutput)
 }
 
-// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 func (o LookupFleetResultOutput) ApproximateManagedInstanceCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupFleetResult) int { return v.ApproximateManagedInstanceCount }).(pulumi.IntOutput)
 }
@@ -180,7 +180,7 @@ func (o LookupFleetResultOutput) FleetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFleetResult) string { return v.FleetId }).(pulumi.StringOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
 func (o LookupFleetResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupFleetResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -195,7 +195,7 @@ func (o LookupFleetResultOutput) InventoryLogs() GetFleetInventoryLogArrayOutput
 	return o.ApplyT(func(v LookupFleetResult) []GetFleetInventoryLog { return v.InventoryLogs }).(GetFleetInventoryLogArrayOutput)
 }
 
-// Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
+// Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
 func (o LookupFleetResultOutput) IsAdvancedFeaturesEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupFleetResult) bool { return v.IsAdvancedFeaturesEnabled }).(pulumi.BoolOutput)
 }

@@ -92,6 +92,8 @@ type providerArgs struct {
 	// (Optional) The path to the user's PEM formatted private key. A private_key or a private_key_path must be provided if
 	// auth is set to 'ApiKey', ignored otherwise.
 	PrivateKeyPath *string `pulumi:"privateKeyPath"`
+	// (Optional) flags to enable realm specific service endpoint.
+	RealmSpecificServiceEndpointTemplateEnabled *bool `pulumi:"realmSpecificServiceEndpointTemplateEnabled"`
 	// (Required) The region for API connections (e.g. us-ashburn-1).
 	Region *string `pulumi:"region"`
 	// (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
@@ -130,6 +132,8 @@ type ProviderArgs struct {
 	// (Optional) The path to the user's PEM formatted private key. A private_key or a private_key_path must be provided if
 	// auth is set to 'ApiKey', ignored otherwise.
 	PrivateKeyPath pulumi.StringPtrInput
+	// (Optional) flags to enable realm specific service endpoint.
+	RealmSpecificServiceEndpointTemplateEnabled pulumi.BoolPtrInput
 	// (Required) The region for API connections (e.g. us-ashburn-1).
 	Region pulumi.StringPtrInput
 	// (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry

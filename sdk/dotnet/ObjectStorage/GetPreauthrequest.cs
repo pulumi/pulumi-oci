@@ -149,6 +149,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
         /// </summary>
         public readonly string BucketListingAction;
+        public readonly string FullPath;
         /// <summary>
         /// The unique identifier to use when directly addressing the pre-authenticated request.
         /// </summary>
@@ -189,6 +190,8 @@ namespace Pulumi.Oci.ObjectStorage
 
             string bucketListingAction,
 
+            string fullPath,
+
             string id,
 
             string name,
@@ -209,6 +212,7 @@ namespace Pulumi.Oci.ObjectStorage
             AccessUri = accessUri;
             Bucket = bucket;
             BucketListingAction = bucketListingAction;
+            FullPath = fullPath;
             Id = id;
             Name = name;
             Namespace = @namespace;

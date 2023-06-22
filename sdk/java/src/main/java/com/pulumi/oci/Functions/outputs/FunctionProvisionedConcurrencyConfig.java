@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class FunctionProvisionedConcurrencyConfig {
     /**
-     * @return (Updatable)
+     * @return (Updatable) Configuration specifying a constant amount of provisioned concurrency.
      * 
      */
     private @Nullable Integer count;
@@ -25,7 +25,7 @@ public final class FunctionProvisionedConcurrencyConfig {
 
     private FunctionProvisionedConcurrencyConfig() {}
     /**
-     * @return (Updatable)
+     * @return (Updatable) Configuration specifying a constant amount of provisioned concurrency.
      * 
      */
     public Optional<Integer> count() {

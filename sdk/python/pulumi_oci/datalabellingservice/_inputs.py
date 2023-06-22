@@ -13,6 +13,9 @@ __all__ = [
     'DatasetDatasetFormatDetailsArgs',
     'DatasetDatasetFormatDetailsTextFileTypeMetadataArgs',
     'DatasetDatasetSourceDetailsArgs',
+    'DatasetInitialImportDatasetConfigurationArgs',
+    'DatasetInitialImportDatasetConfigurationImportFormatArgs',
+    'DatasetInitialImportDatasetConfigurationImportMetadataPathArgs',
     'DatasetInitialRecordGenerationConfigurationArgs',
     'DatasetLabelSetArgs',
     'DatasetLabelSetItemArgs',
@@ -167,9 +170,9 @@ class DatasetDatasetSourceDetailsArgs:
                  source_type: pulumi.Input[str],
                  prefix: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] bucket: The object storage bucket that contains the dataset data source.
-        :param pulumi.Input[str] namespace: The namespace of the bucket that contains the dataset data source.
-        :param pulumi.Input[str] source_type: The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+        :param pulumi.Input[str] bucket: Bucket name
+        :param pulumi.Input[str] namespace: Bucket namespace name
+        :param pulumi.Input[str] source_type: The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
         :param pulumi.Input[str] prefix: A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -182,7 +185,7 @@ class DatasetDatasetSourceDetailsArgs:
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
         """
-        The object storage bucket that contains the dataset data source.
+        Bucket name
         """
         return pulumi.get(self, "bucket")
 
@@ -194,7 +197,7 @@ class DatasetDatasetSourceDetailsArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
         """
-        The namespace of the bucket that contains the dataset data source.
+        Bucket namespace name
         """
         return pulumi.get(self, "namespace")
 
@@ -206,7 +209,7 @@ class DatasetDatasetSourceDetailsArgs:
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Input[str]:
         """
-        The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+        The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
         """
         return pulumi.get(self, "source_type")
 
@@ -225,6 +228,148 @@ class DatasetDatasetSourceDetailsArgs:
     @prefix.setter
     def prefix(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "prefix", value)
+
+
+@pulumi.input_type
+class DatasetInitialImportDatasetConfigurationArgs:
+    def __init__(__self__, *,
+                 import_format: pulumi.Input['DatasetInitialImportDatasetConfigurationImportFormatArgs'],
+                 import_metadata_path: pulumi.Input['DatasetInitialImportDatasetConfigurationImportMetadataPathArgs']):
+        """
+        :param pulumi.Input['DatasetInitialImportDatasetConfigurationImportFormatArgs'] import_format: File format details used for importing dataset
+        :param pulumi.Input['DatasetInitialImportDatasetConfigurationImportMetadataPathArgs'] import_metadata_path: Object storage path for the metadata file
+        """
+        pulumi.set(__self__, "import_format", import_format)
+        pulumi.set(__self__, "import_metadata_path", import_metadata_path)
+
+    @property
+    @pulumi.getter(name="importFormat")
+    def import_format(self) -> pulumi.Input['DatasetInitialImportDatasetConfigurationImportFormatArgs']:
+        """
+        File format details used for importing dataset
+        """
+        return pulumi.get(self, "import_format")
+
+    @import_format.setter
+    def import_format(self, value: pulumi.Input['DatasetInitialImportDatasetConfigurationImportFormatArgs']):
+        pulumi.set(self, "import_format", value)
+
+    @property
+    @pulumi.getter(name="importMetadataPath")
+    def import_metadata_path(self) -> pulumi.Input['DatasetInitialImportDatasetConfigurationImportMetadataPathArgs']:
+        """
+        Object storage path for the metadata file
+        """
+        return pulumi.get(self, "import_metadata_path")
+
+    @import_metadata_path.setter
+    def import_metadata_path(self, value: pulumi.Input['DatasetInitialImportDatasetConfigurationImportMetadataPathArgs']):
+        pulumi.set(self, "import_metadata_path", value)
+
+
+@pulumi.input_type
+class DatasetInitialImportDatasetConfigurationImportFormatArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str],
+                 version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: An unique name for a label within its dataset.
+        :param pulumi.Input[str] version: Version of import format
+        """
+        pulumi.set(__self__, "name", name)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        An unique name for a label within its dataset.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[str]]:
+        """
+        Version of import format
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version", value)
+
+
+@pulumi.input_type
+class DatasetInitialImportDatasetConfigurationImportMetadataPathArgs:
+    def __init__(__self__, *,
+                 bucket: pulumi.Input[str],
+                 namespace: pulumi.Input[str],
+                 path: pulumi.Input[str],
+                 source_type: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] bucket: Bucket name
+        :param pulumi.Input[str] namespace: Bucket namespace name
+        :param pulumi.Input[str] path: Path for the metadata file.
+        :param pulumi.Input[str] source_type: The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "source_type", source_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> pulumi.Input[str]:
+        """
+        Bucket name
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: pulumi.Input[str]):
+        pulumi.set(self, "bucket", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> pulumi.Input[str]:
+        """
+        Bucket namespace name
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: pulumi.Input[str]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter
+    def path(self) -> pulumi.Input[str]:
+        """
+        Path for the metadata file.
+        """
+        return pulumi.get(self, "path")
+
+    @path.setter
+    def path(self, value: pulumi.Input[str]):
+        pulumi.set(self, "path", value)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> pulumi.Input[str]:
+        """
+        The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+        """
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "source_type", value)
 
 
 @pulumi.input_type

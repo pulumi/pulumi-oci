@@ -18,11 +18,17 @@ __all__ = [
     'InvokeRunDriverShapeConfigArgs',
     'InvokeRunExecutorShapeConfigArgs',
     'InvokeRunParameterArgs',
+    'PoolConfigurationArgs',
+    'PoolConfigurationShapeConfigArgs',
+    'PoolPoolMetricArgs',
+    'PoolPoolMetricActivelyUsedNodeCountArgs',
+    'PoolScheduleArgs',
     'PrivateEndpointScanDetailArgs',
     'RunStatementOutputArgs',
     'RunStatementOutputDataArgs',
     'GetApplicationsFilterArgs',
     'GetInvokeRunsFilterArgs',
+    'GetPoolsFilterArgs',
     'GetPrivateEndpointsFilterArgs',
     'GetRunLogsFilterArgs',
     'GetRunStatementsFilterArgs',
@@ -333,6 +339,313 @@ class InvokeRunParameterArgs:
 
 
 @pulumi.input_type
+class PoolConfigurationArgs:
+    def __init__(__self__, *,
+                 max: Optional[pulumi.Input[int]] = None,
+                 min: Optional[pulumi.Input[int]] = None,
+                 shape: Optional[pulumi.Input[str]] = None,
+                 shape_config: Optional[pulumi.Input['PoolConfigurationShapeConfigArgs']] = None):
+        """
+        :param pulumi.Input[int] max: (Updatable) Maximum number of compute instances in the pool for a given compute shape.
+        :param pulumi.Input[int] min: (Updatable) Minimum number of compute instances in the pool for a given compute shape.
+        :param pulumi.Input[str] shape: (Updatable) The compute shape of the resources you would like to provision.
+        :param pulumi.Input['PoolConfigurationShapeConfigArgs'] shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        if max is not None:
+            pulumi.set(__self__, "max", max)
+        if min is not None:
+            pulumi.set(__self__, "min", min)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
+        if shape_config is not None:
+            pulumi.set(__self__, "shape_config", shape_config)
+
+    @property
+    @pulumi.getter
+    def max(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Maximum number of compute instances in the pool for a given compute shape.
+        """
+        return pulumi.get(self, "max")
+
+    @max.setter
+    def max(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max", value)
+
+    @property
+    @pulumi.getter
+    def min(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Minimum number of compute instances in the pool for a given compute shape.
+        """
+        return pulumi.get(self, "min")
+
+    @min.setter
+    def min(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min", value)
+
+    @property
+    @pulumi.getter
+    def shape(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The compute shape of the resources you would like to provision.
+        """
+        return pulumi.get(self, "shape")
+
+    @shape.setter
+    def shape(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "shape", value)
+
+    @property
+    @pulumi.getter(name="shapeConfig")
+    def shape_config(self) -> Optional[pulumi.Input['PoolConfigurationShapeConfigArgs']]:
+        """
+        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "shape_config")
+
+    @shape_config.setter
+    def shape_config(self, value: Optional[pulumi.Input['PoolConfigurationShapeConfigArgs']]):
+        pulumi.set(self, "shape_config", value)
+
+
+@pulumi.input_type
+class PoolConfigurationShapeConfigArgs:
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[pulumi.Input[float]] = None,
+                 ocpus: Optional[pulumi.Input[float]] = None):
+        """
+        :param pulumi.Input[float] memory_in_gbs: (Updatable) The amount of memory used for the driver or executors.
+        :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
+        """
+        (Updatable) The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[pulumi.Input[float]]:
+        """
+        (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "ocpus", value)
+
+
+@pulumi.input_type
+class PoolPoolMetricArgs:
+    def __init__(__self__, *,
+                 active_runs_count: Optional[pulumi.Input[str]] = None,
+                 actively_used_node_counts: Optional[pulumi.Input[Sequence[pulumi.Input['PoolPoolMetricActivelyUsedNodeCountArgs']]]] = None,
+                 time_last_metrics_updated: Optional[pulumi.Input[str]] = None,
+                 time_last_started: Optional[pulumi.Input[str]] = None,
+                 time_last_stopped: Optional[pulumi.Input[str]] = None,
+                 time_last_used: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] active_runs_count: The number of runs that are currently running that are using this pool.
+        :param pulumi.Input[Sequence[pulumi.Input['PoolPoolMetricActivelyUsedNodeCountArgs']]] actively_used_node_counts: A count of the nodes that are currently being used for each shape in this pool.
+        :param pulumi.Input[str] time_last_metrics_updated: The last time the mertics were updated for this.
+        :param pulumi.Input[str] time_last_started: The last time this pool was started.
+        :param pulumi.Input[str] time_last_stopped: The last time this pool was stopped.
+        :param pulumi.Input[str] time_last_used: The last time a run used this pool.
+        """
+        if active_runs_count is not None:
+            pulumi.set(__self__, "active_runs_count", active_runs_count)
+        if actively_used_node_counts is not None:
+            pulumi.set(__self__, "actively_used_node_counts", actively_used_node_counts)
+        if time_last_metrics_updated is not None:
+            pulumi.set(__self__, "time_last_metrics_updated", time_last_metrics_updated)
+        if time_last_started is not None:
+            pulumi.set(__self__, "time_last_started", time_last_started)
+        if time_last_stopped is not None:
+            pulumi.set(__self__, "time_last_stopped", time_last_stopped)
+        if time_last_used is not None:
+            pulumi.set(__self__, "time_last_used", time_last_used)
+
+    @property
+    @pulumi.getter(name="activeRunsCount")
+    def active_runs_count(self) -> Optional[pulumi.Input[str]]:
+        """
+        The number of runs that are currently running that are using this pool.
+        """
+        return pulumi.get(self, "active_runs_count")
+
+    @active_runs_count.setter
+    def active_runs_count(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "active_runs_count", value)
+
+    @property
+    @pulumi.getter(name="activelyUsedNodeCounts")
+    def actively_used_node_counts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PoolPoolMetricActivelyUsedNodeCountArgs']]]]:
+        """
+        A count of the nodes that are currently being used for each shape in this pool.
+        """
+        return pulumi.get(self, "actively_used_node_counts")
+
+    @actively_used_node_counts.setter
+    def actively_used_node_counts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PoolPoolMetricActivelyUsedNodeCountArgs']]]]):
+        pulumi.set(self, "actively_used_node_counts", value)
+
+    @property
+    @pulumi.getter(name="timeLastMetricsUpdated")
+    def time_last_metrics_updated(self) -> Optional[pulumi.Input[str]]:
+        """
+        The last time the mertics were updated for this.
+        """
+        return pulumi.get(self, "time_last_metrics_updated")
+
+    @time_last_metrics_updated.setter
+    def time_last_metrics_updated(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_last_metrics_updated", value)
+
+    @property
+    @pulumi.getter(name="timeLastStarted")
+    def time_last_started(self) -> Optional[pulumi.Input[str]]:
+        """
+        The last time this pool was started.
+        """
+        return pulumi.get(self, "time_last_started")
+
+    @time_last_started.setter
+    def time_last_started(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_last_started", value)
+
+    @property
+    @pulumi.getter(name="timeLastStopped")
+    def time_last_stopped(self) -> Optional[pulumi.Input[str]]:
+        """
+        The last time this pool was stopped.
+        """
+        return pulumi.get(self, "time_last_stopped")
+
+    @time_last_stopped.setter
+    def time_last_stopped(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_last_stopped", value)
+
+    @property
+    @pulumi.getter(name="timeLastUsed")
+    def time_last_used(self) -> Optional[pulumi.Input[str]]:
+        """
+        The last time a run used this pool.
+        """
+        return pulumi.get(self, "time_last_used")
+
+    @time_last_used.setter
+    def time_last_used(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_last_used", value)
+
+
+@pulumi.input_type
+class PoolPoolMetricActivelyUsedNodeCountArgs:
+    def __init__(__self__, *,
+                 logical_shape: Optional[pulumi.Input[str]] = None,
+                 pool_count: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] logical_shape: The compute shape of the nodes that the count is for.
+        :param pulumi.Input[int] pool_count: The node count of this compute shape.
+        """
+        if logical_shape is not None:
+            pulumi.set(__self__, "logical_shape", logical_shape)
+        if pool_count is not None:
+            pulumi.set(__self__, "pool_count", pool_count)
+
+    @property
+    @pulumi.getter(name="logicalShape")
+    def logical_shape(self) -> Optional[pulumi.Input[str]]:
+        """
+        The compute shape of the nodes that the count is for.
+        """
+        return pulumi.get(self, "logical_shape")
+
+    @logical_shape.setter
+    def logical_shape(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "logical_shape", value)
+
+    @property
+    @pulumi.getter(name="poolCount")
+    def pool_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The node count of this compute shape.
+        """
+        return pulumi.get(self, "pool_count")
+
+    @pool_count.setter
+    def pool_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "pool_count", value)
+
+
+@pulumi.input_type
+class PoolScheduleArgs:
+    def __init__(__self__, *,
+                 day_of_week: Optional[pulumi.Input[str]] = None,
+                 start_time: Optional[pulumi.Input[int]] = None,
+                 stop_time: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] day_of_week: (Updatable) Day of the week SUN-SAT
+        :param pulumi.Input[int] start_time: (Updatable) Hour of the day to start or stop pool.
+        :param pulumi.Input[int] stop_time: (Updatable) Hour of the day to stop the pool.
+        """
+        if day_of_week is not None:
+            pulumi.set(__self__, "day_of_week", day_of_week)
+        if start_time is not None:
+            pulumi.set(__self__, "start_time", start_time)
+        if stop_time is not None:
+            pulumi.set(__self__, "stop_time", stop_time)
+
+    @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Day of the week SUN-SAT
+        """
+        return pulumi.get(self, "day_of_week")
+
+    @day_of_week.setter
+    def day_of_week(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "day_of_week", value)
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Hour of the day to start or stop pool.
+        """
+        return pulumi.get(self, "start_time")
+
+    @start_time.setter
+    def start_time(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "start_time", value)
+
+    @property
+    @pulumi.getter(name="stopTime")
+    def stop_time(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Hour of the day to stop the pool.
+        """
+        return pulumi.get(self, "stop_time")
+
+    @stop_time.setter
+    def stop_time(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "stop_time", value)
+
+
+@pulumi.input_type
 class PrivateEndpointScanDetailArgs:
     def __init__(__self__, *,
                  fqdn: Optional[pulumi.Input[str]] = None,
@@ -562,6 +875,45 @@ class GetInvokeRunsFilterArgs:
         """
         The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
         """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetPoolsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
         return pulumi.get(self, "name")
 
     @name.setter

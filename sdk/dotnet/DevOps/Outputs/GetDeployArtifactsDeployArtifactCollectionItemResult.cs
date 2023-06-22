@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DevOps.Outputs
     public sealed class GetDeployArtifactsDeployArtifactCollectionItemResult
     {
         /// <summary>
-        /// Mode for artifact parameter substitution.
+        /// Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         /// </summary>
         public readonly string ArgumentSubstitutionMode;
         /// <summary>

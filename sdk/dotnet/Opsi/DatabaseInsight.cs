@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Opsi
         public Output<Outputs.DatabaseInsightConnectionCredentialDetails> ConnectionCredentialDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Connection details to connect to the database. HostName, protocol, and port should be specified.
+        /// Connection details of the private endpoints.
         /// </summary>
         [Output("connectionDetails")]
         public Output<Outputs.DatabaseInsightConnectionDetails> ConnectionDetails { get; private set; } = null!;
@@ -287,7 +287,7 @@ namespace Pulumi.Oci.Opsi
         public Input<Inputs.DatabaseInsightConnectionCredentialDetailsArgs>? ConnectionCredentialDetails { get; set; }
 
         /// <summary>
-        /// Connection details to connect to the database. HostName, protocol, and port should be specified.
+        /// Connection details of the private endpoints.
         /// </summary>
         [Input("connectionDetails")]
         public Input<Inputs.DatabaseInsightConnectionDetailsArgs>? ConnectionDetails { get; set; }
@@ -424,7 +424,7 @@ namespace Pulumi.Oci.Opsi
         public Input<Inputs.DatabaseInsightConnectionCredentialDetailsGetArgs>? ConnectionCredentialDetails { get; set; }
 
         /// <summary>
-        /// Connection details to connect to the database. HostName, protocol, and port should be specified.
+        /// Connection details of the private endpoints.
         /// </summary>
         [Input("connectionDetails")]
         public Input<Inputs.DatabaseInsightConnectionDetailsGetArgs>? ConnectionDetails { get; set; }

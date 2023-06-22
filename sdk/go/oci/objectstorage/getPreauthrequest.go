@@ -70,6 +70,7 @@ type LookupPreauthrequestResult struct {
 	Bucket string `pulumi:"bucket"`
 	// Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
 	BucketListingAction string `pulumi:"bucketListingAction"`
+	FullPath            string `pulumi:"fullPath"`
 	// The unique identifier to use when directly addressing the pre-authenticated request.
 	Id string `pulumi:"id"`
 	// The user-provided name of the pre-authenticated request.
@@ -149,6 +150,10 @@ func (o LookupPreauthrequestResultOutput) Bucket() pulumi.StringOutput {
 // Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
 func (o LookupPreauthrequestResultOutput) BucketListingAction() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPreauthrequestResult) string { return v.BucketListingAction }).(pulumi.StringOutput)
+}
+
+func (o LookupPreauthrequestResultOutput) FullPath() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPreauthrequestResult) string { return v.FullPath }).(pulumi.StringOutput)
 }
 
 // The unique identifier to use when directly addressing the pre-authenticated request.

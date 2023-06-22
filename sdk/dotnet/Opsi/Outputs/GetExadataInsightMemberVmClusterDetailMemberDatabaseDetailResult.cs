@@ -17,6 +17,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// Compartment identifier of the Exadata insight resource
         /// </summary>
         public readonly string CompartmentId;
+        public readonly ImmutableArray<Outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult> ConnectionDetails;
         public readonly ImmutableArray<Outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult> CredentialDetails;
         public readonly string DatabaseId;
         public readonly string DatabaseResourceType;
@@ -45,6 +46,8 @@ namespace Pulumi.Oci.Opsi.Outputs
         private GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult(
             string compartmentId,
 
+            ImmutableArray<Outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult> connectionDetails,
+
             ImmutableArray<Outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult> credentialDetails,
 
             string databaseId,
@@ -68,6 +71,7 @@ namespace Pulumi.Oci.Opsi.Outputs
             ImmutableDictionary<string, object> systemTags)
         {
             CompartmentId = compartmentId;
+            ConnectionDetails = connectionDetails;
             CredentialDetails = credentialDetails;
             DatabaseId = databaseId;
             DatabaseResourceType = databaseResourceType;

@@ -6,8 +6,10 @@ package com.pulumi.oci.Jms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking;
 import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis;
+import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis;
 import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationJfrRecording;
 import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationLcm;
+import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -20,12 +22,12 @@ public final class GetFleetAdvancedFeatureConfigurationResult {
      */
     private List<GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking> advancedUsageTrackings;
     /**
-     * @return Bucket name required to store jfr and related data
+     * @return Bucket name required to store JFR and related data.
      * 
      */
     private String analyticBucketName;
     /**
-     * @return Namespace for the fleet advanced feature
+     * @return Namespace for the Fleet advanced feature.
      * 
      */
     private String analyticNamespace;
@@ -41,15 +43,25 @@ public final class GetFleetAdvancedFeatureConfigurationResult {
      */
     private String id;
     /**
+     * @return JavaMigrationAnalysis configuration
+     * 
+     */
+    private List<GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis> javaMigrationAnalyses;
+    /**
      * @return JfrRecording configuration
      * 
      */
     private List<GetFleetAdvancedFeatureConfigurationJfrRecording> jfrRecordings;
     /**
-     * @return Enable lifecycle management and set post action configurations
+     * @return Enable lifecycle management and set post action configurations.
      * 
      */
     private List<GetFleetAdvancedFeatureConfigurationLcm> lcms;
+    /**
+     * @return Performance tuning analysis configuration
+     * 
+     */
+    private List<GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis> performanceTuningAnalyses;
     /**
      * @return The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
@@ -65,14 +77,14 @@ public final class GetFleetAdvancedFeatureConfigurationResult {
         return this.advancedUsageTrackings;
     }
     /**
-     * @return Bucket name required to store jfr and related data
+     * @return Bucket name required to store JFR and related data.
      * 
      */
     public String analyticBucketName() {
         return this.analyticBucketName;
     }
     /**
-     * @return Namespace for the fleet advanced feature
+     * @return Namespace for the Fleet advanced feature.
      * 
      */
     public String analyticNamespace() {
@@ -96,6 +108,13 @@ public final class GetFleetAdvancedFeatureConfigurationResult {
         return this.id;
     }
     /**
+     * @return JavaMigrationAnalysis configuration
+     * 
+     */
+    public List<GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis> javaMigrationAnalyses() {
+        return this.javaMigrationAnalyses;
+    }
+    /**
      * @return JfrRecording configuration
      * 
      */
@@ -103,11 +122,18 @@ public final class GetFleetAdvancedFeatureConfigurationResult {
         return this.jfrRecordings;
     }
     /**
-     * @return Enable lifecycle management and set post action configurations
+     * @return Enable lifecycle management and set post action configurations.
      * 
      */
     public List<GetFleetAdvancedFeatureConfigurationLcm> lcms() {
         return this.lcms;
+    }
+    /**
+     * @return Performance tuning analysis configuration
+     * 
+     */
+    public List<GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis> performanceTuningAnalyses() {
+        return this.performanceTuningAnalyses;
     }
     /**
      * @return The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -132,8 +158,10 @@ public final class GetFleetAdvancedFeatureConfigurationResult {
         private List<GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis> cryptoEventAnalyses;
         private String fleetId;
         private String id;
+        private List<GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis> javaMigrationAnalyses;
         private List<GetFleetAdvancedFeatureConfigurationJfrRecording> jfrRecordings;
         private List<GetFleetAdvancedFeatureConfigurationLcm> lcms;
+        private List<GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis> performanceTuningAnalyses;
         private String timeLastModified;
         public Builder() {}
         public Builder(GetFleetAdvancedFeatureConfigurationResult defaults) {
@@ -144,8 +172,10 @@ public final class GetFleetAdvancedFeatureConfigurationResult {
     	      this.cryptoEventAnalyses = defaults.cryptoEventAnalyses;
     	      this.fleetId = defaults.fleetId;
     	      this.id = defaults.id;
+    	      this.javaMigrationAnalyses = defaults.javaMigrationAnalyses;
     	      this.jfrRecordings = defaults.jfrRecordings;
     	      this.lcms = defaults.lcms;
+    	      this.performanceTuningAnalyses = defaults.performanceTuningAnalyses;
     	      this.timeLastModified = defaults.timeLastModified;
         }
 
@@ -186,6 +216,14 @@ public final class GetFleetAdvancedFeatureConfigurationResult {
             return this;
         }
         @CustomType.Setter
+        public Builder javaMigrationAnalyses(List<GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis> javaMigrationAnalyses) {
+            this.javaMigrationAnalyses = Objects.requireNonNull(javaMigrationAnalyses);
+            return this;
+        }
+        public Builder javaMigrationAnalyses(GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis... javaMigrationAnalyses) {
+            return javaMigrationAnalyses(List.of(javaMigrationAnalyses));
+        }
+        @CustomType.Setter
         public Builder jfrRecordings(List<GetFleetAdvancedFeatureConfigurationJfrRecording> jfrRecordings) {
             this.jfrRecordings = Objects.requireNonNull(jfrRecordings);
             return this;
@@ -202,6 +240,14 @@ public final class GetFleetAdvancedFeatureConfigurationResult {
             return lcms(List.of(lcms));
         }
         @CustomType.Setter
+        public Builder performanceTuningAnalyses(List<GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis> performanceTuningAnalyses) {
+            this.performanceTuningAnalyses = Objects.requireNonNull(performanceTuningAnalyses);
+            return this;
+        }
+        public Builder performanceTuningAnalyses(GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis... performanceTuningAnalyses) {
+            return performanceTuningAnalyses(List.of(performanceTuningAnalyses));
+        }
+        @CustomType.Setter
         public Builder timeLastModified(String timeLastModified) {
             this.timeLastModified = Objects.requireNonNull(timeLastModified);
             return this;
@@ -214,8 +260,10 @@ public final class GetFleetAdvancedFeatureConfigurationResult {
             o.cryptoEventAnalyses = cryptoEventAnalyses;
             o.fleetId = fleetId;
             o.id = id;
+            o.javaMigrationAnalyses = javaMigrationAnalyses;
             o.jfrRecordings = jfrRecordings;
             o.lcms = lcms;
+            o.performanceTuningAnalyses = performanceTuningAnalyses;
             o.timeLastModified = timeLastModified;
             return o;
         }

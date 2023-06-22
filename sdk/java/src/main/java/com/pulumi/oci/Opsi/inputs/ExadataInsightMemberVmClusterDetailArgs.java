@@ -18,37 +18,76 @@ public final class ExadataInsightMemberVmClusterDetailArgs extends com.pulumi.re
     public static final ExadataInsightMemberVmClusterDetailArgs Empty = new ExadataInsightMemberVmClusterDetailArgs();
 
     /**
-     * (Updatable) Compartment Identifier of Exadata insight
+     * (Updatable) Compartment Identifier of database
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier of Exadata insight
+     * @return (Updatable) Compartment Identifier of database
      * 
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+     * 
+     */
+    @Import(name="dbmPrivateEndpointId")
+    private @Nullable Output<String> dbmPrivateEndpointId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+     * 
+     */
+    public Optional<Output<String>> dbmPrivateEndpointId() {
+        return Optional.ofNullable(this.dbmPrivateEndpointId);
+    }
+
+    /**
+     * The databases that belong to the VM Cluster
+     * 
+     */
     @Import(name="memberDatabaseDetails")
     private @Nullable Output<List<ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs>> memberDatabaseDetails;
 
+    /**
+     * @return The databases that belong to the VM Cluster
+     * 
+     */
     public Optional<Output<List<ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs>>> memberDatabaseDetails() {
         return Optional.ofNullable(this.memberDatabaseDetails);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+     * 
+     */
     @Import(name="opsiPrivateEndpointId")
     private @Nullable Output<String> opsiPrivateEndpointId;
 
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+     * 
+     */
     public Optional<Output<String>> opsiPrivateEndpointId() {
         return Optional.ofNullable(this.opsiPrivateEndpointId);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
+     * 
+     */
     @Import(name="vmclusterId")
     private @Nullable Output<String> vmclusterId;
 
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
+     * 
+     */
     public Optional<Output<String>> vmclusterId() {
         return Optional.ofNullable(this.vmclusterId);
     }
@@ -57,6 +96,7 @@ public final class ExadataInsightMemberVmClusterDetailArgs extends com.pulumi.re
 
     private ExadataInsightMemberVmClusterDetailArgs(ExadataInsightMemberVmClusterDetailArgs $) {
         this.compartmentId = $.compartmentId;
+        this.dbmPrivateEndpointId = $.dbmPrivateEndpointId;
         this.memberDatabaseDetails = $.memberDatabaseDetails;
         this.opsiPrivateEndpointId = $.opsiPrivateEndpointId;
         this.vmclusterId = $.vmclusterId;
@@ -81,7 +121,7 @@ public final class ExadataInsightMemberVmClusterDetailArgs extends com.pulumi.re
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier of Exadata insight
+         * @param compartmentId (Updatable) Compartment Identifier of database
          * 
          * @return builder
          * 
@@ -92,7 +132,7 @@ public final class ExadataInsightMemberVmClusterDetailArgs extends com.pulumi.re
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier of Exadata insight
+         * @param compartmentId (Updatable) Compartment Identifier of database
          * 
          * @return builder
          * 
@@ -101,33 +141,96 @@ public final class ExadataInsightMemberVmClusterDetailArgs extends com.pulumi.re
             return compartmentId(Output.of(compartmentId));
         }
 
+        /**
+         * @param dbmPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbmPrivateEndpointId(@Nullable Output<String> dbmPrivateEndpointId) {
+            $.dbmPrivateEndpointId = dbmPrivateEndpointId;
+            return this;
+        }
+
+        /**
+         * @param dbmPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbmPrivateEndpointId(String dbmPrivateEndpointId) {
+            return dbmPrivateEndpointId(Output.of(dbmPrivateEndpointId));
+        }
+
+        /**
+         * @param memberDatabaseDetails The databases that belong to the VM Cluster
+         * 
+         * @return builder
+         * 
+         */
         public Builder memberDatabaseDetails(@Nullable Output<List<ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs>> memberDatabaseDetails) {
             $.memberDatabaseDetails = memberDatabaseDetails;
             return this;
         }
 
+        /**
+         * @param memberDatabaseDetails The databases that belong to the VM Cluster
+         * 
+         * @return builder
+         * 
+         */
         public Builder memberDatabaseDetails(List<ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs> memberDatabaseDetails) {
             return memberDatabaseDetails(Output.of(memberDatabaseDetails));
         }
 
+        /**
+         * @param memberDatabaseDetails The databases that belong to the VM Cluster
+         * 
+         * @return builder
+         * 
+         */
         public Builder memberDatabaseDetails(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs... memberDatabaseDetails) {
             return memberDatabaseDetails(List.of(memberDatabaseDetails));
         }
 
+        /**
+         * @param opsiPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+         * 
+         * @return builder
+         * 
+         */
         public Builder opsiPrivateEndpointId(@Nullable Output<String> opsiPrivateEndpointId) {
             $.opsiPrivateEndpointId = opsiPrivateEndpointId;
             return this;
         }
 
+        /**
+         * @param opsiPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+         * 
+         * @return builder
+         * 
+         */
         public Builder opsiPrivateEndpointId(String opsiPrivateEndpointId) {
             return opsiPrivateEndpointId(Output.of(opsiPrivateEndpointId));
         }
 
+        /**
+         * @param vmclusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
+         * 
+         * @return builder
+         * 
+         */
         public Builder vmclusterId(@Nullable Output<String> vmclusterId) {
             $.vmclusterId = vmclusterId;
             return this;
         }
 
+        /**
+         * @param vmclusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
+         * 
+         * @return builder
+         * 
+         */
         public Builder vmclusterId(String vmclusterId) {
             return vmclusterId(Output.of(vmclusterId));
         }

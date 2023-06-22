@@ -39,8 +39,11 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testEsxiHosts = Oci.Ocvp.GetExsiHosts.Invoke(new()
         ///     {
+        ///         CompartmentId = @var.Compartment_id,
         ///         ComputeInstanceId = oci_core_instance.Test_instance.Id,
         ///         DisplayName = @var.Esxi_host_display_name,
+        ///         IsBillingDonorsOnly = @var.Esxi_host_is_billing_donors_only,
+        ///         IsSwapBillingOnly = @var.Esxi_host_is_swap_billing_only,
         ///         SddcId = oci_ocvp_sddc.Test_sddc.Id,
         ///         State = @var.Esxi_host_state,
         ///     });
@@ -81,8 +84,11 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testEsxiHosts = Oci.Ocvp.GetExsiHosts.Invoke(new()
         ///     {
+        ///         CompartmentId = @var.Compartment_id,
         ///         ComputeInstanceId = oci_core_instance.Test_instance.Id,
         ///         DisplayName = @var.Esxi_host_display_name,
+        ///         IsBillingDonorsOnly = @var.Esxi_host_is_billing_donors_only,
+        ///         IsSwapBillingOnly = @var.Esxi_host_is_swap_billing_only,
         ///         SddcId = oci_ocvp_sddc.Test_sddc.Id,
         ///         State = @var.Esxi_host_state,
         ///     });
@@ -99,6 +105,12 @@ namespace Pulumi.Oci.Ocvp
 
     public sealed class GetExsiHostsArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
+        /// </summary>
+        [Input("compartmentId")]
+        public string? CompartmentId { get; set; }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
         /// </summary>
@@ -118,6 +130,18 @@ namespace Pulumi.Oci.Ocvp
             get => _filters ?? (_filters = new List<Inputs.GetExsiHostsFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.
+        /// </summary>
+        [Input("isBillingDonorsOnly")]
+        public bool? IsBillingDonorsOnly { get; set; }
+
+        /// <summary>
+        /// If this flag/param is set to True, we return only active hosts.
+        /// </summary>
+        [Input("isSwapBillingOnly")]
+        public bool? IsSwapBillingOnly { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
@@ -140,6 +164,12 @@ namespace Pulumi.Oci.Ocvp
     public sealed class GetExsiHostsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
+        /// </summary>
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
         /// </summary>
         [Input("computeInstanceId")]
@@ -158,6 +188,18 @@ namespace Pulumi.Oci.Ocvp
             get => _filters ?? (_filters = new InputList<Inputs.GetExsiHostsFilterInputArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.
+        /// </summary>
+        [Input("isBillingDonorsOnly")]
+        public Input<bool>? IsBillingDonorsOnly { get; set; }
+
+        /// <summary>
+        /// If this flag/param is set to True, we return only active hosts.
+        /// </summary>
+        [Input("isSwapBillingOnly")]
+        public Input<bool>? IsSwapBillingOnly { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
@@ -182,6 +224,10 @@ namespace Pulumi.Oci.Ocvp
     public sealed class GetExsiHostsResult
     {
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+        /// </summary>
+        public readonly string? CompartmentId;
+        /// <summary>
         /// In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
         /// </summary>
         public readonly string? ComputeInstanceId;
@@ -198,6 +244,8 @@ namespace Pulumi.Oci.Ocvp
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly bool? IsBillingDonorsOnly;
+        public readonly bool? IsSwapBillingOnly;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
         /// </summary>
@@ -209,6 +257,8 @@ namespace Pulumi.Oci.Ocvp
 
         [OutputConstructor]
         private GetExsiHostsResult(
+            string? compartmentId,
+
             string? computeInstanceId,
 
             string? displayName,
@@ -219,15 +269,22 @@ namespace Pulumi.Oci.Ocvp
 
             string id,
 
+            bool? isBillingDonorsOnly,
+
+            bool? isSwapBillingOnly,
+
             string? sddcId,
 
             string? state)
         {
+            CompartmentId = compartmentId;
             ComputeInstanceId = computeInstanceId;
             DisplayName = displayName;
             EsxiHostCollections = esxiHostCollections;
             Filters = filters;
             Id = id;
+            IsBillingDonorsOnly = isBillingDonorsOnly;
+            IsSwapBillingOnly = isSwapBillingOnly;
             SddcId = sddcId;
             State = state;
         }

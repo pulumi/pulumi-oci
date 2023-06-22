@@ -261,6 +261,7 @@ class SddcVsphereUpgradeObject(dict):
 class GetExsiHostsEsxiHostCollectionResult(dict):
     def __init__(__self__, *,
                  billing_contract_end_date: str,
+                 billing_donor_host_id: str,
                  capacity_reservation_id: str,
                  compartment_id: str,
                  compute_availability_domain: str,
@@ -274,41 +275,49 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
                  host_ocpu_count: float,
                  host_shape_name: str,
                  id: str,
+                 is_billing_continuation_in_progress: bool,
+                 is_billing_swapping_in_progress: bool,
                  next_sku: str,
                  non_upgraded_esxi_host_id: str,
                  replacement_esxi_host_id: str,
                  sddc_id: str,
                  state: str,
+                 swap_billing_host_id: str,
                  time_created: str,
                  time_updated: str,
                  upgraded_replacement_esxi_host_id: str,
                  vmware_software_version: str):
         """
         :param str billing_contract_end_date: Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
+        :param str billing_donor_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         :param str capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
         :param str compute_availability_domain: The availability domain of the ESXi host.
         :param str compute_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
         :param str current_sku: The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param str failed_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed.
+        :param str failed_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str grace_period_end_date: The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
         :param float host_ocpu_count: The OCPU count of the ESXi host.
         :param str host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
+        :param bool is_billing_continuation_in_progress: Indicates whether this host is in the progress of billing continuation.
+        :param bool is_billing_swapping_in_progress: Indicates whether this host is in the progress of swapping billing.
         :param str next_sku: The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param str non_upgraded_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
         :param str replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
         :param str sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
         :param str state: The lifecycle state of the resource.
+        :param str swap_billing_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
         :param str time_created: The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param str time_updated: The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str upgraded_replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
         :param str vmware_software_version: The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
         """
         pulumi.set(__self__, "billing_contract_end_date", billing_contract_end_date)
+        pulumi.set(__self__, "billing_donor_host_id", billing_donor_host_id)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
@@ -322,11 +331,14 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         pulumi.set(__self__, "host_ocpu_count", host_ocpu_count)
         pulumi.set(__self__, "host_shape_name", host_shape_name)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_billing_continuation_in_progress", is_billing_continuation_in_progress)
+        pulumi.set(__self__, "is_billing_swapping_in_progress", is_billing_swapping_in_progress)
         pulumi.set(__self__, "next_sku", next_sku)
         pulumi.set(__self__, "non_upgraded_esxi_host_id", non_upgraded_esxi_host_id)
         pulumi.set(__self__, "replacement_esxi_host_id", replacement_esxi_host_id)
         pulumi.set(__self__, "sddc_id", sddc_id)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "swap_billing_host_id", swap_billing_host_id)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "upgraded_replacement_esxi_host_id", upgraded_replacement_esxi_host_id)
@@ -341,6 +353,14 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         return pulumi.get(self, "billing_contract_end_date")
 
     @property
+    @pulumi.getter(name="billingDonorHostId")
+    def billing_donor_host_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+        """
+        return pulumi.get(self, "billing_donor_host_id")
+
+    @property
     @pulumi.getter(name="capacityReservationId")
     def capacity_reservation_id(self) -> str:
         """
@@ -352,7 +372,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -400,7 +420,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
     @pulumi.getter(name="failedEsxiHostId")
     def failed_esxi_host_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
         """
         return pulumi.get(self, "failed_esxi_host_id")
 
@@ -445,6 +465,22 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isBillingContinuationInProgress")
+    def is_billing_continuation_in_progress(self) -> bool:
+        """
+        Indicates whether this host is in the progress of billing continuation.
+        """
+        return pulumi.get(self, "is_billing_continuation_in_progress")
+
+    @property
+    @pulumi.getter(name="isBillingSwappingInProgress")
+    def is_billing_swapping_in_progress(self) -> bool:
+        """
+        Indicates whether this host is in the progress of swapping billing.
+        """
+        return pulumi.get(self, "is_billing_swapping_in_progress")
+
+    @property
     @pulumi.getter(name="nextSku")
     def next_sku(self) -> str:
         """
@@ -483,6 +519,14 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         The lifecycle state of the resource.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="swapBillingHostId")
+    def swap_billing_host_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+        """
+        return pulumi.get(self, "swap_billing_host_id")
 
     @property
     @pulumi.getter(name="timeCreated")

@@ -190,7 +190,7 @@ export class Sddc extends pulumi.CustomResource {
      */
     public readonly isHcxEnabled!: pulumi.Output<boolean>;
     /**
-     * Indicates whether to enable HCX Enterprise for this SDDC.
+     * Indicates whether HCX Enterprise is enabled for this SDDC.
      */
     public /*out*/ readonly isHcxEnterpriseEnabled!: pulumi.Output<boolean>;
     /**
@@ -613,7 +613,7 @@ export interface SddcState {
      */
     isHcxEnabled?: pulumi.Input<boolean>;
     /**
-     * Indicates whether to enable HCX Enterprise for this SDDC.
+     * Indicates whether HCX Enterprise is enabled for this SDDC.
      */
     isHcxEnterpriseEnabled?: pulumi.Input<boolean>;
     /**

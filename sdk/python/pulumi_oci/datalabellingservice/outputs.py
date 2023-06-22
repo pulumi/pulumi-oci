@@ -14,6 +14,9 @@ __all__ = [
     'DatasetDatasetFormatDetails',
     'DatasetDatasetFormatDetailsTextFileTypeMetadata',
     'DatasetDatasetSourceDetails',
+    'DatasetInitialImportDatasetConfiguration',
+    'DatasetInitialImportDatasetConfigurationImportFormat',
+    'DatasetInitialImportDatasetConfigurationImportMetadataPath',
     'DatasetInitialRecordGenerationConfiguration',
     'DatasetLabelSet',
     'DatasetLabelSetItem',
@@ -24,6 +27,9 @@ __all__ = [
     'GetDatasetDatasetFormatDetailResult',
     'GetDatasetDatasetFormatDetailTextFileTypeMetadataResult',
     'GetDatasetDatasetSourceDetailResult',
+    'GetDatasetInitialImportDatasetConfigurationResult',
+    'GetDatasetInitialImportDatasetConfigurationImportFormatResult',
+    'GetDatasetInitialImportDatasetConfigurationImportMetadataPathResult',
     'GetDatasetInitialRecordGenerationConfigurationResult',
     'GetDatasetLabelSetResult',
     'GetDatasetLabelSetItemResult',
@@ -32,6 +38,9 @@ __all__ = [
     'GetDatasetsDatasetCollectionItemDatasetFormatDetailResult',
     'GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataResult',
     'GetDatasetsDatasetCollectionItemDatasetSourceDetailResult',
+    'GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationResult',
+    'GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatResult',
+    'GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathResult',
     'GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationResult',
     'GetDatasetsDatasetCollectionItemLabelSetResult',
     'GetDatasetsDatasetCollectionItemLabelSetItemResult',
@@ -216,9 +225,9 @@ class DatasetDatasetSourceDetails(dict):
                  source_type: str,
                  prefix: Optional[str] = None):
         """
-        :param str bucket: The object storage bucket that contains the dataset data source.
-        :param str namespace: The namespace of the bucket that contains the dataset data source.
-        :param str source_type: The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+        :param str bucket: Bucket name
+        :param str namespace: Bucket namespace name
+        :param str source_type: The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
         :param str prefix: A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -231,7 +240,7 @@ class DatasetDatasetSourceDetails(dict):
     @pulumi.getter
     def bucket(self) -> str:
         """
-        The object storage bucket that contains the dataset data source.
+        Bucket name
         """
         return pulumi.get(self, "bucket")
 
@@ -239,7 +248,7 @@ class DatasetDatasetSourceDetails(dict):
     @pulumi.getter
     def namespace(self) -> str:
         """
-        The namespace of the bucket that contains the dataset data source.
+        Bucket namespace name
         """
         return pulumi.get(self, "namespace")
 
@@ -247,7 +256,7 @@ class DatasetDatasetSourceDetails(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+        The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
         """
         return pulumi.get(self, "source_type")
 
@@ -258,6 +267,152 @@ class DatasetDatasetSourceDetails(dict):
         A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
         """
         return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
+class DatasetInitialImportDatasetConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "importFormat":
+            suggest = "import_format"
+        elif key == "importMetadataPath":
+            suggest = "import_metadata_path"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatasetInitialImportDatasetConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatasetInitialImportDatasetConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatasetInitialImportDatasetConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 import_format: 'outputs.DatasetInitialImportDatasetConfigurationImportFormat',
+                 import_metadata_path: 'outputs.DatasetInitialImportDatasetConfigurationImportMetadataPath'):
+        """
+        :param 'DatasetInitialImportDatasetConfigurationImportFormatArgs' import_format: File format details used for importing dataset
+        :param 'DatasetInitialImportDatasetConfigurationImportMetadataPathArgs' import_metadata_path: Object storage path for the metadata file
+        """
+        pulumi.set(__self__, "import_format", import_format)
+        pulumi.set(__self__, "import_metadata_path", import_metadata_path)
+
+    @property
+    @pulumi.getter(name="importFormat")
+    def import_format(self) -> 'outputs.DatasetInitialImportDatasetConfigurationImportFormat':
+        """
+        File format details used for importing dataset
+        """
+        return pulumi.get(self, "import_format")
+
+    @property
+    @pulumi.getter(name="importMetadataPath")
+    def import_metadata_path(self) -> 'outputs.DatasetInitialImportDatasetConfigurationImportMetadataPath':
+        """
+        Object storage path for the metadata file
+        """
+        return pulumi.get(self, "import_metadata_path")
+
+
+@pulumi.output_type
+class DatasetInitialImportDatasetConfigurationImportFormat(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 version: Optional[str] = None):
+        """
+        :param str name: An unique name for a label within its dataset.
+        :param str version: Version of import format
+        """
+        pulumi.set(__self__, "name", name)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        An unique name for a label within its dataset.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[str]:
+        """
+        Version of import format
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class DatasetInitialImportDatasetConfigurationImportMetadataPath(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourceType":
+            suggest = "source_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatasetInitialImportDatasetConfigurationImportMetadataPath. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatasetInitialImportDatasetConfigurationImportMetadataPath.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatasetInitialImportDatasetConfigurationImportMetadataPath.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bucket: str,
+                 namespace: str,
+                 path: str,
+                 source_type: str):
+        """
+        :param str bucket: Bucket name
+        :param str namespace: Bucket namespace name
+        :param str path: Path for the metadata file.
+        :param str source_type: The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "source_type", source_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        Bucket name
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        Bucket namespace name
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def path(self) -> str:
+        """
+        Path for the metadata file.
+        """
+        return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+        """
+        return pulumi.get(self, "source_type")
 
 
 @pulumi.output_type
@@ -499,10 +654,10 @@ class GetDatasetDatasetSourceDetailResult(dict):
                  prefix: str,
                  source_type: str):
         """
-        :param str bucket: The object storage bucket that contains the dataset data source.
-        :param str namespace: The namespace of the bucket that contains the dataset data source.
+        :param str bucket: Bucket name
+        :param str namespace: Bucket namespace name
         :param str prefix: A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
-        :param str source_type: The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+        :param str source_type: The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "namespace", namespace)
@@ -513,7 +668,7 @@ class GetDatasetDatasetSourceDetailResult(dict):
     @pulumi.getter
     def bucket(self) -> str:
         """
-        The object storage bucket that contains the dataset data source.
+        Bucket name
         """
         return pulumi.get(self, "bucket")
 
@@ -521,7 +676,7 @@ class GetDatasetDatasetSourceDetailResult(dict):
     @pulumi.getter
     def namespace(self) -> str:
         """
-        The namespace of the bucket that contains the dataset data source.
+        Bucket namespace name
         """
         return pulumi.get(self, "namespace")
 
@@ -537,7 +692,116 @@ class GetDatasetDatasetSourceDetailResult(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+        The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+        """
+        return pulumi.get(self, "source_type")
+
+
+@pulumi.output_type
+class GetDatasetInitialImportDatasetConfigurationResult(dict):
+    def __init__(__self__, *,
+                 import_formats: Sequence['outputs.GetDatasetInitialImportDatasetConfigurationImportFormatResult'],
+                 import_metadata_paths: Sequence['outputs.GetDatasetInitialImportDatasetConfigurationImportMetadataPathResult']):
+        """
+        :param Sequence['GetDatasetInitialImportDatasetConfigurationImportFormatArgs'] import_formats: File format details used for importing dataset
+        :param Sequence['GetDatasetInitialImportDatasetConfigurationImportMetadataPathArgs'] import_metadata_paths: Object storage path for the metadata file
+        """
+        pulumi.set(__self__, "import_formats", import_formats)
+        pulumi.set(__self__, "import_metadata_paths", import_metadata_paths)
+
+    @property
+    @pulumi.getter(name="importFormats")
+    def import_formats(self) -> Sequence['outputs.GetDatasetInitialImportDatasetConfigurationImportFormatResult']:
+        """
+        File format details used for importing dataset
+        """
+        return pulumi.get(self, "import_formats")
+
+    @property
+    @pulumi.getter(name="importMetadataPaths")
+    def import_metadata_paths(self) -> Sequence['outputs.GetDatasetInitialImportDatasetConfigurationImportMetadataPathResult']:
+        """
+        Object storage path for the metadata file
+        """
+        return pulumi.get(self, "import_metadata_paths")
+
+
+@pulumi.output_type
+class GetDatasetInitialImportDatasetConfigurationImportFormatResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 version: str):
+        """
+        :param str name: An unique name for a label within its dataset.
+        :param str version: Version of import format
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        An unique name for a label within its dataset.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        Version of import format
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetDatasetInitialImportDatasetConfigurationImportMetadataPathResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 namespace: str,
+                 path: str,
+                 source_type: str):
+        """
+        :param str bucket: Bucket name
+        :param str namespace: Bucket namespace name
+        :param str path: Path for the metadata file.
+        :param str source_type: The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "source_type", source_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        Bucket name
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        Bucket namespace name
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def path(self) -> str:
+        """
+        Path for the metadata file.
+        """
+        return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
         """
         return pulumi.get(self, "source_type")
 
@@ -605,6 +869,7 @@ class GetDatasetsDatasetCollectionResult(dict):
 @pulumi.output_type
 class GetDatasetsDatasetCollectionItemResult(dict):
     def __init__(__self__, *,
+                 additional_properties: Mapping[str, Any],
                  annotation_format: str,
                  compartment_id: str,
                  dataset_format_details: Sequence['outputs.GetDatasetsDatasetCollectionItemDatasetFormatDetailResult'],
@@ -614,14 +879,17 @@ class GetDatasetsDatasetCollectionItemResult(dict):
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 initial_import_dataset_configurations: Sequence['outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationResult'],
                  initial_record_generation_configurations: Sequence['outputs.GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationResult'],
                  label_sets: Sequence['outputs.GetDatasetsDatasetCollectionItemLabelSetResult'],
                  labeling_instructions: str,
                  lifecycle_details: str,
+                 lifecycle_substate: str,
                  state: str,
                  time_created: str,
                  time_updated: str):
         """
+        :param Mapping[str, Any] additional_properties: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param str annotation_format: A filter to return only resources that match the entire annotation format given.
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param Sequence['GetDatasetsDatasetCollectionItemDatasetFormatDetailArgs'] dataset_format_details: It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
@@ -631,14 +899,17 @@ class GetDatasetsDatasetCollectionItemResult(dict):
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param str id: Unique Dataset OCID
+        :param Sequence['GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArgs'] initial_import_dataset_configurations: Initial import dataset configuration. Allows user to create dataset from existing dataset files.
         :param Sequence['GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArgs'] initial_record_generation_configurations: The initial generate records configuration. It generates records from the dataset's source.
         :param Sequence['GetDatasetsDatasetCollectionItemLabelSetArgs'] label_sets: An ordered collection of labels that are unique by name.
         :param str labeling_instructions: The labeling instructions for human labelers in rich text format
         :param str lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
+        :param str lifecycle_substate: The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
         :param str state: A filter to return only resources whose lifecycleState matches this query param.
         :param str time_created: The date and time the resource was created, in the timestamp format defined by RFC3339.
         :param str time_updated: The date and time the resource was last updated, in the timestamp format defined by RFC3339.
         """
+        pulumi.set(__self__, "additional_properties", additional_properties)
         pulumi.set(__self__, "annotation_format", annotation_format)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "dataset_format_details", dataset_format_details)
@@ -648,13 +919,23 @@ class GetDatasetsDatasetCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "initial_import_dataset_configurations", initial_import_dataset_configurations)
         pulumi.set(__self__, "initial_record_generation_configurations", initial_record_generation_configurations)
         pulumi.set(__self__, "label_sets", label_sets)
         pulumi.set(__self__, "labeling_instructions", labeling_instructions)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "lifecycle_substate", lifecycle_substate)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="additionalProperties")
+    def additional_properties(self) -> Mapping[str, Any]:
+        """
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_properties")
 
     @property
     @pulumi.getter(name="annotationFormat")
@@ -729,6 +1010,14 @@ class GetDatasetsDatasetCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="initialImportDatasetConfigurations")
+    def initial_import_dataset_configurations(self) -> Sequence['outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationResult']:
+        """
+        Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+        """
+        return pulumi.get(self, "initial_import_dataset_configurations")
+
+    @property
     @pulumi.getter(name="initialRecordGenerationConfigurations")
     def initial_record_generation_configurations(self) -> Sequence['outputs.GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationResult']:
         """
@@ -759,6 +1048,14 @@ class GetDatasetsDatasetCollectionItemResult(dict):
         A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="lifecycleSubstate")
+    def lifecycle_substate(self) -> str:
+        """
+        The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+        """
+        return pulumi.get(self, "lifecycle_substate")
 
     @property
     @pulumi.getter
@@ -895,10 +1192,10 @@ class GetDatasetsDatasetCollectionItemDatasetSourceDetailResult(dict):
                  prefix: str,
                  source_type: str):
         """
-        :param str bucket: The object storage bucket that contains the dataset data source.
-        :param str namespace: The namespace of the bucket that contains the dataset data source.
+        :param str bucket: Bucket name
+        :param str namespace: Bucket namespace name
         :param str prefix: A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
-        :param str source_type: The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+        :param str source_type: The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "namespace", namespace)
@@ -909,7 +1206,7 @@ class GetDatasetsDatasetCollectionItemDatasetSourceDetailResult(dict):
     @pulumi.getter
     def bucket(self) -> str:
         """
-        The object storage bucket that contains the dataset data source.
+        Bucket name
         """
         return pulumi.get(self, "bucket")
 
@@ -917,7 +1214,7 @@ class GetDatasetsDatasetCollectionItemDatasetSourceDetailResult(dict):
     @pulumi.getter
     def namespace(self) -> str:
         """
-        The namespace of the bucket that contains the dataset data source.
+        Bucket namespace name
         """
         return pulumi.get(self, "namespace")
 
@@ -933,7 +1230,116 @@ class GetDatasetsDatasetCollectionItemDatasetSourceDetailResult(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+        The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+        """
+        return pulumi.get(self, "source_type")
+
+
+@pulumi.output_type
+class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationResult(dict):
+    def __init__(__self__, *,
+                 import_formats: Sequence['outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatResult'],
+                 import_metadata_paths: Sequence['outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathResult']):
+        """
+        :param Sequence['GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArgs'] import_formats: File format details used for importing dataset
+        :param Sequence['GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArgs'] import_metadata_paths: Object storage path for the metadata file
+        """
+        pulumi.set(__self__, "import_formats", import_formats)
+        pulumi.set(__self__, "import_metadata_paths", import_metadata_paths)
+
+    @property
+    @pulumi.getter(name="importFormats")
+    def import_formats(self) -> Sequence['outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatResult']:
+        """
+        File format details used for importing dataset
+        """
+        return pulumi.get(self, "import_formats")
+
+    @property
+    @pulumi.getter(name="importMetadataPaths")
+    def import_metadata_paths(self) -> Sequence['outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathResult']:
+        """
+        Object storage path for the metadata file
+        """
+        return pulumi.get(self, "import_metadata_paths")
+
+
+@pulumi.output_type
+class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 version: str):
+        """
+        :param str name: An unique name for a label within its dataset.
+        :param str version: Version of import format
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        An unique name for a label within its dataset.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        Version of import format
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 namespace: str,
+                 path: str,
+                 source_type: str):
+        """
+        :param str bucket: Bucket name
+        :param str namespace: Bucket namespace name
+        :param str path: Path for the metadata file.
+        :param str source_type: The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "source_type", source_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        Bucket name
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        Bucket namespace name
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def path(self) -> str:
+        """
+        Path for the metadata file.
+        """
+        return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
         """
         return pulumi.get(self, "source_type")
 

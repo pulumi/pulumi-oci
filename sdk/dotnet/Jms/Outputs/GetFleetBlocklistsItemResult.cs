@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string Operation;
         /// <summary>
-        /// The reason for why the operation is blocklisted
+        /// The reason why the operation is blocklisted.
         /// </summary>
         public readonly string Reason;
         /// <summary>

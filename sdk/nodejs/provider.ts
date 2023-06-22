@@ -87,6 +87,7 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["privateKey"] = args?.privateKey ? pulumi.secret(args.privateKey) : undefined;
             resourceInputs["privateKeyPassword"] = args?.privateKeyPassword ? pulumi.secret(args.privateKeyPassword) : undefined;
             resourceInputs["privateKeyPath"] = args ? args.privateKeyPath : undefined;
+            resourceInputs["realmSpecificServiceEndpointTemplateEnabled"] = pulumi.output(args ? args.realmSpecificServiceEndpointTemplateEnabled : undefined).apply(JSON.stringify);
             resourceInputs["region"] = args ? args.region : undefined;
             resourceInputs["retryDurationSeconds"] = pulumi.output(args ? args.retryDurationSeconds : undefined).apply(JSON.stringify);
             resourceInputs["tenancyOcid"] = args ? args.tenancyOcid : undefined;
@@ -141,6 +142,10 @@ export interface ProviderArgs {
      * auth is set to 'ApiKey', ignored otherwise.
      */
     privateKeyPath?: pulumi.Input<string>;
+    /**
+     * (Optional) flags to enable realm specific service endpoint.
+     */
+    realmSpecificServiceEndpointTemplateEnabled?: pulumi.Input<boolean>;
     /**
      * (Required) The region for API connections (e.g. us-ashburn-1).
      */

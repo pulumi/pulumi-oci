@@ -31,6 +31,7 @@ import * as utilities from "../utilities";
  *             kmsKeyId: oci_kms_key.test_key.id,
  *         }],
  *     },
+ *     shape: _var.application_shape,
  *     syslogUrl: _var.application_syslog_url,
  *     traceConfig: {
  *         domainId: oci_functions_domain.test_domain.id,
@@ -106,6 +107,10 @@ export class Application extends pulumi.CustomResource {
      */
     public readonly networkSecurityGroupIds!: pulumi.Output<string[]>;
     /**
+     * Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+     */
+    public readonly shape!: pulumi.Output<string>;
+    /**
      * The current state of the application.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -150,6 +155,7 @@ export class Application extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["imagePolicyConfig"] = state ? state.imagePolicyConfig : undefined;
             resourceInputs["networkSecurityGroupIds"] = state ? state.networkSecurityGroupIds : undefined;
+            resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetIds"] = state ? state.subnetIds : undefined;
             resourceInputs["syslogUrl"] = state ? state.syslogUrl : undefined;
@@ -174,6 +180,7 @@ export class Application extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["imagePolicyConfig"] = args ? args.imagePolicyConfig : undefined;
             resourceInputs["networkSecurityGroupIds"] = args ? args.networkSecurityGroupIds : undefined;
+            resourceInputs["shape"] = args ? args.shape : undefined;
             resourceInputs["subnetIds"] = args ? args.subnetIds : undefined;
             resourceInputs["syslogUrl"] = args ? args.syslogUrl : undefined;
             resourceInputs["traceConfig"] = args ? args.traceConfig : undefined;
@@ -220,6 +227,10 @@ export interface ApplicationState {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
      */
     networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+     */
+    shape?: pulumi.Input<string>;
     /**
      * The current state of the application.
      */
@@ -280,6 +291,10 @@ export interface ApplicationArgs {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
      */
     networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+     */
+    shape?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
      */

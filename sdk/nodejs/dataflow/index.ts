@@ -30,6 +30,16 @@ export const getInvokeRuns: typeof import("./getInvokeRuns").getInvokeRuns = nul
 export const getInvokeRunsOutput: typeof import("./getInvokeRuns").getInvokeRunsOutput = null as any;
 utilities.lazyLoad(exports, ["getInvokeRuns","getInvokeRunsOutput"], () => require("./getInvokeRuns"));
 
+export { GetPoolArgs, GetPoolResult, GetPoolOutputArgs } from "./getPool";
+export const getPool: typeof import("./getPool").getPool = null as any;
+export const getPoolOutput: typeof import("./getPool").getPoolOutput = null as any;
+utilities.lazyLoad(exports, ["getPool","getPoolOutput"], () => require("./getPool"));
+
+export { GetPoolsArgs, GetPoolsResult, GetPoolsOutputArgs } from "./getPools";
+export const getPools: typeof import("./getPools").getPools = null as any;
+export const getPoolsOutput: typeof import("./getPools").getPoolsOutput = null as any;
+utilities.lazyLoad(exports, ["getPools","getPoolsOutput"], () => require("./getPools"));
+
 export { GetPrivateEndpointArgs, GetPrivateEndpointResult, GetPrivateEndpointOutputArgs } from "./getPrivateEndpoint";
 export const getPrivateEndpoint: typeof import("./getPrivateEndpoint").getPrivateEndpoint = null as any;
 export const getPrivateEndpointOutput: typeof import("./getPrivateEndpoint").getPrivateEndpointOutput = null as any;
@@ -65,6 +75,11 @@ export type InvokeRun = import("./invokeRun").InvokeRun;
 export const InvokeRun: typeof import("./invokeRun").InvokeRun = null as any;
 utilities.lazyLoad(exports, ["InvokeRun"], () => require("./invokeRun"));
 
+export { PoolArgs, PoolState } from "./pool";
+export type Pool = import("./pool").Pool;
+export const Pool: typeof import("./pool").Pool = null as any;
+utilities.lazyLoad(exports, ["Pool"], () => require("./pool"));
+
 export { PrivateEndpointArgs, PrivateEndpointState } from "./privateEndpoint";
 export type PrivateEndpoint = import("./privateEndpoint").PrivateEndpoint;
 export const PrivateEndpoint: typeof import("./privateEndpoint").PrivateEndpoint = null as any;
@@ -84,6 +99,8 @@ const _module = {
                 return new Application(name, <any>undefined, { urn })
             case "oci:DataFlow/invokeRun:InvokeRun":
                 return new InvokeRun(name, <any>undefined, { urn })
+            case "oci:DataFlow/pool:Pool":
+                return new Pool(name, <any>undefined, { urn })
             case "oci:DataFlow/privateEndpoint:PrivateEndpoint":
                 return new PrivateEndpoint(name, <any>undefined, { urn })
             case "oci:DataFlow/runStatement:RunStatement":
@@ -95,5 +112,6 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "DataFlow/application", _module)
 pulumi.runtime.registerResourceModule("oci", "DataFlow/invokeRun", _module)
+pulumi.runtime.registerResourceModule("oci", "DataFlow/pool", _module)
 pulumi.runtime.registerResourceModule("oci", "DataFlow/privateEndpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "DataFlow/runStatement", _module)

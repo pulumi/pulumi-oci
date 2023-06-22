@@ -45,6 +45,10 @@ export interface GetDatasetArgs {
  */
 export interface GetDatasetResult {
     /**
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+     */
+    readonly additionalProperties: {[key: string]: any};
+    /**
      * The annotation format name required for labeling records.
      */
     readonly annotationFormat: string;
@@ -82,6 +86,10 @@ export interface GetDatasetResult {
      */
     readonly id: string;
     /**
+     * Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+     */
+    readonly initialImportDatasetConfigurations: outputs.DataLabellingService.GetDatasetInitialImportDatasetConfiguration[];
+    /**
      * The initial generate records configuration. It generates records from the dataset's source.
      */
     readonly initialRecordGenerationConfigurations: outputs.DataLabellingService.GetDatasetInitialRecordGenerationConfiguration[];
@@ -97,6 +105,10 @@ export interface GetDatasetResult {
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
      */
     readonly lifecycleDetails: string;
+    /**
+     * The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+     */
+    readonly lifecycleSubstate: string;
     /**
      * The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
      */

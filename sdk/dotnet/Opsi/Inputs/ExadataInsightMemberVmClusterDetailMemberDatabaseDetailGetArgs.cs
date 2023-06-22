@@ -13,20 +13,38 @@ namespace Pulumi.Oci.Opsi.Inputs
     public sealed class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier of Exadata insight
+        /// (Updatable) Compartment Identifier of database
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
+        /// <summary>
+        /// Connection details of the private endpoints.
+        /// </summary>
+        [Input("connectionDetails")]
+        public Input<Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsGetArgs>? ConnectionDetails { get; set; }
+
+        /// <summary>
+        /// User credential details to connect to the database. This is supplied via the External Database Service.
+        /// </summary>
         [Input("credentialDetails")]
         public Input<Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsGetArgs>? CredentialDetails { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+        /// </summary>
         [Input("databaseId")]
         public Input<string>? DatabaseId { get; set; }
 
+        /// <summary>
+        /// Oracle Cloud Infrastructure database resource type
+        /// </summary>
         [Input("databaseResourceType")]
         public Input<string>? DatabaseResourceType { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+        /// </summary>
         [Input("dbmPrivateEndpointId")]
         public Input<string>? DbmPrivateEndpointId { get; set; }
 
@@ -34,7 +52,7 @@ namespace Pulumi.Oci.Opsi.Inputs
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -42,11 +60,14 @@ namespace Pulumi.Oci.Opsi.Inputs
             set => _definedTags = value;
         }
 
+        /// <summary>
+        /// Database Deployment Type
+        /// </summary>
         [Input("deploymentType")]
         public Input<string>? DeploymentType { get; set; }
 
         /// <summary>
-        /// (Updatable) Source of the Exadata system.
+        /// Source of the database entity.
         /// </summary>
         [Input("entitySource")]
         public Input<string>? EntitySource { get; set; }
@@ -55,7 +76,7 @@ namespace Pulumi.Oci.Opsi.Inputs
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -63,9 +84,15 @@ namespace Pulumi.Oci.Opsi.Inputs
             set => _freeformTags = value;
         }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+        /// </summary>
         [Input("opsiPrivateEndpointId")]
         public Input<string>? OpsiPrivateEndpointId { get; set; }
 
+        /// <summary>
+        /// Database service name used for connection requests.
+        /// </summary>
         [Input("serviceName")]
         public Input<string>? ServiceName { get; set; }
 

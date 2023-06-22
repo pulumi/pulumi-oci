@@ -29,6 +29,7 @@ public final class GetPreauthrequestResult {
      * 
      */
     private String bucketListingAction;
+    private String fullPath;
     /**
      * @return The unique identifier to use when directly addressing the pre-authenticated request.
      * 
@@ -98,6 +99,9 @@ public final class GetPreauthrequestResult {
      */
     public String bucketListingAction() {
         return this.bucketListingAction;
+    }
+    public String fullPath() {
+        return this.fullPath;
     }
     /**
      * @return The unique identifier to use when directly addressing the pre-authenticated request.
@@ -169,6 +173,7 @@ public final class GetPreauthrequestResult {
         private String accessUri;
         private String bucket;
         private String bucketListingAction;
+        private String fullPath;
         private String id;
         private String name;
         private String namespace;
@@ -184,6 +189,7 @@ public final class GetPreauthrequestResult {
     	      this.accessUri = defaults.accessUri;
     	      this.bucket = defaults.bucket;
     	      this.bucketListingAction = defaults.bucketListingAction;
+    	      this.fullPath = defaults.fullPath;
     	      this.id = defaults.id;
     	      this.name = defaults.name;
     	      this.namespace = defaults.namespace;
@@ -212,6 +218,11 @@ public final class GetPreauthrequestResult {
         @CustomType.Setter
         public Builder bucketListingAction(String bucketListingAction) {
             this.bucketListingAction = Objects.requireNonNull(bucketListingAction);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder fullPath(String fullPath) {
+            this.fullPath = Objects.requireNonNull(fullPath);
             return this;
         }
         @CustomType.Setter
@@ -260,6 +271,7 @@ public final class GetPreauthrequestResult {
             o.accessUri = accessUri;
             o.bucket = bucket;
             o.bucketListingAction = bucketListingAction;
+            o.fullPath = fullPath;
             o.id = id;
             o.name = name;
             o.namespace = namespace;

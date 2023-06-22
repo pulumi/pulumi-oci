@@ -100,6 +100,21 @@ public final class GetInvokeRunsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * The ID of the pool.
+     * 
+     */
+    @Import(name="poolId")
+    private @Nullable Output<String> poolId;
+
+    /**
+     * @return The ID of the pool.
+     * 
+     */
+    public Optional<Output<String>> poolId() {
+        return Optional.ofNullable(this.poolId);
+    }
+
+    /**
      * The LifecycleState of the run.
      * 
      */
@@ -138,6 +153,7 @@ public final class GetInvokeRunsArgs extends com.pulumi.resources.InvokeArgs {
         this.displayNameStartsWith = $.displayNameStartsWith;
         this.filters = $.filters;
         this.ownerPrincipalId = $.ownerPrincipalId;
+        this.poolId = $.poolId;
         this.state = $.state;
         this.timeCreatedGreaterThan = $.timeCreatedGreaterThan;
     }
@@ -276,6 +292,27 @@ public final class GetInvokeRunsArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder ownerPrincipalId(String ownerPrincipalId) {
             return ownerPrincipalId(Output.of(ownerPrincipalId));
+        }
+
+        /**
+         * @param poolId The ID of the pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder poolId(@Nullable Output<String> poolId) {
+            $.poolId = poolId;
+            return this;
+        }
+
+        /**
+         * @param poolId The ID of the pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder poolId(String poolId) {
+            return poolId(Output.of(poolId));
         }
 
         /**

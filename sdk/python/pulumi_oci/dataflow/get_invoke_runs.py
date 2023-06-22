@@ -23,7 +23,7 @@ class GetInvokeRunsResult:
     """
     A collection of values returned by getInvokeRuns.
     """
-    def __init__(__self__, application_id=None, compartment_id=None, display_name=None, display_name_starts_with=None, filters=None, id=None, owner_principal_id=None, runs=None, state=None, time_created_greater_than=None):
+    def __init__(__self__, application_id=None, compartment_id=None, display_name=None, display_name_starts_with=None, filters=None, id=None, owner_principal_id=None, pool_id=None, runs=None, state=None, time_created_greater_than=None):
         if application_id and not isinstance(application_id, str):
             raise TypeError("Expected argument 'application_id' to be a str")
         pulumi.set(__self__, "application_id", application_id)
@@ -45,6 +45,9 @@ class GetInvokeRunsResult:
         if owner_principal_id and not isinstance(owner_principal_id, str):
             raise TypeError("Expected argument 'owner_principal_id' to be a str")
         pulumi.set(__self__, "owner_principal_id", owner_principal_id)
+        if pool_id and not isinstance(pool_id, str):
+            raise TypeError("Expected argument 'pool_id' to be a str")
+        pulumi.set(__self__, "pool_id", pool_id)
         if runs and not isinstance(runs, list):
             raise TypeError("Expected argument 'runs' to be a list")
         pulumi.set(__self__, "runs", runs)
@@ -106,6 +109,14 @@ class GetInvokeRunsResult:
         return pulumi.get(self, "owner_principal_id")
 
     @property
+    @pulumi.getter(name="poolId")
+    def pool_id(self) -> Optional[str]:
+        """
+        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+        """
+        return pulumi.get(self, "pool_id")
+
+    @property
     @pulumi.getter
     def runs(self) -> Sequence['outputs.GetInvokeRunsRunResult']:
         """
@@ -140,6 +151,7 @@ class AwaitableGetInvokeRunsResult(GetInvokeRunsResult):
             filters=self.filters,
             id=self.id,
             owner_principal_id=self.owner_principal_id,
+            pool_id=self.pool_id,
             runs=self.runs,
             state=self.state,
             time_created_greater_than=self.time_created_greater_than)
@@ -151,6 +163,7 @@ def get_invoke_runs(application_id: Optional[str] = None,
                     display_name_starts_with: Optional[str] = None,
                     filters: Optional[Sequence[pulumi.InputType['GetInvokeRunsFilterArgs']]] = None,
                     owner_principal_id: Optional[str] = None,
+                    pool_id: Optional[str] = None,
                     state: Optional[str] = None,
                     time_created_greater_than: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInvokeRunsResult:
@@ -170,6 +183,7 @@ def get_invoke_runs(application_id: Optional[str] = None,
         display_name=var["invoke_run_display_name"],
         display_name_starts_with=var["invoke_run_display_name_starts_with"],
         owner_principal_id=oci_dataflow_owner_principal["test_owner_principal"]["id"],
+        pool_id=oci_dataflow_pool["test_pool"]["id"],
         state=var["invoke_run_state"],
         time_created_greater_than=var["invoke_run_time_created_greater_than"])
     ```
@@ -180,6 +194,7 @@ def get_invoke_runs(application_id: Optional[str] = None,
     :param str display_name: The query parameter for the Spark application name.
     :param str display_name_starts_with: The displayName prefix.
     :param str owner_principal_id: The OCID of the user who created the resource.
+    :param str pool_id: The ID of the pool.
     :param str state: The LifecycleState of the run.
     :param str time_created_greater_than: The epoch time that the resource was created.
     """
@@ -190,6 +205,7 @@ def get_invoke_runs(application_id: Optional[str] = None,
     __args__['displayNameStartsWith'] = display_name_starts_with
     __args__['filters'] = filters
     __args__['ownerPrincipalId'] = owner_principal_id
+    __args__['poolId'] = pool_id
     __args__['state'] = state
     __args__['timeCreatedGreaterThan'] = time_created_greater_than
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -203,6 +219,7 @@ def get_invoke_runs(application_id: Optional[str] = None,
         filters=__ret__.filters,
         id=__ret__.id,
         owner_principal_id=__ret__.owner_principal_id,
+        pool_id=__ret__.pool_id,
         runs=__ret__.runs,
         state=__ret__.state,
         time_created_greater_than=__ret__.time_created_greater_than)
@@ -215,6 +232,7 @@ def get_invoke_runs_output(application_id: Optional[pulumi.Input[Optional[str]]]
                            display_name_starts_with: Optional[pulumi.Input[Optional[str]]] = None,
                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetInvokeRunsFilterArgs']]]]] = None,
                            owner_principal_id: Optional[pulumi.Input[Optional[str]]] = None,
+                           pool_id: Optional[pulumi.Input[Optional[str]]] = None,
                            state: Optional[pulumi.Input[Optional[str]]] = None,
                            time_created_greater_than: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInvokeRunsResult]:
@@ -234,6 +252,7 @@ def get_invoke_runs_output(application_id: Optional[pulumi.Input[Optional[str]]]
         display_name=var["invoke_run_display_name"],
         display_name_starts_with=var["invoke_run_display_name_starts_with"],
         owner_principal_id=oci_dataflow_owner_principal["test_owner_principal"]["id"],
+        pool_id=oci_dataflow_pool["test_pool"]["id"],
         state=var["invoke_run_state"],
         time_created_greater_than=var["invoke_run_time_created_greater_than"])
     ```
@@ -244,6 +263,7 @@ def get_invoke_runs_output(application_id: Optional[pulumi.Input[Optional[str]]]
     :param str display_name: The query parameter for the Spark application name.
     :param str display_name_starts_with: The displayName prefix.
     :param str owner_principal_id: The OCID of the user who created the resource.
+    :param str pool_id: The ID of the pool.
     :param str state: The LifecycleState of the run.
     :param str time_created_greater_than: The epoch time that the resource was created.
     """

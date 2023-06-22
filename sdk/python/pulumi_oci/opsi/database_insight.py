@@ -40,7 +40,7 @@ class DatabaseInsightArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of database
         :param pulumi.Input[str] entity_source: (Updatable) Source of the database entity.
         :param pulumi.Input['DatabaseInsightConnectionCredentialDetailsArgs'] connection_credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
-        :param pulumi.Input['DatabaseInsightConnectionDetailsArgs'] connection_details: Connection details to connect to the database. HostName, protocol, and port should be specified.
+        :param pulumi.Input['DatabaseInsightConnectionDetailsArgs'] connection_details: Connection details of the private endpoints.
         :param pulumi.Input['DatabaseInsightCredentialDetailsArgs'] credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
         :param pulumi.Input[str] database_connection_status_details: A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
@@ -137,7 +137,7 @@ class DatabaseInsightArgs:
     @pulumi.getter(name="connectionDetails")
     def connection_details(self) -> Optional[pulumi.Input['DatabaseInsightConnectionDetailsArgs']]:
         """
-        Connection details to connect to the database. HostName, protocol, and port should be specified.
+        Connection details of the private endpoints.
         """
         return pulumi.get(self, "connection_details")
 
@@ -370,7 +370,7 @@ class _DatabaseInsightState:
         Input properties used for looking up and filtering DatabaseInsight resources.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of database
         :param pulumi.Input['DatabaseInsightConnectionCredentialDetailsArgs'] connection_credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
-        :param pulumi.Input['DatabaseInsightConnectionDetailsArgs'] connection_details: Connection details to connect to the database. HostName, protocol, and port should be specified.
+        :param pulumi.Input['DatabaseInsightConnectionDetailsArgs'] connection_details: Connection details of the private endpoints.
         :param pulumi.Input['DatabaseInsightCredentialDetailsArgs'] credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
         :param pulumi.Input[str] database_connection_status_details: A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
         :param pulumi.Input[str] database_display_name: Display name of database
@@ -503,7 +503,7 @@ class _DatabaseInsightState:
     @pulumi.getter(name="connectionDetails")
     def connection_details(self) -> Optional[pulumi.Input['DatabaseInsightConnectionDetailsArgs']]:
         """
-        Connection details to connect to the database. HostName, protocol, and port should be specified.
+        Connection details of the private endpoints.
         """
         return pulumi.get(self, "connection_details")
 
@@ -925,7 +925,7 @@ class DatabaseInsight(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of database
         :param pulumi.Input[pulumi.InputType['DatabaseInsightConnectionCredentialDetailsArgs']] connection_credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
-        :param pulumi.Input[pulumi.InputType['DatabaseInsightConnectionDetailsArgs']] connection_details: Connection details to connect to the database. HostName, protocol, and port should be specified.
+        :param pulumi.Input[pulumi.InputType['DatabaseInsightConnectionDetailsArgs']] connection_details: Connection details of the private endpoints.
         :param pulumi.Input[pulumi.InputType['DatabaseInsightCredentialDetailsArgs']] credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
         :param pulumi.Input[str] database_connection_status_details: A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
@@ -1095,7 +1095,7 @@ class DatabaseInsight(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of database
         :param pulumi.Input[pulumi.InputType['DatabaseInsightConnectionCredentialDetailsArgs']] connection_credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
-        :param pulumi.Input[pulumi.InputType['DatabaseInsightConnectionDetailsArgs']] connection_details: Connection details to connect to the database. HostName, protocol, and port should be specified.
+        :param pulumi.Input[pulumi.InputType['DatabaseInsightConnectionDetailsArgs']] connection_details: Connection details of the private endpoints.
         :param pulumi.Input[pulumi.InputType['DatabaseInsightCredentialDetailsArgs']] credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
         :param pulumi.Input[str] database_connection_status_details: A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
         :param pulumi.Input[str] database_display_name: Display name of database
@@ -1191,7 +1191,7 @@ class DatabaseInsight(pulumi.CustomResource):
     @pulumi.getter(name="connectionDetails")
     def connection_details(self) -> pulumi.Output['outputs.DatabaseInsightConnectionDetails']:
         """
-        Connection details to connect to the database. HostName, protocol, and port should be specified.
+        Connection details of the private endpoints.
         """
         return pulumi.get(self, "connection_details")
 

@@ -117,6 +117,8 @@ type LookupInvokeRunResult struct {
 	OwnerUserName string `pulumi:"ownerUserName"`
 	// An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
 	Parameters []GetInvokeRunParameter `pulumi:"parameters"`
+	// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+	PoolId string `pulumi:"poolId"`
 	// An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
 	PrivateEndpointDnsZones []string `pulumi:"privateEndpointDnsZones"`
 	// The OCID of a private endpoint.
@@ -134,9 +136,9 @@ type LookupInvokeRunResult struct {
 	SparkVersion string `pulumi:"sparkVersion"`
 	// The current state of this run.
 	State string `pulumi:"state"`
-	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The total number of oCPU requested by the run.
 	TotalOcpu int `pulumi:"totalOcpu"`
@@ -338,6 +340,11 @@ func (o LookupInvokeRunResultOutput) Parameters() GetInvokeRunParameterArrayOutp
 	return o.ApplyT(func(v LookupInvokeRunResult) []GetInvokeRunParameter { return v.Parameters }).(GetInvokeRunParameterArrayOutput)
 }
 
+// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+func (o LookupInvokeRunResultOutput) PoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInvokeRunResult) string { return v.PoolId }).(pulumi.StringOutput)
+}
+
 // An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
 func (o LookupInvokeRunResultOutput) PrivateEndpointDnsZones() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupInvokeRunResult) []string { return v.PrivateEndpointDnsZones }).(pulumi.StringArrayOutput)
@@ -382,12 +389,12 @@ func (o LookupInvokeRunResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvokeRunResult) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 func (o LookupInvokeRunResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvokeRunResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 func (o LookupInvokeRunResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvokeRunResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }

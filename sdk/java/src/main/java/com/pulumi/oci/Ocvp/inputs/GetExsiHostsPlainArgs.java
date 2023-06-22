@@ -5,6 +5,7 @@ package com.pulumi.oci.Ocvp.inputs;
 
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Ocvp.inputs.GetExsiHostsFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -15,6 +16,21 @@ import javax.annotation.Nullable;
 public final class GetExsiHostsPlainArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetExsiHostsPlainArgs Empty = new GetExsiHostsPlainArgs();
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
+     * 
+     */
+    @Import(name="compartmentId")
+    private @Nullable String compartmentId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
+     * 
+     */
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
@@ -54,6 +70,36 @@ public final class GetExsiHostsPlainArgs extends com.pulumi.resources.InvokeArgs
     }
 
     /**
+     * If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.
+     * 
+     */
+    @Import(name="isBillingDonorsOnly")
+    private @Nullable Boolean isBillingDonorsOnly;
+
+    /**
+     * @return If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.
+     * 
+     */
+    public Optional<Boolean> isBillingDonorsOnly() {
+        return Optional.ofNullable(this.isBillingDonorsOnly);
+    }
+
+    /**
+     * If this flag/param is set to True, we return only active hosts.
+     * 
+     */
+    @Import(name="isSwapBillingOnly")
+    private @Nullable Boolean isSwapBillingOnly;
+
+    /**
+     * @return If this flag/param is set to True, we return only active hosts.
+     * 
+     */
+    public Optional<Boolean> isSwapBillingOnly() {
+        return Optional.ofNullable(this.isSwapBillingOnly);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
      * 
      */
@@ -86,9 +132,12 @@ public final class GetExsiHostsPlainArgs extends com.pulumi.resources.InvokeArgs
     private GetExsiHostsPlainArgs() {}
 
     private GetExsiHostsPlainArgs(GetExsiHostsPlainArgs $) {
+        this.compartmentId = $.compartmentId;
         this.computeInstanceId = $.computeInstanceId;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.isBillingDonorsOnly = $.isBillingDonorsOnly;
+        this.isSwapBillingOnly = $.isSwapBillingOnly;
         this.sddcId = $.sddcId;
         this.state = $.state;
     }
@@ -109,6 +158,17 @@ public final class GetExsiHostsPlainArgs extends com.pulumi.resources.InvokeArgs
 
         public Builder(GetExsiHostsPlainArgs defaults) {
             $ = new GetExsiHostsPlainArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(@Nullable String compartmentId) {
+            $.compartmentId = compartmentId;
+            return this;
         }
 
         /**
@@ -140,6 +200,28 @@ public final class GetExsiHostsPlainArgs extends com.pulumi.resources.InvokeArgs
 
         public Builder filters(GetExsiHostsFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param isBillingDonorsOnly If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isBillingDonorsOnly(@Nullable Boolean isBillingDonorsOnly) {
+            $.isBillingDonorsOnly = isBillingDonorsOnly;
+            return this;
+        }
+
+        /**
+         * @param isSwapBillingOnly If this flag/param is set to True, we return only active hosts.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSwapBillingOnly(@Nullable Boolean isSwapBillingOnly) {
+            $.isSwapBillingOnly = isSwapBillingOnly;
+            return this;
         }
 
         /**

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Functions.Inputs
     public sealed class FunctionProvisionedConcurrencyConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Configuration specifying a constant amount of provisioned concurrency.
         /// </summary>
         [Input("count")]
         public Input<int>? Count { get; set; }

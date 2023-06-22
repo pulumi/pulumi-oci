@@ -73,6 +73,12 @@ namespace Pulumi.Oci.ObjectStorage
         public Output<string> BucketListingAction { get; private set; } = null!;
 
         /// <summary>
+        /// The full Path for the object.
+        /// </summary>
+        [Output("fullPath")]
+        public Output<string> FullPath { get; private set; } = null!;
+
+        /// <summary>
         /// A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
         /// </summary>
         [Output("name")]
@@ -247,6 +253,12 @@ namespace Pulumi.Oci.ObjectStorage
         /// </summary>
         [Input("bucketListingAction")]
         public Input<string>? BucketListingAction { get; set; }
+
+        /// <summary>
+        /// The full Path for the object.
+        /// </summary>
+        [Input("fullPath")]
+        public Input<string>? FullPath { get; set; }
 
         /// <summary>
         /// A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.

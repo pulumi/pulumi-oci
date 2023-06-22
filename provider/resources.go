@@ -37,6 +37,7 @@ const (
 	// modules:
 	mainMod                         = "index"                        // the oci module
 	aiAnomalyDetectionMod           = "AiAnomalyDetection"           // AI Anomaly Detection
+	aiDocumentMod                   = "AiDocument"                   // AI Document
 	aiVisionMod                     = "AiVision"                     // AI Vision
 	analyticsMod                    = "Analytics"                    // Analytics
 	apiGatewayMod                   = "ApiGateway"                   // API Gateway
@@ -146,6 +147,7 @@ const (
 // This mapping is used by x.TokensKnownModules to compute module names.
 var mappedMods = map[string]string{
 	"ai_anomaly_detection":           aiAnomalyDetectionMod,
+	"ai_document":                    aiDocumentMod,
 	"ai_vision":                      aiVisionMod,
 	"analytics":                      analyticsMod,
 	"apigateway":                     apiGatewayMod,

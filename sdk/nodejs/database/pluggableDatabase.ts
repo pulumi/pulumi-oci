@@ -112,6 +112,14 @@ export class PluggableDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly pluggableDatabaseManagementConfigs!: pulumi.Output<outputs.Database.PluggableDatabasePluggableDatabaseManagementConfig[]>;
     /**
+     * (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly rotateKeyTrigger!: pulumi.Output<number | undefined>;
+    /**
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
      */
     public readonly shouldPdbAdminAccountBeLocked!: pulumi.Output<boolean>;
@@ -121,10 +129,6 @@ export class PluggableDatabase extends pulumi.CustomResource {
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
      * The existing TDE wallet password of the CDB.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly tdeWalletPassword!: pulumi.Output<string>;
     /**
@@ -156,6 +160,7 @@ export class PluggableDatabase extends pulumi.CustomResource {
             resourceInputs["pdbAdminPassword"] = state ? state.pdbAdminPassword : undefined;
             resourceInputs["pdbName"] = state ? state.pdbName : undefined;
             resourceInputs["pluggableDatabaseManagementConfigs"] = state ? state.pluggableDatabaseManagementConfigs : undefined;
+            resourceInputs["rotateKeyTrigger"] = state ? state.rotateKeyTrigger : undefined;
             resourceInputs["shouldPdbAdminAccountBeLocked"] = state ? state.shouldPdbAdminAccountBeLocked : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["tdeWalletPassword"] = state ? state.tdeWalletPassword : undefined;
@@ -173,6 +178,7 @@ export class PluggableDatabase extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["pdbAdminPassword"] = args?.pdbAdminPassword ? pulumi.secret(args.pdbAdminPassword) : undefined;
             resourceInputs["pdbName"] = args ? args.pdbName : undefined;
+            resourceInputs["rotateKeyTrigger"] = args ? args.rotateKeyTrigger : undefined;
             resourceInputs["shouldPdbAdminAccountBeLocked"] = args ? args.shouldPdbAdminAccountBeLocked : undefined;
             resourceInputs["tdeWalletPassword"] = args?.tdeWalletPassword ? pulumi.secret(args.tdeWalletPassword) : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
@@ -240,6 +246,14 @@ export interface PluggableDatabaseState {
      */
     pluggableDatabaseManagementConfigs?: pulumi.Input<pulumi.Input<inputs.Database.PluggableDatabasePluggableDatabaseManagementConfig>[]>;
     /**
+     * (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    rotateKeyTrigger?: pulumi.Input<number>;
+    /**
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
      */
     shouldPdbAdminAccountBeLocked?: pulumi.Input<boolean>;
@@ -249,10 +263,6 @@ export interface PluggableDatabaseState {
     state?: pulumi.Input<string>;
     /**
      * The existing TDE wallet password of the CDB.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     tdeWalletPassword?: pulumi.Input<string>;
     /**
@@ -286,15 +296,19 @@ export interface PluggableDatabaseArgs {
      */
     pdbName: pulumi.Input<string>;
     /**
+     * (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    rotateKeyTrigger?: pulumi.Input<number>;
+    /**
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
      */
     shouldPdbAdminAccountBeLocked?: pulumi.Input<boolean>;
     /**
      * The existing TDE wallet password of the CDB.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     tdeWalletPassword?: pulumi.Input<string>;
 }

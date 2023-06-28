@@ -118,9 +118,17 @@ namespace Pulumi.Oci.Artifacts
         /// </summary>
         public readonly string CreatedBy;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
         /// The container repository name.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
         /// </summary>
@@ -146,6 +154,10 @@ namespace Pulumi.Oci.Artifacts
         /// </summary>
         public readonly string LayersSizeInBytes;
         /// <summary>
+        /// The tenancy namespace used in the container repository path.
+        /// </summary>
+        public readonly string Namespace;
+        /// <summary>
         /// Container repository readme.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetContainerRepositoryReadmeResult> Readmes;
@@ -154,6 +166,10 @@ namespace Pulumi.Oci.Artifacts
         /// The current state of the container repository.
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
         /// An RFC 3339 timestamp indicating when the repository was created.
         /// </summary>
@@ -171,7 +187,11 @@ namespace Pulumi.Oci.Artifacts
 
             string createdBy,
 
+            ImmutableDictionary<string, object> definedTags,
+
             string displayName,
+
+            ImmutableDictionary<string, object> freeformTags,
 
             string id,
 
@@ -185,11 +205,15 @@ namespace Pulumi.Oci.Artifacts
 
             string layersSizeInBytes,
 
+            string @namespace,
+
             ImmutableArray<Outputs.GetContainerRepositoryReadmeResult> readmes,
 
             string repositoryId,
 
             string state,
+
+            ImmutableDictionary<string, object> systemTags,
 
             string timeCreated,
 
@@ -198,16 +222,20 @@ namespace Pulumi.Oci.Artifacts
             BillableSizeInGbs = billableSizeInGbs;
             CompartmentId = compartmentId;
             CreatedBy = createdBy;
+            DefinedTags = definedTags;
             DisplayName = displayName;
+            FreeformTags = freeformTags;
             Id = id;
             ImageCount = imageCount;
             IsImmutable = isImmutable;
             IsPublic = isPublic;
             LayerCount = layerCount;
             LayersSizeInBytes = layersSizeInBytes;
+            Namespace = @namespace;
             Readmes = readmes;
             RepositoryId = repositoryId;
             State = state;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeLastPushed = timeLastPushed;
         }

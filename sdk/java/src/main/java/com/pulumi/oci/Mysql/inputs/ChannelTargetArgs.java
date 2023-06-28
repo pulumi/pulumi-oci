@@ -6,6 +6,7 @@ package com.pulumi.oci.Mysql.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Mysql.inputs.ChannelTargetFilterArgs;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -63,6 +64,21 @@ public final class ChannelTargetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+     * 
+     */
+    @Import(name="delayInSeconds")
+    private @Nullable Output<Integer> delayInSeconds;
+
+    /**
+     * @return (Updatable) Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+     * 
+     */
+    public Optional<Output<Integer>> delayInSeconds() {
+        return Optional.ofNullable(this.delayInSeconds);
+    }
+
+    /**
      * (Updatable) Replication filter rules to be applied at the DB System Channel target.
      * 
      */
@@ -75,6 +91,21 @@ public final class ChannelTargetArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<ChannelTargetFilterArgs>>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * (Updatable) Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key. The default value is set to ALLOW.
+     * 
+     */
+    @Import(name="tablesWithoutPrimaryKeyHandling")
+    private @Nullable Output<String> tablesWithoutPrimaryKeyHandling;
+
+    /**
+     * @return (Updatable) Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key. The default value is set to ALLOW.
+     * 
+     */
+    public Optional<Output<String>> tablesWithoutPrimaryKeyHandling() {
+        return Optional.ofNullable(this.tablesWithoutPrimaryKeyHandling);
     }
 
     /**
@@ -104,7 +135,9 @@ public final class ChannelTargetArgs extends com.pulumi.resources.ResourceArgs {
         this.applierUsername = $.applierUsername;
         this.channelName = $.channelName;
         this.dbSystemId = $.dbSystemId;
+        this.delayInSeconds = $.delayInSeconds;
         this.filters = $.filters;
+        this.tablesWithoutPrimaryKeyHandling = $.tablesWithoutPrimaryKeyHandling;
         this.targetType = $.targetType;
     }
 
@@ -190,6 +223,27 @@ public final class ChannelTargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param delayInSeconds (Updatable) Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder delayInSeconds(@Nullable Output<Integer> delayInSeconds) {
+            $.delayInSeconds = delayInSeconds;
+            return this;
+        }
+
+        /**
+         * @param delayInSeconds (Updatable) Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder delayInSeconds(Integer delayInSeconds) {
+            return delayInSeconds(Output.of(delayInSeconds));
+        }
+
+        /**
          * @param filters (Updatable) Replication filter rules to be applied at the DB System Channel target.
          * 
          * @return builder
@@ -218,6 +272,27 @@ public final class ChannelTargetArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder filters(ChannelTargetFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param tablesWithoutPrimaryKeyHandling (Updatable) Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key. The default value is set to ALLOW.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tablesWithoutPrimaryKeyHandling(@Nullable Output<String> tablesWithoutPrimaryKeyHandling) {
+            $.tablesWithoutPrimaryKeyHandling = tablesWithoutPrimaryKeyHandling;
+            return this;
+        }
+
+        /**
+         * @param tablesWithoutPrimaryKeyHandling (Updatable) Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key. The default value is set to ALLOW.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tablesWithoutPrimaryKeyHandling(String tablesWithoutPrimaryKeyHandling) {
+            return tablesWithoutPrimaryKeyHandling(Output.of(tablesWithoutPrimaryKeyHandling));
         }
 
         /**

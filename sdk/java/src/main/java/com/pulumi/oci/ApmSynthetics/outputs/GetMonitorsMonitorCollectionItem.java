@@ -8,6 +8,7 @@ import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemAvai
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemScriptParameter;
+import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemVantagePoint;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -137,7 +138,7 @@ public final class GetMonitorsMonitorCollectionItem {
      * @return List of public and dedicated vantage points where the monitor is running.
      * 
      */
-    private List<String> vantagePoints;
+    private List<GetMonitorsMonitorCollectionItemVantagePoint> vantagePoints;
 
     private GetMonitorsMonitorCollectionItem() {}
     /**
@@ -305,7 +306,7 @@ public final class GetMonitorsMonitorCollectionItem {
      * @return List of public and dedicated vantage points where the monitor is running.
      * 
      */
-    public List<String> vantagePoints() {
+    public List<GetMonitorsMonitorCollectionItemVantagePoint> vantagePoints() {
         return this.vantagePoints;
     }
 
@@ -341,7 +342,7 @@ public final class GetMonitorsMonitorCollectionItem {
         private String timeUpdated;
         private Integer timeoutInSeconds;
         private Integer vantagePointCount;
-        private List<String> vantagePoints;
+        private List<GetMonitorsMonitorCollectionItemVantagePoint> vantagePoints;
         public Builder() {}
         public Builder(GetMonitorsMonitorCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -499,11 +500,11 @@ public final class GetMonitorsMonitorCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder vantagePoints(List<String> vantagePoints) {
+        public Builder vantagePoints(List<GetMonitorsMonitorCollectionItemVantagePoint> vantagePoints) {
             this.vantagePoints = Objects.requireNonNull(vantagePoints);
             return this;
         }
-        public Builder vantagePoints(String... vantagePoints) {
+        public Builder vantagePoints(GetMonitorsMonitorCollectionItemVantagePoint... vantagePoints) {
             return vantagePoints(List.of(vantagePoints));
         }
         public GetMonitorsMonitorCollectionItem build() {

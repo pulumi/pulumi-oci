@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemChannelTargetFilter;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -27,10 +28,20 @@ public final class GetMysqlDbSystemsDbSystemChannelTarget {
      */
     private String dbSystemId;
     /**
+     * @return Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+     * 
+     */
+    private Integer delayInSeconds;
+    /**
      * @return Replication filter rules to be applied at the DB System Channel target.
      * 
      */
     private List<GetMysqlDbSystemsDbSystemChannelTargetFilter> filters;
+    /**
+     * @return Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+     * 
+     */
+    private String tablesWithoutPrimaryKeyHandling;
     /**
      * @return The specific target identifier.
      * 
@@ -60,11 +71,25 @@ public final class GetMysqlDbSystemsDbSystemChannelTarget {
         return this.dbSystemId;
     }
     /**
+     * @return Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+     * 
+     */
+    public Integer delayInSeconds() {
+        return this.delayInSeconds;
+    }
+    /**
      * @return Replication filter rules to be applied at the DB System Channel target.
      * 
      */
     public List<GetMysqlDbSystemsDbSystemChannelTargetFilter> filters() {
         return this.filters;
+    }
+    /**
+     * @return Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+     * 
+     */
+    public String tablesWithoutPrimaryKeyHandling() {
+        return this.tablesWithoutPrimaryKeyHandling;
     }
     /**
      * @return The specific target identifier.
@@ -86,7 +111,9 @@ public final class GetMysqlDbSystemsDbSystemChannelTarget {
         private String applierUsername;
         private String channelName;
         private String dbSystemId;
+        private Integer delayInSeconds;
         private List<GetMysqlDbSystemsDbSystemChannelTargetFilter> filters;
+        private String tablesWithoutPrimaryKeyHandling;
         private String targetType;
         public Builder() {}
         public Builder(GetMysqlDbSystemsDbSystemChannelTarget defaults) {
@@ -94,7 +121,9 @@ public final class GetMysqlDbSystemsDbSystemChannelTarget {
     	      this.applierUsername = defaults.applierUsername;
     	      this.channelName = defaults.channelName;
     	      this.dbSystemId = defaults.dbSystemId;
+    	      this.delayInSeconds = defaults.delayInSeconds;
     	      this.filters = defaults.filters;
+    	      this.tablesWithoutPrimaryKeyHandling = defaults.tablesWithoutPrimaryKeyHandling;
     	      this.targetType = defaults.targetType;
         }
 
@@ -114,12 +143,22 @@ public final class GetMysqlDbSystemsDbSystemChannelTarget {
             return this;
         }
         @CustomType.Setter
+        public Builder delayInSeconds(Integer delayInSeconds) {
+            this.delayInSeconds = Objects.requireNonNull(delayInSeconds);
+            return this;
+        }
+        @CustomType.Setter
         public Builder filters(List<GetMysqlDbSystemsDbSystemChannelTargetFilter> filters) {
             this.filters = Objects.requireNonNull(filters);
             return this;
         }
         public Builder filters(GetMysqlDbSystemsDbSystemChannelTargetFilter... filters) {
             return filters(List.of(filters));
+        }
+        @CustomType.Setter
+        public Builder tablesWithoutPrimaryKeyHandling(String tablesWithoutPrimaryKeyHandling) {
+            this.tablesWithoutPrimaryKeyHandling = Objects.requireNonNull(tablesWithoutPrimaryKeyHandling);
+            return this;
         }
         @CustomType.Setter
         public Builder targetType(String targetType) {
@@ -131,7 +170,9 @@ public final class GetMysqlDbSystemsDbSystemChannelTarget {
             o.applierUsername = applierUsername;
             o.channelName = channelName;
             o.dbSystemId = dbSystemId;
+            o.delayInSeconds = delayInSeconds;
             o.filters = filters;
+            o.tablesWithoutPrimaryKeyHandling = tablesWithoutPrimaryKeyHandling;
             o.targetType = targetType;
             return o;
         }

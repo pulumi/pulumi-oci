@@ -46,6 +46,16 @@ public final class GetBackupsBackup {
      */
     private String id;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * 
+     */
+    private String keyStoreId;
+    /**
+     * @return The wallet name for Oracle Key Vault.
+     * 
+     */
+    private String keyStoreWalletName;
+    /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -147,6 +157,20 @@ public final class GetBackupsBackup {
         return this.id;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * 
+     */
+    public String keyStoreId() {
+        return this.keyStoreId;
+    }
+    /**
+     * @return The wallet name for Oracle Key Vault.
+     * 
+     */
+    public String keyStoreWalletName() {
+        return this.keyStoreWalletName;
+    }
+    /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -233,6 +257,8 @@ public final class GetBackupsBackup {
         private Double databaseSizeInGbs;
         private String displayName;
         private String id;
+        private String keyStoreId;
+        private String keyStoreWalletName;
         private String kmsKeyId;
         private String kmsKeyVersionId;
         private String lifecycleDetails;
@@ -253,6 +279,8 @@ public final class GetBackupsBackup {
     	      this.databaseSizeInGbs = defaults.databaseSizeInGbs;
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
+    	      this.keyStoreId = defaults.keyStoreId;
+    	      this.keyStoreWalletName = defaults.keyStoreWalletName;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -298,6 +326,16 @@ public final class GetBackupsBackup {
         @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder keyStoreId(String keyStoreId) {
+            this.keyStoreId = Objects.requireNonNull(keyStoreId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder keyStoreWalletName(String keyStoreWalletName) {
+            this.keyStoreWalletName = Objects.requireNonNull(keyStoreWalletName);
             return this;
         }
         @CustomType.Setter
@@ -359,6 +397,8 @@ public final class GetBackupsBackup {
             o.databaseSizeInGbs = databaseSizeInGbs;
             o.displayName = displayName;
             o.id = id;
+            o.keyStoreId = keyStoreId;
+            o.keyStoreWalletName = keyStoreWalletName;
             o.kmsKeyId = kmsKeyId;
             o.kmsKeyVersionId = kmsKeyVersionId;
             o.lifecycleDetails = lifecycleDetails;

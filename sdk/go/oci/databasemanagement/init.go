@@ -39,6 +39,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ExternalDbSystemDatabaseManagementsManagement{}
 	case "oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery":
 		r = &ExternalDbSystemDiscovery{}
+	case "oci:DatabaseManagement/externalDbSystemStackMonitoringsManagement:ExternalDbSystemStackMonitoringsManagement":
+		r = &ExternalDbSystemStackMonitoringsManagement{}
 	case "oci:DatabaseManagement/externalExadataInfrastructure:ExternalExadataInfrastructure":
 		r = &ExternalExadataInfrastructure{}
 	case "oci:DatabaseManagement/externalExadataInfrastructureExadataManagement:ExternalExadataInfrastructureExadataManagement":
@@ -109,6 +111,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DatabaseManagement/externalDbSystemDiscovery",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/externalDbSystemStackMonitoringsManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

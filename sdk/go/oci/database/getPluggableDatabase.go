@@ -80,6 +80,7 @@ type LookupPluggableDatabaseResult struct {
 	PluggableDatabaseId string `pulumi:"pluggableDatabaseId"`
 	// The configuration of the Pluggable Database Management service.
 	PluggableDatabaseManagementConfigs []GetPluggableDatabasePluggableDatabaseManagementConfig `pulumi:"pluggableDatabaseManagementConfigs"`
+	RotateKeyTrigger                   int                                                     `pulumi:"rotateKeyTrigger"`
 	ShouldPdbAdminAccountBeLocked      bool                                                    `pulumi:"shouldPdbAdminAccountBeLocked"`
 	// The current state of the pluggable database.
 	State             string `pulumi:"state"`
@@ -191,6 +192,10 @@ func (o LookupPluggableDatabaseResultOutput) PluggableDatabaseManagementConfigs(
 	return o.ApplyT(func(v LookupPluggableDatabaseResult) []GetPluggableDatabasePluggableDatabaseManagementConfig {
 		return v.PluggableDatabaseManagementConfigs
 	}).(GetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput)
+}
+
+func (o LookupPluggableDatabaseResultOutput) RotateKeyTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupPluggableDatabaseResult) int { return v.RotateKeyTrigger }).(pulumi.IntOutput)
 }
 
 func (o LookupPluggableDatabaseResultOutput) ShouldPdbAdminAccountBeLocked() pulumi.BoolOutput {

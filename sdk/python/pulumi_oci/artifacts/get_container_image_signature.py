@@ -21,16 +21,22 @@ class GetContainerImageSignatureResult:
     """
     A collection of values returned by getContainerImageSignature.
     """
-    def __init__(__self__, compartment_id=None, created_by=None, display_name=None, id=None, image_id=None, image_signature_id=None, kms_key_id=None, kms_key_version_id=None, message=None, signature=None, signing_algorithm=None, time_created=None):
+    def __init__(__self__, compartment_id=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, image_id=None, image_signature_id=None, kms_key_id=None, kms_key_version_id=None, message=None, signature=None, signing_algorithm=None, state=None, system_tags=None, time_created=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
         if created_by and not isinstance(created_by, str):
             raise TypeError("Expected argument 'created_by' to be a str")
         pulumi.set(__self__, "created_by", created_by)
+        if defined_tags and not isinstance(defined_tags, dict):
+            raise TypeError("Expected argument 'defined_tags' to be a dict")
+        pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags and not isinstance(freeform_tags, dict):
+            raise TypeError("Expected argument 'freeform_tags' to be a dict")
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -55,6 +61,12 @@ class GetContainerImageSignatureResult:
         if signing_algorithm and not isinstance(signing_algorithm, str):
             raise TypeError("Expected argument 'signing_algorithm' to be a str")
         pulumi.set(__self__, "signing_algorithm", signing_algorithm)
+        if state and not isinstance(state, str):
+            raise TypeError("Expected argument 'state' to be a str")
+        pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -76,12 +88,28 @@ class GetContainerImageSignatureResult:
         return pulumi.get(self, "created_by")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
         The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.  Example: `wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva`
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -145,6 +173,22 @@ class GetContainerImageSignatureResult:
         return pulumi.get(self, "signing_algorithm")
 
     @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the container image signature.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -161,7 +205,9 @@ class AwaitableGetContainerImageSignatureResult(GetContainerImageSignatureResult
         return GetContainerImageSignatureResult(
             compartment_id=self.compartment_id,
             created_by=self.created_by,
+            defined_tags=self.defined_tags,
             display_name=self.display_name,
+            freeform_tags=self.freeform_tags,
             id=self.id,
             image_id=self.image_id,
             image_signature_id=self.image_signature_id,
@@ -170,6 +216,8 @@ class AwaitableGetContainerImageSignatureResult(GetContainerImageSignatureResult
             message=self.message,
             signature=self.signature,
             signing_algorithm=self.signing_algorithm,
+            state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created)
 
 
@@ -200,7 +248,9 @@ def get_container_image_signature(image_signature_id: Optional[str] = None,
     return AwaitableGetContainerImageSignatureResult(
         compartment_id=__ret__.compartment_id,
         created_by=__ret__.created_by,
+        defined_tags=__ret__.defined_tags,
         display_name=__ret__.display_name,
+        freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
         image_id=__ret__.image_id,
         image_signature_id=__ret__.image_signature_id,
@@ -209,6 +259,8 @@ def get_container_image_signature(image_signature_id: Optional[str] = None,
         message=__ret__.message,
         signature=__ret__.signature,
         signing_algorithm=__ret__.signing_algorithm,
+        state=__ret__.state,
+        system_tags=__ret__.system_tags,
         time_created=__ret__.time_created)
 
 

@@ -14,6 +14,7 @@ from .external_db_system import *
 from .external_db_system_connector import *
 from .external_db_system_database_managements_management import *
 from .external_db_system_discovery import *
+from .external_db_system_stack_monitorings_management import *
 from .external_exadata_infrastructure import *
 from .external_exadata_infrastructure_exadata_management import *
 from .external_exadata_storage_connector import *
@@ -66,6 +67,7 @@ from .get_managed_database_alert_log_count import *
 from .get_managed_database_alert_log_counts import *
 from .get_managed_database_attention_log_count import *
 from .get_managed_database_attention_log_counts import *
+from .get_managed_database_cursor_cache_statements import *
 from .get_managed_database_group import *
 from .get_managed_database_groups import *
 from .get_managed_database_optimizer_statistics_advisor_execution import *
@@ -74,6 +76,10 @@ from .get_managed_database_optimizer_statistics_advisor_executions import *
 from .get_managed_database_optimizer_statistics_collection_aggregations import *
 from .get_managed_database_optimizer_statistics_collection_operation import *
 from .get_managed_database_optimizer_statistics_collection_operations import *
+from .get_managed_database_sql_plan_baseline import *
+from .get_managed_database_sql_plan_baseline_configuration import *
+from .get_managed_database_sql_plan_baseline_jobs import *
+from .get_managed_database_sql_plan_baselines import *
 from .get_managed_database_sql_tuning_advisor_task import *
 from .get_managed_database_sql_tuning_advisor_tasks import *
 from .get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparison import *

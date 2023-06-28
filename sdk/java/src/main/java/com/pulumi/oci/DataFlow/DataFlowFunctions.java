@@ -31,6 +31,10 @@ import com.pulumi.oci.DataFlow.inputs.GetRunStatementArgs;
 import com.pulumi.oci.DataFlow.inputs.GetRunStatementPlainArgs;
 import com.pulumi.oci.DataFlow.inputs.GetRunStatementsArgs;
 import com.pulumi.oci.DataFlow.inputs.GetRunStatementsPlainArgs;
+import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointArgs;
+import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointPlainArgs;
+import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointsArgs;
+import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointsPlainArgs;
 import com.pulumi.oci.DataFlow.outputs.GetApplicationResult;
 import com.pulumi.oci.DataFlow.outputs.GetApplicationsResult;
 import com.pulumi.oci.DataFlow.outputs.GetInvokeRunResult;
@@ -43,6 +47,8 @@ import com.pulumi.oci.DataFlow.outputs.GetRunLogResult;
 import com.pulumi.oci.DataFlow.outputs.GetRunLogsResult;
 import com.pulumi.oci.DataFlow.outputs.GetRunStatementResult;
 import com.pulumi.oci.DataFlow.outputs.GetRunStatementsResult;
+import com.pulumi.oci.DataFlow.outputs.GetSqlEndpointResult;
+import com.pulumi.oci.DataFlow.outputs.GetSqlEndpointsResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -2006,5 +2012,425 @@ public final class DataFlowFunctions {
      */
     public static CompletableFuture<GetRunStatementsResult> getRunStatementsPlain(GetRunStatementsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataFlow/getRunStatements:getRunStatements", TypeShape.of(GetRunStatementsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Retrieves a SQL Endpoint using a sqlEndpointId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlEndpoint = DataFlowFunctions.getSqlEndpoint(GetSqlEndpointArgs.builder()
+     *             .sqlEndpointId(oci_dataflow_sql_endpoint.test_sql_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSqlEndpointResult> getSqlEndpoint(GetSqlEndpointArgs args) {
+        return getSqlEndpoint(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Retrieves a SQL Endpoint using a sqlEndpointId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlEndpoint = DataFlowFunctions.getSqlEndpoint(GetSqlEndpointArgs.builder()
+     *             .sqlEndpointId(oci_dataflow_sql_endpoint.test_sql_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSqlEndpointResult> getSqlEndpointPlain(GetSqlEndpointPlainArgs args) {
+        return getSqlEndpointPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Retrieves a SQL Endpoint using a sqlEndpointId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlEndpoint = DataFlowFunctions.getSqlEndpoint(GetSqlEndpointArgs.builder()
+     *             .sqlEndpointId(oci_dataflow_sql_endpoint.test_sql_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSqlEndpointResult> getSqlEndpoint(GetSqlEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataFlow/getSqlEndpoint:getSqlEndpoint", TypeShape.of(GetSqlEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Retrieves a SQL Endpoint using a sqlEndpointId.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlEndpoint = DataFlowFunctions.getSqlEndpoint(GetSqlEndpointArgs.builder()
+     *             .sqlEndpointId(oci_dataflow_sql_endpoint.test_sql_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSqlEndpointResult> getSqlEndpointPlain(GetSqlEndpointPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataFlow/getSqlEndpoint:getSqlEndpoint", TypeShape.of(GetSqlEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sql Endpoints in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Lists all Sql Endpoints in the specified compartment.
+     * The query must include compartmentId or sqlEndpointId.
+     * If the query does not include either compartmentId or sqlEndpointId, an error is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlEndpoints = DataFlowFunctions.getSqlEndpoints(GetSqlEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.sql_endpoint_display_name())
+     *             .sqlEndpointId(oci_dataflow_sql_endpoint.test_sql_endpoint().id())
+     *             .state(var_.sql_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSqlEndpointsResult> getSqlEndpoints() {
+        return getSqlEndpoints(GetSqlEndpointsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Endpoints in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Lists all Sql Endpoints in the specified compartment.
+     * The query must include compartmentId or sqlEndpointId.
+     * If the query does not include either compartmentId or sqlEndpointId, an error is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlEndpoints = DataFlowFunctions.getSqlEndpoints(GetSqlEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.sql_endpoint_display_name())
+     *             .sqlEndpointId(oci_dataflow_sql_endpoint.test_sql_endpoint().id())
+     *             .state(var_.sql_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSqlEndpointsResult> getSqlEndpointsPlain() {
+        return getSqlEndpointsPlain(GetSqlEndpointsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Endpoints in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Lists all Sql Endpoints in the specified compartment.
+     * The query must include compartmentId or sqlEndpointId.
+     * If the query does not include either compartmentId or sqlEndpointId, an error is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlEndpoints = DataFlowFunctions.getSqlEndpoints(GetSqlEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.sql_endpoint_display_name())
+     *             .sqlEndpointId(oci_dataflow_sql_endpoint.test_sql_endpoint().id())
+     *             .state(var_.sql_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSqlEndpointsResult> getSqlEndpoints(GetSqlEndpointsArgs args) {
+        return getSqlEndpoints(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Endpoints in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Lists all Sql Endpoints in the specified compartment.
+     * The query must include compartmentId or sqlEndpointId.
+     * If the query does not include either compartmentId or sqlEndpointId, an error is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlEndpoints = DataFlowFunctions.getSqlEndpoints(GetSqlEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.sql_endpoint_display_name())
+     *             .sqlEndpointId(oci_dataflow_sql_endpoint.test_sql_endpoint().id())
+     *             .state(var_.sql_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSqlEndpointsResult> getSqlEndpointsPlain(GetSqlEndpointsPlainArgs args) {
+        return getSqlEndpointsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Endpoints in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Lists all Sql Endpoints in the specified compartment.
+     * The query must include compartmentId or sqlEndpointId.
+     * If the query does not include either compartmentId or sqlEndpointId, an error is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlEndpoints = DataFlowFunctions.getSqlEndpoints(GetSqlEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.sql_endpoint_display_name())
+     *             .sqlEndpointId(oci_dataflow_sql_endpoint.test_sql_endpoint().id())
+     *             .state(var_.sql_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSqlEndpointsResult> getSqlEndpoints(GetSqlEndpointsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataFlow/getSqlEndpoints:getSqlEndpoints", TypeShape.of(GetSqlEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sql Endpoints in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Lists all Sql Endpoints in the specified compartment.
+     * The query must include compartmentId or sqlEndpointId.
+     * If the query does not include either compartmentId or sqlEndpointId, an error is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlEndpoints = DataFlowFunctions.getSqlEndpoints(GetSqlEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.sql_endpoint_display_name())
+     *             .sqlEndpointId(oci_dataflow_sql_endpoint.test_sql_endpoint().id())
+     *             .state(var_.sql_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSqlEndpointsResult> getSqlEndpointsPlain(GetSqlEndpointsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataFlow/getSqlEndpoints:getSqlEndpoints", TypeShape.of(GetSqlEndpointsResult.class), args, Utilities.withVersion(options));
     }
 }

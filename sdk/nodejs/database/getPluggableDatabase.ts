@@ -90,6 +90,7 @@ export interface GetPluggableDatabaseResult {
      * The configuration of the Pluggable Database Management service.
      */
     readonly pluggableDatabaseManagementConfigs: outputs.Database.GetPluggableDatabasePluggableDatabaseManagementConfig[];
+    readonly rotateKeyTrigger: number;
     readonly shouldPdbAdminAccountBeLocked: boolean;
     /**
      * The current state of the pluggable database.

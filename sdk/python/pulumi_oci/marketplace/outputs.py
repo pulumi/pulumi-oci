@@ -1177,7 +1177,7 @@ class GetListingPackagesListingPackageResult(dict):
         :param str package_type: A filter to return only packages that match the given package type exactly.
         :param str package_version: The version of the package. Package versions are unique within a listing.
         :param Sequence['GetListingPackagesListingPackagePricingArgs'] pricings: The model for pricing.
-        :param Sequence['GetListingPackagesListingPackageRegionArgs'] regions: The regions where the listing is available.
+        :param Sequence['GetListingPackagesListingPackageRegionArgs'] regions: The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
         :param str resource_id: The unique identifier for the package resource.
         :param str time_created: The date and time this listing package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -1234,7 +1234,7 @@ class GetListingPackagesListingPackageResult(dict):
     @pulumi.getter
     def regions(self) -> Sequence['outputs.GetListingPackagesListingPackageRegionResult']:
         """
-        The regions where the listing is available.
+        The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
         """
         return pulumi.get(self, "regions")
 

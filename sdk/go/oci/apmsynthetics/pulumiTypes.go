@@ -2024,6 +2024,112 @@ func (o ConfigScriptParameterMonitorScriptParameterArrayOutput) Index(i pulumi.I
 	}).(ConfigScriptParameterMonitorScriptParameterOutput)
 }
 
+type ConfigVantagePoint struct {
+	// Unique name that can be edited. The name should not contain any confidential information.
+	DisplayName *string `pulumi:"displayName"`
+	// Name of the vantage point.
+	Name string `pulumi:"name"`
+}
+
+// ConfigVantagePointInput is an input type that accepts ConfigVantagePointArgs and ConfigVantagePointOutput values.
+// You can construct a concrete instance of `ConfigVantagePointInput` via:
+//
+//	ConfigVantagePointArgs{...}
+type ConfigVantagePointInput interface {
+	pulumi.Input
+
+	ToConfigVantagePointOutput() ConfigVantagePointOutput
+	ToConfigVantagePointOutputWithContext(context.Context) ConfigVantagePointOutput
+}
+
+type ConfigVantagePointArgs struct {
+	// Unique name that can be edited. The name should not contain any confidential information.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// Name of the vantage point.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (ConfigVantagePointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigVantagePoint)(nil)).Elem()
+}
+
+func (i ConfigVantagePointArgs) ToConfigVantagePointOutput() ConfigVantagePointOutput {
+	return i.ToConfigVantagePointOutputWithContext(context.Background())
+}
+
+func (i ConfigVantagePointArgs) ToConfigVantagePointOutputWithContext(ctx context.Context) ConfigVantagePointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigVantagePointOutput)
+}
+
+// ConfigVantagePointArrayInput is an input type that accepts ConfigVantagePointArray and ConfigVantagePointArrayOutput values.
+// You can construct a concrete instance of `ConfigVantagePointArrayInput` via:
+//
+//	ConfigVantagePointArray{ ConfigVantagePointArgs{...} }
+type ConfigVantagePointArrayInput interface {
+	pulumi.Input
+
+	ToConfigVantagePointArrayOutput() ConfigVantagePointArrayOutput
+	ToConfigVantagePointArrayOutputWithContext(context.Context) ConfigVantagePointArrayOutput
+}
+
+type ConfigVantagePointArray []ConfigVantagePointInput
+
+func (ConfigVantagePointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConfigVantagePoint)(nil)).Elem()
+}
+
+func (i ConfigVantagePointArray) ToConfigVantagePointArrayOutput() ConfigVantagePointArrayOutput {
+	return i.ToConfigVantagePointArrayOutputWithContext(context.Background())
+}
+
+func (i ConfigVantagePointArray) ToConfigVantagePointArrayOutputWithContext(ctx context.Context) ConfigVantagePointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigVantagePointArrayOutput)
+}
+
+type ConfigVantagePointOutput struct{ *pulumi.OutputState }
+
+func (ConfigVantagePointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigVantagePoint)(nil)).Elem()
+}
+
+func (o ConfigVantagePointOutput) ToConfigVantagePointOutput() ConfigVantagePointOutput {
+	return o
+}
+
+func (o ConfigVantagePointOutput) ToConfigVantagePointOutputWithContext(ctx context.Context) ConfigVantagePointOutput {
+	return o
+}
+
+// Unique name that can be edited. The name should not contain any confidential information.
+func (o ConfigVantagePointOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigVantagePoint) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// Name of the vantage point.
+func (o ConfigVantagePointOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v ConfigVantagePoint) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type ConfigVantagePointArrayOutput struct{ *pulumi.OutputState }
+
+func (ConfigVantagePointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConfigVantagePoint)(nil)).Elem()
+}
+
+func (o ConfigVantagePointArrayOutput) ToConfigVantagePointArrayOutput() ConfigVantagePointArrayOutput {
+	return o
+}
+
+func (o ConfigVantagePointArrayOutput) ToConfigVantagePointArrayOutputWithContext(ctx context.Context) ConfigVantagePointArrayOutput {
+	return o
+}
+
+func (o ConfigVantagePointArrayOutput) Index(i pulumi.IntInput) ConfigVantagePointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConfigVantagePoint {
+		return vs[0].([]ConfigVantagePoint)[vs[1].(int)]
+	}).(ConfigVantagePointOutput)
+}
+
 type DedicatedVantagePointDvpStackDetails struct {
 	// (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 	DvpStackId string `pulumi:"dvpStackId"`
@@ -5151,6 +5257,112 @@ func (o GetMonitorScriptParameterMonitorScriptParameterArrayOutput) Index(i pulu
 	}).(GetMonitorScriptParameterMonitorScriptParameterOutput)
 }
 
+type GetMonitorVantagePoint struct {
+	// Unique name that can be edited. The name should not contain any confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// Name of the vantage point.
+	Name string `pulumi:"name"`
+}
+
+// GetMonitorVantagePointInput is an input type that accepts GetMonitorVantagePointArgs and GetMonitorVantagePointOutput values.
+// You can construct a concrete instance of `GetMonitorVantagePointInput` via:
+//
+//	GetMonitorVantagePointArgs{...}
+type GetMonitorVantagePointInput interface {
+	pulumi.Input
+
+	ToGetMonitorVantagePointOutput() GetMonitorVantagePointOutput
+	ToGetMonitorVantagePointOutputWithContext(context.Context) GetMonitorVantagePointOutput
+}
+
+type GetMonitorVantagePointArgs struct {
+	// Unique name that can be edited. The name should not contain any confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Name of the vantage point.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetMonitorVantagePointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorVantagePoint)(nil)).Elem()
+}
+
+func (i GetMonitorVantagePointArgs) ToGetMonitorVantagePointOutput() GetMonitorVantagePointOutput {
+	return i.ToGetMonitorVantagePointOutputWithContext(context.Background())
+}
+
+func (i GetMonitorVantagePointArgs) ToGetMonitorVantagePointOutputWithContext(ctx context.Context) GetMonitorVantagePointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorVantagePointOutput)
+}
+
+// GetMonitorVantagePointArrayInput is an input type that accepts GetMonitorVantagePointArray and GetMonitorVantagePointArrayOutput values.
+// You can construct a concrete instance of `GetMonitorVantagePointArrayInput` via:
+//
+//	GetMonitorVantagePointArray{ GetMonitorVantagePointArgs{...} }
+type GetMonitorVantagePointArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorVantagePointArrayOutput() GetMonitorVantagePointArrayOutput
+	ToGetMonitorVantagePointArrayOutputWithContext(context.Context) GetMonitorVantagePointArrayOutput
+}
+
+type GetMonitorVantagePointArray []GetMonitorVantagePointInput
+
+func (GetMonitorVantagePointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorVantagePoint)(nil)).Elem()
+}
+
+func (i GetMonitorVantagePointArray) ToGetMonitorVantagePointArrayOutput() GetMonitorVantagePointArrayOutput {
+	return i.ToGetMonitorVantagePointArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorVantagePointArray) ToGetMonitorVantagePointArrayOutputWithContext(ctx context.Context) GetMonitorVantagePointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorVantagePointArrayOutput)
+}
+
+type GetMonitorVantagePointOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorVantagePointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorVantagePoint)(nil)).Elem()
+}
+
+func (o GetMonitorVantagePointOutput) ToGetMonitorVantagePointOutput() GetMonitorVantagePointOutput {
+	return o
+}
+
+func (o GetMonitorVantagePointOutput) ToGetMonitorVantagePointOutputWithContext(ctx context.Context) GetMonitorVantagePointOutput {
+	return o
+}
+
+// Unique name that can be edited. The name should not contain any confidential information.
+func (o GetMonitorVantagePointOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorVantagePoint) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Name of the vantage point.
+func (o GetMonitorVantagePointOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorVantagePoint) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetMonitorVantagePointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorVantagePointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorVantagePoint)(nil)).Elem()
+}
+
+func (o GetMonitorVantagePointArrayOutput) ToGetMonitorVantagePointArrayOutput() GetMonitorVantagePointArrayOutput {
+	return o
+}
+
+func (o GetMonitorVantagePointArrayOutput) ToGetMonitorVantagePointArrayOutputWithContext(ctx context.Context) GetMonitorVantagePointArrayOutput {
+	return o
+}
+
+func (o GetMonitorVantagePointArrayOutput) Index(i pulumi.IntInput) GetMonitorVantagePointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorVantagePoint {
+		return vs[0].([]GetMonitorVantagePoint)[vs[1].(int)]
+	}).(GetMonitorVantagePointOutput)
+}
+
 type GetMonitorsFilter struct {
 	// Name of the vantage point.
 	Name   string   `pulumi:"name"`
@@ -5402,7 +5614,7 @@ type GetMonitorsMonitorCollectionItem struct {
 	// Number of vantage points where monitor is running.
 	VantagePointCount int `pulumi:"vantagePointCount"`
 	// List of public and dedicated vantage points where the monitor is running.
-	VantagePoints []string `pulumi:"vantagePoints"`
+	VantagePoints []GetMonitorsMonitorCollectionItemVantagePoint `pulumi:"vantagePoints"`
 }
 
 // GetMonitorsMonitorCollectionItemInput is an input type that accepts GetMonitorsMonitorCollectionItemArgs and GetMonitorsMonitorCollectionItemOutput values.
@@ -5464,7 +5676,7 @@ type GetMonitorsMonitorCollectionItemArgs struct {
 	// Number of vantage points where monitor is running.
 	VantagePointCount pulumi.IntInput `pulumi:"vantagePointCount"`
 	// List of public and dedicated vantage points where the monitor is running.
-	VantagePoints pulumi.StringArrayInput `pulumi:"vantagePoints"`
+	VantagePoints GetMonitorsMonitorCollectionItemVantagePointArrayInput `pulumi:"vantagePoints"`
 }
 
 func (GetMonitorsMonitorCollectionItemArgs) ElementType() reflect.Type {
@@ -5642,8 +5854,10 @@ func (o GetMonitorsMonitorCollectionItemOutput) VantagePointCount() pulumi.IntOu
 }
 
 // List of public and dedicated vantage points where the monitor is running.
-func (o GetMonitorsMonitorCollectionItemOutput) VantagePoints() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) []string { return v.VantagePoints }).(pulumi.StringArrayOutput)
+func (o GetMonitorsMonitorCollectionItemOutput) VantagePoints() GetMonitorsMonitorCollectionItemVantagePointArrayOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) []GetMonitorsMonitorCollectionItemVantagePoint {
+		return v.VantagePoints
+	}).(GetMonitorsMonitorCollectionItemVantagePointArrayOutput)
 }
 
 type GetMonitorsMonitorCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -7194,6 +7408,112 @@ func (o GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArr
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter {
 		return vs[0].([]GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter)[vs[1].(int)]
 	}).(GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterOutput)
+}
+
+type GetMonitorsMonitorCollectionItemVantagePoint struct {
+	// A filter to return only the resources that match the entire display name.
+	DisplayName string `pulumi:"displayName"`
+	// Name of the vantage point.
+	Name string `pulumi:"name"`
+}
+
+// GetMonitorsMonitorCollectionItemVantagePointInput is an input type that accepts GetMonitorsMonitorCollectionItemVantagePointArgs and GetMonitorsMonitorCollectionItemVantagePointOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemVantagePointInput` via:
+//
+//	GetMonitorsMonitorCollectionItemVantagePointArgs{...}
+type GetMonitorsMonitorCollectionItemVantagePointInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemVantagePointOutput() GetMonitorsMonitorCollectionItemVantagePointOutput
+	ToGetMonitorsMonitorCollectionItemVantagePointOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemVantagePointOutput
+}
+
+type GetMonitorsMonitorCollectionItemVantagePointArgs struct {
+	// A filter to return only the resources that match the entire display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Name of the vantage point.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetMonitorsMonitorCollectionItemVantagePointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemVantagePoint)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemVantagePointArgs) ToGetMonitorsMonitorCollectionItemVantagePointOutput() GetMonitorsMonitorCollectionItemVantagePointOutput {
+	return i.ToGetMonitorsMonitorCollectionItemVantagePointOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemVantagePointArgs) ToGetMonitorsMonitorCollectionItemVantagePointOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemVantagePointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemVantagePointOutput)
+}
+
+// GetMonitorsMonitorCollectionItemVantagePointArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemVantagePointArray and GetMonitorsMonitorCollectionItemVantagePointArrayOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemVantagePointArrayInput` via:
+//
+//	GetMonitorsMonitorCollectionItemVantagePointArray{ GetMonitorsMonitorCollectionItemVantagePointArgs{...} }
+type GetMonitorsMonitorCollectionItemVantagePointArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemVantagePointArrayOutput() GetMonitorsMonitorCollectionItemVantagePointArrayOutput
+	ToGetMonitorsMonitorCollectionItemVantagePointArrayOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemVantagePointArrayOutput
+}
+
+type GetMonitorsMonitorCollectionItemVantagePointArray []GetMonitorsMonitorCollectionItemVantagePointInput
+
+func (GetMonitorsMonitorCollectionItemVantagePointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemVantagePoint)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemVantagePointArray) ToGetMonitorsMonitorCollectionItemVantagePointArrayOutput() GetMonitorsMonitorCollectionItemVantagePointArrayOutput {
+	return i.ToGetMonitorsMonitorCollectionItemVantagePointArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemVantagePointArray) ToGetMonitorsMonitorCollectionItemVantagePointArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemVantagePointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemVantagePointArrayOutput)
+}
+
+type GetMonitorsMonitorCollectionItemVantagePointOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemVantagePointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemVantagePoint)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemVantagePointOutput) ToGetMonitorsMonitorCollectionItemVantagePointOutput() GetMonitorsMonitorCollectionItemVantagePointOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemVantagePointOutput) ToGetMonitorsMonitorCollectionItemVantagePointOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemVantagePointOutput {
+	return o
+}
+
+// A filter to return only the resources that match the entire display name.
+func (o GetMonitorsMonitorCollectionItemVantagePointOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemVantagePoint) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Name of the vantage point.
+func (o GetMonitorsMonitorCollectionItemVantagePointOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemVantagePoint) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetMonitorsMonitorCollectionItemVantagePointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemVantagePointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemVantagePoint)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemVantagePointArrayOutput) ToGetMonitorsMonitorCollectionItemVantagePointArrayOutput() GetMonitorsMonitorCollectionItemVantagePointArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemVantagePointArrayOutput) ToGetMonitorsMonitorCollectionItemVantagePointArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemVantagePointArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemVantagePointArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemVantagePointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemVantagePoint {
+		return vs[0].([]GetMonitorsMonitorCollectionItemVantagePoint)[vs[1].(int)]
+	}).(GetMonitorsMonitorCollectionItemVantagePointOutput)
 }
 
 type GetResultResultDataSet struct {
@@ -9231,6 +9551,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigScriptParameterArrayInput)(nil)).Elem(), ConfigScriptParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigScriptParameterMonitorScriptParameterInput)(nil)).Elem(), ConfigScriptParameterMonitorScriptParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigScriptParameterMonitorScriptParameterArrayInput)(nil)).Elem(), ConfigScriptParameterMonitorScriptParameterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigVantagePointInput)(nil)).Elem(), ConfigVantagePointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigVantagePointArrayInput)(nil)).Elem(), ConfigVantagePointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedVantagePointDvpStackDetailsInput)(nil)).Elem(), DedicatedVantagePointDvpStackDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedVantagePointDvpStackDetailsPtrInput)(nil)).Elem(), DedicatedVantagePointDvpStackDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedVantagePointMonitorStatusCountMapInput)(nil)).Elem(), DedicatedVantagePointMonitorStatusCountMapArgs{})
@@ -9279,6 +9601,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorScriptParameterArrayInput)(nil)).Elem(), GetMonitorScriptParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorScriptParameterMonitorScriptParameterInput)(nil)).Elem(), GetMonitorScriptParameterMonitorScriptParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorScriptParameterMonitorScriptParameterArrayInput)(nil)).Elem(), GetMonitorScriptParameterMonitorScriptParameterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorVantagePointInput)(nil)).Elem(), GetMonitorVantagePointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorVantagePointArrayInput)(nil)).Elem(), GetMonitorVantagePointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsFilterInput)(nil)).Elem(), GetMonitorsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsFilterArrayInput)(nil)).Elem(), GetMonitorsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionInput)(nil)).Elem(), GetMonitorsMonitorCollectionArgs{})
@@ -9309,6 +9633,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemScriptParameterArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemScriptParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemVantagePointInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemVantagePointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemVantagePointArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemVantagePointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResultResultDataSetInput)(nil)).Elem(), GetResultResultDataSetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResultResultDataSetArrayInput)(nil)).Elem(), GetResultResultDataSetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScriptMonitorStatusCountMapInput)(nil)).Elem(), GetScriptMonitorStatusCountMapArgs{})
@@ -9365,6 +9691,8 @@ func init() {
 	pulumi.RegisterOutputType(ConfigScriptParameterArrayOutput{})
 	pulumi.RegisterOutputType(ConfigScriptParameterMonitorScriptParameterOutput{})
 	pulumi.RegisterOutputType(ConfigScriptParameterMonitorScriptParameterArrayOutput{})
+	pulumi.RegisterOutputType(ConfigVantagePointOutput{})
+	pulumi.RegisterOutputType(ConfigVantagePointArrayOutput{})
 	pulumi.RegisterOutputType(DedicatedVantagePointDvpStackDetailsOutput{})
 	pulumi.RegisterOutputType(DedicatedVantagePointDvpStackDetailsPtrOutput{})
 	pulumi.RegisterOutputType(DedicatedVantagePointMonitorStatusCountMapOutput{})
@@ -9413,6 +9741,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMonitorScriptParameterArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorScriptParameterMonitorScriptParameterOutput{})
 	pulumi.RegisterOutputType(GetMonitorScriptParameterMonitorScriptParameterArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorVantagePointOutput{})
+	pulumi.RegisterOutputType(GetMonitorVantagePointArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorsFilterOutput{})
 	pulumi.RegisterOutputType(GetMonitorsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionOutput{})
@@ -9443,6 +9773,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemScriptParameterArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemVantagePointOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemVantagePointArrayOutput{})
 	pulumi.RegisterOutputType(GetResultResultDataSetOutput{})
 	pulumi.RegisterOutputType(GetResultResultDataSetArrayOutput{})
 	pulumi.RegisterOutputType(GetScriptMonitorStatusCountMapOutput{})

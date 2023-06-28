@@ -108,7 +108,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// List of public and dedicated vantage points where the monitor is running.
         /// </summary>
-        public readonly ImmutableArray<string> VantagePoints;
+        public readonly ImmutableArray<Outputs.GetMonitorsMonitorCollectionItemVantagePointResult> VantagePoints;
 
         [OutputConstructor]
         private GetMonitorsMonitorCollectionItemResult(
@@ -158,7 +158,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
 
             int vantagePointCount,
 
-            ImmutableArray<string> vantagePoints)
+            ImmutableArray<Outputs.GetMonitorsMonitorCollectionItemVantagePointResult> vantagePoints)
         {
             ApmDomainId = apmDomainId;
             AvailabilityConfigurations = availabilityConfigurations;

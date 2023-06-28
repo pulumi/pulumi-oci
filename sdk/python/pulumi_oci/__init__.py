@@ -1574,6 +1574,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataFlow/sqlEndpoint",
+  "fqn": "pulumi_oci.dataflow",
+  "classes": {
+   "oci:DataFlow/sqlEndpoint:SqlEndpoint": "SqlEndpoint"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataIntegration/workspace",
   "fqn": "pulumi_oci.dataintegration",
   "classes": {
@@ -2458,6 +2466,14 @@ _utilities.register(
   "fqn": "pulumi_oci.databasemanagement",
   "classes": {
    "oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery": "ExternalDbSystemDiscovery"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/externalDbSystemStackMonitoringsManagement",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalDbSystemStackMonitoringsManagement:ExternalDbSystemStackMonitoringsManagement": "ExternalDbSystemStackMonitoringsManagement"
   }
  },
  {

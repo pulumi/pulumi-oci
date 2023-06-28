@@ -76,6 +76,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly bool IsCdb;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        /// </summary>
+        public readonly string KeyStoreId;
+        /// <summary>
+        /// The wallet name for Oracle Key Vault.
+        /// </summary>
+        public readonly string KeyStoreWalletName;
+        /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         public readonly string KmsKeyId;
@@ -171,6 +179,10 @@ namespace Pulumi.Oci.Database.Outputs
 
             bool isCdb,
 
+            string keyStoreId,
+
+            string keyStoreWalletName,
+
             string kmsKeyId,
 
             bool kmsKeyMigration,
@@ -222,6 +234,8 @@ namespace Pulumi.Oci.Database.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IsCdb = isCdb;
+            KeyStoreId = keyStoreId;
+            KeyStoreWalletName = keyStoreWalletName;
             KmsKeyId = kmsKeyId;
             KmsKeyMigration = kmsKeyMigration;
             KmsKeyRotation = kmsKeyRotation;

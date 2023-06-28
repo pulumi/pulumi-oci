@@ -200,7 +200,7 @@ namespace Pulumi.Oci.Marketplace
         /// </summary>
         public readonly ImmutableArray<Outputs.GetListingPackagePricingResult> Pricings;
         /// <summary>
-        /// The regions where you can deploy this listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
+        /// The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
         /// </summary>
         public readonly ImmutableArray<Outputs.GetListingPackageRegionResult> Regions;
         /// <summary>

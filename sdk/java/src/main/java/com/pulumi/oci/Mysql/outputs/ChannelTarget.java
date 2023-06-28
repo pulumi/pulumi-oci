@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Mysql.outputs.ChannelTargetFilter;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -29,10 +30,20 @@ public final class ChannelTarget {
      */
     private String dbSystemId;
     /**
+     * @return (Updatable) Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+     * 
+     */
+    private @Nullable Integer delayInSeconds;
+    /**
      * @return (Updatable) Replication filter rules to be applied at the DB System Channel target.
      * 
      */
     private @Nullable List<ChannelTargetFilter> filters;
+    /**
+     * @return (Updatable) Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key. The default value is set to ALLOW.
+     * 
+     */
+    private @Nullable String tablesWithoutPrimaryKeyHandling;
     /**
      * @return (Updatable) The specific target identifier.
      * 
@@ -65,11 +76,25 @@ public final class ChannelTarget {
         return this.dbSystemId;
     }
     /**
+     * @return (Updatable) Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+     * 
+     */
+    public Optional<Integer> delayInSeconds() {
+        return Optional.ofNullable(this.delayInSeconds);
+    }
+    /**
      * @return (Updatable) Replication filter rules to be applied at the DB System Channel target.
      * 
      */
     public List<ChannelTargetFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
+    }
+    /**
+     * @return (Updatable) Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key. The default value is set to ALLOW.
+     * 
+     */
+    public Optional<String> tablesWithoutPrimaryKeyHandling() {
+        return Optional.ofNullable(this.tablesWithoutPrimaryKeyHandling);
     }
     /**
      * @return (Updatable) The specific target identifier.
@@ -94,7 +119,9 @@ public final class ChannelTarget {
         private @Nullable String applierUsername;
         private @Nullable String channelName;
         private String dbSystemId;
+        private @Nullable Integer delayInSeconds;
         private @Nullable List<ChannelTargetFilter> filters;
+        private @Nullable String tablesWithoutPrimaryKeyHandling;
         private String targetType;
         public Builder() {}
         public Builder(ChannelTarget defaults) {
@@ -102,7 +129,9 @@ public final class ChannelTarget {
     	      this.applierUsername = defaults.applierUsername;
     	      this.channelName = defaults.channelName;
     	      this.dbSystemId = defaults.dbSystemId;
+    	      this.delayInSeconds = defaults.delayInSeconds;
     	      this.filters = defaults.filters;
+    	      this.tablesWithoutPrimaryKeyHandling = defaults.tablesWithoutPrimaryKeyHandling;
     	      this.targetType = defaults.targetType;
         }
 
@@ -122,12 +151,22 @@ public final class ChannelTarget {
             return this;
         }
         @CustomType.Setter
+        public Builder delayInSeconds(@Nullable Integer delayInSeconds) {
+            this.delayInSeconds = delayInSeconds;
+            return this;
+        }
+        @CustomType.Setter
         public Builder filters(@Nullable List<ChannelTargetFilter> filters) {
             this.filters = filters;
             return this;
         }
         public Builder filters(ChannelTargetFilter... filters) {
             return filters(List.of(filters));
+        }
+        @CustomType.Setter
+        public Builder tablesWithoutPrimaryKeyHandling(@Nullable String tablesWithoutPrimaryKeyHandling) {
+            this.tablesWithoutPrimaryKeyHandling = tablesWithoutPrimaryKeyHandling;
+            return this;
         }
         @CustomType.Setter
         public Builder targetType(String targetType) {
@@ -139,7 +178,9 @@ public final class ChannelTarget {
             o.applierUsername = applierUsername;
             o.channelName = channelName;
             o.dbSystemId = dbSystemId;
+            o.delayInSeconds = delayInSeconds;
             o.filters = filters;
+            o.tablesWithoutPrimaryKeyHandling = tablesWithoutPrimaryKeyHandling;
             o.targetType = targetType;
             return o;
         }

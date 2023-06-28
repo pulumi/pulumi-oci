@@ -46,6 +46,7 @@ __all__ = [
     'ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo',
     'ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentials',
     'ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionString',
+    'ExternalDbSystemStackMonitoringConfig',
     'ExternalExadataInfrastructureDatabaseSystem',
     'ExternalExadataInfrastructureStorageGrid',
     'ExternalExadataStorageConnectorCredentialInfo',
@@ -170,9 +171,11 @@ __all__ = [
     'GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoResult',
     'GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialResult',
     'GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringResult',
+    'GetExternalDbSystemStackMonitoringConfigResult',
     'GetExternalDbSystemsExternalDbSystemCollectionResult',
     'GetExternalDbSystemsExternalDbSystemCollectionItemResult',
     'GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfigResult',
+    'GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigResult',
     'GetExternalDbSystemsFilterResult',
     'GetExternalExadataInfrastructureDatabaseSystemResult',
     'GetExternalExadataInfrastructureStorageGridResult',
@@ -223,6 +226,9 @@ __all__ = [
     'GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionResult',
     'GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemResult',
     'GetManagedDatabaseAttentionLogCountsFilterResult',
+    'GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionResult',
+    'GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemResult',
+    'GetManagedDatabaseCursorCacheStatementsFilterResult',
     'GetManagedDatabaseGroupManagedDatabaseResult',
     'GetManagedDatabaseGroupsFilterResult',
     'GetManagedDatabaseGroupsManagedDatabaseGroupCollectionResult',
@@ -262,6 +268,14 @@ __all__ = [
     'GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemResult',
     'GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseResult',
     'GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskResult',
+    'GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterResult',
+    'GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterResult',
+    'GetManagedDatabaseSqlPlanBaselineJobsFilterResult',
+    'GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionResult',
+    'GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemResult',
+    'GetManagedDatabaseSqlPlanBaselinesFilterResult',
+    'GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionResult',
+    'GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemResult',
     'GetManagedDatabaseSqlTuningAdvisorTaskItemResult',
     'GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedResult',
     'GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginalResult',
@@ -3760,6 +3774,61 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
         The service name of the ASM instance.
         """
         return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class ExternalDbSystemStackMonitoringConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isEnabled":
+            suggest = "is_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExternalDbSystemStackMonitoringConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExternalDbSystemStackMonitoringConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExternalDbSystemStackMonitoringConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_enabled: bool,
+                 metadata: Optional[str] = None):
+        """
+        :param bool is_enabled: The status of the associated service.
+        :param str metadata: The associated service-specific inputs in JSON string format, which Database Management can identify.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        The status of the associated service.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter
+    def metadata(self) -> Optional[str]:
+        """
+        The associated service-specific inputs in JSON string format, which Database Management can identify.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "metadata")
 
 
 @pulumi.output_type
@@ -12273,6 +12342,35 @@ class GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConn
 
 
 @pulumi.output_type
+class GetExternalDbSystemStackMonitoringConfigResult(dict):
+    def __init__(__self__, *,
+                 is_enabled: bool,
+                 metadata: str):
+        """
+        :param bool is_enabled: The status of the associated service.
+        :param str metadata: The associated service-specific inputs in JSON string format, which Database Management can identify.
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "metadata", metadata)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        The status of the associated service.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter
+    def metadata(self) -> str:
+        """
+        The associated service-specific inputs in JSON string format, which Database Management can identify.
+        """
+        return pulumi.get(self, "metadata")
+
+
+@pulumi.output_type
 class GetExternalDbSystemsExternalDbSystemCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetExternalDbSystemsExternalDbSystemCollectionItemResult']):
@@ -12296,6 +12394,7 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemResult(dict):
                  id: str,
                  is_cluster: bool,
                  lifecycle_details: str,
+                 stack_monitoring_configs: Sequence['outputs.GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigResult'],
                  state: str,
                  time_created: str,
                  time_updated: str):
@@ -12309,6 +12408,7 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemResult(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
         :param bool is_cluster: Indicates whether the DB system is a cluster DB system or not.
         :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param Sequence['GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArgs'] stack_monitoring_configs: The configuration details of Stack Monitoring for an external DB system.
         :param str state: The current lifecycle state of the external DB system resource.
         :param str time_created: The date and time the external DB system was created.
         :param str time_updated: The date and time the external DB system was last updated.
@@ -12322,6 +12422,7 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_cluster", is_cluster)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "stack_monitoring_configs", stack_monitoring_configs)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
@@ -12399,6 +12500,14 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="stackMonitoringConfigs")
+    def stack_monitoring_configs(self) -> Sequence['outputs.GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigResult']:
+        """
+        The configuration details of Stack Monitoring for an external DB system.
+        """
+        return pulumi.get(self, "stack_monitoring_configs")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -12439,6 +12548,35 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfig
         The Oracle license model that applies to the external database.
         """
         return pulumi.get(self, "license_model")
+
+
+@pulumi.output_type
+class GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigResult(dict):
+    def __init__(__self__, *,
+                 is_enabled: bool,
+                 metadata: str):
+        """
+        :param bool is_enabled: The status of the associated service.
+        :param str metadata: The associated service-specific inputs in JSON string format, which Database Management can identify.
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "metadata", metadata)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        The status of the associated service.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter
+    def metadata(self) -> str:
+        """
+        The associated service-specific inputs in JSON string format, which Database Management can identify.
+        """
+        return pulumi.get(self, "metadata")
 
 
 @pulumi.output_type
@@ -15955,6 +16093,91 @@ class GetManagedDatabaseAttentionLogCountsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemResult']):
+        """
+        :param Sequence['GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArgs'] items: A list of SQL statements in the cursor cache.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemResult']:
+        """
+        A list of SQL statements in the cursor cache.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 schema: str,
+                 sql_id: str,
+                 sql_text: str):
+        """
+        :param str schema: The name of the parsing schema.
+        :param str sql_id: The SQL statement identifier. Identifies a SQL statement in the cursor cache.
+        :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
+        """
+        pulumi.set(__self__, "schema", schema)
+        pulumi.set(__self__, "sql_id", sql_id)
+        pulumi.set(__self__, "sql_text", sql_text)
+
+    @property
+    @pulumi.getter
+    def schema(self) -> str:
+        """
+        The name of the parsing schema.
+        """
+        return pulumi.get(self, "schema")
+
+    @property
+    @pulumi.getter(name="sqlId")
+    def sql_id(self) -> str:
+        """
+        The SQL statement identifier. Identifies a SQL statement in the cursor cache.
+        """
+        return pulumi.get(self, "sql_id")
+
+    @property
+    @pulumi.getter(name="sqlText")
+    def sql_text(self) -> str:
+        """
+        A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
+        """
+        return pulumi.get(self, "sql_text")
+
+
+@pulumi.output_type
+class GetManagedDatabaseCursorCacheStatementsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetManagedDatabaseGroupManagedDatabaseResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
@@ -17878,6 +18101,462 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisti
         The start time of the Optimizer Statistics Collection task.
         """
         return pulumi.get(self, "time_start")
+
+
+@pulumi.output_type
+class GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterResult(dict):
+    def __init__(__self__, *,
+                 modified_by: str,
+                 name: str,
+                 time_last_modified: str,
+                 values_to_excludes: Sequence[str],
+                 values_to_includes: Sequence[str]):
+        """
+        :param str modified_by: The database user who last updated the filter value.
+        :param str name: The name of the automatic capture filter.
+               * AUTO_CAPTURE_SQL_TEXT: Search pattern to apply to SQL text.
+               * AUTO_CAPTURE_PARSING_SCHEMA_NAME: Parsing schema to include or exclude for SQL plan management auto capture.
+               * AUTO_CAPTURE_MODULE: Module to include or exclude for SQL plan management auto capture.
+               * AUTO_CAPTURE_ACTION: Action to include or exclude for SQL plan management automatic capture.
+        :param str time_last_modified: The time the filter value was last updated.
+        :param Sequence[str] values_to_excludes: A list of filter values to exclude.
+        :param Sequence[str] values_to_includes: A list of filter values to include.
+        """
+        pulumi.set(__self__, "modified_by", modified_by)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "time_last_modified", time_last_modified)
+        pulumi.set(__self__, "values_to_excludes", values_to_excludes)
+        pulumi.set(__self__, "values_to_includes", values_to_includes)
+
+    @property
+    @pulumi.getter(name="modifiedBy")
+    def modified_by(self) -> str:
+        """
+        The database user who last updated the filter value.
+        """
+        return pulumi.get(self, "modified_by")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the automatic capture filter.
+        * AUTO_CAPTURE_SQL_TEXT: Search pattern to apply to SQL text.
+        * AUTO_CAPTURE_PARSING_SCHEMA_NAME: Parsing schema to include or exclude for SQL plan management auto capture.
+        * AUTO_CAPTURE_MODULE: Module to include or exclude for SQL plan management auto capture.
+        * AUTO_CAPTURE_ACTION: Action to include or exclude for SQL plan management automatic capture.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="timeLastModified")
+    def time_last_modified(self) -> str:
+        """
+        The time the filter value was last updated.
+        """
+        return pulumi.get(self, "time_last_modified")
+
+    @property
+    @pulumi.getter(name="valuesToExcludes")
+    def values_to_excludes(self) -> Sequence[str]:
+        """
+        A list of filter values to exclude.
+        """
+        return pulumi.get(self, "values_to_excludes")
+
+    @property
+    @pulumi.getter(name="valuesToIncludes")
+    def values_to_includes(self) -> Sequence[str]:
+        """
+        A list of filter values to include.
+        """
+        return pulumi.get(self, "values_to_includes")
+
+
+@pulumi.output_type
+class GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterResult(dict):
+    def __init__(__self__, *,
+                 allowed_time_limit: int,
+                 alternate_plan_baselines: Sequence[str],
+                 alternate_plan_limit: int,
+                 alternate_plan_sources: Sequence[str],
+                 are_plans_auto_accepted: bool):
+        """
+        :param int allowed_time_limit: The global time limit in seconds. This is the total time allowed for the task.
+        :param Sequence[str] alternate_plan_baselines: Determines which alternative plans should be loaded.
+        :param int alternate_plan_limit: Specifies the maximum number of plans to load in total (that is, not the limit for each SQL statement). A value of zero indicates `UNLIMITED` number of plans.
+        :param Sequence[str] alternate_plan_sources: Determines which sources to search for additional plans.
+        :param bool are_plans_auto_accepted: Specifies whether to accept recommended plans automatically.
+        """
+        pulumi.set(__self__, "allowed_time_limit", allowed_time_limit)
+        pulumi.set(__self__, "alternate_plan_baselines", alternate_plan_baselines)
+        pulumi.set(__self__, "alternate_plan_limit", alternate_plan_limit)
+        pulumi.set(__self__, "alternate_plan_sources", alternate_plan_sources)
+        pulumi.set(__self__, "are_plans_auto_accepted", are_plans_auto_accepted)
+
+    @property
+    @pulumi.getter(name="allowedTimeLimit")
+    def allowed_time_limit(self) -> int:
+        """
+        The global time limit in seconds. This is the total time allowed for the task.
+        """
+        return pulumi.get(self, "allowed_time_limit")
+
+    @property
+    @pulumi.getter(name="alternatePlanBaselines")
+    def alternate_plan_baselines(self) -> Sequence[str]:
+        """
+        Determines which alternative plans should be loaded.
+        """
+        return pulumi.get(self, "alternate_plan_baselines")
+
+    @property
+    @pulumi.getter(name="alternatePlanLimit")
+    def alternate_plan_limit(self) -> int:
+        """
+        Specifies the maximum number of plans to load in total (that is, not the limit for each SQL statement). A value of zero indicates `UNLIMITED` number of plans.
+        """
+        return pulumi.get(self, "alternate_plan_limit")
+
+    @property
+    @pulumi.getter(name="alternatePlanSources")
+    def alternate_plan_sources(self) -> Sequence[str]:
+        """
+        Determines which sources to search for additional plans.
+        """
+        return pulumi.get(self, "alternate_plan_sources")
+
+    @property
+    @pulumi.getter(name="arePlansAutoAccepted")
+    def are_plans_auto_accepted(self) -> bool:
+        """
+        Specifies whether to accept recommended plans automatically.
+        """
+        return pulumi.get(self, "are_plans_auto_accepted")
+
+
+@pulumi.output_type
+class GetManagedDatabaseSqlPlanBaselineJobsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to return the SQL plan baseline jobs that match the name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return the SQL plan baseline jobs that match the name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemResult']):
+        """
+        :param Sequence['GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArgs'] items: A list of SQL plan baseline jobs.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemResult']:
+        """
+        A list of SQL plan baseline jobs.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 status: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str name: A filter to return the SQL plan baseline jobs that match the name.
+        :param str status: The status of the job.
+        :param str time_created: The date and time the job was created.
+        :param str type: The type of the job.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return the SQL plan baseline jobs that match the name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the job.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the job was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the job.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetManagedDatabaseSqlPlanBaselinesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 accepted: str,
+                 action: str,
+                 adaptive: str,
+                 auto_purge: str,
+                 enabled: str,
+                 execution_plan: str,
+                 fixed: str,
+                 module: str,
+                 origin: str,
+                 plan_name: str,
+                 reproduced: str,
+                 sql_handle: str,
+                 sql_text: str,
+                 time_created: str,
+                 time_last_executed: str,
+                 time_last_modified: str):
+        """
+        :param str accepted: Indicates whether the plan baseline is accepted (`YES`) or not (`NO`).
+        :param str action: The application action.
+        :param str adaptive: Indicates whether a plan that is automatically captured by SQL plan management is marked adaptive or not.
+        :param str auto_purge: Indicates whether the plan baseline is auto-purged (`YES`) or not (`NO`).
+        :param str enabled: Indicates whether the plan baseline is enabled (`YES`) or disabled (`NO`).
+        :param str execution_plan: The execution plan for the SQL statement.
+        :param str fixed: Indicates whether the plan baseline is fixed (`YES`) or not (`NO`).
+        :param str module: The application module name.
+        :param str origin: A filter to return all the SQL plan baselines that match the origin.
+        :param str plan_name: A filter to return only SQL plan baselines that match the plan name.
+        :param str reproduced: Indicates whether the optimizer was able to reproduce the plan (`YES`) or not (`NO`). The value is set to `YES` when a plan is initially added to the plan baseline.
+        :param str sql_handle: A filter to return all the SQL plan baselines for the specified SQL handle.
+        :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
+        :param str time_created: The date and time when the plan baseline was created.
+        :param str time_last_executed: The date and time when the plan baseline was last executed.
+        :param str time_last_modified: The date and time when the plan baseline was last modified.
+        """
+        pulumi.set(__self__, "accepted", accepted)
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "adaptive", adaptive)
+        pulumi.set(__self__, "auto_purge", auto_purge)
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "execution_plan", execution_plan)
+        pulumi.set(__self__, "fixed", fixed)
+        pulumi.set(__self__, "module", module)
+        pulumi.set(__self__, "origin", origin)
+        pulumi.set(__self__, "plan_name", plan_name)
+        pulumi.set(__self__, "reproduced", reproduced)
+        pulumi.set(__self__, "sql_handle", sql_handle)
+        pulumi.set(__self__, "sql_text", sql_text)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_executed", time_last_executed)
+        pulumi.set(__self__, "time_last_modified", time_last_modified)
+
+    @property
+    @pulumi.getter
+    def accepted(self) -> str:
+        """
+        Indicates whether the plan baseline is accepted (`YES`) or not (`NO`).
+        """
+        return pulumi.get(self, "accepted")
+
+    @property
+    @pulumi.getter
+    def action(self) -> str:
+        """
+        The application action.
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def adaptive(self) -> str:
+        """
+        Indicates whether a plan that is automatically captured by SQL plan management is marked adaptive or not.
+        """
+        return pulumi.get(self, "adaptive")
+
+    @property
+    @pulumi.getter(name="autoPurge")
+    def auto_purge(self) -> str:
+        """
+        Indicates whether the plan baseline is auto-purged (`YES`) or not (`NO`).
+        """
+        return pulumi.get(self, "auto_purge")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> str:
+        """
+        Indicates whether the plan baseline is enabled (`YES`) or disabled (`NO`).
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="executionPlan")
+    def execution_plan(self) -> str:
+        """
+        The execution plan for the SQL statement.
+        """
+        return pulumi.get(self, "execution_plan")
+
+    @property
+    @pulumi.getter
+    def fixed(self) -> str:
+        """
+        Indicates whether the plan baseline is fixed (`YES`) or not (`NO`).
+        """
+        return pulumi.get(self, "fixed")
+
+    @property
+    @pulumi.getter
+    def module(self) -> str:
+        """
+        The application module name.
+        """
+        return pulumi.get(self, "module")
+
+    @property
+    @pulumi.getter
+    def origin(self) -> str:
+        """
+        A filter to return all the SQL plan baselines that match the origin.
+        """
+        return pulumi.get(self, "origin")
+
+    @property
+    @pulumi.getter(name="planName")
+    def plan_name(self) -> str:
+        """
+        A filter to return only SQL plan baselines that match the plan name.
+        """
+        return pulumi.get(self, "plan_name")
+
+    @property
+    @pulumi.getter
+    def reproduced(self) -> str:
+        """
+        Indicates whether the optimizer was able to reproduce the plan (`YES`) or not (`NO`). The value is set to `YES` when a plan is initially added to the plan baseline.
+        """
+        return pulumi.get(self, "reproduced")
+
+    @property
+    @pulumi.getter(name="sqlHandle")
+    def sql_handle(self) -> str:
+        """
+        A filter to return all the SQL plan baselines for the specified SQL handle.
+        """
+        return pulumi.get(self, "sql_handle")
+
+    @property
+    @pulumi.getter(name="sqlText")
+    def sql_text(self) -> str:
+        """
+        A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
+        """
+        return pulumi.get(self, "sql_text")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time when the plan baseline was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLastExecuted")
+    def time_last_executed(self) -> str:
+        """
+        The date and time when the plan baseline was last executed.
+        """
+        return pulumi.get(self, "time_last_executed")
+
+    @property
+    @pulumi.getter(name="timeLastModified")
+    def time_last_modified(self) -> str:
+        """
+        The date and time when the plan baseline was last modified.
+        """
+        return pulumi.get(self, "time_last_modified")
 
 
 @pulumi.output_type

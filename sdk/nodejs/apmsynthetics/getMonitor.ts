@@ -143,7 +143,7 @@ export interface GetMonitorResult {
     /**
      * List of public and dedicated vantage points where the monitor is running.
      */
-    readonly vantagePoints: string[];
+    readonly vantagePoints: outputs.ApmSynthetics.GetMonitorVantagePoint[];
 }
 /**
  * This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.

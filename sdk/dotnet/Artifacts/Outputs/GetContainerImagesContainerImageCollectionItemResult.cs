@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Artifacts.Outputs
         /// </summary>
         public readonly string CreatedBy;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
         /// The sha256 digest of the image layer.
         /// </summary>
         public readonly string Digest;
@@ -29,6 +33,10 @@ namespace Pulumi.Oci.Artifacts.Outputs
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
         /// </summary>
@@ -62,6 +70,10 @@ namespace Pulumi.Oci.Artifacts.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> SystemTags;
+        /// <summary>
         /// The creation time of the version.
         /// </summary>
         public readonly string TimeCreated;
@@ -84,9 +96,13 @@ namespace Pulumi.Oci.Artifacts.Outputs
 
             string createdBy,
 
+            ImmutableDictionary<string, object> definedTags,
+
             string digest,
 
             string displayName,
+
+            ImmutableDictionary<string, object> freeformTags,
 
             string id,
 
@@ -104,6 +120,8 @@ namespace Pulumi.Oci.Artifacts.Outputs
 
             string state,
 
+            ImmutableDictionary<string, object> systemTags,
+
             string timeCreated,
 
             string timeLastPulled,
@@ -114,8 +132,10 @@ namespace Pulumi.Oci.Artifacts.Outputs
         {
             CompartmentId = compartmentId;
             CreatedBy = createdBy;
+            DefinedTags = definedTags;
             Digest = digest;
             DisplayName = displayName;
+            FreeformTags = freeformTags;
             Id = id;
             Layers = layers;
             LayersSizeInBytes = layersSizeInBytes;
@@ -124,6 +144,7 @@ namespace Pulumi.Oci.Artifacts.Outputs
             RepositoryId = repositoryId;
             RepositoryName = repositoryName;
             State = state;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeLastPulled = timeLastPulled;
             Version = version;

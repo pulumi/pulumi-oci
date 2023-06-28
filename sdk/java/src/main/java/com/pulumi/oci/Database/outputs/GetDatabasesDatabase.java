@@ -96,6 +96,16 @@ public final class GetDatabasesDatabase {
      */
     private Boolean isCdb;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * 
+     */
+    private String keyStoreId;
+    /**
+     * @return The wallet name for Oracle Key Vault.
+     * 
+     */
+    private String keyStoreWalletName;
+    /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -282,6 +292,20 @@ public final class GetDatabasesDatabase {
         return this.isCdb;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * 
+     */
+    public String keyStoreId() {
+        return this.keyStoreId;
+    }
+    /**
+     * @return The wallet name for Oracle Key Vault.
+     * 
+     */
+    public String keyStoreWalletName() {
+        return this.keyStoreWalletName;
+    }
+    /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -415,6 +439,8 @@ public final class GetDatabasesDatabase {
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isCdb;
+        private String keyStoreId;
+        private String keyStoreWalletName;
         private String kmsKeyId;
         private Boolean kmsKeyMigration;
         private Integer kmsKeyRotation;
@@ -452,6 +478,8 @@ public final class GetDatabasesDatabase {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isCdb = defaults.isCdb;
+    	      this.keyStoreId = defaults.keyStoreId;
+    	      this.keyStoreWalletName = defaults.keyStoreWalletName;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyMigration = defaults.kmsKeyMigration;
     	      this.kmsKeyRotation = defaults.kmsKeyRotation;
@@ -569,6 +597,16 @@ public final class GetDatabasesDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder keyStoreId(String keyStoreId) {
+            this.keyStoreId = Objects.requireNonNull(keyStoreId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder keyStoreWalletName(String keyStoreWalletName) {
+            this.keyStoreWalletName = Objects.requireNonNull(keyStoreWalletName);
+            return this;
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
@@ -672,6 +710,8 @@ public final class GetDatabasesDatabase {
             o.freeformTags = freeformTags;
             o.id = id;
             o.isCdb = isCdb;
+            o.keyStoreId = keyStoreId;
+            o.keyStoreWalletName = keyStoreWalletName;
             o.kmsKeyId = kmsKeyId;
             o.kmsKeyMigration = kmsKeyMigration;
             o.kmsKeyRotation = kmsKeyRotation;

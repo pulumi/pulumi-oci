@@ -176,8 +176,10 @@ class GetContainerImagesContainerImageCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  created_by: str,
+                 defined_tags: Mapping[str, Any],
                  digest: str,
                  display_name: str,
+                 freeform_tags: Mapping[str, Any],
                  id: str,
                  layers: Sequence['outputs.GetContainerImagesContainerImageCollectionItemLayerResult'],
                  layers_size_in_bytes: str,
@@ -186,6 +188,7 @@ class GetContainerImagesContainerImageCollectionItemResult(dict):
                  repository_id: str,
                  repository_name: str,
                  state: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_last_pulled: str,
                  version: str,
@@ -193,8 +196,10 @@ class GetContainerImagesContainerImageCollectionItemResult(dict):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str created_by: The OCID of the user or principal that pushed the version.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str digest: The sha256 digest of the image layer.
         :param str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
         :param Sequence['GetContainerImagesContainerImageCollectionItemLayerArgs'] layers: Layers of which the image is composed, ordered by the layer digest.
         :param str layers_size_in_bytes: The total size of the container image layers in bytes.
@@ -203,6 +208,7 @@ class GetContainerImagesContainerImageCollectionItemResult(dict):
         :param str repository_id: A filter to return container images only for the specified container repository OCID.
         :param str repository_name: A filter to return container images or container image signatures that match the repository name.  Example: `foo` or `foo*`
         :param str state: A filter to return only resources that match the given lifecycle state name exactly.
+        :param Mapping[str, Any] system_tags: The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The creation time of the version.
         :param str time_last_pulled: An RFC 3339 timestamp indicating when the image was last pulled.
         :param str version: A filter to return container images that match the version.  Example: `foo` or `foo*`
@@ -210,8 +216,10 @@ class GetContainerImagesContainerImageCollectionItemResult(dict):
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "digest", digest)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "layers", layers)
         pulumi.set(__self__, "layers_size_in_bytes", layers_size_in_bytes)
@@ -220,6 +228,7 @@ class GetContainerImagesContainerImageCollectionItemResult(dict):
         pulumi.set(__self__, "repository_id", repository_id)
         pulumi.set(__self__, "repository_name", repository_name)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_last_pulled", time_last_pulled)
         pulumi.set(__self__, "version", version)
@@ -242,6 +251,14 @@ class GetContainerImagesContainerImageCollectionItemResult(dict):
         return pulumi.get(self, "created_by")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter
     def digest(self) -> str:
         """
@@ -256,6 +273,14 @@ class GetContainerImagesContainerImageCollectionItemResult(dict):
         A filter to return only resources that match the given display name exactly.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -320,6 +345,14 @@ class GetContainerImagesContainerImageCollectionItemResult(dict):
         A filter to return only resources that match the given lifecycle state name exactly.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -528,45 +561,57 @@ class GetContainerRepositoriesContainerRepositoryCollectionItemResult(dict):
                  billable_size_in_gbs: str,
                  compartment_id: str,
                  created_by: str,
+                 defined_tags: Mapping[str, Any],
                  display_name: str,
+                 freeform_tags: Mapping[str, Any],
                  id: str,
                  image_count: int,
                  is_immutable: bool,
                  is_public: bool,
                  layer_count: int,
                  layers_size_in_bytes: str,
+                 namespace: str,
                  readmes: Sequence['outputs.GetContainerRepositoriesContainerRepositoryCollectionItemReadmeResult'],
                  state: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_last_pushed: str):
         """
         :param str billable_size_in_gbs: Total storage size in GBs that will be charged.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str created_by: The id of the user or principal that created the resource.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
         :param int image_count: Total number of images.
         :param bool is_immutable: Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
         :param bool is_public: A filter to return resources that match the isPublic value.
         :param int layer_count: Total number of layers.
         :param str layers_size_in_bytes: Total storage in bytes consumed by layers.
+        :param str namespace: The tenancy namespace used in the container repository path.
         :param Sequence['GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArgs'] readmes: Container repository readme.
         :param str state: A filter to return only resources that match the given lifecycle state name exactly.
+        :param Mapping[str, Any] system_tags: The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: An RFC 3339 timestamp indicating when the repository was created.
         :param str time_last_pushed: An RFC 3339 timestamp indicating when an image was last pushed to the repository.
         """
         pulumi.set(__self__, "billable_size_in_gbs", billable_size_in_gbs)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "image_count", image_count)
         pulumi.set(__self__, "is_immutable", is_immutable)
         pulumi.set(__self__, "is_public", is_public)
         pulumi.set(__self__, "layer_count", layer_count)
         pulumi.set(__self__, "layers_size_in_bytes", layers_size_in_bytes)
+        pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "readmes", readmes)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_last_pushed", time_last_pushed)
 
@@ -595,12 +640,28 @@ class GetContainerRepositoriesContainerRepositoryCollectionItemResult(dict):
         return pulumi.get(self, "created_by")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
         A filter to return only resources that match the given display name exactly.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -652,6 +713,14 @@ class GetContainerRepositoriesContainerRepositoryCollectionItemResult(dict):
 
     @property
     @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The tenancy namespace used in the container repository path.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
     def readmes(self) -> Sequence['outputs.GetContainerRepositoriesContainerRepositoryCollectionItemReadmeResult']:
         """
         Container repository readme.
@@ -665,6 +734,14 @@ class GetContainerRepositoriesContainerRepositoryCollectionItemResult(dict):
         A filter to return only resources that match the given lifecycle state name exactly.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -792,7 +869,9 @@ class GetContainerSignaturesContainerImageSignatureCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  created_by: str,
+                 defined_tags: Mapping[str, Any],
                  display_name: str,
+                 freeform_tags: Mapping[str, Any],
                  id: str,
                  image_id: str,
                  kms_key_id: str,
@@ -800,11 +879,15 @@ class GetContainerSignaturesContainerImageSignatureCollectionItemResult(dict):
                  message: str,
                  signature: str,
                  signing_algorithm: str,
+                 state: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str created_by: The id of the user or principal that created the resource.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.  Example: `ocid1.containerimagesignature.oc1..exampleuniqueID`
         :param str image_id: A filter to return a container image summary only for the specified container image OCID.
         :param str kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
@@ -812,11 +895,15 @@ class GetContainerSignaturesContainerImageSignatureCollectionItemResult(dict):
         :param str message: The base64 encoded signature payload that was signed.
         :param str signature: The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
         :param str signing_algorithm: The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+        :param str state: The current state of the container image signature.
+        :param Mapping[str, Any] system_tags: The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: An RFC 3339 timestamp indicating when the image was created.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "image_id", image_id)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
@@ -824,6 +911,8 @@ class GetContainerSignaturesContainerImageSignatureCollectionItemResult(dict):
         pulumi.set(__self__, "message", message)
         pulumi.set(__self__, "signature", signature)
         pulumi.set(__self__, "signing_algorithm", signing_algorithm)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
 
     @property
@@ -843,12 +932,28 @@ class GetContainerSignaturesContainerImageSignatureCollectionItemResult(dict):
         return pulumi.get(self, "created_by")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
         A filter to return only resources that match the given display name exactly.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -905,6 +1010,22 @@ class GetContainerSignaturesContainerImageSignatureCollectionItemResult(dict):
         The algorithm to be used for signing. These are the only supported signing algorithms for container images.
         """
         return pulumi.get(self, "signing_algorithm")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the container image signature.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

@@ -50,6 +50,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// The configuration details of Stack Monitoring for an external DB system.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigResult> StackMonitoringConfigs;
+        /// <summary>
         /// The current lifecycle state of the external DB system resource.
         /// </summary>
         public readonly string State;
@@ -82,6 +86,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigResult> stackMonitoringConfigs,
+
             string state,
 
             string timeCreated,
@@ -97,6 +103,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             Id = id;
             IsCluster = isCluster;
             LifecycleDetails = lifecycleDetails;
+            StackMonitoringConfigs = stackMonitoringConfigs;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

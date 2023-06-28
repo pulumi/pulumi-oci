@@ -134,6 +134,10 @@ type Database struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// True if the database is a container database.
 	IsCdb pulumi.BoolOutput `pulumi:"isCdb"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	KeyStoreId pulumi.StringOutput `pulumi:"keyStoreId"`
+	// The wallet name for Oracle Key Vault.
+	KeyStoreWalletName pulumi.StringOutput `pulumi:"keyStoreWalletName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
 	// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
@@ -251,6 +255,10 @@ type databaseState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// True if the database is a container database.
 	IsCdb *bool `pulumi:"isCdb"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	KeyStoreId *string `pulumi:"keyStoreId"`
+	// The wallet name for Oracle Key Vault.
+	KeyStoreWalletName *string `pulumi:"keyStoreWalletName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
@@ -331,6 +339,10 @@ type DatabaseState struct {
 	FreeformTags pulumi.MapInput
 	// True if the database is a container database.
 	IsCdb pulumi.BoolPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	KeyStoreId pulumi.StringPtrInput
+	// The wallet name for Oracle Key Vault.
+	KeyStoreWalletName pulumi.StringPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
 	// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
@@ -385,6 +397,8 @@ type databaseArgs struct {
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 	DbVersion *string `pulumi:"dbVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	KeyStoreId *string `pulumi:"keyStoreId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
@@ -414,6 +428,8 @@ type DatabaseArgs struct {
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 	DbVersion pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	KeyStoreId pulumi.StringPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
 	// The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
@@ -604,6 +620,16 @@ func (o DatabaseOutput) FreeformTags() pulumi.MapOutput {
 // True if the database is a container database.
 func (o DatabaseOutput) IsCdb() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Database) pulumi.BoolOutput { return v.IsCdb }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+func (o DatabaseOutput) KeyStoreId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.KeyStoreId }).(pulumi.StringOutput)
+}
+
+// The wallet name for Oracle Key Vault.
+func (o DatabaseOutput) KeyStoreWalletName() pulumi.StringOutput {
+	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.KeyStoreWalletName }).(pulumi.StringOutput)
 }
 
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.

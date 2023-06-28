@@ -66,6 +66,8 @@ class _BackupState:
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_size_in_gbs: Optional[pulumi.Input[float]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 key_store_id: Optional[pulumi.Input[str]] = None,
+                 key_store_wallet_name: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  kms_key_version_id: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -88,6 +90,8 @@ class _BackupState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
@@ -111,6 +115,10 @@ class _BackupState:
             pulumi.set(__self__, "database_size_in_gbs", database_size_in_gbs)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if key_store_id is not None:
+            pulumi.set(__self__, "key_store_id", key_store_id)
+        if key_store_wallet_name is not None:
+            pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
@@ -207,6 +215,30 @@ class _BackupState:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @key_store_id.setter
+    def key_store_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key_store_id", value)
+
+    @property
+    @pulumi.getter(name="keyStoreWalletName")
+    def key_store_wallet_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The wallet name for Oracle Key Vault.
+        """
+        return pulumi.get(self, "key_store_wallet_name")
+
+    @key_store_wallet_name.setter
+    def key_store_wallet_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key_store_wallet_name", value)
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -436,6 +468,8 @@ class Backup(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["database_edition"] = None
             __props__.__dict__["database_size_in_gbs"] = None
+            __props__.__dict__["key_store_id"] = None
+            __props__.__dict__["key_store_wallet_name"] = None
             __props__.__dict__["kms_key_id"] = None
             __props__.__dict__["kms_key_version_id"] = None
             __props__.__dict__["lifecycle_details"] = None
@@ -462,6 +496,8 @@ class Backup(pulumi.CustomResource):
             database_id: Optional[pulumi.Input[str]] = None,
             database_size_in_gbs: Optional[pulumi.Input[float]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            key_store_id: Optional[pulumi.Input[str]] = None,
+            key_store_wallet_name: Optional[pulumi.Input[str]] = None,
             kms_key_id: Optional[pulumi.Input[str]] = None,
             kms_key_version_id: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -489,6 +525,8 @@ class Backup(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
@@ -510,6 +548,8 @@ class Backup(pulumi.CustomResource):
         __props__.__dict__["database_id"] = database_id
         __props__.__dict__["database_size_in_gbs"] = database_size_in_gbs
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["key_store_id"] = key_store_id
+        __props__.__dict__["key_store_wallet_name"] = key_store_wallet_name
         __props__.__dict__["kms_key_id"] = kms_key_id
         __props__.__dict__["kms_key_version_id"] = kms_key_version_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
@@ -573,6 +613,22 @@ class Backup(pulumi.CustomResource):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @property
+    @pulumi.getter(name="keyStoreWalletName")
+    def key_store_wallet_name(self) -> pulumi.Output[str]:
+        """
+        The wallet name for Oracle Key Vault.
+        """
+        return pulumi.get(self, "key_store_wallet_name")
 
     @property
     @pulumi.getter(name="kmsKeyId")

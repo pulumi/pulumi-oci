@@ -13,7 +13,9 @@ import com.pulumi.oci.Artifacts.outputs.ContainerRepositoryReadme;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
+import java.lang.Object;
 import java.lang.String;
+import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
@@ -47,6 +49,8 @@ import javax.annotation.Nullable;
  *         var testContainerRepository = new ContainerRepository(&#34;testContainerRepository&#34;, ContainerRepositoryArgs.builder()        
  *             .compartmentId(var_.compartment_id())
  *             .displayName(var_.container_repository_display_name())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .isImmutable(var_.container_repository_is_immutable())
  *             .isPublic(var_.container_repository_is_public())
  *             .readme(ContainerRepositoryReadmeArgs.builder()
@@ -113,6 +117,20 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
         return this.createdBy;
     }
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    private Output<Map<String,Object>> definedTags;
+
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * The container repository name.
      * 
      */
@@ -125,6 +143,20 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    private Output<Map<String,Object>> freeformTags;
+
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * Total number of images.
@@ -197,6 +229,20 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
         return this.layersSizeInBytes;
     }
     /**
+     * The tenancy namespace used in the container repository path.
+     * 
+     */
+    @Export(name="namespace", type=String.class, parameters={})
+    private Output<String> namespace;
+
+    /**
+     * @return The tenancy namespace used in the container repository path.
+     * 
+     */
+    public Output<String> namespace() {
+        return this.namespace;
+    }
+    /**
      * (Updatable) Container repository readme.
      * 
      */
@@ -223,6 +269,20 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    private Output<Map<String,Object>> systemTags;
+
+    /**
+     * @return The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> systemTags() {
+        return this.systemTags;
     }
     /**
      * An RFC 3339 timestamp indicating when the repository was created.

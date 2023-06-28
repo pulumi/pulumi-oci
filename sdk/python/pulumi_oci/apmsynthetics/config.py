@@ -20,7 +20,7 @@ class ConfigArgs:
                  display_name: pulumi.Input[str],
                  monitor_type: pulumi.Input[str],
                  repeat_interval_in_seconds: pulumi.Input[int],
-                 vantage_points: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 vantage_points: pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]],
                  availability_configuration: Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']] = None,
                  batch_interval_in_seconds: Optional[pulumi.Input[int]] = None,
                  configuration: Optional[pulumi.Input['ConfigConfigurationArgs']] = None,
@@ -39,10 +39,10 @@ class ConfigArgs:
         """
         The set of arguments for constructing a Config resource.
         :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
-        :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+        :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[str] monitor_type: Type of monitor.
         :param pulumi.Input[int] repeat_interval_in_seconds: (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
+        :param pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
                
                
                ** IMPORTANT **
@@ -115,7 +115,7 @@ class ConfigArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+        Unique name that can be edited. The name should not contain any confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -149,7 +149,7 @@ class ConfigArgs:
 
     @property
     @pulumi.getter(name="vantagePoints")
-    def vantage_points(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+    def vantage_points(self) -> pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]]:
         """
         (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
 
@@ -160,7 +160,7 @@ class ConfigArgs:
         return pulumi.get(self, "vantage_points")
 
     @vantage_points.setter
-    def vantage_points(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+    def vantage_points(self, value: pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]]):
         pulumi.set(self, "vantage_points", value)
 
     @property
@@ -369,7 +369,7 @@ class _ConfigState:
                  time_updated: Optional[pulumi.Input[str]] = None,
                  timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  vantage_point_count: Optional[pulumi.Input[int]] = None,
-                 vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+                 vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]]] = None):
         """
         Input properties used for looking up and filtering Config resources.
         :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
@@ -377,7 +377,7 @@ class _ConfigState:
         :param pulumi.Input[int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         :param pulumi.Input['ConfigConfigurationArgs'] configuration: (Updatable) Details of monitor configuration.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+        :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run now.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
@@ -394,7 +394,7 @@ class _ConfigState:
         :param pulumi.Input[str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         :param pulumi.Input[int] vantage_point_count: Number of vantage points where monitor is running.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
+        :param pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
                
                
                ** IMPORTANT **
@@ -511,7 +511,7 @@ class _ConfigState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+        Unique name that can be edited. The name should not contain any confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -713,7 +713,7 @@ class _ConfigState:
 
     @property
     @pulumi.getter(name="vantagePoints")
-    def vantage_points(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+    def vantage_points(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]]]:
         """
         (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
 
@@ -724,7 +724,7 @@ class _ConfigState:
         return pulumi.get(self, "vantage_points")
 
     @vantage_points.setter
-    def vantage_points(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+    def vantage_points(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]]]):
         pulumi.set(self, "vantage_points", value)
 
 
@@ -752,7 +752,7 @@ class Config(pulumi.CustomResource):
                  status: Optional[pulumi.Input[str]] = None,
                  target: Optional[pulumi.Input[str]] = None,
                  timeout_in_seconds: Optional[pulumi.Input[int]] = None,
-                 vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigVantagePointArgs']]]]] = None,
                  __props__=None):
         """
         This resource provides the Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -770,7 +770,10 @@ class Config(pulumi.CustomResource):
             display_name=var["monitor_display_name"],
             monitor_type=var["monitor_monitor_type"],
             repeat_interval_in_seconds=var["monitor_repeat_interval_in_seconds"],
-            vantage_points=var["vantage_points"],
+            vantage_points=[oci.apm_synthetics.ConfigVantagePointArgs(
+                name=var["monitor_vantage_points_name"],
+                display_name=var["monitor_vantage_points_param_display_name"],
+            )],
             availability_configuration=oci.apm_synthetics.ConfigAvailabilityConfigurationArgs(
                 max_allowed_failures_per_interval=var["monitor_availability_configuration_max_allowed_failures_per_interval"],
                 min_allowed_runs_per_interval=var["monitor_availability_configuration_min_allowed_runs_per_interval"],
@@ -860,7 +863,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         :param pulumi.Input[pulumi.InputType['ConfigConfigurationArgs']] configuration: (Updatable) Details of monitor configuration.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+        :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run now.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
@@ -874,7 +877,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[str] status: (Updatable) Enables or disables the monitor.
         :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigVantagePointArgs']]]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
                
                
                ** IMPORTANT **
@@ -902,7 +905,10 @@ class Config(pulumi.CustomResource):
             display_name=var["monitor_display_name"],
             monitor_type=var["monitor_monitor_type"],
             repeat_interval_in_seconds=var["monitor_repeat_interval_in_seconds"],
-            vantage_points=var["vantage_points"],
+            vantage_points=[oci.apm_synthetics.ConfigVantagePointArgs(
+                name=var["monitor_vantage_points_name"],
+                display_name=var["monitor_vantage_points_param_display_name"],
+            )],
             availability_configuration=oci.apm_synthetics.ConfigAvailabilityConfigurationArgs(
                 max_allowed_failures_per_interval=var["monitor_availability_configuration_max_allowed_failures_per_interval"],
                 min_allowed_runs_per_interval=var["monitor_availability_configuration_min_allowed_runs_per_interval"],
@@ -1019,7 +1025,7 @@ class Config(pulumi.CustomResource):
                  status: Optional[pulumi.Input[str]] = None,
                  target: Optional[pulumi.Input[str]] = None,
                  timeout_in_seconds: Optional[pulumi.Input[int]] = None,
-                 vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigVantagePointArgs']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1094,7 +1100,7 @@ class Config(pulumi.CustomResource):
             time_updated: Optional[pulumi.Input[str]] = None,
             timeout_in_seconds: Optional[pulumi.Input[int]] = None,
             vantage_point_count: Optional[pulumi.Input[int]] = None,
-            vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None) -> 'Config':
+            vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigVantagePointArgs']]]]] = None) -> 'Config':
         """
         Get an existing Config resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1107,7 +1113,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         :param pulumi.Input[pulumi.InputType['ConfigConfigurationArgs']] configuration: (Updatable) Details of monitor configuration.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+        :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run now.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
@@ -1124,7 +1130,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         :param pulumi.Input[int] vantage_point_count: Number of vantage points where monitor is running.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigVantagePointArgs']]]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
                
                
                ** IMPORTANT **
@@ -1203,7 +1209,7 @@ class Config(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+        Unique name that can be edited. The name should not contain any confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -1337,7 +1343,7 @@ class Config(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="vantagePoints")
-    def vantage_points(self) -> pulumi.Output[Sequence[str]]:
+    def vantage_points(self) -> pulumi.Output[Sequence['outputs.ConfigVantagePoint']]:
         """
         (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
 

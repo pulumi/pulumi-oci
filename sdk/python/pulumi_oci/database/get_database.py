@@ -22,7 +22,7 @@ class GetDatabaseResult:
     """
     A collection of values returned by getDatabase.
     """
-    def __init__(__self__, character_set=None, compartment_id=None, connection_strings=None, database_id=None, database_management_configs=None, database_software_image_id=None, databases=None, db_backup_configs=None, db_home_id=None, db_name=None, db_system_id=None, db_unique_name=None, db_version=None, db_workload=None, defined_tags=None, freeform_tags=None, id=None, is_cdb=None, kms_key_id=None, kms_key_migration=None, kms_key_rotation=None, kms_key_version_id=None, last_backup_duration_in_seconds=None, last_backup_timestamp=None, last_failed_backup_timestamp=None, lifecycle_details=None, ncharacter_set=None, pdb_name=None, sid_prefix=None, source=None, source_database_point_in_time_recovery_timestamp=None, state=None, time_created=None, vault_id=None, vm_cluster_id=None):
+    def __init__(__self__, character_set=None, compartment_id=None, connection_strings=None, database_id=None, database_management_configs=None, database_software_image_id=None, databases=None, db_backup_configs=None, db_home_id=None, db_name=None, db_system_id=None, db_unique_name=None, db_version=None, db_workload=None, defined_tags=None, freeform_tags=None, id=None, is_cdb=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_migration=None, kms_key_rotation=None, kms_key_version_id=None, last_backup_duration_in_seconds=None, last_backup_timestamp=None, last_failed_backup_timestamp=None, lifecycle_details=None, ncharacter_set=None, pdb_name=None, sid_prefix=None, source=None, source_database_point_in_time_recovery_timestamp=None, state=None, time_created=None, vault_id=None, vm_cluster_id=None):
         if character_set and not isinstance(character_set, str):
             raise TypeError("Expected argument 'character_set' to be a str")
         pulumi.set(__self__, "character_set", character_set)
@@ -77,6 +77,12 @@ class GetDatabaseResult:
         if is_cdb and not isinstance(is_cdb, bool):
             raise TypeError("Expected argument 'is_cdb' to be a bool")
         pulumi.set(__self__, "is_cdb", is_cdb)
+        if key_store_id and not isinstance(key_store_id, str):
+            raise TypeError("Expected argument 'key_store_id' to be a str")
+        pulumi.set(__self__, "key_store_id", key_store_id)
+        if key_store_wallet_name and not isinstance(key_store_wallet_name, str):
+            raise TypeError("Expected argument 'key_store_wallet_name' to be a str")
+        pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
         if kms_key_id and not isinstance(kms_key_id, str):
             raise TypeError("Expected argument 'kms_key_id' to be a str")
         pulumi.set(__self__, "kms_key_id", kms_key_id)
@@ -265,6 +271,22 @@ class GetDatabaseResult:
         return pulumi.get(self, "is_cdb")
 
     @property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @property
+    @pulumi.getter(name="keyStoreWalletName")
+    def key_store_wallet_name(self) -> str:
+        """
+        The wallet name for Oracle Key Vault.
+        """
+        return pulumi.get(self, "key_store_wallet_name")
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> str:
         """
@@ -416,6 +438,8 @@ class AwaitableGetDatabaseResult(GetDatabaseResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_cdb=self.is_cdb,
+            key_store_id=self.key_store_id,
+            key_store_wallet_name=self.key_store_wallet_name,
             kms_key_id=self.kms_key_id,
             kms_key_migration=self.kms_key_migration,
             kms_key_rotation=self.kms_key_rotation,
@@ -478,6 +502,8 @@ def get_database(database_id: Optional[str] = None,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
         is_cdb=__ret__.is_cdb,
+        key_store_id=__ret__.key_store_id,
+        key_store_wallet_name=__ret__.key_store_wallet_name,
         kms_key_id=__ret__.kms_key_id,
         kms_key_migration=__ret__.kms_key_migration,
         kms_key_rotation=__ret__.kms_key_rotation,

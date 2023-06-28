@@ -287,7 +287,7 @@ class GetMonitorResult:
 
     @property
     @pulumi.getter(name="vantagePoints")
-    def vantage_points(self) -> Sequence[str]:
+    def vantage_points(self) -> Sequence['outputs.GetMonitorVantagePointResult']:
         """
         List of public and dedicated vantage points where the monitor is running.
         """

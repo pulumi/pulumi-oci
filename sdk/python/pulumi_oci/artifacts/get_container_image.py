@@ -22,19 +22,25 @@ class GetContainerImageResult:
     """
     A collection of values returned by getContainerImage.
     """
-    def __init__(__self__, compartment_id=None, created_by=None, digest=None, display_name=None, id=None, image_id=None, layers=None, layers_size_in_bytes=None, manifest_size_in_bytes=None, pull_count=None, repository_id=None, repository_name=None, state=None, time_created=None, time_last_pulled=None, version=None, versions=None):
+    def __init__(__self__, compartment_id=None, created_by=None, defined_tags=None, digest=None, display_name=None, freeform_tags=None, id=None, image_id=None, layers=None, layers_size_in_bytes=None, manifest_size_in_bytes=None, pull_count=None, repository_id=None, repository_name=None, state=None, system_tags=None, time_created=None, time_last_pulled=None, version=None, versions=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
         if created_by and not isinstance(created_by, str):
             raise TypeError("Expected argument 'created_by' to be a str")
         pulumi.set(__self__, "created_by", created_by)
+        if defined_tags and not isinstance(defined_tags, dict):
+            raise TypeError("Expected argument 'defined_tags' to be a dict")
+        pulumi.set(__self__, "defined_tags", defined_tags)
         if digest and not isinstance(digest, str):
             raise TypeError("Expected argument 'digest' to be a str")
         pulumi.set(__self__, "digest", digest)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags and not isinstance(freeform_tags, dict):
+            raise TypeError("Expected argument 'freeform_tags' to be a dict")
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -62,6 +68,9 @@ class GetContainerImageResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -92,6 +101,14 @@ class GetContainerImageResult:
         return pulumi.get(self, "created_by")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter
     def digest(self) -> str:
         """
@@ -106,6 +123,14 @@ class GetContainerImageResult:
         The repository name and the most recent version associated with the image. If there are no versions associated with the image, then last known version and digest are used instead. If the last known version is unavailable, then 'unknown' is used instead of the version.  Example: `ubuntu:latest` or `ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2`
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -177,6 +202,14 @@ class GetContainerImageResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -217,8 +250,10 @@ class AwaitableGetContainerImageResult(GetContainerImageResult):
         return GetContainerImageResult(
             compartment_id=self.compartment_id,
             created_by=self.created_by,
+            defined_tags=self.defined_tags,
             digest=self.digest,
             display_name=self.display_name,
+            freeform_tags=self.freeform_tags,
             id=self.id,
             image_id=self.image_id,
             layers=self.layers,
@@ -228,6 +263,7 @@ class AwaitableGetContainerImageResult(GetContainerImageResult):
             repository_id=self.repository_id,
             repository_name=self.repository_name,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_last_pulled=self.time_last_pulled,
             version=self.version,
@@ -261,8 +297,10 @@ def get_container_image(image_id: Optional[str] = None,
     return AwaitableGetContainerImageResult(
         compartment_id=__ret__.compartment_id,
         created_by=__ret__.created_by,
+        defined_tags=__ret__.defined_tags,
         digest=__ret__.digest,
         display_name=__ret__.display_name,
+        freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
         image_id=__ret__.image_id,
         layers=__ret__.layers,
@@ -272,6 +310,7 @@ def get_container_image(image_id: Optional[str] = None,
         repository_id=__ret__.repository_id,
         repository_name=__ret__.repository_name,
         state=__ret__.state,
+        system_tags=__ret__.system_tags,
         time_created=__ret__.time_created,
         time_last_pulled=__ret__.time_last_pulled,
         version=__ret__.version,

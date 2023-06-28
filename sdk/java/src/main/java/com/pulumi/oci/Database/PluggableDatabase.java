@@ -13,10 +13,12 @@ import com.pulumi.oci.Database.outputs.PluggableDatabaseConnectionString;
 import com.pulumi.oci.Database.outputs.PluggableDatabasePluggableDatabaseManagementConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -227,6 +229,26 @@ public class PluggableDatabase extends com.pulumi.resources.CustomResource {
         return this.pluggableDatabaseManagementConfigs;
     }
     /**
+     * (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="rotateKeyTrigger", type=Integer.class, parameters={})
+    private Output</* @Nullable */ Integer> rotateKeyTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<Integer>> rotateKeyTrigger() {
+        return Codegen.optional(this.rotateKeyTrigger);
+    }
+    /**
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
      * 
      */
@@ -257,18 +279,12 @@ public class PluggableDatabase extends com.pulumi.resources.CustomResource {
     /**
      * The existing TDE wallet password of the CDB.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="tdeWalletPassword", type=String.class, parameters={})
     private Output<String> tdeWalletPassword;
 
     /**
      * @return The existing TDE wallet password of the CDB.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> tdeWalletPassword() {

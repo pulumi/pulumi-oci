@@ -20453,6 +20453,8 @@ class GetBackupsBackupResult(dict):
                  database_size_in_gbs: float,
                  display_name: str,
                  id: str,
+                 key_store_id: str,
+                 key_store_wallet_name: str,
                  kms_key_id: str,
                  kms_key_version_id: str,
                  lifecycle_details: str,
@@ -20471,6 +20473,8 @@ class GetBackupsBackupResult(dict):
         :param float database_size_in_gbs: The size of the database in gigabytes at the time the backup was taken.
         :param str display_name: The user-friendly name for the backup. The name does not have to be unique.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
+        :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        :param str key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param str lifecycle_details: Additional information about the current lifecycle state.
@@ -20489,6 +20493,8 @@ class GetBackupsBackupResult(dict):
         pulumi.set(__self__, "database_size_in_gbs", database_size_in_gbs)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "key_store_id", key_store_id)
+        pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -20555,6 +20561,22 @@ class GetBackupsBackupResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @property
+    @pulumi.getter(name="keyStoreWalletName")
+    def key_store_wallet_name(self) -> str:
+        """
+        The wallet name for Oracle Key Vault.
+        """
+        return pulumi.get(self, "key_store_wallet_name")
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -25966,6 +25988,8 @@ class GetDatabasesDatabaseResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_cdb: bool,
+                 key_store_id: str,
+                 key_store_wallet_name: str,
                  kms_key_id: str,
                  kms_key_migration: bool,
                  kms_key_rotation: int,
@@ -25999,6 +26023,8 @@ class GetDatabasesDatabaseResult(dict):
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param bool is_cdb: True if the database is a container database.
+        :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        :param str key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param int last_backup_duration_in_seconds: The duration when the latest database backup created.
@@ -26031,6 +26057,8 @@ class GetDatabasesDatabaseResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_cdb", is_cdb)
+        pulumi.set(__self__, "key_store_id", key_store_id)
+        pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "kms_key_migration", kms_key_migration)
         pulumi.set(__self__, "kms_key_rotation", kms_key_rotation)
@@ -26178,6 +26206,22 @@ class GetDatabasesDatabaseResult(dict):
         True if the database is a container database.
         """
         return pulumi.get(self, "is_cdb")
+
+    @property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @property
+    @pulumi.getter(name="keyStoreWalletName")
+    def key_store_wallet_name(self) -> str:
+        """
+        The wallet name for Oracle Key Vault.
+        """
+        return pulumi.get(self, "key_store_wallet_name")
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -35473,6 +35517,7 @@ class GetPluggableDatabasesPluggableDatabaseResult(dict):
                  pdb_admin_password: str,
                  pdb_name: str,
                  pluggable_database_management_configs: Sequence['outputs.GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigResult'],
+                 rotate_key_trigger: int,
                  should_pdb_admin_account_be_locked: bool,
                  state: str,
                  tde_wallet_password: str,
@@ -35504,6 +35549,7 @@ class GetPluggableDatabasesPluggableDatabaseResult(dict):
         pulumi.set(__self__, "pdb_admin_password", pdb_admin_password)
         pulumi.set(__self__, "pdb_name", pdb_name)
         pulumi.set(__self__, "pluggable_database_management_configs", pluggable_database_management_configs)
+        pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
         pulumi.set(__self__, "should_pdb_admin_account_be_locked", should_pdb_admin_account_be_locked)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
@@ -35601,6 +35647,11 @@ class GetPluggableDatabasesPluggableDatabaseResult(dict):
         The configuration of the Pluggable Database Management service.
         """
         return pulumi.get(self, "pluggable_database_management_configs")
+
+    @property
+    @pulumi.getter(name="rotateKeyTrigger")
+    def rotate_key_trigger(self) -> int:
+        return pulumi.get(self, "rotate_key_trigger")
 
     @property
     @pulumi.getter(name="shouldPdbAdminAccountBeLocked")

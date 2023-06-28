@@ -50,6 +50,11 @@ export type ExternalDbSystemDiscovery = import("./externalDbSystemDiscovery").Ex
 export const ExternalDbSystemDiscovery: typeof import("./externalDbSystemDiscovery").ExternalDbSystemDiscovery = null as any;
 utilities.lazyLoad(exports, ["ExternalDbSystemDiscovery"], () => require("./externalDbSystemDiscovery"));
 
+export { ExternalDbSystemStackMonitoringsManagementArgs, ExternalDbSystemStackMonitoringsManagementState } from "./externalDbSystemStackMonitoringsManagement";
+export type ExternalDbSystemStackMonitoringsManagement = import("./externalDbSystemStackMonitoringsManagement").ExternalDbSystemStackMonitoringsManagement;
+export const ExternalDbSystemStackMonitoringsManagement: typeof import("./externalDbSystemStackMonitoringsManagement").ExternalDbSystemStackMonitoringsManagement = null as any;
+utilities.lazyLoad(exports, ["ExternalDbSystemStackMonitoringsManagement"], () => require("./externalDbSystemStackMonitoringsManagement"));
+
 export { ExternalExadataInfrastructureArgs, ExternalExadataInfrastructureState } from "./externalExadataInfrastructure";
 export type ExternalExadataInfrastructure = import("./externalExadataInfrastructure").ExternalExadataInfrastructure;
 export const ExternalExadataInfrastructure: typeof import("./externalExadataInfrastructure").ExternalExadataInfrastructure = null as any;
@@ -310,6 +315,11 @@ export const getManagedDatabaseAttentionLogCounts: typeof import("./getManagedDa
 export const getManagedDatabaseAttentionLogCountsOutput: typeof import("./getManagedDatabaseAttentionLogCounts").getManagedDatabaseAttentionLogCountsOutput = null as any;
 utilities.lazyLoad(exports, ["getManagedDatabaseAttentionLogCounts","getManagedDatabaseAttentionLogCountsOutput"], () => require("./getManagedDatabaseAttentionLogCounts"));
 
+export { GetManagedDatabaseCursorCacheStatementsArgs, GetManagedDatabaseCursorCacheStatementsResult, GetManagedDatabaseCursorCacheStatementsOutputArgs } from "./getManagedDatabaseCursorCacheStatements";
+export const getManagedDatabaseCursorCacheStatements: typeof import("./getManagedDatabaseCursorCacheStatements").getManagedDatabaseCursorCacheStatements = null as any;
+export const getManagedDatabaseCursorCacheStatementsOutput: typeof import("./getManagedDatabaseCursorCacheStatements").getManagedDatabaseCursorCacheStatementsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseCursorCacheStatements","getManagedDatabaseCursorCacheStatementsOutput"], () => require("./getManagedDatabaseCursorCacheStatements"));
+
 export { GetManagedDatabaseGroupArgs, GetManagedDatabaseGroupResult, GetManagedDatabaseGroupOutputArgs } from "./getManagedDatabaseGroup";
 export const getManagedDatabaseGroup: typeof import("./getManagedDatabaseGroup").getManagedDatabaseGroup = null as any;
 export const getManagedDatabaseGroupOutput: typeof import("./getManagedDatabaseGroup").getManagedDatabaseGroupOutput = null as any;
@@ -349,6 +359,26 @@ export { GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs, GetManag
 export const getManagedDatabaseOptimizerStatisticsCollectionOperations: typeof import("./getManagedDatabaseOptimizerStatisticsCollectionOperations").getManagedDatabaseOptimizerStatisticsCollectionOperations = null as any;
 export const getManagedDatabaseOptimizerStatisticsCollectionOperationsOutput: typeof import("./getManagedDatabaseOptimizerStatisticsCollectionOperations").getManagedDatabaseOptimizerStatisticsCollectionOperationsOutput = null as any;
 utilities.lazyLoad(exports, ["getManagedDatabaseOptimizerStatisticsCollectionOperations","getManagedDatabaseOptimizerStatisticsCollectionOperationsOutput"], () => require("./getManagedDatabaseOptimizerStatisticsCollectionOperations"));
+
+export { GetManagedDatabaseSqlPlanBaselineArgs, GetManagedDatabaseSqlPlanBaselineResult, GetManagedDatabaseSqlPlanBaselineOutputArgs } from "./getManagedDatabaseSqlPlanBaseline";
+export const getManagedDatabaseSqlPlanBaseline: typeof import("./getManagedDatabaseSqlPlanBaseline").getManagedDatabaseSqlPlanBaseline = null as any;
+export const getManagedDatabaseSqlPlanBaselineOutput: typeof import("./getManagedDatabaseSqlPlanBaseline").getManagedDatabaseSqlPlanBaselineOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseSqlPlanBaseline","getManagedDatabaseSqlPlanBaselineOutput"], () => require("./getManagedDatabaseSqlPlanBaseline"));
+
+export { GetManagedDatabaseSqlPlanBaselineConfigurationArgs, GetManagedDatabaseSqlPlanBaselineConfigurationResult, GetManagedDatabaseSqlPlanBaselineConfigurationOutputArgs } from "./getManagedDatabaseSqlPlanBaselineConfiguration";
+export const getManagedDatabaseSqlPlanBaselineConfiguration: typeof import("./getManagedDatabaseSqlPlanBaselineConfiguration").getManagedDatabaseSqlPlanBaselineConfiguration = null as any;
+export const getManagedDatabaseSqlPlanBaselineConfigurationOutput: typeof import("./getManagedDatabaseSqlPlanBaselineConfiguration").getManagedDatabaseSqlPlanBaselineConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseSqlPlanBaselineConfiguration","getManagedDatabaseSqlPlanBaselineConfigurationOutput"], () => require("./getManagedDatabaseSqlPlanBaselineConfiguration"));
+
+export { GetManagedDatabaseSqlPlanBaselineJobsArgs, GetManagedDatabaseSqlPlanBaselineJobsResult, GetManagedDatabaseSqlPlanBaselineJobsOutputArgs } from "./getManagedDatabaseSqlPlanBaselineJobs";
+export const getManagedDatabaseSqlPlanBaselineJobs: typeof import("./getManagedDatabaseSqlPlanBaselineJobs").getManagedDatabaseSqlPlanBaselineJobs = null as any;
+export const getManagedDatabaseSqlPlanBaselineJobsOutput: typeof import("./getManagedDatabaseSqlPlanBaselineJobs").getManagedDatabaseSqlPlanBaselineJobsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseSqlPlanBaselineJobs","getManagedDatabaseSqlPlanBaselineJobsOutput"], () => require("./getManagedDatabaseSqlPlanBaselineJobs"));
+
+export { GetManagedDatabaseSqlPlanBaselinesArgs, GetManagedDatabaseSqlPlanBaselinesResult, GetManagedDatabaseSqlPlanBaselinesOutputArgs } from "./getManagedDatabaseSqlPlanBaselines";
+export const getManagedDatabaseSqlPlanBaselines: typeof import("./getManagedDatabaseSqlPlanBaselines").getManagedDatabaseSqlPlanBaselines = null as any;
+export const getManagedDatabaseSqlPlanBaselinesOutput: typeof import("./getManagedDatabaseSqlPlanBaselines").getManagedDatabaseSqlPlanBaselinesOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedDatabaseSqlPlanBaselines","getManagedDatabaseSqlPlanBaselinesOutput"], () => require("./getManagedDatabaseSqlPlanBaselines"));
 
 export { GetManagedDatabaseSqlTuningAdvisorTaskArgs, GetManagedDatabaseSqlTuningAdvisorTaskResult, GetManagedDatabaseSqlTuningAdvisorTaskOutputArgs } from "./getManagedDatabaseSqlTuningAdvisorTask";
 export const getManagedDatabaseSqlTuningAdvisorTask: typeof import("./getManagedDatabaseSqlTuningAdvisorTask").getManagedDatabaseSqlTuningAdvisorTask = null as any;
@@ -553,6 +583,8 @@ const _module = {
                 return new ExternalDbSystemDatabaseManagementsManagement(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery":
                 return new ExternalDbSystemDiscovery(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalDbSystemStackMonitoringsManagement:ExternalDbSystemStackMonitoringsManagement":
+                return new ExternalDbSystemStackMonitoringsManagement(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/externalExadataInfrastructure:ExternalExadataInfrastructure":
                 return new ExternalExadataInfrastructure(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/externalExadataInfrastructureExadataManagement:ExternalExadataInfrastructureExadataManagement":
@@ -581,6 +613,7 @@ pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalDbSyste
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalDbSystemConnector", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalDbSystemDatabaseManagementsManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalDbSystemDiscovery", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalDbSystemStackMonitoringsManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalExadataInfrastructure", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalExadataInfrastructureExadataManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalExadataStorageConnector", _module)

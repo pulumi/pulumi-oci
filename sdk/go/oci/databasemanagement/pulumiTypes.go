@@ -5476,6 +5476,174 @@ func (o ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConne
 	}).(pulumi.StringPtrOutput)
 }
 
+type ExternalDbSystemStackMonitoringConfig struct {
+	// The status of the associated service.
+	IsEnabled bool `pulumi:"isEnabled"`
+	// The associated service-specific inputs in JSON string format, which Database Management can identify.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Metadata *string `pulumi:"metadata"`
+}
+
+// ExternalDbSystemStackMonitoringConfigInput is an input type that accepts ExternalDbSystemStackMonitoringConfigArgs and ExternalDbSystemStackMonitoringConfigOutput values.
+// You can construct a concrete instance of `ExternalDbSystemStackMonitoringConfigInput` via:
+//
+//	ExternalDbSystemStackMonitoringConfigArgs{...}
+type ExternalDbSystemStackMonitoringConfigInput interface {
+	pulumi.Input
+
+	ToExternalDbSystemStackMonitoringConfigOutput() ExternalDbSystemStackMonitoringConfigOutput
+	ToExternalDbSystemStackMonitoringConfigOutputWithContext(context.Context) ExternalDbSystemStackMonitoringConfigOutput
+}
+
+type ExternalDbSystemStackMonitoringConfigArgs struct {
+	// The status of the associated service.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// The associated service-specific inputs in JSON string format, which Database Management can identify.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
+}
+
+func (ExternalDbSystemStackMonitoringConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalDbSystemStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i ExternalDbSystemStackMonitoringConfigArgs) ToExternalDbSystemStackMonitoringConfigOutput() ExternalDbSystemStackMonitoringConfigOutput {
+	return i.ToExternalDbSystemStackMonitoringConfigOutputWithContext(context.Background())
+}
+
+func (i ExternalDbSystemStackMonitoringConfigArgs) ToExternalDbSystemStackMonitoringConfigOutputWithContext(ctx context.Context) ExternalDbSystemStackMonitoringConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemStackMonitoringConfigOutput)
+}
+
+func (i ExternalDbSystemStackMonitoringConfigArgs) ToExternalDbSystemStackMonitoringConfigPtrOutput() ExternalDbSystemStackMonitoringConfigPtrOutput {
+	return i.ToExternalDbSystemStackMonitoringConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ExternalDbSystemStackMonitoringConfigArgs) ToExternalDbSystemStackMonitoringConfigPtrOutputWithContext(ctx context.Context) ExternalDbSystemStackMonitoringConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemStackMonitoringConfigOutput).ToExternalDbSystemStackMonitoringConfigPtrOutputWithContext(ctx)
+}
+
+// ExternalDbSystemStackMonitoringConfigPtrInput is an input type that accepts ExternalDbSystemStackMonitoringConfigArgs, ExternalDbSystemStackMonitoringConfigPtr and ExternalDbSystemStackMonitoringConfigPtrOutput values.
+// You can construct a concrete instance of `ExternalDbSystemStackMonitoringConfigPtrInput` via:
+//
+//	        ExternalDbSystemStackMonitoringConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ExternalDbSystemStackMonitoringConfigPtrInput interface {
+	pulumi.Input
+
+	ToExternalDbSystemStackMonitoringConfigPtrOutput() ExternalDbSystemStackMonitoringConfigPtrOutput
+	ToExternalDbSystemStackMonitoringConfigPtrOutputWithContext(context.Context) ExternalDbSystemStackMonitoringConfigPtrOutput
+}
+
+type externalDbSystemStackMonitoringConfigPtrType ExternalDbSystemStackMonitoringConfigArgs
+
+func ExternalDbSystemStackMonitoringConfigPtr(v *ExternalDbSystemStackMonitoringConfigArgs) ExternalDbSystemStackMonitoringConfigPtrInput {
+	return (*externalDbSystemStackMonitoringConfigPtrType)(v)
+}
+
+func (*externalDbSystemStackMonitoringConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ExternalDbSystemStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i *externalDbSystemStackMonitoringConfigPtrType) ToExternalDbSystemStackMonitoringConfigPtrOutput() ExternalDbSystemStackMonitoringConfigPtrOutput {
+	return i.ToExternalDbSystemStackMonitoringConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *externalDbSystemStackMonitoringConfigPtrType) ToExternalDbSystemStackMonitoringConfigPtrOutputWithContext(ctx context.Context) ExternalDbSystemStackMonitoringConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemStackMonitoringConfigPtrOutput)
+}
+
+type ExternalDbSystemStackMonitoringConfigOutput struct{ *pulumi.OutputState }
+
+func (ExternalDbSystemStackMonitoringConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalDbSystemStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o ExternalDbSystemStackMonitoringConfigOutput) ToExternalDbSystemStackMonitoringConfigOutput() ExternalDbSystemStackMonitoringConfigOutput {
+	return o
+}
+
+func (o ExternalDbSystemStackMonitoringConfigOutput) ToExternalDbSystemStackMonitoringConfigOutputWithContext(ctx context.Context) ExternalDbSystemStackMonitoringConfigOutput {
+	return o
+}
+
+func (o ExternalDbSystemStackMonitoringConfigOutput) ToExternalDbSystemStackMonitoringConfigPtrOutput() ExternalDbSystemStackMonitoringConfigPtrOutput {
+	return o.ToExternalDbSystemStackMonitoringConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ExternalDbSystemStackMonitoringConfigOutput) ToExternalDbSystemStackMonitoringConfigPtrOutputWithContext(ctx context.Context) ExternalDbSystemStackMonitoringConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ExternalDbSystemStackMonitoringConfig) *ExternalDbSystemStackMonitoringConfig {
+		return &v
+	}).(ExternalDbSystemStackMonitoringConfigPtrOutput)
+}
+
+// The status of the associated service.
+func (o ExternalDbSystemStackMonitoringConfigOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v ExternalDbSystemStackMonitoringConfig) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// The associated service-specific inputs in JSON string format, which Database Management can identify.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ExternalDbSystemStackMonitoringConfigOutput) Metadata() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDbSystemStackMonitoringConfig) *string { return v.Metadata }).(pulumi.StringPtrOutput)
+}
+
+type ExternalDbSystemStackMonitoringConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ExternalDbSystemStackMonitoringConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ExternalDbSystemStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o ExternalDbSystemStackMonitoringConfigPtrOutput) ToExternalDbSystemStackMonitoringConfigPtrOutput() ExternalDbSystemStackMonitoringConfigPtrOutput {
+	return o
+}
+
+func (o ExternalDbSystemStackMonitoringConfigPtrOutput) ToExternalDbSystemStackMonitoringConfigPtrOutputWithContext(ctx context.Context) ExternalDbSystemStackMonitoringConfigPtrOutput {
+	return o
+}
+
+func (o ExternalDbSystemStackMonitoringConfigPtrOutput) Elem() ExternalDbSystemStackMonitoringConfigOutput {
+	return o.ApplyT(func(v *ExternalDbSystemStackMonitoringConfig) ExternalDbSystemStackMonitoringConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ExternalDbSystemStackMonitoringConfig
+		return ret
+	}).(ExternalDbSystemStackMonitoringConfigOutput)
+}
+
+// The status of the associated service.
+func (o ExternalDbSystemStackMonitoringConfigPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ExternalDbSystemStackMonitoringConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The associated service-specific inputs in JSON string format, which Database Management can identify.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ExternalDbSystemStackMonitoringConfigPtrOutput) Metadata() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalDbSystemStackMonitoringConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Metadata
+	}).(pulumi.StringPtrOutput)
+}
+
 type ExternalExadataInfrastructureDatabaseSystem struct {
 	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
@@ -23399,6 +23567,112 @@ func (o GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoCo
 	}).(GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringOutput)
 }
 
+type GetExternalDbSystemStackMonitoringConfig struct {
+	// The status of the associated service.
+	IsEnabled bool `pulumi:"isEnabled"`
+	// The associated service-specific inputs in JSON string format, which Database Management can identify.
+	Metadata string `pulumi:"metadata"`
+}
+
+// GetExternalDbSystemStackMonitoringConfigInput is an input type that accepts GetExternalDbSystemStackMonitoringConfigArgs and GetExternalDbSystemStackMonitoringConfigOutput values.
+// You can construct a concrete instance of `GetExternalDbSystemStackMonitoringConfigInput` via:
+//
+//	GetExternalDbSystemStackMonitoringConfigArgs{...}
+type GetExternalDbSystemStackMonitoringConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalDbSystemStackMonitoringConfigOutput() GetExternalDbSystemStackMonitoringConfigOutput
+	ToGetExternalDbSystemStackMonitoringConfigOutputWithContext(context.Context) GetExternalDbSystemStackMonitoringConfigOutput
+}
+
+type GetExternalDbSystemStackMonitoringConfigArgs struct {
+	// The status of the associated service.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// The associated service-specific inputs in JSON string format, which Database Management can identify.
+	Metadata pulumi.StringInput `pulumi:"metadata"`
+}
+
+func (GetExternalDbSystemStackMonitoringConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDbSystemStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalDbSystemStackMonitoringConfigArgs) ToGetExternalDbSystemStackMonitoringConfigOutput() GetExternalDbSystemStackMonitoringConfigOutput {
+	return i.ToGetExternalDbSystemStackMonitoringConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalDbSystemStackMonitoringConfigArgs) ToGetExternalDbSystemStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalDbSystemStackMonitoringConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDbSystemStackMonitoringConfigOutput)
+}
+
+// GetExternalDbSystemStackMonitoringConfigArrayInput is an input type that accepts GetExternalDbSystemStackMonitoringConfigArray and GetExternalDbSystemStackMonitoringConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalDbSystemStackMonitoringConfigArrayInput` via:
+//
+//	GetExternalDbSystemStackMonitoringConfigArray{ GetExternalDbSystemStackMonitoringConfigArgs{...} }
+type GetExternalDbSystemStackMonitoringConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalDbSystemStackMonitoringConfigArrayOutput() GetExternalDbSystemStackMonitoringConfigArrayOutput
+	ToGetExternalDbSystemStackMonitoringConfigArrayOutputWithContext(context.Context) GetExternalDbSystemStackMonitoringConfigArrayOutput
+}
+
+type GetExternalDbSystemStackMonitoringConfigArray []GetExternalDbSystemStackMonitoringConfigInput
+
+func (GetExternalDbSystemStackMonitoringConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDbSystemStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalDbSystemStackMonitoringConfigArray) ToGetExternalDbSystemStackMonitoringConfigArrayOutput() GetExternalDbSystemStackMonitoringConfigArrayOutput {
+	return i.ToGetExternalDbSystemStackMonitoringConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalDbSystemStackMonitoringConfigArray) ToGetExternalDbSystemStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalDbSystemStackMonitoringConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDbSystemStackMonitoringConfigArrayOutput)
+}
+
+type GetExternalDbSystemStackMonitoringConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDbSystemStackMonitoringConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDbSystemStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalDbSystemStackMonitoringConfigOutput) ToGetExternalDbSystemStackMonitoringConfigOutput() GetExternalDbSystemStackMonitoringConfigOutput {
+	return o
+}
+
+func (o GetExternalDbSystemStackMonitoringConfigOutput) ToGetExternalDbSystemStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalDbSystemStackMonitoringConfigOutput {
+	return o
+}
+
+// The status of the associated service.
+func (o GetExternalDbSystemStackMonitoringConfigOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExternalDbSystemStackMonitoringConfig) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// The associated service-specific inputs in JSON string format, which Database Management can identify.
+func (o GetExternalDbSystemStackMonitoringConfigOutput) Metadata() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemStackMonitoringConfig) string { return v.Metadata }).(pulumi.StringOutput)
+}
+
+type GetExternalDbSystemStackMonitoringConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDbSystemStackMonitoringConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDbSystemStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalDbSystemStackMonitoringConfigArrayOutput) ToGetExternalDbSystemStackMonitoringConfigArrayOutput() GetExternalDbSystemStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalDbSystemStackMonitoringConfigArrayOutput) ToGetExternalDbSystemStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalDbSystemStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalDbSystemStackMonitoringConfigArrayOutput) Index(i pulumi.IntInput) GetExternalDbSystemStackMonitoringConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDbSystemStackMonitoringConfig {
+		return vs[0].([]GetExternalDbSystemStackMonitoringConfig)[vs[1].(int)]
+	}).(GetExternalDbSystemStackMonitoringConfigOutput)
+}
+
 type GetExternalDbSystemsExternalDbSystemCollection struct {
 	Items []GetExternalDbSystemsExternalDbSystemCollectionItem `pulumi:"items"`
 }
@@ -23514,6 +23788,8 @@ type GetExternalDbSystemsExternalDbSystemCollectionItem struct {
 	IsCluster bool `pulumi:"isCluster"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The configuration details of Stack Monitoring for an external DB system.
+	StackMonitoringConfigs []GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig `pulumi:"stackMonitoringConfigs"`
 	// The current lifecycle state of the external DB system resource.
 	State string `pulumi:"state"`
 	// The date and time the external DB system was created.
@@ -23552,6 +23828,8 @@ type GetExternalDbSystemsExternalDbSystemCollectionItemArgs struct {
 	IsCluster pulumi.BoolInput `pulumi:"isCluster"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The configuration details of Stack Monitoring for an external DB system.
+	StackMonitoringConfigs GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayInput `pulumi:"stackMonitoringConfigs"`
 	// The current lifecycle state of the external DB system resource.
 	State pulumi.StringInput `pulumi:"state"`
 	// The date and time the external DB system was created.
@@ -23656,6 +23934,13 @@ func (o GetExternalDbSystemsExternalDbSystemCollectionItemOutput) IsCluster() pu
 // Additional information about the current lifecycle state.
 func (o GetExternalDbSystemsExternalDbSystemCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemsExternalDbSystemCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The configuration details of Stack Monitoring for an external DB system.
+func (o GetExternalDbSystemsExternalDbSystemCollectionItemOutput) StackMonitoringConfigs() GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutput {
+	return o.ApplyT(func(v GetExternalDbSystemsExternalDbSystemCollectionItem) []GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig {
+		return v.StackMonitoringConfigs
+	}).(GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutput)
 }
 
 // The current lifecycle state of the external DB system resource.
@@ -23790,6 +24075,116 @@ func (o GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConf
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfig {
 		return vs[0].([]GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfig)[vs[1].(int)]
 	}).(GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfigOutput)
+}
+
+type GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig struct {
+	// The status of the associated service.
+	IsEnabled bool `pulumi:"isEnabled"`
+	// The associated service-specific inputs in JSON string format, which Database Management can identify.
+	Metadata string `pulumi:"metadata"`
+}
+
+// GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigInput is an input type that accepts GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArgs and GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutput values.
+// You can construct a concrete instance of `GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigInput` via:
+//
+//	GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArgs{...}
+type GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutput() GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutput
+	ToGetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutputWithContext(context.Context) GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutput
+}
+
+type GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArgs struct {
+	// The status of the associated service.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// The associated service-specific inputs in JSON string format, which Database Management can identify.
+	Metadata pulumi.StringInput `pulumi:"metadata"`
+}
+
+func (GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArgs) ToGetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutput() GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutput {
+	return i.ToGetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArgs) ToGetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutput)
+}
+
+// GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayInput is an input type that accepts GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArray and GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayInput` via:
+//
+//	GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArray{ GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArgs{...} }
+type GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutput() GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutput
+	ToGetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutputWithContext(context.Context) GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutput
+}
+
+type GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArray []GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigInput
+
+func (GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArray) ToGetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutput() GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutput {
+	return i.ToGetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArray) ToGetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutput)
+}
+
+type GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutput) ToGetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutput() GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutput {
+	return o
+}
+
+func (o GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutput) ToGetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutput {
+	return o
+}
+
+// The status of the associated service.
+func (o GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig) bool {
+		return v.IsEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// The associated service-specific inputs in JSON string format, which Database Management can identify.
+func (o GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutput) Metadata() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig) string {
+		return v.Metadata
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutput) ToGetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutput() GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutput) ToGetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutput) Index(i pulumi.IntInput) GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig {
+		return vs[0].([]GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig)[vs[1].(int)]
+	}).(GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutput)
 }
 
 type GetExternalDbSystemsFilter struct {
@@ -31021,6 +31416,332 @@ func (o GetManagedDatabaseAttentionLogCountsFilterArrayOutput) Index(i pulumi.In
 	}).(GetManagedDatabaseAttentionLogCountsFilterOutput)
 }
 
+type GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection struct {
+	// A list of SQL statements in the cursor cache.
+	Items []GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem `pulumi:"items"`
+}
+
+// GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionInput is an input type that accepts GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArgs and GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionInput` via:
+//
+//	GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArgs{...}
+type GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutput() GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutput
+	ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutputWithContext(context.Context) GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutput
+}
+
+type GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArgs struct {
+	// A list of SQL statements in the cursor cache.
+	Items GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArgs) ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutput() GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutput {
+	return i.ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArgs) ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutput)
+}
+
+// GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayInput is an input type that accepts GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArray and GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayInput` via:
+//
+//	GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArray{ GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArgs{...} }
+type GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutput() GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutput
+	ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutputWithContext(context.Context) GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutput
+}
+
+type GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArray []GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionInput
+
+func (GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArray) ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutput() GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutput {
+	return i.ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArray) ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutput)
+}
+
+type GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutput) ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutput() GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutput {
+	return o
+}
+
+func (o GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutput) ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutput {
+	return o
+}
+
+// A list of SQL statements in the cursor cache.
+func (o GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutput) Items() GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection) []GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem {
+		return v.Items
+	}).(GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutput) ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutput() GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutput) ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection {
+		return vs[0].([]GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection)[vs[1].(int)]
+	}).(GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutput)
+}
+
+type GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem struct {
+	// The name of the parsing schema.
+	Schema string `pulumi:"schema"`
+	// The SQL statement identifier. Identifies a SQL statement in the cursor cache.
+	SqlId string `pulumi:"sqlId"`
+	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
+	SqlText string `pulumi:"sqlText"`
+}
+
+// GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemInput is an input type that accepts GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArgs and GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemInput` via:
+//
+//	GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArgs{...}
+type GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput() GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput
+	ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutputWithContext(context.Context) GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput
+}
+
+type GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArgs struct {
+	// The name of the parsing schema.
+	Schema pulumi.StringInput `pulumi:"schema"`
+	// The SQL statement identifier. Identifies a SQL statement in the cursor cache.
+	SqlId pulumi.StringInput `pulumi:"sqlId"`
+	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
+	SqlText pulumi.StringInput `pulumi:"sqlText"`
+}
+
+func (GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArgs) ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput() GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput {
+	return i.ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArgs) ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput)
+}
+
+// GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayInput is an input type that accepts GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArray and GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayInput` via:
+//
+//	GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArray{ GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArgs{...} }
+type GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutput() GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutput
+	ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutputWithContext(context.Context) GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutput
+}
+
+type GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArray []GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemInput
+
+func (GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArray) ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutput() GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutput {
+	return i.ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArray) ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput) ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput() GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput) ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput {
+	return o
+}
+
+// The name of the parsing schema.
+func (o GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput) Schema() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem) string {
+		return v.Schema
+	}).(pulumi.StringOutput)
+}
+
+// The SQL statement identifier. Identifies a SQL statement in the cursor cache.
+func (o GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput) SqlId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem) string {
+		return v.SqlId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
+func (o GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput) SqlText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem) string {
+		return v.SqlText
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutput) ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutput() GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutput) ToGetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem {
+		return vs[0].([]GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem)[vs[1].(int)]
+	}).(GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput)
+}
+
+type GetManagedDatabaseCursorCacheStatementsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedDatabaseCursorCacheStatementsFilterInput is an input type that accepts GetManagedDatabaseCursorCacheStatementsFilterArgs and GetManagedDatabaseCursorCacheStatementsFilterOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseCursorCacheStatementsFilterInput` via:
+//
+//	GetManagedDatabaseCursorCacheStatementsFilterArgs{...}
+type GetManagedDatabaseCursorCacheStatementsFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseCursorCacheStatementsFilterOutput() GetManagedDatabaseCursorCacheStatementsFilterOutput
+	ToGetManagedDatabaseCursorCacheStatementsFilterOutputWithContext(context.Context) GetManagedDatabaseCursorCacheStatementsFilterOutput
+}
+
+type GetManagedDatabaseCursorCacheStatementsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedDatabaseCursorCacheStatementsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseCursorCacheStatementsFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseCursorCacheStatementsFilterArgs) ToGetManagedDatabaseCursorCacheStatementsFilterOutput() GetManagedDatabaseCursorCacheStatementsFilterOutput {
+	return i.ToGetManagedDatabaseCursorCacheStatementsFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseCursorCacheStatementsFilterArgs) ToGetManagedDatabaseCursorCacheStatementsFilterOutputWithContext(ctx context.Context) GetManagedDatabaseCursorCacheStatementsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseCursorCacheStatementsFilterOutput)
+}
+
+// GetManagedDatabaseCursorCacheStatementsFilterArrayInput is an input type that accepts GetManagedDatabaseCursorCacheStatementsFilterArray and GetManagedDatabaseCursorCacheStatementsFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseCursorCacheStatementsFilterArrayInput` via:
+//
+//	GetManagedDatabaseCursorCacheStatementsFilterArray{ GetManagedDatabaseCursorCacheStatementsFilterArgs{...} }
+type GetManagedDatabaseCursorCacheStatementsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseCursorCacheStatementsFilterArrayOutput() GetManagedDatabaseCursorCacheStatementsFilterArrayOutput
+	ToGetManagedDatabaseCursorCacheStatementsFilterArrayOutputWithContext(context.Context) GetManagedDatabaseCursorCacheStatementsFilterArrayOutput
+}
+
+type GetManagedDatabaseCursorCacheStatementsFilterArray []GetManagedDatabaseCursorCacheStatementsFilterInput
+
+func (GetManagedDatabaseCursorCacheStatementsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseCursorCacheStatementsFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseCursorCacheStatementsFilterArray) ToGetManagedDatabaseCursorCacheStatementsFilterArrayOutput() GetManagedDatabaseCursorCacheStatementsFilterArrayOutput {
+	return i.ToGetManagedDatabaseCursorCacheStatementsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseCursorCacheStatementsFilterArray) ToGetManagedDatabaseCursorCacheStatementsFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseCursorCacheStatementsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseCursorCacheStatementsFilterArrayOutput)
+}
+
+type GetManagedDatabaseCursorCacheStatementsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseCursorCacheStatementsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseCursorCacheStatementsFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseCursorCacheStatementsFilterOutput) ToGetManagedDatabaseCursorCacheStatementsFilterOutput() GetManagedDatabaseCursorCacheStatementsFilterOutput {
+	return o
+}
+
+func (o GetManagedDatabaseCursorCacheStatementsFilterOutput) ToGetManagedDatabaseCursorCacheStatementsFilterOutputWithContext(ctx context.Context) GetManagedDatabaseCursorCacheStatementsFilterOutput {
+	return o
+}
+
+func (o GetManagedDatabaseCursorCacheStatementsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseCursorCacheStatementsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedDatabaseCursorCacheStatementsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseCursorCacheStatementsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedDatabaseCursorCacheStatementsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseCursorCacheStatementsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedDatabaseCursorCacheStatementsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseCursorCacheStatementsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseCursorCacheStatementsFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseCursorCacheStatementsFilterArrayOutput) ToGetManagedDatabaseCursorCacheStatementsFilterArrayOutput() GetManagedDatabaseCursorCacheStatementsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseCursorCacheStatementsFilterArrayOutput) ToGetManagedDatabaseCursorCacheStatementsFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseCursorCacheStatementsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseCursorCacheStatementsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseCursorCacheStatementsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseCursorCacheStatementsFilter {
+		return vs[0].([]GetManagedDatabaseCursorCacheStatementsFilter)[vs[1].(int)]
+	}).(GetManagedDatabaseCursorCacheStatementsFilterOutput)
+}
+
 type GetManagedDatabaseGroupManagedDatabase struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -36020,6 +36741,1072 @@ func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatis
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask {
 		return vs[0].([]GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask)[vs[1].(int)]
 	}).(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter struct {
+	// The database user who last updated the filter value.
+	ModifiedBy string `pulumi:"modifiedBy"`
+	// The name of the automatic capture filter.
+	// * AUTO_CAPTURE_SQL_TEXT: Search pattern to apply to SQL text.
+	// * AUTO_CAPTURE_PARSING_SCHEMA_NAME: Parsing schema to include or exclude for SQL plan management auto capture.
+	// * AUTO_CAPTURE_MODULE: Module to include or exclude for SQL plan management auto capture.
+	// * AUTO_CAPTURE_ACTION: Action to include or exclude for SQL plan management automatic capture.
+	Name string `pulumi:"name"`
+	// The time the filter value was last updated.
+	TimeLastModified string `pulumi:"timeLastModified"`
+	// A list of filter values to exclude.
+	ValuesToExcludes []string `pulumi:"valuesToExcludes"`
+	// A list of filter values to include.
+	ValuesToIncludes []string `pulumi:"valuesToIncludes"`
+}
+
+// GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterInput is an input type that accepts GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArgs and GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterInput` via:
+//
+//	GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArgs{...}
+type GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput() GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput
+	ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutputWithContext(context.Context) GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput
+}
+
+type GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArgs struct {
+	// The database user who last updated the filter value.
+	ModifiedBy pulumi.StringInput `pulumi:"modifiedBy"`
+	// The name of the automatic capture filter.
+	// * AUTO_CAPTURE_SQL_TEXT: Search pattern to apply to SQL text.
+	// * AUTO_CAPTURE_PARSING_SCHEMA_NAME: Parsing schema to include or exclude for SQL plan management auto capture.
+	// * AUTO_CAPTURE_MODULE: Module to include or exclude for SQL plan management auto capture.
+	// * AUTO_CAPTURE_ACTION: Action to include or exclude for SQL plan management automatic capture.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The time the filter value was last updated.
+	TimeLastModified pulumi.StringInput `pulumi:"timeLastModified"`
+	// A list of filter values to exclude.
+	ValuesToExcludes pulumi.StringArrayInput `pulumi:"valuesToExcludes"`
+	// A list of filter values to include.
+	ValuesToIncludes pulumi.StringArrayInput `pulumi:"valuesToIncludes"`
+}
+
+func (GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArgs) ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput() GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput {
+	return i.ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArgs) ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput)
+}
+
+// GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayInput is an input type that accepts GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArray and GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayInput` via:
+//
+//	GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArray{ GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArgs{...} }
+type GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutput() GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutput
+	ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutputWithContext(context.Context) GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutput
+}
+
+type GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArray []GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterInput
+
+func (GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArray) ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutput() GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutput {
+	return i.ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArray) ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput) ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput() GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput) ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput {
+	return o
+}
+
+// The database user who last updated the filter value.
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput) ModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter) string { return v.ModifiedBy }).(pulumi.StringOutput)
+}
+
+// The name of the automatic capture filter.
+// * AUTO_CAPTURE_SQL_TEXT: Search pattern to apply to SQL text.
+// * AUTO_CAPTURE_PARSING_SCHEMA_NAME: Parsing schema to include or exclude for SQL plan management auto capture.
+// * AUTO_CAPTURE_MODULE: Module to include or exclude for SQL plan management auto capture.
+// * AUTO_CAPTURE_ACTION: Action to include or exclude for SQL plan management automatic capture.
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The time the filter value was last updated.
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput) TimeLastModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter) string {
+		return v.TimeLastModified
+	}).(pulumi.StringOutput)
+}
+
+// A list of filter values to exclude.
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput) ValuesToExcludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter) []string {
+		return v.ValuesToExcludes
+	}).(pulumi.StringArrayOutput)
+}
+
+// A list of filter values to include.
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput) ValuesToIncludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter) []string {
+		return v.ValuesToIncludes
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutput) ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutput() GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutput) ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter {
+		return vs[0].([]GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter)[vs[1].(int)]
+	}).(GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter struct {
+	// The global time limit in seconds. This is the total time allowed for the task.
+	AllowedTimeLimit int `pulumi:"allowedTimeLimit"`
+	// Determines which alternative plans should be loaded.
+	AlternatePlanBaselines []string `pulumi:"alternatePlanBaselines"`
+	// Specifies the maximum number of plans to load in total (that is, not the limit for each SQL statement). A value of zero indicates `UNLIMITED` number of plans.
+	AlternatePlanLimit int `pulumi:"alternatePlanLimit"`
+	// Determines which sources to search for additional plans.
+	AlternatePlanSources []string `pulumi:"alternatePlanSources"`
+	// Specifies whether to accept recommended plans automatically.
+	ArePlansAutoAccepted bool `pulumi:"arePlansAutoAccepted"`
+}
+
+// GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterInput is an input type that accepts GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArgs and GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterInput` via:
+//
+//	GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArgs{...}
+type GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput() GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput
+	ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutputWithContext(context.Context) GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput
+}
+
+type GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArgs struct {
+	// The global time limit in seconds. This is the total time allowed for the task.
+	AllowedTimeLimit pulumi.IntInput `pulumi:"allowedTimeLimit"`
+	// Determines which alternative plans should be loaded.
+	AlternatePlanBaselines pulumi.StringArrayInput `pulumi:"alternatePlanBaselines"`
+	// Specifies the maximum number of plans to load in total (that is, not the limit for each SQL statement). A value of zero indicates `UNLIMITED` number of plans.
+	AlternatePlanLimit pulumi.IntInput `pulumi:"alternatePlanLimit"`
+	// Determines which sources to search for additional plans.
+	AlternatePlanSources pulumi.StringArrayInput `pulumi:"alternatePlanSources"`
+	// Specifies whether to accept recommended plans automatically.
+	ArePlansAutoAccepted pulumi.BoolInput `pulumi:"arePlansAutoAccepted"`
+}
+
+func (GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArgs) ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput() GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput {
+	return i.ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArgs) ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput)
+}
+
+// GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayInput is an input type that accepts GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArray and GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayInput` via:
+//
+//	GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArray{ GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArgs{...} }
+type GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutput() GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutput
+	ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutputWithContext(context.Context) GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutput
+}
+
+type GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArray []GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterInput
+
+func (GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArray) ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutput() GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutput {
+	return i.ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArray) ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput) ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput() GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput) ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput {
+	return o
+}
+
+// The global time limit in seconds. This is the total time allowed for the task.
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput) AllowedTimeLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter) int {
+		return v.AllowedTimeLimit
+	}).(pulumi.IntOutput)
+}
+
+// Determines which alternative plans should be loaded.
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput) AlternatePlanBaselines() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter) []string {
+		return v.AlternatePlanBaselines
+	}).(pulumi.StringArrayOutput)
+}
+
+// Specifies the maximum number of plans to load in total (that is, not the limit for each SQL statement). A value of zero indicates `UNLIMITED` number of plans.
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput) AlternatePlanLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter) int {
+		return v.AlternatePlanLimit
+	}).(pulumi.IntOutput)
+}
+
+// Determines which sources to search for additional plans.
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput) AlternatePlanSources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter) []string {
+		return v.AlternatePlanSources
+	}).(pulumi.StringArrayOutput)
+}
+
+// Specifies whether to accept recommended plans automatically.
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput) ArePlansAutoAccepted() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter) bool {
+		return v.ArePlansAutoAccepted
+	}).(pulumi.BoolOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutput) ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutput() GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutput) ToGetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter {
+		return vs[0].([]GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter)[vs[1].(int)]
+	}).(GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselineJobsFilter struct {
+	// A filter to return the SQL plan baseline jobs that match the name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedDatabaseSqlPlanBaselineJobsFilterInput is an input type that accepts GetManagedDatabaseSqlPlanBaselineJobsFilterArgs and GetManagedDatabaseSqlPlanBaselineJobsFilterOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlPlanBaselineJobsFilterInput` via:
+//
+//	GetManagedDatabaseSqlPlanBaselineJobsFilterArgs{...}
+type GetManagedDatabaseSqlPlanBaselineJobsFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlPlanBaselineJobsFilterOutput() GetManagedDatabaseSqlPlanBaselineJobsFilterOutput
+	ToGetManagedDatabaseSqlPlanBaselineJobsFilterOutputWithContext(context.Context) GetManagedDatabaseSqlPlanBaselineJobsFilterOutput
+}
+
+type GetManagedDatabaseSqlPlanBaselineJobsFilterArgs struct {
+	// A filter to return the SQL plan baseline jobs that match the name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedDatabaseSqlPlanBaselineJobsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselineJobsFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlPlanBaselineJobsFilterArgs) ToGetManagedDatabaseSqlPlanBaselineJobsFilterOutput() GetManagedDatabaseSqlPlanBaselineJobsFilterOutput {
+	return i.ToGetManagedDatabaseSqlPlanBaselineJobsFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlPlanBaselineJobsFilterArgs) ToGetManagedDatabaseSqlPlanBaselineJobsFilterOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineJobsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlPlanBaselineJobsFilterOutput)
+}
+
+// GetManagedDatabaseSqlPlanBaselineJobsFilterArrayInput is an input type that accepts GetManagedDatabaseSqlPlanBaselineJobsFilterArray and GetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlPlanBaselineJobsFilterArrayInput` via:
+//
+//	GetManagedDatabaseSqlPlanBaselineJobsFilterArray{ GetManagedDatabaseSqlPlanBaselineJobsFilterArgs{...} }
+type GetManagedDatabaseSqlPlanBaselineJobsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutput() GetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutput
+	ToGetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutputWithContext(context.Context) GetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutput
+}
+
+type GetManagedDatabaseSqlPlanBaselineJobsFilterArray []GetManagedDatabaseSqlPlanBaselineJobsFilterInput
+
+func (GetManagedDatabaseSqlPlanBaselineJobsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlPlanBaselineJobsFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlPlanBaselineJobsFilterArray) ToGetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutput() GetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutput {
+	return i.ToGetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlPlanBaselineJobsFilterArray) ToGetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselineJobsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlPlanBaselineJobsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselineJobsFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineJobsFilterOutput) ToGetManagedDatabaseSqlPlanBaselineJobsFilterOutput() GetManagedDatabaseSqlPlanBaselineJobsFilterOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineJobsFilterOutput) ToGetManagedDatabaseSqlPlanBaselineJobsFilterOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineJobsFilterOutput {
+	return o
+}
+
+// A filter to return the SQL plan baseline jobs that match the name.
+func (o GetManagedDatabaseSqlPlanBaselineJobsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineJobsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineJobsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineJobsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineJobsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineJobsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlPlanBaselineJobsFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutput) ToGetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutput() GetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutput) ToGetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseSqlPlanBaselineJobsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseSqlPlanBaselineJobsFilter {
+		return vs[0].([]GetManagedDatabaseSqlPlanBaselineJobsFilter)[vs[1].(int)]
+	}).(GetManagedDatabaseSqlPlanBaselineJobsFilterOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection struct {
+	// A list of SQL plan baseline jobs.
+	Items []GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem `pulumi:"items"`
+}
+
+// GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionInput is an input type that accepts GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArgs and GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionInput` via:
+//
+//	GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArgs{...}
+type GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutput() GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutput
+	ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutputWithContext(context.Context) GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutput
+}
+
+type GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArgs struct {
+	// A list of SQL plan baseline jobs.
+	Items GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArgs) ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutput() GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutput {
+	return i.ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArgs) ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutput)
+}
+
+// GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayInput is an input type that accepts GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArray and GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayInput` via:
+//
+//	GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArray{ GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArgs{...} }
+type GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutput() GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutput
+	ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutputWithContext(context.Context) GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutput
+}
+
+type GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArray []GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionInput
+
+func (GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArray) ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutput() GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutput {
+	return i.ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArray) ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutput) ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutput() GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutput) ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutput {
+	return o
+}
+
+// A list of SQL plan baseline jobs.
+func (o GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutput) Items() GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection) []GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem {
+		return v.Items
+	}).(GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutput) ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutput() GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutput) ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection {
+		return vs[0].([]GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection)[vs[1].(int)]
+	}).(GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem struct {
+	// A filter to return the SQL plan baseline jobs that match the name.
+	Name string `pulumi:"name"`
+	// The status of the job.
+	Status string `pulumi:"status"`
+	// The date and time the job was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The type of the job.
+	Type string `pulumi:"type"`
+}
+
+// GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemInput is an input type that accepts GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArgs and GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemInput` via:
+//
+//	GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArgs{...}
+type GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput() GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput
+	ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutputWithContext(context.Context) GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput
+}
+
+type GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArgs struct {
+	// A filter to return the SQL plan baseline jobs that match the name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The status of the job.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The date and time the job was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The type of the job.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArgs) ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput() GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput {
+	return i.ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArgs) ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput)
+}
+
+// GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayInput is an input type that accepts GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArray and GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayInput` via:
+//
+//	GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArray{ GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArgs{...} }
+type GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutput() GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutput
+	ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutputWithContext(context.Context) GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutput
+}
+
+type GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArray []GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemInput
+
+func (GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArray) ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutput() GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutput {
+	return i.ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArray) ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput) ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput() GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput) ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput {
+	return o
+}
+
+// A filter to return the SQL plan baseline jobs that match the name.
+func (o GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The status of the job.
+func (o GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The date and time the job was created.
+func (o GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The type of the job.
+func (o GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutput) ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutput() GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutput) ToGetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem {
+		return vs[0].([]GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem)[vs[1].(int)]
+	}).(GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselinesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedDatabaseSqlPlanBaselinesFilterInput is an input type that accepts GetManagedDatabaseSqlPlanBaselinesFilterArgs and GetManagedDatabaseSqlPlanBaselinesFilterOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlPlanBaselinesFilterInput` via:
+//
+//	GetManagedDatabaseSqlPlanBaselinesFilterArgs{...}
+type GetManagedDatabaseSqlPlanBaselinesFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlPlanBaselinesFilterOutput() GetManagedDatabaseSqlPlanBaselinesFilterOutput
+	ToGetManagedDatabaseSqlPlanBaselinesFilterOutputWithContext(context.Context) GetManagedDatabaseSqlPlanBaselinesFilterOutput
+}
+
+type GetManagedDatabaseSqlPlanBaselinesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedDatabaseSqlPlanBaselinesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselinesFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlPlanBaselinesFilterArgs) ToGetManagedDatabaseSqlPlanBaselinesFilterOutput() GetManagedDatabaseSqlPlanBaselinesFilterOutput {
+	return i.ToGetManagedDatabaseSqlPlanBaselinesFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlPlanBaselinesFilterArgs) ToGetManagedDatabaseSqlPlanBaselinesFilterOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselinesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlPlanBaselinesFilterOutput)
+}
+
+// GetManagedDatabaseSqlPlanBaselinesFilterArrayInput is an input type that accepts GetManagedDatabaseSqlPlanBaselinesFilterArray and GetManagedDatabaseSqlPlanBaselinesFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlPlanBaselinesFilterArrayInput` via:
+//
+//	GetManagedDatabaseSqlPlanBaselinesFilterArray{ GetManagedDatabaseSqlPlanBaselinesFilterArgs{...} }
+type GetManagedDatabaseSqlPlanBaselinesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlPlanBaselinesFilterArrayOutput() GetManagedDatabaseSqlPlanBaselinesFilterArrayOutput
+	ToGetManagedDatabaseSqlPlanBaselinesFilterArrayOutputWithContext(context.Context) GetManagedDatabaseSqlPlanBaselinesFilterArrayOutput
+}
+
+type GetManagedDatabaseSqlPlanBaselinesFilterArray []GetManagedDatabaseSqlPlanBaselinesFilterInput
+
+func (GetManagedDatabaseSqlPlanBaselinesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlPlanBaselinesFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlPlanBaselinesFilterArray) ToGetManagedDatabaseSqlPlanBaselinesFilterArrayOutput() GetManagedDatabaseSqlPlanBaselinesFilterArrayOutput {
+	return i.ToGetManagedDatabaseSqlPlanBaselinesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlPlanBaselinesFilterArray) ToGetManagedDatabaseSqlPlanBaselinesFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselinesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlPlanBaselinesFilterArrayOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselinesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlPlanBaselinesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselinesFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesFilterOutput) ToGetManagedDatabaseSqlPlanBaselinesFilterOutput() GetManagedDatabaseSqlPlanBaselinesFilterOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesFilterOutput) ToGetManagedDatabaseSqlPlanBaselinesFilterOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselinesFilterOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselinesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlPlanBaselinesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlPlanBaselinesFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesFilterArrayOutput) ToGetManagedDatabaseSqlPlanBaselinesFilterArrayOutput() GetManagedDatabaseSqlPlanBaselinesFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesFilterArrayOutput) ToGetManagedDatabaseSqlPlanBaselinesFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselinesFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesFilterArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseSqlPlanBaselinesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseSqlPlanBaselinesFilter {
+		return vs[0].([]GetManagedDatabaseSqlPlanBaselinesFilter)[vs[1].(int)]
+	}).(GetManagedDatabaseSqlPlanBaselinesFilterOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection struct {
+	Items []GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem `pulumi:"items"`
+}
+
+// GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionInput is an input type that accepts GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArgs and GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionInput` via:
+//
+//	GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArgs{...}
+type GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutput() GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutput
+	ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutputWithContext(context.Context) GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutput
+}
+
+type GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArgs struct {
+	Items GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArgs) ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutput() GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutput {
+	return i.ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArgs) ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutput)
+}
+
+// GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayInput is an input type that accepts GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArray and GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayInput` via:
+//
+//	GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArray{ GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArgs{...} }
+type GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutput() GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutput
+	ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutputWithContext(context.Context) GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutput
+}
+
+type GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArray []GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionInput
+
+func (GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArray) ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutput() GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutput {
+	return i.ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArray) ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutput) ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutput() GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutput) ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutput) Items() GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection) []GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem {
+		return v.Items
+	}).(GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutput) ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutput() GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutput) ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection {
+		return vs[0].([]GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection)[vs[1].(int)]
+	}).(GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem struct {
+	// Indicates whether the plan baseline is accepted (`YES`) or not (`NO`).
+	Accepted string `pulumi:"accepted"`
+	// The application action.
+	Action string `pulumi:"action"`
+	// Indicates whether a plan that is automatically captured by SQL plan management is marked adaptive or not.
+	Adaptive string `pulumi:"adaptive"`
+	// Indicates whether the plan baseline is auto-purged (`YES`) or not (`NO`).
+	AutoPurge string `pulumi:"autoPurge"`
+	// Indicates whether the plan baseline is enabled (`YES`) or disabled (`NO`).
+	Enabled string `pulumi:"enabled"`
+	// The execution plan for the SQL statement.
+	ExecutionPlan string `pulumi:"executionPlan"`
+	// Indicates whether the plan baseline is fixed (`YES`) or not (`NO`).
+	Fixed string `pulumi:"fixed"`
+	// The application module name.
+	Module string `pulumi:"module"`
+	// A filter to return all the SQL plan baselines that match the origin.
+	Origin string `pulumi:"origin"`
+	// A filter to return only SQL plan baselines that match the plan name.
+	PlanName string `pulumi:"planName"`
+	// Indicates whether the optimizer was able to reproduce the plan (`YES`) or not (`NO`). The value is set to `YES` when a plan is initially added to the plan baseline.
+	Reproduced string `pulumi:"reproduced"`
+	// A filter to return all the SQL plan baselines for the specified SQL handle.
+	SqlHandle string `pulumi:"sqlHandle"`
+	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
+	SqlText string `pulumi:"sqlText"`
+	// The date and time when the plan baseline was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time when the plan baseline was last executed.
+	TimeLastExecuted string `pulumi:"timeLastExecuted"`
+	// The date and time when the plan baseline was last modified.
+	TimeLastModified string `pulumi:"timeLastModified"`
+}
+
+// GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemInput is an input type that accepts GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArgs and GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemInput` via:
+//
+//	GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArgs{...}
+type GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput() GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput
+	ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutputWithContext(context.Context) GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput
+}
+
+type GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArgs struct {
+	// Indicates whether the plan baseline is accepted (`YES`) or not (`NO`).
+	Accepted pulumi.StringInput `pulumi:"accepted"`
+	// The application action.
+	Action pulumi.StringInput `pulumi:"action"`
+	// Indicates whether a plan that is automatically captured by SQL plan management is marked adaptive or not.
+	Adaptive pulumi.StringInput `pulumi:"adaptive"`
+	// Indicates whether the plan baseline is auto-purged (`YES`) or not (`NO`).
+	AutoPurge pulumi.StringInput `pulumi:"autoPurge"`
+	// Indicates whether the plan baseline is enabled (`YES`) or disabled (`NO`).
+	Enabled pulumi.StringInput `pulumi:"enabled"`
+	// The execution plan for the SQL statement.
+	ExecutionPlan pulumi.StringInput `pulumi:"executionPlan"`
+	// Indicates whether the plan baseline is fixed (`YES`) or not (`NO`).
+	Fixed pulumi.StringInput `pulumi:"fixed"`
+	// The application module name.
+	Module pulumi.StringInput `pulumi:"module"`
+	// A filter to return all the SQL plan baselines that match the origin.
+	Origin pulumi.StringInput `pulumi:"origin"`
+	// A filter to return only SQL plan baselines that match the plan name.
+	PlanName pulumi.StringInput `pulumi:"planName"`
+	// Indicates whether the optimizer was able to reproduce the plan (`YES`) or not (`NO`). The value is set to `YES` when a plan is initially added to the plan baseline.
+	Reproduced pulumi.StringInput `pulumi:"reproduced"`
+	// A filter to return all the SQL plan baselines for the specified SQL handle.
+	SqlHandle pulumi.StringInput `pulumi:"sqlHandle"`
+	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
+	SqlText pulumi.StringInput `pulumi:"sqlText"`
+	// The date and time when the plan baseline was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time when the plan baseline was last executed.
+	TimeLastExecuted pulumi.StringInput `pulumi:"timeLastExecuted"`
+	// The date and time when the plan baseline was last modified.
+	TimeLastModified pulumi.StringInput `pulumi:"timeLastModified"`
+}
+
+func (GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArgs) ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput() GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput {
+	return i.ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArgs) ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput)
+}
+
+// GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayInput is an input type that accepts GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArray and GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayInput` via:
+//
+//	GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArray{ GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArgs{...} }
+type GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutput() GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutput
+	ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutputWithContext(context.Context) GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutput
+}
+
+type GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArray []GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemInput
+
+func (GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArray) ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutput() GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutput {
+	return i.ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArray) ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput() GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput {
+	return o
+}
+
+// Indicates whether the plan baseline is accepted (`YES`) or not (`NO`).
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) Accepted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem) string { return v.Accepted }).(pulumi.StringOutput)
+}
+
+// The application action.
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// Indicates whether a plan that is automatically captured by SQL plan management is marked adaptive or not.
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) Adaptive() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem) string { return v.Adaptive }).(pulumi.StringOutput)
+}
+
+// Indicates whether the plan baseline is auto-purged (`YES`) or not (`NO`).
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) AutoPurge() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem) string { return v.AutoPurge }).(pulumi.StringOutput)
+}
+
+// Indicates whether the plan baseline is enabled (`YES`) or disabled (`NO`).
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) Enabled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem) string { return v.Enabled }).(pulumi.StringOutput)
+}
+
+// The execution plan for the SQL statement.
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) ExecutionPlan() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem) string { return v.ExecutionPlan }).(pulumi.StringOutput)
+}
+
+// Indicates whether the plan baseline is fixed (`YES`) or not (`NO`).
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) Fixed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem) string { return v.Fixed }).(pulumi.StringOutput)
+}
+
+// The application module name.
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) Module() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem) string { return v.Module }).(pulumi.StringOutput)
+}
+
+// A filter to return all the SQL plan baselines that match the origin.
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) Origin() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem) string { return v.Origin }).(pulumi.StringOutput)
+}
+
+// A filter to return only SQL plan baselines that match the plan name.
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) PlanName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem) string { return v.PlanName }).(pulumi.StringOutput)
+}
+
+// Indicates whether the optimizer was able to reproduce the plan (`YES`) or not (`NO`). The value is set to `YES` when a plan is initially added to the plan baseline.
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) Reproduced() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem) string { return v.Reproduced }).(pulumi.StringOutput)
+}
+
+// A filter to return all the SQL plan baselines for the specified SQL handle.
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) SqlHandle() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem) string { return v.SqlHandle }).(pulumi.StringOutput)
+}
+
+// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) SqlText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem) string { return v.SqlText }).(pulumi.StringOutput)
+}
+
+// The date and time when the plan baseline was created.
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time when the plan baseline was last executed.
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) TimeLastExecuted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem) string {
+		return v.TimeLastExecuted
+	}).(pulumi.StringOutput)
+}
+
+// The date and time when the plan baseline was last modified.
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) TimeLastModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem) string {
+		return v.TimeLastModified
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutput) ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutput() GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutput) ToGetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem {
+		return vs[0].([]GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem)[vs[1].(int)]
+	}).(GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput)
 }
 
 type GetManagedDatabaseSqlTuningAdvisorTaskItem struct {
@@ -46222,6 +48009,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsPtrInput)(nil)).Elem(), ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringInput)(nil)).Elem(), ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringPtrInput)(nil)).Elem(), ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemStackMonitoringConfigInput)(nil)).Elem(), ExternalDbSystemStackMonitoringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDbSystemStackMonitoringConfigPtrInput)(nil)).Elem(), ExternalDbSystemStackMonitoringConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalExadataInfrastructureDatabaseSystemInput)(nil)).Elem(), ExternalExadataInfrastructureDatabaseSystemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalExadataInfrastructureDatabaseSystemArrayInput)(nil)).Elem(), ExternalExadataInfrastructureDatabaseSystemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalExadataInfrastructureStorageGridInput)(nil)).Elem(), ExternalExadataInfrastructureStorageGridArgs{})
@@ -46470,12 +48259,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringInput)(nil)).Elem(), GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArrayInput)(nil)).Elem(), GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemStackMonitoringConfigInput)(nil)).Elem(), GetExternalDbSystemStackMonitoringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemStackMonitoringConfigArrayInput)(nil)).Elem(), GetExternalDbSystemStackMonitoringConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemsExternalDbSystemCollectionInput)(nil)).Elem(), GetExternalDbSystemsExternalDbSystemCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemsExternalDbSystemCollectionArrayInput)(nil)).Elem(), GetExternalDbSystemsExternalDbSystemCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemsExternalDbSystemCollectionItemInput)(nil)).Elem(), GetExternalDbSystemsExternalDbSystemCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemsExternalDbSystemCollectionItemArrayInput)(nil)).Elem(), GetExternalDbSystemsExternalDbSystemCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfigInput)(nil)).Elem(), GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfigArrayInput)(nil)).Elem(), GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigInput)(nil)).Elem(), GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayInput)(nil)).Elem(), GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemsFilterInput)(nil)).Elem(), GetExternalDbSystemsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDbSystemsFilterArrayInput)(nil)).Elem(), GetExternalDbSystemsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalExadataInfrastructureDatabaseSystemInput)(nil)).Elem(), GetExternalExadataInfrastructureDatabaseSystemArgs{})
@@ -46576,6 +48369,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayInput)(nil)).Elem(), GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAttentionLogCountsFilterInput)(nil)).Elem(), GetManagedDatabaseAttentionLogCountsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAttentionLogCountsFilterArrayInput)(nil)).Elem(), GetManagedDatabaseAttentionLogCountsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionInput)(nil)).Elem(), GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayInput)(nil)).Elem(), GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemInput)(nil)).Elem(), GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayInput)(nil)).Elem(), GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseCursorCacheStatementsFilterInput)(nil)).Elem(), GetManagedDatabaseCursorCacheStatementsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseCursorCacheStatementsFilterArrayInput)(nil)).Elem(), GetManagedDatabaseCursorCacheStatementsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseGroupManagedDatabaseInput)(nil)).Elem(), GetManagedDatabaseGroupManagedDatabaseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseGroupManagedDatabaseArrayInput)(nil)).Elem(), GetManagedDatabaseGroupManagedDatabaseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseGroupsFilterInput)(nil)).Elem(), GetManagedDatabaseGroupsFilterArgs{})
@@ -46654,6 +48453,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterInput)(nil)).Elem(), GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayInput)(nil)).Elem(), GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterInput)(nil)).Elem(), GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayInput)(nil)).Elem(), GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselineJobsFilterInput)(nil)).Elem(), GetManagedDatabaseSqlPlanBaselineJobsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselineJobsFilterArrayInput)(nil)).Elem(), GetManagedDatabaseSqlPlanBaselineJobsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionInput)(nil)).Elem(), GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayInput)(nil)).Elem(), GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemInput)(nil)).Elem(), GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayInput)(nil)).Elem(), GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselinesFilterInput)(nil)).Elem(), GetManagedDatabaseSqlPlanBaselinesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselinesFilterArrayInput)(nil)).Elem(), GetManagedDatabaseSqlPlanBaselinesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionInput)(nil)).Elem(), GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayInput)(nil)).Elem(), GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemInput)(nil)).Elem(), GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayInput)(nil)).Elem(), GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlTuningAdvisorTaskItemInput)(nil)).Elem(), GetManagedDatabaseSqlTuningAdvisorTaskItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlTuningAdvisorTaskItemArrayInput)(nil)).Elem(), GetManagedDatabaseSqlTuningAdvisorTaskItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedInput)(nil)).Elem(), GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedArgs{})
@@ -46872,6 +48687,8 @@ func init() {
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsPtrOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringOutput{})
 	pulumi.RegisterOutputType(ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringPtrOutput{})
+	pulumi.RegisterOutputType(ExternalDbSystemStackMonitoringConfigOutput{})
+	pulumi.RegisterOutputType(ExternalDbSystemStackMonitoringConfigPtrOutput{})
 	pulumi.RegisterOutputType(ExternalExadataInfrastructureDatabaseSystemOutput{})
 	pulumi.RegisterOutputType(ExternalExadataInfrastructureDatabaseSystemArrayOutput{})
 	pulumi.RegisterOutputType(ExternalExadataInfrastructureStorageGridOutput{})
@@ -47120,12 +48937,16 @@ func init() {
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalDbSystemStackMonitoringConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalDbSystemStackMonitoringConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemsExternalDbSystemCollectionOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemsExternalDbSystemCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemsExternalDbSystemCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemsExternalDbSystemCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfigOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemsFilterOutput{})
 	pulumi.RegisterOutputType(GetExternalDbSystemsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalExadataInfrastructureDatabaseSystemOutput{})
@@ -47226,6 +49047,12 @@ func init() {
 	pulumi.RegisterOutputType(GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseAttentionLogCountsFilterOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseAttentionLogCountsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseCursorCacheStatementsFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseCursorCacheStatementsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseGroupManagedDatabaseOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseGroupManagedDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseGroupsFilterOutput{})
@@ -47304,6 +49131,22 @@ func init() {
 	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlPlanBaselineJobsFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlPlanBaselinesFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlPlanBaselinesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseSqlTuningAdvisorTaskItemOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseSqlTuningAdvisorTaskItemArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedOutput{})

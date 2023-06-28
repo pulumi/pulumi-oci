@@ -75,6 +75,8 @@ type LookupExternalDbSystemResult struct {
 	IsCluster bool `pulumi:"isCluster"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The configuration details of Stack Monitoring for an external DB system.
+	StackMonitoringConfigs []GetExternalDbSystemStackMonitoringConfig `pulumi:"stackMonitoringConfigs"`
 	// The current lifecycle state of the external DB system resource.
 	State string `pulumi:"state"`
 	// The date and time the external DB system was created.
@@ -170,6 +172,13 @@ func (o LookupExternalDbSystemResultOutput) IsCluster() pulumi.BoolOutput {
 // Additional information about the current lifecycle state.
 func (o LookupExternalDbSystemResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalDbSystemResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The configuration details of Stack Monitoring for an external DB system.
+func (o LookupExternalDbSystemResultOutput) StackMonitoringConfigs() GetExternalDbSystemStackMonitoringConfigArrayOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemResult) []GetExternalDbSystemStackMonitoringConfig {
+		return v.StackMonitoringConfigs
+	}).(GetExternalDbSystemStackMonitoringConfigArrayOutput)
 }
 
 // The current lifecycle state of the external DB system resource.

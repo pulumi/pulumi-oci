@@ -13,6 +13,7 @@ import com.pulumi.oci.ApmSynthetics.outputs.ConfigAvailabilityConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.ConfigConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.ConfigMaintenanceWindowSchedule;
 import com.pulumi.oci.ApmSynthetics.outputs.ConfigScriptParameter;
+import com.pulumi.oci.ApmSynthetics.outputs.ConfigVantagePoint;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -36,6 +37,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.ApmSynthetics.Config;
  * import com.pulumi.oci.ApmSynthetics.ConfigArgs;
+ * import com.pulumi.oci.ApmSynthetics.inputs.ConfigVantagePointArgs;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigAvailabilityConfigurationArgs;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationArgs;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationDnsConfigurationArgs;
@@ -61,7 +63,10 @@ import javax.annotation.Nullable;
  *             .displayName(var_.monitor_display_name())
  *             .monitorType(var_.monitor_monitor_type())
  *             .repeatIntervalInSeconds(var_.monitor_repeat_interval_in_seconds())
- *             .vantagePoints(var_.vantage_points())
+ *             .vantagePoints(ConfigVantagePointArgs.builder()
+ *                 .name(var_.monitor_vantage_points_name())
+ *                 .displayName(var_.monitor_vantage_points_param_display_name())
+ *                 .build())
  *             .availabilityConfiguration(ConfigAvailabilityConfigurationArgs.builder()
  *                 .maxAllowedFailuresPerInterval(var_.monitor_availability_configuration_max_allowed_failures_per_interval())
  *                 .minAllowedRunsPerInterval(var_.monitor_availability_configuration_min_allowed_runs_per_interval())
@@ -218,14 +223,14 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+     * Unique name that can be edited. The name should not contain any confidential information.
      * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+     * @return Unique name that can be edited. The name should not contain any confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -462,8 +467,8 @@ public class Config extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="vantagePoints", type=List.class, parameters={String.class})
-    private Output<List<String>> vantagePoints;
+    @Export(name="vantagePoints", type=List.class, parameters={ConfigVantagePoint.class})
+    private Output<List<ConfigVantagePoint>> vantagePoints;
 
     /**
      * @return (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
@@ -472,7 +477,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<List<String>> vantagePoints() {
+    public Output<List<ConfigVantagePoint>> vantagePoints() {
         return this.vantagePoints;
     }
 

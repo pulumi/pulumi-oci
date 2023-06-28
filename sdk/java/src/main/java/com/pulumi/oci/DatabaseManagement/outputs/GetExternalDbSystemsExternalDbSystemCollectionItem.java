@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfig;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -57,6 +58,11 @@ public final class GetExternalDbSystemsExternalDbSystemCollectionItem {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return The configuration details of Stack Monitoring for an external DB system.
+     * 
+     */
+    private List<GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig> stackMonitoringConfigs;
     /**
      * @return The current lifecycle state of the external DB system resource.
      * 
@@ -138,6 +144,13 @@ public final class GetExternalDbSystemsExternalDbSystemCollectionItem {
         return this.lifecycleDetails;
     }
     /**
+     * @return The configuration details of Stack Monitoring for an external DB system.
+     * 
+     */
+    public List<GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig> stackMonitoringConfigs() {
+        return this.stackMonitoringConfigs;
+    }
+    /**
      * @return The current lifecycle state of the external DB system resource.
      * 
      */
@@ -177,6 +190,7 @@ public final class GetExternalDbSystemsExternalDbSystemCollectionItem {
         private String id;
         private Boolean isCluster;
         private String lifecycleDetails;
+        private List<GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig> stackMonitoringConfigs;
         private String state;
         private String timeCreated;
         private String timeUpdated;
@@ -192,6 +206,7 @@ public final class GetExternalDbSystemsExternalDbSystemCollectionItem {
     	      this.id = defaults.id;
     	      this.isCluster = defaults.isCluster;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.stackMonitoringConfigs = defaults.stackMonitoringConfigs;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -246,6 +261,14 @@ public final class GetExternalDbSystemsExternalDbSystemCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder stackMonitoringConfigs(List<GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig> stackMonitoringConfigs) {
+            this.stackMonitoringConfigs = Objects.requireNonNull(stackMonitoringConfigs);
+            return this;
+        }
+        public Builder stackMonitoringConfigs(GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig... stackMonitoringConfigs) {
+            return stackMonitoringConfigs(List.of(stackMonitoringConfigs));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -271,6 +294,7 @@ public final class GetExternalDbSystemsExternalDbSystemCollectionItem {
             o.id = id;
             o.isCluster = isCluster;
             o.lifecycleDetails = lifecycleDetails;
+            o.stackMonitoringConfigs = stackMonitoringConfigs;
             o.state = state;
             o.timeCreated = timeCreated;
             o.timeUpdated = timeUpdated;

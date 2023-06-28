@@ -106,7 +106,7 @@ type GetMonitorResult struct {
 	// Number of vantage points where monitor is running.
 	VantagePointCount int `pulumi:"vantagePointCount"`
 	// List of public and dedicated vantage points where the monitor is running.
-	VantagePoints []string `pulumi:"vantagePoints"`
+	VantagePoints []GetMonitorVantagePoint `pulumi:"vantagePoints"`
 }
 
 func GetMonitorOutput(ctx *pulumi.Context, args GetMonitorOutputArgs, opts ...pulumi.InvokeOption) GetMonitorResultOutput {
@@ -268,8 +268,8 @@ func (o GetMonitorResultOutput) VantagePointCount() pulumi.IntOutput {
 }
 
 // List of public and dedicated vantage points where the monitor is running.
-func (o GetMonitorResultOutput) VantagePoints() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetMonitorResult) []string { return v.VantagePoints }).(pulumi.StringArrayOutput)
+func (o GetMonitorResultOutput) VantagePoints() GetMonitorVantagePointArrayOutput {
+	return o.ApplyT(func(v GetMonitorResult) []GetMonitorVantagePoint { return v.VantagePoints }).(GetMonitorVantagePointArrayOutput)
 }
 
 func init() {

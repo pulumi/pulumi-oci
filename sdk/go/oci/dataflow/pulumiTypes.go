@@ -2146,6 +2146,686 @@ func (o RunStatementOutputDataArrayOutput) Index(i pulumi.IntInput) RunStatement
 	}).(RunStatementOutputDataOutput)
 }
 
+type SqlEndpointDriverShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus *float64 `pulumi:"ocpus"`
+}
+
+// SqlEndpointDriverShapeConfigInput is an input type that accepts SqlEndpointDriverShapeConfigArgs and SqlEndpointDriverShapeConfigOutput values.
+// You can construct a concrete instance of `SqlEndpointDriverShapeConfigInput` via:
+//
+//	SqlEndpointDriverShapeConfigArgs{...}
+type SqlEndpointDriverShapeConfigInput interface {
+	pulumi.Input
+
+	ToSqlEndpointDriverShapeConfigOutput() SqlEndpointDriverShapeConfigOutput
+	ToSqlEndpointDriverShapeConfigOutputWithContext(context.Context) SqlEndpointDriverShapeConfigOutput
+}
+
+type SqlEndpointDriverShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
+}
+
+func (SqlEndpointDriverShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SqlEndpointDriverShapeConfig)(nil)).Elem()
+}
+
+func (i SqlEndpointDriverShapeConfigArgs) ToSqlEndpointDriverShapeConfigOutput() SqlEndpointDriverShapeConfigOutput {
+	return i.ToSqlEndpointDriverShapeConfigOutputWithContext(context.Background())
+}
+
+func (i SqlEndpointDriverShapeConfigArgs) ToSqlEndpointDriverShapeConfigOutputWithContext(ctx context.Context) SqlEndpointDriverShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointDriverShapeConfigOutput)
+}
+
+func (i SqlEndpointDriverShapeConfigArgs) ToSqlEndpointDriverShapeConfigPtrOutput() SqlEndpointDriverShapeConfigPtrOutput {
+	return i.ToSqlEndpointDriverShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i SqlEndpointDriverShapeConfigArgs) ToSqlEndpointDriverShapeConfigPtrOutputWithContext(ctx context.Context) SqlEndpointDriverShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointDriverShapeConfigOutput).ToSqlEndpointDriverShapeConfigPtrOutputWithContext(ctx)
+}
+
+// SqlEndpointDriverShapeConfigPtrInput is an input type that accepts SqlEndpointDriverShapeConfigArgs, SqlEndpointDriverShapeConfigPtr and SqlEndpointDriverShapeConfigPtrOutput values.
+// You can construct a concrete instance of `SqlEndpointDriverShapeConfigPtrInput` via:
+//
+//	        SqlEndpointDriverShapeConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type SqlEndpointDriverShapeConfigPtrInput interface {
+	pulumi.Input
+
+	ToSqlEndpointDriverShapeConfigPtrOutput() SqlEndpointDriverShapeConfigPtrOutput
+	ToSqlEndpointDriverShapeConfigPtrOutputWithContext(context.Context) SqlEndpointDriverShapeConfigPtrOutput
+}
+
+type sqlEndpointDriverShapeConfigPtrType SqlEndpointDriverShapeConfigArgs
+
+func SqlEndpointDriverShapeConfigPtr(v *SqlEndpointDriverShapeConfigArgs) SqlEndpointDriverShapeConfigPtrInput {
+	return (*sqlEndpointDriverShapeConfigPtrType)(v)
+}
+
+func (*sqlEndpointDriverShapeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SqlEndpointDriverShapeConfig)(nil)).Elem()
+}
+
+func (i *sqlEndpointDriverShapeConfigPtrType) ToSqlEndpointDriverShapeConfigPtrOutput() SqlEndpointDriverShapeConfigPtrOutput {
+	return i.ToSqlEndpointDriverShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *sqlEndpointDriverShapeConfigPtrType) ToSqlEndpointDriverShapeConfigPtrOutputWithContext(ctx context.Context) SqlEndpointDriverShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointDriverShapeConfigPtrOutput)
+}
+
+type SqlEndpointDriverShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (SqlEndpointDriverShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SqlEndpointDriverShapeConfig)(nil)).Elem()
+}
+
+func (o SqlEndpointDriverShapeConfigOutput) ToSqlEndpointDriverShapeConfigOutput() SqlEndpointDriverShapeConfigOutput {
+	return o
+}
+
+func (o SqlEndpointDriverShapeConfigOutput) ToSqlEndpointDriverShapeConfigOutputWithContext(ctx context.Context) SqlEndpointDriverShapeConfigOutput {
+	return o
+}
+
+func (o SqlEndpointDriverShapeConfigOutput) ToSqlEndpointDriverShapeConfigPtrOutput() SqlEndpointDriverShapeConfigPtrOutput {
+	return o.ToSqlEndpointDriverShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o SqlEndpointDriverShapeConfigOutput) ToSqlEndpointDriverShapeConfigPtrOutputWithContext(ctx context.Context) SqlEndpointDriverShapeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SqlEndpointDriverShapeConfig) *SqlEndpointDriverShapeConfig {
+		return &v
+	}).(SqlEndpointDriverShapeConfigPtrOutput)
+}
+
+// The amount of memory used for the driver or executors.
+func (o SqlEndpointDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v SqlEndpointDriverShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o SqlEndpointDriverShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v SqlEndpointDriverShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
+}
+
+type SqlEndpointDriverShapeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (SqlEndpointDriverShapeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SqlEndpointDriverShapeConfig)(nil)).Elem()
+}
+
+func (o SqlEndpointDriverShapeConfigPtrOutput) ToSqlEndpointDriverShapeConfigPtrOutput() SqlEndpointDriverShapeConfigPtrOutput {
+	return o
+}
+
+func (o SqlEndpointDriverShapeConfigPtrOutput) ToSqlEndpointDriverShapeConfigPtrOutputWithContext(ctx context.Context) SqlEndpointDriverShapeConfigPtrOutput {
+	return o
+}
+
+func (o SqlEndpointDriverShapeConfigPtrOutput) Elem() SqlEndpointDriverShapeConfigOutput {
+	return o.ApplyT(func(v *SqlEndpointDriverShapeConfig) SqlEndpointDriverShapeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret SqlEndpointDriverShapeConfig
+		return ret
+	}).(SqlEndpointDriverShapeConfigOutput)
+}
+
+// The amount of memory used for the driver or executors.
+func (o SqlEndpointDriverShapeConfigPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *SqlEndpointDriverShapeConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o SqlEndpointDriverShapeConfigPtrOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *SqlEndpointDriverShapeConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.Float64PtrOutput)
+}
+
+type SqlEndpointExecutorShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus *float64 `pulumi:"ocpus"`
+}
+
+// SqlEndpointExecutorShapeConfigInput is an input type that accepts SqlEndpointExecutorShapeConfigArgs and SqlEndpointExecutorShapeConfigOutput values.
+// You can construct a concrete instance of `SqlEndpointExecutorShapeConfigInput` via:
+//
+//	SqlEndpointExecutorShapeConfigArgs{...}
+type SqlEndpointExecutorShapeConfigInput interface {
+	pulumi.Input
+
+	ToSqlEndpointExecutorShapeConfigOutput() SqlEndpointExecutorShapeConfigOutput
+	ToSqlEndpointExecutorShapeConfigOutputWithContext(context.Context) SqlEndpointExecutorShapeConfigOutput
+}
+
+type SqlEndpointExecutorShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
+}
+
+func (SqlEndpointExecutorShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SqlEndpointExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i SqlEndpointExecutorShapeConfigArgs) ToSqlEndpointExecutorShapeConfigOutput() SqlEndpointExecutorShapeConfigOutput {
+	return i.ToSqlEndpointExecutorShapeConfigOutputWithContext(context.Background())
+}
+
+func (i SqlEndpointExecutorShapeConfigArgs) ToSqlEndpointExecutorShapeConfigOutputWithContext(ctx context.Context) SqlEndpointExecutorShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointExecutorShapeConfigOutput)
+}
+
+func (i SqlEndpointExecutorShapeConfigArgs) ToSqlEndpointExecutorShapeConfigPtrOutput() SqlEndpointExecutorShapeConfigPtrOutput {
+	return i.ToSqlEndpointExecutorShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i SqlEndpointExecutorShapeConfigArgs) ToSqlEndpointExecutorShapeConfigPtrOutputWithContext(ctx context.Context) SqlEndpointExecutorShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointExecutorShapeConfigOutput).ToSqlEndpointExecutorShapeConfigPtrOutputWithContext(ctx)
+}
+
+// SqlEndpointExecutorShapeConfigPtrInput is an input type that accepts SqlEndpointExecutorShapeConfigArgs, SqlEndpointExecutorShapeConfigPtr and SqlEndpointExecutorShapeConfigPtrOutput values.
+// You can construct a concrete instance of `SqlEndpointExecutorShapeConfigPtrInput` via:
+//
+//	        SqlEndpointExecutorShapeConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type SqlEndpointExecutorShapeConfigPtrInput interface {
+	pulumi.Input
+
+	ToSqlEndpointExecutorShapeConfigPtrOutput() SqlEndpointExecutorShapeConfigPtrOutput
+	ToSqlEndpointExecutorShapeConfigPtrOutputWithContext(context.Context) SqlEndpointExecutorShapeConfigPtrOutput
+}
+
+type sqlEndpointExecutorShapeConfigPtrType SqlEndpointExecutorShapeConfigArgs
+
+func SqlEndpointExecutorShapeConfigPtr(v *SqlEndpointExecutorShapeConfigArgs) SqlEndpointExecutorShapeConfigPtrInput {
+	return (*sqlEndpointExecutorShapeConfigPtrType)(v)
+}
+
+func (*sqlEndpointExecutorShapeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SqlEndpointExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i *sqlEndpointExecutorShapeConfigPtrType) ToSqlEndpointExecutorShapeConfigPtrOutput() SqlEndpointExecutorShapeConfigPtrOutput {
+	return i.ToSqlEndpointExecutorShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *sqlEndpointExecutorShapeConfigPtrType) ToSqlEndpointExecutorShapeConfigPtrOutputWithContext(ctx context.Context) SqlEndpointExecutorShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointExecutorShapeConfigPtrOutput)
+}
+
+type SqlEndpointExecutorShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (SqlEndpointExecutorShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SqlEndpointExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o SqlEndpointExecutorShapeConfigOutput) ToSqlEndpointExecutorShapeConfigOutput() SqlEndpointExecutorShapeConfigOutput {
+	return o
+}
+
+func (o SqlEndpointExecutorShapeConfigOutput) ToSqlEndpointExecutorShapeConfigOutputWithContext(ctx context.Context) SqlEndpointExecutorShapeConfigOutput {
+	return o
+}
+
+func (o SqlEndpointExecutorShapeConfigOutput) ToSqlEndpointExecutorShapeConfigPtrOutput() SqlEndpointExecutorShapeConfigPtrOutput {
+	return o.ToSqlEndpointExecutorShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o SqlEndpointExecutorShapeConfigOutput) ToSqlEndpointExecutorShapeConfigPtrOutputWithContext(ctx context.Context) SqlEndpointExecutorShapeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SqlEndpointExecutorShapeConfig) *SqlEndpointExecutorShapeConfig {
+		return &v
+	}).(SqlEndpointExecutorShapeConfigPtrOutput)
+}
+
+// The amount of memory used for the driver or executors.
+func (o SqlEndpointExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v SqlEndpointExecutorShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o SqlEndpointExecutorShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v SqlEndpointExecutorShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
+}
+
+type SqlEndpointExecutorShapeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (SqlEndpointExecutorShapeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SqlEndpointExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o SqlEndpointExecutorShapeConfigPtrOutput) ToSqlEndpointExecutorShapeConfigPtrOutput() SqlEndpointExecutorShapeConfigPtrOutput {
+	return o
+}
+
+func (o SqlEndpointExecutorShapeConfigPtrOutput) ToSqlEndpointExecutorShapeConfigPtrOutputWithContext(ctx context.Context) SqlEndpointExecutorShapeConfigPtrOutput {
+	return o
+}
+
+func (o SqlEndpointExecutorShapeConfigPtrOutput) Elem() SqlEndpointExecutorShapeConfigOutput {
+	return o.ApplyT(func(v *SqlEndpointExecutorShapeConfig) SqlEndpointExecutorShapeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret SqlEndpointExecutorShapeConfig
+		return ret
+	}).(SqlEndpointExecutorShapeConfigOutput)
+}
+
+// The amount of memory used for the driver or executors.
+func (o SqlEndpointExecutorShapeConfigPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *SqlEndpointExecutorShapeConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o SqlEndpointExecutorShapeConfigPtrOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *SqlEndpointExecutorShapeConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.Float64PtrOutput)
+}
+
+type SqlEndpointNetworkConfiguration struct {
+	// A list of SecureAccessControlRule's to which access is limited to
+	AccessControlRules []SqlEndpointNetworkConfigurationAccessControlRule `pulumi:"accessControlRules"`
+	// The host name prefix.
+	HostNamePrefix *string `pulumi:"hostNamePrefix"`
+	// The type of network configuration.
+	NetworkType string `pulumi:"networkType"`
+	// Ip Address of private endpoint
+	PrivateEndpointIp *string `pulumi:"privateEndpointIp"`
+	// Ip Address of public endpoint
+	PublicEndpointIp *string `pulumi:"publicEndpointIp"`
+	// The VCN Subnet OCID.
+	SubnetId *string `pulumi:"subnetId"`
+	// The VCN OCID.
+	VcnId *string `pulumi:"vcnId"`
+}
+
+// SqlEndpointNetworkConfigurationInput is an input type that accepts SqlEndpointNetworkConfigurationArgs and SqlEndpointNetworkConfigurationOutput values.
+// You can construct a concrete instance of `SqlEndpointNetworkConfigurationInput` via:
+//
+//	SqlEndpointNetworkConfigurationArgs{...}
+type SqlEndpointNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToSqlEndpointNetworkConfigurationOutput() SqlEndpointNetworkConfigurationOutput
+	ToSqlEndpointNetworkConfigurationOutputWithContext(context.Context) SqlEndpointNetworkConfigurationOutput
+}
+
+type SqlEndpointNetworkConfigurationArgs struct {
+	// A list of SecureAccessControlRule's to which access is limited to
+	AccessControlRules SqlEndpointNetworkConfigurationAccessControlRuleArrayInput `pulumi:"accessControlRules"`
+	// The host name prefix.
+	HostNamePrefix pulumi.StringPtrInput `pulumi:"hostNamePrefix"`
+	// The type of network configuration.
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// Ip Address of private endpoint
+	PrivateEndpointIp pulumi.StringPtrInput `pulumi:"privateEndpointIp"`
+	// Ip Address of public endpoint
+	PublicEndpointIp pulumi.StringPtrInput `pulumi:"publicEndpointIp"`
+	// The VCN Subnet OCID.
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+	// The VCN OCID.
+	VcnId pulumi.StringPtrInput `pulumi:"vcnId"`
+}
+
+func (SqlEndpointNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SqlEndpointNetworkConfiguration)(nil)).Elem()
+}
+
+func (i SqlEndpointNetworkConfigurationArgs) ToSqlEndpointNetworkConfigurationOutput() SqlEndpointNetworkConfigurationOutput {
+	return i.ToSqlEndpointNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i SqlEndpointNetworkConfigurationArgs) ToSqlEndpointNetworkConfigurationOutputWithContext(ctx context.Context) SqlEndpointNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointNetworkConfigurationOutput)
+}
+
+func (i SqlEndpointNetworkConfigurationArgs) ToSqlEndpointNetworkConfigurationPtrOutput() SqlEndpointNetworkConfigurationPtrOutput {
+	return i.ToSqlEndpointNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i SqlEndpointNetworkConfigurationArgs) ToSqlEndpointNetworkConfigurationPtrOutputWithContext(ctx context.Context) SqlEndpointNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointNetworkConfigurationOutput).ToSqlEndpointNetworkConfigurationPtrOutputWithContext(ctx)
+}
+
+// SqlEndpointNetworkConfigurationPtrInput is an input type that accepts SqlEndpointNetworkConfigurationArgs, SqlEndpointNetworkConfigurationPtr and SqlEndpointNetworkConfigurationPtrOutput values.
+// You can construct a concrete instance of `SqlEndpointNetworkConfigurationPtrInput` via:
+//
+//	        SqlEndpointNetworkConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type SqlEndpointNetworkConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToSqlEndpointNetworkConfigurationPtrOutput() SqlEndpointNetworkConfigurationPtrOutput
+	ToSqlEndpointNetworkConfigurationPtrOutputWithContext(context.Context) SqlEndpointNetworkConfigurationPtrOutput
+}
+
+type sqlEndpointNetworkConfigurationPtrType SqlEndpointNetworkConfigurationArgs
+
+func SqlEndpointNetworkConfigurationPtr(v *SqlEndpointNetworkConfigurationArgs) SqlEndpointNetworkConfigurationPtrInput {
+	return (*sqlEndpointNetworkConfigurationPtrType)(v)
+}
+
+func (*sqlEndpointNetworkConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SqlEndpointNetworkConfiguration)(nil)).Elem()
+}
+
+func (i *sqlEndpointNetworkConfigurationPtrType) ToSqlEndpointNetworkConfigurationPtrOutput() SqlEndpointNetworkConfigurationPtrOutput {
+	return i.ToSqlEndpointNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *sqlEndpointNetworkConfigurationPtrType) ToSqlEndpointNetworkConfigurationPtrOutputWithContext(ctx context.Context) SqlEndpointNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointNetworkConfigurationPtrOutput)
+}
+
+type SqlEndpointNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (SqlEndpointNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SqlEndpointNetworkConfiguration)(nil)).Elem()
+}
+
+func (o SqlEndpointNetworkConfigurationOutput) ToSqlEndpointNetworkConfigurationOutput() SqlEndpointNetworkConfigurationOutput {
+	return o
+}
+
+func (o SqlEndpointNetworkConfigurationOutput) ToSqlEndpointNetworkConfigurationOutputWithContext(ctx context.Context) SqlEndpointNetworkConfigurationOutput {
+	return o
+}
+
+func (o SqlEndpointNetworkConfigurationOutput) ToSqlEndpointNetworkConfigurationPtrOutput() SqlEndpointNetworkConfigurationPtrOutput {
+	return o.ToSqlEndpointNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o SqlEndpointNetworkConfigurationOutput) ToSqlEndpointNetworkConfigurationPtrOutputWithContext(ctx context.Context) SqlEndpointNetworkConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SqlEndpointNetworkConfiguration) *SqlEndpointNetworkConfiguration {
+		return &v
+	}).(SqlEndpointNetworkConfigurationPtrOutput)
+}
+
+// A list of SecureAccessControlRule's to which access is limited to
+func (o SqlEndpointNetworkConfigurationOutput) AccessControlRules() SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput {
+	return o.ApplyT(func(v SqlEndpointNetworkConfiguration) []SqlEndpointNetworkConfigurationAccessControlRule {
+		return v.AccessControlRules
+	}).(SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput)
+}
+
+// The host name prefix.
+func (o SqlEndpointNetworkConfigurationOutput) HostNamePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SqlEndpointNetworkConfiguration) *string { return v.HostNamePrefix }).(pulumi.StringPtrOutput)
+}
+
+// The type of network configuration.
+func (o SqlEndpointNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v SqlEndpointNetworkConfiguration) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// Ip Address of private endpoint
+func (o SqlEndpointNetworkConfigurationOutput) PrivateEndpointIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SqlEndpointNetworkConfiguration) *string { return v.PrivateEndpointIp }).(pulumi.StringPtrOutput)
+}
+
+// Ip Address of public endpoint
+func (o SqlEndpointNetworkConfigurationOutput) PublicEndpointIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SqlEndpointNetworkConfiguration) *string { return v.PublicEndpointIp }).(pulumi.StringPtrOutput)
+}
+
+// The VCN Subnet OCID.
+func (o SqlEndpointNetworkConfigurationOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SqlEndpointNetworkConfiguration) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+// The VCN OCID.
+func (o SqlEndpointNetworkConfigurationOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SqlEndpointNetworkConfiguration) *string { return v.VcnId }).(pulumi.StringPtrOutput)
+}
+
+type SqlEndpointNetworkConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (SqlEndpointNetworkConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SqlEndpointNetworkConfiguration)(nil)).Elem()
+}
+
+func (o SqlEndpointNetworkConfigurationPtrOutput) ToSqlEndpointNetworkConfigurationPtrOutput() SqlEndpointNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o SqlEndpointNetworkConfigurationPtrOutput) ToSqlEndpointNetworkConfigurationPtrOutputWithContext(ctx context.Context) SqlEndpointNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o SqlEndpointNetworkConfigurationPtrOutput) Elem() SqlEndpointNetworkConfigurationOutput {
+	return o.ApplyT(func(v *SqlEndpointNetworkConfiguration) SqlEndpointNetworkConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret SqlEndpointNetworkConfiguration
+		return ret
+	}).(SqlEndpointNetworkConfigurationOutput)
+}
+
+// A list of SecureAccessControlRule's to which access is limited to
+func (o SqlEndpointNetworkConfigurationPtrOutput) AccessControlRules() SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput {
+	return o.ApplyT(func(v *SqlEndpointNetworkConfiguration) []SqlEndpointNetworkConfigurationAccessControlRule {
+		if v == nil {
+			return nil
+		}
+		return v.AccessControlRules
+	}).(SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput)
+}
+
+// The host name prefix.
+func (o SqlEndpointNetworkConfigurationPtrOutput) HostNamePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlEndpointNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HostNamePrefix
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of network configuration.
+func (o SqlEndpointNetworkConfigurationPtrOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlEndpointNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.NetworkType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Ip Address of private endpoint
+func (o SqlEndpointNetworkConfigurationPtrOutput) PrivateEndpointIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlEndpointNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PrivateEndpointIp
+	}).(pulumi.StringPtrOutput)
+}
+
+// Ip Address of public endpoint
+func (o SqlEndpointNetworkConfigurationPtrOutput) PublicEndpointIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlEndpointNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PublicEndpointIp
+	}).(pulumi.StringPtrOutput)
+}
+
+// The VCN Subnet OCID.
+func (o SqlEndpointNetworkConfigurationPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlEndpointNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The VCN OCID.
+func (o SqlEndpointNetworkConfigurationPtrOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlEndpointNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VcnId
+	}).(pulumi.StringPtrOutput)
+}
+
+type SqlEndpointNetworkConfigurationAccessControlRule struct {
+	// The type of IP notation.
+	IpNotation *string `pulumi:"ipNotation"`
+	// The associated value of the selected IP notation.
+	Value *string `pulumi:"value"`
+	// A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+	VcnIps *string `pulumi:"vcnIps"`
+}
+
+// SqlEndpointNetworkConfigurationAccessControlRuleInput is an input type that accepts SqlEndpointNetworkConfigurationAccessControlRuleArgs and SqlEndpointNetworkConfigurationAccessControlRuleOutput values.
+// You can construct a concrete instance of `SqlEndpointNetworkConfigurationAccessControlRuleInput` via:
+//
+//	SqlEndpointNetworkConfigurationAccessControlRuleArgs{...}
+type SqlEndpointNetworkConfigurationAccessControlRuleInput interface {
+	pulumi.Input
+
+	ToSqlEndpointNetworkConfigurationAccessControlRuleOutput() SqlEndpointNetworkConfigurationAccessControlRuleOutput
+	ToSqlEndpointNetworkConfigurationAccessControlRuleOutputWithContext(context.Context) SqlEndpointNetworkConfigurationAccessControlRuleOutput
+}
+
+type SqlEndpointNetworkConfigurationAccessControlRuleArgs struct {
+	// The type of IP notation.
+	IpNotation pulumi.StringPtrInput `pulumi:"ipNotation"`
+	// The associated value of the selected IP notation.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+	// A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+	VcnIps pulumi.StringPtrInput `pulumi:"vcnIps"`
+}
+
+func (SqlEndpointNetworkConfigurationAccessControlRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SqlEndpointNetworkConfigurationAccessControlRule)(nil)).Elem()
+}
+
+func (i SqlEndpointNetworkConfigurationAccessControlRuleArgs) ToSqlEndpointNetworkConfigurationAccessControlRuleOutput() SqlEndpointNetworkConfigurationAccessControlRuleOutput {
+	return i.ToSqlEndpointNetworkConfigurationAccessControlRuleOutputWithContext(context.Background())
+}
+
+func (i SqlEndpointNetworkConfigurationAccessControlRuleArgs) ToSqlEndpointNetworkConfigurationAccessControlRuleOutputWithContext(ctx context.Context) SqlEndpointNetworkConfigurationAccessControlRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointNetworkConfigurationAccessControlRuleOutput)
+}
+
+// SqlEndpointNetworkConfigurationAccessControlRuleArrayInput is an input type that accepts SqlEndpointNetworkConfigurationAccessControlRuleArray and SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput values.
+// You can construct a concrete instance of `SqlEndpointNetworkConfigurationAccessControlRuleArrayInput` via:
+//
+//	SqlEndpointNetworkConfigurationAccessControlRuleArray{ SqlEndpointNetworkConfigurationAccessControlRuleArgs{...} }
+type SqlEndpointNetworkConfigurationAccessControlRuleArrayInput interface {
+	pulumi.Input
+
+	ToSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput() SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput
+	ToSqlEndpointNetworkConfigurationAccessControlRuleArrayOutputWithContext(context.Context) SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput
+}
+
+type SqlEndpointNetworkConfigurationAccessControlRuleArray []SqlEndpointNetworkConfigurationAccessControlRuleInput
+
+func (SqlEndpointNetworkConfigurationAccessControlRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SqlEndpointNetworkConfigurationAccessControlRule)(nil)).Elem()
+}
+
+func (i SqlEndpointNetworkConfigurationAccessControlRuleArray) ToSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput() SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput {
+	return i.ToSqlEndpointNetworkConfigurationAccessControlRuleArrayOutputWithContext(context.Background())
+}
+
+func (i SqlEndpointNetworkConfigurationAccessControlRuleArray) ToSqlEndpointNetworkConfigurationAccessControlRuleArrayOutputWithContext(ctx context.Context) SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput)
+}
+
+type SqlEndpointNetworkConfigurationAccessControlRuleOutput struct{ *pulumi.OutputState }
+
+func (SqlEndpointNetworkConfigurationAccessControlRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SqlEndpointNetworkConfigurationAccessControlRule)(nil)).Elem()
+}
+
+func (o SqlEndpointNetworkConfigurationAccessControlRuleOutput) ToSqlEndpointNetworkConfigurationAccessControlRuleOutput() SqlEndpointNetworkConfigurationAccessControlRuleOutput {
+	return o
+}
+
+func (o SqlEndpointNetworkConfigurationAccessControlRuleOutput) ToSqlEndpointNetworkConfigurationAccessControlRuleOutputWithContext(ctx context.Context) SqlEndpointNetworkConfigurationAccessControlRuleOutput {
+	return o
+}
+
+// The type of IP notation.
+func (o SqlEndpointNetworkConfigurationAccessControlRuleOutput) IpNotation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SqlEndpointNetworkConfigurationAccessControlRule) *string { return v.IpNotation }).(pulumi.StringPtrOutput)
+}
+
+// The associated value of the selected IP notation.
+func (o SqlEndpointNetworkConfigurationAccessControlRuleOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SqlEndpointNetworkConfigurationAccessControlRule) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+// A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+func (o SqlEndpointNetworkConfigurationAccessControlRuleOutput) VcnIps() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SqlEndpointNetworkConfigurationAccessControlRule) *string { return v.VcnIps }).(pulumi.StringPtrOutput)
+}
+
+type SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SqlEndpointNetworkConfigurationAccessControlRule)(nil)).Elem()
+}
+
+func (o SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput) ToSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput() SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput {
+	return o
+}
+
+func (o SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput) ToSqlEndpointNetworkConfigurationAccessControlRuleArrayOutputWithContext(ctx context.Context) SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput {
+	return o
+}
+
+func (o SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput) Index(i pulumi.IntInput) SqlEndpointNetworkConfigurationAccessControlRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SqlEndpointNetworkConfigurationAccessControlRule {
+		return vs[0].([]SqlEndpointNetworkConfigurationAccessControlRule)[vs[1].(int)]
+	}).(SqlEndpointNetworkConfigurationAccessControlRuleOutput)
+}
+
 type GetApplicationApplicationLogConfig struct {
 	// The log group id for where log objects will be for Data Flow Runs.
 	LogGroupId string `pulumi:"logGroupId"`
@@ -8304,6 +8984,1497 @@ func (o GetRunStatementsStatementCollectionItemOutputDataArrayOutput) Index(i pu
 	}).(GetRunStatementsStatementCollectionItemOutputDataOutput)
 }
 
+type GetSqlEndpointDriverShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetSqlEndpointDriverShapeConfigInput is an input type that accepts GetSqlEndpointDriverShapeConfigArgs and GetSqlEndpointDriverShapeConfigOutput values.
+// You can construct a concrete instance of `GetSqlEndpointDriverShapeConfigInput` via:
+//
+//	GetSqlEndpointDriverShapeConfigArgs{...}
+type GetSqlEndpointDriverShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointDriverShapeConfigOutput() GetSqlEndpointDriverShapeConfigOutput
+	ToGetSqlEndpointDriverShapeConfigOutputWithContext(context.Context) GetSqlEndpointDriverShapeConfigOutput
+}
+
+type GetSqlEndpointDriverShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetSqlEndpointDriverShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointDriverShapeConfig)(nil)).Elem()
+}
+
+func (i GetSqlEndpointDriverShapeConfigArgs) ToGetSqlEndpointDriverShapeConfigOutput() GetSqlEndpointDriverShapeConfigOutput {
+	return i.ToGetSqlEndpointDriverShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointDriverShapeConfigArgs) ToGetSqlEndpointDriverShapeConfigOutputWithContext(ctx context.Context) GetSqlEndpointDriverShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointDriverShapeConfigOutput)
+}
+
+// GetSqlEndpointDriverShapeConfigArrayInput is an input type that accepts GetSqlEndpointDriverShapeConfigArray and GetSqlEndpointDriverShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetSqlEndpointDriverShapeConfigArrayInput` via:
+//
+//	GetSqlEndpointDriverShapeConfigArray{ GetSqlEndpointDriverShapeConfigArgs{...} }
+type GetSqlEndpointDriverShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointDriverShapeConfigArrayOutput() GetSqlEndpointDriverShapeConfigArrayOutput
+	ToGetSqlEndpointDriverShapeConfigArrayOutputWithContext(context.Context) GetSqlEndpointDriverShapeConfigArrayOutput
+}
+
+type GetSqlEndpointDriverShapeConfigArray []GetSqlEndpointDriverShapeConfigInput
+
+func (GetSqlEndpointDriverShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointDriverShapeConfig)(nil)).Elem()
+}
+
+func (i GetSqlEndpointDriverShapeConfigArray) ToGetSqlEndpointDriverShapeConfigArrayOutput() GetSqlEndpointDriverShapeConfigArrayOutput {
+	return i.ToGetSqlEndpointDriverShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointDriverShapeConfigArray) ToGetSqlEndpointDriverShapeConfigArrayOutputWithContext(ctx context.Context) GetSqlEndpointDriverShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointDriverShapeConfigArrayOutput)
+}
+
+type GetSqlEndpointDriverShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointDriverShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointDriverShapeConfig)(nil)).Elem()
+}
+
+func (o GetSqlEndpointDriverShapeConfigOutput) ToGetSqlEndpointDriverShapeConfigOutput() GetSqlEndpointDriverShapeConfigOutput {
+	return o
+}
+
+func (o GetSqlEndpointDriverShapeConfigOutput) ToGetSqlEndpointDriverShapeConfigOutputWithContext(ctx context.Context) GetSqlEndpointDriverShapeConfigOutput {
+	return o
+}
+
+// The amount of memory used for the driver or executors.
+func (o GetSqlEndpointDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSqlEndpointDriverShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o GetSqlEndpointDriverShapeConfigOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSqlEndpointDriverShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+type GetSqlEndpointDriverShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointDriverShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointDriverShapeConfig)(nil)).Elem()
+}
+
+func (o GetSqlEndpointDriverShapeConfigArrayOutput) ToGetSqlEndpointDriverShapeConfigArrayOutput() GetSqlEndpointDriverShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointDriverShapeConfigArrayOutput) ToGetSqlEndpointDriverShapeConfigArrayOutputWithContext(ctx context.Context) GetSqlEndpointDriverShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointDriverShapeConfigArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointDriverShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlEndpointDriverShapeConfig {
+		return vs[0].([]GetSqlEndpointDriverShapeConfig)[vs[1].(int)]
+	}).(GetSqlEndpointDriverShapeConfigOutput)
+}
+
+type GetSqlEndpointExecutorShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetSqlEndpointExecutorShapeConfigInput is an input type that accepts GetSqlEndpointExecutorShapeConfigArgs and GetSqlEndpointExecutorShapeConfigOutput values.
+// You can construct a concrete instance of `GetSqlEndpointExecutorShapeConfigInput` via:
+//
+//	GetSqlEndpointExecutorShapeConfigArgs{...}
+type GetSqlEndpointExecutorShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointExecutorShapeConfigOutput() GetSqlEndpointExecutorShapeConfigOutput
+	ToGetSqlEndpointExecutorShapeConfigOutputWithContext(context.Context) GetSqlEndpointExecutorShapeConfigOutput
+}
+
+type GetSqlEndpointExecutorShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetSqlEndpointExecutorShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i GetSqlEndpointExecutorShapeConfigArgs) ToGetSqlEndpointExecutorShapeConfigOutput() GetSqlEndpointExecutorShapeConfigOutput {
+	return i.ToGetSqlEndpointExecutorShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointExecutorShapeConfigArgs) ToGetSqlEndpointExecutorShapeConfigOutputWithContext(ctx context.Context) GetSqlEndpointExecutorShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointExecutorShapeConfigOutput)
+}
+
+// GetSqlEndpointExecutorShapeConfigArrayInput is an input type that accepts GetSqlEndpointExecutorShapeConfigArray and GetSqlEndpointExecutorShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetSqlEndpointExecutorShapeConfigArrayInput` via:
+//
+//	GetSqlEndpointExecutorShapeConfigArray{ GetSqlEndpointExecutorShapeConfigArgs{...} }
+type GetSqlEndpointExecutorShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointExecutorShapeConfigArrayOutput() GetSqlEndpointExecutorShapeConfigArrayOutput
+	ToGetSqlEndpointExecutorShapeConfigArrayOutputWithContext(context.Context) GetSqlEndpointExecutorShapeConfigArrayOutput
+}
+
+type GetSqlEndpointExecutorShapeConfigArray []GetSqlEndpointExecutorShapeConfigInput
+
+func (GetSqlEndpointExecutorShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i GetSqlEndpointExecutorShapeConfigArray) ToGetSqlEndpointExecutorShapeConfigArrayOutput() GetSqlEndpointExecutorShapeConfigArrayOutput {
+	return i.ToGetSqlEndpointExecutorShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointExecutorShapeConfigArray) ToGetSqlEndpointExecutorShapeConfigArrayOutputWithContext(ctx context.Context) GetSqlEndpointExecutorShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointExecutorShapeConfigArrayOutput)
+}
+
+type GetSqlEndpointExecutorShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointExecutorShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o GetSqlEndpointExecutorShapeConfigOutput) ToGetSqlEndpointExecutorShapeConfigOutput() GetSqlEndpointExecutorShapeConfigOutput {
+	return o
+}
+
+func (o GetSqlEndpointExecutorShapeConfigOutput) ToGetSqlEndpointExecutorShapeConfigOutputWithContext(ctx context.Context) GetSqlEndpointExecutorShapeConfigOutput {
+	return o
+}
+
+// The amount of memory used for the driver or executors.
+func (o GetSqlEndpointExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSqlEndpointExecutorShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o GetSqlEndpointExecutorShapeConfigOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSqlEndpointExecutorShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+type GetSqlEndpointExecutorShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointExecutorShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o GetSqlEndpointExecutorShapeConfigArrayOutput) ToGetSqlEndpointExecutorShapeConfigArrayOutput() GetSqlEndpointExecutorShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointExecutorShapeConfigArrayOutput) ToGetSqlEndpointExecutorShapeConfigArrayOutputWithContext(ctx context.Context) GetSqlEndpointExecutorShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointExecutorShapeConfigArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointExecutorShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlEndpointExecutorShapeConfig {
+		return vs[0].([]GetSqlEndpointExecutorShapeConfig)[vs[1].(int)]
+	}).(GetSqlEndpointExecutorShapeConfigOutput)
+}
+
+type GetSqlEndpointNetworkConfiguration struct {
+	// A list of SecureAccessControlRule's to which access is limited to
+	AccessControlRules []GetSqlEndpointNetworkConfigurationAccessControlRule `pulumi:"accessControlRules"`
+	// The host name prefix.
+	HostNamePrefix string `pulumi:"hostNamePrefix"`
+	// The type of network configuration.
+	NetworkType string `pulumi:"networkType"`
+	// Ip Address of private endpoint
+	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
+	// Ip Address of public endpoint
+	PublicEndpointIp string `pulumi:"publicEndpointIp"`
+	// The VCN Subnet OCID.
+	SubnetId string `pulumi:"subnetId"`
+	// The VCN OCID.
+	VcnId string `pulumi:"vcnId"`
+}
+
+// GetSqlEndpointNetworkConfigurationInput is an input type that accepts GetSqlEndpointNetworkConfigurationArgs and GetSqlEndpointNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetSqlEndpointNetworkConfigurationInput` via:
+//
+//	GetSqlEndpointNetworkConfigurationArgs{...}
+type GetSqlEndpointNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointNetworkConfigurationOutput() GetSqlEndpointNetworkConfigurationOutput
+	ToGetSqlEndpointNetworkConfigurationOutputWithContext(context.Context) GetSqlEndpointNetworkConfigurationOutput
+}
+
+type GetSqlEndpointNetworkConfigurationArgs struct {
+	// A list of SecureAccessControlRule's to which access is limited to
+	AccessControlRules GetSqlEndpointNetworkConfigurationAccessControlRuleArrayInput `pulumi:"accessControlRules"`
+	// The host name prefix.
+	HostNamePrefix pulumi.StringInput `pulumi:"hostNamePrefix"`
+	// The type of network configuration.
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// Ip Address of private endpoint
+	PrivateEndpointIp pulumi.StringInput `pulumi:"privateEndpointIp"`
+	// Ip Address of public endpoint
+	PublicEndpointIp pulumi.StringInput `pulumi:"publicEndpointIp"`
+	// The VCN Subnet OCID.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The VCN OCID.
+	VcnId pulumi.StringInput `pulumi:"vcnId"`
+}
+
+func (GetSqlEndpointNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetSqlEndpointNetworkConfigurationArgs) ToGetSqlEndpointNetworkConfigurationOutput() GetSqlEndpointNetworkConfigurationOutput {
+	return i.ToGetSqlEndpointNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointNetworkConfigurationArgs) ToGetSqlEndpointNetworkConfigurationOutputWithContext(ctx context.Context) GetSqlEndpointNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointNetworkConfigurationOutput)
+}
+
+// GetSqlEndpointNetworkConfigurationArrayInput is an input type that accepts GetSqlEndpointNetworkConfigurationArray and GetSqlEndpointNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetSqlEndpointNetworkConfigurationArrayInput` via:
+//
+//	GetSqlEndpointNetworkConfigurationArray{ GetSqlEndpointNetworkConfigurationArgs{...} }
+type GetSqlEndpointNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointNetworkConfigurationArrayOutput() GetSqlEndpointNetworkConfigurationArrayOutput
+	ToGetSqlEndpointNetworkConfigurationArrayOutputWithContext(context.Context) GetSqlEndpointNetworkConfigurationArrayOutput
+}
+
+type GetSqlEndpointNetworkConfigurationArray []GetSqlEndpointNetworkConfigurationInput
+
+func (GetSqlEndpointNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetSqlEndpointNetworkConfigurationArray) ToGetSqlEndpointNetworkConfigurationArrayOutput() GetSqlEndpointNetworkConfigurationArrayOutput {
+	return i.ToGetSqlEndpointNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointNetworkConfigurationArray) ToGetSqlEndpointNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetSqlEndpointNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointNetworkConfigurationArrayOutput)
+}
+
+type GetSqlEndpointNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetSqlEndpointNetworkConfigurationOutput) ToGetSqlEndpointNetworkConfigurationOutput() GetSqlEndpointNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetSqlEndpointNetworkConfigurationOutput) ToGetSqlEndpointNetworkConfigurationOutputWithContext(ctx context.Context) GetSqlEndpointNetworkConfigurationOutput {
+	return o
+}
+
+// A list of SecureAccessControlRule's to which access is limited to
+func (o GetSqlEndpointNetworkConfigurationOutput) AccessControlRules() GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput {
+	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) []GetSqlEndpointNetworkConfigurationAccessControlRule {
+		return v.AccessControlRules
+	}).(GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput)
+}
+
+// The host name prefix.
+func (o GetSqlEndpointNetworkConfigurationOutput) HostNamePrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) string { return v.HostNamePrefix }).(pulumi.StringOutput)
+}
+
+// The type of network configuration.
+func (o GetSqlEndpointNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// Ip Address of private endpoint
+func (o GetSqlEndpointNetworkConfigurationOutput) PrivateEndpointIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) string { return v.PrivateEndpointIp }).(pulumi.StringOutput)
+}
+
+// Ip Address of public endpoint
+func (o GetSqlEndpointNetworkConfigurationOutput) PublicEndpointIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) string { return v.PublicEndpointIp }).(pulumi.StringOutput)
+}
+
+// The VCN Subnet OCID.
+func (o GetSqlEndpointNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The VCN OCID.
+func (o GetSqlEndpointNetworkConfigurationOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+type GetSqlEndpointNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetSqlEndpointNetworkConfigurationArrayOutput) ToGetSqlEndpointNetworkConfigurationArrayOutput() GetSqlEndpointNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointNetworkConfigurationArrayOutput) ToGetSqlEndpointNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetSqlEndpointNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlEndpointNetworkConfiguration {
+		return vs[0].([]GetSqlEndpointNetworkConfiguration)[vs[1].(int)]
+	}).(GetSqlEndpointNetworkConfigurationOutput)
+}
+
+type GetSqlEndpointNetworkConfigurationAccessControlRule struct {
+	// The type of IP notation.
+	IpNotation string `pulumi:"ipNotation"`
+	// The associated value of the selected IP notation.
+	Value string `pulumi:"value"`
+	// A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+	VcnIps string `pulumi:"vcnIps"`
+}
+
+// GetSqlEndpointNetworkConfigurationAccessControlRuleInput is an input type that accepts GetSqlEndpointNetworkConfigurationAccessControlRuleArgs and GetSqlEndpointNetworkConfigurationAccessControlRuleOutput values.
+// You can construct a concrete instance of `GetSqlEndpointNetworkConfigurationAccessControlRuleInput` via:
+//
+//	GetSqlEndpointNetworkConfigurationAccessControlRuleArgs{...}
+type GetSqlEndpointNetworkConfigurationAccessControlRuleInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointNetworkConfigurationAccessControlRuleOutput() GetSqlEndpointNetworkConfigurationAccessControlRuleOutput
+	ToGetSqlEndpointNetworkConfigurationAccessControlRuleOutputWithContext(context.Context) GetSqlEndpointNetworkConfigurationAccessControlRuleOutput
+}
+
+type GetSqlEndpointNetworkConfigurationAccessControlRuleArgs struct {
+	// The type of IP notation.
+	IpNotation pulumi.StringInput `pulumi:"ipNotation"`
+	// The associated value of the selected IP notation.
+	Value pulumi.StringInput `pulumi:"value"`
+	// A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+	VcnIps pulumi.StringInput `pulumi:"vcnIps"`
+}
+
+func (GetSqlEndpointNetworkConfigurationAccessControlRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointNetworkConfigurationAccessControlRule)(nil)).Elem()
+}
+
+func (i GetSqlEndpointNetworkConfigurationAccessControlRuleArgs) ToGetSqlEndpointNetworkConfigurationAccessControlRuleOutput() GetSqlEndpointNetworkConfigurationAccessControlRuleOutput {
+	return i.ToGetSqlEndpointNetworkConfigurationAccessControlRuleOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointNetworkConfigurationAccessControlRuleArgs) ToGetSqlEndpointNetworkConfigurationAccessControlRuleOutputWithContext(ctx context.Context) GetSqlEndpointNetworkConfigurationAccessControlRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointNetworkConfigurationAccessControlRuleOutput)
+}
+
+// GetSqlEndpointNetworkConfigurationAccessControlRuleArrayInput is an input type that accepts GetSqlEndpointNetworkConfigurationAccessControlRuleArray and GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput values.
+// You can construct a concrete instance of `GetSqlEndpointNetworkConfigurationAccessControlRuleArrayInput` via:
+//
+//	GetSqlEndpointNetworkConfigurationAccessControlRuleArray{ GetSqlEndpointNetworkConfigurationAccessControlRuleArgs{...} }
+type GetSqlEndpointNetworkConfigurationAccessControlRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput() GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput
+	ToGetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutputWithContext(context.Context) GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput
+}
+
+type GetSqlEndpointNetworkConfigurationAccessControlRuleArray []GetSqlEndpointNetworkConfigurationAccessControlRuleInput
+
+func (GetSqlEndpointNetworkConfigurationAccessControlRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointNetworkConfigurationAccessControlRule)(nil)).Elem()
+}
+
+func (i GetSqlEndpointNetworkConfigurationAccessControlRuleArray) ToGetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput() GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput {
+	return i.ToGetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointNetworkConfigurationAccessControlRuleArray) ToGetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutputWithContext(ctx context.Context) GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput)
+}
+
+type GetSqlEndpointNetworkConfigurationAccessControlRuleOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointNetworkConfigurationAccessControlRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointNetworkConfigurationAccessControlRule)(nil)).Elem()
+}
+
+func (o GetSqlEndpointNetworkConfigurationAccessControlRuleOutput) ToGetSqlEndpointNetworkConfigurationAccessControlRuleOutput() GetSqlEndpointNetworkConfigurationAccessControlRuleOutput {
+	return o
+}
+
+func (o GetSqlEndpointNetworkConfigurationAccessControlRuleOutput) ToGetSqlEndpointNetworkConfigurationAccessControlRuleOutputWithContext(ctx context.Context) GetSqlEndpointNetworkConfigurationAccessControlRuleOutput {
+	return o
+}
+
+// The type of IP notation.
+func (o GetSqlEndpointNetworkConfigurationAccessControlRuleOutput) IpNotation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointNetworkConfigurationAccessControlRule) string { return v.IpNotation }).(pulumi.StringOutput)
+}
+
+// The associated value of the selected IP notation.
+func (o GetSqlEndpointNetworkConfigurationAccessControlRuleOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointNetworkConfigurationAccessControlRule) string { return v.Value }).(pulumi.StringOutput)
+}
+
+// A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+func (o GetSqlEndpointNetworkConfigurationAccessControlRuleOutput) VcnIps() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointNetworkConfigurationAccessControlRule) string { return v.VcnIps }).(pulumi.StringOutput)
+}
+
+type GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointNetworkConfigurationAccessControlRule)(nil)).Elem()
+}
+
+func (o GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput) ToGetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput() GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput) ToGetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutputWithContext(ctx context.Context) GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointNetworkConfigurationAccessControlRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlEndpointNetworkConfigurationAccessControlRule {
+		return vs[0].([]GetSqlEndpointNetworkConfigurationAccessControlRule)[vs[1].(int)]
+	}).(GetSqlEndpointNetworkConfigurationAccessControlRuleOutput)
+}
+
+type GetSqlEndpointsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSqlEndpointsFilterInput is an input type that accepts GetSqlEndpointsFilterArgs and GetSqlEndpointsFilterOutput values.
+// You can construct a concrete instance of `GetSqlEndpointsFilterInput` via:
+//
+//	GetSqlEndpointsFilterArgs{...}
+type GetSqlEndpointsFilterInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointsFilterOutput() GetSqlEndpointsFilterOutput
+	ToGetSqlEndpointsFilterOutputWithContext(context.Context) GetSqlEndpointsFilterOutput
+}
+
+type GetSqlEndpointsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSqlEndpointsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointsFilter)(nil)).Elem()
+}
+
+func (i GetSqlEndpointsFilterArgs) ToGetSqlEndpointsFilterOutput() GetSqlEndpointsFilterOutput {
+	return i.ToGetSqlEndpointsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointsFilterArgs) ToGetSqlEndpointsFilterOutputWithContext(ctx context.Context) GetSqlEndpointsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsFilterOutput)
+}
+
+// GetSqlEndpointsFilterArrayInput is an input type that accepts GetSqlEndpointsFilterArray and GetSqlEndpointsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSqlEndpointsFilterArrayInput` via:
+//
+//	GetSqlEndpointsFilterArray{ GetSqlEndpointsFilterArgs{...} }
+type GetSqlEndpointsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointsFilterArrayOutput() GetSqlEndpointsFilterArrayOutput
+	ToGetSqlEndpointsFilterArrayOutputWithContext(context.Context) GetSqlEndpointsFilterArrayOutput
+}
+
+type GetSqlEndpointsFilterArray []GetSqlEndpointsFilterInput
+
+func (GetSqlEndpointsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointsFilter)(nil)).Elem()
+}
+
+func (i GetSqlEndpointsFilterArray) ToGetSqlEndpointsFilterArrayOutput() GetSqlEndpointsFilterArrayOutput {
+	return i.ToGetSqlEndpointsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointsFilterArray) ToGetSqlEndpointsFilterArrayOutputWithContext(ctx context.Context) GetSqlEndpointsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsFilterArrayOutput)
+}
+
+type GetSqlEndpointsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointsFilter)(nil)).Elem()
+}
+
+func (o GetSqlEndpointsFilterOutput) ToGetSqlEndpointsFilterOutput() GetSqlEndpointsFilterOutput {
+	return o
+}
+
+func (o GetSqlEndpointsFilterOutput) ToGetSqlEndpointsFilterOutputWithContext(ctx context.Context) GetSqlEndpointsFilterOutput {
+	return o
+}
+
+func (o GetSqlEndpointsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSqlEndpointsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSqlEndpointsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlEndpointsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSqlEndpointsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointsFilter)(nil)).Elem()
+}
+
+func (o GetSqlEndpointsFilterArrayOutput) ToGetSqlEndpointsFilterArrayOutput() GetSqlEndpointsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointsFilterArrayOutput) ToGetSqlEndpointsFilterArrayOutputWithContext(ctx context.Context) GetSqlEndpointsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlEndpointsFilter {
+		return vs[0].([]GetSqlEndpointsFilter)[vs[1].(int)]
+	}).(GetSqlEndpointsFilterOutput)
+}
+
+type GetSqlEndpointsSqlEndpointCollection struct {
+	Items []GetSqlEndpointsSqlEndpointCollectionItem `pulumi:"items"`
+}
+
+// GetSqlEndpointsSqlEndpointCollectionInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionArgs and GetSqlEndpointsSqlEndpointCollectionOutput values.
+// You can construct a concrete instance of `GetSqlEndpointsSqlEndpointCollectionInput` via:
+//
+//	GetSqlEndpointsSqlEndpointCollectionArgs{...}
+type GetSqlEndpointsSqlEndpointCollectionInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointsSqlEndpointCollectionOutput() GetSqlEndpointsSqlEndpointCollectionOutput
+	ToGetSqlEndpointsSqlEndpointCollectionOutputWithContext(context.Context) GetSqlEndpointsSqlEndpointCollectionOutput
+}
+
+type GetSqlEndpointsSqlEndpointCollectionArgs struct {
+	Items GetSqlEndpointsSqlEndpointCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSqlEndpointsSqlEndpointCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollection)(nil)).Elem()
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionArgs) ToGetSqlEndpointsSqlEndpointCollectionOutput() GetSqlEndpointsSqlEndpointCollectionOutput {
+	return i.ToGetSqlEndpointsSqlEndpointCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionArgs) ToGetSqlEndpointsSqlEndpointCollectionOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionOutput)
+}
+
+// GetSqlEndpointsSqlEndpointCollectionArrayInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionArray and GetSqlEndpointsSqlEndpointCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSqlEndpointsSqlEndpointCollectionArrayInput` via:
+//
+//	GetSqlEndpointsSqlEndpointCollectionArray{ GetSqlEndpointsSqlEndpointCollectionArgs{...} }
+type GetSqlEndpointsSqlEndpointCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointsSqlEndpointCollectionArrayOutput() GetSqlEndpointsSqlEndpointCollectionArrayOutput
+	ToGetSqlEndpointsSqlEndpointCollectionArrayOutputWithContext(context.Context) GetSqlEndpointsSqlEndpointCollectionArrayOutput
+}
+
+type GetSqlEndpointsSqlEndpointCollectionArray []GetSqlEndpointsSqlEndpointCollectionInput
+
+func (GetSqlEndpointsSqlEndpointCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointsSqlEndpointCollection)(nil)).Elem()
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionArray) ToGetSqlEndpointsSqlEndpointCollectionArrayOutput() GetSqlEndpointsSqlEndpointCollectionArrayOutput {
+	return i.ToGetSqlEndpointsSqlEndpointCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionArray) ToGetSqlEndpointsSqlEndpointCollectionArrayOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionArrayOutput)
+}
+
+type GetSqlEndpointsSqlEndpointCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointsSqlEndpointCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollection)(nil)).Elem()
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionOutput) ToGetSqlEndpointsSqlEndpointCollectionOutput() GetSqlEndpointsSqlEndpointCollectionOutput {
+	return o
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionOutput) ToGetSqlEndpointsSqlEndpointCollectionOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionOutput {
+	return o
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionOutput) Items() GetSqlEndpointsSqlEndpointCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollection) []GetSqlEndpointsSqlEndpointCollectionItem {
+		return v.Items
+	}).(GetSqlEndpointsSqlEndpointCollectionItemArrayOutput)
+}
+
+type GetSqlEndpointsSqlEndpointCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointsSqlEndpointCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointsSqlEndpointCollection)(nil)).Elem()
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionArrayOutput) ToGetSqlEndpointsSqlEndpointCollectionArrayOutput() GetSqlEndpointsSqlEndpointCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionArrayOutput) ToGetSqlEndpointsSqlEndpointCollectionArrayOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointsSqlEndpointCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlEndpointsSqlEndpointCollection {
+		return vs[0].([]GetSqlEndpointsSqlEndpointCollection)[vs[1].(int)]
+	}).(GetSqlEndpointsSqlEndpointCollectionOutput)
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItem struct {
+	// The OCID of the compartment in which to query resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The description of the SQL Endpoint.
+	Description string `pulumi:"description"`
+	// The query parameter for the Spark application name.
+	DisplayName string `pulumi:"displayName"`
+	// The shape of the SQL Endpoint driver instance.
+	DriverShape string `pulumi:"driverShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	DriverShapeConfigs []GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig `pulumi:"driverShapeConfigs"`
+	// The shape of the SQL Endpoint executor instance.
+	ExecutorShape string `pulumi:"executorShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	ExecutorShapeConfigs []GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig `pulumi:"executorShapeConfigs"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The provision identifier that is immutable on creation.
+	Id string `pulumi:"id"`
+	// The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
+	JdbcEndpointUrl string `pulumi:"jdbcEndpointUrl"`
+	// The OCID of Oracle Cloud Infrastructure Lake.
+	LakeId string `pulumi:"lakeId"`
+	// This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
+	LastAcceptedRequestToken string `pulumi:"lastAcceptedRequestToken"`
+	// The maximum number of executors.
+	MaxExecutorCount int `pulumi:"maxExecutorCount"`
+	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
+	MetastoreId string `pulumi:"metastoreId"`
+	// The minimum number of executors.
+	MinExecutorCount int `pulumi:"minExecutorCount"`
+	// The network configuration of a SQL Endpoint.
+	NetworkConfigurations []GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration `pulumi:"networkConfigurations"`
+	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+	SparkAdvancedConfigurations map[string]interface{} `pulumi:"sparkAdvancedConfigurations"`
+	// The version of SQL Endpoint.
+	SqlEndpointVersion string `pulumi:"sqlEndpointVersion"`
+	// A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
+	State string `pulumi:"state"`
+	// A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
+	StateMessage string `pulumi:"stateMessage"`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
+	WarehouseBucketUri string `pulumi:"warehouseBucketUri"`
+}
+
+// GetSqlEndpointsSqlEndpointCollectionItemInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionItemArgs and GetSqlEndpointsSqlEndpointCollectionItemOutput values.
+// You can construct a concrete instance of `GetSqlEndpointsSqlEndpointCollectionItemInput` via:
+//
+//	GetSqlEndpointsSqlEndpointCollectionItemArgs{...}
+type GetSqlEndpointsSqlEndpointCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointsSqlEndpointCollectionItemOutput() GetSqlEndpointsSqlEndpointCollectionItemOutput
+	ToGetSqlEndpointsSqlEndpointCollectionItemOutputWithContext(context.Context) GetSqlEndpointsSqlEndpointCollectionItemOutput
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemArgs struct {
+	// The OCID of the compartment in which to query resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The description of the SQL Endpoint.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The query parameter for the Spark application name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The shape of the SQL Endpoint driver instance.
+	DriverShape pulumi.StringInput `pulumi:"driverShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	DriverShapeConfigs GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayInput `pulumi:"driverShapeConfigs"`
+	// The shape of the SQL Endpoint executor instance.
+	ExecutorShape pulumi.StringInput `pulumi:"executorShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	ExecutorShapeConfigs GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayInput `pulumi:"executorShapeConfigs"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The provision identifier that is immutable on creation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
+	JdbcEndpointUrl pulumi.StringInput `pulumi:"jdbcEndpointUrl"`
+	// The OCID of Oracle Cloud Infrastructure Lake.
+	LakeId pulumi.StringInput `pulumi:"lakeId"`
+	// This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
+	LastAcceptedRequestToken pulumi.StringInput `pulumi:"lastAcceptedRequestToken"`
+	// The maximum number of executors.
+	MaxExecutorCount pulumi.IntInput `pulumi:"maxExecutorCount"`
+	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
+	MetastoreId pulumi.StringInput `pulumi:"metastoreId"`
+	// The minimum number of executors.
+	MinExecutorCount pulumi.IntInput `pulumi:"minExecutorCount"`
+	// The network configuration of a SQL Endpoint.
+	NetworkConfigurations GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
+	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+	SparkAdvancedConfigurations pulumi.MapInput `pulumi:"sparkAdvancedConfigurations"`
+	// The version of SQL Endpoint.
+	SqlEndpointVersion pulumi.StringInput `pulumi:"sqlEndpointVersion"`
+	// A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
+	StateMessage pulumi.StringInput `pulumi:"stateMessage"`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
+	WarehouseBucketUri pulumi.StringInput `pulumi:"warehouseBucketUri"`
+}
+
+func (GetSqlEndpointsSqlEndpointCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionItemArgs) ToGetSqlEndpointsSqlEndpointCollectionItemOutput() GetSqlEndpointsSqlEndpointCollectionItemOutput {
+	return i.ToGetSqlEndpointsSqlEndpointCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionItemArgs) ToGetSqlEndpointsSqlEndpointCollectionItemOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionItemOutput)
+}
+
+// GetSqlEndpointsSqlEndpointCollectionItemArrayInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionItemArray and GetSqlEndpointsSqlEndpointCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSqlEndpointsSqlEndpointCollectionItemArrayInput` via:
+//
+//	GetSqlEndpointsSqlEndpointCollectionItemArray{ GetSqlEndpointsSqlEndpointCollectionItemArgs{...} }
+type GetSqlEndpointsSqlEndpointCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointsSqlEndpointCollectionItemArrayOutput() GetSqlEndpointsSqlEndpointCollectionItemArrayOutput
+	ToGetSqlEndpointsSqlEndpointCollectionItemArrayOutputWithContext(context.Context) GetSqlEndpointsSqlEndpointCollectionItemArrayOutput
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemArray []GetSqlEndpointsSqlEndpointCollectionItemInput
+
+func (GetSqlEndpointsSqlEndpointCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointsSqlEndpointCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionItemArray) ToGetSqlEndpointsSqlEndpointCollectionItemArrayOutput() GetSqlEndpointsSqlEndpointCollectionItemArrayOutput {
+	return i.ToGetSqlEndpointsSqlEndpointCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionItemArray) ToGetSqlEndpointsSqlEndpointCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionItemArrayOutput)
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointsSqlEndpointCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) ToGetSqlEndpointsSqlEndpointCollectionItemOutput() GetSqlEndpointsSqlEndpointCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) ToGetSqlEndpointsSqlEndpointCollectionItemOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemOutput {
+	return o
+}
+
+// The OCID of the compartment in which to query resources.
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The description of the SQL Endpoint.
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The query parameter for the Spark application name.
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The shape of the SQL Endpoint driver instance.
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) DriverShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.DriverShape }).(pulumi.StringOutput)
+}
+
+// This is used to configure the shape of the driver or executor if a flexible shape is used.
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) DriverShapeConfigs() GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) []GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig {
+		return v.DriverShapeConfigs
+	}).(GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput)
+}
+
+// The shape of the SQL Endpoint executor instance.
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) ExecutorShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.ExecutorShape }).(pulumi.StringOutput)
+}
+
+// This is used to configure the shape of the driver or executor if a flexible shape is used.
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) ExecutorShapeConfigs() GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) []GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig {
+		return v.ExecutorShapeConfigs
+	}).(GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The provision identifier that is immutable on creation.
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) JdbcEndpointUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.JdbcEndpointUrl }).(pulumi.StringOutput)
+}
+
+// The OCID of Oracle Cloud Infrastructure Lake.
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) LakeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.LakeId }).(pulumi.StringOutput)
+}
+
+// This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) LastAcceptedRequestToken() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.LastAcceptedRequestToken }).(pulumi.StringOutput)
+}
+
+// The maximum number of executors.
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) MaxExecutorCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) int { return v.MaxExecutorCount }).(pulumi.IntOutput)
+}
+
+// The OCID of Oracle Cloud Infrastructure Hive Metastore.
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) MetastoreId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.MetastoreId }).(pulumi.StringOutput)
+}
+
+// The minimum number of executors.
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) MinExecutorCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) int { return v.MinExecutorCount }).(pulumi.IntOutput)
+}
+
+// The network configuration of a SQL Endpoint.
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) NetworkConfigurations() GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) []GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration {
+		return v.NetworkConfigurations
+	}).(GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput)
+}
+
+// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) SparkAdvancedConfigurations() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) map[string]interface{} {
+		return v.SparkAdvancedConfigurations
+	}).(pulumi.MapOutput)
+}
+
+// The version of SQL Endpoint.
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) SqlEndpointVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.SqlEndpointVersion }).(pulumi.StringOutput)
+}
+
+// A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) StateMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.StateMessage }).(pulumi.StringOutput)
+}
+
+// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) WarehouseBucketUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.WarehouseBucketUri }).(pulumi.StringOutput)
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointsSqlEndpointCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointsSqlEndpointCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemArrayOutput) ToGetSqlEndpointsSqlEndpointCollectionItemArrayOutput() GetSqlEndpointsSqlEndpointCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemArrayOutput) ToGetSqlEndpointsSqlEndpointCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointsSqlEndpointCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlEndpointsSqlEndpointCollectionItem {
+		return vs[0].([]GetSqlEndpointsSqlEndpointCollectionItem)[vs[1].(int)]
+	}).(GetSqlEndpointsSqlEndpointCollectionItemOutput)
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArgs and GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput values.
+// You can construct a concrete instance of `GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigInput` via:
+//
+//	GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArgs{...}
+type GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput() GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput
+	ToGetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutputWithContext(context.Context) GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig)(nil)).Elem()
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArgs) ToGetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput() GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput {
+	return i.ToGetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArgs) ToGetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput)
+}
+
+// GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArray and GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayInput` via:
+//
+//	GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArray{ GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArgs{...} }
+type GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput() GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput
+	ToGetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutputWithContext(context.Context) GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArray []GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigInput
+
+func (GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig)(nil)).Elem()
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArray) ToGetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput() GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput {
+	return i.ToGetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArray) ToGetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput)
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig)(nil)).Elem()
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput) ToGetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput() GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput {
+	return o
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput) ToGetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput {
+	return o
+}
+
+// The amount of memory used for the driver or executors.
+func (o GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig)(nil)).Elem()
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput) ToGetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput() GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput) ToGetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig {
+		return vs[0].([]GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig)[vs[1].(int)]
+	}).(GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput)
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArgs and GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput values.
+// You can construct a concrete instance of `GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigInput` via:
+//
+//	GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArgs{...}
+type GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput() GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput
+	ToGetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutputWithContext(context.Context) GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArgs) ToGetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput() GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput {
+	return i.ToGetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArgs) ToGetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput)
+}
+
+// GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArray and GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayInput` via:
+//
+//	GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArray{ GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArgs{...} }
+type GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput() GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput
+	ToGetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutputWithContext(context.Context) GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArray []GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigInput
+
+func (GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArray) ToGetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput() GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput {
+	return i.ToGetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArray) ToGetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput)
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput) ToGetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput() GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput {
+	return o
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput) ToGetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput {
+	return o
+}
+
+// The amount of memory used for the driver or executors.
+func (o GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput) ToGetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput() GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput) ToGetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig {
+		return vs[0].([]GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig)[vs[1].(int)]
+	}).(GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput)
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration struct {
+	// A list of SecureAccessControlRule's to which access is limited to
+	AccessControlRules []GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule `pulumi:"accessControlRules"`
+	// The host name prefix.
+	HostNamePrefix string `pulumi:"hostNamePrefix"`
+	// The type of network configuration.
+	NetworkType string `pulumi:"networkType"`
+	// Ip Address of private endpoint
+	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
+	// Ip Address of public endpoint
+	PublicEndpointIp string `pulumi:"publicEndpointIp"`
+	// The VCN Subnet OCID.
+	SubnetId string `pulumi:"subnetId"`
+	// The VCN OCID.
+	VcnId string `pulumi:"vcnId"`
+}
+
+// GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArgs and GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationInput` via:
+//
+//	GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArgs{...}
+type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput() GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput
+	ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutputWithContext(context.Context) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArgs struct {
+	// A list of SecureAccessControlRule's to which access is limited to
+	AccessControlRules GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayInput `pulumi:"accessControlRules"`
+	// The host name prefix.
+	HostNamePrefix pulumi.StringInput `pulumi:"hostNamePrefix"`
+	// The type of network configuration.
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// Ip Address of private endpoint
+	PrivateEndpointIp pulumi.StringInput `pulumi:"privateEndpointIp"`
+	// Ip Address of public endpoint
+	PublicEndpointIp pulumi.StringInput `pulumi:"publicEndpointIp"`
+	// The VCN Subnet OCID.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The VCN OCID.
+	VcnId pulumi.StringInput `pulumi:"vcnId"`
+}
+
+func (GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArgs) ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput() GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput {
+	return i.ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArgs) ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput)
+}
+
+// GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArray and GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayInput` via:
+//
+//	GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArray{ GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArgs{...} }
+type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput() GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput
+	ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutputWithContext(context.Context) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArray []GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationInput
+
+func (GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArray) ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput() GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput {
+	return i.ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArray) ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput)
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput() GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput {
+	return o
+}
+
+// A list of SecureAccessControlRule's to which access is limited to
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) AccessControlRules() GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) []GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule {
+		return v.AccessControlRules
+	}).(GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput)
+}
+
+// The host name prefix.
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) HostNamePrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) string { return v.HostNamePrefix }).(pulumi.StringOutput)
+}
+
+// The type of network configuration.
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// Ip Address of private endpoint
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) PrivateEndpointIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) string {
+		return v.PrivateEndpointIp
+	}).(pulumi.StringOutput)
+}
+
+// Ip Address of public endpoint
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) PublicEndpointIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) string { return v.PublicEndpointIp }).(pulumi.StringOutput)
+}
+
+// The VCN Subnet OCID.
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The VCN OCID.
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput) ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput() GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput) ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration {
+		return vs[0].([]GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration)[vs[1].(int)]
+	}).(GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput)
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule struct {
+	// The type of IP notation.
+	IpNotation string `pulumi:"ipNotation"`
+	// The associated value of the selected IP notation.
+	Value string `pulumi:"value"`
+	// A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+	VcnIps string `pulumi:"vcnIps"`
+}
+
+// GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArgs and GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput values.
+// You can construct a concrete instance of `GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleInput` via:
+//
+//	GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArgs{...}
+type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput() GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput
+	ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutputWithContext(context.Context) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArgs struct {
+	// The type of IP notation.
+	IpNotation pulumi.StringInput `pulumi:"ipNotation"`
+	// The associated value of the selected IP notation.
+	Value pulumi.StringInput `pulumi:"value"`
+	// A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+	VcnIps pulumi.StringInput `pulumi:"vcnIps"`
+}
+
+func (GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule)(nil)).Elem()
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArgs) ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput() GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput {
+	return i.ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArgs) ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput)
+}
+
+// GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArray and GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput values.
+// You can construct a concrete instance of `GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayInput` via:
+//
+//	GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArray{ GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArgs{...} }
+type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput() GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput
+	ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutputWithContext(context.Context) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArray []GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleInput
+
+func (GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule)(nil)).Elem()
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArray) ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput() GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput {
+	return i.ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArray) ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput)
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule)(nil)).Elem()
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput) ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput() GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput {
+	return o
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput) ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput {
+	return o
+}
+
+// The type of IP notation.
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput) IpNotation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule) string {
+		return v.IpNotation
+	}).(pulumi.StringOutput)
+}
+
+// The associated value of the selected IP notation.
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+// A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput) VcnIps() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule) string {
+		return v.VcnIps
+	}).(pulumi.StringOutput)
+}
+
+type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule)(nil)).Elem()
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput) ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput() GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput) ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput {
+	return o
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule {
+		return vs[0].([]GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule)[vs[1].(int)]
+	}).(GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationApplicationLogConfigInput)(nil)).Elem(), ApplicationApplicationLogConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationApplicationLogConfigPtrInput)(nil)).Elem(), ApplicationApplicationLogConfigArgs{})
@@ -8337,6 +10508,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*RunStatementOutputTypeArrayInput)(nil)).Elem(), RunStatementOutputTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RunStatementOutputDataInput)(nil)).Elem(), RunStatementOutputDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RunStatementOutputDataArrayInput)(nil)).Elem(), RunStatementOutputDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SqlEndpointDriverShapeConfigInput)(nil)).Elem(), SqlEndpointDriverShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SqlEndpointDriverShapeConfigPtrInput)(nil)).Elem(), SqlEndpointDriverShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SqlEndpointExecutorShapeConfigInput)(nil)).Elem(), SqlEndpointExecutorShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SqlEndpointExecutorShapeConfigPtrInput)(nil)).Elem(), SqlEndpointExecutorShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SqlEndpointNetworkConfigurationInput)(nil)).Elem(), SqlEndpointNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SqlEndpointNetworkConfigurationPtrInput)(nil)).Elem(), SqlEndpointNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SqlEndpointNetworkConfigurationAccessControlRuleInput)(nil)).Elem(), SqlEndpointNetworkConfigurationAccessControlRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SqlEndpointNetworkConfigurationAccessControlRuleArrayInput)(nil)).Elem(), SqlEndpointNetworkConfigurationAccessControlRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationApplicationLogConfigInput)(nil)).Elem(), GetApplicationApplicationLogConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationApplicationLogConfigArrayInput)(nil)).Elem(), GetApplicationApplicationLogConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationDriverShapeConfigInput)(nil)).Elem(), GetApplicationDriverShapeConfigArgs{})
@@ -8431,6 +10610,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRunStatementsStatementCollectionItemOutputTypeArrayInput)(nil)).Elem(), GetRunStatementsStatementCollectionItemOutputTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRunStatementsStatementCollectionItemOutputDataInput)(nil)).Elem(), GetRunStatementsStatementCollectionItemOutputDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRunStatementsStatementCollectionItemOutputDataArrayInput)(nil)).Elem(), GetRunStatementsStatementCollectionItemOutputDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointDriverShapeConfigInput)(nil)).Elem(), GetSqlEndpointDriverShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointDriverShapeConfigArrayInput)(nil)).Elem(), GetSqlEndpointDriverShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointExecutorShapeConfigInput)(nil)).Elem(), GetSqlEndpointExecutorShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointExecutorShapeConfigArrayInput)(nil)).Elem(), GetSqlEndpointExecutorShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointNetworkConfigurationInput)(nil)).Elem(), GetSqlEndpointNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointNetworkConfigurationArrayInput)(nil)).Elem(), GetSqlEndpointNetworkConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointNetworkConfigurationAccessControlRuleInput)(nil)).Elem(), GetSqlEndpointNetworkConfigurationAccessControlRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointNetworkConfigurationAccessControlRuleArrayInput)(nil)).Elem(), GetSqlEndpointNetworkConfigurationAccessControlRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointsFilterInput)(nil)).Elem(), GetSqlEndpointsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointsFilterArrayInput)(nil)).Elem(), GetSqlEndpointsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionInput)(nil)).Elem(), GetSqlEndpointsSqlEndpointCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionArrayInput)(nil)).Elem(), GetSqlEndpointsSqlEndpointCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionItemInput)(nil)).Elem(), GetSqlEndpointsSqlEndpointCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionItemArrayInput)(nil)).Elem(), GetSqlEndpointsSqlEndpointCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigInput)(nil)).Elem(), GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayInput)(nil)).Elem(), GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigInput)(nil)).Elem(), GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayInput)(nil)).Elem(), GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationInput)(nil)).Elem(), GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayInput)(nil)).Elem(), GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleInput)(nil)).Elem(), GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayInput)(nil)).Elem(), GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArray{})
 	pulumi.RegisterOutputType(ApplicationApplicationLogConfigOutput{})
 	pulumi.RegisterOutputType(ApplicationApplicationLogConfigPtrOutput{})
 	pulumi.RegisterOutputType(ApplicationDriverShapeConfigOutput{})
@@ -8463,6 +10664,14 @@ func init() {
 	pulumi.RegisterOutputType(RunStatementOutputTypeArrayOutput{})
 	pulumi.RegisterOutputType(RunStatementOutputDataOutput{})
 	pulumi.RegisterOutputType(RunStatementOutputDataArrayOutput{})
+	pulumi.RegisterOutputType(SqlEndpointDriverShapeConfigOutput{})
+	pulumi.RegisterOutputType(SqlEndpointDriverShapeConfigPtrOutput{})
+	pulumi.RegisterOutputType(SqlEndpointExecutorShapeConfigOutput{})
+	pulumi.RegisterOutputType(SqlEndpointExecutorShapeConfigPtrOutput{})
+	pulumi.RegisterOutputType(SqlEndpointNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(SqlEndpointNetworkConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(SqlEndpointNetworkConfigurationAccessControlRuleOutput{})
+	pulumi.RegisterOutputType(SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetApplicationApplicationLogConfigOutput{})
 	pulumi.RegisterOutputType(GetApplicationApplicationLogConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetApplicationDriverShapeConfigOutput{})
@@ -8557,4 +10766,26 @@ func init() {
 	pulumi.RegisterOutputType(GetRunStatementsStatementCollectionItemOutputTypeArrayOutput{})
 	pulumi.RegisterOutputType(GetRunStatementsStatementCollectionItemOutputDataOutput{})
 	pulumi.RegisterOutputType(GetRunStatementsStatementCollectionItemOutputDataArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointDriverShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointDriverShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointExecutorShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointExecutorShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointNetworkConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointNetworkConfigurationAccessControlRuleOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointsFilterOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointsSqlEndpointCollectionOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointsSqlEndpointCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointsSqlEndpointCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointsSqlEndpointCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput{})
+	pulumi.RegisterOutputType(GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput{})
 }

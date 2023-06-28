@@ -20,6 +20,7 @@ class DatabaseArgs:
                  db_home_id: pulumi.Input[str],
                  source: pulumi.Input[str],
                  db_version: Optional[pulumi.Input[str]] = None,
+                 key_store_id: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  kms_key_migration: Optional[pulumi.Input[bool]] = None,
                  kms_key_rotation: Optional[pulumi.Input[int]] = None,
@@ -39,6 +40,7 @@ class DatabaseArgs:
         :param pulumi.Input[str] db_version: A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+        :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[bool] kms_key_migration: The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
         :param pulumi.Input[int] kms_key_rotation: The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
@@ -50,6 +52,8 @@ class DatabaseArgs:
         pulumi.set(__self__, "source", source)
         if db_version is not None:
             pulumi.set(__self__, "db_version", db_version)
+        if key_store_id is not None:
+            pulumi.set(__self__, "key_store_id", key_store_id)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_migration is not None:
@@ -116,6 +120,18 @@ class DatabaseArgs:
     @db_version.setter
     def db_version(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "db_version", value)
+
+    @property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @key_store_id.setter
+    def key_store_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key_store_id", value)
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -197,6 +213,8 @@ class _DatabaseState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_cdb: Optional[pulumi.Input[bool]] = None,
+                 key_store_id: Optional[pulumi.Input[str]] = None,
+                 key_store_wallet_name: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  kms_key_migration: Optional[pulumi.Input[bool]] = None,
                  kms_key_rotation: Optional[pulumi.Input[int]] = None,
@@ -240,6 +258,8 @@ class _DatabaseState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_cdb: True if the database is a container database.
+        :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[bool] kms_key_migration: The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
         :param pulumi.Input[int] kms_key_rotation: The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
@@ -294,6 +314,10 @@ class _DatabaseState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_cdb is not None:
             pulumi.set(__self__, "is_cdb", is_cdb)
+        if key_store_id is not None:
+            pulumi.set(__self__, "key_store_id", key_store_id)
+        if key_store_wallet_name is not None:
+            pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_migration is not None:
@@ -530,6 +554,30 @@ class _DatabaseState:
         pulumi.set(self, "is_cdb", value)
 
     @property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @key_store_id.setter
+    def key_store_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key_store_id", value)
+
+    @property
+    @pulumi.getter(name="keyStoreWalletName")
+    def key_store_wallet_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The wallet name for Oracle Key Vault.
+        """
+        return pulumi.get(self, "key_store_wallet_name")
+
+    @key_store_wallet_name.setter
+    def key_store_wallet_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key_store_wallet_name", value)
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -746,6 +794,7 @@ class Database(pulumi.CustomResource):
                  database: Optional[pulumi.Input[pulumi.InputType['DatabaseDatabaseArgs']]] = None,
                  db_home_id: Optional[pulumi.Input[str]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
+                 key_store_id: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  kms_key_migration: Optional[pulumi.Input[bool]] = None,
                  kms_key_rotation: Optional[pulumi.Input[int]] = None,
@@ -824,6 +873,7 @@ class Database(pulumi.CustomResource):
         :param pulumi.Input[str] db_version: A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+        :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[bool] kms_key_migration: The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
         :param pulumi.Input[int] kms_key_rotation: The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
@@ -921,6 +971,7 @@ class Database(pulumi.CustomResource):
                  database: Optional[pulumi.Input[pulumi.InputType['DatabaseDatabaseArgs']]] = None,
                  db_home_id: Optional[pulumi.Input[str]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
+                 key_store_id: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  kms_key_migration: Optional[pulumi.Input[bool]] = None,
                  kms_key_rotation: Optional[pulumi.Input[int]] = None,
@@ -943,6 +994,7 @@ class Database(pulumi.CustomResource):
                 raise TypeError("Missing required property 'db_home_id'")
             __props__.__dict__["db_home_id"] = db_home_id
             __props__.__dict__["db_version"] = db_version
+            __props__.__dict__["key_store_id"] = key_store_id
             __props__.__dict__["kms_key_id"] = kms_key_id
             __props__.__dict__["kms_key_migration"] = kms_key_migration
             __props__.__dict__["kms_key_rotation"] = kms_key_rotation
@@ -964,6 +1016,7 @@ class Database(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = None
             __props__.__dict__["freeform_tags"] = None
             __props__.__dict__["is_cdb"] = None
+            __props__.__dict__["key_store_wallet_name"] = None
             __props__.__dict__["last_backup_duration_in_seconds"] = None
             __props__.__dict__["last_backup_timestamp"] = None
             __props__.__dict__["last_failed_backup_timestamp"] = None
@@ -1001,6 +1054,8 @@ class Database(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_cdb: Optional[pulumi.Input[bool]] = None,
+            key_store_id: Optional[pulumi.Input[str]] = None,
+            key_store_wallet_name: Optional[pulumi.Input[str]] = None,
             kms_key_id: Optional[pulumi.Input[str]] = None,
             kms_key_migration: Optional[pulumi.Input[bool]] = None,
             kms_key_rotation: Optional[pulumi.Input[int]] = None,
@@ -1049,6 +1104,8 @@ class Database(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_cdb: True if the database is a container database.
+        :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[bool] kms_key_migration: The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
         :param pulumi.Input[int] kms_key_rotation: The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
@@ -1091,6 +1148,8 @@ class Database(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_cdb"] = is_cdb
+        __props__.__dict__["key_store_id"] = key_store_id
+        __props__.__dict__["key_store_wallet_name"] = key_store_wallet_name
         __props__.__dict__["kms_key_id"] = kms_key_id
         __props__.__dict__["kms_key_migration"] = kms_key_migration
         __props__.__dict__["kms_key_rotation"] = kms_key_rotation
@@ -1245,6 +1304,22 @@ class Database(pulumi.CustomResource):
         True if the database is a container database.
         """
         return pulumi.get(self, "is_cdb")
+
+    @property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @property
+    @pulumi.getter(name="keyStoreWalletName")
+    def key_store_wallet_name(self) -> pulumi.Output[str]:
+        """
+        The wallet name for Oracle Key Vault.
+        """
+        return pulumi.get(self, "key_store_wallet_name")
 
     @property
     @pulumi.getter(name="kmsKeyId")

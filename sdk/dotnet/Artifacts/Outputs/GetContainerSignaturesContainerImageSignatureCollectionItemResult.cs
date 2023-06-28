@@ -22,9 +22,17 @@ namespace Pulumi.Oci.Artifacts.Outputs
         /// </summary>
         public readonly string CreatedBy;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.  Example: `ocid1.containerimagesignature.oc1..exampleuniqueID`
         /// </summary>
@@ -54,6 +62,14 @@ namespace Pulumi.Oci.Artifacts.Outputs
         /// </summary>
         public readonly string SigningAlgorithm;
         /// <summary>
+        /// The current state of the container image signature.
+        /// </summary>
+        public readonly string State;
+        /// <summary>
+        /// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> SystemTags;
+        /// <summary>
         /// An RFC 3339 timestamp indicating when the image was created.
         /// </summary>
         public readonly string TimeCreated;
@@ -64,7 +80,11 @@ namespace Pulumi.Oci.Artifacts.Outputs
 
             string createdBy,
 
+            ImmutableDictionary<string, object> definedTags,
+
             string displayName,
+
+            ImmutableDictionary<string, object> freeformTags,
 
             string id,
 
@@ -80,11 +100,17 @@ namespace Pulumi.Oci.Artifacts.Outputs
 
             string signingAlgorithm,
 
+            string state,
+
+            ImmutableDictionary<string, object> systemTags,
+
             string timeCreated)
         {
             CompartmentId = compartmentId;
             CreatedBy = createdBy;
+            DefinedTags = definedTags;
             DisplayName = displayName;
+            FreeformTags = freeformTags;
             Id = id;
             ImageId = imageId;
             KmsKeyId = kmsKeyId;
@@ -92,6 +118,8 @@ namespace Pulumi.Oci.Artifacts.Outputs
             Message = message;
             Signature = signature;
             SigningAlgorithm = signingAlgorithm;
+            State = state;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
         }
     }

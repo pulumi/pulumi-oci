@@ -95,7 +95,7 @@ type GetListingPackageResult struct {
 	PackageVersion string `pulumi:"packageVersion"`
 	// The model for pricing.
 	Pricings []GetListingPackagePricing `pulumi:"pricings"`
-	// The regions where you can deploy this listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
+	// The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
 	Regions []GetListingPackageRegion `pulumi:"regions"`
 	// The unique identifier for the package resource.
 	ResourceId string `pulumi:"resourceId"`
@@ -204,7 +204,7 @@ func (o GetListingPackageResultOutput) Pricings() GetListingPackagePricingArrayO
 	return o.ApplyT(func(v GetListingPackageResult) []GetListingPackagePricing { return v.Pricings }).(GetListingPackagePricingArrayOutput)
 }
 
-// The regions where you can deploy this listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
+// The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
 func (o GetListingPackageResultOutput) Regions() GetListingPackageRegionArrayOutput {
 	return o.ApplyT(func(v GetListingPackageResult) []GetListingPackageRegion { return v.Regions }).(GetListingPackageRegionArrayOutput)
 }

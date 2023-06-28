@@ -64,7 +64,7 @@ public final class GetListingPackageResult {
      */
     private List<GetListingPackagePricing> pricings;
     /**
-     * @return The regions where you can deploy this listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
+     * @return The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
      * 
      */
     private List<GetListingPackageRegion> regions;
@@ -165,7 +165,7 @@ public final class GetListingPackageResult {
         return this.pricings;
     }
     /**
-     * @return The regions where you can deploy this listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
+     * @return The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
      * 
      */
     public List<GetListingPackageRegion> regions() {

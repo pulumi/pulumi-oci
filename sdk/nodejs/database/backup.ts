@@ -86,6 +86,14 @@ export class Backup extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     */
+    public /*out*/ readonly keyStoreId!: pulumi.Output<string>;
+    /**
+     * The wallet name for Oracle Key Vault.
+     */
+    public /*out*/ readonly keyStoreWalletName!: pulumi.Output<string>;
+    /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
     public /*out*/ readonly kmsKeyId!: pulumi.Output<string>;
@@ -145,6 +153,8 @@ export class Backup extends pulumi.CustomResource {
             resourceInputs["databaseId"] = state ? state.databaseId : undefined;
             resourceInputs["databaseSizeInGbs"] = state ? state.databaseSizeInGbs : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["keyStoreId"] = state ? state.keyStoreId : undefined;
+            resourceInputs["keyStoreWalletName"] = state ? state.keyStoreWalletName : undefined;
             resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
             resourceInputs["kmsKeyVersionId"] = state ? state.kmsKeyVersionId : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
@@ -169,6 +179,8 @@ export class Backup extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["databaseEdition"] = undefined /*out*/;
             resourceInputs["databaseSizeInGbs"] = undefined /*out*/;
+            resourceInputs["keyStoreId"] = undefined /*out*/;
+            resourceInputs["keyStoreWalletName"] = undefined /*out*/;
             resourceInputs["kmsKeyId"] = undefined /*out*/;
             resourceInputs["kmsKeyVersionId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -217,6 +229,14 @@ export interface BackupState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     */
+    keyStoreId?: pulumi.Input<string>;
+    /**
+     * The wallet name for Oracle Key Vault.
+     */
+    keyStoreWalletName?: pulumi.Input<string>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */

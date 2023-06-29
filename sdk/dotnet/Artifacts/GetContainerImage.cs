@@ -114,6 +114,10 @@ namespace Pulumi.Oci.Artifacts
         /// </summary>
         public readonly string CreatedBy;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
         /// The sha256 digest of the image layer.
         /// </summary>
         public readonly string Digest;
@@ -121,6 +125,10 @@ namespace Pulumi.Oci.Artifacts
         /// The repository name and the most recent version associated with the image. If there are no versions associated with the image, then last known version and digest are used instead. If the last known version is unavailable, then 'unknown' is used instead of the version.  Example: `ubuntu:latest` or `ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2`
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
@@ -155,6 +163,10 @@ namespace Pulumi.Oci.Artifacts
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> SystemTags;
+        /// <summary>
         /// The creation time of the version.
         /// </summary>
         public readonly string TimeCreated;
@@ -177,9 +189,13 @@ namespace Pulumi.Oci.Artifacts
 
             string createdBy,
 
+            ImmutableDictionary<string, object> definedTags,
+
             string digest,
 
             string displayName,
+
+            ImmutableDictionary<string, object> freeformTags,
 
             string id,
 
@@ -199,6 +215,8 @@ namespace Pulumi.Oci.Artifacts
 
             string state,
 
+            ImmutableDictionary<string, object> systemTags,
+
             string timeCreated,
 
             string timeLastPulled,
@@ -209,8 +227,10 @@ namespace Pulumi.Oci.Artifacts
         {
             CompartmentId = compartmentId;
             CreatedBy = createdBy;
+            DefinedTags = definedTags;
             Digest = digest;
             DisplayName = displayName;
+            FreeformTags = freeformTags;
             Id = id;
             ImageId = imageId;
             Layers = layers;
@@ -220,6 +240,7 @@ namespace Pulumi.Oci.Artifacts
             RepositoryId = repositoryId;
             RepositoryName = repositoryName;
             State = state;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeLastPulled = timeLastPulled;
             Version = version;

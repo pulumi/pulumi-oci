@@ -151,6 +151,7 @@ namespace Pulumi.Oci.Database
         /// The configuration of the Pluggable Database Management service.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPluggableDatabasePluggableDatabaseManagementConfigResult> PluggableDatabaseManagementConfigs;
+        public readonly int RotateKeyTrigger;
         public readonly bool ShouldPdbAdminAccountBeLocked;
         /// <summary>
         /// The current state of the pluggable database.
@@ -190,6 +191,8 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetPluggableDatabasePluggableDatabaseManagementConfigResult> pluggableDatabaseManagementConfigs,
 
+            int rotateKeyTrigger,
+
             bool shouldPdbAdminAccountBeLocked,
 
             string state,
@@ -211,6 +214,7 @@ namespace Pulumi.Oci.Database
             PdbName = pdbName;
             PluggableDatabaseId = pluggableDatabaseId;
             PluggableDatabaseManagementConfigs = pluggableDatabaseManagementConfigs;
+            RotateKeyTrigger = rotateKeyTrigger;
             ShouldPdbAdminAccountBeLocked = shouldPdbAdminAccountBeLocked;
             State = state;
             TdeWalletPassword = tdeWalletPassword;

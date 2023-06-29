@@ -22,6 +22,7 @@ __all__ = [
     'ConfigMaintenanceWindowScheduleArgs',
     'ConfigScriptParameterArgs',
     'ConfigScriptParameterMonitorScriptParameterArgs',
+    'ConfigVantagePointArgs',
     'DedicatedVantagePointDvpStackDetailsArgs',
     'DedicatedVantagePointMonitorStatusCountMapArgs',
     'ScriptMonitorStatusCountMapArgs',
@@ -881,6 +882,44 @@ class ConfigScriptParameterMonitorScriptParameterArgs:
     @param_value.setter
     def param_value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "param_value", value)
+
+
+@pulumi.input_type
+class ConfigVantagePointArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str],
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: Name of the vantage point.
+        :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
+        """
+        pulumi.set(__self__, "name", name)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        Name of the vantage point.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Unique name that can be edited. The name should not contain any confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
 
 
 @pulumi.input_type

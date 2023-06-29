@@ -30,7 +30,14 @@ namespace Pulumi.Oci.ApmSynthetics
     ///         DisplayName = @var.Monitor_display_name,
     ///         MonitorType = @var.Monitor_monitor_type,
     ///         RepeatIntervalInSeconds = @var.Monitor_repeat_interval_in_seconds,
-    ///         VantagePoints = @var.Vantage_points,
+    ///         VantagePoints = new[]
+    ///         {
+    ///             new Oci.ApmSynthetics.Inputs.ConfigVantagePointArgs
+    ///             {
+    ///                 Name = @var.Monitor_vantage_points_name,
+    ///                 DisplayName = @var.Monitor_vantage_points_param_display_name,
+    ///             },
+    ///         },
     ///         AvailabilityConfiguration = new Oci.ApmSynthetics.Inputs.ConfigAvailabilityConfigurationArgs
     ///         {
     ///             MaxAllowedFailuresPerInterval = @var.Monitor_availability_configuration_max_allowed_failures_per_interval,
@@ -178,7 +185,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+        /// Unique name that can be edited. The name should not contain any confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -287,7 +294,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("vantagePoints")]
-        public Output<ImmutableArray<string>> VantagePoints { get; private set; } = null!;
+        public Output<ImmutableArray<Outputs.ConfigVantagePoint>> VantagePoints { get; private set; } = null!;
 
 
         /// <summary>
@@ -372,7 +379,7 @@ namespace Pulumi.Oci.ApmSynthetics
         }
 
         /// <summary>
-        /// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+        /// Unique name that can be edited. The name should not contain any confidential information.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -468,7 +475,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<int>? TimeoutInSeconds { get; set; }
 
         [Input("vantagePoints", required: true)]
-        private InputList<string>? _vantagePoints;
+        private InputList<Inputs.ConfigVantagePointArgs>? _vantagePoints;
 
         /// <summary>
         /// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
@@ -477,9 +484,9 @@ namespace Pulumi.Oci.ApmSynthetics
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        public InputList<string> VantagePoints
+        public InputList<Inputs.ConfigVantagePointArgs> VantagePoints
         {
-            get => _vantagePoints ?? (_vantagePoints = new InputList<string>());
+            get => _vantagePoints ?? (_vantagePoints = new InputList<Inputs.ConfigVantagePointArgs>());
             set => _vantagePoints = value;
         }
 
@@ -528,7 +535,7 @@ namespace Pulumi.Oci.ApmSynthetics
         }
 
         /// <summary>
-        /// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+        /// Unique name that can be edited. The name should not contain any confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -642,7 +649,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<int>? VantagePointCount { get; set; }
 
         [Input("vantagePoints")]
-        private InputList<string>? _vantagePoints;
+        private InputList<Inputs.ConfigVantagePointGetArgs>? _vantagePoints;
 
         /// <summary>
         /// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
@@ -651,9 +658,9 @@ namespace Pulumi.Oci.ApmSynthetics
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        public InputList<string> VantagePoints
+        public InputList<Inputs.ConfigVantagePointGetArgs> VantagePoints
         {
-            get => _vantagePoints ?? (_vantagePoints = new InputList<string>());
+            get => _vantagePoints ?? (_vantagePoints = new InputList<Inputs.ConfigVantagePointGetArgs>());
             set => _vantagePoints = value;
         }
 

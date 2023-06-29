@@ -45,6 +45,7 @@ __all__ = [
     'ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs',
     'ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs',
     'ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs',
+    'ExternalDbSystemStackMonitoringConfigArgs',
     'ExternalExadataInfrastructureDatabaseSystemArgs',
     'ExternalExadataInfrastructureStorageGridArgs',
     'ExternalExadataStorageConnectorCredentialInfoArgs',
@@ -78,10 +79,13 @@ __all__ = [
     'GetManagedDatabaseAddmTasksFilterArgs',
     'GetManagedDatabaseAlertLogCountsFilterArgs',
     'GetManagedDatabaseAttentionLogCountsFilterArgs',
+    'GetManagedDatabaseCursorCacheStatementsFilterArgs',
     'GetManagedDatabaseGroupsFilterArgs',
     'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs',
     'GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs',
     'GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs',
+    'GetManagedDatabaseSqlPlanBaselineJobsFilterArgs',
+    'GetManagedDatabaseSqlPlanBaselinesFilterArgs',
     'GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs',
     'GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs',
     'GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs',
@@ -3522,6 +3526,52 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
 
 
 @pulumi.input_type
+class ExternalDbSystemStackMonitoringConfigArgs:
+    def __init__(__self__, *,
+                 is_enabled: pulumi.Input[bool],
+                 metadata: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] is_enabled: The status of the associated service.
+        :param pulumi.Input[str] metadata: The associated service-specific inputs in JSON string format, which Database Management can identify.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> pulumi.Input[bool]:
+        """
+        The status of the associated service.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "is_enabled", value)
+
+    @property
+    @pulumi.getter
+    def metadata(self) -> Optional[pulumi.Input[str]]:
+        """
+        The associated service-specific inputs in JSON string format, which Database Management can identify.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "metadata", value)
+
+
+@pulumi.input_type
 class ExternalExadataInfrastructureDatabaseSystemArgs:
     def __init__(__self__, *,
                  additional_details: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -5521,6 +5571,45 @@ class GetManagedDatabaseAttentionLogCountsFilterArgs:
 
 
 @pulumi.input_type
+class GetManagedDatabaseCursorCacheStatementsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
 class GetManagedDatabaseGroupsFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -5669,6 +5758,90 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs:
         """
         The name of the Managed Database.
         """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetManagedDatabaseSqlPlanBaselineJobsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to return the SQL plan baseline jobs that match the name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return the SQL plan baseline jobs that match the name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetManagedDatabaseSqlPlanBaselinesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
         return pulumi.get(self, "name")
 
     @name.setter

@@ -108,7 +108,7 @@ export interface GetListingPackageResult {
      */
     readonly pricings: outputs.Marketplace.GetListingPackagePricing[];
     /**
-     * The regions where you can deploy this listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
+     * The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
      */
     readonly regions: outputs.Marketplace.GetListingPackageRegion[];
     /**

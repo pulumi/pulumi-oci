@@ -21,6 +21,7 @@ class PluggableDatabaseArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  pdb_admin_password: Optional[pulumi.Input[str]] = None,
+                 rotate_key_trigger: Optional[pulumi.Input[int]] = None,
                  should_pdb_admin_account_be_locked: Optional[pulumi.Input[bool]] = None,
                  tde_wallet_password: Optional[pulumi.Input[str]] = None):
         """
@@ -30,12 +31,13 @@ class PluggableDatabaseArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] pdb_admin_password: A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-        :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
-        :param pulumi.Input[str] tde_wallet_password: The existing TDE wallet password of the CDB.
+        :param pulumi.Input[int] rotate_key_trigger: (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
+        :param pulumi.Input[str] tde_wallet_password: The existing TDE wallet password of the CDB.
         """
         pulumi.set(__self__, "container_database_id", container_database_id)
         pulumi.set(__self__, "pdb_name", pdb_name)
@@ -45,6 +47,8 @@ class PluggableDatabaseArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if pdb_admin_password is not None:
             pulumi.set(__self__, "pdb_admin_password", pdb_admin_password)
+        if rotate_key_trigger is not None:
+            pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
         if should_pdb_admin_account_be_locked is not None:
             pulumi.set(__self__, "should_pdb_admin_account_be_locked", should_pdb_admin_account_be_locked)
         if tde_wallet_password is not None:
@@ -111,6 +115,22 @@ class PluggableDatabaseArgs:
         pulumi.set(self, "pdb_admin_password", value)
 
     @property
+    @pulumi.getter(name="rotateKeyTrigger")
+    def rotate_key_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "rotate_key_trigger")
+
+    @rotate_key_trigger.setter
+    def rotate_key_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "rotate_key_trigger", value)
+
+    @property
     @pulumi.getter(name="shouldPdbAdminAccountBeLocked")
     def should_pdb_admin_account_be_locked(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -127,10 +147,6 @@ class PluggableDatabaseArgs:
     def tde_wallet_password(self) -> Optional[pulumi.Input[str]]:
         """
         The existing TDE wallet password of the CDB.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "tde_wallet_password")
 
@@ -153,6 +169,7 @@ class _PluggableDatabaseState:
                  pdb_admin_password: Optional[pulumi.Input[str]] = None,
                  pdb_name: Optional[pulumi.Input[str]] = None,
                  pluggable_database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabasePluggableDatabaseManagementConfigArgs']]]] = None,
+                 rotate_key_trigger: Optional[pulumi.Input[int]] = None,
                  should_pdb_admin_account_be_locked: Optional[pulumi.Input[bool]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  tde_wallet_password: Optional[pulumi.Input[str]] = None,
@@ -170,13 +187,14 @@ class _PluggableDatabaseState:
         :param pulumi.Input[str] pdb_admin_password: A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
         :param pulumi.Input[str] pdb_name: The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
         :param pulumi.Input[Sequence[pulumi.Input['PluggableDatabasePluggableDatabaseManagementConfigArgs']]] pluggable_database_management_configs: The configuration of the Pluggable Database Management service.
-        :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
-        :param pulumi.Input[str] state: The current state of the pluggable database.
-        :param pulumi.Input[str] tde_wallet_password: The existing TDE wallet password of the CDB.
+        :param pulumi.Input[int] rotate_key_trigger: (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
+        :param pulumi.Input[str] state: The current state of the pluggable database.
+        :param pulumi.Input[str] tde_wallet_password: The existing TDE wallet password of the CDB.
         :param pulumi.Input[str] time_created: The date and time the pluggable database was created.
         """
         if compartment_id is not None:
@@ -201,6 +219,8 @@ class _PluggableDatabaseState:
             pulumi.set(__self__, "pdb_name", pdb_name)
         if pluggable_database_management_configs is not None:
             pulumi.set(__self__, "pluggable_database_management_configs", pluggable_database_management_configs)
+        if rotate_key_trigger is not None:
+            pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
         if should_pdb_admin_account_be_locked is not None:
             pulumi.set(__self__, "should_pdb_admin_account_be_locked", should_pdb_admin_account_be_locked)
         if state is not None:
@@ -343,6 +363,22 @@ class _PluggableDatabaseState:
         pulumi.set(self, "pluggable_database_management_configs", value)
 
     @property
+    @pulumi.getter(name="rotateKeyTrigger")
+    def rotate_key_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "rotate_key_trigger")
+
+    @rotate_key_trigger.setter
+    def rotate_key_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "rotate_key_trigger", value)
+
+    @property
     @pulumi.getter(name="shouldPdbAdminAccountBeLocked")
     def should_pdb_admin_account_be_locked(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -371,10 +407,6 @@ class _PluggableDatabaseState:
     def tde_wallet_password(self) -> Optional[pulumi.Input[str]]:
         """
         The existing TDE wallet password of the CDB.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "tde_wallet_password")
 
@@ -405,6 +437,7 @@ class PluggableDatabase(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  pdb_admin_password: Optional[pulumi.Input[str]] = None,
                  pdb_name: Optional[pulumi.Input[str]] = None,
+                 rotate_key_trigger: Optional[pulumi.Input[int]] = None,
                  should_pdb_admin_account_be_locked: Optional[pulumi.Input[bool]] = None,
                  tde_wallet_password: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -447,12 +480,13 @@ class PluggableDatabase(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] pdb_admin_password: A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
         :param pulumi.Input[str] pdb_name: The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-        :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
-        :param pulumi.Input[str] tde_wallet_password: The existing TDE wallet password of the CDB.
+        :param pulumi.Input[int] rotate_key_trigger: (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
+        :param pulumi.Input[str] tde_wallet_password: The existing TDE wallet password of the CDB.
         """
         ...
     @overload
@@ -512,6 +546,7 @@ class PluggableDatabase(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  pdb_admin_password: Optional[pulumi.Input[str]] = None,
                  pdb_name: Optional[pulumi.Input[str]] = None,
+                 rotate_key_trigger: Optional[pulumi.Input[int]] = None,
                  should_pdb_admin_account_be_locked: Optional[pulumi.Input[bool]] = None,
                  tde_wallet_password: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -532,6 +567,7 @@ class PluggableDatabase(pulumi.CustomResource):
             if pdb_name is None and not opts.urn:
                 raise TypeError("Missing required property 'pdb_name'")
             __props__.__dict__["pdb_name"] = pdb_name
+            __props__.__dict__["rotate_key_trigger"] = rotate_key_trigger
             __props__.__dict__["should_pdb_admin_account_be_locked"] = should_pdb_admin_account_be_locked
             __props__.__dict__["tde_wallet_password"] = None if tde_wallet_password is None else pulumi.Output.secret(tde_wallet_password)
             __props__.__dict__["compartment_id"] = None
@@ -565,6 +601,7 @@ class PluggableDatabase(pulumi.CustomResource):
             pdb_admin_password: Optional[pulumi.Input[str]] = None,
             pdb_name: Optional[pulumi.Input[str]] = None,
             pluggable_database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PluggableDatabasePluggableDatabaseManagementConfigArgs']]]]] = None,
+            rotate_key_trigger: Optional[pulumi.Input[int]] = None,
             should_pdb_admin_account_be_locked: Optional[pulumi.Input[bool]] = None,
             state: Optional[pulumi.Input[str]] = None,
             tde_wallet_password: Optional[pulumi.Input[str]] = None,
@@ -587,13 +624,14 @@ class PluggableDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] pdb_admin_password: A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
         :param pulumi.Input[str] pdb_name: The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PluggableDatabasePluggableDatabaseManagementConfigArgs']]]] pluggable_database_management_configs: The configuration of the Pluggable Database Management service.
-        :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
-        :param pulumi.Input[str] state: The current state of the pluggable database.
-        :param pulumi.Input[str] tde_wallet_password: The existing TDE wallet password of the CDB.
+        :param pulumi.Input[int] rotate_key_trigger: (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
+        :param pulumi.Input[str] state: The current state of the pluggable database.
+        :param pulumi.Input[str] tde_wallet_password: The existing TDE wallet password of the CDB.
         :param pulumi.Input[str] time_created: The date and time the pluggable database was created.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -611,6 +649,7 @@ class PluggableDatabase(pulumi.CustomResource):
         __props__.__dict__["pdb_admin_password"] = pdb_admin_password
         __props__.__dict__["pdb_name"] = pdb_name
         __props__.__dict__["pluggable_database_management_configs"] = pluggable_database_management_configs
+        __props__.__dict__["rotate_key_trigger"] = rotate_key_trigger
         __props__.__dict__["should_pdb_admin_account_be_locked"] = should_pdb_admin_account_be_locked
         __props__.__dict__["state"] = state
         __props__.__dict__["tde_wallet_password"] = tde_wallet_password
@@ -706,6 +745,18 @@ class PluggableDatabase(pulumi.CustomResource):
         return pulumi.get(self, "pluggable_database_management_configs")
 
     @property
+    @pulumi.getter(name="rotateKeyTrigger")
+    def rotate_key_trigger(self) -> pulumi.Output[Optional[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "rotate_key_trigger")
+
+    @property
     @pulumi.getter(name="shouldPdbAdminAccountBeLocked")
     def should_pdb_admin_account_be_locked(self) -> pulumi.Output[bool]:
         """
@@ -726,10 +777,6 @@ class PluggableDatabase(pulumi.CustomResource):
     def tde_wallet_password(self) -> pulumi.Output[str]:
         """
         The existing TDE wallet password of the CDB.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "tde_wallet_password")
 

@@ -28,6 +28,14 @@ namespace Pulumi.Oci.Artifacts
     ///     {
     ///         CompartmentId = @var.Compartment_id,
     ///         DisplayName = @var.Container_repository_display_name,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
     ///         IsImmutable = @var.Container_repository_is_immutable,
     ///         IsPublic = @var.Container_repository_is_public,
     ///         Readme = new Oci.Artifacts.Inputs.ContainerRepositoryReadmeArgs
@@ -70,10 +78,22 @@ namespace Pulumi.Oci.Artifacts
         public Output<string> CreatedBy { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        [Output("definedTags")]
+        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+
+        /// <summary>
         /// The container repository name.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
+        [Output("freeformTags")]
+        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Total number of images.
@@ -106,6 +126,12 @@ namespace Pulumi.Oci.Artifacts
         public Output<string> LayersSizeInBytes { get; private set; } = null!;
 
         /// <summary>
+        /// The tenancy namespace used in the container repository path.
+        /// </summary>
+        [Output("namespace")]
+        public Output<string> Namespace { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Container repository readme.
         /// </summary>
         [Output("readme")]
@@ -116,6 +142,12 @@ namespace Pulumi.Oci.Artifacts
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        /// <summary>
+        /// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// An RFC 3339 timestamp indicating when the repository was created.
@@ -181,11 +213,35 @@ namespace Pulumi.Oci.Artifacts
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        [Input("definedTags")]
+        private InputMap<object>? _definedTags;
+
+        /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public InputMap<object> DefinedTags
+        {
+            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            set => _definedTags = value;
+        }
+
         /// <summary>
         /// The container repository name.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
+
+        [Input("freeformTags")]
+        private InputMap<object>? _freeformTags;
+
+        /// <summary>
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
+        public InputMap<object> FreeformTags
+        {
+            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            set => _freeformTags = value;
+        }
 
         /// <summary>
         /// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
@@ -231,11 +287,35 @@ namespace Pulumi.Oci.Artifacts
         [Input("createdBy")]
         public Input<string>? CreatedBy { get; set; }
 
+        [Input("definedTags")]
+        private InputMap<object>? _definedTags;
+
+        /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
+        public InputMap<object> DefinedTags
+        {
+            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            set => _definedTags = value;
+        }
+
         /// <summary>
         /// The container repository name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        [Input("freeformTags")]
+        private InputMap<object>? _freeformTags;
+
+        /// <summary>
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
+        public InputMap<object> FreeformTags
+        {
+            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            set => _freeformTags = value;
+        }
 
         /// <summary>
         /// Total number of images.
@@ -268,6 +348,12 @@ namespace Pulumi.Oci.Artifacts
         public Input<string>? LayersSizeInBytes { get; set; }
 
         /// <summary>
+        /// The tenancy namespace used in the container repository path.
+        /// </summary>
+        [Input("namespace")]
+        public Input<string>? Namespace { get; set; }
+
+        /// <summary>
         /// (Updatable) Container repository readme.
         /// </summary>
         [Input("readme")]
@@ -278,6 +364,18 @@ namespace Pulumi.Oci.Artifacts
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<object>? _systemTags;
+
+        /// <summary>
+        /// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public InputMap<object> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<object>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// An RFC 3339 timestamp indicating when the repository was created.

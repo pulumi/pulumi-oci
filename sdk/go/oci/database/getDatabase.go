@@ -89,6 +89,10 @@ type LookupDatabaseResult struct {
 	Id string `pulumi:"id"`
 	// True if the database is a container database.
 	IsCdb bool `pulumi:"isCdb"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	KeyStoreId string `pulumi:"keyStoreId"`
+	// The wallet name for Oracle Key Vault.
+	KeyStoreWalletName string `pulumi:"keyStoreWalletName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId        string `pulumi:"kmsKeyId"`
 	KmsKeyMigration bool   `pulumi:"kmsKeyMigration"`
@@ -245,6 +249,16 @@ func (o LookupDatabaseResultOutput) Id() pulumi.StringOutput {
 // True if the database is a container database.
 func (o LookupDatabaseResultOutput) IsCdb() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) bool { return v.IsCdb }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+func (o LookupDatabaseResultOutput) KeyStoreId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) string { return v.KeyStoreId }).(pulumi.StringOutput)
+}
+
+// The wallet name for Oracle Key Vault.
+func (o LookupDatabaseResultOutput) KeyStoreWalletName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) string { return v.KeyStoreWalletName }).(pulumi.StringOutput)
 }
 
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.

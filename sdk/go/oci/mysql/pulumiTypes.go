@@ -772,8 +772,12 @@ type ChannelTarget struct {
 	ChannelName *string `pulumi:"channelName"`
 	// The OCID of the target DB System.
 	DbSystemId string `pulumi:"dbSystemId"`
+	// (Updatable) Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+	DelayInSeconds *int `pulumi:"delayInSeconds"`
 	// (Updatable) Replication filter rules to be applied at the DB System Channel target.
 	Filters []ChannelTargetFilter `pulumi:"filters"`
+	// (Updatable) Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key. The default value is set to ALLOW.
+	TablesWithoutPrimaryKeyHandling *string `pulumi:"tablesWithoutPrimaryKeyHandling"`
 	// (Updatable) The specific target identifier.
 	//
 	// ** IMPORTANT **
@@ -799,8 +803,12 @@ type ChannelTargetArgs struct {
 	ChannelName pulumi.StringPtrInput `pulumi:"channelName"`
 	// The OCID of the target DB System.
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// (Updatable) Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+	DelayInSeconds pulumi.IntPtrInput `pulumi:"delayInSeconds"`
 	// (Updatable) Replication filter rules to be applied at the DB System Channel target.
 	Filters ChannelTargetFilterArrayInput `pulumi:"filters"`
+	// (Updatable) Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key. The default value is set to ALLOW.
+	TablesWithoutPrimaryKeyHandling pulumi.StringPtrInput `pulumi:"tablesWithoutPrimaryKeyHandling"`
 	// (Updatable) The specific target identifier.
 	//
 	// ** IMPORTANT **
@@ -900,9 +908,19 @@ func (o ChannelTargetOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v ChannelTarget) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
+// (Updatable) Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+func (o ChannelTargetOutput) DelayInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ChannelTarget) *int { return v.DelayInSeconds }).(pulumi.IntPtrOutput)
+}
+
 // (Updatable) Replication filter rules to be applied at the DB System Channel target.
 func (o ChannelTargetOutput) Filters() ChannelTargetFilterArrayOutput {
 	return o.ApplyT(func(v ChannelTarget) []ChannelTargetFilter { return v.Filters }).(ChannelTargetFilterArrayOutput)
+}
+
+// (Updatable) Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key. The default value is set to ALLOW.
+func (o ChannelTargetOutput) TablesWithoutPrimaryKeyHandling() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ChannelTarget) *string { return v.TablesWithoutPrimaryKeyHandling }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The specific target identifier.
@@ -967,6 +985,16 @@ func (o ChannelTargetPtrOutput) DbSystemId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+func (o ChannelTargetPtrOutput) DelayInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ChannelTarget) *int {
+		if v == nil {
+			return nil
+		}
+		return v.DelayInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
 // (Updatable) Replication filter rules to be applied at the DB System Channel target.
 func (o ChannelTargetPtrOutput) Filters() ChannelTargetFilterArrayOutput {
 	return o.ApplyT(func(v *ChannelTarget) []ChannelTargetFilter {
@@ -975,6 +1003,16 @@ func (o ChannelTargetPtrOutput) Filters() ChannelTargetFilterArrayOutput {
 		}
 		return v.Filters
 	}).(ChannelTargetFilterArrayOutput)
+}
+
+// (Updatable) Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key. The default value is set to ALLOW.
+func (o ChannelTargetPtrOutput) TablesWithoutPrimaryKeyHandling() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ChannelTarget) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TablesWithoutPrimaryKeyHandling
+	}).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The specific target identifier.
@@ -5501,8 +5539,12 @@ type MysqlDbSystemChannelTarget struct {
 	ChannelName *string `pulumi:"channelName"`
 	// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
 	DbSystemId *string `pulumi:"dbSystemId"`
+	// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+	DelayInSeconds *int `pulumi:"delayInSeconds"`
 	// Replication filter rules to be applied at the DB System Channel target.
 	Filters []MysqlDbSystemChannelTargetFilter `pulumi:"filters"`
+	// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+	TablesWithoutPrimaryKeyHandling *string `pulumi:"tablesWithoutPrimaryKeyHandling"`
 	// The specific target identifier.
 	TargetType *string `pulumi:"targetType"`
 }
@@ -5525,8 +5567,12 @@ type MysqlDbSystemChannelTargetArgs struct {
 	ChannelName pulumi.StringPtrInput `pulumi:"channelName"`
 	// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
 	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
+	// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+	DelayInSeconds pulumi.IntPtrInput `pulumi:"delayInSeconds"`
 	// Replication filter rules to be applied at the DB System Channel target.
 	Filters MysqlDbSystemChannelTargetFilterArrayInput `pulumi:"filters"`
+	// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+	TablesWithoutPrimaryKeyHandling pulumi.StringPtrInput `pulumi:"tablesWithoutPrimaryKeyHandling"`
 	// The specific target identifier.
 	TargetType pulumi.StringPtrInput `pulumi:"targetType"`
 }
@@ -5597,9 +5643,19 @@ func (o MysqlDbSystemChannelTargetOutput) DbSystemId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemChannelTarget) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
+// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+func (o MysqlDbSystemChannelTargetOutput) DelayInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemChannelTarget) *int { return v.DelayInSeconds }).(pulumi.IntPtrOutput)
+}
+
 // Replication filter rules to be applied at the DB System Channel target.
 func (o MysqlDbSystemChannelTargetOutput) Filters() MysqlDbSystemChannelTargetFilterArrayOutput {
 	return o.ApplyT(func(v MysqlDbSystemChannelTarget) []MysqlDbSystemChannelTargetFilter { return v.Filters }).(MysqlDbSystemChannelTargetFilterArrayOutput)
+}
+
+// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+func (o MysqlDbSystemChannelTargetOutput) TablesWithoutPrimaryKeyHandling() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemChannelTarget) *string { return v.TablesWithoutPrimaryKeyHandling }).(pulumi.StringPtrOutput)
 }
 
 // The specific target identifier.
@@ -7300,8 +7356,12 @@ type GetChannelTarget struct {
 	ChannelName string `pulumi:"channelName"`
 	// The OCID of the source DB System.
 	DbSystemId string `pulumi:"dbSystemId"`
+	// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+	DelayInSeconds int `pulumi:"delayInSeconds"`
 	// Replication filter rules to be applied at the DB System Channel target.
 	Filters []GetChannelTargetFilter `pulumi:"filters"`
+	// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+	TablesWithoutPrimaryKeyHandling string `pulumi:"tablesWithoutPrimaryKeyHandling"`
 	// The specific target identifier.
 	TargetType string `pulumi:"targetType"`
 }
@@ -7324,8 +7384,12 @@ type GetChannelTargetArgs struct {
 	ChannelName pulumi.StringInput `pulumi:"channelName"`
 	// The OCID of the source DB System.
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+	DelayInSeconds pulumi.IntInput `pulumi:"delayInSeconds"`
 	// Replication filter rules to be applied at the DB System Channel target.
 	Filters GetChannelTargetFilterArrayInput `pulumi:"filters"`
+	// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+	TablesWithoutPrimaryKeyHandling pulumi.StringInput `pulumi:"tablesWithoutPrimaryKeyHandling"`
 	// The specific target identifier.
 	TargetType pulumi.StringInput `pulumi:"targetType"`
 }
@@ -7396,9 +7460,19 @@ func (o GetChannelTargetOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetChannelTarget) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
+// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+func (o GetChannelTargetOutput) DelayInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetChannelTarget) int { return v.DelayInSeconds }).(pulumi.IntOutput)
+}
+
 // Replication filter rules to be applied at the DB System Channel target.
 func (o GetChannelTargetOutput) Filters() GetChannelTargetFilterArrayOutput {
 	return o.ApplyT(func(v GetChannelTarget) []GetChannelTargetFilter { return v.Filters }).(GetChannelTargetFilterArrayOutput)
+}
+
+// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+func (o GetChannelTargetOutput) TablesWithoutPrimaryKeyHandling() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChannelTarget) string { return v.TablesWithoutPrimaryKeyHandling }).(pulumi.StringOutput)
 }
 
 // The specific target identifier.
@@ -8137,8 +8211,12 @@ type GetChannelsChannelTarget struct {
 	ChannelName string `pulumi:"channelName"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId string `pulumi:"dbSystemId"`
+	// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+	DelayInSeconds int `pulumi:"delayInSeconds"`
 	// Replication filter rules to be applied at the DB System Channel target.
 	Filters []GetChannelsChannelTargetFilter `pulumi:"filters"`
+	// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+	TablesWithoutPrimaryKeyHandling string `pulumi:"tablesWithoutPrimaryKeyHandling"`
 	// The specific target identifier.
 	TargetType string `pulumi:"targetType"`
 }
@@ -8161,8 +8239,12 @@ type GetChannelsChannelTargetArgs struct {
 	ChannelName pulumi.StringInput `pulumi:"channelName"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+	DelayInSeconds pulumi.IntInput `pulumi:"delayInSeconds"`
 	// Replication filter rules to be applied at the DB System Channel target.
 	Filters GetChannelsChannelTargetFilterArrayInput `pulumi:"filters"`
+	// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+	TablesWithoutPrimaryKeyHandling pulumi.StringInput `pulumi:"tablesWithoutPrimaryKeyHandling"`
 	// The specific target identifier.
 	TargetType pulumi.StringInput `pulumi:"targetType"`
 }
@@ -8233,9 +8315,19 @@ func (o GetChannelsChannelTargetOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetChannelsChannelTarget) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
+// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+func (o GetChannelsChannelTargetOutput) DelayInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetChannelsChannelTarget) int { return v.DelayInSeconds }).(pulumi.IntOutput)
+}
+
 // Replication filter rules to be applied at the DB System Channel target.
 func (o GetChannelsChannelTargetOutput) Filters() GetChannelsChannelTargetFilterArrayOutput {
 	return o.ApplyT(func(v GetChannelsChannelTarget) []GetChannelsChannelTargetFilter { return v.Filters }).(GetChannelsChannelTargetFilterArrayOutput)
+}
+
+// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+func (o GetChannelsChannelTargetOutput) TablesWithoutPrimaryKeyHandling() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChannelsChannelTarget) string { return v.TablesWithoutPrimaryKeyHandling }).(pulumi.StringOutput)
 }
 
 // The specific target identifier.
@@ -14022,8 +14114,12 @@ type GetMysqlDbSystemChannelTarget struct {
 	ChannelName string `pulumi:"channelName"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId string `pulumi:"dbSystemId"`
+	// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+	DelayInSeconds int `pulumi:"delayInSeconds"`
 	// Replication filter rules to be applied at the DB System Channel target.
 	Filters []GetMysqlDbSystemChannelTargetFilter `pulumi:"filters"`
+	// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+	TablesWithoutPrimaryKeyHandling string `pulumi:"tablesWithoutPrimaryKeyHandling"`
 	// The specific target identifier.
 	TargetType string `pulumi:"targetType"`
 }
@@ -14046,8 +14142,12 @@ type GetMysqlDbSystemChannelTargetArgs struct {
 	ChannelName pulumi.StringInput `pulumi:"channelName"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+	DelayInSeconds pulumi.IntInput `pulumi:"delayInSeconds"`
 	// Replication filter rules to be applied at the DB System Channel target.
 	Filters GetMysqlDbSystemChannelTargetFilterArrayInput `pulumi:"filters"`
+	// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+	TablesWithoutPrimaryKeyHandling pulumi.StringInput `pulumi:"tablesWithoutPrimaryKeyHandling"`
 	// The specific target identifier.
 	TargetType pulumi.StringInput `pulumi:"targetType"`
 }
@@ -14118,9 +14218,19 @@ func (o GetMysqlDbSystemChannelTargetOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemChannelTarget) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
+// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+func (o GetMysqlDbSystemChannelTargetOutput) DelayInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelTarget) int { return v.DelayInSeconds }).(pulumi.IntOutput)
+}
+
 // Replication filter rules to be applied at the DB System Channel target.
 func (o GetMysqlDbSystemChannelTargetOutput) Filters() GetMysqlDbSystemChannelTargetFilterArrayOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemChannelTarget) []GetMysqlDbSystemChannelTargetFilter { return v.Filters }).(GetMysqlDbSystemChannelTargetFilterArrayOutput)
+}
+
+// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+func (o GetMysqlDbSystemChannelTargetOutput) TablesWithoutPrimaryKeyHandling() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelTarget) string { return v.TablesWithoutPrimaryKeyHandling }).(pulumi.StringOutput)
 }
 
 // The specific target identifier.
@@ -16514,8 +16624,12 @@ type GetMysqlDbSystemsDbSystemChannelTarget struct {
 	ChannelName string `pulumi:"channelName"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId string `pulumi:"dbSystemId"`
+	// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+	DelayInSeconds int `pulumi:"delayInSeconds"`
 	// Replication filter rules to be applied at the DB System Channel target.
 	Filters []GetMysqlDbSystemsDbSystemChannelTargetFilter `pulumi:"filters"`
+	// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+	TablesWithoutPrimaryKeyHandling string `pulumi:"tablesWithoutPrimaryKeyHandling"`
 	// The specific target identifier.
 	TargetType string `pulumi:"targetType"`
 }
@@ -16538,8 +16652,12 @@ type GetMysqlDbSystemsDbSystemChannelTargetArgs struct {
 	ChannelName pulumi.StringInput `pulumi:"channelName"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+	DelayInSeconds pulumi.IntInput `pulumi:"delayInSeconds"`
 	// Replication filter rules to be applied at the DB System Channel target.
 	Filters GetMysqlDbSystemsDbSystemChannelTargetFilterArrayInput `pulumi:"filters"`
+	// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+	TablesWithoutPrimaryKeyHandling pulumi.StringInput `pulumi:"tablesWithoutPrimaryKeyHandling"`
 	// The specific target identifier.
 	TargetType pulumi.StringInput `pulumi:"targetType"`
 }
@@ -16610,11 +16728,21 @@ func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) DbSystemId() pulumi.String
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTarget) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
+// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) DelayInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTarget) int { return v.DelayInSeconds }).(pulumi.IntOutput)
+}
+
 // Replication filter rules to be applied at the DB System Channel target.
 func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) Filters() GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTarget) []GetMysqlDbSystemsDbSystemChannelTargetFilter {
 		return v.Filters
 	}).(GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput)
+}
+
+// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) TablesWithoutPrimaryKeyHandling() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTarget) string { return v.TablesWithoutPrimaryKeyHandling }).(pulumi.StringOutput)
 }
 
 // The specific target identifier.

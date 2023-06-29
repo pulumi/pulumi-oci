@@ -62,8 +62,12 @@ type LookupContainerRepositoryResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The id of the user or principal that created the resource.
 	CreatedBy string `pulumi:"createdBy"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The container repository name.
 	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
 	Id string `pulumi:"id"`
 	// Total number of images.
@@ -76,11 +80,15 @@ type LookupContainerRepositoryResult struct {
 	LayerCount int `pulumi:"layerCount"`
 	// Total storage in bytes consumed by layers.
 	LayersSizeInBytes string `pulumi:"layersSizeInBytes"`
+	// The tenancy namespace used in the container repository path.
+	Namespace string `pulumi:"namespace"`
 	// Container repository readme.
 	Readmes      []GetContainerRepositoryReadme `pulumi:"readmes"`
 	RepositoryId string                         `pulumi:"repositoryId"`
 	// The current state of the container repository.
 	State string `pulumi:"state"`
+	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// An RFC 3339 timestamp indicating when the repository was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// An RFC 3339 timestamp indicating when an image was last pushed to the repository.
@@ -140,9 +148,19 @@ func (o LookupContainerRepositoryResultOutput) CreatedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.CreatedBy }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o LookupContainerRepositoryResultOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The container repository name.
 func (o LookupContainerRepositoryResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o LookupContainerRepositoryResultOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
@@ -175,6 +193,11 @@ func (o LookupContainerRepositoryResultOutput) LayersSizeInBytes() pulumi.String
 	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.LayersSizeInBytes }).(pulumi.StringOutput)
 }
 
+// The tenancy namespace used in the container repository path.
+func (o LookupContainerRepositoryResultOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
 // Container repository readme.
 func (o LookupContainerRepositoryResultOutput) Readmes() GetContainerRepositoryReadmeArrayOutput {
 	return o.ApplyT(func(v LookupContainerRepositoryResult) []GetContainerRepositoryReadme { return v.Readmes }).(GetContainerRepositoryReadmeArrayOutput)
@@ -187,6 +210,11 @@ func (o LookupContainerRepositoryResultOutput) RepositoryId() pulumi.StringOutpu
 // The current state of the container repository.
 func (o LookupContainerRepositoryResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o LookupContainerRepositoryResultOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // An RFC 3339 timestamp indicating when the repository was created.

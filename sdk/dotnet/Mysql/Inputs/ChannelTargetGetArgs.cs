@@ -30,6 +30,12 @@ namespace Pulumi.Oci.Mysql.Inputs
         [Input("dbSystemId", required: true)]
         public Input<string> DbSystemId { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+        /// </summary>
+        [Input("delayInSeconds")]
+        public Input<int>? DelayInSeconds { get; set; }
+
         [Input("filters")]
         private InputList<Inputs.ChannelTargetFilterGetArgs>? _filters;
 
@@ -41,6 +47,12 @@ namespace Pulumi.Oci.Mysql.Inputs
             get => _filters ?? (_filters = new InputList<Inputs.ChannelTargetFilterGetArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// (Updatable) Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key. The default value is set to ALLOW.
+        /// </summary>
+        [Input("tablesWithoutPrimaryKeyHandling")]
+        public Input<string>? TablesWithoutPrimaryKeyHandling { get; set; }
 
         /// <summary>
         /// (Updatable) The specific target identifier.

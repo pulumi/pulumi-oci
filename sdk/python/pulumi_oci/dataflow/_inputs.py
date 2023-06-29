@@ -26,12 +26,17 @@ __all__ = [
     'PrivateEndpointScanDetailArgs',
     'RunStatementOutputArgs',
     'RunStatementOutputDataArgs',
+    'SqlEndpointDriverShapeConfigArgs',
+    'SqlEndpointExecutorShapeConfigArgs',
+    'SqlEndpointNetworkConfigurationArgs',
+    'SqlEndpointNetworkConfigurationAccessControlRuleArgs',
     'GetApplicationsFilterArgs',
     'GetInvokeRunsFilterArgs',
     'GetPoolsFilterArgs',
     'GetPrivateEndpointsFilterArgs',
     'GetRunLogsFilterArgs',
     'GetRunStatementsFilterArgs',
+    'GetSqlEndpointsFilterArgs',
 ]
 
 @pulumi.input_type
@@ -811,6 +816,257 @@ class RunStatementOutputDataArgs:
 
 
 @pulumi.input_type
+class SqlEndpointDriverShapeConfigArgs:
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[pulumi.Input[float]] = None,
+                 ocpus: Optional[pulumi.Input[float]] = None):
+        """
+        :param pulumi.Input[float] memory_in_gbs: The amount of memory used for the driver or executors.
+        :param pulumi.Input[float] ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[pulumi.Input[float]]:
+        """
+        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "ocpus", value)
+
+
+@pulumi.input_type
+class SqlEndpointExecutorShapeConfigArgs:
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[pulumi.Input[float]] = None,
+                 ocpus: Optional[pulumi.Input[float]] = None):
+        """
+        :param pulumi.Input[float] memory_in_gbs: The amount of memory used for the driver or executors.
+        :param pulumi.Input[float] ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[pulumi.Input[float]]:
+        """
+        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "ocpus", value)
+
+
+@pulumi.input_type
+class SqlEndpointNetworkConfigurationArgs:
+    def __init__(__self__, *,
+                 network_type: pulumi.Input[str],
+                 access_control_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgs']]]] = None,
+                 host_name_prefix: Optional[pulumi.Input[str]] = None,
+                 private_endpoint_ip: Optional[pulumi.Input[str]] = None,
+                 public_endpoint_ip: Optional[pulumi.Input[str]] = None,
+                 subnet_id: Optional[pulumi.Input[str]] = None,
+                 vcn_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] network_type: The type of network configuration.
+        :param pulumi.Input[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgs']]] access_control_rules: A list of SecureAccessControlRule's to which access is limited to
+        :param pulumi.Input[str] host_name_prefix: The host name prefix.
+        :param pulumi.Input[str] private_endpoint_ip: Ip Address of private endpoint
+        :param pulumi.Input[str] public_endpoint_ip: Ip Address of public endpoint
+        :param pulumi.Input[str] subnet_id: The VCN Subnet OCID.
+        :param pulumi.Input[str] vcn_id: The VCN OCID.
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        if access_control_rules is not None:
+            pulumi.set(__self__, "access_control_rules", access_control_rules)
+        if host_name_prefix is not None:
+            pulumi.set(__self__, "host_name_prefix", host_name_prefix)
+        if private_endpoint_ip is not None:
+            pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        if public_endpoint_ip is not None:
+            pulumi.set(__self__, "public_endpoint_ip", public_endpoint_ip)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if vcn_id is not None:
+            pulumi.set(__self__, "vcn_id", vcn_id)
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> pulumi.Input[str]:
+        """
+        The type of network configuration.
+        """
+        return pulumi.get(self, "network_type")
+
+    @network_type.setter
+    def network_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "network_type", value)
+
+    @property
+    @pulumi.getter(name="accessControlRules")
+    def access_control_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgs']]]]:
+        """
+        A list of SecureAccessControlRule's to which access is limited to
+        """
+        return pulumi.get(self, "access_control_rules")
+
+    @access_control_rules.setter
+    def access_control_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgs']]]]):
+        pulumi.set(self, "access_control_rules", value)
+
+    @property
+    @pulumi.getter(name="hostNamePrefix")
+    def host_name_prefix(self) -> Optional[pulumi.Input[str]]:
+        """
+        The host name prefix.
+        """
+        return pulumi.get(self, "host_name_prefix")
+
+    @host_name_prefix.setter
+    def host_name_prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host_name_prefix", value)
+
+    @property
+    @pulumi.getter(name="privateEndpointIp")
+    def private_endpoint_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        Ip Address of private endpoint
+        """
+        return pulumi.get(self, "private_endpoint_ip")
+
+    @private_endpoint_ip.setter
+    def private_endpoint_ip(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_endpoint_ip", value)
+
+    @property
+    @pulumi.getter(name="publicEndpointIp")
+    def public_endpoint_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        Ip Address of public endpoint
+        """
+        return pulumi.get(self, "public_endpoint_ip")
+
+    @public_endpoint_ip.setter
+    def public_endpoint_ip(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "public_endpoint_ip", value)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The VCN Subnet OCID.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subnet_id", value)
+
+    @property
+    @pulumi.getter(name="vcnId")
+    def vcn_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The VCN OCID.
+        """
+        return pulumi.get(self, "vcn_id")
+
+    @vcn_id.setter
+    def vcn_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vcn_id", value)
+
+
+@pulumi.input_type
+class SqlEndpointNetworkConfigurationAccessControlRuleArgs:
+    def __init__(__self__, *,
+                 ip_notation: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None,
+                 vcn_ips: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] ip_notation: The type of IP notation.
+        :param pulumi.Input[str] value: The associated value of the selected IP notation.
+        :param pulumi.Input[str] vcn_ips: A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+        """
+        if ip_notation is not None:
+            pulumi.set(__self__, "ip_notation", ip_notation)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+        if vcn_ips is not None:
+            pulumi.set(__self__, "vcn_ips", vcn_ips)
+
+    @property
+    @pulumi.getter(name="ipNotation")
+    def ip_notation(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of IP notation.
+        """
+        return pulumi.get(self, "ip_notation")
+
+    @ip_notation.setter
+    def ip_notation(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ip_notation", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        The associated value of the selected IP notation.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter(name="vcnIps")
+    def vcn_ips(self) -> Optional[pulumi.Input[str]]:
+        """
+        A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+        """
+        return pulumi.get(self, "vcn_ips")
+
+    @vcn_ips.setter
+    def vcn_ips(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vcn_ips", value)
+
+
+@pulumi.input_type
 class GetApplicationsFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -1019,6 +1275,45 @@ class GetRunLogsFilterArgs:
 
 @pulumi.input_type
 class GetRunStatementsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSqlEndpointsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

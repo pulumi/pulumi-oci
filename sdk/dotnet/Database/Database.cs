@@ -193,6 +193,18 @@ namespace Pulumi.Oci.Database
         public Output<bool> IsCdb { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        /// </summary>
+        [Output("keyStoreId")]
+        public Output<string> KeyStoreId { get; private set; } = null!;
+
+        /// <summary>
+        /// The wallet name for Oracle Key Vault.
+        /// </summary>
+        [Output("keyStoreWalletName")]
+        public Output<string> KeyStoreWalletName { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         [Output("kmsKeyId")]
@@ -365,6 +377,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("dbVersion")]
         public Input<string>? DbVersion { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        /// </summary>
+        [Input("keyStoreId")]
+        public Input<string>? KeyStoreId { get; set; }
 
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -547,6 +565,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("isCdb")]
         public Input<bool>? IsCdb { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        /// </summary>
+        [Input("keyStoreId")]
+        public Input<string>? KeyStoreId { get; set; }
+
+        /// <summary>
+        /// The wallet name for Oracle Key Vault.
+        /// </summary>
+        [Input("keyStoreWalletName")]
+        public Input<string>? KeyStoreWalletName { get; set; }
 
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.

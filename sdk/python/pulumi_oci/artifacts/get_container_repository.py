@@ -22,7 +22,7 @@ class GetContainerRepositoryResult:
     """
     A collection of values returned by getContainerRepository.
     """
-    def __init__(__self__, billable_size_in_gbs=None, compartment_id=None, created_by=None, display_name=None, id=None, image_count=None, is_immutable=None, is_public=None, layer_count=None, layers_size_in_bytes=None, readmes=None, repository_id=None, state=None, time_created=None, time_last_pushed=None):
+    def __init__(__self__, billable_size_in_gbs=None, compartment_id=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, image_count=None, is_immutable=None, is_public=None, layer_count=None, layers_size_in_bytes=None, namespace=None, readmes=None, repository_id=None, state=None, system_tags=None, time_created=None, time_last_pushed=None):
         if billable_size_in_gbs and not isinstance(billable_size_in_gbs, str):
             raise TypeError("Expected argument 'billable_size_in_gbs' to be a str")
         pulumi.set(__self__, "billable_size_in_gbs", billable_size_in_gbs)
@@ -32,9 +32,15 @@ class GetContainerRepositoryResult:
         if created_by and not isinstance(created_by, str):
             raise TypeError("Expected argument 'created_by' to be a str")
         pulumi.set(__self__, "created_by", created_by)
+        if defined_tags and not isinstance(defined_tags, dict):
+            raise TypeError("Expected argument 'defined_tags' to be a dict")
+        pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags and not isinstance(freeform_tags, dict):
+            raise TypeError("Expected argument 'freeform_tags' to be a dict")
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -53,6 +59,9 @@ class GetContainerRepositoryResult:
         if layers_size_in_bytes and not isinstance(layers_size_in_bytes, str):
             raise TypeError("Expected argument 'layers_size_in_bytes' to be a str")
         pulumi.set(__self__, "layers_size_in_bytes", layers_size_in_bytes)
+        if namespace and not isinstance(namespace, str):
+            raise TypeError("Expected argument 'namespace' to be a str")
+        pulumi.set(__self__, "namespace", namespace)
         if readmes and not isinstance(readmes, list):
             raise TypeError("Expected argument 'readmes' to be a list")
         pulumi.set(__self__, "readmes", readmes)
@@ -62,6 +71,9 @@ class GetContainerRepositoryResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -94,12 +106,28 @@ class GetContainerRepositoryResult:
         return pulumi.get(self, "created_by")
 
     @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
         The container repository name.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
@@ -151,6 +179,14 @@ class GetContainerRepositoryResult:
 
     @property
     @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The tenancy namespace used in the container repository path.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
     def readmes(self) -> Sequence['outputs.GetContainerRepositoryReadmeResult']:
         """
         Container repository readme.
@@ -169,6 +205,14 @@ class GetContainerRepositoryResult:
         The current state of the container repository.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -196,16 +240,20 @@ class AwaitableGetContainerRepositoryResult(GetContainerRepositoryResult):
             billable_size_in_gbs=self.billable_size_in_gbs,
             compartment_id=self.compartment_id,
             created_by=self.created_by,
+            defined_tags=self.defined_tags,
             display_name=self.display_name,
+            freeform_tags=self.freeform_tags,
             id=self.id,
             image_count=self.image_count,
             is_immutable=self.is_immutable,
             is_public=self.is_public,
             layer_count=self.layer_count,
             layers_size_in_bytes=self.layers_size_in_bytes,
+            namespace=self.namespace,
             readmes=self.readmes,
             repository_id=self.repository_id,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_last_pushed=self.time_last_pushed)
 
@@ -238,16 +286,20 @@ def get_container_repository(repository_id: Optional[str] = None,
         billable_size_in_gbs=__ret__.billable_size_in_gbs,
         compartment_id=__ret__.compartment_id,
         created_by=__ret__.created_by,
+        defined_tags=__ret__.defined_tags,
         display_name=__ret__.display_name,
+        freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
         image_count=__ret__.image_count,
         is_immutable=__ret__.is_immutable,
         is_public=__ret__.is_public,
         layer_count=__ret__.layer_count,
         layers_size_in_bytes=__ret__.layers_size_in_bytes,
+        namespace=__ret__.namespace,
         readmes=__ret__.readmes,
         repository_id=__ret__.repository_id,
         state=__ret__.state,
+        system_tags=__ret__.system_tags,
         time_created=__ret__.time_created,
         time_last_pushed=__ret__.time_last_pushed)
 

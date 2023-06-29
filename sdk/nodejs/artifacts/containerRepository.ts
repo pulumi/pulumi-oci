@@ -20,6 +20,12 @@ import * as utilities from "../utilities";
  * const testContainerRepository = new oci.artifacts.ContainerRepository("testContainerRepository", {
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.container_repository_display_name,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
  *     isImmutable: _var.container_repository_is_immutable,
  *     isPublic: _var.container_repository_is_public,
  *     readme: {
@@ -78,9 +84,17 @@ export class ContainerRepository extends pulumi.CustomResource {
      */
     public /*out*/ readonly createdBy!: pulumi.Output<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+     */
+    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * The container repository name.
      */
     public readonly displayName!: pulumi.Output<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     */
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * Total number of images.
      */
@@ -102,6 +116,10 @@ export class ContainerRepository extends pulumi.CustomResource {
      */
     public /*out*/ readonly layersSizeInBytes!: pulumi.Output<string>;
     /**
+     * The tenancy namespace used in the container repository path.
+     */
+    public /*out*/ readonly namespace!: pulumi.Output<string>;
+    /**
      * (Updatable) Container repository readme.
      */
     public readonly readme!: pulumi.Output<outputs.Artifacts.ContainerRepositoryReadme>;
@@ -109,6 +127,10 @@ export class ContainerRepository extends pulumi.CustomResource {
      * The current state of the container repository.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
+     * The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * An RFC 3339 timestamp indicating when the repository was created.
      */
@@ -134,14 +156,18 @@ export class ContainerRepository extends pulumi.CustomResource {
             resourceInputs["billableSizeInGbs"] = state ? state.billableSizeInGbs : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["createdBy"] = state ? state.createdBy : undefined;
+            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["imageCount"] = state ? state.imageCount : undefined;
             resourceInputs["isImmutable"] = state ? state.isImmutable : undefined;
             resourceInputs["isPublic"] = state ? state.isPublic : undefined;
             resourceInputs["layerCount"] = state ? state.layerCount : undefined;
             resourceInputs["layersSizeInBytes"] = state ? state.layersSizeInBytes : undefined;
+            resourceInputs["namespace"] = state ? state.namespace : undefined;
             resourceInputs["readme"] = state ? state.readme : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeLastPushed"] = state ? state.timeLastPushed : undefined;
         } else {
@@ -153,7 +179,9 @@ export class ContainerRepository extends pulumi.CustomResource {
                 throw new Error("Missing required property 'displayName'");
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isImmutable"] = args ? args.isImmutable : undefined;
             resourceInputs["isPublic"] = args ? args.isPublic : undefined;
             resourceInputs["readme"] = args ? args.readme : undefined;
@@ -162,7 +190,9 @@ export class ContainerRepository extends pulumi.CustomResource {
             resourceInputs["imageCount"] = undefined /*out*/;
             resourceInputs["layerCount"] = undefined /*out*/;
             resourceInputs["layersSizeInBytes"] = undefined /*out*/;
+            resourceInputs["namespace"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeLastPushed"] = undefined /*out*/;
         }
@@ -188,9 +218,17 @@ export interface ContainerRepositoryState {
      */
     createdBy?: pulumi.Input<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * The container repository name.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * Total number of images.
      */
@@ -212,6 +250,10 @@ export interface ContainerRepositoryState {
      */
     layersSizeInBytes?: pulumi.Input<string>;
     /**
+     * The tenancy namespace used in the container repository path.
+     */
+    namespace?: pulumi.Input<string>;
+    /**
      * (Updatable) Container repository readme.
      */
     readme?: pulumi.Input<inputs.Artifacts.ContainerRepositoryReadme>;
@@ -219,6 +261,10 @@ export interface ContainerRepositoryState {
      * The current state of the container repository.
      */
     state?: pulumi.Input<string>;
+    /**
+     * The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * An RFC 3339 timestamp indicating when the repository was created.
      */
@@ -238,9 +284,17 @@ export interface ContainerRepositoryArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * The container repository name.
      */
     displayName: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
      */

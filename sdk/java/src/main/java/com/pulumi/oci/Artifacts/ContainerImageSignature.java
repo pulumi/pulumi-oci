@@ -10,7 +10,9 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Artifacts.ContainerImageSignatureArgs;
 import com.pulumi.oci.Artifacts.inputs.ContainerImageSignatureState;
 import com.pulumi.oci.Utilities;
+import java.lang.Object;
 import java.lang.String;
+import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
@@ -48,6 +50,8 @@ import javax.annotation.Nullable;
  *             .message(var_.container_image_signature_message())
  *             .signature(var_.container_image_signature_signature())
  *             .signingAlgorithm(var_.container_image_signature_signing_algorithm())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 
  *     }
@@ -94,6 +98,20 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
         return this.createdBy;
     }
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    private Output<Map<String,Object>> definedTags;
+
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.  Example: `wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva`
      * 
      */
@@ -106,6 +124,20 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    private Output<Map<String,Object>> freeformTags;
+
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
@@ -196,6 +228,34 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      */
     public Output<String> signingAlgorithm() {
         return this.signingAlgorithm;
+    }
+    /**
+     * The current state of the container image signature.
+     * 
+     */
+    @Export(name="state", type=String.class, parameters={})
+    private Output<String> state;
+
+    /**
+     * @return The current state of the container image signature.
+     * 
+     */
+    public Output<String> state() {
+        return this.state;
+    }
+    /**
+     * The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    private Output<Map<String,Object>> systemTags;
+
+    /**
+     * @return The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> systemTags() {
+        return this.systemTags;
     }
     /**
      * An RFC 3339 timestamp indicating when the image was created.

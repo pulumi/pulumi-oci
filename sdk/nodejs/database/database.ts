@@ -170,6 +170,14 @@ export class Database extends pulumi.CustomResource {
      */
     public /*out*/ readonly isCdb!: pulumi.Output<boolean>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     */
+    public readonly keyStoreId!: pulumi.Output<string>;
+    /**
+     * The wallet name for Oracle Key Vault.
+     */
+    public /*out*/ readonly keyStoreWalletName!: pulumi.Output<string>;
+    /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
     public readonly kmsKeyId!: pulumi.Output<string>;
@@ -271,6 +279,8 @@ export class Database extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isCdb"] = state ? state.isCdb : undefined;
+            resourceInputs["keyStoreId"] = state ? state.keyStoreId : undefined;
+            resourceInputs["keyStoreWalletName"] = state ? state.keyStoreWalletName : undefined;
             resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
             resourceInputs["kmsKeyMigration"] = state ? state.kmsKeyMigration : undefined;
             resourceInputs["kmsKeyRotation"] = state ? state.kmsKeyRotation : undefined;
@@ -302,6 +312,7 @@ export class Database extends pulumi.CustomResource {
             resourceInputs["database"] = args ? args.database : undefined;
             resourceInputs["dbHomeId"] = args ? args.dbHomeId : undefined;
             resourceInputs["dbVersion"] = args ? args.dbVersion : undefined;
+            resourceInputs["keyStoreId"] = args ? args.keyStoreId : undefined;
             resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
             resourceInputs["kmsKeyMigration"] = args ? args.kmsKeyMigration : undefined;
             resourceInputs["kmsKeyRotation"] = args ? args.kmsKeyRotation : undefined;
@@ -321,6 +332,7 @@ export class Database extends pulumi.CustomResource {
             resourceInputs["definedTags"] = undefined /*out*/;
             resourceInputs["freeformTags"] = undefined /*out*/;
             resourceInputs["isCdb"] = undefined /*out*/;
+            resourceInputs["keyStoreWalletName"] = undefined /*out*/;
             resourceInputs["lastBackupDurationInSeconds"] = undefined /*out*/;
             resourceInputs["lastBackupTimestamp"] = undefined /*out*/;
             resourceInputs["lastFailedBackupTimestamp"] = undefined /*out*/;
@@ -415,6 +427,14 @@ export interface DatabaseState {
      */
     isCdb?: pulumi.Input<boolean>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     */
+    keyStoreId?: pulumi.Input<string>;
+    /**
+     * The wallet name for Oracle Key Vault.
+     */
+    keyStoreWalletName?: pulumi.Input<string>;
+    /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
     kmsKeyId?: pulumi.Input<string>;
@@ -508,6 +528,10 @@ export interface DatabaseArgs {
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      */
     dbVersion?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     */
+    keyStoreId?: pulumi.Input<string>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */

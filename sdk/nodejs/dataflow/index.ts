@@ -70,6 +70,16 @@ export const getRunStatements: typeof import("./getRunStatements").getRunStateme
 export const getRunStatementsOutput: typeof import("./getRunStatements").getRunStatementsOutput = null as any;
 utilities.lazyLoad(exports, ["getRunStatements","getRunStatementsOutput"], () => require("./getRunStatements"));
 
+export { GetSqlEndpointArgs, GetSqlEndpointResult, GetSqlEndpointOutputArgs } from "./getSqlEndpoint";
+export const getSqlEndpoint: typeof import("./getSqlEndpoint").getSqlEndpoint = null as any;
+export const getSqlEndpointOutput: typeof import("./getSqlEndpoint").getSqlEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getSqlEndpoint","getSqlEndpointOutput"], () => require("./getSqlEndpoint"));
+
+export { GetSqlEndpointsArgs, GetSqlEndpointsResult, GetSqlEndpointsOutputArgs } from "./getSqlEndpoints";
+export const getSqlEndpoints: typeof import("./getSqlEndpoints").getSqlEndpoints = null as any;
+export const getSqlEndpointsOutput: typeof import("./getSqlEndpoints").getSqlEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getSqlEndpoints","getSqlEndpointsOutput"], () => require("./getSqlEndpoints"));
+
 export { InvokeRunArgs, InvokeRunState } from "./invokeRun";
 export type InvokeRun = import("./invokeRun").InvokeRun;
 export const InvokeRun: typeof import("./invokeRun").InvokeRun = null as any;
@@ -90,6 +100,11 @@ export type RunStatement = import("./runStatement").RunStatement;
 export const RunStatement: typeof import("./runStatement").RunStatement = null as any;
 utilities.lazyLoad(exports, ["RunStatement"], () => require("./runStatement"));
 
+export { SqlEndpointArgs, SqlEndpointState } from "./sqlEndpoint";
+export type SqlEndpoint = import("./sqlEndpoint").SqlEndpoint;
+export const SqlEndpoint: typeof import("./sqlEndpoint").SqlEndpoint = null as any;
+utilities.lazyLoad(exports, ["SqlEndpoint"], () => require("./sqlEndpoint"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -105,6 +120,8 @@ const _module = {
                 return new PrivateEndpoint(name, <any>undefined, { urn })
             case "oci:DataFlow/runStatement:RunStatement":
                 return new RunStatement(name, <any>undefined, { urn })
+            case "oci:DataFlow/sqlEndpoint:SqlEndpoint":
+                return new SqlEndpoint(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -115,3 +132,4 @@ pulumi.runtime.registerResourceModule("oci", "DataFlow/invokeRun", _module)
 pulumi.runtime.registerResourceModule("oci", "DataFlow/pool", _module)
 pulumi.runtime.registerResourceModule("oci", "DataFlow/privateEndpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "DataFlow/runStatement", _module)
+pulumi.runtime.registerResourceModule("oci", "DataFlow/sqlEndpoint", _module)

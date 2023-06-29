@@ -60,8 +60,12 @@ type LookupContainerImageSignatureResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The id of the user or principal that created the resource.
 	CreatedBy string `pulumi:"createdBy"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.  Example: `wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva`
 	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.  Example: `ocid1.containerimagesignature.oc1..exampleuniqueID`
 	Id string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
@@ -77,6 +81,10 @@ type LookupContainerImageSignatureResult struct {
 	Signature string `pulumi:"signature"`
 	// The algorithm to be used for signing. These are the only supported signing algorithms for container images.
 	SigningAlgorithm string `pulumi:"signingAlgorithm"`
+	// The current state of the container image signature.
+	State string `pulumi:"state"`
+	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// An RFC 3339 timestamp indicating when the image was created.
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -129,9 +137,19 @@ func (o LookupContainerImageSignatureResultOutput) CreatedBy() pulumi.StringOutp
 	return o.ApplyT(func(v LookupContainerImageSignatureResult) string { return v.CreatedBy }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o LookupContainerImageSignatureResultOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupContainerImageSignatureResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.  Example: `wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva`
 func (o LookupContainerImageSignatureResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupContainerImageSignatureResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o LookupContainerImageSignatureResultOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupContainerImageSignatureResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.  Example: `ocid1.containerimagesignature.oc1..exampleuniqueID`
@@ -171,6 +189,16 @@ func (o LookupContainerImageSignatureResultOutput) Signature() pulumi.StringOutp
 // The algorithm to be used for signing. These are the only supported signing algorithms for container images.
 func (o LookupContainerImageSignatureResultOutput) SigningAlgorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupContainerImageSignatureResult) string { return v.SigningAlgorithm }).(pulumi.StringOutput)
+}
+
+// The current state of the container image signature.
+func (o LookupContainerImageSignatureResultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupContainerImageSignatureResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o LookupContainerImageSignatureResultOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupContainerImageSignatureResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // An RFC 3339 timestamp indicating when the image was created.

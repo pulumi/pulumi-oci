@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDatabaseManagementConfig;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemStackMonitoringConfig;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -58,6 +59,11 @@ public final class GetExternalDbSystemResult {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return The configuration details of Stack Monitoring for an external DB system.
+     * 
+     */
+    private List<GetExternalDbSystemStackMonitoringConfig> stackMonitoringConfigs;
     /**
      * @return The current lifecycle state of the external DB system resource.
      * 
@@ -142,6 +148,13 @@ public final class GetExternalDbSystemResult {
         return this.lifecycleDetails;
     }
     /**
+     * @return The configuration details of Stack Monitoring for an external DB system.
+     * 
+     */
+    public List<GetExternalDbSystemStackMonitoringConfig> stackMonitoringConfigs() {
+        return this.stackMonitoringConfigs;
+    }
+    /**
      * @return The current lifecycle state of the external DB system resource.
      * 
      */
@@ -182,6 +195,7 @@ public final class GetExternalDbSystemResult {
         private String id;
         private Boolean isCluster;
         private String lifecycleDetails;
+        private List<GetExternalDbSystemStackMonitoringConfig> stackMonitoringConfigs;
         private String state;
         private String timeCreated;
         private String timeUpdated;
@@ -198,6 +212,7 @@ public final class GetExternalDbSystemResult {
     	      this.id = defaults.id;
     	      this.isCluster = defaults.isCluster;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.stackMonitoringConfigs = defaults.stackMonitoringConfigs;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -257,6 +272,14 @@ public final class GetExternalDbSystemResult {
             return this;
         }
         @CustomType.Setter
+        public Builder stackMonitoringConfigs(List<GetExternalDbSystemStackMonitoringConfig> stackMonitoringConfigs) {
+            this.stackMonitoringConfigs = Objects.requireNonNull(stackMonitoringConfigs);
+            return this;
+        }
+        public Builder stackMonitoringConfigs(GetExternalDbSystemStackMonitoringConfig... stackMonitoringConfigs) {
+            return stackMonitoringConfigs(List.of(stackMonitoringConfigs));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -283,6 +306,7 @@ public final class GetExternalDbSystemResult {
             o.id = id;
             o.isCluster = isCluster;
             o.lifecycleDetails = lifecycleDetails;
+            o.stackMonitoringConfigs = stackMonitoringConfigs;
             o.state = state;
             o.timeCreated = timeCreated;
             o.timeUpdated = timeUpdated;

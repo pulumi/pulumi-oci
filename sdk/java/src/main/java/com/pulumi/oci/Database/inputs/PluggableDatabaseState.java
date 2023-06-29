@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.PluggableDatabaseConnectionStringArgs;
 import com.pulumi.oci.Database.inputs.PluggableDatabasePluggableDatabaseManagementConfigArgs;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -187,6 +188,27 @@ public final class PluggableDatabaseState extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="rotateKeyTrigger")
+    private @Nullable Output<Integer> rotateKeyTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> rotateKeyTrigger() {
+        return Optional.ofNullable(this.rotateKeyTrigger);
+    }
+
+    /**
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
      * 
      */
@@ -219,18 +241,12 @@ public final class PluggableDatabaseState extends com.pulumi.resources.ResourceA
     /**
      * The existing TDE wallet password of the CDB.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="tdeWalletPassword")
     private @Nullable Output<String> tdeWalletPassword;
 
     /**
      * @return The existing TDE wallet password of the CDB.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> tdeWalletPassword() {
@@ -266,6 +282,7 @@ public final class PluggableDatabaseState extends com.pulumi.resources.ResourceA
         this.pdbAdminPassword = $.pdbAdminPassword;
         this.pdbName = $.pdbName;
         this.pluggableDatabaseManagementConfigs = $.pluggableDatabaseManagementConfigs;
+        this.rotateKeyTrigger = $.rotateKeyTrigger;
         this.shouldPdbAdminAccountBeLocked = $.shouldPdbAdminAccountBeLocked;
         this.state = $.state;
         this.tdeWalletPassword = $.tdeWalletPassword;
@@ -542,6 +559,33 @@ public final class PluggableDatabaseState extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param rotateKeyTrigger (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rotateKeyTrigger(@Nullable Output<Integer> rotateKeyTrigger) {
+            $.rotateKeyTrigger = rotateKeyTrigger;
+            return this;
+        }
+
+        /**
+         * @param rotateKeyTrigger (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rotateKeyTrigger(Integer rotateKeyTrigger) {
+            return rotateKeyTrigger(Output.of(rotateKeyTrigger));
+        }
+
+        /**
          * @param shouldPdbAdminAccountBeLocked The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
          * 
          * @return builder
@@ -586,9 +630,6 @@ public final class PluggableDatabaseState extends com.pulumi.resources.ResourceA
         /**
          * @param tdeWalletPassword The existing TDE wallet password of the CDB.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -599,9 +640,6 @@ public final class PluggableDatabaseState extends com.pulumi.resources.ResourceA
 
         /**
          * @param tdeWalletPassword The existing TDE wallet password of the CDB.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

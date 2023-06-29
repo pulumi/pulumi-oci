@@ -120,6 +120,16 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.PluggableDatabasePluggableDatabaseManagementConfig>> PluggableDatabaseManagementConfigs { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("rotateKeyTrigger")]
+        public Output<int?> RotateKeyTrigger { get; private set; } = null!;
+
+        /// <summary>
         /// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         /// </summary>
         [Output("shouldPdbAdminAccountBeLocked")]
@@ -133,10 +143,6 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The existing TDE wallet password of the CDB.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("tdeWalletPassword")]
         public Output<string> TdeWalletPassword { get; private set; } = null!;
@@ -251,6 +257,16 @@ namespace Pulumi.Oci.Database
         public Input<string> PdbName { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("rotateKeyTrigger")]
+        public Input<int>? RotateKeyTrigger { get; set; }
+
+        /// <summary>
         /// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         /// </summary>
         [Input("shouldPdbAdminAccountBeLocked")]
@@ -261,10 +277,6 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The existing TDE wallet password of the CDB.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public Input<string>? TdeWalletPassword
         {
@@ -385,6 +397,16 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("rotateKeyTrigger")]
+        public Input<int>? RotateKeyTrigger { get; set; }
+
+        /// <summary>
         /// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         /// </summary>
         [Input("shouldPdbAdminAccountBeLocked")]
@@ -401,10 +423,6 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The existing TDE wallet password of the CDB.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public Input<string>? TdeWalletPassword
         {

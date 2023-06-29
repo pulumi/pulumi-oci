@@ -118,6 +118,14 @@ export class DatabaseUpgrade extends pulumi.CustomResource {
      */
     public /*out*/ readonly isCdb!: pulumi.Output<boolean>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     */
+    public /*out*/ readonly keyStoreId!: pulumi.Output<string>;
+    /**
+     * The wallet name for Oracle Key Vault.
+     */
+    public /*out*/ readonly keyStoreWalletName!: pulumi.Output<string>;
+    /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
     public /*out*/ readonly kmsKeyId!: pulumi.Output<string>;
@@ -203,6 +211,8 @@ export class DatabaseUpgrade extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isCdb"] = state ? state.isCdb : undefined;
+            resourceInputs["keyStoreId"] = state ? state.keyStoreId : undefined;
+            resourceInputs["keyStoreWalletName"] = state ? state.keyStoreWalletName : undefined;
             resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
             resourceInputs["kmsKeyVersionId"] = state ? state.kmsKeyVersionId : undefined;
             resourceInputs["lastBackupDurationInSeconds"] = state ? state.lastBackupDurationInSeconds : undefined;
@@ -241,6 +251,8 @@ export class DatabaseUpgrade extends pulumi.CustomResource {
             resourceInputs["definedTags"] = undefined /*out*/;
             resourceInputs["freeformTags"] = undefined /*out*/;
             resourceInputs["isCdb"] = undefined /*out*/;
+            resourceInputs["keyStoreId"] = undefined /*out*/;
+            resourceInputs["keyStoreWalletName"] = undefined /*out*/;
             resourceInputs["kmsKeyId"] = undefined /*out*/;
             resourceInputs["kmsKeyVersionId"] = undefined /*out*/;
             resourceInputs["lastBackupDurationInSeconds"] = undefined /*out*/;
@@ -329,6 +341,14 @@ export interface DatabaseUpgradeState {
      * True if the database is a container database.
      */
     isCdb?: pulumi.Input<boolean>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     */
+    keyStoreId?: pulumi.Input<string>;
+    /**
+     * The wallet name for Oracle Key Vault.
+     */
+    keyStoreWalletName?: pulumi.Input<string>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */

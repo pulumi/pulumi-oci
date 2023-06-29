@@ -34,7 +34,12 @@ import (
 //				DisplayName:             pulumi.Any(_var.Monitor_display_name),
 //				MonitorType:             pulumi.Any(_var.Monitor_monitor_type),
 //				RepeatIntervalInSeconds: pulumi.Any(_var.Monitor_repeat_interval_in_seconds),
-//				VantagePoints:           pulumi.Any(_var.Vantage_points),
+//				VantagePoints: apmsynthetics.ConfigVantagePointArray{
+//					&apmsynthetics.ConfigVantagePointArgs{
+//						Name:        pulumi.Any(_var.Monitor_vantage_points_name),
+//						DisplayName: pulumi.Any(_var.Monitor_vantage_points_param_display_name),
+//					},
+//				},
 //				AvailabilityConfiguration: &apmsynthetics.ConfigAvailabilityConfigurationArgs{
 //					MaxAllowedFailuresPerInterval: pulumi.Any(_var.Monitor_availability_configuration_max_allowed_failures_per_interval),
 //					MinAllowedRunsPerInterval:     pulumi.Any(_var.Monitor_availability_configuration_min_allowed_runs_per_interval),
@@ -149,7 +154,7 @@ type Config struct {
 	Configuration ConfigConfigurationOutput `pulumi:"configuration"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+	// Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
@@ -187,7 +192,7 @@ type Config struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VantagePoints pulumi.StringArrayOutput `pulumi:"vantagePoints"`
+	VantagePoints ConfigVantagePointArrayOutput `pulumi:"vantagePoints"`
 }
 
 // NewConfig registers a new resource with the given unique name, arguments, and options.
@@ -244,7 +249,7 @@ type configState struct {
 	Configuration *ConfigConfiguration `pulumi:"configuration"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+	// Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -282,7 +287,7 @@ type configState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VantagePoints []string `pulumi:"vantagePoints"`
+	VantagePoints []ConfigVantagePoint `pulumi:"vantagePoints"`
 }
 
 type ConfigState struct {
@@ -296,7 +301,7 @@ type ConfigState struct {
 	Configuration ConfigConfigurationPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+	// Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
@@ -334,7 +339,7 @@ type ConfigState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VantagePoints pulumi.StringArrayInput
+	VantagePoints ConfigVantagePointArrayInput
 }
 
 func (ConfigState) ElementType() reflect.Type {
@@ -352,7 +357,7 @@ type configArgs struct {
 	Configuration *ConfigConfiguration `pulumi:"configuration"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+	// Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -384,7 +389,7 @@ type configArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VantagePoints []string `pulumi:"vantagePoints"`
+	VantagePoints []ConfigVantagePoint `pulumi:"vantagePoints"`
 }
 
 // The set of arguments for constructing a Config resource.
@@ -399,7 +404,7 @@ type ConfigArgs struct {
 	Configuration ConfigConfigurationPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+	// Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
@@ -431,7 +436,7 @@ type ConfigArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VantagePoints pulumi.StringArrayInput
+	VantagePoints ConfigVantagePointArrayInput
 }
 
 func (ConfigArgs) ElementType() reflect.Type {
@@ -546,7 +551,7 @@ func (o ConfigOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Config) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+// Unique name that can be edited. The name should not contain any confidential information.
 func (o ConfigOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -635,8 +640,8 @@ func (o ConfigOutput) VantagePointCount() pulumi.IntOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ConfigOutput) VantagePoints() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *Config) pulumi.StringArrayOutput { return v.VantagePoints }).(pulumi.StringArrayOutput)
+func (o ConfigOutput) VantagePoints() ConfigVantagePointArrayOutput {
+	return o.ApplyT(func(v *Config) ConfigVantagePointArrayOutput { return v.VantagePoints }).(ConfigVantagePointArrayOutput)
 }
 
 type ConfigArrayOutput struct{ *pulumi.OutputState }

@@ -23,6 +23,12 @@ import * as utilities from "../utilities";
  *     message: _var.container_image_signature_message,
  *     signature: _var.container_image_signature_signature,
  *     signingAlgorithm: _var.container_image_signature_signing_algorithm,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
  * });
  * ```
  *
@@ -71,9 +77,17 @@ export class ContainerImageSignature extends pulumi.CustomResource {
      */
     public /*out*/ readonly createdBy!: pulumi.Output<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+     */
+    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.  Example: `wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva`
      */
     public /*out*/ readonly displayName!: pulumi.Output<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     */
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
      */
@@ -103,6 +117,14 @@ export class ContainerImageSignature extends pulumi.CustomResource {
      */
     public readonly signingAlgorithm!: pulumi.Output<string>;
     /**
+     * The current state of the container image signature.
+     */
+    public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
+     * The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * An RFC 3339 timestamp indicating when the image was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -122,13 +144,17 @@ export class ContainerImageSignature extends pulumi.CustomResource {
             const state = argsOrState as ContainerImageSignatureState | undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["createdBy"] = state ? state.createdBy : undefined;
+            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["imageId"] = state ? state.imageId : undefined;
             resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
             resourceInputs["kmsKeyVersionId"] = state ? state.kmsKeyVersionId : undefined;
             resourceInputs["message"] = state ? state.message : undefined;
             resourceInputs["signature"] = state ? state.signature : undefined;
             resourceInputs["signingAlgorithm"] = state ? state.signingAlgorithm : undefined;
+            resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
         } else {
             const args = argsOrState as ContainerImageSignatureArgs | undefined;
@@ -154,6 +180,8 @@ export class ContainerImageSignature extends pulumi.CustomResource {
                 throw new Error("Missing required property 'signingAlgorithm'");
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
+            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["imageId"] = args ? args.imageId : undefined;
             resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
             resourceInputs["kmsKeyVersionId"] = args ? args.kmsKeyVersionId : undefined;
@@ -162,6 +190,8 @@ export class ContainerImageSignature extends pulumi.CustomResource {
             resourceInputs["signingAlgorithm"] = args ? args.signingAlgorithm : undefined;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;
+            resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -182,9 +212,17 @@ export interface ContainerImageSignatureState {
      */
     createdBy?: pulumi.Input<string>;
     /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.  Example: `wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva`
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
      */
@@ -214,6 +252,14 @@ export interface ContainerImageSignatureState {
      */
     signingAlgorithm?: pulumi.Input<string>;
     /**
+     * The current state of the container image signature.
+     */
+    state?: pulumi.Input<string>;
+    /**
+     * The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * An RFC 3339 timestamp indicating when the image was created.
      */
     timeCreated?: pulumi.Input<string>;
@@ -227,6 +273,14 @@ export interface ContainerImageSignatureArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the container repository exists.
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
      */

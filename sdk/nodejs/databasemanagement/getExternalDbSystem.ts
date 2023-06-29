@@ -82,6 +82,10 @@ export interface GetExternalDbSystemResult {
      */
     readonly lifecycleDetails: string;
     /**
+     * The configuration details of Stack Monitoring for an external DB system.
+     */
+    readonly stackMonitoringConfigs: outputs.DatabaseManagement.GetExternalDbSystemStackMonitoringConfig[];
+    /**
      * The current lifecycle state of the external DB system resource.
      */
     readonly state: string;

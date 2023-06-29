@@ -161,7 +161,7 @@ class GetListingPackageResult:
     @pulumi.getter
     def regions(self) -> Sequence['outputs.GetListingPackageRegionResult']:
         """
-        The regions where you can deploy this listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
+        The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
         """
         return pulumi.get(self, "regions")
 

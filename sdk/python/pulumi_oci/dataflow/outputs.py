@@ -27,6 +27,10 @@ __all__ = [
     'PrivateEndpointScanDetail',
     'RunStatementOutput',
     'RunStatementOutputData',
+    'SqlEndpointDriverShapeConfig',
+    'SqlEndpointExecutorShapeConfig',
+    'SqlEndpointNetworkConfiguration',
+    'SqlEndpointNetworkConfigurationAccessControlRule',
     'GetApplicationApplicationLogConfigResult',
     'GetApplicationDriverShapeConfigResult',
     'GetApplicationExecutorShapeConfigResult',
@@ -74,6 +78,17 @@ __all__ = [
     'GetRunStatementsStatementCollectionItemResult',
     'GetRunStatementsStatementCollectionItemOutputResult',
     'GetRunStatementsStatementCollectionItemOutputDataResult',
+    'GetSqlEndpointDriverShapeConfigResult',
+    'GetSqlEndpointExecutorShapeConfigResult',
+    'GetSqlEndpointNetworkConfigurationResult',
+    'GetSqlEndpointNetworkConfigurationAccessControlRuleResult',
+    'GetSqlEndpointsFilterResult',
+    'GetSqlEndpointsSqlEndpointCollectionResult',
+    'GetSqlEndpointsSqlEndpointCollectionItemResult',
+    'GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigResult',
+    'GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigResult',
+    'GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationResult',
+    'GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleResult',
 ]
 
 @pulumi.output_type
@@ -908,6 +923,283 @@ class RunStatementOutputData(dict):
         The statement code execution output in html format.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class SqlEndpointDriverShapeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SqlEndpointDriverShapeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SqlEndpointDriverShapeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SqlEndpointDriverShapeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        """
+        :param float memory_in_gbs: The amount of memory used for the driver or executors.
+        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[float]:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[float]:
+        """
+        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class SqlEndpointExecutorShapeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SqlEndpointExecutorShapeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SqlEndpointExecutorShapeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SqlEndpointExecutorShapeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        """
+        :param float memory_in_gbs: The amount of memory used for the driver or executors.
+        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[float]:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[float]:
+        """
+        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class SqlEndpointNetworkConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "networkType":
+            suggest = "network_type"
+        elif key == "accessControlRules":
+            suggest = "access_control_rules"
+        elif key == "hostNamePrefix":
+            suggest = "host_name_prefix"
+        elif key == "privateEndpointIp":
+            suggest = "private_endpoint_ip"
+        elif key == "publicEndpointIp":
+            suggest = "public_endpoint_ip"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+        elif key == "vcnId":
+            suggest = "vcn_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SqlEndpointNetworkConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SqlEndpointNetworkConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SqlEndpointNetworkConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 network_type: str,
+                 access_control_rules: Optional[Sequence['outputs.SqlEndpointNetworkConfigurationAccessControlRule']] = None,
+                 host_name_prefix: Optional[str] = None,
+                 private_endpoint_ip: Optional[str] = None,
+                 public_endpoint_ip: Optional[str] = None,
+                 subnet_id: Optional[str] = None,
+                 vcn_id: Optional[str] = None):
+        """
+        :param str network_type: The type of network configuration.
+        :param Sequence['SqlEndpointNetworkConfigurationAccessControlRuleArgs'] access_control_rules: A list of SecureAccessControlRule's to which access is limited to
+        :param str host_name_prefix: The host name prefix.
+        :param str private_endpoint_ip: Ip Address of private endpoint
+        :param str public_endpoint_ip: Ip Address of public endpoint
+        :param str subnet_id: The VCN Subnet OCID.
+        :param str vcn_id: The VCN OCID.
+        """
+        pulumi.set(__self__, "network_type", network_type)
+        if access_control_rules is not None:
+            pulumi.set(__self__, "access_control_rules", access_control_rules)
+        if host_name_prefix is not None:
+            pulumi.set(__self__, "host_name_prefix", host_name_prefix)
+        if private_endpoint_ip is not None:
+            pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        if public_endpoint_ip is not None:
+            pulumi.set(__self__, "public_endpoint_ip", public_endpoint_ip)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if vcn_id is not None:
+            pulumi.set(__self__, "vcn_id", vcn_id)
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> str:
+        """
+        The type of network configuration.
+        """
+        return pulumi.get(self, "network_type")
+
+    @property
+    @pulumi.getter(name="accessControlRules")
+    def access_control_rules(self) -> Optional[Sequence['outputs.SqlEndpointNetworkConfigurationAccessControlRule']]:
+        """
+        A list of SecureAccessControlRule's to which access is limited to
+        """
+        return pulumi.get(self, "access_control_rules")
+
+    @property
+    @pulumi.getter(name="hostNamePrefix")
+    def host_name_prefix(self) -> Optional[str]:
+        """
+        The host name prefix.
+        """
+        return pulumi.get(self, "host_name_prefix")
+
+    @property
+    @pulumi.getter(name="privateEndpointIp")
+    def private_endpoint_ip(self) -> Optional[str]:
+        """
+        Ip Address of private endpoint
+        """
+        return pulumi.get(self, "private_endpoint_ip")
+
+    @property
+    @pulumi.getter(name="publicEndpointIp")
+    def public_endpoint_ip(self) -> Optional[str]:
+        """
+        Ip Address of public endpoint
+        """
+        return pulumi.get(self, "public_endpoint_ip")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[str]:
+        """
+        The VCN Subnet OCID.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="vcnId")
+    def vcn_id(self) -> Optional[str]:
+        """
+        The VCN OCID.
+        """
+        return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class SqlEndpointNetworkConfigurationAccessControlRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ipNotation":
+            suggest = "ip_notation"
+        elif key == "vcnIps":
+            suggest = "vcn_ips"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SqlEndpointNetworkConfigurationAccessControlRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SqlEndpointNetworkConfigurationAccessControlRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SqlEndpointNetworkConfigurationAccessControlRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ip_notation: Optional[str] = None,
+                 value: Optional[str] = None,
+                 vcn_ips: Optional[str] = None):
+        """
+        :param str ip_notation: The type of IP notation.
+        :param str value: The associated value of the selected IP notation.
+        :param str vcn_ips: A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+        """
+        if ip_notation is not None:
+            pulumi.set(__self__, "ip_notation", ip_notation)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+        if vcn_ips is not None:
+            pulumi.set(__self__, "vcn_ips", vcn_ips)
+
+    @property
+    @pulumi.getter(name="ipNotation")
+    def ip_notation(self) -> Optional[str]:
+        """
+        The type of IP notation.
+        """
+        return pulumi.get(self, "ip_notation")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        The associated value of the selected IP notation.
+        """
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter(name="vcnIps")
+    def vcn_ips(self) -> Optional[str]:
+        """
+        A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+        """
+        return pulumi.get(self, "vcn_ips")
 
 
 @pulumi.output_type
@@ -3670,5 +3962,690 @@ class GetRunStatementsStatementCollectionItemOutputDataResult(dict):
         The statement code execution output in html format.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetSqlEndpointDriverShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: float,
+                 ocpus: float):
+        """
+        :param float memory_in_gbs: The amount of memory used for the driver or executors.
+        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetSqlEndpointExecutorShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: float,
+                 ocpus: float):
+        """
+        :param float memory_in_gbs: The amount of memory used for the driver or executors.
+        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetSqlEndpointNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 access_control_rules: Sequence['outputs.GetSqlEndpointNetworkConfigurationAccessControlRuleResult'],
+                 host_name_prefix: str,
+                 network_type: str,
+                 private_endpoint_ip: str,
+                 public_endpoint_ip: str,
+                 subnet_id: str,
+                 vcn_id: str):
+        """
+        :param Sequence['GetSqlEndpointNetworkConfigurationAccessControlRuleArgs'] access_control_rules: A list of SecureAccessControlRule's to which access is limited to
+        :param str host_name_prefix: The host name prefix.
+        :param str network_type: The type of network configuration.
+        :param str private_endpoint_ip: Ip Address of private endpoint
+        :param str public_endpoint_ip: Ip Address of public endpoint
+        :param str subnet_id: The VCN Subnet OCID.
+        :param str vcn_id: The VCN OCID.
+        """
+        pulumi.set(__self__, "access_control_rules", access_control_rules)
+        pulumi.set(__self__, "host_name_prefix", host_name_prefix)
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        pulumi.set(__self__, "public_endpoint_ip", public_endpoint_ip)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "vcn_id", vcn_id)
+
+    @property
+    @pulumi.getter(name="accessControlRules")
+    def access_control_rules(self) -> Sequence['outputs.GetSqlEndpointNetworkConfigurationAccessControlRuleResult']:
+        """
+        A list of SecureAccessControlRule's to which access is limited to
+        """
+        return pulumi.get(self, "access_control_rules")
+
+    @property
+    @pulumi.getter(name="hostNamePrefix")
+    def host_name_prefix(self) -> str:
+        """
+        The host name prefix.
+        """
+        return pulumi.get(self, "host_name_prefix")
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> str:
+        """
+        The type of network configuration.
+        """
+        return pulumi.get(self, "network_type")
+
+    @property
+    @pulumi.getter(name="privateEndpointIp")
+    def private_endpoint_ip(self) -> str:
+        """
+        Ip Address of private endpoint
+        """
+        return pulumi.get(self, "private_endpoint_ip")
+
+    @property
+    @pulumi.getter(name="publicEndpointIp")
+    def public_endpoint_ip(self) -> str:
+        """
+        Ip Address of public endpoint
+        """
+        return pulumi.get(self, "public_endpoint_ip")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The VCN Subnet OCID.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="vcnId")
+    def vcn_id(self) -> str:
+        """
+        The VCN OCID.
+        """
+        return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class GetSqlEndpointNetworkConfigurationAccessControlRuleResult(dict):
+    def __init__(__self__, *,
+                 ip_notation: str,
+                 value: str,
+                 vcn_ips: str):
+        """
+        :param str ip_notation: The type of IP notation.
+        :param str value: The associated value of the selected IP notation.
+        :param str vcn_ips: A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+        """
+        pulumi.set(__self__, "ip_notation", ip_notation)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "vcn_ips", vcn_ips)
+
+    @property
+    @pulumi.getter(name="ipNotation")
+    def ip_notation(self) -> str:
+        """
+        The type of IP notation.
+        """
+        return pulumi.get(self, "ip_notation")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The associated value of the selected IP notation.
+        """
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter(name="vcnIps")
+    def vcn_ips(self) -> str:
+        """
+        A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+        """
+        return pulumi.get(self, "vcn_ips")
+
+
+@pulumi.output_type
+class GetSqlEndpointsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSqlEndpointsSqlEndpointCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSqlEndpointsSqlEndpointCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 display_name: str,
+                 driver_shape: str,
+                 driver_shape_configs: Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigResult'],
+                 executor_shape: str,
+                 executor_shape_configs: Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigResult'],
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 jdbc_endpoint_url: str,
+                 lake_id: str,
+                 last_accepted_request_token: str,
+                 max_executor_count: int,
+                 metastore_id: str,
+                 min_executor_count: int,
+                 network_configurations: Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationResult'],
+                 spark_advanced_configurations: Mapping[str, Any],
+                 sql_endpoint_version: str,
+                 state: str,
+                 state_message: str,
+                 system_tags: Mapping[str, Any],
+                 time_created: str,
+                 time_updated: str,
+                 warehouse_bucket_uri: str):
+        """
+        :param str compartment_id: The OCID of the compartment in which to query resources.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str description: The description of the SQL Endpoint.
+        :param str display_name: The query parameter for the Spark application name.
+        :param str driver_shape: The shape of the SQL Endpoint driver instance.
+        :param Sequence['GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArgs'] driver_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
+        :param str executor_shape: The shape of the SQL Endpoint executor instance.
+        :param Sequence['GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArgs'] executor_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param str id: The provision identifier that is immutable on creation.
+        :param str jdbc_endpoint_url: The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
+        :param str lake_id: The OCID of Oracle Cloud Infrastructure Lake.
+        :param str last_accepted_request_token: This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
+        :param int max_executor_count: The maximum number of executors.
+        :param str metastore_id: The OCID of Oracle Cloud Infrastructure Hive Metastore.
+        :param int min_executor_count: The minimum number of executors.
+        :param Sequence['GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArgs'] network_configurations: The network configuration of a SQL Endpoint.
+        :param Mapping[str, Any] spark_advanced_configurations: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        :param str sql_endpoint_version: The version of SQL Endpoint.
+        :param str state: A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
+        :param str state_message: A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
+        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param str time_created: The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
+        :param str time_updated: The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
+        :param str warehouse_bucket_uri: The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "driver_shape", driver_shape)
+        pulumi.set(__self__, "driver_shape_configs", driver_shape_configs)
+        pulumi.set(__self__, "executor_shape", executor_shape)
+        pulumi.set(__self__, "executor_shape_configs", executor_shape_configs)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "jdbc_endpoint_url", jdbc_endpoint_url)
+        pulumi.set(__self__, "lake_id", lake_id)
+        pulumi.set(__self__, "last_accepted_request_token", last_accepted_request_token)
+        pulumi.set(__self__, "max_executor_count", max_executor_count)
+        pulumi.set(__self__, "metastore_id", metastore_id)
+        pulumi.set(__self__, "min_executor_count", min_executor_count)
+        pulumi.set(__self__, "network_configurations", network_configurations)
+        pulumi.set(__self__, "spark_advanced_configurations", spark_advanced_configurations)
+        pulumi.set(__self__, "sql_endpoint_version", sql_endpoint_version)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "state_message", state_message)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "warehouse_bucket_uri", warehouse_bucket_uri)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The OCID of the compartment in which to query resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the SQL Endpoint.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The query parameter for the Spark application name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="driverShape")
+    def driver_shape(self) -> str:
+        """
+        The shape of the SQL Endpoint driver instance.
+        """
+        return pulumi.get(self, "driver_shape")
+
+    @property
+    @pulumi.getter(name="driverShapeConfigs")
+    def driver_shape_configs(self) -> Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigResult']:
+        """
+        This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "driver_shape_configs")
+
+    @property
+    @pulumi.getter(name="executorShape")
+    def executor_shape(self) -> str:
+        """
+        The shape of the SQL Endpoint executor instance.
+        """
+        return pulumi.get(self, "executor_shape")
+
+    @property
+    @pulumi.getter(name="executorShapeConfigs")
+    def executor_shape_configs(self) -> Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigResult']:
+        """
+        This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "executor_shape_configs")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The provision identifier that is immutable on creation.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="jdbcEndpointUrl")
+    def jdbc_endpoint_url(self) -> str:
+        """
+        The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
+        """
+        return pulumi.get(self, "jdbc_endpoint_url")
+
+    @property
+    @pulumi.getter(name="lakeId")
+    def lake_id(self) -> str:
+        """
+        The OCID of Oracle Cloud Infrastructure Lake.
+        """
+        return pulumi.get(self, "lake_id")
+
+    @property
+    @pulumi.getter(name="lastAcceptedRequestToken")
+    def last_accepted_request_token(self) -> str:
+        """
+        This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
+        """
+        return pulumi.get(self, "last_accepted_request_token")
+
+    @property
+    @pulumi.getter(name="maxExecutorCount")
+    def max_executor_count(self) -> int:
+        """
+        The maximum number of executors.
+        """
+        return pulumi.get(self, "max_executor_count")
+
+    @property
+    @pulumi.getter(name="metastoreId")
+    def metastore_id(self) -> str:
+        """
+        The OCID of Oracle Cloud Infrastructure Hive Metastore.
+        """
+        return pulumi.get(self, "metastore_id")
+
+    @property
+    @pulumi.getter(name="minExecutorCount")
+    def min_executor_count(self) -> int:
+        """
+        The minimum number of executors.
+        """
+        return pulumi.get(self, "min_executor_count")
+
+    @property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationResult']:
+        """
+        The network configuration of a SQL Endpoint.
+        """
+        return pulumi.get(self, "network_configurations")
+
+    @property
+    @pulumi.getter(name="sparkAdvancedConfigurations")
+    def spark_advanced_configurations(self) -> Mapping[str, Any]:
+        """
+        The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        """
+        return pulumi.get(self, "spark_advanced_configurations")
+
+    @property
+    @pulumi.getter(name="sqlEndpointVersion")
+    def sql_endpoint_version(self) -> str:
+        """
+        The version of SQL Endpoint.
+        """
+        return pulumi.get(self, "sql_endpoint_version")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="stateMessage")
+    def state_message(self) -> str:
+        """
+        A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "state_message")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="warehouseBucketUri")
+    def warehouse_bucket_uri(self) -> str:
+        """
+        The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
+        """
+        return pulumi.get(self, "warehouse_bucket_uri")
+
+
+@pulumi.output_type
+class GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: float,
+                 ocpus: float):
+        """
+        :param float memory_in_gbs: The amount of memory used for the driver or executors.
+        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: float,
+                 ocpus: float):
+        """
+        :param float memory_in_gbs: The amount of memory used for the driver or executors.
+        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 access_control_rules: Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleResult'],
+                 host_name_prefix: str,
+                 network_type: str,
+                 private_endpoint_ip: str,
+                 public_endpoint_ip: str,
+                 subnet_id: str,
+                 vcn_id: str):
+        """
+        :param Sequence['GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArgs'] access_control_rules: A list of SecureAccessControlRule's to which access is limited to
+        :param str host_name_prefix: The host name prefix.
+        :param str network_type: The type of network configuration.
+        :param str private_endpoint_ip: Ip Address of private endpoint
+        :param str public_endpoint_ip: Ip Address of public endpoint
+        :param str subnet_id: The VCN Subnet OCID.
+        :param str vcn_id: The VCN OCID.
+        """
+        pulumi.set(__self__, "access_control_rules", access_control_rules)
+        pulumi.set(__self__, "host_name_prefix", host_name_prefix)
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        pulumi.set(__self__, "public_endpoint_ip", public_endpoint_ip)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "vcn_id", vcn_id)
+
+    @property
+    @pulumi.getter(name="accessControlRules")
+    def access_control_rules(self) -> Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleResult']:
+        """
+        A list of SecureAccessControlRule's to which access is limited to
+        """
+        return pulumi.get(self, "access_control_rules")
+
+    @property
+    @pulumi.getter(name="hostNamePrefix")
+    def host_name_prefix(self) -> str:
+        """
+        The host name prefix.
+        """
+        return pulumi.get(self, "host_name_prefix")
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> str:
+        """
+        The type of network configuration.
+        """
+        return pulumi.get(self, "network_type")
+
+    @property
+    @pulumi.getter(name="privateEndpointIp")
+    def private_endpoint_ip(self) -> str:
+        """
+        Ip Address of private endpoint
+        """
+        return pulumi.get(self, "private_endpoint_ip")
+
+    @property
+    @pulumi.getter(name="publicEndpointIp")
+    def public_endpoint_ip(self) -> str:
+        """
+        Ip Address of public endpoint
+        """
+        return pulumi.get(self, "public_endpoint_ip")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The VCN Subnet OCID.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="vcnId")
+    def vcn_id(self) -> str:
+        """
+        The VCN OCID.
+        """
+        return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleResult(dict):
+    def __init__(__self__, *,
+                 ip_notation: str,
+                 value: str,
+                 vcn_ips: str):
+        """
+        :param str ip_notation: The type of IP notation.
+        :param str value: The associated value of the selected IP notation.
+        :param str vcn_ips: A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+        """
+        pulumi.set(__self__, "ip_notation", ip_notation)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "vcn_ips", vcn_ips)
+
+    @property
+    @pulumi.getter(name="ipNotation")
+    def ip_notation(self) -> str:
+        """
+        The type of IP notation.
+        """
+        return pulumi.get(self, "ip_notation")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The associated value of the selected IP notation.
+        """
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter(name="vcnIps")
+    def vcn_ips(self) -> str:
+        """
+        A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+        """
+        return pulumi.get(self, "vcn_ips")
 
 

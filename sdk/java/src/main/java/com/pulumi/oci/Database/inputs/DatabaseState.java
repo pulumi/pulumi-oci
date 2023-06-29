@@ -281,6 +281,36 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * 
+     */
+    @Import(name="keyStoreId")
+    private @Nullable Output<String> keyStoreId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * 
+     */
+    public Optional<Output<String>> keyStoreId() {
+        return Optional.ofNullable(this.keyStoreId);
+    }
+
+    /**
+     * The wallet name for Oracle Key Vault.
+     * 
+     */
+    @Import(name="keyStoreWalletName")
+    private @Nullable Output<String> keyStoreWalletName;
+
+    /**
+     * @return The wallet name for Oracle Key Vault.
+     * 
+     */
+    public Optional<Output<String>> keyStoreWalletName() {
+        return Optional.ofNullable(this.keyStoreWalletName);
+    }
+
+    /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -560,6 +590,8 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.freeformTags = $.freeformTags;
         this.isCdb = $.isCdb;
+        this.keyStoreId = $.keyStoreId;
+        this.keyStoreWalletName = $.keyStoreWalletName;
         this.kmsKeyId = $.kmsKeyId;
         this.kmsKeyMigration = $.kmsKeyMigration;
         this.kmsKeyRotation = $.kmsKeyRotation;
@@ -977,6 +1009,48 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isCdb(Boolean isCdb) {
             return isCdb(Output.of(isCdb));
+        }
+
+        /**
+         * @param keyStoreId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyStoreId(@Nullable Output<String> keyStoreId) {
+            $.keyStoreId = keyStoreId;
+            return this;
+        }
+
+        /**
+         * @param keyStoreId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyStoreId(String keyStoreId) {
+            return keyStoreId(Output.of(keyStoreId));
+        }
+
+        /**
+         * @param keyStoreWalletName The wallet name for Oracle Key Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyStoreWalletName(@Nullable Output<String> keyStoreWalletName) {
+            $.keyStoreWalletName = keyStoreWalletName;
+            return this;
+        }
+
+        /**
+         * @param keyStoreWalletName The wallet name for Oracle Key Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyStoreWalletName(String keyStoreWalletName) {
+            return keyStoreWalletName(Output.of(keyStoreWalletName));
         }
 
         /**

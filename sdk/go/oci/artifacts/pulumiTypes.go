@@ -515,10 +515,14 @@ type GetContainerImagesContainerImageCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The OCID of the user or principal that pushed the version.
 	CreatedBy string `pulumi:"createdBy"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The sha256 digest of the image layer.
 	Digest string `pulumi:"digest"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
 	Id string `pulumi:"id"`
 	// Layers of which the image is composed, ordered by the layer digest.
@@ -535,6 +539,8 @@ type GetContainerImagesContainerImageCollectionItem struct {
 	RepositoryName string `pulumi:"repositoryName"`
 	// A filter to return only resources that match the given lifecycle state name exactly.
 	State string `pulumi:"state"`
+	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The creation time of the version.
 	TimeCreated string `pulumi:"timeCreated"`
 	// An RFC 3339 timestamp indicating when the image was last pulled.
@@ -561,10 +567,14 @@ type GetContainerImagesContainerImageCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The OCID of the user or principal that pushed the version.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The sha256 digest of the image layer.
 	Digest pulumi.StringInput `pulumi:"digest"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
 	Id pulumi.StringInput `pulumi:"id"`
 	// Layers of which the image is composed, ordered by the layer digest.
@@ -581,6 +591,8 @@ type GetContainerImagesContainerImageCollectionItemArgs struct {
 	RepositoryName pulumi.StringInput `pulumi:"repositoryName"`
 	// A filter to return only resources that match the given lifecycle state name exactly.
 	State pulumi.StringInput `pulumi:"state"`
+	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The creation time of the version.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// An RFC 3339 timestamp indicating when the image was last pulled.
@@ -652,6 +664,11 @@ func (o GetContainerImagesContainerImageCollectionItemOutput) CreatedBy() pulumi
 	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetContainerImagesContainerImageCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The sha256 digest of the image layer.
 func (o GetContainerImagesContainerImageCollectionItemOutput) Digest() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) string { return v.Digest }).(pulumi.StringOutput)
@@ -660,6 +677,11 @@ func (o GetContainerImagesContainerImageCollectionItemOutput) Digest() pulumi.St
 // A filter to return only resources that match the given display name exactly.
 func (o GetContainerImagesContainerImageCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetContainerImagesContainerImageCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
@@ -702,6 +724,11 @@ func (o GetContainerImagesContainerImageCollectionItemOutput) RepositoryName() p
 // A filter to return only resources that match the given lifecycle state name exactly.
 func (o GetContainerImagesContainerImageCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetContainerImagesContainerImageCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The creation time of the version.
@@ -1224,8 +1251,12 @@ type GetContainerRepositoriesContainerRepositoryCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The id of the user or principal that created the resource.
 	CreatedBy string `pulumi:"createdBy"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
 	Id string `pulumi:"id"`
 	// Total number of images.
@@ -1238,10 +1269,14 @@ type GetContainerRepositoriesContainerRepositoryCollectionItem struct {
 	LayerCount int `pulumi:"layerCount"`
 	// Total storage in bytes consumed by layers.
 	LayersSizeInBytes string `pulumi:"layersSizeInBytes"`
+	// The tenancy namespace used in the container repository path.
+	Namespace string `pulumi:"namespace"`
 	// Container repository readme.
 	Readmes []GetContainerRepositoriesContainerRepositoryCollectionItemReadme `pulumi:"readmes"`
 	// A filter to return only resources that match the given lifecycle state name exactly.
 	State string `pulumi:"state"`
+	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// An RFC 3339 timestamp indicating when the repository was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// An RFC 3339 timestamp indicating when an image was last pushed to the repository.
@@ -1266,8 +1301,12 @@ type GetContainerRepositoriesContainerRepositoryCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The id of the user or principal that created the resource.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
 	Id pulumi.StringInput `pulumi:"id"`
 	// Total number of images.
@@ -1280,10 +1319,14 @@ type GetContainerRepositoriesContainerRepositoryCollectionItemArgs struct {
 	LayerCount pulumi.IntInput `pulumi:"layerCount"`
 	// Total storage in bytes consumed by layers.
 	LayersSizeInBytes pulumi.StringInput `pulumi:"layersSizeInBytes"`
+	// The tenancy namespace used in the container repository path.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// Container repository readme.
 	Readmes GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArrayInput `pulumi:"readmes"`
 	// A filter to return only resources that match the given lifecycle state name exactly.
 	State pulumi.StringInput `pulumi:"state"`
+	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// An RFC 3339 timestamp indicating when the repository was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// An RFC 3339 timestamp indicating when an image was last pushed to the repository.
@@ -1356,9 +1399,23 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) Created
 	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
 // A filter to return only resources that match the given display name exactly.
 func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
@@ -1391,6 +1448,11 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) LayersS
 	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.LayersSizeInBytes }).(pulumi.StringOutput)
 }
 
+// The tenancy namespace used in the container repository path.
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
 // Container repository readme.
 func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) Readmes() GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArrayOutput {
 	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) []GetContainerRepositoriesContainerRepositoryCollectionItemReadme {
@@ -1401,6 +1463,13 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) Readmes
 // A filter to return only resources that match the given lifecycle state name exactly.
 func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
 }
 
 // An RFC 3339 timestamp indicating when the repository was created.
@@ -1858,8 +1927,12 @@ type GetContainerSignaturesContainerImageSignatureCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The id of the user or principal that created the resource.
 	CreatedBy string `pulumi:"createdBy"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.  Example: `ocid1.containerimagesignature.oc1..exampleuniqueID`
 	Id string `pulumi:"id"`
 	// A filter to return a container image summary only for the specified container image OCID.
@@ -1874,6 +1947,10 @@ type GetContainerSignaturesContainerImageSignatureCollectionItem struct {
 	Signature string `pulumi:"signature"`
 	// The algorithm to be used for signing. These are the only supported signing algorithms for container images.
 	SigningAlgorithm string `pulumi:"signingAlgorithm"`
+	// The current state of the container image signature.
+	State string `pulumi:"state"`
+	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// An RFC 3339 timestamp indicating when the image was created.
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -1894,8 +1971,12 @@ type GetContainerSignaturesContainerImageSignatureCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The id of the user or principal that created the resource.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.  Example: `ocid1.containerimagesignature.oc1..exampleuniqueID`
 	Id pulumi.StringInput `pulumi:"id"`
 	// A filter to return a container image summary only for the specified container image OCID.
@@ -1910,6 +1991,10 @@ type GetContainerSignaturesContainerImageSignatureCollectionItemArgs struct {
 	Signature pulumi.StringInput `pulumi:"signature"`
 	// The algorithm to be used for signing. These are the only supported signing algorithms for container images.
 	SigningAlgorithm pulumi.StringInput `pulumi:"signingAlgorithm"`
+	// The current state of the container image signature.
+	State pulumi.StringInput `pulumi:"state"`
+	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// An RFC 3339 timestamp indicating when the image was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 }
@@ -1975,9 +2060,23 @@ func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) Creat
 	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
 // A filter to return only resources that match the given display name exactly.
 func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.  Example: `ocid1.containerimagesignature.oc1..exampleuniqueID`
@@ -2013,6 +2112,18 @@ func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) Signa
 // The algorithm to be used for signing. These are the only supported signing algorithms for container images.
 func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) SigningAlgorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) string { return v.SigningAlgorithm }).(pulumi.StringOutput)
+}
+
+// The current state of the container image signature.
+func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
 }
 
 // An RFC 3339 timestamp indicating when the image was created.

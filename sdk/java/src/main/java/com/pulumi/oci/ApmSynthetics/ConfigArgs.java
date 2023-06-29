@@ -9,6 +9,7 @@ import com.pulumi.oci.ApmSynthetics.inputs.ConfigAvailabilityConfigurationArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigMaintenanceWindowScheduleArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigScriptParameterArgs;
+import com.pulumi.oci.ApmSynthetics.inputs.ConfigVantagePointArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -100,14 +101,14 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+     * Unique name that can be edited. The name should not contain any confidential information.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+     * @return Unique name that can be edited. The name should not contain any confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -317,7 +318,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="vantagePoints", required=true)
-    private Output<List<String>> vantagePoints;
+    private Output<List<ConfigVantagePointArgs>> vantagePoints;
 
     /**
      * @return (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
@@ -326,7 +327,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<List<String>> vantagePoints() {
+    public Output<List<ConfigVantagePointArgs>> vantagePoints() {
         return this.vantagePoints;
     }
 
@@ -479,7 +480,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+         * @param displayName Unique name that can be edited. The name should not contain any confidential information.
          * 
          * @return builder
          * 
@@ -490,7 +491,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+         * @param displayName Unique name that can be edited. The name should not contain any confidential information.
          * 
          * @return builder
          * 
@@ -791,7 +792,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder vantagePoints(Output<List<String>> vantagePoints) {
+        public Builder vantagePoints(Output<List<ConfigVantagePointArgs>> vantagePoints) {
             $.vantagePoints = vantagePoints;
             return this;
         }
@@ -805,7 +806,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder vantagePoints(List<String> vantagePoints) {
+        public Builder vantagePoints(List<ConfigVantagePointArgs> vantagePoints) {
             return vantagePoints(Output.of(vantagePoints));
         }
 
@@ -818,7 +819,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder vantagePoints(String... vantagePoints) {
+        public Builder vantagePoints(ConfigVantagePointArgs... vantagePoints) {
             return vantagePoints(List.of(vantagePoints));
         }
 

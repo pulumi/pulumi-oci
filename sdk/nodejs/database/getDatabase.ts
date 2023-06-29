@@ -108,6 +108,14 @@ export interface GetDatabaseResult {
      */
     readonly isCdb: boolean;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     */
+    readonly keyStoreId: string;
+    /**
+     * The wallet name for Oracle Key Vault.
+     */
+    readonly keyStoreWalletName: string;
+    /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
     readonly kmsKeyId: string;

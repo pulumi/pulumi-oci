@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DatabaseManagement.ExternalDbSystemArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemState;
 import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemDatabaseManagementConfig;
+import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemStackMonitoringConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
@@ -30,6 +31,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DatabaseManagement.ExternalDbSystem;
  * import com.pulumi.oci.DatabaseManagement.ExternalDbSystemArgs;
  * import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemDatabaseManagementConfigArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemStackMonitoringConfigArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -50,6 +52,10 @@ import javax.annotation.Nullable;
  *                 .licenseModel(var_.external_db_system_database_management_config_license_model())
  *                 .build())
  *             .displayName(var_.external_db_system_display_name())
+ *             .stackMonitoringConfig(ExternalDbSystemStackMonitoringConfigArgs.builder()
+ *                 .isEnabled(var_.external_db_system_stack_monitoring_config_is_enabled())
+ *                 .metadata(var_.external_db_system_stack_monitoring_config_metadata())
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -126,18 +132,12 @@ public class ExternalDbSystem extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
      * @return (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> displayName() {
@@ -184,6 +184,20 @@ public class ExternalDbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * The details of the associated service that will be enabled or disabled for an external DB System.
+     * 
+     */
+    @Export(name="stackMonitoringConfig", type=ExternalDbSystemStackMonitoringConfig.class, parameters={})
+    private Output<ExternalDbSystemStackMonitoringConfig> stackMonitoringConfig;
+
+    /**
+     * @return The details of the associated service that will be enabled or disabled for an external DB System.
+     * 
+     */
+    public Output<ExternalDbSystemStackMonitoringConfig> stackMonitoringConfig() {
+        return this.stackMonitoringConfig;
     }
     /**
      * The current lifecycle state of the external DB system resource.

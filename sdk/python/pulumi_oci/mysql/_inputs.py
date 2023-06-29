@@ -371,7 +371,9 @@ class ChannelTargetArgs:
                  target_type: pulumi.Input[str],
                  applier_username: Optional[pulumi.Input[str]] = None,
                  channel_name: Optional[pulumi.Input[str]] = None,
-                 filters: Optional[pulumi.Input[Sequence[pulumi.Input['ChannelTargetFilterArgs']]]] = None):
+                 delay_in_seconds: Optional[pulumi.Input[int]] = None,
+                 filters: Optional[pulumi.Input[Sequence[pulumi.Input['ChannelTargetFilterArgs']]]] = None,
+                 tables_without_primary_key_handling: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] db_system_id: The OCID of the target DB System.
         :param pulumi.Input[str] target_type: (Updatable) The specific target identifier.
@@ -381,7 +383,9 @@ class ChannelTargetArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] applier_username: (Updatable) The username for the replication applier of the target MySQL DB System.
         :param pulumi.Input[str] channel_name: (Updatable) The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
+        :param pulumi.Input[int] delay_in_seconds: (Updatable) Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
         :param pulumi.Input[Sequence[pulumi.Input['ChannelTargetFilterArgs']]] filters: (Updatable) Replication filter rules to be applied at the DB System Channel target.
+        :param pulumi.Input[str] tables_without_primary_key_handling: (Updatable) Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key. The default value is set to ALLOW.
         """
         pulumi.set(__self__, "db_system_id", db_system_id)
         pulumi.set(__self__, "target_type", target_type)
@@ -389,8 +393,12 @@ class ChannelTargetArgs:
             pulumi.set(__self__, "applier_username", applier_username)
         if channel_name is not None:
             pulumi.set(__self__, "channel_name", channel_name)
+        if delay_in_seconds is not None:
+            pulumi.set(__self__, "delay_in_seconds", delay_in_seconds)
         if filters is not None:
             pulumi.set(__self__, "filters", filters)
+        if tables_without_primary_key_handling is not None:
+            pulumi.set(__self__, "tables_without_primary_key_handling", tables_without_primary_key_handling)
 
     @property
     @pulumi.getter(name="dbSystemId")
@@ -445,6 +453,18 @@ class ChannelTargetArgs:
         pulumi.set(self, "channel_name", value)
 
     @property
+    @pulumi.getter(name="delayInSeconds")
+    def delay_in_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+        """
+        return pulumi.get(self, "delay_in_seconds")
+
+    @delay_in_seconds.setter
+    def delay_in_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "delay_in_seconds", value)
+
+    @property
     @pulumi.getter
     def filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ChannelTargetFilterArgs']]]]:
         """
@@ -455,6 +475,18 @@ class ChannelTargetArgs:
     @filters.setter
     def filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ChannelTargetFilterArgs']]]]):
         pulumi.set(self, "filters", value)
+
+    @property
+    @pulumi.getter(name="tablesWithoutPrimaryKeyHandling")
+    def tables_without_primary_key_handling(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key. The default value is set to ALLOW.
+        """
+        return pulumi.get(self, "tables_without_primary_key_handling")
+
+    @tables_without_primary_key_handling.setter
+    def tables_without_primary_key_handling(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tables_without_primary_key_handling", value)
 
 
 @pulumi.input_type
@@ -3505,13 +3537,17 @@ class MysqlDbSystemChannelTargetArgs:
                  applier_username: Optional[pulumi.Input[str]] = None,
                  channel_name: Optional[pulumi.Input[str]] = None,
                  db_system_id: Optional[pulumi.Input[str]] = None,
+                 delay_in_seconds: Optional[pulumi.Input[int]] = None,
                  filters: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelTargetFilterArgs']]]] = None,
+                 tables_without_primary_key_handling: Optional[pulumi.Input[str]] = None,
                  target_type: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] applier_username: The username for the replication applier of the target MySQL DB System.
         :param pulumi.Input[str] channel_name: The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
         :param pulumi.Input[str] db_system_id: The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
+        :param pulumi.Input[int] delay_in_seconds: Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelTargetFilterArgs']]] filters: Replication filter rules to be applied at the DB System Channel target.
+        :param pulumi.Input[str] tables_without_primary_key_handling: Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
         :param pulumi.Input[str] target_type: The specific target identifier.
         """
         if applier_username is not None:
@@ -3520,8 +3556,12 @@ class MysqlDbSystemChannelTargetArgs:
             pulumi.set(__self__, "channel_name", channel_name)
         if db_system_id is not None:
             pulumi.set(__self__, "db_system_id", db_system_id)
+        if delay_in_seconds is not None:
+            pulumi.set(__self__, "delay_in_seconds", delay_in_seconds)
         if filters is not None:
             pulumi.set(__self__, "filters", filters)
+        if tables_without_primary_key_handling is not None:
+            pulumi.set(__self__, "tables_without_primary_key_handling", tables_without_primary_key_handling)
         if target_type is not None:
             pulumi.set(__self__, "target_type", target_type)
 
@@ -3562,6 +3602,18 @@ class MysqlDbSystemChannelTargetArgs:
         pulumi.set(self, "db_system_id", value)
 
     @property
+    @pulumi.getter(name="delayInSeconds")
+    def delay_in_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+        """
+        return pulumi.get(self, "delay_in_seconds")
+
+    @delay_in_seconds.setter
+    def delay_in_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "delay_in_seconds", value)
+
+    @property
     @pulumi.getter
     def filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelTargetFilterArgs']]]]:
         """
@@ -3572,6 +3624,18 @@ class MysqlDbSystemChannelTargetArgs:
     @filters.setter
     def filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelTargetFilterArgs']]]]):
         pulumi.set(self, "filters", value)
+
+    @property
+    @pulumi.getter(name="tablesWithoutPrimaryKeyHandling")
+    def tables_without_primary_key_handling(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+        """
+        return pulumi.get(self, "tables_without_primary_key_handling")
+
+    @tables_without_primary_key_handling.setter
+    def tables_without_primary_key_handling(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tables_without_primary_key_handling", value)
 
     @property
     @pulumi.getter(name="targetType")

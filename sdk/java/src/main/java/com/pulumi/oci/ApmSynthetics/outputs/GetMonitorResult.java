@@ -8,6 +8,7 @@ import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorAvailabilityConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorMaintenanceWindowSchedule;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorScriptParameter;
+import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorVantagePoint;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -134,7 +135,7 @@ public final class GetMonitorResult {
      * @return List of public and dedicated vantage points where the monitor is running.
      * 
      */
-    private List<String> vantagePoints;
+    private List<GetMonitorVantagePoint> vantagePoints;
 
     private GetMonitorResult() {}
     public String apmDomainId() {
@@ -301,7 +302,7 @@ public final class GetMonitorResult {
      * @return List of public and dedicated vantage points where the monitor is running.
      * 
      */
-    public List<String> vantagePoints() {
+    public List<GetMonitorVantagePoint> vantagePoints() {
         return this.vantagePoints;
     }
 
@@ -338,7 +339,7 @@ public final class GetMonitorResult {
         private String timeUpdated;
         private Integer timeoutInSeconds;
         private Integer vantagePointCount;
-        private List<String> vantagePoints;
+        private List<GetMonitorVantagePoint> vantagePoints;
         public Builder() {}
         public Builder(GetMonitorResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -502,11 +503,11 @@ public final class GetMonitorResult {
             return this;
         }
         @CustomType.Setter
-        public Builder vantagePoints(List<String> vantagePoints) {
+        public Builder vantagePoints(List<GetMonitorVantagePoint> vantagePoints) {
             this.vantagePoints = Objects.requireNonNull(vantagePoints);
             return this;
         }
-        public Builder vantagePoints(String... vantagePoints) {
+        public Builder vantagePoints(GetMonitorVantagePoint... vantagePoints) {
             return vantagePoints(List.of(vantagePoints));
         }
         public GetMonitorResult build() {

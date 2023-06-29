@@ -23,6 +23,7 @@ __all__ = [
     'ConfigMaintenanceWindowSchedule',
     'ConfigScriptParameter',
     'ConfigScriptParameterMonitorScriptParameter',
+    'ConfigVantagePoint',
     'DedicatedVantagePointDvpStackDetails',
     'DedicatedVantagePointMonitorStatusCountMap',
     'ScriptMonitorStatusCountMap',
@@ -47,6 +48,7 @@ __all__ = [
     'GetMonitorMaintenanceWindowScheduleResult',
     'GetMonitorScriptParameterResult',
     'GetMonitorScriptParameterMonitorScriptParameterResult',
+    'GetMonitorVantagePointResult',
     'GetMonitorsFilterResult',
     'GetMonitorsMonitorCollectionResult',
     'GetMonitorsMonitorCollectionItemResult',
@@ -62,6 +64,7 @@ __all__ = [
     'GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult',
     'GetMonitorsMonitorCollectionItemScriptParameterResult',
     'GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterResult',
+    'GetMonitorsMonitorCollectionItemVantagePointResult',
     'GetResultResultDataSetResult',
     'GetScriptMonitorStatusCountMapResult',
     'GetScriptParameterResult',
@@ -993,6 +996,53 @@ class ConfigScriptParameterMonitorScriptParameter(dict):
         (Updatable) Value of the parameter.
         """
         return pulumi.get(self, "param_value")
+
+
+@pulumi.output_type
+class ConfigVantagePoint(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConfigVantagePoint. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConfigVantagePoint.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConfigVantagePoint.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: str,
+                 display_name: Optional[str] = None):
+        """
+        :param str name: Name of the vantage point.
+        :param str display_name: Unique name that can be edited. The name should not contain any confidential information.
+        """
+        pulumi.set(__self__, "name", name)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the vantage point.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        Unique name that can be edited. The name should not contain any confidential information.
+        """
+        return pulumi.get(self, "display_name")
 
 
 @pulumi.output_type
@@ -2351,6 +2401,35 @@ class GetMonitorScriptParameterMonitorScriptParameterResult(dict):
 
 
 @pulumi.output_type
+class GetMonitorVantagePointResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 name: str):
+        """
+        :param str display_name: Unique name that can be edited. The name should not contain any confidential information.
+        :param str name: Name of the vantage point.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        Unique name that can be edited. The name should not contain any confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the vantage point.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
 class GetMonitorsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -2421,7 +2500,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
                  time_updated: str,
                  timeout_in_seconds: int,
                  vantage_point_count: int,
-                 vantage_points: Sequence[str]):
+                 vantage_points: Sequence['outputs.GetMonitorsMonitorCollectionItemVantagePointResult']):
         """
         :param str apm_domain_id: The APM domain ID the request is intended for.
         :param Sequence['GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs'] availability_configurations: Monitor availability configuration details.
@@ -2446,7 +2525,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         :param str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         :param int timeout_in_seconds: Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         :param int vantage_point_count: Number of vantage points where monitor is running.
-        :param Sequence[str] vantage_points: List of public and dedicated vantage points where the monitor is running.
+        :param Sequence['GetMonitorsMonitorCollectionItemVantagePointArgs'] vantage_points: List of public and dedicated vantage points where the monitor is running.
         """
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
         pulumi.set(__self__, "availability_configurations", availability_configurations)
@@ -2659,7 +2738,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="vantagePoints")
-    def vantage_points(self) -> Sequence[str]:
+    def vantage_points(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemVantagePointResult']:
         """
         List of public and dedicated vantage points where the monitor is running.
         """
@@ -3276,6 +3355,35 @@ class GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterResul
         Value of the parameter.
         """
         return pulumi.get(self, "param_value")
+
+
+@pulumi.output_type
+class GetMonitorsMonitorCollectionItemVantagePointResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 name: str):
+        """
+        :param str display_name: A filter to return only the resources that match the entire display name.
+        :param str name: Name of the vantage point.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the vantage point.
+        """
+        return pulumi.get(self, "name")
 
 
 @pulumi.output_type

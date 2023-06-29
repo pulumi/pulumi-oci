@@ -32,8 +32,14 @@ import (
 //			_, err := Artifacts.NewContainerRepository(ctx, "testContainerRepository", &Artifacts.ContainerRepositoryArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
 //				DisplayName:   pulumi.Any(_var.Container_repository_display_name),
-//				IsImmutable:   pulumi.Any(_var.Container_repository_is_immutable),
-//				IsPublic:      pulumi.Any(_var.Container_repository_is_public),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsImmutable: pulumi.Any(_var.Container_repository_is_immutable),
+//				IsPublic:    pulumi.Any(_var.Container_repository_is_public),
 //				Readme: &artifacts.ContainerRepositoryReadmeArgs{
 //					Content: pulumi.Any(_var.Container_repository_readme_content),
 //					Format:  pulumi.Any(_var.Container_repository_readme_format),
@@ -66,8 +72,12 @@ type ContainerRepository struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The id of the user or principal that created the resource.
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The container repository name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Total number of images.
 	ImageCount pulumi.IntOutput `pulumi:"imageCount"`
 	// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
@@ -78,10 +88,14 @@ type ContainerRepository struct {
 	LayerCount pulumi.IntOutput `pulumi:"layerCount"`
 	// Total storage in bytes consumed by layers.
 	LayersSizeInBytes pulumi.StringOutput `pulumi:"layersSizeInBytes"`
+	// The tenancy namespace used in the container repository path.
+	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// (Updatable) Container repository readme.
 	Readme ContainerRepositoryReadmeOutput `pulumi:"readme"`
 	// The current state of the container repository.
 	State pulumi.StringOutput `pulumi:"state"`
+	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// An RFC 3339 timestamp indicating when the repository was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// An RFC 3339 timestamp indicating when an image was last pushed to the repository.
@@ -129,8 +143,12 @@ type containerRepositoryState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The id of the user or principal that created the resource.
 	CreatedBy *string `pulumi:"createdBy"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The container repository name.
 	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Total number of images.
 	ImageCount *int `pulumi:"imageCount"`
 	// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
@@ -141,10 +159,14 @@ type containerRepositoryState struct {
 	LayerCount *int `pulumi:"layerCount"`
 	// Total storage in bytes consumed by layers.
 	LayersSizeInBytes *string `pulumi:"layersSizeInBytes"`
+	// The tenancy namespace used in the container repository path.
+	Namespace *string `pulumi:"namespace"`
 	// (Updatable) Container repository readme.
 	Readme *ContainerRepositoryReadme `pulumi:"readme"`
 	// The current state of the container repository.
 	State *string `pulumi:"state"`
+	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// An RFC 3339 timestamp indicating when the repository was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// An RFC 3339 timestamp indicating when an image was last pushed to the repository.
@@ -158,8 +180,12 @@ type ContainerRepositoryState struct {
 	CompartmentId pulumi.StringPtrInput
 	// The id of the user or principal that created the resource.
 	CreatedBy pulumi.StringPtrInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput
 	// The container repository name.
 	DisplayName pulumi.StringPtrInput
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput
 	// Total number of images.
 	ImageCount pulumi.IntPtrInput
 	// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
@@ -170,10 +196,14 @@ type ContainerRepositoryState struct {
 	LayerCount pulumi.IntPtrInput
 	// Total storage in bytes consumed by layers.
 	LayersSizeInBytes pulumi.StringPtrInput
+	// The tenancy namespace used in the container repository path.
+	Namespace pulumi.StringPtrInput
 	// (Updatable) Container repository readme.
 	Readme ContainerRepositoryReadmePtrInput
 	// The current state of the container repository.
 	State pulumi.StringPtrInput
+	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput
 	// An RFC 3339 timestamp indicating when the repository was created.
 	TimeCreated pulumi.StringPtrInput
 	// An RFC 3339 timestamp indicating when an image was last pushed to the repository.
@@ -187,8 +217,12 @@ func (ContainerRepositoryState) ElementType() reflect.Type {
 type containerRepositoryArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
 	CompartmentId string `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The container repository name.
 	DisplayName string `pulumi:"displayName"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
 	IsImmutable *bool `pulumi:"isImmutable"`
 	// (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
@@ -201,8 +235,12 @@ type containerRepositoryArgs struct {
 type ContainerRepositoryArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
 	CompartmentId pulumi.StringInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput
 	// The container repository name.
 	DisplayName pulumi.StringInput
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput
 	// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
 	IsImmutable pulumi.BoolPtrInput
 	// (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
@@ -313,9 +351,19 @@ func (o ContainerRepositoryOutput) CreatedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerRepository) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
 }
 
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o ContainerRepositoryOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *ContainerRepository) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
 // The container repository name.
 func (o ContainerRepositoryOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerRepository) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o ContainerRepositoryOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *ContainerRepository) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // Total number of images.
@@ -343,6 +391,11 @@ func (o ContainerRepositoryOutput) LayersSizeInBytes() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerRepository) pulumi.StringOutput { return v.LayersSizeInBytes }).(pulumi.StringOutput)
 }
 
+// The tenancy namespace used in the container repository path.
+func (o ContainerRepositoryOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v *ContainerRepository) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
+}
+
 // (Updatable) Container repository readme.
 func (o ContainerRepositoryOutput) Readme() ContainerRepositoryReadmeOutput {
 	return o.ApplyT(func(v *ContainerRepository) ContainerRepositoryReadmeOutput { return v.Readme }).(ContainerRepositoryReadmeOutput)
@@ -351,6 +404,11 @@ func (o ContainerRepositoryOutput) Readme() ContainerRepositoryReadmeOutput {
 // The current state of the container repository.
 func (o ContainerRepositoryOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerRepository) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o ContainerRepositoryOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *ContainerRepository) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // An RFC 3339 timestamp indicating when the repository was created.

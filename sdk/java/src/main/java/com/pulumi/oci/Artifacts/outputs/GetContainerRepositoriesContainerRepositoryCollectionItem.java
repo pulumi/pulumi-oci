@@ -7,8 +7,10 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Artifacts.outputs.GetContainerRepositoriesContainerRepositoryCollectionItemReadme;
 import java.lang.Boolean;
 import java.lang.Integer;
+import java.lang.Object;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -29,10 +31,20 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
      */
     private String createdBy;
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    private Map<String,Object> definedTags;
+    /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
     private String displayName;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
      * 
@@ -64,6 +76,11 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
      */
     private String layersSizeInBytes;
     /**
+     * @return The tenancy namespace used in the container repository path.
+     * 
+     */
+    private String namespace;
+    /**
      * @return Container repository readme.
      * 
      */
@@ -73,6 +90,11 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
      * 
      */
     private String state;
+    /**
+     * @return The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,Object> systemTags;
     /**
      * @return An RFC 3339 timestamp indicating when the repository was created.
      * 
@@ -107,11 +129,25 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
         return this.createdBy;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    public Map<String,Object> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
     public String displayName() {
         return this.displayName;
+    }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,Object> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
@@ -156,6 +192,13 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
         return this.layersSizeInBytes;
     }
     /**
+     * @return The tenancy namespace used in the container repository path.
+     * 
+     */
+    public String namespace() {
+        return this.namespace;
+    }
+    /**
      * @return Container repository readme.
      * 
      */
@@ -168,6 +211,13 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
      */
     public String state() {
         return this.state;
+    }
+    /**
+     * @return The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
     }
     /**
      * @return An RFC 3339 timestamp indicating when the repository was created.
@@ -196,15 +246,19 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
         private String billableSizeInGbs;
         private String compartmentId;
         private String createdBy;
+        private Map<String,Object> definedTags;
         private String displayName;
+        private Map<String,Object> freeformTags;
         private String id;
         private Integer imageCount;
         private Boolean isImmutable;
         private Boolean isPublic;
         private Integer layerCount;
         private String layersSizeInBytes;
+        private String namespace;
         private List<GetContainerRepositoriesContainerRepositoryCollectionItemReadme> readmes;
         private String state;
+        private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeLastPushed;
         public Builder() {}
@@ -213,15 +267,19 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
     	      this.billableSizeInGbs = defaults.billableSizeInGbs;
     	      this.compartmentId = defaults.compartmentId;
     	      this.createdBy = defaults.createdBy;
+    	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.imageCount = defaults.imageCount;
     	      this.isImmutable = defaults.isImmutable;
     	      this.isPublic = defaults.isPublic;
     	      this.layerCount = defaults.layerCount;
     	      this.layersSizeInBytes = defaults.layersSizeInBytes;
+    	      this.namespace = defaults.namespace;
     	      this.readmes = defaults.readmes;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeLastPushed = defaults.timeLastPushed;
         }
@@ -242,8 +300,18 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder definedTags(Map<String,Object> definedTags) {
+            this.definedTags = Objects.requireNonNull(definedTags);
+            return this;
+        }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
         @CustomType.Setter
@@ -277,6 +345,11 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder namespace(String namespace) {
+            this.namespace = Objects.requireNonNull(namespace);
+            return this;
+        }
+        @CustomType.Setter
         public Builder readmes(List<GetContainerRepositoriesContainerRepositoryCollectionItemReadme> readmes) {
             this.readmes = Objects.requireNonNull(readmes);
             return this;
@@ -287,6 +360,11 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
         @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
         @CustomType.Setter
@@ -304,15 +382,19 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
             o.billableSizeInGbs = billableSizeInGbs;
             o.compartmentId = compartmentId;
             o.createdBy = createdBy;
+            o.definedTags = definedTags;
             o.displayName = displayName;
+            o.freeformTags = freeformTags;
             o.id = id;
             o.imageCount = imageCount;
             o.isImmutable = isImmutable;
             o.isPublic = isPublic;
             o.layerCount = layerCount;
             o.layersSizeInBytes = layersSizeInBytes;
+            o.namespace = namespace;
             o.readmes = readmes;
             o.state = state;
+            o.systemTags = systemTags;
             o.timeCreated = timeCreated;
             o.timeLastPushed = timeLastPushed;
             return o;

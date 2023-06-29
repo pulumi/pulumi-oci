@@ -22,7 +22,10 @@ import * as utilities from "../utilities";
  *     displayName: _var.monitor_display_name,
  *     monitorType: _var.monitor_monitor_type,
  *     repeatIntervalInSeconds: _var.monitor_repeat_interval_in_seconds,
- *     vantagePoints: _var.vantage_points,
+ *     vantagePoints: [{
+ *         name: _var.monitor_vantage_points_name,
+ *         displayName: _var.monitor_vantage_points_param_display_name,
+ *     }],
  *     availabilityConfiguration: {
  *         maxAllowedFailuresPerInterval: _var.monitor_availability_configuration_max_allowed_failures_per_interval,
  *         minAllowedRunsPerInterval: _var.monitor_availability_configuration_min_allowed_runs_per_interval,
@@ -155,7 +158,7 @@ export class Config extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+     * Unique name that can be edited. The name should not contain any confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -229,7 +232,7 @@ export class Config extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vantagePoints!: pulumi.Output<string[]>;
+    public readonly vantagePoints!: pulumi.Output<outputs.ApmSynthetics.ConfigVantagePoint[]>;
 
     /**
      * Create a Config resource with the given unique name, arguments, and options.
@@ -338,7 +341,7 @@ export interface ConfigState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+     * Unique name that can be edited. The name should not contain any confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -412,7 +415,7 @@ export interface ConfigState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vantagePoints?: pulumi.Input<pulumi.Input<string>[]>;
+    vantagePoints?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.ConfigVantagePoint>[]>;
 }
 
 /**
@@ -440,7 +443,7 @@ export interface ConfigArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Unique name that can be edited. The name should not contain any confidential information.
+     * Unique name that can be edited. The name should not contain any confidential information.
      */
     displayName: pulumi.Input<string>;
     /**
@@ -502,5 +505,5 @@ export interface ConfigArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vantagePoints: pulumi.Input<pulumi.Input<string>[]>;
+    vantagePoints: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.ConfigVantagePoint>[]>;
 }

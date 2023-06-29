@@ -57,9 +57,17 @@ export interface GetContainerRepositoryResult {
      */
     readonly createdBy: string;
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+     */
+    readonly definedTags: {[key: string]: any};
+    /**
      * The container repository name.
      */
     readonly displayName: string;
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     */
+    readonly freeformTags: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
      */
@@ -85,6 +93,10 @@ export interface GetContainerRepositoryResult {
      */
     readonly layersSizeInBytes: string;
     /**
+     * The tenancy namespace used in the container repository path.
+     */
+    readonly namespace: string;
+    /**
      * Container repository readme.
      */
     readonly readmes: outputs.Artifacts.GetContainerRepositoryReadme[];
@@ -93,6 +105,10 @@ export interface GetContainerRepositoryResult {
      * The current state of the container repository.
      */
     readonly state: string;
+    /**
+     * The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    readonly systemTags: {[key: string]: any};
     /**
      * An RFC 3339 timestamp indicating when the repository was created.
      */

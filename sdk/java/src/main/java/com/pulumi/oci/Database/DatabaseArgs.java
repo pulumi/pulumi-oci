@@ -72,6 +72,21 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * 
+     */
+    @Import(name="keyStoreId")
+    private @Nullable Output<String> keyStoreId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * 
+     */
+    public Optional<Output<String>> keyStoreId() {
+        return Optional.ofNullable(this.keyStoreId);
+    }
+
+    /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -173,6 +188,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         this.database = $.database;
         this.dbHomeId = $.dbHomeId;
         this.dbVersion = $.dbVersion;
+        this.keyStoreId = $.keyStoreId;
         this.kmsKeyId = $.kmsKeyId;
         this.kmsKeyMigration = $.kmsKeyMigration;
         this.kmsKeyRotation = $.kmsKeyRotation;
@@ -268,6 +284,27 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder dbVersion(String dbVersion) {
             return dbVersion(Output.of(dbVersion));
+        }
+
+        /**
+         * @param keyStoreId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyStoreId(@Nullable Output<String> keyStoreId) {
+            $.keyStoreId = keyStoreId;
+            return this;
+        }
+
+        /**
+         * @param keyStoreId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyStoreId(String keyStoreId) {
+            return keyStoreId(Output.of(keyStoreId));
         }
 
         /**

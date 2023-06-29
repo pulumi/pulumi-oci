@@ -86,6 +86,8 @@ class _DatabaseUpgradeState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_cdb: Optional[pulumi.Input[bool]] = None,
+                 key_store_id: Optional[pulumi.Input[str]] = None,
+                 key_store_wallet_name: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  kms_key_version_id: Optional[pulumi.Input[str]] = None,
                  last_backup_duration_in_seconds: Optional[pulumi.Input[int]] = None,
@@ -118,6 +120,8 @@ class _DatabaseUpgradeState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_cdb: True if the database is a container database.
+        :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[int] last_backup_duration_in_seconds: The duration when the latest database backup created.
@@ -165,6 +169,10 @@ class _DatabaseUpgradeState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_cdb is not None:
             pulumi.set(__self__, "is_cdb", is_cdb)
+        if key_store_id is not None:
+            pulumi.set(__self__, "key_store_id", key_store_id)
+        if key_store_wallet_name is not None:
+            pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
@@ -385,6 +393,30 @@ class _DatabaseUpgradeState:
     @is_cdb.setter
     def is_cdb(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_cdb", value)
+
+    @property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @key_store_id.setter
+    def key_store_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key_store_id", value)
+
+    @property
+    @pulumi.getter(name="keyStoreWalletName")
+    def key_store_wallet_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The wallet name for Oracle Key Vault.
+        """
+        return pulumi.get(self, "key_store_wallet_name")
+
+    @key_store_wallet_name.setter
+    def key_store_wallet_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key_store_wallet_name", value)
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -661,6 +693,8 @@ class DatabaseUpgrade(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = None
             __props__.__dict__["freeform_tags"] = None
             __props__.__dict__["is_cdb"] = None
+            __props__.__dict__["key_store_id"] = None
+            __props__.__dict__["key_store_wallet_name"] = None
             __props__.__dict__["kms_key_id"] = None
             __props__.__dict__["kms_key_version_id"] = None
             __props__.__dict__["last_backup_duration_in_seconds"] = None
@@ -701,6 +735,8 @@ class DatabaseUpgrade(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_cdb: Optional[pulumi.Input[bool]] = None,
+            key_store_id: Optional[pulumi.Input[str]] = None,
+            key_store_wallet_name: Optional[pulumi.Input[str]] = None,
             kms_key_id: Optional[pulumi.Input[str]] = None,
             kms_key_version_id: Optional[pulumi.Input[str]] = None,
             last_backup_duration_in_seconds: Optional[pulumi.Input[int]] = None,
@@ -738,6 +774,8 @@ class DatabaseUpgrade(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_cdb: True if the database is a container database.
+        :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[int] last_backup_duration_in_seconds: The duration when the latest database backup created.
@@ -773,6 +811,8 @@ class DatabaseUpgrade(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_cdb"] = is_cdb
+        __props__.__dict__["key_store_id"] = key_store_id
+        __props__.__dict__["key_store_wallet_name"] = key_store_wallet_name
         __props__.__dict__["kms_key_id"] = kms_key_id
         __props__.__dict__["kms_key_version_id"] = kms_key_version_id
         __props__.__dict__["last_backup_duration_in_seconds"] = last_backup_duration_in_seconds
@@ -916,6 +956,22 @@ class DatabaseUpgrade(pulumi.CustomResource):
         True if the database is a container database.
         """
         return pulumi.get(self, "is_cdb")
+
+    @property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @property
+    @pulumi.getter(name="keyStoreWalletName")
+    def key_store_wallet_name(self) -> pulumi.Output[str]:
+        """
+        The wallet name for Oracle Key Vault.
+        """
+        return pulumi.get(self, "key_store_wallet_name")
 
     @property
     @pulumi.getter(name="kmsKeyId")

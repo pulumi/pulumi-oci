@@ -3494,6 +3494,17 @@ export namespace ApmSynthetics {
         paramValue?: pulumi.Input<string>;
     }
 
+    export interface ConfigVantagePoint {
+        /**
+         * Unique name that can be edited. The name should not contain any confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * Name of the vantage point.
+         */
+        name: pulumi.Input<string>;
+    }
+
     export interface DedicatedVantagePointDvpStackDetails {
         /**
          * (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
@@ -14148,6 +14159,18 @@ export namespace DataFlow {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetSqlEndpointsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSqlEndpointsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface InvokeRunApplicationLogConfig {
         /**
          * The log group id for where log objects will be for Data Flow Runs.
@@ -14318,6 +14341,74 @@ export namespace DataFlow {
          * The statement code execution output in html format.
          */
         value?: pulumi.Input<string>;
+    }
+
+    export interface SqlEndpointDriverShapeConfig {
+        /**
+         * The amount of memory used for the driver or executors.
+         */
+        memoryInGbs?: pulumi.Input<number>;
+        /**
+         * The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+         */
+        ocpus?: pulumi.Input<number>;
+    }
+
+    export interface SqlEndpointExecutorShapeConfig {
+        /**
+         * The amount of memory used for the driver or executors.
+         */
+        memoryInGbs?: pulumi.Input<number>;
+        /**
+         * The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+         */
+        ocpus?: pulumi.Input<number>;
+    }
+
+    export interface SqlEndpointNetworkConfiguration {
+        /**
+         * A list of SecureAccessControlRule's to which access is limited to
+         */
+        accessControlRules?: pulumi.Input<pulumi.Input<inputs.DataFlow.SqlEndpointNetworkConfigurationAccessControlRule>[]>;
+        /**
+         * The host name prefix.
+         */
+        hostNamePrefix?: pulumi.Input<string>;
+        /**
+         * The type of network configuration.
+         */
+        networkType: pulumi.Input<string>;
+        /**
+         * Ip Address of private endpoint
+         */
+        privateEndpointIp?: pulumi.Input<string>;
+        /**
+         * Ip Address of public endpoint
+         */
+        publicEndpointIp?: pulumi.Input<string>;
+        /**
+         * The VCN Subnet OCID.
+         */
+        subnetId?: pulumi.Input<string>;
+        /**
+         * The VCN OCID.
+         */
+        vcnId?: pulumi.Input<string>;
+    }
+
+    export interface SqlEndpointNetworkConfigurationAccessControlRule {
+        /**
+         * The type of IP notation.
+         */
+        ipNotation?: pulumi.Input<string>;
+        /**
+         * The associated value of the selected IP notation.
+         */
+        value?: pulumi.Input<string>;
+        /**
+         * A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+         */
+        vcnIps?: pulumi.Input<string>;
     }
 }
 
@@ -21475,6 +21566,21 @@ export namespace DatabaseManagement {
         service?: pulumi.Input<string>;
     }
 
+    export interface ExternalDbSystemStackMonitoringConfig {
+        /**
+         * The status of the associated service.
+         */
+        isEnabled: pulumi.Input<boolean>;
+        /**
+         * The associated service-specific inputs in JSON string format, which Database Management can identify.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        metadata?: pulumi.Input<string>;
+    }
+
     export interface ExternalExadataInfrastructureDatabaseSystem {
         /**
          * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
@@ -21977,6 +22083,18 @@ export namespace DatabaseManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetManagedDatabaseCursorCacheStatementsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedDatabaseCursorCacheStatementsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetManagedDatabaseGroupsFilter {
         /**
          * A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
@@ -22038,6 +22156,36 @@ export namespace DatabaseManagement {
         /**
          * The name of the Managed Database.
          */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedDatabaseSqlPlanBaselineJobsFilter {
+        /**
+         * A filter to return the SQL plan baseline jobs that match the name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedDatabaseSqlPlanBaselineJobsFilterArgs {
+        /**
+         * A filter to return the SQL plan baseline jobs that match the name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedDatabaseSqlPlanBaselinesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedDatabaseSqlPlanBaselinesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -43976,9 +44124,17 @@ export namespace Mysql {
          */
         dbSystemId: pulumi.Input<string>;
         /**
+         * (Updatable) Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+         */
+        delayInSeconds?: pulumi.Input<number>;
+        /**
          * (Updatable) Replication filter rules to be applied at the DB System Channel target.
          */
         filters?: pulumi.Input<pulumi.Input<inputs.Mysql.ChannelTargetFilter>[]>;
+        /**
+         * (Updatable) Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key. The default value is set to ALLOW.
+         */
+        tablesWithoutPrimaryKeyHandling?: pulumi.Input<string>;
         /**
          * (Updatable) The specific target identifier.
          *
@@ -44942,9 +45098,17 @@ export namespace Mysql {
          */
         dbSystemId?: pulumi.Input<string>;
         /**
+         * Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+         */
+        delayInSeconds?: pulumi.Input<number>;
+        /**
          * Replication filter rules to be applied at the DB System Channel target.
          */
         filters?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemChannelTargetFilter>[]>;
+        /**
+         * Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+         */
+        tablesWithoutPrimaryKeyHandling?: pulumi.Input<string>;
         /**
          * The specific target identifier.
          */

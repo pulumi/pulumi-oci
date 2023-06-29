@@ -36,6 +36,10 @@ import (
 //					LicenseModel: pulumi.Any(_var.External_db_system_database_management_config_license_model),
 //				},
 //				DisplayName: pulumi.Any(_var.External_db_system_display_name),
+//				StackMonitoringConfig: &databasemanagement.ExternalDbSystemStackMonitoringConfigArgs{
+//					IsEnabled: pulumi.Any(_var.External_db_system_stack_monitoring_config_is_enabled),
+//					Metadata:  pulumi.Any(_var.External_db_system_stack_monitoring_config_metadata),
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -67,9 +71,6 @@ type ExternalDbSystem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
 	DiscoveryAgentId pulumi.StringOutput `pulumi:"discoveryAgentId"`
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
 	HomeDirectory pulumi.StringOutput `pulumi:"homeDirectory"`
@@ -77,6 +78,8 @@ type ExternalDbSystem struct {
 	IsCluster pulumi.BoolOutput `pulumi:"isCluster"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// The details of the associated service that will be enabled or disabled for an external DB System.
+	StackMonitoringConfig ExternalDbSystemStackMonitoringConfigOutput `pulumi:"stackMonitoringConfig"`
 	// The current lifecycle state of the external DB system resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the external DB system was created.
@@ -129,9 +132,6 @@ type externalDbSystemState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
 	DiscoveryAgentId *string `pulumi:"discoveryAgentId"`
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisplayName *string `pulumi:"displayName"`
 	// The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
 	HomeDirectory *string `pulumi:"homeDirectory"`
@@ -139,6 +139,8 @@ type externalDbSystemState struct {
 	IsCluster *bool `pulumi:"isCluster"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// The details of the associated service that will be enabled or disabled for an external DB System.
+	StackMonitoringConfig *ExternalDbSystemStackMonitoringConfig `pulumi:"stackMonitoringConfig"`
 	// The current lifecycle state of the external DB system resource.
 	State *string `pulumi:"state"`
 	// The date and time the external DB system was created.
@@ -157,9 +159,6 @@ type ExternalDbSystemState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
 	DiscoveryAgentId pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisplayName pulumi.StringPtrInput
 	// The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
 	HomeDirectory pulumi.StringPtrInput
@@ -167,6 +166,8 @@ type ExternalDbSystemState struct {
 	IsCluster pulumi.BoolPtrInput
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
+	// The details of the associated service that will be enabled or disabled for an external DB System.
+	StackMonitoringConfig ExternalDbSystemStackMonitoringConfigPtrInput
 	// The current lifecycle state of the external DB system resource.
 	State pulumi.StringPtrInput
 	// The date and time the external DB system was created.
@@ -187,10 +188,9 @@ type externalDbSystemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
 	DbSystemDiscoveryId string `pulumi:"dbSystemDiscoveryId"`
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisplayName *string `pulumi:"displayName"`
+	// The details of the associated service that will be enabled or disabled for an external DB System.
+	StackMonitoringConfig *ExternalDbSystemStackMonitoringConfig `pulumi:"stackMonitoringConfig"`
 }
 
 // The set of arguments for constructing a ExternalDbSystem resource.
@@ -202,10 +202,9 @@ type ExternalDbSystemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
 	DbSystemDiscoveryId pulumi.StringInput
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisplayName pulumi.StringPtrInput
+	// The details of the associated service that will be enabled or disabled for an external DB System.
+	StackMonitoringConfig ExternalDbSystemStackMonitoringConfigPtrInput
 }
 
 func (ExternalDbSystemArgs) ElementType() reflect.Type {
@@ -318,9 +317,6 @@ func (o ExternalDbSystemOutput) DiscoveryAgentId() pulumi.StringOutput {
 }
 
 // (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExternalDbSystemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -338,6 +334,11 @@ func (o ExternalDbSystemOutput) IsCluster() pulumi.BoolOutput {
 // Additional information about the current lifecycle state.
 func (o ExternalDbSystemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The details of the associated service that will be enabled or disabled for an external DB System.
+func (o ExternalDbSystemOutput) StackMonitoringConfig() ExternalDbSystemStackMonitoringConfigOutput {
+	return o.ApplyT(func(v *ExternalDbSystem) ExternalDbSystemStackMonitoringConfigOutput { return v.StackMonitoringConfig }).(ExternalDbSystemStackMonitoringConfigOutput)
 }
 
 // The current lifecycle state of the external DB system resource.

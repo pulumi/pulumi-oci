@@ -24,6 +24,10 @@ import * as utilities from "../utilities";
  *         licenseModel: _var.external_db_system_database_management_config_license_model,
  *     },
  *     displayName: _var.external_db_system_display_name,
+ *     stackMonitoringConfig: {
+ *         isEnabled: _var.external_db_system_stack_monitoring_config_is_enabled,
+ *         metadata: _var.external_db_system_stack_monitoring_config_metadata,
+ *     },
  * });
  * ```
  *
@@ -81,10 +85,6 @@ export class ExternalDbSystem extends pulumi.CustomResource {
     public /*out*/ readonly discoveryAgentId!: pulumi.Output<string>;
     /**
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -99,6 +99,10 @@ export class ExternalDbSystem extends pulumi.CustomResource {
      * Additional information about the current lifecycle state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * The details of the associated service that will be enabled or disabled for an external DB System.
+     */
+    public readonly stackMonitoringConfig!: pulumi.Output<outputs.DatabaseManagement.ExternalDbSystemStackMonitoringConfig>;
     /**
      * The current lifecycle state of the external DB system resource.
      */
@@ -133,6 +137,7 @@ export class ExternalDbSystem extends pulumi.CustomResource {
             resourceInputs["homeDirectory"] = state ? state.homeDirectory : undefined;
             resourceInputs["isCluster"] = state ? state.isCluster : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["stackMonitoringConfig"] = state ? state.stackMonitoringConfig : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -148,6 +153,7 @@ export class ExternalDbSystem extends pulumi.CustomResource {
             resourceInputs["databaseManagementConfig"] = args ? args.databaseManagementConfig : undefined;
             resourceInputs["dbSystemDiscoveryId"] = args ? args.dbSystemDiscoveryId : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["stackMonitoringConfig"] = args ? args.stackMonitoringConfig : undefined;
             resourceInputs["discoveryAgentId"] = undefined /*out*/;
             resourceInputs["homeDirectory"] = undefined /*out*/;
             resourceInputs["isCluster"] = undefined /*out*/;
@@ -183,10 +189,6 @@ export interface ExternalDbSystemState {
     discoveryAgentId?: pulumi.Input<string>;
     /**
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -201,6 +203,10 @@ export interface ExternalDbSystemState {
      * Additional information about the current lifecycle state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * The details of the associated service that will be enabled or disabled for an external DB System.
+     */
+    stackMonitoringConfig?: pulumi.Input<inputs.DatabaseManagement.ExternalDbSystemStackMonitoringConfig>;
     /**
      * The current lifecycle state of the external DB system resource.
      */
@@ -233,10 +239,10 @@ export interface ExternalDbSystemArgs {
     dbSystemDiscoveryId: pulumi.Input<string>;
     /**
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * The details of the associated service that will be enabled or disabled for an external DB System.
+     */
+    stackMonitoringConfig?: pulumi.Input<inputs.DatabaseManagement.ExternalDbSystemStackMonitoringConfig>;
 }

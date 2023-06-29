@@ -308,6 +308,34 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
         return this.isCdb;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * 
+     */
+    @Export(name="keyStoreId", type=String.class, parameters={})
+    private Output<String> keyStoreId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * 
+     */
+    public Output<String> keyStoreId() {
+        return this.keyStoreId;
+    }
+    /**
+     * The wallet name for Oracle Key Vault.
+     * 
+     */
+    @Export(name="keyStoreWalletName", type=String.class, parameters={})
+    private Output<String> keyStoreWalletName;
+
+    /**
+     * @return The wallet name for Oracle Key Vault.
+     * 
+     */
+    public Output<String> keyStoreWalletName() {
+        return this.keyStoreWalletName;
+    }
+    /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */

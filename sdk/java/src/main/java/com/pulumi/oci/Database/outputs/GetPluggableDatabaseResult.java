@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.GetPluggableDatabaseConnectionString;
 import com.pulumi.oci.Database.outputs.GetPluggableDatabasePluggableDatabaseManagementConfig;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -72,6 +73,7 @@ public final class GetPluggableDatabaseResult {
      * 
      */
     private List<GetPluggableDatabasePluggableDatabaseManagementConfig> pluggableDatabaseManagementConfigs;
+    private Integer rotateKeyTrigger;
     private Boolean shouldPdbAdminAccountBeLocked;
     /**
      * @return The current state of the pluggable database.
@@ -169,6 +171,9 @@ public final class GetPluggableDatabaseResult {
     public List<GetPluggableDatabasePluggableDatabaseManagementConfig> pluggableDatabaseManagementConfigs() {
         return this.pluggableDatabaseManagementConfigs;
     }
+    public Integer rotateKeyTrigger() {
+        return this.rotateKeyTrigger;
+    }
     public Boolean shouldPdbAdminAccountBeLocked() {
         return this.shouldPdbAdminAccountBeLocked;
     }
@@ -212,6 +217,7 @@ public final class GetPluggableDatabaseResult {
         private String pdbName;
         private String pluggableDatabaseId;
         private List<GetPluggableDatabasePluggableDatabaseManagementConfig> pluggableDatabaseManagementConfigs;
+        private Integer rotateKeyTrigger;
         private Boolean shouldPdbAdminAccountBeLocked;
         private String state;
         private String tdeWalletPassword;
@@ -232,6 +238,7 @@ public final class GetPluggableDatabaseResult {
     	      this.pdbName = defaults.pdbName;
     	      this.pluggableDatabaseId = defaults.pluggableDatabaseId;
     	      this.pluggableDatabaseManagementConfigs = defaults.pluggableDatabaseManagementConfigs;
+    	      this.rotateKeyTrigger = defaults.rotateKeyTrigger;
     	      this.shouldPdbAdminAccountBeLocked = defaults.shouldPdbAdminAccountBeLocked;
     	      this.state = defaults.state;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
@@ -310,6 +317,11 @@ public final class GetPluggableDatabaseResult {
             return pluggableDatabaseManagementConfigs(List.of(pluggableDatabaseManagementConfigs));
         }
         @CustomType.Setter
+        public Builder rotateKeyTrigger(Integer rotateKeyTrigger) {
+            this.rotateKeyTrigger = Objects.requireNonNull(rotateKeyTrigger);
+            return this;
+        }
+        @CustomType.Setter
         public Builder shouldPdbAdminAccountBeLocked(Boolean shouldPdbAdminAccountBeLocked) {
             this.shouldPdbAdminAccountBeLocked = Objects.requireNonNull(shouldPdbAdminAccountBeLocked);
             return this;
@@ -344,6 +356,7 @@ public final class GetPluggableDatabaseResult {
             o.pdbName = pdbName;
             o.pluggableDatabaseId = pluggableDatabaseId;
             o.pluggableDatabaseManagementConfigs = pluggableDatabaseManagementConfigs;
+            o.rotateKeyTrigger = rotateKeyTrigger;
             o.shouldPdbAdminAccountBeLocked = shouldPdbAdminAccountBeLocked;
             o.state = state;
             o.tdeWalletPassword = tdeWalletPassword;

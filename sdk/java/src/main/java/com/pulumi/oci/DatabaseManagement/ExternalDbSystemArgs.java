@@ -6,6 +6,7 @@ package com.pulumi.oci.DatabaseManagement;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemDatabaseManagementConfigArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemStackMonitoringConfigArgs;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -64,9 +65,6 @@ public final class ExternalDbSystemArgs extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
@@ -74,12 +72,24 @@ public final class ExternalDbSystemArgs extends com.pulumi.resources.ResourceArg
     /**
      * @return (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+
+    /**
+     * The details of the associated service that will be enabled or disabled for an external DB System.
+     * 
+     */
+    @Import(name="stackMonitoringConfig")
+    private @Nullable Output<ExternalDbSystemStackMonitoringConfigArgs> stackMonitoringConfig;
+
+    /**
+     * @return The details of the associated service that will be enabled or disabled for an external DB System.
+     * 
+     */
+    public Optional<Output<ExternalDbSystemStackMonitoringConfigArgs>> stackMonitoringConfig() {
+        return Optional.ofNullable(this.stackMonitoringConfig);
     }
 
     private ExternalDbSystemArgs() {}
@@ -89,6 +99,7 @@ public final class ExternalDbSystemArgs extends com.pulumi.resources.ResourceArg
         this.databaseManagementConfig = $.databaseManagementConfig;
         this.dbSystemDiscoveryId = $.dbSystemDiscoveryId;
         this.displayName = $.displayName;
+        this.stackMonitoringConfig = $.stackMonitoringConfig;
     }
 
     public static Builder builder() {
@@ -175,9 +186,6 @@ public final class ExternalDbSystemArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param displayName (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -189,14 +197,32 @@ public final class ExternalDbSystemArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param displayName (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param stackMonitoringConfig The details of the associated service that will be enabled or disabled for an external DB System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stackMonitoringConfig(@Nullable Output<ExternalDbSystemStackMonitoringConfigArgs> stackMonitoringConfig) {
+            $.stackMonitoringConfig = stackMonitoringConfig;
+            return this;
+        }
+
+        /**
+         * @param stackMonitoringConfig The details of the associated service that will be enabled or disabled for an external DB System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stackMonitoringConfig(ExternalDbSystemStackMonitoringConfigArgs stackMonitoringConfig) {
+            return stackMonitoringConfig(Output.of(stackMonitoringConfig));
         }
 
         public ExternalDbSystemArgs build() {

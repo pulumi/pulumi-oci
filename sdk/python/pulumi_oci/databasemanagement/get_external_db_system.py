@@ -22,7 +22,7 @@ class GetExternalDbSystemResult:
     """
     A collection of values returned by getExternalDbSystem.
     """
-    def __init__(__self__, compartment_id=None, database_management_configs=None, db_system_discovery_id=None, discovery_agent_id=None, display_name=None, external_db_system_id=None, home_directory=None, id=None, is_cluster=None, lifecycle_details=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, database_management_configs=None, db_system_discovery_id=None, discovery_agent_id=None, display_name=None, external_db_system_id=None, home_directory=None, id=None, is_cluster=None, lifecycle_details=None, stack_monitoring_configs=None, state=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -53,6 +53,9 @@ class GetExternalDbSystemResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if stack_monitoring_configs and not isinstance(stack_monitoring_configs, list):
+            raise TypeError("Expected argument 'stack_monitoring_configs' to be a list")
+        pulumi.set(__self__, "stack_monitoring_configs", stack_monitoring_configs)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -141,6 +144,14 @@ class GetExternalDbSystemResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="stackMonitoringConfigs")
+    def stack_monitoring_configs(self) -> Sequence['outputs.GetExternalDbSystemStackMonitoringConfigResult']:
+        """
+        The configuration details of Stack Monitoring for an external DB system.
+        """
+        return pulumi.get(self, "stack_monitoring_configs")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -181,6 +192,7 @@ class AwaitableGetExternalDbSystemResult(GetExternalDbSystemResult):
             id=self.id,
             is_cluster=self.is_cluster,
             lifecycle_details=self.lifecycle_details,
+            stack_monitoring_configs=self.stack_monitoring_configs,
             state=self.state,
             time_created=self.time_created,
             time_updated=self.time_updated)
@@ -221,6 +233,7 @@ def get_external_db_system(external_db_system_id: Optional[str] = None,
         id=__ret__.id,
         is_cluster=__ret__.is_cluster,
         lifecycle_details=__ret__.lifecycle_details,
+        stack_monitoring_configs=__ret__.stack_monitoring_configs,
         state=__ret__.state,
         time_created=__ret__.time_created,
         time_updated=__ret__.time_updated)

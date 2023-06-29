@@ -102,6 +102,8 @@ import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAttentionLogCo
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAttentionLogCountPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAttentionLogCountsArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAttentionLogCountsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseCursorCacheStatementsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseCursorCacheStatementsPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseGroupArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseGroupPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseGroupsArgs;
@@ -119,6 +121,14 @@ import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStati
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasePlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselineArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselineConfigurationArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselineConfigurationPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselineJobsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselineJobsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselinePlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselinesArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselinesPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTaskArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTaskPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksArgs;
@@ -232,6 +242,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAlertLogCount
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAlertLogCountsResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAttentionLogCountResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAttentionLogCountsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseCursorCacheStatementsResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseGroupResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseGroupsResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult;
@@ -241,6 +252,10 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStat
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlPlanBaselineConfigurationResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlPlanBaselineJobsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlPlanBaselineResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlPlanBaselinesResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTaskResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingResult;
@@ -8825,6 +8840,166 @@ public final class DatabaseManagementFunctions {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseAttentionLogCounts:getManagedDatabaseAttentionLogCounts", TypeShape.of(GetManagedDatabaseAttentionLogCountsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Managed Database Cursor Cache Statements in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL statements from shared SQL area, also called the cursor cache.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseCursorCacheStatementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseCursorCacheStatements = DatabaseManagementFunctions.getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlText(var_.managed_database_cursor_cache_statement_sql_text())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetManagedDatabaseCursorCacheStatementsResult> getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs args) {
+        return getManagedDatabaseCursorCacheStatements(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Cursor Cache Statements in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL statements from shared SQL area, also called the cursor cache.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseCursorCacheStatementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseCursorCacheStatements = DatabaseManagementFunctions.getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlText(var_.managed_database_cursor_cache_statement_sql_text())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseCursorCacheStatementsResult> getManagedDatabaseCursorCacheStatementsPlain(GetManagedDatabaseCursorCacheStatementsPlainArgs args) {
+        return getManagedDatabaseCursorCacheStatementsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Cursor Cache Statements in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL statements from shared SQL area, also called the cursor cache.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseCursorCacheStatementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseCursorCacheStatements = DatabaseManagementFunctions.getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlText(var_.managed_database_cursor_cache_statement_sql_text())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetManagedDatabaseCursorCacheStatementsResult> getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseCursorCacheStatements:getManagedDatabaseCursorCacheStatements", TypeShape.of(GetManagedDatabaseCursorCacheStatementsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Cursor Cache Statements in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL statements from shared SQL area, also called the cursor cache.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseCursorCacheStatementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseCursorCacheStatements = DatabaseManagementFunctions.getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlText(var_.managed_database_cursor_cache_statement_sql_text())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseCursorCacheStatementsResult> getManagedDatabaseCursorCacheStatementsPlain(GetManagedDatabaseCursorCacheStatementsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseCursorCacheStatements:getManagedDatabaseCursorCacheStatements", TypeShape.of(GetManagedDatabaseCursorCacheStatementsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
@@ -10211,6 +10386,682 @@ public final class DatabaseManagementFunctions {
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> getManagedDatabaseOptimizerStatisticsCollectionOperationsPlain(GetManagedDatabaseOptimizerStatisticsCollectionOperationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperations:getManagedDatabaseOptimizerStatisticsCollectionOperations", TypeShape.of(GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Plan Baseline resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the SQL plan baseline details for the specified planName.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaseline = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetManagedDatabaseSqlPlanBaselineResult> getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs args) {
+        return getManagedDatabaseSqlPlanBaseline(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Plan Baseline resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the SQL plan baseline details for the specified planName.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaseline = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseSqlPlanBaselineResult> getManagedDatabaseSqlPlanBaselinePlain(GetManagedDatabaseSqlPlanBaselinePlainArgs args) {
+        return getManagedDatabaseSqlPlanBaselinePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Plan Baseline resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the SQL plan baseline details for the specified planName.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaseline = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetManagedDatabaseSqlPlanBaselineResult> getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaseline:getManagedDatabaseSqlPlanBaseline", TypeShape.of(GetManagedDatabaseSqlPlanBaselineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Plan Baseline resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the SQL plan baseline details for the specified planName.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaseline = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseSqlPlanBaselineResult> getManagedDatabaseSqlPlanBaselinePlain(GetManagedDatabaseSqlPlanBaselinePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaseline:getManagedDatabaseSqlPlanBaseline", TypeShape.of(GetManagedDatabaseSqlPlanBaselineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Plan Baseline Configuration resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the configuration details of SQL plan baselines for the specified
+     * Managed Database. The details include the settings for the capture and use of
+     * SQL plan baselines, SPM Evolve Advisor task, and SQL Management Base.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselineConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaselineConfiguration = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetManagedDatabaseSqlPlanBaselineConfigurationResult> getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs args) {
+        return getManagedDatabaseSqlPlanBaselineConfiguration(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Plan Baseline Configuration resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the configuration details of SQL plan baselines for the specified
+     * Managed Database. The details include the settings for the capture and use of
+     * SQL plan baselines, SPM Evolve Advisor task, and SQL Management Base.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselineConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaselineConfiguration = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseSqlPlanBaselineConfigurationResult> getManagedDatabaseSqlPlanBaselineConfigurationPlain(GetManagedDatabaseSqlPlanBaselineConfigurationPlainArgs args) {
+        return getManagedDatabaseSqlPlanBaselineConfigurationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Plan Baseline Configuration resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the configuration details of SQL plan baselines for the specified
+     * Managed Database. The details include the settings for the capture and use of
+     * SQL plan baselines, SPM Evolve Advisor task, and SQL Management Base.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselineConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaselineConfiguration = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetManagedDatabaseSqlPlanBaselineConfigurationResult> getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineConfiguration:getManagedDatabaseSqlPlanBaselineConfiguration", TypeShape.of(GetManagedDatabaseSqlPlanBaselineConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Plan Baseline Configuration resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the configuration details of SQL plan baselines for the specified
+     * Managed Database. The details include the settings for the capture and use of
+     * SQL plan baselines, SPM Evolve Advisor task, and SQL Management Base.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselineConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaselineConfiguration = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseSqlPlanBaselineConfigurationResult> getManagedDatabaseSqlPlanBaselineConfigurationPlain(GetManagedDatabaseSqlPlanBaselineConfigurationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineConfiguration:getManagedDatabaseSqlPlanBaselineConfiguration", TypeShape.of(GetManagedDatabaseSqlPlanBaselineConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Sql Plan Baseline Jobs in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the database jobs used for loading SQL plan baselines in the specified Managed Database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselineJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaselineJobs = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_database_sql_plan_baseline_job_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetManagedDatabaseSqlPlanBaselineJobsResult> getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs args) {
+        return getManagedDatabaseSqlPlanBaselineJobs(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Sql Plan Baseline Jobs in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the database jobs used for loading SQL plan baselines in the specified Managed Database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselineJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaselineJobs = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_database_sql_plan_baseline_job_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseSqlPlanBaselineJobsResult> getManagedDatabaseSqlPlanBaselineJobsPlain(GetManagedDatabaseSqlPlanBaselineJobsPlainArgs args) {
+        return getManagedDatabaseSqlPlanBaselineJobsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Sql Plan Baseline Jobs in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the database jobs used for loading SQL plan baselines in the specified Managed Database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselineJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaselineJobs = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_database_sql_plan_baseline_job_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetManagedDatabaseSqlPlanBaselineJobsResult> getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineJobs:getManagedDatabaseSqlPlanBaselineJobs", TypeShape.of(GetManagedDatabaseSqlPlanBaselineJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Sql Plan Baseline Jobs in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the database jobs used for loading SQL plan baselines in the specified Managed Database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselineJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaselineJobs = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_database_sql_plan_baseline_job_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseSqlPlanBaselineJobsResult> getManagedDatabaseSqlPlanBaselineJobsPlain(GetManagedDatabaseSqlPlanBaselineJobsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineJobs:getManagedDatabaseSqlPlanBaselineJobs", TypeShape.of(GetManagedDatabaseSqlPlanBaselineJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL plan baselines for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaselines = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .isAccepted(var_.managed_database_sql_plan_baseline_is_accepted())
+     *             .isAdaptive(var_.managed_database_sql_plan_baseline_is_adaptive())
+     *             .isEnabled(var_.managed_database_sql_plan_baseline_is_enabled())
+     *             .isFixed(var_.managed_database_sql_plan_baseline_is_fixed())
+     *             .isReproduced(var_.managed_database_sql_plan_baseline_is_reproduced())
+     *             .origin(var_.managed_database_sql_plan_baseline_origin())
+     *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
+     *             .sqlHandle(var_.managed_database_sql_plan_baseline_sql_handle())
+     *             .sqlText(var_.managed_database_sql_plan_baseline_sql_text())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetManagedDatabaseSqlPlanBaselinesResult> getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs args) {
+        return getManagedDatabaseSqlPlanBaselines(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL plan baselines for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaselines = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .isAccepted(var_.managed_database_sql_plan_baseline_is_accepted())
+     *             .isAdaptive(var_.managed_database_sql_plan_baseline_is_adaptive())
+     *             .isEnabled(var_.managed_database_sql_plan_baseline_is_enabled())
+     *             .isFixed(var_.managed_database_sql_plan_baseline_is_fixed())
+     *             .isReproduced(var_.managed_database_sql_plan_baseline_is_reproduced())
+     *             .origin(var_.managed_database_sql_plan_baseline_origin())
+     *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
+     *             .sqlHandle(var_.managed_database_sql_plan_baseline_sql_handle())
+     *             .sqlText(var_.managed_database_sql_plan_baseline_sql_text())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseSqlPlanBaselinesResult> getManagedDatabaseSqlPlanBaselinesPlain(GetManagedDatabaseSqlPlanBaselinesPlainArgs args) {
+        return getManagedDatabaseSqlPlanBaselinesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL plan baselines for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaselines = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .isAccepted(var_.managed_database_sql_plan_baseline_is_accepted())
+     *             .isAdaptive(var_.managed_database_sql_plan_baseline_is_adaptive())
+     *             .isEnabled(var_.managed_database_sql_plan_baseline_is_enabled())
+     *             .isFixed(var_.managed_database_sql_plan_baseline_is_fixed())
+     *             .isReproduced(var_.managed_database_sql_plan_baseline_is_reproduced())
+     *             .origin(var_.managed_database_sql_plan_baseline_origin())
+     *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
+     *             .sqlHandle(var_.managed_database_sql_plan_baseline_sql_handle())
+     *             .sqlText(var_.managed_database_sql_plan_baseline_sql_text())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetManagedDatabaseSqlPlanBaselinesResult> getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines", TypeShape.of(GetManagedDatabaseSqlPlanBaselinesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL plan baselines for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaselines = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .isAccepted(var_.managed_database_sql_plan_baseline_is_accepted())
+     *             .isAdaptive(var_.managed_database_sql_plan_baseline_is_adaptive())
+     *             .isEnabled(var_.managed_database_sql_plan_baseline_is_enabled())
+     *             .isFixed(var_.managed_database_sql_plan_baseline_is_fixed())
+     *             .isReproduced(var_.managed_database_sql_plan_baseline_is_reproduced())
+     *             .origin(var_.managed_database_sql_plan_baseline_origin())
+     *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
+     *             .sqlHandle(var_.managed_database_sql_plan_baseline_sql_handle())
+     *             .sqlText(var_.managed_database_sql_plan_baseline_sql_text())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseSqlPlanBaselinesResult> getManagedDatabaseSqlPlanBaselinesPlain(GetManagedDatabaseSqlPlanBaselinesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines", TypeShape.of(GetManagedDatabaseSqlPlanBaselinesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Managed Database Sql Tuning Advisor Task resource in Oracle Cloud Infrastructure Database Management service.

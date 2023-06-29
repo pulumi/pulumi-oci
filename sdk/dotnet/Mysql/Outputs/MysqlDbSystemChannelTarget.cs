@@ -26,9 +26,17 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string? DbSystemId;
         /// <summary>
+        /// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+        /// </summary>
+        public readonly int? DelayInSeconds;
+        /// <summary>
         /// Replication filter rules to be applied at the DB System Channel target.
         /// </summary>
         public readonly ImmutableArray<Outputs.MysqlDbSystemChannelTargetFilter> Filters;
+        /// <summary>
+        /// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+        /// </summary>
+        public readonly string? TablesWithoutPrimaryKeyHandling;
         /// <summary>
         /// The specific target identifier.
         /// </summary>
@@ -42,14 +50,20 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string? dbSystemId,
 
+            int? delayInSeconds,
+
             ImmutableArray<Outputs.MysqlDbSystemChannelTargetFilter> filters,
+
+            string? tablesWithoutPrimaryKeyHandling,
 
             string? targetType)
         {
             ApplierUsername = applierUsername;
             ChannelName = channelName;
             DbSystemId = dbSystemId;
+            DelayInSeconds = delayInSeconds;
             Filters = filters;
+            TablesWithoutPrimaryKeyHandling = tablesWithoutPrimaryKeyHandling;
             TargetType = targetType;
         }
     }

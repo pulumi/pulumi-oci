@@ -64,6 +64,10 @@ type DatabaseUpgrade struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// True if the database is a container database.
 	IsCdb pulumi.BoolOutput `pulumi:"isCdb"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	KeyStoreId pulumi.StringOutput `pulumi:"keyStoreId"`
+	// The wallet name for Oracle Key Vault.
+	KeyStoreWalletName pulumi.StringOutput `pulumi:"keyStoreWalletName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
@@ -161,6 +165,10 @@ type databaseUpgradeState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// True if the database is a container database.
 	IsCdb *bool `pulumi:"isCdb"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	KeyStoreId *string `pulumi:"keyStoreId"`
+	// The wallet name for Oracle Key Vault.
+	KeyStoreWalletName *string `pulumi:"keyStoreWalletName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
@@ -224,6 +232,10 @@ type DatabaseUpgradeState struct {
 	FreeformTags pulumi.MapInput
 	// True if the database is a container database.
 	IsCdb pulumi.BoolPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	KeyStoreId pulumi.StringPtrInput
+	// The wallet name for Oracle Key Vault.
+	KeyStoreWalletName pulumi.StringPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
@@ -444,6 +456,16 @@ func (o DatabaseUpgradeOutput) FreeformTags() pulumi.MapOutput {
 // True if the database is a container database.
 func (o DatabaseUpgradeOutput) IsCdb() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.BoolOutput { return v.IsCdb }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+func (o DatabaseUpgradeOutput) KeyStoreId() pulumi.StringOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.KeyStoreId }).(pulumi.StringOutput)
+}
+
+// The wallet name for Oracle Key Vault.
+func (o DatabaseUpgradeOutput) KeyStoreWalletName() pulumi.StringOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.KeyStoreWalletName }).(pulumi.StringOutput)
 }
 
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.

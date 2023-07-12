@@ -204,15 +204,15 @@ def get_managed_instance_stream_profile(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OsManagement/getManagedInstanceStreamProfile:getManagedInstanceStreamProfile', __args__, opts=opts, typ=GetManagedInstanceStreamProfileResult).value
 
     return AwaitableGetManagedInstanceStreamProfileResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        managed_instance_id=__ret__.managed_instance_id,
-        module_name=__ret__.module_name,
-        module_stream_profile_on_managed_instances=__ret__.module_stream_profile_on_managed_instances,
-        profile_name=__ret__.profile_name,
-        profile_status=__ret__.profile_status,
-        stream_name=__ret__.stream_name)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
+        module_name=pulumi.get(__ret__, 'module_name'),
+        module_stream_profile_on_managed_instances=pulumi.get(__ret__, 'module_stream_profile_on_managed_instances'),
+        profile_name=pulumi.get(__ret__, 'profile_name'),
+        profile_status=pulumi.get(__ret__, 'profile_status'),
+        stream_name=pulumi.get(__ret__, 'stream_name'))
 
 
 @_utilities.lift_output_func(get_managed_instance_stream_profile)

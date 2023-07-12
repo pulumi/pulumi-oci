@@ -116,11 +116,11 @@ def get_work_request_log_entries(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ContainerEngine/getWorkRequestLogEntries:getWorkRequestLogEntries', __args__, opts=opts, typ=GetWorkRequestLogEntriesResult).value
 
     return AwaitableGetWorkRequestLogEntriesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        work_request_id=__ret__.work_request_id,
-        work_request_log_entries=__ret__.work_request_log_entries)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        work_request_id=pulumi.get(__ret__, 'work_request_id'),
+        work_request_log_entries=pulumi.get(__ret__, 'work_request_log_entries'))
 
 
 @_utilities.lift_output_func(get_work_request_log_entries)

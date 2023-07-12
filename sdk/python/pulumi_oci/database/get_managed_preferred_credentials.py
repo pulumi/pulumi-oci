@@ -103,10 +103,10 @@ def get_managed_preferred_credentials(filters: Optional[Sequence[pulumi.InputTyp
     __ret__ = pulumi.runtime.invoke('oci:Database/getManagedPreferredCredentials:getManagedPreferredCredentials', __args__, opts=opts, typ=GetManagedPreferredCredentialsResult).value
 
     return AwaitableGetManagedPreferredCredentialsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        managed_database_id=__ret__.managed_database_id,
-        preferred_credential_collections=__ret__.preferred_credential_collections)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        preferred_credential_collections=pulumi.get(__ret__, 'preferred_credential_collections'))
 
 
 @_utilities.lift_output_func(get_managed_preferred_credentials)

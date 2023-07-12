@@ -48,11 +48,15 @@ export class Subscription extends pulumi.CustomResource {
     }
 
     /**
+     * (Updatable) Account type.
+     */
+    public /*out*/ readonly accountType!: pulumi.Output<string>;
+    /**
      * (Updatable) Bill to customer Account id.
      */
     public /*out*/ readonly billToCustAccountId!: pulumi.Output<string>;
     /**
-     * (Updatable) Billing address details model.
+     * (Updatable) Address details model.
      */
     public /*out*/ readonly billingAddresses!: pulumi.Output<outputs.OspGateway.SubscriptionBillingAddress[]>;
     /**
@@ -128,6 +132,10 @@ export class Subscription extends pulumi.CustomResource {
      */
     public /*out*/ readonly taxInfos!: pulumi.Output<outputs.OspGateway.SubscriptionTaxInfo[]>;
     /**
+     * (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+     */
+    public /*out*/ readonly timePersonalToCorporateConv!: pulumi.Output<string>;
+    /**
      * (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      */
     public /*out*/ readonly timePlanUpgrade!: pulumi.Output<string>;
@@ -157,6 +165,7 @@ export class Subscription extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SubscriptionState | undefined;
+            resourceInputs["accountType"] = state ? state.accountType : undefined;
             resourceInputs["billToCustAccountId"] = state ? state.billToCustAccountId : undefined;
             resourceInputs["billingAddresses"] = state ? state.billingAddresses : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
@@ -176,6 +185,7 @@ export class Subscription extends pulumi.CustomResource {
             resourceInputs["subscriptionId"] = state ? state.subscriptionId : undefined;
             resourceInputs["subscriptionPlanNumber"] = state ? state.subscriptionPlanNumber : undefined;
             resourceInputs["taxInfos"] = state ? state.taxInfos : undefined;
+            resourceInputs["timePersonalToCorporateConv"] = state ? state.timePersonalToCorporateConv : undefined;
             resourceInputs["timePlanUpgrade"] = state ? state.timePlanUpgrade : undefined;
             resourceInputs["timeStart"] = state ? state.timeStart : undefined;
             resourceInputs["upgradeState"] = state ? state.upgradeState : undefined;
@@ -202,6 +212,7 @@ export class Subscription extends pulumi.CustomResource {
             resourceInputs["ospHomeRegion"] = args ? args.ospHomeRegion : undefined;
             resourceInputs["subscription"] = args ? args.subscription : undefined;
             resourceInputs["subscriptionId"] = args ? args.subscriptionId : undefined;
+            resourceInputs["accountType"] = undefined /*out*/;
             resourceInputs["billToCustAccountId"] = undefined /*out*/;
             resourceInputs["billingAddresses"] = undefined /*out*/;
             resourceInputs["currencyCode"] = undefined /*out*/;
@@ -216,6 +227,7 @@ export class Subscription extends pulumi.CustomResource {
             resourceInputs["shipToCustAcctSiteId"] = undefined /*out*/;
             resourceInputs["subscriptionPlanNumber"] = undefined /*out*/;
             resourceInputs["taxInfos"] = undefined /*out*/;
+            resourceInputs["timePersonalToCorporateConv"] = undefined /*out*/;
             resourceInputs["timePlanUpgrade"] = undefined /*out*/;
             resourceInputs["timeStart"] = undefined /*out*/;
             resourceInputs["upgradeState"] = undefined /*out*/;
@@ -231,11 +243,15 @@ export class Subscription extends pulumi.CustomResource {
  */
 export interface SubscriptionState {
     /**
+     * (Updatable) Account type.
+     */
+    accountType?: pulumi.Input<string>;
+    /**
      * (Updatable) Bill to customer Account id.
      */
     billToCustAccountId?: pulumi.Input<string>;
     /**
-     * (Updatable) Billing address details model.
+     * (Updatable) Address details model.
      */
     billingAddresses?: pulumi.Input<pulumi.Input<inputs.OspGateway.SubscriptionBillingAddress>[]>;
     /**
@@ -310,6 +326,10 @@ export interface SubscriptionState {
      * (Updatable) Tax details.
      */
     taxInfos?: pulumi.Input<pulumi.Input<inputs.OspGateway.SubscriptionTaxInfo>[]>;
+    /**
+     * (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+     */
+    timePersonalToCorporateConv?: pulumi.Input<string>;
     /**
      * (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      */

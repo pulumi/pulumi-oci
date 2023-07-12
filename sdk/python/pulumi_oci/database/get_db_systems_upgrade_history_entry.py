@@ -187,17 +187,17 @@ def get_db_systems_upgrade_history_entry(db_system_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getDbSystemsUpgradeHistoryEntry:getDbSystemsUpgradeHistoryEntry', __args__, opts=opts, typ=GetDbSystemsUpgradeHistoryEntryResult).value
 
     return AwaitableGetDbSystemsUpgradeHistoryEntryResult(
-        action=__ret__.action,
-        db_system_id=__ret__.db_system_id,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        new_gi_version=__ret__.new_gi_version,
-        old_gi_version=__ret__.old_gi_version,
-        snapshot_retention_period_in_days=__ret__.snapshot_retention_period_in_days,
-        state=__ret__.state,
-        time_ended=__ret__.time_ended,
-        time_started=__ret__.time_started,
-        upgrade_history_entry_id=__ret__.upgrade_history_entry_id)
+        action=pulumi.get(__ret__, 'action'),
+        db_system_id=pulumi.get(__ret__, 'db_system_id'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        new_gi_version=pulumi.get(__ret__, 'new_gi_version'),
+        old_gi_version=pulumi.get(__ret__, 'old_gi_version'),
+        snapshot_retention_period_in_days=pulumi.get(__ret__, 'snapshot_retention_period_in_days'),
+        state=pulumi.get(__ret__, 'state'),
+        time_ended=pulumi.get(__ret__, 'time_ended'),
+        time_started=pulumi.get(__ret__, 'time_started'),
+        upgrade_history_entry_id=pulumi.get(__ret__, 'upgrade_history_entry_id'))
 
 
 @_utilities.lift_output_func(get_db_systems_upgrade_history_entry)

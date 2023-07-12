@@ -199,16 +199,16 @@ def get_namespace_ingest_time_rules(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getNamespaceIngestTimeRules:getNamespaceIngestTimeRules', __args__, opts=opts, typ=GetNamespaceIngestTimeRulesResult).value
 
     return AwaitableGetNamespaceIngestTimeRulesResult(
-        compartment_id=__ret__.compartment_id,
-        condition_kind=__ret__.condition_kind,
-        display_name=__ret__.display_name,
-        field_name=__ret__.field_name,
-        field_value=__ret__.field_value,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        ingest_time_rule_summary_collections=__ret__.ingest_time_rule_summary_collections,
-        namespace=__ret__.namespace,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        condition_kind=pulumi.get(__ret__, 'condition_kind'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        field_name=pulumi.get(__ret__, 'field_name'),
+        field_value=pulumi.get(__ret__, 'field_value'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        ingest_time_rule_summary_collections=pulumi.get(__ret__, 'ingest_time_rule_summary_collections'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_namespace_ingest_time_rules)

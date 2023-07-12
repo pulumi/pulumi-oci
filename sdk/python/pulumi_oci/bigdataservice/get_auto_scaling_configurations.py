@@ -119,13 +119,13 @@ def get_auto_scaling_configurations(bds_instance_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:BigDataService/getAutoScalingConfigurations:getAutoScalingConfigurations', __args__, opts=opts, typ=GetAutoScalingConfigurationsResult).value
 
     return AwaitableGetAutoScalingConfigurationsResult(
-        auto_scaling_configurations=__ret__.auto_scaling_configurations,
-        bds_instance_id=__ret__.bds_instance_id,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        auto_scaling_configurations=pulumi.get(__ret__, 'auto_scaling_configurations'),
+        bds_instance_id=pulumi.get(__ret__, 'bds_instance_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_auto_scaling_configurations)

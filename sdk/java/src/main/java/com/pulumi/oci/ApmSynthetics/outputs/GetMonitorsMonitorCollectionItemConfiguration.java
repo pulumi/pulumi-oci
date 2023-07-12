@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail;
@@ -18,12 +19,17 @@ import java.util.Objects;
 @CustomType
 public final class GetMonitorsMonitorCollectionItemConfiguration {
     /**
+     * @return Details for client certificate.
+     * 
+     */
+    private List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail> clientCertificateDetails;
+    /**
      * @return Type of configuration.
      * 
      */
     private String configType;
     /**
-     * @return Dns settings.
+     * @return Information about the DNS settings.
      * 
      */
     private List<GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration> dnsConfigurations;
@@ -33,12 +39,17 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
      */
     private Boolean isCertificateValidationEnabled;
     /**
+     * @return If disabled then auto snapshots are not collected.
+     * 
+     */
+    private Boolean isDefaultSnapshotEnabled;
+    /**
      * @return If isFailureRetried is enabled, then a failed call will be retried.
      * 
      */
     private Boolean isFailureRetried;
     /**
-     * @return If redirection enabled, then redirects will be allowed while accessing target URL.
+     * @return If redirection is enabled, then redirects will be allowed while accessing target URL.
      * 
      */
     private Boolean isRedirectionEnabled;
@@ -53,7 +64,7 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
      */
     private List<GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail> reqAuthenticationDetails;
     /**
-     * @return Request http authentication scheme.
+     * @return Request HTTP authentication scheme.
      * 
      */
     private String reqAuthenticationScheme;
@@ -95,6 +106,13 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
 
     private GetMonitorsMonitorCollectionItemConfiguration() {}
     /**
+     * @return Details for client certificate.
+     * 
+     */
+    public List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail> clientCertificateDetails() {
+        return this.clientCertificateDetails;
+    }
+    /**
      * @return Type of configuration.
      * 
      */
@@ -102,7 +120,7 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         return this.configType;
     }
     /**
-     * @return Dns settings.
+     * @return Information about the DNS settings.
      * 
      */
     public List<GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration> dnsConfigurations() {
@@ -116,6 +134,13 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         return this.isCertificateValidationEnabled;
     }
     /**
+     * @return If disabled then auto snapshots are not collected.
+     * 
+     */
+    public Boolean isDefaultSnapshotEnabled() {
+        return this.isDefaultSnapshotEnabled;
+    }
+    /**
      * @return If isFailureRetried is enabled, then a failed call will be retried.
      * 
      */
@@ -123,7 +148,7 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         return this.isFailureRetried;
     }
     /**
-     * @return If redirection enabled, then redirects will be allowed while accessing target URL.
+     * @return If redirection is enabled, then redirects will be allowed while accessing target URL.
      * 
      */
     public Boolean isRedirectionEnabled() {
@@ -144,7 +169,7 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         return this.reqAuthenticationDetails;
     }
     /**
-     * @return Request http authentication scheme.
+     * @return Request HTTP authentication scheme.
      * 
      */
     public String reqAuthenticationScheme() {
@@ -209,9 +234,11 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail> clientCertificateDetails;
         private String configType;
         private List<GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration> dnsConfigurations;
         private Boolean isCertificateValidationEnabled;
+        private Boolean isDefaultSnapshotEnabled;
         private Boolean isFailureRetried;
         private Boolean isRedirectionEnabled;
         private List<GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration> networkConfigurations;
@@ -227,9 +254,11 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         public Builder() {}
         public Builder(GetMonitorsMonitorCollectionItemConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.clientCertificateDetails = defaults.clientCertificateDetails;
     	      this.configType = defaults.configType;
     	      this.dnsConfigurations = defaults.dnsConfigurations;
     	      this.isCertificateValidationEnabled = defaults.isCertificateValidationEnabled;
+    	      this.isDefaultSnapshotEnabled = defaults.isDefaultSnapshotEnabled;
     	      this.isFailureRetried = defaults.isFailureRetried;
     	      this.isRedirectionEnabled = defaults.isRedirectionEnabled;
     	      this.networkConfigurations = defaults.networkConfigurations;
@@ -244,6 +273,14 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
     	      this.verifyTexts = defaults.verifyTexts;
         }
 
+        @CustomType.Setter
+        public Builder clientCertificateDetails(List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail> clientCertificateDetails) {
+            this.clientCertificateDetails = Objects.requireNonNull(clientCertificateDetails);
+            return this;
+        }
+        public Builder clientCertificateDetails(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail... clientCertificateDetails) {
+            return clientCertificateDetails(List.of(clientCertificateDetails));
+        }
         @CustomType.Setter
         public Builder configType(String configType) {
             this.configType = Objects.requireNonNull(configType);
@@ -260,6 +297,11 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         @CustomType.Setter
         public Builder isCertificateValidationEnabled(Boolean isCertificateValidationEnabled) {
             this.isCertificateValidationEnabled = Objects.requireNonNull(isCertificateValidationEnabled);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isDefaultSnapshotEnabled(Boolean isDefaultSnapshotEnabled) {
+            this.isDefaultSnapshotEnabled = Objects.requireNonNull(isDefaultSnapshotEnabled);
             return this;
         }
         @CustomType.Setter
@@ -342,9 +384,11 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         }
         public GetMonitorsMonitorCollectionItemConfiguration build() {
             final var o = new GetMonitorsMonitorCollectionItemConfiguration();
+            o.clientCertificateDetails = clientCertificateDetails;
             o.configType = configType;
             o.dnsConfigurations = dnsConfigurations;
             o.isCertificateValidationEnabled = isCertificateValidationEnabled;
+            o.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
             o.isFailureRetried = isFailureRetried;
             o.isRedirectionEnabled = isRedirectionEnabled;
             o.networkConfigurations = networkConfigurations;

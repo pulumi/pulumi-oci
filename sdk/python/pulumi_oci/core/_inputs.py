@@ -2055,6 +2055,9 @@ class DefaultRouteTableRouteRuleArgs:
     @property
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""", DeprecationWarning)
+        pulumi.log.warn("""cidr_block is deprecated: The 'cidr_block' field has been deprecated. Please use 'destination' instead.""")
+
         return pulumi.get(self, "cidr_block")
 
     @cidr_block.setter
@@ -7747,6 +7750,9 @@ class RouteTableRouteRuleArgs:
 
         Example: `0.0.0.0/0`
         """
+        warnings.warn("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""", DeprecationWarning)
+        pulumi.log.warn("""cidr_block is deprecated: The 'cidr_block' field has been deprecated. Please use 'destination' instead.""")
+
         return pulumi.get(self, "cidr_block")
 
     @cidr_block.setter

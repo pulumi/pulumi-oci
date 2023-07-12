@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Database.inputs.VmClusterNetworkDrScanArgs;
 import com.pulumi.oci.Database.inputs.VmClusterNetworkScanArgs;
 import com.pulumi.oci.Database.inputs.VmClusterNetworkVmNetworkArgs;
 import java.lang.Boolean;
@@ -86,6 +87,21 @@ public final class VmClusterNetworkState extends com.pulumi.resources.ResourceAr
      */
     public Optional<Output<List<String>>> dns() {
         return Optional.ofNullable(this.dns);
+    }
+
+    /**
+     * (Updatable) The SCAN details for DR network
+     * 
+     */
+    @Import(name="drScans")
+    private @Nullable Output<List<VmClusterNetworkDrScanArgs>> drScans;
+
+    /**
+     * @return (Updatable) The SCAN details for DR network
+     * 
+     */
+    public Optional<Output<List<VmClusterNetworkDrScanArgs>>> drScans() {
+        return Optional.ofNullable(this.drScans);
     }
 
     /**
@@ -238,6 +254,7 @@ public final class VmClusterNetworkState extends com.pulumi.resources.ResourceAr
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.dns = $.dns;
+        this.drScans = $.drScans;
         this.exadataInfrastructureId = $.exadataInfrastructureId;
         this.freeformTags = $.freeformTags;
         this.lifecycleDetails = $.lifecycleDetails;
@@ -369,6 +386,37 @@ public final class VmClusterNetworkState extends com.pulumi.resources.ResourceAr
          */
         public Builder dns(String... dns) {
             return dns(List.of(dns));
+        }
+
+        /**
+         * @param drScans (Updatable) The SCAN details for DR network
+         * 
+         * @return builder
+         * 
+         */
+        public Builder drScans(@Nullable Output<List<VmClusterNetworkDrScanArgs>> drScans) {
+            $.drScans = drScans;
+            return this;
+        }
+
+        /**
+         * @param drScans (Updatable) The SCAN details for DR network
+         * 
+         * @return builder
+         * 
+         */
+        public Builder drScans(List<VmClusterNetworkDrScanArgs> drScans) {
+            return drScans(Output.of(drScans));
+        }
+
+        /**
+         * @param drScans (Updatable) The SCAN details for DR network
+         * 
+         * @return builder
+         * 
+         */
+        public Builder drScans(VmClusterNetworkDrScanArgs... drScans) {
+            return drScans(List.of(drScans));
         }
 
         /**

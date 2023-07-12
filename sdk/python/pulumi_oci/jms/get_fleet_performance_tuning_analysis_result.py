@@ -274,24 +274,24 @@ def get_fleet_performance_tuning_analysis_result(fleet_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Jms/getFleetPerformanceTuningAnalysisResult:getFleetPerformanceTuningAnalysisResult', __args__, opts=opts, typ=GetFleetPerformanceTuningAnalysisResultResult).value
 
     return AwaitableGetFleetPerformanceTuningAnalysisResultResult(
-        application_id=__ret__.application_id,
-        application_installation_id=__ret__.application_installation_id,
-        application_installation_path=__ret__.application_installation_path,
-        application_name=__ret__.application_name,
-        bucket=__ret__.bucket,
-        fleet_id=__ret__.fleet_id,
-        host_name=__ret__.host_name,
-        id=__ret__.id,
-        managed_instance_id=__ret__.managed_instance_id,
-        namespace=__ret__.namespace,
-        object=__ret__.object,
-        performance_tuning_analysis_result_id=__ret__.performance_tuning_analysis_result_id,
-        result=__ret__.result,
-        time_created=__ret__.time_created,
-        time_finished=__ret__.time_finished,
-        time_started=__ret__.time_started,
-        warning_count=__ret__.warning_count,
-        work_request_id=__ret__.work_request_id)
+        application_id=pulumi.get(__ret__, 'application_id'),
+        application_installation_id=pulumi.get(__ret__, 'application_installation_id'),
+        application_installation_path=pulumi.get(__ret__, 'application_installation_path'),
+        application_name=pulumi.get(__ret__, 'application_name'),
+        bucket=pulumi.get(__ret__, 'bucket'),
+        fleet_id=pulumi.get(__ret__, 'fleet_id'),
+        host_name=pulumi.get(__ret__, 'host_name'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        object=pulumi.get(__ret__, 'object'),
+        performance_tuning_analysis_result_id=pulumi.get(__ret__, 'performance_tuning_analysis_result_id'),
+        result=pulumi.get(__ret__, 'result'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_finished=pulumi.get(__ret__, 'time_finished'),
+        time_started=pulumi.get(__ret__, 'time_started'),
+        warning_count=pulumi.get(__ret__, 'warning_count'),
+        work_request_id=pulumi.get(__ret__, 'work_request_id'))
 
 
 @_utilities.lift_output_func(get_fleet_performance_tuning_analysis_result)

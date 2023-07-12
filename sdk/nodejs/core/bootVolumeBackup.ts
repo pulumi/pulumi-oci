@@ -31,6 +31,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     kmsKeyId: oci_kms_key.test_key.id,
  *     type: _var.boot_volume_backup_type,
  * });
  * ```
@@ -102,7 +103,7 @@ export class BootVolumeBackup extends pulumi.CustomResource {
     /**
      * The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
      */
-    public /*out*/ readonly kmsKeyId!: pulumi.Output<string>;
+    public readonly kmsKeyId!: pulumi.Output<string>;
     /**
      * The size of the boot volume, in GBs.
      */
@@ -182,11 +183,11 @@ export class BootVolumeBackup extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
             resourceInputs["sourceDetails"] = args ? args.sourceDetails : undefined;
             resourceInputs["type"] = args ? args.type : undefined;
             resourceInputs["expirationTime"] = undefined /*out*/;
             resourceInputs["imageId"] = undefined /*out*/;
-            resourceInputs["kmsKeyId"] = undefined /*out*/;
             resourceInputs["sizeInGbs"] = undefined /*out*/;
             resourceInputs["sourceBootVolumeBackupId"] = undefined /*out*/;
             resourceInputs["sourceType"] = undefined /*out*/;
@@ -303,6 +304,10 @@ export interface BootVolumeBackupArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+     */
+    kmsKeyId?: pulumi.Input<string>;
     /**
      * Details of the volume backup source in the cloud. Cannot be defined if `bootVolumeId` is defined.
      */

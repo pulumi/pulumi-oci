@@ -167,14 +167,14 @@ def get_databases(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getDatabases:getDatabases', __args__, opts=opts, typ=GetDatabasesResult).value
 
     return AwaitableGetDatabasesResult(
-        compartment_id=__ret__.compartment_id,
-        databases=__ret__.databases,
-        db_home_id=__ret__.db_home_id,
-        db_name=__ret__.db_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        system_id=__ret__.system_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        databases=pulumi.get(__ret__, 'databases'),
+        db_home_id=pulumi.get(__ret__, 'db_home_id'),
+        db_name=pulumi.get(__ret__, 'db_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        system_id=pulumi.get(__ret__, 'system_id'))
 
 
 @_utilities.lift_output_func(get_databases)

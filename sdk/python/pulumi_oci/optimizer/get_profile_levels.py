@@ -150,13 +150,13 @@ def get_profile_levels(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Optimizer/getProfileLevels:getProfileLevels', __args__, opts=opts, typ=GetProfileLevelsResult).value
 
     return AwaitableGetProfileLevelsResult(
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        profile_level_collections=__ret__.profile_level_collections,
-        recommendation_name=__ret__.recommendation_name)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        profile_level_collections=pulumi.get(__ret__, 'profile_level_collections'),
+        recommendation_name=pulumi.get(__ret__, 'recommendation_name'))
 
 
 @_utilities.lift_output_func(get_profile_levels)

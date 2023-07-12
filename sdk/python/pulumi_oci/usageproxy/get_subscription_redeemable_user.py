@@ -110,11 +110,11 @@ def get_subscription_redeemable_user(subscription_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:UsageProxy/getSubscriptionRedeemableUser:getSubscriptionRedeemableUser', __args__, opts=opts, typ=GetSubscriptionRedeemableUserResult).value
 
     return AwaitableGetSubscriptionRedeemableUserResult(
-        id=__ret__.id,
-        items=__ret__.items,
-        subscription_id=__ret__.subscription_id,
-        tenancy_id=__ret__.tenancy_id,
-        user_id=__ret__.user_id)
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'),
+        tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
+        user_id=pulumi.get(__ret__, 'user_id'))
 
 
 @_utilities.lift_output_func(get_subscription_redeemable_user)

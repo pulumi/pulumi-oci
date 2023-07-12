@@ -107,10 +107,10 @@ def get_appliance_image(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudBridge/getApplianceImage:getApplianceImage', __args__, opts=opts, typ=GetApplianceImageResult).value
 
     return AwaitableGetApplianceImageResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        id=__ret__.id,
-        items=__ret__.items)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'))
 
 
 @_utilities.lift_output_func(get_appliance_image)

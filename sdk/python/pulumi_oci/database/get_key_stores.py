@@ -106,10 +106,10 @@ def get_key_stores(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getKeyStores:getKeyStores', __args__, opts=opts, typ=GetKeyStoresResult).value
 
     return AwaitableGetKeyStoresResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        key_stores=__ret__.key_stores)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        key_stores=pulumi.get(__ret__, 'key_stores'))
 
 
 @_utilities.lift_output_func(get_key_stores)

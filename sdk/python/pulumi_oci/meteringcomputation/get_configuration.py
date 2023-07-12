@@ -91,9 +91,9 @@ def get_configuration(tenant_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:MeteringComputation/getConfiguration:getConfiguration', __args__, opts=opts, typ=GetConfigurationResult).value
 
     return AwaitableGetConfigurationResult(
-        id=__ret__.id,
-        items=__ret__.items,
-        tenant_id=__ret__.tenant_id)
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        tenant_id=pulumi.get(__ret__, 'tenant_id'))
 
 
 @_utilities.lift_output_func(get_configuration)

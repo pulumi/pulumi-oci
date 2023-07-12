@@ -236,21 +236,21 @@ def get_script(apm_domain_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApmSynthetics/getScript:getScript', __args__, opts=opts, typ=GetScriptResult).value
 
     return AwaitableGetScriptResult(
-        apm_domain_id=__ret__.apm_domain_id,
-        content=__ret__.content,
-        content_file_name=__ret__.content_file_name,
-        content_size_in_bytes=__ret__.content_size_in_bytes,
-        content_type=__ret__.content_type,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        monitor_status_count_maps=__ret__.monitor_status_count_maps,
-        parameters=__ret__.parameters,
-        script_id=__ret__.script_id,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        time_uploaded=__ret__.time_uploaded)
+        apm_domain_id=pulumi.get(__ret__, 'apm_domain_id'),
+        content=pulumi.get(__ret__, 'content'),
+        content_file_name=pulumi.get(__ret__, 'content_file_name'),
+        content_size_in_bytes=pulumi.get(__ret__, 'content_size_in_bytes'),
+        content_type=pulumi.get(__ret__, 'content_type'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        monitor_status_count_maps=pulumi.get(__ret__, 'monitor_status_count_maps'),
+        parameters=pulumi.get(__ret__, 'parameters'),
+        script_id=pulumi.get(__ret__, 'script_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        time_uploaded=pulumi.get(__ret__, 'time_uploaded'))
 
 
 @_utilities.lift_output_func(get_script)

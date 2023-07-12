@@ -158,13 +158,13 @@ def get_datasets(annotation_format: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataLabellingService/getDatasets:getDatasets', __args__, opts=opts, typ=GetDatasetsResult).value
 
     return AwaitableGetDatasetsResult(
-        annotation_format=__ret__.annotation_format,
-        compartment_id=__ret__.compartment_id,
-        dataset_collections=__ret__.dataset_collections,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        annotation_format=pulumi.get(__ret__, 'annotation_format'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        dataset_collections=pulumi.get(__ret__, 'dataset_collections'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_datasets)

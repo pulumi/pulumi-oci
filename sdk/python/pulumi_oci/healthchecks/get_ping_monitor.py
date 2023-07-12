@@ -246,22 +246,22 @@ def get_ping_monitor(monitor_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:HealthChecks/getPingMonitor:getPingMonitor', __args__, opts=opts, typ=GetPingMonitorResult).value
 
     return AwaitableGetPingMonitorResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        home_region=__ret__.home_region,
-        id=__ret__.id,
-        interval_in_seconds=__ret__.interval_in_seconds,
-        is_enabled=__ret__.is_enabled,
-        monitor_id=__ret__.monitor_id,
-        port=__ret__.port,
-        protocol=__ret__.protocol,
-        results_url=__ret__.results_url,
-        targets=__ret__.targets,
-        time_created=__ret__.time_created,
-        timeout_in_seconds=__ret__.timeout_in_seconds,
-        vantage_point_names=__ret__.vantage_point_names)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        home_region=pulumi.get(__ret__, 'home_region'),
+        id=pulumi.get(__ret__, 'id'),
+        interval_in_seconds=pulumi.get(__ret__, 'interval_in_seconds'),
+        is_enabled=pulumi.get(__ret__, 'is_enabled'),
+        monitor_id=pulumi.get(__ret__, 'monitor_id'),
+        port=pulumi.get(__ret__, 'port'),
+        protocol=pulumi.get(__ret__, 'protocol'),
+        results_url=pulumi.get(__ret__, 'results_url'),
+        targets=pulumi.get(__ret__, 'targets'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        timeout_in_seconds=pulumi.get(__ret__, 'timeout_in_seconds'),
+        vantage_point_names=pulumi.get(__ret__, 'vantage_point_names'))
 
 
 @_utilities.lift_output_func(get_ping_monitor)

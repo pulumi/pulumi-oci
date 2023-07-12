@@ -75,10 +75,12 @@ import * as utilities from "../utilities";
  *         source: {
  *             kind: _var.migration_dump_transfer_details_source_kind,
  *             ociHome: _var.migration_dump_transfer_details_source_oci_home,
+ *             walletLocation: _var.migration_dump_transfer_details_source_wallet_location,
  *         },
  *         target: {
  *             kind: _var.migration_dump_transfer_details_target_kind,
  *             ociHome: _var.migration_dump_transfer_details_target_oci_home,
+ *             walletLocation: _var.migration_dump_transfer_details_target_wallet_location,
  *         },
  *     },
  *     excludeObjects: [{

@@ -48,18 +48,18 @@ public final class VmClusterNetworkScanArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) The SCAN TCPIP port. Default is 1521.
+     * (Updatable) **Deprecated.** This field is deprecated. You may use &#39;scanListenerPortTcp&#39; to specify the port. The SCAN TCPIP port. Default is 1521.
      * 
      */
-    @Import(name="port", required=true)
-    private Output<Integer> port;
+    @Import(name="port")
+    private @Nullable Output<Integer> port;
 
     /**
-     * @return (Updatable) The SCAN TCPIP port. Default is 1521.
+     * @return (Updatable) **Deprecated.** This field is deprecated. You may use &#39;scanListenerPortTcp&#39; to specify the port. The SCAN TCPIP port. Default is 1521.
      * 
      */
-    public Output<Integer> port() {
-        return this.port;
+    public Optional<Output<Integer>> port() {
+        return Optional.ofNullable(this.port);
     }
 
     /**
@@ -173,18 +173,18 @@ public final class VmClusterNetworkScanArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param port (Updatable) The SCAN TCPIP port. Default is 1521.
+         * @param port (Updatable) **Deprecated.** This field is deprecated. You may use &#39;scanListenerPortTcp&#39; to specify the port. The SCAN TCPIP port. Default is 1521.
          * 
          * @return builder
          * 
          */
-        public Builder port(Output<Integer> port) {
+        public Builder port(@Nullable Output<Integer> port) {
             $.port = port;
             return this;
         }
 
         /**
-         * @param port (Updatable) The SCAN TCPIP port. Default is 1521.
+         * @param port (Updatable) **Deprecated.** This field is deprecated. You may use &#39;scanListenerPortTcp&#39; to specify the port. The SCAN TCPIP port. Default is 1521.
          * 
          * @return builder
          * 
@@ -238,7 +238,6 @@ public final class VmClusterNetworkScanArgs extends com.pulumi.resources.Resourc
         public VmClusterNetworkScanArgs build() {
             $.hostname = Objects.requireNonNull($.hostname, "expected parameter 'hostname' to be non-null");
             $.ips = Objects.requireNonNull($.ips, "expected parameter 'ips' to be non-null");
-            $.port = Objects.requireNonNull($.port, "expected parameter 'port' to be non-null");
             return $;
         }
     }

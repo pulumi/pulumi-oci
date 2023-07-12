@@ -159,13 +159,13 @@ def get_identity_providers(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getIdentityProviders:getIdentityProviders', __args__, opts=opts, typ=GetIdentityProvidersResult).value
 
     return AwaitableGetIdentityProvidersResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        identity_providers=__ret__.identity_providers,
-        name=__ret__.name,
-        protocol=__ret__.protocol,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        identity_providers=pulumi.get(__ret__, 'identity_providers'),
+        name=pulumi.get(__ret__, 'name'),
+        protocol=pulumi.get(__ret__, 'protocol'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_identity_providers)

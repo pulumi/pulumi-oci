@@ -125,11 +125,11 @@ def get_key_versions(filters: Optional[Sequence[pulumi.InputType['GetKeyVersions
     __ret__ = pulumi.runtime.invoke('oci:Kms/getKeyVersions:getKeyVersions', __args__, opts=opts, typ=GetKeyVersionsResult).value
 
     return AwaitableGetKeyVersionsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        key_id=__ret__.key_id,
-        key_versions=__ret__.key_versions,
-        management_endpoint=__ret__.management_endpoint)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        key_id=pulumi.get(__ret__, 'key_id'),
+        key_versions=pulumi.get(__ret__, 'key_versions'),
+        management_endpoint=pulumi.get(__ret__, 'management_endpoint'))
 
 
 @_utilities.lift_output_func(get_key_versions)

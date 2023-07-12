@@ -158,13 +158,13 @@ def get_deploy_stages(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getDeployStages:getDeployStages', __args__, opts=opts, typ=GetDeployStagesResult).value
 
     return AwaitableGetDeployStagesResult(
-        compartment_id=__ret__.compartment_id,
-        deploy_pipeline_id=__ret__.deploy_pipeline_id,
-        deploy_stage_collections=__ret__.deploy_stage_collections,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        deploy_pipeline_id=pulumi.get(__ret__, 'deploy_pipeline_id'),
+        deploy_stage_collections=pulumi.get(__ret__, 'deploy_stage_collections'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_deploy_stages)

@@ -156,13 +156,13 @@ def get_vnic_attachments(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getVnicAttachments:getVnicAttachments', __args__, opts=opts, typ=GetVnicAttachmentsResult).value
 
     return AwaitableGetVnicAttachmentsResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        instance_id=__ret__.instance_id,
-        vnic_attachments=__ret__.vnic_attachments,
-        vnic_id=__ret__.vnic_id)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        instance_id=pulumi.get(__ret__, 'instance_id'),
+        vnic_attachments=pulumi.get(__ret__, 'vnic_attachments'),
+        vnic_id=pulumi.get(__ret__, 'vnic_id'))
 
 
 @_utilities.lift_output_func(get_vnic_attachments)

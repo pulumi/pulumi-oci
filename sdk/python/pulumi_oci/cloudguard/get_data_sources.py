@@ -210,16 +210,16 @@ def get_data_sources(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudGuard/getDataSources:getDataSources', __args__, opts=opts, typ=GetDataSourcesResult).value
 
     return AwaitableGetDataSourcesResult(
-        access_level=__ret__.access_level,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        data_source_collections=__ret__.data_source_collections,
-        data_source_feed_provider=__ret__.data_source_feed_provider,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        logging_query_type=__ret__.logging_query_type,
-        state=__ret__.state)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        data_source_collections=pulumi.get(__ret__, 'data_source_collections'),
+        data_source_feed_provider=pulumi.get(__ret__, 'data_source_feed_provider'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        logging_query_type=pulumi.get(__ret__, 'logging_query_type'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_data_sources)

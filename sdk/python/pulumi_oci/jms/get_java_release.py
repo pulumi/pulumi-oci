@@ -214,19 +214,19 @@ def get_java_release(release_version: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Jms/getJavaRelease:getJavaRelease', __args__, opts=opts, typ=GetJavaReleaseResult).value
 
     return AwaitableGetJavaReleaseResult(
-        artifact_content_types=__ret__.artifact_content_types,
-        artifacts=__ret__.artifacts,
-        family_details=__ret__.family_details,
-        family_version=__ret__.family_version,
-        id=__ret__.id,
-        license_details=__ret__.license_details,
-        license_type=__ret__.license_type,
-        parent_release_version=__ret__.parent_release_version,
-        release_date=__ret__.release_date,
-        release_notes_url=__ret__.release_notes_url,
-        release_type=__ret__.release_type,
-        release_version=__ret__.release_version,
-        security_status=__ret__.security_status)
+        artifact_content_types=pulumi.get(__ret__, 'artifact_content_types'),
+        artifacts=pulumi.get(__ret__, 'artifacts'),
+        family_details=pulumi.get(__ret__, 'family_details'),
+        family_version=pulumi.get(__ret__, 'family_version'),
+        id=pulumi.get(__ret__, 'id'),
+        license_details=pulumi.get(__ret__, 'license_details'),
+        license_type=pulumi.get(__ret__, 'license_type'),
+        parent_release_version=pulumi.get(__ret__, 'parent_release_version'),
+        release_date=pulumi.get(__ret__, 'release_date'),
+        release_notes_url=pulumi.get(__ret__, 'release_notes_url'),
+        release_type=pulumi.get(__ret__, 'release_type'),
+        release_version=pulumi.get(__ret__, 'release_version'),
+        security_status=pulumi.get(__ret__, 'security_status'))
 
 
 @_utilities.lift_output_func(get_java_release)

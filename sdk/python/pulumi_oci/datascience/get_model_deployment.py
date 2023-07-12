@@ -235,21 +235,21 @@ def get_model_deployment(model_deployment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataScience/getModelDeployment:getModelDeployment', __args__, opts=opts, typ=GetModelDeploymentResult).value
 
     return AwaitableGetModelDeploymentResult(
-        category_log_details=__ret__.category_log_details,
-        compartment_id=__ret__.compartment_id,
-        created_by=__ret__.created_by,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        model_deployment_configuration_details=__ret__.model_deployment_configuration_details,
-        model_deployment_id=__ret__.model_deployment_id,
-        model_deployment_url=__ret__.model_deployment_url,
-        project_id=__ret__.project_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created)
+        category_log_details=pulumi.get(__ret__, 'category_log_details'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        created_by=pulumi.get(__ret__, 'created_by'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        model_deployment_configuration_details=pulumi.get(__ret__, 'model_deployment_configuration_details'),
+        model_deployment_id=pulumi.get(__ret__, 'model_deployment_id'),
+        model_deployment_url=pulumi.get(__ret__, 'model_deployment_url'),
+        project_id=pulumi.get(__ret__, 'project_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_model_deployment)

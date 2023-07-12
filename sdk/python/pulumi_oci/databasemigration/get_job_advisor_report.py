@@ -151,14 +151,14 @@ def get_job_advisor_report(job_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport', __args__, opts=opts, typ=GetJobAdvisorReportResult).value
 
     return AwaitableGetJobAdvisorReportResult(
-        id=__ret__.id,
-        job_id=__ret__.job_id,
-        number_of_fatal=__ret__.number_of_fatal,
-        number_of_fatal_blockers=__ret__.number_of_fatal_blockers,
-        number_of_informational_results=__ret__.number_of_informational_results,
-        number_of_warnings=__ret__.number_of_warnings,
-        report_location_details=__ret__.report_location_details,
-        result=__ret__.result)
+        id=pulumi.get(__ret__, 'id'),
+        job_id=pulumi.get(__ret__, 'job_id'),
+        number_of_fatal=pulumi.get(__ret__, 'number_of_fatal'),
+        number_of_fatal_blockers=pulumi.get(__ret__, 'number_of_fatal_blockers'),
+        number_of_informational_results=pulumi.get(__ret__, 'number_of_informational_results'),
+        number_of_warnings=pulumi.get(__ret__, 'number_of_warnings'),
+        report_location_details=pulumi.get(__ret__, 'report_location_details'),
+        result=pulumi.get(__ret__, 'result'))
 
 
 @_utilities.lift_output_func(get_job_advisor_report)

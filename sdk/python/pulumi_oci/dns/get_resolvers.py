@@ -160,13 +160,13 @@ def get_resolvers(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Dns/getResolvers:getResolvers', __args__, opts=opts, typ=GetResolversResult).value
 
     return AwaitableGetResolversResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        resolvers=__ret__.resolvers,
-        scope=__ret__.scope,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        resolvers=pulumi.get(__ret__, 'resolvers'),
+        scope=pulumi.get(__ret__, 'scope'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_resolvers)

@@ -92,9 +92,9 @@ def get_alert_policy_rule(alert_policy_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getAlertPolicyRule:getAlertPolicyRule', __args__, opts=opts, typ=GetAlertPolicyRuleResult).value
 
     return AwaitableGetAlertPolicyRuleResult(
-        alert_policy_id=__ret__.alert_policy_id,
-        id=__ret__.id,
-        items=__ret__.items)
+        alert_policy_id=pulumi.get(__ret__, 'alert_policy_id'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'))
 
 
 @_utilities.lift_output_func(get_alert_policy_rule)

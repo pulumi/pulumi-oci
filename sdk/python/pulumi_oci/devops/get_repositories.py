@@ -167,14 +167,14 @@ def get_repositories(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getRepositories:getRepositories', __args__, opts=opts, typ=GetRepositoriesResult).value
 
     return AwaitableGetRepositoriesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        project_id=__ret__.project_id,
-        repository_collections=__ret__.repository_collections,
-        repository_id=__ret__.repository_id,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        project_id=pulumi.get(__ret__, 'project_id'),
+        repository_collections=pulumi.get(__ret__, 'repository_collections'),
+        repository_id=pulumi.get(__ret__, 'repository_id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_repositories)

@@ -103,10 +103,10 @@ def get_certificates(filters: Optional[Sequence[pulumi.InputType['GetCertificate
     __ret__ = pulumi.runtime.invoke('oci:LoadBalancer/getCertificates:getCertificates', __args__, opts=opts, typ=GetCertificatesResult).value
 
     return AwaitableGetCertificatesResult(
-        certificates=__ret__.certificates,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        load_balancer_id=__ret__.load_balancer_id)
+        certificates=pulumi.get(__ret__, 'certificates'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'))
 
 
 @_utilities.lift_output_func(get_certificates)

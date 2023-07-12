@@ -247,22 +247,22 @@ def get_data_mask_rule(data_mask_rule_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudGuard/getDataMaskRule:getDataMaskRule', __args__, opts=opts, typ=GetDataMaskRuleResult).value
 
     return AwaitableGetDataMaskRuleResult(
-        compartment_id=__ret__.compartment_id,
-        data_mask_categories=__ret__.data_mask_categories,
-        data_mask_rule_id=__ret__.data_mask_rule_id,
-        data_mask_rule_status=__ret__.data_mask_rule_status,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        iam_group_id=__ret__.iam_group_id,
-        id=__ret__.id,
-        lifecyle_details=__ret__.lifecyle_details,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        target_selecteds=__ret__.target_selecteds,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        data_mask_categories=pulumi.get(__ret__, 'data_mask_categories'),
+        data_mask_rule_id=pulumi.get(__ret__, 'data_mask_rule_id'),
+        data_mask_rule_status=pulumi.get(__ret__, 'data_mask_rule_status'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        iam_group_id=pulumi.get(__ret__, 'iam_group_id'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecyle_details=pulumi.get(__ret__, 'lifecyle_details'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        target_selecteds=pulumi.get(__ret__, 'target_selecteds'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_data_mask_rule)

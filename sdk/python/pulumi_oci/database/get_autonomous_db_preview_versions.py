@@ -104,10 +104,10 @@ def get_autonomous_db_preview_versions(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousDbPreviewVersions:getAutonomousDbPreviewVersions', __args__, opts=opts, typ=GetAutonomousDbPreviewVersionsResult).value
 
     return AwaitableGetAutonomousDbPreviewVersionsResult(
-        autonomous_db_preview_versions=__ret__.autonomous_db_preview_versions,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        autonomous_db_preview_versions=pulumi.get(__ret__, 'autonomous_db_preview_versions'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_autonomous_db_preview_versions)

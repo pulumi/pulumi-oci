@@ -271,24 +271,24 @@ def get_gateway(gateway_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApiGateway/getGateway:getGateway', __args__, opts=opts, typ=GetGatewayResult).value
 
     return AwaitableGetGatewayResult(
-        ca_bundles=__ret__.ca_bundles,
-        certificate_id=__ret__.certificate_id,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        endpoint_type=__ret__.endpoint_type,
-        freeform_tags=__ret__.freeform_tags,
-        gateway_id=__ret__.gateway_id,
-        hostname=__ret__.hostname,
-        id=__ret__.id,
-        ip_addresses=__ret__.ip_addresses,
-        lifecycle_details=__ret__.lifecycle_details,
-        network_security_group_ids=__ret__.network_security_group_ids,
-        response_cache_details=__ret__.response_cache_details,
-        state=__ret__.state,
-        subnet_id=__ret__.subnet_id,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        ca_bundles=pulumi.get(__ret__, 'ca_bundles'),
+        certificate_id=pulumi.get(__ret__, 'certificate_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        endpoint_type=pulumi.get(__ret__, 'endpoint_type'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        gateway_id=pulumi.get(__ret__, 'gateway_id'),
+        hostname=pulumi.get(__ret__, 'hostname'),
+        id=pulumi.get(__ret__, 'id'),
+        ip_addresses=pulumi.get(__ret__, 'ip_addresses'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        network_security_group_ids=pulumi.get(__ret__, 'network_security_group_ids'),
+        response_cache_details=pulumi.get(__ret__, 'response_cache_details'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_gateway)

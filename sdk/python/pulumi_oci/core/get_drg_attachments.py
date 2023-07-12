@@ -217,17 +217,17 @@ def get_drg_attachments(attachment_type: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getDrgAttachments:getDrgAttachments', __args__, opts=opts, typ=GetDrgAttachmentsResult).value
 
     return AwaitableGetDrgAttachmentsResult(
-        attachment_type=__ret__.attachment_type,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        drg_attachments=__ret__.drg_attachments,
-        drg_id=__ret__.drg_id,
-        drg_route_table_id=__ret__.drg_route_table_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        network_id=__ret__.network_id,
-        state=__ret__.state,
-        vcn_id=__ret__.vcn_id)
+        attachment_type=pulumi.get(__ret__, 'attachment_type'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        drg_attachments=pulumi.get(__ret__, 'drg_attachments'),
+        drg_id=pulumi.get(__ret__, 'drg_id'),
+        drg_route_table_id=pulumi.get(__ret__, 'drg_route_table_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        network_id=pulumi.get(__ret__, 'network_id'),
+        state=pulumi.get(__ret__, 'state'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_drg_attachments)

@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? LifecycleDetails;
         /// <summary>
-        /// (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        /// The current state of the Autonomous Database.
         /// </summary>
         public readonly string? State;
         /// <summary>

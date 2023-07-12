@@ -286,25 +286,25 @@ def get_autonomous_container_database_dataguard_association(autonomous_container
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousContainerDatabaseDataguardAssociation:getAutonomousContainerDatabaseDataguardAssociation', __args__, opts=opts, typ=GetAutonomousContainerDatabaseDataguardAssociationResult).value
 
     return AwaitableGetAutonomousContainerDatabaseDataguardAssociationResult(
-        apply_lag=__ret__.apply_lag,
-        apply_rate=__ret__.apply_rate,
-        autonomous_container_database_dataguard_association_id=__ret__.autonomous_container_database_dataguard_association_id,
-        autonomous_container_database_id=__ret__.autonomous_container_database_id,
-        fast_start_fail_over_lag_limit_in_seconds=__ret__.fast_start_fail_over_lag_limit_in_seconds,
-        id=__ret__.id,
-        is_automatic_failover_enabled=__ret__.is_automatic_failover_enabled,
-        lifecycle_details=__ret__.lifecycle_details,
-        peer_autonomous_container_database_dataguard_association_id=__ret__.peer_autonomous_container_database_dataguard_association_id,
-        peer_autonomous_container_database_id=__ret__.peer_autonomous_container_database_id,
-        peer_lifecycle_state=__ret__.peer_lifecycle_state,
-        peer_role=__ret__.peer_role,
-        protection_mode=__ret__.protection_mode,
-        role=__ret__.role,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_last_role_changed=__ret__.time_last_role_changed,
-        time_last_synced=__ret__.time_last_synced,
-        transport_lag=__ret__.transport_lag)
+        apply_lag=pulumi.get(__ret__, 'apply_lag'),
+        apply_rate=pulumi.get(__ret__, 'apply_rate'),
+        autonomous_container_database_dataguard_association_id=pulumi.get(__ret__, 'autonomous_container_database_dataguard_association_id'),
+        autonomous_container_database_id=pulumi.get(__ret__, 'autonomous_container_database_id'),
+        fast_start_fail_over_lag_limit_in_seconds=pulumi.get(__ret__, 'fast_start_fail_over_lag_limit_in_seconds'),
+        id=pulumi.get(__ret__, 'id'),
+        is_automatic_failover_enabled=pulumi.get(__ret__, 'is_automatic_failover_enabled'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        peer_autonomous_container_database_dataguard_association_id=pulumi.get(__ret__, 'peer_autonomous_container_database_dataguard_association_id'),
+        peer_autonomous_container_database_id=pulumi.get(__ret__, 'peer_autonomous_container_database_id'),
+        peer_lifecycle_state=pulumi.get(__ret__, 'peer_lifecycle_state'),
+        peer_role=pulumi.get(__ret__, 'peer_role'),
+        protection_mode=pulumi.get(__ret__, 'protection_mode'),
+        role=pulumi.get(__ret__, 'role'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_last_role_changed=pulumi.get(__ret__, 'time_last_role_changed'),
+        time_last_synced=pulumi.get(__ret__, 'time_last_synced'),
+        transport_lag=pulumi.get(__ret__, 'transport_lag'))
 
 
 @_utilities.lift_output_func(get_autonomous_container_database_dataguard_association)

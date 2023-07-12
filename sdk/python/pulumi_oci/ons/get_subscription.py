@@ -200,18 +200,18 @@ def get_subscription(subscription_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Ons/getSubscription:getSubscription', __args__, opts=opts, typ=GetSubscriptionResult).value
 
     return AwaitableGetSubscriptionResult(
-        compartment_id=__ret__.compartment_id,
-        created_time=__ret__.created_time,
-        defined_tags=__ret__.defined_tags,
-        delivery_policy=__ret__.delivery_policy,
-        endpoint=__ret__.endpoint,
-        etag=__ret__.etag,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        protocol=__ret__.protocol,
-        state=__ret__.state,
-        subscription_id=__ret__.subscription_id,
-        topic_id=__ret__.topic_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        created_time=pulumi.get(__ret__, 'created_time'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        delivery_policy=pulumi.get(__ret__, 'delivery_policy'),
+        endpoint=pulumi.get(__ret__, 'endpoint'),
+        etag=pulumi.get(__ret__, 'etag'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        protocol=pulumi.get(__ret__, 'protocol'),
+        state=pulumi.get(__ret__, 'state'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'),
+        topic_id=pulumi.get(__ret__, 'topic_id'))
 
 
 @_utilities.lift_output_func(get_subscription)

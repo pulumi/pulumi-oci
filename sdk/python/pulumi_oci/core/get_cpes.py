@@ -106,10 +106,10 @@ def get_cpes(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getCpes:getCpes', __args__, opts=opts, typ=GetCpesResult).value
 
     return AwaitableGetCpesResult(
-        compartment_id=__ret__.compartment_id,
-        cpes=__ret__.cpes,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        cpes=pulumi.get(__ret__, 'cpes'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_cpes)

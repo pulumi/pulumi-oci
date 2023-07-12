@@ -138,12 +138,12 @@ def get_profiles(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Optimizer/getProfiles:getProfiles', __args__, opts=opts, typ=GetProfilesResult).value
 
     return AwaitableGetProfilesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        profile_collections=__ret__.profile_collections,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        profile_collections=pulumi.get(__ret__, 'profile_collections'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_profiles)

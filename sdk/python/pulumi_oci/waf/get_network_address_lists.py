@@ -142,12 +142,12 @@ def get_network_address_lists(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Waf/getNetworkAddressLists:getNetworkAddressLists', __args__, opts=opts, typ=GetNetworkAddressListsResult).value
 
     return AwaitableGetNetworkAddressListsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        network_address_list_collections=__ret__.network_address_list_collections,
-        states=__ret__.states)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        network_address_list_collections=pulumi.get(__ret__, 'network_address_list_collections'),
+        states=pulumi.get(__ret__, 'states'))
 
 
 @_utilities.lift_output_func(get_network_address_lists)

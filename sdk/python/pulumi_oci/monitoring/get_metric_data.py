@@ -216,17 +216,17 @@ def get_metric_data(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Monitoring/getMetricData:getMetricData', __args__, opts=opts, typ=GetMetricDataResult).value
 
     return AwaitableGetMetricDataResult(
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        end_time=__ret__.end_time,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        metric_datas=__ret__.metric_datas,
-        namespace=__ret__.namespace,
-        query=__ret__.query,
-        resolution=__ret__.resolution,
-        resource_group=__ret__.resource_group,
-        start_time=__ret__.start_time)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        end_time=pulumi.get(__ret__, 'end_time'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        metric_datas=pulumi.get(__ret__, 'metric_datas'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        query=pulumi.get(__ret__, 'query'),
+        resolution=pulumi.get(__ret__, 'resolution'),
+        resource_group=pulumi.get(__ret__, 'resource_group'),
+        start_time=pulumi.get(__ret__, 'start_time'))
 
 
 @_utilities.lift_output_func(get_metric_data)

@@ -183,15 +183,15 @@ def get_bds_instance_metastore_configs(bds_api_key_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:BigDataService/getBdsInstanceMetastoreConfigs:getBdsInstanceMetastoreConfigs', __args__, opts=opts, typ=GetBdsInstanceMetastoreConfigsResult).value
 
     return AwaitableGetBdsInstanceMetastoreConfigsResult(
-        bds_api_key_id=__ret__.bds_api_key_id,
-        bds_instance_id=__ret__.bds_instance_id,
-        bds_metastore_configurations=__ret__.bds_metastore_configurations,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        metastore_id=__ret__.metastore_id,
-        metastore_type=__ret__.metastore_type,
-        state=__ret__.state)
+        bds_api_key_id=pulumi.get(__ret__, 'bds_api_key_id'),
+        bds_instance_id=pulumi.get(__ret__, 'bds_instance_id'),
+        bds_metastore_configurations=pulumi.get(__ret__, 'bds_metastore_configurations'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        metastore_id=pulumi.get(__ret__, 'metastore_id'),
+        metastore_type=pulumi.get(__ret__, 'metastore_type'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_bds_instance_metastore_configs)

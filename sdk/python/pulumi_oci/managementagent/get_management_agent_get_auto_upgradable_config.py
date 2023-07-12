@@ -91,9 +91,9 @@ def get_management_agent_get_auto_upgradable_config(compartment_id: Optional[str
     __ret__ = pulumi.runtime.invoke('oci:ManagementAgent/getManagementAgentGetAutoUpgradableConfig:getManagementAgentGetAutoUpgradableConfig', __args__, opts=opts, typ=GetManagementAgentGetAutoUpgradableConfigResult).value
 
     return AwaitableGetManagementAgentGetAutoUpgradableConfigResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        is_agent_auto_upgradable=__ret__.is_agent_auto_upgradable)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        is_agent_auto_upgradable=pulumi.get(__ret__, 'is_agent_auto_upgradable'))
 
 
 @_utilities.lift_output_func(get_management_agent_get_auto_upgradable_config)

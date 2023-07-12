@@ -216,17 +216,17 @@ def get_mysql_db_systems(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Mysql/getMysqlDbSystems:getMysqlDbSystems', __args__, opts=opts, typ=GetMysqlDbSystemsResult).value
 
     return AwaitableGetMysqlDbSystemsResult(
-        compartment_id=__ret__.compartment_id,
-        configuration_id=__ret__.configuration_id,
-        db_system_id=__ret__.db_system_id,
-        db_systems=__ret__.db_systems,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_analytics_cluster_attached=__ret__.is_analytics_cluster_attached,
-        is_heat_wave_cluster_attached=__ret__.is_heat_wave_cluster_attached,
-        is_up_to_date=__ret__.is_up_to_date,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        configuration_id=pulumi.get(__ret__, 'configuration_id'),
+        db_system_id=pulumi.get(__ret__, 'db_system_id'),
+        db_systems=pulumi.get(__ret__, 'db_systems'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_analytics_cluster_attached=pulumi.get(__ret__, 'is_analytics_cluster_attached'),
+        is_heat_wave_cluster_attached=pulumi.get(__ret__, 'is_heat_wave_cluster_attached'),
+        is_up_to_date=pulumi.get(__ret__, 'is_up_to_date'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_mysql_db_systems)

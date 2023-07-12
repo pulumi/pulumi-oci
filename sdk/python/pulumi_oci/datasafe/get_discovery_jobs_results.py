@@ -202,16 +202,16 @@ def get_discovery_jobs_results(column_names: Optional[Sequence[str]] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getDiscoveryJobsResults:getDiscoveryJobsResults', __args__, opts=opts, typ=GetDiscoveryJobsResultsResult).value
 
     return AwaitableGetDiscoveryJobsResultsResult(
-        column_names=__ret__.column_names,
-        discovery_job_id=__ret__.discovery_job_id,
-        discovery_job_result_collections=__ret__.discovery_job_result_collections,
-        discovery_type=__ret__.discovery_type,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_result_applied=__ret__.is_result_applied,
-        objects=__ret__.objects,
-        planned_action=__ret__.planned_action,
-        schema_names=__ret__.schema_names)
+        column_names=pulumi.get(__ret__, 'column_names'),
+        discovery_job_id=pulumi.get(__ret__, 'discovery_job_id'),
+        discovery_job_result_collections=pulumi.get(__ret__, 'discovery_job_result_collections'),
+        discovery_type=pulumi.get(__ret__, 'discovery_type'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_result_applied=pulumi.get(__ret__, 'is_result_applied'),
+        objects=pulumi.get(__ret__, 'objects'),
+        planned_action=pulumi.get(__ret__, 'planned_action'),
+        schema_names=pulumi.get(__ret__, 'schema_names'))
 
 
 @_utilities.lift_output_func(get_discovery_jobs_results)

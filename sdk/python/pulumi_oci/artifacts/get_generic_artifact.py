@@ -210,19 +210,19 @@ def get_generic_artifact(artifact_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Artifacts/getGenericArtifact:getGenericArtifact', __args__, opts=opts, typ=GetGenericArtifactResult).value
 
     return AwaitableGetGenericArtifactResult(
-        artifact_id=__ret__.artifact_id,
-        artifact_path=__ret__.artifact_path,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        repository_id=__ret__.repository_id,
-        sha256=__ret__.sha256,
-        size_in_bytes=__ret__.size_in_bytes,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        version=__ret__.version)
+        artifact_id=pulumi.get(__ret__, 'artifact_id'),
+        artifact_path=pulumi.get(__ret__, 'artifact_path'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        repository_id=pulumi.get(__ret__, 'repository_id'),
+        sha256=pulumi.get(__ret__, 'sha256'),
+        size_in_bytes=pulumi.get(__ret__, 'size_in_bytes'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_generic_artifact)

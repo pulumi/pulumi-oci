@@ -186,17 +186,17 @@ def get_index(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Nosql/getIndex:getIndex', __args__, opts=opts, typ=GetIndexResult).value
 
     return AwaitableGetIndexResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        index_name=__ret__.index_name,
-        is_if_not_exists=__ret__.is_if_not_exists,
-        keys=__ret__.keys,
-        lifecycle_details=__ret__.lifecycle_details,
-        name=__ret__.name,
-        state=__ret__.state,
-        table_id=__ret__.table_id,
-        table_name=__ret__.table_name,
-        table_name_or_id=__ret__.table_name_or_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        index_name=pulumi.get(__ret__, 'index_name'),
+        is_if_not_exists=pulumi.get(__ret__, 'is_if_not_exists'),
+        keys=pulumi.get(__ret__, 'keys'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        table_id=pulumi.get(__ret__, 'table_id'),
+        table_name=pulumi.get(__ret__, 'table_name'),
+        table_name_or_id=pulumi.get(__ret__, 'table_name_or_id'))
 
 
 @_utilities.lift_output_func(get_index)

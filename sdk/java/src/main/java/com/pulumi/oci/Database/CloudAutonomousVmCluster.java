@@ -304,14 +304,14 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="dbServers", type=List.class, parameters={String.class})
-    private Output</* @Nullable */ List<String>> dbServers;
+    private Output<List<String>> dbServers;
 
     /**
      * @return The list of database servers.
      * 
      */
-    public Output<Optional<List<String>>> dbServers() {
-        return Codegen.optional(this.dbServers);
+    public Output<List<String>> dbServers() {
+        return this.dbServers;
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

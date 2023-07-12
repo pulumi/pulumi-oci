@@ -151,13 +151,13 @@ def get_controls(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OperatorAccessControl/getControls:getControls', __args__, opts=opts, typ=GetControlsResult).value
 
     return AwaitableGetControlsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        operator_control_collections=__ret__.operator_control_collections,
-        resource_type=__ret__.resource_type,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        operator_control_collections=pulumi.get(__ret__, 'operator_control_collections'),
+        resource_type=pulumi.get(__ret__, 'resource_type'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_controls)

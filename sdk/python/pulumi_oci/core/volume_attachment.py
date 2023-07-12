@@ -118,6 +118,9 @@ class VolumeAttachmentArgs:
         """
         The OCID of the compartment.
         """
+        warnings.warn("""The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""compartment_id is deprecated: The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -381,6 +384,9 @@ class _VolumeAttachmentState:
         """
         The OCID of the compartment.
         """
+        warnings.warn("""The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""compartment_id is deprecated: The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -920,6 +926,9 @@ class VolumeAttachment(pulumi.CustomResource):
         """
         The OCID of the compartment.
         """
+        warnings.warn("""The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""compartment_id is deprecated: The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "compartment_id")
 
     @property

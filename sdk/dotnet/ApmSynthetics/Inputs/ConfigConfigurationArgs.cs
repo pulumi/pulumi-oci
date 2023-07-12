@@ -13,13 +13,19 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
     public sealed class ConfigConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) Details for client certificate.
+        /// </summary>
+        [Input("clientCertificateDetails")]
+        public Input<Inputs.ConfigConfigurationClientCertificateDetailsArgs>? ClientCertificateDetails { get; set; }
+
+        /// <summary>
         /// (Updatable) Type of configuration.
         /// </summary>
         [Input("configType")]
         public Input<string>? ConfigType { get; set; }
 
         /// <summary>
-        /// (Updatable) Dns settings.
+        /// (Updatable) Information about the DNS settings.
         /// </summary>
         [Input("dnsConfiguration")]
         public Input<Inputs.ConfigConfigurationDnsConfigurationArgs>? DnsConfiguration { get; set; }
@@ -31,13 +37,19 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public Input<bool>? IsCertificateValidationEnabled { get; set; }
 
         /// <summary>
+        /// (Updatable) If disabled then auto snapshots are not collected.
+        /// </summary>
+        [Input("isDefaultSnapshotEnabled")]
+        public Input<bool>? IsDefaultSnapshotEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
         /// </summary>
         [Input("isFailureRetried")]
         public Input<bool>? IsFailureRetried { get; set; }
 
         /// <summary>
-        /// (Updatable) If redirection enabled, then redirects will be allowed while accessing target URL.
+        /// (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
         /// </summary>
         [Input("isRedirectionEnabled")]
         public Input<bool>? IsRedirectionEnabled { get; set; }
@@ -55,7 +67,7 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public Input<Inputs.ConfigConfigurationReqAuthenticationDetailsArgs>? ReqAuthenticationDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) Request http authentication scheme.
+        /// (Updatable) Request HTTP authentication scheme.
         /// </summary>
         [Input("reqAuthenticationScheme")]
         public Input<string>? ReqAuthenticationScheme { get; set; }

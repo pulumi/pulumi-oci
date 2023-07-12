@@ -199,16 +199,16 @@ def get_maintenance_runs(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getMaintenanceRuns:getMaintenanceRuns', __args__, opts=opts, typ=GetMaintenanceRunsResult).value
 
     return AwaitableGetMaintenanceRunsResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        maintenance_runs=__ret__.maintenance_runs,
-        maintenance_subtype=__ret__.maintenance_subtype,
-        maintenance_type=__ret__.maintenance_type,
-        state=__ret__.state,
-        target_resource_id=__ret__.target_resource_id,
-        target_resource_type=__ret__.target_resource_type)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        maintenance_runs=pulumi.get(__ret__, 'maintenance_runs'),
+        maintenance_subtype=pulumi.get(__ret__, 'maintenance_subtype'),
+        maintenance_type=pulumi.get(__ret__, 'maintenance_type'),
+        state=pulumi.get(__ret__, 'state'),
+        target_resource_id=pulumi.get(__ret__, 'target_resource_id'),
+        target_resource_type=pulumi.get(__ret__, 'target_resource_type'))
 
 
 @_utilities.lift_output_func(get_maintenance_runs)

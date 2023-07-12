@@ -30,7 +30,7 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     private List<GetMonitorsMonitorCollectionItemAvailabilityConfiguration> availabilityConfigurations;
     /**
-     * @return Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+     * @return Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
      * 
      */
     private Integer batchIntervalInSeconds;
@@ -60,7 +60,7 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     private String id;
     /**
-     * @return If isRunNow is enabled, then the monitor will run now.
+     * @return If isRunNow is enabled, then the monitor will run immediately.
      * 
      */
     private Boolean isRunNow;
@@ -70,7 +70,7 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     private Boolean isRunOnce;
     /**
-     * @return Details used to schedule maintenance window.
+     * @return Details required to schedule maintenance window.
      * 
      */
     private List<GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule> maintenanceWindowSchedules;
@@ -85,7 +85,7 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     private Integer repeatIntervalInSeconds;
     /**
-     * @return Scheduling policy on Vantage points.
+     * @return Scheduling policy to decide the distribution of monitor executions on vantage points.
      * 
      */
     private String schedulingPolicy;
@@ -156,7 +156,7 @@ public final class GetMonitorsMonitorCollectionItem {
         return this.availabilityConfigurations;
     }
     /**
-     * @return Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+     * @return Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
      * 
      */
     public Integer batchIntervalInSeconds() {
@@ -198,7 +198,7 @@ public final class GetMonitorsMonitorCollectionItem {
         return this.id;
     }
     /**
-     * @return If isRunNow is enabled, then the monitor will run now.
+     * @return If isRunNow is enabled, then the monitor will run immediately.
      * 
      */
     public Boolean isRunNow() {
@@ -212,7 +212,7 @@ public final class GetMonitorsMonitorCollectionItem {
         return this.isRunOnce;
     }
     /**
-     * @return Details used to schedule maintenance window.
+     * @return Details required to schedule maintenance window.
      * 
      */
     public List<GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule> maintenanceWindowSchedules() {
@@ -233,7 +233,7 @@ public final class GetMonitorsMonitorCollectionItem {
         return this.repeatIntervalInSeconds;
     }
     /**
-     * @return Scheduling policy on Vantage points.
+     * @return Scheduling policy to decide the distribution of monitor executions on vantage points.
      * 
      */
     public String schedulingPolicy() {

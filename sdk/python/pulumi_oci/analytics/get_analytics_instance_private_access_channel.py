@@ -197,18 +197,18 @@ def get_analytics_instance_private_access_channel(analytics_instance_id: Optiona
     __ret__ = pulumi.runtime.invoke('oci:Analytics/getAnalyticsInstancePrivateAccessChannel:getAnalyticsInstancePrivateAccessChannel', __args__, opts=opts, typ=GetAnalyticsInstancePrivateAccessChannelResult).value
 
     return AwaitableGetAnalyticsInstancePrivateAccessChannelResult(
-        analytics_instance_id=__ret__.analytics_instance_id,
-        display_name=__ret__.display_name,
-        egress_source_ip_addresses=__ret__.egress_source_ip_addresses,
-        id=__ret__.id,
-        ip_address=__ret__.ip_address,
-        key=__ret__.key,
-        network_security_group_ids=__ret__.network_security_group_ids,
-        private_access_channel_key=__ret__.private_access_channel_key,
-        private_source_dns_zones=__ret__.private_source_dns_zones,
-        private_source_scan_hosts=__ret__.private_source_scan_hosts,
-        subnet_id=__ret__.subnet_id,
-        vcn_id=__ret__.vcn_id)
+        analytics_instance_id=pulumi.get(__ret__, 'analytics_instance_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        egress_source_ip_addresses=pulumi.get(__ret__, 'egress_source_ip_addresses'),
+        id=pulumi.get(__ret__, 'id'),
+        ip_address=pulumi.get(__ret__, 'ip_address'),
+        key=pulumi.get(__ret__, 'key'),
+        network_security_group_ids=pulumi.get(__ret__, 'network_security_group_ids'),
+        private_access_channel_key=pulumi.get(__ret__, 'private_access_channel_key'),
+        private_source_dns_zones=pulumi.get(__ret__, 'private_source_dns_zones'),
+        private_source_scan_hosts=pulumi.get(__ret__, 'private_source_scan_hosts'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_analytics_instance_private_access_channel)

@@ -175,16 +175,16 @@ def get_log_analytics_log_group(log_analytics_log_group_id: Optional[str] = None
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getLogAnalyticsLogGroup:getLogAnalyticsLogGroup', __args__, opts=opts, typ=GetLogAnalyticsLogGroupResult).value
 
     return AwaitableGetLogAnalyticsLogGroupResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        log_analytics_log_group_id=__ret__.log_analytics_log_group_id,
-        namespace=__ret__.namespace,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        log_analytics_log_group_id=pulumi.get(__ret__, 'log_analytics_log_group_id'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_log_analytics_log_group)

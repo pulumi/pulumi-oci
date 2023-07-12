@@ -99,7 +99,7 @@ public final class GetClustersCluster {
      */
     private String state;
     /**
-     * @return Type of cluster
+     * @return Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
      * 
      */
     private String type;
@@ -223,7 +223,7 @@ public final class GetClustersCluster {
         return this.state;
     }
     /**
-     * @return Type of cluster
+     * @return Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
      * 
      */
     public String type() {

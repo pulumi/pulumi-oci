@@ -5,6 +5,9 @@
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .address_action_verification import *
+from .get_address import *
+from .get_address_rule import *
 from .get_invoice import *
 from .get_invoices import *
 from .get_invoices_invoice_line import *

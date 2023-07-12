@@ -269,21 +269,21 @@ def get_zones(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Dns/getZones:getZones', __args__, opts=opts, typ=GetZonesResult).value
 
     return AwaitableGetZonesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        name_contains=__ret__.name_contains,
-        scope=__ret__.scope,
-        sort_by=__ret__.sort_by,
-        sort_order=__ret__.sort_order,
-        state=__ret__.state,
-        time_created_greater_than_or_equal_to=__ret__.time_created_greater_than_or_equal_to,
-        time_created_less_than=__ret__.time_created_less_than,
-        tsig_key_id=__ret__.tsig_key_id,
-        view_id=__ret__.view_id,
-        zone_type=__ret__.zone_type,
-        zones=__ret__.zones)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        name_contains=pulumi.get(__ret__, 'name_contains'),
+        scope=pulumi.get(__ret__, 'scope'),
+        sort_by=pulumi.get(__ret__, 'sort_by'),
+        sort_order=pulumi.get(__ret__, 'sort_order'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'),
+        tsig_key_id=pulumi.get(__ret__, 'tsig_key_id'),
+        view_id=pulumi.get(__ret__, 'view_id'),
+        zone_type=pulumi.get(__ret__, 'zone_type'),
+        zones=pulumi.get(__ret__, 'zones'))
 
 
 @_utilities.lift_output_func(get_zones)

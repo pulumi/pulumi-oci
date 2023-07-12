@@ -66,6 +66,8 @@ __all__ = [
     'GetAddonsAddonConfigurationResult',
     'GetAddonsFilterResult',
     'GetClusterOptionClusterPodNetworkOptionResult',
+    'GetClusterWorkloadMappingsFilterResult',
+    'GetClusterWorkloadMappingsWorkloadMappingResult',
     'GetClustersClusterResult',
     'GetClustersClusterClusterPodNetworkOptionResult',
     'GetClustersClusterEndpointResult',
@@ -4014,6 +4016,139 @@ class GetClusterOptionClusterPodNetworkOptionResult(dict):
 
 
 @pulumi.output_type
+class GetClusterWorkloadMappingsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetClusterWorkloadMappingsWorkloadMappingResult(dict):
+    def __init__(__self__, *,
+                 cluster_id: str,
+                 defined_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 mapped_compartment_id: str,
+                 mapped_tenancy_id: str,
+                 namespace: str,
+                 state: str,
+                 time_created: str):
+        """
+        :param str cluster_id: The OCID of the cluster.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param str id: The ocid of the workloadMapping.
+        :param str mapped_compartment_id: The OCID of the mapped customer compartment.
+        :param str mapped_tenancy_id: The OCID of the mapped customer tenancy.
+        :param str namespace: The namespace of the workloadMapping.
+        :param str state: The state of the workloadMapping.
+        :param str time_created: The time the cluster was created.
+        """
+        pulumi.set(__self__, "cluster_id", cluster_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "mapped_compartment_id", mapped_compartment_id)
+        pulumi.set(__self__, "mapped_tenancy_id", mapped_tenancy_id)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> str:
+        """
+        The OCID of the cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The ocid of the workloadMapping.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="mappedCompartmentId")
+    def mapped_compartment_id(self) -> str:
+        """
+        The OCID of the mapped customer compartment.
+        """
+        return pulumi.get(self, "mapped_compartment_id")
+
+    @property
+    @pulumi.getter(name="mappedTenancyId")
+    def mapped_tenancy_id(self) -> str:
+        """
+        The OCID of the mapped customer tenancy.
+        """
+        return pulumi.get(self, "mapped_tenancy_id")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The namespace of the workloadMapping.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The state of the workloadMapping.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the cluster was created.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
 class GetClustersClusterResult(dict):
     def __init__(__self__, *,
                  available_kubernetes_upgrades: Sequence[str],
@@ -4051,7 +4186,7 @@ class GetClustersClusterResult(dict):
         :param str name: The name to filter on.
         :param Sequence['GetClustersClusterOptionArgs'] options: Optional attributes for the cluster.
         :param str state: A cluster lifecycle state to filter on. Can have multiple parameters of this name.
-        :param str type: Type of cluster
+        :param str type: Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
         :param str vcn_id: The OCID of the virtual cloud network (VCN) in which the cluster exists.
         """
         pulumi.set(__self__, "available_kubernetes_upgrades", available_kubernetes_upgrades)
@@ -4205,7 +4340,7 @@ class GetClustersClusterResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        Type of cluster
+        Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
         """
         return pulumi.get(self, "type")
 
@@ -5629,6 +5764,9 @@ class GetNodePoolsNodePoolResult(dict):
         """
         Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         """
+        warnings.warn("""The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
+        pulumi.log.warn("""node_image_id is deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
+
         return pulumi.get(self, "node_image_id")
 
     @property
@@ -5637,6 +5775,9 @@ class GetNodePoolsNodePoolResult(dict):
         """
         Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
         """
+        warnings.warn("""The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
+        pulumi.log.warn("""node_image_name is deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
+
         return pulumi.get(self, "node_image_name")
 
     @property

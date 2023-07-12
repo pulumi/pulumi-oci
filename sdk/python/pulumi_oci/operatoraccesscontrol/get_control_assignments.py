@@ -167,14 +167,14 @@ def get_control_assignments(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OperatorAccessControl/getControlAssignments:getControlAssignments', __args__, opts=opts, typ=GetControlAssignmentsResult).value
 
     return AwaitableGetControlAssignmentsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        operator_control_assignment_collections=__ret__.operator_control_assignment_collections,
-        operator_control_name=__ret__.operator_control_name,
-        resource_name=__ret__.resource_name,
-        resource_type=__ret__.resource_type,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        operator_control_assignment_collections=pulumi.get(__ret__, 'operator_control_assignment_collections'),
+        operator_control_name=pulumi.get(__ret__, 'operator_control_name'),
+        resource_name=pulumi.get(__ret__, 'resource_name'),
+        resource_type=pulumi.get(__ret__, 'resource_type'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_control_assignments)

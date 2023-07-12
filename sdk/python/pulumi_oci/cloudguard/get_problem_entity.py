@@ -94,9 +94,9 @@ def get_problem_entity(problem_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudGuard/getProblemEntity:getProblemEntity', __args__, opts=opts, typ=GetProblemEntityResult).value
 
     return AwaitableGetProblemEntityResult(
-        id=__ret__.id,
-        items=__ret__.items,
-        problem_id=__ret__.problem_id)
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        problem_id=pulumi.get(__ret__, 'problem_id'))
 
 
 @_utilities.lift_output_func(get_problem_entity)

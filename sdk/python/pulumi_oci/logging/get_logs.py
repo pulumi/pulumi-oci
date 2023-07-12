@@ -180,15 +180,15 @@ def get_logs(display_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Logging/getLogs:getLogs', __args__, opts=opts, typ=GetLogsResult).value
 
     return AwaitableGetLogsResult(
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        log_group_id=__ret__.log_group_id,
-        log_type=__ret__.log_type,
-        logs=__ret__.logs,
-        source_resource=__ret__.source_resource,
-        source_service=__ret__.source_service,
-        state=__ret__.state)
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        log_group_id=pulumi.get(__ret__, 'log_group_id'),
+        log_type=pulumi.get(__ret__, 'log_type'),
+        logs=pulumi.get(__ret__, 'logs'),
+        source_resource=pulumi.get(__ret__, 'source_resource'),
+        source_service=pulumi.get(__ret__, 'source_service'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_logs)

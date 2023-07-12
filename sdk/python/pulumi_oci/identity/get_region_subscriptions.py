@@ -103,10 +103,10 @@ def get_region_subscriptions(filters: Optional[Sequence[pulumi.InputType['GetReg
     __ret__ = pulumi.runtime.invoke('oci:Identity/getRegionSubscriptions:getRegionSubscriptions', __args__, opts=opts, typ=GetRegionSubscriptionsResult).value
 
     return AwaitableGetRegionSubscriptionsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        region_subscriptions=__ret__.region_subscriptions,
-        tenancy_id=__ret__.tenancy_id)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        region_subscriptions=pulumi.get(__ret__, 'region_subscriptions'),
+        tenancy_id=pulumi.get(__ret__, 'tenancy_id'))
 
 
 @_utilities.lift_output_func(get_region_subscriptions)

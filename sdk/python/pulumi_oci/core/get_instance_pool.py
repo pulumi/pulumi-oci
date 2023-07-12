@@ -211,19 +211,19 @@ def get_instance_pool(instance_pool_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getInstancePool:getInstancePool', __args__, opts=opts, typ=GetInstancePoolResult).value
 
     return AwaitableGetInstancePoolResult(
-        actual_size=__ret__.actual_size,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        instance_configuration_id=__ret__.instance_configuration_id,
-        instance_pool_id=__ret__.instance_pool_id,
-        load_balancers=__ret__.load_balancers,
-        placement_configurations=__ret__.placement_configurations,
-        size=__ret__.size,
-        state=__ret__.state,
-        time_created=__ret__.time_created)
+        actual_size=pulumi.get(__ret__, 'actual_size'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        instance_configuration_id=pulumi.get(__ret__, 'instance_configuration_id'),
+        instance_pool_id=pulumi.get(__ret__, 'instance_pool_id'),
+        load_balancers=pulumi.get(__ret__, 'load_balancers'),
+        placement_configurations=pulumi.get(__ret__, 'placement_configurations'),
+        size=pulumi.get(__ret__, 'size'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_instance_pool)

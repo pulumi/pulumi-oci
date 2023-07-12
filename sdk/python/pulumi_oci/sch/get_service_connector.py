@@ -235,21 +235,21 @@ def get_service_connector(service_connector_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Sch/getServiceConnector:getServiceConnector', __args__, opts=opts, typ=GetServiceConnectorResult).value
 
     return AwaitableGetServiceConnectorResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecyle_details=__ret__.lifecyle_details,
-        service_connector_id=__ret__.service_connector_id,
-        sources=__ret__.sources,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        targets=__ret__.targets,
-        tasks=__ret__.tasks,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecyle_details=pulumi.get(__ret__, 'lifecyle_details'),
+        service_connector_id=pulumi.get(__ret__, 'service_connector_id'),
+        sources=pulumi.get(__ret__, 'sources'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        targets=pulumi.get(__ret__, 'targets'),
+        tasks=pulumi.get(__ret__, 'tasks'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_service_connector)

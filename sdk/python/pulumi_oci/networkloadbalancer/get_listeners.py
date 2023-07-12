@@ -103,10 +103,10 @@ def get_listeners(filters: Optional[Sequence[pulumi.InputType['GetListenersFilte
     __ret__ = pulumi.runtime.invoke('oci:NetworkLoadBalancer/getListeners:getListeners', __args__, opts=opts, typ=GetListenersResult).value
 
     return AwaitableGetListenersResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        listener_collections=__ret__.listener_collections,
-        network_load_balancer_id=__ret__.network_load_balancer_id)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        listener_collections=pulumi.get(__ret__, 'listener_collections'),
+        network_load_balancer_id=pulumi.get(__ret__, 'network_load_balancer_id'))
 
 
 @_utilities.lift_output_func(get_listeners)

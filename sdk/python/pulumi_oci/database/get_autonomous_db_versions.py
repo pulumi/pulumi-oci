@@ -123,11 +123,11 @@ def get_autonomous_db_versions(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousDbVersions:getAutonomousDbVersions', __args__, opts=opts, typ=GetAutonomousDbVersionsResult).value
 
     return AwaitableGetAutonomousDbVersionsResult(
-        autonomous_db_versions=__ret__.autonomous_db_versions,
-        compartment_id=__ret__.compartment_id,
-        db_workload=__ret__.db_workload,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        autonomous_db_versions=pulumi.get(__ret__, 'autonomous_db_versions'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        db_workload=pulumi.get(__ret__, 'db_workload'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_autonomous_db_versions)

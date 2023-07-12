@@ -226,18 +226,18 @@ def get_steering_policy_attachments(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Dns/getSteeringPolicyAttachments:getSteeringPolicyAttachments', __args__, opts=opts, typ=GetSteeringPolicyAttachmentsResult).value
 
     return AwaitableGetSteeringPolicyAttachmentsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        domain=__ret__.domain,
-        domain_contains=__ret__.domain_contains,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        steering_policy_attachments=__ret__.steering_policy_attachments,
-        steering_policy_id=__ret__.steering_policy_id,
-        time_created_greater_than_or_equal_to=__ret__.time_created_greater_than_or_equal_to,
-        time_created_less_than=__ret__.time_created_less_than,
-        zone_id=__ret__.zone_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        domain=pulumi.get(__ret__, 'domain'),
+        domain_contains=pulumi.get(__ret__, 'domain_contains'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        steering_policy_attachments=pulumi.get(__ret__, 'steering_policy_attachments'),
+        steering_policy_id=pulumi.get(__ret__, 'steering_policy_id'),
+        time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'),
+        zone_id=pulumi.get(__ret__, 'zone_id'))
 
 
 @_utilities.lift_output_func(get_steering_policy_attachments)

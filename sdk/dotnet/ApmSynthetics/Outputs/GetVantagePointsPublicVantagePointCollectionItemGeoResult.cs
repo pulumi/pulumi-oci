@@ -30,7 +30,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly string CountryName;
         /// <summary>
-        /// Degrees north of the Equator.
+        /// Degrees north of the equator.
         /// </summary>
         public readonly double Latitude;
         /// <summary>

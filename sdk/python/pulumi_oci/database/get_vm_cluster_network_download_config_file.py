@@ -115,11 +115,11 @@ def get_vm_cluster_network_download_config_file(base64_encode_content: Optional[
     __ret__ = pulumi.runtime.invoke('oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile', __args__, opts=opts, typ=GetVmClusterNetworkDownloadConfigFileResult).value
 
     return AwaitableGetVmClusterNetworkDownloadConfigFileResult(
-        base64_encode_content=__ret__.base64_encode_content,
-        content=__ret__.content,
-        exadata_infrastructure_id=__ret__.exadata_infrastructure_id,
-        id=__ret__.id,
-        vm_cluster_network_id=__ret__.vm_cluster_network_id)
+        base64_encode_content=pulumi.get(__ret__, 'base64_encode_content'),
+        content=pulumi.get(__ret__, 'content'),
+        exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
+        id=pulumi.get(__ret__, 'id'),
+        vm_cluster_network_id=pulumi.get(__ret__, 'vm_cluster_network_id'))
 
 
 @_utilities.lift_output_func(get_vm_cluster_network_download_config_file)

@@ -145,13 +145,13 @@ def get_trail_sequence(deployment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:GoldenGate/getTrailSequence:getTrailSequence', __args__, opts=opts, typ=GetTrailSequenceResult).value
 
     return AwaitableGetTrailSequenceResult(
-        deployment_id=__ret__.deployment_id,
-        display_name=__ret__.display_name,
-        id=__ret__.id,
-        items=__ret__.items,
-        time_last_fetched=__ret__.time_last_fetched,
-        trail_file_id=__ret__.trail_file_id,
-        trail_sequence_id=__ret__.trail_sequence_id)
+        deployment_id=pulumi.get(__ret__, 'deployment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        time_last_fetched=pulumi.get(__ret__, 'time_last_fetched'),
+        trail_file_id=pulumi.get(__ret__, 'trail_file_id'),
+        trail_sequence_id=pulumi.get(__ret__, 'trail_sequence_id'))
 
 
 @_utilities.lift_output_func(get_trail_sequence)

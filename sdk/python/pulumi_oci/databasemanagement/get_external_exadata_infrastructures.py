@@ -122,11 +122,11 @@ def get_external_exadata_infrastructures(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalExadataInfrastructures:getExternalExadataInfrastructures', __args__, opts=opts, typ=GetExternalExadataInfrastructuresResult).value
 
     return AwaitableGetExternalExadataInfrastructuresResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        external_exadata_infrastructure_collections=__ret__.external_exadata_infrastructure_collections,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        external_exadata_infrastructure_collections=pulumi.get(__ret__, 'external_exadata_infrastructure_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_external_exadata_infrastructures)

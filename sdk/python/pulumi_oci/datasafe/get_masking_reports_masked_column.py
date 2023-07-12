@@ -187,15 +187,15 @@ def get_masking_reports_masked_column(column_names: Optional[Sequence[str]] = No
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getMaskingReportsMaskedColumn:getMaskingReportsMaskedColumn', __args__, opts=opts, typ=GetMaskingReportsMaskedColumnResult).value
 
     return AwaitableGetMaskingReportsMaskedColumnResult(
-        column_names=__ret__.column_names,
-        id=__ret__.id,
-        items=__ret__.items,
-        masking_column_groups=__ret__.masking_column_groups,
-        masking_report_id=__ret__.masking_report_id,
-        object_types=__ret__.object_types,
-        objects=__ret__.objects,
-        schema_names=__ret__.schema_names,
-        sensitive_type_id=__ret__.sensitive_type_id)
+        column_names=pulumi.get(__ret__, 'column_names'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        masking_column_groups=pulumi.get(__ret__, 'masking_column_groups'),
+        masking_report_id=pulumi.get(__ret__, 'masking_report_id'),
+        object_types=pulumi.get(__ret__, 'object_types'),
+        objects=pulumi.get(__ret__, 'objects'),
+        schema_names=pulumi.get(__ret__, 'schema_names'),
+        sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'))
 
 
 @_utilities.lift_output_func(get_masking_reports_masked_column)

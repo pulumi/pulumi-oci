@@ -153,7 +153,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
     /**
      * The list of database servers.
      */
-    public readonly dbServers!: pulumi.Output<string[] | undefined>;
+    public readonly dbServers!: pulumi.Output<string[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */

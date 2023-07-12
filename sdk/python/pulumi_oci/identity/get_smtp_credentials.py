@@ -107,10 +107,10 @@ def get_smtp_credentials(filters: Optional[Sequence[pulumi.InputType['GetSmtpCre
     __ret__ = pulumi.runtime.invoke('oci:Identity/getSmtpCredentials:getSmtpCredentials', __args__, opts=opts, typ=GetSmtpCredentialsResult).value
 
     return AwaitableGetSmtpCredentialsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        smtp_credentials=__ret__.smtp_credentials,
-        user_id=__ret__.user_id)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        smtp_credentials=pulumi.get(__ret__, 'smtp_credentials'),
+        user_id=pulumi.get(__ret__, 'user_id'))
 
 
 @_utilities.lift_output_func(get_smtp_credentials)

@@ -187,14 +187,14 @@ def get_managed_instance_module_streams(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OsManagement/getManagedInstanceModuleStreams:getManagedInstanceModuleStreams', __args__, opts=opts, typ=GetManagedInstanceModuleStreamsResult).value
 
     return AwaitableGetManagedInstanceModuleStreamsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        managed_instance_id=__ret__.managed_instance_id,
-        module_name=__ret__.module_name,
-        module_stream_on_managed_instances=__ret__.module_stream_on_managed_instances,
-        stream_name=__ret__.stream_name,
-        stream_status=__ret__.stream_status)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
+        module_name=pulumi.get(__ret__, 'module_name'),
+        module_stream_on_managed_instances=pulumi.get(__ret__, 'module_stream_on_managed_instances'),
+        stream_name=pulumi.get(__ret__, 'stream_name'),
+        stream_status=pulumi.get(__ret__, 'stream_status'))
 
 
 @_utilities.lift_output_func(get_managed_instance_module_streams)

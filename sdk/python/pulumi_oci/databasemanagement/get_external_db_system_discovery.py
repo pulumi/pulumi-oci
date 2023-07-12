@@ -208,19 +208,19 @@ def get_external_db_system_discovery(external_db_system_discovery_id: Optional[s
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalDbSystemDiscovery:getExternalDbSystemDiscovery', __args__, opts=opts, typ=GetExternalDbSystemDiscoveryResult).value
 
     return AwaitableGetExternalDbSystemDiscoveryResult(
-        agent_id=__ret__.agent_id,
-        compartment_id=__ret__.compartment_id,
-        discovered_components=__ret__.discovered_components,
-        display_name=__ret__.display_name,
-        external_db_system_discovery_id=__ret__.external_db_system_discovery_id,
-        grid_home=__ret__.grid_home,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        patch_operations=__ret__.patch_operations,
-        resource_id=__ret__.resource_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        agent_id=pulumi.get(__ret__, 'agent_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        discovered_components=pulumi.get(__ret__, 'discovered_components'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        external_db_system_discovery_id=pulumi.get(__ret__, 'external_db_system_discovery_id'),
+        grid_home=pulumi.get(__ret__, 'grid_home'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        patch_operations=pulumi.get(__ret__, 'patch_operations'),
+        resource_id=pulumi.get(__ret__, 'resource_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_external_db_system_discovery)

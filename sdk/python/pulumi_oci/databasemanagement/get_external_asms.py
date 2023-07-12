@@ -138,12 +138,12 @@ def get_external_asms(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalAsms:getExternalAsms', __args__, opts=opts, typ=GetExternalAsmsResult).value
 
     return AwaitableGetExternalAsmsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        external_asm_collections=__ret__.external_asm_collections,
-        external_db_system_id=__ret__.external_db_system_id,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        external_asm_collections=pulumi.get(__ret__, 'external_asm_collections'),
+        external_db_system_id=pulumi.get(__ret__, 'external_db_system_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_external_asms)

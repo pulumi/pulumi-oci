@@ -158,13 +158,13 @@ def get_app_accelerations(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Waa/getAppAccelerations:getAppAccelerations', __args__, opts=opts, typ=GetAppAccelerationsResult).value
 
     return AwaitableGetAppAccelerationsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        states=__ret__.states,
-        web_app_acceleration_collections=__ret__.web_app_acceleration_collections,
-        web_app_acceleration_policy_id=__ret__.web_app_acceleration_policy_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        states=pulumi.get(__ret__, 'states'),
+        web_app_acceleration_collections=pulumi.get(__ret__, 'web_app_acceleration_collections'),
+        web_app_acceleration_policy_id=pulumi.get(__ret__, 'web_app_acceleration_policy_id'))
 
 
 @_utilities.lift_output_func(get_app_accelerations)

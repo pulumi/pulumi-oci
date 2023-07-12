@@ -239,21 +239,21 @@ def get_log(log_group_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Logging/getLog:getLog', __args__, opts=opts, typ=GetLogResult).value
 
     return AwaitableGetLogResult(
-        compartment_id=__ret__.compartment_id,
-        configurations=__ret__.configurations,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_enabled=__ret__.is_enabled,
-        log_group_id=__ret__.log_group_id,
-        log_id=__ret__.log_id,
-        log_type=__ret__.log_type,
-        retention_duration=__ret__.retention_duration,
-        state=__ret__.state,
-        tenancy_id=__ret__.tenancy_id,
-        time_created=__ret__.time_created,
-        time_last_modified=__ret__.time_last_modified)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        configurations=pulumi.get(__ret__, 'configurations'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_enabled=pulumi.get(__ret__, 'is_enabled'),
+        log_group_id=pulumi.get(__ret__, 'log_group_id'),
+        log_id=pulumi.get(__ret__, 'log_id'),
+        log_type=pulumi.get(__ret__, 'log_type'),
+        retention_duration=pulumi.get(__ret__, 'retention_duration'),
+        state=pulumi.get(__ret__, 'state'),
+        tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_last_modified=pulumi.get(__ret__, 'time_last_modified'))
 
 
 @_utilities.lift_output_func(get_log)

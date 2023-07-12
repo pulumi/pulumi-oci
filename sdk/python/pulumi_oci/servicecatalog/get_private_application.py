@@ -229,21 +229,21 @@ def get_private_application(private_application_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ServiceCatalog/getPrivateApplication:getPrivateApplication', __args__, opts=opts, typ=GetPrivateApplicationResult).value
 
     return AwaitableGetPrivateApplicationResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        logo_file_base64encoded=__ret__.logo_file_base64encoded,
-        logos=__ret__.logos,
-        long_description=__ret__.long_description,
-        package_details=__ret__.package_details,
-        package_type=__ret__.package_type,
-        private_application_id=__ret__.private_application_id,
-        short_description=__ret__.short_description,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        logo_file_base64encoded=pulumi.get(__ret__, 'logo_file_base64encoded'),
+        logos=pulumi.get(__ret__, 'logos'),
+        long_description=pulumi.get(__ret__, 'long_description'),
+        package_details=pulumi.get(__ret__, 'package_details'),
+        package_type=pulumi.get(__ret__, 'package_type'),
+        private_application_id=pulumi.get(__ret__, 'private_application_id'),
+        short_description=pulumi.get(__ret__, 'short_description'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_private_application)

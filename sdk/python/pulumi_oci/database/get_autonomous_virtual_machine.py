@@ -222,20 +222,20 @@ def get_autonomous_virtual_machine(autonomous_virtual_machine_id: Optional[str] 
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousVirtualMachine:getAutonomousVirtualMachine', __args__, opts=opts, typ=GetAutonomousVirtualMachineResult).value
 
     return AwaitableGetAutonomousVirtualMachineResult(
-        autonomous_virtual_machine_id=__ret__.autonomous_virtual_machine_id,
-        autonomous_vm_cluster_id=__ret__.autonomous_vm_cluster_id,
-        client_ip_address=__ret__.client_ip_address,
-        compartment_id=__ret__.compartment_id,
-        cpu_core_count=__ret__.cpu_core_count,
-        db_node_storage_size_in_gbs=__ret__.db_node_storage_size_in_gbs,
-        db_server_display_name=__ret__.db_server_display_name,
-        db_server_id=__ret__.db_server_id,
-        defined_tags=__ret__.defined_tags,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        memory_size_in_gbs=__ret__.memory_size_in_gbs,
-        state=__ret__.state,
-        vm_name=__ret__.vm_name)
+        autonomous_virtual_machine_id=pulumi.get(__ret__, 'autonomous_virtual_machine_id'),
+        autonomous_vm_cluster_id=pulumi.get(__ret__, 'autonomous_vm_cluster_id'),
+        client_ip_address=pulumi.get(__ret__, 'client_ip_address'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        cpu_core_count=pulumi.get(__ret__, 'cpu_core_count'),
+        db_node_storage_size_in_gbs=pulumi.get(__ret__, 'db_node_storage_size_in_gbs'),
+        db_server_display_name=pulumi.get(__ret__, 'db_server_display_name'),
+        db_server_id=pulumi.get(__ret__, 'db_server_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        memory_size_in_gbs=pulumi.get(__ret__, 'memory_size_in_gbs'),
+        state=pulumi.get(__ret__, 'state'),
+        vm_name=pulumi.get(__ret__, 'vm_name'))
 
 
 @_utilities.lift_output_func(get_autonomous_virtual_machine)

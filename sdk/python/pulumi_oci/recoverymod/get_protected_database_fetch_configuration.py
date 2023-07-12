@@ -115,11 +115,11 @@ def get_protected_database_fetch_configuration(base64_encode_content: Optional[b
     __ret__ = pulumi.runtime.invoke('oci:RecoveryMod/getProtectedDatabaseFetchConfiguration:getProtectedDatabaseFetchConfiguration', __args__, opts=opts, typ=GetProtectedDatabaseFetchConfigurationResult).value
 
     return AwaitableGetProtectedDatabaseFetchConfigurationResult(
-        base64_encode_content=__ret__.base64_encode_content,
-        configuration_type=__ret__.configuration_type,
-        content=__ret__.content,
-        id=__ret__.id,
-        protected_database_id=__ret__.protected_database_id)
+        base64_encode_content=pulumi.get(__ret__, 'base64_encode_content'),
+        configuration_type=pulumi.get(__ret__, 'configuration_type'),
+        content=pulumi.get(__ret__, 'content'),
+        id=pulumi.get(__ret__, 'id'),
+        protected_database_id=pulumi.get(__ret__, 'protected_database_id'))
 
 
 @_utilities.lift_output_func(get_protected_database_fetch_configuration)

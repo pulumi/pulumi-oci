@@ -270,24 +270,24 @@ def get_agent_dependency(agent_dependency_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudBridge/getAgentDependency:getAgentDependency', __args__, opts=opts, typ=GetAgentDependencyResult).value
 
     return AwaitableGetAgentDependencyResult(
-        agent_dependency_id=__ret__.agent_dependency_id,
-        bucket=__ret__.bucket,
-        checksum=__ret__.checksum,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        dependency_name=__ret__.dependency_name,
-        dependency_version=__ret__.dependency_version,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        e_tag=__ret__.e_tag,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        namespace=__ret__.namespace,
-        object=__ret__.object,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created)
+        agent_dependency_id=pulumi.get(__ret__, 'agent_dependency_id'),
+        bucket=pulumi.get(__ret__, 'bucket'),
+        checksum=pulumi.get(__ret__, 'checksum'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        dependency_name=pulumi.get(__ret__, 'dependency_name'),
+        dependency_version=pulumi.get(__ret__, 'dependency_version'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        e_tag=pulumi.get(__ret__, 'e_tag'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        object=pulumi.get(__ret__, 'object'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_agent_dependency)

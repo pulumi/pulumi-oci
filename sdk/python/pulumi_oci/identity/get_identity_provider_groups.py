@@ -137,12 +137,12 @@ def get_identity_provider_groups(filters: Optional[Sequence[pulumi.InputType['Ge
     __ret__ = pulumi.runtime.invoke('oci:Identity/getIdentityProviderGroups:getIdentityProviderGroups', __args__, opts=opts, typ=GetIdentityProviderGroupsResult).value
 
     return AwaitableGetIdentityProviderGroupsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        identity_provider_groups=__ret__.identity_provider_groups,
-        identity_provider_id=__ret__.identity_provider_id,
-        name=__ret__.name,
-        state=__ret__.state)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        identity_provider_groups=pulumi.get(__ret__, 'identity_provider_groups'),
+        identity_provider_id=pulumi.get(__ret__, 'identity_provider_id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_identity_provider_groups)

@@ -116,11 +116,11 @@ def get_gi_versions(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getGiVersions:getGiVersions', __args__, opts=opts, typ=GetGiVersionsResult).value
 
     return AwaitableGetGiVersionsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        gi_versions=__ret__.gi_versions,
-        id=__ret__.id,
-        shape=__ret__.shape)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        gi_versions=pulumi.get(__ret__, 'gi_versions'),
+        id=pulumi.get(__ret__, 'id'),
+        shape=pulumi.get(__ret__, 'shape'))
 
 
 @_utilities.lift_output_func(get_gi_versions)

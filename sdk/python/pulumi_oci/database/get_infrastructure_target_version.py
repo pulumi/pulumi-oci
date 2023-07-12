@@ -135,12 +135,12 @@ def get_infrastructure_target_version(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion', __args__, opts=opts, typ=GetInfrastructureTargetVersionResult).value
 
     return AwaitableGetInfrastructureTargetVersionResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        target_db_version_history_entries=__ret__.target_db_version_history_entries,
-        target_resource_id=__ret__.target_resource_id,
-        target_resource_type=__ret__.target_resource_type,
-        target_storage_version_history_entries=__ret__.target_storage_version_history_entries)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        target_db_version_history_entries=pulumi.get(__ret__, 'target_db_version_history_entries'),
+        target_resource_id=pulumi.get(__ret__, 'target_resource_id'),
+        target_resource_type=pulumi.get(__ret__, 'target_resource_type'),
+        target_storage_version_history_entries=pulumi.get(__ret__, 'target_storage_version_history_entries'))
 
 
 @_utilities.lift_output_func(get_infrastructure_target_version)

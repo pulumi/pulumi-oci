@@ -96,9 +96,9 @@ def get_namespace(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ObjectStorage/getNamespace:getNamespace', __args__, opts=opts, typ=GetNamespaceResult).value
 
     return AwaitableGetNamespaceResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        namespace=__ret__.namespace)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        namespace=pulumi.get(__ret__, 'namespace'))
 
 
 @_utilities.lift_output_func(get_namespace)

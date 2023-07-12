@@ -22,7 +22,10 @@ class GetSubscriptionResult:
     """
     A collection of values returned by getSubscription.
     """
-    def __init__(__self__, bill_to_cust_account_id=None, billing_addresses=None, compartment_id=None, currency_code=None, email=None, gsi_org_code=None, id=None, is_intent_to_pay=None, language_code=None, organization_id=None, osp_home_region=None, payment_gateways=None, payment_options=None, plan_type=None, ship_to_cust_acct_role_id=None, ship_to_cust_acct_site_id=None, subscription_id=None, subscription_plan_number=None, subscriptions=None, tax_infos=None, time_plan_upgrade=None, time_start=None, upgrade_state=None, upgrade_state_details=None):
+    def __init__(__self__, account_type=None, bill_to_cust_account_id=None, billing_addresses=None, compartment_id=None, currency_code=None, email=None, gsi_org_code=None, id=None, is_intent_to_pay=None, language_code=None, organization_id=None, osp_home_region=None, payment_gateways=None, payment_options=None, plan_type=None, ship_to_cust_acct_role_id=None, ship_to_cust_acct_site_id=None, subscription_id=None, subscription_plan_number=None, subscriptions=None, tax_infos=None, time_personal_to_corporate_conv=None, time_plan_upgrade=None, time_start=None, upgrade_state=None, upgrade_state_details=None):
+        if account_type and not isinstance(account_type, str):
+            raise TypeError("Expected argument 'account_type' to be a str")
+        pulumi.set(__self__, "account_type", account_type)
         if bill_to_cust_account_id and not isinstance(bill_to_cust_account_id, str):
             raise TypeError("Expected argument 'bill_to_cust_account_id' to be a str")
         pulumi.set(__self__, "bill_to_cust_account_id", bill_to_cust_account_id)
@@ -83,6 +86,9 @@ class GetSubscriptionResult:
         if tax_infos and not isinstance(tax_infos, list):
             raise TypeError("Expected argument 'tax_infos' to be a list")
         pulumi.set(__self__, "tax_infos", tax_infos)
+        if time_personal_to_corporate_conv and not isinstance(time_personal_to_corporate_conv, str):
+            raise TypeError("Expected argument 'time_personal_to_corporate_conv' to be a str")
+        pulumi.set(__self__, "time_personal_to_corporate_conv", time_personal_to_corporate_conv)
         if time_plan_upgrade and not isinstance(time_plan_upgrade, str):
             raise TypeError("Expected argument 'time_plan_upgrade' to be a str")
         pulumi.set(__self__, "time_plan_upgrade", time_plan_upgrade)
@@ -97,6 +103,14 @@ class GetSubscriptionResult:
         pulumi.set(__self__, "upgrade_state_details", upgrade_state_details)
 
     @property
+    @pulumi.getter(name="accountType")
+    def account_type(self) -> str:
+        """
+        Account type.
+        """
+        return pulumi.get(self, "account_type")
+
+    @property
     @pulumi.getter(name="billToCustAccountId")
     def bill_to_cust_account_id(self) -> str:
         """
@@ -108,7 +122,7 @@ class GetSubscriptionResult:
     @pulumi.getter(name="billingAddresses")
     def billing_addresses(self) -> Sequence['outputs.GetSubscriptionBillingAddressResult']:
         """
-        Billing address details model.
+        Address details model.
         """
         return pulumi.get(self, "billing_addresses")
 
@@ -242,6 +256,14 @@ class GetSubscriptionResult:
         return pulumi.get(self, "tax_infos")
 
     @property
+    @pulumi.getter(name="timePersonalToCorporateConv")
+    def time_personal_to_corporate_conv(self) -> str:
+        """
+        Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+        """
+        return pulumi.get(self, "time_personal_to_corporate_conv")
+
+    @property
     @pulumi.getter(name="timePlanUpgrade")
     def time_plan_upgrade(self) -> str:
         """
@@ -280,6 +302,7 @@ class AwaitableGetSubscriptionResult(GetSubscriptionResult):
         if False:
             yield self
         return GetSubscriptionResult(
+            account_type=self.account_type,
             bill_to_cust_account_id=self.bill_to_cust_account_id,
             billing_addresses=self.billing_addresses,
             compartment_id=self.compartment_id,
@@ -300,6 +323,7 @@ class AwaitableGetSubscriptionResult(GetSubscriptionResult):
             subscription_plan_number=self.subscription_plan_number,
             subscriptions=self.subscriptions,
             tax_infos=self.tax_infos,
+            time_personal_to_corporate_conv=self.time_personal_to_corporate_conv,
             time_plan_upgrade=self.time_plan_upgrade,
             time_start=self.time_start,
             upgrade_state=self.upgrade_state,
@@ -339,30 +363,32 @@ def get_subscription(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OspGateway/getSubscription:getSubscription', __args__, opts=opts, typ=GetSubscriptionResult).value
 
     return AwaitableGetSubscriptionResult(
-        bill_to_cust_account_id=__ret__.bill_to_cust_account_id,
-        billing_addresses=__ret__.billing_addresses,
-        compartment_id=__ret__.compartment_id,
-        currency_code=__ret__.currency_code,
-        email=__ret__.email,
-        gsi_org_code=__ret__.gsi_org_code,
-        id=__ret__.id,
-        is_intent_to_pay=__ret__.is_intent_to_pay,
-        language_code=__ret__.language_code,
-        organization_id=__ret__.organization_id,
-        osp_home_region=__ret__.osp_home_region,
-        payment_gateways=__ret__.payment_gateways,
-        payment_options=__ret__.payment_options,
-        plan_type=__ret__.plan_type,
-        ship_to_cust_acct_role_id=__ret__.ship_to_cust_acct_role_id,
-        ship_to_cust_acct_site_id=__ret__.ship_to_cust_acct_site_id,
-        subscription_id=__ret__.subscription_id,
-        subscription_plan_number=__ret__.subscription_plan_number,
-        subscriptions=__ret__.subscriptions,
-        tax_infos=__ret__.tax_infos,
-        time_plan_upgrade=__ret__.time_plan_upgrade,
-        time_start=__ret__.time_start,
-        upgrade_state=__ret__.upgrade_state,
-        upgrade_state_details=__ret__.upgrade_state_details)
+        account_type=pulumi.get(__ret__, 'account_type'),
+        bill_to_cust_account_id=pulumi.get(__ret__, 'bill_to_cust_account_id'),
+        billing_addresses=pulumi.get(__ret__, 'billing_addresses'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        currency_code=pulumi.get(__ret__, 'currency_code'),
+        email=pulumi.get(__ret__, 'email'),
+        gsi_org_code=pulumi.get(__ret__, 'gsi_org_code'),
+        id=pulumi.get(__ret__, 'id'),
+        is_intent_to_pay=pulumi.get(__ret__, 'is_intent_to_pay'),
+        language_code=pulumi.get(__ret__, 'language_code'),
+        organization_id=pulumi.get(__ret__, 'organization_id'),
+        osp_home_region=pulumi.get(__ret__, 'osp_home_region'),
+        payment_gateways=pulumi.get(__ret__, 'payment_gateways'),
+        payment_options=pulumi.get(__ret__, 'payment_options'),
+        plan_type=pulumi.get(__ret__, 'plan_type'),
+        ship_to_cust_acct_role_id=pulumi.get(__ret__, 'ship_to_cust_acct_role_id'),
+        ship_to_cust_acct_site_id=pulumi.get(__ret__, 'ship_to_cust_acct_site_id'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'),
+        subscription_plan_number=pulumi.get(__ret__, 'subscription_plan_number'),
+        subscriptions=pulumi.get(__ret__, 'subscriptions'),
+        tax_infos=pulumi.get(__ret__, 'tax_infos'),
+        time_personal_to_corporate_conv=pulumi.get(__ret__, 'time_personal_to_corporate_conv'),
+        time_plan_upgrade=pulumi.get(__ret__, 'time_plan_upgrade'),
+        time_start=pulumi.get(__ret__, 'time_start'),
+        upgrade_state=pulumi.get(__ret__, 'upgrade_state'),
+        upgrade_state_details=pulumi.get(__ret__, 'upgrade_state_details'))
 
 
 @_utilities.lift_output_func(get_subscription)

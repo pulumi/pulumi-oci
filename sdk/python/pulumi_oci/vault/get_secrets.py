@@ -151,13 +151,13 @@ def get_secrets(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Vault/getSecrets:getSecrets', __args__, opts=opts, typ=GetSecretsResult).value
 
     return AwaitableGetSecretsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        secrets=__ret__.secrets,
-        state=__ret__.state,
-        vault_id=__ret__.vault_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        secrets=pulumi.get(__ret__, 'secrets'),
+        state=pulumi.get(__ret__, 'state'),
+        vault_id=pulumi.get(__ret__, 'vault_id'))
 
 
 @_utilities.lift_output_func(get_secrets)

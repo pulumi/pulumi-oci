@@ -154,13 +154,13 @@ def get_database_tools_endpoint_services(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseTools/getDatabaseToolsEndpointServices:getDatabaseToolsEndpointServices', __args__, opts=opts, typ=GetDatabaseToolsEndpointServicesResult).value
 
     return AwaitableGetDatabaseToolsEndpointServicesResult(
-        compartment_id=__ret__.compartment_id,
-        database_tools_endpoint_service_collections=__ret__.database_tools_endpoint_service_collections,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        database_tools_endpoint_service_collections=pulumi.get(__ret__, 'database_tools_endpoint_service_collections'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_database_tools_endpoint_services)

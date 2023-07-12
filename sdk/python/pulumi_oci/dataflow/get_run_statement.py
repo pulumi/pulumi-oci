@@ -167,15 +167,15 @@ def get_run_statement(run_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataFlow/getRunStatement:getRunStatement', __args__, opts=opts, typ=GetRunStatementResult).value
 
     return AwaitableGetRunStatementResult(
-        code=__ret__.code,
-        id=__ret__.id,
-        outputs=__ret__.outputs,
-        progress=__ret__.progress,
-        run_id=__ret__.run_id,
-        state=__ret__.state,
-        statement_id=__ret__.statement_id,
-        time_completed=__ret__.time_completed,
-        time_created=__ret__.time_created)
+        code=pulumi.get(__ret__, 'code'),
+        id=pulumi.get(__ret__, 'id'),
+        outputs=pulumi.get(__ret__, 'outputs'),
+        progress=pulumi.get(__ret__, 'progress'),
+        run_id=pulumi.get(__ret__, 'run_id'),
+        state=pulumi.get(__ret__, 'state'),
+        statement_id=pulumi.get(__ret__, 'statement_id'),
+        time_completed=pulumi.get(__ret__, 'time_completed'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_run_statement)

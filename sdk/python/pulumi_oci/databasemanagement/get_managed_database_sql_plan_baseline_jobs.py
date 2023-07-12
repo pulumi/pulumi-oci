@@ -119,11 +119,11 @@ def get_managed_database_sql_plan_baseline_jobs(filters: Optional[Sequence[pulum
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineJobs:getManagedDatabaseSqlPlanBaselineJobs', __args__, opts=opts, typ=GetManagedDatabaseSqlPlanBaselineJobsResult).value
 
     return AwaitableGetManagedDatabaseSqlPlanBaselineJobsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        managed_database_id=__ret__.managed_database_id,
-        name=__ret__.name,
-        sql_plan_baseline_job_collections=__ret__.sql_plan_baseline_job_collections)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        name=pulumi.get(__ret__, 'name'),
+        sql_plan_baseline_job_collections=pulumi.get(__ret__, 'sql_plan_baseline_job_collections'))
 
 
 @_utilities.lift_output_func(get_managed_database_sql_plan_baseline_jobs)

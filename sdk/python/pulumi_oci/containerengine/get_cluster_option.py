@@ -116,11 +116,11 @@ def get_cluster_option(cluster_option_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ContainerEngine/getClusterOption:getClusterOption', __args__, opts=opts, typ=GetClusterOptionResult).value
 
     return AwaitableGetClusterOptionResult(
-        cluster_option_id=__ret__.cluster_option_id,
-        cluster_pod_network_options=__ret__.cluster_pod_network_options,
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        kubernetes_versions=__ret__.kubernetes_versions)
+        cluster_option_id=pulumi.get(__ret__, 'cluster_option_id'),
+        cluster_pod_network_options=pulumi.get(__ret__, 'cluster_pod_network_options'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        kubernetes_versions=pulumi.get(__ret__, 'kubernetes_versions'))
 
 
 @_utilities.lift_output_func(get_cluster_option)

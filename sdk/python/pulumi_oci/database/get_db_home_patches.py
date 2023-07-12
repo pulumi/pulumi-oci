@@ -103,10 +103,10 @@ def get_db_home_patches(db_home_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getDbHomePatches:getDbHomePatches', __args__, opts=opts, typ=GetDbHomePatchesResult).value
 
     return AwaitableGetDbHomePatchesResult(
-        db_home_id=__ret__.db_home_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        patches=__ret__.patches)
+        db_home_id=pulumi.get(__ret__, 'db_home_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        patches=pulumi.get(__ret__, 'patches'))
 
 
 @_utilities.lift_output_func(get_db_home_patches)

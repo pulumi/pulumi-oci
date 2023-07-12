@@ -120,11 +120,11 @@ def get_compatible_formats_for_sensitive_type(access_level: Optional[str] = None
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getCompatibleFormatsForSensitiveType:getCompatibleFormatsForSensitiveType', __args__, opts=opts, typ=GetCompatibleFormatsForSensitiveTypeResult).value
 
     return AwaitableGetCompatibleFormatsForSensitiveTypeResult(
-        access_level=__ret__.access_level,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        formats_for_sensitive_types=__ret__.formats_for_sensitive_types,
-        id=__ret__.id)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        formats_for_sensitive_types=pulumi.get(__ret__, 'formats_for_sensitive_types'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_compatible_formats_for_sensitive_type)

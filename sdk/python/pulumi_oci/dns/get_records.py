@@ -53,10 +53,6 @@ class GetRecordsResult:
         pulumi.set(__self__, "sort_order", sort_order)
         if zone_name_or_id and not isinstance(zone_name_or_id, str):
             raise TypeError("Expected argument 'zone_name_or_id' to be a str")
-        if zone_name_or_id is not None:
-            warnings.warn("""The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead.""", DeprecationWarning)
-            pulumi.log.warn("""zone_name_or_id is deprecated: The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead.""")
-
         pulumi.set(__self__, "zone_name_or_id", zone_name_or_id)
         if zone_version and not isinstance(zone_version, str):
             raise TypeError("Expected argument 'zone_version' to be a str")
@@ -125,6 +121,9 @@ class GetRecordsResult:
         """
         The name or OCID of the target zone.
         """
+        warnings.warn("""The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead.""", DeprecationWarning)
+        pulumi.log.warn("""zone_name_or_id is deprecated: The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead.""")
+
         return pulumi.get(self, "zone_name_or_id")
 
     @property
@@ -197,17 +196,17 @@ def get_records(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Dns/getRecords:getRecords', __args__, opts=opts, typ=GetRecordsResult).value
 
     return AwaitableGetRecordsResult(
-        compartment_id=__ret__.compartment_id,
-        domain=__ret__.domain,
-        domain_contains=__ret__.domain_contains,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        records=__ret__.records,
-        rtype=__ret__.rtype,
-        sort_by=__ret__.sort_by,
-        sort_order=__ret__.sort_order,
-        zone_name_or_id=__ret__.zone_name_or_id,
-        zone_version=__ret__.zone_version)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        domain=pulumi.get(__ret__, 'domain'),
+        domain_contains=pulumi.get(__ret__, 'domain_contains'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        records=pulumi.get(__ret__, 'records'),
+        rtype=pulumi.get(__ret__, 'rtype'),
+        sort_by=pulumi.get(__ret__, 'sort_by'),
+        sort_order=pulumi.get(__ret__, 'sort_order'),
+        zone_name_or_id=pulumi.get(__ret__, 'zone_name_or_id'),
+        zone_version=pulumi.get(__ret__, 'zone_version'))
 
 
 @_utilities.lift_output_func(get_records)

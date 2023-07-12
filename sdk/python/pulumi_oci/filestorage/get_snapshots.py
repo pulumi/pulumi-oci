@@ -158,13 +158,13 @@ def get_snapshots(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:FileStorage/getSnapshots:getSnapshots', __args__, opts=opts, typ=GetSnapshotsResult).value
 
     return AwaitableGetSnapshotsResult(
-        compartment_id=__ret__.compartment_id,
-        file_system_id=__ret__.file_system_id,
-        filesystem_snapshot_policy_id=__ret__.filesystem_snapshot_policy_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        snapshots=__ret__.snapshots,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        file_system_id=pulumi.get(__ret__, 'file_system_id'),
+        filesystem_snapshot_policy_id=pulumi.get(__ret__, 'filesystem_snapshot_policy_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        snapshots=pulumi.get(__ret__, 'snapshots'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_snapshots)

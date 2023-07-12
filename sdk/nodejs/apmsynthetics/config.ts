@@ -32,12 +32,23 @@ import * as utilities from "../utilities";
  *     },
  *     batchIntervalInSeconds: _var.monitor_batch_interval_in_seconds,
  *     configuration: {
+ *         clientCertificateDetails: {
+ *             clientCertificate: {
+ *                 content: _var.monitor_configuration_client_certificate_details_client_certificate_content,
+ *                 fileName: _var.monitor_configuration_client_certificate_details_client_certificate_file_name,
+ *             },
+ *             privateKey: {
+ *                 content: _var.monitor_configuration_client_certificate_details_private_key_content,
+ *                 fileName: _var.monitor_configuration_client_certificate_details_private_key_file_name,
+ *             },
+ *         },
  *         configType: _var.monitor_configuration_config_type,
  *         dnsConfiguration: {
  *             isOverrideDns: _var.monitor_configuration_dns_configuration_is_override_dns,
  *             overrideDnsIp: _var.monitor_configuration_dns_configuration_override_dns_ip,
  *         },
  *         isCertificateValidationEnabled: _var.monitor_configuration_is_certificate_validation_enabled,
+ *         isDefaultSnapshotEnabled: _var.monitor_configuration_is_default_snapshot_enabled,
  *         isFailureRetried: _var.monitor_configuration_is_failure_retried,
  *         isRedirectionEnabled: _var.monitor_configuration_is_redirection_enabled,
  *         networkConfiguration: {
@@ -166,7 +177,7 @@ export class Config extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) If isRunNow is enabled, then the monitor will run now.
+     * (Updatable) If isRunNow is enabled, then the monitor will run immediately.
      */
     public readonly isRunNow!: pulumi.Output<boolean>;
     /**
@@ -174,7 +185,7 @@ export class Config extends pulumi.CustomResource {
      */
     public readonly isRunOnce!: pulumi.Output<boolean>;
     /**
-     * (Updatable) Details used to schedule maintenance window.
+     * (Updatable) Details required to schedule maintenance window.
      */
     public readonly maintenanceWindowSchedule!: pulumi.Output<outputs.ApmSynthetics.ConfigMaintenanceWindowSchedule>;
     /**
@@ -186,7 +197,7 @@ export class Config extends pulumi.CustomResource {
      */
     public readonly repeatIntervalInSeconds!: pulumi.Output<number>;
     /**
-     * (Updatable) Scheduling policy on Vantage points.
+     * (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
      */
     public readonly schedulingPolicy!: pulumi.Output<string>;
     /**
@@ -349,7 +360,7 @@ export interface ConfigState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) If isRunNow is enabled, then the monitor will run now.
+     * (Updatable) If isRunNow is enabled, then the monitor will run immediately.
      */
     isRunNow?: pulumi.Input<boolean>;
     /**
@@ -357,7 +368,7 @@ export interface ConfigState {
      */
     isRunOnce?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Details used to schedule maintenance window.
+     * (Updatable) Details required to schedule maintenance window.
      */
     maintenanceWindowSchedule?: pulumi.Input<inputs.ApmSynthetics.ConfigMaintenanceWindowSchedule>;
     /**
@@ -369,7 +380,7 @@ export interface ConfigState {
      */
     repeatIntervalInSeconds?: pulumi.Input<number>;
     /**
-     * (Updatable) Scheduling policy on Vantage points.
+     * (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
      */
     schedulingPolicy?: pulumi.Input<string>;
     /**
@@ -451,7 +462,7 @@ export interface ConfigArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) If isRunNow is enabled, then the monitor will run now.
+     * (Updatable) If isRunNow is enabled, then the monitor will run immediately.
      */
     isRunNow?: pulumi.Input<boolean>;
     /**
@@ -459,7 +470,7 @@ export interface ConfigArgs {
      */
     isRunOnce?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Details used to schedule maintenance window.
+     * (Updatable) Details required to schedule maintenance window.
      */
     maintenanceWindowSchedule?: pulumi.Input<inputs.ApmSynthetics.ConfigMaintenanceWindowSchedule>;
     /**
@@ -471,7 +482,7 @@ export interface ConfigArgs {
      */
     repeatIntervalInSeconds: pulumi.Input<number>;
     /**
-     * (Updatable) Scheduling policy on Vantage points.
+     * (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
      */
     schedulingPolicy?: pulumi.Input<string>;
     /**

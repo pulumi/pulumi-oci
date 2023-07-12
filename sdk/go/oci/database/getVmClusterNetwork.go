@@ -69,6 +69,8 @@ type LookupVmClusterNetworkResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// The list of DNS server IP addresses. Maximum of 3 allowed.
 	Dns []string `pulumi:"dns"`
+	// The SCAN details for DR network
+	DrScans []GetVmClusterNetworkDrScan `pulumi:"drScans"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -155,6 +157,11 @@ func (o LookupVmClusterNetworkResultOutput) DisplayName() pulumi.StringOutput {
 // The list of DNS server IP addresses. Maximum of 3 allowed.
 func (o LookupVmClusterNetworkResultOutput) Dns() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupVmClusterNetworkResult) []string { return v.Dns }).(pulumi.StringArrayOutput)
+}
+
+// The SCAN details for DR network
+func (o LookupVmClusterNetworkResultOutput) DrScans() GetVmClusterNetworkDrScanArrayOutput {
+	return o.ApplyT(func(v LookupVmClusterNetworkResult) []GetVmClusterNetworkDrScan { return v.DrScans }).(GetVmClusterNetworkDrScanArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.

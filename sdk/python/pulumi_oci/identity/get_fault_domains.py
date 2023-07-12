@@ -124,11 +124,11 @@ def get_fault_domains(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getFaultDomains:getFaultDomains', __args__, opts=opts, typ=GetFaultDomainsResult).value
 
     return AwaitableGetFaultDomainsResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        fault_domains=__ret__.fault_domains,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        fault_domains=pulumi.get(__ret__, 'fault_domains'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_fault_domains)

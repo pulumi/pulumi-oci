@@ -216,19 +216,19 @@ def get_recovery_service_subnet(recovery_service_subnet_id: Optional[str] = None
     __ret__ = pulumi.runtime.invoke('oci:RecoveryMod/getRecoveryServiceSubnet:getRecoveryServiceSubnet', __args__, opts=opts, typ=GetRecoveryServiceSubnetResult).value
 
     return AwaitableGetRecoveryServiceSubnetResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        recovery_service_subnet_id=__ret__.recovery_service_subnet_id,
-        state=__ret__.state,
-        subnet_id=__ret__.subnet_id,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        vcn_id=__ret__.vcn_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        recovery_service_subnet_id=pulumi.get(__ret__, 'recovery_service_subnet_id'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_recovery_service_subnet)

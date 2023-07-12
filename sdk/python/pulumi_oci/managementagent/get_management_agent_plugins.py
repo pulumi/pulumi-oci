@@ -161,14 +161,14 @@ def get_management_agent_plugins(agent_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ManagementAgent/getManagementAgentPlugins:getManagementAgentPlugins', __args__, opts=opts, typ=GetManagementAgentPluginsResult).value
 
     return AwaitableGetManagementAgentPluginsResult(
-        agent_id=__ret__.agent_id,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        management_agent_plugins=__ret__.management_agent_plugins,
-        platform_types=__ret__.platform_types,
-        state=__ret__.state)
+        agent_id=pulumi.get(__ret__, 'agent_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        management_agent_plugins=pulumi.get(__ret__, 'management_agent_plugins'),
+        platform_types=pulumi.get(__ret__, 'platform_types'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_management_agent_plugins)

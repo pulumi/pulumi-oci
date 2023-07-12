@@ -235,21 +235,21 @@ def get_media_workflow(media_workflow_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:MediaServices/getMediaWorkflow:getMediaWorkflow', __args__, opts=opts, typ=GetMediaWorkflowResult).value
 
     return AwaitableGetMediaWorkflowResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecyle_details=__ret__.lifecyle_details,
-        media_workflow_configuration_ids=__ret__.media_workflow_configuration_ids,
-        media_workflow_id=__ret__.media_workflow_id,
-        parameters=__ret__.parameters,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        tasks=__ret__.tasks,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        version=__ret__.version)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecyle_details=pulumi.get(__ret__, 'lifecyle_details'),
+        media_workflow_configuration_ids=pulumi.get(__ret__, 'media_workflow_configuration_ids'),
+        media_workflow_id=pulumi.get(__ret__, 'media_workflow_id'),
+        parameters=pulumi.get(__ret__, 'parameters'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        tasks=pulumi.get(__ret__, 'tasks'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_media_workflow)

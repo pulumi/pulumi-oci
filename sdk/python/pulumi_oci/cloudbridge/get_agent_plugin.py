@@ -211,19 +211,19 @@ def get_agent_plugin(agent_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudBridge/getAgentPlugin:getAgentPlugin', __args__, opts=opts, typ=GetAgentPluginResult).value
 
     return AwaitableGetAgentPluginResult(
-        agent_id=__ret__.agent_id,
-        defined_tags=__ret__.defined_tags,
-        desired_state=__ret__.desired_state,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        name=__ret__.name,
-        plugin_name=__ret__.plugin_name,
-        plugin_version=__ret__.plugin_version,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        agent_id=pulumi.get(__ret__, 'agent_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        desired_state=pulumi.get(__ret__, 'desired_state'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        name=pulumi.get(__ret__, 'name'),
+        plugin_name=pulumi.get(__ret__, 'plugin_name'),
+        plugin_version=pulumi.get(__ret__, 'plugin_version'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_agent_plugin)

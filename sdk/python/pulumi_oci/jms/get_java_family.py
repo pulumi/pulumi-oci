@@ -129,12 +129,12 @@ def get_java_family(family_version: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Jms/getJavaFamily:getJavaFamily', __args__, opts=opts, typ=GetJavaFamilyResult).value
 
     return AwaitableGetJavaFamilyResult(
-        display_name=__ret__.display_name,
-        doc_url=__ret__.doc_url,
-        end_of_support_life_date=__ret__.end_of_support_life_date,
-        family_version=__ret__.family_version,
-        id=__ret__.id,
-        support_type=__ret__.support_type)
+        display_name=pulumi.get(__ret__, 'display_name'),
+        doc_url=pulumi.get(__ret__, 'doc_url'),
+        end_of_support_life_date=pulumi.get(__ret__, 'end_of_support_life_date'),
+        family_version=pulumi.get(__ret__, 'family_version'),
+        id=pulumi.get(__ret__, 'id'),
+        support_type=pulumi.get(__ret__, 'support_type'))
 
 
 @_utilities.lift_output_func(get_java_family)

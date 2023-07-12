@@ -87,9 +87,9 @@ def get_configuration(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Audit/getConfiguration:getConfiguration', __args__, opts=opts, typ=GetConfigurationResult).value
 
     return AwaitableGetConfigurationResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        retention_period_days=__ret__.retention_period_days)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        retention_period_days=pulumi.get(__ret__, 'retention_period_days'))
 
 
 @_utilities.lift_output_func(get_configuration)

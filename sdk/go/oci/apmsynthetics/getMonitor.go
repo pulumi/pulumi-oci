@@ -62,7 +62,7 @@ type GetMonitorResult struct {
 	ApmDomainId string `pulumi:"apmDomainId"`
 	// Monitor availability configuration details.
 	AvailabilityConfigurations []GetMonitorAvailabilityConfiguration `pulumi:"availabilityConfigurations"`
-	// Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+	// Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
 	BatchIntervalInSeconds int `pulumi:"batchIntervalInSeconds"`
 	// Details of monitor configuration.
 	Configurations []GetMonitorConfiguration `pulumi:"configurations"`
@@ -74,18 +74,18 @@ type GetMonitorResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
 	Id string `pulumi:"id"`
-	// If isRunNow is enabled, then the monitor will run now.
+	// If isRunNow is enabled, then the monitor will run immediately.
 	IsRunNow bool `pulumi:"isRunNow"`
 	// If runOnce is enabled, then the monitor will run once.
 	IsRunOnce bool `pulumi:"isRunOnce"`
-	// Details used to schedule maintenance window.
+	// Details required to schedule maintenance window.
 	MaintenanceWindowSchedules []GetMonitorMaintenanceWindowSchedule `pulumi:"maintenanceWindowSchedules"`
 	MonitorId                  string                                `pulumi:"monitorId"`
-	// Type of the monitor.
+	// Type of monitor.
 	MonitorType string `pulumi:"monitorType"`
 	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds int `pulumi:"repeatIntervalInSeconds"`
-	// Scheduling policy on Vantage points.
+	// Scheduling policy to decide the distribution of monitor executions on vantage points.
 	SchedulingPolicy string `pulumi:"schedulingPolicy"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 	ScriptId string `pulumi:"scriptId"`
@@ -158,7 +158,7 @@ func (o GetMonitorResultOutput) AvailabilityConfigurations() GetMonitorAvailabil
 	return o.ApplyT(func(v GetMonitorResult) []GetMonitorAvailabilityConfiguration { return v.AvailabilityConfigurations }).(GetMonitorAvailabilityConfigurationArrayOutput)
 }
 
-// Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+// Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
 func (o GetMonitorResultOutput) BatchIntervalInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitorResult) int { return v.BatchIntervalInSeconds }).(pulumi.IntOutput)
 }
@@ -188,7 +188,7 @@ func (o GetMonitorResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// If isRunNow is enabled, then the monitor will run now.
+// If isRunNow is enabled, then the monitor will run immediately.
 func (o GetMonitorResultOutput) IsRunNow() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorResult) bool { return v.IsRunNow }).(pulumi.BoolOutput)
 }
@@ -198,7 +198,7 @@ func (o GetMonitorResultOutput) IsRunOnce() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorResult) bool { return v.IsRunOnce }).(pulumi.BoolOutput)
 }
 
-// Details used to schedule maintenance window.
+// Details required to schedule maintenance window.
 func (o GetMonitorResultOutput) MaintenanceWindowSchedules() GetMonitorMaintenanceWindowScheduleArrayOutput {
 	return o.ApplyT(func(v GetMonitorResult) []GetMonitorMaintenanceWindowSchedule { return v.MaintenanceWindowSchedules }).(GetMonitorMaintenanceWindowScheduleArrayOutput)
 }
@@ -207,7 +207,7 @@ func (o GetMonitorResultOutput) MonitorId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorResult) string { return v.MonitorId }).(pulumi.StringOutput)
 }
 
-// Type of the monitor.
+// Type of monitor.
 func (o GetMonitorResultOutput) MonitorType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorResult) string { return v.MonitorType }).(pulumi.StringOutput)
 }
@@ -217,7 +217,7 @@ func (o GetMonitorResultOutput) RepeatIntervalInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitorResult) int { return v.RepeatIntervalInSeconds }).(pulumi.IntOutput)
 }
 
-// Scheduling policy on Vantage points.
+// Scheduling policy to decide the distribution of monitor executions on vantage points.
 func (o GetMonitorResultOutput) SchedulingPolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorResult) string { return v.SchedulingPolicy }).(pulumi.StringOutput)
 }

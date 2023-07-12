@@ -174,14 +174,14 @@ def get_mount_targets(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:FileStorage/getMountTargets:getMountTargets', __args__, opts=opts, typ=GetMountTargetsResult).value
 
     return AwaitableGetMountTargetsResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        export_set_id=__ret__.export_set_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        mount_targets=__ret__.mount_targets,
-        state=__ret__.state)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        export_set_id=pulumi.get(__ret__, 'export_set_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        mount_targets=pulumi.get(__ret__, 'mount_targets'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_mount_targets)

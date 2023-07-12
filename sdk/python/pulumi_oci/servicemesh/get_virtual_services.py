@@ -158,13 +158,13 @@ def get_virtual_services(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ServiceMesh/getVirtualServices:getVirtualServices', __args__, opts=opts, typ=GetVirtualServicesResult).value
 
     return AwaitableGetVirtualServicesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        mesh_id=__ret__.mesh_id,
-        name=__ret__.name,
-        state=__ret__.state,
-        virtual_service_collections=__ret__.virtual_service_collections)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        mesh_id=pulumi.get(__ret__, 'mesh_id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        virtual_service_collections=pulumi.get(__ret__, 'virtual_service_collections'))
 
 
 @_utilities.lift_output_func(get_virtual_services)

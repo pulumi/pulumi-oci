@@ -172,16 +172,16 @@ def get_commitment_aggregateds(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OsubUsage/getCommitmentAggregateds:getCommitmentAggregateds', __args__, opts=opts, typ=GetCommitmentAggregatedsResult).value
 
     return AwaitableGetCommitmentAggregatedsResult(
-        compartment_id=__ret__.compartment_id,
-        computed_usage_aggregateds=__ret__.computed_usage_aggregateds,
-        filters=__ret__.filters,
-        grouping=__ret__.grouping,
-        id=__ret__.id,
-        parent_product=__ret__.parent_product,
-        subscription_id=__ret__.subscription_id,
-        time_from=__ret__.time_from,
-        time_to=__ret__.time_to,
-        x_one_origin_region=__ret__.x_one_origin_region)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        computed_usage_aggregateds=pulumi.get(__ret__, 'computed_usage_aggregateds'),
+        filters=pulumi.get(__ret__, 'filters'),
+        grouping=pulumi.get(__ret__, 'grouping'),
+        id=pulumi.get(__ret__, 'id'),
+        parent_product=pulumi.get(__ret__, 'parent_product'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'),
+        time_from=pulumi.get(__ret__, 'time_from'),
+        time_to=pulumi.get(__ret__, 'time_to'),
+        x_one_origin_region=pulumi.get(__ret__, 'x_one_origin_region'))
 
 
 @_utilities.lift_output_func(get_commitment_aggregateds)

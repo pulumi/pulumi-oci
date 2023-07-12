@@ -243,20 +243,20 @@ def get_managed_database_sql_plan_baselines(filters: Optional[Sequence[pulumi.In
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines', __args__, opts=opts, typ=GetManagedDatabaseSqlPlanBaselinesResult).value
 
     return AwaitableGetManagedDatabaseSqlPlanBaselinesResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_accepted=__ret__.is_accepted,
-        is_adaptive=__ret__.is_adaptive,
-        is_enabled=__ret__.is_enabled,
-        is_fixed=__ret__.is_fixed,
-        is_reproduced=__ret__.is_reproduced,
-        limit=__ret__.limit,
-        managed_database_id=__ret__.managed_database_id,
-        origin=__ret__.origin,
-        plan_name=__ret__.plan_name,
-        sql_handle=__ret__.sql_handle,
-        sql_plan_baseline_collections=__ret__.sql_plan_baseline_collections,
-        sql_text=__ret__.sql_text)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_accepted=pulumi.get(__ret__, 'is_accepted'),
+        is_adaptive=pulumi.get(__ret__, 'is_adaptive'),
+        is_enabled=pulumi.get(__ret__, 'is_enabled'),
+        is_fixed=pulumi.get(__ret__, 'is_fixed'),
+        is_reproduced=pulumi.get(__ret__, 'is_reproduced'),
+        limit=pulumi.get(__ret__, 'limit'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        origin=pulumi.get(__ret__, 'origin'),
+        plan_name=pulumi.get(__ret__, 'plan_name'),
+        sql_handle=pulumi.get(__ret__, 'sql_handle'),
+        sql_plan_baseline_collections=pulumi.get(__ret__, 'sql_plan_baseline_collections'),
+        sql_text=pulumi.get(__ret__, 'sql_text'))
 
 
 @_utilities.lift_output_func(get_managed_database_sql_plan_baselines)

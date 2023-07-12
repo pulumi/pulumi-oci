@@ -18,12 +18,17 @@ import javax.annotation.Nullable;
 @CustomType
 public final class SubscriptionSubscription {
     /**
+     * @return (Updatable) Account type.
+     * 
+     */
+    private @Nullable String accountType;
+    /**
      * @return (Updatable) Bill to customer Account id.
      * 
      */
     private @Nullable String billToCustAccountId;
     /**
-     * @return (Updatable) Billing address details model.
+     * @return (Updatable) Address details model.
      * 
      */
     private @Nullable List<SubscriptionSubscriptionBillingAddress> billingAddresses;
@@ -93,6 +98,11 @@ public final class SubscriptionSubscription {
      */
     private @Nullable SubscriptionSubscriptionTaxInfo taxInfo;
     /**
+     * @return (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+     * 
+     */
+    private @Nullable String timePersonalToCorporateConv;
+    /**
      * @return (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      * 
      */
@@ -115,6 +125,13 @@ public final class SubscriptionSubscription {
 
     private SubscriptionSubscription() {}
     /**
+     * @return (Updatable) Account type.
+     * 
+     */
+    public Optional<String> accountType() {
+        return Optional.ofNullable(this.accountType);
+    }
+    /**
      * @return (Updatable) Bill to customer Account id.
      * 
      */
@@ -122,7 +139,7 @@ public final class SubscriptionSubscription {
         return Optional.ofNullable(this.billToCustAccountId);
     }
     /**
-     * @return (Updatable) Billing address details model.
+     * @return (Updatable) Address details model.
      * 
      */
     public List<SubscriptionSubscriptionBillingAddress> billingAddresses() {
@@ -220,6 +237,13 @@ public final class SubscriptionSubscription {
         return Optional.ofNullable(this.taxInfo);
     }
     /**
+     * @return (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+     * 
+     */
+    public Optional<String> timePersonalToCorporateConv() {
+        return Optional.ofNullable(this.timePersonalToCorporateConv);
+    }
+    /**
      * @return (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      * 
      */
@@ -257,6 +281,7 @@ public final class SubscriptionSubscription {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String accountType;
         private @Nullable String billToCustAccountId;
         private @Nullable List<SubscriptionSubscriptionBillingAddress> billingAddresses;
         private @Nullable String currencyCode;
@@ -272,6 +297,7 @@ public final class SubscriptionSubscription {
         private @Nullable String shipToCustAcctSiteId;
         private String subscriptionPlanNumber;
         private @Nullable SubscriptionSubscriptionTaxInfo taxInfo;
+        private @Nullable String timePersonalToCorporateConv;
         private @Nullable String timePlanUpgrade;
         private @Nullable String timeStart;
         private @Nullable String upgradeState;
@@ -279,6 +305,7 @@ public final class SubscriptionSubscription {
         public Builder() {}
         public Builder(SubscriptionSubscription defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.accountType = defaults.accountType;
     	      this.billToCustAccountId = defaults.billToCustAccountId;
     	      this.billingAddresses = defaults.billingAddresses;
     	      this.currencyCode = defaults.currencyCode;
@@ -294,12 +321,18 @@ public final class SubscriptionSubscription {
     	      this.shipToCustAcctSiteId = defaults.shipToCustAcctSiteId;
     	      this.subscriptionPlanNumber = defaults.subscriptionPlanNumber;
     	      this.taxInfo = defaults.taxInfo;
+    	      this.timePersonalToCorporateConv = defaults.timePersonalToCorporateConv;
     	      this.timePlanUpgrade = defaults.timePlanUpgrade;
     	      this.timeStart = defaults.timeStart;
     	      this.upgradeState = defaults.upgradeState;
     	      this.upgradeStateDetails = defaults.upgradeStateDetails;
         }
 
+        @CustomType.Setter
+        public Builder accountType(@Nullable String accountType) {
+            this.accountType = accountType;
+            return this;
+        }
         @CustomType.Setter
         public Builder billToCustAccountId(@Nullable String billToCustAccountId) {
             this.billToCustAccountId = billToCustAccountId;
@@ -382,6 +415,11 @@ public final class SubscriptionSubscription {
             return this;
         }
         @CustomType.Setter
+        public Builder timePersonalToCorporateConv(@Nullable String timePersonalToCorporateConv) {
+            this.timePersonalToCorporateConv = timePersonalToCorporateConv;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timePlanUpgrade(@Nullable String timePlanUpgrade) {
             this.timePlanUpgrade = timePlanUpgrade;
             return this;
@@ -403,6 +441,7 @@ public final class SubscriptionSubscription {
         }
         public SubscriptionSubscription build() {
             final var o = new SubscriptionSubscription();
+            o.accountType = accountType;
             o.billToCustAccountId = billToCustAccountId;
             o.billingAddresses = billingAddresses;
             o.currencyCode = currencyCode;
@@ -418,6 +457,7 @@ public final class SubscriptionSubscription {
             o.shipToCustAcctSiteId = shipToCustAcctSiteId;
             o.subscriptionPlanNumber = subscriptionPlanNumber;
             o.taxInfo = taxInfo;
+            o.timePersonalToCorporateConv = timePersonalToCorporateConv;
             o.timePlanUpgrade = timePlanUpgrade;
             o.timeStart = timeStart;
             o.upgradeState = upgradeState;

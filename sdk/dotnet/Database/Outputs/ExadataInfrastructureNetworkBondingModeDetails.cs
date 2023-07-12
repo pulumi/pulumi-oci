@@ -21,15 +21,22 @@ namespace Pulumi.Oci.Database.Outputs
         /// (Updatable) The network bonding mode for the Exadata infrastructure.
         /// </summary>
         public readonly string? ClientNetworkBondingMode;
+        /// <summary>
+        /// (Updatable) The network bonding mode for the Exadata infrastructure.
+        /// </summary>
+        public readonly string? DrNetworkBondingMode;
 
         [OutputConstructor]
         private ExadataInfrastructureNetworkBondingModeDetails(
             string? backupNetworkBondingMode,
 
-            string? clientNetworkBondingMode)
+            string? clientNetworkBondingMode,
+
+            string? drNetworkBondingMode)
         {
             BackupNetworkBondingMode = backupNetworkBondingMode;
             ClientNetworkBondingMode = clientNetworkBondingMode;
+            DrNetworkBondingMode = drNetworkBondingMode;
         }
     }
 }

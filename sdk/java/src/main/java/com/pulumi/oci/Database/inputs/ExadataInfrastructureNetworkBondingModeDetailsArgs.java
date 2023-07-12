@@ -45,11 +45,27 @@ public final class ExadataInfrastructureNetworkBondingModeDetailsArgs extends co
         return Optional.ofNullable(this.clientNetworkBondingMode);
     }
 
+    /**
+     * (Updatable) The network bonding mode for the Exadata infrastructure.
+     * 
+     */
+    @Import(name="drNetworkBondingMode")
+    private @Nullable Output<String> drNetworkBondingMode;
+
+    /**
+     * @return (Updatable) The network bonding mode for the Exadata infrastructure.
+     * 
+     */
+    public Optional<Output<String>> drNetworkBondingMode() {
+        return Optional.ofNullable(this.drNetworkBondingMode);
+    }
+
     private ExadataInfrastructureNetworkBondingModeDetailsArgs() {}
 
     private ExadataInfrastructureNetworkBondingModeDetailsArgs(ExadataInfrastructureNetworkBondingModeDetailsArgs $) {
         this.backupNetworkBondingMode = $.backupNetworkBondingMode;
         this.clientNetworkBondingMode = $.clientNetworkBondingMode;
+        this.drNetworkBondingMode = $.drNetworkBondingMode;
     }
 
     public static Builder builder() {
@@ -110,6 +126,27 @@ public final class ExadataInfrastructureNetworkBondingModeDetailsArgs extends co
          */
         public Builder clientNetworkBondingMode(String clientNetworkBondingMode) {
             return clientNetworkBondingMode(Output.of(clientNetworkBondingMode));
+        }
+
+        /**
+         * @param drNetworkBondingMode (Updatable) The network bonding mode for the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder drNetworkBondingMode(@Nullable Output<String> drNetworkBondingMode) {
+            $.drNetworkBondingMode = drNetworkBondingMode;
+            return this;
+        }
+
+        /**
+         * @param drNetworkBondingMode (Updatable) The network bonding mode for the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder drNetworkBondingMode(String drNetworkBondingMode) {
+            return drNetworkBondingMode(Output.of(drNetworkBondingMode));
         }
 
         public ExadataInfrastructureNetworkBondingModeDetailsArgs build() {

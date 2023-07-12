@@ -115,11 +115,11 @@ def get_fusion_environment_family_limits_and_usage(fusion_environment_family_id:
     __ret__ = pulumi.runtime.invoke('oci:Functions/getFusionEnvironmentFamilyLimitsAndUsage:getFusionEnvironmentFamilyLimitsAndUsage', __args__, opts=opts, typ=GetFusionEnvironmentFamilyLimitsAndUsageResult).value
 
     return AwaitableGetFusionEnvironmentFamilyLimitsAndUsageResult(
-        development_limit_and_usages=__ret__.development_limit_and_usages,
-        fusion_environment_family_id=__ret__.fusion_environment_family_id,
-        id=__ret__.id,
-        production_limit_and_usages=__ret__.production_limit_and_usages,
-        test_limit_and_usages=__ret__.test_limit_and_usages)
+        development_limit_and_usages=pulumi.get(__ret__, 'development_limit_and_usages'),
+        fusion_environment_family_id=pulumi.get(__ret__, 'fusion_environment_family_id'),
+        id=pulumi.get(__ret__, 'id'),
+        production_limit_and_usages=pulumi.get(__ret__, 'production_limit_and_usages'),
+        test_limit_and_usages=pulumi.get(__ret__, 'test_limit_and_usages'))
 
 
 @_utilities.lift_output_func(get_fusion_environment_family_limits_and_usage)

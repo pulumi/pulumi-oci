@@ -163,15 +163,15 @@ def get_managed_database_group(managed_database_group_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseGroup:getManagedDatabaseGroup', __args__, opts=opts, typ=GetManagedDatabaseGroupResult).value
 
     return AwaitableGetManagedDatabaseGroupResult(
-        compartment_id=__ret__.compartment_id,
-        description=__ret__.description,
-        id=__ret__.id,
-        managed_database_group_id=__ret__.managed_database_group_id,
-        managed_databases=__ret__.managed_databases,
-        name=__ret__.name,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        description=pulumi.get(__ret__, 'description'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_database_group_id=pulumi.get(__ret__, 'managed_database_group_id'),
+        managed_databases=pulumi.get(__ret__, 'managed_databases'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_managed_database_group)

@@ -175,15 +175,15 @@ def get_pbf_listings(filters: Optional[Sequence[pulumi.InputType['GetPbfListings
     __ret__ = pulumi.runtime.invoke('oci:Functions/getPbfListings:getPbfListings', __args__, opts=opts, typ=GetPbfListingsResult).value
 
     return AwaitableGetPbfListingsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        name_contains=__ret__.name_contains,
-        name_starts_with=__ret__.name_starts_with,
-        pbf_listing_id=__ret__.pbf_listing_id,
-        pbf_listings_collections=__ret__.pbf_listings_collections,
-        state=__ret__.state,
-        triggers=__ret__.triggers)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        name_contains=pulumi.get(__ret__, 'name_contains'),
+        name_starts_with=pulumi.get(__ret__, 'name_starts_with'),
+        pbf_listing_id=pulumi.get(__ret__, 'pbf_listing_id'),
+        pbf_listings_collections=pulumi.get(__ret__, 'pbf_listings_collections'),
+        state=pulumi.get(__ret__, 'state'),
+        triggers=pulumi.get(__ret__, 'triggers'))
 
 
 @_utilities.lift_output_func(get_pbf_listings)

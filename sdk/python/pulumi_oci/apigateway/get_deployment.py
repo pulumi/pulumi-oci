@@ -223,20 +223,20 @@ def get_deployment(deployment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApiGateway/getDeployment:getDeployment', __args__, opts=opts, typ=GetDeploymentResult).value
 
     return AwaitableGetDeploymentResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        deployment_id=__ret__.deployment_id,
-        display_name=__ret__.display_name,
-        endpoint=__ret__.endpoint,
-        freeform_tags=__ret__.freeform_tags,
-        gateway_id=__ret__.gateway_id,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        path_prefix=__ret__.path_prefix,
-        specifications=__ret__.specifications,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        deployment_id=pulumi.get(__ret__, 'deployment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        endpoint=pulumi.get(__ret__, 'endpoint'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        gateway_id=pulumi.get(__ret__, 'gateway_id'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        path_prefix=pulumi.get(__ret__, 'path_prefix'),
+        specifications=pulumi.get(__ret__, 'specifications'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_deployment)

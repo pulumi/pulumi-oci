@@ -251,7 +251,7 @@ type AutonomousDatabase struct {
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 	StandbyWhitelistedIps pulumi.StringArrayOutput `pulumi:"standbyWhitelistedIps"`
-	// (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+	// The current state of the Autonomous Database.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
 	//
@@ -588,7 +588,7 @@ type autonomousDatabaseState struct {
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 	StandbyWhitelistedIps []string `pulumi:"standbyWhitelistedIps"`
-	// (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+	// The current state of the Autonomous Database.
 	State *string `pulumi:"state"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
 	//
@@ -884,7 +884,7 @@ type AutonomousDatabaseState struct {
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 	StandbyWhitelistedIps pulumi.StringArrayInput
-	// (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+	// The current state of the Autonomous Database.
 	State pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
 	//
@@ -1116,7 +1116,7 @@ type autonomousDatabaseArgs struct {
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 	StandbyWhitelistedIps []string `pulumi:"standbyWhitelistedIps"`
-	// (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+	// The current state of the Autonomous Database.
 	State *string `pulumi:"state"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
 	//
@@ -1307,7 +1307,7 @@ type AutonomousDatabaseArgs struct {
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 	StandbyWhitelistedIps pulumi.StringArrayInput
-	// (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+	// The current state of the Autonomous Database.
 	State pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
 	//
@@ -1924,7 +1924,7 @@ func (o AutonomousDatabaseOutput) StandbyWhitelistedIps() pulumi.StringArrayOutp
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringArrayOutput { return v.StandbyWhitelistedIps }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+// The current state of the Autonomous Database.
 func (o AutonomousDatabaseOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

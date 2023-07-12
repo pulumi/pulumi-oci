@@ -150,13 +150,13 @@ def get_opsi_configuration_configuration_item(compartment_id: Optional[str] = No
     __ret__ = pulumi.runtime.invoke('oci:Opsi/getOpsiConfigurationConfigurationItem:getOpsiConfigurationConfigurationItem', __args__, opts=opts, typ=GetOpsiConfigurationConfigurationItemResult).value
 
     return AwaitableGetOpsiConfigurationConfigurationItemResult(
-        compartment_id=__ret__.compartment_id,
-        config_item_fields=__ret__.config_item_fields,
-        config_items=__ret__.config_items,
-        config_items_applicable_contexts=__ret__.config_items_applicable_contexts,
-        id=__ret__.id,
-        name=__ret__.name,
-        opsi_config_type=__ret__.opsi_config_type)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        config_item_fields=pulumi.get(__ret__, 'config_item_fields'),
+        config_items=pulumi.get(__ret__, 'config_items'),
+        config_items_applicable_contexts=pulumi.get(__ret__, 'config_items_applicable_contexts'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        opsi_config_type=pulumi.get(__ret__, 'opsi_config_type'))
 
 
 @_utilities.lift_output_func(get_opsi_configuration_configuration_item)

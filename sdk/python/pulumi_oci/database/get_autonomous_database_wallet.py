@@ -24,10 +24,6 @@ class GetAutonomousDatabaseWalletResult:
     def __init__(__self__, autonomous_database_id=None, base64_encode_content=None, content=None, generate_type=None, id=None, password=None):
         if autonomous_database_id and not isinstance(autonomous_database_id, str):
             raise TypeError("Expected argument 'autonomous_database_id' to be a str")
-        if autonomous_database_id is not None:
-            warnings.warn("""The 'data.oci_database_autonomous_database_wallet' resource has been deprecated. Please use 'oci_database_autonomous_database_wallet' instead.""", DeprecationWarning)
-            pulumi.log.warn("""autonomous_database_id is deprecated: The 'data.oci_database_autonomous_database_wallet' resource has been deprecated. Please use 'oci_database_autonomous_database_wallet' instead.""")
-
         pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
         if base64_encode_content and not isinstance(base64_encode_content, bool):
             raise TypeError("Expected argument 'base64_encode_content' to be a bool")
@@ -48,6 +44,9 @@ class GetAutonomousDatabaseWalletResult:
     @property
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> str:
+        warnings.warn("""The 'data.oci_database_autonomous_database_wallet' resource has been deprecated. Please use 'oci_database_autonomous_database_wallet' instead.""", DeprecationWarning)
+        pulumi.log.warn("""autonomous_database_id is deprecated: The 'data.oci_database_autonomous_database_wallet' resource has been deprecated. Please use 'oci_database_autonomous_database_wallet' instead.""")
+
         return pulumi.get(self, "autonomous_database_id")
 
     @property
@@ -136,12 +135,12 @@ def get_autonomous_database_wallet(autonomous_database_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet', __args__, opts=opts, typ=GetAutonomousDatabaseWalletResult).value
 
     return AwaitableGetAutonomousDatabaseWalletResult(
-        autonomous_database_id=__ret__.autonomous_database_id,
-        base64_encode_content=__ret__.base64_encode_content,
-        content=__ret__.content,
-        generate_type=__ret__.generate_type,
-        id=__ret__.id,
-        password=__ret__.password)
+        autonomous_database_id=pulumi.get(__ret__, 'autonomous_database_id'),
+        base64_encode_content=pulumi.get(__ret__, 'base64_encode_content'),
+        content=pulumi.get(__ret__, 'content'),
+        generate_type=pulumi.get(__ret__, 'generate_type'),
+        id=pulumi.get(__ret__, 'id'),
+        password=pulumi.get(__ret__, 'password'))
 
 
 @_utilities.lift_output_func(get_autonomous_database_wallet)

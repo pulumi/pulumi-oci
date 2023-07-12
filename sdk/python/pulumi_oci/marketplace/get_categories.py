@@ -104,10 +104,10 @@ def get_categories(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Marketplace/getCategories:getCategories', __args__, opts=opts, typ=GetCategoriesResult).value
 
     return AwaitableGetCategoriesResult(
-        categories=__ret__.categories,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        categories=pulumi.get(__ret__, 'categories'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_categories)

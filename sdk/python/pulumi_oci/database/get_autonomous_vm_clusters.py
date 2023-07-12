@@ -154,13 +154,13 @@ def get_autonomous_vm_clusters(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousVmClusters:getAutonomousVmClusters', __args__, opts=opts, typ=GetAutonomousVmClustersResult).value
 
     return AwaitableGetAutonomousVmClustersResult(
-        autonomous_vm_clusters=__ret__.autonomous_vm_clusters,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        exadata_infrastructure_id=__ret__.exadata_infrastructure_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        autonomous_vm_clusters=pulumi.get(__ret__, 'autonomous_vm_clusters'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_autonomous_vm_clusters)

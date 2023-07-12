@@ -151,13 +151,13 @@ def get_discovery_analytic(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getDiscoveryAnalytic:getDiscoveryAnalytic', __args__, opts=opts, typ=GetDiscoveryAnalyticResult).value
 
     return AwaitableGetDiscoveryAnalyticResult(
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        group_by=__ret__.group_by,
-        id=__ret__.id,
-        items=__ret__.items,
-        sensitive_data_model_id=__ret__.sensitive_data_model_id,
-        target_id=__ret__.target_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        group_by=pulumi.get(__ret__, 'group_by'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'),
+        target_id=pulumi.get(__ret__, 'target_id'))
 
 
 @_utilities.lift_output_func(get_discovery_analytic)

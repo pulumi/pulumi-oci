@@ -201,18 +201,18 @@ def get_managed_database_sql_plan_baseline_configuration(managed_database_id: Op
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineConfiguration:getManagedDatabaseSqlPlanBaselineConfiguration', __args__, opts=opts, typ=GetManagedDatabaseSqlPlanBaselineConfigurationResult).value
 
     return AwaitableGetManagedDatabaseSqlPlanBaselineConfigurationResult(
-        auto_capture_filters=__ret__.auto_capture_filters,
-        auto_spm_evolve_task_parameters=__ret__.auto_spm_evolve_task_parameters,
-        id=__ret__.id,
-        is_auto_spm_evolve_task_enabled=__ret__.is_auto_spm_evolve_task_enabled,
-        is_automatic_initial_plan_capture_enabled=__ret__.is_automatic_initial_plan_capture_enabled,
-        is_high_frequency_auto_spm_evolve_task_enabled=__ret__.is_high_frequency_auto_spm_evolve_task_enabled,
-        is_sql_plan_baselines_usage_enabled=__ret__.is_sql_plan_baselines_usage_enabled,
-        managed_database_id=__ret__.managed_database_id,
-        plan_retention_weeks=__ret__.plan_retention_weeks,
-        space_budget_mb=__ret__.space_budget_mb,
-        space_budget_percent=__ret__.space_budget_percent,
-        space_used_mb=__ret__.space_used_mb)
+        auto_capture_filters=pulumi.get(__ret__, 'auto_capture_filters'),
+        auto_spm_evolve_task_parameters=pulumi.get(__ret__, 'auto_spm_evolve_task_parameters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_auto_spm_evolve_task_enabled=pulumi.get(__ret__, 'is_auto_spm_evolve_task_enabled'),
+        is_automatic_initial_plan_capture_enabled=pulumi.get(__ret__, 'is_automatic_initial_plan_capture_enabled'),
+        is_high_frequency_auto_spm_evolve_task_enabled=pulumi.get(__ret__, 'is_high_frequency_auto_spm_evolve_task_enabled'),
+        is_sql_plan_baselines_usage_enabled=pulumi.get(__ret__, 'is_sql_plan_baselines_usage_enabled'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        plan_retention_weeks=pulumi.get(__ret__, 'plan_retention_weeks'),
+        space_budget_mb=pulumi.get(__ret__, 'space_budget_mb'),
+        space_budget_percent=pulumi.get(__ret__, 'space_budget_percent'),
+        space_used_mb=pulumi.get(__ret__, 'space_used_mb'))
 
 
 @_utilities.lift_output_func(get_managed_database_sql_plan_baseline_configuration)

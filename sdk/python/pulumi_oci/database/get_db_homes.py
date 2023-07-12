@@ -184,16 +184,16 @@ def get_db_homes(backup_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getDbHomes:getDbHomes', __args__, opts=opts, typ=GetDbHomesResult).value
 
     return AwaitableGetDbHomesResult(
-        backup_id=__ret__.backup_id,
-        compartment_id=__ret__.compartment_id,
-        db_homes=__ret__.db_homes,
-        db_system_id=__ret__.db_system_id,
-        db_version=__ret__.db_version,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        vm_cluster_id=__ret__.vm_cluster_id)
+        backup_id=pulumi.get(__ret__, 'backup_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        db_homes=pulumi.get(__ret__, 'db_homes'),
+        db_system_id=pulumi.get(__ret__, 'db_system_id'),
+        db_version=pulumi.get(__ret__, 'db_version'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
 
 
 @_utilities.lift_output_func(get_db_homes)

@@ -158,13 +158,13 @@ def get_volume_attachments(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getVolumeAttachments:getVolumeAttachments', __args__, opts=opts, typ=GetVolumeAttachmentsResult).value
 
     return AwaitableGetVolumeAttachmentsResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        instance_id=__ret__.instance_id,
-        volume_attachments=__ret__.volume_attachments,
-        volume_id=__ret__.volume_id)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        instance_id=pulumi.get(__ret__, 'instance_id'),
+        volume_attachments=pulumi.get(__ret__, 'volume_attachments'),
+        volume_id=pulumi.get(__ret__, 'volume_id'))
 
 
 @_utilities.lift_output_func(get_volume_attachments)

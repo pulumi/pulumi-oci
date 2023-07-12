@@ -91,9 +91,9 @@ def get_namespace_storage_encryption_key_info(namespace: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getNamespaceStorageEncryptionKeyInfo:getNamespaceStorageEncryptionKeyInfo', __args__, opts=opts, typ=GetNamespaceStorageEncryptionKeyInfoResult).value
 
     return AwaitableGetNamespaceStorageEncryptionKeyInfoResult(
-        id=__ret__.id,
-        items=__ret__.items,
-        namespace=__ret__.namespace)
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        namespace=pulumi.get(__ret__, 'namespace'))
 
 
 @_utilities.lift_output_func(get_namespace_storage_encryption_key_info)

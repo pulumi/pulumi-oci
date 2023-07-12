@@ -154,13 +154,13 @@ def get_external_database_connectors(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getExternalDatabaseConnectors:getExternalDatabaseConnectors', __args__, opts=opts, typ=GetExternalDatabaseConnectorsResult).value
 
     return AwaitableGetExternalDatabaseConnectorsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        external_database_connectors=__ret__.external_database_connectors,
-        external_database_id=__ret__.external_database_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        external_database_connectors=pulumi.get(__ret__, 'external_database_connectors'),
+        external_database_id=pulumi.get(__ret__, 'external_database_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_external_database_connectors)

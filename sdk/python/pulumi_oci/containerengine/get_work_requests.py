@@ -161,14 +161,14 @@ def get_work_requests(cluster_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ContainerEngine/getWorkRequests:getWorkRequests', __args__, opts=opts, typ=GetWorkRequestsResult).value
 
     return AwaitableGetWorkRequestsResult(
-        cluster_id=__ret__.cluster_id,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        resource_id=__ret__.resource_id,
-        resource_type=__ret__.resource_type,
-        statuses=__ret__.statuses,
-        work_requests=__ret__.work_requests)
+        cluster_id=pulumi.get(__ret__, 'cluster_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        resource_id=pulumi.get(__ret__, 'resource_id'),
+        resource_type=pulumi.get(__ret__, 'resource_type'),
+        statuses=pulumi.get(__ret__, 'statuses'),
+        work_requests=pulumi.get(__ret__, 'work_requests'))
 
 
 @_utilities.lift_output_func(get_work_requests)

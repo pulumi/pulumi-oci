@@ -142,12 +142,12 @@ def get_functions(application_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Functions/getFunctions:getFunctions', __args__, opts=opts, typ=GetFunctionsResult).value
 
     return AwaitableGetFunctionsResult(
-        application_id=__ret__.application_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        functions=__ret__.functions,
-        id=__ret__.id,
-        state=__ret__.state)
+        application_id=pulumi.get(__ret__, 'application_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        functions=pulumi.get(__ret__, 'functions'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_functions)

@@ -90,9 +90,9 @@ def get_network_load_balancers_protocols(filters: Optional[Sequence[pulumi.Input
     __ret__ = pulumi.runtime.invoke('oci:NetworkLoadBalancer/getNetworkLoadBalancersProtocols:getNetworkLoadBalancersProtocols', __args__, opts=opts, typ=GetNetworkLoadBalancersProtocolsResult).value
 
     return AwaitableGetNetworkLoadBalancersProtocolsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        network_load_balancers_protocol_collections=__ret__.network_load_balancers_protocol_collections)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        network_load_balancers_protocol_collections=pulumi.get(__ret__, 'network_load_balancers_protocol_collections'))
 
 
 @_utilities.lift_output_func(get_network_load_balancers_protocols)

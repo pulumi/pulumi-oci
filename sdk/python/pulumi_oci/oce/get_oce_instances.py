@@ -151,13 +151,13 @@ def get_oce_instances(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Oce/getOceInstances:getOceInstances', __args__, opts=opts, typ=GetOceInstancesResult).value
 
     return AwaitableGetOceInstancesResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        oce_instances=__ret__.oce_instances,
-        state=__ret__.state,
-        tenancy_id=__ret__.tenancy_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        oce_instances=pulumi.get(__ret__, 'oce_instances'),
+        state=pulumi.get(__ret__, 'state'),
+        tenancy_id=pulumi.get(__ret__, 'tenancy_id'))
 
 
 @_utilities.lift_output_func(get_oce_instances)

@@ -14,9 +14,17 @@ namespace Pulumi.Oci.OspGateway.Outputs
     public sealed class GetInvoicesInvoiceCollectionItemLastPaymentDetailResult
     {
         /// <summary>
+        /// Account number of the card owner
+        /// </summary>
+        public readonly string AccountNumber;
+        /// <summary>
         /// Amount that paid
         /// </summary>
         public readonly double AmountPaid;
+        /// <summary>
+        /// Echeck card type
+        /// </summary>
+        public readonly string CardType;
         /// <summary>
         /// Credit card type
         /// </summary>
@@ -50,6 +58,10 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// </summary>
         public readonly string PaypalReference;
         /// <summary>
+        /// Routing number of the echeck card
+        /// </summary>
+        public readonly string RoutingNumber;
+        /// <summary>
         /// Expired date of the credit card
         /// </summary>
         public readonly string TimeExpiration;
@@ -60,7 +72,11 @@ namespace Pulumi.Oci.OspGateway.Outputs
 
         [OutputConstructor]
         private GetInvoicesInvoiceCollectionItemLastPaymentDetailResult(
+            string accountNumber,
+
             double amountPaid,
+
+            string cardType,
 
             string creditCardType,
 
@@ -78,11 +94,15 @@ namespace Pulumi.Oci.OspGateway.Outputs
 
             string paypalReference,
 
+            string routingNumber,
+
             string timeExpiration,
 
             string timePaidOn)
         {
+            AccountNumber = accountNumber;
             AmountPaid = amountPaid;
+            CardType = cardType;
             CreditCardType = creditCardType;
             EcheckRouting = echeckRouting;
             LastDigits = lastDigits;
@@ -91,6 +111,7 @@ namespace Pulumi.Oci.OspGateway.Outputs
             PaymentMethod = paymentMethod;
             PaypalId = paypalId;
             PaypalReference = paypalReference;
+            RoutingNumber = routingNumber;
             TimeExpiration = timeExpiration;
             TimePaidOn = timePaidOn;
         }

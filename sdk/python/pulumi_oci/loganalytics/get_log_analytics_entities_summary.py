@@ -130,12 +130,12 @@ def get_log_analytics_entities_summary(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getLogAnalyticsEntitiesSummary:getLogAnalyticsEntitiesSummary', __args__, opts=opts, typ=GetLogAnalyticsEntitiesSummaryResult).value
 
     return AwaitableGetLogAnalyticsEntitiesSummaryResult(
-        active_entities_count=__ret__.active_entities_count,
-        compartment_id=__ret__.compartment_id,
-        entities_with_has_logs_collected_count=__ret__.entities_with_has_logs_collected_count,
-        entities_with_management_agent_count=__ret__.entities_with_management_agent_count,
-        id=__ret__.id,
-        namespace=__ret__.namespace)
+        active_entities_count=pulumi.get(__ret__, 'active_entities_count'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        entities_with_has_logs_collected_count=pulumi.get(__ret__, 'entities_with_has_logs_collected_count'),
+        entities_with_management_agent_count=pulumi.get(__ret__, 'entities_with_management_agent_count'),
+        id=pulumi.get(__ret__, 'id'),
+        namespace=pulumi.get(__ret__, 'namespace'))
 
 
 @_utilities.lift_output_func(get_log_analytics_entities_summary)

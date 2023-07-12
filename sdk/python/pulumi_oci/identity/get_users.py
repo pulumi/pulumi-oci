@@ -172,14 +172,14 @@ def get_users(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getUsers:getUsers', __args__, opts=opts, typ=GetUsersResult).value
 
     return AwaitableGetUsersResult(
-        compartment_id=__ret__.compartment_id,
-        external_identifier=__ret__.external_identifier,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        identity_provider_id=__ret__.identity_provider_id,
-        name=__ret__.name,
-        state=__ret__.state,
-        users=__ret__.users)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        external_identifier=pulumi.get(__ret__, 'external_identifier'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        identity_provider_id=pulumi.get(__ret__, 'identity_provider_id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        users=pulumi.get(__ret__, 'users'))
 
 
 @_utilities.lift_output_func(get_users)

@@ -122,11 +122,11 @@ def get_custom_tables(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:MeteringComputation/getCustomTables:getCustomTables', __args__, opts=opts, typ=GetCustomTablesResult).value
 
     return AwaitableGetCustomTablesResult(
-        compartment_id=__ret__.compartment_id,
-        custom_table_collections=__ret__.custom_table_collections,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        saved_report_id=__ret__.saved_report_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        custom_table_collections=pulumi.get(__ret__, 'custom_table_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        saved_report_id=pulumi.get(__ret__, 'saved_report_id'))
 
 
 @_utilities.lift_output_func(get_custom_tables)

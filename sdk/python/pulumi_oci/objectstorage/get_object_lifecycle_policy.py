@@ -113,11 +113,11 @@ def get_object_lifecycle_policy(bucket: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ObjectStorage/getObjectLifecyclePolicy:getObjectLifecyclePolicy', __args__, opts=opts, typ=GetObjectLifecyclePolicyResult).value
 
     return AwaitableGetObjectLifecyclePolicyResult(
-        bucket=__ret__.bucket,
-        id=__ret__.id,
-        namespace=__ret__.namespace,
-        rules=__ret__.rules,
-        time_created=__ret__.time_created)
+        bucket=pulumi.get(__ret__, 'bucket'),
+        id=pulumi.get(__ret__, 'id'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        rules=pulumi.get(__ret__, 'rules'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_object_lifecycle_policy)

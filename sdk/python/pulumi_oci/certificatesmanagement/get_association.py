@@ -162,15 +162,15 @@ def get_association(association_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CertificatesManagement/getAssociation:getAssociation', __args__, opts=opts, typ=GetAssociationResult).value
 
     return AwaitableGetAssociationResult(
-        associated_resource_id=__ret__.associated_resource_id,
-        association_id=__ret__.association_id,
-        association_type=__ret__.association_type,
-        certificates_resource_id=__ret__.certificates_resource_id,
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        name=__ret__.name,
-        state=__ret__.state,
-        time_created=__ret__.time_created)
+        associated_resource_id=pulumi.get(__ret__, 'associated_resource_id'),
+        association_id=pulumi.get(__ret__, 'association_id'),
+        association_type=pulumi.get(__ret__, 'association_type'),
+        certificates_resource_id=pulumi.get(__ret__, 'certificates_resource_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_association)

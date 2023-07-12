@@ -174,14 +174,14 @@ def get_pipeline_runs(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataScience/getPipelineRuns:getPipelineRuns', __args__, opts=opts, typ=GetPipelineRunsResult).value
 
     return AwaitableGetPipelineRunsResult(
-        compartment_id=__ret__.compartment_id,
-        created_by=__ret__.created_by,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        pipeline_id=__ret__.pipeline_id,
-        pipeline_runs=__ret__.pipeline_runs,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        created_by=pulumi.get(__ret__, 'created_by'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        pipeline_id=pulumi.get(__ret__, 'pipeline_id'),
+        pipeline_runs=pulumi.get(__ret__, 'pipeline_runs'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_pipeline_runs)

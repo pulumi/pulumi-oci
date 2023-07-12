@@ -274,24 +274,24 @@ def get_fleet_crypto_analysis_result(crypto_analysis_result_id: Optional[str] = 
     __ret__ = pulumi.runtime.invoke('oci:Jms/getFleetCryptoAnalysisResult:getFleetCryptoAnalysisResult', __args__, opts=opts, typ=GetFleetCryptoAnalysisResultResult).value
 
     return AwaitableGetFleetCryptoAnalysisResultResult(
-        aggregation_mode=__ret__.aggregation_mode,
-        bucket=__ret__.bucket,
-        crypto_analysis_result_id=__ret__.crypto_analysis_result_id,
-        crypto_roadmap_version=__ret__.crypto_roadmap_version,
-        finding_count=__ret__.finding_count,
-        fleet_id=__ret__.fleet_id,
-        host_name=__ret__.host_name,
-        id=__ret__.id,
-        managed_instance_id=__ret__.managed_instance_id,
-        namespace=__ret__.namespace,
-        non_compliant_finding_count=__ret__.non_compliant_finding_count,
-        object=__ret__.object,
-        summarized_event_count=__ret__.summarized_event_count,
-        time_created=__ret__.time_created,
-        time_first_event=__ret__.time_first_event,
-        time_last_event=__ret__.time_last_event,
-        total_event_count=__ret__.total_event_count,
-        work_request_id=__ret__.work_request_id)
+        aggregation_mode=pulumi.get(__ret__, 'aggregation_mode'),
+        bucket=pulumi.get(__ret__, 'bucket'),
+        crypto_analysis_result_id=pulumi.get(__ret__, 'crypto_analysis_result_id'),
+        crypto_roadmap_version=pulumi.get(__ret__, 'crypto_roadmap_version'),
+        finding_count=pulumi.get(__ret__, 'finding_count'),
+        fleet_id=pulumi.get(__ret__, 'fleet_id'),
+        host_name=pulumi.get(__ret__, 'host_name'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        non_compliant_finding_count=pulumi.get(__ret__, 'non_compliant_finding_count'),
+        object=pulumi.get(__ret__, 'object'),
+        summarized_event_count=pulumi.get(__ret__, 'summarized_event_count'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_first_event=pulumi.get(__ret__, 'time_first_event'),
+        time_last_event=pulumi.get(__ret__, 'time_last_event'),
+        total_event_count=pulumi.get(__ret__, 'total_event_count'),
+        work_request_id=pulumi.get(__ret__, 'work_request_id'))
 
 
 @_utilities.lift_output_func(get_fleet_crypto_analysis_result)

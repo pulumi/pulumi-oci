@@ -236,21 +236,21 @@ def get_ipsec_connection_tunnel(ipsec_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getIpsecConnectionTunnel:getIpsecConnectionTunnel', __args__, opts=opts, typ=GetIpsecConnectionTunnelResult).value
 
     return AwaitableGetIpsecConnectionTunnelResult(
-        bgp_session_infos=__ret__.bgp_session_infos,
-        compartment_id=__ret__.compartment_id,
-        cpe_ip=__ret__.cpe_ip,
-        display_name=__ret__.display_name,
-        encryption_domain_configs=__ret__.encryption_domain_configs,
-        id=__ret__.id,
-        ike_version=__ret__.ike_version,
-        ipsec_id=__ret__.ipsec_id,
-        routing=__ret__.routing,
-        state=__ret__.state,
-        status=__ret__.status,
-        time_created=__ret__.time_created,
-        time_status_updated=__ret__.time_status_updated,
-        tunnel_id=__ret__.tunnel_id,
-        vpn_ip=__ret__.vpn_ip)
+        bgp_session_infos=pulumi.get(__ret__, 'bgp_session_infos'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        cpe_ip=pulumi.get(__ret__, 'cpe_ip'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        encryption_domain_configs=pulumi.get(__ret__, 'encryption_domain_configs'),
+        id=pulumi.get(__ret__, 'id'),
+        ike_version=pulumi.get(__ret__, 'ike_version'),
+        ipsec_id=pulumi.get(__ret__, 'ipsec_id'),
+        routing=pulumi.get(__ret__, 'routing'),
+        state=pulumi.get(__ret__, 'state'),
+        status=pulumi.get(__ret__, 'status'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_status_updated=pulumi.get(__ret__, 'time_status_updated'),
+        tunnel_id=pulumi.get(__ret__, 'tunnel_id'),
+        vpn_ip=pulumi.get(__ret__, 'vpn_ip'))
 
 
 @_utilities.lift_output_func(get_ipsec_connection_tunnel)

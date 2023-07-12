@@ -139,12 +139,12 @@ def get_volume_group_backups(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getVolumeGroupBackups:getVolumeGroupBackups', __args__, opts=opts, typ=GetVolumeGroupBackupsResult).value
 
     return AwaitableGetVolumeGroupBackupsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        volume_group_backups=__ret__.volume_group_backups,
-        volume_group_id=__ret__.volume_group_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        volume_group_backups=pulumi.get(__ret__, 'volume_group_backups'),
+        volume_group_id=pulumi.get(__ret__, 'volume_group_id'))
 
 
 @_utilities.lift_output_func(get_volume_group_backups)

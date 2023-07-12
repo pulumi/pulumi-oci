@@ -147,12 +147,12 @@ def get_audit_event(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getAuditEvent:getAuditEvent', __args__, opts=opts, typ=GetAuditEventResult).value
 
     return AwaitableGetAuditEventResult(
-        access_level=__ret__.access_level,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        id=__ret__.id,
-        items=__ret__.items,
-        scim_query=__ret__.scim_query)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        scim_query=pulumi.get(__ret__, 'scim_query'))
 
 
 @_utilities.lift_output_func(get_audit_event)

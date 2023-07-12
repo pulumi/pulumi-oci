@@ -135,12 +135,12 @@ def get_log_groups(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Logging/getLogGroups:getLogGroups', __args__, opts=opts, typ=GetLogGroupsResult).value
 
     return AwaitableGetLogGroupsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_compartment_id_in_subtree=__ret__.is_compartment_id_in_subtree,
-        log_groups=__ret__.log_groups)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_compartment_id_in_subtree=pulumi.get(__ret__, 'is_compartment_id_in_subtree'),
+        log_groups=pulumi.get(__ret__, 'log_groups'))
 
 
 @_utilities.lift_output_func(get_log_groups)

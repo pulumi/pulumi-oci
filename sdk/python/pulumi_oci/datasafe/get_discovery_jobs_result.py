@@ -43,10 +43,6 @@ class GetDiscoveryJobsResultResult:
         pulumi.set(__self__, "discovery_job_id", discovery_job_id)
         if discovery_type and not isinstance(discovery_type, str):
             raise TypeError("Expected argument 'discovery_type' to be a str")
-        if discovery_type is not None:
-            warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
-            pulumi.log.warn("""discovery_type is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
-
         pulumi.set(__self__, "discovery_type", discovery_type)
         if estimated_data_value_count and not isinstance(estimated_data_value_count, str):
             raise TypeError("Expected argument 'estimated_data_value_count' to be a str")
@@ -59,10 +55,6 @@ class GetDiscoveryJobsResultResult:
         pulumi.set(__self__, "is_result_applied", is_result_applied)
         if key and not isinstance(key, str):
             raise TypeError("Expected argument 'key' to be a str")
-        if key is not None:
-            warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
-            pulumi.log.warn("""key is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
-
         pulumi.set(__self__, "key", key)
         if modified_attributes and not isinstance(modified_attributes, list):
             raise TypeError("Expected argument 'modified_attributes' to be a list")
@@ -152,6 +144,9 @@ class GetDiscoveryJobsResultResult:
         """
         The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
         """
+        warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""discovery_type is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "discovery_type")
 
     @property
@@ -181,6 +176,9 @@ class GetDiscoveryJobsResultResult:
         """
         The unique key that identifies the discovery result.
         """
+        warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""key is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "key")
 
     @property
@@ -328,28 +326,28 @@ def get_discovery_jobs_result(discovery_job_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getDiscoveryJobsResult:getDiscoveryJobsResult', __args__, opts=opts, typ=GetDiscoveryJobsResultResult).value
 
     return AwaitableGetDiscoveryJobsResultResult(
-        app_defined_child_column_keys=__ret__.app_defined_child_column_keys,
-        app_name=__ret__.app_name,
-        column_name=__ret__.column_name,
-        data_type=__ret__.data_type,
-        db_defined_child_column_keys=__ret__.db_defined_child_column_keys,
-        discovery_job_id=__ret__.discovery_job_id,
-        discovery_type=__ret__.discovery_type,
-        estimated_data_value_count=__ret__.estimated_data_value_count,
-        id=__ret__.id,
-        is_result_applied=__ret__.is_result_applied,
-        key=__ret__.key,
-        modified_attributes=__ret__.modified_attributes,
-        object=__ret__.object,
-        object_type=__ret__.object_type,
-        parent_column_keys=__ret__.parent_column_keys,
-        planned_action=__ret__.planned_action,
-        relation_type=__ret__.relation_type,
-        result_key=__ret__.result_key,
-        sample_data_values=__ret__.sample_data_values,
-        schema_name=__ret__.schema_name,
-        sensitive_columnkey=__ret__.sensitive_columnkey,
-        sensitive_type_id=__ret__.sensitive_type_id)
+        app_defined_child_column_keys=pulumi.get(__ret__, 'app_defined_child_column_keys'),
+        app_name=pulumi.get(__ret__, 'app_name'),
+        column_name=pulumi.get(__ret__, 'column_name'),
+        data_type=pulumi.get(__ret__, 'data_type'),
+        db_defined_child_column_keys=pulumi.get(__ret__, 'db_defined_child_column_keys'),
+        discovery_job_id=pulumi.get(__ret__, 'discovery_job_id'),
+        discovery_type=pulumi.get(__ret__, 'discovery_type'),
+        estimated_data_value_count=pulumi.get(__ret__, 'estimated_data_value_count'),
+        id=pulumi.get(__ret__, 'id'),
+        is_result_applied=pulumi.get(__ret__, 'is_result_applied'),
+        key=pulumi.get(__ret__, 'key'),
+        modified_attributes=pulumi.get(__ret__, 'modified_attributes'),
+        object=pulumi.get(__ret__, 'object'),
+        object_type=pulumi.get(__ret__, 'object_type'),
+        parent_column_keys=pulumi.get(__ret__, 'parent_column_keys'),
+        planned_action=pulumi.get(__ret__, 'planned_action'),
+        relation_type=pulumi.get(__ret__, 'relation_type'),
+        result_key=pulumi.get(__ret__, 'result_key'),
+        sample_data_values=pulumi.get(__ret__, 'sample_data_values'),
+        schema_name=pulumi.get(__ret__, 'schema_name'),
+        sensitive_columnkey=pulumi.get(__ret__, 'sensitive_columnkey'),
+        sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'))
 
 
 @_utilities.lift_output_func(get_discovery_jobs_result)

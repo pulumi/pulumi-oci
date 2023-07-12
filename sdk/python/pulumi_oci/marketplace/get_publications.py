@@ -164,14 +164,14 @@ def get_publications(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Marketplace/getPublications:getPublications', __args__, opts=opts, typ=GetPublicationsResult).value
 
     return AwaitableGetPublicationsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        listing_type=__ret__.listing_type,
-        names=__ret__.names,
-        operating_systems=__ret__.operating_systems,
-        publication_id=__ret__.publication_id,
-        publications=__ret__.publications)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        listing_type=pulumi.get(__ret__, 'listing_type'),
+        names=pulumi.get(__ret__, 'names'),
+        operating_systems=pulumi.get(__ret__, 'operating_systems'),
+        publication_id=pulumi.get(__ret__, 'publication_id'),
+        publications=pulumi.get(__ret__, 'publications'))
 
 
 @_utilities.lift_output_func(get_publications)

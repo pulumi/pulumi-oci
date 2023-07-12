@@ -160,15 +160,15 @@ def get_security_assessment_findings(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings', __args__, opts=opts, typ=GetSecurityAssessmentFindingsResult).value
 
     return AwaitableGetSecurityAssessmentFindingsResult(
-        access_level=__ret__.access_level,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        filters=__ret__.filters,
-        finding_key=__ret__.finding_key,
-        findings=__ret__.findings,
-        id=__ret__.id,
-        references=__ret__.references,
-        security_assessment_id=__ret__.security_assessment_id,
-        severity=__ret__.severity)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        filters=pulumi.get(__ret__, 'filters'),
+        finding_key=pulumi.get(__ret__, 'finding_key'),
+        findings=pulumi.get(__ret__, 'findings'),
+        id=pulumi.get(__ret__, 'id'),
+        references=pulumi.get(__ret__, 'references'),
+        security_assessment_id=pulumi.get(__ret__, 'security_assessment_id'),
+        severity=pulumi.get(__ret__, 'severity'))
 
 
 @_utilities.lift_output_func(get_security_assessment_findings)

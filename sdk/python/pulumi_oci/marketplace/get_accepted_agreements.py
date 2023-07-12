@@ -168,14 +168,14 @@ def get_accepted_agreements(accepted_agreement_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Marketplace/getAcceptedAgreements:getAcceptedAgreements', __args__, opts=opts, typ=GetAcceptedAgreementsResult).value
 
     return AwaitableGetAcceptedAgreementsResult(
-        accepted_agreement_id=__ret__.accepted_agreement_id,
-        accepted_agreements=__ret__.accepted_agreements,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        listing_id=__ret__.listing_id,
-        package_version=__ret__.package_version)
+        accepted_agreement_id=pulumi.get(__ret__, 'accepted_agreement_id'),
+        accepted_agreements=pulumi.get(__ret__, 'accepted_agreements'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        listing_id=pulumi.get(__ret__, 'listing_id'),
+        package_version=pulumi.get(__ret__, 'package_version'))
 
 
 @_utilities.lift_output_func(get_accepted_agreements)

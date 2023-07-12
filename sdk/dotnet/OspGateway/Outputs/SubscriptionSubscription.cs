@@ -14,11 +14,15 @@ namespace Pulumi.Oci.OspGateway.Outputs
     public sealed class SubscriptionSubscription
     {
         /// <summary>
+        /// (Updatable) Account type.
+        /// </summary>
+        public readonly string? AccountType;
+        /// <summary>
         /// (Updatable) Bill to customer Account id.
         /// </summary>
         public readonly string? BillToCustAccountId;
         /// <summary>
-        /// (Updatable) Billing address details model.
+        /// (Updatable) Address details model.
         /// </summary>
         public readonly ImmutableArray<Outputs.SubscriptionSubscriptionBillingAddress> BillingAddresses;
         /// <summary>
@@ -74,6 +78,10 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// </summary>
         public readonly Outputs.SubscriptionSubscriptionTaxInfo? TaxInfo;
         /// <summary>
+        /// (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+        /// </summary>
+        public readonly string? TimePersonalToCorporateConv;
+        /// <summary>
         /// (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
         /// </summary>
         public readonly string? TimePlanUpgrade;
@@ -92,6 +100,8 @@ namespace Pulumi.Oci.OspGateway.Outputs
 
         [OutputConstructor]
         private SubscriptionSubscription(
+            string? accountType,
+
             string? billToCustAccountId,
 
             ImmutableArray<Outputs.SubscriptionSubscriptionBillingAddress> billingAddresses,
@@ -122,6 +132,8 @@ namespace Pulumi.Oci.OspGateway.Outputs
 
             Outputs.SubscriptionSubscriptionTaxInfo? taxInfo,
 
+            string? timePersonalToCorporateConv,
+
             string? timePlanUpgrade,
 
             string? timeStart,
@@ -130,6 +142,7 @@ namespace Pulumi.Oci.OspGateway.Outputs
 
             string? upgradeStateDetails)
         {
+            AccountType = accountType;
             BillToCustAccountId = billToCustAccountId;
             BillingAddresses = billingAddresses;
             CurrencyCode = currencyCode;
@@ -145,6 +158,7 @@ namespace Pulumi.Oci.OspGateway.Outputs
             ShipToCustAcctSiteId = shipToCustAcctSiteId;
             SubscriptionPlanNumber = subscriptionPlanNumber;
             TaxInfo = taxInfo;
+            TimePersonalToCorporateConv = timePersonalToCorporateConv;
             TimePlanUpgrade = timePlanUpgrade;
             TimeStart = timeStart;
             UpgradeState = upgradeState;

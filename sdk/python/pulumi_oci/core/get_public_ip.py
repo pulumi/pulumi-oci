@@ -267,21 +267,21 @@ def get_public_ip(id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getPublicIp:getPublicIp', __args__, opts=opts, typ=GetPublicIpResult).value
 
     return AwaitableGetPublicIpResult(
-        assigned_entity_id=__ret__.assigned_entity_id,
-        assigned_entity_type=__ret__.assigned_entity_type,
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        ip_address=__ret__.ip_address,
-        lifetime=__ret__.lifetime,
-        private_ip_id=__ret__.private_ip_id,
-        public_ip_pool_id=__ret__.public_ip_pool_id,
-        scope=__ret__.scope,
-        state=__ret__.state,
-        time_created=__ret__.time_created)
+        assigned_entity_id=pulumi.get(__ret__, 'assigned_entity_id'),
+        assigned_entity_type=pulumi.get(__ret__, 'assigned_entity_type'),
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        ip_address=pulumi.get(__ret__, 'ip_address'),
+        lifetime=pulumi.get(__ret__, 'lifetime'),
+        private_ip_id=pulumi.get(__ret__, 'private_ip_id'),
+        public_ip_pool_id=pulumi.get(__ret__, 'public_ip_pool_id'),
+        scope=pulumi.get(__ret__, 'scope'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_public_ip)

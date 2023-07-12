@@ -19,6 +19,11 @@ public final class GetMigrationsMigrationCollectionItemDumpTransferDetailSource 
      * 
      */
     private String ociHome;
+    /**
+     * @return Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+     * 
+     */
+    private String walletLocation;
 
     private GetMigrationsMigrationCollectionItemDumpTransferDetailSource() {}
     /**
@@ -35,6 +40,13 @@ public final class GetMigrationsMigrationCollectionItemDumpTransferDetailSource 
     public String ociHome() {
         return this.ociHome;
     }
+    /**
+     * @return Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+     * 
+     */
+    public String walletLocation() {
+        return this.walletLocation;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -47,11 +59,13 @@ public final class GetMigrationsMigrationCollectionItemDumpTransferDetailSource 
     public static final class Builder {
         private String kind;
         private String ociHome;
+        private String walletLocation;
         public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemDumpTransferDetailSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.kind = defaults.kind;
     	      this.ociHome = defaults.ociHome;
+    	      this.walletLocation = defaults.walletLocation;
         }
 
         @CustomType.Setter
@@ -64,10 +78,16 @@ public final class GetMigrationsMigrationCollectionItemDumpTransferDetailSource 
             this.ociHome = Objects.requireNonNull(ociHome);
             return this;
         }
+        @CustomType.Setter
+        public Builder walletLocation(String walletLocation) {
+            this.walletLocation = Objects.requireNonNull(walletLocation);
+            return this;
+        }
         public GetMigrationsMigrationCollectionItemDumpTransferDetailSource build() {
             final var o = new GetMigrationsMigrationCollectionItemDumpTransferDetailSource();
             o.kind = kind;
             o.ociHome = ociHome;
+            o.walletLocation = walletLocation;
             return o;
         }
     }

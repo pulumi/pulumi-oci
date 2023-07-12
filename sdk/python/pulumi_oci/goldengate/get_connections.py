@@ -209,17 +209,17 @@ def get_connections(assignable_deployment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:GoldenGate/getConnections:getConnections', __args__, opts=opts, typ=GetConnectionsResult).value
 
     return AwaitableGetConnectionsResult(
-        assignable_deployment_id=__ret__.assignable_deployment_id,
-        assignable_deployment_type=__ret__.assignable_deployment_type,
-        assigned_deployment_id=__ret__.assigned_deployment_id,
-        compartment_id=__ret__.compartment_id,
-        connection_collections=__ret__.connection_collections,
-        connection_types=__ret__.connection_types,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        technology_types=__ret__.technology_types)
+        assignable_deployment_id=pulumi.get(__ret__, 'assignable_deployment_id'),
+        assignable_deployment_type=pulumi.get(__ret__, 'assignable_deployment_type'),
+        assigned_deployment_id=pulumi.get(__ret__, 'assigned_deployment_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        connection_collections=pulumi.get(__ret__, 'connection_collections'),
+        connection_types=pulumi.get(__ret__, 'connection_types'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        technology_types=pulumi.get(__ret__, 'technology_types'))
 
 
 @_utilities.lift_output_func(get_connections)

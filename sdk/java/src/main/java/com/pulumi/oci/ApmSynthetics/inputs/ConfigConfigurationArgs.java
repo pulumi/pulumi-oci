@@ -5,6 +5,7 @@ package com.pulumi.oci.ApmSynthetics.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationClientCertificateDetailsArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationDnsConfigurationArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationNetworkConfigurationArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationReqAuthenticationDetailsArgs;
@@ -24,6 +25,21 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
     public static final ConfigConfigurationArgs Empty = new ConfigConfigurationArgs();
 
     /**
+     * (Updatable) Details for client certificate.
+     * 
+     */
+    @Import(name="clientCertificateDetails")
+    private @Nullable Output<ConfigConfigurationClientCertificateDetailsArgs> clientCertificateDetails;
+
+    /**
+     * @return (Updatable) Details for client certificate.
+     * 
+     */
+    public Optional<Output<ConfigConfigurationClientCertificateDetailsArgs>> clientCertificateDetails() {
+        return Optional.ofNullable(this.clientCertificateDetails);
+    }
+
+    /**
      * (Updatable) Type of configuration.
      * 
      */
@@ -39,14 +55,14 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Dns settings.
+     * (Updatable) Information about the DNS settings.
      * 
      */
     @Import(name="dnsConfiguration")
     private @Nullable Output<ConfigConfigurationDnsConfigurationArgs> dnsConfiguration;
 
     /**
-     * @return (Updatable) Dns settings.
+     * @return (Updatable) Information about the DNS settings.
      * 
      */
     public Optional<Output<ConfigConfigurationDnsConfigurationArgs>> dnsConfiguration() {
@@ -69,6 +85,21 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) If disabled then auto snapshots are not collected.
+     * 
+     */
+    @Import(name="isDefaultSnapshotEnabled")
+    private @Nullable Output<Boolean> isDefaultSnapshotEnabled;
+
+    /**
+     * @return (Updatable) If disabled then auto snapshots are not collected.
+     * 
+     */
+    public Optional<Output<Boolean>> isDefaultSnapshotEnabled() {
+        return Optional.ofNullable(this.isDefaultSnapshotEnabled);
+    }
+
+    /**
      * (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
      * 
      */
@@ -84,14 +115,14 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) If redirection enabled, then redirects will be allowed while accessing target URL.
+     * (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
      * 
      */
     @Import(name="isRedirectionEnabled")
     private @Nullable Output<Boolean> isRedirectionEnabled;
 
     /**
-     * @return (Updatable) If redirection enabled, then redirects will be allowed while accessing target URL.
+     * @return (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
      * 
      */
     public Optional<Output<Boolean>> isRedirectionEnabled() {
@@ -129,14 +160,14 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Request http authentication scheme.
+     * (Updatable) Request HTTP authentication scheme.
      * 
      */
     @Import(name="reqAuthenticationScheme")
     private @Nullable Output<String> reqAuthenticationScheme;
 
     /**
-     * @return (Updatable) Request http authentication scheme.
+     * @return (Updatable) Request HTTP authentication scheme.
      * 
      */
     public Optional<Output<String>> reqAuthenticationScheme() {
@@ -251,9 +282,11 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
     private ConfigConfigurationArgs() {}
 
     private ConfigConfigurationArgs(ConfigConfigurationArgs $) {
+        this.clientCertificateDetails = $.clientCertificateDetails;
         this.configType = $.configType;
         this.dnsConfiguration = $.dnsConfiguration;
         this.isCertificateValidationEnabled = $.isCertificateValidationEnabled;
+        this.isDefaultSnapshotEnabled = $.isDefaultSnapshotEnabled;
         this.isFailureRetried = $.isFailureRetried;
         this.isRedirectionEnabled = $.isRedirectionEnabled;
         this.networkConfiguration = $.networkConfiguration;
@@ -287,6 +320,27 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param clientCertificateDetails (Updatable) Details for client certificate.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clientCertificateDetails(@Nullable Output<ConfigConfigurationClientCertificateDetailsArgs> clientCertificateDetails) {
+            $.clientCertificateDetails = clientCertificateDetails;
+            return this;
+        }
+
+        /**
+         * @param clientCertificateDetails (Updatable) Details for client certificate.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clientCertificateDetails(ConfigConfigurationClientCertificateDetailsArgs clientCertificateDetails) {
+            return clientCertificateDetails(Output.of(clientCertificateDetails));
+        }
+
+        /**
          * @param configType (Updatable) Type of configuration.
          * 
          * @return builder
@@ -308,7 +362,7 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param dnsConfiguration (Updatable) Dns settings.
+         * @param dnsConfiguration (Updatable) Information about the DNS settings.
          * 
          * @return builder
          * 
@@ -319,7 +373,7 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param dnsConfiguration (Updatable) Dns settings.
+         * @param dnsConfiguration (Updatable) Information about the DNS settings.
          * 
          * @return builder
          * 
@@ -350,6 +404,27 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param isDefaultSnapshotEnabled (Updatable) If disabled then auto snapshots are not collected.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDefaultSnapshotEnabled(@Nullable Output<Boolean> isDefaultSnapshotEnabled) {
+            $.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
+            return this;
+        }
+
+        /**
+         * @param isDefaultSnapshotEnabled (Updatable) If disabled then auto snapshots are not collected.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDefaultSnapshotEnabled(Boolean isDefaultSnapshotEnabled) {
+            return isDefaultSnapshotEnabled(Output.of(isDefaultSnapshotEnabled));
+        }
+
+        /**
          * @param isFailureRetried (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
          * 
          * @return builder
@@ -371,7 +446,7 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param isRedirectionEnabled (Updatable) If redirection enabled, then redirects will be allowed while accessing target URL.
+         * @param isRedirectionEnabled (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
          * 
          * @return builder
          * 
@@ -382,7 +457,7 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param isRedirectionEnabled (Updatable) If redirection enabled, then redirects will be allowed while accessing target URL.
+         * @param isRedirectionEnabled (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
          * 
          * @return builder
          * 
@@ -434,7 +509,7 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param reqAuthenticationScheme (Updatable) Request http authentication scheme.
+         * @param reqAuthenticationScheme (Updatable) Request HTTP authentication scheme.
          * 
          * @return builder
          * 
@@ -445,7 +520,7 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param reqAuthenticationScheme (Updatable) Request http authentication scheme.
+         * @param reqAuthenticationScheme (Updatable) Request HTTP authentication scheme.
          * 
          * @return builder
          * 

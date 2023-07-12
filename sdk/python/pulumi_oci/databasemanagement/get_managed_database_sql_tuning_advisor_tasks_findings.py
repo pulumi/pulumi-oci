@@ -197,17 +197,17 @@ def get_managed_database_sql_tuning_advisor_tasks_findings(begin_exec_id: Option
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksFindings:getManagedDatabaseSqlTuningAdvisorTasksFindings', __args__, opts=opts, typ=GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult).value
 
     return AwaitableGetManagedDatabaseSqlTuningAdvisorTasksFindingsResult(
-        begin_exec_id=__ret__.begin_exec_id,
-        end_exec_id=__ret__.end_exec_id,
-        filters=__ret__.filters,
-        finding_filter=__ret__.finding_filter,
-        id=__ret__.id,
-        index_hash_filter=__ret__.index_hash_filter,
-        managed_database_id=__ret__.managed_database_id,
-        search_period=__ret__.search_period,
-        sql_tuning_advisor_task_finding_collections=__ret__.sql_tuning_advisor_task_finding_collections,
-        sql_tuning_advisor_task_id=__ret__.sql_tuning_advisor_task_id,
-        stats_hash_filter=__ret__.stats_hash_filter)
+        begin_exec_id=pulumi.get(__ret__, 'begin_exec_id'),
+        end_exec_id=pulumi.get(__ret__, 'end_exec_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        finding_filter=pulumi.get(__ret__, 'finding_filter'),
+        id=pulumi.get(__ret__, 'id'),
+        index_hash_filter=pulumi.get(__ret__, 'index_hash_filter'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        search_period=pulumi.get(__ret__, 'search_period'),
+        sql_tuning_advisor_task_finding_collections=pulumi.get(__ret__, 'sql_tuning_advisor_task_finding_collections'),
+        sql_tuning_advisor_task_id=pulumi.get(__ret__, 'sql_tuning_advisor_task_id'),
+        stats_hash_filter=pulumi.get(__ret__, 'stats_hash_filter'))
 
 
 @_utilities.lift_output_func(get_managed_database_sql_tuning_advisor_tasks_findings)

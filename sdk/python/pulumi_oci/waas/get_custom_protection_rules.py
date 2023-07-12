@@ -171,15 +171,15 @@ def get_custom_protection_rules(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Waas/getCustomProtectionRules:getCustomProtectionRules', __args__, opts=opts, typ=GetCustomProtectionRulesResult).value
 
     return AwaitableGetCustomProtectionRulesResult(
-        compartment_id=__ret__.compartment_id,
-        custom_protection_rules=__ret__.custom_protection_rules,
-        display_names=__ret__.display_names,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        ids=__ret__.ids,
-        states=__ret__.states,
-        time_created_greater_than_or_equal_to=__ret__.time_created_greater_than_or_equal_to,
-        time_created_less_than=__ret__.time_created_less_than)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        custom_protection_rules=pulumi.get(__ret__, 'custom_protection_rules'),
+        display_names=pulumi.get(__ret__, 'display_names'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        ids=pulumi.get(__ret__, 'ids'),
+        states=pulumi.get(__ret__, 'states'),
+        time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
 
 
 @_utilities.lift_output_func(get_custom_protection_rules)

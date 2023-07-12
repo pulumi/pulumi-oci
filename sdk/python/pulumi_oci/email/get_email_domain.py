@@ -198,18 +198,18 @@ def get_email_domain(email_domain_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Email/getEmailDomain:getEmailDomain', __args__, opts=opts, typ=GetEmailDomainResult).value
 
     return AwaitableGetEmailDomainResult(
-        active_dkim_id=__ret__.active_dkim_id,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        email_domain_id=__ret__.email_domain_id,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_spf=__ret__.is_spf,
-        name=__ret__.name,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created)
+        active_dkim_id=pulumi.get(__ret__, 'active_dkim_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        email_domain_id=pulumi.get(__ret__, 'email_domain_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_spf=pulumi.get(__ret__, 'is_spf'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_email_domain)

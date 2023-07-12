@@ -215,19 +215,19 @@ def get_certificate_version(certificate_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CertificatesManagement/getCertificateVersion:getCertificateVersion', __args__, opts=opts, typ=GetCertificateVersionResult).value
 
     return AwaitableGetCertificateVersionResult(
-        certificate_id=__ret__.certificate_id,
-        certificate_version_number=__ret__.certificate_version_number,
-        id=__ret__.id,
-        issuer_ca_version_number=__ret__.issuer_ca_version_number,
-        revocation_statuses=__ret__.revocation_statuses,
-        serial_number=__ret__.serial_number,
-        stages=__ret__.stages,
-        subject_alternative_names=__ret__.subject_alternative_names,
-        time_created=__ret__.time_created,
-        time_of_deletion=__ret__.time_of_deletion,
-        validities=__ret__.validities,
-        version_name=__ret__.version_name,
-        version_number=__ret__.version_number)
+        certificate_id=pulumi.get(__ret__, 'certificate_id'),
+        certificate_version_number=pulumi.get(__ret__, 'certificate_version_number'),
+        id=pulumi.get(__ret__, 'id'),
+        issuer_ca_version_number=pulumi.get(__ret__, 'issuer_ca_version_number'),
+        revocation_statuses=pulumi.get(__ret__, 'revocation_statuses'),
+        serial_number=pulumi.get(__ret__, 'serial_number'),
+        stages=pulumi.get(__ret__, 'stages'),
+        subject_alternative_names=pulumi.get(__ret__, 'subject_alternative_names'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
+        validities=pulumi.get(__ret__, 'validities'),
+        version_name=pulumi.get(__ret__, 'version_name'),
+        version_number=pulumi.get(__ret__, 'version_number'))
 
 
 @_utilities.lift_output_func(get_certificate_version)

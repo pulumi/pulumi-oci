@@ -17,12 +17,17 @@ import java.util.Objects;
 @CustomType
 public final class GetSubscriptionResult {
     /**
+     * @return Account type.
+     * 
+     */
+    private String accountType;
+    /**
      * @return Bill to customer Account id.
      * 
      */
     private String billToCustAccountId;
     /**
-     * @return Billing address details model.
+     * @return Address details model.
      * 
      */
     private List<GetSubscriptionBillingAddress> billingAddresses;
@@ -97,6 +102,11 @@ public final class GetSubscriptionResult {
      */
     private List<GetSubscriptionTaxInfo> taxInfos;
     /**
+     * @return Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+     * 
+     */
+    private String timePersonalToCorporateConv;
+    /**
      * @return Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      * 
      */
@@ -119,6 +129,13 @@ public final class GetSubscriptionResult {
 
     private GetSubscriptionResult() {}
     /**
+     * @return Account type.
+     * 
+     */
+    public String accountType() {
+        return this.accountType;
+    }
+    /**
      * @return Bill to customer Account id.
      * 
      */
@@ -126,7 +143,7 @@ public final class GetSubscriptionResult {
         return this.billToCustAccountId;
     }
     /**
-     * @return Billing address details model.
+     * @return Address details model.
      * 
      */
     public List<GetSubscriptionBillingAddress> billingAddresses() {
@@ -239,6 +256,13 @@ public final class GetSubscriptionResult {
         return this.taxInfos;
     }
     /**
+     * @return Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+     * 
+     */
+    public String timePersonalToCorporateConv() {
+        return this.timePersonalToCorporateConv;
+    }
+    /**
      * @return Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      * 
      */
@@ -276,6 +300,7 @@ public final class GetSubscriptionResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String accountType;
         private String billToCustAccountId;
         private List<GetSubscriptionBillingAddress> billingAddresses;
         private String compartmentId;
@@ -296,6 +321,7 @@ public final class GetSubscriptionResult {
         private String subscriptionPlanNumber;
         private List<GetSubscriptionSubscription> subscriptions;
         private List<GetSubscriptionTaxInfo> taxInfos;
+        private String timePersonalToCorporateConv;
         private String timePlanUpgrade;
         private String timeStart;
         private String upgradeState;
@@ -303,6 +329,7 @@ public final class GetSubscriptionResult {
         public Builder() {}
         public Builder(GetSubscriptionResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.accountType = defaults.accountType;
     	      this.billToCustAccountId = defaults.billToCustAccountId;
     	      this.billingAddresses = defaults.billingAddresses;
     	      this.compartmentId = defaults.compartmentId;
@@ -323,12 +350,18 @@ public final class GetSubscriptionResult {
     	      this.subscriptionPlanNumber = defaults.subscriptionPlanNumber;
     	      this.subscriptions = defaults.subscriptions;
     	      this.taxInfos = defaults.taxInfos;
+    	      this.timePersonalToCorporateConv = defaults.timePersonalToCorporateConv;
     	      this.timePlanUpgrade = defaults.timePlanUpgrade;
     	      this.timeStart = defaults.timeStart;
     	      this.upgradeState = defaults.upgradeState;
     	      this.upgradeStateDetails = defaults.upgradeStateDetails;
         }
 
+        @CustomType.Setter
+        public Builder accountType(String accountType) {
+            this.accountType = Objects.requireNonNull(accountType);
+            return this;
+        }
         @CustomType.Setter
         public Builder billToCustAccountId(String billToCustAccountId) {
             this.billToCustAccountId = Objects.requireNonNull(billToCustAccountId);
@@ -445,6 +478,11 @@ public final class GetSubscriptionResult {
             return taxInfos(List.of(taxInfos));
         }
         @CustomType.Setter
+        public Builder timePersonalToCorporateConv(String timePersonalToCorporateConv) {
+            this.timePersonalToCorporateConv = Objects.requireNonNull(timePersonalToCorporateConv);
+            return this;
+        }
+        @CustomType.Setter
         public Builder timePlanUpgrade(String timePlanUpgrade) {
             this.timePlanUpgrade = Objects.requireNonNull(timePlanUpgrade);
             return this;
@@ -466,6 +504,7 @@ public final class GetSubscriptionResult {
         }
         public GetSubscriptionResult build() {
             final var o = new GetSubscriptionResult();
+            o.accountType = accountType;
             o.billToCustAccountId = billToCustAccountId;
             o.billingAddresses = billingAddresses;
             o.compartmentId = compartmentId;
@@ -486,6 +525,7 @@ public final class GetSubscriptionResult {
             o.subscriptionPlanNumber = subscriptionPlanNumber;
             o.subscriptions = subscriptions;
             o.taxInfos = taxInfos;
+            o.timePersonalToCorporateConv = timePersonalToCorporateConv;
             o.timePlanUpgrade = timePlanUpgrade;
             o.timeStart = timeStart;
             o.upgradeState = upgradeState;

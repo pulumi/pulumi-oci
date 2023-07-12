@@ -129,12 +129,12 @@ def get_announcements(filters: Optional[Sequence[pulumi.InputType['GetAnnounceme
     __ret__ = pulumi.runtime.invoke('oci:Jms/getAnnouncements:getAnnouncements', __args__, opts=opts, typ=GetAnnouncementsResult).value
 
     return AwaitableGetAnnouncementsResult(
-        announcement_collections=__ret__.announcement_collections,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        summary_contains=__ret__.summary_contains,
-        time_end=__ret__.time_end,
-        time_start=__ret__.time_start)
+        announcement_collections=pulumi.get(__ret__, 'announcement_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        summary_contains=pulumi.get(__ret__, 'summary_contains'),
+        time_end=pulumi.get(__ret__, 'time_end'),
+        time_start=pulumi.get(__ret__, 'time_start'))
 
 
 @_utilities.lift_output_func(get_announcements)

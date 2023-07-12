@@ -186,17 +186,17 @@ def get_autonomous_patch(autonomous_patch_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousPatch:getAutonomousPatch', __args__, opts=opts, typ=GetAutonomousPatchResult).value
 
     return AwaitableGetAutonomousPatchResult(
-        autonomous_patch_id=__ret__.autonomous_patch_id,
-        description=__ret__.description,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        patch_model=__ret__.patch_model,
-        quarter=__ret__.quarter,
-        state=__ret__.state,
-        time_released=__ret__.time_released,
-        type=__ret__.type,
-        version=__ret__.version,
-        year=__ret__.year)
+        autonomous_patch_id=pulumi.get(__ret__, 'autonomous_patch_id'),
+        description=pulumi.get(__ret__, 'description'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        patch_model=pulumi.get(__ret__, 'patch_model'),
+        quarter=pulumi.get(__ret__, 'quarter'),
+        state=pulumi.get(__ret__, 'state'),
+        time_released=pulumi.get(__ret__, 'time_released'),
+        type=pulumi.get(__ret__, 'type'),
+        version=pulumi.get(__ret__, 'version'),
+        year=pulumi.get(__ret__, 'year'))
 
 
 @_utilities.lift_output_func(get_autonomous_patch)

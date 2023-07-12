@@ -275,24 +275,24 @@ def get_namespace_scheduled_task(namespace: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getNamespaceScheduledTask:getNamespaceScheduledTask', __args__, opts=opts, typ=GetNamespaceScheduledTaskResult).value
 
     return AwaitableGetNamespaceScheduledTaskResult(
-        actions=__ret__.actions,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        kind=__ret__.kind,
-        namespace=__ret__.namespace,
-        num_occurrences=__ret__.num_occurrences,
-        saved_search_id=__ret__.saved_search_id,
-        scheduled_task_id=__ret__.scheduled_task_id,
-        schedules=__ret__.schedules,
-        state=__ret__.state,
-        task_status=__ret__.task_status,
-        task_type=__ret__.task_type,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        work_request_id=__ret__.work_request_id)
+        actions=pulumi.get(__ret__, 'actions'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        kind=pulumi.get(__ret__, 'kind'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        num_occurrences=pulumi.get(__ret__, 'num_occurrences'),
+        saved_search_id=pulumi.get(__ret__, 'saved_search_id'),
+        scheduled_task_id=pulumi.get(__ret__, 'scheduled_task_id'),
+        schedules=pulumi.get(__ret__, 'schedules'),
+        state=pulumi.get(__ret__, 'state'),
+        task_status=pulumi.get(__ret__, 'task_status'),
+        task_type=pulumi.get(__ret__, 'task_type'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        work_request_id=pulumi.get(__ret__, 'work_request_id'))
 
 
 @_utilities.lift_output_func(get_namespace_scheduled_task)

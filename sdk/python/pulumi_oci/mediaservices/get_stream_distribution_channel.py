@@ -186,17 +186,17 @@ def get_stream_distribution_channel(stream_distribution_channel_id: Optional[str
     __ret__ = pulumi.runtime.invoke('oci:MediaServices/getStreamDistributionChannel:getStreamDistributionChannel', __args__, opts=opts, typ=GetStreamDistributionChannelResult).value
 
     return AwaitableGetStreamDistributionChannelResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        domain_name=__ret__.domain_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        state=__ret__.state,
-        stream_distribution_channel_id=__ret__.stream_distribution_channel_id,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        domain_name=pulumi.get(__ret__, 'domain_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        stream_distribution_channel_id=pulumi.get(__ret__, 'stream_distribution_channel_id'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_stream_distribution_channel)

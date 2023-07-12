@@ -271,24 +271,24 @@ def get_build_run(build_run_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getBuildRun:getBuildRun', __args__, opts=opts, typ=GetBuildRunResult).value
 
     return AwaitableGetBuildRunResult(
-        build_outputs=__ret__.build_outputs,
-        build_pipeline_id=__ret__.build_pipeline_id,
-        build_run_arguments=__ret__.build_run_arguments,
-        build_run_id=__ret__.build_run_id,
-        build_run_progresses=__ret__.build_run_progresses,
-        build_run_sources=__ret__.build_run_sources,
-        commit_infos=__ret__.commit_infos,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        project_id=__ret__.project_id,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        build_outputs=pulumi.get(__ret__, 'build_outputs'),
+        build_pipeline_id=pulumi.get(__ret__, 'build_pipeline_id'),
+        build_run_arguments=pulumi.get(__ret__, 'build_run_arguments'),
+        build_run_id=pulumi.get(__ret__, 'build_run_id'),
+        build_run_progresses=pulumi.get(__ret__, 'build_run_progresses'),
+        build_run_sources=pulumi.get(__ret__, 'build_run_sources'),
+        commit_infos=pulumi.get(__ret__, 'commit_infos'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        project_id=pulumi.get(__ret__, 'project_id'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_build_run)

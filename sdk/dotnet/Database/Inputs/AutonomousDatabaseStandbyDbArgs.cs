@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        /// The current state of the Autonomous Database.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

@@ -150,13 +150,13 @@ def get_http_probe_results(filters: Optional[Sequence[pulumi.InputType['GetHttpP
     __ret__ = pulumi.runtime.invoke('oci:HealthChecks/getHttpProbeResults:getHttpProbeResults', __args__, opts=opts, typ=GetHttpProbeResultsResult).value
 
     return AwaitableGetHttpProbeResultsResult(
-        filters=__ret__.filters,
-        http_probe_results=__ret__.http_probe_results,
-        id=__ret__.id,
-        probe_configuration_id=__ret__.probe_configuration_id,
-        start_time_greater_than_or_equal_to=__ret__.start_time_greater_than_or_equal_to,
-        start_time_less_than_or_equal_to=__ret__.start_time_less_than_or_equal_to,
-        target=__ret__.target)
+        filters=pulumi.get(__ret__, 'filters'),
+        http_probe_results=pulumi.get(__ret__, 'http_probe_results'),
+        id=pulumi.get(__ret__, 'id'),
+        probe_configuration_id=pulumi.get(__ret__, 'probe_configuration_id'),
+        start_time_greater_than_or_equal_to=pulumi.get(__ret__, 'start_time_greater_than_or_equal_to'),
+        start_time_less_than_or_equal_to=pulumi.get(__ret__, 'start_time_less_than_or_equal_to'),
+        target=pulumi.get(__ret__, 'target'))
 
 
 @_utilities.lift_output_func(get_http_probe_results)

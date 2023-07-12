@@ -103,10 +103,10 @@ def get_path_route_sets(filters: Optional[Sequence[pulumi.InputType['GetPathRout
     __ret__ = pulumi.runtime.invoke('oci:LoadBalancer/getPathRouteSets:getPathRouteSets', __args__, opts=opts, typ=GetPathRouteSetsResult).value
 
     return AwaitableGetPathRouteSetsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        load_balancer_id=__ret__.load_balancer_id,
-        path_route_sets=__ret__.path_route_sets)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
+        path_route_sets=pulumi.get(__ret__, 'path_route_sets'))
 
 
 @_utilities.lift_output_func(get_path_route_sets)

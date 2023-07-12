@@ -107,6 +107,7 @@ class SubscriptionArgs:
 @pulumi.input_type
 class _SubscriptionState:
     def __init__(__self__, *,
+                 account_type: Optional[pulumi.Input[str]] = None,
                  bill_to_cust_account_id: Optional[pulumi.Input[str]] = None,
                  billing_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionBillingAddressArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -126,14 +127,16 @@ class _SubscriptionState:
                  subscription_id: Optional[pulumi.Input[str]] = None,
                  subscription_plan_number: Optional[pulumi.Input[str]] = None,
                  tax_infos: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionTaxInfoArgs']]]] = None,
+                 time_personal_to_corporate_conv: Optional[pulumi.Input[str]] = None,
                  time_plan_upgrade: Optional[pulumi.Input[str]] = None,
                  time_start: Optional[pulumi.Input[str]] = None,
                  upgrade_state: Optional[pulumi.Input[str]] = None,
                  upgrade_state_details: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Subscription resources.
+        :param pulumi.Input[str] account_type: (Updatable) Account type.
         :param pulumi.Input[str] bill_to_cust_account_id: (Updatable) Bill to customer Account id.
-        :param pulumi.Input[Sequence[pulumi.Input['SubscriptionBillingAddressArgs']]] billing_addresses: (Updatable) Billing address details model.
+        :param pulumi.Input[Sequence[pulumi.Input['SubscriptionBillingAddressArgs']]] billing_addresses: (Updatable) Address details model.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] currency_code: (Updatable) Currency code
         :param pulumi.Input[str] email: (Updatable) User email
@@ -155,11 +158,14 @@ class _SubscriptionState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] subscription_plan_number: (Updatable) Subscription plan number.
         :param pulumi.Input[Sequence[pulumi.Input['SubscriptionTaxInfoArgs']]] tax_infos: (Updatable) Tax details.
+        :param pulumi.Input[str] time_personal_to_corporate_conv: (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
         :param pulumi.Input[str] time_plan_upgrade: (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
         :param pulumi.Input[str] time_start: (Updatable) Start date of the subscription.
         :param pulumi.Input[str] upgrade_state: (Updatable) Status of the upgrade.
         :param pulumi.Input[str] upgrade_state_details: (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
         """
+        if account_type is not None:
+            pulumi.set(__self__, "account_type", account_type)
         if bill_to_cust_account_id is not None:
             pulumi.set(__self__, "bill_to_cust_account_id", bill_to_cust_account_id)
         if billing_addresses is not None:
@@ -198,6 +204,8 @@ class _SubscriptionState:
             pulumi.set(__self__, "subscription_plan_number", subscription_plan_number)
         if tax_infos is not None:
             pulumi.set(__self__, "tax_infos", tax_infos)
+        if time_personal_to_corporate_conv is not None:
+            pulumi.set(__self__, "time_personal_to_corporate_conv", time_personal_to_corporate_conv)
         if time_plan_upgrade is not None:
             pulumi.set(__self__, "time_plan_upgrade", time_plan_upgrade)
         if time_start is not None:
@@ -206,6 +214,18 @@ class _SubscriptionState:
             pulumi.set(__self__, "upgrade_state", upgrade_state)
         if upgrade_state_details is not None:
             pulumi.set(__self__, "upgrade_state_details", upgrade_state_details)
+
+    @property
+    @pulumi.getter(name="accountType")
+    def account_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Account type.
+        """
+        return pulumi.get(self, "account_type")
+
+    @account_type.setter
+    def account_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "account_type", value)
 
     @property
     @pulumi.getter(name="billToCustAccountId")
@@ -223,7 +243,7 @@ class _SubscriptionState:
     @pulumi.getter(name="billingAddresses")
     def billing_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionBillingAddressArgs']]]]:
         """
-        (Updatable) Billing address details model.
+        (Updatable) Address details model.
         """
         return pulumi.get(self, "billing_addresses")
 
@@ -440,6 +460,18 @@ class _SubscriptionState:
         pulumi.set(self, "tax_infos", value)
 
     @property
+    @pulumi.getter(name="timePersonalToCorporateConv")
+    def time_personal_to_corporate_conv(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+        """
+        return pulumi.get(self, "time_personal_to_corporate_conv")
+
+    @time_personal_to_corporate_conv.setter
+    def time_personal_to_corporate_conv(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_personal_to_corporate_conv", value)
+
+    @property
     @pulumi.getter(name="timePlanUpgrade")
     def time_plan_upgrade(self) -> Optional[pulumi.Input[str]]:
         """
@@ -587,6 +619,7 @@ class Subscription(pulumi.CustomResource):
             if subscription_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subscription_id'")
             __props__.__dict__["subscription_id"] = subscription_id
+            __props__.__dict__["account_type"] = None
             __props__.__dict__["bill_to_cust_account_id"] = None
             __props__.__dict__["billing_addresses"] = None
             __props__.__dict__["currency_code"] = None
@@ -601,6 +634,7 @@ class Subscription(pulumi.CustomResource):
             __props__.__dict__["ship_to_cust_acct_site_id"] = None
             __props__.__dict__["subscription_plan_number"] = None
             __props__.__dict__["tax_infos"] = None
+            __props__.__dict__["time_personal_to_corporate_conv"] = None
             __props__.__dict__["time_plan_upgrade"] = None
             __props__.__dict__["time_start"] = None
             __props__.__dict__["upgrade_state"] = None
@@ -615,6 +649,7 @@ class Subscription(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            account_type: Optional[pulumi.Input[str]] = None,
             bill_to_cust_account_id: Optional[pulumi.Input[str]] = None,
             billing_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionBillingAddressArgs']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
@@ -634,6 +669,7 @@ class Subscription(pulumi.CustomResource):
             subscription_id: Optional[pulumi.Input[str]] = None,
             subscription_plan_number: Optional[pulumi.Input[str]] = None,
             tax_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionTaxInfoArgs']]]]] = None,
+            time_personal_to_corporate_conv: Optional[pulumi.Input[str]] = None,
             time_plan_upgrade: Optional[pulumi.Input[str]] = None,
             time_start: Optional[pulumi.Input[str]] = None,
             upgrade_state: Optional[pulumi.Input[str]] = None,
@@ -645,8 +681,9 @@ class Subscription(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] account_type: (Updatable) Account type.
         :param pulumi.Input[str] bill_to_cust_account_id: (Updatable) Bill to customer Account id.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionBillingAddressArgs']]]] billing_addresses: (Updatable) Billing address details model.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionBillingAddressArgs']]]] billing_addresses: (Updatable) Address details model.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] currency_code: (Updatable) Currency code
         :param pulumi.Input[str] email: (Updatable) User email
@@ -668,6 +705,7 @@ class Subscription(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] subscription_plan_number: (Updatable) Subscription plan number.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionTaxInfoArgs']]]] tax_infos: (Updatable) Tax details.
+        :param pulumi.Input[str] time_personal_to_corporate_conv: (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
         :param pulumi.Input[str] time_plan_upgrade: (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
         :param pulumi.Input[str] time_start: (Updatable) Start date of the subscription.
         :param pulumi.Input[str] upgrade_state: (Updatable) Status of the upgrade.
@@ -677,6 +715,7 @@ class Subscription(pulumi.CustomResource):
 
         __props__ = _SubscriptionState.__new__(_SubscriptionState)
 
+        __props__.__dict__["account_type"] = account_type
         __props__.__dict__["bill_to_cust_account_id"] = bill_to_cust_account_id
         __props__.__dict__["billing_addresses"] = billing_addresses
         __props__.__dict__["compartment_id"] = compartment_id
@@ -696,11 +735,20 @@ class Subscription(pulumi.CustomResource):
         __props__.__dict__["subscription_id"] = subscription_id
         __props__.__dict__["subscription_plan_number"] = subscription_plan_number
         __props__.__dict__["tax_infos"] = tax_infos
+        __props__.__dict__["time_personal_to_corporate_conv"] = time_personal_to_corporate_conv
         __props__.__dict__["time_plan_upgrade"] = time_plan_upgrade
         __props__.__dict__["time_start"] = time_start
         __props__.__dict__["upgrade_state"] = upgrade_state
         __props__.__dict__["upgrade_state_details"] = upgrade_state_details
         return Subscription(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="accountType")
+    def account_type(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Account type.
+        """
+        return pulumi.get(self, "account_type")
 
     @property
     @pulumi.getter(name="billToCustAccountId")
@@ -714,7 +762,7 @@ class Subscription(pulumi.CustomResource):
     @pulumi.getter(name="billingAddresses")
     def billing_addresses(self) -> pulumi.Output[Sequence['outputs.SubscriptionBillingAddress']]:
         """
-        (Updatable) Billing address details model.
+        (Updatable) Address details model.
         """
         return pulumi.get(self, "billing_addresses")
 
@@ -857,6 +905,14 @@ class Subscription(pulumi.CustomResource):
         (Updatable) Tax details.
         """
         return pulumi.get(self, "tax_infos")
+
+    @property
+    @pulumi.getter(name="timePersonalToCorporateConv")
+    def time_personal_to_corporate_conv(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+        """
+        return pulumi.get(self, "time_personal_to_corporate_conv")
 
     @property
     @pulumi.getter(name="timePlanUpgrade")

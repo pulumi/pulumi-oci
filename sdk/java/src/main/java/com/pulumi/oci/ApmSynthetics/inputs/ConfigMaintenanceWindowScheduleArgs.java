@@ -16,14 +16,14 @@ public final class ConfigMaintenanceWindowScheduleArgs extends com.pulumi.resour
     public static final ConfigMaintenanceWindowScheduleArgs Empty = new ConfigMaintenanceWindowScheduleArgs();
 
     /**
-     * (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+     * (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
     @Import(name="timeEnded")
     private @Nullable Output<String> timeEnded;
 
     /**
-     * @return (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+     * @return (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
     public Optional<Output<String>> timeEnded() {
@@ -31,14 +31,14 @@ public final class ConfigMaintenanceWindowScheduleArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+     * (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
     @Import(name="timeStarted")
     private @Nullable Output<String> timeStarted;
 
     /**
-     * @return (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+     * @return (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
     public Optional<Output<String>> timeStarted() {
@@ -71,7 +71,7 @@ public final class ConfigMaintenanceWindowScheduleArgs extends com.pulumi.resour
         }
 
         /**
-         * @param timeEnded (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+         * @param timeEnded (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ConfigMaintenanceWindowScheduleArgs extends com.pulumi.resour
         }
 
         /**
-         * @param timeEnded (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+         * @param timeEnded (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class ConfigMaintenanceWindowScheduleArgs extends com.pulumi.resour
         }
 
         /**
-         * @param timeStarted (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+         * @param timeStarted (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ConfigMaintenanceWindowScheduleArgs extends com.pulumi.resour
         }
 
         /**
-         * @param timeStarted (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+         * @param timeStarted (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
          * 
          * @return builder
          * 

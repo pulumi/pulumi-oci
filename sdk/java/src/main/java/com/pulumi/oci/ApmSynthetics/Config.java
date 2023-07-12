@@ -40,6 +40,9 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigVantagePointArgs;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigAvailabilityConfigurationArgs;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationArgs;
+ * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationClientCertificateDetailsArgs;
+ * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationClientCertificateDetailsClientCertificateArgs;
+ * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationClientCertificateDetailsPrivateKeyArgs;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationDnsConfigurationArgs;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationNetworkConfigurationArgs;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationReqAuthenticationDetailsArgs;
@@ -73,12 +76,23 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .batchIntervalInSeconds(var_.monitor_batch_interval_in_seconds())
  *             .configuration(ConfigConfigurationArgs.builder()
+ *                 .clientCertificateDetails(ConfigConfigurationClientCertificateDetailsArgs.builder()
+ *                     .clientCertificate(ConfigConfigurationClientCertificateDetailsClientCertificateArgs.builder()
+ *                         .content(var_.monitor_configuration_client_certificate_details_client_certificate_content())
+ *                         .fileName(var_.monitor_configuration_client_certificate_details_client_certificate_file_name())
+ *                         .build())
+ *                     .privateKey(ConfigConfigurationClientCertificateDetailsPrivateKeyArgs.builder()
+ *                         .content(var_.monitor_configuration_client_certificate_details_private_key_content())
+ *                         .fileName(var_.monitor_configuration_client_certificate_details_private_key_file_name())
+ *                         .build())
+ *                     .build())
  *                 .configType(var_.monitor_configuration_config_type())
  *                 .dnsConfiguration(ConfigConfigurationDnsConfigurationArgs.builder()
  *                     .isOverrideDns(var_.monitor_configuration_dns_configuration_is_override_dns())
  *                     .overrideDnsIp(var_.monitor_configuration_dns_configuration_override_dns_ip())
  *                     .build())
  *                 .isCertificateValidationEnabled(var_.monitor_configuration_is_certificate_validation_enabled())
+ *                 .isDefaultSnapshotEnabled(var_.monitor_configuration_is_default_snapshot_enabled())
  *                 .isFailureRetried(var_.monitor_configuration_is_failure_retried())
  *                 .isRedirectionEnabled(var_.monitor_configuration_is_redirection_enabled())
  *                 .networkConfiguration(ConfigConfigurationNetworkConfigurationArgs.builder()
@@ -251,14 +265,14 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * (Updatable) If isRunNow is enabled, then the monitor will run now.
+     * (Updatable) If isRunNow is enabled, then the monitor will run immediately.
      * 
      */
     @Export(name="isRunNow", type=Boolean.class, parameters={})
     private Output<Boolean> isRunNow;
 
     /**
-     * @return (Updatable) If isRunNow is enabled, then the monitor will run now.
+     * @return (Updatable) If isRunNow is enabled, then the monitor will run immediately.
      * 
      */
     public Output<Boolean> isRunNow() {
@@ -279,14 +293,14 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.isRunOnce;
     }
     /**
-     * (Updatable) Details used to schedule maintenance window.
+     * (Updatable) Details required to schedule maintenance window.
      * 
      */
     @Export(name="maintenanceWindowSchedule", type=ConfigMaintenanceWindowSchedule.class, parameters={})
     private Output<ConfigMaintenanceWindowSchedule> maintenanceWindowSchedule;
 
     /**
-     * @return (Updatable) Details used to schedule maintenance window.
+     * @return (Updatable) Details required to schedule maintenance window.
      * 
      */
     public Output<ConfigMaintenanceWindowSchedule> maintenanceWindowSchedule() {
@@ -321,14 +335,14 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.repeatIntervalInSeconds;
     }
     /**
-     * (Updatable) Scheduling policy on Vantage points.
+     * (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
      * 
      */
     @Export(name="schedulingPolicy", type=String.class, parameters={})
     private Output<String> schedulingPolicy;
 
     /**
-     * @return (Updatable) Scheduling policy on Vantage points.
+     * @return (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
      * 
      */
     public Output<String> schedulingPolicy() {

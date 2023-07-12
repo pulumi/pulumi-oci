@@ -251,22 +251,22 @@ def get_table(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Nosql/getTable:getTable', __args__, opts=opts, typ=GetTableResult).value
 
     return AwaitableGetTableResult(
-        compartment_id=__ret__.compartment_id,
-        ddl_statement=__ret__.ddl_statement,
-        defined_tags=__ret__.defined_tags,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_auto_reclaimable=__ret__.is_auto_reclaimable,
-        lifecycle_details=__ret__.lifecycle_details,
-        name=__ret__.name,
-        schemas=__ret__.schemas,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        table_limits=__ret__.table_limits,
-        table_name_or_id=__ret__.table_name_or_id,
-        time_created=__ret__.time_created,
-        time_of_expiration=__ret__.time_of_expiration,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        ddl_statement=pulumi.get(__ret__, 'ddl_statement'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_auto_reclaimable=pulumi.get(__ret__, 'is_auto_reclaimable'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        name=pulumi.get(__ret__, 'name'),
+        schemas=pulumi.get(__ret__, 'schemas'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        table_limits=pulumi.get(__ret__, 'table_limits'),
+        table_name_or_id=pulumi.get(__ret__, 'table_name_or_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_of_expiration=pulumi.get(__ret__, 'time_of_expiration'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_table)

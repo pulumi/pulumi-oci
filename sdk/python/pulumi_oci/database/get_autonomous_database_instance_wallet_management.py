@@ -123,12 +123,12 @@ def get_autonomous_database_instance_wallet_management(autonomous_database_id: O
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousDatabaseInstanceWalletManagement:getAutonomousDatabaseInstanceWalletManagement', __args__, opts=opts, typ=GetAutonomousDatabaseInstanceWalletManagementResult).value
 
     return AwaitableGetAutonomousDatabaseInstanceWalletManagementResult(
-        autonomous_database_id=__ret__.autonomous_database_id,
-        grace_period=__ret__.grace_period,
-        id=__ret__.id,
-        should_rotate=__ret__.should_rotate,
-        state=__ret__.state,
-        time_rotated=__ret__.time_rotated)
+        autonomous_database_id=pulumi.get(__ret__, 'autonomous_database_id'),
+        grace_period=pulumi.get(__ret__, 'grace_period'),
+        id=pulumi.get(__ret__, 'id'),
+        should_rotate=pulumi.get(__ret__, 'should_rotate'),
+        state=pulumi.get(__ret__, 'state'),
+        time_rotated=pulumi.get(__ret__, 'time_rotated'))
 
 
 @_utilities.lift_output_func(get_autonomous_database_instance_wallet_management)

@@ -268,24 +268,24 @@ def get_secret(secret_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Vault/getSecret:getSecret', __args__, opts=opts, typ=GetSecretResult).value
 
     return AwaitableGetSecretResult(
-        compartment_id=__ret__.compartment_id,
-        current_version_number=__ret__.current_version_number,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        key_id=__ret__.key_id,
-        lifecycle_details=__ret__.lifecycle_details,
-        metadata=__ret__.metadata,
-        secret_contents=__ret__.secret_contents,
-        secret_id=__ret__.secret_id,
-        secret_name=__ret__.secret_name,
-        secret_rules=__ret__.secret_rules,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_of_current_version_expiry=__ret__.time_of_current_version_expiry,
-        time_of_deletion=__ret__.time_of_deletion,
-        vault_id=__ret__.vault_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        current_version_number=pulumi.get(__ret__, 'current_version_number'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        key_id=pulumi.get(__ret__, 'key_id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        metadata=pulumi.get(__ret__, 'metadata'),
+        secret_contents=pulumi.get(__ret__, 'secret_contents'),
+        secret_id=pulumi.get(__ret__, 'secret_id'),
+        secret_name=pulumi.get(__ret__, 'secret_name'),
+        secret_rules=pulumi.get(__ret__, 'secret_rules'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_of_current_version_expiry=pulumi.get(__ret__, 'time_of_current_version_expiry'),
+        time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
+        vault_id=pulumi.get(__ret__, 'vault_id'))
 
 
 @_utilities.lift_output_func(get_secret)

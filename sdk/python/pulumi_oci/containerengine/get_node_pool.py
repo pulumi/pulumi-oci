@@ -58,17 +58,9 @@ class GetNodePoolResult:
         pulumi.set(__self__, "node_eviction_node_pool_settings", node_eviction_node_pool_settings)
         if node_image_id and not isinstance(node_image_id, str):
             raise TypeError("Expected argument 'node_image_id' to be a str")
-        if node_image_id is not None:
-            warnings.warn("""The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
-            pulumi.log.warn("""node_image_id is deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
-
         pulumi.set(__self__, "node_image_id", node_image_id)
         if node_image_name and not isinstance(node_image_name, str):
             raise TypeError("Expected argument 'node_image_name' to be a str")
-        if node_image_name is not None:
-            warnings.warn("""The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
-            pulumi.log.warn("""node_image_name is deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
-
         pulumi.set(__self__, "node_image_name", node_image_name)
         if node_metadata and not isinstance(node_metadata, dict):
             raise TypeError("Expected argument 'node_metadata' to be a dict")
@@ -201,6 +193,9 @@ class GetNodePoolResult:
         """
         Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         """
+        warnings.warn("""The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
+        pulumi.log.warn("""node_image_id is deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
+
         return pulumi.get(self, "node_image_id")
 
     @property
@@ -209,6 +204,9 @@ class GetNodePoolResult:
         """
         Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
         """
+        warnings.warn("""The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
+        pulumi.log.warn("""node_image_name is deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
+
         return pulumi.get(self, "node_image_name")
 
     @property
@@ -366,31 +364,31 @@ def get_node_pool(node_pool_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ContainerEngine/getNodePool:getNodePool', __args__, opts=opts, typ=GetNodePoolResult).value
 
     return AwaitableGetNodePoolResult(
-        cluster_id=__ret__.cluster_id,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        initial_node_labels=__ret__.initial_node_labels,
-        kubernetes_version=__ret__.kubernetes_version,
-        lifecycle_details=__ret__.lifecycle_details,
-        name=__ret__.name,
-        node_config_details=__ret__.node_config_details,
-        node_eviction_node_pool_settings=__ret__.node_eviction_node_pool_settings,
-        node_image_id=__ret__.node_image_id,
-        node_image_name=__ret__.node_image_name,
-        node_metadata=__ret__.node_metadata,
-        node_pool_cycling_details=__ret__.node_pool_cycling_details,
-        node_pool_id=__ret__.node_pool_id,
-        node_shape=__ret__.node_shape,
-        node_shape_configs=__ret__.node_shape_configs,
-        node_source_details=__ret__.node_source_details,
-        node_sources=__ret__.node_sources,
-        nodes=__ret__.nodes,
-        quantity_per_subnet=__ret__.quantity_per_subnet,
-        ssh_public_key=__ret__.ssh_public_key,
-        state=__ret__.state,
-        subnet_ids=__ret__.subnet_ids)
+        cluster_id=pulumi.get(__ret__, 'cluster_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        initial_node_labels=pulumi.get(__ret__, 'initial_node_labels'),
+        kubernetes_version=pulumi.get(__ret__, 'kubernetes_version'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        name=pulumi.get(__ret__, 'name'),
+        node_config_details=pulumi.get(__ret__, 'node_config_details'),
+        node_eviction_node_pool_settings=pulumi.get(__ret__, 'node_eviction_node_pool_settings'),
+        node_image_id=pulumi.get(__ret__, 'node_image_id'),
+        node_image_name=pulumi.get(__ret__, 'node_image_name'),
+        node_metadata=pulumi.get(__ret__, 'node_metadata'),
+        node_pool_cycling_details=pulumi.get(__ret__, 'node_pool_cycling_details'),
+        node_pool_id=pulumi.get(__ret__, 'node_pool_id'),
+        node_shape=pulumi.get(__ret__, 'node_shape'),
+        node_shape_configs=pulumi.get(__ret__, 'node_shape_configs'),
+        node_source_details=pulumi.get(__ret__, 'node_source_details'),
+        node_sources=pulumi.get(__ret__, 'node_sources'),
+        nodes=pulumi.get(__ret__, 'nodes'),
+        quantity_per_subnet=pulumi.get(__ret__, 'quantity_per_subnet'),
+        ssh_public_key=pulumi.get(__ret__, 'ssh_public_key'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_ids=pulumi.get(__ret__, 'subnet_ids'))
 
 
 @_utilities.lift_output_func(get_node_pool)

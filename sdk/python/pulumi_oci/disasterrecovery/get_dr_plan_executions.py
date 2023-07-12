@@ -164,14 +164,14 @@ def get_dr_plan_executions(display_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DisasterRecovery/getDrPlanExecutions:getDrPlanExecutions', __args__, opts=opts, typ=GetDrPlanExecutionsResult).value
 
     return AwaitableGetDrPlanExecutionsResult(
-        display_name=__ret__.display_name,
-        dr_plan_execution_collections=__ret__.dr_plan_execution_collections,
-        dr_plan_execution_id=__ret__.dr_plan_execution_id,
-        dr_plan_execution_type=__ret__.dr_plan_execution_type,
-        dr_protection_group_id=__ret__.dr_protection_group_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        display_name=pulumi.get(__ret__, 'display_name'),
+        dr_plan_execution_collections=pulumi.get(__ret__, 'dr_plan_execution_collections'),
+        dr_plan_execution_id=pulumi.get(__ret__, 'dr_plan_execution_id'),
+        dr_plan_execution_type=pulumi.get(__ret__, 'dr_plan_execution_type'),
+        dr_protection_group_id=pulumi.get(__ret__, 'dr_protection_group_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_dr_plan_executions)

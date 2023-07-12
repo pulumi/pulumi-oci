@@ -152,14 +152,14 @@ def get_repository_object(file_path: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getRepositoryObject:getRepositoryObject', __args__, opts=opts, typ=GetRepositoryObjectResult).value
 
     return AwaitableGetRepositoryObjectResult(
-        file_path=__ret__.file_path,
-        id=__ret__.id,
-        is_binary=__ret__.is_binary,
-        ref_name=__ret__.ref_name,
-        repository_id=__ret__.repository_id,
-        sha=__ret__.sha,
-        size_in_bytes=__ret__.size_in_bytes,
-        type=__ret__.type)
+        file_path=pulumi.get(__ret__, 'file_path'),
+        id=pulumi.get(__ret__, 'id'),
+        is_binary=pulumi.get(__ret__, 'is_binary'),
+        ref_name=pulumi.get(__ret__, 'ref_name'),
+        repository_id=pulumi.get(__ret__, 'repository_id'),
+        sha=pulumi.get(__ret__, 'sha'),
+        size_in_bytes=pulumi.get(__ret__, 'size_in_bytes'),
+        type=pulumi.get(__ret__, 'type'))
 
 
 @_utilities.lift_output_func(get_repository_object)

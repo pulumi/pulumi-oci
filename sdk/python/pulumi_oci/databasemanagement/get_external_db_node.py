@@ -246,22 +246,22 @@ def get_external_db_node(external_db_node_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalDbNode:getExternalDbNode', __args__, opts=opts, typ=GetExternalDbNodeResult).value
 
     return AwaitableGetExternalDbNodeResult(
-        additional_details=__ret__.additional_details,
-        compartment_id=__ret__.compartment_id,
-        component_name=__ret__.component_name,
-        cpu_core_count=__ret__.cpu_core_count,
-        display_name=__ret__.display_name,
-        domain_name=__ret__.domain_name,
-        external_connector_id=__ret__.external_connector_id,
-        external_db_node_id=__ret__.external_db_node_id,
-        external_db_system_id=__ret__.external_db_system_id,
-        host_name=__ret__.host_name,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        memory_size_in_gbs=__ret__.memory_size_in_gbs,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        additional_details=pulumi.get(__ret__, 'additional_details'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        component_name=pulumi.get(__ret__, 'component_name'),
+        cpu_core_count=pulumi.get(__ret__, 'cpu_core_count'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        domain_name=pulumi.get(__ret__, 'domain_name'),
+        external_connector_id=pulumi.get(__ret__, 'external_connector_id'),
+        external_db_node_id=pulumi.get(__ret__, 'external_db_node_id'),
+        external_db_system_id=pulumi.get(__ret__, 'external_db_system_id'),
+        host_name=pulumi.get(__ret__, 'host_name'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        memory_size_in_gbs=pulumi.get(__ret__, 'memory_size_in_gbs'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_external_db_node)

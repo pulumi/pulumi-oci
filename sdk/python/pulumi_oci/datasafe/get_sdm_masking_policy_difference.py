@@ -210,19 +210,19 @@ def get_sdm_masking_policy_difference(sdm_masking_policy_difference_id: Optional
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getSdmMaskingPolicyDifference:getSdmMaskingPolicyDifference', __args__, opts=opts, typ=GetSdmMaskingPolicyDifferenceResult).value
 
     return AwaitableGetSdmMaskingPolicyDifferenceResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        difference_type=__ret__.difference_type,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        masking_policy_id=__ret__.masking_policy_id,
-        sdm_masking_policy_difference_id=__ret__.sdm_masking_policy_difference_id,
-        sensitive_data_model_id=__ret__.sensitive_data_model_id,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_creation_started=__ret__.time_creation_started)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        difference_type=pulumi.get(__ret__, 'difference_type'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        masking_policy_id=pulumi.get(__ret__, 'masking_policy_id'),
+        sdm_masking_policy_difference_id=pulumi.get(__ret__, 'sdm_masking_policy_difference_id'),
+        sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_creation_started=pulumi.get(__ret__, 'time_creation_started'))
 
 
 @_utilities.lift_output_func(get_sdm_masking_policy_difference)

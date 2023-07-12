@@ -250,22 +250,22 @@ def get_byoip_range(byoip_range_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getByoipRange:getByoipRange', __args__, opts=opts, typ=GetByoipRangeResult).value
 
     return AwaitableGetByoipRangeResult(
-        byoip_range_id=__ret__.byoip_range_id,
-        byoip_range_vcn_ipv6allocations=__ret__.byoip_range_vcn_ipv6allocations,
-        cidr_block=__ret__.cidr_block,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        ipv6cidr_block=__ret__.ipv6cidr_block,
-        lifecycle_details=__ret__.lifecycle_details,
-        state=__ret__.state,
-        time_advertised=__ret__.time_advertised,
-        time_created=__ret__.time_created,
-        time_validated=__ret__.time_validated,
-        time_withdrawn=__ret__.time_withdrawn,
-        validation_token=__ret__.validation_token)
+        byoip_range_id=pulumi.get(__ret__, 'byoip_range_id'),
+        byoip_range_vcn_ipv6allocations=pulumi.get(__ret__, 'byoip_range_vcn_ipv6allocations'),
+        cidr_block=pulumi.get(__ret__, 'cidr_block'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        ipv6cidr_block=pulumi.get(__ret__, 'ipv6cidr_block'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        state=pulumi.get(__ret__, 'state'),
+        time_advertised=pulumi.get(__ret__, 'time_advertised'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_validated=pulumi.get(__ret__, 'time_validated'),
+        time_withdrawn=pulumi.get(__ret__, 'time_withdrawn'),
+        validation_token=pulumi.get(__ret__, 'validation_token'))
 
 
 @_utilities.lift_output_func(get_byoip_range)

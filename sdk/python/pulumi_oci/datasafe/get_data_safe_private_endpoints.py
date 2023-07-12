@@ -180,15 +180,15 @@ def get_data_safe_private_endpoints(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getDataSafePrivateEndpoints:getDataSafePrivateEndpoints', __args__, opts=opts, typ=GetDataSafePrivateEndpointsResult).value
 
     return AwaitableGetDataSafePrivateEndpointsResult(
-        access_level=__ret__.access_level,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        data_safe_private_endpoints=__ret__.data_safe_private_endpoints,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        vcn_id=__ret__.vcn_id)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        data_safe_private_endpoints=pulumi.get(__ret__, 'data_safe_private_endpoints'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_data_safe_private_endpoints)

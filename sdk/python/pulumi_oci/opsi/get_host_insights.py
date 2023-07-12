@@ -204,16 +204,16 @@ def get_host_insights(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Opsi/getHostInsights:getHostInsights', __args__, opts=opts, typ=GetHostInsightsResult).value
 
     return AwaitableGetHostInsightsResult(
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        enterprise_manager_bridge_id=__ret__.enterprise_manager_bridge_id,
-        exadata_insight_id=__ret__.exadata_insight_id,
-        filters=__ret__.filters,
-        host_insight_summary_collections=__ret__.host_insight_summary_collections,
-        host_types=__ret__.host_types,
-        id=__ret__.id,
-        states=__ret__.states,
-        statuses=__ret__.statuses)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        enterprise_manager_bridge_id=pulumi.get(__ret__, 'enterprise_manager_bridge_id'),
+        exadata_insight_id=pulumi.get(__ret__, 'exadata_insight_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        host_insight_summary_collections=pulumi.get(__ret__, 'host_insight_summary_collections'),
+        host_types=pulumi.get(__ret__, 'host_types'),
+        id=pulumi.get(__ret__, 'id'),
+        states=pulumi.get(__ret__, 'states'),
+        statuses=pulumi.get(__ret__, 'statuses'))
 
 
 @_utilities.lift_output_func(get_host_insights)

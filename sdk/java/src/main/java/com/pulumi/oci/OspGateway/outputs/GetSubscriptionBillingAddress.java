@@ -25,10 +25,25 @@ public final class GetSubscriptionBillingAddress {
      */
     private String companyName;
     /**
+     * @return Contributor class of the customer company.
+     * 
+     */
+    private String contributorClass;
+    /**
      * @return Country of the address.
      * 
      */
     private String country;
+    /**
+     * @return County of the address.
+     * 
+     */
+    private String county;
+    /**
+     * @return Department name of the customer company.
+     * 
+     */
+    private String departmentName;
     /**
      * @return The email address of the paypal user.
      * 
@@ -39,6 +54,16 @@ public final class GetSubscriptionBillingAddress {
      * 
      */
     private String firstName;
+    /**
+     * @return Internal number of the customer company.
+     * 
+     */
+    private String internalNumber;
+    /**
+     * @return Job title of the contact person.
+     * 
+     */
+    private String jobTitle;
     /**
      * @return Last name of the paypal user.
      * 
@@ -55,15 +80,65 @@ public final class GetSubscriptionBillingAddress {
      */
     private String line2;
     /**
+     * @return Address line 3.
+     * 
+     */
+    private String line3;
+    /**
+     * @return Address line 4.
+     * 
+     */
+    private String line4;
+    /**
+     * @return Middle name of the contact person.
+     * 
+     */
+    private String middleName;
+    /**
+     * @return Municipal Inscription.
+     * 
+     */
+    private String municipalInscription;
+    /**
+     * @return Phone country code of the contact person.
+     * 
+     */
+    private String phoneCountryCode;
+    /**
+     * @return Phone number of the contact person.
+     * 
+     */
+    private String phoneNumber;
+    /**
      * @return Post code of the address.
      * 
      */
     private String postalCode;
     /**
+     * @return Province of the address.
+     * 
+     */
+    private String province;
+    /**
      * @return State of the address.
      * 
      */
     private String state;
+    /**
+     * @return State Inscription.
+     * 
+     */
+    private String stateInscription;
+    /**
+     * @return Street name of the address.
+     * 
+     */
+    private String streetName;
+    /**
+     * @return Street number of the address.
+     * 
+     */
+    private String streetNumber;
 
     private GetSubscriptionBillingAddress() {}
     /**
@@ -88,11 +163,32 @@ public final class GetSubscriptionBillingAddress {
         return this.companyName;
     }
     /**
+     * @return Contributor class of the customer company.
+     * 
+     */
+    public String contributorClass() {
+        return this.contributorClass;
+    }
+    /**
      * @return Country of the address.
      * 
      */
     public String country() {
         return this.country;
+    }
+    /**
+     * @return County of the address.
+     * 
+     */
+    public String county() {
+        return this.county;
+    }
+    /**
+     * @return Department name of the customer company.
+     * 
+     */
+    public String departmentName() {
+        return this.departmentName;
     }
     /**
      * @return The email address of the paypal user.
@@ -107,6 +203,20 @@ public final class GetSubscriptionBillingAddress {
      */
     public String firstName() {
         return this.firstName;
+    }
+    /**
+     * @return Internal number of the customer company.
+     * 
+     */
+    public String internalNumber() {
+        return this.internalNumber;
+    }
+    /**
+     * @return Job title of the contact person.
+     * 
+     */
+    public String jobTitle() {
+        return this.jobTitle;
     }
     /**
      * @return Last name of the paypal user.
@@ -130,6 +240,48 @@ public final class GetSubscriptionBillingAddress {
         return this.line2;
     }
     /**
+     * @return Address line 3.
+     * 
+     */
+    public String line3() {
+        return this.line3;
+    }
+    /**
+     * @return Address line 4.
+     * 
+     */
+    public String line4() {
+        return this.line4;
+    }
+    /**
+     * @return Middle name of the contact person.
+     * 
+     */
+    public String middleName() {
+        return this.middleName;
+    }
+    /**
+     * @return Municipal Inscription.
+     * 
+     */
+    public String municipalInscription() {
+        return this.municipalInscription;
+    }
+    /**
+     * @return Phone country code of the contact person.
+     * 
+     */
+    public String phoneCountryCode() {
+        return this.phoneCountryCode;
+    }
+    /**
+     * @return Phone number of the contact person.
+     * 
+     */
+    public String phoneNumber() {
+        return this.phoneNumber;
+    }
+    /**
      * @return Post code of the address.
      * 
      */
@@ -137,11 +289,39 @@ public final class GetSubscriptionBillingAddress {
         return this.postalCode;
     }
     /**
+     * @return Province of the address.
+     * 
+     */
+    public String province() {
+        return this.province;
+    }
+    /**
      * @return State of the address.
      * 
      */
     public String state() {
         return this.state;
+    }
+    /**
+     * @return State Inscription.
+     * 
+     */
+    public String stateInscription() {
+        return this.stateInscription;
+    }
+    /**
+     * @return Street name of the address.
+     * 
+     */
+    public String streetName() {
+        return this.streetName;
+    }
+    /**
+     * @return Street number of the address.
+     * 
+     */
+    public String streetNumber() {
+        return this.streetNumber;
     }
 
     public static Builder builder() {
@@ -156,28 +336,58 @@ public final class GetSubscriptionBillingAddress {
         private String addressKey;
         private String city;
         private String companyName;
+        private String contributorClass;
         private String country;
+        private String county;
+        private String departmentName;
         private String emailAddress;
         private String firstName;
+        private String internalNumber;
+        private String jobTitle;
         private String lastName;
         private String line1;
         private String line2;
+        private String line3;
+        private String line4;
+        private String middleName;
+        private String municipalInscription;
+        private String phoneCountryCode;
+        private String phoneNumber;
         private String postalCode;
+        private String province;
         private String state;
+        private String stateInscription;
+        private String streetName;
+        private String streetNumber;
         public Builder() {}
         public Builder(GetSubscriptionBillingAddress defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.addressKey = defaults.addressKey;
     	      this.city = defaults.city;
     	      this.companyName = defaults.companyName;
+    	      this.contributorClass = defaults.contributorClass;
     	      this.country = defaults.country;
+    	      this.county = defaults.county;
+    	      this.departmentName = defaults.departmentName;
     	      this.emailAddress = defaults.emailAddress;
     	      this.firstName = defaults.firstName;
+    	      this.internalNumber = defaults.internalNumber;
+    	      this.jobTitle = defaults.jobTitle;
     	      this.lastName = defaults.lastName;
     	      this.line1 = defaults.line1;
     	      this.line2 = defaults.line2;
+    	      this.line3 = defaults.line3;
+    	      this.line4 = defaults.line4;
+    	      this.middleName = defaults.middleName;
+    	      this.municipalInscription = defaults.municipalInscription;
+    	      this.phoneCountryCode = defaults.phoneCountryCode;
+    	      this.phoneNumber = defaults.phoneNumber;
     	      this.postalCode = defaults.postalCode;
+    	      this.province = defaults.province;
     	      this.state = defaults.state;
+    	      this.stateInscription = defaults.stateInscription;
+    	      this.streetName = defaults.streetName;
+    	      this.streetNumber = defaults.streetNumber;
         }
 
         @CustomType.Setter
@@ -196,8 +406,23 @@ public final class GetSubscriptionBillingAddress {
             return this;
         }
         @CustomType.Setter
+        public Builder contributorClass(String contributorClass) {
+            this.contributorClass = Objects.requireNonNull(contributorClass);
+            return this;
+        }
+        @CustomType.Setter
         public Builder country(String country) {
             this.country = Objects.requireNonNull(country);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder county(String county) {
+            this.county = Objects.requireNonNull(county);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder departmentName(String departmentName) {
+            this.departmentName = Objects.requireNonNull(departmentName);
             return this;
         }
         @CustomType.Setter
@@ -208,6 +433,16 @@ public final class GetSubscriptionBillingAddress {
         @CustomType.Setter
         public Builder firstName(String firstName) {
             this.firstName = Objects.requireNonNull(firstName);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder internalNumber(String internalNumber) {
+            this.internalNumber = Objects.requireNonNull(internalNumber);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder jobTitle(String jobTitle) {
+            this.jobTitle = Objects.requireNonNull(jobTitle);
             return this;
         }
         @CustomType.Setter
@@ -226,8 +461,43 @@ public final class GetSubscriptionBillingAddress {
             return this;
         }
         @CustomType.Setter
+        public Builder line3(String line3) {
+            this.line3 = Objects.requireNonNull(line3);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder line4(String line4) {
+            this.line4 = Objects.requireNonNull(line4);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder middleName(String middleName) {
+            this.middleName = Objects.requireNonNull(middleName);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder municipalInscription(String municipalInscription) {
+            this.municipalInscription = Objects.requireNonNull(municipalInscription);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder phoneCountryCode(String phoneCountryCode) {
+            this.phoneCountryCode = Objects.requireNonNull(phoneCountryCode);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder phoneNumber(String phoneNumber) {
+            this.phoneNumber = Objects.requireNonNull(phoneNumber);
+            return this;
+        }
+        @CustomType.Setter
         public Builder postalCode(String postalCode) {
             this.postalCode = Objects.requireNonNull(postalCode);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder province(String province) {
+            this.province = Objects.requireNonNull(province);
             return this;
         }
         @CustomType.Setter
@@ -235,19 +505,49 @@ public final class GetSubscriptionBillingAddress {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
+        public Builder stateInscription(String stateInscription) {
+            this.stateInscription = Objects.requireNonNull(stateInscription);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder streetName(String streetName) {
+            this.streetName = Objects.requireNonNull(streetName);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder streetNumber(String streetNumber) {
+            this.streetNumber = Objects.requireNonNull(streetNumber);
+            return this;
+        }
         public GetSubscriptionBillingAddress build() {
             final var o = new GetSubscriptionBillingAddress();
             o.addressKey = addressKey;
             o.city = city;
             o.companyName = companyName;
+            o.contributorClass = contributorClass;
             o.country = country;
+            o.county = county;
+            o.departmentName = departmentName;
             o.emailAddress = emailAddress;
             o.firstName = firstName;
+            o.internalNumber = internalNumber;
+            o.jobTitle = jobTitle;
             o.lastName = lastName;
             o.line1 = line1;
             o.line2 = line2;
+            o.line3 = line3;
+            o.line4 = line4;
+            o.middleName = middleName;
+            o.municipalInscription = municipalInscription;
+            o.phoneCountryCode = phoneCountryCode;
+            o.phoneNumber = phoneNumber;
             o.postalCode = postalCode;
+            o.province = province;
             o.state = state;
+            o.stateInscription = stateInscription;
+            o.streetName = streetName;
+            o.streetNumber = streetNumber;
             return o;
         }
     }

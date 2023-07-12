@@ -145,14 +145,14 @@ def get_fusion_environment_admin_user(fusion_environment_id: Optional[str] = Non
     __ret__ = pulumi.runtime.invoke('oci:Functions/getFusionEnvironmentAdminUser:getFusionEnvironmentAdminUser', __args__, opts=opts, typ=GetFusionEnvironmentAdminUserResult).value
 
     return AwaitableGetFusionEnvironmentAdminUserResult(
-        email_address=__ret__.email_address,
-        first_name=__ret__.first_name,
-        fusion_environment_id=__ret__.fusion_environment_id,
-        id=__ret__.id,
-        items=__ret__.items,
-        last_name=__ret__.last_name,
-        password=__ret__.password,
-        username=__ret__.username)
+        email_address=pulumi.get(__ret__, 'email_address'),
+        first_name=pulumi.get(__ret__, 'first_name'),
+        fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        last_name=pulumi.get(__ret__, 'last_name'),
+        password=pulumi.get(__ret__, 'password'),
+        username=pulumi.get(__ret__, 'username'))
 
 
 @_utilities.lift_output_func(get_fusion_environment_admin_user)

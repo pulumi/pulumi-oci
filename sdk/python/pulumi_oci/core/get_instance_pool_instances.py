@@ -135,12 +135,12 @@ def get_instance_pool_instances(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getInstancePoolInstances:getInstancePoolInstances', __args__, opts=opts, typ=GetInstancePoolInstancesResult).value
 
     return AwaitableGetInstancePoolInstancesResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        instance_pool_id=__ret__.instance_pool_id,
-        instances=__ret__.instances)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        instance_pool_id=pulumi.get(__ret__, 'instance_pool_id'),
+        instances=pulumi.get(__ret__, 'instances'))
 
 
 @_utilities.lift_output_func(get_instance_pool_instances)

@@ -103,10 +103,10 @@ def get_db_home_patch_history_entries(db_home_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getDbHomePatchHistoryEntries:getDbHomePatchHistoryEntries', __args__, opts=opts, typ=GetDbHomePatchHistoryEntriesResult).value
 
     return AwaitableGetDbHomePatchHistoryEntriesResult(
-        db_home_id=__ret__.db_home_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        patch_history_entries=__ret__.patch_history_entries)
+        db_home_id=pulumi.get(__ret__, 'db_home_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        patch_history_entries=pulumi.get(__ret__, 'patch_history_entries'))
 
 
 @_utilities.lift_output_func(get_db_home_patch_history_entries)

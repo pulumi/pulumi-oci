@@ -27,10 +27,6 @@ class GetReplicationPolicyResult:
         pulumi.set(__self__, "bucket", bucket)
         if delete_object_in_destination_bucket and not isinstance(delete_object_in_destination_bucket, str):
             raise TypeError("Expected argument 'delete_object_in_destination_bucket' to be a str")
-        if delete_object_in_destination_bucket is not None:
-            warnings.warn("""The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""", DeprecationWarning)
-            pulumi.log.warn("""delete_object_in_destination_bucket is deprecated: The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""")
-
         pulumi.set(__self__, "delete_object_in_destination_bucket", delete_object_in_destination_bucket)
         if destination_bucket_name and not isinstance(destination_bucket_name, str):
             raise TypeError("Expected argument 'destination_bucket_name' to be a str")
@@ -71,6 +67,9 @@ class GetReplicationPolicyResult:
     @property
     @pulumi.getter(name="deleteObjectInDestinationBucket")
     def delete_object_in_destination_bucket(self) -> str:
+        warnings.warn("""The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""delete_object_in_destination_bucket is deprecated: The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "delete_object_in_destination_bucket")
 
     @property
@@ -201,18 +200,18 @@ def get_replication_policy(bucket: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ObjectStorage/getReplicationPolicy:getReplicationPolicy', __args__, opts=opts, typ=GetReplicationPolicyResult).value
 
     return AwaitableGetReplicationPolicyResult(
-        bucket=__ret__.bucket,
-        delete_object_in_destination_bucket=__ret__.delete_object_in_destination_bucket,
-        destination_bucket_name=__ret__.destination_bucket_name,
-        destination_region_name=__ret__.destination_region_name,
-        id=__ret__.id,
-        name=__ret__.name,
-        namespace=__ret__.namespace,
-        replication_id=__ret__.replication_id,
-        status=__ret__.status,
-        status_message=__ret__.status_message,
-        time_created=__ret__.time_created,
-        time_last_sync=__ret__.time_last_sync)
+        bucket=pulumi.get(__ret__, 'bucket'),
+        delete_object_in_destination_bucket=pulumi.get(__ret__, 'delete_object_in_destination_bucket'),
+        destination_bucket_name=pulumi.get(__ret__, 'destination_bucket_name'),
+        destination_region_name=pulumi.get(__ret__, 'destination_region_name'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        replication_id=pulumi.get(__ret__, 'replication_id'),
+        status=pulumi.get(__ret__, 'status'),
+        status_message=pulumi.get(__ret__, 'status_message'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_last_sync=pulumi.get(__ret__, 'time_last_sync'))
 
 
 @_utilities.lift_output_func(get_replication_policy)

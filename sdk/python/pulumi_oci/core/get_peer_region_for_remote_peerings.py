@@ -90,9 +90,9 @@ def get_peer_region_for_remote_peerings(filters: Optional[Sequence[pulumi.InputT
     __ret__ = pulumi.runtime.invoke('oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings', __args__, opts=opts, typ=GetPeerRegionForRemotePeeringsResult).value
 
     return AwaitableGetPeerRegionForRemotePeeringsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        peer_region_for_remote_peerings=__ret__.peer_region_for_remote_peerings)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        peer_region_for_remote_peerings=pulumi.get(__ret__, 'peer_region_for_remote_peerings'))
 
 
 @_utilities.lift_output_func(get_peer_region_for_remote_peerings)

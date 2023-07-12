@@ -191,15 +191,15 @@ def get_keys(algorithm: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Kms/getKeys:getKeys', __args__, opts=opts, typ=GetKeysResult).value
 
     return AwaitableGetKeysResult(
-        algorithm=__ret__.algorithm,
-        compartment_id=__ret__.compartment_id,
-        curve_id=__ret__.curve_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        keys=__ret__.keys,
-        length=__ret__.length,
-        management_endpoint=__ret__.management_endpoint,
-        protection_mode=__ret__.protection_mode)
+        algorithm=pulumi.get(__ret__, 'algorithm'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        curve_id=pulumi.get(__ret__, 'curve_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        keys=pulumi.get(__ret__, 'keys'),
+        length=pulumi.get(__ret__, 'length'),
+        management_endpoint=pulumi.get(__ret__, 'management_endpoint'),
+        protection_mode=pulumi.get(__ret__, 'protection_mode'))
 
 
 @_utilities.lift_output_func(get_keys)

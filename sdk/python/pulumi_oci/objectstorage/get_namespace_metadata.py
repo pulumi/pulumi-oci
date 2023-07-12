@@ -82,10 +82,10 @@ def get_namespace_metadata(namespace: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ObjectStorage/getNamespaceMetadata:getNamespaceMetadata', __args__, opts=opts, typ=GetNamespaceMetadataResult).value
 
     return AwaitableGetNamespaceMetadataResult(
-        default_s3compartment_id=__ret__.default_s3compartment_id,
-        default_swift_compartment_id=__ret__.default_swift_compartment_id,
-        id=__ret__.id,
-        namespace=__ret__.namespace)
+        default_s3compartment_id=pulumi.get(__ret__, 'default_s3compartment_id'),
+        default_swift_compartment_id=pulumi.get(__ret__, 'default_swift_compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        namespace=pulumi.get(__ret__, 'namespace'))
 
 
 @_utilities.lift_output_func(get_namespace_metadata)

@@ -164,15 +164,15 @@ def get_exadata_infrastructure_un_allocated_resource(db_servers: Optional[Sequen
     __ret__ = pulumi.runtime.invoke('oci:Database/getExadataInfrastructureUnAllocatedResource:getExadataInfrastructureUnAllocatedResource', __args__, opts=opts, typ=GetExadataInfrastructureUnAllocatedResourceResult).value
 
     return AwaitableGetExadataInfrastructureUnAllocatedResourceResult(
-        autonomous_vm_clusters=__ret__.autonomous_vm_clusters,
-        db_servers=__ret__.db_servers,
-        display_name=__ret__.display_name,
-        exadata_infrastructure_id=__ret__.exadata_infrastructure_id,
-        exadata_storage_in_tbs=__ret__.exadata_storage_in_tbs,
-        id=__ret__.id,
-        local_storage_in_gbs=__ret__.local_storage_in_gbs,
-        memory_in_gbs=__ret__.memory_in_gbs,
-        ocpus=__ret__.ocpus)
+        autonomous_vm_clusters=pulumi.get(__ret__, 'autonomous_vm_clusters'),
+        db_servers=pulumi.get(__ret__, 'db_servers'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
+        exadata_storage_in_tbs=pulumi.get(__ret__, 'exadata_storage_in_tbs'),
+        id=pulumi.get(__ret__, 'id'),
+        local_storage_in_gbs=pulumi.get(__ret__, 'local_storage_in_gbs'),
+        memory_in_gbs=pulumi.get(__ret__, 'memory_in_gbs'),
+        ocpus=pulumi.get(__ret__, 'ocpus'))
 
 
 @_utilities.lift_output_func(get_exadata_infrastructure_un_allocated_resource)

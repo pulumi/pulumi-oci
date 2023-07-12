@@ -8297,6 +8297,9 @@ class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult(dict):
         """
         The OCID of the discovery job.
         """
+        warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""discovery_job_id is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "discovery_job_id")
 
     @property
@@ -8305,6 +8308,9 @@ class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult(dict):
         """
         A filter to return only the resources that match the specified discovery type.
         """
+        warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""discovery_type is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "discovery_type")
 
     @property
@@ -8329,6 +8335,9 @@ class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult(dict):
         """
         The unique key that identifies the discovery result.
         """
+        warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""key is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "key")
 
     @property

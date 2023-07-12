@@ -122,11 +122,11 @@ def get_run_statements(filters: Optional[Sequence[pulumi.InputType['GetRunStatem
     __ret__ = pulumi.runtime.invoke('oci:DataFlow/getRunStatements:getRunStatements', __args__, opts=opts, typ=GetRunStatementsResult).value
 
     return AwaitableGetRunStatementsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        run_id=__ret__.run_id,
-        state=__ret__.state,
-        statement_collections=__ret__.statement_collections)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        run_id=pulumi.get(__ret__, 'run_id'),
+        state=pulumi.get(__ret__, 'state'),
+        statement_collections=pulumi.get(__ret__, 'statement_collections'))
 
 
 @_utilities.lift_output_func(get_run_statements)

@@ -27,10 +27,25 @@ public final class SubscriptionSubscriptionBillingAddress {
      */
     private @Nullable String companyName;
     /**
+     * @return (Updatable) Contributor class of the customer company.
+     * 
+     */
+    private @Nullable String contributorClass;
+    /**
      * @return (Updatable) Country of the address.
      * 
      */
     private @Nullable String country;
+    /**
+     * @return (Updatable) County of the address.
+     * 
+     */
+    private @Nullable String county;
+    /**
+     * @return (Updatable) Department name of the customer company.
+     * 
+     */
+    private @Nullable String departmentName;
     /**
      * @return (Updatable) The email address of the paypal user.
      * 
@@ -41,6 +56,16 @@ public final class SubscriptionSubscriptionBillingAddress {
      * 
      */
     private @Nullable String firstName;
+    /**
+     * @return (Updatable) Internal number of the customer company.
+     * 
+     */
+    private @Nullable String internalNumber;
+    /**
+     * @return (Updatable) Job title of the contact person.
+     * 
+     */
+    private @Nullable String jobTitle;
     /**
      * @return (Updatable) Last name of the paypal user.
      * 
@@ -57,15 +82,65 @@ public final class SubscriptionSubscriptionBillingAddress {
      */
     private @Nullable String line2;
     /**
+     * @return (Updatable) Address line 3.
+     * 
+     */
+    private @Nullable String line3;
+    /**
+     * @return (Updatable) Address line 4.
+     * 
+     */
+    private @Nullable String line4;
+    /**
+     * @return (Updatable) Middle name of the contact person.
+     * 
+     */
+    private @Nullable String middleName;
+    /**
+     * @return (Updatable) Municipal Inscription.
+     * 
+     */
+    private @Nullable String municipalInscription;
+    /**
+     * @return (Updatable) Phone country code of the contact person.
+     * 
+     */
+    private @Nullable String phoneCountryCode;
+    /**
+     * @return (Updatable) Phone number of the contact person.
+     * 
+     */
+    private @Nullable String phoneNumber;
+    /**
      * @return (Updatable) Post code of the address.
      * 
      */
     private @Nullable String postalCode;
     /**
+     * @return (Updatable) Province of the address.
+     * 
+     */
+    private @Nullable String province;
+    /**
      * @return (Updatable) State of the address.
      * 
      */
     private @Nullable String state;
+    /**
+     * @return (Updatable) State Inscription.
+     * 
+     */
+    private @Nullable String stateInscription;
+    /**
+     * @return (Updatable) Street name of the address.
+     * 
+     */
+    private @Nullable String streetName;
+    /**
+     * @return (Updatable) Street number of the address.
+     * 
+     */
+    private @Nullable String streetNumber;
 
     private SubscriptionSubscriptionBillingAddress() {}
     /**
@@ -90,11 +165,32 @@ public final class SubscriptionSubscriptionBillingAddress {
         return Optional.ofNullable(this.companyName);
     }
     /**
+     * @return (Updatable) Contributor class of the customer company.
+     * 
+     */
+    public Optional<String> contributorClass() {
+        return Optional.ofNullable(this.contributorClass);
+    }
+    /**
      * @return (Updatable) Country of the address.
      * 
      */
     public Optional<String> country() {
         return Optional.ofNullable(this.country);
+    }
+    /**
+     * @return (Updatable) County of the address.
+     * 
+     */
+    public Optional<String> county() {
+        return Optional.ofNullable(this.county);
+    }
+    /**
+     * @return (Updatable) Department name of the customer company.
+     * 
+     */
+    public Optional<String> departmentName() {
+        return Optional.ofNullable(this.departmentName);
     }
     /**
      * @return (Updatable) The email address of the paypal user.
@@ -109,6 +205,20 @@ public final class SubscriptionSubscriptionBillingAddress {
      */
     public Optional<String> firstName() {
         return Optional.ofNullable(this.firstName);
+    }
+    /**
+     * @return (Updatable) Internal number of the customer company.
+     * 
+     */
+    public Optional<String> internalNumber() {
+        return Optional.ofNullable(this.internalNumber);
+    }
+    /**
+     * @return (Updatable) Job title of the contact person.
+     * 
+     */
+    public Optional<String> jobTitle() {
+        return Optional.ofNullable(this.jobTitle);
     }
     /**
      * @return (Updatable) Last name of the paypal user.
@@ -132,6 +242,48 @@ public final class SubscriptionSubscriptionBillingAddress {
         return Optional.ofNullable(this.line2);
     }
     /**
+     * @return (Updatable) Address line 3.
+     * 
+     */
+    public Optional<String> line3() {
+        return Optional.ofNullable(this.line3);
+    }
+    /**
+     * @return (Updatable) Address line 4.
+     * 
+     */
+    public Optional<String> line4() {
+        return Optional.ofNullable(this.line4);
+    }
+    /**
+     * @return (Updatable) Middle name of the contact person.
+     * 
+     */
+    public Optional<String> middleName() {
+        return Optional.ofNullable(this.middleName);
+    }
+    /**
+     * @return (Updatable) Municipal Inscription.
+     * 
+     */
+    public Optional<String> municipalInscription() {
+        return Optional.ofNullable(this.municipalInscription);
+    }
+    /**
+     * @return (Updatable) Phone country code of the contact person.
+     * 
+     */
+    public Optional<String> phoneCountryCode() {
+        return Optional.ofNullable(this.phoneCountryCode);
+    }
+    /**
+     * @return (Updatable) Phone number of the contact person.
+     * 
+     */
+    public Optional<String> phoneNumber() {
+        return Optional.ofNullable(this.phoneNumber);
+    }
+    /**
      * @return (Updatable) Post code of the address.
      * 
      */
@@ -139,11 +291,39 @@ public final class SubscriptionSubscriptionBillingAddress {
         return Optional.ofNullable(this.postalCode);
     }
     /**
+     * @return (Updatable) Province of the address.
+     * 
+     */
+    public Optional<String> province() {
+        return Optional.ofNullable(this.province);
+    }
+    /**
      * @return (Updatable) State of the address.
      * 
      */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
+    }
+    /**
+     * @return (Updatable) State Inscription.
+     * 
+     */
+    public Optional<String> stateInscription() {
+        return Optional.ofNullable(this.stateInscription);
+    }
+    /**
+     * @return (Updatable) Street name of the address.
+     * 
+     */
+    public Optional<String> streetName() {
+        return Optional.ofNullable(this.streetName);
+    }
+    /**
+     * @return (Updatable) Street number of the address.
+     * 
+     */
+    public Optional<String> streetNumber() {
+        return Optional.ofNullable(this.streetNumber);
     }
 
     public static Builder builder() {
@@ -158,28 +338,58 @@ public final class SubscriptionSubscriptionBillingAddress {
         private @Nullable String addressKey;
         private @Nullable String city;
         private @Nullable String companyName;
+        private @Nullable String contributorClass;
         private @Nullable String country;
+        private @Nullable String county;
+        private @Nullable String departmentName;
         private @Nullable String emailAddress;
         private @Nullable String firstName;
+        private @Nullable String internalNumber;
+        private @Nullable String jobTitle;
         private @Nullable String lastName;
         private @Nullable String line1;
         private @Nullable String line2;
+        private @Nullable String line3;
+        private @Nullable String line4;
+        private @Nullable String middleName;
+        private @Nullable String municipalInscription;
+        private @Nullable String phoneCountryCode;
+        private @Nullable String phoneNumber;
         private @Nullable String postalCode;
+        private @Nullable String province;
         private @Nullable String state;
+        private @Nullable String stateInscription;
+        private @Nullable String streetName;
+        private @Nullable String streetNumber;
         public Builder() {}
         public Builder(SubscriptionSubscriptionBillingAddress defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.addressKey = defaults.addressKey;
     	      this.city = defaults.city;
     	      this.companyName = defaults.companyName;
+    	      this.contributorClass = defaults.contributorClass;
     	      this.country = defaults.country;
+    	      this.county = defaults.county;
+    	      this.departmentName = defaults.departmentName;
     	      this.emailAddress = defaults.emailAddress;
     	      this.firstName = defaults.firstName;
+    	      this.internalNumber = defaults.internalNumber;
+    	      this.jobTitle = defaults.jobTitle;
     	      this.lastName = defaults.lastName;
     	      this.line1 = defaults.line1;
     	      this.line2 = defaults.line2;
+    	      this.line3 = defaults.line3;
+    	      this.line4 = defaults.line4;
+    	      this.middleName = defaults.middleName;
+    	      this.municipalInscription = defaults.municipalInscription;
+    	      this.phoneCountryCode = defaults.phoneCountryCode;
+    	      this.phoneNumber = defaults.phoneNumber;
     	      this.postalCode = defaults.postalCode;
+    	      this.province = defaults.province;
     	      this.state = defaults.state;
+    	      this.stateInscription = defaults.stateInscription;
+    	      this.streetName = defaults.streetName;
+    	      this.streetNumber = defaults.streetNumber;
         }
 
         @CustomType.Setter
@@ -198,8 +408,23 @@ public final class SubscriptionSubscriptionBillingAddress {
             return this;
         }
         @CustomType.Setter
+        public Builder contributorClass(@Nullable String contributorClass) {
+            this.contributorClass = contributorClass;
+            return this;
+        }
+        @CustomType.Setter
         public Builder country(@Nullable String country) {
             this.country = country;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder county(@Nullable String county) {
+            this.county = county;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder departmentName(@Nullable String departmentName) {
+            this.departmentName = departmentName;
             return this;
         }
         @CustomType.Setter
@@ -210,6 +435,16 @@ public final class SubscriptionSubscriptionBillingAddress {
         @CustomType.Setter
         public Builder firstName(@Nullable String firstName) {
             this.firstName = firstName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder internalNumber(@Nullable String internalNumber) {
+            this.internalNumber = internalNumber;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder jobTitle(@Nullable String jobTitle) {
+            this.jobTitle = jobTitle;
             return this;
         }
         @CustomType.Setter
@@ -228,8 +463,43 @@ public final class SubscriptionSubscriptionBillingAddress {
             return this;
         }
         @CustomType.Setter
+        public Builder line3(@Nullable String line3) {
+            this.line3 = line3;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder line4(@Nullable String line4) {
+            this.line4 = line4;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder middleName(@Nullable String middleName) {
+            this.middleName = middleName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder municipalInscription(@Nullable String municipalInscription) {
+            this.municipalInscription = municipalInscription;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder phoneCountryCode(@Nullable String phoneCountryCode) {
+            this.phoneCountryCode = phoneCountryCode;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder phoneNumber(@Nullable String phoneNumber) {
+            this.phoneNumber = phoneNumber;
+            return this;
+        }
+        @CustomType.Setter
         public Builder postalCode(@Nullable String postalCode) {
             this.postalCode = postalCode;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder province(@Nullable String province) {
+            this.province = province;
             return this;
         }
         @CustomType.Setter
@@ -237,19 +507,49 @@ public final class SubscriptionSubscriptionBillingAddress {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
+        public Builder stateInscription(@Nullable String stateInscription) {
+            this.stateInscription = stateInscription;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder streetName(@Nullable String streetName) {
+            this.streetName = streetName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder streetNumber(@Nullable String streetNumber) {
+            this.streetNumber = streetNumber;
+            return this;
+        }
         public SubscriptionSubscriptionBillingAddress build() {
             final var o = new SubscriptionSubscriptionBillingAddress();
             o.addressKey = addressKey;
             o.city = city;
             o.companyName = companyName;
+            o.contributorClass = contributorClass;
             o.country = country;
+            o.county = county;
+            o.departmentName = departmentName;
             o.emailAddress = emailAddress;
             o.firstName = firstName;
+            o.internalNumber = internalNumber;
+            o.jobTitle = jobTitle;
             o.lastName = lastName;
             o.line1 = line1;
             o.line2 = line2;
+            o.line3 = line3;
+            o.line4 = line4;
+            o.middleName = middleName;
+            o.municipalInscription = municipalInscription;
+            o.phoneCountryCode = phoneCountryCode;
+            o.phoneNumber = phoneNumber;
             o.postalCode = postalCode;
+            o.province = province;
             o.state = state;
+            o.stateInscription = stateInscription;
+            o.streetName = streetName;
+            o.streetNumber = streetNumber;
             return o;
         }
     }

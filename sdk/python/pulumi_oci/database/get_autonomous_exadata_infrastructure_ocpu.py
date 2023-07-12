@@ -115,11 +115,11 @@ def get_autonomous_exadata_infrastructure_ocpu(autonomous_exadata_infrastructure
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousExadataInfrastructureOcpu:getAutonomousExadataInfrastructureOcpu', __args__, opts=opts, typ=GetAutonomousExadataInfrastructureOcpuResult).value
 
     return AwaitableGetAutonomousExadataInfrastructureOcpuResult(
-        autonomous_exadata_infrastructure_id=__ret__.autonomous_exadata_infrastructure_id,
-        by_workload_types=__ret__.by_workload_types,
-        consumed_cpu=__ret__.consumed_cpu,
-        id=__ret__.id,
-        total_cpu=__ret__.total_cpu)
+        autonomous_exadata_infrastructure_id=pulumi.get(__ret__, 'autonomous_exadata_infrastructure_id'),
+        by_workload_types=pulumi.get(__ret__, 'by_workload_types'),
+        consumed_cpu=pulumi.get(__ret__, 'consumed_cpu'),
+        id=pulumi.get(__ret__, 'id'),
+        total_cpu=pulumi.get(__ret__, 'total_cpu'))
 
 
 @_utilities.lift_output_func(get_autonomous_exadata_infrastructure_ocpu)

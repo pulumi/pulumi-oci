@@ -139,12 +139,12 @@ def get_ipsec_connections(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getIpsecConnections:getIpsecConnections', __args__, opts=opts, typ=GetIpsecConnectionsResult).value
 
     return AwaitableGetIpsecConnectionsResult(
-        compartment_id=__ret__.compartment_id,
-        connections=__ret__.connections,
-        cpe_id=__ret__.cpe_id,
-        drg_id=__ret__.drg_id,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        connections=pulumi.get(__ret__, 'connections'),
+        cpe_id=pulumi.get(__ret__, 'cpe_id'),
+        drg_id=pulumi.get(__ret__, 'drg_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_ipsec_connections)

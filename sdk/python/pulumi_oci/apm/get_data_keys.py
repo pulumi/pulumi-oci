@@ -117,11 +117,11 @@ def get_data_keys(apm_domain_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Apm/getDataKeys:getDataKeys', __args__, opts=opts, typ=GetDataKeysResult).value
 
     return AwaitableGetDataKeysResult(
-        apm_domain_id=__ret__.apm_domain_id,
-        data_key_type=__ret__.data_key_type,
-        data_keys=__ret__.data_keys,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        apm_domain_id=pulumi.get(__ret__, 'apm_domain_id'),
+        data_key_type=pulumi.get(__ret__, 'data_key_type'),
+        data_keys=pulumi.get(__ret__, 'data_keys'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_data_keys)

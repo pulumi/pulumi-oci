@@ -135,12 +135,12 @@ def get_preauthrequests(bucket: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ObjectStorage/getPreauthrequests:getPreauthrequests', __args__, opts=opts, typ=GetPreauthrequestsResult).value
 
     return AwaitableGetPreauthrequestsResult(
-        bucket=__ret__.bucket,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        namespace=__ret__.namespace,
-        object_name_prefix=__ret__.object_name_prefix,
-        preauthenticated_requests=__ret__.preauthenticated_requests)
+        bucket=pulumi.get(__ret__, 'bucket'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        object_name_prefix=pulumi.get(__ret__, 'object_name_prefix'),
+        preauthenticated_requests=pulumi.get(__ret__, 'preauthenticated_requests'))
 
 
 @_utilities.lift_output_func(get_preauthrequests)

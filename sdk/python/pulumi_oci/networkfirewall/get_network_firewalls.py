@@ -174,14 +174,14 @@ def get_network_firewalls(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:NetworkFirewall/getNetworkFirewalls:getNetworkFirewalls', __args__, opts=opts, typ=GetNetworkFirewallsResult).value
 
     return AwaitableGetNetworkFirewallsResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        network_firewall_collections=__ret__.network_firewall_collections,
-        network_firewall_policy_id=__ret__.network_firewall_policy_id,
-        state=__ret__.state)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        network_firewall_collections=pulumi.get(__ret__, 'network_firewall_collections'),
+        network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_network_firewalls)

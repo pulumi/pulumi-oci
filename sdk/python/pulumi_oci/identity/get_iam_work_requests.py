@@ -122,11 +122,11 @@ def get_iam_work_requests(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getIamWorkRequests:getIamWorkRequests', __args__, opts=opts, typ=GetIamWorkRequestsResult).value
 
     return AwaitableGetIamWorkRequestsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        iam_work_requests=__ret__.iam_work_requests,
-        id=__ret__.id,
-        resource_identifier=__ret__.resource_identifier)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        iam_work_requests=pulumi.get(__ret__, 'iam_work_requests'),
+        id=pulumi.get(__ret__, 'id'),
+        resource_identifier=pulumi.get(__ret__, 'resource_identifier'))
 
 
 @_utilities.lift_output_func(get_iam_work_requests)

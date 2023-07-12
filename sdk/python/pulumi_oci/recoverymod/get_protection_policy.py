@@ -216,19 +216,19 @@ def get_protection_policy(protection_policy_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:RecoveryMod/getProtectionPolicy:getProtectionPolicy', __args__, opts=opts, typ=GetProtectionPolicyResult).value
 
     return AwaitableGetProtectionPolicyResult(
-        backup_retention_period_in_days=__ret__.backup_retention_period_in_days,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_predefined_policy=__ret__.is_predefined_policy,
-        lifecycle_details=__ret__.lifecycle_details,
-        protection_policy_id=__ret__.protection_policy_id,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        backup_retention_period_in_days=pulumi.get(__ret__, 'backup_retention_period_in_days'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_predefined_policy=pulumi.get(__ret__, 'is_predefined_policy'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        protection_policy_id=pulumi.get(__ret__, 'protection_policy_id'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_protection_policy)

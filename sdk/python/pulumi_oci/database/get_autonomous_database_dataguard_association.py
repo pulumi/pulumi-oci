@@ -226,20 +226,20 @@ def get_autonomous_database_dataguard_association(autonomous_database_dataguard_
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousDatabaseDataguardAssociation:getAutonomousDatabaseDataguardAssociation', __args__, opts=opts, typ=GetAutonomousDatabaseDataguardAssociationResult).value
 
     return AwaitableGetAutonomousDatabaseDataguardAssociationResult(
-        apply_lag=__ret__.apply_lag,
-        apply_rate=__ret__.apply_rate,
-        autonomous_database_dataguard_association_id=__ret__.autonomous_database_dataguard_association_id,
-        autonomous_database_id=__ret__.autonomous_database_id,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        peer_autonomous_database_id=__ret__.peer_autonomous_database_id,
-        peer_autonomous_database_life_cycle_state=__ret__.peer_autonomous_database_life_cycle_state,
-        peer_role=__ret__.peer_role,
-        protection_mode=__ret__.protection_mode,
-        role=__ret__.role,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_last_role_changed=__ret__.time_last_role_changed)
+        apply_lag=pulumi.get(__ret__, 'apply_lag'),
+        apply_rate=pulumi.get(__ret__, 'apply_rate'),
+        autonomous_database_dataguard_association_id=pulumi.get(__ret__, 'autonomous_database_dataguard_association_id'),
+        autonomous_database_id=pulumi.get(__ret__, 'autonomous_database_id'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        peer_autonomous_database_id=pulumi.get(__ret__, 'peer_autonomous_database_id'),
+        peer_autonomous_database_life_cycle_state=pulumi.get(__ret__, 'peer_autonomous_database_life_cycle_state'),
+        peer_role=pulumi.get(__ret__, 'peer_role'),
+        protection_mode=pulumi.get(__ret__, 'protection_mode'),
+        role=pulumi.get(__ret__, 'role'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_last_role_changed=pulumi.get(__ret__, 'time_last_role_changed'))
 
 
 @_utilities.lift_output_func(get_autonomous_database_dataguard_association)

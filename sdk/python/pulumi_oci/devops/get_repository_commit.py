@@ -190,17 +190,17 @@ def get_repository_commit(commit_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getRepositoryCommit:getRepositoryCommit', __args__, opts=opts, typ=GetRepositoryCommitResult).value
 
     return AwaitableGetRepositoryCommitResult(
-        author_email=__ret__.author_email,
-        author_name=__ret__.author_name,
-        commit_id=__ret__.commit_id,
-        commit_message=__ret__.commit_message,
-        committer_email=__ret__.committer_email,
-        committer_name=__ret__.committer_name,
-        id=__ret__.id,
-        parent_commit_ids=__ret__.parent_commit_ids,
-        repository_id=__ret__.repository_id,
-        time_created=__ret__.time_created,
-        tree_id=__ret__.tree_id)
+        author_email=pulumi.get(__ret__, 'author_email'),
+        author_name=pulumi.get(__ret__, 'author_name'),
+        commit_id=pulumi.get(__ret__, 'commit_id'),
+        commit_message=pulumi.get(__ret__, 'commit_message'),
+        committer_email=pulumi.get(__ret__, 'committer_email'),
+        committer_name=pulumi.get(__ret__, 'committer_name'),
+        id=pulumi.get(__ret__, 'id'),
+        parent_commit_ids=pulumi.get(__ret__, 'parent_commit_ids'),
+        repository_id=pulumi.get(__ret__, 'repository_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        tree_id=pulumi.get(__ret__, 'tree_id'))
 
 
 @_utilities.lift_output_func(get_repository_commit)

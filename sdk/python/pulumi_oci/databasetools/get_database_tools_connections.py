@@ -154,13 +154,13 @@ def get_database_tools_connections(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseTools/getDatabaseToolsConnections:getDatabaseToolsConnections', __args__, opts=opts, typ=GetDatabaseToolsConnectionsResult).value
 
     return AwaitableGetDatabaseToolsConnectionsResult(
-        compartment_id=__ret__.compartment_id,
-        database_tools_connection_collections=__ret__.database_tools_connection_collections,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        types=__ret__.types)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        database_tools_connection_collections=pulumi.get(__ret__, 'database_tools_connection_collections'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        types=pulumi.get(__ret__, 'types'))
 
 
 @_utilities.lift_output_func(get_database_tools_connections)

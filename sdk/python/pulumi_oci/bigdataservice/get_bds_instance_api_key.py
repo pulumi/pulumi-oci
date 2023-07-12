@@ -196,18 +196,18 @@ def get_bds_instance_api_key(api_key_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:BigDataService/getBdsInstanceApiKey:getBdsInstanceApiKey', __args__, opts=opts, typ=GetBdsInstanceApiKeyResult).value
 
     return AwaitableGetBdsInstanceApiKeyResult(
-        api_key_id=__ret__.api_key_id,
-        bds_instance_id=__ret__.bds_instance_id,
-        default_region=__ret__.default_region,
-        fingerprint=__ret__.fingerprint,
-        id=__ret__.id,
-        key_alias=__ret__.key_alias,
-        passphrase=__ret__.passphrase,
-        pemfilepath=__ret__.pemfilepath,
-        state=__ret__.state,
-        tenant_id=__ret__.tenant_id,
-        time_created=__ret__.time_created,
-        user_id=__ret__.user_id)
+        api_key_id=pulumi.get(__ret__, 'api_key_id'),
+        bds_instance_id=pulumi.get(__ret__, 'bds_instance_id'),
+        default_region=pulumi.get(__ret__, 'default_region'),
+        fingerprint=pulumi.get(__ret__, 'fingerprint'),
+        id=pulumi.get(__ret__, 'id'),
+        key_alias=pulumi.get(__ret__, 'key_alias'),
+        passphrase=pulumi.get(__ret__, 'passphrase'),
+        pemfilepath=pulumi.get(__ret__, 'pemfilepath'),
+        state=pulumi.get(__ret__, 'state'),
+        tenant_id=pulumi.get(__ret__, 'tenant_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        user_id=pulumi.get(__ret__, 'user_id'))
 
 
 @_utilities.lift_output_func(get_bds_instance_api_key)

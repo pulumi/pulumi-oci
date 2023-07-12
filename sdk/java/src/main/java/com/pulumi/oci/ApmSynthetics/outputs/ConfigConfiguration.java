@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.ApmSynthetics.outputs.ConfigConfigurationClientCertificateDetails;
 import com.pulumi.oci.ApmSynthetics.outputs.ConfigConfigurationDnsConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.ConfigConfigurationNetworkConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.ConfigConfigurationReqAuthenticationDetails;
@@ -20,12 +21,17 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ConfigConfiguration {
     /**
+     * @return (Updatable) Details for client certificate.
+     * 
+     */
+    private @Nullable ConfigConfigurationClientCertificateDetails clientCertificateDetails;
+    /**
      * @return (Updatable) Type of configuration.
      * 
      */
     private @Nullable String configType;
     /**
-     * @return (Updatable) Dns settings.
+     * @return (Updatable) Information about the DNS settings.
      * 
      */
     private @Nullable ConfigConfigurationDnsConfiguration dnsConfiguration;
@@ -35,12 +41,17 @@ public final class ConfigConfiguration {
      */
     private @Nullable Boolean isCertificateValidationEnabled;
     /**
+     * @return (Updatable) If disabled then auto snapshots are not collected.
+     * 
+     */
+    private @Nullable Boolean isDefaultSnapshotEnabled;
+    /**
      * @return (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
      * 
      */
     private @Nullable Boolean isFailureRetried;
     /**
-     * @return (Updatable) If redirection enabled, then redirects will be allowed while accessing target URL.
+     * @return (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
      * 
      */
     private @Nullable Boolean isRedirectionEnabled;
@@ -55,7 +66,7 @@ public final class ConfigConfiguration {
      */
     private @Nullable ConfigConfigurationReqAuthenticationDetails reqAuthenticationDetails;
     /**
-     * @return (Updatable) Request http authentication scheme.
+     * @return (Updatable) Request HTTP authentication scheme.
      * 
      */
     private @Nullable String reqAuthenticationScheme;
@@ -97,6 +108,13 @@ public final class ConfigConfiguration {
 
     private ConfigConfiguration() {}
     /**
+     * @return (Updatable) Details for client certificate.
+     * 
+     */
+    public Optional<ConfigConfigurationClientCertificateDetails> clientCertificateDetails() {
+        return Optional.ofNullable(this.clientCertificateDetails);
+    }
+    /**
      * @return (Updatable) Type of configuration.
      * 
      */
@@ -104,7 +122,7 @@ public final class ConfigConfiguration {
         return Optional.ofNullable(this.configType);
     }
     /**
-     * @return (Updatable) Dns settings.
+     * @return (Updatable) Information about the DNS settings.
      * 
      */
     public Optional<ConfigConfigurationDnsConfiguration> dnsConfiguration() {
@@ -118,6 +136,13 @@ public final class ConfigConfiguration {
         return Optional.ofNullable(this.isCertificateValidationEnabled);
     }
     /**
+     * @return (Updatable) If disabled then auto snapshots are not collected.
+     * 
+     */
+    public Optional<Boolean> isDefaultSnapshotEnabled() {
+        return Optional.ofNullable(this.isDefaultSnapshotEnabled);
+    }
+    /**
      * @return (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
      * 
      */
@@ -125,7 +150,7 @@ public final class ConfigConfiguration {
         return Optional.ofNullable(this.isFailureRetried);
     }
     /**
-     * @return (Updatable) If redirection enabled, then redirects will be allowed while accessing target URL.
+     * @return (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
      * 
      */
     public Optional<Boolean> isRedirectionEnabled() {
@@ -146,7 +171,7 @@ public final class ConfigConfiguration {
         return Optional.ofNullable(this.reqAuthenticationDetails);
     }
     /**
-     * @return (Updatable) Request http authentication scheme.
+     * @return (Updatable) Request HTTP authentication scheme.
      * 
      */
     public Optional<String> reqAuthenticationScheme() {
@@ -211,9 +236,11 @@ public final class ConfigConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable ConfigConfigurationClientCertificateDetails clientCertificateDetails;
         private @Nullable String configType;
         private @Nullable ConfigConfigurationDnsConfiguration dnsConfiguration;
         private @Nullable Boolean isCertificateValidationEnabled;
+        private @Nullable Boolean isDefaultSnapshotEnabled;
         private @Nullable Boolean isFailureRetried;
         private @Nullable Boolean isRedirectionEnabled;
         private @Nullable ConfigConfigurationNetworkConfiguration networkConfiguration;
@@ -229,9 +256,11 @@ public final class ConfigConfiguration {
         public Builder() {}
         public Builder(ConfigConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.clientCertificateDetails = defaults.clientCertificateDetails;
     	      this.configType = defaults.configType;
     	      this.dnsConfiguration = defaults.dnsConfiguration;
     	      this.isCertificateValidationEnabled = defaults.isCertificateValidationEnabled;
+    	      this.isDefaultSnapshotEnabled = defaults.isDefaultSnapshotEnabled;
     	      this.isFailureRetried = defaults.isFailureRetried;
     	      this.isRedirectionEnabled = defaults.isRedirectionEnabled;
     	      this.networkConfiguration = defaults.networkConfiguration;
@@ -247,6 +276,11 @@ public final class ConfigConfiguration {
         }
 
         @CustomType.Setter
+        public Builder clientCertificateDetails(@Nullable ConfigConfigurationClientCertificateDetails clientCertificateDetails) {
+            this.clientCertificateDetails = clientCertificateDetails;
+            return this;
+        }
+        @CustomType.Setter
         public Builder configType(@Nullable String configType) {
             this.configType = configType;
             return this;
@@ -259,6 +293,11 @@ public final class ConfigConfiguration {
         @CustomType.Setter
         public Builder isCertificateValidationEnabled(@Nullable Boolean isCertificateValidationEnabled) {
             this.isCertificateValidationEnabled = isCertificateValidationEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isDefaultSnapshotEnabled(@Nullable Boolean isDefaultSnapshotEnabled) {
+            this.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
             return this;
         }
         @CustomType.Setter
@@ -335,9 +374,11 @@ public final class ConfigConfiguration {
         }
         public ConfigConfiguration build() {
             final var o = new ConfigConfiguration();
+            o.clientCertificateDetails = clientCertificateDetails;
             o.configType = configType;
             o.dnsConfiguration = dnsConfiguration;
             o.isCertificateValidationEnabled = isCertificateValidationEnabled;
+            o.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
             o.isFailureRetried = isFailureRetried;
             o.isRedirectionEnabled = isRedirectionEnabled;
             o.networkConfiguration = networkConfiguration;

@@ -105,10 +105,10 @@ def get_cross_connect_port_speed_shape(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getCrossConnectPortSpeedShape:getCrossConnectPortSpeedShape', __args__, opts=opts, typ=GetCrossConnectPortSpeedShapeResult).value
 
     return AwaitableGetCrossConnectPortSpeedShapeResult(
-        compartment_id=__ret__.compartment_id,
-        cross_connect_port_speed_shapes=__ret__.cross_connect_port_speed_shapes,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        cross_connect_port_speed_shapes=pulumi.get(__ret__, 'cross_connect_port_speed_shapes'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_cross_connect_port_speed_shape)

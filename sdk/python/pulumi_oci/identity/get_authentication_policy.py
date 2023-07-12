@@ -104,10 +104,10 @@ def get_authentication_policy(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getAuthenticationPolicy:getAuthenticationPolicy', __args__, opts=opts, typ=GetAuthenticationPolicyResult).value
 
     return AwaitableGetAuthenticationPolicyResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        network_policies=__ret__.network_policies,
-        password_policies=__ret__.password_policies)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        network_policies=pulumi.get(__ret__, 'network_policies'),
+        password_policies=pulumi.get(__ret__, 'password_policies'))
 
 
 @_utilities.lift_output_func(get_authentication_policy)

@@ -186,13 +186,17 @@ export interface GetExadataInfrastructureResult {
      */
     readonly netmask: string;
     /**
-     * Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     * Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
      */
     readonly networkBondingModeDetails: outputs.Database.GetExadataInfrastructureNetworkBondingModeDetail[];
     /**
      * The list of NTP server IP addresses. Maximum of 3 allowed.
      */
     readonly ntpServers: string[];
+    /**
+     * The serial number for the Exadata infrastructure.
+     */
+    readonly rackSerialNumber: string;
     /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      */

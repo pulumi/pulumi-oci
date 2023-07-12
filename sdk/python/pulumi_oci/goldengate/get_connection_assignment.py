@@ -162,15 +162,15 @@ def get_connection_assignment(connection_assignment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:GoldenGate/getConnectionAssignment:getConnectionAssignment', __args__, opts=opts, typ=GetConnectionAssignmentResult).value
 
     return AwaitableGetConnectionAssignmentResult(
-        alias_name=__ret__.alias_name,
-        compartment_id=__ret__.compartment_id,
-        connection_assignment_id=__ret__.connection_assignment_id,
-        connection_id=__ret__.connection_id,
-        deployment_id=__ret__.deployment_id,
-        id=__ret__.id,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        alias_name=pulumi.get(__ret__, 'alias_name'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        connection_assignment_id=pulumi.get(__ret__, 'connection_assignment_id'),
+        connection_id=pulumi.get(__ret__, 'connection_id'),
+        deployment_id=pulumi.get(__ret__, 'deployment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_connection_assignment)

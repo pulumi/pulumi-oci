@@ -154,13 +154,13 @@ def get_vm_cluster_networks(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getVmClusterNetworks:getVmClusterNetworks', __args__, opts=opts, typ=GetVmClusterNetworksResult).value
 
     return AwaitableGetVmClusterNetworksResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        exadata_infrastructure_id=__ret__.exadata_infrastructure_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        vm_cluster_networks=__ret__.vm_cluster_networks)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        vm_cluster_networks=pulumi.get(__ret__, 'vm_cluster_networks'))
 
 
 @_utilities.lift_output_func(get_vm_cluster_networks)

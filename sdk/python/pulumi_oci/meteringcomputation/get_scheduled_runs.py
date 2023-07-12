@@ -106,10 +106,10 @@ def get_scheduled_runs(filters: Optional[Sequence[pulumi.InputType['GetScheduled
     __ret__ = pulumi.runtime.invoke('oci:MeteringComputation/getScheduledRuns:getScheduledRuns', __args__, opts=opts, typ=GetScheduledRunsResult).value
 
     return AwaitableGetScheduledRunsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        schedule_id=__ret__.schedule_id,
-        scheduled_run_collections=__ret__.scheduled_run_collections)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        schedule_id=pulumi.get(__ret__, 'schedule_id'),
+        scheduled_run_collections=pulumi.get(__ret__, 'scheduled_run_collections'))
 
 
 @_utilities.lift_output_func(get_scheduled_runs)

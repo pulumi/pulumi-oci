@@ -178,16 +178,16 @@ def get_app_catalog_listing_resource_version(listing_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getAppCatalogListingResourceVersion:getAppCatalogListingResourceVersion', __args__, opts=opts, typ=GetAppCatalogListingResourceVersionResult).value
 
     return AwaitableGetAppCatalogListingResourceVersionResult(
-        accessible_ports=__ret__.accessible_ports,
-        allowed_actions=__ret__.allowed_actions,
-        available_regions=__ret__.available_regions,
-        compatible_shapes=__ret__.compatible_shapes,
-        id=__ret__.id,
-        listing_id=__ret__.listing_id,
-        listing_resource_id=__ret__.listing_resource_id,
-        listing_resource_version=__ret__.listing_resource_version,
-        resource_version=__ret__.resource_version,
-        time_published=__ret__.time_published)
+        accessible_ports=pulumi.get(__ret__, 'accessible_ports'),
+        allowed_actions=pulumi.get(__ret__, 'allowed_actions'),
+        available_regions=pulumi.get(__ret__, 'available_regions'),
+        compatible_shapes=pulumi.get(__ret__, 'compatible_shapes'),
+        id=pulumi.get(__ret__, 'id'),
+        listing_id=pulumi.get(__ret__, 'listing_id'),
+        listing_resource_id=pulumi.get(__ret__, 'listing_resource_id'),
+        listing_resource_version=pulumi.get(__ret__, 'listing_resource_version'),
+        resource_version=pulumi.get(__ret__, 'resource_version'),
+        time_published=pulumi.get(__ret__, 'time_published'))
 
 
 @_utilities.lift_output_func(get_app_catalog_listing_resource_version)

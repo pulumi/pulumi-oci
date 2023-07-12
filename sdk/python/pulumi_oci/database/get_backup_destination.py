@@ -52,10 +52,6 @@ class GetBackupDestinationResult:
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if local_mount_point_path and not isinstance(local_mount_point_path, str):
             raise TypeError("Expected argument 'local_mount_point_path' to be a str")
-        if local_mount_point_path is not None:
-            warnings.warn("""The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""", DeprecationWarning)
-            pulumi.log.warn("""local_mount_point_path is deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""")
-
         pulumi.set(__self__, "local_mount_point_path", local_mount_point_path)
         if mount_type_details and not isinstance(mount_type_details, list):
             raise TypeError("Expected argument 'mount_type_details' to be a list")
@@ -157,6 +153,9 @@ class GetBackupDestinationResult:
         """
         The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
         """
+        warnings.warn("""The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""", DeprecationWarning)
+        pulumi.log.warn("""local_mount_point_path is deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""")
+
         return pulumi.get(self, "local_mount_point_path")
 
     @property
@@ -272,24 +271,24 @@ def get_backup_destination(backup_destination_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getBackupDestination:getBackupDestination', __args__, opts=opts, typ=GetBackupDestinationResult).value
 
     return AwaitableGetBackupDestinationResult(
-        associated_databases=__ret__.associated_databases,
-        backup_destination_id=__ret__.backup_destination_id,
-        compartment_id=__ret__.compartment_id,
-        connection_string=__ret__.connection_string,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        local_mount_point_path=__ret__.local_mount_point_path,
-        mount_type_details=__ret__.mount_type_details,
-        nfs_mount_type=__ret__.nfs_mount_type,
-        nfs_server_export=__ret__.nfs_server_export,
-        nfs_servers=__ret__.nfs_servers,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        type=__ret__.type,
-        vpc_users=__ret__.vpc_users)
+        associated_databases=pulumi.get(__ret__, 'associated_databases'),
+        backup_destination_id=pulumi.get(__ret__, 'backup_destination_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        connection_string=pulumi.get(__ret__, 'connection_string'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        local_mount_point_path=pulumi.get(__ret__, 'local_mount_point_path'),
+        mount_type_details=pulumi.get(__ret__, 'mount_type_details'),
+        nfs_mount_type=pulumi.get(__ret__, 'nfs_mount_type'),
+        nfs_server_export=pulumi.get(__ret__, 'nfs_server_export'),
+        nfs_servers=pulumi.get(__ret__, 'nfs_servers'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        type=pulumi.get(__ret__, 'type'),
+        vpc_users=pulumi.get(__ret__, 'vpc_users'))
 
 
 @_utilities.lift_output_func(get_backup_destination)

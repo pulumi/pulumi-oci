@@ -227,20 +227,20 @@ def get_namespace_ingest_time_rule(ingest_time_rule_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getNamespaceIngestTimeRule:getNamespaceIngestTimeRule', __args__, opts=opts, typ=GetNamespaceIngestTimeRuleResult).value
 
     return AwaitableGetNamespaceIngestTimeRuleResult(
-        actions=__ret__.actions,
-        compartment_id=__ret__.compartment_id,
-        conditions=__ret__.conditions,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        ingest_time_rule_id=__ret__.ingest_time_rule_id,
-        is_enabled=__ret__.is_enabled,
-        namespace=__ret__.namespace,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        actions=pulumi.get(__ret__, 'actions'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        conditions=pulumi.get(__ret__, 'conditions'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        ingest_time_rule_id=pulumi.get(__ret__, 'ingest_time_rule_id'),
+        is_enabled=pulumi.get(__ret__, 'is_enabled'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_namespace_ingest_time_rule)

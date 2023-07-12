@@ -170,14 +170,14 @@ def get_database_tools_private_endpoints(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseTools/getDatabaseToolsPrivateEndpoints:getDatabaseToolsPrivateEndpoints', __args__, opts=opts, typ=GetDatabaseToolsPrivateEndpointsResult).value
 
     return AwaitableGetDatabaseToolsPrivateEndpointsResult(
-        compartment_id=__ret__.compartment_id,
-        database_tools_private_endpoint_collections=__ret__.database_tools_private_endpoint_collections,
-        display_name=__ret__.display_name,
-        endpoint_service_id=__ret__.endpoint_service_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        subnet_id=__ret__.subnet_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        database_tools_private_endpoint_collections=pulumi.get(__ret__, 'database_tools_private_endpoint_collections'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        endpoint_service_id=pulumi.get(__ret__, 'endpoint_service_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'))
 
 
 @_utilities.lift_output_func(get_database_tools_private_endpoints)

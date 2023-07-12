@@ -259,23 +259,23 @@ def get_recommendation(recommendation_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Optimizer/getRecommendation:getRecommendation', __args__, opts=opts, typ=GetRecommendationResult).value
 
     return AwaitableGetRecommendationResult(
-        category_id=__ret__.category_id,
-        compartment_id=__ret__.compartment_id,
-        description=__ret__.description,
-        estimated_cost_saving=__ret__.estimated_cost_saving,
-        extended_metadata=__ret__.extended_metadata,
-        id=__ret__.id,
-        importance=__ret__.importance,
-        name=__ret__.name,
-        recommendation_id=__ret__.recommendation_id,
-        resource_counts=__ret__.resource_counts,
-        state=__ret__.state,
-        status=__ret__.status,
-        supported_levels=__ret__.supported_levels,
-        time_created=__ret__.time_created,
-        time_status_begin=__ret__.time_status_begin,
-        time_status_end=__ret__.time_status_end,
-        time_updated=__ret__.time_updated)
+        category_id=pulumi.get(__ret__, 'category_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        description=pulumi.get(__ret__, 'description'),
+        estimated_cost_saving=pulumi.get(__ret__, 'estimated_cost_saving'),
+        extended_metadata=pulumi.get(__ret__, 'extended_metadata'),
+        id=pulumi.get(__ret__, 'id'),
+        importance=pulumi.get(__ret__, 'importance'),
+        name=pulumi.get(__ret__, 'name'),
+        recommendation_id=pulumi.get(__ret__, 'recommendation_id'),
+        resource_counts=pulumi.get(__ret__, 'resource_counts'),
+        state=pulumi.get(__ret__, 'state'),
+        status=pulumi.get(__ret__, 'status'),
+        supported_levels=pulumi.get(__ret__, 'supported_levels'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_status_begin=pulumi.get(__ret__, 'time_status_begin'),
+        time_status_end=pulumi.get(__ret__, 'time_status_end'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_recommendation)

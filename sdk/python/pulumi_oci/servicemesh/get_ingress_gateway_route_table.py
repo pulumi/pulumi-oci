@@ -235,21 +235,21 @@ def get_ingress_gateway_route_table(ingress_gateway_route_table_id: Optional[str
     __ret__ = pulumi.runtime.invoke('oci:ServiceMesh/getIngressGatewayRouteTable:getIngressGatewayRouteTable', __args__, opts=opts, typ=GetIngressGatewayRouteTableResult).value
 
     return AwaitableGetIngressGatewayRouteTableResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        ingress_gateway_id=__ret__.ingress_gateway_id,
-        ingress_gateway_route_table_id=__ret__.ingress_gateway_route_table_id,
-        lifecycle_details=__ret__.lifecycle_details,
-        name=__ret__.name,
-        priority=__ret__.priority,
-        route_rules=__ret__.route_rules,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        ingress_gateway_id=pulumi.get(__ret__, 'ingress_gateway_id'),
+        ingress_gateway_route_table_id=pulumi.get(__ret__, 'ingress_gateway_route_table_id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        name=pulumi.get(__ret__, 'name'),
+        priority=pulumi.get(__ret__, 'priority'),
+        route_rules=pulumi.get(__ret__, 'route_rules'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_ingress_gateway_route_table)

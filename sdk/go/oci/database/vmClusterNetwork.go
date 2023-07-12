@@ -64,6 +64,13 @@ import (
 //				},
 //				DefinedTags: pulumi.Any(_var.Vm_cluster_network_defined_tags),
 //				Dns:         pulumi.Any(_var.Vm_cluster_network_dns),
+//				DrScans: database.VmClusterNetworkDrScanArray{
+//					&database.VmClusterNetworkDrScanArgs{
+//						Hostname:            pulumi.Any(_var.Vm_cluster_network_dr_scans_hostname),
+//						Ips:                 pulumi.Any(_var.Vm_cluster_network_dr_scans_ips),
+//						ScanListenerPortTcp: pulumi.Any(_var.Vm_cluster_network_dr_scans_scan_listener_port_tcp),
+//					},
+//				},
 //				FreeformTags: pulumi.AnyMap{
 //					"Department": pulumi.Any("Finance"),
 //				},
@@ -100,6 +107,8 @@ type VmClusterNetwork struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
 	Dns pulumi.StringArrayOutput `pulumi:"dns"`
+	// (Updatable) The SCAN details for DR network
+	DrScans VmClusterNetworkDrScanArrayOutput `pulumi:"drScans"`
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId pulumi.StringOutput `pulumi:"exadataInfrastructureId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -174,6 +183,8 @@ type vmClusterNetworkState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
 	Dns []string `pulumi:"dns"`
+	// (Updatable) The SCAN details for DR network
+	DrScans []VmClusterNetworkDrScan `pulumi:"drScans"`
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId *string `pulumi:"exadataInfrastructureId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -205,6 +216,8 @@ type VmClusterNetworkState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
 	Dns pulumi.StringArrayInput
+	// (Updatable) The SCAN details for DR network
+	DrScans VmClusterNetworkDrScanArrayInput
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -240,6 +253,8 @@ type vmClusterNetworkArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
 	Dns []string `pulumi:"dns"`
+	// (Updatable) The SCAN details for DR network
+	DrScans []VmClusterNetworkDrScan `pulumi:"drScans"`
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -264,6 +279,8 @@ type VmClusterNetworkArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
 	Dns pulumi.StringArrayInput
+	// (Updatable) The SCAN details for DR network
+	DrScans VmClusterNetworkDrScanArrayInput
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -386,6 +403,11 @@ func (o VmClusterNetworkOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
 func (o VmClusterNetworkOutput) Dns() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *VmClusterNetwork) pulumi.StringArrayOutput { return v.Dns }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The SCAN details for DR network
+func (o VmClusterNetworkOutput) DrScans() VmClusterNetworkDrScanArrayOutput {
+	return o.ApplyT(func(v *VmClusterNetwork) VmClusterNetworkDrScanArrayOutput { return v.DrScans }).(VmClusterNetworkDrScanArrayOutput)
 }
 
 // The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

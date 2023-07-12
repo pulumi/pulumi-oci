@@ -138,12 +138,12 @@ def get_fleet_blocklists(filters: Optional[Sequence[pulumi.InputType['GetFleetBl
     __ret__ = pulumi.runtime.invoke('oci:Jms/getFleetBlocklists:getFleetBlocklists', __args__, opts=opts, typ=GetFleetBlocklistsResult).value
 
     return AwaitableGetFleetBlocklistsResult(
-        filters=__ret__.filters,
-        fleet_id=__ret__.fleet_id,
-        id=__ret__.id,
-        items=__ret__.items,
-        managed_instance_id=__ret__.managed_instance_id,
-        operation=__ret__.operation)
+        filters=pulumi.get(__ret__, 'filters'),
+        fleet_id=pulumi.get(__ret__, 'fleet_id'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
+        operation=pulumi.get(__ret__, 'operation'))
 
 
 @_utilities.lift_output_func(get_fleet_blocklists)

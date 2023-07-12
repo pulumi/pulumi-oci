@@ -122,11 +122,11 @@ def get_data_source_events(data_source_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudGuard/getDataSourceEvents:getDataSourceEvents', __args__, opts=opts, typ=GetDataSourceEventsResult).value
 
     return AwaitableGetDataSourceEventsResult(
-        data_source_event_collections=__ret__.data_source_event_collections,
-        data_source_id=__ret__.data_source_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        region=__ret__.region)
+        data_source_event_collections=pulumi.get(__ret__, 'data_source_event_collections'),
+        data_source_id=pulumi.get(__ret__, 'data_source_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        region=pulumi.get(__ret__, 'region'))
 
 
 @_utilities.lift_output_func(get_data_source_events)

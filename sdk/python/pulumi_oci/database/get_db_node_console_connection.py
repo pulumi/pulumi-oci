@@ -142,13 +142,13 @@ def get_db_node_console_connection(db_node_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getDbNodeConsoleConnection:getDbNodeConsoleConnection', __args__, opts=opts, typ=GetDbNodeConsoleConnectionResult).value
 
     return AwaitableGetDbNodeConsoleConnectionResult(
-        compartment_id=__ret__.compartment_id,
-        connection_string=__ret__.connection_string,
-        db_node_id=__ret__.db_node_id,
-        fingerprint=__ret__.fingerprint,
-        id=__ret__.id,
-        public_key=__ret__.public_key,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        connection_string=pulumi.get(__ret__, 'connection_string'),
+        db_node_id=pulumi.get(__ret__, 'db_node_id'),
+        fingerprint=pulumi.get(__ret__, 'fingerprint'),
+        id=pulumi.get(__ret__, 'id'),
+        public_key=pulumi.get(__ret__, 'public_key'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_db_node_console_connection)

@@ -174,16 +174,16 @@ def get_object_head(bucket: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ObjectStorage/getObjectHead:getObjectHead', __args__, opts=opts, typ=GetObjectHeadResult).value
 
     return AwaitableGetObjectHeadResult(
-        archival_state=__ret__.archival_state,
-        bucket=__ret__.bucket,
-        content_length=__ret__.content_length,
-        content_type=__ret__.content_type,
-        etag=__ret__.etag,
-        id=__ret__.id,
-        metadata=__ret__.metadata,
-        namespace=__ret__.namespace,
-        object=__ret__.object,
-        storage_tier=__ret__.storage_tier)
+        archival_state=pulumi.get(__ret__, 'archival_state'),
+        bucket=pulumi.get(__ret__, 'bucket'),
+        content_length=pulumi.get(__ret__, 'content_length'),
+        content_type=pulumi.get(__ret__, 'content_type'),
+        etag=pulumi.get(__ret__, 'etag'),
+        id=pulumi.get(__ret__, 'id'),
+        metadata=pulumi.get(__ret__, 'metadata'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        object=pulumi.get(__ret__, 'object'),
+        storage_tier=pulumi.get(__ret__, 'storage_tier'))
 
 
 @_utilities.lift_output_func(get_object_head)

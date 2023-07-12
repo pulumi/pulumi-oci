@@ -116,11 +116,11 @@ def get_subscriptions(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OspGateway/getSubscriptions:getSubscriptions', __args__, opts=opts, typ=GetSubscriptionsResult).value
 
     return AwaitableGetSubscriptionsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        osp_home_region=__ret__.osp_home_region,
-        subscription_collections=__ret__.subscription_collections)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        osp_home_region=pulumi.get(__ret__, 'osp_home_region'),
+        subscription_collections=pulumi.get(__ret__, 'subscription_collections'))
 
 
 @_utilities.lift_output_func(get_subscriptions)

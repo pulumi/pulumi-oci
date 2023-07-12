@@ -135,12 +135,12 @@ def get_service_catalogs(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ServiceCatalog/getServiceCatalogs:getServiceCatalogs', __args__, opts=opts, typ=GetServiceCatalogsResult).value
 
     return AwaitableGetServiceCatalogsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        service_catalog_collections=__ret__.service_catalog_collections,
-        service_catalog_id=__ret__.service_catalog_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        service_catalog_collections=pulumi.get(__ret__, 'service_catalog_collections'),
+        service_catalog_id=pulumi.get(__ret__, 'service_catalog_id'))
 
 
 @_utilities.lift_output_func(get_service_catalogs)

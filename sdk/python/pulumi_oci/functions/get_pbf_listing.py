@@ -199,18 +199,18 @@ def get_pbf_listing(pbf_listing_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Functions/getPbfListing:getPbfListing', __args__, opts=opts, typ=GetPbfListingResult).value
 
     return AwaitableGetPbfListingResult(
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        name=__ret__.name,
-        pbf_listing_id=__ret__.pbf_listing_id,
-        publisher_details=__ret__.publisher_details,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        triggers=__ret__.triggers)
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        pbf_listing_id=pulumi.get(__ret__, 'pbf_listing_id'),
+        publisher_details=pulumi.get(__ret__, 'publisher_details'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        triggers=pulumi.get(__ret__, 'triggers'))
 
 
 @_utilities.lift_output_func(get_pbf_listing)

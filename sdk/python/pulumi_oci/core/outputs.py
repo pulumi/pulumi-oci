@@ -2479,6 +2479,9 @@ class DefaultRouteTableRouteRule(dict):
     @property
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> Optional[str]:
+        warnings.warn("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""", DeprecationWarning)
+        pulumi.log.warn("""cidr_block is deprecated: The 'cidr_block' field has been deprecated. Please use 'destination' instead.""")
+
         return pulumi.get(self, "cidr_block")
 
     @property
@@ -8229,6 +8232,9 @@ class RouteTableRouteRule(dict):
 
         Example: `0.0.0.0/0`
         """
+        warnings.warn("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""", DeprecationWarning)
+        pulumi.log.warn("""cidr_block is deprecated: The 'cidr_block' field has been deprecated. Please use 'destination' instead.""")
+
         return pulumi.get(self, "cidr_block")
 
     @property
@@ -11589,6 +11595,9 @@ class GetBootVolumesBootVolumeResult(dict):
     @property
     @pulumi.getter(name="backupPolicyId")
     def backup_policy_id(self) -> str:
+        warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
+        pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
+
         return pulumi.get(self, "backup_policy_id")
 
     @property
@@ -24020,6 +24029,9 @@ class GetInstancesInstanceResult(dict):
     @property
     @pulumi.getter(name="hostnameLabel")
     def hostname_label(self) -> str:
+        warnings.warn("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""", DeprecationWarning)
+        pulumi.log.warn("""hostname_label is deprecated: The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
+
         return pulumi.get(self, "hostname_label")
 
     @property
@@ -24036,6 +24048,9 @@ class GetInstancesInstanceResult(dict):
         """
         Deprecated. Use `sourceDetails` instead.
         """
+        warnings.warn("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""", DeprecationWarning)
+        pulumi.log.warn("""image is deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
+
         return pulumi.get(self, "image")
 
     @property
@@ -24168,6 +24183,9 @@ class GetInstancesInstanceResult(dict):
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
+        warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""", DeprecationWarning)
+        pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
+
         return pulumi.get(self, "subnet_id")
 
     @property
@@ -28384,6 +28402,9 @@ class GetRouteTablesRouteTableRouteRuleResult(dict):
         """
         Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
         """
+        warnings.warn("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""", DeprecationWarning)
+        pulumi.log.warn("""cidr_block is deprecated: The 'cidr_block' field has been deprecated. Please use 'destination' instead.""")
+
         return pulumi.get(self, "cidr_block")
 
     @property
@@ -32025,6 +32046,9 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
         """
         Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
         """
+        warnings.warn("""The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.""", DeprecationWarning)
+        pulumi.log.warn("""bgp_management is deprecated: The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.""")
+
         return pulumi.get(self, "bgp_management")
 
     @property
@@ -32065,6 +32089,9 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
         """
         Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
         """
+        warnings.warn("""The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.""", DeprecationWarning)
+        pulumi.log.warn("""customer_bgp_asn is deprecated: The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.""")
+
         return pulumi.get(self, "customer_bgp_asn")
 
     @property
@@ -33099,6 +33126,9 @@ class GetVolumeAttachmentsVolumeAttachmentResult(dict):
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
+        warnings.warn("""The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""compartment_id is deprecated: The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -33796,6 +33826,9 @@ class GetVolumeBackupsVolumeBackupResult(dict):
         """
         The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
         """
+        warnings.warn("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""", DeprecationWarning)
+        pulumi.log.warn("""size_in_mbs is deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
+
         return pulumi.get(self, "size_in_mbs")
 
     @property
@@ -33873,6 +33906,9 @@ class GetVolumeBackupsVolumeBackupResult(dict):
         """
         The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
         """
+        warnings.warn("""The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.""", DeprecationWarning)
+        pulumi.log.warn("""unique_size_in_mbs is deprecated: The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.""")
+
         return pulumi.get(self, "unique_size_in_mbs")
 
     @property
@@ -34910,6 +34946,9 @@ class GetVolumesVolumeResult(dict):
     @property
     @pulumi.getter(name="backupPolicyId")
     def backup_policy_id(self) -> str:
+        warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
+        pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
+
         return pulumi.get(self, "backup_policy_id")
 
     @property
@@ -35003,6 +35042,9 @@ class GetVolumesVolumeResult(dict):
         """
         The size of the volume in MBs. This field is deprecated. Use `size_in_gbs` instead.
         """
+        warnings.warn("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""", DeprecationWarning)
+        pulumi.log.warn("""size_in_mbs is deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
+
         return pulumi.get(self, "size_in_mbs")
 
     @property

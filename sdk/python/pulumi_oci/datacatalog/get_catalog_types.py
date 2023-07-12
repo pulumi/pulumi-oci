@@ -231,18 +231,18 @@ def get_catalog_types(catalog_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataCatalog/getCatalogTypes:getCatalogTypes', __args__, opts=opts, typ=GetCatalogTypesResult).value
 
     return AwaitableGetCatalogTypesResult(
-        catalog_id=__ret__.catalog_id,
-        external_type_name=__ret__.external_type_name,
-        fields=__ret__.fields,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_approved=__ret__.is_approved,
-        is_internal=__ret__.is_internal,
-        is_tag=__ret__.is_tag,
-        name=__ret__.name,
-        state=__ret__.state,
-        type_category=__ret__.type_category,
-        type_collections=__ret__.type_collections)
+        catalog_id=pulumi.get(__ret__, 'catalog_id'),
+        external_type_name=pulumi.get(__ret__, 'external_type_name'),
+        fields=pulumi.get(__ret__, 'fields'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_approved=pulumi.get(__ret__, 'is_approved'),
+        is_internal=pulumi.get(__ret__, 'is_internal'),
+        is_tag=pulumi.get(__ret__, 'is_tag'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        type_category=pulumi.get(__ret__, 'type_category'),
+        type_collections=pulumi.get(__ret__, 'type_collections'))
 
 
 @_utilities.lift_output_func(get_catalog_types)

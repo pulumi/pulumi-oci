@@ -24,6 +24,12 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("clientNetworkBondingMode")]
         public Input<string>? ClientNetworkBondingMode { get; set; }
 
+        /// <summary>
+        /// (Updatable) The network bonding mode for the Exadata infrastructure.
+        /// </summary>
+        [Input("drNetworkBondingMode")]
+        public Input<string>? DrNetworkBondingMode { get; set; }
+
         public ExadataInfrastructureNetworkBondingModeDetailsArgs()
         {
         }

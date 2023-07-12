@@ -142,12 +142,12 @@ def get_vcns(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getVcns:getVcns', __args__, opts=opts, typ=GetVcnsResult).value
 
     return AwaitableGetVcnsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        virtual_networks=__ret__.virtual_networks)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        virtual_networks=pulumi.get(__ret__, 'virtual_networks'))
 
 
 @_utilities.lift_output_func(get_vcns)

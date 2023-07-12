@@ -224,20 +224,20 @@ def get_fusion_environment_refresh_activity(fusion_environment_id: Optional[str]
     __ret__ = pulumi.runtime.invoke('oci:Functions/getFusionEnvironmentRefreshActivity:getFusionEnvironmentRefreshActivity', __args__, opts=opts, typ=GetFusionEnvironmentRefreshActivityResult).value
 
     return AwaitableGetFusionEnvironmentRefreshActivityResult(
-        display_name=__ret__.display_name,
-        fusion_environment_id=__ret__.fusion_environment_id,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        refresh_activity_id=__ret__.refresh_activity_id,
-        refresh_issue_details_lists=__ret__.refresh_issue_details_lists,
-        service_availability=__ret__.service_availability,
-        source_fusion_environment_id=__ret__.source_fusion_environment_id,
-        state=__ret__.state,
-        time_accepted=__ret__.time_accepted,
-        time_expected_finish=__ret__.time_expected_finish,
-        time_finished=__ret__.time_finished,
-        time_of_restoration_point=__ret__.time_of_restoration_point,
-        time_updated=__ret__.time_updated)
+        display_name=pulumi.get(__ret__, 'display_name'),
+        fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        refresh_activity_id=pulumi.get(__ret__, 'refresh_activity_id'),
+        refresh_issue_details_lists=pulumi.get(__ret__, 'refresh_issue_details_lists'),
+        service_availability=pulumi.get(__ret__, 'service_availability'),
+        source_fusion_environment_id=pulumi.get(__ret__, 'source_fusion_environment_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_accepted=pulumi.get(__ret__, 'time_accepted'),
+        time_expected_finish=pulumi.get(__ret__, 'time_expected_finish'),
+        time_finished=pulumi.get(__ret__, 'time_finished'),
+        time_of_restoration_point=pulumi.get(__ret__, 'time_of_restoration_point'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_fusion_environment_refresh_activity)

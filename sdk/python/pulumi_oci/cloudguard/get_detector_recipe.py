@@ -259,23 +259,23 @@ def get_detector_recipe(detector_recipe_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudGuard/getDetectorRecipe:getDetectorRecipe', __args__, opts=opts, typ=GetDetectorRecipeResult).value
 
     return AwaitableGetDetectorRecipeResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        detector=__ret__.detector,
-        detector_recipe_id=__ret__.detector_recipe_id,
-        detector_rules=__ret__.detector_rules,
-        display_name=__ret__.display_name,
-        effective_detector_rules=__ret__.effective_detector_rules,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        owner=__ret__.owner,
-        source_detector_recipe_id=__ret__.source_detector_recipe_id,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        target_ids=__ret__.target_ids,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        detector=pulumi.get(__ret__, 'detector'),
+        detector_recipe_id=pulumi.get(__ret__, 'detector_recipe_id'),
+        detector_rules=pulumi.get(__ret__, 'detector_rules'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        effective_detector_rules=pulumi.get(__ret__, 'effective_detector_rules'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        owner=pulumi.get(__ret__, 'owner'),
+        source_detector_recipe_id=pulumi.get(__ret__, 'source_detector_recipe_id'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        target_ids=pulumi.get(__ret__, 'target_ids'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_detector_recipe)

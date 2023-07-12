@@ -135,12 +135,12 @@ def get_db_credentials(filters: Optional[Sequence[pulumi.InputType['GetDbCredent
     __ret__ = pulumi.runtime.invoke('oci:Identity/getDbCredentials:getDbCredentials', __args__, opts=opts, typ=GetDbCredentialsResult).value
 
     return AwaitableGetDbCredentialsResult(
-        db_credentials=__ret__.db_credentials,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        state=__ret__.state,
-        user_id=__ret__.user_id)
+        db_credentials=pulumi.get(__ret__, 'db_credentials'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        user_id=pulumi.get(__ret__, 'user_id'))
 
 
 @_utilities.lift_output_func(get_db_credentials)

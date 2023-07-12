@@ -89,9 +89,9 @@ def get_migration_object_types(filters: Optional[Sequence[pulumi.InputType['GetM
     __ret__ = pulumi.runtime.invoke('oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes', __args__, opts=opts, typ=GetMigrationObjectTypesResult).value
 
     return AwaitableGetMigrationObjectTypesResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        migration_object_type_summary_collections=__ret__.migration_object_type_summary_collections)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        migration_object_type_summary_collections=pulumi.get(__ret__, 'migration_object_type_summary_collections'))
 
 
 @_utilities.lift_output_func(get_migration_object_types)

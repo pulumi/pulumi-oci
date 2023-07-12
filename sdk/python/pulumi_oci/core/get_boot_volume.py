@@ -34,10 +34,6 @@ class GetBootVolumeResult:
         pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_policy_id and not isinstance(backup_policy_id, str):
             raise TypeError("Expected argument 'backup_policy_id' to be a str")
-        if backup_policy_id is not None:
-            warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
-            pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
-
         pulumi.set(__self__, "backup_policy_id", backup_policy_id)
         if boot_volume_id and not isinstance(boot_volume_id, str):
             raise TypeError("Expected argument 'boot_volume_id' to be a str")
@@ -127,6 +123,9 @@ class GetBootVolumeResult:
     @property
     @pulumi.getter(name="backupPolicyId")
     def backup_policy_id(self) -> str:
+        warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
+        pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
+
         return pulumi.get(self, "backup_policy_id")
 
     @property
@@ -338,30 +337,30 @@ def get_boot_volume(boot_volume_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getBootVolume:getBootVolume', __args__, opts=opts, typ=GetBootVolumeResult).value
 
     return AwaitableGetBootVolumeResult(
-        auto_tuned_vpus_per_gb=__ret__.auto_tuned_vpus_per_gb,
-        autotune_policies=__ret__.autotune_policies,
-        availability_domain=__ret__.availability_domain,
-        backup_policy_id=__ret__.backup_policy_id,
-        boot_volume_id=__ret__.boot_volume_id,
-        boot_volume_replicas=__ret__.boot_volume_replicas,
-        boot_volume_replicas_deletion=__ret__.boot_volume_replicas_deletion,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        image_id=__ret__.image_id,
-        is_auto_tune_enabled=__ret__.is_auto_tune_enabled,
-        is_hydrated=__ret__.is_hydrated,
-        kms_key_id=__ret__.kms_key_id,
-        size_in_gbs=__ret__.size_in_gbs,
-        size_in_mbs=__ret__.size_in_mbs,
-        source_details=__ret__.source_details,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        volume_group_id=__ret__.volume_group_id,
-        vpus_per_gb=__ret__.vpus_per_gb)
+        auto_tuned_vpus_per_gb=pulumi.get(__ret__, 'auto_tuned_vpus_per_gb'),
+        autotune_policies=pulumi.get(__ret__, 'autotune_policies'),
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        backup_policy_id=pulumi.get(__ret__, 'backup_policy_id'),
+        boot_volume_id=pulumi.get(__ret__, 'boot_volume_id'),
+        boot_volume_replicas=pulumi.get(__ret__, 'boot_volume_replicas'),
+        boot_volume_replicas_deletion=pulumi.get(__ret__, 'boot_volume_replicas_deletion'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        image_id=pulumi.get(__ret__, 'image_id'),
+        is_auto_tune_enabled=pulumi.get(__ret__, 'is_auto_tune_enabled'),
+        is_hydrated=pulumi.get(__ret__, 'is_hydrated'),
+        kms_key_id=pulumi.get(__ret__, 'kms_key_id'),
+        size_in_gbs=pulumi.get(__ret__, 'size_in_gbs'),
+        size_in_mbs=pulumi.get(__ret__, 'size_in_mbs'),
+        source_details=pulumi.get(__ret__, 'source_details'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        volume_group_id=pulumi.get(__ret__, 'volume_group_id'),
+        vpus_per_gb=pulumi.get(__ret__, 'vpus_per_gb'))
 
 
 @_utilities.lift_output_func(get_boot_volume)

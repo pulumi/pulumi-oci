@@ -107,10 +107,10 @@ def get_cost_tracking_tags(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getCostTrackingTags:getCostTrackingTags', __args__, opts=opts, typ=GetCostTrackingTagsResult).value
 
     return AwaitableGetCostTrackingTagsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        tags=__ret__.tags)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        tags=pulumi.get(__ret__, 'tags'))
 
 
 @_utilities.lift_output_func(get_cost_tracking_tags)

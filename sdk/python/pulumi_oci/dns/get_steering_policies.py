@@ -213,17 +213,17 @@ def get_steering_policies(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Dns/getSteeringPolicies:getSteeringPolicies', __args__, opts=opts, typ=GetSteeringPoliciesResult).value
 
     return AwaitableGetSteeringPoliciesResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        display_name_contains=__ret__.display_name_contains,
-        filters=__ret__.filters,
-        health_check_monitor_id=__ret__.health_check_monitor_id,
-        id=__ret__.id,
-        state=__ret__.state,
-        steering_policies=__ret__.steering_policies,
-        template=__ret__.template,
-        time_created_greater_than_or_equal_to=__ret__.time_created_greater_than_or_equal_to,
-        time_created_less_than=__ret__.time_created_less_than)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        display_name_contains=pulumi.get(__ret__, 'display_name_contains'),
+        filters=pulumi.get(__ret__, 'filters'),
+        health_check_monitor_id=pulumi.get(__ret__, 'health_check_monitor_id'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        steering_policies=pulumi.get(__ret__, 'steering_policies'),
+        template=pulumi.get(__ret__, 'template'),
+        time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
 
 
 @_utilities.lift_output_func(get_steering_policies)

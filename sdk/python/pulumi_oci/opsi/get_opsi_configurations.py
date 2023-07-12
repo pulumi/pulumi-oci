@@ -154,13 +154,13 @@ def get_opsi_configurations(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Opsi/getOpsiConfigurations:getOpsiConfigurations', __args__, opts=opts, typ=GetOpsiConfigurationsResult).value
 
     return AwaitableGetOpsiConfigurationsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        opsi_config_types=__ret__.opsi_config_types,
-        opsi_configurations_collections=__ret__.opsi_configurations_collections,
-        states=__ret__.states)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        opsi_config_types=pulumi.get(__ret__, 'opsi_config_types'),
+        opsi_configurations_collections=pulumi.get(__ret__, 'opsi_configurations_collections'),
+        states=pulumi.get(__ret__, 'states'))
 
 
 @_utilities.lift_output_func(get_opsi_configurations)

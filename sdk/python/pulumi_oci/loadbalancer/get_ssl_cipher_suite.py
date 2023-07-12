@@ -114,11 +114,11 @@ def get_ssl_cipher_suite(load_balancer_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LoadBalancer/getSslCipherSuite:getSslCipherSuite', __args__, opts=opts, typ=GetSslCipherSuiteResult).value
 
     return AwaitableGetSslCipherSuiteResult(
-        ciphers=__ret__.ciphers,
-        id=__ret__.id,
-        load_balancer_id=__ret__.load_balancer_id,
-        name=__ret__.name,
-        state=__ret__.state)
+        ciphers=pulumi.get(__ret__, 'ciphers'),
+        id=pulumi.get(__ret__, 'id'),
+        load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_ssl_cipher_suite)

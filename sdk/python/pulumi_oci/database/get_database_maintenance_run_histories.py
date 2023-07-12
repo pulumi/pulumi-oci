@@ -183,15 +183,15 @@ def get_database_maintenance_run_histories(availability_domain: Optional[str] = 
     __ret__ = pulumi.runtime.invoke('oci:Database/getDatabaseMaintenanceRunHistories:getDatabaseMaintenanceRunHistories', __args__, opts=opts, typ=GetDatabaseMaintenanceRunHistoriesResult).value
 
     return AwaitableGetDatabaseMaintenanceRunHistoriesResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        maintenance_run_histories=__ret__.maintenance_run_histories,
-        maintenance_type=__ret__.maintenance_type,
-        state=__ret__.state,
-        target_resource_id=__ret__.target_resource_id,
-        target_resource_type=__ret__.target_resource_type)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        maintenance_run_histories=pulumi.get(__ret__, 'maintenance_run_histories'),
+        maintenance_type=pulumi.get(__ret__, 'maintenance_type'),
+        state=pulumi.get(__ret__, 'state'),
+        target_resource_id=pulumi.get(__ret__, 'target_resource_id'),
+        target_resource_type=pulumi.get(__ret__, 'target_resource_type'))
 
 
 @_utilities.lift_output_func(get_database_maintenance_run_histories)

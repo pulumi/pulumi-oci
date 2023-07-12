@@ -137,13 +137,13 @@ def get_osn(blockchain_platform_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Blockchain/getOsn:getOsn', __args__, opts=opts, typ=GetOsnResult).value
 
     return AwaitableGetOsnResult(
-        ad=__ret__.ad,
-        blockchain_platform_id=__ret__.blockchain_platform_id,
-        id=__ret__.id,
-        ocpu_allocation_params=__ret__.ocpu_allocation_params,
-        osn_id=__ret__.osn_id,
-        osn_key=__ret__.osn_key,
-        state=__ret__.state)
+        ad=pulumi.get(__ret__, 'ad'),
+        blockchain_platform_id=pulumi.get(__ret__, 'blockchain_platform_id'),
+        id=pulumi.get(__ret__, 'id'),
+        ocpu_allocation_params=pulumi.get(__ret__, 'ocpu_allocation_params'),
+        osn_id=pulumi.get(__ret__, 'osn_id'),
+        osn_key=pulumi.get(__ret__, 'osn_key'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_osn)

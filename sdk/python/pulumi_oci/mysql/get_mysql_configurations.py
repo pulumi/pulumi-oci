@@ -190,15 +190,15 @@ def get_mysql_configurations(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Mysql/getMysqlConfigurations:getMysqlConfigurations', __args__, opts=opts, typ=GetMysqlConfigurationsResult).value
 
     return AwaitableGetMysqlConfigurationsResult(
-        compartment_id=__ret__.compartment_id,
-        configuration_id=__ret__.configuration_id,
-        configurations=__ret__.configurations,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        shape_name=__ret__.shape_name,
-        state=__ret__.state,
-        types=__ret__.types)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        configuration_id=pulumi.get(__ret__, 'configuration_id'),
+        configurations=pulumi.get(__ret__, 'configurations'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        shape_name=pulumi.get(__ret__, 'shape_name'),
+        state=pulumi.get(__ret__, 'state'),
+        types=pulumi.get(__ret__, 'types'))
 
 
 @_utilities.lift_output_func(get_mysql_configurations)

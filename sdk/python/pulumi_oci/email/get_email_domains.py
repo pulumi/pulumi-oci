@@ -142,12 +142,12 @@ def get_email_domains(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Email/getEmailDomains:getEmailDomains', __args__, opts=opts, typ=GetEmailDomainsResult).value
 
     return AwaitableGetEmailDomainsResult(
-        compartment_id=__ret__.compartment_id,
-        email_domain_collections=__ret__.email_domain_collections,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        email_domain_collections=pulumi.get(__ret__, 'email_domain_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_email_domains)

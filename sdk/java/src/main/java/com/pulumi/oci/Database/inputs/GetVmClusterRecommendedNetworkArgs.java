@@ -96,6 +96,21 @@ public final class GetVmClusterRecommendedNetworkArgs extends com.pulumi.resourc
     }
 
     /**
+     * The DR SCAN TCPIP port. Default is 1521.
+     * 
+     */
+    @Import(name="drScanListenerPortTcp")
+    private @Nullable Output<Integer> drScanListenerPortTcp;
+
+    /**
+     * @return The DR SCAN TCPIP port. Default is 1521.
+     * 
+     */
+    public Optional<Output<Integer>> drScanListenerPortTcp() {
+        return Optional.ofNullable(this.drScanListenerPortTcp);
+    }
+
+    /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -193,6 +208,7 @@ public final class GetVmClusterRecommendedNetworkArgs extends com.pulumi.resourc
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.dns = $.dns;
+        this.drScanListenerPortTcp = $.drScanListenerPortTcp;
         this.exadataInfrastructureId = $.exadataInfrastructureId;
         this.freeformTags = $.freeformTags;
         this.networks = $.networks;
@@ -342,6 +358,27 @@ public final class GetVmClusterRecommendedNetworkArgs extends com.pulumi.resourc
          */
         public Builder dns(String... dns) {
             return dns(List.of(dns));
+        }
+
+        /**
+         * @param drScanListenerPortTcp The DR SCAN TCPIP port. Default is 1521.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder drScanListenerPortTcp(@Nullable Output<Integer> drScanListenerPortTcp) {
+            $.drScanListenerPortTcp = drScanListenerPortTcp;
+            return this;
+        }
+
+        /**
+         * @param drScanListenerPortTcp The DR SCAN TCPIP port. Default is 1521.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder drScanListenerPortTcp(Integer drScanListenerPortTcp) {
+            return drScanListenerPortTcp(Output.of(drScanListenerPortTcp));
         }
 
         /**

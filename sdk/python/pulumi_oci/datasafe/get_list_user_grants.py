@@ -222,18 +222,18 @@ def get_list_user_grants(depth_level: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getListUserGrants:getListUserGrants', __args__, opts=opts, typ=GetListUserGrantsResult).value
 
     return AwaitableGetListUserGrantsResult(
-        depth_level=__ret__.depth_level,
-        depth_level_greater_than_or_equal_to=__ret__.depth_level_greater_than_or_equal_to,
-        depth_level_less_than=__ret__.depth_level_less_than,
-        filters=__ret__.filters,
-        grant_key=__ret__.grant_key,
-        grant_name=__ret__.grant_name,
-        grants=__ret__.grants,
-        id=__ret__.id,
-        privilege_category=__ret__.privilege_category,
-        privilege_type=__ret__.privilege_type,
-        user_assessment_id=__ret__.user_assessment_id,
-        user_key=__ret__.user_key)
+        depth_level=pulumi.get(__ret__, 'depth_level'),
+        depth_level_greater_than_or_equal_to=pulumi.get(__ret__, 'depth_level_greater_than_or_equal_to'),
+        depth_level_less_than=pulumi.get(__ret__, 'depth_level_less_than'),
+        filters=pulumi.get(__ret__, 'filters'),
+        grant_key=pulumi.get(__ret__, 'grant_key'),
+        grant_name=pulumi.get(__ret__, 'grant_name'),
+        grants=pulumi.get(__ret__, 'grants'),
+        id=pulumi.get(__ret__, 'id'),
+        privilege_category=pulumi.get(__ret__, 'privilege_category'),
+        privilege_type=pulumi.get(__ret__, 'privilege_type'),
+        user_assessment_id=pulumi.get(__ret__, 'user_assessment_id'),
+        user_key=pulumi.get(__ret__, 'user_key'))
 
 
 @_utilities.lift_output_func(get_list_user_grants)

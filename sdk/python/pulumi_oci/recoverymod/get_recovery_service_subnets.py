@@ -170,13 +170,13 @@ def get_recovery_service_subnets(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:RecoveryMod/getRecoveryServiceSubnets:getRecoveryServiceSubnets', __args__, opts=opts, typ=GetRecoveryServiceSubnetsResult).value
 
     return AwaitableGetRecoveryServiceSubnetsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        recovery_service_subnet_collections=__ret__.recovery_service_subnet_collections,
-        state=__ret__.state,
-        vcn_id=__ret__.vcn_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        recovery_service_subnet_collections=pulumi.get(__ret__, 'recovery_service_subnet_collections'),
+        state=pulumi.get(__ret__, 'state'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_recovery_service_subnets)

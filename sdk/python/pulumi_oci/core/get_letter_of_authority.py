@@ -153,14 +153,14 @@ def get_letter_of_authority(cross_connect_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getLetterOfAuthority:getLetterOfAuthority', __args__, opts=opts, typ=GetLetterOfAuthorityResult).value
 
     return AwaitableGetLetterOfAuthorityResult(
-        authorized_entity_name=__ret__.authorized_entity_name,
-        circuit_type=__ret__.circuit_type,
-        cross_connect_id=__ret__.cross_connect_id,
-        facility_location=__ret__.facility_location,
-        id=__ret__.id,
-        port_name=__ret__.port_name,
-        time_expires=__ret__.time_expires,
-        time_issued=__ret__.time_issued)
+        authorized_entity_name=pulumi.get(__ret__, 'authorized_entity_name'),
+        circuit_type=pulumi.get(__ret__, 'circuit_type'),
+        cross_connect_id=pulumi.get(__ret__, 'cross_connect_id'),
+        facility_location=pulumi.get(__ret__, 'facility_location'),
+        id=pulumi.get(__ret__, 'id'),
+        port_name=pulumi.get(__ret__, 'port_name'),
+        time_expires=pulumi.get(__ret__, 'time_expires'),
+        time_issued=pulumi.get(__ret__, 'time_issued'))
 
 
 @_utilities.lift_output_func(get_letter_of_authority)

@@ -196,17 +196,17 @@ def get_data_assets(catalog_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataCatalog/getDataAssets:getDataAssets', __args__, opts=opts, typ=GetDataAssetsResult).value
 
     return AwaitableGetDataAssetsResult(
-        catalog_id=__ret__.catalog_id,
-        created_by_id=__ret__.created_by_id,
-        data_asset_collections=__ret__.data_asset_collections,
-        display_name=__ret__.display_name,
-        display_name_contains=__ret__.display_name_contains,
-        external_key=__ret__.external_key,
-        fields=__ret__.fields,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        type_key=__ret__.type_key)
+        catalog_id=pulumi.get(__ret__, 'catalog_id'),
+        created_by_id=pulumi.get(__ret__, 'created_by_id'),
+        data_asset_collections=pulumi.get(__ret__, 'data_asset_collections'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        display_name_contains=pulumi.get(__ret__, 'display_name_contains'),
+        external_key=pulumi.get(__ret__, 'external_key'),
+        fields=pulumi.get(__ret__, 'fields'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        type_key=pulumi.get(__ret__, 'type_key'))
 
 
 @_utilities.lift_output_func(get_data_assets)

@@ -151,13 +151,13 @@ def get_subscribed_services(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OneSubsription/getSubscribedServices:getSubscribedServices', __args__, opts=opts, typ=GetSubscribedServicesResult).value
 
     return AwaitableGetSubscribedServicesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        order_line_id=__ret__.order_line_id,
-        status=__ret__.status,
-        subscribed_services=__ret__.subscribed_services,
-        subscription_id=__ret__.subscription_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        order_line_id=pulumi.get(__ret__, 'order_line_id'),
+        status=pulumi.get(__ret__, 'status'),
+        subscribed_services=pulumi.get(__ret__, 'subscribed_services'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'))
 
 
 @_utilities.lift_output_func(get_subscribed_services)

@@ -279,25 +279,25 @@ def get_database_software_image(database_software_image_id: Optional[str] = None
     __ret__ = pulumi.runtime.invoke('oci:Database/getDatabaseSoftwareImage:getDatabaseSoftwareImage', __args__, opts=opts, typ=GetDatabaseSoftwareImageResult).value
 
     return AwaitableGetDatabaseSoftwareImageResult(
-        compartment_id=__ret__.compartment_id,
-        database_software_image_id=__ret__.database_software_image_id,
-        database_software_image_included_patches=__ret__.database_software_image_included_patches,
-        database_software_image_one_off_patches=__ret__.database_software_image_one_off_patches,
-        database_version=__ret__.database_version,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        image_shape_family=__ret__.image_shape_family,
-        image_type=__ret__.image_type,
-        included_patches_summary=__ret__.included_patches_summary,
-        is_upgrade_supported=__ret__.is_upgrade_supported,
-        lifecycle_details=__ret__.lifecycle_details,
-        ls_inventory=__ret__.ls_inventory,
-        patch_set=__ret__.patch_set,
-        source_db_home_id=__ret__.source_db_home_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        database_software_image_id=pulumi.get(__ret__, 'database_software_image_id'),
+        database_software_image_included_patches=pulumi.get(__ret__, 'database_software_image_included_patches'),
+        database_software_image_one_off_patches=pulumi.get(__ret__, 'database_software_image_one_off_patches'),
+        database_version=pulumi.get(__ret__, 'database_version'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        image_shape_family=pulumi.get(__ret__, 'image_shape_family'),
+        image_type=pulumi.get(__ret__, 'image_type'),
+        included_patches_summary=pulumi.get(__ret__, 'included_patches_summary'),
+        is_upgrade_supported=pulumi.get(__ret__, 'is_upgrade_supported'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        ls_inventory=pulumi.get(__ret__, 'ls_inventory'),
+        patch_set=pulumi.get(__ret__, 'patch_set'),
+        source_db_home_id=pulumi.get(__ret__, 'source_db_home_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_database_software_image)

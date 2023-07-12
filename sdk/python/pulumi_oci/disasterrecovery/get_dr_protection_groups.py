@@ -151,13 +151,13 @@ def get_dr_protection_groups(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DisasterRecovery/getDrProtectionGroups:getDrProtectionGroups', __args__, opts=opts, typ=GetDrProtectionGroupsResult).value
 
     return AwaitableGetDrProtectionGroupsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        dr_protection_group_collections=__ret__.dr_protection_group_collections,
-        dr_protection_group_id=__ret__.dr_protection_group_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        dr_protection_group_collections=pulumi.get(__ret__, 'dr_protection_group_collections'),
+        dr_protection_group_id=pulumi.get(__ret__, 'dr_protection_group_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_dr_protection_groups)

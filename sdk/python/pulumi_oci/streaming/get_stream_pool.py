@@ -223,20 +223,20 @@ def get_stream_pool(stream_pool_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Streaming/getStreamPool:getStreamPool', __args__, opts=opts, typ=GetStreamPoolResult).value
 
     return AwaitableGetStreamPoolResult(
-        compartment_id=__ret__.compartment_id,
-        custom_encryption_keys=__ret__.custom_encryption_keys,
-        defined_tags=__ret__.defined_tags,
-        endpoint_fqdn=__ret__.endpoint_fqdn,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_private=__ret__.is_private,
-        kafka_settings=__ret__.kafka_settings,
-        lifecycle_state_details=__ret__.lifecycle_state_details,
-        name=__ret__.name,
-        private_endpoint_settings=__ret__.private_endpoint_settings,
-        state=__ret__.state,
-        stream_pool_id=__ret__.stream_pool_id,
-        time_created=__ret__.time_created)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        custom_encryption_keys=pulumi.get(__ret__, 'custom_encryption_keys'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        endpoint_fqdn=pulumi.get(__ret__, 'endpoint_fqdn'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_private=pulumi.get(__ret__, 'is_private'),
+        kafka_settings=pulumi.get(__ret__, 'kafka_settings'),
+        lifecycle_state_details=pulumi.get(__ret__, 'lifecycle_state_details'),
+        name=pulumi.get(__ret__, 'name'),
+        private_endpoint_settings=pulumi.get(__ret__, 'private_endpoint_settings'),
+        state=pulumi.get(__ret__, 'state'),
+        stream_pool_id=pulumi.get(__ret__, 'stream_pool_id'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_stream_pool)

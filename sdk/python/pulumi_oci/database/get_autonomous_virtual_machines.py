@@ -138,12 +138,12 @@ def get_autonomous_virtual_machines(autonomous_vm_cluster_id: Optional[str] = No
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousVirtualMachines:getAutonomousVirtualMachines', __args__, opts=opts, typ=GetAutonomousVirtualMachinesResult).value
 
     return AwaitableGetAutonomousVirtualMachinesResult(
-        autonomous_virtual_machines=__ret__.autonomous_virtual_machines,
-        autonomous_vm_cluster_id=__ret__.autonomous_vm_cluster_id,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        autonomous_virtual_machines=pulumi.get(__ret__, 'autonomous_virtual_machines'),
+        autonomous_vm_cluster_id=pulumi.get(__ret__, 'autonomous_vm_cluster_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_autonomous_virtual_machines)

@@ -154,13 +154,13 @@ def get_console_histories(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getConsoleHistories:getConsoleHistories', __args__, opts=opts, typ=GetConsoleHistoriesResult).value
 
     return AwaitableGetConsoleHistoriesResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        console_histories=__ret__.console_histories,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        instance_id=__ret__.instance_id,
-        state=__ret__.state)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        console_histories=pulumi.get(__ret__, 'console_histories'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        instance_id=pulumi.get(__ret__, 'instance_id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_console_histories)

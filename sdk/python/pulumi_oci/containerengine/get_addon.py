@@ -173,16 +173,16 @@ def get_addon(addon_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ContainerEngine/getAddon:getAddon', __args__, opts=opts, typ=GetAddonResult).value
 
     return AwaitableGetAddonResult(
-        addon_errors=__ret__.addon_errors,
-        addon_name=__ret__.addon_name,
-        cluster_id=__ret__.cluster_id,
-        configurations=__ret__.configurations,
-        current_installed_version=__ret__.current_installed_version,
-        id=__ret__.id,
-        remove_addon_resources_on_delete=__ret__.remove_addon_resources_on_delete,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        version=__ret__.version)
+        addon_errors=pulumi.get(__ret__, 'addon_errors'),
+        addon_name=pulumi.get(__ret__, 'addon_name'),
+        cluster_id=pulumi.get(__ret__, 'cluster_id'),
+        configurations=pulumi.get(__ret__, 'configurations'),
+        current_installed_version=pulumi.get(__ret__, 'current_installed_version'),
+        id=pulumi.get(__ret__, 'id'),
+        remove_addon_resources_on_delete=pulumi.get(__ret__, 'remove_addon_resources_on_delete'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_addon)

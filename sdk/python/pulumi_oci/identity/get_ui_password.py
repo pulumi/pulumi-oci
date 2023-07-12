@@ -121,12 +121,12 @@ def get_ui_password(user_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getUiPassword:getUiPassword', __args__, opts=opts, typ=GetUiPasswordResult).value
 
     return AwaitableGetUiPasswordResult(
-        id=__ret__.id,
-        inactive_status=__ret__.inactive_status,
-        password=__ret__.password,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        user_id=__ret__.user_id)
+        id=pulumi.get(__ret__, 'id'),
+        inactive_status=pulumi.get(__ret__, 'inactive_status'),
+        password=pulumi.get(__ret__, 'password'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        user_id=pulumi.get(__ret__, 'user_id'))
 
 
 @_utilities.lift_output_func(get_ui_password)

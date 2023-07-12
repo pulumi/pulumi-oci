@@ -198,18 +198,18 @@ def get_apm_domain(apm_domain_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Apm/getApmDomain:getApmDomain', __args__, opts=opts, typ=GetApmDomainResult).value
 
     return AwaitableGetApmDomainResult(
-        apm_domain_id=__ret__.apm_domain_id,
-        compartment_id=__ret__.compartment_id,
-        data_upload_endpoint=__ret__.data_upload_endpoint,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_free_tier=__ret__.is_free_tier,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        apm_domain_id=pulumi.get(__ret__, 'apm_domain_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        data_upload_endpoint=pulumi.get(__ret__, 'data_upload_endpoint'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_free_tier=pulumi.get(__ret__, 'is_free_tier'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_apm_domain)

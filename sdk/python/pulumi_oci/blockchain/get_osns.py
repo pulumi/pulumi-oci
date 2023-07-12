@@ -116,11 +116,11 @@ def get_osns(blockchain_platform_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Blockchain/getOsns:getOsns', __args__, opts=opts, typ=GetOsnsResult).value
 
     return AwaitableGetOsnsResult(
-        blockchain_platform_id=__ret__.blockchain_platform_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        osn_collections=__ret__.osn_collections)
+        blockchain_platform_id=pulumi.get(__ret__, 'blockchain_platform_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        osn_collections=pulumi.get(__ret__, 'osn_collections'))
 
 
 @_utilities.lift_output_func(get_osns)

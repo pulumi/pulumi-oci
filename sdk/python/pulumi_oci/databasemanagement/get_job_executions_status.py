@@ -157,14 +157,14 @@ def get_job_executions_status(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getJobExecutionsStatus:getJobExecutionsStatus', __args__, opts=opts, typ=GetJobExecutionsStatusResult).value
 
     return AwaitableGetJobExecutionsStatusResult(
-        compartment_id=__ret__.compartment_id,
-        end_time=__ret__.end_time,
-        id=__ret__.id,
-        items=__ret__.items,
-        managed_database_group_id=__ret__.managed_database_group_id,
-        managed_database_id=__ret__.managed_database_id,
-        name=__ret__.name,
-        start_time=__ret__.start_time)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        end_time=pulumi.get(__ret__, 'end_time'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        managed_database_group_id=pulumi.get(__ret__, 'managed_database_group_id'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        name=pulumi.get(__ret__, 'name'),
+        start_time=pulumi.get(__ret__, 'start_time'))
 
 
 @_utilities.lift_output_func(get_job_executions_status)

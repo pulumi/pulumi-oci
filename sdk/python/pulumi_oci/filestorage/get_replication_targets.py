@@ -158,13 +158,13 @@ def get_replication_targets(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:FileStorage/getReplicationTargets:getReplicationTargets', __args__, opts=opts, typ=GetReplicationTargetsResult).value
 
     return AwaitableGetReplicationTargetsResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        replication_targets=__ret__.replication_targets,
-        state=__ret__.state)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        replication_targets=pulumi.get(__ret__, 'replication_targets'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_replication_targets)

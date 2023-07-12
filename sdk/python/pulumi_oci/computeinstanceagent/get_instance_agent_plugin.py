@@ -150,14 +150,14 @@ def get_instance_agent_plugin(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ComputeInstanceAgent/getInstanceAgentPlugin:getInstanceAgentPlugin', __args__, opts=opts, typ=GetInstanceAgentPluginResult).value
 
     return AwaitableGetInstanceAgentPluginResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        instanceagent_id=__ret__.instanceagent_id,
-        message=__ret__.message,
-        name=__ret__.name,
-        plugin_name=__ret__.plugin_name,
-        status=__ret__.status,
-        time_last_updated_utc=__ret__.time_last_updated_utc)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        instanceagent_id=pulumi.get(__ret__, 'instanceagent_id'),
+        message=pulumi.get(__ret__, 'message'),
+        name=pulumi.get(__ret__, 'name'),
+        plugin_name=pulumi.get(__ret__, 'plugin_name'),
+        status=pulumi.get(__ret__, 'status'),
+        time_last_updated_utc=pulumi.get(__ret__, 'time_last_updated_utc'))
 
 
 @_utilities.lift_output_func(get_instance_agent_plugin)

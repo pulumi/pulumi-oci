@@ -68848,6 +68848,9 @@ class GetPoliciesPolicyResult(dict):
     @property
     @pulumi.getter(name="ETag")
     def e_tag(self) -> str:
+        warnings.warn("""The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""e_tag is deprecated: The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "e_tag")
 
     @property
@@ -68901,6 +68904,9 @@ class GetPoliciesPolicyResult(dict):
     @property
     @pulumi.getter(name="lastUpdateETag")
     def last_update_e_tag(self) -> str:
+        warnings.warn("""The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""last_update_e_tag is deprecated: The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "last_update_e_tag")
 
     @property
@@ -68914,6 +68920,9 @@ class GetPoliciesPolicyResult(dict):
     @property
     @pulumi.getter(name="policyHash")
     def policy_hash(self) -> str:
+        warnings.warn("""The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""policy_hash is deprecated: The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "policy_hash")
 
     @property

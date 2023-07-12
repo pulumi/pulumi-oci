@@ -139,13 +139,13 @@ def get_license_metric(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LicenseManager/getLicenseMetric:getLicenseMetric', __args__, opts=opts, typ=GetLicenseMetricResult).value
 
     return AwaitableGetLicenseMetricResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        is_compartment_id_in_subtree=__ret__.is_compartment_id_in_subtree,
-        license_record_expiring_soon_count=__ret__.license_record_expiring_soon_count,
-        total_byol_instance_count=__ret__.total_byol_instance_count,
-        total_license_included_instance_count=__ret__.total_license_included_instance_count,
-        total_product_license_count=__ret__.total_product_license_count)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        is_compartment_id_in_subtree=pulumi.get(__ret__, 'is_compartment_id_in_subtree'),
+        license_record_expiring_soon_count=pulumi.get(__ret__, 'license_record_expiring_soon_count'),
+        total_byol_instance_count=pulumi.get(__ret__, 'total_byol_instance_count'),
+        total_license_included_instance_count=pulumi.get(__ret__, 'total_license_included_instance_count'),
+        total_product_license_count=pulumi.get(__ret__, 'total_product_license_count'))
 
 
 @_utilities.lift_output_func(get_license_metric)

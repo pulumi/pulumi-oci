@@ -307,27 +307,27 @@ def get_database_tools_private_endpoint(database_tools_private_endpoint_id: Opti
     __ret__ = pulumi.runtime.invoke('oci:DatabaseTools/getDatabaseToolsPrivateEndpoint:getDatabaseToolsPrivateEndpoint', __args__, opts=opts, typ=GetDatabaseToolsPrivateEndpointResult).value
 
     return AwaitableGetDatabaseToolsPrivateEndpointResult(
-        additional_fqdns=__ret__.additional_fqdns,
-        compartment_id=__ret__.compartment_id,
-        database_tools_private_endpoint_id=__ret__.database_tools_private_endpoint_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        endpoint_fqdn=__ret__.endpoint_fqdn,
-        endpoint_service_id=__ret__.endpoint_service_id,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        nsg_ids=__ret__.nsg_ids,
-        private_endpoint_ip=__ret__.private_endpoint_ip,
-        private_endpoint_vnic_id=__ret__.private_endpoint_vnic_id,
-        reverse_connection_configurations=__ret__.reverse_connection_configurations,
-        state=__ret__.state,
-        subnet_id=__ret__.subnet_id,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        vcn_id=__ret__.vcn_id)
+        additional_fqdns=pulumi.get(__ret__, 'additional_fqdns'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        database_tools_private_endpoint_id=pulumi.get(__ret__, 'database_tools_private_endpoint_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        endpoint_fqdn=pulumi.get(__ret__, 'endpoint_fqdn'),
+        endpoint_service_id=pulumi.get(__ret__, 'endpoint_service_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
+        private_endpoint_ip=pulumi.get(__ret__, 'private_endpoint_ip'),
+        private_endpoint_vnic_id=pulumi.get(__ret__, 'private_endpoint_vnic_id'),
+        reverse_connection_configurations=pulumi.get(__ret__, 'reverse_connection_configurations'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_database_tools_private_endpoint)

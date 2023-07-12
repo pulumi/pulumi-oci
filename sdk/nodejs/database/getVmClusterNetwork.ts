@@ -69,6 +69,10 @@ export interface GetVmClusterNetworkResult {
      */
     readonly dns: string[];
     /**
+     * The SCAN details for DR network
+     */
+    readonly drScans: outputs.Database.GetVmClusterNetworkDrScan[];
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
     readonly exadataInfrastructureId: string;

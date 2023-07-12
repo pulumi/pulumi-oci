@@ -21,15 +21,22 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
         /// </summary>
         public readonly string? OciHome;
+        /// <summary>
+        /// (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+        /// </summary>
+        public readonly string? WalletLocation;
 
         [OutputConstructor]
         private MigrationDumpTransferDetailsTarget(
             string kind,
 
-            string? ociHome)
+            string? ociHome,
+
+            string? walletLocation)
         {
             Kind = kind;
             OciHome = ociHome;
+            WalletLocation = walletLocation;
         }
     }
 }

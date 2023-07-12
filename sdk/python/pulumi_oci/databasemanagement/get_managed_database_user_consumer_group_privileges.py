@@ -132,12 +132,12 @@ def get_managed_database_user_consumer_group_privileges(filters: Optional[Sequen
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseUserConsumerGroupPrivileges:getManagedDatabaseUserConsumerGroupPrivileges', __args__, opts=opts, typ=GetManagedDatabaseUserConsumerGroupPrivilegesResult).value
 
     return AwaitableGetManagedDatabaseUserConsumerGroupPrivilegesResult(
-        consumer_group_privilege_collections=__ret__.consumer_group_privilege_collections,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        managed_database_id=__ret__.managed_database_id,
-        name=__ret__.name,
-        user_name=__ret__.user_name)
+        consumer_group_privilege_collections=pulumi.get(__ret__, 'consumer_group_privilege_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        name=pulumi.get(__ret__, 'name'),
+        user_name=pulumi.get(__ret__, 'user_name'))
 
 
 @_utilities.lift_output_func(get_managed_database_user_consumer_group_privileges)

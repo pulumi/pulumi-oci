@@ -179,16 +179,16 @@ def get_iam_work_request(iam_work_request_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getIamWorkRequest:getIamWorkRequest', __args__, opts=opts, typ=GetIamWorkRequestResult).value
 
     return AwaitableGetIamWorkRequestResult(
-        compartment_id=__ret__.compartment_id,
-        iam_work_request_id=__ret__.iam_work_request_id,
-        id=__ret__.id,
-        operation_type=__ret__.operation_type,
-        percent_complete=__ret__.percent_complete,
-        resources=__ret__.resources,
-        status=__ret__.status,
-        time_accepted=__ret__.time_accepted,
-        time_finished=__ret__.time_finished,
-        time_started=__ret__.time_started)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        iam_work_request_id=pulumi.get(__ret__, 'iam_work_request_id'),
+        id=pulumi.get(__ret__, 'id'),
+        operation_type=pulumi.get(__ret__, 'operation_type'),
+        percent_complete=pulumi.get(__ret__, 'percent_complete'),
+        resources=pulumi.get(__ret__, 'resources'),
+        status=pulumi.get(__ret__, 'status'),
+        time_accepted=pulumi.get(__ret__, 'time_accepted'),
+        time_finished=pulumi.get(__ret__, 'time_finished'),
+        time_started=pulumi.get(__ret__, 'time_started'))
 
 
 @_utilities.lift_output_func(get_iam_work_request)

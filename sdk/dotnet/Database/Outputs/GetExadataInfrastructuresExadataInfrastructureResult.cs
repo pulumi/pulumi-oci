@@ -164,13 +164,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string Netmask;
         /// <summary>
-        /// Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        /// Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailResult> NetworkBondingModeDetails;
         /// <summary>
         /// The list of NTP server IP addresses. Maximum of 3 allowed.
         /// </summary>
         public readonly ImmutableArray<string> NtpServers;
+        /// <summary>
+        /// The serial number for the Exadata infrastructure.
+        /// </summary>
+        public readonly string RackSerialNumber;
         /// <summary>
         /// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         /// </summary>
@@ -280,6 +284,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<string> ntpServers,
 
+            string rackSerialNumber,
+
             string shape,
 
             string state,
@@ -333,6 +339,7 @@ namespace Pulumi.Oci.Database.Outputs
             Netmask = netmask;
             NetworkBondingModeDetails = networkBondingModeDetails;
             NtpServers = ntpServers;
+            RackSerialNumber = rackSerialNumber;
             Shape = shape;
             State = state;
             StorageCount = storageCount;

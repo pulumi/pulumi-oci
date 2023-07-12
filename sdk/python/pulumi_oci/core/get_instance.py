@@ -70,20 +70,12 @@ class GetInstanceResult:
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         if hostname_label and not isinstance(hostname_label, str):
             raise TypeError("Expected argument 'hostname_label' to be a str")
-        if hostname_label is not None:
-            warnings.warn("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""", DeprecationWarning)
-            pulumi.log.warn("""hostname_label is deprecated: The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
-
         pulumi.set(__self__, "hostname_label", hostname_label)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
         if image and not isinstance(image, str):
             raise TypeError("Expected argument 'image' to be a str")
-        if image is not None:
-            warnings.warn("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""", DeprecationWarning)
-            pulumi.log.warn("""image is deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
-
         pulumi.set(__self__, "image", image)
         if instance_id and not isinstance(instance_id, str):
             raise TypeError("Expected argument 'instance_id' to be a str")
@@ -141,10 +133,6 @@ class GetInstanceResult:
         pulumi.set(__self__, "state", state)
         if subnet_id and not isinstance(subnet_id, str):
             raise TypeError("Expected argument 'subnet_id' to be a str")
-        if subnet_id is not None:
-            warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""", DeprecationWarning)
-            pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
-
         pulumi.set(__self__, "subnet_id", subnet_id)
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
@@ -276,6 +264,9 @@ class GetInstanceResult:
         """
         The hostname for the instance VNIC's primary private IP.
         """
+        warnings.warn("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""", DeprecationWarning)
+        pulumi.log.warn("""hostname_label is deprecated: The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
+
         return pulumi.get(self, "hostname_label")
 
     @property
@@ -292,6 +283,9 @@ class GetInstanceResult:
         """
         Deprecated. Use `sourceDetails` instead.
         """
+        warnings.warn("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""", DeprecationWarning)
+        pulumi.log.warn("""image is deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
+
         return pulumi.get(self, "image")
 
     @property
@@ -435,6 +429,9 @@ class GetInstanceResult:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
+        warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""", DeprecationWarning)
+        pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
+
         return pulumi.get(self, "subnet_id")
 
     @property
@@ -544,47 +541,47 @@ def get_instance(instance_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getInstance:getInstance', __args__, opts=opts, typ=GetInstanceResult).value
 
     return AwaitableGetInstanceResult(
-        agent_configs=__ret__.agent_configs,
-        async_=__ret__.async_,
-        availability_configs=__ret__.availability_configs,
-        availability_domain=__ret__.availability_domain,
-        boot_volume_id=__ret__.boot_volume_id,
-        capacity_reservation_id=__ret__.capacity_reservation_id,
-        compartment_id=__ret__.compartment_id,
-        compute_cluster_id=__ret__.compute_cluster_id,
-        create_vnic_details=__ret__.create_vnic_details,
-        dedicated_vm_host_id=__ret__.dedicated_vm_host_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        extended_metadata=__ret__.extended_metadata,
-        fault_domain=__ret__.fault_domain,
-        freeform_tags=__ret__.freeform_tags,
-        hostname_label=__ret__.hostname_label,
-        id=__ret__.id,
-        image=__ret__.image,
-        instance_id=__ret__.instance_id,
-        instance_options=__ret__.instance_options,
-        ipxe_script=__ret__.ipxe_script,
-        is_cross_numa_node=__ret__.is_cross_numa_node,
-        is_pv_encryption_in_transit_enabled=__ret__.is_pv_encryption_in_transit_enabled,
-        launch_mode=__ret__.launch_mode,
-        launch_options=__ret__.launch_options,
-        metadata=__ret__.metadata,
-        platform_configs=__ret__.platform_configs,
-        preemptible_instance_configs=__ret__.preemptible_instance_configs,
-        preserve_boot_volume=__ret__.preserve_boot_volume,
-        private_ip=__ret__.private_ip,
-        public_ip=__ret__.public_ip,
-        region=__ret__.region,
-        shape=__ret__.shape,
-        shape_configs=__ret__.shape_configs,
-        source_details=__ret__.source_details,
-        state=__ret__.state,
-        subnet_id=__ret__.subnet_id,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_maintenance_reboot_due=__ret__.time_maintenance_reboot_due,
-        update_operation_constraint=__ret__.update_operation_constraint)
+        agent_configs=pulumi.get(__ret__, 'agent_configs'),
+        async_=pulumi.get(__ret__, 'async_'),
+        availability_configs=pulumi.get(__ret__, 'availability_configs'),
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        boot_volume_id=pulumi.get(__ret__, 'boot_volume_id'),
+        capacity_reservation_id=pulumi.get(__ret__, 'capacity_reservation_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compute_cluster_id=pulumi.get(__ret__, 'compute_cluster_id'),
+        create_vnic_details=pulumi.get(__ret__, 'create_vnic_details'),
+        dedicated_vm_host_id=pulumi.get(__ret__, 'dedicated_vm_host_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        extended_metadata=pulumi.get(__ret__, 'extended_metadata'),
+        fault_domain=pulumi.get(__ret__, 'fault_domain'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        hostname_label=pulumi.get(__ret__, 'hostname_label'),
+        id=pulumi.get(__ret__, 'id'),
+        image=pulumi.get(__ret__, 'image'),
+        instance_id=pulumi.get(__ret__, 'instance_id'),
+        instance_options=pulumi.get(__ret__, 'instance_options'),
+        ipxe_script=pulumi.get(__ret__, 'ipxe_script'),
+        is_cross_numa_node=pulumi.get(__ret__, 'is_cross_numa_node'),
+        is_pv_encryption_in_transit_enabled=pulumi.get(__ret__, 'is_pv_encryption_in_transit_enabled'),
+        launch_mode=pulumi.get(__ret__, 'launch_mode'),
+        launch_options=pulumi.get(__ret__, 'launch_options'),
+        metadata=pulumi.get(__ret__, 'metadata'),
+        platform_configs=pulumi.get(__ret__, 'platform_configs'),
+        preemptible_instance_configs=pulumi.get(__ret__, 'preemptible_instance_configs'),
+        preserve_boot_volume=pulumi.get(__ret__, 'preserve_boot_volume'),
+        private_ip=pulumi.get(__ret__, 'private_ip'),
+        public_ip=pulumi.get(__ret__, 'public_ip'),
+        region=pulumi.get(__ret__, 'region'),
+        shape=pulumi.get(__ret__, 'shape'),
+        shape_configs=pulumi.get(__ret__, 'shape_configs'),
+        source_details=pulumi.get(__ret__, 'source_details'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_maintenance_reboot_due=pulumi.get(__ret__, 'time_maintenance_reboot_due'),
+        update_operation_constraint=pulumi.get(__ret__, 'update_operation_constraint'))
 
 
 @_utilities.lift_output_func(get_instance)

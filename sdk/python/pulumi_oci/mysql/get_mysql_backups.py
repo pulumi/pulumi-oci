@@ -183,15 +183,15 @@ def get_mysql_backups(backup_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Mysql/getMysqlBackups:getMysqlBackups', __args__, opts=opts, typ=GetMysqlBackupsResult).value
 
     return AwaitableGetMysqlBackupsResult(
-        backup_id=__ret__.backup_id,
-        backups=__ret__.backups,
-        compartment_id=__ret__.compartment_id,
-        creation_type=__ret__.creation_type,
-        db_system_id=__ret__.db_system_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        backup_id=pulumi.get(__ret__, 'backup_id'),
+        backups=pulumi.get(__ret__, 'backups'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        creation_type=pulumi.get(__ret__, 'creation_type'),
+        db_system_id=pulumi.get(__ret__, 'db_system_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_mysql_backups)

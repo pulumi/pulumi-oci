@@ -14,11 +14,15 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
     public sealed class ConfigConfiguration
     {
         /// <summary>
+        /// (Updatable) Details for client certificate.
+        /// </summary>
+        public readonly Outputs.ConfigConfigurationClientCertificateDetails? ClientCertificateDetails;
+        /// <summary>
         /// (Updatable) Type of configuration.
         /// </summary>
         public readonly string? ConfigType;
         /// <summary>
-        /// (Updatable) Dns settings.
+        /// (Updatable) Information about the DNS settings.
         /// </summary>
         public readonly Outputs.ConfigConfigurationDnsConfiguration? DnsConfiguration;
         /// <summary>
@@ -26,11 +30,15 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly bool? IsCertificateValidationEnabled;
         /// <summary>
+        /// (Updatable) If disabled then auto snapshots are not collected.
+        /// </summary>
+        public readonly bool? IsDefaultSnapshotEnabled;
+        /// <summary>
         /// (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
         /// </summary>
         public readonly bool? IsFailureRetried;
         /// <summary>
-        /// (Updatable) If redirection enabled, then redirects will be allowed while accessing target URL.
+        /// (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
         /// </summary>
         public readonly bool? IsRedirectionEnabled;
         /// <summary>
@@ -42,7 +50,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly Outputs.ConfigConfigurationReqAuthenticationDetails? ReqAuthenticationDetails;
         /// <summary>
-        /// (Updatable) Request http authentication scheme.
+        /// (Updatable) Request HTTP authentication scheme.
         /// </summary>
         public readonly string? ReqAuthenticationScheme;
         /// <summary>
@@ -76,11 +84,15 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
 
         [OutputConstructor]
         private ConfigConfiguration(
+            Outputs.ConfigConfigurationClientCertificateDetails? clientCertificateDetails,
+
             string? configType,
 
             Outputs.ConfigConfigurationDnsConfiguration? dnsConfiguration,
 
             bool? isCertificateValidationEnabled,
+
+            bool? isDefaultSnapshotEnabled,
 
             bool? isFailureRetried,
 
@@ -106,9 +118,11 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
 
             ImmutableArray<Outputs.ConfigConfigurationVerifyText> verifyTexts)
         {
+            ClientCertificateDetails = clientCertificateDetails;
             ConfigType = configType;
             DnsConfiguration = dnsConfiguration;
             IsCertificateValidationEnabled = isCertificateValidationEnabled;
+            IsDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
             IsFailureRetried = isFailureRetried;
             IsRedirectionEnabled = isRedirectionEnabled;
             NetworkConfiguration = networkConfiguration;

@@ -90,6 +90,7 @@ namespace Pulumi.Oci.Database
     ///         {
     ///             BackupNetworkBondingMode = @var.Exadata_infrastructure_network_bonding_mode_details_backup_network_bonding_mode,
     ///             ClientNetworkBondingMode = @var.Exadata_infrastructure_network_bonding_mode_details_client_network_bonding_mode,
+    ///             DrNetworkBondingMode = @var.Exadata_infrastructure_network_bonding_mode_details_dr_network_bonding_mode,
     ///         },
     ///         StorageCount = @var.Exadata_infrastructure_storage_count,
     ///     });
@@ -337,7 +338,7 @@ namespace Pulumi.Oci.Database
         public Output<string> Netmask { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        /// (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
         /// </summary>
         [Output("networkBondingModeDetails")]
         public Output<Outputs.ExadataInfrastructureNetworkBondingModeDetails> NetworkBondingModeDetails { get; private set; } = null!;
@@ -347,6 +348,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("ntpServers")]
         public Output<ImmutableArray<string>> NtpServers { get; private set; } = null!;
+
+        /// <summary>
+        /// The serial number for the Exadata infrastructure.
+        /// </summary>
+        [Output("rackSerialNumber")]
+        public Output<string> RackSerialNumber { get; private set; } = null!;
 
         /// <summary>
         /// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
@@ -581,7 +588,7 @@ namespace Pulumi.Oci.Database
         public Input<string> Netmask { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        /// (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
         /// </summary>
         [Input("networkBondingModeDetails")]
         public Input<Inputs.ExadataInfrastructureNetworkBondingModeDetailsArgs>? NetworkBondingModeDetails { get; set; }
@@ -877,7 +884,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? Netmask { get; set; }
 
         /// <summary>
-        /// (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        /// (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
         /// </summary>
         [Input("networkBondingModeDetails")]
         public Input<Inputs.ExadataInfrastructureNetworkBondingModeDetailsGetArgs>? NetworkBondingModeDetails { get; set; }
@@ -893,6 +900,12 @@ namespace Pulumi.Oci.Database
             get => _ntpServers ?? (_ntpServers = new InputList<string>());
             set => _ntpServers = value;
         }
+
+        /// <summary>
+        /// The serial number for the Exadata infrastructure.
+        /// </summary>
+        [Input("rackSerialNumber")]
+        public Input<string>? RackSerialNumber { get; set; }
 
         /// <summary>
         /// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.

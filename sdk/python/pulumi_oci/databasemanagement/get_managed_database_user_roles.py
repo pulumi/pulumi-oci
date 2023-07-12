@@ -132,12 +132,12 @@ def get_managed_database_user_roles(filters: Optional[Sequence[pulumi.InputType[
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseUserRoles:getManagedDatabaseUserRoles', __args__, opts=opts, typ=GetManagedDatabaseUserRolesResult).value
 
     return AwaitableGetManagedDatabaseUserRolesResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        managed_database_id=__ret__.managed_database_id,
-        name=__ret__.name,
-        role_collections=__ret__.role_collections,
-        user_name=__ret__.user_name)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        name=pulumi.get(__ret__, 'name'),
+        role_collections=pulumi.get(__ret__, 'role_collections'),
+        user_name=pulumi.get(__ret__, 'user_name'))
 
 
 @_utilities.lift_output_func(get_managed_database_user_roles)

@@ -88,7 +88,7 @@ type GetMonitorsResult struct {
 	IsMaintenanceWindowSet    *bool  `pulumi:"isMaintenanceWindowSet"`
 	// The list of monitor_collection.
 	MonitorCollections []GetMonitorsMonitorCollection `pulumi:"monitorCollections"`
-	// Type of the monitor.
+	// Type of monitor.
 	MonitorType *string `pulumi:"monitorType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 	ScriptId *string `pulumi:"scriptId"`
@@ -181,7 +181,7 @@ func (o GetMonitorsResultOutput) MonitorCollections() GetMonitorsMonitorCollecti
 	return o.ApplyT(func(v GetMonitorsResult) []GetMonitorsMonitorCollection { return v.MonitorCollections }).(GetMonitorsMonitorCollectionArrayOutput)
 }
 
-// Type of the monitor.
+// Type of monitor.
 func (o GetMonitorsResultOutput) MonitorType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMonitorsResult) *string { return v.MonitorType }).(pulumi.StringPtrOutput)
 }

@@ -180,15 +180,15 @@ def get_container_repositories(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Artifacts/getContainerRepositories:getContainerRepositories', __args__, opts=opts, typ=GetContainerRepositoriesResult).value
 
     return AwaitableGetContainerRepositoriesResult(
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        container_repository_collections=__ret__.container_repository_collections,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_public=__ret__.is_public,
-        repository_id=__ret__.repository_id,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        container_repository_collections=pulumi.get(__ret__, 'container_repository_collections'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_public=pulumi.get(__ret__, 'is_public'),
+        repository_id=pulumi.get(__ret__, 'repository_id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_container_repositories)

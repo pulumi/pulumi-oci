@@ -78,8 +78,8 @@ def get_generic_artifacts_content(artifact_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:GenericArtifactsContent/getGenericArtifactsContent:getGenericArtifactsContent', __args__, opts=opts, typ=GetGenericArtifactsContentResult).value
 
     return AwaitableGetGenericArtifactsContentResult(
-        artifact_id=__ret__.artifact_id,
-        id=__ret__.id)
+        artifact_id=pulumi.get(__ret__, 'artifact_id'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_generic_artifacts_content)

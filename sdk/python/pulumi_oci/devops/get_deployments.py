@@ -200,16 +200,16 @@ def get_deployments(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getDeployments:getDeployments', __args__, opts=opts, typ=GetDeploymentsResult).value
 
     return AwaitableGetDeploymentsResult(
-        compartment_id=__ret__.compartment_id,
-        deploy_pipeline_id=__ret__.deploy_pipeline_id,
-        deployment_collections=__ret__.deployment_collections,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        project_id=__ret__.project_id,
-        state=__ret__.state,
-        time_created_greater_than_or_equal_to=__ret__.time_created_greater_than_or_equal_to,
-        time_created_less_than=__ret__.time_created_less_than)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        deploy_pipeline_id=pulumi.get(__ret__, 'deploy_pipeline_id'),
+        deployment_collections=pulumi.get(__ret__, 'deployment_collections'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        project_id=pulumi.get(__ret__, 'project_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
 
 
 @_utilities.lift_output_func(get_deployments)

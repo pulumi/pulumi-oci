@@ -134,13 +134,13 @@ def get_load_balancer_routing_policy(load_balancer_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LoadBalancer/getLoadBalancerRoutingPolicy:getLoadBalancerRoutingPolicy', __args__, opts=opts, typ=GetLoadBalancerRoutingPolicyResult).value
 
     return AwaitableGetLoadBalancerRoutingPolicyResult(
-        condition_language_version=__ret__.condition_language_version,
-        id=__ret__.id,
-        load_balancer_id=__ret__.load_balancer_id,
-        name=__ret__.name,
-        routing_policy_name=__ret__.routing_policy_name,
-        rules=__ret__.rules,
-        state=__ret__.state)
+        condition_language_version=pulumi.get(__ret__, 'condition_language_version'),
+        id=pulumi.get(__ret__, 'id'),
+        load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
+        name=pulumi.get(__ret__, 'name'),
+        routing_policy_name=pulumi.get(__ret__, 'routing_policy_name'),
+        rules=pulumi.get(__ret__, 'rules'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_load_balancer_routing_policy)

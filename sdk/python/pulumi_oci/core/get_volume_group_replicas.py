@@ -155,13 +155,13 @@ def get_volume_group_replicas(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getVolumeGroupReplicas:getVolumeGroupReplicas', __args__, opts=opts, typ=GetVolumeGroupReplicasResult).value
 
     return AwaitableGetVolumeGroupReplicasResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        volume_group_replicas=__ret__.volume_group_replicas)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        volume_group_replicas=pulumi.get(__ret__, 'volume_group_replicas'))
 
 
 @_utilities.lift_output_func(get_volume_group_replicas)

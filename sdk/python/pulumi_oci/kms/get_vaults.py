@@ -111,10 +111,10 @@ def get_vaults(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Kms/getVaults:getVaults', __args__, opts=opts, typ=GetVaultsResult).value
 
     return AwaitableGetVaultsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        vaults=__ret__.vaults)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        vaults=pulumi.get(__ret__, 'vaults'))
 
 
 @_utilities.lift_output_func(get_vaults)

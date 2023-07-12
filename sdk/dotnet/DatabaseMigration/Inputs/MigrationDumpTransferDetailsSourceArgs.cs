@@ -24,6 +24,12 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         [Input("ociHome")]
         public Input<string>? OciHome { get; set; }
 
+        /// <summary>
+        /// (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+        /// </summary>
+        [Input("walletLocation")]
+        public Input<string>? WalletLocation { get; set; }
+
         public MigrationDumpTransferDetailsSourceArgs()
         {
         }

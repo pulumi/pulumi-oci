@@ -116,11 +116,11 @@ def get_listing_taxes(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Marketplace/getListingTaxes:getListingTaxes', __args__, opts=opts, typ=GetListingTaxesResult).value
 
     return AwaitableGetListingTaxesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        listing_id=__ret__.listing_id,
-        taxes=__ret__.taxes)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        listing_id=pulumi.get(__ret__, 'listing_id'),
+        taxes=pulumi.get(__ret__, 'taxes'))
 
 
 @_utilities.lift_output_func(get_listing_taxes)

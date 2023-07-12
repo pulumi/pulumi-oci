@@ -168,15 +168,15 @@ def get_network_security_group(network_security_group_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getNetworkSecurityGroup:getNetworkSecurityGroup', __args__, opts=opts, typ=GetNetworkSecurityGroupResult).value
 
     return AwaitableGetNetworkSecurityGroupResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        network_security_group_id=__ret__.network_security_group_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        vcn_id=__ret__.vcn_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        network_security_group_id=pulumi.get(__ret__, 'network_security_group_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_network_security_group)

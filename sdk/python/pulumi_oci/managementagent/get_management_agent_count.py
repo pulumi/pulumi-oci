@@ -137,12 +137,12 @@ def get_management_agent_count(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ManagementAgent/getManagementAgentCount:getManagementAgentCount', __args__, opts=opts, typ=GetManagementAgentCountResult).value
 
     return AwaitableGetManagementAgentCountResult(
-        compartment_id=__ret__.compartment_id,
-        group_bies=__ret__.group_bies,
-        has_plugins=__ret__.has_plugins,
-        id=__ret__.id,
-        install_type=__ret__.install_type,
-        items=__ret__.items)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        group_bies=pulumi.get(__ret__, 'group_bies'),
+        has_plugins=pulumi.get(__ret__, 'has_plugins'),
+        id=pulumi.get(__ret__, 'id'),
+        install_type=pulumi.get(__ret__, 'install_type'),
+        items=pulumi.get(__ret__, 'items'))
 
 
 @_utilities.lift_output_func(get_management_agent_count)

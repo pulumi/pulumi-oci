@@ -103,10 +103,10 @@ def get_external_asm_users(external_asm_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalAsmUsers:getExternalAsmUsers', __args__, opts=opts, typ=GetExternalAsmUsersResult).value
 
     return AwaitableGetExternalAsmUsersResult(
-        external_asm_id=__ret__.external_asm_id,
-        external_asm_user_collections=__ret__.external_asm_user_collections,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        external_asm_id=pulumi.get(__ret__, 'external_asm_id'),
+        external_asm_user_collections=pulumi.get(__ret__, 'external_asm_user_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_external_asm_users)

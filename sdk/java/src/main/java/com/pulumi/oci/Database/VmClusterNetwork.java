@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.VmClusterNetworkArgs;
 import com.pulumi.oci.Database.inputs.VmClusterNetworkState;
+import com.pulumi.oci.Database.outputs.VmClusterNetworkDrScan;
 import com.pulumi.oci.Database.outputs.VmClusterNetworkScan;
 import com.pulumi.oci.Database.outputs.VmClusterNetworkVmNetwork;
 import com.pulumi.oci.Utilities;
@@ -37,6 +38,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Database.VmClusterNetworkArgs;
  * import com.pulumi.oci.Database.inputs.VmClusterNetworkScanArgs;
  * import com.pulumi.oci.Database.inputs.VmClusterNetworkVmNetworkArgs;
+ * import com.pulumi.oci.Database.inputs.VmClusterNetworkDrScanArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -78,6 +80,11 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .definedTags(var_.vm_cluster_network_defined_tags())
  *             .dns(var_.vm_cluster_network_dns())
+ *             .drScans(VmClusterNetworkDrScanArgs.builder()
+ *                 .hostname(var_.vm_cluster_network_dr_scans_hostname())
+ *                 .ips(var_.vm_cluster_network_dr_scans_ips())
+ *                 .scanListenerPortTcp(var_.vm_cluster_network_dr_scans_scan_listener_port_tcp())
+ *                 .build())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .ntps(var_.vm_cluster_network_ntp())
  *             .validateVmClusterNetwork(var_.vm_cluster_network_validate_vm_cluster_network())
@@ -159,6 +166,20 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
      */
     public Output<List<String>> dns() {
         return this.dns;
+    }
+    /**
+     * (Updatable) The SCAN details for DR network
+     * 
+     */
+    @Export(name="drScans", type=List.class, parameters={VmClusterNetworkDrScan.class})
+    private Output<List<VmClusterNetworkDrScan>> drScans;
+
+    /**
+     * @return (Updatable) The SCAN details for DR network
+     * 
+     */
+    public Output<List<VmClusterNetworkDrScan>> drScans() {
+        return this.drScans;
     }
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

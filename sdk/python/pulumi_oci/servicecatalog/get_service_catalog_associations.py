@@ -151,13 +151,13 @@ def get_service_catalog_associations(entity_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ServiceCatalog/getServiceCatalogAssociations:getServiceCatalogAssociations', __args__, opts=opts, typ=GetServiceCatalogAssociationsResult).value
 
     return AwaitableGetServiceCatalogAssociationsResult(
-        entity_id=__ret__.entity_id,
-        entity_type=__ret__.entity_type,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        service_catalog_association_collections=__ret__.service_catalog_association_collections,
-        service_catalog_association_id=__ret__.service_catalog_association_id,
-        service_catalog_id=__ret__.service_catalog_id)
+        entity_id=pulumi.get(__ret__, 'entity_id'),
+        entity_type=pulumi.get(__ret__, 'entity_type'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        service_catalog_association_collections=pulumi.get(__ret__, 'service_catalog_association_collections'),
+        service_catalog_association_id=pulumi.get(__ret__, 'service_catalog_association_id'),
+        service_catalog_id=pulumi.get(__ret__, 'service_catalog_id'))
 
 
 @_utilities.lift_output_func(get_service_catalog_associations)

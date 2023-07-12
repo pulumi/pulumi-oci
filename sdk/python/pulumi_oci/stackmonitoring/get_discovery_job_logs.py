@@ -119,11 +119,11 @@ def get_discovery_job_logs(discovery_job_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:StackMonitoring/getDiscoveryJobLogs:getDiscoveryJobLogs', __args__, opts=opts, typ=GetDiscoveryJobLogsResult).value
 
     return AwaitableGetDiscoveryJobLogsResult(
-        discovery_job_id=__ret__.discovery_job_id,
-        discovery_job_log_collections=__ret__.discovery_job_log_collections,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        log_type=__ret__.log_type)
+        discovery_job_id=pulumi.get(__ret__, 'discovery_job_id'),
+        discovery_job_log_collections=pulumi.get(__ret__, 'discovery_job_log_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        log_type=pulumi.get(__ret__, 'log_type'))
 
 
 @_utilities.lift_output_func(get_discovery_job_logs)

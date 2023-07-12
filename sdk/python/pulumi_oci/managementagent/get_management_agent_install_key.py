@@ -222,20 +222,20 @@ def get_management_agent_install_key(management_agent_install_key_id: Optional[s
     __ret__ = pulumi.runtime.invoke('oci:ManagementAgent/getManagementAgentInstallKey:getManagementAgentInstallKey', __args__, opts=opts, typ=GetManagementAgentInstallKeyResult).value
 
     return AwaitableGetManagementAgentInstallKeyResult(
-        allowed_key_install_count=__ret__.allowed_key_install_count,
-        compartment_id=__ret__.compartment_id,
-        created_by_principal_id=__ret__.created_by_principal_id,
-        current_key_install_count=__ret__.current_key_install_count,
-        display_name=__ret__.display_name,
-        id=__ret__.id,
-        is_unlimited=__ret__.is_unlimited,
-        key=__ret__.key,
-        lifecycle_details=__ret__.lifecycle_details,
-        management_agent_install_key_id=__ret__.management_agent_install_key_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_expires=__ret__.time_expires,
-        time_updated=__ret__.time_updated)
+        allowed_key_install_count=pulumi.get(__ret__, 'allowed_key_install_count'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        created_by_principal_id=pulumi.get(__ret__, 'created_by_principal_id'),
+        current_key_install_count=pulumi.get(__ret__, 'current_key_install_count'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        id=pulumi.get(__ret__, 'id'),
+        is_unlimited=pulumi.get(__ret__, 'is_unlimited'),
+        key=pulumi.get(__ret__, 'key'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        management_agent_install_key_id=pulumi.get(__ret__, 'management_agent_install_key_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_expires=pulumi.get(__ret__, 'time_expires'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_management_agent_install_key)

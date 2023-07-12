@@ -108,10 +108,10 @@ def get_idp_group_mappings(filters: Optional[Sequence[pulumi.InputType['GetIdpGr
     __ret__ = pulumi.runtime.invoke('oci:Identity/getIdpGroupMappings:getIdpGroupMappings', __args__, opts=opts, typ=GetIdpGroupMappingsResult).value
 
     return AwaitableGetIdpGroupMappingsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        identity_provider_id=__ret__.identity_provider_id,
-        idp_group_mappings=__ret__.idp_group_mappings)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        identity_provider_id=pulumi.get(__ret__, 'identity_provider_id'),
+        idp_group_mappings=pulumi.get(__ret__, 'idp_group_mappings'))
 
 
 @_utilities.lift_output_func(get_idp_group_mappings)

@@ -103,10 +103,10 @@ def get_private_endpoint_reachable_ip(private_endpoint_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ResourceManager/getPrivateEndpointReachableIp:getPrivateEndpointReachableIp', __args__, opts=opts, typ=GetPrivateEndpointReachableIpResult).value
 
     return AwaitableGetPrivateEndpointReachableIpResult(
-        id=__ret__.id,
-        ip_address=__ret__.ip_address,
-        private_endpoint_id=__ret__.private_endpoint_id,
-        private_ip=__ret__.private_ip)
+        id=pulumi.get(__ret__, 'id'),
+        ip_address=pulumi.get(__ret__, 'ip_address'),
+        private_endpoint_id=pulumi.get(__ret__, 'private_endpoint_id'),
+        private_ip=pulumi.get(__ret__, 'private_ip'))
 
 
 @_utilities.lift_output_func(get_private_endpoint_reachable_ip)

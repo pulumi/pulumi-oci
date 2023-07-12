@@ -135,12 +135,12 @@ def get_cluster_network_instances(cluster_network_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getClusterNetworkInstances:getClusterNetworkInstances', __args__, opts=opts, typ=GetClusterNetworkInstancesResult).value
 
     return AwaitableGetClusterNetworkInstancesResult(
-        cluster_network_id=__ret__.cluster_network_id,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        instances=__ret__.instances)
+        cluster_network_id=pulumi.get(__ret__, 'cluster_network_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        instances=pulumi.get(__ret__, 'instances'))
 
 
 @_utilities.lift_output_func(get_cluster_network_instances)

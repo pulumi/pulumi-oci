@@ -211,19 +211,19 @@ def get_network_source(network_source_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getNetworkSource:getNetworkSource', __args__, opts=opts, typ=GetNetworkSourceResult).value
 
     return AwaitableGetNetworkSourceResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        inactive_state=__ret__.inactive_state,
-        name=__ret__.name,
-        network_source_id=__ret__.network_source_id,
-        public_source_lists=__ret__.public_source_lists,
-        services=__ret__.services,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        virtual_source_lists=__ret__.virtual_source_lists)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        inactive_state=pulumi.get(__ret__, 'inactive_state'),
+        name=pulumi.get(__ret__, 'name'),
+        network_source_id=pulumi.get(__ret__, 'network_source_id'),
+        public_source_lists=pulumi.get(__ret__, 'public_source_lists'),
+        services=pulumi.get(__ret__, 'services'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        virtual_source_lists=pulumi.get(__ret__, 'virtual_source_lists'))
 
 
 @_utilities.lift_output_func(get_network_source)

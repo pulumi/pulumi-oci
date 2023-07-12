@@ -184,16 +184,16 @@ def get_compartment(id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getCompartment:getCompartment', __args__, opts=opts, typ=GetCompartmentResult).value
 
     return AwaitableGetCompartmentResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        inactive_state=__ret__.inactive_state,
-        is_accessible=__ret__.is_accessible,
-        name=__ret__.name,
-        state=__ret__.state,
-        time_created=__ret__.time_created)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        inactive_state=pulumi.get(__ret__, 'inactive_state'),
+        is_accessible=pulumi.get(__ret__, 'is_accessible'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_compartment)

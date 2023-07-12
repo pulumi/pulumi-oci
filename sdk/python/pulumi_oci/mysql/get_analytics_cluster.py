@@ -164,15 +164,15 @@ def get_analytics_cluster(db_system_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Mysql/getAnalyticsCluster:getAnalyticsCluster', __args__, opts=opts, typ=GetAnalyticsClusterResult).value
 
     return AwaitableGetAnalyticsClusterResult(
-        cluster_nodes=__ret__.cluster_nodes,
-        cluster_size=__ret__.cluster_size,
-        db_system_id=__ret__.db_system_id,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        shape_name=__ret__.shape_name,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        cluster_nodes=pulumi.get(__ret__, 'cluster_nodes'),
+        cluster_size=pulumi.get(__ret__, 'cluster_size'),
+        db_system_id=pulumi.get(__ret__, 'db_system_id'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        shape_name=pulumi.get(__ret__, 'shape_name'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_analytics_cluster)

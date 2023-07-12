@@ -135,12 +135,12 @@ def get_tag_namespaces(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getTagNamespaces:getTagNamespaces', __args__, opts=opts, typ=GetTagNamespacesResult).value
 
     return AwaitableGetTagNamespacesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        include_subcompartments=__ret__.include_subcompartments,
-        state=__ret__.state,
-        tag_namespaces=__ret__.tag_namespaces)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        include_subcompartments=pulumi.get(__ret__, 'include_subcompartments'),
+        state=pulumi.get(__ret__, 'state'),
+        tag_namespaces=pulumi.get(__ret__, 'tag_namespaces'))
 
 
 @_utilities.lift_output_func(get_tag_namespaces)

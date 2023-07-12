@@ -138,12 +138,12 @@ def get_compute_image_capability_schemas(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getComputeImageCapabilitySchemas:getComputeImageCapabilitySchemas', __args__, opts=opts, typ=GetComputeImageCapabilitySchemasResult).value
 
     return AwaitableGetComputeImageCapabilitySchemasResult(
-        compartment_id=__ret__.compartment_id,
-        compute_image_capability_schemas=__ret__.compute_image_capability_schemas,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        image_id=__ret__.image_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compute_image_capability_schemas=pulumi.get(__ret__, 'compute_image_capability_schemas'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        image_id=pulumi.get(__ret__, 'image_id'))
 
 
 @_utilities.lift_output_func(get_compute_image_capability_schemas)

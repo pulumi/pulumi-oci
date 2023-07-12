@@ -277,23 +277,23 @@ def get_listing_package(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Marketplace/getListingPackage:getListingPackage', __args__, opts=opts, typ=GetListingPackageResult).value
 
     return AwaitableGetListingPackageResult(
-        app_catalog_listing_id=__ret__.app_catalog_listing_id,
-        app_catalog_listing_resource_version=__ret__.app_catalog_listing_resource_version,
-        compartment_id=__ret__.compartment_id,
-        description=__ret__.description,
-        id=__ret__.id,
-        image_id=__ret__.image_id,
-        listing_id=__ret__.listing_id,
-        operating_systems=__ret__.operating_systems,
-        package_type=__ret__.package_type,
-        package_version=__ret__.package_version,
-        pricings=__ret__.pricings,
-        regions=__ret__.regions,
-        resource_id=__ret__.resource_id,
-        resource_link=__ret__.resource_link,
-        time_created=__ret__.time_created,
-        variables=__ret__.variables,
-        version=__ret__.version)
+        app_catalog_listing_id=pulumi.get(__ret__, 'app_catalog_listing_id'),
+        app_catalog_listing_resource_version=pulumi.get(__ret__, 'app_catalog_listing_resource_version'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        description=pulumi.get(__ret__, 'description'),
+        id=pulumi.get(__ret__, 'id'),
+        image_id=pulumi.get(__ret__, 'image_id'),
+        listing_id=pulumi.get(__ret__, 'listing_id'),
+        operating_systems=pulumi.get(__ret__, 'operating_systems'),
+        package_type=pulumi.get(__ret__, 'package_type'),
+        package_version=pulumi.get(__ret__, 'package_version'),
+        pricings=pulumi.get(__ret__, 'pricings'),
+        regions=pulumi.get(__ret__, 'regions'),
+        resource_id=pulumi.get(__ret__, 'resource_id'),
+        resource_link=pulumi.get(__ret__, 'resource_link'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        variables=pulumi.get(__ret__, 'variables'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_listing_package)

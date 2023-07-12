@@ -164,14 +164,14 @@ def get_db_nodes(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getDbNodes:getDbNodes', __args__, opts=opts, typ=GetDbNodesResult).value
 
     return AwaitableGetDbNodesResult(
-        compartment_id=__ret__.compartment_id,
-        db_nodes=__ret__.db_nodes,
-        db_server_id=__ret__.db_server_id,
-        db_system_id=__ret__.db_system_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        vm_cluster_id=__ret__.vm_cluster_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        db_nodes=pulumi.get(__ret__, 'db_nodes'),
+        db_server_id=pulumi.get(__ret__, 'db_server_id'),
+        db_system_id=pulumi.get(__ret__, 'db_system_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
 
 
 @_utilities.lift_output_func(get_db_nodes)

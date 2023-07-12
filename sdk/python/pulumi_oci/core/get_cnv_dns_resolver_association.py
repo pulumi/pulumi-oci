@@ -103,10 +103,10 @@ def get_cnv_dns_resolver_association(vcn_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getCnvDnsResolverAssociation:getCnvDnsResolverAssociation', __args__, opts=opts, typ=GetCnvDnsResolverAssociationResult).value
 
     return AwaitableGetCnvDnsResolverAssociationResult(
-        dns_resolver_id=__ret__.dns_resolver_id,
-        id=__ret__.id,
-        state=__ret__.state,
-        vcn_id=__ret__.vcn_id)
+        dns_resolver_id=pulumi.get(__ret__, 'dns_resolver_id'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_cnv_dns_resolver_association)

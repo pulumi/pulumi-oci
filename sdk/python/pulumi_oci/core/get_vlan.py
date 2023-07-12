@@ -222,20 +222,20 @@ def get_vlan(vlan_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getVlan:getVlan', __args__, opts=opts, typ=GetVlanResult).value
 
     return AwaitableGetVlanResult(
-        availability_domain=__ret__.availability_domain,
-        cidr_block=__ret__.cidr_block,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        nsg_ids=__ret__.nsg_ids,
-        route_table_id=__ret__.route_table_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        vcn_id=__ret__.vcn_id,
-        vlan_id=__ret__.vlan_id,
-        vlan_tag=__ret__.vlan_tag)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        cidr_block=pulumi.get(__ret__, 'cidr_block'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
+        route_table_id=pulumi.get(__ret__, 'route_table_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'),
+        vlan_id=pulumi.get(__ret__, 'vlan_id'),
+        vlan_tag=pulumi.get(__ret__, 'vlan_tag'))
 
 
 @_utilities.lift_output_func(get_vlan)

@@ -178,16 +178,16 @@ def get_secret_version(secret_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Vault/getSecretVersion:getSecretVersion', __args__, opts=opts, typ=GetSecretVersionResult).value
 
     return AwaitableGetSecretVersionResult(
-        content_type=__ret__.content_type,
-        id=__ret__.id,
-        name=__ret__.name,
-        secret_id=__ret__.secret_id,
-        secret_version_number=__ret__.secret_version_number,
-        stages=__ret__.stages,
-        time_created=__ret__.time_created,
-        time_of_current_version_expiry=__ret__.time_of_current_version_expiry,
-        time_of_deletion=__ret__.time_of_deletion,
-        version_number=__ret__.version_number)
+        content_type=pulumi.get(__ret__, 'content_type'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        secret_id=pulumi.get(__ret__, 'secret_id'),
+        secret_version_number=pulumi.get(__ret__, 'secret_version_number'),
+        stages=pulumi.get(__ret__, 'stages'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_of_current_version_expiry=pulumi.get(__ret__, 'time_of_current_version_expiry'),
+        time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
+        version_number=pulumi.get(__ret__, 'version_number'))
 
 
 @_utilities.lift_output_func(get_secret_version)

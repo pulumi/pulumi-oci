@@ -211,19 +211,19 @@ def get_category(category_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Optimizer/getCategory:getCategory', __args__, opts=opts, typ=GetCategoryResult).value
 
     return AwaitableGetCategoryResult(
-        category_id=__ret__.category_id,
-        compartment_id=__ret__.compartment_id,
-        compartment_name=__ret__.compartment_name,
-        description=__ret__.description,
-        estimated_cost_saving=__ret__.estimated_cost_saving,
-        extended_metadata=__ret__.extended_metadata,
-        id=__ret__.id,
-        name=__ret__.name,
-        recommendation_counts=__ret__.recommendation_counts,
-        resource_counts=__ret__.resource_counts,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        category_id=pulumi.get(__ret__, 'category_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_name=pulumi.get(__ret__, 'compartment_name'),
+        description=pulumi.get(__ret__, 'description'),
+        estimated_cost_saving=pulumi.get(__ret__, 'estimated_cost_saving'),
+        extended_metadata=pulumi.get(__ret__, 'extended_metadata'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        recommendation_counts=pulumi.get(__ret__, 'recommendation_counts'),
+        resource_counts=pulumi.get(__ret__, 'resource_counts'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_category)

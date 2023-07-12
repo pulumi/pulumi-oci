@@ -135,12 +135,12 @@ def get_vantage_points(apm_domain_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApmSynthetics/getVantagePoints:getVantagePoints', __args__, opts=opts, typ=GetVantagePointsResult).value
 
     return AwaitableGetVantagePointsResult(
-        apm_domain_id=__ret__.apm_domain_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        public_vantage_point_collections=__ret__.public_vantage_point_collections)
+        apm_domain_id=pulumi.get(__ret__, 'apm_domain_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        public_vantage_point_collections=pulumi.get(__ret__, 'public_vantage_point_collections'))
 
 
 @_utilities.lift_output_func(get_vantage_points)

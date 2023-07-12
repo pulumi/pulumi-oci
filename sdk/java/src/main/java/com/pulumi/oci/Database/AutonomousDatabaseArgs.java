@@ -941,14 +941,14 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+     * The current state of the Autonomous Database.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+     * @return The current state of the Autonomous Database.
      * 
      */
     public Optional<Output<String>> state() {
@@ -2473,7 +2473,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param state (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+         * @param state The current state of the Autonomous Database.
          * 
          * @return builder
          * 
@@ -2484,7 +2484,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param state (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+         * @param state The current state of the Autonomous Database.
          * 
          * @return builder
          * 

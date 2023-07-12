@@ -91,9 +91,9 @@ def get_annotation_format(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataLabellingService/getAnnotationFormat:getAnnotationFormat', __args__, opts=opts, typ=GetAnnotationFormatResult).value
 
     return AwaitableGetAnnotationFormatResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        items=__ret__.items)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'))
 
 
 @_utilities.lift_output_func(get_annotation_format)

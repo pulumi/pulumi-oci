@@ -1386,14 +1386,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.standbyWhitelistedIps;
     }
     /**
-     * (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+     * The current state of the Autonomous Database.
      * 
      */
     @Export(name="state", type=String.class, parameters={})
     private Output<String> state;
 
     /**
-     * @return (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+     * @return The current state of the Autonomous Database.
      * 
      */
     public Output<String> state() {

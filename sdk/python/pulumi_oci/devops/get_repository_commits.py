@@ -200,17 +200,17 @@ def get_repository_commits(author_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getRepositoryCommits:getRepositoryCommits', __args__, opts=opts, typ=GetRepositoryCommitsResult).value
 
     return AwaitableGetRepositoryCommitsResult(
-        author_name=__ret__.author_name,
-        commit_message=__ret__.commit_message,
-        exclude_ref_name=__ret__.exclude_ref_name,
-        file_path=__ret__.file_path,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        ref_name=__ret__.ref_name,
-        repository_commit_collections=__ret__.repository_commit_collections,
-        repository_id=__ret__.repository_id,
-        timestamp_greater_than_or_equal_to=__ret__.timestamp_greater_than_or_equal_to,
-        timestamp_less_than_or_equal_to=__ret__.timestamp_less_than_or_equal_to)
+        author_name=pulumi.get(__ret__, 'author_name'),
+        commit_message=pulumi.get(__ret__, 'commit_message'),
+        exclude_ref_name=pulumi.get(__ret__, 'exclude_ref_name'),
+        file_path=pulumi.get(__ret__, 'file_path'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        ref_name=pulumi.get(__ret__, 'ref_name'),
+        repository_commit_collections=pulumi.get(__ret__, 'repository_commit_collections'),
+        repository_id=pulumi.get(__ret__, 'repository_id'),
+        timestamp_greater_than_or_equal_to=pulumi.get(__ret__, 'timestamp_greater_than_or_equal_to'),
+        timestamp_less_than_or_equal_to=pulumi.get(__ret__, 'timestamp_less_than_or_equal_to'))
 
 
 @_utilities.lift_output_func(get_repository_commits)

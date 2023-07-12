@@ -155,13 +155,13 @@ def get_load_balancers(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LoadBalancer/getLoadBalancers:getLoadBalancers', __args__, opts=opts, typ=GetLoadBalancersResult).value
 
     return AwaitableGetLoadBalancersResult(
-        compartment_id=__ret__.compartment_id,
-        detail=__ret__.detail,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        load_balancers=__ret__.load_balancers,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        detail=pulumi.get(__ret__, 'detail'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        load_balancers=pulumi.get(__ret__, 'load_balancers'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_load_balancers)

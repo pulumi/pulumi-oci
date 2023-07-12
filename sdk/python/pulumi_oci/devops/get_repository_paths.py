@@ -155,14 +155,14 @@ def get_repository_paths(display_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getRepositoryPaths:getRepositoryPaths', __args__, opts=opts, typ=GetRepositoryPathsResult).value
 
     return AwaitableGetRepositoryPathsResult(
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        folder_path=__ret__.folder_path,
-        id=__ret__.id,
-        paths_in_subtree=__ret__.paths_in_subtree,
-        ref=__ret__.ref,
-        repository_id=__ret__.repository_id,
-        repository_path_collections=__ret__.repository_path_collections)
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        folder_path=pulumi.get(__ret__, 'folder_path'),
+        id=pulumi.get(__ret__, 'id'),
+        paths_in_subtree=pulumi.get(__ret__, 'paths_in_subtree'),
+        ref=pulumi.get(__ret__, 'ref'),
+        repository_id=pulumi.get(__ret__, 'repository_id'),
+        repository_path_collections=pulumi.get(__ret__, 'repository_path_collections'))
 
 
 @_utilities.lift_output_func(get_repository_paths)

@@ -124,11 +124,11 @@ def get_instance_console_connections(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getInstanceConsoleConnections:getInstanceConsoleConnections', __args__, opts=opts, typ=GetInstanceConsoleConnectionsResult).value
 
     return AwaitableGetInstanceConsoleConnectionsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        instance_console_connections=__ret__.instance_console_connections,
-        instance_id=__ret__.instance_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        instance_console_connections=pulumi.get(__ret__, 'instance_console_connections'),
+        instance_id=pulumi.get(__ret__, 'instance_id'))
 
 
 @_utilities.lift_output_func(get_instance_console_connections)

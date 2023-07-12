@@ -198,18 +198,18 @@ def get_external_db_home(external_db_home_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalDbHome:getExternalDbHome', __args__, opts=opts, typ=GetExternalDbHomeResult).value
 
     return AwaitableGetExternalDbHomeResult(
-        additional_details=__ret__.additional_details,
-        compartment_id=__ret__.compartment_id,
-        component_name=__ret__.component_name,
-        display_name=__ret__.display_name,
-        external_db_home_id=__ret__.external_db_home_id,
-        external_db_system_id=__ret__.external_db_system_id,
-        home_directory=__ret__.home_directory,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        additional_details=pulumi.get(__ret__, 'additional_details'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        component_name=pulumi.get(__ret__, 'component_name'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        external_db_home_id=pulumi.get(__ret__, 'external_db_home_id'),
+        external_db_system_id=pulumi.get(__ret__, 'external_db_system_id'),
+        home_directory=pulumi.get(__ret__, 'home_directory'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_external_db_home)

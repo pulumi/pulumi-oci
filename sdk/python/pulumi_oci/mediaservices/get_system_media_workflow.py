@@ -107,10 +107,10 @@ def get_system_media_workflow(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:MediaServices/getSystemMediaWorkflow:getSystemMediaWorkflow', __args__, opts=opts, typ=GetSystemMediaWorkflowResult).value
 
     return AwaitableGetSystemMediaWorkflowResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        items=__ret__.items,
-        name=__ret__.name)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        name=pulumi.get(__ret__, 'name'))
 
 
 @_utilities.lift_output_func(get_system_media_workflow)

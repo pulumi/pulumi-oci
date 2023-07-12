@@ -259,23 +259,23 @@ def get_external_asm(external_asm_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalAsm:getExternalAsm', __args__, opts=opts, typ=GetExternalAsmResult).value
 
     return AwaitableGetExternalAsmResult(
-        additional_details=__ret__.additional_details,
-        compartment_id=__ret__.compartment_id,
-        component_name=__ret__.component_name,
-        display_name=__ret__.display_name,
-        external_asm_id=__ret__.external_asm_id,
-        external_connector_id=__ret__.external_connector_id,
-        external_db_system_id=__ret__.external_db_system_id,
-        grid_home=__ret__.grid_home,
-        id=__ret__.id,
-        is_cluster=__ret__.is_cluster,
-        is_flex_enabled=__ret__.is_flex_enabled,
-        lifecycle_details=__ret__.lifecycle_details,
-        serviced_databases=__ret__.serviced_databases,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        version=__ret__.version)
+        additional_details=pulumi.get(__ret__, 'additional_details'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        component_name=pulumi.get(__ret__, 'component_name'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        external_asm_id=pulumi.get(__ret__, 'external_asm_id'),
+        external_connector_id=pulumi.get(__ret__, 'external_connector_id'),
+        external_db_system_id=pulumi.get(__ret__, 'external_db_system_id'),
+        grid_home=pulumi.get(__ret__, 'grid_home'),
+        id=pulumi.get(__ret__, 'id'),
+        is_cluster=pulumi.get(__ret__, 'is_cluster'),
+        is_flex_enabled=pulumi.get(__ret__, 'is_flex_enabled'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        serviced_databases=pulumi.get(__ret__, 'serviced_databases'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_external_asm)

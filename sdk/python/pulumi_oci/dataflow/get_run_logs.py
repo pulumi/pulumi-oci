@@ -103,10 +103,10 @@ def get_run_logs(filters: Optional[Sequence[pulumi.InputType['GetRunLogsFilterAr
     __ret__ = pulumi.runtime.invoke('oci:DataFlow/getRunLogs:getRunLogs', __args__, opts=opts, typ=GetRunLogsResult).value
 
     return AwaitableGetRunLogsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        run_id=__ret__.run_id,
-        run_logs=__ret__.run_logs)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        run_id=pulumi.get(__ret__, 'run_id'),
+        run_logs=pulumi.get(__ret__, 'run_logs'))
 
 
 @_utilities.lift_output_func(get_run_logs)

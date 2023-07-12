@@ -21,6 +21,11 @@ public final class MigrationDumpTransferDetailsSource {
      * 
      */
     private @Nullable String ociHome;
+    /**
+     * @return (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+     * 
+     */
+    private @Nullable String walletLocation;
 
     private MigrationDumpTransferDetailsSource() {}
     /**
@@ -37,6 +42,13 @@ public final class MigrationDumpTransferDetailsSource {
     public Optional<String> ociHome() {
         return Optional.ofNullable(this.ociHome);
     }
+    /**
+     * @return (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+     * 
+     */
+    public Optional<String> walletLocation() {
+        return Optional.ofNullable(this.walletLocation);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -49,11 +61,13 @@ public final class MigrationDumpTransferDetailsSource {
     public static final class Builder {
         private String kind;
         private @Nullable String ociHome;
+        private @Nullable String walletLocation;
         public Builder() {}
         public Builder(MigrationDumpTransferDetailsSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.kind = defaults.kind;
     	      this.ociHome = defaults.ociHome;
+    	      this.walletLocation = defaults.walletLocation;
         }
 
         @CustomType.Setter
@@ -66,10 +80,16 @@ public final class MigrationDumpTransferDetailsSource {
             this.ociHome = ociHome;
             return this;
         }
+        @CustomType.Setter
+        public Builder walletLocation(@Nullable String walletLocation) {
+            this.walletLocation = walletLocation;
+            return this;
+        }
         public MigrationDumpTransferDetailsSource build() {
             final var o = new MigrationDumpTransferDetailsSource();
             o.kind = kind;
             o.ociHome = ociHome;
+            o.walletLocation = walletLocation;
             return o;
         }
     }

@@ -14,11 +14,11 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
     public sealed class GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult
     {
         /// <summary>
-        /// If isOverrideDns is true, then dns will be overridden.
+        /// If isOverrideDns is true, then DNS settings will be overridden.
         /// </summary>
         public readonly bool IsOverrideDns;
         /// <summary>
-        /// Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+        /// Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
         /// </summary>
         public readonly string OverrideDnsIp;
 

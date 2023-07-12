@@ -103,10 +103,10 @@ def get_organization_subscriptions(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OneSubsription/getOrganizationSubscriptions:getOrganizationSubscriptions', __args__, opts=opts, typ=GetOrganizationSubscriptionsResult).value
 
     return AwaitableGetOrganizationSubscriptionsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        organization_subscriptions=__ret__.organization_subscriptions)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        organization_subscriptions=pulumi.get(__ret__, 'organization_subscriptions'))
 
 
 @_utilities.lift_output_func(get_organization_subscriptions)

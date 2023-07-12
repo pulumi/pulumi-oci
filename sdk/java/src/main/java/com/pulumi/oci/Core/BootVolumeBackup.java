@@ -54,6 +54,7 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .displayName(var_.boot_volume_backup_display_name())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .kmsKeyId(oci_kms_key.test_key().id())
  *             .type(var_.boot_volume_backup_type())
  *             .build());
  * 

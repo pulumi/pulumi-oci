@@ -126,11 +126,11 @@ def get_schedules(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:MeteringComputation/getSchedules:getSchedules', __args__, opts=opts, typ=GetSchedulesResult).value
 
     return AwaitableGetSchedulesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        schedule_collections=__ret__.schedule_collections)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        schedule_collections=pulumi.get(__ret__, 'schedule_collections'))
 
 
 @_utilities.lift_output_func(get_schedules)

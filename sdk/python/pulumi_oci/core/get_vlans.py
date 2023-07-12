@@ -154,13 +154,13 @@ def get_vlans(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getVlans:getVlans', __args__, opts=opts, typ=GetVlansResult).value
 
     return AwaitableGetVlansResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        vcn_id=__ret__.vcn_id,
-        vlans=__ret__.vlans)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'),
+        vlans=pulumi.get(__ret__, 'vlans'))
 
 
 @_utilities.lift_output_func(get_vlans)

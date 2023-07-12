@@ -22,6 +22,21 @@ public final class SubscriptionSubscriptionArgs extends com.pulumi.resources.Res
     public static final SubscriptionSubscriptionArgs Empty = new SubscriptionSubscriptionArgs();
 
     /**
+     * (Updatable) Account type.
+     * 
+     */
+    @Import(name="accountType")
+    private @Nullable Output<String> accountType;
+
+    /**
+     * @return (Updatable) Account type.
+     * 
+     */
+    public Optional<Output<String>> accountType() {
+        return Optional.ofNullable(this.accountType);
+    }
+
+    /**
      * (Updatable) Bill to customer Account id.
      * 
      */
@@ -37,14 +52,14 @@ public final class SubscriptionSubscriptionArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) Billing address details model.
+     * (Updatable) Address details model.
      * 
      */
     @Import(name="billingAddresses")
     private @Nullable Output<List<SubscriptionSubscriptionBillingAddressArgs>> billingAddresses;
 
     /**
-     * @return (Updatable) Billing address details model.
+     * @return (Updatable) Address details model.
      * 
      */
     public Optional<Output<List<SubscriptionSubscriptionBillingAddressArgs>>> billingAddresses() {
@@ -247,6 +262,21 @@ public final class SubscriptionSubscriptionArgs extends com.pulumi.resources.Res
     }
 
     /**
+     * (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+     * 
+     */
+    @Import(name="timePersonalToCorporateConv")
+    private @Nullable Output<String> timePersonalToCorporateConv;
+
+    /**
+     * @return (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+     * 
+     */
+    public Optional<Output<String>> timePersonalToCorporateConv() {
+        return Optional.ofNullable(this.timePersonalToCorporateConv);
+    }
+
+    /**
      * (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      * 
      */
@@ -309,6 +339,7 @@ public final class SubscriptionSubscriptionArgs extends com.pulumi.resources.Res
     private SubscriptionSubscriptionArgs() {}
 
     private SubscriptionSubscriptionArgs(SubscriptionSubscriptionArgs $) {
+        this.accountType = $.accountType;
         this.billToCustAccountId = $.billToCustAccountId;
         this.billingAddresses = $.billingAddresses;
         this.currencyCode = $.currencyCode;
@@ -324,6 +355,7 @@ public final class SubscriptionSubscriptionArgs extends com.pulumi.resources.Res
         this.shipToCustAcctSiteId = $.shipToCustAcctSiteId;
         this.subscriptionPlanNumber = $.subscriptionPlanNumber;
         this.taxInfo = $.taxInfo;
+        this.timePersonalToCorporateConv = $.timePersonalToCorporateConv;
         this.timePlanUpgrade = $.timePlanUpgrade;
         this.timeStart = $.timeStart;
         this.upgradeState = $.upgradeState;
@@ -349,6 +381,27 @@ public final class SubscriptionSubscriptionArgs extends com.pulumi.resources.Res
         }
 
         /**
+         * @param accountType (Updatable) Account type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder accountType(@Nullable Output<String> accountType) {
+            $.accountType = accountType;
+            return this;
+        }
+
+        /**
+         * @param accountType (Updatable) Account type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder accountType(String accountType) {
+            return accountType(Output.of(accountType));
+        }
+
+        /**
          * @param billToCustAccountId (Updatable) Bill to customer Account id.
          * 
          * @return builder
@@ -370,7 +423,7 @@ public final class SubscriptionSubscriptionArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param billingAddresses (Updatable) Billing address details model.
+         * @param billingAddresses (Updatable) Address details model.
          * 
          * @return builder
          * 
@@ -381,7 +434,7 @@ public final class SubscriptionSubscriptionArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param billingAddresses (Updatable) Billing address details model.
+         * @param billingAddresses (Updatable) Address details model.
          * 
          * @return builder
          * 
@@ -391,7 +444,7 @@ public final class SubscriptionSubscriptionArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param billingAddresses (Updatable) Billing address details model.
+         * @param billingAddresses (Updatable) Address details model.
          * 
          * @return builder
          * 
@@ -681,6 +734,27 @@ public final class SubscriptionSubscriptionArgs extends com.pulumi.resources.Res
          */
         public Builder taxInfo(SubscriptionSubscriptionTaxInfoArgs taxInfo) {
             return taxInfo(Output.of(taxInfo));
+        }
+
+        /**
+         * @param timePersonalToCorporateConv (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timePersonalToCorporateConv(@Nullable Output<String> timePersonalToCorporateConv) {
+            $.timePersonalToCorporateConv = timePersonalToCorporateConv;
+            return this;
+        }
+
+        /**
+         * @param timePersonalToCorporateConv (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timePersonalToCorporateConv(String timePersonalToCorporateConv) {
+            return timePersonalToCorporateConv(Output.of(timePersonalToCorporateConv));
         }
 
         /**

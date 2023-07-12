@@ -150,14 +150,14 @@ def get_oda_private_endpoint_attachment(oda_private_endpoint_attachment_id: Opti
     __ret__ = pulumi.runtime.invoke('oci:Oda/getOdaPrivateEndpointAttachment:getOdaPrivateEndpointAttachment', __args__, opts=opts, typ=GetOdaPrivateEndpointAttachmentResult).value
 
     return AwaitableGetOdaPrivateEndpointAttachmentResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        oda_instance_id=__ret__.oda_instance_id,
-        oda_private_endpoint_attachment_id=__ret__.oda_private_endpoint_attachment_id,
-        oda_private_endpoint_id=__ret__.oda_private_endpoint_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        oda_instance_id=pulumi.get(__ret__, 'oda_instance_id'),
+        oda_private_endpoint_attachment_id=pulumi.get(__ret__, 'oda_private_endpoint_attachment_id'),
+        oda_private_endpoint_id=pulumi.get(__ret__, 'oda_private_endpoint_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_oda_private_endpoint_attachment)

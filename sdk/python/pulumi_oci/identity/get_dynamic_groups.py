@@ -140,12 +140,12 @@ def get_dynamic_groups(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getDynamicGroups:getDynamicGroups', __args__, opts=opts, typ=GetDynamicGroupsResult).value
 
     return AwaitableGetDynamicGroupsResult(
-        compartment_id=__ret__.compartment_id,
-        dynamic_groups=__ret__.dynamic_groups,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        dynamic_groups=pulumi.get(__ret__, 'dynamic_groups'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_dynamic_groups)

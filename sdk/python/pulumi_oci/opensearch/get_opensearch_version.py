@@ -103,9 +103,9 @@ def get_opensearch_version(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Opensearch/getOpensearchVersion:getOpensearchVersion', __args__, opts=opts, typ=GetOpensearchVersionResult).value
 
     return AwaitableGetOpensearchVersionResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        items=__ret__.items)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'))
 
 
 @_utilities.lift_output_func(get_opensearch_version)

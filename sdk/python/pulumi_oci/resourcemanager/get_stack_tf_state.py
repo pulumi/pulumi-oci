@@ -85,9 +85,9 @@ def get_stack_tf_state(local_path: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ResourceManager/getStackTfState:getStackTfState', __args__, opts=opts, typ=GetStackTfStateResult).value
 
     return AwaitableGetStackTfStateResult(
-        id=__ret__.id,
-        local_path=__ret__.local_path,
-        stack_id=__ret__.stack_id)
+        id=pulumi.get(__ret__, 'id'),
+        local_path=pulumi.get(__ret__, 'local_path'),
+        stack_id=pulumi.get(__ret__, 'stack_id'))
 
 
 @_utilities.lift_output_func(get_stack_tf_state)

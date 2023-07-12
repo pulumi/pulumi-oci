@@ -237,21 +237,21 @@ def get_private_ip(private_ip_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getPrivateIp:getPrivateIp', __args__, opts=opts, typ=GetPrivateIpResult).value
 
     return AwaitableGetPrivateIpResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        hostname_label=__ret__.hostname_label,
-        id=__ret__.id,
-        ip_address=__ret__.ip_address,
-        is_primary=__ret__.is_primary,
-        is_reserved=__ret__.is_reserved,
-        private_ip_id=__ret__.private_ip_id,
-        subnet_id=__ret__.subnet_id,
-        time_created=__ret__.time_created,
-        vlan_id=__ret__.vlan_id,
-        vnic_id=__ret__.vnic_id)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        hostname_label=pulumi.get(__ret__, 'hostname_label'),
+        id=pulumi.get(__ret__, 'id'),
+        ip_address=pulumi.get(__ret__, 'ip_address'),
+        is_primary=pulumi.get(__ret__, 'is_primary'),
+        is_reserved=pulumi.get(__ret__, 'is_reserved'),
+        private_ip_id=pulumi.get(__ret__, 'private_ip_id'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        vlan_id=pulumi.get(__ret__, 'vlan_id'),
+        vnic_id=pulumi.get(__ret__, 'vnic_id'))
 
 
 @_utilities.lift_output_func(get_private_ip)

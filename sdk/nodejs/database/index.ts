@@ -699,6 +699,16 @@ export const getManagedPreferredCredentials: typeof import("./getManagedPreferre
 export const getManagedPreferredCredentialsOutput: typeof import("./getManagedPreferredCredentials").getManagedPreferredCredentialsOutput = null as any;
 utilities.lazyLoad(exports, ["getManagedPreferredCredentials","getManagedPreferredCredentialsOutput"], () => require("./getManagedPreferredCredentials"));
 
+export { GetOneoffPatchArgs, GetOneoffPatchResult, GetOneoffPatchOutputArgs } from "./getOneoffPatch";
+export const getOneoffPatch: typeof import("./getOneoffPatch").getOneoffPatch = null as any;
+export const getOneoffPatchOutput: typeof import("./getOneoffPatch").getOneoffPatchOutput = null as any;
+utilities.lazyLoad(exports, ["getOneoffPatch","getOneoffPatchOutput"], () => require("./getOneoffPatch"));
+
+export { GetOneoffPatchesArgs, GetOneoffPatchesResult, GetOneoffPatchesOutputArgs } from "./getOneoffPatches";
+export const getOneoffPatches: typeof import("./getOneoffPatches").getOneoffPatches = null as any;
+export const getOneoffPatchesOutput: typeof import("./getOneoffPatches").getOneoffPatchesOutput = null as any;
+utilities.lazyLoad(exports, ["getOneoffPatches","getOneoffPatchesOutput"], () => require("./getOneoffPatches"));
+
 export { GetPluggableDatabaseArgs, GetPluggableDatabaseResult, GetPluggableDatabaseOutputArgs } from "./getPluggableDatabase";
 export const getPluggableDatabase: typeof import("./getPluggableDatabase").getPluggableDatabase = null as any;
 export const getPluggableDatabaseOutput: typeof import("./getPluggableDatabase").getPluggableDatabaseOutput = null as any;
@@ -788,6 +798,11 @@ export { MaintenanceRunArgs, MaintenanceRunState } from "./maintenanceRun";
 export type MaintenanceRun = import("./maintenanceRun").MaintenanceRun;
 export const MaintenanceRun: typeof import("./maintenanceRun").MaintenanceRun = null as any;
 utilities.lazyLoad(exports, ["MaintenanceRun"], () => require("./maintenanceRun"));
+
+export { OneoffPatchArgs, OneoffPatchState } from "./oneoffPatch";
+export type OneoffPatch = import("./oneoffPatch").OneoffPatch;
+export const OneoffPatch: typeof import("./oneoffPatch").OneoffPatch = null as any;
+utilities.lazyLoad(exports, ["OneoffPatch"], () => require("./oneoffPatch"));
 
 export { PluggableDatabaseArgs, PluggableDatabaseState } from "./pluggableDatabase";
 export type PluggableDatabase = import("./pluggableDatabase").PluggableDatabase;
@@ -926,6 +941,8 @@ const _module = {
                 return new KeyStore(name, <any>undefined, { urn })
             case "oci:Database/maintenanceRun:MaintenanceRun":
                 return new MaintenanceRun(name, <any>undefined, { urn })
+            case "oci:Database/oneoffPatch:OneoffPatch":
+                return new OneoffPatch(name, <any>undefined, { urn })
             case "oci:Database/pluggableDatabase:PluggableDatabase":
                 return new PluggableDatabase(name, <any>undefined, { urn })
             case "oci:Database/pluggableDatabaseManagementsManagement:PluggableDatabaseManagementsManagement":
@@ -993,6 +1010,7 @@ pulumi.runtime.registerResourceModule("oci", "Database/externalPluggableDatabase
 pulumi.runtime.registerResourceModule("oci", "Database/externalPluggableDatabasesStackMonitoring", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/keyStore", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/maintenanceRun", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/oneoffPatch", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/pluggableDatabase", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/pluggableDatabaseManagementsManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/pluggableDatabasesLocalClone", _module)

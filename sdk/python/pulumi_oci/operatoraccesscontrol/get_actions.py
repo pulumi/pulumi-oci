@@ -148,13 +148,13 @@ def get_actions(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OperatorAccessControl/getActions:getActions', __args__, opts=opts, typ=GetActionsResult).value
 
     return AwaitableGetActionsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        operator_action_collections=__ret__.operator_action_collections,
-        resource_type=__ret__.resource_type,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        operator_action_collections=pulumi.get(__ret__, 'operator_action_collections'),
+        resource_type=pulumi.get(__ret__, 'resource_type'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_actions)

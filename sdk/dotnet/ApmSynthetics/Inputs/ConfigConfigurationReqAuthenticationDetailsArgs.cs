@@ -43,13 +43,13 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public Input<string>? AuthToken { get; set; }
 
         /// <summary>
-        /// (Updatable) URL to get authetication token.
+        /// (Updatable) URL to get authentication token.
         /// </summary>
         [Input("authUrl")]
         public Input<string>? AuthUrl { get; set; }
 
         /// <summary>
-        /// (Updatable) Username for authentication.
+        /// (Updatable) User name for authentication.
         /// </summary>
         [Input("authUserName")]
         public Input<string>? AuthUserName { get; set; }
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Request http oauth scheme.
+        /// (Updatable) Request HTTP OAuth scheme.
         /// </summary>
         [Input("oauthScheme")]
         public Input<string>? OauthScheme { get; set; }

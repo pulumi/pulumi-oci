@@ -142,12 +142,12 @@ def get_stream_distribution_channels(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:MediaServices/getStreamDistributionChannels:getStreamDistributionChannels', __args__, opts=opts, typ=GetStreamDistributionChannelsResult).value
 
     return AwaitableGetStreamDistributionChannelsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        stream_distribution_channel_collections=__ret__.stream_distribution_channel_collections)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        stream_distribution_channel_collections=pulumi.get(__ret__, 'stream_distribution_channel_collections'))
 
 
 @_utilities.lift_output_func(get_stream_distribution_channels)

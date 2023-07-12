@@ -265,24 +265,24 @@ def get_dr_protection_group(dr_protection_group_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DisasterRecovery/getDrProtectionGroup:getDrProtectionGroup', __args__, opts=opts, typ=GetDrProtectionGroupResult).value
 
     return AwaitableGetDrProtectionGroupResult(
-        associations=__ret__.associations,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        disassociate_trigger=__ret__.disassociate_trigger,
-        display_name=__ret__.display_name,
-        dr_protection_group_id=__ret__.dr_protection_group_id,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        life_cycle_details=__ret__.life_cycle_details,
-        log_locations=__ret__.log_locations,
-        members=__ret__.members,
-        peer_id=__ret__.peer_id,
-        peer_region=__ret__.peer_region,
-        role=__ret__.role,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        associations=pulumi.get(__ret__, 'associations'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        disassociate_trigger=pulumi.get(__ret__, 'disassociate_trigger'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        dr_protection_group_id=pulumi.get(__ret__, 'dr_protection_group_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        life_cycle_details=pulumi.get(__ret__, 'life_cycle_details'),
+        log_locations=pulumi.get(__ret__, 'log_locations'),
+        members=pulumi.get(__ret__, 'members'),
+        peer_id=pulumi.get(__ret__, 'peer_id'),
+        peer_region=pulumi.get(__ret__, 'peer_region'),
+        role=pulumi.get(__ret__, 'role'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_dr_protection_group)

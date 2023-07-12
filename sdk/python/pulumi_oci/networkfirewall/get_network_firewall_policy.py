@@ -283,25 +283,25 @@ def get_network_firewall_policy(network_firewall_policy_id: Optional[str] = None
     __ret__ = pulumi.runtime.invoke('oci:NetworkFirewall/getNetworkFirewallPolicy:getNetworkFirewallPolicy', __args__, opts=opts, typ=GetNetworkFirewallPolicyResult).value
 
     return AwaitableGetNetworkFirewallPolicyResult(
-        application_lists=__ret__.application_lists,
-        compartment_id=__ret__.compartment_id,
-        decryption_profiles=__ret__.decryption_profiles,
-        decryption_rules=__ret__.decryption_rules,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        ip_address_lists=__ret__.ip_address_lists,
-        is_firewall_attached=__ret__.is_firewall_attached,
-        lifecycle_details=__ret__.lifecycle_details,
-        mapped_secrets=__ret__.mapped_secrets,
-        network_firewall_policy_id=__ret__.network_firewall_policy_id,
-        security_rules=__ret__.security_rules,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        url_lists=__ret__.url_lists)
+        application_lists=pulumi.get(__ret__, 'application_lists'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        decryption_profiles=pulumi.get(__ret__, 'decryption_profiles'),
+        decryption_rules=pulumi.get(__ret__, 'decryption_rules'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        ip_address_lists=pulumi.get(__ret__, 'ip_address_lists'),
+        is_firewall_attached=pulumi.get(__ret__, 'is_firewall_attached'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        mapped_secrets=pulumi.get(__ret__, 'mapped_secrets'),
+        network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'),
+        security_rules=pulumi.get(__ret__, 'security_rules'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        url_lists=pulumi.get(__ret__, 'url_lists'))
 
 
 @_utilities.lift_output_func(get_network_firewall_policy)

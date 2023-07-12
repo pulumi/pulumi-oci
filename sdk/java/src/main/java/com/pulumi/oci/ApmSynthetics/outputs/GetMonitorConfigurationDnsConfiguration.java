@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetMonitorConfigurationDnsConfiguration {
     /**
-     * @return If isOverrideDns is true, then dns will be overridden.
+     * @return If isOverrideDns is true, then DNS settings will be overridden.
      * 
      */
     private Boolean isOverrideDns;
     /**
-     * @return Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+     * @return Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
      * 
      */
     private String overrideDnsIp;
 
     private GetMonitorConfigurationDnsConfiguration() {}
     /**
-     * @return If isOverrideDns is true, then dns will be overridden.
+     * @return If isOverrideDns is true, then DNS settings will be overridden.
      * 
      */
     public Boolean isOverrideDns() {
         return this.isOverrideDns;
     }
     /**
-     * @return Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+     * @return Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
      * 
      */
     public String overrideDnsIp() {

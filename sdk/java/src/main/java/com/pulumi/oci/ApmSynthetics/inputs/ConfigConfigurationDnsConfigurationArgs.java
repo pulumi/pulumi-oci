@@ -17,14 +17,14 @@ public final class ConfigConfigurationDnsConfigurationArgs extends com.pulumi.re
     public static final ConfigConfigurationDnsConfigurationArgs Empty = new ConfigConfigurationDnsConfigurationArgs();
 
     /**
-     * (Updatable) If isOverrideDns is true, then dns will be overridden.
+     * (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
      * 
      */
     @Import(name="isOverrideDns")
     private @Nullable Output<Boolean> isOverrideDns;
 
     /**
-     * @return (Updatable) If isOverrideDns is true, then dns will be overridden.
+     * @return (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
      * 
      */
     public Optional<Output<Boolean>> isOverrideDns() {
@@ -32,14 +32,14 @@ public final class ConfigConfigurationDnsConfigurationArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+     * (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
      * 
      */
     @Import(name="overrideDnsIp")
     private @Nullable Output<String> overrideDnsIp;
 
     /**
-     * @return (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+     * @return (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
      * 
      */
     public Optional<Output<String>> overrideDnsIp() {
@@ -72,7 +72,7 @@ public final class ConfigConfigurationDnsConfigurationArgs extends com.pulumi.re
         }
 
         /**
-         * @param isOverrideDns (Updatable) If isOverrideDns is true, then dns will be overridden.
+         * @param isOverrideDns (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class ConfigConfigurationDnsConfigurationArgs extends com.pulumi.re
         }
 
         /**
-         * @param isOverrideDns (Updatable) If isOverrideDns is true, then dns will be overridden.
+         * @param isOverrideDns (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class ConfigConfigurationDnsConfigurationArgs extends com.pulumi.re
         }
 
         /**
-         * @param overrideDnsIp (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+         * @param overrideDnsIp (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class ConfigConfigurationDnsConfigurationArgs extends com.pulumi.re
         }
 
         /**
-         * @param overrideDnsIp (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+         * @param overrideDnsIp (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
          * 
          * @return builder
          * 

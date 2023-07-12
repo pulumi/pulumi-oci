@@ -91,9 +91,9 @@ def get_log_analytics_preference(namespace: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getLogAnalyticsPreference:getLogAnalyticsPreference', __args__, opts=opts, typ=GetLogAnalyticsPreferenceResult).value
 
     return AwaitableGetLogAnalyticsPreferenceResult(
-        id=__ret__.id,
-        items=__ret__.items,
-        namespace=__ret__.namespace)
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        namespace=pulumi.get(__ret__, 'namespace'))
 
 
 @_utilities.lift_output_func(get_log_analytics_preference)

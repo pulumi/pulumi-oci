@@ -122,11 +122,11 @@ def get_fusion_environment_data_masking_activities(filters: Optional[Sequence[pu
     __ret__ = pulumi.runtime.invoke('oci:Functions/getFusionEnvironmentDataMaskingActivities:getFusionEnvironmentDataMaskingActivities', __args__, opts=opts, typ=GetFusionEnvironmentDataMaskingActivitiesResult).value
 
     return AwaitableGetFusionEnvironmentDataMaskingActivitiesResult(
-        data_masking_activity_collections=__ret__.data_masking_activity_collections,
-        filters=__ret__.filters,
-        fusion_environment_id=__ret__.fusion_environment_id,
-        id=__ret__.id,
-        state=__ret__.state)
+        data_masking_activity_collections=pulumi.get(__ret__, 'data_masking_activity_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_fusion_environment_data_masking_activities)

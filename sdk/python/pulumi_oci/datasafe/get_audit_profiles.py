@@ -255,19 +255,19 @@ def get_audit_profiles(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getAuditProfiles:getAuditProfiles', __args__, opts=opts, typ=GetAuditProfilesResult).value
 
     return AwaitableGetAuditProfilesResult(
-        access_level=__ret__.access_level,
-        audit_collected_volume_greater_than_or_equal_to=__ret__.audit_collected_volume_greater_than_or_equal_to,
-        audit_profile_collections=__ret__.audit_profile_collections,
-        audit_profile_id=__ret__.audit_profile_id,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_override_global_retention_setting=__ret__.is_override_global_retention_setting,
-        is_paid_usage_enabled=__ret__.is_paid_usage_enabled,
-        state=__ret__.state,
-        target_id=__ret__.target_id)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        audit_collected_volume_greater_than_or_equal_to=pulumi.get(__ret__, 'audit_collected_volume_greater_than_or_equal_to'),
+        audit_profile_collections=pulumi.get(__ret__, 'audit_profile_collections'),
+        audit_profile_id=pulumi.get(__ret__, 'audit_profile_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_override_global_retention_setting=pulumi.get(__ret__, 'is_override_global_retention_setting'),
+        is_paid_usage_enabled=pulumi.get(__ret__, 'is_paid_usage_enabled'),
+        state=pulumi.get(__ret__, 'state'),
+        target_id=pulumi.get(__ret__, 'target_id'))
 
 
 @_utilities.lift_output_func(get_audit_profiles)

@@ -103,10 +103,10 @@ def get_notebook_session_shapes(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataScience/getNotebookSessionShapes:getNotebookSessionShapes', __args__, opts=opts, typ=GetNotebookSessionShapesResult).value
 
     return AwaitableGetNotebookSessionShapesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        notebook_session_shapes=__ret__.notebook_session_shapes)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        notebook_session_shapes=pulumi.get(__ret__, 'notebook_session_shapes'))
 
 
 @_utilities.lift_output_func(get_notebook_session_shapes)

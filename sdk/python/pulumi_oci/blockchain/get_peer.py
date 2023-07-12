@@ -173,16 +173,16 @@ def get_peer(blockchain_platform_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Blockchain/getPeer:getPeer', __args__, opts=opts, typ=GetPeerResult).value
 
     return AwaitableGetPeerResult(
-        ad=__ret__.ad,
-        alias=__ret__.alias,
-        blockchain_platform_id=__ret__.blockchain_platform_id,
-        host=__ret__.host,
-        id=__ret__.id,
-        ocpu_allocation_params=__ret__.ocpu_allocation_params,
-        peer_id=__ret__.peer_id,
-        peer_key=__ret__.peer_key,
-        role=__ret__.role,
-        state=__ret__.state)
+        ad=pulumi.get(__ret__, 'ad'),
+        alias=pulumi.get(__ret__, 'alias'),
+        blockchain_platform_id=pulumi.get(__ret__, 'blockchain_platform_id'),
+        host=pulumi.get(__ret__, 'host'),
+        id=pulumi.get(__ret__, 'id'),
+        ocpu_allocation_params=pulumi.get(__ret__, 'ocpu_allocation_params'),
+        peer_id=pulumi.get(__ret__, 'peer_id'),
+        peer_key=pulumi.get(__ret__, 'peer_key'),
+        role=pulumi.get(__ret__, 'role'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_peer)

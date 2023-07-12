@@ -138,12 +138,12 @@ def get_enrollment_statuses(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Optimizer/getEnrollmentStatuses:getEnrollmentStatuses', __args__, opts=opts, typ=GetEnrollmentStatusesResult).value
 
     return AwaitableGetEnrollmentStatusesResult(
-        compartment_id=__ret__.compartment_id,
-        enrollment_status_collections=__ret__.enrollment_status_collections,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        status=__ret__.status)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        enrollment_status_collections=pulumi.get(__ret__, 'enrollment_status_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        status=pulumi.get(__ret__, 'status'))
 
 
 @_utilities.lift_output_func(get_enrollment_statuses)

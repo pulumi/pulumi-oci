@@ -107,10 +107,10 @@ def get_auth_tokens(filters: Optional[Sequence[pulumi.InputType['GetAuthTokensFi
     __ret__ = pulumi.runtime.invoke('oci:Identity/getAuthTokens:getAuthTokens', __args__, opts=opts, typ=GetAuthTokensResult).value
 
     return AwaitableGetAuthTokensResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        tokens=__ret__.tokens,
-        user_id=__ret__.user_id)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        tokens=pulumi.get(__ret__, 'tokens'),
+        user_id=pulumi.get(__ret__, 'user_id'))
 
 
 @_utilities.lift_output_func(get_auth_tokens)

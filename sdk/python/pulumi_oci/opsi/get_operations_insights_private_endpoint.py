@@ -258,23 +258,23 @@ def get_operations_insights_private_endpoint(operations_insights_private_endpoin
     __ret__ = pulumi.runtime.invoke('oci:Opsi/getOperationsInsightsPrivateEndpoint:getOperationsInsightsPrivateEndpoint', __args__, opts=opts, typ=GetOperationsInsightsPrivateEndpointResult).value
 
     return AwaitableGetOperationsInsightsPrivateEndpointResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_used_for_rac_dbs=__ret__.is_used_for_rac_dbs,
-        lifecycle_details=__ret__.lifecycle_details,
-        nsg_ids=__ret__.nsg_ids,
-        operations_insights_private_endpoint_id=__ret__.operations_insights_private_endpoint_id,
-        private_endpoint_status_details=__ret__.private_endpoint_status_details,
-        private_ip=__ret__.private_ip,
-        state=__ret__.state,
-        subnet_id=__ret__.subnet_id,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        vcn_id=__ret__.vcn_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_used_for_rac_dbs=pulumi.get(__ret__, 'is_used_for_rac_dbs'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
+        operations_insights_private_endpoint_id=pulumi.get(__ret__, 'operations_insights_private_endpoint_id'),
+        private_endpoint_status_details=pulumi.get(__ret__, 'private_endpoint_status_details'),
+        private_ip=pulumi.get(__ret__, 'private_ip'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_operations_insights_private_endpoint)

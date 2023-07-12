@@ -235,21 +235,21 @@ def get_notebook_session(notebook_session_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataScience/getNotebookSession:getNotebookSession', __args__, opts=opts, typ=GetNotebookSessionResult).value
 
     return AwaitableGetNotebookSessionResult(
-        compartment_id=__ret__.compartment_id,
-        created_by=__ret__.created_by,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        notebook_session_config_details=__ret__.notebook_session_config_details,
-        notebook_session_configuration_details=__ret__.notebook_session_configuration_details,
-        notebook_session_id=__ret__.notebook_session_id,
-        notebook_session_runtime_config_details=__ret__.notebook_session_runtime_config_details,
-        notebook_session_url=__ret__.notebook_session_url,
-        project_id=__ret__.project_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        created_by=pulumi.get(__ret__, 'created_by'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        notebook_session_config_details=pulumi.get(__ret__, 'notebook_session_config_details'),
+        notebook_session_configuration_details=pulumi.get(__ret__, 'notebook_session_configuration_details'),
+        notebook_session_id=pulumi.get(__ret__, 'notebook_session_id'),
+        notebook_session_runtime_config_details=pulumi.get(__ret__, 'notebook_session_runtime_config_details'),
+        notebook_session_url=pulumi.get(__ret__, 'notebook_session_url'),
+        project_id=pulumi.get(__ret__, 'project_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_notebook_session)

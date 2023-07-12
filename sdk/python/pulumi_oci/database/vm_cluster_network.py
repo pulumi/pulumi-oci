@@ -24,6 +24,7 @@ class VmClusterNetworkArgs:
                  action: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  dns: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 dr_scans: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkDrScanArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  ntps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  validate_vm_cluster_network: Optional[pulumi.Input[bool]] = None):
@@ -36,6 +37,7 @@ class VmClusterNetworkArgs:
         :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]] vm_networks: (Updatable) Details of the client and backup networks.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] dns: (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
+        :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkDrScanArgs']]] dr_scans: (Updatable) The SCAN details for DR network
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntps: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         """
@@ -50,6 +52,8 @@ class VmClusterNetworkArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if dns is not None:
             pulumi.set(__self__, "dns", dns)
+        if dr_scans is not None:
+            pulumi.set(__self__, "dr_scans", dr_scans)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if ntps is not None:
@@ -151,6 +155,18 @@ class VmClusterNetworkArgs:
         pulumi.set(self, "dns", value)
 
     @property
+    @pulumi.getter(name="drScans")
+    def dr_scans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkDrScanArgs']]]]:
+        """
+        (Updatable) The SCAN details for DR network
+        """
+        return pulumi.get(self, "dr_scans")
+
+    @dr_scans.setter
+    def dr_scans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkDrScanArgs']]]]):
+        pulumi.set(self, "dr_scans", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -192,6 +208,7 @@ class _VmClusterNetworkState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  dns: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 dr_scans: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkDrScanArgs']]]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -208,6 +225,7 @@ class _VmClusterNetworkState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] dns: (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
+        :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkDrScanArgs']]] dr_scans: (Updatable) The SCAN details for DR network
         :param pulumi.Input[str] exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
@@ -228,6 +246,8 @@ class _VmClusterNetworkState:
             pulumi.set(__self__, "display_name", display_name)
         if dns is not None:
             pulumi.set(__self__, "dns", dns)
+        if dr_scans is not None:
+            pulumi.set(__self__, "dr_scans", dr_scans)
         if exadata_infrastructure_id is not None:
             pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
         if freeform_tags is not None:
@@ -305,6 +325,18 @@ class _VmClusterNetworkState:
     @dns.setter
     def dns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "dns", value)
+
+    @property
+    @pulumi.getter(name="drScans")
+    def dr_scans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkDrScanArgs']]]]:
+        """
+        (Updatable) The SCAN details for DR network
+        """
+        return pulumi.get(self, "dr_scans")
+
+    @dr_scans.setter
+    def dr_scans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkDrScanArgs']]]]):
+        pulumi.set(self, "dr_scans", value)
 
     @property
     @pulumi.getter(name="exadataInfrastructureId")
@@ -434,6 +466,7 @@ class VmClusterNetwork(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  dns: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 dr_scans: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkDrScanArgs']]]]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  ntps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -481,6 +514,11 @@ class VmClusterNetwork(pulumi.CustomResource):
             )],
             defined_tags=var["vm_cluster_network_defined_tags"],
             dns=var["vm_cluster_network_dns"],
+            dr_scans=[oci.database.VmClusterNetworkDrScanArgs(
+                hostname=var["vm_cluster_network_dr_scans_hostname"],
+                ips=var["vm_cluster_network_dr_scans_ips"],
+                scan_listener_port_tcp=var["vm_cluster_network_dr_scans_scan_listener_port_tcp"],
+            )],
             freeform_tags={
                 "Department": "Finance",
             },
@@ -502,6 +540,7 @@ class VmClusterNetwork(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] dns: (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkDrScanArgs']]]] dr_scans: (Updatable) The SCAN details for DR network
         :param pulumi.Input[str] exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntps: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -554,6 +593,11 @@ class VmClusterNetwork(pulumi.CustomResource):
             )],
             defined_tags=var["vm_cluster_network_defined_tags"],
             dns=var["vm_cluster_network_dns"],
+            dr_scans=[oci.database.VmClusterNetworkDrScanArgs(
+                hostname=var["vm_cluster_network_dr_scans_hostname"],
+                ips=var["vm_cluster_network_dr_scans_ips"],
+                scan_listener_port_tcp=var["vm_cluster_network_dr_scans_scan_listener_port_tcp"],
+            )],
             freeform_tags={
                 "Department": "Finance",
             },
@@ -589,6 +633,7 @@ class VmClusterNetwork(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  dns: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 dr_scans: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkDrScanArgs']]]]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  ntps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -613,6 +658,7 @@ class VmClusterNetwork(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["dns"] = dns
+            __props__.__dict__["dr_scans"] = dr_scans
             if exadata_infrastructure_id is None and not opts.urn:
                 raise TypeError("Missing required property 'exadata_infrastructure_id'")
             __props__.__dict__["exadata_infrastructure_id"] = exadata_infrastructure_id
@@ -644,6 +690,7 @@ class VmClusterNetwork(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             dns: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            dr_scans: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkDrScanArgs']]]]] = None,
             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -665,6 +712,7 @@ class VmClusterNetwork(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] dns: (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkDrScanArgs']]]] dr_scans: (Updatable) The SCAN details for DR network
         :param pulumi.Input[str] exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
@@ -684,6 +732,7 @@ class VmClusterNetwork(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["dns"] = dns
+        __props__.__dict__["dr_scans"] = dr_scans
         __props__.__dict__["exadata_infrastructure_id"] = exadata_infrastructure_id
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
@@ -732,6 +781,14 @@ class VmClusterNetwork(pulumi.CustomResource):
         (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
         """
         return pulumi.get(self, "dns")
+
+    @property
+    @pulumi.getter(name="drScans")
+    def dr_scans(self) -> pulumi.Output[Sequence['outputs.VmClusterNetworkDrScan']]:
+        """
+        (Updatable) The SCAN details for DR network
+        """
+        return pulumi.get(self, "dr_scans")
 
     @property
     @pulumi.getter(name="exadataInfrastructureId")

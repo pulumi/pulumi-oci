@@ -126,12 +126,12 @@ def get_service_catalog_association(service_catalog_association_id: Optional[str
     __ret__ = pulumi.runtime.invoke('oci:ServiceCatalog/getServiceCatalogAssociation:getServiceCatalogAssociation', __args__, opts=opts, typ=GetServiceCatalogAssociationResult).value
 
     return AwaitableGetServiceCatalogAssociationResult(
-        entity_id=__ret__.entity_id,
-        entity_type=__ret__.entity_type,
-        id=__ret__.id,
-        service_catalog_association_id=__ret__.service_catalog_association_id,
-        service_catalog_id=__ret__.service_catalog_id,
-        time_created=__ret__.time_created)
+        entity_id=pulumi.get(__ret__, 'entity_id'),
+        entity_type=pulumi.get(__ret__, 'entity_type'),
+        id=pulumi.get(__ret__, 'id'),
+        service_catalog_association_id=pulumi.get(__ret__, 'service_catalog_association_id'),
+        service_catalog_id=pulumi.get(__ret__, 'service_catalog_id'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_service_catalog_association)

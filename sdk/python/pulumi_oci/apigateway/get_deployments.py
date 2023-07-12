@@ -154,13 +154,13 @@ def get_deployments(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApiGateway/getDeployments:getDeployments', __args__, opts=opts, typ=GetDeploymentsResult).value
 
     return AwaitableGetDeploymentsResult(
-        compartment_id=__ret__.compartment_id,
-        deployment_collections=__ret__.deployment_collections,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        gateway_id=__ret__.gateway_id,
-        id=__ret__.id,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        deployment_collections=pulumi.get(__ret__, 'deployment_collections'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        gateway_id=pulumi.get(__ret__, 'gateway_id'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_deployments)

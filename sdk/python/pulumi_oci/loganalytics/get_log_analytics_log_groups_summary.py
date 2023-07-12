@@ -100,10 +100,10 @@ def get_log_analytics_log_groups_summary(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getLogAnalyticsLogGroupsSummary:getLogAnalyticsLogGroupsSummary', __args__, opts=opts, typ=GetLogAnalyticsLogGroupsSummaryResult).value
 
     return AwaitableGetLogAnalyticsLogGroupsSummaryResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        log_group_count=__ret__.log_group_count,
-        namespace=__ret__.namespace)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        log_group_count=pulumi.get(__ret__, 'log_group_count'),
+        namespace=pulumi.get(__ret__, 'namespace'))
 
 
 @_utilities.lift_output_func(get_log_analytics_log_groups_summary)

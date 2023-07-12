@@ -174,16 +174,16 @@ def get_drg_route_distribution(drg_route_distribution_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getDrgRouteDistribution:getDrgRouteDistribution', __args__, opts=opts, typ=GetDrgRouteDistributionResult).value
 
     return AwaitableGetDrgRouteDistributionResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        distribution_type=__ret__.distribution_type,
-        drg_id=__ret__.drg_id,
-        drg_route_distribution_id=__ret__.drg_route_distribution_id,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        state=__ret__.state,
-        time_created=__ret__.time_created)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        distribution_type=pulumi.get(__ret__, 'distribution_type'),
+        drg_id=pulumi.get(__ret__, 'drg_id'),
+        drg_route_distribution_id=pulumi.get(__ret__, 'drg_route_distribution_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_drg_route_distribution)

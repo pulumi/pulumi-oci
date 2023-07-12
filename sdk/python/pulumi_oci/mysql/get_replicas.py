@@ -167,14 +167,14 @@ def get_replicas(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Mysql/getReplicas:getReplicas', __args__, opts=opts, typ=GetReplicasResult).value
 
     return AwaitableGetReplicasResult(
-        compartment_id=__ret__.compartment_id,
-        db_system_id=__ret__.db_system_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        replica_id=__ret__.replica_id,
-        replicas=__ret__.replicas,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        db_system_id=pulumi.get(__ret__, 'db_system_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        replica_id=pulumi.get(__ret__, 'replica_id'),
+        replicas=pulumi.get(__ret__, 'replicas'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_replicas)

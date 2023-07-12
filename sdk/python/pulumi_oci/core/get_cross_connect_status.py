@@ -134,12 +134,12 @@ def get_cross_connect_status(cross_connect_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getCrossConnectStatus:getCrossConnectStatus', __args__, opts=opts, typ=GetCrossConnectStatusResult).value
 
     return AwaitableGetCrossConnectStatusResult(
-        cross_connect_id=__ret__.cross_connect_id,
-        encryption_status=__ret__.encryption_status,
-        id=__ret__.id,
-        interface_state=__ret__.interface_state,
-        light_level_ind_bm=__ret__.light_level_ind_bm,
-        light_level_indicator=__ret__.light_level_indicator)
+        cross_connect_id=pulumi.get(__ret__, 'cross_connect_id'),
+        encryption_status=pulumi.get(__ret__, 'encryption_status'),
+        id=pulumi.get(__ret__, 'id'),
+        interface_state=pulumi.get(__ret__, 'interface_state'),
+        light_level_ind_bm=pulumi.get(__ret__, 'light_level_ind_bm'),
+        light_level_indicator=pulumi.get(__ret__, 'light_level_indicator'))
 
 
 @_utilities.lift_output_func(get_cross_connect_status)

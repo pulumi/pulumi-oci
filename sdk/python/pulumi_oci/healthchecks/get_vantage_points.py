@@ -122,11 +122,11 @@ def get_vantage_points(display_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:HealthChecks/getVantagePoints:getVantagePoints', __args__, opts=opts, typ=GetVantagePointsResult).value
 
     return AwaitableGetVantagePointsResult(
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        health_checks_vantage_points=__ret__.health_checks_vantage_points,
-        id=__ret__.id,
-        name=__ret__.name)
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        health_checks_vantage_points=pulumi.get(__ret__, 'health_checks_vantage_points'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'))
 
 
 @_utilities.lift_output_func(get_vantage_points)

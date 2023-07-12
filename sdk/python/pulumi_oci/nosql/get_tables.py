@@ -138,12 +138,12 @@ def get_tables(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Nosql/getTables:getTables', __args__, opts=opts, typ=GetTablesResult).value
 
     return AwaitableGetTablesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        state=__ret__.state,
-        table_collections=__ret__.table_collections)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        table_collections=pulumi.get(__ret__, 'table_collections'))
 
 
 @_utilities.lift_output_func(get_tables)

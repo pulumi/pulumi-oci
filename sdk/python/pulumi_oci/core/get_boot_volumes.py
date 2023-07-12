@@ -138,12 +138,12 @@ def get_boot_volumes(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getBootVolumes:getBootVolumes', __args__, opts=opts, typ=GetBootVolumesResult).value
 
     return AwaitableGetBootVolumesResult(
-        availability_domain=__ret__.availability_domain,
-        boot_volumes=__ret__.boot_volumes,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        volume_group_id=__ret__.volume_group_id)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        boot_volumes=pulumi.get(__ret__, 'boot_volumes'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        volume_group_id=pulumi.get(__ret__, 'volume_group_id'))
 
 
 @_utilities.lift_output_func(get_boot_volumes)

@@ -106,10 +106,10 @@ def get_autonomous_container_database_dataguard_associations(autonomous_containe
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousContainerDatabaseDataguardAssociations:getAutonomousContainerDatabaseDataguardAssociations', __args__, opts=opts, typ=GetAutonomousContainerDatabaseDataguardAssociationsResult).value
 
     return AwaitableGetAutonomousContainerDatabaseDataguardAssociationsResult(
-        autonomous_container_database_dataguard_associations=__ret__.autonomous_container_database_dataguard_associations,
-        autonomous_container_database_id=__ret__.autonomous_container_database_id,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        autonomous_container_database_dataguard_associations=pulumi.get(__ret__, 'autonomous_container_database_dataguard_associations'),
+        autonomous_container_database_id=pulumi.get(__ret__, 'autonomous_container_database_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_autonomous_container_database_dataguard_associations)

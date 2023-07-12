@@ -222,20 +222,20 @@ def get_alert_policy(alert_policy_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getAlertPolicy:getAlertPolicy', __args__, opts=opts, typ=GetAlertPolicyResult).value
 
     return AwaitableGetAlertPolicyResult(
-        alert_policy_id=__ret__.alert_policy_id,
-        alert_policy_type=__ret__.alert_policy_type,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_user_defined=__ret__.is_user_defined,
-        severity=__ret__.severity,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        alert_policy_id=pulumi.get(__ret__, 'alert_policy_id'),
+        alert_policy_type=pulumi.get(__ret__, 'alert_policy_type'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_user_defined=pulumi.get(__ret__, 'is_user_defined'),
+        severity=pulumi.get(__ret__, 'severity'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_alert_policy)

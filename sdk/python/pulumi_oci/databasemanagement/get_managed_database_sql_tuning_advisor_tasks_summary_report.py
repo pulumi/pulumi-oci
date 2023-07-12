@@ -205,18 +205,18 @@ def get_managed_database_sql_tuning_advisor_tasks_summary_report(begin_exec_id_g
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksSummaryReport:getManagedDatabaseSqlTuningAdvisorTasksSummaryReport', __args__, opts=opts, typ=GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult).value
 
     return AwaitableGetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult(
-        begin_exec_id_greater_than_or_equal_to=__ret__.begin_exec_id_greater_than_or_equal_to,
-        end_exec_id_less_than_or_equal_to=__ret__.end_exec_id_less_than_or_equal_to,
-        id=__ret__.id,
-        index_findings=__ret__.index_findings,
-        managed_database_id=__ret__.managed_database_id,
-        object_stat_findings=__ret__.object_stat_findings,
-        search_period=__ret__.search_period,
-        sql_tuning_advisor_task_id=__ret__.sql_tuning_advisor_task_id,
-        statistics=__ret__.statistics,
-        task_infos=__ret__.task_infos,
-        time_greater_than_or_equal_to=__ret__.time_greater_than_or_equal_to,
-        time_less_than_or_equal_to=__ret__.time_less_than_or_equal_to)
+        begin_exec_id_greater_than_or_equal_to=pulumi.get(__ret__, 'begin_exec_id_greater_than_or_equal_to'),
+        end_exec_id_less_than_or_equal_to=pulumi.get(__ret__, 'end_exec_id_less_than_or_equal_to'),
+        id=pulumi.get(__ret__, 'id'),
+        index_findings=pulumi.get(__ret__, 'index_findings'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        object_stat_findings=pulumi.get(__ret__, 'object_stat_findings'),
+        search_period=pulumi.get(__ret__, 'search_period'),
+        sql_tuning_advisor_task_id=pulumi.get(__ret__, 'sql_tuning_advisor_task_id'),
+        statistics=pulumi.get(__ret__, 'statistics'),
+        task_infos=pulumi.get(__ret__, 'task_infos'),
+        time_greater_than_or_equal_to=pulumi.get(__ret__, 'time_greater_than_or_equal_to'),
+        time_less_than_or_equal_to=pulumi.get(__ret__, 'time_less_than_or_equal_to'))
 
 
 @_utilities.lift_output_func(get_managed_database_sql_tuning_advisor_tasks_summary_report)

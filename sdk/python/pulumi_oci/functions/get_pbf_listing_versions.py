@@ -168,14 +168,14 @@ def get_pbf_listing_versions(filters: Optional[Sequence[pulumi.InputType['GetPbf
     __ret__ = pulumi.runtime.invoke('oci:Functions/getPbfListingVersions:getPbfListingVersions', __args__, opts=opts, typ=GetPbfListingVersionsResult).value
 
     return AwaitableGetPbfListingVersionsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_current_version=__ret__.is_current_version,
-        name=__ret__.name,
-        pbf_listing_id=__ret__.pbf_listing_id,
-        pbf_listing_version_id=__ret__.pbf_listing_version_id,
-        pbf_listing_versions_collections=__ret__.pbf_listing_versions_collections,
-        state=__ret__.state)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_current_version=pulumi.get(__ret__, 'is_current_version'),
+        name=pulumi.get(__ret__, 'name'),
+        pbf_listing_id=pulumi.get(__ret__, 'pbf_listing_id'),
+        pbf_listing_version_id=pulumi.get(__ret__, 'pbf_listing_version_id'),
+        pbf_listing_versions_collections=pulumi.get(__ret__, 'pbf_listing_versions_collections'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_pbf_listing_versions)

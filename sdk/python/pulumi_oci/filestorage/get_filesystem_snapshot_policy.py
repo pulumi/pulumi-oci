@@ -187,17 +187,17 @@ def get_filesystem_snapshot_policy(filesystem_snapshot_policy_id: Optional[str] 
     __ret__ = pulumi.runtime.invoke('oci:FileStorage/getFilesystemSnapshotPolicy:getFilesystemSnapshotPolicy', __args__, opts=opts, typ=GetFilesystemSnapshotPolicyResult).value
 
     return AwaitableGetFilesystemSnapshotPolicyResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        filesystem_snapshot_policy_id=__ret__.filesystem_snapshot_policy_id,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        policy_prefix=__ret__.policy_prefix,
-        schedules=__ret__.schedules,
-        state=__ret__.state,
-        time_created=__ret__.time_created)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filesystem_snapshot_policy_id=pulumi.get(__ret__, 'filesystem_snapshot_policy_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        policy_prefix=pulumi.get(__ret__, 'policy_prefix'),
+        schedules=pulumi.get(__ret__, 'schedules'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_filesystem_snapshot_policy)

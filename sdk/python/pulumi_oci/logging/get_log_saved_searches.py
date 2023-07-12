@@ -135,12 +135,12 @@ def get_log_saved_searches(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Logging/getLogSavedSearches:getLogSavedSearches', __args__, opts=opts, typ=GetLogSavedSearchesResult).value
 
     return AwaitableGetLogSavedSearchesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        log_saved_search_id=__ret__.log_saved_search_id,
-        log_saved_search_summary_collections=__ret__.log_saved_search_summary_collections,
-        name=__ret__.name)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        log_saved_search_id=pulumi.get(__ret__, 'log_saved_search_id'),
+        log_saved_search_summary_collections=pulumi.get(__ret__, 'log_saved_search_summary_collections'),
+        name=pulumi.get(__ret__, 'name'))
 
 
 @_utilities.lift_output_func(get_log_saved_searches)

@@ -211,19 +211,19 @@ def get_cluster_network(cluster_network_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getClusterNetwork:getClusterNetwork', __args__, opts=opts, typ=GetClusterNetworkResult).value
 
     return AwaitableGetClusterNetworkResult(
-        cluster_network_id=__ret__.cluster_network_id,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        hpc_island_id=__ret__.hpc_island_id,
-        id=__ret__.id,
-        instance_pools=__ret__.instance_pools,
-        network_block_ids=__ret__.network_block_ids,
-        placement_configurations=__ret__.placement_configurations,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        cluster_network_id=pulumi.get(__ret__, 'cluster_network_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        hpc_island_id=pulumi.get(__ret__, 'hpc_island_id'),
+        id=pulumi.get(__ret__, 'id'),
+        instance_pools=pulumi.get(__ret__, 'instance_pools'),
+        network_block_ids=pulumi.get(__ret__, 'network_block_ids'),
+        placement_configurations=pulumi.get(__ret__, 'placement_configurations'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_cluster_network)

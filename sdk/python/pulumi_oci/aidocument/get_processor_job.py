@@ -211,19 +211,19 @@ def get_processor_job(processor_job_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:AiDocument/getProcessorJob:getProcessorJob', __args__, opts=opts, typ=GetProcessorJobResult).value
 
     return AwaitableGetProcessorJobResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        id=__ret__.id,
-        input_locations=__ret__.input_locations,
-        lifecycle_details=__ret__.lifecycle_details,
-        output_locations=__ret__.output_locations,
-        percent_complete=__ret__.percent_complete,
-        processor_configs=__ret__.processor_configs,
-        processor_job_id=__ret__.processor_job_id,
-        state=__ret__.state,
-        time_accepted=__ret__.time_accepted,
-        time_finished=__ret__.time_finished,
-        time_started=__ret__.time_started)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        id=pulumi.get(__ret__, 'id'),
+        input_locations=pulumi.get(__ret__, 'input_locations'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        output_locations=pulumi.get(__ret__, 'output_locations'),
+        percent_complete=pulumi.get(__ret__, 'percent_complete'),
+        processor_configs=pulumi.get(__ret__, 'processor_configs'),
+        processor_job_id=pulumi.get(__ret__, 'processor_job_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_accepted=pulumi.get(__ret__, 'time_accepted'),
+        time_finished=pulumi.get(__ret__, 'time_finished'),
+        time_started=pulumi.get(__ret__, 'time_started'))
 
 
 @_utilities.lift_output_func(get_processor_job)

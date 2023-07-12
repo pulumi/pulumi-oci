@@ -246,22 +246,22 @@ def get_dkim(dkim_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Email/getDkim:getDkim', __args__, opts=opts, typ=GetDkimResult).value
 
     return AwaitableGetDkimResult(
-        cname_record_value=__ret__.cname_record_value,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        dkim_id=__ret__.dkim_id,
-        dns_subdomain_name=__ret__.dns_subdomain_name,
-        email_domain_id=__ret__.email_domain_id,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        name=__ret__.name,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        txt_record_value=__ret__.txt_record_value)
+        cname_record_value=pulumi.get(__ret__, 'cname_record_value'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        dkim_id=pulumi.get(__ret__, 'dkim_id'),
+        dns_subdomain_name=pulumi.get(__ret__, 'dns_subdomain_name'),
+        email_domain_id=pulumi.get(__ret__, 'email_domain_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        txt_record_value=pulumi.get(__ret__, 'txt_record_value'))
 
 
 @_utilities.lift_output_func(get_dkim)

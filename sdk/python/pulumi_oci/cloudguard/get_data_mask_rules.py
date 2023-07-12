@@ -209,17 +209,17 @@ def get_data_mask_rules(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudGuard/getDataMaskRules:getDataMaskRules', __args__, opts=opts, typ=GetDataMaskRulesResult).value
 
     return AwaitableGetDataMaskRulesResult(
-        access_level=__ret__.access_level,
-        compartment_id=__ret__.compartment_id,
-        data_mask_rule_collections=__ret__.data_mask_rule_collections,
-        data_mask_rule_status=__ret__.data_mask_rule_status,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        iam_group_id=__ret__.iam_group_id,
-        id=__ret__.id,
-        state=__ret__.state,
-        target_id=__ret__.target_id,
-        target_type=__ret__.target_type)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        data_mask_rule_collections=pulumi.get(__ret__, 'data_mask_rule_collections'),
+        data_mask_rule_status=pulumi.get(__ret__, 'data_mask_rule_status'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        iam_group_id=pulumi.get(__ret__, 'iam_group_id'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        target_id=pulumi.get(__ret__, 'target_id'),
+        target_type=pulumi.get(__ret__, 'target_type'))
 
 
 @_utilities.lift_output_func(get_data_mask_rules)

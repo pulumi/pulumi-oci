@@ -210,19 +210,19 @@ def get_security_recipe(security_recipe_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudGuard/getSecurityRecipe:getSecurityRecipe', __args__, opts=opts, typ=GetSecurityRecipeResult).value
 
     return AwaitableGetSecurityRecipeResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        owner=__ret__.owner,
-        security_policies=__ret__.security_policies,
-        security_recipe_id=__ret__.security_recipe_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        owner=pulumi.get(__ret__, 'owner'),
+        security_policies=pulumi.get(__ret__, 'security_policies'),
+        security_recipe_id=pulumi.get(__ret__, 'security_recipe_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_security_recipe)

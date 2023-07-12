@@ -145,13 +145,13 @@ def get_management_agent_images(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ManagementAgent/getManagementAgentImages:getManagementAgentImages', __args__, opts=opts, typ=GetManagementAgentImagesResult).value
 
     return AwaitableGetManagementAgentImagesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        install_type=__ret__.install_type,
-        management_agent_images=__ret__.management_agent_images,
-        name=__ret__.name,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        install_type=pulumi.get(__ret__, 'install_type'),
+        management_agent_images=pulumi.get(__ret__, 'management_agent_images'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_management_agent_images)

@@ -213,18 +213,18 @@ def get_object_versions(bucket: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ObjectStorage/getObjectVersions:getObjectVersions', __args__, opts=opts, typ=GetObjectVersionsResult).value
 
     return AwaitableGetObjectVersionsResult(
-        bucket=__ret__.bucket,
-        delimiter=__ret__.delimiter,
-        end=__ret__.end,
-        fields=__ret__.fields,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        items=__ret__.items,
-        namespace=__ret__.namespace,
-        prefix=__ret__.prefix,
-        prefixes=__ret__.prefixes,
-        start=__ret__.start,
-        start_after=__ret__.start_after)
+        bucket=pulumi.get(__ret__, 'bucket'),
+        delimiter=pulumi.get(__ret__, 'delimiter'),
+        end=pulumi.get(__ret__, 'end'),
+        fields=pulumi.get(__ret__, 'fields'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        prefix=pulumi.get(__ret__, 'prefix'),
+        prefixes=pulumi.get(__ret__, 'prefixes'),
+        start=pulumi.get(__ret__, 'start'),
+        start_after=pulumi.get(__ret__, 'start_after'))
 
 
 @_utilities.lift_output_func(get_object_versions)

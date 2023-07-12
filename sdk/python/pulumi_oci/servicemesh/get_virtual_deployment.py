@@ -247,22 +247,22 @@ def get_virtual_deployment(virtual_deployment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ServiceMesh/getVirtualDeployment:getVirtualDeployment', __args__, opts=opts, typ=GetVirtualDeploymentResult).value
 
     return AwaitableGetVirtualDeploymentResult(
-        access_loggings=__ret__.access_loggings,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        listeners=__ret__.listeners,
-        name=__ret__.name,
-        service_discoveries=__ret__.service_discoveries,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        virtual_deployment_id=__ret__.virtual_deployment_id,
-        virtual_service_id=__ret__.virtual_service_id)
+        access_loggings=pulumi.get(__ret__, 'access_loggings'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        listeners=pulumi.get(__ret__, 'listeners'),
+        name=pulumi.get(__ret__, 'name'),
+        service_discoveries=pulumi.get(__ret__, 'service_discoveries'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        virtual_deployment_id=pulumi.get(__ret__, 'virtual_deployment_id'),
+        virtual_service_id=pulumi.get(__ret__, 'virtual_service_id'))
 
 
 @_utilities.lift_output_func(get_virtual_deployment)

@@ -108,10 +108,10 @@ def get_allowed_domain_license_types(current_license_type_name: Optional[str] = 
     __ret__ = pulumi.runtime.invoke('oci:Identity/getAllowedDomainLicenseTypes:getAllowedDomainLicenseTypes', __args__, opts=opts, typ=GetAllowedDomainLicenseTypesResult).value
 
     return AwaitableGetAllowedDomainLicenseTypesResult(
-        allowed_domain_license_types=__ret__.allowed_domain_license_types,
-        current_license_type_name=__ret__.current_license_type_name,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        allowed_domain_license_types=pulumi.get(__ret__, 'allowed_domain_license_types'),
+        current_license_type_name=pulumi.get(__ret__, 'current_license_type_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_allowed_domain_license_types)

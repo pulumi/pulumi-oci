@@ -259,23 +259,23 @@ def get_web_app_firewall_policy(web_app_firewall_policy_id: Optional[str] = None
     __ret__ = pulumi.runtime.invoke('oci:Waf/getWebAppFirewallPolicy:getWebAppFirewallPolicy', __args__, opts=opts, typ=GetWebAppFirewallPolicyResult).value
 
     return AwaitableGetWebAppFirewallPolicyResult(
-        actions=__ret__.actions,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        request_access_controls=__ret__.request_access_controls,
-        request_protections=__ret__.request_protections,
-        request_rate_limitings=__ret__.request_rate_limitings,
-        response_access_controls=__ret__.response_access_controls,
-        response_protections=__ret__.response_protections,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        web_app_firewall_policy_id=__ret__.web_app_firewall_policy_id)
+        actions=pulumi.get(__ret__, 'actions'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        request_access_controls=pulumi.get(__ret__, 'request_access_controls'),
+        request_protections=pulumi.get(__ret__, 'request_protections'),
+        request_rate_limitings=pulumi.get(__ret__, 'request_rate_limitings'),
+        response_access_controls=pulumi.get(__ret__, 'response_access_controls'),
+        response_protections=pulumi.get(__ret__, 'response_protections'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        web_app_firewall_policy_id=pulumi.get(__ret__, 'web_app_firewall_policy_id'))
 
 
 @_utilities.lift_output_func(get_web_app_firewall_policy)

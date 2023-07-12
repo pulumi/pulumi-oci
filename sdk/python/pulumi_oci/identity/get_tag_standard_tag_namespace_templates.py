@@ -103,10 +103,10 @@ def get_tag_standard_tag_namespace_templates(compartment_id: Optional[str] = Non
     __ret__ = pulumi.runtime.invoke('oci:Identity/getTagStandardTagNamespaceTemplates:getTagStandardTagNamespaceTemplates', __args__, opts=opts, typ=GetTagStandardTagNamespaceTemplatesResult).value
 
     return AwaitableGetTagStandardTagNamespaceTemplatesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        standard_tag_namespace_templates=__ret__.standard_tag_namespace_templates)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        standard_tag_namespace_templates=pulumi.get(__ret__, 'standard_tag_namespace_templates'))
 
 
 @_utilities.lift_output_func(get_tag_standard_tag_namespace_templates)

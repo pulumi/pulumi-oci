@@ -106,10 +106,10 @@ def get_problem_entities(filters: Optional[Sequence[pulumi.InputType['GetProblem
     __ret__ = pulumi.runtime.invoke('oci:CloudGuard/getProblemEntities:getProblemEntities', __args__, opts=opts, typ=GetProblemEntitiesResult).value
 
     return AwaitableGetProblemEntitiesResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        problem_entity_collections=__ret__.problem_entity_collections,
-        problem_id=__ret__.problem_id)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        problem_entity_collections=pulumi.get(__ret__, 'problem_entity_collections'),
+        problem_id=pulumi.get(__ret__, 'problem_id'))
 
 
 @_utilities.lift_output_func(get_problem_entities)

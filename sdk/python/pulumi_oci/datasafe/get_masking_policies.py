@@ -239,19 +239,19 @@ def get_masking_policies(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getMaskingPolicies:getMaskingPolicies', __args__, opts=opts, typ=GetMaskingPoliciesResult).value
 
     return AwaitableGetMaskingPoliciesResult(
-        access_level=__ret__.access_level,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        masking_policy_collections=__ret__.masking_policy_collections,
-        masking_policy_id=__ret__.masking_policy_id,
-        sensitive_data_model_id=__ret__.sensitive_data_model_id,
-        state=__ret__.state,
-        target_id=__ret__.target_id,
-        time_created_greater_than_or_equal_to=__ret__.time_created_greater_than_or_equal_to,
-        time_created_less_than=__ret__.time_created_less_than)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        masking_policy_collections=pulumi.get(__ret__, 'masking_policy_collections'),
+        masking_policy_id=pulumi.get(__ret__, 'masking_policy_id'),
+        sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'),
+        state=pulumi.get(__ret__, 'state'),
+        target_id=pulumi.get(__ret__, 'target_id'),
+        time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
 
 
 @_utilities.lift_output_func(get_masking_policies)

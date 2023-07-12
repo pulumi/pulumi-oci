@@ -184,6 +184,9 @@ class BudgetArgs:
         """
         This is DEPRECATED. Set the target compartment ID in targets instead.
         """
+        warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""", DeprecationWarning)
+        pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""")
+
         return pulumi.get(self, "target_compartment_id")
 
     @target_compartment_id.setter
@@ -475,6 +478,9 @@ class _BudgetState:
         """
         This is DEPRECATED. Set the target compartment ID in targets instead.
         """
+        warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""", DeprecationWarning)
+        pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""")
+
         return pulumi.get(self, "target_compartment_id")
 
     @target_compartment_id.setter
@@ -940,6 +946,9 @@ class Budget(pulumi.CustomResource):
         """
         This is DEPRECATED. Set the target compartment ID in targets instead.
         """
+        warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""", DeprecationWarning)
+        pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""")
+
         return pulumi.get(self, "target_compartment_id")
 
     @property

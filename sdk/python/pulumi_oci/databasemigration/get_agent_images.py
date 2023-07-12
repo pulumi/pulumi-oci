@@ -89,9 +89,9 @@ def get_agent_images(filters: Optional[Sequence[pulumi.InputType['GetAgentImages
     __ret__ = pulumi.runtime.invoke('oci:DatabaseMigration/getAgentImages:getAgentImages', __args__, opts=opts, typ=GetAgentImagesResult).value
 
     return AwaitableGetAgentImagesResult(
-        agent_image_collections=__ret__.agent_image_collections,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        agent_image_collections=pulumi.get(__ret__, 'agent_image_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_agent_images)

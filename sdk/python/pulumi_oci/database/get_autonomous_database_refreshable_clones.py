@@ -103,10 +103,10 @@ def get_autonomous_database_refreshable_clones(autonomous_database_id: Optional[
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousDatabaseRefreshableClones:getAutonomousDatabaseRefreshableClones', __args__, opts=opts, typ=GetAutonomousDatabaseRefreshableClonesResult).value
 
     return AwaitableGetAutonomousDatabaseRefreshableClonesResult(
-        autonomous_database_id=__ret__.autonomous_database_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        refreshable_clone_collections=__ret__.refreshable_clone_collections)
+        autonomous_database_id=pulumi.get(__ret__, 'autonomous_database_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        refreshable_clone_collections=pulumi.get(__ret__, 'refreshable_clone_collections'))
 
 
 @_utilities.lift_output_func(get_autonomous_database_refreshable_clones)

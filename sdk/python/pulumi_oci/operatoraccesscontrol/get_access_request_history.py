@@ -91,9 +91,9 @@ def get_access_request_history(access_request_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OperatorAccessControl/getAccessRequestHistory:getAccessRequestHistory', __args__, opts=opts, typ=GetAccessRequestHistoryResult).value
 
     return AwaitableGetAccessRequestHistoryResult(
-        access_request_id=__ret__.access_request_id,
-        id=__ret__.id,
-        items=__ret__.items)
+        access_request_id=pulumi.get(__ret__, 'access_request_id'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'))
 
 
 @_utilities.lift_output_func(get_access_request_history)

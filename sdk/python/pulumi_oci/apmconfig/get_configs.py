@@ -203,17 +203,17 @@ def get_configs(apm_domain_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApmConfig/getConfigs:getConfigs', __args__, opts=opts, typ=GetConfigsResult).value
 
     return AwaitableGetConfigsResult(
-        apm_domain_id=__ret__.apm_domain_id,
-        config_collections=__ret__.config_collections,
-        config_type=__ret__.config_type,
-        defined_tag_equals=__ret__.defined_tag_equals,
-        defined_tag_exists=__ret__.defined_tag_exists,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        freeform_tag_equals=__ret__.freeform_tag_equals,
-        freeform_tag_exists=__ret__.freeform_tag_exists,
-        id=__ret__.id,
-        options_group=__ret__.options_group)
+        apm_domain_id=pulumi.get(__ret__, 'apm_domain_id'),
+        config_collections=pulumi.get(__ret__, 'config_collections'),
+        config_type=pulumi.get(__ret__, 'config_type'),
+        defined_tag_equals=pulumi.get(__ret__, 'defined_tag_equals'),
+        defined_tag_exists=pulumi.get(__ret__, 'defined_tag_exists'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        freeform_tag_equals=pulumi.get(__ret__, 'freeform_tag_equals'),
+        freeform_tag_exists=pulumi.get(__ret__, 'freeform_tag_exists'),
+        id=pulumi.get(__ret__, 'id'),
+        options_group=pulumi.get(__ret__, 'options_group'))
 
 
 @_utilities.lift_output_func(get_configs)

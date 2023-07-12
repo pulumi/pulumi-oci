@@ -108,10 +108,10 @@ def get_vault_replicas(filters: Optional[Sequence[pulumi.InputType['GetVaultRepl
     __ret__ = pulumi.runtime.invoke('oci:Kms/getVaultReplicas:getVaultReplicas', __args__, opts=opts, typ=GetVaultReplicasResult).value
 
     return AwaitableGetVaultReplicasResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        vault_id=__ret__.vault_id,
-        vault_replicas=__ret__.vault_replicas)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        vault_id=pulumi.get(__ret__, 'vault_id'),
+        vault_replicas=pulumi.get(__ret__, 'vault_replicas'))
 
 
 @_utilities.lift_output_func(get_vault_replicas)

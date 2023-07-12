@@ -106,10 +106,10 @@ def get_license_records(filters: Optional[Sequence[pulumi.InputType['GetLicenseR
     __ret__ = pulumi.runtime.invoke('oci:LicenseManager/getLicenseRecords:getLicenseRecords', __args__, opts=opts, typ=GetLicenseRecordsResult).value
 
     return AwaitableGetLicenseRecordsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        license_record_collections=__ret__.license_record_collections,
-        product_license_id=__ret__.product_license_id)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        license_record_collections=pulumi.get(__ret__, 'license_record_collections'),
+        product_license_id=pulumi.get(__ret__, 'product_license_id'))
 
 
 @_utilities.lift_output_func(get_license_records)

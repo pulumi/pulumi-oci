@@ -132,12 +132,12 @@ def get_pod_shapes(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ContainerEngine/getPodShapes:getPodShapes', __args__, opts=opts, typ=GetPodShapesResult).value
 
     return AwaitableGetPodShapesResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        pod_shapes=__ret__.pod_shapes)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        pod_shapes=pulumi.get(__ret__, 'pod_shapes'))
 
 
 @_utilities.lift_output_func(get_pod_shapes)

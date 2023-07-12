@@ -202,19 +202,19 @@ def get_bds_instance_metastore_config(bds_instance_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:BigDataService/getBdsInstanceMetastoreConfig:getBdsInstanceMetastoreConfig', __args__, opts=opts, typ=GetBdsInstanceMetastoreConfigResult).value
 
     return AwaitableGetBdsInstanceMetastoreConfigResult(
-        activate_trigger=__ret__.activate_trigger,
-        bds_api_key_id=__ret__.bds_api_key_id,
-        bds_api_key_passphrase=__ret__.bds_api_key_passphrase,
-        bds_instance_id=__ret__.bds_instance_id,
-        cluster_admin_password=__ret__.cluster_admin_password,
-        display_name=__ret__.display_name,
-        id=__ret__.id,
-        metastore_config_id=__ret__.metastore_config_id,
-        metastore_id=__ret__.metastore_id,
-        metastore_type=__ret__.metastore_type,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        activate_trigger=pulumi.get(__ret__, 'activate_trigger'),
+        bds_api_key_id=pulumi.get(__ret__, 'bds_api_key_id'),
+        bds_api_key_passphrase=pulumi.get(__ret__, 'bds_api_key_passphrase'),
+        bds_instance_id=pulumi.get(__ret__, 'bds_instance_id'),
+        cluster_admin_password=pulumi.get(__ret__, 'cluster_admin_password'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        id=pulumi.get(__ret__, 'id'),
+        metastore_config_id=pulumi.get(__ret__, 'metastore_config_id'),
+        metastore_id=pulumi.get(__ret__, 'metastore_id'),
+        metastore_type=pulumi.get(__ret__, 'metastore_type'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_bds_instance_metastore_config)

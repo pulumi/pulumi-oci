@@ -13,6 +13,9 @@ from . import outputs
 __all__ = [
     'ConfigAvailabilityConfiguration',
     'ConfigConfiguration',
+    'ConfigConfigurationClientCertificateDetails',
+    'ConfigConfigurationClientCertificateDetailsClientCertificate',
+    'ConfigConfigurationClientCertificateDetailsPrivateKey',
     'ConfigConfigurationDnsConfiguration',
     'ConfigConfigurationNetworkConfiguration',
     'ConfigConfigurationReqAuthenticationDetails',
@@ -38,6 +41,9 @@ __all__ = [
     'GetDedicatedVantagePointsFilterResult',
     'GetMonitorAvailabilityConfigurationResult',
     'GetMonitorConfigurationResult',
+    'GetMonitorConfigurationClientCertificateDetailResult',
+    'GetMonitorConfigurationClientCertificateDetailClientCertificateResult',
+    'GetMonitorConfigurationClientCertificateDetailPrivateKeyResult',
     'GetMonitorConfigurationDnsConfigurationResult',
     'GetMonitorConfigurationNetworkConfigurationResult',
     'GetMonitorConfigurationReqAuthenticationDetailResult',
@@ -54,6 +60,9 @@ __all__ = [
     'GetMonitorsMonitorCollectionItemResult',
     'GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult',
     'GetMonitorsMonitorCollectionItemConfigurationResult',
+    'GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailResult',
+    'GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateResult',
+    'GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyResult',
     'GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult',
     'GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationResult',
     'GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailResult',
@@ -138,12 +147,16 @@ class ConfigConfiguration(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "configType":
+        if key == "clientCertificateDetails":
+            suggest = "client_certificate_details"
+        elif key == "configType":
             suggest = "config_type"
         elif key == "dnsConfiguration":
             suggest = "dns_configuration"
         elif key == "isCertificateValidationEnabled":
             suggest = "is_certificate_validation_enabled"
+        elif key == "isDefaultSnapshotEnabled":
+            suggest = "is_default_snapshot_enabled"
         elif key == "isFailureRetried":
             suggest = "is_failure_retried"
         elif key == "isRedirectionEnabled":
@@ -181,9 +194,11 @@ class ConfigConfiguration(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 client_certificate_details: Optional['outputs.ConfigConfigurationClientCertificateDetails'] = None,
                  config_type: Optional[str] = None,
                  dns_configuration: Optional['outputs.ConfigConfigurationDnsConfiguration'] = None,
                  is_certificate_validation_enabled: Optional[bool] = None,
+                 is_default_snapshot_enabled: Optional[bool] = None,
                  is_failure_retried: Optional[bool] = None,
                  is_redirection_enabled: Optional[bool] = None,
                  network_configuration: Optional['outputs.ConfigConfigurationNetworkConfiguration'] = None,
@@ -197,14 +212,16 @@ class ConfigConfiguration(dict):
                  verify_response_content: Optional[str] = None,
                  verify_texts: Optional[Sequence['outputs.ConfigConfigurationVerifyText']] = None):
         """
+        :param 'ConfigConfigurationClientCertificateDetailsArgs' client_certificate_details: (Updatable) Details for client certificate.
         :param str config_type: (Updatable) Type of configuration.
-        :param 'ConfigConfigurationDnsConfigurationArgs' dns_configuration: (Updatable) Dns settings.
+        :param 'ConfigConfigurationDnsConfigurationArgs' dns_configuration: (Updatable) Information about the DNS settings.
         :param bool is_certificate_validation_enabled: (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
+        :param bool is_default_snapshot_enabled: (Updatable) If disabled then auto snapshots are not collected.
         :param bool is_failure_retried: (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
-        :param bool is_redirection_enabled: (Updatable) If redirection enabled, then redirects will be allowed while accessing target URL.
+        :param bool is_redirection_enabled: (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
         :param 'ConfigConfigurationNetworkConfigurationArgs' network_configuration: (Updatable) Details of the network configuration.
         :param 'ConfigConfigurationReqAuthenticationDetailsArgs' req_authentication_details: (Updatable) Details for request HTTP authentication.
-        :param str req_authentication_scheme: (Updatable) Request http authentication scheme.
+        :param str req_authentication_scheme: (Updatable) Request HTTP authentication scheme.
         :param Sequence['ConfigConfigurationRequestHeaderArgs'] request_headers: (Updatable) List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
         :param str request_method: (Updatable) Request HTTP method.
         :param str request_post_body: (Updatable) Request post body content.
@@ -213,12 +230,16 @@ class ConfigConfiguration(dict):
         :param str verify_response_content: (Updatable) Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
         :param Sequence['ConfigConfigurationVerifyTextArgs'] verify_texts: (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
+        if client_certificate_details is not None:
+            pulumi.set(__self__, "client_certificate_details", client_certificate_details)
         if config_type is not None:
             pulumi.set(__self__, "config_type", config_type)
         if dns_configuration is not None:
             pulumi.set(__self__, "dns_configuration", dns_configuration)
         if is_certificate_validation_enabled is not None:
             pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
+        if is_default_snapshot_enabled is not None:
+            pulumi.set(__self__, "is_default_snapshot_enabled", is_default_snapshot_enabled)
         if is_failure_retried is not None:
             pulumi.set(__self__, "is_failure_retried", is_failure_retried)
         if is_redirection_enabled is not None:
@@ -245,6 +266,14 @@ class ConfigConfiguration(dict):
             pulumi.set(__self__, "verify_texts", verify_texts)
 
     @property
+    @pulumi.getter(name="clientCertificateDetails")
+    def client_certificate_details(self) -> Optional['outputs.ConfigConfigurationClientCertificateDetails']:
+        """
+        (Updatable) Details for client certificate.
+        """
+        return pulumi.get(self, "client_certificate_details")
+
+    @property
     @pulumi.getter(name="configType")
     def config_type(self) -> Optional[str]:
         """
@@ -256,7 +285,7 @@ class ConfigConfiguration(dict):
     @pulumi.getter(name="dnsConfiguration")
     def dns_configuration(self) -> Optional['outputs.ConfigConfigurationDnsConfiguration']:
         """
-        (Updatable) Dns settings.
+        (Updatable) Information about the DNS settings.
         """
         return pulumi.get(self, "dns_configuration")
 
@@ -267,6 +296,14 @@ class ConfigConfiguration(dict):
         (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
         """
         return pulumi.get(self, "is_certificate_validation_enabled")
+
+    @property
+    @pulumi.getter(name="isDefaultSnapshotEnabled")
+    def is_default_snapshot_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) If disabled then auto snapshots are not collected.
+        """
+        return pulumi.get(self, "is_default_snapshot_enabled")
 
     @property
     @pulumi.getter(name="isFailureRetried")
@@ -280,7 +317,7 @@ class ConfigConfiguration(dict):
     @pulumi.getter(name="isRedirectionEnabled")
     def is_redirection_enabled(self) -> Optional[bool]:
         """
-        (Updatable) If redirection enabled, then redirects will be allowed while accessing target URL.
+        (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
         """
         return pulumi.get(self, "is_redirection_enabled")
 
@@ -304,7 +341,7 @@ class ConfigConfiguration(dict):
     @pulumi.getter(name="reqAuthenticationScheme")
     def req_authentication_scheme(self) -> Optional[str]:
         """
-        (Updatable) Request http authentication scheme.
+        (Updatable) Request HTTP authentication scheme.
         """
         return pulumi.get(self, "req_authentication_scheme")
 
@@ -366,6 +403,152 @@ class ConfigConfiguration(dict):
 
 
 @pulumi.output_type
+class ConfigConfigurationClientCertificateDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "clientCertificate":
+            suggest = "client_certificate"
+        elif key == "privateKey":
+            suggest = "private_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConfigConfigurationClientCertificateDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConfigConfigurationClientCertificateDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConfigConfigurationClientCertificateDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 client_certificate: Optional['outputs.ConfigConfigurationClientCertificateDetailsClientCertificate'] = None,
+                 private_key: Optional['outputs.ConfigConfigurationClientCertificateDetailsPrivateKey'] = None):
+        """
+        :param 'ConfigConfigurationClientCertificateDetailsClientCertificateArgs' client_certificate: (Updatable) Client certificate in pem format.
+        :param 'ConfigConfigurationClientCertificateDetailsPrivateKeyArgs' private_key: (Updatable) The private key associated with the client certificate in pem format.
+        """
+        if client_certificate is not None:
+            pulumi.set(__self__, "client_certificate", client_certificate)
+        if private_key is not None:
+            pulumi.set(__self__, "private_key", private_key)
+
+    @property
+    @pulumi.getter(name="clientCertificate")
+    def client_certificate(self) -> Optional['outputs.ConfigConfigurationClientCertificateDetailsClientCertificate']:
+        """
+        (Updatable) Client certificate in pem format.
+        """
+        return pulumi.get(self, "client_certificate")
+
+    @property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> Optional['outputs.ConfigConfigurationClientCertificateDetailsPrivateKey']:
+        """
+        (Updatable) The private key associated with the client certificate in pem format.
+        """
+        return pulumi.get(self, "private_key")
+
+
+@pulumi.output_type
+class ConfigConfigurationClientCertificateDetailsClientCertificate(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "fileName":
+            suggest = "file_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConfigConfigurationClientCertificateDetailsClientCertificate. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConfigConfigurationClientCertificateDetailsClientCertificate.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConfigConfigurationClientCertificateDetailsClientCertificate.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 content: Optional[str] = None,
+                 file_name: Optional[str] = None):
+        """
+        :param str content: (Updatable) Content of the private key file.
+        :param str file_name: (Updatable) Name of the private key file.
+        """
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if file_name is not None:
+            pulumi.set(__self__, "file_name", file_name)
+
+    @property
+    @pulumi.getter
+    def content(self) -> Optional[str]:
+        """
+        (Updatable) Content of the private key file.
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter(name="fileName")
+    def file_name(self) -> Optional[str]:
+        """
+        (Updatable) Name of the private key file.
+        """
+        return pulumi.get(self, "file_name")
+
+
+@pulumi.output_type
+class ConfigConfigurationClientCertificateDetailsPrivateKey(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "fileName":
+            suggest = "file_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConfigConfigurationClientCertificateDetailsPrivateKey. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConfigConfigurationClientCertificateDetailsPrivateKey.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConfigConfigurationClientCertificateDetailsPrivateKey.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 content: Optional[str] = None,
+                 file_name: Optional[str] = None):
+        """
+        :param str content: (Updatable) Content of the private key file.
+        :param str file_name: (Updatable) Name of the private key file.
+        """
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if file_name is not None:
+            pulumi.set(__self__, "file_name", file_name)
+
+    @property
+    @pulumi.getter
+    def content(self) -> Optional[str]:
+        """
+        (Updatable) Content of the private key file.
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter(name="fileName")
+    def file_name(self) -> Optional[str]:
+        """
+        (Updatable) Name of the private key file.
+        """
+        return pulumi.get(self, "file_name")
+
+
+@pulumi.output_type
 class ConfigConfigurationDnsConfiguration(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -390,8 +573,8 @@ class ConfigConfigurationDnsConfiguration(dict):
                  is_override_dns: Optional[bool] = None,
                  override_dns_ip: Optional[str] = None):
         """
-        :param bool is_override_dns: (Updatable) If isOverrideDns is true, then dns will be overridden.
-        :param str override_dns_ip: (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+        :param bool is_override_dns: (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
+        :param str override_dns_ip: (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
         """
         if is_override_dns is not None:
             pulumi.set(__self__, "is_override_dns", is_override_dns)
@@ -402,7 +585,7 @@ class ConfigConfigurationDnsConfiguration(dict):
     @pulumi.getter(name="isOverrideDns")
     def is_override_dns(self) -> Optional[bool]:
         """
-        (Updatable) If isOverrideDns is true, then dns will be overridden.
+        (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
         """
         return pulumi.get(self, "is_override_dns")
 
@@ -410,7 +593,7 @@ class ConfigConfigurationDnsConfiguration(dict):
     @pulumi.getter(name="overrideDnsIp")
     def override_dns_ip(self) -> Optional[str]:
         """
-        (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+        (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
         """
         return pulumi.get(self, "override_dns_ip")
 
@@ -552,10 +735,10 @@ class ConfigConfigurationReqAuthenticationDetails(dict):
         :param str auth_request_method: (Updatable) Request method.
         :param str auth_request_post_body: (Updatable) Request post body.
         :param str auth_token: (Updatable) Authentication token.
-        :param str auth_url: (Updatable) URL to get authetication token.
-        :param str auth_user_name: (Updatable) Username for authentication.
+        :param str auth_url: (Updatable) URL to get authentication token.
+        :param str auth_user_name: (Updatable) User name for authentication.
         :param str auth_user_password: (Updatable) User password for authentication.
-        :param str oauth_scheme: (Updatable) Request http oauth scheme.
+        :param str oauth_scheme: (Updatable) Request HTTP OAuth scheme.
         """
         if auth_headers is not None:
             pulumi.set(__self__, "auth_headers", auth_headers)
@@ -610,7 +793,7 @@ class ConfigConfigurationReqAuthenticationDetails(dict):
     @pulumi.getter(name="authUrl")
     def auth_url(self) -> Optional[str]:
         """
-        (Updatable) URL to get authetication token.
+        (Updatable) URL to get authentication token.
         """
         return pulumi.get(self, "auth_url")
 
@@ -618,7 +801,7 @@ class ConfigConfigurationReqAuthenticationDetails(dict):
     @pulumi.getter(name="authUserName")
     def auth_user_name(self) -> Optional[str]:
         """
-        (Updatable) Username for authentication.
+        (Updatable) User name for authentication.
         """
         return pulumi.get(self, "auth_user_name")
 
@@ -634,7 +817,7 @@ class ConfigConfigurationReqAuthenticationDetails(dict):
     @pulumi.getter(name="oauthScheme")
     def oauth_scheme(self) -> Optional[str]:
         """
-        (Updatable) Request http oauth scheme.
+        (Updatable) Request HTTP OAuth scheme.
         """
         return pulumi.get(self, "oauth_scheme")
 
@@ -833,8 +1016,8 @@ class ConfigMaintenanceWindowSchedule(dict):
                  time_ended: Optional[str] = None,
                  time_started: Optional[str] = None):
         """
-        :param str time_ended: (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        :param str time_started: (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        :param str time_ended: (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        :param str time_started: (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
         if time_ended is not None:
             pulumi.set(__self__, "time_ended", time_ended)
@@ -845,7 +1028,7 @@ class ConfigMaintenanceWindowSchedule(dict):
     @pulumi.getter(name="timeEnded")
     def time_ended(self) -> Optional[str]:
         """
-        (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_ended")
 
@@ -853,7 +1036,7 @@ class ConfigMaintenanceWindowSchedule(dict):
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> Optional[str]:
         """
-        (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_started")
 
@@ -1794,8 +1977,8 @@ class GetMonitorAvailabilityConfigurationResult(dict):
                  max_allowed_failures_per_interval: int,
                  min_allowed_runs_per_interval: int):
         """
-        :param int max_allowed_failures_per_interval: Intervals with failed runs more than this value will be classified as UNAVAILABLE.
-        :param int min_allowed_runs_per_interval: Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+        :param int max_allowed_failures_per_interval: Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
+        :param int min_allowed_runs_per_interval: Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
         """
         pulumi.set(__self__, "max_allowed_failures_per_interval", max_allowed_failures_per_interval)
         pulumi.set(__self__, "min_allowed_runs_per_interval", min_allowed_runs_per_interval)
@@ -1804,7 +1987,7 @@ class GetMonitorAvailabilityConfigurationResult(dict):
     @pulumi.getter(name="maxAllowedFailuresPerInterval")
     def max_allowed_failures_per_interval(self) -> int:
         """
-        Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+        Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
         """
         return pulumi.get(self, "max_allowed_failures_per_interval")
 
@@ -1812,7 +1995,7 @@ class GetMonitorAvailabilityConfigurationResult(dict):
     @pulumi.getter(name="minAllowedRunsPerInterval")
     def min_allowed_runs_per_interval(self) -> int:
         """
-        Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+        Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
         """
         return pulumi.get(self, "min_allowed_runs_per_interval")
 
@@ -1820,9 +2003,11 @@ class GetMonitorAvailabilityConfigurationResult(dict):
 @pulumi.output_type
 class GetMonitorConfigurationResult(dict):
     def __init__(__self__, *,
+                 client_certificate_details: Sequence['outputs.GetMonitorConfigurationClientCertificateDetailResult'],
                  config_type: str,
                  dns_configurations: Sequence['outputs.GetMonitorConfigurationDnsConfigurationResult'],
                  is_certificate_validation_enabled: bool,
+                 is_default_snapshot_enabled: bool,
                  is_failure_retried: bool,
                  is_redirection_enabled: bool,
                  network_configurations: Sequence['outputs.GetMonitorConfigurationNetworkConfigurationResult'],
@@ -1836,14 +2021,16 @@ class GetMonitorConfigurationResult(dict):
                  verify_response_content: str,
                  verify_texts: Sequence['outputs.GetMonitorConfigurationVerifyTextResult']):
         """
+        :param Sequence['GetMonitorConfigurationClientCertificateDetailArgs'] client_certificate_details: Details for client certificate.
         :param str config_type: Type of configuration.
-        :param Sequence['GetMonitorConfigurationDnsConfigurationArgs'] dns_configurations: Dns settings.
+        :param Sequence['GetMonitorConfigurationDnsConfigurationArgs'] dns_configurations: Information about the DNS settings.
         :param bool is_certificate_validation_enabled: If certificate validation is enabled, then the call will fail in case of certification errors.
+        :param bool is_default_snapshot_enabled: If disabled then auto snapshots are not collected.
         :param bool is_failure_retried: If isFailureRetried is enabled, then a failed call will be retried.
-        :param bool is_redirection_enabled: If redirection enabled, then redirects will be allowed while accessing target URL.
+        :param bool is_redirection_enabled: If redirection is enabled, then redirects will be allowed while accessing target URL.
         :param Sequence['GetMonitorConfigurationNetworkConfigurationArgs'] network_configurations: Details of the network configuration.
         :param Sequence['GetMonitorConfigurationReqAuthenticationDetailArgs'] req_authentication_details: Details for request HTTP authentication.
-        :param str req_authentication_scheme: Request http authentication scheme.
+        :param str req_authentication_scheme: Request HTTP authentication scheme.
         :param Sequence['GetMonitorConfigurationRequestHeaderArgs'] request_headers: List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
         :param str request_method: Request HTTP method.
         :param str request_post_body: Request post body content.
@@ -1852,9 +2039,11 @@ class GetMonitorConfigurationResult(dict):
         :param str verify_response_content: Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
         :param Sequence['GetMonitorConfigurationVerifyTextArgs'] verify_texts: Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
+        pulumi.set(__self__, "client_certificate_details", client_certificate_details)
         pulumi.set(__self__, "config_type", config_type)
         pulumi.set(__self__, "dns_configurations", dns_configurations)
         pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
+        pulumi.set(__self__, "is_default_snapshot_enabled", is_default_snapshot_enabled)
         pulumi.set(__self__, "is_failure_retried", is_failure_retried)
         pulumi.set(__self__, "is_redirection_enabled", is_redirection_enabled)
         pulumi.set(__self__, "network_configurations", network_configurations)
@@ -1869,6 +2058,14 @@ class GetMonitorConfigurationResult(dict):
         pulumi.set(__self__, "verify_texts", verify_texts)
 
     @property
+    @pulumi.getter(name="clientCertificateDetails")
+    def client_certificate_details(self) -> Sequence['outputs.GetMonitorConfigurationClientCertificateDetailResult']:
+        """
+        Details for client certificate.
+        """
+        return pulumi.get(self, "client_certificate_details")
+
+    @property
     @pulumi.getter(name="configType")
     def config_type(self) -> str:
         """
@@ -1880,7 +2077,7 @@ class GetMonitorConfigurationResult(dict):
     @pulumi.getter(name="dnsConfigurations")
     def dns_configurations(self) -> Sequence['outputs.GetMonitorConfigurationDnsConfigurationResult']:
         """
-        Dns settings.
+        Information about the DNS settings.
         """
         return pulumi.get(self, "dns_configurations")
 
@@ -1891,6 +2088,14 @@ class GetMonitorConfigurationResult(dict):
         If certificate validation is enabled, then the call will fail in case of certification errors.
         """
         return pulumi.get(self, "is_certificate_validation_enabled")
+
+    @property
+    @pulumi.getter(name="isDefaultSnapshotEnabled")
+    def is_default_snapshot_enabled(self) -> bool:
+        """
+        If disabled then auto snapshots are not collected.
+        """
+        return pulumi.get(self, "is_default_snapshot_enabled")
 
     @property
     @pulumi.getter(name="isFailureRetried")
@@ -1904,7 +2109,7 @@ class GetMonitorConfigurationResult(dict):
     @pulumi.getter(name="isRedirectionEnabled")
     def is_redirection_enabled(self) -> bool:
         """
-        If redirection enabled, then redirects will be allowed while accessing target URL.
+        If redirection is enabled, then redirects will be allowed while accessing target URL.
         """
         return pulumi.get(self, "is_redirection_enabled")
 
@@ -1928,7 +2133,7 @@ class GetMonitorConfigurationResult(dict):
     @pulumi.getter(name="reqAuthenticationScheme")
     def req_authentication_scheme(self) -> str:
         """
-        Request http authentication scheme.
+        Request HTTP authentication scheme.
         """
         return pulumi.get(self, "req_authentication_scheme")
 
@@ -1990,13 +2195,100 @@ class GetMonitorConfigurationResult(dict):
 
 
 @pulumi.output_type
+class GetMonitorConfigurationClientCertificateDetailResult(dict):
+    def __init__(__self__, *,
+                 client_certificates: Sequence['outputs.GetMonitorConfigurationClientCertificateDetailClientCertificateResult'],
+                 private_keys: Sequence['outputs.GetMonitorConfigurationClientCertificateDetailPrivateKeyResult']):
+        """
+        :param Sequence['GetMonitorConfigurationClientCertificateDetailClientCertificateArgs'] client_certificates: Client certificate in pem format.
+        :param Sequence['GetMonitorConfigurationClientCertificateDetailPrivateKeyArgs'] private_keys: The private key associated with the client certificate in pem format.
+        """
+        pulumi.set(__self__, "client_certificates", client_certificates)
+        pulumi.set(__self__, "private_keys", private_keys)
+
+    @property
+    @pulumi.getter(name="clientCertificates")
+    def client_certificates(self) -> Sequence['outputs.GetMonitorConfigurationClientCertificateDetailClientCertificateResult']:
+        """
+        Client certificate in pem format.
+        """
+        return pulumi.get(self, "client_certificates")
+
+    @property
+    @pulumi.getter(name="privateKeys")
+    def private_keys(self) -> Sequence['outputs.GetMonitorConfigurationClientCertificateDetailPrivateKeyResult']:
+        """
+        The private key associated with the client certificate in pem format.
+        """
+        return pulumi.get(self, "private_keys")
+
+
+@pulumi.output_type
+class GetMonitorConfigurationClientCertificateDetailClientCertificateResult(dict):
+    def __init__(__self__, *,
+                 content: str,
+                 file_name: str):
+        """
+        :param str content: Content of the private key file.
+        :param str file_name: Name of the private key file.
+        """
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "file_name", file_name)
+
+    @property
+    @pulumi.getter
+    def content(self) -> str:
+        """
+        Content of the private key file.
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter(name="fileName")
+    def file_name(self) -> str:
+        """
+        Name of the private key file.
+        """
+        return pulumi.get(self, "file_name")
+
+
+@pulumi.output_type
+class GetMonitorConfigurationClientCertificateDetailPrivateKeyResult(dict):
+    def __init__(__self__, *,
+                 content: str,
+                 file_name: str):
+        """
+        :param str content: Content of the private key file.
+        :param str file_name: Name of the private key file.
+        """
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "file_name", file_name)
+
+    @property
+    @pulumi.getter
+    def content(self) -> str:
+        """
+        Content of the private key file.
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter(name="fileName")
+    def file_name(self) -> str:
+        """
+        Name of the private key file.
+        """
+        return pulumi.get(self, "file_name")
+
+
+@pulumi.output_type
 class GetMonitorConfigurationDnsConfigurationResult(dict):
     def __init__(__self__, *,
                  is_override_dns: bool,
                  override_dns_ip: str):
         """
-        :param bool is_override_dns: If isOverrideDns is true, then dns will be overridden.
-        :param str override_dns_ip: Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+        :param bool is_override_dns: If isOverrideDns is true, then DNS settings will be overridden.
+        :param str override_dns_ip: Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
         """
         pulumi.set(__self__, "is_override_dns", is_override_dns)
         pulumi.set(__self__, "override_dns_ip", override_dns_ip)
@@ -2005,7 +2297,7 @@ class GetMonitorConfigurationDnsConfigurationResult(dict):
     @pulumi.getter(name="isOverrideDns")
     def is_override_dns(self) -> bool:
         """
-        If isOverrideDns is true, then dns will be overridden.
+        If isOverrideDns is true, then DNS settings will be overridden.
         """
         return pulumi.get(self, "is_override_dns")
 
@@ -2013,7 +2305,7 @@ class GetMonitorConfigurationDnsConfigurationResult(dict):
     @pulumi.getter(name="overrideDnsIp")
     def override_dns_ip(self) -> str:
         """
-        Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+        Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
         """
         return pulumi.get(self, "override_dns_ip")
 
@@ -2096,10 +2388,10 @@ class GetMonitorConfigurationReqAuthenticationDetailResult(dict):
         :param str auth_request_method: Request method.
         :param str auth_request_post_body: Request post body.
         :param str auth_token: Authentication token.
-        :param str auth_url: URL to get authetication token.
-        :param str auth_user_name: Username for authentication.
+        :param str auth_url: URL to get authentication token.
+        :param str auth_user_name: User name for authentication.
         :param str auth_user_password: User password for authentication.
-        :param str oauth_scheme: Request http oauth scheme.
+        :param str oauth_scheme: Request HTTP OAuth scheme.
         """
         pulumi.set(__self__, "auth_headers", auth_headers)
         pulumi.set(__self__, "auth_request_method", auth_request_method)
@@ -2146,7 +2438,7 @@ class GetMonitorConfigurationReqAuthenticationDetailResult(dict):
     @pulumi.getter(name="authUrl")
     def auth_url(self) -> str:
         """
-        URL to get authetication token.
+        URL to get authentication token.
         """
         return pulumi.get(self, "auth_url")
 
@@ -2154,7 +2446,7 @@ class GetMonitorConfigurationReqAuthenticationDetailResult(dict):
     @pulumi.getter(name="authUserName")
     def auth_user_name(self) -> str:
         """
-        Username for authentication.
+        User name for authentication.
         """
         return pulumi.get(self, "auth_user_name")
 
@@ -2170,7 +2462,7 @@ class GetMonitorConfigurationReqAuthenticationDetailResult(dict):
     @pulumi.getter(name="oauthScheme")
     def oauth_scheme(self) -> str:
         """
-        Request http oauth scheme.
+        Request HTTP OAuth scheme.
         """
         return pulumi.get(self, "oauth_scheme")
 
@@ -2286,8 +2578,8 @@ class GetMonitorMaintenanceWindowScheduleResult(dict):
                  time_ended: str,
                  time_started: str):
         """
-        :param str time_ended: End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        :param str time_started: Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        :param str time_ended: End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        :param str time_started: Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
         pulumi.set(__self__, "time_ended", time_ended)
         pulumi.set(__self__, "time_started", time_started)
@@ -2296,7 +2588,7 @@ class GetMonitorMaintenanceWindowScheduleResult(dict):
     @pulumi.getter(name="timeEnded")
     def time_ended(self) -> str:
         """
-        End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_ended")
 
@@ -2304,7 +2596,7 @@ class GetMonitorMaintenanceWindowScheduleResult(dict):
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> str:
         """
-        Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_started")
 
@@ -2504,18 +2796,18 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         """
         :param str apm_domain_id: The APM domain ID the request is intended for.
         :param Sequence['GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs'] availability_configurations: Monitor availability configuration details.
-        :param int batch_interval_in_seconds: Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+        :param int batch_interval_in_seconds: Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationArgs'] configurations: Details of monitor configuration.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only the resources that match the entire display name.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
-        :param bool is_run_now: If isRunNow is enabled, then the monitor will run now.
+        :param bool is_run_now: If isRunNow is enabled, then the monitor will run immediately.
         :param bool is_run_once: If runOnce is enabled, then the monitor will run once.
-        :param Sequence['GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs'] maintenance_window_schedules: Details used to schedule maintenance window.
+        :param Sequence['GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs'] maintenance_window_schedules: Details required to schedule maintenance window.
         :param str monitor_type: A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
         :param int repeat_interval_in_seconds: Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
-        :param str scheduling_policy: Scheduling policy on Vantage points.
+        :param str scheduling_policy: Scheduling policy to decide the distribution of monitor executions on vantage points.
         :param str script_id: A filter to return only monitors using scriptId.
         :param str script_name: Name of the script.
         :param Sequence['GetMonitorsMonitorCollectionItemScriptParameterArgs'] script_parameters: List of script parameters. Example: `[{"monitorScriptParameter": {"paramName": "userid", "paramValue":"testuser"}, "isSecret": false, "isOverwritten": false}]`
@@ -2572,7 +2864,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
     @pulumi.getter(name="batchIntervalInSeconds")
     def batch_interval_in_seconds(self) -> int:
         """
-        Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+        Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
         """
         return pulumi.get(self, "batch_interval_in_seconds")
 
@@ -2620,7 +2912,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
     @pulumi.getter(name="isRunNow")
     def is_run_now(self) -> bool:
         """
-        If isRunNow is enabled, then the monitor will run now.
+        If isRunNow is enabled, then the monitor will run immediately.
         """
         return pulumi.get(self, "is_run_now")
 
@@ -2636,7 +2928,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
     @pulumi.getter(name="maintenanceWindowSchedules")
     def maintenance_window_schedules(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult']:
         """
-        Details used to schedule maintenance window.
+        Details required to schedule maintenance window.
         """
         return pulumi.get(self, "maintenance_window_schedules")
 
@@ -2660,7 +2952,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
     @pulumi.getter(name="schedulingPolicy")
     def scheduling_policy(self) -> str:
         """
-        Scheduling policy on Vantage points.
+        Scheduling policy to decide the distribution of monitor executions on vantage points.
         """
         return pulumi.get(self, "scheduling_policy")
 
@@ -2751,8 +3043,8 @@ class GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult(dict):
                  max_allowed_failures_per_interval: int,
                  min_allowed_runs_per_interval: int):
         """
-        :param int max_allowed_failures_per_interval: Intervals with failed runs more than this value will be classified as UNAVAILABLE.
-        :param int min_allowed_runs_per_interval: Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+        :param int max_allowed_failures_per_interval: Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
+        :param int min_allowed_runs_per_interval: Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
         """
         pulumi.set(__self__, "max_allowed_failures_per_interval", max_allowed_failures_per_interval)
         pulumi.set(__self__, "min_allowed_runs_per_interval", min_allowed_runs_per_interval)
@@ -2761,7 +3053,7 @@ class GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult(dict):
     @pulumi.getter(name="maxAllowedFailuresPerInterval")
     def max_allowed_failures_per_interval(self) -> int:
         """
-        Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+        Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
         """
         return pulumi.get(self, "max_allowed_failures_per_interval")
 
@@ -2769,7 +3061,7 @@ class GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult(dict):
     @pulumi.getter(name="minAllowedRunsPerInterval")
     def min_allowed_runs_per_interval(self) -> int:
         """
-        Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+        Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
         """
         return pulumi.get(self, "min_allowed_runs_per_interval")
 
@@ -2777,9 +3069,11 @@ class GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult(dict):
 @pulumi.output_type
 class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
     def __init__(__self__, *,
+                 client_certificate_details: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailResult'],
                  config_type: str,
                  dns_configurations: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult'],
                  is_certificate_validation_enabled: bool,
+                 is_default_snapshot_enabled: bool,
                  is_failure_retried: bool,
                  is_redirection_enabled: bool,
                  network_configurations: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationResult'],
@@ -2793,14 +3087,16 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
                  verify_response_content: str,
                  verify_texts: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationVerifyTextResult']):
         """
+        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArgs'] client_certificate_details: Details for client certificate.
         :param str config_type: Type of configuration.
-        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs'] dns_configurations: Dns settings.
+        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs'] dns_configurations: Information about the DNS settings.
         :param bool is_certificate_validation_enabled: If certificate validation is enabled, then the call will fail in case of certification errors.
+        :param bool is_default_snapshot_enabled: If disabled then auto snapshots are not collected.
         :param bool is_failure_retried: If isFailureRetried is enabled, then a failed call will be retried.
-        :param bool is_redirection_enabled: If redirection enabled, then redirects will be allowed while accessing target URL.
+        :param bool is_redirection_enabled: If redirection is enabled, then redirects will be allowed while accessing target URL.
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs'] network_configurations: Details of the network configuration.
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArgs'] req_authentication_details: Details for request HTTP authentication.
-        :param str req_authentication_scheme: Request http authentication scheme.
+        :param str req_authentication_scheme: Request HTTP authentication scheme.
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArgs'] request_headers: List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
         :param str request_method: Request HTTP method.
         :param str request_post_body: Request post body content.
@@ -2809,9 +3105,11 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         :param str verify_response_content: Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationVerifyTextArgs'] verify_texts: Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
+        pulumi.set(__self__, "client_certificate_details", client_certificate_details)
         pulumi.set(__self__, "config_type", config_type)
         pulumi.set(__self__, "dns_configurations", dns_configurations)
         pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
+        pulumi.set(__self__, "is_default_snapshot_enabled", is_default_snapshot_enabled)
         pulumi.set(__self__, "is_failure_retried", is_failure_retried)
         pulumi.set(__self__, "is_redirection_enabled", is_redirection_enabled)
         pulumi.set(__self__, "network_configurations", network_configurations)
@@ -2826,6 +3124,14 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         pulumi.set(__self__, "verify_texts", verify_texts)
 
     @property
+    @pulumi.getter(name="clientCertificateDetails")
+    def client_certificate_details(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailResult']:
+        """
+        Details for client certificate.
+        """
+        return pulumi.get(self, "client_certificate_details")
+
+    @property
     @pulumi.getter(name="configType")
     def config_type(self) -> str:
         """
@@ -2837,7 +3143,7 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
     @pulumi.getter(name="dnsConfigurations")
     def dns_configurations(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult']:
         """
-        Dns settings.
+        Information about the DNS settings.
         """
         return pulumi.get(self, "dns_configurations")
 
@@ -2848,6 +3154,14 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         If certificate validation is enabled, then the call will fail in case of certification errors.
         """
         return pulumi.get(self, "is_certificate_validation_enabled")
+
+    @property
+    @pulumi.getter(name="isDefaultSnapshotEnabled")
+    def is_default_snapshot_enabled(self) -> bool:
+        """
+        If disabled then auto snapshots are not collected.
+        """
+        return pulumi.get(self, "is_default_snapshot_enabled")
 
     @property
     @pulumi.getter(name="isFailureRetried")
@@ -2861,7 +3175,7 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
     @pulumi.getter(name="isRedirectionEnabled")
     def is_redirection_enabled(self) -> bool:
         """
-        If redirection enabled, then redirects will be allowed while accessing target URL.
+        If redirection is enabled, then redirects will be allowed while accessing target URL.
         """
         return pulumi.get(self, "is_redirection_enabled")
 
@@ -2885,7 +3199,7 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
     @pulumi.getter(name="reqAuthenticationScheme")
     def req_authentication_scheme(self) -> str:
         """
-        Request http authentication scheme.
+        Request HTTP authentication scheme.
         """
         return pulumi.get(self, "req_authentication_scheme")
 
@@ -2947,13 +3261,100 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
 
 
 @pulumi.output_type
+class GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailResult(dict):
+    def __init__(__self__, *,
+                 client_certificates: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateResult'],
+                 private_keys: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyResult']):
+        """
+        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArgs'] client_certificates: Client certificate in pem format.
+        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArgs'] private_keys: The private key associated with the client certificate in pem format.
+        """
+        pulumi.set(__self__, "client_certificates", client_certificates)
+        pulumi.set(__self__, "private_keys", private_keys)
+
+    @property
+    @pulumi.getter(name="clientCertificates")
+    def client_certificates(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateResult']:
+        """
+        Client certificate in pem format.
+        """
+        return pulumi.get(self, "client_certificates")
+
+    @property
+    @pulumi.getter(name="privateKeys")
+    def private_keys(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyResult']:
+        """
+        The private key associated with the client certificate in pem format.
+        """
+        return pulumi.get(self, "private_keys")
+
+
+@pulumi.output_type
+class GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateResult(dict):
+    def __init__(__self__, *,
+                 content: str,
+                 file_name: str):
+        """
+        :param str content: Content of the private key file.
+        :param str file_name: Name of the private key file.
+        """
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "file_name", file_name)
+
+    @property
+    @pulumi.getter
+    def content(self) -> str:
+        """
+        Content of the private key file.
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter(name="fileName")
+    def file_name(self) -> str:
+        """
+        Name of the private key file.
+        """
+        return pulumi.get(self, "file_name")
+
+
+@pulumi.output_type
+class GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyResult(dict):
+    def __init__(__self__, *,
+                 content: str,
+                 file_name: str):
+        """
+        :param str content: Content of the private key file.
+        :param str file_name: Name of the private key file.
+        """
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "file_name", file_name)
+
+    @property
+    @pulumi.getter
+    def content(self) -> str:
+        """
+        Content of the private key file.
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter(name="fileName")
+    def file_name(self) -> str:
+        """
+        Name of the private key file.
+        """
+        return pulumi.get(self, "file_name")
+
+
+@pulumi.output_type
 class GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult(dict):
     def __init__(__self__, *,
                  is_override_dns: bool,
                  override_dns_ip: str):
         """
-        :param bool is_override_dns: If isOverrideDns is true, then dns will be overridden.
-        :param str override_dns_ip: Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+        :param bool is_override_dns: If isOverrideDns is true, then DNS settings will be overridden.
+        :param str override_dns_ip: Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
         """
         pulumi.set(__self__, "is_override_dns", is_override_dns)
         pulumi.set(__self__, "override_dns_ip", override_dns_ip)
@@ -2962,7 +3363,7 @@ class GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult(dict):
     @pulumi.getter(name="isOverrideDns")
     def is_override_dns(self) -> bool:
         """
-        If isOverrideDns is true, then dns will be overridden.
+        If isOverrideDns is true, then DNS settings will be overridden.
         """
         return pulumi.get(self, "is_override_dns")
 
@@ -2970,7 +3371,7 @@ class GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult(dict):
     @pulumi.getter(name="overrideDnsIp")
     def override_dns_ip(self) -> str:
         """
-        Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+        Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
         """
         return pulumi.get(self, "override_dns_ip")
 
@@ -3053,10 +3454,10 @@ class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailResult
         :param str auth_request_method: Request method.
         :param str auth_request_post_body: Request post body.
         :param str auth_token: Authentication token.
-        :param str auth_url: URL to get authetication token.
-        :param str auth_user_name: Username for authentication.
+        :param str auth_url: URL to get authentication token.
+        :param str auth_user_name: User name for authentication.
         :param str auth_user_password: User password for authentication.
-        :param str oauth_scheme: Request http oauth scheme.
+        :param str oauth_scheme: Request HTTP OAuth scheme.
         """
         pulumi.set(__self__, "auth_headers", auth_headers)
         pulumi.set(__self__, "auth_request_method", auth_request_method)
@@ -3103,7 +3504,7 @@ class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailResult
     @pulumi.getter(name="authUrl")
     def auth_url(self) -> str:
         """
-        URL to get authetication token.
+        URL to get authentication token.
         """
         return pulumi.get(self, "auth_url")
 
@@ -3111,7 +3512,7 @@ class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailResult
     @pulumi.getter(name="authUserName")
     def auth_user_name(self) -> str:
         """
-        Username for authentication.
+        User name for authentication.
         """
         return pulumi.get(self, "auth_user_name")
 
@@ -3127,7 +3528,7 @@ class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailResult
     @pulumi.getter(name="oauthScheme")
     def oauth_scheme(self) -> str:
         """
-        Request http oauth scheme.
+        Request HTTP OAuth scheme.
         """
         return pulumi.get(self, "oauth_scheme")
 
@@ -3243,8 +3644,8 @@ class GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult(dict):
                  time_ended: str,
                  time_started: str):
         """
-        :param str time_ended: End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        :param str time_started: Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        :param str time_ended: End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        :param str time_started: Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
         pulumi.set(__self__, "time_ended", time_ended)
         pulumi.set(__self__, "time_started", time_started)
@@ -3253,7 +3654,7 @@ class GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult(dict):
     @pulumi.getter(name="timeEnded")
     def time_ended(self) -> str:
         """
-        End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_ended")
 
@@ -3261,7 +3662,7 @@ class GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult(dict):
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> str:
         """
-        Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_started")
 
@@ -4161,7 +4562,7 @@ class GetVantagePointsPublicVantagePointCollectionItemGeoResult(dict):
         :param str city_name: Common English-language name for the city.
         :param str country_code: The ISO 3166-1 alpha-2 country code. For a list of codes, see Country Codes.
         :param str country_name: The common English-language name for the country.
-        :param float latitude: Degrees north of the Equator.
+        :param float latitude: Degrees north of the equator.
         :param float longitude: Degrees east of the prime meridian.
         """
         pulumi.set(__self__, "admin_div_code", admin_div_code)
@@ -4207,7 +4608,7 @@ class GetVantagePointsPublicVantagePointCollectionItemGeoResult(dict):
     @pulumi.getter
     def latitude(self) -> float:
         """
-        Degrees north of the Equator.
+        Degrees north of the equator.
         """
         return pulumi.get(self, "latitude")
 

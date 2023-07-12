@@ -26,13 +26,19 @@ namespace Pulumi.Oci.OspGateway
     public partial class Subscription : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// (Updatable) Account type.
+        /// </summary>
+        [Output("accountType")]
+        public Output<string> AccountType { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Bill to customer Account id.
         /// </summary>
         [Output("billToCustAccountId")]
         public Output<string> BillToCustAccountId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Billing address details model.
+        /// (Updatable) Address details model.
         /// </summary>
         [Output("billingAddresses")]
         public Output<ImmutableArray<Outputs.SubscriptionBillingAddress>> BillingAddresses { get; private set; } = null!;
@@ -142,6 +148,12 @@ namespace Pulumi.Oci.OspGateway
         /// </summary>
         [Output("taxInfos")]
         public Output<ImmutableArray<Outputs.SubscriptionTaxInfo>> TaxInfos { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+        /// </summary>
+        [Output("timePersonalToCorporateConv")]
+        public Output<string> TimePersonalToCorporateConv { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
@@ -256,6 +268,12 @@ namespace Pulumi.Oci.OspGateway
     public sealed class SubscriptionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) Account type.
+        /// </summary>
+        [Input("accountType")]
+        public Input<string>? AccountType { get; set; }
+
+        /// <summary>
         /// (Updatable) Bill to customer Account id.
         /// </summary>
         [Input("billToCustAccountId")]
@@ -265,7 +283,7 @@ namespace Pulumi.Oci.OspGateway
         private InputList<Inputs.SubscriptionBillingAddressGetArgs>? _billingAddresses;
 
         /// <summary>
-        /// (Updatable) Billing address details model.
+        /// (Updatable) Address details model.
         /// </summary>
         public InputList<Inputs.SubscriptionBillingAddressGetArgs> BillingAddresses
         {
@@ -396,6 +414,12 @@ namespace Pulumi.Oci.OspGateway
             get => _taxInfos ?? (_taxInfos = new InputList<Inputs.SubscriptionTaxInfoGetArgs>());
             set => _taxInfos = value;
         }
+
+        /// <summary>
+        /// (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+        /// </summary>
+        [Input("timePersonalToCorporateConv")]
+        public Input<string>? TimePersonalToCorporateConv { get; set; }
 
         /// <summary>
         /// (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG

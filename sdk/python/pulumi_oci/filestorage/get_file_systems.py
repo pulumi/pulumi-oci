@@ -207,16 +207,16 @@ def get_file_systems(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:FileStorage/getFileSystems:getFileSystems', __args__, opts=opts, typ=GetFileSystemsResult).value
 
     return AwaitableGetFileSystemsResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        file_systems=__ret__.file_systems,
-        filesystem_snapshot_policy_id=__ret__.filesystem_snapshot_policy_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        parent_file_system_id=__ret__.parent_file_system_id,
-        source_snapshot_id=__ret__.source_snapshot_id,
-        state=__ret__.state)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        file_systems=pulumi.get(__ret__, 'file_systems'),
+        filesystem_snapshot_policy_id=pulumi.get(__ret__, 'filesystem_snapshot_policy_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        parent_file_system_id=pulumi.get(__ret__, 'parent_file_system_id'),
+        source_snapshot_id=pulumi.get(__ret__, 'source_snapshot_id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_file_systems)

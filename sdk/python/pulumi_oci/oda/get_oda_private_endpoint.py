@@ -198,18 +198,18 @@ def get_oda_private_endpoint(oda_private_endpoint_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Oda/getOdaPrivateEndpoint:getOdaPrivateEndpoint', __args__, opts=opts, typ=GetOdaPrivateEndpointResult).value
 
     return AwaitableGetOdaPrivateEndpointResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        nsg_ids=__ret__.nsg_ids,
-        oda_private_endpoint_id=__ret__.oda_private_endpoint_id,
-        state=__ret__.state,
-        subnet_id=__ret__.subnet_id,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
+        oda_private_endpoint_id=pulumi.get(__ret__, 'oda_private_endpoint_id'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_oda_private_endpoint)

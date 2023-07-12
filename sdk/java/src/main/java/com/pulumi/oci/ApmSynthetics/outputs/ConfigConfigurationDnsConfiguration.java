@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ConfigConfigurationDnsConfiguration {
     /**
-     * @return (Updatable) If isOverrideDns is true, then dns will be overridden.
+     * @return (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
      * 
      */
     private @Nullable Boolean isOverrideDns;
     /**
-     * @return (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+     * @return (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
      * 
      */
     private @Nullable String overrideDnsIp;
 
     private ConfigConfigurationDnsConfiguration() {}
     /**
-     * @return (Updatable) If isOverrideDns is true, then dns will be overridden.
+     * @return (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
      * 
      */
     public Optional<Boolean> isOverrideDns() {
         return Optional.ofNullable(this.isOverrideDns);
     }
     /**
-     * @return (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+     * @return (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
      * 
      */
     public Optional<String> overrideDnsIp() {

@@ -167,14 +167,14 @@ def get_java_releases(family_version: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Jms/getJavaReleases:getJavaReleases', __args__, opts=opts, typ=GetJavaReleasesResult).value
 
     return AwaitableGetJavaReleasesResult(
-        family_version=__ret__.family_version,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        java_release_collections=__ret__.java_release_collections,
-        jre_security_status=__ret__.jre_security_status,
-        license_type=__ret__.license_type,
-        release_type=__ret__.release_type,
-        release_version=__ret__.release_version)
+        family_version=pulumi.get(__ret__, 'family_version'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        java_release_collections=pulumi.get(__ret__, 'java_release_collections'),
+        jre_security_status=pulumi.get(__ret__, 'jre_security_status'),
+        license_type=pulumi.get(__ret__, 'license_type'),
+        release_type=pulumi.get(__ret__, 'release_type'),
+        release_version=pulumi.get(__ret__, 'release_version'))
 
 
 @_utilities.lift_output_func(get_java_releases)

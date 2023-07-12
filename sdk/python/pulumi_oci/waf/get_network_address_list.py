@@ -223,20 +223,20 @@ def get_network_address_list(network_address_list_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Waf/getNetworkAddressList:getNetworkAddressList', __args__, opts=opts, typ=GetNetworkAddressListResult).value
 
     return AwaitableGetNetworkAddressListResult(
-        addresses=__ret__.addresses,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        network_address_list_id=__ret__.network_address_list_id,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        type=__ret__.type,
-        vcn_addresses=__ret__.vcn_addresses)
+        addresses=pulumi.get(__ret__, 'addresses'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        network_address_list_id=pulumi.get(__ret__, 'network_address_list_id'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        type=pulumi.get(__ret__, 'type'),
+        vcn_addresses=pulumi.get(__ret__, 'vcn_addresses'))
 
 
 @_utilities.lift_output_func(get_network_address_list)

@@ -32,6 +32,9 @@ class DiscoveryJobsResultArgs:
         """
         The OCID of the discovery job.
         """
+        warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""discovery_job_id is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "discovery_job_id")
 
     @discovery_job_id.setter
@@ -201,6 +204,9 @@ class _DiscoveryJobsResultState:
         """
         The OCID of the discovery job.
         """
+        warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""discovery_job_id is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "discovery_job_id")
 
     @discovery_job_id.setter
@@ -213,6 +219,9 @@ class _DiscoveryJobsResultState:
         """
         The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
         """
+        warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""discovery_type is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "discovery_type")
 
     @discovery_type.setter
@@ -249,6 +258,9 @@ class _DiscoveryJobsResultState:
         """
         The unique key that identifies the discovery result.
         """
+        warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""key is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "key")
 
     @key.setter
@@ -617,6 +629,9 @@ class DiscoveryJobsResult(pulumi.CustomResource):
         """
         The OCID of the discovery job.
         """
+        warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""discovery_job_id is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "discovery_job_id")
 
     @property
@@ -625,6 +640,9 @@ class DiscoveryJobsResult(pulumi.CustomResource):
         """
         The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
         """
+        warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""discovery_type is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "discovery_type")
 
     @property
@@ -649,6 +667,9 @@ class DiscoveryJobsResult(pulumi.CustomResource):
         """
         The unique key that identifies the discovery result.
         """
+        warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""key is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "key")
 
     @property

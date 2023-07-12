@@ -123,11 +123,11 @@ def get_managed_database_sql_tuning_set(managed_database_id: Optional[str] = Non
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseSqlTuningSet:getManagedDatabaseSqlTuningSet', __args__, opts=opts, typ=GetManagedDatabaseSqlTuningSetResult).value
 
     return AwaitableGetManagedDatabaseSqlTuningSetResult(
-        id=__ret__.id,
-        items=__ret__.items,
-        managed_database_id=__ret__.managed_database_id,
-        name_contains=__ret__.name_contains,
-        owner=__ret__.owner)
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        name_contains=pulumi.get(__ret__, 'name_contains'),
+        owner=pulumi.get(__ret__, 'owner'))
 
 
 @_utilities.lift_output_func(get_managed_database_sql_tuning_set)

@@ -116,11 +116,11 @@ def get_peers(blockchain_platform_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Blockchain/getPeers:getPeers', __args__, opts=opts, typ=GetPeersResult).value
 
     return AwaitableGetPeersResult(
-        blockchain_platform_id=__ret__.blockchain_platform_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        peer_collections=__ret__.peer_collections)
+        blockchain_platform_id=pulumi.get(__ret__, 'blockchain_platform_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        peer_collections=pulumi.get(__ret__, 'peer_collections'))
 
 
 @_utilities.lift_output_func(get_peers)

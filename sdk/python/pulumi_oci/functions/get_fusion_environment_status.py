@@ -90,9 +90,9 @@ def get_fusion_environment_status(fusion_environment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Functions/getFusionEnvironmentStatus:getFusionEnvironmentStatus', __args__, opts=opts, typ=GetFusionEnvironmentStatusResult).value
 
     return AwaitableGetFusionEnvironmentStatusResult(
-        fusion_environment_id=__ret__.fusion_environment_id,
-        id=__ret__.id,
-        status=__ret__.status)
+        fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        status=pulumi.get(__ret__, 'status'))
 
 
 @_utilities.lift_output_func(get_fusion_environment_status)

@@ -222,18 +222,18 @@ def get_target_databases(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getTargetDatabases:getTargetDatabases', __args__, opts=opts, typ=GetTargetDatabasesResult).value
 
     return AwaitableGetTargetDatabasesResult(
-        access_level=__ret__.access_level,
-        associated_resource_id=__ret__.associated_resource_id,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        database_type=__ret__.database_type,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        infrastructure_type=__ret__.infrastructure_type,
-        state=__ret__.state,
-        target_database_id=__ret__.target_database_id,
-        target_databases=__ret__.target_databases)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        associated_resource_id=pulumi.get(__ret__, 'associated_resource_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        database_type=pulumi.get(__ret__, 'database_type'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        infrastructure_type=pulumi.get(__ret__, 'infrastructure_type'),
+        state=pulumi.get(__ret__, 'state'),
+        target_database_id=pulumi.get(__ret__, 'target_database_id'),
+        target_databases=pulumi.get(__ret__, 'target_databases'))
 
 
 @_utilities.lift_output_func(get_target_databases)

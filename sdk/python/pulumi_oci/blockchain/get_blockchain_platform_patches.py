@@ -103,10 +103,10 @@ def get_blockchain_platform_patches(blockchain_platform_id: Optional[str] = None
     __ret__ = pulumi.runtime.invoke('oci:Blockchain/getBlockchainPlatformPatches:getBlockchainPlatformPatches', __args__, opts=opts, typ=GetBlockchainPlatformPatchesResult).value
 
     return AwaitableGetBlockchainPlatformPatchesResult(
-        blockchain_platform_id=__ret__.blockchain_platform_id,
-        blockchain_platform_patch_collections=__ret__.blockchain_platform_patch_collections,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        blockchain_platform_id=pulumi.get(__ret__, 'blockchain_platform_id'),
+        blockchain_platform_patch_collections=pulumi.get(__ret__, 'blockchain_platform_patch_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_blockchain_platform_patches)

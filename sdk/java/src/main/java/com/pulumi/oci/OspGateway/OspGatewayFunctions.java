@@ -7,6 +7,10 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.oci.OspGateway.inputs.GetAddressArgs;
+import com.pulumi.oci.OspGateway.inputs.GetAddressPlainArgs;
+import com.pulumi.oci.OspGateway.inputs.GetAddressRuleArgs;
+import com.pulumi.oci.OspGateway.inputs.GetAddressRulePlainArgs;
 import com.pulumi.oci.OspGateway.inputs.GetInvoiceArgs;
 import com.pulumi.oci.OspGateway.inputs.GetInvoicePlainArgs;
 import com.pulumi.oci.OspGateway.inputs.GetInvoicesArgs;
@@ -19,6 +23,8 @@ import com.pulumi.oci.OspGateway.inputs.GetSubscriptionArgs;
 import com.pulumi.oci.OspGateway.inputs.GetSubscriptionPlainArgs;
 import com.pulumi.oci.OspGateway.inputs.GetSubscriptionsArgs;
 import com.pulumi.oci.OspGateway.inputs.GetSubscriptionsPlainArgs;
+import com.pulumi.oci.OspGateway.outputs.GetAddressResult;
+import com.pulumi.oci.OspGateway.outputs.GetAddressRuleResult;
 import com.pulumi.oci.OspGateway.outputs.GetInvoiceResult;
 import com.pulumi.oci.OspGateway.outputs.GetInvoicesInvoiceLineResult;
 import com.pulumi.oci.OspGateway.outputs.GetInvoicesInvoiceLinesResult;
@@ -29,6 +35,334 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class OspGatewayFunctions {
+    /**
+     * This data source provides details about a specific Address resource in Oracle Cloud Infrastructure Osp Gateway service.
+     * 
+     * Get the address by id for the compartment
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetAddressArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddress = OspGatewayFunctions.getAddress(GetAddressArgs.builder()
+     *             .addressId(oci_osp_gateway_addres.test_addres().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .ospHomeRegion(var_.address_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAddressResult> getAddress(GetAddressArgs args) {
+        return getAddress(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Address resource in Oracle Cloud Infrastructure Osp Gateway service.
+     * 
+     * Get the address by id for the compartment
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetAddressArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddress = OspGatewayFunctions.getAddress(GetAddressArgs.builder()
+     *             .addressId(oci_osp_gateway_addres.test_addres().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .ospHomeRegion(var_.address_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAddressResult> getAddressPlain(GetAddressPlainArgs args) {
+        return getAddressPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Address resource in Oracle Cloud Infrastructure Osp Gateway service.
+     * 
+     * Get the address by id for the compartment
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetAddressArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddress = OspGatewayFunctions.getAddress(GetAddressArgs.builder()
+     *             .addressId(oci_osp_gateway_addres.test_addres().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .ospHomeRegion(var_.address_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAddressResult> getAddress(GetAddressArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OspGateway/getAddress:getAddress", TypeShape.of(GetAddressResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Address resource in Oracle Cloud Infrastructure Osp Gateway service.
+     * 
+     * Get the address by id for the compartment
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetAddressArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddress = OspGatewayFunctions.getAddress(GetAddressArgs.builder()
+     *             .addressId(oci_osp_gateway_addres.test_addres().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .ospHomeRegion(var_.address_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAddressResult> getAddressPlain(GetAddressPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:OspGateway/getAddress:getAddress", TypeShape.of(GetAddressResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Address Rule resource in Oracle Cloud Infrastructure Osp Gateway service.
+     * 
+     * Get the address rule for the compartment based on the country code
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetAddressRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddressRule = OspGatewayFunctions.getAddressRule(GetAddressRuleArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .countryCode(var_.address_rule_country_code())
+     *             .ospHomeRegion(var_.address_rule_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAddressRuleResult> getAddressRule(GetAddressRuleArgs args) {
+        return getAddressRule(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Address Rule resource in Oracle Cloud Infrastructure Osp Gateway service.
+     * 
+     * Get the address rule for the compartment based on the country code
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetAddressRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddressRule = OspGatewayFunctions.getAddressRule(GetAddressRuleArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .countryCode(var_.address_rule_country_code())
+     *             .ospHomeRegion(var_.address_rule_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAddressRuleResult> getAddressRulePlain(GetAddressRulePlainArgs args) {
+        return getAddressRulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Address Rule resource in Oracle Cloud Infrastructure Osp Gateway service.
+     * 
+     * Get the address rule for the compartment based on the country code
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetAddressRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddressRule = OspGatewayFunctions.getAddressRule(GetAddressRuleArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .countryCode(var_.address_rule_country_code())
+     *             .ospHomeRegion(var_.address_rule_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAddressRuleResult> getAddressRule(GetAddressRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OspGateway/getAddressRule:getAddressRule", TypeShape.of(GetAddressRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Address Rule resource in Oracle Cloud Infrastructure Osp Gateway service.
+     * 
+     * Get the address rule for the compartment based on the country code
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetAddressRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddressRule = OspGatewayFunctions.getAddressRule(GetAddressRuleArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .countryCode(var_.address_rule_country_code())
+     *             .ospHomeRegion(var_.address_rule_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAddressRuleResult> getAddressRulePlain(GetAddressRulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:OspGateway/getAddressRule:getAddressRule", TypeShape.of(GetAddressRuleResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Invoice resource in Oracle Cloud Infrastructure Osp Gateway service.
      * 

@@ -196,16 +196,16 @@ def get_dedicated_vm_hosts(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getDedicatedVmHosts:getDedicatedVmHosts', __args__, opts=opts, typ=GetDedicatedVmHostsResult).value
 
     return AwaitableGetDedicatedVmHostsResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        dedicated_vm_hosts=__ret__.dedicated_vm_hosts,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        instance_shape_name=__ret__.instance_shape_name,
-        remaining_memory_in_gbs_greater_than_or_equal_to=__ret__.remaining_memory_in_gbs_greater_than_or_equal_to,
-        remaining_ocpus_greater_than_or_equal_to=__ret__.remaining_ocpus_greater_than_or_equal_to,
-        state=__ret__.state)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        dedicated_vm_hosts=pulumi.get(__ret__, 'dedicated_vm_hosts'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        instance_shape_name=pulumi.get(__ret__, 'instance_shape_name'),
+        remaining_memory_in_gbs_greater_than_or_equal_to=pulumi.get(__ret__, 'remaining_memory_in_gbs_greater_than_or_equal_to'),
+        remaining_ocpus_greater_than_or_equal_to=pulumi.get(__ret__, 'remaining_ocpus_greater_than_or_equal_to'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_dedicated_vm_hosts)

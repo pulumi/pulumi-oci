@@ -116,11 +116,11 @@ def get_autonomous_character_sets(character_set_type: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousCharacterSets:getAutonomousCharacterSets', __args__, opts=opts, typ=GetAutonomousCharacterSetsResult).value
 
     return AwaitableGetAutonomousCharacterSetsResult(
-        autonomous_database_character_sets=__ret__.autonomous_database_character_sets,
-        character_set_type=__ret__.character_set_type,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_shared=__ret__.is_shared)
+        autonomous_database_character_sets=pulumi.get(__ret__, 'autonomous_database_character_sets'),
+        character_set_type=pulumi.get(__ret__, 'character_set_type'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_shared=pulumi.get(__ret__, 'is_shared'))
 
 
 @_utilities.lift_output_func(get_autonomous_character_sets)

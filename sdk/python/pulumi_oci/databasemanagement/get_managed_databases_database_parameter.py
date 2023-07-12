@@ -181,16 +181,16 @@ def get_managed_databases_database_parameter(is_allowed_values_included: Optiona
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabasesDatabaseParameter:getManagedDatabasesDatabaseParameter', __args__, opts=opts, typ=GetManagedDatabasesDatabaseParameterResult).value
 
     return AwaitableGetManagedDatabasesDatabaseParameterResult(
-        database_name=__ret__.database_name,
-        database_sub_type=__ret__.database_sub_type,
-        database_type=__ret__.database_type,
-        database_version=__ret__.database_version,
-        id=__ret__.id,
-        is_allowed_values_included=__ret__.is_allowed_values_included,
-        items=__ret__.items,
-        managed_database_id=__ret__.managed_database_id,
-        name=__ret__.name,
-        source=__ret__.source)
+        database_name=pulumi.get(__ret__, 'database_name'),
+        database_sub_type=pulumi.get(__ret__, 'database_sub_type'),
+        database_type=pulumi.get(__ret__, 'database_type'),
+        database_version=pulumi.get(__ret__, 'database_version'),
+        id=pulumi.get(__ret__, 'id'),
+        is_allowed_values_included=pulumi.get(__ret__, 'is_allowed_values_included'),
+        items=pulumi.get(__ret__, 'items'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        name=pulumi.get(__ret__, 'name'),
+        source=pulumi.get(__ret__, 'source'))
 
 
 @_utilities.lift_output_func(get_managed_databases_database_parameter)

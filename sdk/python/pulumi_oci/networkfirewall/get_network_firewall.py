@@ -258,23 +258,23 @@ def get_network_firewall(network_firewall_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:NetworkFirewall/getNetworkFirewall:getNetworkFirewall', __args__, opts=opts, typ=GetNetworkFirewallResult).value
 
     return AwaitableGetNetworkFirewallResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        ipv4address=__ret__.ipv4address,
-        ipv6address=__ret__.ipv6address,
-        lifecycle_details=__ret__.lifecycle_details,
-        network_firewall_id=__ret__.network_firewall_id,
-        network_firewall_policy_id=__ret__.network_firewall_policy_id,
-        network_security_group_ids=__ret__.network_security_group_ids,
-        state=__ret__.state,
-        subnet_id=__ret__.subnet_id,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        ipv4address=pulumi.get(__ret__, 'ipv4address'),
+        ipv6address=pulumi.get(__ret__, 'ipv6address'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        network_firewall_id=pulumi.get(__ret__, 'network_firewall_id'),
+        network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'),
+        network_security_group_ids=pulumi.get(__ret__, 'network_security_group_ids'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_network_firewall)

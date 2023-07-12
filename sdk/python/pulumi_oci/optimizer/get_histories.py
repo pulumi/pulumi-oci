@@ -218,17 +218,17 @@ def get_histories(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Optimizer/getHistories:getHistories', __args__, opts=opts, typ=GetHistoriesResult).value
 
     return AwaitableGetHistoriesResult(
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        filters=__ret__.filters,
-        history_collections=__ret__.history_collections,
-        id=__ret__.id,
-        name=__ret__.name,
-        recommendation_id=__ret__.recommendation_id,
-        recommendation_name=__ret__.recommendation_name,
-        resource_type=__ret__.resource_type,
-        state=__ret__.state,
-        status=__ret__.status)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        filters=pulumi.get(__ret__, 'filters'),
+        history_collections=pulumi.get(__ret__, 'history_collections'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        recommendation_id=pulumi.get(__ret__, 'recommendation_id'),
+        recommendation_name=pulumi.get(__ret__, 'recommendation_name'),
+        resource_type=pulumi.get(__ret__, 'resource_type'),
+        state=pulumi.get(__ret__, 'state'),
+        status=pulumi.get(__ret__, 'status'))
 
 
 @_utilities.lift_output_func(get_histories)

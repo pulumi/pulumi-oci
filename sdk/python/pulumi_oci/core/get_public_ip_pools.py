@@ -136,12 +136,12 @@ def get_public_ip_pools(byoip_range_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getPublicIpPools:getPublicIpPools', __args__, opts=opts, typ=GetPublicIpPoolsResult).value
 
     return AwaitableGetPublicIpPoolsResult(
-        byoip_range_id=__ret__.byoip_range_id,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        public_ip_pool_collections=__ret__.public_ip_pool_collections)
+        byoip_range_id=pulumi.get(__ret__, 'byoip_range_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        public_ip_pool_collections=pulumi.get(__ret__, 'public_ip_pool_collections'))
 
 
 @_utilities.lift_output_func(get_public_ip_pools)

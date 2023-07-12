@@ -103,10 +103,10 @@ def get_query(query_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:MeteringComputation/getQuery:getQuery', __args__, opts=opts, typ=GetQueryResult).value
 
     return AwaitableGetQueryResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        query_definitions=__ret__.query_definitions,
-        query_id=__ret__.query_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        query_definitions=pulumi.get(__ret__, 'query_definitions'),
+        query_id=pulumi.get(__ret__, 'query_id'))
 
 
 @_utilities.lift_output_func(get_query)

@@ -211,19 +211,19 @@ def get_volume_group_replica(volume_group_replica_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getVolumeGroupReplica:getVolumeGroupReplica', __args__, opts=opts, typ=GetVolumeGroupReplicaResult).value
 
     return AwaitableGetVolumeGroupReplicaResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        member_replicas=__ret__.member_replicas,
-        size_in_gbs=__ret__.size_in_gbs,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_last_synced=__ret__.time_last_synced,
-        volume_group_id=__ret__.volume_group_id,
-        volume_group_replica_id=__ret__.volume_group_replica_id)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        member_replicas=pulumi.get(__ret__, 'member_replicas'),
+        size_in_gbs=pulumi.get(__ret__, 'size_in_gbs'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_last_synced=pulumi.get(__ret__, 'time_last_synced'),
+        volume_group_id=pulumi.get(__ret__, 'volume_group_id'),
+        volume_group_replica_id=pulumi.get(__ret__, 'volume_group_replica_id'))
 
 
 @_utilities.lift_output_func(get_volume_group_replica)

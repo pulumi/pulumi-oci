@@ -92,9 +92,9 @@ def get_management_dashboards_export(export_dashboard_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport', __args__, opts=opts, typ=GetManagementDashboardsExportResult).value
 
     return AwaitableGetManagementDashboardsExportResult(
-        export_dashboard_id=__ret__.export_dashboard_id,
-        export_details=__ret__.export_details,
-        id=__ret__.id)
+        export_dashboard_id=pulumi.get(__ret__, 'export_dashboard_id'),
+        export_details=pulumi.get(__ret__, 'export_details'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_management_dashboards_export)

@@ -154,13 +154,13 @@ def get_autonomous_exadata_infrastructures(availability_domain: Optional[str] = 
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousExadataInfrastructures:getAutonomousExadataInfrastructures', __args__, opts=opts, typ=GetAutonomousExadataInfrastructuresResult).value
 
     return AwaitableGetAutonomousExadataInfrastructuresResult(
-        autonomous_exadata_infrastructures=__ret__.autonomous_exadata_infrastructures,
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        autonomous_exadata_infrastructures=pulumi.get(__ret__, 'autonomous_exadata_infrastructures'),
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_autonomous_exadata_infrastructures)

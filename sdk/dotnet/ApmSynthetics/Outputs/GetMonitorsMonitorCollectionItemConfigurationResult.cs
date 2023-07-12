@@ -14,11 +14,15 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
     public sealed class GetMonitorsMonitorCollectionItemConfigurationResult
     {
         /// <summary>
+        /// Details for client certificate.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailResult> ClientCertificateDetails;
+        /// <summary>
         /// Type of configuration.
         /// </summary>
         public readonly string ConfigType;
         /// <summary>
-        /// Dns settings.
+        /// Information about the DNS settings.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult> DnsConfigurations;
         /// <summary>
@@ -26,11 +30,15 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly bool IsCertificateValidationEnabled;
         /// <summary>
+        /// If disabled then auto snapshots are not collected.
+        /// </summary>
+        public readonly bool IsDefaultSnapshotEnabled;
+        /// <summary>
         /// If isFailureRetried is enabled, then a failed call will be retried.
         /// </summary>
         public readonly bool IsFailureRetried;
         /// <summary>
-        /// If redirection enabled, then redirects will be allowed while accessing target URL.
+        /// If redirection is enabled, then redirects will be allowed while accessing target URL.
         /// </summary>
         public readonly bool IsRedirectionEnabled;
         /// <summary>
@@ -42,7 +50,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailResult> ReqAuthenticationDetails;
         /// <summary>
-        /// Request http authentication scheme.
+        /// Request HTTP authentication scheme.
         /// </summary>
         public readonly string ReqAuthenticationScheme;
         /// <summary>
@@ -76,11 +84,15 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
 
         [OutputConstructor]
         private GetMonitorsMonitorCollectionItemConfigurationResult(
+            ImmutableArray<Outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailResult> clientCertificateDetails,
+
             string configType,
 
             ImmutableArray<Outputs.GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult> dnsConfigurations,
 
             bool isCertificateValidationEnabled,
+
+            bool isDefaultSnapshotEnabled,
 
             bool isFailureRetried,
 
@@ -106,9 +118,11 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
 
             ImmutableArray<Outputs.GetMonitorsMonitorCollectionItemConfigurationVerifyTextResult> verifyTexts)
         {
+            ClientCertificateDetails = clientCertificateDetails;
             ConfigType = configType;
             DnsConfigurations = dnsConfigurations;
             IsCertificateValidationEnabled = isCertificateValidationEnabled;
+            IsDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
             IsFailureRetried = isFailureRetried;
             IsRedirectionEnabled = isRedirectionEnabled;
             NetworkConfigurations = networkConfigurations;

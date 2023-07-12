@@ -166,15 +166,15 @@ def get_repository_ref(ref_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getRepositoryRef:getRepositoryRef', __args__, opts=opts, typ=GetRepositoryRefResult).value
 
     return AwaitableGetRepositoryRefResult(
-        commit_id=__ret__.commit_id,
-        defined_tags=__ret__.defined_tags,
-        freeform_tags=__ret__.freeform_tags,
-        full_ref_name=__ret__.full_ref_name,
-        id=__ret__.id,
-        object_id=__ret__.object_id,
-        ref_name=__ret__.ref_name,
-        ref_type=__ret__.ref_type,
-        repository_id=__ret__.repository_id)
+        commit_id=pulumi.get(__ret__, 'commit_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        full_ref_name=pulumi.get(__ret__, 'full_ref_name'),
+        id=pulumi.get(__ret__, 'id'),
+        object_id=pulumi.get(__ret__, 'object_id'),
+        ref_name=pulumi.get(__ret__, 'ref_name'),
+        ref_type=pulumi.get(__ret__, 'ref_type'),
+        repository_id=pulumi.get(__ret__, 'repository_id'))
 
 
 @_utilities.lift_output_func(get_repository_ref)

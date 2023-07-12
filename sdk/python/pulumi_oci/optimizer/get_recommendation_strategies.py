@@ -147,13 +147,13 @@ def get_recommendation_strategies(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Optimizer/getRecommendationStrategies:getRecommendationStrategies', __args__, opts=opts, typ=GetRecommendationStrategiesResult).value
 
     return AwaitableGetRecommendationStrategiesResult(
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        recommendation_name=__ret__.recommendation_name,
-        recommendation_strategy_collections=__ret__.recommendation_strategy_collections)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        recommendation_name=pulumi.get(__ret__, 'recommendation_name'),
+        recommendation_strategy_collections=pulumi.get(__ret__, 'recommendation_strategy_collections'))
 
 
 @_utilities.lift_output_func(get_recommendation_strategies)

@@ -162,14 +162,14 @@ def get_software_source_module_stream_profile(module_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OsManagement/getSoftwareSourceModuleStreamProfile:getSoftwareSourceModuleStreamProfile', __args__, opts=opts, typ=GetSoftwareSourceModuleStreamProfileResult).value
 
     return AwaitableGetSoftwareSourceModuleStreamProfileResult(
-        description=__ret__.description,
-        id=__ret__.id,
-        is_default=__ret__.is_default,
-        module_name=__ret__.module_name,
-        packages=__ret__.packages,
-        profile_name=__ret__.profile_name,
-        software_source_id=__ret__.software_source_id,
-        stream_name=__ret__.stream_name)
+        description=pulumi.get(__ret__, 'description'),
+        id=pulumi.get(__ret__, 'id'),
+        is_default=pulumi.get(__ret__, 'is_default'),
+        module_name=pulumi.get(__ret__, 'module_name'),
+        packages=pulumi.get(__ret__, 'packages'),
+        profile_name=pulumi.get(__ret__, 'profile_name'),
+        software_source_id=pulumi.get(__ret__, 'software_source_id'),
+        stream_name=pulumi.get(__ret__, 'stream_name'))
 
 
 @_utilities.lift_output_func(get_software_source_module_stream_profile)

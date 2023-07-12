@@ -12,6 +12,9 @@ from .. import _utilities
 __all__ = [
     'ConfigAvailabilityConfigurationArgs',
     'ConfigConfigurationArgs',
+    'ConfigConfigurationClientCertificateDetailsArgs',
+    'ConfigConfigurationClientCertificateDetailsClientCertificateArgs',
+    'ConfigConfigurationClientCertificateDetailsPrivateKeyArgs',
     'ConfigConfigurationDnsConfigurationArgs',
     'ConfigConfigurationNetworkConfigurationArgs',
     'ConfigConfigurationReqAuthenticationDetailsArgs',
@@ -76,9 +79,11 @@ class ConfigAvailabilityConfigurationArgs:
 @pulumi.input_type
 class ConfigConfigurationArgs:
     def __init__(__self__, *,
+                 client_certificate_details: Optional[pulumi.Input['ConfigConfigurationClientCertificateDetailsArgs']] = None,
                  config_type: Optional[pulumi.Input[str]] = None,
                  dns_configuration: Optional[pulumi.Input['ConfigConfigurationDnsConfigurationArgs']] = None,
                  is_certificate_validation_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_default_snapshot_enabled: Optional[pulumi.Input[bool]] = None,
                  is_failure_retried: Optional[pulumi.Input[bool]] = None,
                  is_redirection_enabled: Optional[pulumi.Input[bool]] = None,
                  network_configuration: Optional[pulumi.Input['ConfigConfigurationNetworkConfigurationArgs']] = None,
@@ -92,14 +97,16 @@ class ConfigConfigurationArgs:
                  verify_response_content: Optional[pulumi.Input[str]] = None,
                  verify_texts: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationVerifyTextArgs']]]] = None):
         """
+        :param pulumi.Input['ConfigConfigurationClientCertificateDetailsArgs'] client_certificate_details: (Updatable) Details for client certificate.
         :param pulumi.Input[str] config_type: (Updatable) Type of configuration.
-        :param pulumi.Input['ConfigConfigurationDnsConfigurationArgs'] dns_configuration: (Updatable) Dns settings.
+        :param pulumi.Input['ConfigConfigurationDnsConfigurationArgs'] dns_configuration: (Updatable) Information about the DNS settings.
         :param pulumi.Input[bool] is_certificate_validation_enabled: (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
+        :param pulumi.Input[bool] is_default_snapshot_enabled: (Updatable) If disabled then auto snapshots are not collected.
         :param pulumi.Input[bool] is_failure_retried: (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
-        :param pulumi.Input[bool] is_redirection_enabled: (Updatable) If redirection enabled, then redirects will be allowed while accessing target URL.
+        :param pulumi.Input[bool] is_redirection_enabled: (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
         :param pulumi.Input['ConfigConfigurationNetworkConfigurationArgs'] network_configuration: (Updatable) Details of the network configuration.
         :param pulumi.Input['ConfigConfigurationReqAuthenticationDetailsArgs'] req_authentication_details: (Updatable) Details for request HTTP authentication.
-        :param pulumi.Input[str] req_authentication_scheme: (Updatable) Request http authentication scheme.
+        :param pulumi.Input[str] req_authentication_scheme: (Updatable) Request HTTP authentication scheme.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationRequestHeaderArgs']]] request_headers: (Updatable) List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
         :param pulumi.Input[str] request_method: (Updatable) Request HTTP method.
         :param pulumi.Input[str] request_post_body: (Updatable) Request post body content.
@@ -108,12 +115,16 @@ class ConfigConfigurationArgs:
         :param pulumi.Input[str] verify_response_content: (Updatable) Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationVerifyTextArgs']]] verify_texts: (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
+        if client_certificate_details is not None:
+            pulumi.set(__self__, "client_certificate_details", client_certificate_details)
         if config_type is not None:
             pulumi.set(__self__, "config_type", config_type)
         if dns_configuration is not None:
             pulumi.set(__self__, "dns_configuration", dns_configuration)
         if is_certificate_validation_enabled is not None:
             pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
+        if is_default_snapshot_enabled is not None:
+            pulumi.set(__self__, "is_default_snapshot_enabled", is_default_snapshot_enabled)
         if is_failure_retried is not None:
             pulumi.set(__self__, "is_failure_retried", is_failure_retried)
         if is_redirection_enabled is not None:
@@ -140,6 +151,18 @@ class ConfigConfigurationArgs:
             pulumi.set(__self__, "verify_texts", verify_texts)
 
     @property
+    @pulumi.getter(name="clientCertificateDetails")
+    def client_certificate_details(self) -> Optional[pulumi.Input['ConfigConfigurationClientCertificateDetailsArgs']]:
+        """
+        (Updatable) Details for client certificate.
+        """
+        return pulumi.get(self, "client_certificate_details")
+
+    @client_certificate_details.setter
+    def client_certificate_details(self, value: Optional[pulumi.Input['ConfigConfigurationClientCertificateDetailsArgs']]):
+        pulumi.set(self, "client_certificate_details", value)
+
+    @property
     @pulumi.getter(name="configType")
     def config_type(self) -> Optional[pulumi.Input[str]]:
         """
@@ -155,7 +178,7 @@ class ConfigConfigurationArgs:
     @pulumi.getter(name="dnsConfiguration")
     def dns_configuration(self) -> Optional[pulumi.Input['ConfigConfigurationDnsConfigurationArgs']]:
         """
-        (Updatable) Dns settings.
+        (Updatable) Information about the DNS settings.
         """
         return pulumi.get(self, "dns_configuration")
 
@@ -176,6 +199,18 @@ class ConfigConfigurationArgs:
         pulumi.set(self, "is_certificate_validation_enabled", value)
 
     @property
+    @pulumi.getter(name="isDefaultSnapshotEnabled")
+    def is_default_snapshot_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If disabled then auto snapshots are not collected.
+        """
+        return pulumi.get(self, "is_default_snapshot_enabled")
+
+    @is_default_snapshot_enabled.setter
+    def is_default_snapshot_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_default_snapshot_enabled", value)
+
+    @property
     @pulumi.getter(name="isFailureRetried")
     def is_failure_retried(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -191,7 +226,7 @@ class ConfigConfigurationArgs:
     @pulumi.getter(name="isRedirectionEnabled")
     def is_redirection_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) If redirection enabled, then redirects will be allowed while accessing target URL.
+        (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
         """
         return pulumi.get(self, "is_redirection_enabled")
 
@@ -227,7 +262,7 @@ class ConfigConfigurationArgs:
     @pulumi.getter(name="reqAuthenticationScheme")
     def req_authentication_scheme(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Request http authentication scheme.
+        (Updatable) Request HTTP authentication scheme.
         """
         return pulumi.get(self, "req_authentication_scheme")
 
@@ -321,13 +356,130 @@ class ConfigConfigurationArgs:
 
 
 @pulumi.input_type
+class ConfigConfigurationClientCertificateDetailsArgs:
+    def __init__(__self__, *,
+                 client_certificate: Optional[pulumi.Input['ConfigConfigurationClientCertificateDetailsClientCertificateArgs']] = None,
+                 private_key: Optional[pulumi.Input['ConfigConfigurationClientCertificateDetailsPrivateKeyArgs']] = None):
+        """
+        :param pulumi.Input['ConfigConfigurationClientCertificateDetailsClientCertificateArgs'] client_certificate: (Updatable) Client certificate in pem format.
+        :param pulumi.Input['ConfigConfigurationClientCertificateDetailsPrivateKeyArgs'] private_key: (Updatable) The private key associated with the client certificate in pem format.
+        """
+        if client_certificate is not None:
+            pulumi.set(__self__, "client_certificate", client_certificate)
+        if private_key is not None:
+            pulumi.set(__self__, "private_key", private_key)
+
+    @property
+    @pulumi.getter(name="clientCertificate")
+    def client_certificate(self) -> Optional[pulumi.Input['ConfigConfigurationClientCertificateDetailsClientCertificateArgs']]:
+        """
+        (Updatable) Client certificate in pem format.
+        """
+        return pulumi.get(self, "client_certificate")
+
+    @client_certificate.setter
+    def client_certificate(self, value: Optional[pulumi.Input['ConfigConfigurationClientCertificateDetailsClientCertificateArgs']]):
+        pulumi.set(self, "client_certificate", value)
+
+    @property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> Optional[pulumi.Input['ConfigConfigurationClientCertificateDetailsPrivateKeyArgs']]:
+        """
+        (Updatable) The private key associated with the client certificate in pem format.
+        """
+        return pulumi.get(self, "private_key")
+
+    @private_key.setter
+    def private_key(self, value: Optional[pulumi.Input['ConfigConfigurationClientCertificateDetailsPrivateKeyArgs']]):
+        pulumi.set(self, "private_key", value)
+
+
+@pulumi.input_type
+class ConfigConfigurationClientCertificateDetailsClientCertificateArgs:
+    def __init__(__self__, *,
+                 content: Optional[pulumi.Input[str]] = None,
+                 file_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] content: (Updatable) Content of the private key file.
+        :param pulumi.Input[str] file_name: (Updatable) Name of the private key file.
+        """
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if file_name is not None:
+            pulumi.set(__self__, "file_name", file_name)
+
+    @property
+    @pulumi.getter
+    def content(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Content of the private key file.
+        """
+        return pulumi.get(self, "content")
+
+    @content.setter
+    def content(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "content", value)
+
+    @property
+    @pulumi.getter(name="fileName")
+    def file_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of the private key file.
+        """
+        return pulumi.get(self, "file_name")
+
+    @file_name.setter
+    def file_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "file_name", value)
+
+
+@pulumi.input_type
+class ConfigConfigurationClientCertificateDetailsPrivateKeyArgs:
+    def __init__(__self__, *,
+                 content: Optional[pulumi.Input[str]] = None,
+                 file_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] content: (Updatable) Content of the private key file.
+        :param pulumi.Input[str] file_name: (Updatable) Name of the private key file.
+        """
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if file_name is not None:
+            pulumi.set(__self__, "file_name", file_name)
+
+    @property
+    @pulumi.getter
+    def content(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Content of the private key file.
+        """
+        return pulumi.get(self, "content")
+
+    @content.setter
+    def content(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "content", value)
+
+    @property
+    @pulumi.getter(name="fileName")
+    def file_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of the private key file.
+        """
+        return pulumi.get(self, "file_name")
+
+    @file_name.setter
+    def file_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "file_name", value)
+
+
+@pulumi.input_type
 class ConfigConfigurationDnsConfigurationArgs:
     def __init__(__self__, *,
                  is_override_dns: Optional[pulumi.Input[bool]] = None,
                  override_dns_ip: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[bool] is_override_dns: (Updatable) If isOverrideDns is true, then dns will be overridden.
-        :param pulumi.Input[str] override_dns_ip: (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+        :param pulumi.Input[bool] is_override_dns: (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
+        :param pulumi.Input[str] override_dns_ip: (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
         """
         if is_override_dns is not None:
             pulumi.set(__self__, "is_override_dns", is_override_dns)
@@ -338,7 +490,7 @@ class ConfigConfigurationDnsConfigurationArgs:
     @pulumi.getter(name="isOverrideDns")
     def is_override_dns(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) If isOverrideDns is true, then dns will be overridden.
+        (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
         """
         return pulumi.get(self, "is_override_dns")
 
@@ -350,7 +502,7 @@ class ConfigConfigurationDnsConfigurationArgs:
     @pulumi.getter(name="overrideDnsIp")
     def override_dns_ip(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+        (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
         """
         return pulumi.get(self, "override_dns_ip")
 
@@ -462,10 +614,10 @@ class ConfigConfigurationReqAuthenticationDetailsArgs:
         :param pulumi.Input[str] auth_request_method: (Updatable) Request method.
         :param pulumi.Input[str] auth_request_post_body: (Updatable) Request post body.
         :param pulumi.Input[str] auth_token: (Updatable) Authentication token.
-        :param pulumi.Input[str] auth_url: (Updatable) URL to get authetication token.
-        :param pulumi.Input[str] auth_user_name: (Updatable) Username for authentication.
+        :param pulumi.Input[str] auth_url: (Updatable) URL to get authentication token.
+        :param pulumi.Input[str] auth_user_name: (Updatable) User name for authentication.
         :param pulumi.Input[str] auth_user_password: (Updatable) User password for authentication.
-        :param pulumi.Input[str] oauth_scheme: (Updatable) Request http oauth scheme.
+        :param pulumi.Input[str] oauth_scheme: (Updatable) Request HTTP OAuth scheme.
         """
         if auth_headers is not None:
             pulumi.set(__self__, "auth_headers", auth_headers)
@@ -536,7 +688,7 @@ class ConfigConfigurationReqAuthenticationDetailsArgs:
     @pulumi.getter(name="authUrl")
     def auth_url(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) URL to get authetication token.
+        (Updatable) URL to get authentication token.
         """
         return pulumi.get(self, "auth_url")
 
@@ -548,7 +700,7 @@ class ConfigConfigurationReqAuthenticationDetailsArgs:
     @pulumi.getter(name="authUserName")
     def auth_user_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Username for authentication.
+        (Updatable) User name for authentication.
         """
         return pulumi.get(self, "auth_user_name")
 
@@ -572,7 +724,7 @@ class ConfigConfigurationReqAuthenticationDetailsArgs:
     @pulumi.getter(name="oauthScheme")
     def oauth_scheme(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Request http oauth scheme.
+        (Updatable) Request HTTP OAuth scheme.
         """
         return pulumi.get(self, "oauth_scheme")
 
@@ -727,8 +879,8 @@ class ConfigMaintenanceWindowScheduleArgs:
                  time_ended: Optional[pulumi.Input[str]] = None,
                  time_started: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] time_ended: (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        :param pulumi.Input[str] time_started: (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        :param pulumi.Input[str] time_ended: (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        :param pulumi.Input[str] time_started: (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
         if time_ended is not None:
             pulumi.set(__self__, "time_ended", time_ended)
@@ -739,7 +891,7 @@ class ConfigMaintenanceWindowScheduleArgs:
     @pulumi.getter(name="timeEnded")
     def time_ended(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_ended")
 
@@ -751,7 +903,7 @@ class ConfigMaintenanceWindowScheduleArgs:
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_started")
 

@@ -138,12 +138,12 @@ def get_alert_rules(budget_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Budget/getAlertRules:getAlertRules', __args__, opts=opts, typ=GetAlertRulesResult).value
 
     return AwaitableGetAlertRulesResult(
-        alert_rules=__ret__.alert_rules,
-        budget_id=__ret__.budget_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        alert_rules=pulumi.get(__ret__, 'alert_rules'),
+        budget_id=pulumi.get(__ret__, 'budget_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_alert_rules)

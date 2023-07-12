@@ -142,13 +142,13 @@ def get_subscription_redemptions(filters: Optional[Sequence[pulumi.InputType['Ge
     __ret__ = pulumi.runtime.invoke('oci:UsageProxy/getSubscriptionRedemptions:getSubscriptionRedemptions', __args__, opts=opts, typ=GetSubscriptionRedemptionsResult).value
 
     return AwaitableGetSubscriptionRedemptionsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        redemption_collections=__ret__.redemption_collections,
-        subscription_id=__ret__.subscription_id,
-        tenancy_id=__ret__.tenancy_id,
-        time_redeemed_greater_than_or_equal_to=__ret__.time_redeemed_greater_than_or_equal_to,
-        time_redeemed_less_than=__ret__.time_redeemed_less_than)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        redemption_collections=pulumi.get(__ret__, 'redemption_collections'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'),
+        tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
+        time_redeemed_greater_than_or_equal_to=pulumi.get(__ret__, 'time_redeemed_greater_than_or_equal_to'),
+        time_redeemed_less_than=pulumi.get(__ret__, 'time_redeemed_less_than'))
 
 
 @_utilities.lift_output_func(get_subscription_redemptions)

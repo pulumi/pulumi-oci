@@ -31,10 +31,28 @@ namespace Pulumi.Oci.OspGateway.Inputs
         public Input<string>? CompanyName { get; set; }
 
         /// <summary>
+        /// (Updatable) Contributor class of the customer company.
+        /// </summary>
+        [Input("contributorClass")]
+        public Input<string>? ContributorClass { get; set; }
+
+        /// <summary>
         /// (Updatable) Country of the address.
         /// </summary>
         [Input("country")]
         public Input<string>? Country { get; set; }
+
+        /// <summary>
+        /// (Updatable) County of the address.
+        /// </summary>
+        [Input("county")]
+        public Input<string>? County { get; set; }
+
+        /// <summary>
+        /// (Updatable) Department name of the customer company.
+        /// </summary>
+        [Input("departmentName")]
+        public Input<string>? DepartmentName { get; set; }
 
         /// <summary>
         /// (Updatable) The email address of the paypal user.
@@ -47,6 +65,18 @@ namespace Pulumi.Oci.OspGateway.Inputs
         /// </summary>
         [Input("firstName")]
         public Input<string>? FirstName { get; set; }
+
+        /// <summary>
+        /// (Updatable) Internal number of the customer company.
+        /// </summary>
+        [Input("internalNumber")]
+        public Input<string>? InternalNumber { get; set; }
+
+        /// <summary>
+        /// (Updatable) Job title of the contact person.
+        /// </summary>
+        [Input("jobTitle")]
+        public Input<string>? JobTitle { get; set; }
 
         /// <summary>
         /// (Updatable) Last name of the paypal user.
@@ -67,16 +97,76 @@ namespace Pulumi.Oci.OspGateway.Inputs
         public Input<string>? Line2 { get; set; }
 
         /// <summary>
+        /// (Updatable) Address line 3.
+        /// </summary>
+        [Input("line3")]
+        public Input<string>? Line3 { get; set; }
+
+        /// <summary>
+        /// (Updatable) Address line 4.
+        /// </summary>
+        [Input("line4")]
+        public Input<string>? Line4 { get; set; }
+
+        /// <summary>
+        /// (Updatable) Middle name of the contact person.
+        /// </summary>
+        [Input("middleName")]
+        public Input<string>? MiddleName { get; set; }
+
+        /// <summary>
+        /// (Updatable) Municipal Inscription.
+        /// </summary>
+        [Input("municipalInscription")]
+        public Input<string>? MunicipalInscription { get; set; }
+
+        /// <summary>
+        /// (Updatable) Phone country code of the contact person.
+        /// </summary>
+        [Input("phoneCountryCode")]
+        public Input<string>? PhoneCountryCode { get; set; }
+
+        /// <summary>
+        /// (Updatable) Phone number of the contact person.
+        /// </summary>
+        [Input("phoneNumber")]
+        public Input<string>? PhoneNumber { get; set; }
+
+        /// <summary>
         /// (Updatable) Post code of the address.
         /// </summary>
         [Input("postalCode")]
         public Input<string>? PostalCode { get; set; }
 
         /// <summary>
+        /// (Updatable) Province of the address.
+        /// </summary>
+        [Input("province")]
+        public Input<string>? Province { get; set; }
+
+        /// <summary>
         /// (Updatable) State of the address.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        /// <summary>
+        /// (Updatable) State Inscription.
+        /// </summary>
+        [Input("stateInscription")]
+        public Input<string>? StateInscription { get; set; }
+
+        /// <summary>
+        /// (Updatable) Street name of the address.
+        /// </summary>
+        [Input("streetName")]
+        public Input<string>? StreetName { get; set; }
+
+        /// <summary>
+        /// (Updatable) Street number of the address.
+        /// </summary>
+        [Input("streetNumber")]
+        public Input<string>? StreetNumber { get; set; }
 
         public SubscriptionBillingAddressGetArgs()
         {

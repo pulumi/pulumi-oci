@@ -210,19 +210,19 @@ def get_nat_gateway(nat_gateway_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getNatGateway:getNatGateway', __args__, opts=opts, typ=GetNatGatewayResult).value
 
     return AwaitableGetNatGatewayResult(
-        block_traffic=__ret__.block_traffic,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        nat_gateway_id=__ret__.nat_gateway_id,
-        nat_ip=__ret__.nat_ip,
-        public_ip_id=__ret__.public_ip_id,
-        route_table_id=__ret__.route_table_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        vcn_id=__ret__.vcn_id)
+        block_traffic=pulumi.get(__ret__, 'block_traffic'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        nat_gateway_id=pulumi.get(__ret__, 'nat_gateway_id'),
+        nat_ip=pulumi.get(__ret__, 'nat_ip'),
+        public_ip_id=pulumi.get(__ret__, 'public_ip_id'),
+        route_table_id=pulumi.get(__ret__, 'route_table_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_nat_gateway)

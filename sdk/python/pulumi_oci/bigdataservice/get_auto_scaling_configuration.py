@@ -194,18 +194,18 @@ def get_auto_scaling_configuration(auto_scaling_configuration_id: Optional[str] 
     __ret__ = pulumi.runtime.invoke('oci:BigDataService/getAutoScalingConfiguration:getAutoScalingConfiguration', __args__, opts=opts, typ=GetAutoScalingConfigurationResult).value
 
     return AwaitableGetAutoScalingConfigurationResult(
-        auto_scaling_configuration_id=__ret__.auto_scaling_configuration_id,
-        bds_instance_id=__ret__.bds_instance_id,
-        cluster_admin_password=__ret__.cluster_admin_password,
-        display_name=__ret__.display_name,
-        id=__ret__.id,
-        is_enabled=__ret__.is_enabled,
-        node_type=__ret__.node_type,
-        policies=__ret__.policies,
-        policy_details=__ret__.policy_details,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        auto_scaling_configuration_id=pulumi.get(__ret__, 'auto_scaling_configuration_id'),
+        bds_instance_id=pulumi.get(__ret__, 'bds_instance_id'),
+        cluster_admin_password=pulumi.get(__ret__, 'cluster_admin_password'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        id=pulumi.get(__ret__, 'id'),
+        is_enabled=pulumi.get(__ret__, 'is_enabled'),
+        node_type=pulumi.get(__ret__, 'node_type'),
+        policies=pulumi.get(__ret__, 'policies'),
+        policy_details=pulumi.get(__ret__, 'policy_details'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_auto_scaling_configuration)

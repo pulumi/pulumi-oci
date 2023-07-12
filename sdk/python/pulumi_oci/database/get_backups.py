@@ -122,11 +122,11 @@ def get_backups(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getBackups:getBackups', __args__, opts=opts, typ=GetBackupsResult).value
 
     return AwaitableGetBackupsResult(
-        backups=__ret__.backups,
-        compartment_id=__ret__.compartment_id,
-        database_id=__ret__.database_id,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        backups=pulumi.get(__ret__, 'backups'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        database_id=pulumi.get(__ret__, 'database_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_backups)

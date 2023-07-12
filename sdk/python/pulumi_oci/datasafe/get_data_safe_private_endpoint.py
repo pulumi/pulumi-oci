@@ -246,22 +246,22 @@ def get_data_safe_private_endpoint(data_safe_private_endpoint_id: Optional[str] 
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getDataSafePrivateEndpoint:getDataSafePrivateEndpoint', __args__, opts=opts, typ=GetDataSafePrivateEndpointResult).value
 
     return AwaitableGetDataSafePrivateEndpointResult(
-        compartment_id=__ret__.compartment_id,
-        data_safe_private_endpoint_id=__ret__.data_safe_private_endpoint_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        endpoint_fqdn=__ret__.endpoint_fqdn,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        nsg_ids=__ret__.nsg_ids,
-        private_endpoint_id=__ret__.private_endpoint_id,
-        private_endpoint_ip=__ret__.private_endpoint_ip,
-        state=__ret__.state,
-        subnet_id=__ret__.subnet_id,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        vcn_id=__ret__.vcn_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        data_safe_private_endpoint_id=pulumi.get(__ret__, 'data_safe_private_endpoint_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        endpoint_fqdn=pulumi.get(__ret__, 'endpoint_fqdn'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
+        private_endpoint_id=pulumi.get(__ret__, 'private_endpoint_id'),
+        private_endpoint_ip=pulumi.get(__ret__, 'private_endpoint_ip'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_data_safe_private_endpoint)

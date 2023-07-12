@@ -151,13 +151,13 @@ def get_service_environments(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ServiceManagerProxy/getServiceEnvironments:getServiceEnvironments', __args__, opts=opts, typ=GetServiceEnvironmentsResult).value
 
     return AwaitableGetServiceEnvironmentsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        service_environment_collections=__ret__.service_environment_collections,
-        service_environment_id=__ret__.service_environment_id,
-        service_environment_type=__ret__.service_environment_type)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        service_environment_collections=pulumi.get(__ret__, 'service_environment_collections'),
+        service_environment_id=pulumi.get(__ret__, 'service_environment_id'),
+        service_environment_type=pulumi.get(__ret__, 'service_environment_type'))
 
 
 @_utilities.lift_output_func(get_service_environments)

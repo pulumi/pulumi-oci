@@ -210,19 +210,19 @@ def get_catalog_private_endpoint(catalog_private_endpoint_id: Optional[str] = No
     __ret__ = pulumi.runtime.invoke('oci:DataCatalog/getCatalogPrivateEndpoint:getCatalogPrivateEndpoint', __args__, opts=opts, typ=GetCatalogPrivateEndpointResult).value
 
     return AwaitableGetCatalogPrivateEndpointResult(
-        attached_catalogs=__ret__.attached_catalogs,
-        catalog_private_endpoint_id=__ret__.catalog_private_endpoint_id,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        dns_zones=__ret__.dns_zones,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        state=__ret__.state,
-        subnet_id=__ret__.subnet_id,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        attached_catalogs=pulumi.get(__ret__, 'attached_catalogs'),
+        catalog_private_endpoint_id=pulumi.get(__ret__, 'catalog_private_endpoint_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        dns_zones=pulumi.get(__ret__, 'dns_zones'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_catalog_private_endpoint)

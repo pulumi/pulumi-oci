@@ -115,11 +115,11 @@ def get_api_deployment_specification(api_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApiGateway/getApiDeploymentSpecification:getApiDeploymentSpecification', __args__, opts=opts, typ=GetApiDeploymentSpecificationResult).value
 
     return AwaitableGetApiDeploymentSpecificationResult(
-        api_id=__ret__.api_id,
-        id=__ret__.id,
-        logging_policies=__ret__.logging_policies,
-        request_policies=__ret__.request_policies,
-        routes=__ret__.routes)
+        api_id=pulumi.get(__ret__, 'api_id'),
+        id=pulumi.get(__ret__, 'id'),
+        logging_policies=pulumi.get(__ret__, 'logging_policies'),
+        request_policies=pulumi.get(__ret__, 'request_policies'),
+        routes=pulumi.get(__ret__, 'routes'))
 
 
 @_utilities.lift_output_func(get_api_deployment_specification)

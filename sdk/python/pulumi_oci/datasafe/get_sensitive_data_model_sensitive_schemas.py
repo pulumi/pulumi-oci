@@ -119,11 +119,11 @@ def get_sensitive_data_model_sensitive_schemas(filters: Optional[Sequence[pulumi
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getSensitiveDataModelSensitiveSchemas:getSensitiveDataModelSensitiveSchemas', __args__, opts=opts, typ=GetSensitiveDataModelSensitiveSchemasResult).value
 
     return AwaitableGetSensitiveDataModelSensitiveSchemasResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        schema_names=__ret__.schema_names,
-        sensitive_data_model_id=__ret__.sensitive_data_model_id,
-        sensitive_schema_collections=__ret__.sensitive_schema_collections)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        schema_names=pulumi.get(__ret__, 'schema_names'),
+        sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'),
+        sensitive_schema_collections=pulumi.get(__ret__, 'sensitive_schema_collections'))
 
 
 @_utilities.lift_output_func(get_sensitive_data_model_sensitive_schemas)

@@ -15,6 +15,11 @@ export type Cluster = import("./cluster").Cluster;
 export const Cluster: typeof import("./cluster").Cluster = null as any;
 utilities.lazyLoad(exports, ["Cluster"], () => require("./cluster"));
 
+export { ClusterWorkloadMappingArgs, ClusterWorkloadMappingState } from "./clusterWorkloadMapping";
+export type ClusterWorkloadMapping = import("./clusterWorkloadMapping").ClusterWorkloadMapping;
+export const ClusterWorkloadMapping: typeof import("./clusterWorkloadMapping").ClusterWorkloadMapping = null as any;
+utilities.lazyLoad(exports, ["ClusterWorkloadMapping"], () => require("./clusterWorkloadMapping"));
+
 export { ContainerInstanceArgs, ContainerInstanceState } from "./containerInstance";
 export type ContainerInstance = import("./containerInstance").ContainerInstance;
 export const ContainerInstance: typeof import("./containerInstance").ContainerInstance = null as any;
@@ -44,6 +49,16 @@ export { GetClusterOptionArgs, GetClusterOptionResult, GetClusterOptionOutputArg
 export const getClusterOption: typeof import("./getClusterOption").getClusterOption = null as any;
 export const getClusterOptionOutput: typeof import("./getClusterOption").getClusterOptionOutput = null as any;
 utilities.lazyLoad(exports, ["getClusterOption","getClusterOptionOutput"], () => require("./getClusterOption"));
+
+export { GetClusterWorkloadMappingArgs, GetClusterWorkloadMappingResult, GetClusterWorkloadMappingOutputArgs } from "./getClusterWorkloadMapping";
+export const getClusterWorkloadMapping: typeof import("./getClusterWorkloadMapping").getClusterWorkloadMapping = null as any;
+export const getClusterWorkloadMappingOutput: typeof import("./getClusterWorkloadMapping").getClusterWorkloadMappingOutput = null as any;
+utilities.lazyLoad(exports, ["getClusterWorkloadMapping","getClusterWorkloadMappingOutput"], () => require("./getClusterWorkloadMapping"));
+
+export { GetClusterWorkloadMappingsArgs, GetClusterWorkloadMappingsResult, GetClusterWorkloadMappingsOutputArgs } from "./getClusterWorkloadMappings";
+export const getClusterWorkloadMappings: typeof import("./getClusterWorkloadMappings").getClusterWorkloadMappings = null as any;
+export const getClusterWorkloadMappingsOutput: typeof import("./getClusterWorkloadMappings").getClusterWorkloadMappingsOutput = null as any;
+utilities.lazyLoad(exports, ["getClusterWorkloadMappings","getClusterWorkloadMappingsOutput"], () => require("./getClusterWorkloadMappings"));
 
 export { GetClustersArgs, GetClustersResult, GetClustersOutputArgs } from "./getClusters";
 export const getClusters: typeof import("./getClusters").getClusters = null as any;
@@ -119,6 +134,8 @@ const _module = {
                 return new Addon(name, <any>undefined, { urn })
             case "oci:ContainerEngine/cluster:Cluster":
                 return new Cluster(name, <any>undefined, { urn })
+            case "oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping":
+                return new ClusterWorkloadMapping(name, <any>undefined, { urn })
             case "oci:ContainerEngine/containerInstance:ContainerInstance":
                 return new ContainerInstance(name, <any>undefined, { urn })
             case "oci:ContainerEngine/nodePool:NodePool":
@@ -132,6 +149,7 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/addon", _module)
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/cluster", _module)
+pulumi.runtime.registerResourceModule("oci", "ContainerEngine/clusterWorkloadMapping", _module)
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/containerInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/nodePool", _module)
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/virtualNodePool", _module)

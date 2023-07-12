@@ -181,13 +181,13 @@ def get_private_ips(filters: Optional[Sequence[pulumi.InputType['GetPrivateIpsFi
     __ret__ = pulumi.runtime.invoke('oci:Core/getPrivateIps:getPrivateIps', __args__, opts=opts, typ=GetPrivateIpsResult).value
 
     return AwaitableGetPrivateIpsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        ip_address=__ret__.ip_address,
-        private_ips=__ret__.private_ips,
-        subnet_id=__ret__.subnet_id,
-        vlan_id=__ret__.vlan_id,
-        vnic_id=__ret__.vnic_id)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        ip_address=pulumi.get(__ret__, 'ip_address'),
+        private_ips=pulumi.get(__ret__, 'private_ips'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        vlan_id=pulumi.get(__ret__, 'vlan_id'),
+        vnic_id=pulumi.get(__ret__, 'vnic_id'))
 
 
 @_utilities.lift_output_func(get_private_ips)

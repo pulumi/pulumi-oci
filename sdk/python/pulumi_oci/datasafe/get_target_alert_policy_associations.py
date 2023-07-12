@@ -220,18 +220,18 @@ def get_target_alert_policy_associations(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations', __args__, opts=opts, typ=GetTargetAlertPolicyAssociationsResult).value
 
     return AwaitableGetTargetAlertPolicyAssociationsResult(
-        access_level=__ret__.access_level,
-        alert_policy_id=__ret__.alert_policy_id,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        target_alert_policy_association_collections=__ret__.target_alert_policy_association_collections,
-        target_alert_policy_association_id=__ret__.target_alert_policy_association_id,
-        target_id=__ret__.target_id,
-        time_created_greater_than_or_equal_to=__ret__.time_created_greater_than_or_equal_to,
-        time_created_less_than=__ret__.time_created_less_than)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        alert_policy_id=pulumi.get(__ret__, 'alert_policy_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        target_alert_policy_association_collections=pulumi.get(__ret__, 'target_alert_policy_association_collections'),
+        target_alert_policy_association_id=pulumi.get(__ret__, 'target_alert_policy_association_id'),
+        target_id=pulumi.get(__ret__, 'target_id'),
+        time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
 
 
 @_utilities.lift_output_func(get_target_alert_policy_associations)

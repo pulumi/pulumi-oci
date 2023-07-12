@@ -109,10 +109,10 @@ def get_api_keys(filters: Optional[Sequence[pulumi.InputType['GetApiKeysFilterAr
     __ret__ = pulumi.runtime.invoke('oci:Identity/getApiKeys:getApiKeys', __args__, opts=opts, typ=GetApiKeysResult).value
 
     return AwaitableGetApiKeysResult(
-        api_keys=__ret__.api_keys,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        user_id=__ret__.user_id)
+        api_keys=pulumi.get(__ret__, 'api_keys'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        user_id=pulumi.get(__ret__, 'user_id'))
 
 
 @_utilities.lift_output_func(get_api_keys)

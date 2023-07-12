@@ -219,20 +219,20 @@ def get_boot_volume_replica(boot_volume_replica_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getBootVolumeReplica:getBootVolumeReplica', __args__, opts=opts, typ=GetBootVolumeReplicaResult).value
 
     return AwaitableGetBootVolumeReplicaResult(
-        availability_domain=__ret__.availability_domain,
-        boot_volume_id=__ret__.boot_volume_id,
-        boot_volume_replica_id=__ret__.boot_volume_replica_id,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        image_id=__ret__.image_id,
-        size_in_gbs=__ret__.size_in_gbs,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_last_synced=__ret__.time_last_synced,
-        volume_group_replica_id=__ret__.volume_group_replica_id)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        boot_volume_id=pulumi.get(__ret__, 'boot_volume_id'),
+        boot_volume_replica_id=pulumi.get(__ret__, 'boot_volume_replica_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        image_id=pulumi.get(__ret__, 'image_id'),
+        size_in_gbs=pulumi.get(__ret__, 'size_in_gbs'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_last_synced=pulumi.get(__ret__, 'time_last_synced'),
+        volume_group_replica_id=pulumi.get(__ret__, 'volume_group_replica_id'))
 
 
 @_utilities.lift_output_func(get_boot_volume_replica)

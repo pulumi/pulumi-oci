@@ -177,15 +177,15 @@ def get_workspace_folders(aggregator_key: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataIntegration/getWorkspaceFolders:getWorkspaceFolders', __args__, opts=opts, typ=GetWorkspaceFoldersResult).value
 
     return AwaitableGetWorkspaceFoldersResult(
-        aggregator_key=__ret__.aggregator_key,
-        fields=__ret__.fields,
-        filters=__ret__.filters,
-        folder_summary_collections=__ret__.folder_summary_collections,
-        id=__ret__.id,
-        identifiers=__ret__.identifiers,
-        name=__ret__.name,
-        name_contains=__ret__.name_contains,
-        workspace_id=__ret__.workspace_id)
+        aggregator_key=pulumi.get(__ret__, 'aggregator_key'),
+        fields=pulumi.get(__ret__, 'fields'),
+        filters=pulumi.get(__ret__, 'filters'),
+        folder_summary_collections=pulumi.get(__ret__, 'folder_summary_collections'),
+        id=pulumi.get(__ret__, 'id'),
+        identifiers=pulumi.get(__ret__, 'identifiers'),
+        name=pulumi.get(__ret__, 'name'),
+        name_contains=pulumi.get(__ret__, 'name_contains'),
+        workspace_id=pulumi.get(__ret__, 'workspace_id'))
 
 
 @_utilities.lift_output_func(get_workspace_folders)

@@ -57,11 +57,15 @@ export interface GetSubscriptionArgs {
  */
 export interface GetSubscriptionResult {
     /**
+     * Account type.
+     */
+    readonly accountType: string;
+    /**
      * Bill to customer Account id.
      */
     readonly billToCustAccountId: string;
     /**
-     * Billing address details model.
+     * Address details model.
      */
     readonly billingAddresses: outputs.OspGateway.GetSubscriptionBillingAddress[];
     readonly compartmentId: string;
@@ -121,6 +125,10 @@ export interface GetSubscriptionResult {
      * Tax details.
      */
     readonly taxInfos: outputs.OspGateway.GetSubscriptionTaxInfo[];
+    /**
+     * Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+     */
+    readonly timePersonalToCorporateConv: string;
     /**
      * Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      */

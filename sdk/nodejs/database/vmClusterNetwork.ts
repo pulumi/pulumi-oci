@@ -46,6 +46,11 @@ import * as utilities from "../utilities";
  *     }],
  *     definedTags: _var.vm_cluster_network_defined_tags,
  *     dns: _var.vm_cluster_network_dns,
+ *     drScans: [{
+ *         hostname: _var.vm_cluster_network_dr_scans_hostname,
+ *         ips: _var.vm_cluster_network_dr_scans_ips,
+ *         scanListenerPortTcp: _var.vm_cluster_network_dr_scans_scan_listener_port_tcp,
+ *     }],
  *     freeformTags: {
  *         Department: "Finance",
  *     },
@@ -108,6 +113,10 @@ export class VmClusterNetwork extends pulumi.CustomResource {
      */
     public readonly dns!: pulumi.Output<string[]>;
     /**
+     * (Updatable) The SCAN details for DR network
+     */
+    public readonly drScans!: pulumi.Output<outputs.Database.VmClusterNetworkDrScan[]>;
+    /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public readonly exadataInfrastructureId!: pulumi.Output<string>;
@@ -163,6 +172,7 @@ export class VmClusterNetwork extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["dns"] = state ? state.dns : undefined;
+            resourceInputs["drScans"] = state ? state.drScans : undefined;
             resourceInputs["exadataInfrastructureId"] = state ? state.exadataInfrastructureId : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
@@ -195,6 +205,7 @@ export class VmClusterNetwork extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["dns"] = args ? args.dns : undefined;
+            resourceInputs["drScans"] = args ? args.drScans : undefined;
             resourceInputs["exadataInfrastructureId"] = args ? args.exadataInfrastructureId : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["ntps"] = args ? args.ntps : undefined;
@@ -232,6 +243,10 @@ export interface VmClusterNetworkState {
      * (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
      */
     dns?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) The SCAN details for DR network
+     */
+    drScans?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterNetworkDrScan>[]>;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -292,6 +307,10 @@ export interface VmClusterNetworkArgs {
      * (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
      */
     dns?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) The SCAN details for DR network
+     */
+    drScans?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterNetworkDrScan>[]>;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

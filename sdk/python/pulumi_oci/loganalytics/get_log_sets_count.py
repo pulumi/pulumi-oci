@@ -90,9 +90,9 @@ def get_log_sets_count(namespace: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getLogSetsCount:getLogSetsCount', __args__, opts=opts, typ=GetLogSetsCountResult).value
 
     return AwaitableGetLogSetsCountResult(
-        id=__ret__.id,
-        log_sets_count=__ret__.log_sets_count,
-        namespace=__ret__.namespace)
+        id=pulumi.get(__ret__, 'id'),
+        log_sets_count=pulumi.get(__ret__, 'log_sets_count'),
+        namespace=pulumi.get(__ret__, 'namespace'))
 
 
 @_utilities.lift_output_func(get_log_sets_count)

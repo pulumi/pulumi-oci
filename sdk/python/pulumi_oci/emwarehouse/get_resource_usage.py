@@ -139,13 +139,13 @@ def get_resource_usage(em_warehouse_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:EmWarehouse/getResourceUsage:getResourceUsage', __args__, opts=opts, typ=GetResourceUsageResult).value
 
     return AwaitableGetResourceUsageResult(
-        em_instance_count=__ret__.em_instance_count,
-        em_instances=__ret__.em_instances,
-        em_warehouse_id=__ret__.em_warehouse_id,
-        id=__ret__.id,
-        operations_insights_warehouse_id=__ret__.operations_insights_warehouse_id,
-        schema_name=__ret__.schema_name,
-        targets_count=__ret__.targets_count)
+        em_instance_count=pulumi.get(__ret__, 'em_instance_count'),
+        em_instances=pulumi.get(__ret__, 'em_instances'),
+        em_warehouse_id=pulumi.get(__ret__, 'em_warehouse_id'),
+        id=pulumi.get(__ret__, 'id'),
+        operations_insights_warehouse_id=pulumi.get(__ret__, 'operations_insights_warehouse_id'),
+        schema_name=pulumi.get(__ret__, 'schema_name'),
+        targets_count=pulumi.get(__ret__, 'targets_count'))
 
 
 @_utilities.lift_output_func(get_resource_usage)

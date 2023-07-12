@@ -134,12 +134,12 @@ def get_backend_health(backend_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:NetworkLoadBalancer/getBackendHealth:getBackendHealth', __args__, opts=opts, typ=GetBackendHealthResult).value
 
     return AwaitableGetBackendHealthResult(
-        backend_name=__ret__.backend_name,
-        backend_set_name=__ret__.backend_set_name,
-        health_check_results=__ret__.health_check_results,
-        id=__ret__.id,
-        network_load_balancer_id=__ret__.network_load_balancer_id,
-        status=__ret__.status)
+        backend_name=pulumi.get(__ret__, 'backend_name'),
+        backend_set_name=pulumi.get(__ret__, 'backend_set_name'),
+        health_check_results=pulumi.get(__ret__, 'health_check_results'),
+        id=pulumi.get(__ret__, 'id'),
+        network_load_balancer_id=pulumi.get(__ret__, 'network_load_balancer_id'),
+        status=pulumi.get(__ret__, 'status'))
 
 
 @_utilities.lift_output_func(get_backend_health)

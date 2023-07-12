@@ -175,16 +175,16 @@ def get_capture_filter(capture_filter_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getCaptureFilter:getCaptureFilter', __args__, opts=opts, typ=GetCaptureFilterResult).value
 
     return AwaitableGetCaptureFilterResult(
-        capture_filter_id=__ret__.capture_filter_id,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        filter_type=__ret__.filter_type,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        vtap_capture_filter_rules=__ret__.vtap_capture_filter_rules)
+        capture_filter_id=pulumi.get(__ret__, 'capture_filter_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filter_type=pulumi.get(__ret__, 'filter_type'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        vtap_capture_filter_rules=pulumi.get(__ret__, 'vtap_capture_filter_rules'))
 
 
 @_utilities.lift_output_func(get_capture_filter)

@@ -222,20 +222,20 @@ def get_ai_private_endpoint(ai_private_endpoint_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:AiAnomalyDetection/getAiPrivateEndpoint:getAiPrivateEndpoint', __args__, opts=opts, typ=GetAiPrivateEndpointResult).value
 
     return AwaitableGetAiPrivateEndpointResult(
-        ai_private_endpoint_id=__ret__.ai_private_endpoint_id,
-        attached_data_assets=__ret__.attached_data_assets,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        dns_zones=__ret__.dns_zones,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        state=__ret__.state,
-        subnet_id=__ret__.subnet_id,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        ai_private_endpoint_id=pulumi.get(__ret__, 'ai_private_endpoint_id'),
+        attached_data_assets=pulumi.get(__ret__, 'attached_data_assets'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        dns_zones=pulumi.get(__ret__, 'dns_zones'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_ai_private_endpoint)

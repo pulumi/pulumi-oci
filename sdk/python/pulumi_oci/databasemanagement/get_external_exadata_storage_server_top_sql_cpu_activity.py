@@ -91,9 +91,9 @@ def get_external_exadata_storage_server_top_sql_cpu_activity(external_exadata_st
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalExadataStorageServerTopSqlCpuActivity:getExternalExadataStorageServerTopSqlCpuActivity', __args__, opts=opts, typ=GetExternalExadataStorageServerTopSqlCpuActivityResult).value
 
     return AwaitableGetExternalExadataStorageServerTopSqlCpuActivityResult(
-        activities=__ret__.activities,
-        external_exadata_storage_server_id=__ret__.external_exadata_storage_server_id,
-        id=__ret__.id)
+        activities=pulumi.get(__ret__, 'activities'),
+        external_exadata_storage_server_id=pulumi.get(__ret__, 'external_exadata_storage_server_id'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_external_exadata_storage_server_top_sql_cpu_activity)

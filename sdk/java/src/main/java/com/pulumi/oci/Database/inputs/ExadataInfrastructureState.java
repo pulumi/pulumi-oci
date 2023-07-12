@@ -593,14 +593,14 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     * (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
      * 
      */
     @Import(name="networkBondingModeDetails")
     private @Nullable Output<ExadataInfrastructureNetworkBondingModeDetailsArgs> networkBondingModeDetails;
 
     /**
-     * @return (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     * @return (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
      * 
      */
     public Optional<Output<ExadataInfrastructureNetworkBondingModeDetailsArgs>> networkBondingModeDetails() {
@@ -620,6 +620,21 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
      */
     public Optional<Output<List<String>>> ntpServers() {
         return Optional.ofNullable(this.ntpServers);
+    }
+
+    /**
+     * The serial number for the Exadata infrastructure.
+     * 
+     */
+    @Import(name="rackSerialNumber")
+    private @Nullable Output<String> rackSerialNumber;
+
+    /**
+     * @return The serial number for the Exadata infrastructure.
+     * 
+     */
+    public Optional<Output<String>> rackSerialNumber() {
+        return Optional.ofNullable(this.rackSerialNumber);
     }
 
     /**
@@ -755,6 +770,7 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
         this.netmask = $.netmask;
         this.networkBondingModeDetails = $.networkBondingModeDetails;
         this.ntpServers = $.ntpServers;
+        this.rackSerialNumber = $.rackSerialNumber;
         this.shape = $.shape;
         this.state = $.state;
         this.storageCount = $.storageCount;
@@ -1594,7 +1610,7 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param networkBondingModeDetails (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+         * @param networkBondingModeDetails (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
          * 
          * @return builder
          * 
@@ -1605,7 +1621,7 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param networkBondingModeDetails (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+         * @param networkBondingModeDetails (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
          * 
          * @return builder
          * 
@@ -1643,6 +1659,27 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
          */
         public Builder ntpServers(String... ntpServers) {
             return ntpServers(List.of(ntpServers));
+        }
+
+        /**
+         * @param rackSerialNumber The serial number for the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rackSerialNumber(@Nullable Output<String> rackSerialNumber) {
+            $.rackSerialNumber = rackSerialNumber;
+            return this;
+        }
+
+        /**
+         * @param rackSerialNumber The serial number for the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rackSerialNumber(String rackSerialNumber) {
+            return rackSerialNumber(Output.of(rackSerialNumber));
         }
 
         /**

@@ -151,13 +151,13 @@ def get_environments(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudBridge/getEnvironments:getEnvironments', __args__, opts=opts, typ=GetEnvironmentsResult).value
 
     return AwaitableGetEnvironmentsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        environment_collections=__ret__.environment_collections,
-        environment_id=__ret__.environment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        environment_collections=pulumi.get(__ret__, 'environment_collections'),
+        environment_id=pulumi.get(__ret__, 'environment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_environments)

@@ -212,19 +212,19 @@ def get_dedicated_vantage_point(apm_domain_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApmSynthetics/getDedicatedVantagePoint:getDedicatedVantagePoint', __args__, opts=opts, typ=GetDedicatedVantagePointResult).value
 
     return AwaitableGetDedicatedVantagePointResult(
-        apm_domain_id=__ret__.apm_domain_id,
-        dedicated_vantage_point_id=__ret__.dedicated_vantage_point_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        dvp_stack_details=__ret__.dvp_stack_details,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        monitor_status_count_maps=__ret__.monitor_status_count_maps,
-        name=__ret__.name,
-        region=__ret__.region,
-        status=__ret__.status,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        apm_domain_id=pulumi.get(__ret__, 'apm_domain_id'),
+        dedicated_vantage_point_id=pulumi.get(__ret__, 'dedicated_vantage_point_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        dvp_stack_details=pulumi.get(__ret__, 'dvp_stack_details'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        monitor_status_count_maps=pulumi.get(__ret__, 'monitor_status_count_maps'),
+        name=pulumi.get(__ret__, 'name'),
+        region=pulumi.get(__ret__, 'region'),
+        status=pulumi.get(__ret__, 'status'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_dedicated_vantage_point)

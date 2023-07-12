@@ -103,10 +103,10 @@ def get_db_system_history_entries(db_system_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getDbSystemHistoryEntries:getDbSystemHistoryEntries', __args__, opts=opts, typ=GetDbSystemHistoryEntriesResult).value
 
     return AwaitableGetDbSystemHistoryEntriesResult(
-        db_system_id=__ret__.db_system_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        patch_history_entries=__ret__.patch_history_entries)
+        db_system_id=pulumi.get(__ret__, 'db_system_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        patch_history_entries=pulumi.get(__ret__, 'patch_history_entries'))
 
 
 @_utilities.lift_output_func(get_db_system_history_entries)

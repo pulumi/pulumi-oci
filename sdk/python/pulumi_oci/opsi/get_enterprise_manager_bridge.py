@@ -234,21 +234,21 @@ def get_enterprise_manager_bridge(enterprise_manager_bridge_id: Optional[str] = 
     __ret__ = pulumi.runtime.invoke('oci:Opsi/getEnterpriseManagerBridge:getEnterpriseManagerBridge', __args__, opts=opts, typ=GetEnterpriseManagerBridgeResult).value
 
     return AwaitableGetEnterpriseManagerBridgeResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        enterprise_manager_bridge_id=__ret__.enterprise_manager_bridge_id,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        object_storage_bucket_name=__ret__.object_storage_bucket_name,
-        object_storage_bucket_status_details=__ret__.object_storage_bucket_status_details,
-        object_storage_namespace_name=__ret__.object_storage_namespace_name,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        enterprise_manager_bridge_id=pulumi.get(__ret__, 'enterprise_manager_bridge_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        object_storage_bucket_name=pulumi.get(__ret__, 'object_storage_bucket_name'),
+        object_storage_bucket_status_details=pulumi.get(__ret__, 'object_storage_bucket_status_details'),
+        object_storage_namespace_name=pulumi.get(__ret__, 'object_storage_namespace_name'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_enterprise_manager_bridge)

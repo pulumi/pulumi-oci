@@ -307,23 +307,23 @@ def get_user_assessments(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getUserAssessments:getUserAssessments', __args__, opts=opts, typ=GetUserAssessmentsResult).value
 
     return AwaitableGetUserAssessmentsResult(
-        access_level=__ret__.access_level,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        ignored_targets=__ret__.ignored_targets,
-        is_baseline=__ret__.is_baseline,
-        is_schedule_assessment=__ret__.is_schedule_assessment,
-        schedule_user_assessment_id=__ret__.schedule_user_assessment_id,
-        state=__ret__.state,
-        target_id=__ret__.target_id,
-        time_created_greater_than_or_equal_to=__ret__.time_created_greater_than_or_equal_to,
-        time_created_less_than=__ret__.time_created_less_than,
-        triggered_by=__ret__.triggered_by,
-        type=__ret__.type,
-        user_assessments=__ret__.user_assessments)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        ignored_targets=pulumi.get(__ret__, 'ignored_targets'),
+        is_baseline=pulumi.get(__ret__, 'is_baseline'),
+        is_schedule_assessment=pulumi.get(__ret__, 'is_schedule_assessment'),
+        schedule_user_assessment_id=pulumi.get(__ret__, 'schedule_user_assessment_id'),
+        state=pulumi.get(__ret__, 'state'),
+        target_id=pulumi.get(__ret__, 'target_id'),
+        time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'),
+        triggered_by=pulumi.get(__ret__, 'triggered_by'),
+        type=pulumi.get(__ret__, 'type'),
+        user_assessments=pulumi.get(__ret__, 'user_assessments'))
 
 
 @_utilities.lift_output_func(get_user_assessments)

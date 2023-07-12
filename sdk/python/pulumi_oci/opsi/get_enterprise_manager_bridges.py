@@ -156,13 +156,13 @@ def get_enterprise_manager_bridges(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Opsi/getEnterpriseManagerBridges:getEnterpriseManagerBridges', __args__, opts=opts, typ=GetEnterpriseManagerBridgesResult).value
 
     return AwaitableGetEnterpriseManagerBridgesResult(
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        display_name=__ret__.display_name,
-        enterprise_manager_bridge_collections=__ret__.enterprise_manager_bridge_collections,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        states=__ret__.states)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        enterprise_manager_bridge_collections=pulumi.get(__ret__, 'enterprise_manager_bridge_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        states=pulumi.get(__ret__, 'states'))
 
 
 @_utilities.lift_output_func(get_enterprise_manager_bridges)

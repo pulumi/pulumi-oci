@@ -180,16 +180,16 @@ def get_resource_availability(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Limits/getResourceAvailability:getResourceAvailability', __args__, opts=opts, typ=GetResourceAvailabilityResult).value
 
     return AwaitableGetResourceAvailabilityResult(
-        availability_domain=__ret__.availability_domain,
-        available=__ret__.available,
-        compartment_id=__ret__.compartment_id,
-        effective_quota_value=__ret__.effective_quota_value,
-        fractional_availability=__ret__.fractional_availability,
-        fractional_usage=__ret__.fractional_usage,
-        id=__ret__.id,
-        limit_name=__ret__.limit_name,
-        service_name=__ret__.service_name,
-        used=__ret__.used)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        available=pulumi.get(__ret__, 'available'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        effective_quota_value=pulumi.get(__ret__, 'effective_quota_value'),
+        fractional_availability=pulumi.get(__ret__, 'fractional_availability'),
+        fractional_usage=pulumi.get(__ret__, 'fractional_usage'),
+        id=pulumi.get(__ret__, 'id'),
+        limit_name=pulumi.get(__ret__, 'limit_name'),
+        service_name=pulumi.get(__ret__, 'service_name'),
+        used=pulumi.get(__ret__, 'used'))
 
 
 @_utilities.lift_output_func(get_resource_availability)

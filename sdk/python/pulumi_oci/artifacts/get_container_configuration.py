@@ -99,10 +99,10 @@ def get_container_configuration(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Artifacts/getContainerConfiguration:getContainerConfiguration', __args__, opts=opts, typ=GetContainerConfigurationResult).value
 
     return AwaitableGetContainerConfigurationResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        is_repository_created_on_first_push=__ret__.is_repository_created_on_first_push,
-        namespace=__ret__.namespace)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        is_repository_created_on_first_push=pulumi.get(__ret__, 'is_repository_created_on_first_push'),
+        namespace=pulumi.get(__ret__, 'namespace'))
 
 
 @_utilities.lift_output_func(get_container_configuration)

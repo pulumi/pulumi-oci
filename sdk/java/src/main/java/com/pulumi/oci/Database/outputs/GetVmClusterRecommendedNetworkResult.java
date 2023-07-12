@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Database.outputs.GetVmClusterRecommendedNetworkDrScan;
 import com.pulumi.oci.Database.outputs.GetVmClusterRecommendedNetworkNetwork;
 import com.pulumi.oci.Database.outputs.GetVmClusterRecommendedNetworkScan;
 import com.pulumi.oci.Database.outputs.GetVmClusterRecommendedNetworkVmNetwork;
@@ -39,6 +40,12 @@ public final class GetVmClusterRecommendedNetworkResult {
      * 
      */
     private List<String> dns;
+    private @Nullable Integer drScanListenerPortTcp;
+    /**
+     * @return The SCAN details for DR network
+     * 
+     */
+    private List<GetVmClusterRecommendedNetworkDrScan> drScans;
     private String exadataInfrastructureId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -108,6 +115,16 @@ public final class GetVmClusterRecommendedNetworkResult {
      */
     public List<String> dns() {
         return this.dns;
+    }
+    public Optional<Integer> drScanListenerPortTcp() {
+        return Optional.ofNullable(this.drScanListenerPortTcp);
+    }
+    /**
+     * @return The SCAN details for DR network
+     * 
+     */
+    public List<GetVmClusterRecommendedNetworkDrScan> drScans() {
+        return this.drScans;
     }
     public String exadataInfrastructureId() {
         return this.exadataInfrastructureId;
@@ -179,6 +196,8 @@ public final class GetVmClusterRecommendedNetworkResult {
         private Map<String,Object> definedTags;
         private String displayName;
         private List<String> dns;
+        private @Nullable Integer drScanListenerPortTcp;
+        private List<GetVmClusterRecommendedNetworkDrScan> drScans;
         private String exadataInfrastructureId;
         private Map<String,Object> freeformTags;
         private String id;
@@ -196,6 +215,8 @@ public final class GetVmClusterRecommendedNetworkResult {
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.dns = defaults.dns;
+    	      this.drScanListenerPortTcp = defaults.drScanListenerPortTcp;
+    	      this.drScans = defaults.drScans;
     	      this.exadataInfrastructureId = defaults.exadataInfrastructureId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
@@ -237,6 +258,19 @@ public final class GetVmClusterRecommendedNetworkResult {
         }
         public Builder dns(String... dns) {
             return dns(List.of(dns));
+        }
+        @CustomType.Setter
+        public Builder drScanListenerPortTcp(@Nullable Integer drScanListenerPortTcp) {
+            this.drScanListenerPortTcp = drScanListenerPortTcp;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder drScans(List<GetVmClusterRecommendedNetworkDrScan> drScans) {
+            this.drScans = Objects.requireNonNull(drScans);
+            return this;
+        }
+        public Builder drScans(GetVmClusterRecommendedNetworkDrScan... drScans) {
+            return drScans(List.of(drScans));
         }
         @CustomType.Setter
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
@@ -302,6 +336,8 @@ public final class GetVmClusterRecommendedNetworkResult {
             o.definedTags = definedTags;
             o.displayName = displayName;
             o.dns = dns;
+            o.drScanListenerPortTcp = drScanListenerPortTcp;
+            o.drScans = drScans;
             o.exadataInfrastructureId = exadataInfrastructureId;
             o.freeformTags = freeformTags;
             o.id = id;

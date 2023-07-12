@@ -135,12 +135,12 @@ def get_app_catalog_listings(display_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getAppCatalogListings:getAppCatalogListings', __args__, opts=opts, typ=GetAppCatalogListingsResult).value
 
     return AwaitableGetAppCatalogListingsResult(
-        app_catalog_listings=__ret__.app_catalog_listings,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        publisher_name=__ret__.publisher_name,
-        publisher_type=__ret__.publisher_type)
+        app_catalog_listings=pulumi.get(__ret__, 'app_catalog_listings'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        publisher_name=pulumi.get(__ret__, 'publisher_name'),
+        publisher_type=pulumi.get(__ret__, 'publisher_type'))
 
 
 @_utilities.lift_output_func(get_app_catalog_listings)

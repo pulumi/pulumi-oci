@@ -148,14 +148,14 @@ def get_listener(listener_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:NetworkLoadBalancer/getListener:getListener', __args__, opts=opts, typ=GetListenerResult).value
 
     return AwaitableGetListenerResult(
-        default_backend_set_name=__ret__.default_backend_set_name,
-        id=__ret__.id,
-        ip_version=__ret__.ip_version,
-        listener_name=__ret__.listener_name,
-        name=__ret__.name,
-        network_load_balancer_id=__ret__.network_load_balancer_id,
-        port=__ret__.port,
-        protocol=__ret__.protocol)
+        default_backend_set_name=pulumi.get(__ret__, 'default_backend_set_name'),
+        id=pulumi.get(__ret__, 'id'),
+        ip_version=pulumi.get(__ret__, 'ip_version'),
+        listener_name=pulumi.get(__ret__, 'listener_name'),
+        name=pulumi.get(__ret__, 'name'),
+        network_load_balancer_id=pulumi.get(__ret__, 'network_load_balancer_id'),
+        port=pulumi.get(__ret__, 'port'),
+        protocol=pulumi.get(__ret__, 'protocol'))
 
 
 @_utilities.lift_output_func(get_listener)

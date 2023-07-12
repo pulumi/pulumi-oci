@@ -164,14 +164,14 @@ def get_management_agent_install_keys(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ManagementAgent/getManagementAgentInstallKeys:getManagementAgentInstallKeys', __args__, opts=opts, typ=GetManagementAgentInstallKeysResult).value
 
     return AwaitableGetManagementAgentInstallKeysResult(
-        access_level=__ret__.access_level,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        management_agent_install_keys=__ret__.management_agent_install_keys,
-        state=__ret__.state)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        management_agent_install_keys=pulumi.get(__ret__, 'management_agent_install_keys'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_management_agent_install_keys)

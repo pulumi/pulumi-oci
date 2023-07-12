@@ -132,12 +132,12 @@ def get_ipsec_connection_tunnel_routes(advertiser: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getIpsecConnectionTunnelRoutes:getIpsecConnectionTunnelRoutes', __args__, opts=opts, typ=GetIpsecConnectionTunnelRoutesResult).value
 
     return AwaitableGetIpsecConnectionTunnelRoutesResult(
-        advertiser=__ret__.advertiser,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        ipsec_id=__ret__.ipsec_id,
-        tunnel_id=__ret__.tunnel_id,
-        tunnel_routes=__ret__.tunnel_routes)
+        advertiser=pulumi.get(__ret__, 'advertiser'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        ipsec_id=pulumi.get(__ret__, 'ipsec_id'),
+        tunnel_id=pulumi.get(__ret__, 'tunnel_id'),
+        tunnel_routes=pulumi.get(__ret__, 'tunnel_routes'))
 
 
 @_utilities.lift_output_func(get_ipsec_connection_tunnel_routes)

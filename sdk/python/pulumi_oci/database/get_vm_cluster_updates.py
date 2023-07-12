@@ -135,12 +135,12 @@ def get_vm_cluster_updates(filters: Optional[Sequence[pulumi.InputType['GetVmClu
     __ret__ = pulumi.runtime.invoke('oci:Database/getVmClusterUpdates:getVmClusterUpdates', __args__, opts=opts, typ=GetVmClusterUpdatesResult).value
 
     return AwaitableGetVmClusterUpdatesResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        update_type=__ret__.update_type,
-        vm_cluster_id=__ret__.vm_cluster_id,
-        vm_cluster_updates=__ret__.vm_cluster_updates)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        update_type=pulumi.get(__ret__, 'update_type'),
+        vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'),
+        vm_cluster_updates=pulumi.get(__ret__, 'vm_cluster_updates'))
 
 
 @_utilities.lift_output_func(get_vm_cluster_updates)

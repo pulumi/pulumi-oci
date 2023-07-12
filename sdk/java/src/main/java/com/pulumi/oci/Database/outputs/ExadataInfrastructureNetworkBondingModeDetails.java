@@ -21,6 +21,11 @@ public final class ExadataInfrastructureNetworkBondingModeDetails {
      * 
      */
     private @Nullable String clientNetworkBondingMode;
+    /**
+     * @return (Updatable) The network bonding mode for the Exadata infrastructure.
+     * 
+     */
+    private @Nullable String drNetworkBondingMode;
 
     private ExadataInfrastructureNetworkBondingModeDetails() {}
     /**
@@ -37,6 +42,13 @@ public final class ExadataInfrastructureNetworkBondingModeDetails {
     public Optional<String> clientNetworkBondingMode() {
         return Optional.ofNullable(this.clientNetworkBondingMode);
     }
+    /**
+     * @return (Updatable) The network bonding mode for the Exadata infrastructure.
+     * 
+     */
+    public Optional<String> drNetworkBondingMode() {
+        return Optional.ofNullable(this.drNetworkBondingMode);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -49,11 +61,13 @@ public final class ExadataInfrastructureNetworkBondingModeDetails {
     public static final class Builder {
         private @Nullable String backupNetworkBondingMode;
         private @Nullable String clientNetworkBondingMode;
+        private @Nullable String drNetworkBondingMode;
         public Builder() {}
         public Builder(ExadataInfrastructureNetworkBondingModeDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupNetworkBondingMode = defaults.backupNetworkBondingMode;
     	      this.clientNetworkBondingMode = defaults.clientNetworkBondingMode;
+    	      this.drNetworkBondingMode = defaults.drNetworkBondingMode;
         }
 
         @CustomType.Setter
@@ -66,10 +80,16 @@ public final class ExadataInfrastructureNetworkBondingModeDetails {
             this.clientNetworkBondingMode = clientNetworkBondingMode;
             return this;
         }
+        @CustomType.Setter
+        public Builder drNetworkBondingMode(@Nullable String drNetworkBondingMode) {
+            this.drNetworkBondingMode = drNetworkBondingMode;
+            return this;
+        }
         public ExadataInfrastructureNetworkBondingModeDetails build() {
             final var o = new ExadataInfrastructureNetworkBondingModeDetails();
             o.backupNetworkBondingMode = backupNetworkBondingMode;
             o.clientNetworkBondingMode = clientNetworkBondingMode;
+            o.drNetworkBondingMode = drNetworkBondingMode;
             return o;
         }
     }

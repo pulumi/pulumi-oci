@@ -103,10 +103,10 @@ def get_external_asm_disk_groups(external_asm_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalAsmDiskGroups:getExternalAsmDiskGroups', __args__, opts=opts, typ=GetExternalAsmDiskGroupsResult).value
 
     return AwaitableGetExternalAsmDiskGroupsResult(
-        external_asm_disk_group_collections=__ret__.external_asm_disk_group_collections,
-        external_asm_id=__ret__.external_asm_id,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        external_asm_disk_group_collections=pulumi.get(__ret__, 'external_asm_disk_group_collections'),
+        external_asm_id=pulumi.get(__ret__, 'external_asm_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_external_asm_disk_groups)

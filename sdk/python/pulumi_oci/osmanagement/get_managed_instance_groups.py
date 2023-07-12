@@ -154,13 +154,13 @@ def get_managed_instance_groups(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OsManagement/getManagedInstanceGroups:getManagedInstanceGroups', __args__, opts=opts, typ=GetManagedInstanceGroupsResult).value
 
     return AwaitableGetManagedInstanceGroupsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        managed_instance_groups=__ret__.managed_instance_groups,
-        os_family=__ret__.os_family,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_instance_groups=pulumi.get(__ret__, 'managed_instance_groups'),
+        os_family=pulumi.get(__ret__, 'os_family'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_managed_instance_groups)

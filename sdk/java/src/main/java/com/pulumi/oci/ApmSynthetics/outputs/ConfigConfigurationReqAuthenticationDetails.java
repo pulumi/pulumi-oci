@@ -34,12 +34,12 @@ public final class ConfigConfigurationReqAuthenticationDetails {
      */
     private @Nullable String authToken;
     /**
-     * @return (Updatable) URL to get authetication token.
+     * @return (Updatable) URL to get authentication token.
      * 
      */
     private @Nullable String authUrl;
     /**
-     * @return (Updatable) Username for authentication.
+     * @return (Updatable) User name for authentication.
      * 
      */
     private @Nullable String authUserName;
@@ -49,7 +49,7 @@ public final class ConfigConfigurationReqAuthenticationDetails {
      */
     private @Nullable String authUserPassword;
     /**
-     * @return (Updatable) Request http oauth scheme.
+     * @return (Updatable) Request HTTP OAuth scheme.
      * 
      */
     private @Nullable String oauthScheme;
@@ -84,14 +84,14 @@ public final class ConfigConfigurationReqAuthenticationDetails {
         return Optional.ofNullable(this.authToken);
     }
     /**
-     * @return (Updatable) URL to get authetication token.
+     * @return (Updatable) URL to get authentication token.
      * 
      */
     public Optional<String> authUrl() {
         return Optional.ofNullable(this.authUrl);
     }
     /**
-     * @return (Updatable) Username for authentication.
+     * @return (Updatable) User name for authentication.
      * 
      */
     public Optional<String> authUserName() {
@@ -105,7 +105,7 @@ public final class ConfigConfigurationReqAuthenticationDetails {
         return Optional.ofNullable(this.authUserPassword);
     }
     /**
-     * @return (Updatable) Request http oauth scheme.
+     * @return (Updatable) Request HTTP OAuth scheme.
      * 
      */
     public Optional<String> oauthScheme() {

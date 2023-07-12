@@ -11,10 +11,20 @@ import java.util.Objects;
 @CustomType
 public final class GetInvoicesInvoiceCollectionItemLastPaymentDetail {
     /**
+     * @return Account number of the card owner
+     * 
+     */
+    private String accountNumber;
+    /**
      * @return Amount that paid
      * 
      */
     private Double amountPaid;
+    /**
+     * @return Echeck card type
+     * 
+     */
+    private String cardType;
     /**
      * @return Credit card type
      * 
@@ -56,6 +66,11 @@ public final class GetInvoicesInvoiceCollectionItemLastPaymentDetail {
      */
     private String paypalReference;
     /**
+     * @return Routing number of the echeck card
+     * 
+     */
+    private String routingNumber;
+    /**
      * @return Expired date of the credit card
      * 
      */
@@ -68,11 +83,25 @@ public final class GetInvoicesInvoiceCollectionItemLastPaymentDetail {
 
     private GetInvoicesInvoiceCollectionItemLastPaymentDetail() {}
     /**
+     * @return Account number of the card owner
+     * 
+     */
+    public String accountNumber() {
+        return this.accountNumber;
+    }
+    /**
      * @return Amount that paid
      * 
      */
     public Double amountPaid() {
         return this.amountPaid;
+    }
+    /**
+     * @return Echeck card type
+     * 
+     */
+    public String cardType() {
+        return this.cardType;
     }
     /**
      * @return Credit card type
@@ -131,6 +160,13 @@ public final class GetInvoicesInvoiceCollectionItemLastPaymentDetail {
         return this.paypalReference;
     }
     /**
+     * @return Routing number of the echeck card
+     * 
+     */
+    public String routingNumber() {
+        return this.routingNumber;
+    }
+    /**
      * @return Expired date of the credit card
      * 
      */
@@ -154,7 +190,9 @@ public final class GetInvoicesInvoiceCollectionItemLastPaymentDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String accountNumber;
         private Double amountPaid;
+        private String cardType;
         private String creditCardType;
         private String echeckRouting;
         private String lastDigits;
@@ -163,12 +201,15 @@ public final class GetInvoicesInvoiceCollectionItemLastPaymentDetail {
         private String paymentMethod;
         private String paypalId;
         private String paypalReference;
+        private String routingNumber;
         private String timeExpiration;
         private String timePaidOn;
         public Builder() {}
         public Builder(GetInvoicesInvoiceCollectionItemLastPaymentDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.accountNumber = defaults.accountNumber;
     	      this.amountPaid = defaults.amountPaid;
+    	      this.cardType = defaults.cardType;
     	      this.creditCardType = defaults.creditCardType;
     	      this.echeckRouting = defaults.echeckRouting;
     	      this.lastDigits = defaults.lastDigits;
@@ -177,13 +218,24 @@ public final class GetInvoicesInvoiceCollectionItemLastPaymentDetail {
     	      this.paymentMethod = defaults.paymentMethod;
     	      this.paypalId = defaults.paypalId;
     	      this.paypalReference = defaults.paypalReference;
+    	      this.routingNumber = defaults.routingNumber;
     	      this.timeExpiration = defaults.timeExpiration;
     	      this.timePaidOn = defaults.timePaidOn;
         }
 
         @CustomType.Setter
+        public Builder accountNumber(String accountNumber) {
+            this.accountNumber = Objects.requireNonNull(accountNumber);
+            return this;
+        }
+        @CustomType.Setter
         public Builder amountPaid(Double amountPaid) {
             this.amountPaid = Objects.requireNonNull(amountPaid);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder cardType(String cardType) {
+            this.cardType = Objects.requireNonNull(cardType);
             return this;
         }
         @CustomType.Setter
@@ -227,6 +279,11 @@ public final class GetInvoicesInvoiceCollectionItemLastPaymentDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder routingNumber(String routingNumber) {
+            this.routingNumber = Objects.requireNonNull(routingNumber);
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeExpiration(String timeExpiration) {
             this.timeExpiration = Objects.requireNonNull(timeExpiration);
             return this;
@@ -238,7 +295,9 @@ public final class GetInvoicesInvoiceCollectionItemLastPaymentDetail {
         }
         public GetInvoicesInvoiceCollectionItemLastPaymentDetail build() {
             final var o = new GetInvoicesInvoiceCollectionItemLastPaymentDetail();
+            o.accountNumber = accountNumber;
             o.amountPaid = amountPaid;
+            o.cardType = cardType;
             o.creditCardType = creditCardType;
             o.echeckRouting = echeckRouting;
             o.lastDigits = lastDigits;
@@ -247,6 +306,7 @@ public final class GetInvoicesInvoiceCollectionItemLastPaymentDetail {
             o.paymentMethod = paymentMethod;
             o.paypalId = paypalId;
             o.paypalReference = paypalReference;
+            o.routingNumber = routingNumber;
             o.timeExpiration = timeExpiration;
             o.timePaidOn = timePaidOn;
             return o;

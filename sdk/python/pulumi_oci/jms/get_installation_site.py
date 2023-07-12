@@ -237,20 +237,20 @@ def get_installation_site(application_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Jms/getInstallationSite:getInstallationSite', __args__, opts=opts, typ=GetInstallationSiteResult).value
 
     return AwaitableGetInstallationSiteResult(
-        application_id=__ret__.application_id,
-        fleet_id=__ret__.fleet_id,
-        id=__ret__.id,
-        installation_path=__ret__.installation_path,
-        items=__ret__.items,
-        jre_distribution=__ret__.jre_distribution,
-        jre_security_status=__ret__.jre_security_status,
-        jre_vendor=__ret__.jre_vendor,
-        jre_version=__ret__.jre_version,
-        managed_instance_id=__ret__.managed_instance_id,
-        os_families=__ret__.os_families,
-        path_contains=__ret__.path_contains,
-        time_end=__ret__.time_end,
-        time_start=__ret__.time_start)
+        application_id=pulumi.get(__ret__, 'application_id'),
+        fleet_id=pulumi.get(__ret__, 'fleet_id'),
+        id=pulumi.get(__ret__, 'id'),
+        installation_path=pulumi.get(__ret__, 'installation_path'),
+        items=pulumi.get(__ret__, 'items'),
+        jre_distribution=pulumi.get(__ret__, 'jre_distribution'),
+        jre_security_status=pulumi.get(__ret__, 'jre_security_status'),
+        jre_vendor=pulumi.get(__ret__, 'jre_vendor'),
+        jre_version=pulumi.get(__ret__, 'jre_version'),
+        managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
+        os_families=pulumi.get(__ret__, 'os_families'),
+        path_contains=pulumi.get(__ret__, 'path_contains'),
+        time_end=pulumi.get(__ret__, 'time_end'),
+        time_start=pulumi.get(__ret__, 'time_start'))
 
 
 @_utilities.lift_output_func(get_installation_site)

@@ -139,13 +139,13 @@ def get_boot_volume_attachments(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getBootVolumeAttachments:getBootVolumeAttachments', __args__, opts=opts, typ=GetBootVolumeAttachmentsResult).value
 
     return AwaitableGetBootVolumeAttachmentsResult(
-        availability_domain=__ret__.availability_domain,
-        boot_volume_attachments=__ret__.boot_volume_attachments,
-        boot_volume_id=__ret__.boot_volume_id,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        instance_id=__ret__.instance_id)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        boot_volume_attachments=pulumi.get(__ret__, 'boot_volume_attachments'),
+        boot_volume_id=pulumi.get(__ret__, 'boot_volume_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        instance_id=pulumi.get(__ret__, 'instance_id'))
 
 
 @_utilities.lift_output_func(get_boot_volume_attachments)

@@ -117,11 +117,11 @@ def get_invoices_invoice_line(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OspGateway/getInvoicesInvoiceLine:getInvoicesInvoiceLine', __args__, opts=opts, typ=GetInvoicesInvoiceLineResult).value
 
     return AwaitableGetInvoicesInvoiceLineResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        internal_invoice_id=__ret__.internal_invoice_id,
-        items=__ret__.items,
-        osp_home_region=__ret__.osp_home_region)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        internal_invoice_id=pulumi.get(__ret__, 'internal_invoice_id'),
+        items=pulumi.get(__ret__, 'items'),
+        osp_home_region=pulumi.get(__ret__, 'osp_home_region'))
 
 
 @_utilities.lift_output_func(get_invoices_invoice_line)

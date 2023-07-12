@@ -136,12 +136,12 @@ def get_media_workflow_task_declaration(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:MediaServices/getMediaWorkflowTaskDeclaration:getMediaWorkflowTaskDeclaration', __args__, opts=opts, typ=GetMediaWorkflowTaskDeclarationResult).value
 
     return AwaitableGetMediaWorkflowTaskDeclarationResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        is_current=__ret__.is_current,
-        items=__ret__.items,
-        name=__ret__.name,
-        version=__ret__.version)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        is_current=pulumi.get(__ret__, 'is_current'),
+        items=pulumi.get(__ret__, 'items'),
+        name=pulumi.get(__ret__, 'name'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_media_workflow_task_declaration)

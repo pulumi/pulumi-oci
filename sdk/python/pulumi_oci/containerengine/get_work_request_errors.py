@@ -116,11 +116,11 @@ def get_work_request_errors(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ContainerEngine/getWorkRequestErrors:getWorkRequestErrors', __args__, opts=opts, typ=GetWorkRequestErrorsResult).value
 
     return AwaitableGetWorkRequestErrorsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        work_request_errors=__ret__.work_request_errors,
-        work_request_id=__ret__.work_request_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        work_request_errors=pulumi.get(__ret__, 'work_request_errors'),
+        work_request_id=pulumi.get(__ret__, 'work_request_id'))
 
 
 @_utilities.lift_output_func(get_work_request_errors)

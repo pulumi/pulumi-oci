@@ -207,7 +207,7 @@ public final class GetExadataInfrastructureResult {
      */
     private String netmask;
     /**
-     * @return Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     * @return Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
      * 
      */
     private List<GetExadataInfrastructureNetworkBondingModeDetail> networkBondingModeDetails;
@@ -216,6 +216,11 @@ public final class GetExadataInfrastructureResult {
      * 
      */
     private List<String> ntpServers;
+    /**
+     * @return The serial number for the Exadata infrastructure.
+     * 
+     */
+    private String rackSerialNumber;
     /**
      * @return The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      * 
@@ -517,7 +522,7 @@ public final class GetExadataInfrastructureResult {
         return this.netmask;
     }
     /**
-     * @return Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     * @return Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
      * 
      */
     public List<GetExadataInfrastructureNetworkBondingModeDetail> networkBondingModeDetails() {
@@ -529,6 +534,13 @@ public final class GetExadataInfrastructureResult {
      */
     public List<String> ntpServers() {
         return this.ntpServers;
+    }
+    /**
+     * @return The serial number for the Exadata infrastructure.
+     * 
+     */
+    public String rackSerialNumber() {
+        return this.rackSerialNumber;
     }
     /**
      * @return The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
@@ -624,6 +636,7 @@ public final class GetExadataInfrastructureResult {
         private String netmask;
         private List<GetExadataInfrastructureNetworkBondingModeDetail> networkBondingModeDetails;
         private List<String> ntpServers;
+        private String rackSerialNumber;
         private String shape;
         private String state;
         private Integer storageCount;
@@ -675,6 +688,7 @@ public final class GetExadataInfrastructureResult {
     	      this.netmask = defaults.netmask;
     	      this.networkBondingModeDetails = defaults.networkBondingModeDetails;
     	      this.ntpServers = defaults.ntpServers;
+    	      this.rackSerialNumber = defaults.rackSerialNumber;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.storageCount = defaults.storageCount;
@@ -909,6 +923,11 @@ public final class GetExadataInfrastructureResult {
             return ntpServers(List.of(ntpServers));
         }
         @CustomType.Setter
+        public Builder rackSerialNumber(String rackSerialNumber) {
+            this.rackSerialNumber = Objects.requireNonNull(rackSerialNumber);
+            return this;
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
@@ -982,6 +1001,7 @@ public final class GetExadataInfrastructureResult {
             o.netmask = netmask;
             o.networkBondingModeDetails = networkBondingModeDetails;
             o.ntpServers = ntpServers;
+            o.rackSerialNumber = rackSerialNumber;
             o.shape = shape;
             o.state = state;
             o.storageCount = storageCount;

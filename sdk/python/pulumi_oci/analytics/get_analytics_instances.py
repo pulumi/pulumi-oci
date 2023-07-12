@@ -170,14 +170,14 @@ def get_analytics_instances(capacity_type: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Analytics/getAnalyticsInstances:getAnalyticsInstances', __args__, opts=opts, typ=GetAnalyticsInstancesResult).value
 
     return AwaitableGetAnalyticsInstancesResult(
-        analytics_instances=__ret__.analytics_instances,
-        capacity_type=__ret__.capacity_type,
-        compartment_id=__ret__.compartment_id,
-        feature_set=__ret__.feature_set,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        state=__ret__.state)
+        analytics_instances=pulumi.get(__ret__, 'analytics_instances'),
+        capacity_type=pulumi.get(__ret__, 'capacity_type'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        feature_set=pulumi.get(__ret__, 'feature_set'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_analytics_instances)

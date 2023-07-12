@@ -123,11 +123,11 @@ def get_local_peering_gateways(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getLocalPeeringGateways:getLocalPeeringGateways', __args__, opts=opts, typ=GetLocalPeeringGatewaysResult).value
 
     return AwaitableGetLocalPeeringGatewaysResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        local_peering_gateways=__ret__.local_peering_gateways,
-        vcn_id=__ret__.vcn_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        local_peering_gateways=pulumi.get(__ret__, 'local_peering_gateways'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_local_peering_gateways)

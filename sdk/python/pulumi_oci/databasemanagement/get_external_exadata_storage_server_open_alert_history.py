@@ -91,9 +91,9 @@ def get_external_exadata_storage_server_open_alert_history(external_exadata_stor
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalExadataStorageServerOpenAlertHistory:getExternalExadataStorageServerOpenAlertHistory', __args__, opts=opts, typ=GetExternalExadataStorageServerOpenAlertHistoryResult).value
 
     return AwaitableGetExternalExadataStorageServerOpenAlertHistoryResult(
-        alerts=__ret__.alerts,
-        external_exadata_storage_server_id=__ret__.external_exadata_storage_server_id,
-        id=__ret__.id)
+        alerts=pulumi.get(__ret__, 'alerts'),
+        external_exadata_storage_server_id=pulumi.get(__ret__, 'external_exadata_storage_server_id'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_external_exadata_storage_server_open_alert_history)

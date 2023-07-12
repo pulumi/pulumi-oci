@@ -260,23 +260,23 @@ def get_managed_database_optimizer_statistics_collection_operation(managed_datab
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperation:getManagedDatabaseOptimizerStatisticsCollectionOperation', __args__, opts=opts, typ=GetManagedDatabaseOptimizerStatisticsCollectionOperationResult).value
 
     return AwaitableGetManagedDatabaseOptimizerStatisticsCollectionOperationResult(
-        completed_count=__ret__.completed_count,
-        databases=__ret__.databases,
-        duration_in_seconds=__ret__.duration_in_seconds,
-        end_time=__ret__.end_time,
-        failed_count=__ret__.failed_count,
-        id=__ret__.id,
-        in_progress_count=__ret__.in_progress_count,
-        job_name=__ret__.job_name,
-        managed_database_id=__ret__.managed_database_id,
-        operation_name=__ret__.operation_name,
-        optimizer_statistics_collection_operation_id=__ret__.optimizer_statistics_collection_operation_id,
-        start_time=__ret__.start_time,
-        status=__ret__.status,
-        target=__ret__.target,
-        tasks=__ret__.tasks,
-        timed_out_count=__ret__.timed_out_count,
-        total_objects_count=__ret__.total_objects_count)
+        completed_count=pulumi.get(__ret__, 'completed_count'),
+        databases=pulumi.get(__ret__, 'databases'),
+        duration_in_seconds=pulumi.get(__ret__, 'duration_in_seconds'),
+        end_time=pulumi.get(__ret__, 'end_time'),
+        failed_count=pulumi.get(__ret__, 'failed_count'),
+        id=pulumi.get(__ret__, 'id'),
+        in_progress_count=pulumi.get(__ret__, 'in_progress_count'),
+        job_name=pulumi.get(__ret__, 'job_name'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        operation_name=pulumi.get(__ret__, 'operation_name'),
+        optimizer_statistics_collection_operation_id=pulumi.get(__ret__, 'optimizer_statistics_collection_operation_id'),
+        start_time=pulumi.get(__ret__, 'start_time'),
+        status=pulumi.get(__ret__, 'status'),
+        target=pulumi.get(__ret__, 'target'),
+        tasks=pulumi.get(__ret__, 'tasks'),
+        timed_out_count=pulumi.get(__ret__, 'timed_out_count'),
+        total_objects_count=pulumi.get(__ret__, 'total_objects_count'))
 
 
 @_utilities.lift_output_func(get_managed_database_optimizer_statistics_collection_operation)

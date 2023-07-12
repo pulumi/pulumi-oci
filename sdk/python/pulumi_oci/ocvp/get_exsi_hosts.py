@@ -204,16 +204,16 @@ def get_exsi_hosts(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Ocvp/getExsiHosts:getExsiHosts', __args__, opts=opts, typ=GetExsiHostsResult).value
 
     return AwaitableGetExsiHostsResult(
-        compartment_id=__ret__.compartment_id,
-        compute_instance_id=__ret__.compute_instance_id,
-        display_name=__ret__.display_name,
-        esxi_host_collections=__ret__.esxi_host_collections,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_billing_donors_only=__ret__.is_billing_donors_only,
-        is_swap_billing_only=__ret__.is_swap_billing_only,
-        sddc_id=__ret__.sddc_id,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compute_instance_id=pulumi.get(__ret__, 'compute_instance_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        esxi_host_collections=pulumi.get(__ret__, 'esxi_host_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_billing_donors_only=pulumi.get(__ret__, 'is_billing_donors_only'),
+        is_swap_billing_only=pulumi.get(__ret__, 'is_swap_billing_only'),
+        sddc_id=pulumi.get(__ret__, 'sddc_id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_exsi_hosts)

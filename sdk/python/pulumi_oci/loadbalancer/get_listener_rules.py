@@ -122,11 +122,11 @@ def get_listener_rules(filters: Optional[Sequence[pulumi.InputType['GetListenerR
     __ret__ = pulumi.runtime.invoke('oci:LoadBalancer/getListenerRules:getListenerRules', __args__, opts=opts, typ=GetListenerRulesResult).value
 
     return AwaitableGetListenerRulesResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        listener_name=__ret__.listener_name,
-        listener_rules=__ret__.listener_rules,
-        load_balancer_id=__ret__.load_balancer_id)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        listener_name=pulumi.get(__ret__, 'listener_name'),
+        listener_rules=pulumi.get(__ret__, 'listener_rules'),
+        load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'))
 
 
 @_utilities.lift_output_func(get_listener_rules)

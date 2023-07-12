@@ -200,18 +200,18 @@ def get_notification_topic(topic_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Ons/getNotificationTopic:getNotificationTopic', __args__, opts=opts, typ=GetNotificationTopicResult).value
 
     return AwaitableGetNotificationTopicResult(
-        api_endpoint=__ret__.api_endpoint,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        etag=__ret__.etag,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        name=__ret__.name,
-        short_topic_id=__ret__.short_topic_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        topic_id=__ret__.topic_id)
+        api_endpoint=pulumi.get(__ret__, 'api_endpoint'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        etag=pulumi.get(__ret__, 'etag'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        short_topic_id=pulumi.get(__ret__, 'short_topic_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        topic_id=pulumi.get(__ret__, 'topic_id'))
 
 
 @_utilities.lift_output_func(get_notification_topic)

@@ -154,13 +154,13 @@ def get_ping_probe_results(filters: Optional[Sequence[pulumi.InputType['GetPingP
     __ret__ = pulumi.runtime.invoke('oci:HealthChecks/getPingProbeResults:getPingProbeResults', __args__, opts=opts, typ=GetPingProbeResultsResult).value
 
     return AwaitableGetPingProbeResultsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        ping_probe_results=__ret__.ping_probe_results,
-        probe_configuration_id=__ret__.probe_configuration_id,
-        start_time_greater_than_or_equal_to=__ret__.start_time_greater_than_or_equal_to,
-        start_time_less_than_or_equal_to=__ret__.start_time_less_than_or_equal_to,
-        target=__ret__.target)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        ping_probe_results=pulumi.get(__ret__, 'ping_probe_results'),
+        probe_configuration_id=pulumi.get(__ret__, 'probe_configuration_id'),
+        start_time_greater_than_or_equal_to=pulumi.get(__ret__, 'start_time_greater_than_or_equal_to'),
+        start_time_less_than_or_equal_to=pulumi.get(__ret__, 'start_time_less_than_or_equal_to'),
+        target=pulumi.get(__ret__, 'target'))
 
 
 @_utilities.lift_output_func(get_ping_probe_results)

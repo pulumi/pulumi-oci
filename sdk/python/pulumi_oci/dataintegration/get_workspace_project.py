@@ -230,21 +230,21 @@ def get_workspace_project(project_key: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataIntegration/getWorkspaceProject:getWorkspaceProject', __args__, opts=opts, typ=GetWorkspaceProjectResult).value
 
     return AwaitableGetWorkspaceProjectResult(
-        description=__ret__.description,
-        id=__ret__.id,
-        identifier=__ret__.identifier,
-        key=__ret__.key,
-        key_map=__ret__.key_map,
-        metadatas=__ret__.metadatas,
-        model_type=__ret__.model_type,
-        model_version=__ret__.model_version,
-        name=__ret__.name,
-        object_status=__ret__.object_status,
-        object_version=__ret__.object_version,
-        parent_reves=__ret__.parent_reves,
-        project_key=__ret__.project_key,
-        registry_metadatas=__ret__.registry_metadatas,
-        workspace_id=__ret__.workspace_id)
+        description=pulumi.get(__ret__, 'description'),
+        id=pulumi.get(__ret__, 'id'),
+        identifier=pulumi.get(__ret__, 'identifier'),
+        key=pulumi.get(__ret__, 'key'),
+        key_map=pulumi.get(__ret__, 'key_map'),
+        metadatas=pulumi.get(__ret__, 'metadatas'),
+        model_type=pulumi.get(__ret__, 'model_type'),
+        model_version=pulumi.get(__ret__, 'model_version'),
+        name=pulumi.get(__ret__, 'name'),
+        object_status=pulumi.get(__ret__, 'object_status'),
+        object_version=pulumi.get(__ret__, 'object_version'),
+        parent_reves=pulumi.get(__ret__, 'parent_reves'),
+        project_key=pulumi.get(__ret__, 'project_key'),
+        registry_metadatas=pulumi.get(__ret__, 'registry_metadatas'),
+        workspace_id=pulumi.get(__ret__, 'workspace_id'))
 
 
 @_utilities.lift_output_func(get_workspace_project)

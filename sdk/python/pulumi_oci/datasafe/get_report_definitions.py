@@ -214,17 +214,17 @@ def get_report_definitions(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getReportDefinitions:getReportDefinitions', __args__, opts=opts, typ=GetReportDefinitionsResult).value
 
     return AwaitableGetReportDefinitionsResult(
-        access_level=__ret__.access_level,
-        category=__ret__.category,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        data_source=__ret__.data_source,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_seeded=__ret__.is_seeded,
-        report_definition_collections=__ret__.report_definition_collections,
-        state=__ret__.state)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        category=pulumi.get(__ret__, 'category'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        data_source=pulumi.get(__ret__, 'data_source'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_seeded=pulumi.get(__ret__, 'is_seeded'),
+        report_definition_collections=pulumi.get(__ret__, 'report_definition_collections'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_report_definitions)

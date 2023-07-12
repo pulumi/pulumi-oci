@@ -119,11 +119,11 @@ def get_drg_route_table_route_rules(drg_route_table_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getDrgRouteTableRouteRules:getDrgRouteTableRouteRules', __args__, opts=opts, typ=GetDrgRouteTableRouteRulesResult).value
 
     return AwaitableGetDrgRouteTableRouteRulesResult(
-        drg_route_rules=__ret__.drg_route_rules,
-        drg_route_table_id=__ret__.drg_route_table_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        route_type=__ret__.route_type)
+        drg_route_rules=pulumi.get(__ret__, 'drg_route_rules'),
+        drg_route_table_id=pulumi.get(__ret__, 'drg_route_table_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        route_type=pulumi.get(__ret__, 'route_type'))
 
 
 @_utilities.lift_output_func(get_drg_route_table_route_rules)

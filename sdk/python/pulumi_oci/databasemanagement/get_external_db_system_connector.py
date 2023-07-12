@@ -235,21 +235,21 @@ def get_external_db_system_connector(external_db_system_connector_id: Optional[s
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalDbSystemConnector:getExternalDbSystemConnector', __args__, opts=opts, typ=GetExternalDbSystemConnectorResult).value
 
     return AwaitableGetExternalDbSystemConnectorResult(
-        agent_id=__ret__.agent_id,
-        compartment_id=__ret__.compartment_id,
-        connection_failure_message=__ret__.connection_failure_message,
-        connection_infos=__ret__.connection_infos,
-        connection_status=__ret__.connection_status,
-        connector_type=__ret__.connector_type,
-        display_name=__ret__.display_name,
-        external_db_system_connector_id=__ret__.external_db_system_connector_id,
-        external_db_system_id=__ret__.external_db_system_id,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        state=__ret__.state,
-        time_connection_status_last_updated=__ret__.time_connection_status_last_updated,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        agent_id=pulumi.get(__ret__, 'agent_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        connection_failure_message=pulumi.get(__ret__, 'connection_failure_message'),
+        connection_infos=pulumi.get(__ret__, 'connection_infos'),
+        connection_status=pulumi.get(__ret__, 'connection_status'),
+        connector_type=pulumi.get(__ret__, 'connector_type'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        external_db_system_connector_id=pulumi.get(__ret__, 'external_db_system_connector_id'),
+        external_db_system_id=pulumi.get(__ret__, 'external_db_system_id'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        state=pulumi.get(__ret__, 'state'),
+        time_connection_status_last_updated=pulumi.get(__ret__, 'time_connection_status_last_updated'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_external_db_system_connector)

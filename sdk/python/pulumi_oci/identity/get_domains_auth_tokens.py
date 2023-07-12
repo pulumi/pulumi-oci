@@ -245,22 +245,22 @@ def get_domains_auth_tokens(attribute_sets: Optional[Sequence[str]] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getDomainsAuthTokens:getDomainsAuthTokens', __args__, opts=opts, typ=GetDomainsAuthTokensResult).value
 
     return AwaitableGetDomainsAuthTokensResult(
-        attribute_sets=__ret__.attribute_sets,
-        attributes=__ret__.attributes,
-        auth_token_count=__ret__.auth_token_count,
-        auth_token_filter=__ret__.auth_token_filter,
-        auth_tokens=__ret__.auth_tokens,
-        authorization=__ret__.authorization,
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        idcs_endpoint=__ret__.idcs_endpoint,
-        items_per_page=__ret__.items_per_page,
-        resource_type_schema_version=__ret__.resource_type_schema_version,
-        schemas=__ret__.schemas,
-        sort_by=__ret__.sort_by,
-        sort_order=__ret__.sort_order,
-        start_index=__ret__.start_index,
-        total_results=__ret__.total_results)
+        attribute_sets=pulumi.get(__ret__, 'attribute_sets'),
+        attributes=pulumi.get(__ret__, 'attributes'),
+        auth_token_count=pulumi.get(__ret__, 'auth_token_count'),
+        auth_token_filter=pulumi.get(__ret__, 'auth_token_filter'),
+        auth_tokens=pulumi.get(__ret__, 'auth_tokens'),
+        authorization=pulumi.get(__ret__, 'authorization'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        idcs_endpoint=pulumi.get(__ret__, 'idcs_endpoint'),
+        items_per_page=pulumi.get(__ret__, 'items_per_page'),
+        resource_type_schema_version=pulumi.get(__ret__, 'resource_type_schema_version'),
+        schemas=pulumi.get(__ret__, 'schemas'),
+        sort_by=pulumi.get(__ret__, 'sort_by'),
+        sort_order=pulumi.get(__ret__, 'sort_order'),
+        start_index=pulumi.get(__ret__, 'start_index'),
+        total_results=pulumi.get(__ret__, 'total_results'))
 
 
 @_utilities.lift_output_func(get_domains_auth_tokens)

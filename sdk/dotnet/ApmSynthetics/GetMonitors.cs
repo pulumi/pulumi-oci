@@ -238,7 +238,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMonitorsMonitorCollectionResult> MonitorCollections;
         /// <summary>
-        /// Type of the monitor.
+        /// Type of monitor.
         /// </summary>
         public readonly string? MonitorType;
         /// <summary>

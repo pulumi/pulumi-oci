@@ -195,18 +195,18 @@ def get_drg_route_rule(drg_route_table_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getDrgRouteRule:getDrgRouteRule', __args__, opts=opts, typ=GetDrgRouteRuleResult).value
 
     return AwaitableGetDrgRouteRuleResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        drg_id=__ret__.drg_id,
-        drg_route_table_id=__ret__.drg_route_table_id,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        import_drg_route_distribution_id=__ret__.import_drg_route_distribution_id,
-        is_ecmp_enabled=__ret__.is_ecmp_enabled,
-        remove_import_trigger=__ret__.remove_import_trigger,
-        state=__ret__.state,
-        time_created=__ret__.time_created)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        drg_id=pulumi.get(__ret__, 'drg_id'),
+        drg_route_table_id=pulumi.get(__ret__, 'drg_route_table_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        import_drg_route_distribution_id=pulumi.get(__ret__, 'import_drg_route_distribution_id'),
+        is_ecmp_enabled=pulumi.get(__ret__, 'is_ecmp_enabled'),
+        remove_import_trigger=pulumi.get(__ret__, 'remove_import_trigger'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_drg_route_rule)

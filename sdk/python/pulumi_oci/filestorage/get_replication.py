@@ -270,24 +270,24 @@ def get_replication(replication_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:FileStorage/getReplication:getReplication', __args__, opts=opts, typ=GetReplicationResult).value
 
     return AwaitableGetReplicationResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        delta_progress=__ret__.delta_progress,
-        delta_status=__ret__.delta_status,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        last_snapshot_id=__ret__.last_snapshot_id,
-        lifecycle_details=__ret__.lifecycle_details,
-        recovery_point_time=__ret__.recovery_point_time,
-        replication_id=__ret__.replication_id,
-        replication_interval=__ret__.replication_interval,
-        replication_target_id=__ret__.replication_target_id,
-        source_id=__ret__.source_id,
-        state=__ret__.state,
-        target_id=__ret__.target_id,
-        time_created=__ret__.time_created)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        delta_progress=pulumi.get(__ret__, 'delta_progress'),
+        delta_status=pulumi.get(__ret__, 'delta_status'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        last_snapshot_id=pulumi.get(__ret__, 'last_snapshot_id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        recovery_point_time=pulumi.get(__ret__, 'recovery_point_time'),
+        replication_id=pulumi.get(__ret__, 'replication_id'),
+        replication_interval=pulumi.get(__ret__, 'replication_interval'),
+        replication_target_id=pulumi.get(__ret__, 'replication_target_id'),
+        source_id=pulumi.get(__ret__, 'source_id'),
+        state=pulumi.get(__ret__, 'state'),
+        target_id=pulumi.get(__ret__, 'target_id'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_replication)

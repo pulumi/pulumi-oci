@@ -137,12 +137,12 @@ def get_limit_definitions(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Limits/getLimitDefinitions:getLimitDefinitions', __args__, opts=opts, typ=GetLimitDefinitionsResult).value
 
     return AwaitableGetLimitDefinitionsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        limit_definitions=__ret__.limit_definitions,
-        name=__ret__.name,
-        service_name=__ret__.service_name)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        limit_definitions=pulumi.get(__ret__, 'limit_definitions'),
+        name=pulumi.get(__ret__, 'name'),
+        service_name=pulumi.get(__ret__, 'service_name'))
 
 
 @_utilities.lift_output_func(get_limit_definitions)

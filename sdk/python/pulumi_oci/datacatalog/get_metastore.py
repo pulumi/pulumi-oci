@@ -198,18 +198,18 @@ def get_metastore(metastore_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataCatalog/getMetastore:getMetastore', __args__, opts=opts, typ=GetMetastoreResult).value
 
     return AwaitableGetMetastoreResult(
-        compartment_id=__ret__.compartment_id,
-        default_external_table_location=__ret__.default_external_table_location,
-        default_managed_table_location=__ret__.default_managed_table_location,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        metastore_id=__ret__.metastore_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        default_external_table_location=pulumi.get(__ret__, 'default_external_table_location'),
+        default_managed_table_location=pulumi.get(__ret__, 'default_managed_table_location'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        metastore_id=pulumi.get(__ret__, 'metastore_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_metastore)

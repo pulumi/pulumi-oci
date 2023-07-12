@@ -104,10 +104,10 @@ def get_container_instance_shape(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ContainerInstances/getContainerInstanceShape:getContainerInstanceShape', __args__, opts=opts, typ=GetContainerInstanceShapeResult).value
 
     return AwaitableGetContainerInstanceShapeResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        items=__ret__.items)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'))
 
 
 @_utilities.lift_output_func(get_container_instance_shape)

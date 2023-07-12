@@ -262,23 +262,23 @@ def get_fleet_java_migration_analysis_result(fleet_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Jms/getFleetJavaMigrationAnalysisResult:getFleetJavaMigrationAnalysisResult', __args__, opts=opts, typ=GetFleetJavaMigrationAnalysisResultResult).value
 
     return AwaitableGetFleetJavaMigrationAnalysisResultResult(
-        application_execution_type=__ret__.application_execution_type,
-        application_name=__ret__.application_name,
-        application_path=__ret__.application_path,
-        bucket=__ret__.bucket,
-        fleet_id=__ret__.fleet_id,
-        host_name=__ret__.host_name,
-        id=__ret__.id,
-        java_migration_analysis_result_id=__ret__.java_migration_analysis_result_id,
-        managed_instance_id=__ret__.managed_instance_id,
-        metadata=__ret__.metadata,
-        namespace=__ret__.namespace,
-        object_lists=__ret__.object_lists,
-        object_storage_upload_dir_path=__ret__.object_storage_upload_dir_path,
-        source_jdk_version=__ret__.source_jdk_version,
-        target_jdk_version=__ret__.target_jdk_version,
-        time_created=__ret__.time_created,
-        work_request_id=__ret__.work_request_id)
+        application_execution_type=pulumi.get(__ret__, 'application_execution_type'),
+        application_name=pulumi.get(__ret__, 'application_name'),
+        application_path=pulumi.get(__ret__, 'application_path'),
+        bucket=pulumi.get(__ret__, 'bucket'),
+        fleet_id=pulumi.get(__ret__, 'fleet_id'),
+        host_name=pulumi.get(__ret__, 'host_name'),
+        id=pulumi.get(__ret__, 'id'),
+        java_migration_analysis_result_id=pulumi.get(__ret__, 'java_migration_analysis_result_id'),
+        managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
+        metadata=pulumi.get(__ret__, 'metadata'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        object_lists=pulumi.get(__ret__, 'object_lists'),
+        object_storage_upload_dir_path=pulumi.get(__ret__, 'object_storage_upload_dir_path'),
+        source_jdk_version=pulumi.get(__ret__, 'source_jdk_version'),
+        target_jdk_version=pulumi.get(__ret__, 'target_jdk_version'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        work_request_id=pulumi.get(__ret__, 'work_request_id'))
 
 
 @_utilities.lift_output_func(get_fleet_java_migration_analysis_result)

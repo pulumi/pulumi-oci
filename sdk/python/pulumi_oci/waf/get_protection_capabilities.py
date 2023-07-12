@@ -182,15 +182,15 @@ def get_protection_capabilities(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Waf/getProtectionCapabilities:getProtectionCapabilities', __args__, opts=opts, typ=GetProtectionCapabilitiesResult).value
 
     return AwaitableGetProtectionCapabilitiesResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        group_tags=__ret__.group_tags,
-        id=__ret__.id,
-        is_latest_versions=__ret__.is_latest_versions,
-        key=__ret__.key,
-        protection_capability_collections=__ret__.protection_capability_collections,
-        type=__ret__.type)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        group_tags=pulumi.get(__ret__, 'group_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_latest_versions=pulumi.get(__ret__, 'is_latest_versions'),
+        key=pulumi.get(__ret__, 'key'),
+        protection_capability_collections=pulumi.get(__ret__, 'protection_capability_collections'),
+        type=pulumi.get(__ret__, 'type'))
 
 
 @_utilities.lift_output_func(get_protection_capabilities)

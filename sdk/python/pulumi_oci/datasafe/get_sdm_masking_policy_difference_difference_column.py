@@ -223,20 +223,20 @@ def get_sdm_masking_policy_difference_difference_column(difference_column_key: O
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getSdmMaskingPolicyDifferenceDifferenceColumn:getSdmMaskingPolicyDifferenceDifferenceColumn', __args__, opts=opts, typ=GetSdmMaskingPolicyDifferenceDifferenceColumnResult).value
 
     return AwaitableGetSdmMaskingPolicyDifferenceDifferenceColumnResult(
-        column_name=__ret__.column_name,
-        difference_column_key=__ret__.difference_column_key,
-        difference_type=__ret__.difference_type,
-        id=__ret__.id,
-        key=__ret__.key,
-        masking_columnkey=__ret__.masking_columnkey,
-        object=__ret__.object,
-        planned_action=__ret__.planned_action,
-        schema_name=__ret__.schema_name,
-        sdm_masking_policy_difference_id=__ret__.sdm_masking_policy_difference_id,
-        sensitive_columnkey=__ret__.sensitive_columnkey,
-        sensitive_type_id=__ret__.sensitive_type_id,
-        sync_status=__ret__.sync_status,
-        time_last_synced=__ret__.time_last_synced)
+        column_name=pulumi.get(__ret__, 'column_name'),
+        difference_column_key=pulumi.get(__ret__, 'difference_column_key'),
+        difference_type=pulumi.get(__ret__, 'difference_type'),
+        id=pulumi.get(__ret__, 'id'),
+        key=pulumi.get(__ret__, 'key'),
+        masking_columnkey=pulumi.get(__ret__, 'masking_columnkey'),
+        object=pulumi.get(__ret__, 'object'),
+        planned_action=pulumi.get(__ret__, 'planned_action'),
+        schema_name=pulumi.get(__ret__, 'schema_name'),
+        sdm_masking_policy_difference_id=pulumi.get(__ret__, 'sdm_masking_policy_difference_id'),
+        sensitive_columnkey=pulumi.get(__ret__, 'sensitive_columnkey'),
+        sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'),
+        sync_status=pulumi.get(__ret__, 'sync_status'),
+        time_last_synced=pulumi.get(__ret__, 'time_last_synced'))
 
 
 @_utilities.lift_output_func(get_sdm_masking_policy_difference_difference_column)

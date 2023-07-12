@@ -87,9 +87,9 @@ def get_api_content(api_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApiGateway/getApiContent:getApiContent', __args__, opts=opts, typ=GetApiContentResult).value
 
     return AwaitableGetApiContentResult(
-        api_id=__ret__.api_id,
-        content=__ret__.content,
-        id=__ret__.id)
+        api_id=pulumi.get(__ret__, 'api_id'),
+        content=pulumi.get(__ret__, 'content'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_api_content)

@@ -234,21 +234,21 @@ def get_security_policy(security_policy_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudGuard/getSecurityPolicy:getSecurityPolicy', __args__, opts=opts, typ=GetSecurityPolicyResult).value
 
     return AwaitableGetSecurityPolicyResult(
-        category=__ret__.category,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        friendly_name=__ret__.friendly_name,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        owner=__ret__.owner,
-        security_policy_id=__ret__.security_policy_id,
-        services=__ret__.services,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        category=pulumi.get(__ret__, 'category'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        friendly_name=pulumi.get(__ret__, 'friendly_name'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        owner=pulumi.get(__ret__, 'owner'),
+        security_policy_id=pulumi.get(__ret__, 'security_policy_id'),
+        services=pulumi.get(__ret__, 'services'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_security_policy)

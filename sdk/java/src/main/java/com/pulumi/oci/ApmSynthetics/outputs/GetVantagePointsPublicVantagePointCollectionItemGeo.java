@@ -31,7 +31,7 @@ public final class GetVantagePointsPublicVantagePointCollectionItemGeo {
      */
     private String countryName;
     /**
-     * @return Degrees north of the Equator.
+     * @return Degrees north of the equator.
      * 
      */
     private Double latitude;
@@ -71,7 +71,7 @@ public final class GetVantagePointsPublicVantagePointCollectionItemGeo {
         return this.countryName;
     }
     /**
-     * @return Degrees north of the Equator.
+     * @return Degrees north of the equator.
      * 
      */
     public Double latitude() {

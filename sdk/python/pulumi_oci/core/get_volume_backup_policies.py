@@ -109,10 +109,10 @@ def get_volume_backup_policies(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getVolumeBackupPolicies:getVolumeBackupPolicies', __args__, opts=opts, typ=GetVolumeBackupPoliciesResult).value
 
     return AwaitableGetVolumeBackupPoliciesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        volume_backup_policies=__ret__.volume_backup_policies)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        volume_backup_policies=pulumi.get(__ret__, 'volume_backup_policies'))
 
 
 @_utilities.lift_output_func(get_volume_backup_policies)

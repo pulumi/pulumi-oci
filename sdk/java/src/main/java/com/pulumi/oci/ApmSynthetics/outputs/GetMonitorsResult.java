@@ -35,7 +35,7 @@ public final class GetMonitorsResult {
      */
     private List<GetMonitorsMonitorCollection> monitorCollections;
     /**
-     * @return Type of the monitor.
+     * @return Type of monitor.
      * 
      */
     private @Nullable String monitorType;
@@ -86,7 +86,7 @@ public final class GetMonitorsResult {
         return this.monitorCollections;
     }
     /**
-     * @return Type of the monitor.
+     * @return Type of monitor.
      * 
      */
     public Optional<String> monitorType() {

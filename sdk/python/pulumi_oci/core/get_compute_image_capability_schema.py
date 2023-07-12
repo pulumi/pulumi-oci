@@ -199,18 +199,18 @@ def get_compute_image_capability_schema(compute_image_capability_schema_id: Opti
     __ret__ = pulumi.runtime.invoke('oci:Core/getComputeImageCapabilitySchema:getComputeImageCapabilitySchema', __args__, opts=opts, typ=GetComputeImageCapabilitySchemaResult).value
 
     return AwaitableGetComputeImageCapabilitySchemaResult(
-        compartment_id=__ret__.compartment_id,
-        compute_global_image_capability_schema_id=__ret__.compute_global_image_capability_schema_id,
-        compute_global_image_capability_schema_version_name=__ret__.compute_global_image_capability_schema_version_name,
-        compute_image_capability_schema_id=__ret__.compute_image_capability_schema_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        image_id=__ret__.image_id,
-        is_merge_enabled=__ret__.is_merge_enabled,
-        schema_data=__ret__.schema_data,
-        time_created=__ret__.time_created)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compute_global_image_capability_schema_id=pulumi.get(__ret__, 'compute_global_image_capability_schema_id'),
+        compute_global_image_capability_schema_version_name=pulumi.get(__ret__, 'compute_global_image_capability_schema_version_name'),
+        compute_image_capability_schema_id=pulumi.get(__ret__, 'compute_image_capability_schema_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        image_id=pulumi.get(__ret__, 'image_id'),
+        is_merge_enabled=pulumi.get(__ret__, 'is_merge_enabled'),
+        schema_data=pulumi.get(__ret__, 'schema_data'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_compute_image_capability_schema)

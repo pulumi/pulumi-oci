@@ -100,9 +100,9 @@ def get_importable_compute_entities(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Opsi/getImportableComputeEntities:getImportableComputeEntities', __args__, opts=opts, typ=GetImportableComputeEntitiesResult).value
 
     return AwaitableGetImportableComputeEntitiesResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        items=__ret__.items)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'))
 
 
 @_utilities.lift_output_func(get_importable_compute_entities)

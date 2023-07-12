@@ -41,6 +41,7 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         KmsKeyId = oci_kms_key.Test_key.Id,
     ///         Type = @var.Boot_volume_backup_type,
     ///     });
     /// 
@@ -253,6 +254,12 @@ namespace Pulumi.Oci.Core
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+        /// </summary>
+        [Input("kmsKeyId")]
+        public Input<string>? KmsKeyId { get; set; }
 
         /// <summary>
         /// Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.

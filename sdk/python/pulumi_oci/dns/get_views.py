@@ -160,13 +160,13 @@ def get_views(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Dns/getViews:getViews', __args__, opts=opts, typ=GetViewsResult).value
 
     return AwaitableGetViewsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        scope=__ret__.scope,
-        state=__ret__.state,
-        views=__ret__.views)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        scope=pulumi.get(__ret__, 'scope'),
+        state=pulumi.get(__ret__, 'state'),
+        views=pulumi.get(__ret__, 'views'))
 
 
 @_utilities.lift_output_func(get_views)

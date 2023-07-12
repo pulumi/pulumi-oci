@@ -42,7 +42,8 @@ import (
 //				FreeformTags: pulumi.AnyMap{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				Type: pulumi.Any(_var.Volume_backup_type),
+//				KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),
+//				Type:     pulumi.Any(_var.Volume_backup_type),
 //			})
 //			if err != nil {
 //				return err
@@ -240,6 +241,8 @@ type volumeBackupArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// Details of the volume backup source in the cloud.
 	SourceDetails *VolumeBackupSourceDetails `pulumi:"sourceDetails"`
 	// The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
@@ -258,6 +261,8 @@ type VolumeBackupArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
+	// The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+	KmsKeyId pulumi.StringPtrInput
 	// Details of the volume backup source in the cloud.
 	SourceDetails VolumeBackupSourceDetailsPtrInput
 	// The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.

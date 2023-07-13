@@ -158,14 +158,14 @@ def get_subscriptions(buyer_email: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OneSubsription/getSubscriptions:getSubscriptions', __args__, opts=opts, typ=GetSubscriptionsResult).value
 
     return AwaitableGetSubscriptionsResult(
-        buyer_email=__ret__.buyer_email,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_commit_info_required=__ret__.is_commit_info_required,
-        plan_number=__ret__.plan_number,
-        subscription_id=__ret__.subscription_id,
-        subscriptions=__ret__.subscriptions)
+        buyer_email=pulumi.get(__ret__, 'buyer_email'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_commit_info_required=pulumi.get(__ret__, 'is_commit_info_required'),
+        plan_number=pulumi.get(__ret__, 'plan_number'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'),
+        subscriptions=pulumi.get(__ret__, 'subscriptions'))
 
 
 @_utilities.lift_output_func(get_subscriptions)

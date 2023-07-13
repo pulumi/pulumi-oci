@@ -258,23 +258,23 @@ def get_managed_list(managed_list_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudGuard/getManagedList:getManagedList', __args__, opts=opts, typ=GetManagedListResult).value
 
     return AwaitableGetManagedListResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        feed_provider=__ret__.feed_provider,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_editable=__ret__.is_editable,
-        lifecyle_details=__ret__.lifecyle_details,
-        list_items=__ret__.list_items,
-        list_type=__ret__.list_type,
-        managed_list_id=__ret__.managed_list_id,
-        source_managed_list_id=__ret__.source_managed_list_id,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        feed_provider=pulumi.get(__ret__, 'feed_provider'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_editable=pulumi.get(__ret__, 'is_editable'),
+        lifecyle_details=pulumi.get(__ret__, 'lifecyle_details'),
+        list_items=pulumi.get(__ret__, 'list_items'),
+        list_type=pulumi.get(__ret__, 'list_type'),
+        managed_list_id=pulumi.get(__ret__, 'managed_list_id'),
+        source_managed_list_id=pulumi.get(__ret__, 'source_managed_list_id'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_managed_list)

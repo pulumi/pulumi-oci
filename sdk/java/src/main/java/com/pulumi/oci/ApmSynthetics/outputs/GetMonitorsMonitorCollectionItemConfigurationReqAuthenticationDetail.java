@@ -32,12 +32,12 @@ public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticatio
      */
     private String authToken;
     /**
-     * @return URL to get authetication token.
+     * @return URL to get authentication token.
      * 
      */
     private String authUrl;
     /**
-     * @return Username for authentication.
+     * @return User name for authentication.
      * 
      */
     private String authUserName;
@@ -47,7 +47,7 @@ public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticatio
      */
     private String authUserPassword;
     /**
-     * @return Request http oauth scheme.
+     * @return Request HTTP OAuth scheme.
      * 
      */
     private String oauthScheme;
@@ -82,14 +82,14 @@ public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticatio
         return this.authToken;
     }
     /**
-     * @return URL to get authetication token.
+     * @return URL to get authentication token.
      * 
      */
     public String authUrl() {
         return this.authUrl;
     }
     /**
-     * @return Username for authentication.
+     * @return User name for authentication.
      * 
      */
     public String authUserName() {
@@ -103,7 +103,7 @@ public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticatio
         return this.authUserPassword;
     }
     /**
-     * @return Request http oauth scheme.
+     * @return Request HTTP OAuth scheme.
      * 
      */
     public String oauthScheme() {

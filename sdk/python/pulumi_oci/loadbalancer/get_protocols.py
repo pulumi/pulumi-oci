@@ -103,10 +103,10 @@ def get_protocols(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LoadBalancer/getProtocols:getProtocols', __args__, opts=opts, typ=GetProtocolsResult).value
 
     return AwaitableGetProtocolsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        protocols=__ret__.protocols)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        protocols=pulumi.get(__ret__, 'protocols'))
 
 
 @_utilities.lift_output_func(get_protocols)

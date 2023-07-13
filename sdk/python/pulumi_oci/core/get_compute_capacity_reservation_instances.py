@@ -135,12 +135,12 @@ def get_compute_capacity_reservation_instances(availability_domain: Optional[str
     __ret__ = pulumi.runtime.invoke('oci:Core/getComputeCapacityReservationInstances:getComputeCapacityReservationInstances', __args__, opts=opts, typ=GetComputeCapacityReservationInstancesResult).value
 
     return AwaitableGetComputeCapacityReservationInstancesResult(
-        availability_domain=__ret__.availability_domain,
-        capacity_reservation_id=__ret__.capacity_reservation_id,
-        capacity_reservation_instances=__ret__.capacity_reservation_instances,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        capacity_reservation_id=pulumi.get(__ret__, 'capacity_reservation_id'),
+        capacity_reservation_instances=pulumi.get(__ret__, 'capacity_reservation_instances'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_compute_capacity_reservation_instances)

@@ -172,15 +172,15 @@ def get_rrset(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Dns/getRrset:getRrset', __args__, opts=opts, typ=GetRrsetResult).value
 
     return AwaitableGetRrsetResult(
-        compartment_id=__ret__.compartment_id,
-        domain=__ret__.domain,
-        id=__ret__.id,
-        items=__ret__.items,
-        rtype=__ret__.rtype,
-        scope=__ret__.scope,
-        view_id=__ret__.view_id,
-        zone_name_or_id=__ret__.zone_name_or_id,
-        zone_version=__ret__.zone_version)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        domain=pulumi.get(__ret__, 'domain'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        rtype=pulumi.get(__ret__, 'rtype'),
+        scope=pulumi.get(__ret__, 'scope'),
+        view_id=pulumi.get(__ret__, 'view_id'),
+        zone_name_or_id=pulumi.get(__ret__, 'zone_name_or_id'),
+        zone_version=pulumi.get(__ret__, 'zone_version'))
 
 
 @_utilities.lift_output_func(get_rrset)

@@ -135,12 +135,12 @@ def get_instance_devices(filters: Optional[Sequence[pulumi.InputType['GetInstanc
     __ret__ = pulumi.runtime.invoke('oci:Core/getInstanceDevices:getInstanceDevices', __args__, opts=opts, typ=GetInstanceDevicesResult).value
 
     return AwaitableGetInstanceDevicesResult(
-        devices=__ret__.devices,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        instance_id=__ret__.instance_id,
-        is_available=__ret__.is_available,
-        name=__ret__.name)
+        devices=pulumi.get(__ret__, 'devices'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        instance_id=pulumi.get(__ret__, 'instance_id'),
+        is_available=pulumi.get(__ret__, 'is_available'),
+        name=pulumi.get(__ret__, 'name'))
 
 
 @_utilities.lift_output_func(get_instance_devices)

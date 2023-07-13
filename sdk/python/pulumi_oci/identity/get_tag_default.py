@@ -176,16 +176,16 @@ def get_tag_default(tag_default_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getTagDefault:getTagDefault', __args__, opts=opts, typ=GetTagDefaultResult).value
 
     return AwaitableGetTagDefaultResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        is_required=__ret__.is_required,
-        state=__ret__.state,
-        tag_default_id=__ret__.tag_default_id,
-        tag_definition_id=__ret__.tag_definition_id,
-        tag_definition_name=__ret__.tag_definition_name,
-        tag_namespace_id=__ret__.tag_namespace_id,
-        time_created=__ret__.time_created,
-        value=__ret__.value)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        is_required=pulumi.get(__ret__, 'is_required'),
+        state=pulumi.get(__ret__, 'state'),
+        tag_default_id=pulumi.get(__ret__, 'tag_default_id'),
+        tag_definition_id=pulumi.get(__ret__, 'tag_definition_id'),
+        tag_definition_name=pulumi.get(__ret__, 'tag_definition_name'),
+        tag_namespace_id=pulumi.get(__ret__, 'tag_namespace_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        value=pulumi.get(__ret__, 'value'))
 
 
 @_utilities.lift_output_func(get_tag_default)

@@ -142,12 +142,12 @@ def get_inst_vbs_instances(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Vbs/getInstVbsInstances:getInstVbsInstances', __args__, opts=opts, typ=GetInstVbsInstancesResult).value
 
     return AwaitableGetInstVbsInstancesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        state=__ret__.state,
-        vbs_instance_summary_collections=__ret__.vbs_instance_summary_collections)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        vbs_instance_summary_collections=pulumi.get(__ret__, 'vbs_instance_summary_collections'))
 
 
 @_utilities.lift_output_func(get_inst_vbs_instances)

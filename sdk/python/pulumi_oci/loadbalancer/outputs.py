@@ -3593,6 +3593,9 @@ class GetLoadBalancersLoadBalancerResult(dict):
         """
         An array of IP addresses. Deprecated: use ip_address_details instead.
         """
+        warnings.warn("""The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.""", DeprecationWarning)
+        pulumi.log.warn("""ip_addresses is deprecated: The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.""")
+
         return pulumi.get(self, "ip_addresses")
 
     @property

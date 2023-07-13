@@ -153,13 +153,13 @@ def get_audit_profile_available_audit_volume(audit_profile_id: Optional[str] = N
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getAuditProfileAvailableAuditVolume:getAuditProfileAvailableAuditVolume', __args__, opts=opts, typ=GetAuditProfileAvailableAuditVolumeResult).value
 
     return AwaitableGetAuditProfileAvailableAuditVolumeResult(
-        audit_profile_id=__ret__.audit_profile_id,
-        id=__ret__.id,
-        items=__ret__.items,
-        month_in_consideration_greater_than=__ret__.month_in_consideration_greater_than,
-        month_in_consideration_less_than=__ret__.month_in_consideration_less_than,
-        trail_location=__ret__.trail_location,
-        work_request_id=__ret__.work_request_id)
+        audit_profile_id=pulumi.get(__ret__, 'audit_profile_id'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        month_in_consideration_greater_than=pulumi.get(__ret__, 'month_in_consideration_greater_than'),
+        month_in_consideration_less_than=pulumi.get(__ret__, 'month_in_consideration_less_than'),
+        trail_location=pulumi.get(__ret__, 'trail_location'),
+        work_request_id=pulumi.get(__ret__, 'work_request_id'))
 
 
 @_utilities.lift_output_func(get_audit_profile_available_audit_volume)

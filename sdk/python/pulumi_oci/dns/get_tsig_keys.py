@@ -142,12 +142,12 @@ def get_tsig_keys(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Dns/getTsigKeys:getTsigKeys', __args__, opts=opts, typ=GetTsigKeysResult).value
 
     return AwaitableGetTsigKeysResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        state=__ret__.state,
-        tsig_keys=__ret__.tsig_keys)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        tsig_keys=pulumi.get(__ret__, 'tsig_keys'))
 
 
 @_utilities.lift_output_func(get_tsig_keys)

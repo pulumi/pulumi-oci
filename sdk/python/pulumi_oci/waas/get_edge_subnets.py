@@ -89,9 +89,9 @@ def get_edge_subnets(filters: Optional[Sequence[pulumi.InputType['GetEdgeSubnets
     __ret__ = pulumi.runtime.invoke('oci:Waas/getEdgeSubnets:getEdgeSubnets', __args__, opts=opts, typ=GetEdgeSubnetsResult).value
 
     return AwaitableGetEdgeSubnetsResult(
-        edge_subnets=__ret__.edge_subnets,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        edge_subnets=pulumi.get(__ret__, 'edge_subnets'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_edge_subnets)

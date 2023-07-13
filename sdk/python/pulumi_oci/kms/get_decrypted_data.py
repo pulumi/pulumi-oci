@@ -141,13 +141,13 @@ def get_decrypted_data(associated_data: Optional[Mapping[str, Any]] = None,
     __ret__ = pulumi.runtime.invoke('oci:Kms/getDecryptedData:getDecryptedData', __args__, opts=opts, typ=GetDecryptedDataResult).value
 
     return AwaitableGetDecryptedDataResult(
-        associated_data=__ret__.associated_data,
-        ciphertext=__ret__.ciphertext,
-        crypto_endpoint=__ret__.crypto_endpoint,
-        id=__ret__.id,
-        key_id=__ret__.key_id,
-        plaintext=__ret__.plaintext,
-        plaintext_checksum=__ret__.plaintext_checksum)
+        associated_data=pulumi.get(__ret__, 'associated_data'),
+        ciphertext=pulumi.get(__ret__, 'ciphertext'),
+        crypto_endpoint=pulumi.get(__ret__, 'crypto_endpoint'),
+        id=pulumi.get(__ret__, 'id'),
+        key_id=pulumi.get(__ret__, 'key_id'),
+        plaintext=pulumi.get(__ret__, 'plaintext'),
+        plaintext_checksum=pulumi.get(__ret__, 'plaintext_checksum'))
 
 
 @_utilities.lift_output_func(get_decrypted_data)

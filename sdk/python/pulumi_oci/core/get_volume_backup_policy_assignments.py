@@ -108,10 +108,10 @@ def get_volume_backup_policy_assignments(asset_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getVolumeBackupPolicyAssignments:getVolumeBackupPolicyAssignments', __args__, opts=opts, typ=GetVolumeBackupPolicyAssignmentsResult).value
 
     return AwaitableGetVolumeBackupPolicyAssignmentsResult(
-        asset_id=__ret__.asset_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        volume_backup_policy_assignments=__ret__.volume_backup_policy_assignments)
+        asset_id=pulumi.get(__ret__, 'asset_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        volume_backup_policy_assignments=pulumi.get(__ret__, 'volume_backup_policy_assignments'))
 
 
 @_utilities.lift_output_func(get_volume_backup_policy_assignments)

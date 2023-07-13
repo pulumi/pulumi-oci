@@ -138,12 +138,12 @@ def get_clusters(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ContainerEngine/getClusters:getClusters', __args__, opts=opts, typ=GetClustersResult).value
 
     return AwaitableGetClustersResult(
-        clusters=__ret__.clusters,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        states=__ret__.states)
+        clusters=pulumi.get(__ret__, 'clusters'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        states=pulumi.get(__ret__, 'states'))
 
 
 @_utilities.lift_output_func(get_clusters)

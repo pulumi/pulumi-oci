@@ -23,7 +23,7 @@ public final class AutonomousDatabaseLocalStandbyDb {
      */
     private @Nullable String lifecycleDetails;
     /**
-     * @return (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+     * @return The current state of the Autonomous Database.
      * 
      */
     private @Nullable String state;
@@ -54,7 +54,7 @@ public final class AutonomousDatabaseLocalStandbyDb {
         return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
-     * @return (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+     * @return The current state of the Autonomous Database.
      * 
      */
     public Optional<String> state() {

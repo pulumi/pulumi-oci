@@ -258,23 +258,23 @@ def get_em_warehouse(em_warehouse_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:EmWarehouse/getEmWarehouse:getEmWarehouse', __args__, opts=opts, typ=GetEmWarehouseResult).value
 
     return AwaitableGetEmWarehouseResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        em_bridge_id=__ret__.em_bridge_id,
-        em_warehouse_id=__ret__.em_warehouse_id,
-        em_warehouse_type=__ret__.em_warehouse_type,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        latest_etl_run_message=__ret__.latest_etl_run_message,
-        latest_etl_run_status=__ret__.latest_etl_run_status,
-        latest_etl_run_time=__ret__.latest_etl_run_time,
-        lifecycle_details=__ret__.lifecycle_details,
-        operations_insights_warehouse_id=__ret__.operations_insights_warehouse_id,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        em_bridge_id=pulumi.get(__ret__, 'em_bridge_id'),
+        em_warehouse_id=pulumi.get(__ret__, 'em_warehouse_id'),
+        em_warehouse_type=pulumi.get(__ret__, 'em_warehouse_type'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        latest_etl_run_message=pulumi.get(__ret__, 'latest_etl_run_message'),
+        latest_etl_run_status=pulumi.get(__ret__, 'latest_etl_run_status'),
+        latest_etl_run_time=pulumi.get(__ret__, 'latest_etl_run_time'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        operations_insights_warehouse_id=pulumi.get(__ret__, 'operations_insights_warehouse_id'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_em_warehouse)

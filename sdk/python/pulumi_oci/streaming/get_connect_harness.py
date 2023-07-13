@@ -162,15 +162,15 @@ def get_connect_harness(connect_harness_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Streaming/getConnectHarness:getConnectHarness', __args__, opts=opts, typ=GetConnectHarnessResult).value
 
     return AwaitableGetConnectHarnessResult(
-        compartment_id=__ret__.compartment_id,
-        connect_harness_id=__ret__.connect_harness_id,
-        defined_tags=__ret__.defined_tags,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_state_details=__ret__.lifecycle_state_details,
-        name=__ret__.name,
-        state=__ret__.state,
-        time_created=__ret__.time_created)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        connect_harness_id=pulumi.get(__ret__, 'connect_harness_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_state_details=pulumi.get(__ret__, 'lifecycle_state_details'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_connect_harness)

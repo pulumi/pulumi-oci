@@ -28,10 +28,6 @@ class GetAutonomousExadataInfrastructureResult:
         pulumi.set(__self__, "autonomous_exadata_infrastructure_id", autonomous_exadata_infrastructure_id)
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
-        if availability_domain is not None:
-            warnings.warn("""Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""", DeprecationWarning)
-            pulumi.log.warn("""availability_domain is deprecated: Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""")
-
         pulumi.set(__self__, "availability_domain", availability_domain)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
@@ -108,6 +104,9 @@ class GetAutonomousExadataInfrastructureResult:
         """
         The name of the availability domain that the Autonomous Exadata Infrastructure is located in.
         """
+        warnings.warn("""Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""", DeprecationWarning)
+        pulumi.log.warn("""availability_domain is deprecated: Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""")
+
         return pulumi.get(self, "availability_domain")
 
     @property
@@ -330,29 +329,29 @@ def get_autonomous_exadata_infrastructure(autonomous_exadata_infrastructure_id: 
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousExadataInfrastructure:getAutonomousExadataInfrastructure', __args__, opts=opts, typ=GetAutonomousExadataInfrastructureResult).value
 
     return AwaitableGetAutonomousExadataInfrastructureResult(
-        autonomous_exadata_infrastructure_id=__ret__.autonomous_exadata_infrastructure_id,
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        create_async=__ret__.create_async,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        domain=__ret__.domain,
-        freeform_tags=__ret__.freeform_tags,
-        hostname=__ret__.hostname,
-        id=__ret__.id,
-        last_maintenance_run_id=__ret__.last_maintenance_run_id,
-        license_model=__ret__.license_model,
-        lifecycle_details=__ret__.lifecycle_details,
-        maintenance_window_details=__ret__.maintenance_window_details,
-        maintenance_windows=__ret__.maintenance_windows,
-        next_maintenance_run_id=__ret__.next_maintenance_run_id,
-        nsg_ids=__ret__.nsg_ids,
-        scan_dns_name=__ret__.scan_dns_name,
-        shape=__ret__.shape,
-        state=__ret__.state,
-        subnet_id=__ret__.subnet_id,
-        time_created=__ret__.time_created,
-        zone_id=__ret__.zone_id)
+        autonomous_exadata_infrastructure_id=pulumi.get(__ret__, 'autonomous_exadata_infrastructure_id'),
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        create_async=pulumi.get(__ret__, 'create_async'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        domain=pulumi.get(__ret__, 'domain'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        hostname=pulumi.get(__ret__, 'hostname'),
+        id=pulumi.get(__ret__, 'id'),
+        last_maintenance_run_id=pulumi.get(__ret__, 'last_maintenance_run_id'),
+        license_model=pulumi.get(__ret__, 'license_model'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        maintenance_window_details=pulumi.get(__ret__, 'maintenance_window_details'),
+        maintenance_windows=pulumi.get(__ret__, 'maintenance_windows'),
+        next_maintenance_run_id=pulumi.get(__ret__, 'next_maintenance_run_id'),
+        nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
+        scan_dns_name=pulumi.get(__ret__, 'scan_dns_name'),
+        shape=pulumi.get(__ret__, 'shape'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        zone_id=pulumi.get(__ret__, 'zone_id'))
 
 
 @_utilities.lift_output_func(get_autonomous_exadata_infrastructure)

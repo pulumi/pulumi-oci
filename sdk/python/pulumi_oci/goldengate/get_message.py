@@ -91,9 +91,9 @@ def get_message(deployment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:GoldenGate/getMessage:getMessage', __args__, opts=opts, typ=GetMessageResult).value
 
     return AwaitableGetMessageResult(
-        deployment_id=__ret__.deployment_id,
-        id=__ret__.id,
-        items=__ret__.items)
+        deployment_id=pulumi.get(__ret__, 'deployment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'))
 
 
 @_utilities.lift_output_func(get_message)

@@ -158,14 +158,14 @@ def get_migration_plan_available_shapes(availability_domain: Optional[str] = Non
     __ret__ = pulumi.runtime.invoke('oci:CloudMigrations/getMigrationPlanAvailableShapes:getMigrationPlanAvailableShapes', __args__, opts=opts, typ=GetMigrationPlanAvailableShapesResult).value
 
     return AwaitableGetMigrationPlanAvailableShapesResult(
-        availability_domain=__ret__.availability_domain,
-        available_shapes_collections=__ret__.available_shapes_collections,
-        compartment_id=__ret__.compartment_id,
-        dvh_host_id=__ret__.dvh_host_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        migration_plan_id=__ret__.migration_plan_id,
-        reserved_capacity_id=__ret__.reserved_capacity_id)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        available_shapes_collections=pulumi.get(__ret__, 'available_shapes_collections'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        dvh_host_id=pulumi.get(__ret__, 'dvh_host_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        migration_plan_id=pulumi.get(__ret__, 'migration_plan_id'),
+        reserved_capacity_id=pulumi.get(__ret__, 'reserved_capacity_id'))
 
 
 @_utilities.lift_output_func(get_migration_plan_available_shapes)

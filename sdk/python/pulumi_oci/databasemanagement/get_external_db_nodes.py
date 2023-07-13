@@ -138,12 +138,12 @@ def get_external_db_nodes(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalDbNodes:getExternalDbNodes', __args__, opts=opts, typ=GetExternalDbNodesResult).value
 
     return AwaitableGetExternalDbNodesResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        external_db_node_collections=__ret__.external_db_node_collections,
-        external_db_system_id=__ret__.external_db_system_id,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        external_db_node_collections=pulumi.get(__ret__, 'external_db_node_collections'),
+        external_db_system_id=pulumi.get(__ret__, 'external_db_system_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_external_db_nodes)

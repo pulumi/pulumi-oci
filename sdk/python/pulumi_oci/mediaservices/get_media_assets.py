@@ -279,21 +279,21 @@ def get_media_assets(bucket: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:MediaServices/getMediaAssets:getMediaAssets', __args__, opts=opts, typ=GetMediaAssetsResult).value
 
     return AwaitableGetMediaAssetsResult(
-        bucket=__ret__.bucket,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        distribution_channel_id=__ret__.distribution_channel_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        master_media_asset_id=__ret__.master_media_asset_id,
-        media_asset_collections=__ret__.media_asset_collections,
-        media_workflow_job_id=__ret__.media_workflow_job_id,
-        object=__ret__.object,
-        parent_media_asset_id=__ret__.parent_media_asset_id,
-        source_media_workflow_id=__ret__.source_media_workflow_id,
-        source_media_workflow_version=__ret__.source_media_workflow_version,
-        state=__ret__.state,
-        type=__ret__.type)
+        bucket=pulumi.get(__ret__, 'bucket'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        distribution_channel_id=pulumi.get(__ret__, 'distribution_channel_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        master_media_asset_id=pulumi.get(__ret__, 'master_media_asset_id'),
+        media_asset_collections=pulumi.get(__ret__, 'media_asset_collections'),
+        media_workflow_job_id=pulumi.get(__ret__, 'media_workflow_job_id'),
+        object=pulumi.get(__ret__, 'object'),
+        parent_media_asset_id=pulumi.get(__ret__, 'parent_media_asset_id'),
+        source_media_workflow_id=pulumi.get(__ret__, 'source_media_workflow_id'),
+        source_media_workflow_version=pulumi.get(__ret__, 'source_media_workflow_version'),
+        state=pulumi.get(__ret__, 'state'),
+        type=pulumi.get(__ret__, 'type'))
 
 
 @_utilities.lift_output_func(get_media_assets)

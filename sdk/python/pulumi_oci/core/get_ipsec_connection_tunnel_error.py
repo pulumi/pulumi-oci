@@ -151,14 +151,14 @@ def get_ipsec_connection_tunnel_error(ipsec_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getIpsecConnectionTunnelError:getIpsecConnectionTunnelError', __args__, opts=opts, typ=GetIpsecConnectionTunnelErrorResult).value
 
     return AwaitableGetIpsecConnectionTunnelErrorResult(
-        error_code=__ret__.error_code,
-        error_description=__ret__.error_description,
-        id=__ret__.id,
-        ipsec_id=__ret__.ipsec_id,
-        oci_resources_link=__ret__.oci_resources_link,
-        solution=__ret__.solution,
-        timestamp=__ret__.timestamp,
-        tunnel_id=__ret__.tunnel_id)
+        error_code=pulumi.get(__ret__, 'error_code'),
+        error_description=pulumi.get(__ret__, 'error_description'),
+        id=pulumi.get(__ret__, 'id'),
+        ipsec_id=pulumi.get(__ret__, 'ipsec_id'),
+        oci_resources_link=pulumi.get(__ret__, 'oci_resources_link'),
+        solution=pulumi.get(__ret__, 'solution'),
+        timestamp=pulumi.get(__ret__, 'timestamp'),
+        tunnel_id=pulumi.get(__ret__, 'tunnel_id'))
 
 
 @_utilities.lift_output_func(get_ipsec_connection_tunnel_error)

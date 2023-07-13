@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Database.outputs.GetVmClusterNetworksVmClusterNetworkDrScan;
 import com.pulumi.oci.Database.outputs.GetVmClusterNetworksVmClusterNetworkScan;
 import com.pulumi.oci.Database.outputs.GetVmClusterNetworksVmClusterNetworkVmNetwork;
 import java.lang.Boolean;
@@ -36,6 +37,11 @@ public final class GetVmClusterNetworksVmClusterNetwork {
      * 
      */
     private List<String> dns;
+    /**
+     * @return The SCAN details for DR network
+     * 
+     */
+    private List<GetVmClusterNetworksVmClusterNetworkDrScan> drScans;
     /**
      * @return The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -119,6 +125,13 @@ public final class GetVmClusterNetworksVmClusterNetwork {
      */
     public List<String> dns() {
         return this.dns;
+    }
+    /**
+     * @return The SCAN details for DR network
+     * 
+     */
+    public List<GetVmClusterNetworksVmClusterNetworkDrScan> drScans() {
+        return this.drScans;
     }
     /**
      * @return The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -208,6 +221,7 @@ public final class GetVmClusterNetworksVmClusterNetwork {
         private Map<String,Object> definedTags;
         private String displayName;
         private List<String> dns;
+        private List<GetVmClusterNetworksVmClusterNetworkDrScan> drScans;
         private String exadataInfrastructureId;
         private Map<String,Object> freeformTags;
         private String id;
@@ -227,6 +241,7 @@ public final class GetVmClusterNetworksVmClusterNetwork {
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.dns = defaults.dns;
+    	      this.drScans = defaults.drScans;
     	      this.exadataInfrastructureId = defaults.exadataInfrastructureId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
@@ -267,6 +282,14 @@ public final class GetVmClusterNetworksVmClusterNetwork {
         }
         public Builder dns(String... dns) {
             return dns(List.of(dns));
+        }
+        @CustomType.Setter
+        public Builder drScans(List<GetVmClusterNetworksVmClusterNetworkDrScan> drScans) {
+            this.drScans = Objects.requireNonNull(drScans);
+            return this;
+        }
+        public Builder drScans(GetVmClusterNetworksVmClusterNetworkDrScan... drScans) {
+            return drScans(List.of(drScans));
         }
         @CustomType.Setter
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
@@ -339,6 +362,7 @@ public final class GetVmClusterNetworksVmClusterNetwork {
             o.definedTags = definedTags;
             o.displayName = displayName;
             o.dns = dns;
+            o.drScans = drScans;
             o.exadataInfrastructureId = exadataInfrastructureId;
             o.freeformTags = freeformTags;
             o.id = id;

@@ -249,22 +249,22 @@ def get_announcement_subscription(announcement_subscription_id: Optional[str] = 
     __ret__ = pulumi.runtime.invoke('oci:AnnouncementsService/getAnnouncementSubscription:getAnnouncementSubscription', __args__, opts=opts, typ=GetAnnouncementSubscriptionResult).value
 
     return AwaitableGetAnnouncementSubscriptionResult(
-        announcement_subscription_id=__ret__.announcement_subscription_id,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        filter_groups=__ret__.filter_groups,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        ons_topic_id=__ret__.ons_topic_id,
-        preferred_language=__ret__.preferred_language,
-        preferred_time_zone=__ret__.preferred_time_zone,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        announcement_subscription_id=pulumi.get(__ret__, 'announcement_subscription_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filter_groups=pulumi.get(__ret__, 'filter_groups'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        ons_topic_id=pulumi.get(__ret__, 'ons_topic_id'),
+        preferred_language=pulumi.get(__ret__, 'preferred_language'),
+        preferred_time_zone=pulumi.get(__ret__, 'preferred_time_zone'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_announcement_subscription)

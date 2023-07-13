@@ -271,24 +271,24 @@ def get_fleet(fleet_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Jms/getFleet:getFleet', __args__, opts=opts, typ=GetFleetResult).value
 
     return AwaitableGetFleetResult(
-        approximate_application_count=__ret__.approximate_application_count,
-        approximate_installation_count=__ret__.approximate_installation_count,
-        approximate_java_server_count=__ret__.approximate_java_server_count,
-        approximate_jre_count=__ret__.approximate_jre_count,
-        approximate_managed_instance_count=__ret__.approximate_managed_instance_count,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        fleet_id=__ret__.fleet_id,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        inventory_logs=__ret__.inventory_logs,
-        is_advanced_features_enabled=__ret__.is_advanced_features_enabled,
-        operation_logs=__ret__.operation_logs,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created)
+        approximate_application_count=pulumi.get(__ret__, 'approximate_application_count'),
+        approximate_installation_count=pulumi.get(__ret__, 'approximate_installation_count'),
+        approximate_java_server_count=pulumi.get(__ret__, 'approximate_java_server_count'),
+        approximate_jre_count=pulumi.get(__ret__, 'approximate_jre_count'),
+        approximate_managed_instance_count=pulumi.get(__ret__, 'approximate_managed_instance_count'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        fleet_id=pulumi.get(__ret__, 'fleet_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        inventory_logs=pulumi.get(__ret__, 'inventory_logs'),
+        is_advanced_features_enabled=pulumi.get(__ret__, 'is_advanced_features_enabled'),
+        operation_logs=pulumi.get(__ret__, 'operation_logs'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_fleet)

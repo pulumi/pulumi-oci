@@ -242,22 +242,22 @@ def get_workspace_folder(folder_key: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataIntegration/getWorkspaceFolder:getWorkspaceFolder', __args__, opts=opts, typ=GetWorkspaceFolderResult).value
 
     return AwaitableGetWorkspaceFolderResult(
-        category_name=__ret__.category_name,
-        description=__ret__.description,
-        folder_key=__ret__.folder_key,
-        id=__ret__.id,
-        identifier=__ret__.identifier,
-        key=__ret__.key,
-        key_map=__ret__.key_map,
-        metadatas=__ret__.metadatas,
-        model_type=__ret__.model_type,
-        model_version=__ret__.model_version,
-        name=__ret__.name,
-        object_status=__ret__.object_status,
-        object_version=__ret__.object_version,
-        parent_reves=__ret__.parent_reves,
-        registry_metadatas=__ret__.registry_metadatas,
-        workspace_id=__ret__.workspace_id)
+        category_name=pulumi.get(__ret__, 'category_name'),
+        description=pulumi.get(__ret__, 'description'),
+        folder_key=pulumi.get(__ret__, 'folder_key'),
+        id=pulumi.get(__ret__, 'id'),
+        identifier=pulumi.get(__ret__, 'identifier'),
+        key=pulumi.get(__ret__, 'key'),
+        key_map=pulumi.get(__ret__, 'key_map'),
+        metadatas=pulumi.get(__ret__, 'metadatas'),
+        model_type=pulumi.get(__ret__, 'model_type'),
+        model_version=pulumi.get(__ret__, 'model_version'),
+        name=pulumi.get(__ret__, 'name'),
+        object_status=pulumi.get(__ret__, 'object_status'),
+        object_version=pulumi.get(__ret__, 'object_version'),
+        parent_reves=pulumi.get(__ret__, 'parent_reves'),
+        registry_metadatas=pulumi.get(__ret__, 'registry_metadatas'),
+        workspace_id=pulumi.get(__ret__, 'workspace_id'))
 
 
 @_utilities.lift_output_func(get_workspace_folder)

@@ -223,19 +223,19 @@ def get_invoices(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OspGateway/getInvoices:getInvoices', __args__, opts=opts, typ=GetInvoicesResult).value
 
     return AwaitableGetInvoicesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        invoice_collections=__ret__.invoice_collections,
-        invoice_id=__ret__.invoice_id,
-        osp_home_region=__ret__.osp_home_region,
-        search_text=__ret__.search_text,
-        statuses=__ret__.statuses,
-        time_invoice_end=__ret__.time_invoice_end,
-        time_invoice_start=__ret__.time_invoice_start,
-        time_payment_end=__ret__.time_payment_end,
-        time_payment_start=__ret__.time_payment_start,
-        types=__ret__.types)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        invoice_collections=pulumi.get(__ret__, 'invoice_collections'),
+        invoice_id=pulumi.get(__ret__, 'invoice_id'),
+        osp_home_region=pulumi.get(__ret__, 'osp_home_region'),
+        search_text=pulumi.get(__ret__, 'search_text'),
+        statuses=pulumi.get(__ret__, 'statuses'),
+        time_invoice_end=pulumi.get(__ret__, 'time_invoice_end'),
+        time_invoice_start=pulumi.get(__ret__, 'time_invoice_start'),
+        time_payment_end=pulumi.get(__ret__, 'time_payment_end'),
+        time_payment_start=pulumi.get(__ret__, 'time_payment_start'),
+        types=pulumi.get(__ret__, 'types'))
 
 
 @_utilities.lift_output_func(get_invoices)

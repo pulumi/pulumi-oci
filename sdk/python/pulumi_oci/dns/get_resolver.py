@@ -262,23 +262,23 @@ def get_resolver(resolver_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Dns/getResolver:getResolver', __args__, opts=opts, typ=GetResolverResult).value
 
     return AwaitableGetResolverResult(
-        attached_vcn_id=__ret__.attached_vcn_id,
-        attached_views=__ret__.attached_views,
-        compartment_id=__ret__.compartment_id,
-        default_view_id=__ret__.default_view_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        endpoints=__ret__.endpoints,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_protected=__ret__.is_protected,
-        resolver_id=__ret__.resolver_id,
-        rules=__ret__.rules,
-        scope=__ret__.scope,
-        self=__ret__.self,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        attached_vcn_id=pulumi.get(__ret__, 'attached_vcn_id'),
+        attached_views=pulumi.get(__ret__, 'attached_views'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        default_view_id=pulumi.get(__ret__, 'default_view_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        endpoints=pulumi.get(__ret__, 'endpoints'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_protected=pulumi.get(__ret__, 'is_protected'),
+        resolver_id=pulumi.get(__ret__, 'resolver_id'),
+        rules=pulumi.get(__ret__, 'rules'),
+        scope=pulumi.get(__ret__, 'scope'),
+        self=pulumi.get(__ret__, 'self'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_resolver)

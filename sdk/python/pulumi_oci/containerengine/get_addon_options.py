@@ -116,11 +116,11 @@ def get_addon_options(addon_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ContainerEngine/getAddonOptions:getAddonOptions', __args__, opts=opts, typ=GetAddonOptionsResult).value
 
     return AwaitableGetAddonOptionsResult(
-        addon_name=__ret__.addon_name,
-        addon_options=__ret__.addon_options,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        kubernetes_version=__ret__.kubernetes_version)
+        addon_name=pulumi.get(__ret__, 'addon_name'),
+        addon_options=pulumi.get(__ret__, 'addon_options'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        kubernetes_version=pulumi.get(__ret__, 'kubernetes_version'))
 
 
 @_utilities.lift_output_func(get_addon_options)

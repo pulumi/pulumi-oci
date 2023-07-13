@@ -123,11 +123,11 @@ def get_awr_hub_awr_sources_summary(awr_hub_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Opsi/getAwrHubAwrSourcesSummary:getAwrHubAwrSourcesSummary', __args__, opts=opts, typ=GetAwrHubAwrSourcesSummaryResult).value
 
     return AwaitableGetAwrHubAwrSourcesSummaryResult(
-        awr_hub_id=__ret__.awr_hub_id,
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        items=__ret__.items,
-        name=__ret__.name)
+        awr_hub_id=pulumi.get(__ret__, 'awr_hub_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        name=pulumi.get(__ret__, 'name'))
 
 
 @_utilities.lift_output_func(get_awr_hub_awr_sources_summary)

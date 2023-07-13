@@ -139,12 +139,12 @@ def get_service_gateways(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getServiceGateways:getServiceGateways', __args__, opts=opts, typ=GetServiceGatewaysResult).value
 
     return AwaitableGetServiceGatewaysResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        service_gateways=__ret__.service_gateways,
-        state=__ret__.state,
-        vcn_id=__ret__.vcn_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        service_gateways=pulumi.get(__ret__, 'service_gateways'),
+        state=pulumi.get(__ret__, 'state'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_service_gateways)

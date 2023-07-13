@@ -104,10 +104,10 @@ def get_trace_aggregated_snapshot_data(apm_domain_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApmTraces/getTraceAggregatedSnapshotData:getTraceAggregatedSnapshotData', __args__, opts=opts, typ=GetTraceAggregatedSnapshotDataResult).value
 
     return AwaitableGetTraceAggregatedSnapshotDataResult(
-        apm_domain_id=__ret__.apm_domain_id,
-        details=__ret__.details,
-        id=__ret__.id,
-        trace_key=__ret__.trace_key)
+        apm_domain_id=pulumi.get(__ret__, 'apm_domain_id'),
+        details=pulumi.get(__ret__, 'details'),
+        id=pulumi.get(__ret__, 'id'),
+        trace_key=pulumi.get(__ret__, 'trace_key'))
 
 
 @_utilities.lift_output_func(get_trace_aggregated_snapshot_data)

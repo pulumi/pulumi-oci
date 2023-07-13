@@ -128,12 +128,12 @@ def get_fast_connect_provider_service_key(provider_service_id: Optional[str] = N
     __ret__ = pulumi.runtime.invoke('oci:Core/getFastConnectProviderServiceKey:getFastConnectProviderServiceKey', __args__, opts=opts, typ=GetFastConnectProviderServiceKeyResult).value
 
     return AwaitableGetFastConnectProviderServiceKeyResult(
-        bandwidth_shape_name=__ret__.bandwidth_shape_name,
-        id=__ret__.id,
-        name=__ret__.name,
-        peering_location=__ret__.peering_location,
-        provider_service_id=__ret__.provider_service_id,
-        provider_service_key_name=__ret__.provider_service_key_name)
+        bandwidth_shape_name=pulumi.get(__ret__, 'bandwidth_shape_name'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        peering_location=pulumi.get(__ret__, 'peering_location'),
+        provider_service_id=pulumi.get(__ret__, 'provider_service_id'),
+        provider_service_key_name=pulumi.get(__ret__, 'provider_service_key_name'))
 
 
 @_utilities.lift_output_func(get_fast_connect_provider_service_key)

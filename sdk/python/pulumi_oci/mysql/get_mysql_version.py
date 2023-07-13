@@ -105,10 +105,10 @@ def get_mysql_version(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Mysql/getMysqlVersion:getMysqlVersion', __args__, opts=opts, typ=GetMysqlVersionResult).value
 
     return AwaitableGetMysqlVersionResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        versions=__ret__.versions)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        versions=pulumi.get(__ret__, 'versions'))
 
 
 @_utilities.lift_output_func(get_mysql_version)

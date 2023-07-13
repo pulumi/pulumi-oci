@@ -183,17 +183,17 @@ def get_accepted_agreement(accepted_agreement_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Marketplace/getAcceptedAgreement:getAcceptedAgreement', __args__, opts=opts, typ=GetAcceptedAgreementResult).value
 
     return AwaitableGetAcceptedAgreementResult(
-        accepted_agreement_id=__ret__.accepted_agreement_id,
-        agreement_id=__ret__.agreement_id,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        listing_id=__ret__.listing_id,
-        package_version=__ret__.package_version,
-        signature=__ret__.signature,
-        time_accepted=__ret__.time_accepted)
+        accepted_agreement_id=pulumi.get(__ret__, 'accepted_agreement_id'),
+        agreement_id=pulumi.get(__ret__, 'agreement_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        listing_id=pulumi.get(__ret__, 'listing_id'),
+        package_version=pulumi.get(__ret__, 'package_version'),
+        signature=pulumi.get(__ret__, 'signature'),
+        time_accepted=pulumi.get(__ret__, 'time_accepted'))
 
 
 @_utilities.lift_output_func(get_accepted_agreement)

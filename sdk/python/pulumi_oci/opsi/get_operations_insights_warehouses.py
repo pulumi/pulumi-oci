@@ -143,12 +143,12 @@ def get_operations_insights_warehouses(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Opsi/getOperationsInsightsWarehouses:getOperationsInsightsWarehouses', __args__, opts=opts, typ=GetOperationsInsightsWarehousesResult).value
 
     return AwaitableGetOperationsInsightsWarehousesResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        operations_insights_warehouse_summary_collections=__ret__.operations_insights_warehouse_summary_collections,
-        states=__ret__.states)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        operations_insights_warehouse_summary_collections=pulumi.get(__ret__, 'operations_insights_warehouse_summary_collections'),
+        states=pulumi.get(__ret__, 'states'))
 
 
 @_utilities.lift_output_func(get_operations_insights_warehouses)

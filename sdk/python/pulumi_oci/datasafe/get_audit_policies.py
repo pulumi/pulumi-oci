@@ -207,16 +207,16 @@ def get_audit_policies(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getAuditPolicies:getAuditPolicies', __args__, opts=opts, typ=GetAuditPoliciesResult).value
 
     return AwaitableGetAuditPoliciesResult(
-        access_level=__ret__.access_level,
-        audit_policy_collections=__ret__.audit_policy_collections,
-        audit_policy_id=__ret__.audit_policy_id,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        target_id=__ret__.target_id)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        audit_policy_collections=pulumi.get(__ret__, 'audit_policy_collections'),
+        audit_policy_id=pulumi.get(__ret__, 'audit_policy_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        target_id=pulumi.get(__ret__, 'target_id'))
 
 
 @_utilities.lift_output_func(get_audit_policies)

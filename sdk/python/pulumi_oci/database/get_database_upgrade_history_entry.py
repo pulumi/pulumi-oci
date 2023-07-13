@@ -225,20 +225,20 @@ def get_database_upgrade_history_entry(database_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getDatabaseUpgradeHistoryEntry:getDatabaseUpgradeHistoryEntry', __args__, opts=opts, typ=GetDatabaseUpgradeHistoryEntryResult).value
 
     return AwaitableGetDatabaseUpgradeHistoryEntryResult(
-        action=__ret__.action,
-        database_id=__ret__.database_id,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        options=__ret__.options,
-        source=__ret__.source,
-        source_db_home_id=__ret__.source_db_home_id,
-        state=__ret__.state,
-        target_database_software_image_id=__ret__.target_database_software_image_id,
-        target_db_home_id=__ret__.target_db_home_id,
-        target_db_version=__ret__.target_db_version,
-        time_ended=__ret__.time_ended,
-        time_started=__ret__.time_started,
-        upgrade_history_entry_id=__ret__.upgrade_history_entry_id)
+        action=pulumi.get(__ret__, 'action'),
+        database_id=pulumi.get(__ret__, 'database_id'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        options=pulumi.get(__ret__, 'options'),
+        source=pulumi.get(__ret__, 'source'),
+        source_db_home_id=pulumi.get(__ret__, 'source_db_home_id'),
+        state=pulumi.get(__ret__, 'state'),
+        target_database_software_image_id=pulumi.get(__ret__, 'target_database_software_image_id'),
+        target_db_home_id=pulumi.get(__ret__, 'target_db_home_id'),
+        target_db_version=pulumi.get(__ret__, 'target_db_version'),
+        time_ended=pulumi.get(__ret__, 'time_ended'),
+        time_started=pulumi.get(__ret__, 'time_started'),
+        upgrade_history_entry_id=pulumi.get(__ret__, 'upgrade_history_entry_id'))
 
 
 @_utilities.lift_output_func(get_database_upgrade_history_entry)

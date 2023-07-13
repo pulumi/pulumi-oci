@@ -75,5 +75,5 @@ def get_proxy_detail(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGe
     __ret__ = pulumi.runtime.invoke('oci:ServiceMesh/getProxyDetail:getProxyDetail', __args__, opts=opts, typ=GetProxyDetailResult).value
 
     return AwaitableGetProxyDetailResult(
-        id=__ret__.id,
-        proxy_image=__ret__.proxy_image)
+        id=pulumi.get(__ret__, 'id'),
+        proxy_image=pulumi.get(__ret__, 'proxy_image'))

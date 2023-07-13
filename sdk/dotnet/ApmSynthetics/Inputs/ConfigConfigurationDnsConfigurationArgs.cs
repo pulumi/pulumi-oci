@@ -13,13 +13,13 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
     public sealed class ConfigConfigurationDnsConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) If isOverrideDns is true, then dns will be overridden.
+        /// (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
         /// </summary>
         [Input("isOverrideDns")]
         public Input<bool>? IsOverrideDns { get; set; }
 
         /// <summary>
-        /// (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+        /// (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
         /// </summary>
         [Input("overrideDnsIp")]
         public Input<string>? OverrideDnsIp { get; set; }

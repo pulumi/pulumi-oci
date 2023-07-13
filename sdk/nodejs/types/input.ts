@@ -3279,11 +3279,15 @@ export namespace ApmSynthetics {
 
     export interface ConfigConfiguration {
         /**
+         * (Updatable) Details for client certificate.
+         */
+        clientCertificateDetails?: pulumi.Input<inputs.ApmSynthetics.ConfigConfigurationClientCertificateDetails>;
+        /**
          * (Updatable) Type of configuration.
          */
         configType?: pulumi.Input<string>;
         /**
-         * (Updatable) Dns settings.
+         * (Updatable) Information about the DNS settings.
          */
         dnsConfiguration?: pulumi.Input<inputs.ApmSynthetics.ConfigConfigurationDnsConfiguration>;
         /**
@@ -3291,11 +3295,15 @@ export namespace ApmSynthetics {
          */
         isCertificateValidationEnabled?: pulumi.Input<boolean>;
         /**
+         * (Updatable) If disabled then auto snapshots are not collected.
+         */
+        isDefaultSnapshotEnabled?: pulumi.Input<boolean>;
+        /**
          * (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
          */
         isFailureRetried?: pulumi.Input<boolean>;
         /**
-         * (Updatable) If redirection enabled, then redirects will be allowed while accessing target URL.
+         * (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
          */
         isRedirectionEnabled?: pulumi.Input<boolean>;
         /**
@@ -3307,7 +3315,7 @@ export namespace ApmSynthetics {
          */
         reqAuthenticationDetails?: pulumi.Input<inputs.ApmSynthetics.ConfigConfigurationReqAuthenticationDetails>;
         /**
-         * (Updatable) Request http authentication scheme.
+         * (Updatable) Request HTTP authentication scheme.
          */
         reqAuthenticationScheme?: pulumi.Input<string>;
         /**
@@ -3340,13 +3348,46 @@ export namespace ApmSynthetics {
         verifyTexts?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.ConfigConfigurationVerifyText>[]>;
     }
 
+    export interface ConfigConfigurationClientCertificateDetails {
+        /**
+         * (Updatable) Client certificate in pem format.
+         */
+        clientCertificate?: pulumi.Input<inputs.ApmSynthetics.ConfigConfigurationClientCertificateDetailsClientCertificate>;
+        /**
+         * (Updatable) The private key associated with the client certificate in pem format.
+         */
+        privateKey?: pulumi.Input<inputs.ApmSynthetics.ConfigConfigurationClientCertificateDetailsPrivateKey>;
+    }
+
+    export interface ConfigConfigurationClientCertificateDetailsClientCertificate {
+        /**
+         * (Updatable) Content of the private key file.
+         */
+        content?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of the private key file.
+         */
+        fileName?: pulumi.Input<string>;
+    }
+
+    export interface ConfigConfigurationClientCertificateDetailsPrivateKey {
+        /**
+         * (Updatable) Content of the private key file.
+         */
+        content?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of the private key file.
+         */
+        fileName?: pulumi.Input<string>;
+    }
+
     export interface ConfigConfigurationDnsConfiguration {
         /**
-         * (Updatable) If isOverrideDns is true, then dns will be overridden.
+         * (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
          */
         isOverrideDns?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+         * (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
          */
         overrideDnsIp?: pulumi.Input<string>;
     }
@@ -3392,11 +3433,11 @@ export namespace ApmSynthetics {
          */
         authToken?: pulumi.Input<string>;
         /**
-         * (Updatable) URL to get authetication token.
+         * (Updatable) URL to get authentication token.
          */
         authUrl?: pulumi.Input<string>;
         /**
-         * (Updatable) Username for authentication.
+         * (Updatable) User name for authentication.
          */
         authUserName?: pulumi.Input<string>;
         /**
@@ -3404,7 +3445,7 @@ export namespace ApmSynthetics {
          */
         authUserPassword?: pulumi.Input<string>;
         /**
-         * (Updatable) Request http oauth scheme.
+         * (Updatable) Request HTTP OAuth scheme.
          */
         oauthScheme?: pulumi.Input<string>;
     }
@@ -3451,11 +3492,11 @@ export namespace ApmSynthetics {
 
     export interface ConfigMaintenanceWindowSchedule {
         /**
-         * (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+         * (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
          */
         timeEnded?: pulumi.Input<string>;
         /**
-         * (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+         * (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
          */
         timeStarted?: pulumi.Input<string>;
     }
@@ -9752,6 +9793,18 @@ export namespace ContainerEngine {
     }
 
     export interface GetAddonsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetClusterWorkloadMappingsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetClusterWorkloadMappingsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -17587,7 +17640,7 @@ export namespace Database {
          */
         lifecycleDetails?: pulumi.Input<string>;
         /**
-         * (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+         * The current state of the Autonomous Database.
          */
         state?: pulumi.Input<string>;
         /**
@@ -17658,7 +17711,7 @@ export namespace Database {
          */
         lifecycleDetails?: pulumi.Input<string>;
         /**
-         * (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+         * The current state of the Autonomous Database.
          */
         state?: pulumi.Input<string>;
         /**
@@ -19315,6 +19368,10 @@ export namespace Database {
          * (Updatable) The network bonding mode for the Exadata infrastructure.
          */
         clientNetworkBondingMode?: pulumi.Input<string>;
+        /**
+         * (Updatable) The network bonding mode for the Exadata infrastructure.
+         */
+        drNetworkBondingMode?: pulumi.Input<string>;
     }
 
     export interface ExadataInfrastructureStorageContact {
@@ -20207,6 +20264,18 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetOneoffPatchesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOneoffPatchesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetPluggableDatabasesFilter {
         name: string;
         regex?: boolean;
@@ -20562,7 +20631,7 @@ export namespace Database {
         isIncidentLogsEnabled?: pulumi.Input<boolean>;
     }
 
-    export interface VmClusterNetworkScan {
+    export interface VmClusterNetworkDrScan {
         /**
          * (Updatable) The node host name.
          */
@@ -20574,7 +20643,22 @@ export namespace Database {
         /**
          * (Updatable) The SCAN TCPIP port. Default is 1521.
          */
-        port: pulumi.Input<number>;
+        scanListenerPortTcp: pulumi.Input<number>;
+    }
+
+    export interface VmClusterNetworkScan {
+        /**
+         * (Updatable) The node host name.
+         */
+        hostname: pulumi.Input<string>;
+        /**
+         * (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
+         */
+        ips: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
+         */
+        port?: pulumi.Input<number>;
         /**
          * (Updatable) The SCAN TCPIP port. Default is 1521.
          */
@@ -22971,6 +23055,10 @@ export namespace DatabaseMigration {
          * (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
          */
         ociHome?: pulumi.Input<string>;
+        /**
+         * (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+         */
+        walletLocation?: pulumi.Input<string>;
     }
 
     export interface MigrationDumpTransferDetailsTarget {
@@ -22982,6 +23070,10 @@ export namespace DatabaseMigration {
          * (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
          */
         ociHome?: pulumi.Input<string>;
+        /**
+         * (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+         */
+        walletLocation?: pulumi.Input<string>;
     }
 
     export interface MigrationExcludeObject {
@@ -47630,6 +47722,117 @@ export namespace OsManagement {
 }
 
 export namespace OspGateway {
+    export interface AddressActionVerificationAddress {
+        /**
+         * Address identifier.
+         */
+        addressKey?: pulumi.Input<string>;
+        /**
+         * Name of the city.
+         */
+        city?: pulumi.Input<string>;
+        /**
+         * Name of the customer company.
+         */
+        companyName?: pulumi.Input<string>;
+        /**
+         * Contributor class of the customer company.
+         */
+        contributorClass?: pulumi.Input<string>;
+        /**
+         * Country of the address.
+         */
+        country?: pulumi.Input<string>;
+        /**
+         * County of the address.
+         */
+        county?: pulumi.Input<string>;
+        /**
+         * Department name of the customer company.
+         */
+        departmentName?: pulumi.Input<string>;
+        /**
+         * Contact person email address.
+         */
+        emailAddress?: pulumi.Input<string>;
+        /**
+         * First name of the contact person.
+         */
+        firstName?: pulumi.Input<string>;
+        /**
+         * Internal number of the customer company.
+         */
+        internalNumber?: pulumi.Input<string>;
+        /**
+         * Job title of the contact person.
+         */
+        jobTitle?: pulumi.Input<string>;
+        /**
+         * Last name of the contact person.
+         */
+        lastName?: pulumi.Input<string>;
+        /**
+         * Address line 1.
+         */
+        line1?: pulumi.Input<string>;
+        /**
+         * Address line 2.
+         */
+        line2?: pulumi.Input<string>;
+        /**
+         * Address line 3.
+         */
+        line3?: pulumi.Input<string>;
+        /**
+         * Address line 4.
+         */
+        line4?: pulumi.Input<string>;
+        /**
+         * Middle name of the contact person.
+         */
+        middleName?: pulumi.Input<string>;
+        /**
+         * Municipal Inscription.
+         */
+        municipalInscription?: pulumi.Input<string>;
+        /**
+         * Phone country code of the contact person.
+         */
+        phoneCountryCode?: pulumi.Input<string>;
+        /**
+         * Phone number of the contact person.
+         */
+        phoneNumber?: pulumi.Input<string>;
+        /**
+         * Post code of the address.
+         */
+        postalCode?: pulumi.Input<string>;
+        /**
+         * Province of the address.
+         */
+        province?: pulumi.Input<string>;
+        /**
+         * State of the address.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * State Inscription.
+         */
+        stateInscription?: pulumi.Input<string>;
+        /**
+         * Street name of the address.
+         */
+        streetName?: pulumi.Input<string>;
+        /**
+         * Street number of the address.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        streetNumber?: pulumi.Input<string>;
+    }
+
     export interface GetInvoicesFilter {
         /**
          * Name of the currency
@@ -47692,9 +47895,21 @@ export namespace OspGateway {
          */
         companyName?: pulumi.Input<string>;
         /**
+         * (Updatable) Contributor class of the customer company.
+         */
+        contributorClass?: pulumi.Input<string>;
+        /**
          * (Updatable) Country of the address.
          */
         country?: pulumi.Input<string>;
+        /**
+         * (Updatable) County of the address.
+         */
+        county?: pulumi.Input<string>;
+        /**
+         * (Updatable) Department name of the customer company.
+         */
+        departmentName?: pulumi.Input<string>;
         /**
          * (Updatable) The email address of the paypal user.
          */
@@ -47703,6 +47918,14 @@ export namespace OspGateway {
          * (Updatable) First name of the paypal user.
          */
         firstName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Internal number of the customer company.
+         */
+        internalNumber?: pulumi.Input<string>;
+        /**
+         * (Updatable) Job title of the contact person.
+         */
+        jobTitle?: pulumi.Input<string>;
         /**
          * (Updatable) Last name of the paypal user.
          */
@@ -47716,13 +47939,53 @@ export namespace OspGateway {
          */
         line2?: pulumi.Input<string>;
         /**
+         * (Updatable) Address line 3.
+         */
+        line3?: pulumi.Input<string>;
+        /**
+         * (Updatable) Address line 4.
+         */
+        line4?: pulumi.Input<string>;
+        /**
+         * (Updatable) Middle name of the contact person.
+         */
+        middleName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Municipal Inscription.
+         */
+        municipalInscription?: pulumi.Input<string>;
+        /**
+         * (Updatable) Phone country code of the contact person.
+         */
+        phoneCountryCode?: pulumi.Input<string>;
+        /**
+         * (Updatable) Phone number of the contact person.
+         */
+        phoneNumber?: pulumi.Input<string>;
+        /**
          * (Updatable) Post code of the address.
          */
         postalCode?: pulumi.Input<string>;
         /**
+         * (Updatable) Province of the address.
+         */
+        province?: pulumi.Input<string>;
+        /**
          * (Updatable) State of the address.
          */
         state?: pulumi.Input<string>;
+        /**
+         * (Updatable) State Inscription.
+         */
+        stateInscription?: pulumi.Input<string>;
+        /**
+         * (Updatable) Street name of the address.
+         */
+        streetName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Street number of the address.
+         */
+        streetNumber?: pulumi.Input<string>;
     }
 
     export interface SubscriptionPaymentGateway {
@@ -47792,11 +48055,15 @@ export namespace OspGateway {
 
     export interface SubscriptionSubscription {
         /**
+         * (Updatable) Account type.
+         */
+        accountType?: pulumi.Input<string>;
+        /**
          * (Updatable) Bill to customer Account id.
          */
         billToCustAccountId?: pulumi.Input<string>;
         /**
-         * (Updatable) Billing address details model.
+         * (Updatable) Address details model.
          */
         billingAddresses?: pulumi.Input<pulumi.Input<inputs.OspGateway.SubscriptionSubscriptionBillingAddress>[]>;
         /**
@@ -47852,6 +48119,10 @@ export namespace OspGateway {
          */
         taxInfo?: pulumi.Input<inputs.OspGateway.SubscriptionSubscriptionTaxInfo>;
         /**
+         * (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+         */
+        timePersonalToCorporateConv?: pulumi.Input<string>;
+        /**
          * (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
          */
         timePlanUpgrade?: pulumi.Input<string>;
@@ -47883,9 +48154,21 @@ export namespace OspGateway {
          */
         companyName?: pulumi.Input<string>;
         /**
+         * (Updatable) Contributor class of the customer company.
+         */
+        contributorClass?: pulumi.Input<string>;
+        /**
          * (Updatable) Country of the address.
          */
         country?: pulumi.Input<string>;
+        /**
+         * (Updatable) County of the address.
+         */
+        county?: pulumi.Input<string>;
+        /**
+         * (Updatable) Department name of the customer company.
+         */
+        departmentName?: pulumi.Input<string>;
         /**
          * (Updatable) The email address of the paypal user.
          */
@@ -47894,6 +48177,14 @@ export namespace OspGateway {
          * (Updatable) First name of the paypal user.
          */
         firstName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Internal number of the customer company.
+         */
+        internalNumber?: pulumi.Input<string>;
+        /**
+         * (Updatable) Job title of the contact person.
+         */
+        jobTitle?: pulumi.Input<string>;
         /**
          * (Updatable) Last name of the paypal user.
          */
@@ -47907,13 +48198,53 @@ export namespace OspGateway {
          */
         line2?: pulumi.Input<string>;
         /**
+         * (Updatable) Address line 3.
+         */
+        line3?: pulumi.Input<string>;
+        /**
+         * (Updatable) Address line 4.
+         */
+        line4?: pulumi.Input<string>;
+        /**
+         * (Updatable) Middle name of the contact person.
+         */
+        middleName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Municipal Inscription.
+         */
+        municipalInscription?: pulumi.Input<string>;
+        /**
+         * (Updatable) Phone country code of the contact person.
+         */
+        phoneCountryCode?: pulumi.Input<string>;
+        /**
+         * (Updatable) Phone number of the contact person.
+         */
+        phoneNumber?: pulumi.Input<string>;
+        /**
          * (Updatable) Post code of the address.
          */
         postalCode?: pulumi.Input<string>;
         /**
+         * (Updatable) Province of the address.
+         */
+        province?: pulumi.Input<string>;
+        /**
          * (Updatable) State of the address.
          */
         state?: pulumi.Input<string>;
+        /**
+         * (Updatable) State Inscription.
+         */
+        stateInscription?: pulumi.Input<string>;
+        /**
+         * (Updatable) Street name of the address.
+         */
+        streetName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Street number of the address.
+         */
+        streetNumber?: pulumi.Input<string>;
     }
 
     export interface SubscriptionSubscriptionPaymentGateway {

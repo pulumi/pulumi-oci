@@ -163,15 +163,15 @@ def get_vm_cluster_patch_history_entry(patch_history_entry_id: Optional[str] = N
     __ret__ = pulumi.runtime.invoke('oci:Database/getVmClusterPatchHistoryEntry:getVmClusterPatchHistoryEntry', __args__, opts=opts, typ=GetVmClusterPatchHistoryEntryResult).value
 
     return AwaitableGetVmClusterPatchHistoryEntryResult(
-        action=__ret__.action,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        patch_history_entry_id=__ret__.patch_history_entry_id,
-        patch_id=__ret__.patch_id,
-        state=__ret__.state,
-        time_ended=__ret__.time_ended,
-        time_started=__ret__.time_started,
-        vm_cluster_id=__ret__.vm_cluster_id)
+        action=pulumi.get(__ret__, 'action'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        patch_history_entry_id=pulumi.get(__ret__, 'patch_history_entry_id'),
+        patch_id=pulumi.get(__ret__, 'patch_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_ended=pulumi.get(__ret__, 'time_ended'),
+        time_started=pulumi.get(__ret__, 'time_started'),
+        vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
 
 
 @_utilities.lift_output_func(get_vm_cluster_patch_history_entry)

@@ -37,6 +37,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:OspGateway/subscription:Subscription")
 public class Subscription extends com.pulumi.resources.CustomResource {
     /**
+     * (Updatable) Account type.
+     * 
+     */
+    @Export(name="accountType", type=String.class, parameters={})
+    private Output<String> accountType;
+
+    /**
+     * @return (Updatable) Account type.
+     * 
+     */
+    public Output<String> accountType() {
+        return this.accountType;
+    }
+    /**
      * (Updatable) Bill to customer Account id.
      * 
      */
@@ -51,14 +65,14 @@ public class Subscription extends com.pulumi.resources.CustomResource {
         return this.billToCustAccountId;
     }
     /**
-     * (Updatable) Billing address details model.
+     * (Updatable) Address details model.
      * 
      */
     @Export(name="billingAddresses", type=List.class, parameters={SubscriptionBillingAddress.class})
     private Output<List<SubscriptionBillingAddress>> billingAddresses;
 
     /**
-     * @return (Updatable) Billing address details model.
+     * @return (Updatable) Address details model.
      * 
      */
     public Output<List<SubscriptionBillingAddress>> billingAddresses() {
@@ -307,6 +321,20 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      */
     public Output<List<SubscriptionTaxInfo>> taxInfos() {
         return this.taxInfos;
+    }
+    /**
+     * (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+     * 
+     */
+    @Export(name="timePersonalToCorporateConv", type=String.class, parameters={})
+    private Output<String> timePersonalToCorporateConv;
+
+    /**
+     * @return (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+     * 
+     */
+    public Output<String> timePersonalToCorporateConv() {
+        return this.timePersonalToCorporateConv;
     }
     /**
      * (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG

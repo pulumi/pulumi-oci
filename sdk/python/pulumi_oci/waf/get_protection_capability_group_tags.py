@@ -132,12 +132,12 @@ def get_protection_capability_group_tags(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags', __args__, opts=opts, typ=GetProtectionCapabilityGroupTagsResult).value
 
     return AwaitableGetProtectionCapabilityGroupTagsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        protection_capability_group_tag_collections=__ret__.protection_capability_group_tag_collections,
-        type=__ret__.type)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        protection_capability_group_tag_collections=pulumi.get(__ret__, 'protection_capability_group_tag_collections'),
+        type=pulumi.get(__ret__, 'type'))
 
 
 @_utilities.lift_output_func(get_protection_capability_group_tags)

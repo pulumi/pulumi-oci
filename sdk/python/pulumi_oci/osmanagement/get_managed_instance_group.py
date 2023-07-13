@@ -184,17 +184,17 @@ def get_managed_instance_group(managed_instance_group_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OsManagement/getManagedInstanceGroup:getManagedInstanceGroup', __args__, opts=opts, typ=GetManagedInstanceGroupResult).value
 
     return AwaitableGetManagedInstanceGroupResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        managed_instance_count=__ret__.managed_instance_count,
-        managed_instance_group_id=__ret__.managed_instance_group_id,
-        managed_instances=__ret__.managed_instances,
-        os_family=__ret__.os_family,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_instance_count=pulumi.get(__ret__, 'managed_instance_count'),
+        managed_instance_group_id=pulumi.get(__ret__, 'managed_instance_group_id'),
+        managed_instances=pulumi.get(__ret__, 'managed_instances'),
+        os_family=pulumi.get(__ret__, 'os_family'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_managed_instance_group)

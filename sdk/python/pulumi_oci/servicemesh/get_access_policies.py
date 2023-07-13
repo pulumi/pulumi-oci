@@ -158,13 +158,13 @@ def get_access_policies(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ServiceMesh/getAccessPolicies:getAccessPolicies', __args__, opts=opts, typ=GetAccessPoliciesResult).value
 
     return AwaitableGetAccessPoliciesResult(
-        access_policy_collections=__ret__.access_policy_collections,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        mesh_id=__ret__.mesh_id,
-        name=__ret__.name,
-        state=__ret__.state)
+        access_policy_collections=pulumi.get(__ret__, 'access_policy_collections'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        mesh_id=pulumi.get(__ret__, 'mesh_id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_access_policies)

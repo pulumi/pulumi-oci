@@ -212,19 +212,19 @@ def get_rule(rule_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Events/getRule:getRule', __args__, opts=opts, typ=GetRuleResult).value
 
     return AwaitableGetRuleResult(
-        actions=__ret__.actions,
-        compartment_id=__ret__.compartment_id,
-        condition=__ret__.condition,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_enabled=__ret__.is_enabled,
-        lifecycle_message=__ret__.lifecycle_message,
-        rule_id=__ret__.rule_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created)
+        actions=pulumi.get(__ret__, 'actions'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        condition=pulumi.get(__ret__, 'condition'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_enabled=pulumi.get(__ret__, 'is_enabled'),
+        lifecycle_message=pulumi.get(__ret__, 'lifecycle_message'),
+        rule_id=pulumi.get(__ret__, 'rule_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_rule)

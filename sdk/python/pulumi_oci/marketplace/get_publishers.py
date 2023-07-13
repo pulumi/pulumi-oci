@@ -116,11 +116,11 @@ def get_publishers(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Marketplace/getPublishers:getPublishers', __args__, opts=opts, typ=GetPublishersResult).value
 
     return AwaitableGetPublishersResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        publisher_id=__ret__.publisher_id,
-        publishers=__ret__.publishers)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        publisher_id=pulumi.get(__ret__, 'publisher_id'),
+        publishers=pulumi.get(__ret__, 'publishers'))
 
 
 @_utilities.lift_output_func(get_publishers)

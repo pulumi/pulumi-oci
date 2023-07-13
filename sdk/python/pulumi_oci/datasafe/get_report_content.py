@@ -78,8 +78,8 @@ def get_report_content(report_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getReportContent:getReportContent', __args__, opts=opts, typ=GetReportContentResult).value
 
     return AwaitableGetReportContentResult(
-        id=__ret__.id,
-        report_id=__ret__.report_id)
+        id=pulumi.get(__ret__, 'id'),
+        report_id=pulumi.get(__ret__, 'report_id'))
 
 
 @_utilities.lift_output_func(get_report_content)

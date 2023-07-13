@@ -116,11 +116,11 @@ def get_supported_skus(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Ocvp/getSupportedSkus:getSupportedSkus', __args__, opts=opts, typ=GetSupportedSkusResult).value
 
     return AwaitableGetSupportedSkusResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        host_shape_name=__ret__.host_shape_name,
-        id=__ret__.id,
-        items=__ret__.items)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        host_shape_name=pulumi.get(__ret__, 'host_shape_name'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'))
 
 
 @_utilities.lift_output_func(get_supported_skus)

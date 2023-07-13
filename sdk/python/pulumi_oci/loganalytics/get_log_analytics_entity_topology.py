@@ -120,11 +120,11 @@ def get_log_analytics_entity_topology(log_analytics_entity_id: Optional[str] = N
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology', __args__, opts=opts, typ=GetLogAnalyticsEntityTopologyResult).value
 
     return AwaitableGetLogAnalyticsEntityTopologyResult(
-        id=__ret__.id,
-        items=__ret__.items,
-        log_analytics_entity_id=__ret__.log_analytics_entity_id,
-        namespace=__ret__.namespace,
-        state=__ret__.state)
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        log_analytics_entity_id=pulumi.get(__ret__, 'log_analytics_entity_id'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_log_analytics_entity_topology)

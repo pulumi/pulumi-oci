@@ -138,12 +138,12 @@ def get_detection_projects(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:AiAnomalyDetection/getDetectionProjects:getDetectionProjects', __args__, opts=opts, typ=GetDetectionProjectsResult).value
 
     return AwaitableGetDetectionProjectsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        project_collections=__ret__.project_collections,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        project_collections=pulumi.get(__ret__, 'project_collections'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_detection_projects)

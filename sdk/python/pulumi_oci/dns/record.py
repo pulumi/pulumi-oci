@@ -58,6 +58,9 @@ class RecordArgs:
         """
         The fully qualified domain name where the record can be located. Domain value is case insensitive.
         """
+        warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
+        pulumi.log.warn("""domain is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
+
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -70,6 +73,9 @@ class RecordArgs:
         """
         The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         """
+        warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
+        pulumi.log.warn("""rtype is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
+
         return pulumi.get(self, "rtype")
 
     @rtype.setter
@@ -86,6 +92,9 @@ class RecordArgs:
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
+        pulumi.log.warn("""zone_name_or_id is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
+
         return pulumi.get(self, "zone_name_or_id")
 
     @zone_name_or_id.setter
@@ -203,6 +212,9 @@ class _RecordState:
         """
         The fully qualified domain name where the record can be located. Domain value is case insensitive.
         """
+        warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
+        pulumi.log.warn("""domain is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
+
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -263,6 +275,9 @@ class _RecordState:
         """
         The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         """
+        warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
+        pulumi.log.warn("""rtype is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
+
         return pulumi.get(self, "rtype")
 
     @rtype.setter
@@ -291,6 +306,9 @@ class _RecordState:
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
+        pulumi.log.warn("""zone_name_or_id is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
+
         return pulumi.get(self, "zone_name_or_id")
 
     @zone_name_or_id.setter
@@ -512,6 +530,9 @@ class Record(pulumi.CustomResource):
         """
         The fully qualified domain name where the record can be located. Domain value is case insensitive.
         """
+        warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
+        pulumi.log.warn("""domain is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
+
         return pulumi.get(self, "domain")
 
     @property
@@ -552,6 +573,9 @@ class Record(pulumi.CustomResource):
         """
         The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         """
+        warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
+        pulumi.log.warn("""rtype is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
+
         return pulumi.get(self, "rtype")
 
     @property
@@ -572,5 +596,8 @@ class Record(pulumi.CustomResource):
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
+        pulumi.log.warn("""zone_name_or_id is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
+
         return pulumi.get(self, "zone_name_or_id")
 

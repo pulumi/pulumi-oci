@@ -245,22 +245,22 @@ def get_domains_identity_providers(attribute_sets: Optional[Sequence[str]] = Non
     __ret__ = pulumi.runtime.invoke('oci:Identity/getDomainsIdentityProviders:getDomainsIdentityProviders', __args__, opts=opts, typ=GetDomainsIdentityProvidersResult).value
 
     return AwaitableGetDomainsIdentityProvidersResult(
-        attribute_sets=__ret__.attribute_sets,
-        attributes=__ret__.attributes,
-        authorization=__ret__.authorization,
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        idcs_endpoint=__ret__.idcs_endpoint,
-        identity_provider_count=__ret__.identity_provider_count,
-        identity_provider_filter=__ret__.identity_provider_filter,
-        identity_providers=__ret__.identity_providers,
-        items_per_page=__ret__.items_per_page,
-        resource_type_schema_version=__ret__.resource_type_schema_version,
-        schemas=__ret__.schemas,
-        sort_by=__ret__.sort_by,
-        sort_order=__ret__.sort_order,
-        start_index=__ret__.start_index,
-        total_results=__ret__.total_results)
+        attribute_sets=pulumi.get(__ret__, 'attribute_sets'),
+        attributes=pulumi.get(__ret__, 'attributes'),
+        authorization=pulumi.get(__ret__, 'authorization'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        idcs_endpoint=pulumi.get(__ret__, 'idcs_endpoint'),
+        identity_provider_count=pulumi.get(__ret__, 'identity_provider_count'),
+        identity_provider_filter=pulumi.get(__ret__, 'identity_provider_filter'),
+        identity_providers=pulumi.get(__ret__, 'identity_providers'),
+        items_per_page=pulumi.get(__ret__, 'items_per_page'),
+        resource_type_schema_version=pulumi.get(__ret__, 'resource_type_schema_version'),
+        schemas=pulumi.get(__ret__, 'schemas'),
+        sort_by=pulumi.get(__ret__, 'sort_by'),
+        sort_order=pulumi.get(__ret__, 'sort_order'),
+        start_index=pulumi.get(__ret__, 'start_index'),
+        total_results=pulumi.get(__ret__, 'total_results'))
 
 
 @_utilities.lift_output_func(get_domains_identity_providers)

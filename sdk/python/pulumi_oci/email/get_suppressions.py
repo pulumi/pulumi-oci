@@ -154,13 +154,13 @@ def get_suppressions(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Email/getSuppressions:getSuppressions', __args__, opts=opts, typ=GetSuppressionsResult).value
 
     return AwaitableGetSuppressionsResult(
-        compartment_id=__ret__.compartment_id,
-        email_address=__ret__.email_address,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        suppressions=__ret__.suppressions,
-        time_created_greater_than_or_equal_to=__ret__.time_created_greater_than_or_equal_to,
-        time_created_less_than=__ret__.time_created_less_than)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        email_address=pulumi.get(__ret__, 'email_address'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        suppressions=pulumi.get(__ret__, 'suppressions'),
+        time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
 
 
 @_utilities.lift_output_func(get_suppressions)

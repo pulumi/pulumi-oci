@@ -250,22 +250,22 @@ def get_alert_rule(alert_rule_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Budget/getAlertRule:getAlertRule', __args__, opts=opts, typ=GetAlertRuleResult).value
 
     return AwaitableGetAlertRuleResult(
-        alert_rule_id=__ret__.alert_rule_id,
-        budget_id=__ret__.budget_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        message=__ret__.message,
-        recipients=__ret__.recipients,
-        state=__ret__.state,
-        threshold=__ret__.threshold,
-        threshold_type=__ret__.threshold_type,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        type=__ret__.type,
-        version=__ret__.version)
+        alert_rule_id=pulumi.get(__ret__, 'alert_rule_id'),
+        budget_id=pulumi.get(__ret__, 'budget_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        message=pulumi.get(__ret__, 'message'),
+        recipients=pulumi.get(__ret__, 'recipients'),
+        state=pulumi.get(__ret__, 'state'),
+        threshold=pulumi.get(__ret__, 'threshold'),
+        threshold_type=pulumi.get(__ret__, 'threshold_type'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        type=pulumi.get(__ret__, 'type'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_alert_rule)

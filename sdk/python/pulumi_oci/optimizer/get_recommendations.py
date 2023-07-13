@@ -234,18 +234,18 @@ def get_recommendations(category_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Optimizer/getRecommendations:getRecommendations', __args__, opts=opts, typ=GetRecommendationsResult).value
 
     return AwaitableGetRecommendationsResult(
-        category_id=__ret__.category_id,
-        category_name=__ret__.category_name,
-        child_tenancy_ids=__ret__.child_tenancy_ids,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        include_organization=__ret__.include_organization,
-        name=__ret__.name,
-        recommendation_collections=__ret__.recommendation_collections,
-        state=__ret__.state,
-        status=__ret__.status)
+        category_id=pulumi.get(__ret__, 'category_id'),
+        category_name=pulumi.get(__ret__, 'category_name'),
+        child_tenancy_ids=pulumi.get(__ret__, 'child_tenancy_ids'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        include_organization=pulumi.get(__ret__, 'include_organization'),
+        name=pulumi.get(__ret__, 'name'),
+        recommendation_collections=pulumi.get(__ret__, 'recommendation_collections'),
+        state=pulumi.get(__ret__, 'state'),
+        status=pulumi.get(__ret__, 'status'))
 
 
 @_utilities.lift_output_func(get_recommendations)

@@ -174,16 +174,16 @@ def get_sender(sender_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Email/getSender:getSender', __args__, opts=opts, typ=GetSenderResult).value
 
     return AwaitableGetSenderResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        email_address=__ret__.email_address,
-        email_domain_id=__ret__.email_domain_id,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_spf=__ret__.is_spf,
-        sender_id=__ret__.sender_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        email_address=pulumi.get(__ret__, 'email_address'),
+        email_domain_id=pulumi.get(__ret__, 'email_domain_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_spf=pulumi.get(__ret__, 'is_spf'),
+        sender_id=pulumi.get(__ret__, 'sender_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_sender)

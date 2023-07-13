@@ -137,12 +137,12 @@ def get_events(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Audit/getEvents:getEvents', __args__, opts=opts, typ=GetEventsResult).value
 
     return AwaitableGetEventsResult(
-        audit_events=__ret__.audit_events,
-        compartment_id=__ret__.compartment_id,
-        end_time=__ret__.end_time,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        start_time=__ret__.start_time)
+        audit_events=pulumi.get(__ret__, 'audit_events'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        end_time=pulumi.get(__ret__, 'end_time'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        start_time=pulumi.get(__ret__, 'start_time'))
 
 
 @_utilities.lift_output_func(get_events)

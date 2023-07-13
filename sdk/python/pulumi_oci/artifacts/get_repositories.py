@@ -158,13 +158,13 @@ def get_repositories(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Artifacts/getRepositories:getRepositories', __args__, opts=opts, typ=GetRepositoriesResult).value
 
     return AwaitableGetRepositoriesResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_immutable=__ret__.is_immutable,
-        repository_collections=__ret__.repository_collections,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_immutable=pulumi.get(__ret__, 'is_immutable'),
+        repository_collections=pulumi.get(__ret__, 'repository_collections'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_repositories)

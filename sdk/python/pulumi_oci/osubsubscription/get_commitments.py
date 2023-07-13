@@ -142,13 +142,13 @@ def get_commitments(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OsubSubscription/getCommitments:getCommitments', __args__, opts=opts, typ=GetCommitmentsResult).value
 
     return AwaitableGetCommitmentsResult(
-        commitments=__ret__.commitments,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        subscribed_service_id=__ret__.subscribed_service_id,
-        x_one_gateway_subscription_id=__ret__.x_one_gateway_subscription_id,
-        x_one_origin_region=__ret__.x_one_origin_region)
+        commitments=pulumi.get(__ret__, 'commitments'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        subscribed_service_id=pulumi.get(__ret__, 'subscribed_service_id'),
+        x_one_gateway_subscription_id=pulumi.get(__ret__, 'x_one_gateway_subscription_id'),
+        x_one_origin_region=pulumi.get(__ret__, 'x_one_origin_region'))
 
 
 @_utilities.lift_output_func(get_commitments)

@@ -157,13 +157,13 @@ def get_dhcp_options(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getDhcpOptions:getDhcpOptions', __args__, opts=opts, typ=GetDhcpOptionsResult).value
 
     return AwaitableGetDhcpOptionsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        options=__ret__.options,
-        state=__ret__.state,
-        vcn_id=__ret__.vcn_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        options=pulumi.get(__ret__, 'options'),
+        state=pulumi.get(__ret__, 'state'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_dhcp_options)

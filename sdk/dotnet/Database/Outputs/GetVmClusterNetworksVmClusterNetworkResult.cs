@@ -31,6 +31,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Dns;
         /// <summary>
+        /// The SCAN details for DR network
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetVmClusterNetworksVmClusterNetworkDrScanResult> DrScans;
+        /// <summary>
         /// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string ExadataInfrastructureId;
@@ -84,6 +88,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<string> dns,
 
+            ImmutableArray<Outputs.GetVmClusterNetworksVmClusterNetworkDrScanResult> drScans,
+
             string exadataInfrastructureId,
 
             ImmutableDictionary<string, object> freeformTags,
@@ -111,6 +117,7 @@ namespace Pulumi.Oci.Database.Outputs
             DefinedTags = definedTags;
             DisplayName = displayName;
             Dns = dns;
+            DrScans = drScans;
             ExadataInfrastructureId = exadataInfrastructureId;
             FreeformTags = freeformTags;
             Id = id;

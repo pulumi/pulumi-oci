@@ -116,11 +116,11 @@ def get_autonomous_exadata_infrastructure_shapes(availability_domain: Optional[s
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousExadataInfrastructureShapes:getAutonomousExadataInfrastructureShapes', __args__, opts=opts, typ=GetAutonomousExadataInfrastructureShapesResult).value
 
     return AwaitableGetAutonomousExadataInfrastructureShapesResult(
-        autonomous_exadata_infrastructure_shapes=__ret__.autonomous_exadata_infrastructure_shapes,
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        autonomous_exadata_infrastructure_shapes=pulumi.get(__ret__, 'autonomous_exadata_infrastructure_shapes'),
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_autonomous_exadata_infrastructure_shapes)

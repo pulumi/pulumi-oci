@@ -141,6 +141,7 @@ __all__ = [
     'VmClusterAddVirtualNetworkDataCollectionOption',
     'VmClusterAddVirtualNetworkDbServer',
     'VmClusterDataCollectionOptions',
+    'VmClusterNetworkDrScan',
     'VmClusterNetworkScan',
     'VmClusterNetworkVmNetwork',
     'VmClusterNetworkVmNetworkNode',
@@ -468,6 +469,8 @@ __all__ = [
     'GetManagedPreferredCredentialsFilterResult',
     'GetManagedPreferredCredentialsPreferredCredentialCollectionResult',
     'GetManagedPreferredCredentialsPreferredCredentialCollectionItemResult',
+    'GetOneoffPatchesFilterResult',
+    'GetOneoffPatchesOneoffPatchResult',
     'GetPluggableDatabaseConnectionStringResult',
     'GetPluggableDatabasePluggableDatabaseManagementConfigResult',
     'GetPluggableDatabasesFilterResult',
@@ -475,11 +478,13 @@ __all__ = [
     'GetPluggableDatabasesPluggableDatabaseConnectionStringResult',
     'GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigResult',
     'GetVmClusterDataCollectionOptionResult',
+    'GetVmClusterNetworkDrScanResult',
     'GetVmClusterNetworkScanResult',
     'GetVmClusterNetworkVmNetworkResult',
     'GetVmClusterNetworkVmNetworkNodeResult',
     'GetVmClusterNetworksFilterResult',
     'GetVmClusterNetworksVmClusterNetworkResult',
+    'GetVmClusterNetworksVmClusterNetworkDrScanResult',
     'GetVmClusterNetworksVmClusterNetworkScanResult',
     'GetVmClusterNetworksVmClusterNetworkVmNetworkResult',
     'GetVmClusterNetworksVmClusterNetworkVmNetworkNodeResult',
@@ -487,6 +492,7 @@ __all__ = [
     'GetVmClusterPatchHistoryEntriesPatchHistoryEntryResult',
     'GetVmClusterPatchesFilterResult',
     'GetVmClusterPatchesPatchResult',
+    'GetVmClusterRecommendedNetworkDrScanResult',
     'GetVmClusterRecommendedNetworkNetworkResult',
     'GetVmClusterRecommendedNetworkScanResult',
     'GetVmClusterRecommendedNetworkVmNetworkResult',
@@ -1872,7 +1878,7 @@ class AutonomousDatabaseLocalStandbyDb(dict):
         """
         :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param str lifecycle_details: Additional information about the current lifecycle state.
-        :param str state: (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        :param str state: The current state of the Autonomous Database.
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
@@ -1907,7 +1913,7 @@ class AutonomousDatabaseLocalStandbyDb(dict):
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        The current state of the Autonomous Database.
         """
         return pulumi.get(self, "state")
 
@@ -2157,7 +2163,7 @@ class AutonomousDatabaseStandbyDb(dict):
         """
         :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param str lifecycle_details: Additional information about the current lifecycle state.
-        :param str state: (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        :param str state: The current state of the Autonomous Database.
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
@@ -2192,7 +2198,7 @@ class AutonomousDatabaseStandbyDb(dict):
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        The current state of the Autonomous Database.
         """
         return pulumi.get(self, "state")
 
@@ -8280,6 +8286,8 @@ class ExadataInfrastructureNetworkBondingModeDetails(dict):
             suggest = "backup_network_bonding_mode"
         elif key == "clientNetworkBondingMode":
             suggest = "client_network_bonding_mode"
+        elif key == "drNetworkBondingMode":
+            suggest = "dr_network_bonding_mode"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in ExadataInfrastructureNetworkBondingModeDetails. Access the value via the '{suggest}' property getter instead.")
@@ -8294,15 +8302,19 @@ class ExadataInfrastructureNetworkBondingModeDetails(dict):
 
     def __init__(__self__, *,
                  backup_network_bonding_mode: Optional[str] = None,
-                 client_network_bonding_mode: Optional[str] = None):
+                 client_network_bonding_mode: Optional[str] = None,
+                 dr_network_bonding_mode: Optional[str] = None):
         """
         :param str backup_network_bonding_mode: (Updatable) The network bonding mode for the Exadata infrastructure.
         :param str client_network_bonding_mode: (Updatable) The network bonding mode for the Exadata infrastructure.
+        :param str dr_network_bonding_mode: (Updatable) The network bonding mode for the Exadata infrastructure.
         """
         if backup_network_bonding_mode is not None:
             pulumi.set(__self__, "backup_network_bonding_mode", backup_network_bonding_mode)
         if client_network_bonding_mode is not None:
             pulumi.set(__self__, "client_network_bonding_mode", client_network_bonding_mode)
+        if dr_network_bonding_mode is not None:
+            pulumi.set(__self__, "dr_network_bonding_mode", dr_network_bonding_mode)
 
     @property
     @pulumi.getter(name="backupNetworkBondingMode")
@@ -8319,6 +8331,14 @@ class ExadataInfrastructureNetworkBondingModeDetails(dict):
         (Updatable) The network bonding mode for the Exadata infrastructure.
         """
         return pulumi.get(self, "client_network_bonding_mode")
+
+    @property
+    @pulumi.getter(name="drNetworkBondingMode")
+    def dr_network_bonding_mode(self) -> Optional[str]:
+        """
+        (Updatable) The network bonding mode for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "dr_network_bonding_mode")
 
 
 @pulumi.output_type
@@ -10013,6 +10033,63 @@ class VmClusterDataCollectionOptions(dict):
 
 
 @pulumi.output_type
+class VmClusterNetworkDrScan(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "scanListenerPortTcp":
+            suggest = "scan_listener_port_tcp"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmClusterNetworkDrScan. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmClusterNetworkDrScan.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmClusterNetworkDrScan.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 hostname: str,
+                 ips: Sequence[str],
+                 scan_listener_port_tcp: int):
+        """
+        :param str hostname: (Updatable) The node host name.
+        :param Sequence[str] ips: (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
+        :param int scan_listener_port_tcp: (Updatable) The SCAN TCPIP port. Default is 1521.
+        """
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "ips", ips)
+        pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> str:
+        """
+        (Updatable) The node host name.
+        """
+        return pulumi.get(self, "hostname")
+
+    @property
+    @pulumi.getter
+    def ips(self) -> Sequence[str]:
+        """
+        (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
+        """
+        return pulumi.get(self, "ips")
+
+    @property
+    @pulumi.getter(name="scanListenerPortTcp")
+    def scan_listener_port_tcp(self) -> int:
+        """
+        (Updatable) The SCAN TCPIP port. Default is 1521.
+        """
+        return pulumi.get(self, "scan_listener_port_tcp")
+
+
+@pulumi.output_type
 class VmClusterNetworkScan(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -10036,19 +10113,20 @@ class VmClusterNetworkScan(dict):
     def __init__(__self__, *,
                  hostname: str,
                  ips: Sequence[str],
-                 port: int,
+                 port: Optional[int] = None,
                  scan_listener_port_tcp: Optional[int] = None,
                  scan_listener_port_tcp_ssl: Optional[int] = None):
         """
         :param str hostname: (Updatable) The node host name.
         :param Sequence[str] ips: (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
-        :param int port: (Updatable) The SCAN TCPIP port. Default is 1521.
+        :param int port: (Updatable) **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
         :param int scan_listener_port_tcp: (Updatable) The SCAN TCPIP port. Default is 1521.
         :param int scan_listener_port_tcp_ssl: (Updatable) The SCAN TCPIP SSL port. Default is 2484.
         """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "ips", ips)
-        pulumi.set(__self__, "port", port)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
         if scan_listener_port_tcp is not None:
             pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
         if scan_listener_port_tcp_ssl is not None:
@@ -10072,9 +10150,9 @@ class VmClusterNetworkScan(dict):
 
     @property
     @pulumi.getter
-    def port(self) -> int:
+    def port(self) -> Optional[int]:
         """
-        (Updatable) The SCAN TCPIP port. Default is 1521.
+        (Updatable) **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
         """
         return pulumi.get(self, "port")
 
@@ -18374,6 +18452,9 @@ class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureResult(d
         """
         A filter to return only resources that match the given availability domain exactly.
         """
+        warnings.warn("""Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""", DeprecationWarning)
+        pulumi.log.warn("""availability_domain is deprecated: Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""")
+
         return pulumi.get(self, "availability_domain")
 
     @property
@@ -20276,6 +20357,9 @@ class GetBackupDestinationsBackupDestinationResult(dict):
         """
         The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
         """
+        warnings.warn("""The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""", DeprecationWarning)
+        pulumi.log.warn("""local_mount_point_path is deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""")
+
         return pulumi.get(self, "local_mount_point_path")
 
     @property
@@ -29435,6 +29519,9 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
         """
         Deprecated. Use `name` instead of `shape`.
         """
+        warnings.warn("""The 'shape' field has been deprecated. Please use 'name' instead.""", DeprecationWarning)
+        pulumi.log.warn("""shape is deprecated: The 'shape' field has been deprecated. Please use 'name' instead.""")
+
         return pulumi.get(self, "shape")
 
     @property
@@ -31716,13 +31803,16 @@ class GetExadataInfrastructureMaintenanceWindowMonthResult(dict):
 class GetExadataInfrastructureNetworkBondingModeDetailResult(dict):
     def __init__(__self__, *,
                  backup_network_bonding_mode: str,
-                 client_network_bonding_mode: str):
+                 client_network_bonding_mode: str,
+                 dr_network_bonding_mode: str):
         """
         :param str backup_network_bonding_mode: The network bonding mode for the Exadata infrastructure.
         :param str client_network_bonding_mode: The network bonding mode for the Exadata infrastructure.
+        :param str dr_network_bonding_mode: The network bonding mode for the Exadata infrastructure.
         """
         pulumi.set(__self__, "backup_network_bonding_mode", backup_network_bonding_mode)
         pulumi.set(__self__, "client_network_bonding_mode", client_network_bonding_mode)
+        pulumi.set(__self__, "dr_network_bonding_mode", dr_network_bonding_mode)
 
     @property
     @pulumi.getter(name="backupNetworkBondingMode")
@@ -31739,6 +31829,14 @@ class GetExadataInfrastructureNetworkBondingModeDetailResult(dict):
         The network bonding mode for the Exadata infrastructure.
         """
         return pulumi.get(self, "client_network_bonding_mode")
+
+    @property
+    @pulumi.getter(name="drNetworkBondingMode")
+    def dr_network_bonding_mode(self) -> str:
+        """
+        The network bonding mode for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "dr_network_bonding_mode")
 
 
 @pulumi.output_type
@@ -31814,6 +31912,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
                  netmask: str,
                  network_bonding_mode_details: Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailResult'],
                  ntp_servers: Sequence[str],
+                 rack_serial_number: str,
                  shape: str,
                  state: str,
                  storage_count: int,
@@ -31858,8 +31957,9 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         :param str monthly_db_server_version: The monthly software version of the database servers (dom0) in the Exadata infrastructure.
         :param str multi_rack_configuration_file: The base64 encoded Multi-Rack configuration json file.
         :param str netmask: The netmask for the control plane network.
-        :param Sequence['GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailArgs'] network_bonding_mode_details: Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        :param Sequence['GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailArgs'] network_bonding_mode_details: Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
         :param Sequence[str] ntp_servers: The list of NTP server IP addresses. Maximum of 3 allowed.
+        :param str rack_serial_number: The serial number for the Exadata infrastructure.
         :param str shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param int storage_count: The number of Exadata storage servers for the Exadata infrastructure.
@@ -31908,6 +32008,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         pulumi.set(__self__, "netmask", netmask)
         pulumi.set(__self__, "network_bonding_mode_details", network_bonding_mode_details)
         pulumi.set(__self__, "ntp_servers", ntp_servers)
+        pulumi.set(__self__, "rack_serial_number", rack_serial_number)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "storage_count", storage_count)
@@ -32225,7 +32326,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
     @pulumi.getter(name="networkBondingModeDetails")
     def network_bonding_mode_details(self) -> Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailResult']:
         """
-        Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
         """
         return pulumi.get(self, "network_bonding_mode_details")
 
@@ -32236,6 +32337,14 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         The list of NTP server IP addresses. Maximum of 3 allowed.
         """
         return pulumi.get(self, "ntp_servers")
+
+    @property
+    @pulumi.getter(name="rackSerialNumber")
+    def rack_serial_number(self) -> str:
+        """
+        The serial number for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "rack_serial_number")
 
     @property
     @pulumi.getter
@@ -32507,13 +32616,16 @@ class GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthResult
 class GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailResult(dict):
     def __init__(__self__, *,
                  backup_network_bonding_mode: str,
-                 client_network_bonding_mode: str):
+                 client_network_bonding_mode: str,
+                 dr_network_bonding_mode: str):
         """
         :param str backup_network_bonding_mode: The network bonding mode for the Exadata infrastructure.
         :param str client_network_bonding_mode: The network bonding mode for the Exadata infrastructure.
+        :param str dr_network_bonding_mode: The network bonding mode for the Exadata infrastructure.
         """
         pulumi.set(__self__, "backup_network_bonding_mode", backup_network_bonding_mode)
         pulumi.set(__self__, "client_network_bonding_mode", client_network_bonding_mode)
+        pulumi.set(__self__, "dr_network_bonding_mode", dr_network_bonding_mode)
 
     @property
     @pulumi.getter(name="backupNetworkBondingMode")
@@ -32530,6 +32642,14 @@ class GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailResu
         The network bonding mode for the Exadata infrastructure.
         """
         return pulumi.get(self, "client_network_bonding_mode")
+
+    @property
+    @pulumi.getter(name="drNetworkBondingMode")
+    def dr_network_bonding_mode(self) -> str:
+        """
+        The network bonding mode for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "dr_network_bonding_mode")
 
 
 @pulumi.output_type
@@ -35418,6 +35538,212 @@ class GetManagedPreferredCredentialsPreferredCredentialCollectionItemResult(dict
 
 
 @pulumi.output_type
+class GetOneoffPatchesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetOneoffPatchesOneoffPatchResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 db_version: str,
+                 defined_tags: Mapping[str, Any],
+                 display_name: str,
+                 download_oneoff_patch_trigger: int,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 lifecycle_details: str,
+                 one_off_patches: Sequence[str],
+                 release_update: str,
+                 sha256sum: str,
+                 size_in_kbs: float,
+                 state: str,
+                 time_created: str,
+                 time_of_expiration: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str db_version: A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the one-off patch.
+        :param str lifecycle_details: Detailed message for the lifecycle state.
+        :param Sequence[str] one_off_patches: List of one-off patches for Database Homes.
+        :param str release_update: The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+        :param str sha256sum: SHA-256 checksum of the one-off patch.
+        :param float size_in_kbs: The size of one-off patch in kilobytes.
+        :param str state: A filter to return only resources that match the given lifecycle state exactly
+        :param str time_created: The date and time one-off patch was created.
+        :param str time_of_expiration: The date and time until which the one-off patch will be available for download.
+        :param str time_updated: The date and time one-off patch was updated.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "db_version", db_version)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "download_oneoff_patch_trigger", download_oneoff_patch_trigger)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "one_off_patches", one_off_patches)
+        pulumi.set(__self__, "release_update", release_update)
+        pulumi.set(__self__, "sha256sum", sha256sum)
+        pulumi.set(__self__, "size_in_kbs", size_in_kbs)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_of_expiration", time_of_expiration)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="dbVersion")
+    def db_version(self) -> str:
+        """
+        A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+        """
+        return pulumi.get(self, "db_version")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="downloadOneoffPatchTrigger")
+    def download_oneoff_patch_trigger(self) -> int:
+        return pulumi.get(self, "download_oneoff_patch_trigger")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the one-off patch.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Detailed message for the lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="oneOffPatches")
+    def one_off_patches(self) -> Sequence[str]:
+        """
+        List of one-off patches for Database Homes.
+        """
+        return pulumi.get(self, "one_off_patches")
+
+    @property
+    @pulumi.getter(name="releaseUpdate")
+    def release_update(self) -> str:
+        """
+        The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+        """
+        return pulumi.get(self, "release_update")
+
+    @property
+    @pulumi.getter
+    def sha256sum(self) -> str:
+        """
+        SHA-256 checksum of the one-off patch.
+        """
+        return pulumi.get(self, "sha256sum")
+
+    @property
+    @pulumi.getter(name="sizeInKbs")
+    def size_in_kbs(self) -> float:
+        """
+        The size of one-off patch in kilobytes.
+        """
+        return pulumi.get(self, "size_in_kbs")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state exactly
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time one-off patch was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeOfExpiration")
+    def time_of_expiration(self) -> str:
+        """
+        The date and time until which the one-off patch will be available for download.
+        """
+        return pulumi.get(self, "time_of_expiration")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time one-off patch was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
 class GetPluggableDatabaseConnectionStringResult(dict):
     def __init__(__self__, *,
                  all_connection_strings: Mapping[str, Any],
@@ -35779,6 +36105,46 @@ class GetVmClusterDataCollectionOptionResult(dict):
 
 
 @pulumi.output_type
+class GetVmClusterNetworkDrScanResult(dict):
+    def __init__(__self__, *,
+                 hostname: str,
+                 ips: Sequence[str],
+                 scan_listener_port_tcp: int):
+        """
+        :param str hostname: The node host name.
+        :param Sequence[str] ips: The list of SCAN IP addresses. Three addresses should be provided.
+        :param int scan_listener_port_tcp: The SCAN TCPIP port. Default is 1521.
+        """
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "ips", ips)
+        pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> str:
+        """
+        The node host name.
+        """
+        return pulumi.get(self, "hostname")
+
+    @property
+    @pulumi.getter
+    def ips(self) -> Sequence[str]:
+        """
+        The list of SCAN IP addresses. Three addresses should be provided.
+        """
+        return pulumi.get(self, "ips")
+
+    @property
+    @pulumi.getter(name="scanListenerPortTcp")
+    def scan_listener_port_tcp(self) -> int:
+        """
+        The SCAN TCPIP port. Default is 1521.
+        """
+        return pulumi.get(self, "scan_listener_port_tcp")
+
+
+@pulumi.output_type
 class GetVmClusterNetworkScanResult(dict):
     def __init__(__self__, *,
                  hostname: str,
@@ -35789,7 +36155,7 @@ class GetVmClusterNetworkScanResult(dict):
         """
         :param str hostname: The node host name.
         :param Sequence[str] ips: The list of SCAN IP addresses. Three addresses should be provided.
-        :param int port: The SCAN TCPIP port. Default is 1521.
+        :param int port: **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
         :param int scan_listener_port_tcp: The SCAN TCPIP port. Default is 1521.
         :param int scan_listener_port_tcp_ssl: The SCAN TCPIP SSL port. Default is 2484.
         """
@@ -35819,7 +36185,7 @@ class GetVmClusterNetworkScanResult(dict):
     @pulumi.getter
     def port(self) -> int:
         """
-        The SCAN TCPIP port. Default is 1521.
+        **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
         """
         return pulumi.get(self, "port")
 
@@ -36021,6 +36387,7 @@ class GetVmClusterNetworksVmClusterNetworkResult(dict):
                  defined_tags: Mapping[str, Any],
                  display_name: str,
                  dns: Sequence[str],
+                 dr_scans: Sequence['outputs.GetVmClusterNetworksVmClusterNetworkDrScanResult'],
                  exadata_infrastructure_id: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
@@ -36037,6 +36404,7 @@ class GetVmClusterNetworksVmClusterNetworkResult(dict):
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param Sequence[str] dns: The list of DNS server IP addresses. Maximum of 3 allowed.
+        :param Sequence['GetVmClusterNetworksVmClusterNetworkDrScanArgs'] dr_scans: The SCAN details for DR network
         :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
@@ -36053,6 +36421,7 @@ class GetVmClusterNetworksVmClusterNetworkResult(dict):
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "dns", dns)
+        pulumi.set(__self__, "dr_scans", dr_scans)
         pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
@@ -36101,6 +36470,14 @@ class GetVmClusterNetworksVmClusterNetworkResult(dict):
         The list of DNS server IP addresses. Maximum of 3 allowed.
         """
         return pulumi.get(self, "dns")
+
+    @property
+    @pulumi.getter(name="drScans")
+    def dr_scans(self) -> Sequence['outputs.GetVmClusterNetworksVmClusterNetworkDrScanResult']:
+        """
+        The SCAN details for DR network
+        """
+        return pulumi.get(self, "dr_scans")
 
     @property
     @pulumi.getter(name="exadataInfrastructureId")
@@ -36189,6 +36566,46 @@ class GetVmClusterNetworksVmClusterNetworkResult(dict):
 
 
 @pulumi.output_type
+class GetVmClusterNetworksVmClusterNetworkDrScanResult(dict):
+    def __init__(__self__, *,
+                 hostname: str,
+                 ips: Sequence[str],
+                 scan_listener_port_tcp: int):
+        """
+        :param str hostname: The node host name.
+        :param Sequence[str] ips: The list of SCAN IP addresses. Three addresses should be provided.
+        :param int scan_listener_port_tcp: The SCAN TCPIP port. Default is 1521.
+        """
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "ips", ips)
+        pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> str:
+        """
+        The node host name.
+        """
+        return pulumi.get(self, "hostname")
+
+    @property
+    @pulumi.getter
+    def ips(self) -> Sequence[str]:
+        """
+        The list of SCAN IP addresses. Three addresses should be provided.
+        """
+        return pulumi.get(self, "ips")
+
+    @property
+    @pulumi.getter(name="scanListenerPortTcp")
+    def scan_listener_port_tcp(self) -> int:
+        """
+        The SCAN TCPIP port. Default is 1521.
+        """
+        return pulumi.get(self, "scan_listener_port_tcp")
+
+
+@pulumi.output_type
 class GetVmClusterNetworksVmClusterNetworkScanResult(dict):
     def __init__(__self__, *,
                  hostname: str,
@@ -36199,7 +36616,7 @@ class GetVmClusterNetworksVmClusterNetworkScanResult(dict):
         """
         :param str hostname: The node host name.
         :param Sequence[str] ips: The list of SCAN IP addresses. Three addresses should be provided.
-        :param int port: The SCAN TCPIP port. Default is 1521.
+        :param int port: **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
         :param int scan_listener_port_tcp: The SCAN TCPIP port. Default is 1521.
         :param int scan_listener_port_tcp_ssl: The SCAN TCPIP SSL port. Default is 2484.
         """
@@ -36229,7 +36646,7 @@ class GetVmClusterNetworksVmClusterNetworkScanResult(dict):
     @pulumi.getter
     def port(self) -> int:
         """
-        The SCAN TCPIP port. Default is 1521.
+        **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
         """
         return pulumi.get(self, "port")
 
@@ -36630,6 +37047,46 @@ class GetVmClusterPatchesPatchResult(dict):
 
 
 @pulumi.output_type
+class GetVmClusterRecommendedNetworkDrScanResult(dict):
+    def __init__(__self__, *,
+                 hostname: str,
+                 ips: Sequence[str],
+                 scan_listener_port_tcp: int):
+        """
+        :param str hostname: The node host name.
+        :param Sequence[str] ips: The list of SCAN IP addresses. Three addresses should be provided.
+        :param int scan_listener_port_tcp: The SCAN TCPIP port. Default is 1521.
+        """
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "ips", ips)
+        pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> str:
+        """
+        The node host name.
+        """
+        return pulumi.get(self, "hostname")
+
+    @property
+    @pulumi.getter
+    def ips(self) -> Sequence[str]:
+        """
+        The list of SCAN IP addresses. Three addresses should be provided.
+        """
+        return pulumi.get(self, "ips")
+
+    @property
+    @pulumi.getter(name="scanListenerPortTcp")
+    def scan_listener_port_tcp(self) -> int:
+        """
+        The SCAN TCPIP port. Default is 1521.
+        """
+        return pulumi.get(self, "scan_listener_port_tcp")
+
+
+@pulumi.output_type
 class GetVmClusterRecommendedNetworkNetworkResult(dict):
     def __init__(__self__, *,
                  cidr: str,
@@ -36724,7 +37181,7 @@ class GetVmClusterRecommendedNetworkScanResult(dict):
         """
         :param str hostname: The node host name.
         :param Sequence[str] ips: The list of SCAN IP addresses. Three addresses should be provided.
-        :param int port: The SCAN TCPIP port. Default is 1521.
+        :param int port: **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
         :param int scan_listener_port_tcp: The SCAN TCPIP port. Default is 1521.
         :param int scan_listener_port_tcp_ssl: The SCAN TCPIP SSL port. Default is 2484.
         """
@@ -36754,7 +37211,7 @@ class GetVmClusterRecommendedNetworkScanResult(dict):
     @pulumi.getter
     def port(self) -> int:
         """
-        The SCAN TCPIP port. Default is 1521.
+        **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
         """
         return pulumi.get(self, "port")
 

@@ -227,20 +227,20 @@ def get_repository_file_diff(base_version: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getRepositoryFileDiff:getRepositoryFileDiff', __args__, opts=opts, typ=GetRepositoryFileDiffResult).value
 
     return AwaitableGetRepositoryFileDiffResult(
-        are_conflicts_in_file=__ret__.are_conflicts_in_file,
-        base_version=__ret__.base_version,
-        changes=__ret__.changes,
-        file_path=__ret__.file_path,
-        id=__ret__.id,
-        is_binary=__ret__.is_binary,
-        is_comparison_from_merge_base=__ret__.is_comparison_from_merge_base,
-        is_large=__ret__.is_large,
-        new_id=__ret__.new_id,
-        new_path=__ret__.new_path,
-        old_id=__ret__.old_id,
-        old_path=__ret__.old_path,
-        repository_id=__ret__.repository_id,
-        target_version=__ret__.target_version)
+        are_conflicts_in_file=pulumi.get(__ret__, 'are_conflicts_in_file'),
+        base_version=pulumi.get(__ret__, 'base_version'),
+        changes=pulumi.get(__ret__, 'changes'),
+        file_path=pulumi.get(__ret__, 'file_path'),
+        id=pulumi.get(__ret__, 'id'),
+        is_binary=pulumi.get(__ret__, 'is_binary'),
+        is_comparison_from_merge_base=pulumi.get(__ret__, 'is_comparison_from_merge_base'),
+        is_large=pulumi.get(__ret__, 'is_large'),
+        new_id=pulumi.get(__ret__, 'new_id'),
+        new_path=pulumi.get(__ret__, 'new_path'),
+        old_id=pulumi.get(__ret__, 'old_id'),
+        old_path=pulumi.get(__ret__, 'old_path'),
+        repository_id=pulumi.get(__ret__, 'repository_id'),
+        target_version=pulumi.get(__ret__, 'target_version'))
 
 
 @_utilities.lift_output_func(get_repository_file_diff)

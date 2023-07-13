@@ -132,12 +132,12 @@ def get_database_pdb_conversion_history_entries(database_id: Optional[str] = Non
     __ret__ = pulumi.runtime.invoke('oci:Database/getDatabasePdbConversionHistoryEntries:getDatabasePdbConversionHistoryEntries', __args__, opts=opts, typ=GetDatabasePdbConversionHistoryEntriesResult).value
 
     return AwaitableGetDatabasePdbConversionHistoryEntriesResult(
-        database_id=__ret__.database_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        pdb_conversion_action=__ret__.pdb_conversion_action,
-        pdb_conversion_history_entries=__ret__.pdb_conversion_history_entries,
-        state=__ret__.state)
+        database_id=pulumi.get(__ret__, 'database_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        pdb_conversion_action=pulumi.get(__ret__, 'pdb_conversion_action'),
+        pdb_conversion_history_entries=pulumi.get(__ret__, 'pdb_conversion_history_entries'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_database_pdb_conversion_history_entries)

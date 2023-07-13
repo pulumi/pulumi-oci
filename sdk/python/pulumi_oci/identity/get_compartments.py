@@ -183,14 +183,14 @@ def get_compartments(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getCompartments:getCompartments', __args__, opts=opts, typ=GetCompartmentsResult).value
 
     return AwaitableGetCompartmentsResult(
-        access_level=__ret__.access_level,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        compartments=__ret__.compartments,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        state=__ret__.state)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        compartments=pulumi.get(__ret__, 'compartments'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_compartments)

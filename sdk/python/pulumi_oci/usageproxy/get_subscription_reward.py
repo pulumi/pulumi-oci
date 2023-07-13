@@ -122,11 +122,11 @@ def get_subscription_reward(subscription_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:UsageProxy/getSubscriptionReward:getSubscriptionReward', __args__, opts=opts, typ=GetSubscriptionRewardResult).value
 
     return AwaitableGetSubscriptionRewardResult(
-        id=__ret__.id,
-        items=__ret__.items,
-        subscription_id=__ret__.subscription_id,
-        summaries=__ret__.summaries,
-        tenancy_id=__ret__.tenancy_id)
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'),
+        summaries=pulumi.get(__ret__, 'summaries'),
+        tenancy_id=pulumi.get(__ret__, 'tenancy_id'))
 
 
 @_utilities.lift_output_func(get_subscription_reward)

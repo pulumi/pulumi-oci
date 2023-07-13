@@ -147,12 +147,12 @@ def get_user_group_memberships(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getUserGroupMemberships:getUserGroupMemberships', __args__, opts=opts, typ=GetUserGroupMembershipsResult).value
 
     return AwaitableGetUserGroupMembershipsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        group_id=__ret__.group_id,
-        id=__ret__.id,
-        memberships=__ret__.memberships,
-        user_id=__ret__.user_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        group_id=pulumi.get(__ret__, 'group_id'),
+        id=pulumi.get(__ret__, 'id'),
+        memberships=pulumi.get(__ret__, 'memberships'),
+        user_id=pulumi.get(__ret__, 'user_id'))
 
 
 @_utilities.lift_output_func(get_user_group_memberships)

@@ -129,12 +129,12 @@ def get_log_analytics_unprocessed_data_bucket(namespace: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket', __args__, opts=opts, typ=GetLogAnalyticsUnprocessedDataBucketResult).value
 
     return AwaitableGetLogAnalyticsUnprocessedDataBucketResult(
-        bucket=__ret__.bucket,
-        id=__ret__.id,
-        is_enabled=__ret__.is_enabled,
-        namespace=__ret__.namespace,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        bucket=pulumi.get(__ret__, 'bucket'),
+        id=pulumi.get(__ret__, 'id'),
+        is_enabled=pulumi.get(__ret__, 'is_enabled'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_log_analytics_unprocessed_data_bucket)

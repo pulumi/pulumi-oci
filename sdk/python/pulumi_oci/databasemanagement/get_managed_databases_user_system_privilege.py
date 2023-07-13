@@ -120,11 +120,11 @@ def get_managed_databases_user_system_privilege(managed_database_id: Optional[st
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabasesUserSystemPrivilege:getManagedDatabasesUserSystemPrivilege', __args__, opts=opts, typ=GetManagedDatabasesUserSystemPrivilegeResult).value
 
     return AwaitableGetManagedDatabasesUserSystemPrivilegeResult(
-        id=__ret__.id,
-        items=__ret__.items,
-        managed_database_id=__ret__.managed_database_id,
-        name=__ret__.name,
-        user_name=__ret__.user_name)
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        name=pulumi.get(__ret__, 'name'),
+        user_name=pulumi.get(__ret__, 'user_name'))
 
 
 @_utilities.lift_output_func(get_managed_databases_user_system_privilege)

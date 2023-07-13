@@ -5,6 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AddressActionVerificationArgs, AddressActionVerificationState } from "./addressActionVerification";
+export type AddressActionVerification = import("./addressActionVerification").AddressActionVerification;
+export const AddressActionVerification: typeof import("./addressActionVerification").AddressActionVerification = null as any;
+utilities.lazyLoad(exports, ["AddressActionVerification"], () => require("./addressActionVerification"));
+
+export { GetAddressArgs, GetAddressResult, GetAddressOutputArgs } from "./getAddress";
+export const getAddress: typeof import("./getAddress").getAddress = null as any;
+export const getAddressOutput: typeof import("./getAddress").getAddressOutput = null as any;
+utilities.lazyLoad(exports, ["getAddress","getAddressOutput"], () => require("./getAddress"));
+
+export { GetAddressRuleArgs, GetAddressRuleResult, GetAddressRuleOutputArgs } from "./getAddressRule";
+export const getAddressRule: typeof import("./getAddressRule").getAddressRule = null as any;
+export const getAddressRuleOutput: typeof import("./getAddressRule").getAddressRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getAddressRule","getAddressRuleOutput"], () => require("./getAddressRule"));
+
 export { GetInvoiceArgs, GetInvoiceResult, GetInvoiceOutputArgs } from "./getInvoice";
 export const getInvoice: typeof import("./getInvoice").getInvoice = null as any;
 export const getInvoiceOutput: typeof import("./getInvoice").getInvoiceOutput = null as any;
@@ -45,6 +60,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:OspGateway/addressActionVerification:AddressActionVerification":
+                return new AddressActionVerification(name, <any>undefined, { urn })
             case "oci:OspGateway/subscription:Subscription":
                 return new Subscription(name, <any>undefined, { urn })
             default:
@@ -52,4 +69,5 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "OspGateway/addressActionVerification", _module)
 pulumi.runtime.registerResourceModule("oci", "OspGateway/subscription", _module)

@@ -146,13 +146,13 @@ def get_network_load_balancer_health(network_load_balancer_id: Optional[str] = N
     __ret__ = pulumi.runtime.invoke('oci:NetworkLoadBalancer/getNetworkLoadBalancerHealth:getNetworkLoadBalancerHealth', __args__, opts=opts, typ=GetNetworkLoadBalancerHealthResult).value
 
     return AwaitableGetNetworkLoadBalancerHealthResult(
-        critical_state_backend_set_names=__ret__.critical_state_backend_set_names,
-        id=__ret__.id,
-        network_load_balancer_id=__ret__.network_load_balancer_id,
-        status=__ret__.status,
-        total_backend_set_count=__ret__.total_backend_set_count,
-        unknown_state_backend_set_names=__ret__.unknown_state_backend_set_names,
-        warning_state_backend_set_names=__ret__.warning_state_backend_set_names)
+        critical_state_backend_set_names=pulumi.get(__ret__, 'critical_state_backend_set_names'),
+        id=pulumi.get(__ret__, 'id'),
+        network_load_balancer_id=pulumi.get(__ret__, 'network_load_balancer_id'),
+        status=pulumi.get(__ret__, 'status'),
+        total_backend_set_count=pulumi.get(__ret__, 'total_backend_set_count'),
+        unknown_state_backend_set_names=pulumi.get(__ret__, 'unknown_state_backend_set_names'),
+        warning_state_backend_set_names=pulumi.get(__ret__, 'warning_state_backend_set_names'))
 
 
 @_utilities.lift_output_func(get_network_load_balancer_health)

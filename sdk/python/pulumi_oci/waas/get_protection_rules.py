@@ -133,12 +133,12 @@ def get_protection_rules(actions: Optional[Sequence[str]] = None,
     __ret__ = pulumi.runtime.invoke('oci:Waas/getProtectionRules:getProtectionRules', __args__, opts=opts, typ=GetProtectionRulesResult).value
 
     return AwaitableGetProtectionRulesResult(
-        actions=__ret__.actions,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        mod_security_rule_ids=__ret__.mod_security_rule_ids,
-        protection_rules=__ret__.protection_rules,
-        waas_policy_id=__ret__.waas_policy_id)
+        actions=pulumi.get(__ret__, 'actions'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        mod_security_rule_ids=pulumi.get(__ret__, 'mod_security_rule_ids'),
+        protection_rules=pulumi.get(__ret__, 'protection_rules'),
+        waas_policy_id=pulumi.get(__ret__, 'waas_policy_id'))
 
 
 @_utilities.lift_output_func(get_protection_rules)

@@ -122,11 +122,11 @@ def get_monitored_instances(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:AppMgmtControl/getMonitoredInstances:getMonitoredInstances', __args__, opts=opts, typ=GetMonitoredInstancesResult).value
 
     return AwaitableGetMonitoredInstancesResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        monitored_instance_collections=__ret__.monitored_instance_collections)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        monitored_instance_collections=pulumi.get(__ret__, 'monitored_instance_collections'))
 
 
 @_utilities.lift_output_func(get_monitored_instances)

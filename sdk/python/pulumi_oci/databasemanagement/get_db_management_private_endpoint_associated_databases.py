@@ -119,11 +119,11 @@ def get_db_management_private_endpoint_associated_databases(compartment_id: Opti
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabases:getDbManagementPrivateEndpointAssociatedDatabases', __args__, opts=opts, typ=GetDbManagementPrivateEndpointAssociatedDatabasesResult).value
 
     return AwaitableGetDbManagementPrivateEndpointAssociatedDatabasesResult(
-        associated_database_collections=__ret__.associated_database_collections,
-        compartment_id=__ret__.compartment_id,
-        db_management_private_endpoint_id=__ret__.db_management_private_endpoint_id,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        associated_database_collections=pulumi.get(__ret__, 'associated_database_collections'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        db_management_private_endpoint_id=pulumi.get(__ret__, 'db_management_private_endpoint_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_db_management_private_endpoint_associated_databases)

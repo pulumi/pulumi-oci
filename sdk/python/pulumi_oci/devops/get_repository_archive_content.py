@@ -104,10 +104,10 @@ def get_repository_archive_content(format: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getRepositoryArchiveContent:getRepositoryArchiveContent', __args__, opts=opts, typ=GetRepositoryArchiveContentResult).value
 
     return AwaitableGetRepositoryArchiveContentResult(
-        format=__ret__.format,
-        id=__ret__.id,
-        ref_name=__ret__.ref_name,
-        repository_id=__ret__.repository_id)
+        format=pulumi.get(__ret__, 'format'),
+        id=pulumi.get(__ret__, 'id'),
+        ref_name=pulumi.get(__ret__, 'ref_name'),
+        repository_id=pulumi.get(__ret__, 'repository_id'))
 
 
 @_utilities.lift_output_func(get_repository_archive_content)

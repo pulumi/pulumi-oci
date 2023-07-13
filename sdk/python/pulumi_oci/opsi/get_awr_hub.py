@@ -222,20 +222,20 @@ def get_awr_hub(awr_hub_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Opsi/getAwrHub:getAwrHub', __args__, opts=opts, typ=GetAwrHubResult).value
 
     return AwaitableGetAwrHubResult(
-        awr_hub_id=__ret__.awr_hub_id,
-        awr_mailbox_url=__ret__.awr_mailbox_url,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        object_storage_bucket_name=__ret__.object_storage_bucket_name,
-        operations_insights_warehouse_id=__ret__.operations_insights_warehouse_id,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        awr_hub_id=pulumi.get(__ret__, 'awr_hub_id'),
+        awr_mailbox_url=pulumi.get(__ret__, 'awr_mailbox_url'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        object_storage_bucket_name=pulumi.get(__ret__, 'object_storage_bucket_name'),
+        operations_insights_warehouse_id=pulumi.get(__ret__, 'operations_insights_warehouse_id'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_awr_hub)

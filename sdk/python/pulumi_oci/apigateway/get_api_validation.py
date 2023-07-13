@@ -91,9 +91,9 @@ def get_api_validation(api_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApiGateway/getApiValidation:getApiValidation', __args__, opts=opts, typ=GetApiValidationResult).value
 
     return AwaitableGetApiValidationResult(
-        api_id=__ret__.api_id,
-        id=__ret__.id,
-        validations=__ret__.validations)
+        api_id=pulumi.get(__ret__, 'api_id'),
+        id=pulumi.get(__ret__, 'id'),
+        validations=pulumi.get(__ret__, 'validations'))
 
 
 @_utilities.lift_output_func(get_api_validation)

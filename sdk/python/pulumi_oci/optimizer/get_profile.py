@@ -223,20 +223,20 @@ def get_profile(profile_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Optimizer/getProfile:getProfile', __args__, opts=opts, typ=GetProfileResult).value
 
     return AwaitableGetProfileResult(
-        aggregation_interval_in_days=__ret__.aggregation_interval_in_days,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        levels_configurations=__ret__.levels_configurations,
-        name=__ret__.name,
-        profile_id=__ret__.profile_id,
-        state=__ret__.state,
-        target_compartments=__ret__.target_compartments,
-        target_tags=__ret__.target_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        aggregation_interval_in_days=pulumi.get(__ret__, 'aggregation_interval_in_days'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        levels_configurations=pulumi.get(__ret__, 'levels_configurations'),
+        name=pulumi.get(__ret__, 'name'),
+        profile_id=pulumi.get(__ret__, 'profile_id'),
+        state=pulumi.get(__ret__, 'state'),
+        target_compartments=pulumi.get(__ret__, 'target_compartments'),
+        target_tags=pulumi.get(__ret__, 'target_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_profile)

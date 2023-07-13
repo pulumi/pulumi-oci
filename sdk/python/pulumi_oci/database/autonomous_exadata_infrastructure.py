@@ -82,6 +82,9 @@ class AutonomousExadataInfrastructureArgs:
         """
         The availability domain where the Autonomous Exadata Infrastructure is located.
         """
+        warnings.warn("""Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""", DeprecationWarning)
+        pulumi.log.warn("""availability_domain is deprecated: Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""")
+
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -337,6 +340,9 @@ class _AutonomousExadataInfrastructureState:
         """
         The availability domain where the Autonomous Exadata Infrastructure is located.
         """
+        warnings.warn("""Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""", DeprecationWarning)
+        pulumi.log.warn("""availability_domain is deprecated: Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""")
+
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -913,6 +919,9 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
         """
         The availability domain where the Autonomous Exadata Infrastructure is located.
         """
+        warnings.warn("""Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""", DeprecationWarning)
+        pulumi.log.warn("""availability_domain is deprecated: Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""")
+
         return pulumi.get(self, "availability_domain")
 
     @property

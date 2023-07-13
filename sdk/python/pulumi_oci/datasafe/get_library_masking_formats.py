@@ -223,18 +223,18 @@ def get_library_masking_formats(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getLibraryMaskingFormats:getLibraryMaskingFormats', __args__, opts=opts, typ=GetLibraryMaskingFormatsResult).value
 
     return AwaitableGetLibraryMaskingFormatsResult(
-        access_level=__ret__.access_level,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        library_masking_format_collections=__ret__.library_masking_format_collections,
-        library_masking_format_id=__ret__.library_masking_format_id,
-        library_masking_format_source=__ret__.library_masking_format_source,
-        state=__ret__.state,
-        time_created_greater_than_or_equal_to=__ret__.time_created_greater_than_or_equal_to,
-        time_created_less_than=__ret__.time_created_less_than)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        library_masking_format_collections=pulumi.get(__ret__, 'library_masking_format_collections'),
+        library_masking_format_id=pulumi.get(__ret__, 'library_masking_format_id'),
+        library_masking_format_source=pulumi.get(__ret__, 'library_masking_format_source'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
 
 
 @_utilities.lift_output_func(get_library_masking_formats)

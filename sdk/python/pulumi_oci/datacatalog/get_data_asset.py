@@ -260,23 +260,23 @@ def get_data_asset(catalog_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataCatalog/getDataAsset:getDataAsset', __args__, opts=opts, typ=GetDataAssetResult).value
 
     return AwaitableGetDataAssetResult(
-        catalog_id=__ret__.catalog_id,
-        created_by_id=__ret__.created_by_id,
-        data_asset_key=__ret__.data_asset_key,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        external_key=__ret__.external_key,
-        fields=__ret__.fields,
-        id=__ret__.id,
-        key=__ret__.key,
-        properties=__ret__.properties,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_harvested=__ret__.time_harvested,
-        time_updated=__ret__.time_updated,
-        type_key=__ret__.type_key,
-        updated_by_id=__ret__.updated_by_id,
-        uri=__ret__.uri)
+        catalog_id=pulumi.get(__ret__, 'catalog_id'),
+        created_by_id=pulumi.get(__ret__, 'created_by_id'),
+        data_asset_key=pulumi.get(__ret__, 'data_asset_key'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        external_key=pulumi.get(__ret__, 'external_key'),
+        fields=pulumi.get(__ret__, 'fields'),
+        id=pulumi.get(__ret__, 'id'),
+        key=pulumi.get(__ret__, 'key'),
+        properties=pulumi.get(__ret__, 'properties'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_harvested=pulumi.get(__ret__, 'time_harvested'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        type_key=pulumi.get(__ret__, 'type_key'),
+        updated_by_id=pulumi.get(__ret__, 'updated_by_id'),
+        uri=pulumi.get(__ret__, 'uri'))
 
 
 @_utilities.lift_output_func(get_data_asset)

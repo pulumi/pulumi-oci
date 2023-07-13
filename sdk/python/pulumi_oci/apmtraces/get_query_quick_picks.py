@@ -104,10 +104,10 @@ def get_query_quick_picks(apm_domain_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApmTraces/getQueryQuickPicks:getQueryQuickPicks', __args__, opts=opts, typ=GetQueryQuickPicksResult).value
 
     return AwaitableGetQueryQuickPicksResult(
-        apm_domain_id=__ret__.apm_domain_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        quick_picks=__ret__.quick_picks)
+        apm_domain_id=pulumi.get(__ret__, 'apm_domain_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        quick_picks=pulumi.get(__ret__, 'quick_picks'))
 
 
 @_utilities.lift_output_func(get_query_quick_picks)

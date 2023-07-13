@@ -129,11 +129,11 @@ def get_cpe_device_shape(cpe_device_shape_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getCpeDeviceShape:getCpeDeviceShape', __args__, opts=opts, typ=GetCpeDeviceShapeResult).value
 
     return AwaitableGetCpeDeviceShapeResult(
-        cpe_device_infos=__ret__.cpe_device_infos,
-        cpe_device_shape_id=__ret__.cpe_device_shape_id,
-        id=__ret__.id,
-        parameters=__ret__.parameters,
-        template=__ret__.template)
+        cpe_device_infos=pulumi.get(__ret__, 'cpe_device_infos'),
+        cpe_device_shape_id=pulumi.get(__ret__, 'cpe_device_shape_id'),
+        id=pulumi.get(__ret__, 'id'),
+        parameters=pulumi.get(__ret__, 'parameters'),
+        template=pulumi.get(__ret__, 'template'))
 
 
 @_utilities.lift_output_func(get_cpe_device_shape)

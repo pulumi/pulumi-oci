@@ -291,22 +291,22 @@ def get_management_agents(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ManagementAgent/getManagementAgents:getManagementAgents', __args__, opts=opts, typ=GetManagementAgentsResult).value
 
     return AwaitableGetManagementAgentsResult(
-        access_level=__ret__.access_level,
-        availability_status=__ret__.availability_status,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        gateway_ids=__ret__.gateway_ids,
-        host_id=__ret__.host_id,
-        id=__ret__.id,
-        install_type=__ret__.install_type,
-        is_customer_deployed=__ret__.is_customer_deployed,
-        management_agents=__ret__.management_agents,
-        platform_types=__ret__.platform_types,
-        plugin_names=__ret__.plugin_names,
-        state=__ret__.state,
-        versions=__ret__.versions)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        availability_status=pulumi.get(__ret__, 'availability_status'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        gateway_ids=pulumi.get(__ret__, 'gateway_ids'),
+        host_id=pulumi.get(__ret__, 'host_id'),
+        id=pulumi.get(__ret__, 'id'),
+        install_type=pulumi.get(__ret__, 'install_type'),
+        is_customer_deployed=pulumi.get(__ret__, 'is_customer_deployed'),
+        management_agents=pulumi.get(__ret__, 'management_agents'),
+        platform_types=pulumi.get(__ret__, 'platform_types'),
+        plugin_names=pulumi.get(__ret__, 'plugin_names'),
+        state=pulumi.get(__ret__, 'state'),
+        versions=pulumi.get(__ret__, 'versions'))
 
 
 @_utilities.lift_output_func(get_management_agents)

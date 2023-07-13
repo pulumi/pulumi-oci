@@ -243,22 +243,22 @@ def get_inst_vbs_instance(vbs_instance_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Vbs/getInstVbsInstance:getInstVbsInstance', __args__, opts=opts, typ=GetInstVbsInstanceResult).value
 
     return AwaitableGetInstVbsInstanceResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        idcs_access_token=__ret__.idcs_access_token,
-        is_resource_usage_agreement_granted=__ret__.is_resource_usage_agreement_granted,
-        lifecyle_details=__ret__.lifecyle_details,
-        name=__ret__.name,
-        resource_compartment_id=__ret__.resource_compartment_id,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        vbs_access_url=__ret__.vbs_access_url,
-        vbs_instance_id=__ret__.vbs_instance_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        idcs_access_token=pulumi.get(__ret__, 'idcs_access_token'),
+        is_resource_usage_agreement_granted=pulumi.get(__ret__, 'is_resource_usage_agreement_granted'),
+        lifecyle_details=pulumi.get(__ret__, 'lifecyle_details'),
+        name=pulumi.get(__ret__, 'name'),
+        resource_compartment_id=pulumi.get(__ret__, 'resource_compartment_id'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        vbs_access_url=pulumi.get(__ret__, 'vbs_access_url'),
+        vbs_instance_id=pulumi.get(__ret__, 'vbs_instance_id'))
 
 
 @_utilities.lift_output_func(get_inst_vbs_instance)

@@ -82,5 +82,5 @@ def get_compatible_formats_for_data_type(opts: Optional[pulumi.InvokeOptions] = 
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getCompatibleFormatsForDataType:getCompatibleFormatsForDataType', __args__, opts=opts, typ=GetCompatibleFormatsForDataTypeResult).value
 
     return AwaitableGetCompatibleFormatsForDataTypeResult(
-        formats_for_data_types=__ret__.formats_for_data_types,
-        id=__ret__.id)
+        formats_for_data_types=pulumi.get(__ret__, 'formats_for_data_types'),
+        id=pulumi.get(__ret__, 'id'))

@@ -337,14 +337,14 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     * (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
      * 
      */
     @Import(name="networkBondingModeDetails")
     private @Nullable Output<ExadataInfrastructureNetworkBondingModeDetailsArgs> networkBondingModeDetails;
 
     /**
-     * @return (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     * @return (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
      * 
      */
     public Optional<Output<ExadataInfrastructureNetworkBondingModeDetailsArgs>> networkBondingModeDetails() {
@@ -916,7 +916,7 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param networkBondingModeDetails (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+         * @param networkBondingModeDetails (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
          * 
          * @return builder
          * 
@@ -927,7 +927,7 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param networkBondingModeDetails (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+         * @param networkBondingModeDetails (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
          * 
          * @return builder
          * 

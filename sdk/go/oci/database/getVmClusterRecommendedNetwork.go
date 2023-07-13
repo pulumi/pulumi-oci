@@ -34,6 +34,8 @@ type GetVmClusterRecommendedNetworkArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// The list of DNS server IP addresses. Maximum of 3 allowed.
 	Dns []string `pulumi:"dns"`
+	// The DR SCAN TCPIP port. Default is 1521.
+	DrScanListenerPortTcp *int `pulumi:"drScanListenerPortTcp"`
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -58,8 +60,11 @@ type GetVmClusterRecommendedNetworkResult struct {
 	// The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// The list of DNS server IP addresses. Maximum of 3 allowed.
-	Dns                     []string `pulumi:"dns"`
-	ExadataInfrastructureId string   `pulumi:"exadataInfrastructureId"`
+	Dns                   []string `pulumi:"dns"`
+	DrScanListenerPortTcp *int     `pulumi:"drScanListenerPortTcp"`
+	// The SCAN details for DR network
+	DrScans                 []GetVmClusterRecommendedNetworkDrScan `pulumi:"drScans"`
+	ExadataInfrastructureId string                                 `pulumi:"exadataInfrastructureId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
@@ -102,6 +107,8 @@ type GetVmClusterRecommendedNetworkOutputArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The list of DNS server IP addresses. Maximum of 3 allowed.
 	Dns pulumi.StringArrayInput `pulumi:"dns"`
+	// The DR SCAN TCPIP port. Default is 1521.
+	DrScanListenerPortTcp pulumi.IntPtrInput `pulumi:"drScanListenerPortTcp"`
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId pulumi.StringInput `pulumi:"exadataInfrastructureId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -157,6 +164,15 @@ func (o GetVmClusterRecommendedNetworkResultOutput) DisplayName() pulumi.StringO
 // The list of DNS server IP addresses. Maximum of 3 allowed.
 func (o GetVmClusterRecommendedNetworkResultOutput) Dns() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetVmClusterRecommendedNetworkResult) []string { return v.Dns }).(pulumi.StringArrayOutput)
+}
+
+func (o GetVmClusterRecommendedNetworkResultOutput) DrScanListenerPortTcp() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkResult) *int { return v.DrScanListenerPortTcp }).(pulumi.IntPtrOutput)
+}
+
+// The SCAN details for DR network
+func (o GetVmClusterRecommendedNetworkResultOutput) DrScans() GetVmClusterRecommendedNetworkDrScanArrayOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkResult) []GetVmClusterRecommendedNetworkDrScan { return v.DrScans }).(GetVmClusterRecommendedNetworkDrScanArrayOutput)
 }
 
 func (o GetVmClusterRecommendedNetworkResultOutput) ExadataInfrastructureId() pulumi.StringOutput {

@@ -22,7 +22,7 @@ class GetExadataInfrastructureResult:
     """
     A collection of values returned by getExadataInfrastructure.
     """
-    def __init__(__self__, activated_storage_count=None, activation_file=None, additional_compute_count=None, additional_compute_system_model=None, additional_storage_count=None, admin_network_cidr=None, availability_domain=None, cloud_control_plane_server1=None, cloud_control_plane_server2=None, compartment_id=None, compute_count=None, contacts=None, corporate_proxy=None, cpus_enabled=None, create_async=None, csi_number=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_tags=None, display_name=None, dns_servers=None, exadata_infrastructure_id=None, freeform_tags=None, gateway=None, id=None, infini_band_network_cidr=None, is_cps_offline_report_enabled=None, is_multi_rack_deployment=None, lifecycle_details=None, maintenance_slo_status=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, multi_rack_configuration_file=None, netmask=None, network_bonding_mode_details=None, ntp_servers=None, shape=None, state=None, storage_count=None, storage_server_version=None, time_created=None, time_zone=None):
+    def __init__(__self__, activated_storage_count=None, activation_file=None, additional_compute_count=None, additional_compute_system_model=None, additional_storage_count=None, admin_network_cidr=None, availability_domain=None, cloud_control_plane_server1=None, cloud_control_plane_server2=None, compartment_id=None, compute_count=None, contacts=None, corporate_proxy=None, cpus_enabled=None, create_async=None, csi_number=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_tags=None, display_name=None, dns_servers=None, exadata_infrastructure_id=None, freeform_tags=None, gateway=None, id=None, infini_band_network_cidr=None, is_cps_offline_report_enabled=None, is_multi_rack_deployment=None, lifecycle_details=None, maintenance_slo_status=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, multi_rack_configuration_file=None, netmask=None, network_bonding_mode_details=None, ntp_servers=None, rack_serial_number=None, shape=None, state=None, storage_count=None, storage_server_version=None, time_created=None, time_zone=None):
         if activated_storage_count and not isinstance(activated_storage_count, int):
             raise TypeError("Expected argument 'activated_storage_count' to be a int")
         pulumi.set(__self__, "activated_storage_count", activated_storage_count)
@@ -149,6 +149,9 @@ class GetExadataInfrastructureResult:
         if ntp_servers and not isinstance(ntp_servers, list):
             raise TypeError("Expected argument 'ntp_servers' to be a list")
         pulumi.set(__self__, "ntp_servers", ntp_servers)
+        if rack_serial_number and not isinstance(rack_serial_number, str):
+            raise TypeError("Expected argument 'rack_serial_number' to be a str")
+        pulumi.set(__self__, "rack_serial_number", rack_serial_number)
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
@@ -483,7 +486,7 @@ class GetExadataInfrastructureResult:
     @pulumi.getter(name="networkBondingModeDetails")
     def network_bonding_mode_details(self) -> Sequence['outputs.GetExadataInfrastructureNetworkBondingModeDetailResult']:
         """
-        Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
         """
         return pulumi.get(self, "network_bonding_mode_details")
 
@@ -494,6 +497,14 @@ class GetExadataInfrastructureResult:
         The list of NTP server IP addresses. Maximum of 3 allowed.
         """
         return pulumi.get(self, "ntp_servers")
+
+    @property
+    @pulumi.getter(name="rackSerialNumber")
+    def rack_serial_number(self) -> str:
+        """
+        The serial number for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "rack_serial_number")
 
     @property
     @pulumi.getter
@@ -592,6 +603,7 @@ class AwaitableGetExadataInfrastructureResult(GetExadataInfrastructureResult):
             netmask=self.netmask,
             network_bonding_mode_details=self.network_bonding_mode_details,
             ntp_servers=self.ntp_servers,
+            rack_serial_number=self.rack_serial_number,
             shape=self.shape,
             state=self.state,
             storage_count=self.storage_count,
@@ -617,54 +629,55 @@ def get_exadata_infrastructure(exadata_infrastructure_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getExadataInfrastructure:getExadataInfrastructure', __args__, opts=opts, typ=GetExadataInfrastructureResult).value
 
     return AwaitableGetExadataInfrastructureResult(
-        activated_storage_count=__ret__.activated_storage_count,
-        activation_file=__ret__.activation_file,
-        additional_compute_count=__ret__.additional_compute_count,
-        additional_compute_system_model=__ret__.additional_compute_system_model,
-        additional_storage_count=__ret__.additional_storage_count,
-        admin_network_cidr=__ret__.admin_network_cidr,
-        availability_domain=__ret__.availability_domain,
-        cloud_control_plane_server1=__ret__.cloud_control_plane_server1,
-        cloud_control_plane_server2=__ret__.cloud_control_plane_server2,
-        compartment_id=__ret__.compartment_id,
-        compute_count=__ret__.compute_count,
-        contacts=__ret__.contacts,
-        corporate_proxy=__ret__.corporate_proxy,
-        cpus_enabled=__ret__.cpus_enabled,
-        create_async=__ret__.create_async,
-        csi_number=__ret__.csi_number,
-        data_storage_size_in_tbs=__ret__.data_storage_size_in_tbs,
-        db_node_storage_size_in_gbs=__ret__.db_node_storage_size_in_gbs,
-        db_server_version=__ret__.db_server_version,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        dns_servers=__ret__.dns_servers,
-        exadata_infrastructure_id=__ret__.exadata_infrastructure_id,
-        freeform_tags=__ret__.freeform_tags,
-        gateway=__ret__.gateway,
-        id=__ret__.id,
-        infini_band_network_cidr=__ret__.infini_band_network_cidr,
-        is_cps_offline_report_enabled=__ret__.is_cps_offline_report_enabled,
-        is_multi_rack_deployment=__ret__.is_multi_rack_deployment,
-        lifecycle_details=__ret__.lifecycle_details,
-        maintenance_slo_status=__ret__.maintenance_slo_status,
-        maintenance_windows=__ret__.maintenance_windows,
-        max_cpu_count=__ret__.max_cpu_count,
-        max_data_storage_in_tbs=__ret__.max_data_storage_in_tbs,
-        max_db_node_storage_in_gbs=__ret__.max_db_node_storage_in_gbs,
-        max_memory_in_gbs=__ret__.max_memory_in_gbs,
-        memory_size_in_gbs=__ret__.memory_size_in_gbs,
-        monthly_db_server_version=__ret__.monthly_db_server_version,
-        multi_rack_configuration_file=__ret__.multi_rack_configuration_file,
-        netmask=__ret__.netmask,
-        network_bonding_mode_details=__ret__.network_bonding_mode_details,
-        ntp_servers=__ret__.ntp_servers,
-        shape=__ret__.shape,
-        state=__ret__.state,
-        storage_count=__ret__.storage_count,
-        storage_server_version=__ret__.storage_server_version,
-        time_created=__ret__.time_created,
-        time_zone=__ret__.time_zone)
+        activated_storage_count=pulumi.get(__ret__, 'activated_storage_count'),
+        activation_file=pulumi.get(__ret__, 'activation_file'),
+        additional_compute_count=pulumi.get(__ret__, 'additional_compute_count'),
+        additional_compute_system_model=pulumi.get(__ret__, 'additional_compute_system_model'),
+        additional_storage_count=pulumi.get(__ret__, 'additional_storage_count'),
+        admin_network_cidr=pulumi.get(__ret__, 'admin_network_cidr'),
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        cloud_control_plane_server1=pulumi.get(__ret__, 'cloud_control_plane_server1'),
+        cloud_control_plane_server2=pulumi.get(__ret__, 'cloud_control_plane_server2'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compute_count=pulumi.get(__ret__, 'compute_count'),
+        contacts=pulumi.get(__ret__, 'contacts'),
+        corporate_proxy=pulumi.get(__ret__, 'corporate_proxy'),
+        cpus_enabled=pulumi.get(__ret__, 'cpus_enabled'),
+        create_async=pulumi.get(__ret__, 'create_async'),
+        csi_number=pulumi.get(__ret__, 'csi_number'),
+        data_storage_size_in_tbs=pulumi.get(__ret__, 'data_storage_size_in_tbs'),
+        db_node_storage_size_in_gbs=pulumi.get(__ret__, 'db_node_storage_size_in_gbs'),
+        db_server_version=pulumi.get(__ret__, 'db_server_version'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        dns_servers=pulumi.get(__ret__, 'dns_servers'),
+        exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        gateway=pulumi.get(__ret__, 'gateway'),
+        id=pulumi.get(__ret__, 'id'),
+        infini_band_network_cidr=pulumi.get(__ret__, 'infini_band_network_cidr'),
+        is_cps_offline_report_enabled=pulumi.get(__ret__, 'is_cps_offline_report_enabled'),
+        is_multi_rack_deployment=pulumi.get(__ret__, 'is_multi_rack_deployment'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        maintenance_slo_status=pulumi.get(__ret__, 'maintenance_slo_status'),
+        maintenance_windows=pulumi.get(__ret__, 'maintenance_windows'),
+        max_cpu_count=pulumi.get(__ret__, 'max_cpu_count'),
+        max_data_storage_in_tbs=pulumi.get(__ret__, 'max_data_storage_in_tbs'),
+        max_db_node_storage_in_gbs=pulumi.get(__ret__, 'max_db_node_storage_in_gbs'),
+        max_memory_in_gbs=pulumi.get(__ret__, 'max_memory_in_gbs'),
+        memory_size_in_gbs=pulumi.get(__ret__, 'memory_size_in_gbs'),
+        monthly_db_server_version=pulumi.get(__ret__, 'monthly_db_server_version'),
+        multi_rack_configuration_file=pulumi.get(__ret__, 'multi_rack_configuration_file'),
+        netmask=pulumi.get(__ret__, 'netmask'),
+        network_bonding_mode_details=pulumi.get(__ret__, 'network_bonding_mode_details'),
+        ntp_servers=pulumi.get(__ret__, 'ntp_servers'),
+        rack_serial_number=pulumi.get(__ret__, 'rack_serial_number'),
+        shape=pulumi.get(__ret__, 'shape'),
+        state=pulumi.get(__ret__, 'state'),
+        storage_count=pulumi.get(__ret__, 'storage_count'),
+        storage_server_version=pulumi.get(__ret__, 'storage_server_version'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_zone=pulumi.get(__ret__, 'time_zone'))
 
 
 @_utilities.lift_output_func(get_exadata_infrastructure)

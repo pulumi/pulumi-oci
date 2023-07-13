@@ -102,10 +102,10 @@ def get_exadata_infrastructure_download_config_file(base64_encode_content: Optio
     __ret__ = pulumi.runtime.invoke('oci:Database/getExadataInfrastructureDownloadConfigFile:getExadataInfrastructureDownloadConfigFile', __args__, opts=opts, typ=GetExadataInfrastructureDownloadConfigFileResult).value
 
     return AwaitableGetExadataInfrastructureDownloadConfigFileResult(
-        base64_encode_content=__ret__.base64_encode_content,
-        content=__ret__.content,
-        exadata_infrastructure_id=__ret__.exadata_infrastructure_id,
-        id=__ret__.id)
+        base64_encode_content=pulumi.get(__ret__, 'base64_encode_content'),
+        content=pulumi.get(__ret__, 'content'),
+        exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_exadata_infrastructure_download_config_file)

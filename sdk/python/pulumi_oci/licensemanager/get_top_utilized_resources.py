@@ -117,11 +117,11 @@ def get_top_utilized_resources(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources', __args__, opts=opts, typ=GetTopUtilizedResourcesResult).value
 
     return AwaitableGetTopUtilizedResourcesResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        is_compartment_id_in_subtree=__ret__.is_compartment_id_in_subtree,
-        items=__ret__.items,
-        resource_unit_type=__ret__.resource_unit_type)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        is_compartment_id_in_subtree=pulumi.get(__ret__, 'is_compartment_id_in_subtree'),
+        items=pulumi.get(__ret__, 'items'),
+        resource_unit_type=pulumi.get(__ret__, 'resource_unit_type'))
 
 
 @_utilities.lift_output_func(get_top_utilized_resources)

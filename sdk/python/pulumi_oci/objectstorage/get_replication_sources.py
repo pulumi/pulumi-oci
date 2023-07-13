@@ -116,11 +116,11 @@ def get_replication_sources(bucket: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ObjectStorage/getReplicationSources:getReplicationSources', __args__, opts=opts, typ=GetReplicationSourcesResult).value
 
     return AwaitableGetReplicationSourcesResult(
-        bucket=__ret__.bucket,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        namespace=__ret__.namespace,
-        replication_sources=__ret__.replication_sources)
+        bucket=pulumi.get(__ret__, 'bucket'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        replication_sources=pulumi.get(__ret__, 'replication_sources'))
 
 
 @_utilities.lift_output_func(get_replication_sources)

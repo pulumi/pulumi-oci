@@ -161,14 +161,14 @@ def get_target_databases_tables(filters: Optional[Sequence[pulumi.InputType['Get
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getTargetDatabasesTables:getTargetDatabasesTables', __args__, opts=opts, typ=GetTargetDatabasesTablesResult).value
 
     return AwaitableGetTargetDatabasesTablesResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        schema_name_contains=__ret__.schema_name_contains,
-        schema_names=__ret__.schema_names,
-        table_name_contains=__ret__.table_name_contains,
-        table_names=__ret__.table_names,
-        tables=__ret__.tables,
-        target_database_id=__ret__.target_database_id)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        schema_name_contains=pulumi.get(__ret__, 'schema_name_contains'),
+        schema_names=pulumi.get(__ret__, 'schema_names'),
+        table_name_contains=pulumi.get(__ret__, 'table_name_contains'),
+        table_names=pulumi.get(__ret__, 'table_names'),
+        tables=pulumi.get(__ret__, 'tables'),
+        target_database_id=pulumi.get(__ret__, 'target_database_id'))
 
 
 @_utilities.lift_output_func(get_target_databases_tables)

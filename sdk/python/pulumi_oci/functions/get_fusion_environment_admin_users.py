@@ -103,10 +103,10 @@ def get_fusion_environment_admin_users(filters: Optional[Sequence[pulumi.InputTy
     __ret__ = pulumi.runtime.invoke('oci:Functions/getFusionEnvironmentAdminUsers:getFusionEnvironmentAdminUsers', __args__, opts=opts, typ=GetFusionEnvironmentAdminUsersResult).value
 
     return AwaitableGetFusionEnvironmentAdminUsersResult(
-        admin_user_collections=__ret__.admin_user_collections,
-        filters=__ret__.filters,
-        fusion_environment_id=__ret__.fusion_environment_id,
-        id=__ret__.id)
+        admin_user_collections=pulumi.get(__ret__, 'admin_user_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_fusion_environment_admin_users)

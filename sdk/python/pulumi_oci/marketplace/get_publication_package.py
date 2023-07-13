@@ -236,21 +236,21 @@ def get_publication_package(package_version: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Marketplace/getPublicationPackage:getPublicationPackage', __args__, opts=opts, typ=GetPublicationPackageResult).value
 
     return AwaitableGetPublicationPackageResult(
-        app_catalog_listing_id=__ret__.app_catalog_listing_id,
-        app_catalog_listing_resource_version=__ret__.app_catalog_listing_resource_version,
-        description=__ret__.description,
-        id=__ret__.id,
-        image_id=__ret__.image_id,
-        listing_id=__ret__.listing_id,
-        operating_systems=__ret__.operating_systems,
-        package_type=__ret__.package_type,
-        package_version=__ret__.package_version,
-        publication_id=__ret__.publication_id,
-        resource_id=__ret__.resource_id,
-        resource_link=__ret__.resource_link,
-        time_created=__ret__.time_created,
-        variables=__ret__.variables,
-        version=__ret__.version)
+        app_catalog_listing_id=pulumi.get(__ret__, 'app_catalog_listing_id'),
+        app_catalog_listing_resource_version=pulumi.get(__ret__, 'app_catalog_listing_resource_version'),
+        description=pulumi.get(__ret__, 'description'),
+        id=pulumi.get(__ret__, 'id'),
+        image_id=pulumi.get(__ret__, 'image_id'),
+        listing_id=pulumi.get(__ret__, 'listing_id'),
+        operating_systems=pulumi.get(__ret__, 'operating_systems'),
+        package_type=pulumi.get(__ret__, 'package_type'),
+        package_version=pulumi.get(__ret__, 'package_version'),
+        publication_id=pulumi.get(__ret__, 'publication_id'),
+        resource_id=pulumi.get(__ret__, 'resource_id'),
+        resource_link=pulumi.get(__ret__, 'resource_link'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        variables=pulumi.get(__ret__, 'variables'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_publication_package)

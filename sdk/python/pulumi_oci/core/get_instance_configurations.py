@@ -106,10 +106,10 @@ def get_instance_configurations(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getInstanceConfigurations:getInstanceConfigurations', __args__, opts=opts, typ=GetInstanceConfigurationsResult).value
 
     return AwaitableGetInstanceConfigurationsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        instance_configurations=__ret__.instance_configurations)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        instance_configurations=pulumi.get(__ret__, 'instance_configurations'))
 
 
 @_utilities.lift_output_func(get_instance_configurations)

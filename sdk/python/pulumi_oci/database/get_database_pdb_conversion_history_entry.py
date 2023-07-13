@@ -216,19 +216,19 @@ def get_database_pdb_conversion_history_entry(database_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getDatabasePdbConversionHistoryEntry:getDatabasePdbConversionHistoryEntry', __args__, opts=opts, typ=GetDatabasePdbConversionHistoryEntryResult).value
 
     return AwaitableGetDatabasePdbConversionHistoryEntryResult(
-        action=__ret__.action,
-        additional_cdb_params=__ret__.additional_cdb_params,
-        cdb_name=__ret__.cdb_name,
-        database_id=__ret__.database_id,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        pdb_conversion_history_entry_id=__ret__.pdb_conversion_history_entry_id,
-        source_database_id=__ret__.source_database_id,
-        state=__ret__.state,
-        target=__ret__.target,
-        target_database_id=__ret__.target_database_id,
-        time_ended=__ret__.time_ended,
-        time_started=__ret__.time_started)
+        action=pulumi.get(__ret__, 'action'),
+        additional_cdb_params=pulumi.get(__ret__, 'additional_cdb_params'),
+        cdb_name=pulumi.get(__ret__, 'cdb_name'),
+        database_id=pulumi.get(__ret__, 'database_id'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        pdb_conversion_history_entry_id=pulumi.get(__ret__, 'pdb_conversion_history_entry_id'),
+        source_database_id=pulumi.get(__ret__, 'source_database_id'),
+        state=pulumi.get(__ret__, 'state'),
+        target=pulumi.get(__ret__, 'target'),
+        target_database_id=pulumi.get(__ret__, 'target_database_id'),
+        time_ended=pulumi.get(__ret__, 'time_ended'),
+        time_started=pulumi.get(__ret__, 'time_started'))
 
 
 @_utilities.lift_output_func(get_database_pdb_conversion_history_entry)

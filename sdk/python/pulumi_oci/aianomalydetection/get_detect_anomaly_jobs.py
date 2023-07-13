@@ -183,15 +183,15 @@ def get_detect_anomaly_jobs(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:AiAnomalyDetection/getDetectAnomalyJobs:getDetectAnomalyJobs', __args__, opts=opts, typ=GetDetectAnomalyJobsResult).value
 
     return AwaitableGetDetectAnomalyJobsResult(
-        compartment_id=__ret__.compartment_id,
-        detect_anomaly_job_collections=__ret__.detect_anomaly_job_collections,
-        detect_anomaly_job_id=__ret__.detect_anomaly_job_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        model_id=__ret__.model_id,
-        project_id=__ret__.project_id,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        detect_anomaly_job_collections=pulumi.get(__ret__, 'detect_anomaly_job_collections'),
+        detect_anomaly_job_id=pulumi.get(__ret__, 'detect_anomaly_job_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        model_id=pulumi.get(__ret__, 'model_id'),
+        project_id=pulumi.get(__ret__, 'project_id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_detect_anomaly_jobs)

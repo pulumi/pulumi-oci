@@ -160,15 +160,15 @@ def get_aggregated_computed_usages(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OneSubsription/getAggregatedComputedUsages:getAggregatedComputedUsages', __args__, opts=opts, typ=GetAggregatedComputedUsagesResult).value
 
     return AwaitableGetAggregatedComputedUsagesResult(
-        aggregated_computed_usages=__ret__.aggregated_computed_usages,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        grouping=__ret__.grouping,
-        id=__ret__.id,
-        parent_product=__ret__.parent_product,
-        subscription_id=__ret__.subscription_id,
-        time_from=__ret__.time_from,
-        time_to=__ret__.time_to)
+        aggregated_computed_usages=pulumi.get(__ret__, 'aggregated_computed_usages'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        grouping=pulumi.get(__ret__, 'grouping'),
+        id=pulumi.get(__ret__, 'id'),
+        parent_product=pulumi.get(__ret__, 'parent_product'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'),
+        time_from=pulumi.get(__ret__, 'time_from'),
+        time_to=pulumi.get(__ret__, 'time_to'))
 
 
 @_utilities.lift_output_func(get_aggregated_computed_usages)

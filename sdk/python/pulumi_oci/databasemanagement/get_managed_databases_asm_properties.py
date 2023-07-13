@@ -116,11 +116,11 @@ def get_managed_databases_asm_properties(filters: Optional[Sequence[pulumi.Input
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabasesAsmProperties:getManagedDatabasesAsmProperties', __args__, opts=opts, typ=GetManagedDatabasesAsmPropertiesResult).value
 
     return AwaitableGetManagedDatabasesAsmPropertiesResult(
-        asm_property_collections=__ret__.asm_property_collections,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        managed_database_id=__ret__.managed_database_id,
-        name=__ret__.name)
+        asm_property_collections=pulumi.get(__ret__, 'asm_property_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        name=pulumi.get(__ret__, 'name'))
 
 
 @_utilities.lift_output_func(get_managed_databases_asm_properties)

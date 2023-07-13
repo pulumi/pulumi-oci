@@ -187,17 +187,17 @@ def get_http_redirect(http_redirect_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Waas/getHttpRedirect:getHttpRedirect', __args__, opts=opts, typ=GetHttpRedirectResult).value
 
     return AwaitableGetHttpRedirectResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        domain=__ret__.domain,
-        freeform_tags=__ret__.freeform_tags,
-        http_redirect_id=__ret__.http_redirect_id,
-        id=__ret__.id,
-        response_code=__ret__.response_code,
-        state=__ret__.state,
-        targets=__ret__.targets,
-        time_created=__ret__.time_created)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        domain=pulumi.get(__ret__, 'domain'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        http_redirect_id=pulumi.get(__ret__, 'http_redirect_id'),
+        id=pulumi.get(__ret__, 'id'),
+        response_code=pulumi.get(__ret__, 'response_code'),
+        state=pulumi.get(__ret__, 'state'),
+        targets=pulumi.get(__ret__, 'targets'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_http_redirect)

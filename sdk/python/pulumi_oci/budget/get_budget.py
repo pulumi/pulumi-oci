@@ -69,10 +69,6 @@ class GetBudgetResult:
         pulumi.set(__self__, "state", state)
         if target_compartment_id and not isinstance(target_compartment_id, str):
             raise TypeError("Expected argument 'target_compartment_id' to be a str")
-        if target_compartment_id is not None:
-            warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""", DeprecationWarning)
-            pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""")
-
         pulumi.set(__self__, "target_compartment_id", target_compartment_id)
         if target_type and not isinstance(target_type, str):
             raise TypeError("Expected argument 'target_type' to be a str")
@@ -216,6 +212,9 @@ class GetBudgetResult:
         """
         This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
         """
+        warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""", DeprecationWarning)
+        pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""")
+
         return pulumi.get(self, "target_compartment_id")
 
     @property
@@ -322,28 +321,28 @@ def get_budget(budget_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Budget/getBudget:getBudget', __args__, opts=opts, typ=GetBudgetResult).value
 
     return AwaitableGetBudgetResult(
-        actual_spend=__ret__.actual_spend,
-        alert_rule_count=__ret__.alert_rule_count,
-        amount=__ret__.amount,
-        budget_id=__ret__.budget_id,
-        budget_processing_period_start_offset=__ret__.budget_processing_period_start_offset,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        forecasted_spend=__ret__.forecasted_spend,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        processing_period_type=__ret__.processing_period_type,
-        reset_period=__ret__.reset_period,
-        state=__ret__.state,
-        target_compartment_id=__ret__.target_compartment_id,
-        target_type=__ret__.target_type,
-        targets=__ret__.targets,
-        time_created=__ret__.time_created,
-        time_spend_computed=__ret__.time_spend_computed,
-        time_updated=__ret__.time_updated,
-        version=__ret__.version)
+        actual_spend=pulumi.get(__ret__, 'actual_spend'),
+        alert_rule_count=pulumi.get(__ret__, 'alert_rule_count'),
+        amount=pulumi.get(__ret__, 'amount'),
+        budget_id=pulumi.get(__ret__, 'budget_id'),
+        budget_processing_period_start_offset=pulumi.get(__ret__, 'budget_processing_period_start_offset'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        forecasted_spend=pulumi.get(__ret__, 'forecasted_spend'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        processing_period_type=pulumi.get(__ret__, 'processing_period_type'),
+        reset_period=pulumi.get(__ret__, 'reset_period'),
+        state=pulumi.get(__ret__, 'state'),
+        target_compartment_id=pulumi.get(__ret__, 'target_compartment_id'),
+        target_type=pulumi.get(__ret__, 'target_type'),
+        targets=pulumi.get(__ret__, 'targets'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_spend_computed=pulumi.get(__ret__, 'time_spend_computed'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_budget)

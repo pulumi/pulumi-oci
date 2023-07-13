@@ -155,13 +155,13 @@ def get_sddcs(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Ocvp/getSddcs:getSddcs', __args__, opts=opts, typ=GetSddcsResult).value
 
     return AwaitableGetSddcsResult(
-        compartment_id=__ret__.compartment_id,
-        compute_availability_domain=__ret__.compute_availability_domain,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        sddc_collections=__ret__.sddc_collections,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compute_availability_domain=pulumi.get(__ret__, 'compute_availability_domain'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        sddc_collections=pulumi.get(__ret__, 'sddc_collections'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_sddcs)

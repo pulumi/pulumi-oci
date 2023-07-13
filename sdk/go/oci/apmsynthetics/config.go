@@ -46,12 +46,23 @@ import (
 //				},
 //				BatchIntervalInSeconds: pulumi.Any(_var.Monitor_batch_interval_in_seconds),
 //				Configuration: &apmsynthetics.ConfigConfigurationArgs{
+//					ClientCertificateDetails: &apmsynthetics.ConfigConfigurationClientCertificateDetailsArgs{
+//						ClientCertificate: &apmsynthetics.ConfigConfigurationClientCertificateDetailsClientCertificateArgs{
+//							Content:  pulumi.Any(_var.Monitor_configuration_client_certificate_details_client_certificate_content),
+//							FileName: pulumi.Any(_var.Monitor_configuration_client_certificate_details_client_certificate_file_name),
+//						},
+//						PrivateKey: &apmsynthetics.ConfigConfigurationClientCertificateDetailsPrivateKeyArgs{
+//							Content:  pulumi.Any(_var.Monitor_configuration_client_certificate_details_private_key_content),
+//							FileName: pulumi.Any(_var.Monitor_configuration_client_certificate_details_private_key_file_name),
+//						},
+//					},
 //					ConfigType: pulumi.Any(_var.Monitor_configuration_config_type),
 //					DnsConfiguration: &apmsynthetics.ConfigConfigurationDnsConfigurationArgs{
 //						IsOverrideDns: pulumi.Any(_var.Monitor_configuration_dns_configuration_is_override_dns),
 //						OverrideDnsIp: pulumi.Any(_var.Monitor_configuration_dns_configuration_override_dns_ip),
 //					},
 //					IsCertificateValidationEnabled: pulumi.Any(_var.Monitor_configuration_is_certificate_validation_enabled),
+//					IsDefaultSnapshotEnabled:       pulumi.Any(_var.Monitor_configuration_is_default_snapshot_enabled),
 //					IsFailureRetried:               pulumi.Any(_var.Monitor_configuration_is_failure_retried),
 //					IsRedirectionEnabled:           pulumi.Any(_var.Monitor_configuration_is_redirection_enabled),
 //					NetworkConfiguration: &apmsynthetics.ConfigConfigurationNetworkConfigurationArgs{
@@ -158,17 +169,17 @@ type Config struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// (Updatable) If isRunNow is enabled, then the monitor will run now.
+	// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
 	IsRunNow pulumi.BoolOutput `pulumi:"isRunNow"`
 	// (Updatable) If runOnce is enabled, then the monitor will run once.
 	IsRunOnce pulumi.BoolOutput `pulumi:"isRunOnce"`
-	// (Updatable) Details used to schedule maintenance window.
+	// (Updatable) Details required to schedule maintenance window.
 	MaintenanceWindowSchedule ConfigMaintenanceWindowScheduleOutput `pulumi:"maintenanceWindowSchedule"`
 	// Type of monitor.
 	MonitorType pulumi.StringOutput `pulumi:"monitorType"`
 	// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds pulumi.IntOutput `pulumi:"repeatIntervalInSeconds"`
-	// (Updatable) Scheduling policy on Vantage points.
+	// (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
 	SchedulingPolicy pulumi.StringOutput `pulumi:"schedulingPolicy"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 	ScriptId pulumi.StringOutput `pulumi:"scriptId"`
@@ -253,17 +264,17 @@ type configState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) If isRunNow is enabled, then the monitor will run now.
+	// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
 	IsRunNow *bool `pulumi:"isRunNow"`
 	// (Updatable) If runOnce is enabled, then the monitor will run once.
 	IsRunOnce *bool `pulumi:"isRunOnce"`
-	// (Updatable) Details used to schedule maintenance window.
+	// (Updatable) Details required to schedule maintenance window.
 	MaintenanceWindowSchedule *ConfigMaintenanceWindowSchedule `pulumi:"maintenanceWindowSchedule"`
 	// Type of monitor.
 	MonitorType *string `pulumi:"monitorType"`
 	// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds *int `pulumi:"repeatIntervalInSeconds"`
-	// (Updatable) Scheduling policy on Vantage points.
+	// (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
 	SchedulingPolicy *string `pulumi:"schedulingPolicy"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 	ScriptId *string `pulumi:"scriptId"`
@@ -305,17 +316,17 @@ type ConfigState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable) If isRunNow is enabled, then the monitor will run now.
+	// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
 	IsRunNow pulumi.BoolPtrInput
 	// (Updatable) If runOnce is enabled, then the monitor will run once.
 	IsRunOnce pulumi.BoolPtrInput
-	// (Updatable) Details used to schedule maintenance window.
+	// (Updatable) Details required to schedule maintenance window.
 	MaintenanceWindowSchedule ConfigMaintenanceWindowSchedulePtrInput
 	// Type of monitor.
 	MonitorType pulumi.StringPtrInput
 	// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds pulumi.IntPtrInput
-	// (Updatable) Scheduling policy on Vantage points.
+	// (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
 	SchedulingPolicy pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 	ScriptId pulumi.StringPtrInput
@@ -361,17 +372,17 @@ type configArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) If isRunNow is enabled, then the monitor will run now.
+	// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
 	IsRunNow *bool `pulumi:"isRunNow"`
 	// (Updatable) If runOnce is enabled, then the monitor will run once.
 	IsRunOnce *bool `pulumi:"isRunOnce"`
-	// (Updatable) Details used to schedule maintenance window.
+	// (Updatable) Details required to schedule maintenance window.
 	MaintenanceWindowSchedule *ConfigMaintenanceWindowSchedule `pulumi:"maintenanceWindowSchedule"`
 	// Type of monitor.
 	MonitorType string `pulumi:"monitorType"`
 	// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds int `pulumi:"repeatIntervalInSeconds"`
-	// (Updatable) Scheduling policy on Vantage points.
+	// (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
 	SchedulingPolicy *string `pulumi:"schedulingPolicy"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 	ScriptId *string `pulumi:"scriptId"`
@@ -408,17 +419,17 @@ type ConfigArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable) If isRunNow is enabled, then the monitor will run now.
+	// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
 	IsRunNow pulumi.BoolPtrInput
 	// (Updatable) If runOnce is enabled, then the monitor will run once.
 	IsRunOnce pulumi.BoolPtrInput
-	// (Updatable) Details used to schedule maintenance window.
+	// (Updatable) Details required to schedule maintenance window.
 	MaintenanceWindowSchedule ConfigMaintenanceWindowSchedulePtrInput
 	// Type of monitor.
 	MonitorType pulumi.StringInput
 	// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds pulumi.IntInput
-	// (Updatable) Scheduling policy on Vantage points.
+	// (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
 	SchedulingPolicy pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 	ScriptId pulumi.StringPtrInput
@@ -561,7 +572,7 @@ func (o ConfigOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Config) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) If isRunNow is enabled, then the monitor will run now.
+// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
 func (o ConfigOutput) IsRunNow() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Config) pulumi.BoolOutput { return v.IsRunNow }).(pulumi.BoolOutput)
 }
@@ -571,7 +582,7 @@ func (o ConfigOutput) IsRunOnce() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Config) pulumi.BoolOutput { return v.IsRunOnce }).(pulumi.BoolOutput)
 }
 
-// (Updatable) Details used to schedule maintenance window.
+// (Updatable) Details required to schedule maintenance window.
 func (o ConfigOutput) MaintenanceWindowSchedule() ConfigMaintenanceWindowScheduleOutput {
 	return o.ApplyT(func(v *Config) ConfigMaintenanceWindowScheduleOutput { return v.MaintenanceWindowSchedule }).(ConfigMaintenanceWindowScheduleOutput)
 }
@@ -586,7 +597,7 @@ func (o ConfigOutput) RepeatIntervalInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v *Config) pulumi.IntOutput { return v.RepeatIntervalInSeconds }).(pulumi.IntOutput)
 }
 
-// (Updatable) Scheduling policy on Vantage points.
+// (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
 func (o ConfigOutput) SchedulingPolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.SchedulingPolicy }).(pulumi.StringOutput)
 }

@@ -233,20 +233,20 @@ def get_key_version(key_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Kms/getKeyVersion:getKeyVersion', __args__, opts=opts, typ=GetKeyVersionResult).value
 
     return AwaitableGetKeyVersionResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        is_primary=__ret__.is_primary,
-        key_id=__ret__.key_id,
-        key_version_id=__ret__.key_version_id,
-        management_endpoint=__ret__.management_endpoint,
-        public_key=__ret__.public_key,
-        replica_details=__ret__.replica_details,
-        restored_from_key_id=__ret__.restored_from_key_id,
-        restored_from_key_version_id=__ret__.restored_from_key_version_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_of_deletion=__ret__.time_of_deletion,
-        vault_id=__ret__.vault_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        is_primary=pulumi.get(__ret__, 'is_primary'),
+        key_id=pulumi.get(__ret__, 'key_id'),
+        key_version_id=pulumi.get(__ret__, 'key_version_id'),
+        management_endpoint=pulumi.get(__ret__, 'management_endpoint'),
+        public_key=pulumi.get(__ret__, 'public_key'),
+        replica_details=pulumi.get(__ret__, 'replica_details'),
+        restored_from_key_id=pulumi.get(__ret__, 'restored_from_key_id'),
+        restored_from_key_version_id=pulumi.get(__ret__, 'restored_from_key_version_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
+        vault_id=pulumi.get(__ret__, 'vault_id'))
 
 
 @_utilities.lift_output_func(get_key_version)

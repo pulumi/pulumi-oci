@@ -178,17 +178,17 @@ def get_instance_configuration(instance_configuration_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getInstanceConfiguration:getInstanceConfiguration', __args__, opts=opts, typ=GetInstanceConfigurationResult).value
 
     return AwaitableGetInstanceConfigurationResult(
-        compartment_id=__ret__.compartment_id,
-        deferred_fields=__ret__.deferred_fields,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        instance_configuration_id=__ret__.instance_configuration_id,
-        instance_details=__ret__.instance_details,
-        instance_id=__ret__.instance_id,
-        source=__ret__.source,
-        time_created=__ret__.time_created)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        deferred_fields=pulumi.get(__ret__, 'deferred_fields'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        instance_configuration_id=pulumi.get(__ret__, 'instance_configuration_id'),
+        instance_details=pulumi.get(__ret__, 'instance_details'),
+        instance_id=pulumi.get(__ret__, 'instance_id'),
+        source=pulumi.get(__ret__, 'source'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_instance_configuration)

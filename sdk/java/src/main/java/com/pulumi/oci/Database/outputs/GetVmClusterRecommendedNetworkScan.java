@@ -22,7 +22,7 @@ public final class GetVmClusterRecommendedNetworkScan {
      */
     private List<String> ips;
     /**
-     * @return The SCAN TCPIP port. Default is 1521.
+     * @return **Deprecated.** This field is deprecated. You may use &#39;scanListenerPortTcp&#39; to specify the port. The SCAN TCPIP port. Default is 1521.
      * 
      */
     private Integer port;
@@ -53,7 +53,7 @@ public final class GetVmClusterRecommendedNetworkScan {
         return this.ips;
     }
     /**
-     * @return The SCAN TCPIP port. Default is 1521.
+     * @return **Deprecated.** This field is deprecated. You may use &#39;scanListenerPortTcp&#39; to specify the port. The SCAN TCPIP port. Default is 1521.
      * 
      */
     public Integer port() {

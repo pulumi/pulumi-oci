@@ -131,12 +131,12 @@ def get_image_shape(image_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getImageShape:getImageShape', __args__, opts=opts, typ=GetImageShapeResult).value
 
     return AwaitableGetImageShapeResult(
-        id=__ret__.id,
-        image_id=__ret__.image_id,
-        memory_constraints=__ret__.memory_constraints,
-        ocpu_constraints=__ret__.ocpu_constraints,
-        shape=__ret__.shape,
-        shape_name=__ret__.shape_name)
+        id=pulumi.get(__ret__, 'id'),
+        image_id=pulumi.get(__ret__, 'image_id'),
+        memory_constraints=pulumi.get(__ret__, 'memory_constraints'),
+        ocpu_constraints=pulumi.get(__ret__, 'ocpu_constraints'),
+        shape=pulumi.get(__ret__, 'shape'),
+        shape_name=pulumi.get(__ret__, 'shape_name'))
 
 
 @_utilities.lift_output_func(get_image_shape)

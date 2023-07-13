@@ -184,17 +184,17 @@ def get_objects(bucket: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ObjectStorage/getObjects:getObjects', __args__, opts=opts, typ=GetObjectsResult).value
 
     return AwaitableGetObjectsResult(
-        bucket=__ret__.bucket,
-        delimiter=__ret__.delimiter,
-        end=__ret__.end,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        namespace=__ret__.namespace,
-        objects=__ret__.objects,
-        prefix=__ret__.prefix,
-        prefixes=__ret__.prefixes,
-        start=__ret__.start,
-        start_after=__ret__.start_after)
+        bucket=pulumi.get(__ret__, 'bucket'),
+        delimiter=pulumi.get(__ret__, 'delimiter'),
+        end=pulumi.get(__ret__, 'end'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        objects=pulumi.get(__ret__, 'objects'),
+        prefix=pulumi.get(__ret__, 'prefix'),
+        prefixes=pulumi.get(__ret__, 'prefixes'),
+        start=pulumi.get(__ret__, 'start'),
+        start_after=pulumi.get(__ret__, 'start_after'))
 
 
 @_utilities.lift_output_func(get_objects)

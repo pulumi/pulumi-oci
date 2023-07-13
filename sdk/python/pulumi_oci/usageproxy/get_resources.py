@@ -130,12 +130,12 @@ def get_resources(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:UsageProxy/getResources:getResources', __args__, opts=opts, typ=GetResourcesResult).value
 
     return AwaitableGetResourcesResult(
-        compartment_id=__ret__.compartment_id,
-        entitlement_id=__ret__.entitlement_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        resources_collections=__ret__.resources_collections,
-        service_name=__ret__.service_name)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        entitlement_id=pulumi.get(__ret__, 'entitlement_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        resources_collections=pulumi.get(__ret__, 'resources_collections'),
+        service_name=pulumi.get(__ret__, 'service_name'))
 
 
 @_utilities.lift_output_func(get_resources)

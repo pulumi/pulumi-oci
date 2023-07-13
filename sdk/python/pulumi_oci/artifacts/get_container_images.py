@@ -225,18 +225,18 @@ def get_container_images(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Artifacts/getContainerImages:getContainerImages', __args__, opts=opts, typ=GetContainerImagesResult).value
 
     return AwaitableGetContainerImagesResult(
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        container_image_collections=__ret__.container_image_collections,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        image_id=__ret__.image_id,
-        is_versioned=__ret__.is_versioned,
-        repository_id=__ret__.repository_id,
-        repository_name=__ret__.repository_name,
-        state=__ret__.state,
-        version=__ret__.version)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        container_image_collections=pulumi.get(__ret__, 'container_image_collections'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        image_id=pulumi.get(__ret__, 'image_id'),
+        is_versioned=pulumi.get(__ret__, 'is_versioned'),
+        repository_id=pulumi.get(__ret__, 'repository_id'),
+        repository_name=pulumi.get(__ret__, 'repository_name'),
+        state=pulumi.get(__ret__, 'state'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_container_images)

@@ -162,14 +162,14 @@ def get_list_jre_usage(application_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Jms/getListJreUsage:getListJreUsage', __args__, opts=opts, typ=GetListJreUsageResult).value
 
     return AwaitableGetListJreUsageResult(
-        application_id=__ret__.application_id,
-        application_name=__ret__.application_name,
-        compartment_id=__ret__.compartment_id,
-        host_id=__ret__.host_id,
-        id=__ret__.id,
-        items=__ret__.items,
-        time_end=__ret__.time_end,
-        time_start=__ret__.time_start)
+        application_id=pulumi.get(__ret__, 'application_id'),
+        application_name=pulumi.get(__ret__, 'application_name'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        host_id=pulumi.get(__ret__, 'host_id'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        time_end=pulumi.get(__ret__, 'time_end'),
+        time_start=pulumi.get(__ret__, 'time_start'))
 
 
 @_utilities.lift_output_func(get_list_jre_usage)

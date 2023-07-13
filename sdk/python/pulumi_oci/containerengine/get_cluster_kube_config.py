@@ -129,12 +129,12 @@ def get_cluster_kube_config(cluster_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ContainerEngine/getClusterKubeConfig:getClusterKubeConfig', __args__, opts=opts, typ=GetClusterKubeConfigResult).value
 
     return AwaitableGetClusterKubeConfigResult(
-        cluster_id=__ret__.cluster_id,
-        content=__ret__.content,
-        endpoint=__ret__.endpoint,
-        expiration=__ret__.expiration,
-        id=__ret__.id,
-        token_version=__ret__.token_version)
+        cluster_id=pulumi.get(__ret__, 'cluster_id'),
+        content=pulumi.get(__ret__, 'content'),
+        endpoint=pulumi.get(__ret__, 'endpoint'),
+        expiration=pulumi.get(__ret__, 'expiration'),
+        id=pulumi.get(__ret__, 'id'),
+        token_version=pulumi.get(__ret__, 'token_version'))
 
 
 @_utilities.lift_output_func(get_cluster_kube_config)

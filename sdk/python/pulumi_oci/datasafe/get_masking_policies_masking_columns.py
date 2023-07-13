@@ -316,24 +316,24 @@ def get_masking_policies_masking_columns(column_names: Optional[Sequence[str]] =
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getMaskingPoliciesMaskingColumns:getMaskingPoliciesMaskingColumns', __args__, opts=opts, typ=GetMaskingPoliciesMaskingColumnsResult).value
 
     return AwaitableGetMaskingPoliciesMaskingColumnsResult(
-        column_names=__ret__.column_names,
-        data_types=__ret__.data_types,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_masking_enabled=__ret__.is_masking_enabled,
-        is_seed_required=__ret__.is_seed_required,
-        masking_column_collections=__ret__.masking_column_collections,
-        masking_column_groups=__ret__.masking_column_groups,
-        masking_column_lifecycle_state=__ret__.masking_column_lifecycle_state,
-        masking_policy_id=__ret__.masking_policy_id,
-        object_types=__ret__.object_types,
-        objects=__ret__.objects,
-        schema_names=__ret__.schema_names,
-        sensitive_type_id=__ret__.sensitive_type_id,
-        time_created_greater_than_or_equal_to=__ret__.time_created_greater_than_or_equal_to,
-        time_created_less_than=__ret__.time_created_less_than,
-        time_updated_greater_than_or_equal_to=__ret__.time_updated_greater_than_or_equal_to,
-        time_updated_less_than=__ret__.time_updated_less_than)
+        column_names=pulumi.get(__ret__, 'column_names'),
+        data_types=pulumi.get(__ret__, 'data_types'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_masking_enabled=pulumi.get(__ret__, 'is_masking_enabled'),
+        is_seed_required=pulumi.get(__ret__, 'is_seed_required'),
+        masking_column_collections=pulumi.get(__ret__, 'masking_column_collections'),
+        masking_column_groups=pulumi.get(__ret__, 'masking_column_groups'),
+        masking_column_lifecycle_state=pulumi.get(__ret__, 'masking_column_lifecycle_state'),
+        masking_policy_id=pulumi.get(__ret__, 'masking_policy_id'),
+        object_types=pulumi.get(__ret__, 'object_types'),
+        objects=pulumi.get(__ret__, 'objects'),
+        schema_names=pulumi.get(__ret__, 'schema_names'),
+        sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'),
+        time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'),
+        time_updated_greater_than_or_equal_to=pulumi.get(__ret__, 'time_updated_greater_than_or_equal_to'),
+        time_updated_less_than=pulumi.get(__ret__, 'time_updated_less_than'))
 
 
 @_utilities.lift_output_func(get_masking_policies_masking_columns)

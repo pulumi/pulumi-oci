@@ -132,12 +132,12 @@ def get_managed_databases_user_proxy_users(filters: Optional[Sequence[pulumi.Inp
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabasesUserProxyUsers:getManagedDatabasesUserProxyUsers', __args__, opts=opts, typ=GetManagedDatabasesUserProxyUsersResult).value
 
     return AwaitableGetManagedDatabasesUserProxyUsersResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        managed_database_id=__ret__.managed_database_id,
-        name=__ret__.name,
-        proxy_user_collections=__ret__.proxy_user_collections,
-        user_name=__ret__.user_name)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        name=pulumi.get(__ret__, 'name'),
+        proxy_user_collections=pulumi.get(__ret__, 'proxy_user_collections'),
+        user_name=pulumi.get(__ret__, 'user_name'))
 
 
 @_utilities.lift_output_func(get_managed_databases_user_proxy_users)

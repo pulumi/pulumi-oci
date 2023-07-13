@@ -116,11 +116,11 @@ def get_managed_database_optimizer_statistics_advisor_execution_script(execution
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript:getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript', __args__, opts=opts, typ=GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult).value
 
     return AwaitableGetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult(
-        execution_name=__ret__.execution_name,
-        id=__ret__.id,
-        managed_database_id=__ret__.managed_database_id,
-        script=__ret__.script,
-        task_name=__ret__.task_name)
+        execution_name=pulumi.get(__ret__, 'execution_name'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        script=pulumi.get(__ret__, 'script'),
+        task_name=pulumi.get(__ret__, 'task_name'))
 
 
 @_utilities.lift_output_func(get_managed_database_optimizer_statistics_advisor_execution_script)

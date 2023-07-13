@@ -103,10 +103,10 @@ def get_db_system_compute_performances(db_system_shape: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances', __args__, opts=opts, typ=GetDbSystemComputePerformancesResult).value
 
     return AwaitableGetDbSystemComputePerformancesResult(
-        db_system_compute_performances=__ret__.db_system_compute_performances,
-        db_system_shape=__ret__.db_system_shape,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        db_system_compute_performances=pulumi.get(__ret__, 'db_system_compute_performances'),
+        db_system_shape=pulumi.get(__ret__, 'db_system_shape'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_db_system_compute_performances)

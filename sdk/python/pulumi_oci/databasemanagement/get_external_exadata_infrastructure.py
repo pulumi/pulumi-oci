@@ -287,26 +287,26 @@ def get_external_exadata_infrastructure(external_exadata_infrastructure_id: Opti
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalExadataInfrastructure:getExternalExadataInfrastructure', __args__, opts=opts, typ=GetExternalExadataInfrastructureResult).value
 
     return AwaitableGetExternalExadataInfrastructureResult(
-        additional_details=__ret__.additional_details,
-        compartment_id=__ret__.compartment_id,
-        database_compartments=__ret__.database_compartments,
-        database_systems=__ret__.database_systems,
-        db_system_ids=__ret__.db_system_ids,
-        discovery_key=__ret__.discovery_key,
-        display_name=__ret__.display_name,
-        external_exadata_infrastructure_id=__ret__.external_exadata_infrastructure_id,
-        id=__ret__.id,
-        internal_id=__ret__.internal_id,
-        license_model=__ret__.license_model,
-        lifecycle_details=__ret__.lifecycle_details,
-        rack_size=__ret__.rack_size,
-        state=__ret__.state,
-        status=__ret__.status,
-        storage_grids=__ret__.storage_grids,
-        storage_server_names=__ret__.storage_server_names,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        version=__ret__.version)
+        additional_details=pulumi.get(__ret__, 'additional_details'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        database_compartments=pulumi.get(__ret__, 'database_compartments'),
+        database_systems=pulumi.get(__ret__, 'database_systems'),
+        db_system_ids=pulumi.get(__ret__, 'db_system_ids'),
+        discovery_key=pulumi.get(__ret__, 'discovery_key'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        external_exadata_infrastructure_id=pulumi.get(__ret__, 'external_exadata_infrastructure_id'),
+        id=pulumi.get(__ret__, 'id'),
+        internal_id=pulumi.get(__ret__, 'internal_id'),
+        license_model=pulumi.get(__ret__, 'license_model'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        rack_size=pulumi.get(__ret__, 'rack_size'),
+        state=pulumi.get(__ret__, 'state'),
+        status=pulumi.get(__ret__, 'status'),
+        storage_grids=pulumi.get(__ret__, 'storage_grids'),
+        storage_server_names=pulumi.get(__ret__, 'storage_server_names'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_external_exadata_infrastructure)

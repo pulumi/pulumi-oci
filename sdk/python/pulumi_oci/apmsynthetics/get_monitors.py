@@ -106,7 +106,7 @@ class GetMonitorsResult:
     @pulumi.getter(name="monitorType")
     def monitor_type(self) -> Optional[str]:
         """
-        Type of the monitor.
+        Type of monitor.
         """
         return pulumi.get(self, "monitor_type")
 
@@ -206,17 +206,17 @@ def get_monitors(apm_domain_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApmSynthetics/getMonitors:getMonitors', __args__, opts=opts, typ=GetMonitorsResult).value
 
     return AwaitableGetMonitorsResult(
-        apm_domain_id=__ret__.apm_domain_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_maintenance_window_active=__ret__.is_maintenance_window_active,
-        is_maintenance_window_set=__ret__.is_maintenance_window_set,
-        monitor_collections=__ret__.monitor_collections,
-        monitor_type=__ret__.monitor_type,
-        script_id=__ret__.script_id,
-        status=__ret__.status,
-        vantage_point=__ret__.vantage_point)
+        apm_domain_id=pulumi.get(__ret__, 'apm_domain_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_maintenance_window_active=pulumi.get(__ret__, 'is_maintenance_window_active'),
+        is_maintenance_window_set=pulumi.get(__ret__, 'is_maintenance_window_set'),
+        monitor_collections=pulumi.get(__ret__, 'monitor_collections'),
+        monitor_type=pulumi.get(__ret__, 'monitor_type'),
+        script_id=pulumi.get(__ret__, 'script_id'),
+        status=pulumi.get(__ret__, 'status'),
+        vantage_point=pulumi.get(__ret__, 'vantage_point'))
 
 
 @_utilities.lift_output_func(get_monitors)

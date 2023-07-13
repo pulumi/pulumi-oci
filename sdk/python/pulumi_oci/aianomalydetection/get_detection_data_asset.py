@@ -223,20 +223,20 @@ def get_detection_data_asset(data_asset_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:AiAnomalyDetection/getDetectionDataAsset:getDetectionDataAsset', __args__, opts=opts, typ=GetDetectionDataAssetResult).value
 
     return AwaitableGetDetectionDataAssetResult(
-        compartment_id=__ret__.compartment_id,
-        data_asset_id=__ret__.data_asset_id,
-        data_source_details=__ret__.data_source_details,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        private_endpoint_id=__ret__.private_endpoint_id,
-        project_id=__ret__.project_id,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        data_asset_id=pulumi.get(__ret__, 'data_asset_id'),
+        data_source_details=pulumi.get(__ret__, 'data_source_details'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        private_endpoint_id=pulumi.get(__ret__, 'private_endpoint_id'),
+        project_id=pulumi.get(__ret__, 'project_id'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_detection_data_asset)

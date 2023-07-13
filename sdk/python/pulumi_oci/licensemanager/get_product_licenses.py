@@ -119,11 +119,11 @@ def get_product_licenses(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LicenseManager/getProductLicenses:getProductLicenses', __args__, opts=opts, typ=GetProductLicensesResult).value
 
     return AwaitableGetProductLicensesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_compartment_id_in_subtree=__ret__.is_compartment_id_in_subtree,
-        product_license_collections=__ret__.product_license_collections)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_compartment_id_in_subtree=pulumi.get(__ret__, 'is_compartment_id_in_subtree'),
+        product_license_collections=pulumi.get(__ret__, 'product_license_collections'))
 
 
 @_utilities.lift_output_func(get_product_licenses)

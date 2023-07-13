@@ -152,13 +152,13 @@ def get_ca_bundles(ca_bundle_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CertificatesManagement/getCaBundles:getCaBundles', __args__, opts=opts, typ=GetCaBundlesResult).value
 
     return AwaitableGetCaBundlesResult(
-        ca_bundle_collections=__ret__.ca_bundle_collections,
-        ca_bundle_id=__ret__.ca_bundle_id,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        state=__ret__.state)
+        ca_bundle_collections=pulumi.get(__ret__, 'ca_bundle_collections'),
+        ca_bundle_id=pulumi.get(__ret__, 'ca_bundle_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_ca_bundles)

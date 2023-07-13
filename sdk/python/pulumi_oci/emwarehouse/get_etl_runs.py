@@ -135,12 +135,12 @@ def get_etl_runs(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:EmWarehouse/getEtlRuns:getEtlRuns', __args__, opts=opts, typ=GetEtlRunsResult).value
 
     return AwaitableGetEtlRunsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        em_warehouse_id=__ret__.em_warehouse_id,
-        etl_run_collections=__ret__.etl_run_collections,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        em_warehouse_id=pulumi.get(__ret__, 'em_warehouse_id'),
+        etl_run_collections=pulumi.get(__ret__, 'etl_run_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_etl_runs)

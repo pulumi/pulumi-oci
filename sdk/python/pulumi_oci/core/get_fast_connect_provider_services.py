@@ -109,10 +109,10 @@ def get_fast_connect_provider_services(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getFastConnectProviderServices:getFastConnectProviderServices', __args__, opts=opts, typ=GetFastConnectProviderServicesResult).value
 
     return AwaitableGetFastConnectProviderServicesResult(
-        compartment_id=__ret__.compartment_id,
-        fast_connect_provider_services=__ret__.fast_connect_provider_services,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        fast_connect_provider_services=pulumi.get(__ret__, 'fast_connect_provider_services'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_fast_connect_provider_services)

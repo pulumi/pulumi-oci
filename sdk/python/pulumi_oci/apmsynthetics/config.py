@@ -52,10 +52,10 @@ class ConfigArgs:
         :param pulumi.Input['ConfigConfigurationArgs'] configuration: (Updatable) Details of monitor configuration.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run now.
+        :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
-        :param pulumi.Input['ConfigMaintenanceWindowScheduleArgs'] maintenance_window_schedule: (Updatable) Details used to schedule maintenance window.
-        :param pulumi.Input[str] scheduling_policy: (Updatable) Scheduling policy on Vantage points.
+        :param pulumi.Input['ConfigMaintenanceWindowScheduleArgs'] maintenance_window_schedule: (Updatable) Details required to schedule maintenance window.
+        :param pulumi.Input[str] scheduling_policy: (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
         :param pulumi.Input[str] script_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
         :param pulumi.Input[str] script_name: Name of the script.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterArgs']]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
@@ -227,7 +227,7 @@ class ConfigArgs:
     @pulumi.getter(name="isRunNow")
     def is_run_now(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) If isRunNow is enabled, then the monitor will run now.
+        (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         """
         return pulumi.get(self, "is_run_now")
 
@@ -251,7 +251,7 @@ class ConfigArgs:
     @pulumi.getter(name="maintenanceWindowSchedule")
     def maintenance_window_schedule(self) -> Optional[pulumi.Input['ConfigMaintenanceWindowScheduleArgs']]:
         """
-        (Updatable) Details used to schedule maintenance window.
+        (Updatable) Details required to schedule maintenance window.
         """
         return pulumi.get(self, "maintenance_window_schedule")
 
@@ -263,7 +263,7 @@ class ConfigArgs:
     @pulumi.getter(name="schedulingPolicy")
     def scheduling_policy(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Scheduling policy on Vantage points.
+        (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
         """
         return pulumi.get(self, "scheduling_policy")
 
@@ -379,12 +379,12 @@ class _ConfigState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run now.
+        :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
-        :param pulumi.Input['ConfigMaintenanceWindowScheduleArgs'] maintenance_window_schedule: (Updatable) Details used to schedule maintenance window.
+        :param pulumi.Input['ConfigMaintenanceWindowScheduleArgs'] maintenance_window_schedule: (Updatable) Details required to schedule maintenance window.
         :param pulumi.Input[str] monitor_type: Type of monitor.
         :param pulumi.Input[int] repeat_interval_in_seconds: (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
-        :param pulumi.Input[str] scheduling_policy: (Updatable) Scheduling policy on Vantage points.
+        :param pulumi.Input[str] scheduling_policy: (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
         :param pulumi.Input[str] script_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
         :param pulumi.Input[str] script_name: Name of the script.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterArgs']]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
@@ -535,7 +535,7 @@ class _ConfigState:
     @pulumi.getter(name="isRunNow")
     def is_run_now(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) If isRunNow is enabled, then the monitor will run now.
+        (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         """
         return pulumi.get(self, "is_run_now")
 
@@ -559,7 +559,7 @@ class _ConfigState:
     @pulumi.getter(name="maintenanceWindowSchedule")
     def maintenance_window_schedule(self) -> Optional[pulumi.Input['ConfigMaintenanceWindowScheduleArgs']]:
         """
-        (Updatable) Details used to schedule maintenance window.
+        (Updatable) Details required to schedule maintenance window.
         """
         return pulumi.get(self, "maintenance_window_schedule")
 
@@ -595,7 +595,7 @@ class _ConfigState:
     @pulumi.getter(name="schedulingPolicy")
     def scheduling_policy(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Scheduling policy on Vantage points.
+        (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
         """
         return pulumi.get(self, "scheduling_policy")
 
@@ -780,12 +780,23 @@ class Config(pulumi.CustomResource):
             ),
             batch_interval_in_seconds=var["monitor_batch_interval_in_seconds"],
             configuration=oci.apm_synthetics.ConfigConfigurationArgs(
+                client_certificate_details=oci.apm_synthetics.ConfigConfigurationClientCertificateDetailsArgs(
+                    client_certificate=oci.apm_synthetics.ConfigConfigurationClientCertificateDetailsClientCertificateArgs(
+                        content=var["monitor_configuration_client_certificate_details_client_certificate_content"],
+                        file_name=var["monitor_configuration_client_certificate_details_client_certificate_file_name"],
+                    ),
+                    private_key=oci.apm_synthetics.ConfigConfigurationClientCertificateDetailsPrivateKeyArgs(
+                        content=var["monitor_configuration_client_certificate_details_private_key_content"],
+                        file_name=var["monitor_configuration_client_certificate_details_private_key_file_name"],
+                    ),
+                ),
                 config_type=var["monitor_configuration_config_type"],
                 dns_configuration=oci.apm_synthetics.ConfigConfigurationDnsConfigurationArgs(
                     is_override_dns=var["monitor_configuration_dns_configuration_is_override_dns"],
                     override_dns_ip=var["monitor_configuration_dns_configuration_override_dns_ip"],
                 ),
                 is_certificate_validation_enabled=var["monitor_configuration_is_certificate_validation_enabled"],
+                is_default_snapshot_enabled=var["monitor_configuration_is_default_snapshot_enabled"],
                 is_failure_retried=var["monitor_configuration_is_failure_retried"],
                 is_redirection_enabled=var["monitor_configuration_is_redirection_enabled"],
                 network_configuration=oci.apm_synthetics.ConfigConfigurationNetworkConfigurationArgs(
@@ -865,12 +876,12 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run now.
+        :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
-        :param pulumi.Input[pulumi.InputType['ConfigMaintenanceWindowScheduleArgs']] maintenance_window_schedule: (Updatable) Details used to schedule maintenance window.
+        :param pulumi.Input[pulumi.InputType['ConfigMaintenanceWindowScheduleArgs']] maintenance_window_schedule: (Updatable) Details required to schedule maintenance window.
         :param pulumi.Input[str] monitor_type: Type of monitor.
         :param pulumi.Input[int] repeat_interval_in_seconds: (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
-        :param pulumi.Input[str] scheduling_policy: (Updatable) Scheduling policy on Vantage points.
+        :param pulumi.Input[str] scheduling_policy: (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
         :param pulumi.Input[str] script_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
         :param pulumi.Input[str] script_name: Name of the script.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigScriptParameterArgs']]]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
@@ -915,12 +926,23 @@ class Config(pulumi.CustomResource):
             ),
             batch_interval_in_seconds=var["monitor_batch_interval_in_seconds"],
             configuration=oci.apm_synthetics.ConfigConfigurationArgs(
+                client_certificate_details=oci.apm_synthetics.ConfigConfigurationClientCertificateDetailsArgs(
+                    client_certificate=oci.apm_synthetics.ConfigConfigurationClientCertificateDetailsClientCertificateArgs(
+                        content=var["monitor_configuration_client_certificate_details_client_certificate_content"],
+                        file_name=var["monitor_configuration_client_certificate_details_client_certificate_file_name"],
+                    ),
+                    private_key=oci.apm_synthetics.ConfigConfigurationClientCertificateDetailsPrivateKeyArgs(
+                        content=var["monitor_configuration_client_certificate_details_private_key_content"],
+                        file_name=var["monitor_configuration_client_certificate_details_private_key_file_name"],
+                    ),
+                ),
                 config_type=var["monitor_configuration_config_type"],
                 dns_configuration=oci.apm_synthetics.ConfigConfigurationDnsConfigurationArgs(
                     is_override_dns=var["monitor_configuration_dns_configuration_is_override_dns"],
                     override_dns_ip=var["monitor_configuration_dns_configuration_override_dns_ip"],
                 ),
                 is_certificate_validation_enabled=var["monitor_configuration_is_certificate_validation_enabled"],
+                is_default_snapshot_enabled=var["monitor_configuration_is_default_snapshot_enabled"],
                 is_failure_retried=var["monitor_configuration_is_failure_retried"],
                 is_redirection_enabled=var["monitor_configuration_is_redirection_enabled"],
                 network_configuration=oci.apm_synthetics.ConfigConfigurationNetworkConfigurationArgs(
@@ -1115,12 +1137,12 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run now.
+        :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
-        :param pulumi.Input[pulumi.InputType['ConfigMaintenanceWindowScheduleArgs']] maintenance_window_schedule: (Updatable) Details used to schedule maintenance window.
+        :param pulumi.Input[pulumi.InputType['ConfigMaintenanceWindowScheduleArgs']] maintenance_window_schedule: (Updatable) Details required to schedule maintenance window.
         :param pulumi.Input[str] monitor_type: Type of monitor.
         :param pulumi.Input[int] repeat_interval_in_seconds: (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
-        :param pulumi.Input[str] scheduling_policy: (Updatable) Scheduling policy on Vantage points.
+        :param pulumi.Input[str] scheduling_policy: (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
         :param pulumi.Input[str] script_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
         :param pulumi.Input[str] script_name: Name of the script.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigScriptParameterArgs']]]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
@@ -1225,7 +1247,7 @@ class Config(pulumi.CustomResource):
     @pulumi.getter(name="isRunNow")
     def is_run_now(self) -> pulumi.Output[bool]:
         """
-        (Updatable) If isRunNow is enabled, then the monitor will run now.
+        (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         """
         return pulumi.get(self, "is_run_now")
 
@@ -1241,7 +1263,7 @@ class Config(pulumi.CustomResource):
     @pulumi.getter(name="maintenanceWindowSchedule")
     def maintenance_window_schedule(self) -> pulumi.Output['outputs.ConfigMaintenanceWindowSchedule']:
         """
-        (Updatable) Details used to schedule maintenance window.
+        (Updatable) Details required to schedule maintenance window.
         """
         return pulumi.get(self, "maintenance_window_schedule")
 
@@ -1265,7 +1287,7 @@ class Config(pulumi.CustomResource):
     @pulumi.getter(name="schedulingPolicy")
     def scheduling_policy(self) -> pulumi.Output[str]:
         """
-        (Updatable) Scheduling policy on Vantage points.
+        (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
         """
         return pulumi.get(self, "scheduling_policy")
 

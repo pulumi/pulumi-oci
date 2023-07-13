@@ -145,13 +145,13 @@ def get_managed_databases_database_parameters(filters: Optional[Sequence[pulumi.
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabasesDatabaseParameters:getManagedDatabasesDatabaseParameters', __args__, opts=opts, typ=GetManagedDatabasesDatabaseParametersResult).value
 
     return AwaitableGetManagedDatabasesDatabaseParametersResult(
-        database_parameters_collections=__ret__.database_parameters_collections,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_allowed_values_included=__ret__.is_allowed_values_included,
-        managed_database_id=__ret__.managed_database_id,
-        name=__ret__.name,
-        source=__ret__.source)
+        database_parameters_collections=pulumi.get(__ret__, 'database_parameters_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_allowed_values_included=pulumi.get(__ret__, 'is_allowed_values_included'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        name=pulumi.get(__ret__, 'name'),
+        source=pulumi.get(__ret__, 'source'))
 
 
 @_utilities.lift_output_func(get_managed_databases_database_parameters)

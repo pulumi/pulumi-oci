@@ -222,20 +222,20 @@ def get_agent(agent_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseMigration/getAgent:getAgent', __args__, opts=opts, typ=GetAgentResult).value
 
     return AwaitableGetAgentResult(
-        agent_id=__ret__.agent_id,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        public_key=__ret__.public_key,
-        state=__ret__.state,
-        stream_id=__ret__.stream_id,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        version=__ret__.version)
+        agent_id=pulumi.get(__ret__, 'agent_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        public_key=pulumi.get(__ret__, 'public_key'),
+        state=pulumi.get(__ret__, 'state'),
+        stream_id=pulumi.get(__ret__, 'stream_id'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_agent)

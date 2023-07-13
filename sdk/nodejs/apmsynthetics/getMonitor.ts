@@ -56,7 +56,7 @@ export interface GetMonitorResult {
      */
     readonly availabilityConfigurations: outputs.ApmSynthetics.GetMonitorAvailabilityConfiguration[];
     /**
-     * Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+     * Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
      */
     readonly batchIntervalInSeconds: number;
     /**
@@ -80,7 +80,7 @@ export interface GetMonitorResult {
      */
     readonly id: string;
     /**
-     * If isRunNow is enabled, then the monitor will run now.
+     * If isRunNow is enabled, then the monitor will run immediately.
      */
     readonly isRunNow: boolean;
     /**
@@ -88,12 +88,12 @@ export interface GetMonitorResult {
      */
     readonly isRunOnce: boolean;
     /**
-     * Details used to schedule maintenance window.
+     * Details required to schedule maintenance window.
      */
     readonly maintenanceWindowSchedules: outputs.ApmSynthetics.GetMonitorMaintenanceWindowSchedule[];
     readonly monitorId: string;
     /**
-     * Type of the monitor.
+     * Type of monitor.
      */
     readonly monitorType: string;
     /**
@@ -101,7 +101,7 @@ export interface GetMonitorResult {
      */
     readonly repeatIntervalInSeconds: number;
     /**
-     * Scheduling policy on Vantage points.
+     * Scheduling policy to decide the distribution of monitor executions on vantage points.
      */
     readonly schedulingPolicy: string;
     /**

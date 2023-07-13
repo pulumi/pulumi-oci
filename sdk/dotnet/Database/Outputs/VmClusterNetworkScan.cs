@@ -22,9 +22,9 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Ips;
         /// <summary>
-        /// (Updatable) The SCAN TCPIP port. Default is 1521.
+        /// (Updatable) **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// (Updatable) The SCAN TCPIP port. Default is 1521.
         /// </summary>
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<string> ips,
 
-            int port,
+            int? port,
 
             int? scanListenerPortTcp,
 

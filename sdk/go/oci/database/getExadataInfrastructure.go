@@ -108,10 +108,12 @@ type LookupExadataInfrastructureResult struct {
 	MultiRackConfigurationFile string `pulumi:"multiRackConfigurationFile"`
 	// The netmask for the control plane network.
 	Netmask string `pulumi:"netmask"`
-	// Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+	// Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
 	NetworkBondingModeDetails []GetExadataInfrastructureNetworkBondingModeDetail `pulumi:"networkBondingModeDetails"`
 	// The list of NTP server IP addresses. Maximum of 3 allowed.
 	NtpServers []string `pulumi:"ntpServers"`
+	// The serial number for the Exadata infrastructure.
+	RackSerialNumber string `pulumi:"rackSerialNumber"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
 	Shape string `pulumi:"shape"`
 	// The current lifecycle state of the Exadata infrastructure.
@@ -363,7 +365,7 @@ func (o LookupExadataInfrastructureResultOutput) Netmask() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadataInfrastructureResult) string { return v.Netmask }).(pulumi.StringOutput)
 }
 
-// Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+// Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
 func (o LookupExadataInfrastructureResultOutput) NetworkBondingModeDetails() GetExadataInfrastructureNetworkBondingModeDetailArrayOutput {
 	return o.ApplyT(func(v LookupExadataInfrastructureResult) []GetExadataInfrastructureNetworkBondingModeDetail {
 		return v.NetworkBondingModeDetails
@@ -373,6 +375,11 @@ func (o LookupExadataInfrastructureResultOutput) NetworkBondingModeDetails() Get
 // The list of NTP server IP addresses. Maximum of 3 allowed.
 func (o LookupExadataInfrastructureResultOutput) NtpServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupExadataInfrastructureResult) []string { return v.NtpServers }).(pulumi.StringArrayOutput)
+}
+
+// The serial number for the Exadata infrastructure.
+func (o LookupExadataInfrastructureResultOutput) RackSerialNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExadataInfrastructureResult) string { return v.RackSerialNumber }).(pulumi.StringOutput)
 }
 
 // The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.

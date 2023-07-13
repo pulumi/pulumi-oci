@@ -175,16 +175,16 @@ def get_vm_cluster_update_history_entry(update_history_entry_id: Optional[str] =
     __ret__ = pulumi.runtime.invoke('oci:Database/getVmClusterUpdateHistoryEntry:getVmClusterUpdateHistoryEntry', __args__, opts=opts, typ=GetVmClusterUpdateHistoryEntryResult).value
 
     return AwaitableGetVmClusterUpdateHistoryEntryResult(
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        state=__ret__.state,
-        time_completed=__ret__.time_completed,
-        time_started=__ret__.time_started,
-        update_action=__ret__.update_action,
-        update_history_entry_id=__ret__.update_history_entry_id,
-        update_id=__ret__.update_id,
-        update_type=__ret__.update_type,
-        vm_cluster_id=__ret__.vm_cluster_id)
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        state=pulumi.get(__ret__, 'state'),
+        time_completed=pulumi.get(__ret__, 'time_completed'),
+        time_started=pulumi.get(__ret__, 'time_started'),
+        update_action=pulumi.get(__ret__, 'update_action'),
+        update_history_entry_id=pulumi.get(__ret__, 'update_history_entry_id'),
+        update_id=pulumi.get(__ret__, 'update_id'),
+        update_type=pulumi.get(__ret__, 'update_type'),
+        vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
 
 
 @_utilities.lift_output_func(get_vm_cluster_update_history_entry)

@@ -231,21 +231,21 @@ def get_certificate(certificate_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApiGateway/getCertificate:getCertificate', __args__, opts=opts, typ=GetCertificateResult).value
 
     return AwaitableGetCertificateResult(
-        certificate=__ret__.certificate,
-        certificate_id=__ret__.certificate_id,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        intermediate_certificates=__ret__.intermediate_certificates,
-        lifecycle_details=__ret__.lifecycle_details,
-        private_key=__ret__.private_key,
-        state=__ret__.state,
-        subject_names=__ret__.subject_names,
-        time_created=__ret__.time_created,
-        time_not_valid_after=__ret__.time_not_valid_after,
-        time_updated=__ret__.time_updated)
+        certificate=pulumi.get(__ret__, 'certificate'),
+        certificate_id=pulumi.get(__ret__, 'certificate_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        intermediate_certificates=pulumi.get(__ret__, 'intermediate_certificates'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        private_key=pulumi.get(__ret__, 'private_key'),
+        state=pulumi.get(__ret__, 'state'),
+        subject_names=pulumi.get(__ret__, 'subject_names'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_not_valid_after=pulumi.get(__ret__, 'time_not_valid_after'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_certificate)

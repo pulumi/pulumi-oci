@@ -103,10 +103,10 @@ def get_shapes(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LoadBalancer/getShapes:getShapes', __args__, opts=opts, typ=GetShapesResult).value
 
     return AwaitableGetShapesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        shapes=__ret__.shapes)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        shapes=pulumi.get(__ret__, 'shapes'))
 
 
 @_utilities.lift_output_func(get_shapes)

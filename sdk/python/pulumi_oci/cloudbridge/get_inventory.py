@@ -186,17 +186,17 @@ def get_inventory(inventory_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudBridge/getInventory:getInventory', __args__, opts=opts, typ=GetInventoryResult).value
 
     return AwaitableGetInventoryResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        inventory_id=__ret__.inventory_id,
-        lifecycle_details=__ret__.lifecycle_details,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        inventory_id=pulumi.get(__ret__, 'inventory_id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_inventory)

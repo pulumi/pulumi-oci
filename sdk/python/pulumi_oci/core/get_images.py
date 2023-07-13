@@ -219,17 +219,17 @@ def get_images(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getImages:getImages', __args__, opts=opts, typ=GetImagesResult).value
 
     return AwaitableGetImagesResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        images=__ret__.images,
-        operating_system=__ret__.operating_system,
-        operating_system_version=__ret__.operating_system_version,
-        shape=__ret__.shape,
-        sort_by=__ret__.sort_by,
-        sort_order=__ret__.sort_order,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        images=pulumi.get(__ret__, 'images'),
+        operating_system=pulumi.get(__ret__, 'operating_system'),
+        operating_system_version=pulumi.get(__ret__, 'operating_system_version'),
+        shape=pulumi.get(__ret__, 'shape'),
+        sort_by=pulumi.get(__ret__, 'sort_by'),
+        sort_order=pulumi.get(__ret__, 'sort_order'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_images)

@@ -164,14 +164,14 @@ def get_masking_reports(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getMaskingReports:getMaskingReports', __args__, opts=opts, typ=GetMaskingReportsResult).value
 
     return AwaitableGetMaskingReportsResult(
-        access_level=__ret__.access_level,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        masking_policy_id=__ret__.masking_policy_id,
-        masking_report_collections=__ret__.masking_report_collections,
-        target_id=__ret__.target_id)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        masking_policy_id=pulumi.get(__ret__, 'masking_policy_id'),
+        masking_report_collections=pulumi.get(__ret__, 'masking_report_collections'),
+        target_id=pulumi.get(__ret__, 'target_id'))
 
 
 @_utilities.lift_output_func(get_masking_reports)

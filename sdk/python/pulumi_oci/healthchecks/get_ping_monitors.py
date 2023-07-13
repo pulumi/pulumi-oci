@@ -141,12 +141,12 @@ def get_ping_monitors(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:HealthChecks/getPingMonitors:getPingMonitors', __args__, opts=opts, typ=GetPingMonitorsResult).value
 
     return AwaitableGetPingMonitorsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        home_region=__ret__.home_region,
-        id=__ret__.id,
-        ping_monitors=__ret__.ping_monitors)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        home_region=pulumi.get(__ret__, 'home_region'),
+        id=pulumi.get(__ret__, 'id'),
+        ping_monitors=pulumi.get(__ret__, 'ping_monitors'))
 
 
 @_utilities.lift_output_func(get_ping_monitors)

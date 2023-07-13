@@ -151,13 +151,13 @@ def get_shapes(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Mysql/getShapes:getShapes', __args__, opts=opts, typ=GetShapesResult).value
 
     return AwaitableGetShapesResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_supported_fors=__ret__.is_supported_fors,
-        name=__ret__.name,
-        shapes=__ret__.shapes)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_supported_fors=pulumi.get(__ret__, 'is_supported_fors'),
+        name=pulumi.get(__ret__, 'name'),
+        shapes=pulumi.get(__ret__, 'shapes'))
 
 
 @_utilities.lift_output_func(get_shapes)

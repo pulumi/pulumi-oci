@@ -132,12 +132,12 @@ def get_compute_capacity_reservation_instance_shapes(availability_domain: Option
     __ret__ = pulumi.runtime.invoke('oci:Core/getComputeCapacityReservationInstanceShapes:getComputeCapacityReservationInstanceShapes', __args__, opts=opts, typ=GetComputeCapacityReservationInstanceShapesResult).value
 
     return AwaitableGetComputeCapacityReservationInstanceShapesResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        compute_capacity_reservation_instance_shapes=__ret__.compute_capacity_reservation_instance_shapes,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compute_capacity_reservation_instance_shapes=pulumi.get(__ret__, 'compute_capacity_reservation_instance_shapes'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_compute_capacity_reservation_instance_shapes)

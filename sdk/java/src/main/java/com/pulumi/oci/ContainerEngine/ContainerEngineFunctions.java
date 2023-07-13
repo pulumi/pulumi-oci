@@ -17,6 +17,10 @@ import com.pulumi.oci.ContainerEngine.inputs.GetClusterKubeConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetClusterKubeConfigPlainArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetClusterOptionArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetClusterOptionPlainArgs;
+import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingArgs;
+import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingPlainArgs;
+import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingsArgs;
+import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingsPlainArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetClustersArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetClustersPlainArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetMigrateToNativeVcnStatusArgs;
@@ -44,6 +48,8 @@ import com.pulumi.oci.ContainerEngine.outputs.GetAddonResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetAddonsResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterKubeConfigResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterOptionResult;
+import com.pulumi.oci.ContainerEngine.outputs.GetClusterWorkloadMappingResult;
+import com.pulumi.oci.ContainerEngine.outputs.GetClusterWorkloadMappingsResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetMigrateToNativeVcnStatusResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolOptionResult;
@@ -862,6 +868,322 @@ public final class ContainerEngineFunctions {
      */
     public static CompletableFuture<GetClusterOptionResult> getClusterOptionPlain(GetClusterOptionPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getClusterOption:getClusterOption", TypeShape.of(GetClusterOptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cluster Workload Mapping resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get the specified workloadMapping for a cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterWorkloadMapping = ContainerEngineFunctions.getClusterWorkloadMapping(GetClusterWorkloadMappingArgs.builder()
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .workloadMappingId(oci_containerengine_workload_mapping.test_workload_mapping().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetClusterWorkloadMappingResult> getClusterWorkloadMapping(GetClusterWorkloadMappingArgs args) {
+        return getClusterWorkloadMapping(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cluster Workload Mapping resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get the specified workloadMapping for a cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterWorkloadMapping = ContainerEngineFunctions.getClusterWorkloadMapping(GetClusterWorkloadMappingArgs.builder()
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .workloadMappingId(oci_containerengine_workload_mapping.test_workload_mapping().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetClusterWorkloadMappingResult> getClusterWorkloadMappingPlain(GetClusterWorkloadMappingPlainArgs args) {
+        return getClusterWorkloadMappingPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cluster Workload Mapping resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get the specified workloadMapping for a cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterWorkloadMapping = ContainerEngineFunctions.getClusterWorkloadMapping(GetClusterWorkloadMappingArgs.builder()
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .workloadMappingId(oci_containerengine_workload_mapping.test_workload_mapping().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetClusterWorkloadMappingResult> getClusterWorkloadMapping(GetClusterWorkloadMappingArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getClusterWorkloadMapping:getClusterWorkloadMapping", TypeShape.of(GetClusterWorkloadMappingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cluster Workload Mapping resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get the specified workloadMapping for a cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterWorkloadMapping = ContainerEngineFunctions.getClusterWorkloadMapping(GetClusterWorkloadMappingArgs.builder()
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .workloadMappingId(oci_containerengine_workload_mapping.test_workload_mapping().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetClusterWorkloadMappingResult> getClusterWorkloadMappingPlain(GetClusterWorkloadMappingPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getClusterWorkloadMapping:getClusterWorkloadMapping", TypeShape.of(GetClusterWorkloadMappingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cluster Workload Mappings in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List workloadMappings for a provisioned cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterWorkloadMappings = ContainerEngineFunctions.getClusterWorkloadMappings(GetClusterWorkloadMappingsArgs.builder()
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetClusterWorkloadMappingsResult> getClusterWorkloadMappings(GetClusterWorkloadMappingsArgs args) {
+        return getClusterWorkloadMappings(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cluster Workload Mappings in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List workloadMappings for a provisioned cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterWorkloadMappings = ContainerEngineFunctions.getClusterWorkloadMappings(GetClusterWorkloadMappingsArgs.builder()
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetClusterWorkloadMappingsResult> getClusterWorkloadMappingsPlain(GetClusterWorkloadMappingsPlainArgs args) {
+        return getClusterWorkloadMappingsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cluster Workload Mappings in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List workloadMappings for a provisioned cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterWorkloadMappings = ContainerEngineFunctions.getClusterWorkloadMappings(GetClusterWorkloadMappingsArgs.builder()
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetClusterWorkloadMappingsResult> getClusterWorkloadMappings(GetClusterWorkloadMappingsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getClusterWorkloadMappings:getClusterWorkloadMappings", TypeShape.of(GetClusterWorkloadMappingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cluster Workload Mappings in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * List workloadMappings for a provisioned cluster.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterWorkloadMappings = ContainerEngineFunctions.getClusterWorkloadMappings(GetClusterWorkloadMappingsArgs.builder()
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetClusterWorkloadMappingsResult> getClusterWorkloadMappingsPlain(GetClusterWorkloadMappingsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getClusterWorkloadMappings:getClusterWorkloadMappings", TypeShape.of(GetClusterWorkloadMappingsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Clusters in Oracle Cloud Infrastructure Container Engine service.

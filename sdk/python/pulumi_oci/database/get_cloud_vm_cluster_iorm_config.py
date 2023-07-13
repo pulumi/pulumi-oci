@@ -127,12 +127,12 @@ def get_cloud_vm_cluster_iorm_config(cloud_vm_cluster_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getCloudVmClusterIormConfig:getCloudVmClusterIormConfig', __args__, opts=opts, typ=GetCloudVmClusterIormConfigResult).value
 
     return AwaitableGetCloudVmClusterIormConfigResult(
-        cloud_vm_cluster_id=__ret__.cloud_vm_cluster_id,
-        db_plans=__ret__.db_plans,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        objective=__ret__.objective,
-        state=__ret__.state)
+        cloud_vm_cluster_id=pulumi.get(__ret__, 'cloud_vm_cluster_id'),
+        db_plans=pulumi.get(__ret__, 'db_plans'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        objective=pulumi.get(__ret__, 'objective'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_cloud_vm_cluster_iorm_config)

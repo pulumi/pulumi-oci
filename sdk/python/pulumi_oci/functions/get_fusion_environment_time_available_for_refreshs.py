@@ -103,10 +103,10 @@ def get_fusion_environment_time_available_for_refreshs(filters: Optional[Sequenc
     __ret__ = pulumi.runtime.invoke('oci:Functions/getFusionEnvironmentTimeAvailableForRefreshs:getFusionEnvironmentTimeAvailableForRefreshs', __args__, opts=opts, typ=GetFusionEnvironmentTimeAvailableForRefreshsResult).value
 
     return AwaitableGetFusionEnvironmentTimeAvailableForRefreshsResult(
-        filters=__ret__.filters,
-        fusion_environment_id=__ret__.fusion_environment_id,
-        id=__ret__.id,
-        time_available_for_refresh_collections=__ret__.time_available_for_refresh_collections)
+        filters=pulumi.get(__ret__, 'filters'),
+        fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        time_available_for_refresh_collections=pulumi.get(__ret__, 'time_available_for_refresh_collections'))
 
 
 @_utilities.lift_output_func(get_fusion_environment_time_available_for_refreshs)

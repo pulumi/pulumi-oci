@@ -180,15 +180,15 @@ def get_fusion_environment_scheduled_activities(display_name: Optional[str] = No
     __ret__ = pulumi.runtime.invoke('oci:Functions/getFusionEnvironmentScheduledActivities:getFusionEnvironmentScheduledActivities', __args__, opts=opts, typ=GetFusionEnvironmentScheduledActivitiesResult).value
 
     return AwaitableGetFusionEnvironmentScheduledActivitiesResult(
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        fusion_environment_id=__ret__.fusion_environment_id,
-        id=__ret__.id,
-        run_cycle=__ret__.run_cycle,
-        scheduled_activity_collections=__ret__.scheduled_activity_collections,
-        state=__ret__.state,
-        time_expected_finish_less_than_or_equal_to=__ret__.time_expected_finish_less_than_or_equal_to,
-        time_scheduled_start_greater_than_or_equal_to=__ret__.time_scheduled_start_greater_than_or_equal_to)
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        run_cycle=pulumi.get(__ret__, 'run_cycle'),
+        scheduled_activity_collections=pulumi.get(__ret__, 'scheduled_activity_collections'),
+        state=pulumi.get(__ret__, 'state'),
+        time_expected_finish_less_than_or_equal_to=pulumi.get(__ret__, 'time_expected_finish_less_than_or_equal_to'),
+        time_scheduled_start_greater_than_or_equal_to=pulumi.get(__ret__, 'time_scheduled_start_greater_than_or_equal_to'))
 
 
 @_utilities.lift_output_func(get_fusion_environment_scheduled_activities)

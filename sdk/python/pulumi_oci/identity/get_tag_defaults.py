@@ -142,12 +142,12 @@ def get_tag_defaults(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getTagDefaults:getTagDefaults', __args__, opts=opts, typ=GetTagDefaultsResult).value
 
     return AwaitableGetTagDefaultsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        tag_defaults=__ret__.tag_defaults,
-        tag_definition_id=__ret__.tag_definition_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        tag_defaults=pulumi.get(__ret__, 'tag_defaults'),
+        tag_definition_id=pulumi.get(__ret__, 'tag_definition_id'))
 
 
 @_utilities.lift_output_func(get_tag_defaults)

@@ -142,13 +142,13 @@ def get_log_analytics_resource_categories_list(namespace: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getLogAnalyticsResourceCategoriesList:getLogAnalyticsResourceCategoriesList', __args__, opts=opts, typ=GetLogAnalyticsResourceCategoriesListResult).value
 
     return AwaitableGetLogAnalyticsResourceCategoriesListResult(
-        categories=__ret__.categories,
-        id=__ret__.id,
-        items=__ret__.items,
-        namespace=__ret__.namespace,
-        resource_categories=__ret__.resource_categories,
-        resource_ids=__ret__.resource_ids,
-        resource_types=__ret__.resource_types)
+        categories=pulumi.get(__ret__, 'categories'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        resource_categories=pulumi.get(__ret__, 'resource_categories'),
+        resource_ids=pulumi.get(__ret__, 'resource_ids'),
+        resource_types=pulumi.get(__ret__, 'resource_types'))
 
 
 @_utilities.lift_output_func(get_log_analytics_resource_categories_list)

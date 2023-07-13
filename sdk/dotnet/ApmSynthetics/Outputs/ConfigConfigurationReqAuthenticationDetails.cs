@@ -30,11 +30,11 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly string? AuthToken;
         /// <summary>
-        /// (Updatable) URL to get authetication token.
+        /// (Updatable) URL to get authentication token.
         /// </summary>
         public readonly string? AuthUrl;
         /// <summary>
-        /// (Updatable) Username for authentication.
+        /// (Updatable) User name for authentication.
         /// </summary>
         public readonly string? AuthUserName;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly string? AuthUserPassword;
         /// <summary>
-        /// (Updatable) Request http oauth scheme.
+        /// (Updatable) Request HTTP OAuth scheme.
         /// </summary>
         public readonly string? OauthScheme;
 

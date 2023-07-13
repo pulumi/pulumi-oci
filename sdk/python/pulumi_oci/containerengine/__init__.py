@@ -7,12 +7,15 @@ import typing
 # Export this package's modules as members:
 from .addon import *
 from .cluster import *
+from .cluster_workload_mapping import *
 from .container_instance import *
 from .get_addon import *
 from .get_addon_options import *
 from .get_addons import *
 from .get_cluster_kube_config import *
 from .get_cluster_option import *
+from .get_cluster_workload_mapping import *
+from .get_cluster_workload_mappings import *
 from .get_clusters import *
 from .get_migrate_to_native_vcn_status import *
 from .get_node_pool import *

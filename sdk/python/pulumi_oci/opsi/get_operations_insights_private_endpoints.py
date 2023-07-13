@@ -196,16 +196,16 @@ def get_operations_insights_private_endpoints(compartment_id: Optional[str] = No
     __ret__ = pulumi.runtime.invoke('oci:Opsi/getOperationsInsightsPrivateEndpoints:getOperationsInsightsPrivateEndpoints', __args__, opts=opts, typ=GetOperationsInsightsPrivateEndpointsResult).value
 
     return AwaitableGetOperationsInsightsPrivateEndpointsResult(
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_used_for_rac_dbs=__ret__.is_used_for_rac_dbs,
-        operations_insights_private_endpoint_collections=__ret__.operations_insights_private_endpoint_collections,
-        opsi_private_endpoint_id=__ret__.opsi_private_endpoint_id,
-        states=__ret__.states,
-        vcn_id=__ret__.vcn_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_used_for_rac_dbs=pulumi.get(__ret__, 'is_used_for_rac_dbs'),
+        operations_insights_private_endpoint_collections=pulumi.get(__ret__, 'operations_insights_private_endpoint_collections'),
+        opsi_private_endpoint_id=pulumi.get(__ret__, 'opsi_private_endpoint_id'),
+        states=pulumi.get(__ret__, 'states'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_operations_insights_private_endpoints)

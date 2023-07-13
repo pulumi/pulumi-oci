@@ -67,6 +67,7 @@ import * as utilities from "../utilities";
  *     networkBondingModeDetails: {
  *         backupNetworkBondingMode: _var.exadata_infrastructure_network_bonding_mode_details_backup_network_bonding_mode,
  *         clientNetworkBondingMode: _var.exadata_infrastructure_network_bonding_mode_details_client_network_bonding_mode,
+ *         drNetworkBondingMode: _var.exadata_infrastructure_network_bonding_mode_details_dr_network_bonding_mode,
  *     },
  *     storageCount: _var.exadata_infrastructure_storage_count,
  * });
@@ -261,13 +262,17 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
      */
     public readonly netmask!: pulumi.Output<string>;
     /**
-     * (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     * (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
      */
     public readonly networkBondingModeDetails!: pulumi.Output<outputs.Database.ExadataInfrastructureNetworkBondingModeDetails>;
     /**
      * (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
      */
     public readonly ntpServers!: pulumi.Output<string[]>;
+    /**
+     * The serial number for the Exadata infrastructure.
+     */
+    public /*out*/ readonly rackSerialNumber!: pulumi.Output<string>;
     /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      */
@@ -346,6 +351,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["netmask"] = state ? state.netmask : undefined;
             resourceInputs["networkBondingModeDetails"] = state ? state.networkBondingModeDetails : undefined;
             resourceInputs["ntpServers"] = state ? state.ntpServers : undefined;
+            resourceInputs["rackSerialNumber"] = state ? state.rackSerialNumber : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["storageCount"] = state ? state.storageCount : undefined;
@@ -433,6 +439,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["maxMemoryInGbs"] = undefined /*out*/;
             resourceInputs["memorySizeInGbs"] = undefined /*out*/;
             resourceInputs["monthlyDbServerVersion"] = undefined /*out*/;
+            resourceInputs["rackSerialNumber"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["storageServerVersion"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -599,13 +606,17 @@ export interface ExadataInfrastructureState {
      */
     netmask?: pulumi.Input<string>;
     /**
-     * (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     * (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
      */
     networkBondingModeDetails?: pulumi.Input<inputs.Database.ExadataInfrastructureNetworkBondingModeDetails>;
     /**
      * (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
      */
     ntpServers?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The serial number for the Exadata infrastructure.
+     */
+    rackSerialNumber?: pulumi.Input<string>;
     /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      */
@@ -721,7 +732,7 @@ export interface ExadataInfrastructureArgs {
      */
     netmask: pulumi.Input<string>;
     /**
-     * (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     * (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
      */
     networkBondingModeDetails?: pulumi.Input<inputs.Database.ExadataInfrastructureNetworkBondingModeDetails>;
     /**

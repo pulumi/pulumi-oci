@@ -132,12 +132,12 @@ def get_publication_packages(filters: Optional[Sequence[pulumi.InputType['GetPub
     __ret__ = pulumi.runtime.invoke('oci:Marketplace/getPublicationPackages:getPublicationPackages', __args__, opts=opts, typ=GetPublicationPackagesResult).value
 
     return AwaitableGetPublicationPackagesResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        package_type=__ret__.package_type,
-        package_version=__ret__.package_version,
-        publication_id=__ret__.publication_id,
-        publication_packages=__ret__.publication_packages)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        package_type=pulumi.get(__ret__, 'package_type'),
+        package_version=pulumi.get(__ret__, 'package_version'),
+        publication_id=pulumi.get(__ret__, 'publication_id'),
+        publication_packages=pulumi.get(__ret__, 'publication_packages'))
 
 
 @_utilities.lift_output_func(get_publication_packages)

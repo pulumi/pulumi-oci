@@ -22,7 +22,7 @@ class GetVmClusterNetworkResult:
     """
     A collection of values returned by getVmClusterNetwork.
     """
-    def __init__(__self__, action=None, compartment_id=None, defined_tags=None, display_name=None, dns=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, lifecycle_details=None, ntps=None, scans=None, state=None, time_created=None, validate_vm_cluster_network=None, vm_cluster_id=None, vm_cluster_network_id=None, vm_networks=None):
+    def __init__(__self__, action=None, compartment_id=None, defined_tags=None, display_name=None, dns=None, dr_scans=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, lifecycle_details=None, ntps=None, scans=None, state=None, time_created=None, validate_vm_cluster_network=None, vm_cluster_id=None, vm_cluster_network_id=None, vm_networks=None):
         if action and not isinstance(action, str):
             raise TypeError("Expected argument 'action' to be a str")
         pulumi.set(__self__, "action", action)
@@ -38,6 +38,9 @@ class GetVmClusterNetworkResult:
         if dns and not isinstance(dns, list):
             raise TypeError("Expected argument 'dns' to be a list")
         pulumi.set(__self__, "dns", dns)
+        if dr_scans and not isinstance(dr_scans, list):
+            raise TypeError("Expected argument 'dr_scans' to be a list")
+        pulumi.set(__self__, "dr_scans", dr_scans)
         if exadata_infrastructure_id and not isinstance(exadata_infrastructure_id, str):
             raise TypeError("Expected argument 'exadata_infrastructure_id' to be a str")
         pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
@@ -111,6 +114,14 @@ class GetVmClusterNetworkResult:
         The list of DNS server IP addresses. Maximum of 3 allowed.
         """
         return pulumi.get(self, "dns")
+
+    @property
+    @pulumi.getter(name="drScans")
+    def dr_scans(self) -> Sequence['outputs.GetVmClusterNetworkDrScanResult']:
+        """
+        The SCAN details for DR network
+        """
+        return pulumi.get(self, "dr_scans")
 
     @property
     @pulumi.getter(name="exadataInfrastructureId")
@@ -214,6 +225,7 @@ class AwaitableGetVmClusterNetworkResult(GetVmClusterNetworkResult):
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             dns=self.dns,
+            dr_scans=self.dr_scans,
             exadata_infrastructure_id=self.exadata_infrastructure_id,
             freeform_tags=self.freeform_tags,
             id=self.id,
@@ -258,23 +270,24 @@ def get_vm_cluster_network(exadata_infrastructure_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getVmClusterNetwork:getVmClusterNetwork', __args__, opts=opts, typ=GetVmClusterNetworkResult).value
 
     return AwaitableGetVmClusterNetworkResult(
-        action=__ret__.action,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        dns=__ret__.dns,
-        exadata_infrastructure_id=__ret__.exadata_infrastructure_id,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        ntps=__ret__.ntps,
-        scans=__ret__.scans,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        validate_vm_cluster_network=__ret__.validate_vm_cluster_network,
-        vm_cluster_id=__ret__.vm_cluster_id,
-        vm_cluster_network_id=__ret__.vm_cluster_network_id,
-        vm_networks=__ret__.vm_networks)
+        action=pulumi.get(__ret__, 'action'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        dns=pulumi.get(__ret__, 'dns'),
+        dr_scans=pulumi.get(__ret__, 'dr_scans'),
+        exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        ntps=pulumi.get(__ret__, 'ntps'),
+        scans=pulumi.get(__ret__, 'scans'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        validate_vm_cluster_network=pulumi.get(__ret__, 'validate_vm_cluster_network'),
+        vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'),
+        vm_cluster_network_id=pulumi.get(__ret__, 'vm_cluster_network_id'),
+        vm_networks=pulumi.get(__ret__, 'vm_networks'))
 
 
 @_utilities.lift_output_func(get_vm_cluster_network)

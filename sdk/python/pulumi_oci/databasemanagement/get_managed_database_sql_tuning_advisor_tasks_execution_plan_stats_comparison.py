@@ -144,13 +144,13 @@ def get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_compariso
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison', __args__, opts=opts, typ=GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult).value
 
     return AwaitableGetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult(
-        execution_id=__ret__.execution_id,
-        id=__ret__.id,
-        managed_database_id=__ret__.managed_database_id,
-        modifieds=__ret__.modifieds,
-        originals=__ret__.originals,
-        sql_object_id=__ret__.sql_object_id,
-        sql_tuning_advisor_task_id=__ret__.sql_tuning_advisor_task_id)
+        execution_id=pulumi.get(__ret__, 'execution_id'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        modifieds=pulumi.get(__ret__, 'modifieds'),
+        originals=pulumi.get(__ret__, 'originals'),
+        sql_object_id=pulumi.get(__ret__, 'sql_object_id'),
+        sql_tuning_advisor_task_id=pulumi.get(__ret__, 'sql_tuning_advisor_task_id'))
 
 
 @_utilities.lift_output_func(get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparison)

@@ -158,14 +158,14 @@ def get_managed_database_sql_tuning_advisor_tasks(filters: Optional[Sequence[pul
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasks:getManagedDatabaseSqlTuningAdvisorTasks', __args__, opts=opts, typ=GetManagedDatabaseSqlTuningAdvisorTasksResult).value
 
     return AwaitableGetManagedDatabaseSqlTuningAdvisorTasksResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        managed_database_id=__ret__.managed_database_id,
-        name=__ret__.name,
-        sql_tuning_advisor_task_collections=__ret__.sql_tuning_advisor_task_collections,
-        status=__ret__.status,
-        time_greater_than_or_equal_to=__ret__.time_greater_than_or_equal_to,
-        time_less_than_or_equal_to=__ret__.time_less_than_or_equal_to)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        name=pulumi.get(__ret__, 'name'),
+        sql_tuning_advisor_task_collections=pulumi.get(__ret__, 'sql_tuning_advisor_task_collections'),
+        status=pulumi.get(__ret__, 'status'),
+        time_greater_than_or_equal_to=pulumi.get(__ret__, 'time_greater_than_or_equal_to'),
+        time_less_than_or_equal_to=pulumi.get(__ret__, 'time_less_than_or_equal_to'))
 
 
 @_utilities.lift_output_func(get_managed_database_sql_tuning_advisor_tasks)

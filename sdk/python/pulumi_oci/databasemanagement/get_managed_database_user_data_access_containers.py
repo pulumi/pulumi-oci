@@ -132,12 +132,12 @@ def get_managed_database_user_data_access_containers(filters: Optional[Sequence[
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseUserDataAccessContainers:getManagedDatabaseUserDataAccessContainers', __args__, opts=opts, typ=GetManagedDatabaseUserDataAccessContainersResult).value
 
     return AwaitableGetManagedDatabaseUserDataAccessContainersResult(
-        data_access_container_collections=__ret__.data_access_container_collections,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        managed_database_id=__ret__.managed_database_id,
-        name=__ret__.name,
-        user_name=__ret__.user_name)
+        data_access_container_collections=pulumi.get(__ret__, 'data_access_container_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        name=pulumi.get(__ret__, 'name'),
+        user_name=pulumi.get(__ret__, 'user_name'))
 
 
 @_utilities.lift_output_func(get_managed_database_user_data_access_containers)

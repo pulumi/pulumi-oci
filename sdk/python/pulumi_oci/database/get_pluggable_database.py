@@ -259,24 +259,24 @@ def get_pluggable_database(pluggable_database_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getPluggableDatabase:getPluggableDatabase', __args__, opts=opts, typ=GetPluggableDatabaseResult).value
 
     return AwaitableGetPluggableDatabaseResult(
-        compartment_id=__ret__.compartment_id,
-        connection_strings=__ret__.connection_strings,
-        container_database_id=__ret__.container_database_id,
-        defined_tags=__ret__.defined_tags,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_restricted=__ret__.is_restricted,
-        lifecycle_details=__ret__.lifecycle_details,
-        open_mode=__ret__.open_mode,
-        pdb_admin_password=__ret__.pdb_admin_password,
-        pdb_name=__ret__.pdb_name,
-        pluggable_database_id=__ret__.pluggable_database_id,
-        pluggable_database_management_configs=__ret__.pluggable_database_management_configs,
-        rotate_key_trigger=__ret__.rotate_key_trigger,
-        should_pdb_admin_account_be_locked=__ret__.should_pdb_admin_account_be_locked,
-        state=__ret__.state,
-        tde_wallet_password=__ret__.tde_wallet_password,
-        time_created=__ret__.time_created)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        connection_strings=pulumi.get(__ret__, 'connection_strings'),
+        container_database_id=pulumi.get(__ret__, 'container_database_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_restricted=pulumi.get(__ret__, 'is_restricted'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        open_mode=pulumi.get(__ret__, 'open_mode'),
+        pdb_admin_password=pulumi.get(__ret__, 'pdb_admin_password'),
+        pdb_name=pulumi.get(__ret__, 'pdb_name'),
+        pluggable_database_id=pulumi.get(__ret__, 'pluggable_database_id'),
+        pluggable_database_management_configs=pulumi.get(__ret__, 'pluggable_database_management_configs'),
+        rotate_key_trigger=pulumi.get(__ret__, 'rotate_key_trigger'),
+        should_pdb_admin_account_be_locked=pulumi.get(__ret__, 'should_pdb_admin_account_be_locked'),
+        state=pulumi.get(__ret__, 'state'),
+        tde_wallet_password=pulumi.get(__ret__, 'tde_wallet_password'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_pluggable_database)

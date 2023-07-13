@@ -268,24 +268,24 @@ def get_trigger(trigger_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getTrigger:getTrigger', __args__, opts=opts, typ=GetTriggerResult).value
 
     return AwaitableGetTriggerResult(
-        actions=__ret__.actions,
-        compartment_id=__ret__.compartment_id,
-        connection_id=__ret__.connection_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        project_id=__ret__.project_id,
-        repository_id=__ret__.repository_id,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        trigger_id=__ret__.trigger_id,
-        trigger_source=__ret__.trigger_source,
-        trigger_url=__ret__.trigger_url)
+        actions=pulumi.get(__ret__, 'actions'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        connection_id=pulumi.get(__ret__, 'connection_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        project_id=pulumi.get(__ret__, 'project_id'),
+        repository_id=pulumi.get(__ret__, 'repository_id'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        trigger_id=pulumi.get(__ret__, 'trigger_id'),
+        trigger_source=pulumi.get(__ret__, 'trigger_source'),
+        trigger_url=pulumi.get(__ret__, 'trigger_url'))
 
 
 @_utilities.lift_output_func(get_trigger)

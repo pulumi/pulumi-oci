@@ -171,14 +171,14 @@ def get_replications(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:FileStorage/getReplications:getReplications', __args__, opts=opts, typ=GetReplicationsResult).value
 
     return AwaitableGetReplicationsResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        file_system_id=__ret__.file_system_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        replications=__ret__.replications,
-        state=__ret__.state)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        file_system_id=pulumi.get(__ret__, 'file_system_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        replications=pulumi.get(__ret__, 'replications'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_replications)

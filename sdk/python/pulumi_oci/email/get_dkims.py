@@ -142,12 +142,12 @@ def get_dkims(email_domain_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Email/getDkims:getDkims', __args__, opts=opts, typ=GetDkimsResult).value
 
     return AwaitableGetDkimsResult(
-        dkim_collections=__ret__.dkim_collections,
-        email_domain_id=__ret__.email_domain_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        state=__ret__.state)
+        dkim_collections=pulumi.get(__ret__, 'dkim_collections'),
+        email_domain_id=pulumi.get(__ret__, 'email_domain_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_dkims)

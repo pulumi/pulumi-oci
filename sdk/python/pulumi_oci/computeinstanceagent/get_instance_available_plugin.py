@@ -143,13 +143,13 @@ def get_instance_available_plugin(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ComputeInstanceAgent/getInstanceAvailablePlugin:getInstanceAvailablePlugin', __args__, opts=opts, typ=GetInstanceAvailablePluginResult).value
 
     return AwaitableGetInstanceAvailablePluginResult(
-        available_plugins=__ret__.available_plugins,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        os_name=__ret__.os_name,
-        os_version=__ret__.os_version)
+        available_plugins=pulumi.get(__ret__, 'available_plugins'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        os_name=pulumi.get(__ret__, 'os_name'),
+        os_version=pulumi.get(__ret__, 'os_version'))
 
 
 @_utilities.lift_output_func(get_instance_available_plugin)

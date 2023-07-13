@@ -87,12 +87,14 @@ import (
 //				DisplayName: pulumi.Any(_var.Migration_display_name),
 //				DumpTransferDetails: &databasemigration.MigrationDumpTransferDetailsArgs{
 //					Source: &databasemigration.MigrationDumpTransferDetailsSourceArgs{
-//						Kind:    pulumi.Any(_var.Migration_dump_transfer_details_source_kind),
-//						OciHome: pulumi.Any(_var.Migration_dump_transfer_details_source_oci_home),
+//						Kind:           pulumi.Any(_var.Migration_dump_transfer_details_source_kind),
+//						OciHome:        pulumi.Any(_var.Migration_dump_transfer_details_source_oci_home),
+//						WalletLocation: pulumi.Any(_var.Migration_dump_transfer_details_source_wallet_location),
 //					},
 //					Target: &databasemigration.MigrationDumpTransferDetailsTargetArgs{
-//						Kind:    pulumi.Any(_var.Migration_dump_transfer_details_target_kind),
-//						OciHome: pulumi.Any(_var.Migration_dump_transfer_details_target_oci_home),
+//						Kind:           pulumi.Any(_var.Migration_dump_transfer_details_target_kind),
+//						OciHome:        pulumi.Any(_var.Migration_dump_transfer_details_target_oci_home),
+//						WalletLocation: pulumi.Any(_var.Migration_dump_transfer_details_target_wallet_location),
 //					},
 //				},
 //				ExcludeObjects: databasemigration.MigrationExcludeObjectArray{

@@ -164,14 +164,14 @@ def get_autonomous_databases_clones(autonomous_database_id: Optional[str] = None
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousDatabasesClones:getAutonomousDatabasesClones', __args__, opts=opts, typ=GetAutonomousDatabasesClonesResult).value
 
     return AwaitableGetAutonomousDatabasesClonesResult(
-        autonomous_database_id=__ret__.autonomous_database_id,
-        autonomous_databases=__ret__.autonomous_databases,
-        clone_type=__ret__.clone_type,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        autonomous_database_id=pulumi.get(__ret__, 'autonomous_database_id'),
+        autonomous_databases=pulumi.get(__ret__, 'autonomous_databases'),
+        clone_type=pulumi.get(__ret__, 'clone_type'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_autonomous_databases_clones)

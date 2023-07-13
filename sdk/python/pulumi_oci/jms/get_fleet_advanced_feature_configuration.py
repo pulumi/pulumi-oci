@@ -187,17 +187,17 @@ def get_fleet_advanced_feature_configuration(fleet_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Jms/getFleetAdvancedFeatureConfiguration:getFleetAdvancedFeatureConfiguration', __args__, opts=opts, typ=GetFleetAdvancedFeatureConfigurationResult).value
 
     return AwaitableGetFleetAdvancedFeatureConfigurationResult(
-        advanced_usage_trackings=__ret__.advanced_usage_trackings,
-        analytic_bucket_name=__ret__.analytic_bucket_name,
-        analytic_namespace=__ret__.analytic_namespace,
-        crypto_event_analyses=__ret__.crypto_event_analyses,
-        fleet_id=__ret__.fleet_id,
-        id=__ret__.id,
-        java_migration_analyses=__ret__.java_migration_analyses,
-        jfr_recordings=__ret__.jfr_recordings,
-        lcms=__ret__.lcms,
-        performance_tuning_analyses=__ret__.performance_tuning_analyses,
-        time_last_modified=__ret__.time_last_modified)
+        advanced_usage_trackings=pulumi.get(__ret__, 'advanced_usage_trackings'),
+        analytic_bucket_name=pulumi.get(__ret__, 'analytic_bucket_name'),
+        analytic_namespace=pulumi.get(__ret__, 'analytic_namespace'),
+        crypto_event_analyses=pulumi.get(__ret__, 'crypto_event_analyses'),
+        fleet_id=pulumi.get(__ret__, 'fleet_id'),
+        id=pulumi.get(__ret__, 'id'),
+        java_migration_analyses=pulumi.get(__ret__, 'java_migration_analyses'),
+        jfr_recordings=pulumi.get(__ret__, 'jfr_recordings'),
+        lcms=pulumi.get(__ret__, 'lcms'),
+        performance_tuning_analyses=pulumi.get(__ret__, 'performance_tuning_analyses'),
+        time_last_modified=pulumi.get(__ret__, 'time_last_modified'))
 
 
 @_utilities.lift_output_func(get_fleet_advanced_feature_configuration)

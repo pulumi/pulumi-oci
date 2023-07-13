@@ -164,14 +164,14 @@ def get_alerts(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getAlerts:getAlerts', __args__, opts=opts, typ=GetAlertsResult).value
 
     return AwaitableGetAlertsResult(
-        access_level=__ret__.access_level,
-        alert_collections=__ret__.alert_collections,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        fields=__ret__.fields,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        scim_query=__ret__.scim_query)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        alert_collections=pulumi.get(__ret__, 'alert_collections'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        fields=pulumi.get(__ret__, 'fields'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        scim_query=pulumi.get(__ret__, 'scim_query'))
 
 
 @_utilities.lift_output_func(get_alerts)

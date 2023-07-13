@@ -199,16 +199,16 @@ def get_metrics(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Monitoring/getMetrics:getMetrics', __args__, opts=opts, typ=GetMetricsResult).value
 
     return AwaitableGetMetricsResult(
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        dimension_filters=__ret__.dimension_filters,
-        filters=__ret__.filters,
-        group_bies=__ret__.group_bies,
-        id=__ret__.id,
-        metrics=__ret__.metrics,
-        name=__ret__.name,
-        namespace=__ret__.namespace,
-        resource_group=__ret__.resource_group)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        dimension_filters=pulumi.get(__ret__, 'dimension_filters'),
+        filters=pulumi.get(__ret__, 'filters'),
+        group_bies=pulumi.get(__ret__, 'group_bies'),
+        id=pulumi.get(__ret__, 'id'),
+        metrics=pulumi.get(__ret__, 'metrics'),
+        name=pulumi.get(__ret__, 'name'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        resource_group=pulumi.get(__ret__, 'resource_group'))
 
 
 @_utilities.lift_output_func(get_metrics)

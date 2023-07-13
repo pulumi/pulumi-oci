@@ -132,12 +132,12 @@ def get_bds_instance_patch_histories(bds_instance_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories', __args__, opts=opts, typ=GetBdsInstancePatchHistoriesResult).value
 
     return AwaitableGetBdsInstancePatchHistoriesResult(
-        bds_instance_id=__ret__.bds_instance_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        patch_histories=__ret__.patch_histories,
-        patch_version=__ret__.patch_version,
-        state=__ret__.state)
+        bds_instance_id=pulumi.get(__ret__, 'bds_instance_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        patch_histories=pulumi.get(__ret__, 'patch_histories'),
+        patch_version=pulumi.get(__ret__, 'patch_version'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_bds_instance_patch_histories)

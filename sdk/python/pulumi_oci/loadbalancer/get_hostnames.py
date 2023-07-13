@@ -103,10 +103,10 @@ def get_hostnames(filters: Optional[Sequence[pulumi.InputType['GetHostnamesFilte
     __ret__ = pulumi.runtime.invoke('oci:LoadBalancer/getHostnames:getHostnames', __args__, opts=opts, typ=GetHostnamesResult).value
 
     return AwaitableGetHostnamesResult(
-        filters=__ret__.filters,
-        hostnames=__ret__.hostnames,
-        id=__ret__.id,
-        load_balancer_id=__ret__.load_balancer_id)
+        filters=pulumi.get(__ret__, 'filters'),
+        hostnames=pulumi.get(__ret__, 'hostnames'),
+        id=pulumi.get(__ret__, 'id'),
+        load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'))
 
 
 @_utilities.lift_output_func(get_hostnames)

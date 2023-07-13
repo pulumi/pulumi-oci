@@ -132,12 +132,12 @@ def get_deployment_versions(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:GoldenGate/getDeploymentVersions:getDeploymentVersions', __args__, opts=opts, typ=GetDeploymentVersionsResult).value
 
     return AwaitableGetDeploymentVersionsResult(
-        compartment_id=__ret__.compartment_id,
-        deployment_id=__ret__.deployment_id,
-        deployment_type=__ret__.deployment_type,
-        deployment_version_collections=__ret__.deployment_version_collections,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        deployment_id=pulumi.get(__ret__, 'deployment_id'),
+        deployment_type=pulumi.get(__ret__, 'deployment_type'),
+        deployment_version_collections=pulumi.get(__ret__, 'deployment_version_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_deployment_versions)

@@ -271,24 +271,24 @@ def get_deploy_environment(deploy_environment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getDeployEnvironment:getDeployEnvironment', __args__, opts=opts, typ=GetDeployEnvironmentResult).value
 
     return AwaitableGetDeployEnvironmentResult(
-        cluster_id=__ret__.cluster_id,
-        compartment_id=__ret__.compartment_id,
-        compute_instance_group_selectors=__ret__.compute_instance_group_selectors,
-        defined_tags=__ret__.defined_tags,
-        deploy_environment_id=__ret__.deploy_environment_id,
-        deploy_environment_type=__ret__.deploy_environment_type,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        function_id=__ret__.function_id,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        network_channels=__ret__.network_channels,
-        project_id=__ret__.project_id,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        cluster_id=pulumi.get(__ret__, 'cluster_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compute_instance_group_selectors=pulumi.get(__ret__, 'compute_instance_group_selectors'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        deploy_environment_id=pulumi.get(__ret__, 'deploy_environment_id'),
+        deploy_environment_type=pulumi.get(__ret__, 'deploy_environment_type'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        function_id=pulumi.get(__ret__, 'function_id'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        network_channels=pulumi.get(__ret__, 'network_channels'),
+        project_id=pulumi.get(__ret__, 'project_id'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_deploy_environment)

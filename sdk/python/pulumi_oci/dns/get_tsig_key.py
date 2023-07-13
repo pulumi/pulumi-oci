@@ -198,18 +198,18 @@ def get_tsig_key(tsig_key_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Dns/getTsigKey:getTsigKey', __args__, opts=opts, typ=GetTsigKeyResult).value
 
     return AwaitableGetTsigKeyResult(
-        algorithm=__ret__.algorithm,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        name=__ret__.name,
-        secret=__ret__.secret,
-        self=__ret__.self,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        tsig_key_id=__ret__.tsig_key_id)
+        algorithm=pulumi.get(__ret__, 'algorithm'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        secret=pulumi.get(__ret__, 'secret'),
+        self=pulumi.get(__ret__, 'self'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        tsig_key_id=pulumi.get(__ret__, 'tsig_key_id'))
 
 
 @_utilities.lift_output_func(get_tsig_key)

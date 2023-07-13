@@ -151,13 +151,13 @@ def get_senders(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Email/getSenders:getSenders', __args__, opts=opts, typ=GetSendersResult).value
 
     return AwaitableGetSendersResult(
-        compartment_id=__ret__.compartment_id,
-        domain=__ret__.domain,
-        email_address=__ret__.email_address,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        senders=__ret__.senders,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        domain=pulumi.get(__ret__, 'domain'),
+        email_address=pulumi.get(__ret__, 'email_address'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        senders=pulumi.get(__ret__, 'senders'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_senders)

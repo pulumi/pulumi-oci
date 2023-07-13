@@ -103,10 +103,10 @@ def get_network_security_group_vnics(filters: Optional[Sequence[pulumi.InputType
     __ret__ = pulumi.runtime.invoke('oci:Core/getNetworkSecurityGroupVnics:getNetworkSecurityGroupVnics', __args__, opts=opts, typ=GetNetworkSecurityGroupVnicsResult).value
 
     return AwaitableGetNetworkSecurityGroupVnicsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        network_security_group_id=__ret__.network_security_group_id,
-        network_security_group_vnics=__ret__.network_security_group_vnics)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        network_security_group_id=pulumi.get(__ret__, 'network_security_group_id'),
+        network_security_group_vnics=pulumi.get(__ret__, 'network_security_group_vnics'))
 
 
 @_utilities.lift_output_func(get_network_security_group_vnics)

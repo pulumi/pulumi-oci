@@ -259,23 +259,23 @@ def get_resolver_endpoint(resolver_endpoint_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Dns/getResolverEndpoint:getResolverEndpoint', __args__, opts=opts, typ=GetResolverEndpointResult).value
 
     return AwaitableGetResolverEndpointResult(
-        compartment_id=__ret__.compartment_id,
-        endpoint_type=__ret__.endpoint_type,
-        forwarding_address=__ret__.forwarding_address,
-        id=__ret__.id,
-        is_forwarding=__ret__.is_forwarding,
-        is_listening=__ret__.is_listening,
-        listening_address=__ret__.listening_address,
-        name=__ret__.name,
-        nsg_ids=__ret__.nsg_ids,
-        resolver_endpoint_name=__ret__.resolver_endpoint_name,
-        resolver_id=__ret__.resolver_id,
-        scope=__ret__.scope,
-        self=__ret__.self,
-        state=__ret__.state,
-        subnet_id=__ret__.subnet_id,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        endpoint_type=pulumi.get(__ret__, 'endpoint_type'),
+        forwarding_address=pulumi.get(__ret__, 'forwarding_address'),
+        id=pulumi.get(__ret__, 'id'),
+        is_forwarding=pulumi.get(__ret__, 'is_forwarding'),
+        is_listening=pulumi.get(__ret__, 'is_listening'),
+        listening_address=pulumi.get(__ret__, 'listening_address'),
+        name=pulumi.get(__ret__, 'name'),
+        nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
+        resolver_endpoint_name=pulumi.get(__ret__, 'resolver_endpoint_name'),
+        resolver_id=pulumi.get(__ret__, 'resolver_id'),
+        scope=pulumi.get(__ret__, 'scope'),
+        self=pulumi.get(__ret__, 'self'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_resolver_endpoint)

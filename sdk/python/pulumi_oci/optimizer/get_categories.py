@@ -189,15 +189,15 @@ def get_categories(child_tenancy_ids: Optional[Sequence[str]] = None,
     __ret__ = pulumi.runtime.invoke('oci:Optimizer/getCategories:getCategories', __args__, opts=opts, typ=GetCategoriesResult).value
 
     return AwaitableGetCategoriesResult(
-        category_collections=__ret__.category_collections,
-        child_tenancy_ids=__ret__.child_tenancy_ids,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        include_organization=__ret__.include_organization,
-        name=__ret__.name,
-        state=__ret__.state)
+        category_collections=pulumi.get(__ret__, 'category_collections'),
+        child_tenancy_ids=pulumi.get(__ret__, 'child_tenancy_ids'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        include_organization=pulumi.get(__ret__, 'include_organization'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_categories)

@@ -167,14 +167,14 @@ def get_connection_assignments(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:GoldenGate/getConnectionAssignments:getConnectionAssignments', __args__, opts=opts, typ=GetConnectionAssignmentsResult).value
 
     return AwaitableGetConnectionAssignmentsResult(
-        compartment_id=__ret__.compartment_id,
-        connection_assignment_collections=__ret__.connection_assignment_collections,
-        connection_id=__ret__.connection_id,
-        deployment_id=__ret__.deployment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        connection_assignment_collections=pulumi.get(__ret__, 'connection_assignment_collections'),
+        connection_id=pulumi.get(__ret__, 'connection_id'),
+        deployment_id=pulumi.get(__ret__, 'deployment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_connection_assignments)

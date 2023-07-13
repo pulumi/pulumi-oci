@@ -206,17 +206,17 @@ def get_alert_analytic(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getAlertAnalytic:getAlertAnalytic', __args__, opts=opts, typ=GetAlertAnalyticResult).value
 
     return AwaitableGetAlertAnalyticResult(
-        access_level=__ret__.access_level,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        group_bies=__ret__.group_bies,
-        id=__ret__.id,
-        items=__ret__.items,
-        query_time_zone=__ret__.query_time_zone,
-        scim_query=__ret__.scim_query,
-        summary_fields=__ret__.summary_fields,
-        time_ended=__ret__.time_ended,
-        time_started=__ret__.time_started)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        group_bies=pulumi.get(__ret__, 'group_bies'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        query_time_zone=pulumi.get(__ret__, 'query_time_zone'),
+        scim_query=pulumi.get(__ret__, 'scim_query'),
+        summary_fields=pulumi.get(__ret__, 'summary_fields'),
+        time_ended=pulumi.get(__ret__, 'time_ended'),
+        time_started=pulumi.get(__ret__, 'time_started'))
 
 
 @_utilities.lift_output_func(get_alert_analytic)

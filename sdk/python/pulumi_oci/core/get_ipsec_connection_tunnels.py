@@ -103,10 +103,10 @@ def get_ipsec_connection_tunnels(filters: Optional[Sequence[pulumi.InputType['Ge
     __ret__ = pulumi.runtime.invoke('oci:Core/getIpsecConnectionTunnels:getIpsecConnectionTunnels', __args__, opts=opts, typ=GetIpsecConnectionTunnelsResult).value
 
     return AwaitableGetIpsecConnectionTunnelsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        ip_sec_connection_tunnels=__ret__.ip_sec_connection_tunnels,
-        ipsec_id=__ret__.ipsec_id)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        ip_sec_connection_tunnels=pulumi.get(__ret__, 'ip_sec_connection_tunnels'),
+        ipsec_id=pulumi.get(__ret__, 'ipsec_id'))
 
 
 @_utilities.lift_output_func(get_ipsec_connection_tunnels)

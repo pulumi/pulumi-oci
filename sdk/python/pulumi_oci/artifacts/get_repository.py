@@ -186,17 +186,17 @@ def get_repository(repository_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Artifacts/getRepository:getRepository', __args__, opts=opts, typ=GetRepositoryResult).value
 
     return AwaitableGetRepositoryResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_immutable=__ret__.is_immutable,
-        repository_id=__ret__.repository_id,
-        repository_type=__ret__.repository_type,
-        state=__ret__.state,
-        time_created=__ret__.time_created)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_immutable=pulumi.get(__ret__, 'is_immutable'),
+        repository_id=pulumi.get(__ret__, 'repository_id'),
+        repository_type=pulumi.get(__ret__, 'repository_type'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_repository)

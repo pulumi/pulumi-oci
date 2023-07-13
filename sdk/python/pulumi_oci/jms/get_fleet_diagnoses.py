@@ -103,10 +103,10 @@ def get_fleet_diagnoses(filters: Optional[Sequence[pulumi.InputType['GetFleetDia
     __ret__ = pulumi.runtime.invoke('oci:Jms/getFleetDiagnoses:getFleetDiagnoses', __args__, opts=opts, typ=GetFleetDiagnosesResult).value
 
     return AwaitableGetFleetDiagnosesResult(
-        filters=__ret__.filters,
-        fleet_diagnosis_collections=__ret__.fleet_diagnosis_collections,
-        fleet_id=__ret__.fleet_id,
-        id=__ret__.id)
+        filters=pulumi.get(__ret__, 'filters'),
+        fleet_diagnosis_collections=pulumi.get(__ret__, 'fleet_diagnosis_collections'),
+        fleet_id=pulumi.get(__ret__, 'fleet_id'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_fleet_diagnoses)

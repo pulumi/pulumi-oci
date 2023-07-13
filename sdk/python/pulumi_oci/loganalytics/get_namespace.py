@@ -105,10 +105,10 @@ def get_namespace(namespace: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getNamespace:getNamespace', __args__, opts=opts, typ=GetNamespaceResult).value
 
     return AwaitableGetNamespaceResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        is_onboarded=__ret__.is_onboarded,
-        namespace=__ret__.namespace)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        is_onboarded=pulumi.get(__ret__, 'is_onboarded'),
+        namespace=pulumi.get(__ret__, 'namespace'))
 
 
 @_utilities.lift_output_func(get_namespace)

@@ -106,10 +106,10 @@ def get_image_shapes(filters: Optional[Sequence[pulumi.InputType['GetImageShapes
     __ret__ = pulumi.runtime.invoke('oci:Core/getImageShapes:getImageShapes', __args__, opts=opts, typ=GetImageShapesResult).value
 
     return AwaitableGetImageShapesResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        image_id=__ret__.image_id,
-        image_shape_compatibilities=__ret__.image_shape_compatibilities)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        image_id=pulumi.get(__ret__, 'image_id'),
+        image_shape_compatibilities=pulumi.get(__ret__, 'image_shape_compatibilities'))
 
 
 @_utilities.lift_output_func(get_image_shapes)

@@ -234,21 +234,21 @@ def get_dedicated_vm_host(dedicated_vm_host_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getDedicatedVmHost:getDedicatedVmHost', __args__, opts=opts, typ=GetDedicatedVmHostResult).value
 
     return AwaitableGetDedicatedVmHostResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        dedicated_vm_host_id=__ret__.dedicated_vm_host_id,
-        dedicated_vm_host_shape=__ret__.dedicated_vm_host_shape,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        fault_domain=__ret__.fault_domain,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        remaining_memory_in_gbs=__ret__.remaining_memory_in_gbs,
-        remaining_ocpus=__ret__.remaining_ocpus,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        total_memory_in_gbs=__ret__.total_memory_in_gbs,
-        total_ocpus=__ret__.total_ocpus)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        dedicated_vm_host_id=pulumi.get(__ret__, 'dedicated_vm_host_id'),
+        dedicated_vm_host_shape=pulumi.get(__ret__, 'dedicated_vm_host_shape'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        fault_domain=pulumi.get(__ret__, 'fault_domain'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        remaining_memory_in_gbs=pulumi.get(__ret__, 'remaining_memory_in_gbs'),
+        remaining_ocpus=pulumi.get(__ret__, 'remaining_ocpus'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        total_memory_in_gbs=pulumi.get(__ret__, 'total_memory_in_gbs'),
+        total_ocpus=pulumi.get(__ret__, 'total_ocpus'))
 
 
 @_utilities.lift_output_func(get_dedicated_vm_host)

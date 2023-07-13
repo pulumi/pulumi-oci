@@ -135,12 +135,12 @@ def get_scripts(apm_domain_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApmSynthetics/getScripts:getScripts', __args__, opts=opts, typ=GetScriptsResult).value
 
     return AwaitableGetScriptsResult(
-        apm_domain_id=__ret__.apm_domain_id,
-        content_type=__ret__.content_type,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        script_collections=__ret__.script_collections)
+        apm_domain_id=pulumi.get(__ret__, 'apm_domain_id'),
+        content_type=pulumi.get(__ret__, 'content_type'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        script_collections=pulumi.get(__ret__, 'script_collections'))
 
 
 @_utilities.lift_output_func(get_scripts)

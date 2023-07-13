@@ -247,22 +247,22 @@ def get_deploy_artifact(deploy_artifact_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getDeployArtifact:getDeployArtifact', __args__, opts=opts, typ=GetDeployArtifactResult).value
 
     return AwaitableGetDeployArtifactResult(
-        argument_substitution_mode=__ret__.argument_substitution_mode,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        deploy_artifact_id=__ret__.deploy_artifact_id,
-        deploy_artifact_sources=__ret__.deploy_artifact_sources,
-        deploy_artifact_type=__ret__.deploy_artifact_type,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        project_id=__ret__.project_id,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        argument_substitution_mode=pulumi.get(__ret__, 'argument_substitution_mode'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        deploy_artifact_id=pulumi.get(__ret__, 'deploy_artifact_id'),
+        deploy_artifact_sources=pulumi.get(__ret__, 'deploy_artifact_sources'),
+        deploy_artifact_type=pulumi.get(__ret__, 'deploy_artifact_type'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        project_id=pulumi.get(__ret__, 'project_id'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_deploy_artifact)

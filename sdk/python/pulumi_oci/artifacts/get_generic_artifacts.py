@@ -206,16 +206,16 @@ def get_generic_artifacts(artifact_path: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Artifacts/getGenericArtifacts:getGenericArtifacts', __args__, opts=opts, typ=GetGenericArtifactsResult).value
 
     return AwaitableGetGenericArtifactsResult(
-        artifact_path=__ret__.artifact_path,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        generic_artifact_collections=__ret__.generic_artifact_collections,
-        id=__ret__.id,
-        repository_id=__ret__.repository_id,
-        sha256=__ret__.sha256,
-        state=__ret__.state,
-        version=__ret__.version)
+        artifact_path=pulumi.get(__ret__, 'artifact_path'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        generic_artifact_collections=pulumi.get(__ret__, 'generic_artifact_collections'),
+        id=pulumi.get(__ret__, 'id'),
+        repository_id=pulumi.get(__ret__, 'repository_id'),
+        sha256=pulumi.get(__ret__, 'sha256'),
+        state=pulumi.get(__ret__, 'state'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_generic_artifacts)

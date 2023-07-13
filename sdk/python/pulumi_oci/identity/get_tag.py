@@ -203,18 +203,18 @@ def get_tag(tag_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getTag:getTag', __args__, opts=opts, typ=GetTagResult).value
 
     return AwaitableGetTagResult(
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_cost_tracking=__ret__.is_cost_tracking,
-        is_retired=__ret__.is_retired,
-        name=__ret__.name,
-        state=__ret__.state,
-        tag_name=__ret__.tag_name,
-        tag_namespace_id=__ret__.tag_namespace_id,
-        time_created=__ret__.time_created,
-        validators=__ret__.validators)
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_cost_tracking=pulumi.get(__ret__, 'is_cost_tracking'),
+        is_retired=pulumi.get(__ret__, 'is_retired'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        tag_name=pulumi.get(__ret__, 'tag_name'),
+        tag_namespace_id=pulumi.get(__ret__, 'tag_namespace_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        validators=pulumi.get(__ret__, 'validators'))
 
 
 @_utilities.lift_output_func(get_tag)

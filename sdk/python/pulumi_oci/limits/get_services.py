@@ -104,10 +104,10 @@ def get_services(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Limits/getServices:getServices', __args__, opts=opts, typ=GetServicesResult).value
 
     return AwaitableGetServicesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        services=__ret__.services)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        services=pulumi.get(__ret__, 'services'))
 
 
 @_utilities.lift_output_func(get_services)

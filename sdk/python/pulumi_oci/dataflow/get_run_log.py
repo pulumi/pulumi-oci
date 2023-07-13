@@ -126,12 +126,12 @@ def get_run_log(base64_encode_content: Optional[bool] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataFlow/getRunLog:getRunLog', __args__, opts=opts, typ=GetRunLogResult).value
 
     return AwaitableGetRunLogResult(
-        base64_encode_content=__ret__.base64_encode_content,
-        content=__ret__.content,
-        content_type=__ret__.content_type,
-        id=__ret__.id,
-        name=__ret__.name,
-        run_id=__ret__.run_id)
+        base64_encode_content=pulumi.get(__ret__, 'base64_encode_content'),
+        content=pulumi.get(__ret__, 'content'),
+        content_type=pulumi.get(__ret__, 'content_type'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        run_id=pulumi.get(__ret__, 'run_id'))
 
 
 @_utilities.lift_output_func(get_run_log)

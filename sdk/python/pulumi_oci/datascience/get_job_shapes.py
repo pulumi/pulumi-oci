@@ -103,10 +103,10 @@ def get_job_shapes(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataScience/getJobShapes:getJobShapes', __args__, opts=opts, typ=GetJobShapesResult).value
 
     return AwaitableGetJobShapesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        job_shapes=__ret__.job_shapes)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        job_shapes=pulumi.get(__ret__, 'job_shapes'))
 
 
 @_utilities.lift_output_func(get_job_shapes)

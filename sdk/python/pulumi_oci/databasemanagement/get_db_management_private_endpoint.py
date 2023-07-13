@@ -198,18 +198,18 @@ def get_db_management_private_endpoint(db_management_private_endpoint_id: Option
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getDbManagementPrivateEndpoint:getDbManagementPrivateEndpoint', __args__, opts=opts, typ=GetDbManagementPrivateEndpointResult).value
 
     return AwaitableGetDbManagementPrivateEndpointResult(
-        compartment_id=__ret__.compartment_id,
-        db_management_private_endpoint_id=__ret__.db_management_private_endpoint_id,
-        description=__ret__.description,
-        id=__ret__.id,
-        is_cluster=__ret__.is_cluster,
-        name=__ret__.name,
-        nsg_ids=__ret__.nsg_ids,
-        private_ip=__ret__.private_ip,
-        state=__ret__.state,
-        subnet_id=__ret__.subnet_id,
-        time_created=__ret__.time_created,
-        vcn_id=__ret__.vcn_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        db_management_private_endpoint_id=pulumi.get(__ret__, 'db_management_private_endpoint_id'),
+        description=pulumi.get(__ret__, 'description'),
+        id=pulumi.get(__ret__, 'id'),
+        is_cluster=pulumi.get(__ret__, 'is_cluster'),
+        name=pulumi.get(__ret__, 'name'),
+        nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
+        private_ip=pulumi.get(__ret__, 'private_ip'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_db_management_private_endpoint)

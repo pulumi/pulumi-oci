@@ -2171,6 +2171,9 @@ class MysqlConfigurationVariables(dict):
         """
         ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
         """
+        warnings.warn("""The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""generated_random_password_length is deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "generated_random_password_length")
 
     @property
@@ -2485,6 +2488,9 @@ class MysqlConfigurationVariables(dict):
         """
         DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
         """
+        warnings.warn("""The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""mysql_zstd_default_compression_level is deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "mysql_zstd_default_compression_level")
 
     @property
@@ -2519,6 +2525,9 @@ class MysqlConfigurationVariables(dict):
         """
         ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
         """
+        warnings.warn("""The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""mysqlx_document_id_unique_prefix is deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "mysqlx_document_id_unique_prefix")
 
     @property
@@ -2535,6 +2544,9 @@ class MysqlConfigurationVariables(dict):
         """
         ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
         """
+        warnings.warn("""The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""mysqlx_idle_worker_thread_timeout is deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "mysqlx_idle_worker_thread_timeout")
 
     @property
@@ -2579,6 +2591,9 @@ class MysqlConfigurationVariables(dict):
         """
         ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
         """
+        warnings.warn("""The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""mysqlx_min_worker_threads is deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "mysqlx_min_worker_threads")
 
     @property
@@ -2661,6 +2676,9 @@ class MysqlConfigurationVariables(dict):
         """
         ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
         """
+        warnings.warn("""The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""query_alloc_block_size is deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "query_alloc_block_size")
 
     @property
@@ -2669,6 +2687,9 @@ class MysqlConfigurationVariables(dict):
         """
         ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
         """
+        warnings.warn("""The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""query_prealloc_size is deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "query_prealloc_size")
 
     @property
@@ -6678,6 +6699,9 @@ class GetMysqlConfigurationVariableResult(dict):
         """
         ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
         """
+        warnings.warn("""The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""generated_random_password_length is deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "generated_random_password_length")
 
     @property
@@ -6946,6 +6970,9 @@ class GetMysqlConfigurationVariableResult(dict):
         """
         DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
         """
+        warnings.warn("""The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""mysql_zstd_default_compression_level is deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "mysql_zstd_default_compression_level")
 
     @property
@@ -6978,6 +7005,9 @@ class GetMysqlConfigurationVariableResult(dict):
         """
         ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
         """
+        warnings.warn("""The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""mysqlx_document_id_unique_prefix is deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "mysqlx_document_id_unique_prefix")
 
     @property
@@ -6994,6 +7024,9 @@ class GetMysqlConfigurationVariableResult(dict):
         """
         ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
         """
+        warnings.warn("""The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""mysqlx_idle_worker_thread_timeout is deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "mysqlx_idle_worker_thread_timeout")
 
     @property
@@ -7034,6 +7067,9 @@ class GetMysqlConfigurationVariableResult(dict):
         """
         ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
         """
+        warnings.warn("""The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""mysqlx_min_worker_threads is deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "mysqlx_min_worker_threads")
 
     @property
@@ -7106,6 +7142,9 @@ class GetMysqlConfigurationVariableResult(dict):
         """
         ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
         """
+        warnings.warn("""The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""query_alloc_block_size is deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "query_alloc_block_size")
 
     @property
@@ -7114,6 +7153,9 @@ class GetMysqlConfigurationVariableResult(dict):
         """
         ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
         """
+        warnings.warn("""The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""query_prealloc_size is deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "query_prealloc_size")
 
     @property
@@ -7741,6 +7783,9 @@ class GetMysqlConfigurationsConfigurationVariableResult(dict):
         """
         ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
         """
+        warnings.warn("""The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""generated_random_password_length is deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "generated_random_password_length")
 
     @property
@@ -8009,6 +8054,9 @@ class GetMysqlConfigurationsConfigurationVariableResult(dict):
         """
         DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
         """
+        warnings.warn("""The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""mysql_zstd_default_compression_level is deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "mysql_zstd_default_compression_level")
 
     @property
@@ -8041,6 +8089,9 @@ class GetMysqlConfigurationsConfigurationVariableResult(dict):
         """
         ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
         """
+        warnings.warn("""The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""mysqlx_document_id_unique_prefix is deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "mysqlx_document_id_unique_prefix")
 
     @property
@@ -8057,6 +8108,9 @@ class GetMysqlConfigurationsConfigurationVariableResult(dict):
         """
         ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
         """
+        warnings.warn("""The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""mysqlx_idle_worker_thread_timeout is deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "mysqlx_idle_worker_thread_timeout")
 
     @property
@@ -8097,6 +8151,9 @@ class GetMysqlConfigurationsConfigurationVariableResult(dict):
         """
         ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
         """
+        warnings.warn("""The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""mysqlx_min_worker_threads is deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "mysqlx_min_worker_threads")
 
     @property
@@ -8169,6 +8226,9 @@ class GetMysqlConfigurationsConfigurationVariableResult(dict):
         """
         ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
         """
+        warnings.warn("""The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""query_alloc_block_size is deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "query_alloc_block_size")
 
     @property
@@ -8177,6 +8237,9 @@ class GetMysqlConfigurationsConfigurationVariableResult(dict):
         """
         ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
         """
+        warnings.warn("""The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""query_prealloc_size is deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "query_prealloc_size")
 
     @property

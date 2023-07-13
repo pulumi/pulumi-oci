@@ -198,18 +198,18 @@ def get_ipv6(ipv6id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getIpv6:getIpv6', __args__, opts=opts, typ=GetIpv6Result).value
 
     return AwaitableGetIpv6Result(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        ip_address=__ret__.ip_address,
-        ipv6id=__ret__.ipv6id,
-        ipv6subnet_cidr=__ret__.ipv6subnet_cidr,
-        state=__ret__.state,
-        subnet_id=__ret__.subnet_id,
-        time_created=__ret__.time_created,
-        vnic_id=__ret__.vnic_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        ip_address=pulumi.get(__ret__, 'ip_address'),
+        ipv6id=pulumi.get(__ret__, 'ipv6id'),
+        ipv6subnet_cidr=pulumi.get(__ret__, 'ipv6subnet_cidr'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        vnic_id=pulumi.get(__ret__, 'vnic_id'))
 
 
 @_utilities.lift_output_func(get_ipv6)

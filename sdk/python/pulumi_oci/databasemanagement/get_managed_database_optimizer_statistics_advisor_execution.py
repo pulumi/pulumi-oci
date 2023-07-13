@@ -208,18 +208,18 @@ def get_managed_database_optimizer_statistics_advisor_execution(execution_name: 
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecution:getManagedDatabaseOptimizerStatisticsAdvisorExecution', __args__, opts=opts, typ=GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult).value
 
     return AwaitableGetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult(
-        databases=__ret__.databases,
-        error_message=__ret__.error_message,
-        execution_name=__ret__.execution_name,
-        findings=__ret__.findings,
-        id=__ret__.id,
-        managed_database_id=__ret__.managed_database_id,
-        reports=__ret__.reports,
-        status=__ret__.status,
-        status_message=__ret__.status_message,
-        task_name=__ret__.task_name,
-        time_end=__ret__.time_end,
-        time_start=__ret__.time_start)
+        databases=pulumi.get(__ret__, 'databases'),
+        error_message=pulumi.get(__ret__, 'error_message'),
+        execution_name=pulumi.get(__ret__, 'execution_name'),
+        findings=pulumi.get(__ret__, 'findings'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        reports=pulumi.get(__ret__, 'reports'),
+        status=pulumi.get(__ret__, 'status'),
+        status_message=pulumi.get(__ret__, 'status_message'),
+        task_name=pulumi.get(__ret__, 'task_name'),
+        time_end=pulumi.get(__ret__, 'time_end'),
+        time_start=pulumi.get(__ret__, 'time_start'))
 
 
 @_utilities.lift_output_func(get_managed_database_optimizer_statistics_advisor_execution)

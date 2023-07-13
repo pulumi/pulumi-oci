@@ -232,18 +232,18 @@ def get_domains(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getDomains:getDomains', __args__, opts=opts, typ=GetDomainsResult).value
 
     return AwaitableGetDomainsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        domains=__ret__.domains,
-        filters=__ret__.filters,
-        home_region_url=__ret__.home_region_url,
-        id=__ret__.id,
-        is_hidden_on_login=__ret__.is_hidden_on_login,
-        license_type=__ret__.license_type,
-        name=__ret__.name,
-        state=__ret__.state,
-        type=__ret__.type,
-        url=__ret__.url)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        domains=pulumi.get(__ret__, 'domains'),
+        filters=pulumi.get(__ret__, 'filters'),
+        home_region_url=pulumi.get(__ret__, 'home_region_url'),
+        id=pulumi.get(__ret__, 'id'),
+        is_hidden_on_login=pulumi.get(__ret__, 'is_hidden_on_login'),
+        license_type=pulumi.get(__ret__, 'license_type'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        type=pulumi.get(__ret__, 'type'),
+        url=pulumi.get(__ret__, 'url'))
 
 
 @_utilities.lift_output_func(get_domains)

@@ -27,9 +27,11 @@ import (
 type Subscription struct {
 	pulumi.CustomResourceState
 
+	// (Updatable) Account type.
+	AccountType pulumi.StringOutput `pulumi:"accountType"`
 	// (Updatable) Bill to customer Account id.
 	BillToCustAccountId pulumi.StringOutput `pulumi:"billToCustAccountId"`
-	// (Updatable) Billing address details model.
+	// (Updatable) Address details model.
 	BillingAddresses SubscriptionBillingAddressArrayOutput `pulumi:"billingAddresses"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -68,6 +70,8 @@ type Subscription struct {
 	SubscriptionPlanNumber pulumi.StringOutput `pulumi:"subscriptionPlanNumber"`
 	// (Updatable) Tax details.
 	TaxInfos SubscriptionTaxInfoArrayOutput `pulumi:"taxInfos"`
+	// (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+	TimePersonalToCorporateConv pulumi.StringOutput `pulumi:"timePersonalToCorporateConv"`
 	// (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
 	TimePlanUpgrade pulumi.StringOutput `pulumi:"timePlanUpgrade"`
 	// (Updatable) Start date of the subscription.
@@ -122,9 +126,11 @@ func GetSubscription(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Subscription resources.
 type subscriptionState struct {
+	// (Updatable) Account type.
+	AccountType *string `pulumi:"accountType"`
 	// (Updatable) Bill to customer Account id.
 	BillToCustAccountId *string `pulumi:"billToCustAccountId"`
-	// (Updatable) Billing address details model.
+	// (Updatable) Address details model.
 	BillingAddresses []SubscriptionBillingAddress `pulumi:"billingAddresses"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -163,6 +169,8 @@ type subscriptionState struct {
 	SubscriptionPlanNumber *string `pulumi:"subscriptionPlanNumber"`
 	// (Updatable) Tax details.
 	TaxInfos []SubscriptionTaxInfo `pulumi:"taxInfos"`
+	// (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+	TimePersonalToCorporateConv *string `pulumi:"timePersonalToCorporateConv"`
 	// (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
 	TimePlanUpgrade *string `pulumi:"timePlanUpgrade"`
 	// (Updatable) Start date of the subscription.
@@ -174,9 +182,11 @@ type subscriptionState struct {
 }
 
 type SubscriptionState struct {
+	// (Updatable) Account type.
+	AccountType pulumi.StringPtrInput
 	// (Updatable) Bill to customer Account id.
 	BillToCustAccountId pulumi.StringPtrInput
-	// (Updatable) Billing address details model.
+	// (Updatable) Address details model.
 	BillingAddresses SubscriptionBillingAddressArrayInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
@@ -215,6 +225,8 @@ type SubscriptionState struct {
 	SubscriptionPlanNumber pulumi.StringPtrInput
 	// (Updatable) Tax details.
 	TaxInfos SubscriptionTaxInfoArrayInput
+	// (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+	TimePersonalToCorporateConv pulumi.StringPtrInput
 	// (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
 	TimePlanUpgrade pulumi.StringPtrInput
 	// (Updatable) Start date of the subscription.
@@ -349,12 +361,17 @@ func (o SubscriptionOutput) ToSubscriptionOutputWithContext(ctx context.Context)
 	return o
 }
 
+// (Updatable) Account type.
+func (o SubscriptionOutput) AccountType() pulumi.StringOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.AccountType }).(pulumi.StringOutput)
+}
+
 // (Updatable) Bill to customer Account id.
 func (o SubscriptionOutput) BillToCustAccountId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.BillToCustAccountId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Billing address details model.
+// (Updatable) Address details model.
 func (o SubscriptionOutput) BillingAddresses() SubscriptionBillingAddressArrayOutput {
 	return o.ApplyT(func(v *Subscription) SubscriptionBillingAddressArrayOutput { return v.BillingAddresses }).(SubscriptionBillingAddressArrayOutput)
 }
@@ -445,6 +462,11 @@ func (o SubscriptionOutput) SubscriptionPlanNumber() pulumi.StringOutput {
 // (Updatable) Tax details.
 func (o SubscriptionOutput) TaxInfos() SubscriptionTaxInfoArrayOutput {
 	return o.ApplyT(func(v *Subscription) SubscriptionTaxInfoArrayOutput { return v.TaxInfos }).(SubscriptionTaxInfoArrayOutput)
+}
+
+// (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+func (o SubscriptionOutput) TimePersonalToCorporateConv() pulumi.StringOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.TimePersonalToCorporateConv }).(pulumi.StringOutput)
 }
 
 // (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG

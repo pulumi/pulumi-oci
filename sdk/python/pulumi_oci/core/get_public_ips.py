@@ -189,14 +189,14 @@ def get_public_ips(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getPublicIps:getPublicIps', __args__, opts=opts, typ=GetPublicIpsResult).value
 
     return AwaitableGetPublicIpsResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        lifetime=__ret__.lifetime,
-        public_ip_pool_id=__ret__.public_ip_pool_id,
-        public_ips=__ret__.public_ips,
-        scope=__ret__.scope)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        lifetime=pulumi.get(__ret__, 'lifetime'),
+        public_ip_pool_id=pulumi.get(__ret__, 'public_ip_pool_id'),
+        public_ips=pulumi.get(__ret__, 'public_ips'),
+        scope=pulumi.get(__ret__, 'scope'))
 
 
 @_utilities.lift_output_func(get_public_ips)

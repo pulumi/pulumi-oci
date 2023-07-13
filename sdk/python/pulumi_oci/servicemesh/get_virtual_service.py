@@ -247,22 +247,22 @@ def get_virtual_service(virtual_service_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ServiceMesh/getVirtualService:getVirtualService', __args__, opts=opts, typ=GetVirtualServiceResult).value
 
     return AwaitableGetVirtualServiceResult(
-        compartment_id=__ret__.compartment_id,
-        default_routing_policies=__ret__.default_routing_policies,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        freeform_tags=__ret__.freeform_tags,
-        hosts=__ret__.hosts,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        mesh_id=__ret__.mesh_id,
-        mtls=__ret__.mtls,
-        name=__ret__.name,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        virtual_service_id=__ret__.virtual_service_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        default_routing_policies=pulumi.get(__ret__, 'default_routing_policies'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        hosts=pulumi.get(__ret__, 'hosts'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        mesh_id=pulumi.get(__ret__, 'mesh_id'),
+        mtls=pulumi.get(__ret__, 'mtls'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        virtual_service_id=pulumi.get(__ret__, 'virtual_service_id'))
 
 
 @_utilities.lift_output_func(get_virtual_service)

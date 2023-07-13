@@ -115,11 +115,11 @@ def get_external_exadata_storage_server_iorm_plan(external_exadata_storage_serve
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalExadataStorageServerIormPlan:getExternalExadataStorageServerIormPlan', __args__, opts=opts, typ=GetExternalExadataStorageServerIormPlanResult).value
 
     return AwaitableGetExternalExadataStorageServerIormPlanResult(
-        db_plans=__ret__.db_plans,
-        external_exadata_storage_server_id=__ret__.external_exadata_storage_server_id,
-        id=__ret__.id,
-        plan_objective=__ret__.plan_objective,
-        plan_status=__ret__.plan_status)
+        db_plans=pulumi.get(__ret__, 'db_plans'),
+        external_exadata_storage_server_id=pulumi.get(__ret__, 'external_exadata_storage_server_id'),
+        id=pulumi.get(__ret__, 'id'),
+        plan_objective=pulumi.get(__ret__, 'plan_objective'),
+        plan_status=pulumi.get(__ret__, 'plan_status'))
 
 
 @_utilities.lift_output_func(get_external_exadata_storage_server_iorm_plan)

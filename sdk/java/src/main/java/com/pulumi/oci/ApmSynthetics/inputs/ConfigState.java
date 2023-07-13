@@ -131,14 +131,14 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) If isRunNow is enabled, then the monitor will run now.
+     * (Updatable) If isRunNow is enabled, then the monitor will run immediately.
      * 
      */
     @Import(name="isRunNow")
     private @Nullable Output<Boolean> isRunNow;
 
     /**
-     * @return (Updatable) If isRunNow is enabled, then the monitor will run now.
+     * @return (Updatable) If isRunNow is enabled, then the monitor will run immediately.
      * 
      */
     public Optional<Output<Boolean>> isRunNow() {
@@ -161,14 +161,14 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Details used to schedule maintenance window.
+     * (Updatable) Details required to schedule maintenance window.
      * 
      */
     @Import(name="maintenanceWindowSchedule")
     private @Nullable Output<ConfigMaintenanceWindowScheduleArgs> maintenanceWindowSchedule;
 
     /**
-     * @return (Updatable) Details used to schedule maintenance window.
+     * @return (Updatable) Details required to schedule maintenance window.
      * 
      */
     public Optional<Output<ConfigMaintenanceWindowScheduleArgs>> maintenanceWindowSchedule() {
@@ -206,14 +206,14 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Scheduling policy on Vantage points.
+     * (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
      * 
      */
     @Import(name="schedulingPolicy")
     private @Nullable Output<String> schedulingPolicy;
 
     /**
-     * @return (Updatable) Scheduling policy on Vantage points.
+     * @return (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
      * 
      */
     public Optional<Output<String>> schedulingPolicy() {
@@ -570,7 +570,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isRunNow (Updatable) If isRunNow is enabled, then the monitor will run now.
+         * @param isRunNow (Updatable) If isRunNow is enabled, then the monitor will run immediately.
          * 
          * @return builder
          * 
@@ -581,7 +581,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isRunNow (Updatable) If isRunNow is enabled, then the monitor will run now.
+         * @param isRunNow (Updatable) If isRunNow is enabled, then the monitor will run immediately.
          * 
          * @return builder
          * 
@@ -612,7 +612,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maintenanceWindowSchedule (Updatable) Details used to schedule maintenance window.
+         * @param maintenanceWindowSchedule (Updatable) Details required to schedule maintenance window.
          * 
          * @return builder
          * 
@@ -623,7 +623,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maintenanceWindowSchedule (Updatable) Details used to schedule maintenance window.
+         * @param maintenanceWindowSchedule (Updatable) Details required to schedule maintenance window.
          * 
          * @return builder
          * 
@@ -675,7 +675,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param schedulingPolicy (Updatable) Scheduling policy on Vantage points.
+         * @param schedulingPolicy (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
          * 
          * @return builder
          * 
@@ -686,7 +686,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param schedulingPolicy (Updatable) Scheduling policy on Vantage points.
+         * @param schedulingPolicy (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
          * 
          * @return builder
          * 

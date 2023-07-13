@@ -161,14 +161,14 @@ def get_workspace_projects(fields: Optional[Sequence[str]] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataIntegration/getWorkspaceProjects:getWorkspaceProjects', __args__, opts=opts, typ=GetWorkspaceProjectsResult).value
 
     return AwaitableGetWorkspaceProjectsResult(
-        fields=__ret__.fields,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        identifiers=__ret__.identifiers,
-        name=__ret__.name,
-        name_contains=__ret__.name_contains,
-        project_summary_collections=__ret__.project_summary_collections,
-        workspace_id=__ret__.workspace_id)
+        fields=pulumi.get(__ret__, 'fields'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        identifiers=pulumi.get(__ret__, 'identifiers'),
+        name=pulumi.get(__ret__, 'name'),
+        name_contains=pulumi.get(__ret__, 'name_contains'),
+        project_summary_collections=pulumi.get(__ret__, 'project_summary_collections'),
+        workspace_id=pulumi.get(__ret__, 'workspace_id'))
 
 
 @_utilities.lift_output_func(get_workspace_projects)

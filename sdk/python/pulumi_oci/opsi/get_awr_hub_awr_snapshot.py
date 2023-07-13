@@ -131,12 +131,12 @@ def get_awr_hub_awr_snapshot(awr_hub_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Opsi/getAwrHubAwrSnapshot:getAwrHubAwrSnapshot', __args__, opts=opts, typ=GetAwrHubAwrSnapshotResult).value
 
     return AwaitableGetAwrHubAwrSnapshotResult(
-        awr_hub_id=__ret__.awr_hub_id,
-        awr_source_database_identifier=__ret__.awr_source_database_identifier,
-        id=__ret__.id,
-        items=__ret__.items,
-        time_greater_than_or_equal_to=__ret__.time_greater_than_or_equal_to,
-        time_less_than_or_equal_to=__ret__.time_less_than_or_equal_to)
+        awr_hub_id=pulumi.get(__ret__, 'awr_hub_id'),
+        awr_source_database_identifier=pulumi.get(__ret__, 'awr_source_database_identifier'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        time_greater_than_or_equal_to=pulumi.get(__ret__, 'time_greater_than_or_equal_to'),
+        time_less_than_or_equal_to=pulumi.get(__ret__, 'time_less_than_or_equal_to'))
 
 
 @_utilities.lift_output_func(get_awr_hub_awr_snapshot)

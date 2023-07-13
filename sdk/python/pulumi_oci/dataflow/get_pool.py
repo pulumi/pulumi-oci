@@ -259,23 +259,23 @@ def get_pool(pool_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataFlow/getPool:getPool', __args__, opts=opts, typ=GetPoolResult).value
 
     return AwaitableGetPoolResult(
-        compartment_id=__ret__.compartment_id,
-        configurations=__ret__.configurations,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        idle_timeout_in_minutes=__ret__.idle_timeout_in_minutes,
-        lifecycle_details=__ret__.lifecycle_details,
-        owner_principal_id=__ret__.owner_principal_id,
-        owner_user_name=__ret__.owner_user_name,
-        pool_id=__ret__.pool_id,
-        pool_metrics=__ret__.pool_metrics,
-        schedules=__ret__.schedules,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        configurations=pulumi.get(__ret__, 'configurations'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        idle_timeout_in_minutes=pulumi.get(__ret__, 'idle_timeout_in_minutes'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        owner_principal_id=pulumi.get(__ret__, 'owner_principal_id'),
+        owner_user_name=pulumi.get(__ret__, 'owner_user_name'),
+        pool_id=pulumi.get(__ret__, 'pool_id'),
+        pool_metrics=pulumi.get(__ret__, 'pool_metrics'),
+        schedules=pulumi.get(__ret__, 'schedules'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_pool)

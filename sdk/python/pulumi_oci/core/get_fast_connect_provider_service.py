@@ -211,19 +211,19 @@ def get_fast_connect_provider_service(provider_service_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getFastConnectProviderService:getFastConnectProviderService', __args__, opts=opts, typ=GetFastConnectProviderServiceResult).value
 
     return AwaitableGetFastConnectProviderServiceResult(
-        bandwith_shape_management=__ret__.bandwith_shape_management,
-        customer_asn_management=__ret__.customer_asn_management,
-        description=__ret__.description,
-        id=__ret__.id,
-        private_peering_bgp_management=__ret__.private_peering_bgp_management,
-        provider_name=__ret__.provider_name,
-        provider_service_id=__ret__.provider_service_id,
-        provider_service_key_management=__ret__.provider_service_key_management,
-        provider_service_name=__ret__.provider_service_name,
-        public_peering_bgp_management=__ret__.public_peering_bgp_management,
-        required_total_cross_connects=__ret__.required_total_cross_connects,
-        supported_virtual_circuit_types=__ret__.supported_virtual_circuit_types,
-        type=__ret__.type)
+        bandwith_shape_management=pulumi.get(__ret__, 'bandwith_shape_management'),
+        customer_asn_management=pulumi.get(__ret__, 'customer_asn_management'),
+        description=pulumi.get(__ret__, 'description'),
+        id=pulumi.get(__ret__, 'id'),
+        private_peering_bgp_management=pulumi.get(__ret__, 'private_peering_bgp_management'),
+        provider_name=pulumi.get(__ret__, 'provider_name'),
+        provider_service_id=pulumi.get(__ret__, 'provider_service_id'),
+        provider_service_key_management=pulumi.get(__ret__, 'provider_service_key_management'),
+        provider_service_name=pulumi.get(__ret__, 'provider_service_name'),
+        public_peering_bgp_management=pulumi.get(__ret__, 'public_peering_bgp_management'),
+        required_total_cross_connects=pulumi.get(__ret__, 'required_total_cross_connects'),
+        supported_virtual_circuit_types=pulumi.get(__ret__, 'supported_virtual_circuit_types'),
+        type=pulumi.get(__ret__, 'type'))
 
 
 @_utilities.lift_output_func(get_fast_connect_provider_service)

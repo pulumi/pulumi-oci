@@ -342,26 +342,26 @@ def get_sensitive_data_models_sensitive_columns(column_group: Optional[str] = No
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getSensitiveDataModelsSensitiveColumns:getSensitiveDataModelsSensitiveColumns', __args__, opts=opts, typ=GetSensitiveDataModelsSensitiveColumnsResult).value
 
     return AwaitableGetSensitiveDataModelsSensitiveColumnsResult(
-        column_group=__ret__.column_group,
-        column_names=__ret__.column_names,
-        data_types=__ret__.data_types,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_case_in_sensitive=__ret__.is_case_in_sensitive,
-        object_types=__ret__.object_types,
-        objects=__ret__.objects,
-        parent_column_keys=__ret__.parent_column_keys,
-        relation_types=__ret__.relation_types,
-        schema_names=__ret__.schema_names,
-        sensitive_column_collections=__ret__.sensitive_column_collections,
-        sensitive_column_lifecycle_state=__ret__.sensitive_column_lifecycle_state,
-        sensitive_data_model_id=__ret__.sensitive_data_model_id,
-        sensitive_type_ids=__ret__.sensitive_type_ids,
-        statuses=__ret__.statuses,
-        time_created_greater_than_or_equal_to=__ret__.time_created_greater_than_or_equal_to,
-        time_created_less_than=__ret__.time_created_less_than,
-        time_updated_greater_than_or_equal_to=__ret__.time_updated_greater_than_or_equal_to,
-        time_updated_less_than=__ret__.time_updated_less_than)
+        column_group=pulumi.get(__ret__, 'column_group'),
+        column_names=pulumi.get(__ret__, 'column_names'),
+        data_types=pulumi.get(__ret__, 'data_types'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_case_in_sensitive=pulumi.get(__ret__, 'is_case_in_sensitive'),
+        object_types=pulumi.get(__ret__, 'object_types'),
+        objects=pulumi.get(__ret__, 'objects'),
+        parent_column_keys=pulumi.get(__ret__, 'parent_column_keys'),
+        relation_types=pulumi.get(__ret__, 'relation_types'),
+        schema_names=pulumi.get(__ret__, 'schema_names'),
+        sensitive_column_collections=pulumi.get(__ret__, 'sensitive_column_collections'),
+        sensitive_column_lifecycle_state=pulumi.get(__ret__, 'sensitive_column_lifecycle_state'),
+        sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'),
+        sensitive_type_ids=pulumi.get(__ret__, 'sensitive_type_ids'),
+        statuses=pulumi.get(__ret__, 'statuses'),
+        time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'),
+        time_updated_greater_than_or_equal_to=pulumi.get(__ret__, 'time_updated_greater_than_or_equal_to'),
+        time_updated_less_than=pulumi.get(__ret__, 'time_updated_less_than'))
 
 
 @_utilities.lift_output_func(get_sensitive_data_models_sensitive_columns)

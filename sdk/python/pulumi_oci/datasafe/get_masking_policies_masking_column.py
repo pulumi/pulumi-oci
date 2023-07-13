@@ -272,24 +272,24 @@ def get_masking_policies_masking_column(masking_column_key: Optional[str] = None
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getMaskingPoliciesMaskingColumn:getMaskingPoliciesMaskingColumn', __args__, opts=opts, typ=GetMaskingPoliciesMaskingColumnResult).value
 
     return AwaitableGetMaskingPoliciesMaskingColumnResult(
-        child_columns=__ret__.child_columns,
-        column_name=__ret__.column_name,
-        data_type=__ret__.data_type,
-        id=__ret__.id,
-        is_masking_enabled=__ret__.is_masking_enabled,
-        key=__ret__.key,
-        lifecycle_details=__ret__.lifecycle_details,
-        masking_column_group=__ret__.masking_column_group,
-        masking_column_key=__ret__.masking_column_key,
-        masking_formats=__ret__.masking_formats,
-        masking_policy_id=__ret__.masking_policy_id,
-        object=__ret__.object,
-        object_type=__ret__.object_type,
-        schema_name=__ret__.schema_name,
-        sensitive_type_id=__ret__.sensitive_type_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        child_columns=pulumi.get(__ret__, 'child_columns'),
+        column_name=pulumi.get(__ret__, 'column_name'),
+        data_type=pulumi.get(__ret__, 'data_type'),
+        id=pulumi.get(__ret__, 'id'),
+        is_masking_enabled=pulumi.get(__ret__, 'is_masking_enabled'),
+        key=pulumi.get(__ret__, 'key'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        masking_column_group=pulumi.get(__ret__, 'masking_column_group'),
+        masking_column_key=pulumi.get(__ret__, 'masking_column_key'),
+        masking_formats=pulumi.get(__ret__, 'masking_formats'),
+        masking_policy_id=pulumi.get(__ret__, 'masking_policy_id'),
+        object=pulumi.get(__ret__, 'object'),
+        object_type=pulumi.get(__ret__, 'object_type'),
+        schema_name=pulumi.get(__ret__, 'schema_name'),
+        sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_masking_policies_masking_column)

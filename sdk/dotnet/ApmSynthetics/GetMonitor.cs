@@ -125,7 +125,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMonitorAvailabilityConfigurationResult> AvailabilityConfigurations;
         /// <summary>
-        /// Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+        /// Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
         /// </summary>
         public readonly int BatchIntervalInSeconds;
         /// <summary>
@@ -149,7 +149,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// If isRunNow is enabled, then the monitor will run now.
+        /// If isRunNow is enabled, then the monitor will run immediately.
         /// </summary>
         public readonly bool IsRunNow;
         /// <summary>
@@ -157,12 +157,12 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public readonly bool IsRunOnce;
         /// <summary>
-        /// Details used to schedule maintenance window.
+        /// Details required to schedule maintenance window.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMonitorMaintenanceWindowScheduleResult> MaintenanceWindowSchedules;
         public readonly string MonitorId;
         /// <summary>
-        /// Type of the monitor.
+        /// Type of monitor.
         /// </summary>
         public readonly string MonitorType;
         /// <summary>
@@ -170,7 +170,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public readonly int RepeatIntervalInSeconds;
         /// <summary>
-        /// Scheduling policy on Vantage points.
+        /// Scheduling policy to decide the distribution of monitor executions on vantage points.
         /// </summary>
         public readonly string SchedulingPolicy;
         /// <summary>

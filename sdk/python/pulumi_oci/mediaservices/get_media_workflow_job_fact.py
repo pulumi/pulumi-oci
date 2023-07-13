@@ -133,12 +133,12 @@ def get_media_workflow_job_fact(key: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:MediaServices/getMediaWorkflowJobFact:getMediaWorkflowJobFact', __args__, opts=opts, typ=GetMediaWorkflowJobFactResult).value
 
     return AwaitableGetMediaWorkflowJobFactResult(
-        detail=__ret__.detail,
-        id=__ret__.id,
-        key=__ret__.key,
-        media_workflow_job_id=__ret__.media_workflow_job_id,
-        name=__ret__.name,
-        type=__ret__.type)
+        detail=pulumi.get(__ret__, 'detail'),
+        id=pulumi.get(__ret__, 'id'),
+        key=pulumi.get(__ret__, 'key'),
+        media_workflow_job_id=pulumi.get(__ret__, 'media_workflow_job_id'),
+        name=pulumi.get(__ret__, 'name'),
+        type=pulumi.get(__ret__, 'type'))
 
 
 @_utilities.lift_output_func(get_media_workflow_job_fact)

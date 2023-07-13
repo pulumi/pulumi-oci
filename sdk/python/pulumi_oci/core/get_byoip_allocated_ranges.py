@@ -104,10 +104,10 @@ def get_byoip_allocated_ranges(byoip_range_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getByoipAllocatedRanges:getByoipAllocatedRanges', __args__, opts=opts, typ=GetByoipAllocatedRangesResult).value
 
     return AwaitableGetByoipAllocatedRangesResult(
-        byoip_allocated_range_collections=__ret__.byoip_allocated_range_collections,
-        byoip_range_id=__ret__.byoip_range_id,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        byoip_allocated_range_collections=pulumi.get(__ret__, 'byoip_allocated_range_collections'),
+        byoip_range_id=pulumi.get(__ret__, 'byoip_range_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_byoip_allocated_ranges)

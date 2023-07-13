@@ -144,14 +144,14 @@ def get_media_asset_distribution_channel_attachment(distribution_channel_id: Opt
     __ret__ = pulumi.runtime.invoke('oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment', __args__, opts=opts, typ=GetMediaAssetDistributionChannelAttachmentResult).value
 
     return AwaitableGetMediaAssetDistributionChannelAttachmentResult(
-        display_name=__ret__.display_name,
-        distribution_channel_id=__ret__.distribution_channel_id,
-        id=__ret__.id,
-        media_asset_id=__ret__.media_asset_id,
-        media_workflow_job_id=__ret__.media_workflow_job_id,
-        metadata_ref=__ret__.metadata_ref,
-        state=__ret__.state,
-        version=__ret__.version)
+        display_name=pulumi.get(__ret__, 'display_name'),
+        distribution_channel_id=pulumi.get(__ret__, 'distribution_channel_id'),
+        id=pulumi.get(__ret__, 'id'),
+        media_asset_id=pulumi.get(__ret__, 'media_asset_id'),
+        media_workflow_job_id=pulumi.get(__ret__, 'media_workflow_job_id'),
+        metadata_ref=pulumi.get(__ret__, 'metadata_ref'),
+        state=pulumi.get(__ret__, 'state'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_media_asset_distribution_channel_attachment)

@@ -24,10 +24,10 @@ public final class VmClusterNetworkScan {
      */
     private List<String> ips;
     /**
-     * @return (Updatable) The SCAN TCPIP port. Default is 1521.
+     * @return (Updatable) **Deprecated.** This field is deprecated. You may use &#39;scanListenerPortTcp&#39; to specify the port. The SCAN TCPIP port. Default is 1521.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return (Updatable) The SCAN TCPIP port. Default is 1521.
      * 
@@ -55,11 +55,11 @@ public final class VmClusterNetworkScan {
         return this.ips;
     }
     /**
-     * @return (Updatable) The SCAN TCPIP port. Default is 1521.
+     * @return (Updatable) **Deprecated.** This field is deprecated. You may use &#39;scanListenerPortTcp&#39; to specify the port. The SCAN TCPIP port. Default is 1521.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return (Updatable) The SCAN TCPIP port. Default is 1521.
@@ -87,7 +87,7 @@ public final class VmClusterNetworkScan {
     public static final class Builder {
         private String hostname;
         private List<String> ips;
-        private Integer port;
+        private @Nullable Integer port;
         private @Nullable Integer scanListenerPortTcp;
         private @Nullable Integer scanListenerPortTcpSsl;
         public Builder() {}
@@ -114,8 +114,8 @@ public final class VmClusterNetworkScan {
             return ips(List.of(ips));
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter

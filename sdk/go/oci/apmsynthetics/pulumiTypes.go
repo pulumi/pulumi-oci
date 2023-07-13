@@ -167,21 +167,25 @@ func (o ConfigAvailabilityConfigurationPtrOutput) MinAllowedRunsPerInterval() pu
 }
 
 type ConfigConfiguration struct {
+	// (Updatable) Details for client certificate.
+	ClientCertificateDetails *ConfigConfigurationClientCertificateDetails `pulumi:"clientCertificateDetails"`
 	// (Updatable) Type of configuration.
 	ConfigType *string `pulumi:"configType"`
-	// (Updatable) Dns settings.
+	// (Updatable) Information about the DNS settings.
 	DnsConfiguration *ConfigConfigurationDnsConfiguration `pulumi:"dnsConfiguration"`
 	// (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled *bool `pulumi:"isCertificateValidationEnabled"`
+	// (Updatable) If disabled then auto snapshots are not collected.
+	IsDefaultSnapshotEnabled *bool `pulumi:"isDefaultSnapshotEnabled"`
 	// (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
 	IsFailureRetried *bool `pulumi:"isFailureRetried"`
-	// (Updatable) If redirection enabled, then redirects will be allowed while accessing target URL.
+	// (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
 	IsRedirectionEnabled *bool `pulumi:"isRedirectionEnabled"`
 	// (Updatable) Details of the network configuration.
 	NetworkConfiguration *ConfigConfigurationNetworkConfiguration `pulumi:"networkConfiguration"`
 	// (Updatable) Details for request HTTP authentication.
 	ReqAuthenticationDetails *ConfigConfigurationReqAuthenticationDetails `pulumi:"reqAuthenticationDetails"`
-	// (Updatable) Request http authentication scheme.
+	// (Updatable) Request HTTP authentication scheme.
 	ReqAuthenticationScheme *string `pulumi:"reqAuthenticationScheme"`
 	// (Updatable) List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
 	RequestHeaders []ConfigConfigurationRequestHeader `pulumi:"requestHeaders"`
@@ -211,21 +215,25 @@ type ConfigConfigurationInput interface {
 }
 
 type ConfigConfigurationArgs struct {
+	// (Updatable) Details for client certificate.
+	ClientCertificateDetails ConfigConfigurationClientCertificateDetailsPtrInput `pulumi:"clientCertificateDetails"`
 	// (Updatable) Type of configuration.
 	ConfigType pulumi.StringPtrInput `pulumi:"configType"`
-	// (Updatable) Dns settings.
+	// (Updatable) Information about the DNS settings.
 	DnsConfiguration ConfigConfigurationDnsConfigurationPtrInput `pulumi:"dnsConfiguration"`
 	// (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled pulumi.BoolPtrInput `pulumi:"isCertificateValidationEnabled"`
+	// (Updatable) If disabled then auto snapshots are not collected.
+	IsDefaultSnapshotEnabled pulumi.BoolPtrInput `pulumi:"isDefaultSnapshotEnabled"`
 	// (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
 	IsFailureRetried pulumi.BoolPtrInput `pulumi:"isFailureRetried"`
-	// (Updatable) If redirection enabled, then redirects will be allowed while accessing target URL.
+	// (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
 	IsRedirectionEnabled pulumi.BoolPtrInput `pulumi:"isRedirectionEnabled"`
 	// (Updatable) Details of the network configuration.
 	NetworkConfiguration ConfigConfigurationNetworkConfigurationPtrInput `pulumi:"networkConfiguration"`
 	// (Updatable) Details for request HTTP authentication.
 	ReqAuthenticationDetails ConfigConfigurationReqAuthenticationDetailsPtrInput `pulumi:"reqAuthenticationDetails"`
-	// (Updatable) Request http authentication scheme.
+	// (Updatable) Request HTTP authentication scheme.
 	ReqAuthenticationScheme pulumi.StringPtrInput `pulumi:"reqAuthenticationScheme"`
 	// (Updatable) List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
 	RequestHeaders ConfigConfigurationRequestHeaderArrayInput `pulumi:"requestHeaders"`
@@ -320,12 +328,19 @@ func (o ConfigConfigurationOutput) ToConfigConfigurationPtrOutputWithContext(ctx
 	}).(ConfigConfigurationPtrOutput)
 }
 
+// (Updatable) Details for client certificate.
+func (o ConfigConfigurationOutput) ClientCertificateDetails() ConfigConfigurationClientCertificateDetailsPtrOutput {
+	return o.ApplyT(func(v ConfigConfiguration) *ConfigConfigurationClientCertificateDetails {
+		return v.ClientCertificateDetails
+	}).(ConfigConfigurationClientCertificateDetailsPtrOutput)
+}
+
 // (Updatable) Type of configuration.
 func (o ConfigConfigurationOutput) ConfigType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigConfiguration) *string { return v.ConfigType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Dns settings.
+// (Updatable) Information about the DNS settings.
 func (o ConfigConfigurationOutput) DnsConfiguration() ConfigConfigurationDnsConfigurationPtrOutput {
 	return o.ApplyT(func(v ConfigConfiguration) *ConfigConfigurationDnsConfiguration { return v.DnsConfiguration }).(ConfigConfigurationDnsConfigurationPtrOutput)
 }
@@ -335,12 +350,17 @@ func (o ConfigConfigurationOutput) IsCertificateValidationEnabled() pulumi.BoolP
 	return o.ApplyT(func(v ConfigConfiguration) *bool { return v.IsCertificateValidationEnabled }).(pulumi.BoolPtrOutput)
 }
 
+// (Updatable) If disabled then auto snapshots are not collected.
+func (o ConfigConfigurationOutput) IsDefaultSnapshotEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ConfigConfiguration) *bool { return v.IsDefaultSnapshotEnabled }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
 func (o ConfigConfigurationOutput) IsFailureRetried() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConfigConfiguration) *bool { return v.IsFailureRetried }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) If redirection enabled, then redirects will be allowed while accessing target URL.
+// (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
 func (o ConfigConfigurationOutput) IsRedirectionEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConfigConfiguration) *bool { return v.IsRedirectionEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -357,7 +377,7 @@ func (o ConfigConfigurationOutput) ReqAuthenticationDetails() ConfigConfiguratio
 	}).(ConfigConfigurationReqAuthenticationDetailsPtrOutput)
 }
 
-// (Updatable) Request http authentication scheme.
+// (Updatable) Request HTTP authentication scheme.
 func (o ConfigConfigurationOutput) ReqAuthenticationScheme() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigConfiguration) *string { return v.ReqAuthenticationScheme }).(pulumi.StringPtrOutput)
 }
@@ -421,6 +441,16 @@ func (o ConfigConfigurationPtrOutput) Elem() ConfigConfigurationOutput {
 	}).(ConfigConfigurationOutput)
 }
 
+// (Updatable) Details for client certificate.
+func (o ConfigConfigurationPtrOutput) ClientCertificateDetails() ConfigConfigurationClientCertificateDetailsPtrOutput {
+	return o.ApplyT(func(v *ConfigConfiguration) *ConfigConfigurationClientCertificateDetails {
+		if v == nil {
+			return nil
+		}
+		return v.ClientCertificateDetails
+	}).(ConfigConfigurationClientCertificateDetailsPtrOutput)
+}
+
 // (Updatable) Type of configuration.
 func (o ConfigConfigurationPtrOutput) ConfigType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConfigConfiguration) *string {
@@ -431,7 +461,7 @@ func (o ConfigConfigurationPtrOutput) ConfigType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Dns settings.
+// (Updatable) Information about the DNS settings.
 func (o ConfigConfigurationPtrOutput) DnsConfiguration() ConfigConfigurationDnsConfigurationPtrOutput {
 	return o.ApplyT(func(v *ConfigConfiguration) *ConfigConfigurationDnsConfiguration {
 		if v == nil {
@@ -451,6 +481,16 @@ func (o ConfigConfigurationPtrOutput) IsCertificateValidationEnabled() pulumi.Bo
 	}).(pulumi.BoolPtrOutput)
 }
 
+// (Updatable) If disabled then auto snapshots are not collected.
+func (o ConfigConfigurationPtrOutput) IsDefaultSnapshotEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ConfigConfiguration) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsDefaultSnapshotEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
 func (o ConfigConfigurationPtrOutput) IsFailureRetried() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ConfigConfiguration) *bool {
@@ -461,7 +501,7 @@ func (o ConfigConfigurationPtrOutput) IsFailureRetried() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) If redirection enabled, then redirects will be allowed while accessing target URL.
+// (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
 func (o ConfigConfigurationPtrOutput) IsRedirectionEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ConfigConfiguration) *bool {
 		if v == nil {
@@ -491,7 +531,7 @@ func (o ConfigConfigurationPtrOutput) ReqAuthenticationDetails() ConfigConfigura
 	}).(ConfigConfigurationReqAuthenticationDetailsPtrOutput)
 }
 
-// (Updatable) Request http authentication scheme.
+// (Updatable) Request HTTP authentication scheme.
 func (o ConfigConfigurationPtrOutput) ReqAuthenticationScheme() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConfigConfiguration) *string {
 		if v == nil {
@@ -571,10 +611,482 @@ func (o ConfigConfigurationPtrOutput) VerifyTexts() ConfigConfigurationVerifyTex
 	}).(ConfigConfigurationVerifyTextArrayOutput)
 }
 
+type ConfigConfigurationClientCertificateDetails struct {
+	// (Updatable) Client certificate in pem format.
+	ClientCertificate *ConfigConfigurationClientCertificateDetailsClientCertificate `pulumi:"clientCertificate"`
+	// (Updatable) The private key associated with the client certificate in pem format.
+	PrivateKey *ConfigConfigurationClientCertificateDetailsPrivateKey `pulumi:"privateKey"`
+}
+
+// ConfigConfigurationClientCertificateDetailsInput is an input type that accepts ConfigConfigurationClientCertificateDetailsArgs and ConfigConfigurationClientCertificateDetailsOutput values.
+// You can construct a concrete instance of `ConfigConfigurationClientCertificateDetailsInput` via:
+//
+//	ConfigConfigurationClientCertificateDetailsArgs{...}
+type ConfigConfigurationClientCertificateDetailsInput interface {
+	pulumi.Input
+
+	ToConfigConfigurationClientCertificateDetailsOutput() ConfigConfigurationClientCertificateDetailsOutput
+	ToConfigConfigurationClientCertificateDetailsOutputWithContext(context.Context) ConfigConfigurationClientCertificateDetailsOutput
+}
+
+type ConfigConfigurationClientCertificateDetailsArgs struct {
+	// (Updatable) Client certificate in pem format.
+	ClientCertificate ConfigConfigurationClientCertificateDetailsClientCertificatePtrInput `pulumi:"clientCertificate"`
+	// (Updatable) The private key associated with the client certificate in pem format.
+	PrivateKey ConfigConfigurationClientCertificateDetailsPrivateKeyPtrInput `pulumi:"privateKey"`
+}
+
+func (ConfigConfigurationClientCertificateDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfigurationClientCertificateDetails)(nil)).Elem()
+}
+
+func (i ConfigConfigurationClientCertificateDetailsArgs) ToConfigConfigurationClientCertificateDetailsOutput() ConfigConfigurationClientCertificateDetailsOutput {
+	return i.ToConfigConfigurationClientCertificateDetailsOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigurationClientCertificateDetailsArgs) ToConfigConfigurationClientCertificateDetailsOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationClientCertificateDetailsOutput)
+}
+
+func (i ConfigConfigurationClientCertificateDetailsArgs) ToConfigConfigurationClientCertificateDetailsPtrOutput() ConfigConfigurationClientCertificateDetailsPtrOutput {
+	return i.ToConfigConfigurationClientCertificateDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigurationClientCertificateDetailsArgs) ToConfigConfigurationClientCertificateDetailsPtrOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationClientCertificateDetailsOutput).ToConfigConfigurationClientCertificateDetailsPtrOutputWithContext(ctx)
+}
+
+// ConfigConfigurationClientCertificateDetailsPtrInput is an input type that accepts ConfigConfigurationClientCertificateDetailsArgs, ConfigConfigurationClientCertificateDetailsPtr and ConfigConfigurationClientCertificateDetailsPtrOutput values.
+// You can construct a concrete instance of `ConfigConfigurationClientCertificateDetailsPtrInput` via:
+//
+//	        ConfigConfigurationClientCertificateDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ConfigConfigurationClientCertificateDetailsPtrInput interface {
+	pulumi.Input
+
+	ToConfigConfigurationClientCertificateDetailsPtrOutput() ConfigConfigurationClientCertificateDetailsPtrOutput
+	ToConfigConfigurationClientCertificateDetailsPtrOutputWithContext(context.Context) ConfigConfigurationClientCertificateDetailsPtrOutput
+}
+
+type configConfigurationClientCertificateDetailsPtrType ConfigConfigurationClientCertificateDetailsArgs
+
+func ConfigConfigurationClientCertificateDetailsPtr(v *ConfigConfigurationClientCertificateDetailsArgs) ConfigConfigurationClientCertificateDetailsPtrInput {
+	return (*configConfigurationClientCertificateDetailsPtrType)(v)
+}
+
+func (*configConfigurationClientCertificateDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigConfigurationClientCertificateDetails)(nil)).Elem()
+}
+
+func (i *configConfigurationClientCertificateDetailsPtrType) ToConfigConfigurationClientCertificateDetailsPtrOutput() ConfigConfigurationClientCertificateDetailsPtrOutput {
+	return i.ToConfigConfigurationClientCertificateDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *configConfigurationClientCertificateDetailsPtrType) ToConfigConfigurationClientCertificateDetailsPtrOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationClientCertificateDetailsPtrOutput)
+}
+
+type ConfigConfigurationClientCertificateDetailsOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigurationClientCertificateDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfigurationClientCertificateDetails)(nil)).Elem()
+}
+
+func (o ConfigConfigurationClientCertificateDetailsOutput) ToConfigConfigurationClientCertificateDetailsOutput() ConfigConfigurationClientCertificateDetailsOutput {
+	return o
+}
+
+func (o ConfigConfigurationClientCertificateDetailsOutput) ToConfigConfigurationClientCertificateDetailsOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsOutput {
+	return o
+}
+
+func (o ConfigConfigurationClientCertificateDetailsOutput) ToConfigConfigurationClientCertificateDetailsPtrOutput() ConfigConfigurationClientCertificateDetailsPtrOutput {
+	return o.ToConfigConfigurationClientCertificateDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ConfigConfigurationClientCertificateDetailsOutput) ToConfigConfigurationClientCertificateDetailsPtrOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigConfigurationClientCertificateDetails) *ConfigConfigurationClientCertificateDetails {
+		return &v
+	}).(ConfigConfigurationClientCertificateDetailsPtrOutput)
+}
+
+// (Updatable) Client certificate in pem format.
+func (o ConfigConfigurationClientCertificateDetailsOutput) ClientCertificate() ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput {
+	return o.ApplyT(func(v ConfigConfigurationClientCertificateDetails) *ConfigConfigurationClientCertificateDetailsClientCertificate {
+		return v.ClientCertificate
+	}).(ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput)
+}
+
+// (Updatable) The private key associated with the client certificate in pem format.
+func (o ConfigConfigurationClientCertificateDetailsOutput) PrivateKey() ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput {
+	return o.ApplyT(func(v ConfigConfigurationClientCertificateDetails) *ConfigConfigurationClientCertificateDetailsPrivateKey {
+		return v.PrivateKey
+	}).(ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput)
+}
+
+type ConfigConfigurationClientCertificateDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigurationClientCertificateDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigConfigurationClientCertificateDetails)(nil)).Elem()
+}
+
+func (o ConfigConfigurationClientCertificateDetailsPtrOutput) ToConfigConfigurationClientCertificateDetailsPtrOutput() ConfigConfigurationClientCertificateDetailsPtrOutput {
+	return o
+}
+
+func (o ConfigConfigurationClientCertificateDetailsPtrOutput) ToConfigConfigurationClientCertificateDetailsPtrOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsPtrOutput {
+	return o
+}
+
+func (o ConfigConfigurationClientCertificateDetailsPtrOutput) Elem() ConfigConfigurationClientCertificateDetailsOutput {
+	return o.ApplyT(func(v *ConfigConfigurationClientCertificateDetails) ConfigConfigurationClientCertificateDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ConfigConfigurationClientCertificateDetails
+		return ret
+	}).(ConfigConfigurationClientCertificateDetailsOutput)
+}
+
+// (Updatable) Client certificate in pem format.
+func (o ConfigConfigurationClientCertificateDetailsPtrOutput) ClientCertificate() ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput {
+	return o.ApplyT(func(v *ConfigConfigurationClientCertificateDetails) *ConfigConfigurationClientCertificateDetailsClientCertificate {
+		if v == nil {
+			return nil
+		}
+		return v.ClientCertificate
+	}).(ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput)
+}
+
+// (Updatable) The private key associated with the client certificate in pem format.
+func (o ConfigConfigurationClientCertificateDetailsPtrOutput) PrivateKey() ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput {
+	return o.ApplyT(func(v *ConfigConfigurationClientCertificateDetails) *ConfigConfigurationClientCertificateDetailsPrivateKey {
+		if v == nil {
+			return nil
+		}
+		return v.PrivateKey
+	}).(ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput)
+}
+
+type ConfigConfigurationClientCertificateDetailsClientCertificate struct {
+	// (Updatable) Content of the private key file.
+	Content *string `pulumi:"content"`
+	// (Updatable) Name of the private key file.
+	FileName *string `pulumi:"fileName"`
+}
+
+// ConfigConfigurationClientCertificateDetailsClientCertificateInput is an input type that accepts ConfigConfigurationClientCertificateDetailsClientCertificateArgs and ConfigConfigurationClientCertificateDetailsClientCertificateOutput values.
+// You can construct a concrete instance of `ConfigConfigurationClientCertificateDetailsClientCertificateInput` via:
+//
+//	ConfigConfigurationClientCertificateDetailsClientCertificateArgs{...}
+type ConfigConfigurationClientCertificateDetailsClientCertificateInput interface {
+	pulumi.Input
+
+	ToConfigConfigurationClientCertificateDetailsClientCertificateOutput() ConfigConfigurationClientCertificateDetailsClientCertificateOutput
+	ToConfigConfigurationClientCertificateDetailsClientCertificateOutputWithContext(context.Context) ConfigConfigurationClientCertificateDetailsClientCertificateOutput
+}
+
+type ConfigConfigurationClientCertificateDetailsClientCertificateArgs struct {
+	// (Updatable) Content of the private key file.
+	Content pulumi.StringPtrInput `pulumi:"content"`
+	// (Updatable) Name of the private key file.
+	FileName pulumi.StringPtrInput `pulumi:"fileName"`
+}
+
+func (ConfigConfigurationClientCertificateDetailsClientCertificateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfigurationClientCertificateDetailsClientCertificate)(nil)).Elem()
+}
+
+func (i ConfigConfigurationClientCertificateDetailsClientCertificateArgs) ToConfigConfigurationClientCertificateDetailsClientCertificateOutput() ConfigConfigurationClientCertificateDetailsClientCertificateOutput {
+	return i.ToConfigConfigurationClientCertificateDetailsClientCertificateOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigurationClientCertificateDetailsClientCertificateArgs) ToConfigConfigurationClientCertificateDetailsClientCertificateOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsClientCertificateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationClientCertificateDetailsClientCertificateOutput)
+}
+
+func (i ConfigConfigurationClientCertificateDetailsClientCertificateArgs) ToConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput() ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput {
+	return i.ToConfigConfigurationClientCertificateDetailsClientCertificatePtrOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigurationClientCertificateDetailsClientCertificateArgs) ToConfigConfigurationClientCertificateDetailsClientCertificatePtrOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationClientCertificateDetailsClientCertificateOutput).ToConfigConfigurationClientCertificateDetailsClientCertificatePtrOutputWithContext(ctx)
+}
+
+// ConfigConfigurationClientCertificateDetailsClientCertificatePtrInput is an input type that accepts ConfigConfigurationClientCertificateDetailsClientCertificateArgs, ConfigConfigurationClientCertificateDetailsClientCertificatePtr and ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput values.
+// You can construct a concrete instance of `ConfigConfigurationClientCertificateDetailsClientCertificatePtrInput` via:
+//
+//	        ConfigConfigurationClientCertificateDetailsClientCertificateArgs{...}
+//
+//	or:
+//
+//	        nil
+type ConfigConfigurationClientCertificateDetailsClientCertificatePtrInput interface {
+	pulumi.Input
+
+	ToConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput() ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput
+	ToConfigConfigurationClientCertificateDetailsClientCertificatePtrOutputWithContext(context.Context) ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput
+}
+
+type configConfigurationClientCertificateDetailsClientCertificatePtrType ConfigConfigurationClientCertificateDetailsClientCertificateArgs
+
+func ConfigConfigurationClientCertificateDetailsClientCertificatePtr(v *ConfigConfigurationClientCertificateDetailsClientCertificateArgs) ConfigConfigurationClientCertificateDetailsClientCertificatePtrInput {
+	return (*configConfigurationClientCertificateDetailsClientCertificatePtrType)(v)
+}
+
+func (*configConfigurationClientCertificateDetailsClientCertificatePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigConfigurationClientCertificateDetailsClientCertificate)(nil)).Elem()
+}
+
+func (i *configConfigurationClientCertificateDetailsClientCertificatePtrType) ToConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput() ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput {
+	return i.ToConfigConfigurationClientCertificateDetailsClientCertificatePtrOutputWithContext(context.Background())
+}
+
+func (i *configConfigurationClientCertificateDetailsClientCertificatePtrType) ToConfigConfigurationClientCertificateDetailsClientCertificatePtrOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput)
+}
+
+type ConfigConfigurationClientCertificateDetailsClientCertificateOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigurationClientCertificateDetailsClientCertificateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfigurationClientCertificateDetailsClientCertificate)(nil)).Elem()
+}
+
+func (o ConfigConfigurationClientCertificateDetailsClientCertificateOutput) ToConfigConfigurationClientCertificateDetailsClientCertificateOutput() ConfigConfigurationClientCertificateDetailsClientCertificateOutput {
+	return o
+}
+
+func (o ConfigConfigurationClientCertificateDetailsClientCertificateOutput) ToConfigConfigurationClientCertificateDetailsClientCertificateOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsClientCertificateOutput {
+	return o
+}
+
+func (o ConfigConfigurationClientCertificateDetailsClientCertificateOutput) ToConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput() ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput {
+	return o.ToConfigConfigurationClientCertificateDetailsClientCertificatePtrOutputWithContext(context.Background())
+}
+
+func (o ConfigConfigurationClientCertificateDetailsClientCertificateOutput) ToConfigConfigurationClientCertificateDetailsClientCertificatePtrOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigConfigurationClientCertificateDetailsClientCertificate) *ConfigConfigurationClientCertificateDetailsClientCertificate {
+		return &v
+	}).(ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput)
+}
+
+// (Updatable) Content of the private key file.
+func (o ConfigConfigurationClientCertificateDetailsClientCertificateOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfigurationClientCertificateDetailsClientCertificate) *string { return v.Content }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Name of the private key file.
+func (o ConfigConfigurationClientCertificateDetailsClientCertificateOutput) FileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfigurationClientCertificateDetailsClientCertificate) *string { return v.FileName }).(pulumi.StringPtrOutput)
+}
+
+type ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigConfigurationClientCertificateDetailsClientCertificate)(nil)).Elem()
+}
+
+func (o ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput) ToConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput() ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput {
+	return o
+}
+
+func (o ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput) ToConfigConfigurationClientCertificateDetailsClientCertificatePtrOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput {
+	return o
+}
+
+func (o ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput) Elem() ConfigConfigurationClientCertificateDetailsClientCertificateOutput {
+	return o.ApplyT(func(v *ConfigConfigurationClientCertificateDetailsClientCertificate) ConfigConfigurationClientCertificateDetailsClientCertificate {
+		if v != nil {
+			return *v
+		}
+		var ret ConfigConfigurationClientCertificateDetailsClientCertificate
+		return ret
+	}).(ConfigConfigurationClientCertificateDetailsClientCertificateOutput)
+}
+
+// (Updatable) Content of the private key file.
+func (o ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfigurationClientCertificateDetailsClientCertificate) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Content
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Name of the private key file.
+func (o ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput) FileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfigurationClientCertificateDetailsClientCertificate) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FileName
+	}).(pulumi.StringPtrOutput)
+}
+
+type ConfigConfigurationClientCertificateDetailsPrivateKey struct {
+	// (Updatable) Content of the private key file.
+	Content *string `pulumi:"content"`
+	// (Updatable) Name of the private key file.
+	FileName *string `pulumi:"fileName"`
+}
+
+// ConfigConfigurationClientCertificateDetailsPrivateKeyInput is an input type that accepts ConfigConfigurationClientCertificateDetailsPrivateKeyArgs and ConfigConfigurationClientCertificateDetailsPrivateKeyOutput values.
+// You can construct a concrete instance of `ConfigConfigurationClientCertificateDetailsPrivateKeyInput` via:
+//
+//	ConfigConfigurationClientCertificateDetailsPrivateKeyArgs{...}
+type ConfigConfigurationClientCertificateDetailsPrivateKeyInput interface {
+	pulumi.Input
+
+	ToConfigConfigurationClientCertificateDetailsPrivateKeyOutput() ConfigConfigurationClientCertificateDetailsPrivateKeyOutput
+	ToConfigConfigurationClientCertificateDetailsPrivateKeyOutputWithContext(context.Context) ConfigConfigurationClientCertificateDetailsPrivateKeyOutput
+}
+
+type ConfigConfigurationClientCertificateDetailsPrivateKeyArgs struct {
+	// (Updatable) Content of the private key file.
+	Content pulumi.StringPtrInput `pulumi:"content"`
+	// (Updatable) Name of the private key file.
+	FileName pulumi.StringPtrInput `pulumi:"fileName"`
+}
+
+func (ConfigConfigurationClientCertificateDetailsPrivateKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfigurationClientCertificateDetailsPrivateKey)(nil)).Elem()
+}
+
+func (i ConfigConfigurationClientCertificateDetailsPrivateKeyArgs) ToConfigConfigurationClientCertificateDetailsPrivateKeyOutput() ConfigConfigurationClientCertificateDetailsPrivateKeyOutput {
+	return i.ToConfigConfigurationClientCertificateDetailsPrivateKeyOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigurationClientCertificateDetailsPrivateKeyArgs) ToConfigConfigurationClientCertificateDetailsPrivateKeyOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsPrivateKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationClientCertificateDetailsPrivateKeyOutput)
+}
+
+func (i ConfigConfigurationClientCertificateDetailsPrivateKeyArgs) ToConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput() ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput {
+	return i.ToConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigurationClientCertificateDetailsPrivateKeyArgs) ToConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationClientCertificateDetailsPrivateKeyOutput).ToConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutputWithContext(ctx)
+}
+
+// ConfigConfigurationClientCertificateDetailsPrivateKeyPtrInput is an input type that accepts ConfigConfigurationClientCertificateDetailsPrivateKeyArgs, ConfigConfigurationClientCertificateDetailsPrivateKeyPtr and ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput values.
+// You can construct a concrete instance of `ConfigConfigurationClientCertificateDetailsPrivateKeyPtrInput` via:
+//
+//	        ConfigConfigurationClientCertificateDetailsPrivateKeyArgs{...}
+//
+//	or:
+//
+//	        nil
+type ConfigConfigurationClientCertificateDetailsPrivateKeyPtrInput interface {
+	pulumi.Input
+
+	ToConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput() ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput
+	ToConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutputWithContext(context.Context) ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput
+}
+
+type configConfigurationClientCertificateDetailsPrivateKeyPtrType ConfigConfigurationClientCertificateDetailsPrivateKeyArgs
+
+func ConfigConfigurationClientCertificateDetailsPrivateKeyPtr(v *ConfigConfigurationClientCertificateDetailsPrivateKeyArgs) ConfigConfigurationClientCertificateDetailsPrivateKeyPtrInput {
+	return (*configConfigurationClientCertificateDetailsPrivateKeyPtrType)(v)
+}
+
+func (*configConfigurationClientCertificateDetailsPrivateKeyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigConfigurationClientCertificateDetailsPrivateKey)(nil)).Elem()
+}
+
+func (i *configConfigurationClientCertificateDetailsPrivateKeyPtrType) ToConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput() ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput {
+	return i.ToConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutputWithContext(context.Background())
+}
+
+func (i *configConfigurationClientCertificateDetailsPrivateKeyPtrType) ToConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput)
+}
+
+type ConfigConfigurationClientCertificateDetailsPrivateKeyOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigurationClientCertificateDetailsPrivateKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfigurationClientCertificateDetailsPrivateKey)(nil)).Elem()
+}
+
+func (o ConfigConfigurationClientCertificateDetailsPrivateKeyOutput) ToConfigConfigurationClientCertificateDetailsPrivateKeyOutput() ConfigConfigurationClientCertificateDetailsPrivateKeyOutput {
+	return o
+}
+
+func (o ConfigConfigurationClientCertificateDetailsPrivateKeyOutput) ToConfigConfigurationClientCertificateDetailsPrivateKeyOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsPrivateKeyOutput {
+	return o
+}
+
+func (o ConfigConfigurationClientCertificateDetailsPrivateKeyOutput) ToConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput() ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput {
+	return o.ToConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutputWithContext(context.Background())
+}
+
+func (o ConfigConfigurationClientCertificateDetailsPrivateKeyOutput) ToConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigConfigurationClientCertificateDetailsPrivateKey) *ConfigConfigurationClientCertificateDetailsPrivateKey {
+		return &v
+	}).(ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput)
+}
+
+// (Updatable) Content of the private key file.
+func (o ConfigConfigurationClientCertificateDetailsPrivateKeyOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfigurationClientCertificateDetailsPrivateKey) *string { return v.Content }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Name of the private key file.
+func (o ConfigConfigurationClientCertificateDetailsPrivateKeyOutput) FileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfigurationClientCertificateDetailsPrivateKey) *string { return v.FileName }).(pulumi.StringPtrOutput)
+}
+
+type ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigConfigurationClientCertificateDetailsPrivateKey)(nil)).Elem()
+}
+
+func (o ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput) ToConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput() ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput {
+	return o
+}
+
+func (o ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput) ToConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutputWithContext(ctx context.Context) ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput {
+	return o
+}
+
+func (o ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput) Elem() ConfigConfigurationClientCertificateDetailsPrivateKeyOutput {
+	return o.ApplyT(func(v *ConfigConfigurationClientCertificateDetailsPrivateKey) ConfigConfigurationClientCertificateDetailsPrivateKey {
+		if v != nil {
+			return *v
+		}
+		var ret ConfigConfigurationClientCertificateDetailsPrivateKey
+		return ret
+	}).(ConfigConfigurationClientCertificateDetailsPrivateKeyOutput)
+}
+
+// (Updatable) Content of the private key file.
+func (o ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfigurationClientCertificateDetailsPrivateKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Content
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Name of the private key file.
+func (o ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput) FileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfigurationClientCertificateDetailsPrivateKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FileName
+	}).(pulumi.StringPtrOutput)
+}
+
 type ConfigConfigurationDnsConfiguration struct {
-	// (Updatable) If isOverrideDns is true, then dns will be overridden.
+	// (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
 	IsOverrideDns *bool `pulumi:"isOverrideDns"`
-	// (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+	// (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
 	OverrideDnsIp *string `pulumi:"overrideDnsIp"`
 }
 
@@ -590,9 +1102,9 @@ type ConfigConfigurationDnsConfigurationInput interface {
 }
 
 type ConfigConfigurationDnsConfigurationArgs struct {
-	// (Updatable) If isOverrideDns is true, then dns will be overridden.
+	// (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
 	IsOverrideDns pulumi.BoolPtrInput `pulumi:"isOverrideDns"`
-	// (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+	// (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
 	OverrideDnsIp pulumi.StringPtrInput `pulumi:"overrideDnsIp"`
 }
 
@@ -673,12 +1185,12 @@ func (o ConfigConfigurationDnsConfigurationOutput) ToConfigConfigurationDnsConfi
 	}).(ConfigConfigurationDnsConfigurationPtrOutput)
 }
 
-// (Updatable) If isOverrideDns is true, then dns will be overridden.
+// (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
 func (o ConfigConfigurationDnsConfigurationOutput) IsOverrideDns() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConfigConfigurationDnsConfiguration) *bool { return v.IsOverrideDns }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+// (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
 func (o ConfigConfigurationDnsConfigurationOutput) OverrideDnsIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigConfigurationDnsConfiguration) *string { return v.OverrideDnsIp }).(pulumi.StringPtrOutput)
 }
@@ -707,7 +1219,7 @@ func (o ConfigConfigurationDnsConfigurationPtrOutput) Elem() ConfigConfiguration
 	}).(ConfigConfigurationDnsConfigurationOutput)
 }
 
-// (Updatable) If isOverrideDns is true, then dns will be overridden.
+// (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
 func (o ConfigConfigurationDnsConfigurationPtrOutput) IsOverrideDns() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ConfigConfigurationDnsConfiguration) *bool {
 		if v == nil {
@@ -717,7 +1229,7 @@ func (o ConfigConfigurationDnsConfigurationPtrOutput) IsOverrideDns() pulumi.Boo
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+// (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
 func (o ConfigConfigurationDnsConfigurationPtrOutput) OverrideDnsIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConfigConfigurationDnsConfiguration) *string {
 		if v == nil {
@@ -949,13 +1461,13 @@ type ConfigConfigurationReqAuthenticationDetails struct {
 	AuthRequestPostBody *string `pulumi:"authRequestPostBody"`
 	// (Updatable) Authentication token.
 	AuthToken *string `pulumi:"authToken"`
-	// (Updatable) URL to get authetication token.
+	// (Updatable) URL to get authentication token.
 	AuthUrl *string `pulumi:"authUrl"`
-	// (Updatable) Username for authentication.
+	// (Updatable) User name for authentication.
 	AuthUserName *string `pulumi:"authUserName"`
 	// (Updatable) User password for authentication.
 	AuthUserPassword *string `pulumi:"authUserPassword"`
-	// (Updatable) Request http oauth scheme.
+	// (Updatable) Request HTTP OAuth scheme.
 	OauthScheme *string `pulumi:"oauthScheme"`
 }
 
@@ -979,13 +1491,13 @@ type ConfigConfigurationReqAuthenticationDetailsArgs struct {
 	AuthRequestPostBody pulumi.StringPtrInput `pulumi:"authRequestPostBody"`
 	// (Updatable) Authentication token.
 	AuthToken pulumi.StringPtrInput `pulumi:"authToken"`
-	// (Updatable) URL to get authetication token.
+	// (Updatable) URL to get authentication token.
 	AuthUrl pulumi.StringPtrInput `pulumi:"authUrl"`
-	// (Updatable) Username for authentication.
+	// (Updatable) User name for authentication.
 	AuthUserName pulumi.StringPtrInput `pulumi:"authUserName"`
 	// (Updatable) User password for authentication.
 	AuthUserPassword pulumi.StringPtrInput `pulumi:"authUserPassword"`
-	// (Updatable) Request http oauth scheme.
+	// (Updatable) Request HTTP OAuth scheme.
 	OauthScheme pulumi.StringPtrInput `pulumi:"oauthScheme"`
 }
 
@@ -1088,12 +1600,12 @@ func (o ConfigConfigurationReqAuthenticationDetailsOutput) AuthToken() pulumi.St
 	return o.ApplyT(func(v ConfigConfigurationReqAuthenticationDetails) *string { return v.AuthToken }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) URL to get authetication token.
+// (Updatable) URL to get authentication token.
 func (o ConfigConfigurationReqAuthenticationDetailsOutput) AuthUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigConfigurationReqAuthenticationDetails) *string { return v.AuthUrl }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Username for authentication.
+// (Updatable) User name for authentication.
 func (o ConfigConfigurationReqAuthenticationDetailsOutput) AuthUserName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigConfigurationReqAuthenticationDetails) *string { return v.AuthUserName }).(pulumi.StringPtrOutput)
 }
@@ -1103,7 +1615,7 @@ func (o ConfigConfigurationReqAuthenticationDetailsOutput) AuthUserPassword() pu
 	return o.ApplyT(func(v ConfigConfigurationReqAuthenticationDetails) *string { return v.AuthUserPassword }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Request http oauth scheme.
+// (Updatable) Request HTTP OAuth scheme.
 func (o ConfigConfigurationReqAuthenticationDetailsOutput) OauthScheme() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigConfigurationReqAuthenticationDetails) *string { return v.OauthScheme }).(pulumi.StringPtrOutput)
 }
@@ -1172,7 +1684,7 @@ func (o ConfigConfigurationReqAuthenticationDetailsPtrOutput) AuthToken() pulumi
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) URL to get authetication token.
+// (Updatable) URL to get authentication token.
 func (o ConfigConfigurationReqAuthenticationDetailsPtrOutput) AuthUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConfigConfigurationReqAuthenticationDetails) *string {
 		if v == nil {
@@ -1182,7 +1694,7 @@ func (o ConfigConfigurationReqAuthenticationDetailsPtrOutput) AuthUrl() pulumi.S
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Username for authentication.
+// (Updatable) User name for authentication.
 func (o ConfigConfigurationReqAuthenticationDetailsPtrOutput) AuthUserName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConfigConfigurationReqAuthenticationDetails) *string {
 		if v == nil {
@@ -1202,7 +1714,7 @@ func (o ConfigConfigurationReqAuthenticationDetailsPtrOutput) AuthUserPassword()
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Request http oauth scheme.
+// (Updatable) Request HTTP OAuth scheme.
 func (o ConfigConfigurationReqAuthenticationDetailsPtrOutput) OauthScheme() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConfigConfigurationReqAuthenticationDetails) *string {
 		if v == nil {
@@ -1628,9 +2140,9 @@ func (o ConfigConfigurationVerifyTextArrayOutput) Index(i pulumi.IntInput) Confi
 }
 
 type ConfigMaintenanceWindowSchedule struct {
-	// (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	// (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeEnded *string `pulumi:"timeEnded"`
-	// (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	// (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeStarted *string `pulumi:"timeStarted"`
 }
 
@@ -1646,9 +2158,9 @@ type ConfigMaintenanceWindowScheduleInput interface {
 }
 
 type ConfigMaintenanceWindowScheduleArgs struct {
-	// (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	// (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeEnded pulumi.StringPtrInput `pulumi:"timeEnded"`
-	// (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	// (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
 }
 
@@ -1729,12 +2241,12 @@ func (o ConfigMaintenanceWindowScheduleOutput) ToConfigMaintenanceWindowSchedule
 	}).(ConfigMaintenanceWindowSchedulePtrOutput)
 }
 
-// (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+// (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 func (o ConfigMaintenanceWindowScheduleOutput) TimeEnded() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigMaintenanceWindowSchedule) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+// (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 func (o ConfigMaintenanceWindowScheduleOutput) TimeStarted() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigMaintenanceWindowSchedule) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
@@ -1763,7 +2275,7 @@ func (o ConfigMaintenanceWindowSchedulePtrOutput) Elem() ConfigMaintenanceWindow
 	}).(ConfigMaintenanceWindowScheduleOutput)
 }
 
-// (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+// (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 func (o ConfigMaintenanceWindowSchedulePtrOutput) TimeEnded() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConfigMaintenanceWindowSchedule) *string {
 		if v == nil {
@@ -1773,7 +2285,7 @@ func (o ConfigMaintenanceWindowSchedulePtrOutput) TimeEnded() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+// (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 func (o ConfigMaintenanceWindowSchedulePtrOutput) TimeStarted() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConfigMaintenanceWindowSchedule) *string {
 		if v == nil {
@@ -3760,9 +4272,9 @@ func (o GetDedicatedVantagePointsFilterArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetMonitorAvailabilityConfiguration struct {
-	// Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+	// Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
 	MaxAllowedFailuresPerInterval int `pulumi:"maxAllowedFailuresPerInterval"`
-	// Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+	// Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
 	MinAllowedRunsPerInterval int `pulumi:"minAllowedRunsPerInterval"`
 }
 
@@ -3778,9 +4290,9 @@ type GetMonitorAvailabilityConfigurationInput interface {
 }
 
 type GetMonitorAvailabilityConfigurationArgs struct {
-	// Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+	// Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
 	MaxAllowedFailuresPerInterval pulumi.IntInput `pulumi:"maxAllowedFailuresPerInterval"`
-	// Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+	// Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
 	MinAllowedRunsPerInterval pulumi.IntInput `pulumi:"minAllowedRunsPerInterval"`
 }
 
@@ -3835,12 +4347,12 @@ func (o GetMonitorAvailabilityConfigurationOutput) ToGetMonitorAvailabilityConfi
 	return o
 }
 
-// Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+// Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
 func (o GetMonitorAvailabilityConfigurationOutput) MaxAllowedFailuresPerInterval() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitorAvailabilityConfiguration) int { return v.MaxAllowedFailuresPerInterval }).(pulumi.IntOutput)
 }
 
-// Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+// Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
 func (o GetMonitorAvailabilityConfigurationOutput) MinAllowedRunsPerInterval() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitorAvailabilityConfiguration) int { return v.MinAllowedRunsPerInterval }).(pulumi.IntOutput)
 }
@@ -3866,21 +4378,25 @@ func (o GetMonitorAvailabilityConfigurationArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetMonitorConfiguration struct {
+	// Details for client certificate.
+	ClientCertificateDetails []GetMonitorConfigurationClientCertificateDetail `pulumi:"clientCertificateDetails"`
 	// Type of configuration.
 	ConfigType string `pulumi:"configType"`
-	// Dns settings.
+	// Information about the DNS settings.
 	DnsConfigurations []GetMonitorConfigurationDnsConfiguration `pulumi:"dnsConfigurations"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled bool `pulumi:"isCertificateValidationEnabled"`
+	// If disabled then auto snapshots are not collected.
+	IsDefaultSnapshotEnabled bool `pulumi:"isDefaultSnapshotEnabled"`
 	// If isFailureRetried is enabled, then a failed call will be retried.
 	IsFailureRetried bool `pulumi:"isFailureRetried"`
-	// If redirection enabled, then redirects will be allowed while accessing target URL.
+	// If redirection is enabled, then redirects will be allowed while accessing target URL.
 	IsRedirectionEnabled bool `pulumi:"isRedirectionEnabled"`
 	// Details of the network configuration.
 	NetworkConfigurations []GetMonitorConfigurationNetworkConfiguration `pulumi:"networkConfigurations"`
 	// Details for request HTTP authentication.
 	ReqAuthenticationDetails []GetMonitorConfigurationReqAuthenticationDetail `pulumi:"reqAuthenticationDetails"`
-	// Request http authentication scheme.
+	// Request HTTP authentication scheme.
 	ReqAuthenticationScheme string `pulumi:"reqAuthenticationScheme"`
 	// List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
 	RequestHeaders []GetMonitorConfigurationRequestHeader `pulumi:"requestHeaders"`
@@ -3910,21 +4426,25 @@ type GetMonitorConfigurationInput interface {
 }
 
 type GetMonitorConfigurationArgs struct {
+	// Details for client certificate.
+	ClientCertificateDetails GetMonitorConfigurationClientCertificateDetailArrayInput `pulumi:"clientCertificateDetails"`
 	// Type of configuration.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
-	// Dns settings.
+	// Information about the DNS settings.
 	DnsConfigurations GetMonitorConfigurationDnsConfigurationArrayInput `pulumi:"dnsConfigurations"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled pulumi.BoolInput `pulumi:"isCertificateValidationEnabled"`
+	// If disabled then auto snapshots are not collected.
+	IsDefaultSnapshotEnabled pulumi.BoolInput `pulumi:"isDefaultSnapshotEnabled"`
 	// If isFailureRetried is enabled, then a failed call will be retried.
 	IsFailureRetried pulumi.BoolInput `pulumi:"isFailureRetried"`
-	// If redirection enabled, then redirects will be allowed while accessing target URL.
+	// If redirection is enabled, then redirects will be allowed while accessing target URL.
 	IsRedirectionEnabled pulumi.BoolInput `pulumi:"isRedirectionEnabled"`
 	// Details of the network configuration.
 	NetworkConfigurations GetMonitorConfigurationNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// Details for request HTTP authentication.
 	ReqAuthenticationDetails GetMonitorConfigurationReqAuthenticationDetailArrayInput `pulumi:"reqAuthenticationDetails"`
-	// Request http authentication scheme.
+	// Request HTTP authentication scheme.
 	ReqAuthenticationScheme pulumi.StringInput `pulumi:"reqAuthenticationScheme"`
 	// List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
 	RequestHeaders GetMonitorConfigurationRequestHeaderArrayInput `pulumi:"requestHeaders"`
@@ -3993,12 +4513,19 @@ func (o GetMonitorConfigurationOutput) ToGetMonitorConfigurationOutputWithContex
 	return o
 }
 
+// Details for client certificate.
+func (o GetMonitorConfigurationOutput) ClientCertificateDetails() GetMonitorConfigurationClientCertificateDetailArrayOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) []GetMonitorConfigurationClientCertificateDetail {
+		return v.ClientCertificateDetails
+	}).(GetMonitorConfigurationClientCertificateDetailArrayOutput)
+}
+
 // Type of configuration.
 func (o GetMonitorConfigurationOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.ConfigType }).(pulumi.StringOutput)
 }
 
-// Dns settings.
+// Information about the DNS settings.
 func (o GetMonitorConfigurationOutput) DnsConfigurations() GetMonitorConfigurationDnsConfigurationArrayOutput {
 	return o.ApplyT(func(v GetMonitorConfiguration) []GetMonitorConfigurationDnsConfiguration { return v.DnsConfigurations }).(GetMonitorConfigurationDnsConfigurationArrayOutput)
 }
@@ -4008,12 +4535,17 @@ func (o GetMonitorConfigurationOutput) IsCertificateValidationEnabled() pulumi.B
 	return o.ApplyT(func(v GetMonitorConfiguration) bool { return v.IsCertificateValidationEnabled }).(pulumi.BoolOutput)
 }
 
+// If disabled then auto snapshots are not collected.
+func (o GetMonitorConfigurationOutput) IsDefaultSnapshotEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) bool { return v.IsDefaultSnapshotEnabled }).(pulumi.BoolOutput)
+}
+
 // If isFailureRetried is enabled, then a failed call will be retried.
 func (o GetMonitorConfigurationOutput) IsFailureRetried() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorConfiguration) bool { return v.IsFailureRetried }).(pulumi.BoolOutput)
 }
 
-// If redirection enabled, then redirects will be allowed while accessing target URL.
+// If redirection is enabled, then redirects will be allowed while accessing target URL.
 func (o GetMonitorConfigurationOutput) IsRedirectionEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorConfiguration) bool { return v.IsRedirectionEnabled }).(pulumi.BoolOutput)
 }
@@ -4032,7 +4564,7 @@ func (o GetMonitorConfigurationOutput) ReqAuthenticationDetails() GetMonitorConf
 	}).(GetMonitorConfigurationReqAuthenticationDetailArrayOutput)
 }
 
-// Request http authentication scheme.
+// Request HTTP authentication scheme.
 func (o GetMonitorConfigurationOutput) ReqAuthenticationScheme() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.ReqAuthenticationScheme }).(pulumi.StringOutput)
 }
@@ -4094,10 +4626,332 @@ func (o GetMonitorConfigurationArrayOutput) Index(i pulumi.IntInput) GetMonitorC
 	}).(GetMonitorConfigurationOutput)
 }
 
+type GetMonitorConfigurationClientCertificateDetail struct {
+	// Client certificate in pem format.
+	ClientCertificates []GetMonitorConfigurationClientCertificateDetailClientCertificate `pulumi:"clientCertificates"`
+	// The private key associated with the client certificate in pem format.
+	PrivateKeys []GetMonitorConfigurationClientCertificateDetailPrivateKey `pulumi:"privateKeys"`
+}
+
+// GetMonitorConfigurationClientCertificateDetailInput is an input type that accepts GetMonitorConfigurationClientCertificateDetailArgs and GetMonitorConfigurationClientCertificateDetailOutput values.
+// You can construct a concrete instance of `GetMonitorConfigurationClientCertificateDetailInput` via:
+//
+//	GetMonitorConfigurationClientCertificateDetailArgs{...}
+type GetMonitorConfigurationClientCertificateDetailInput interface {
+	pulumi.Input
+
+	ToGetMonitorConfigurationClientCertificateDetailOutput() GetMonitorConfigurationClientCertificateDetailOutput
+	ToGetMonitorConfigurationClientCertificateDetailOutputWithContext(context.Context) GetMonitorConfigurationClientCertificateDetailOutput
+}
+
+type GetMonitorConfigurationClientCertificateDetailArgs struct {
+	// Client certificate in pem format.
+	ClientCertificates GetMonitorConfigurationClientCertificateDetailClientCertificateArrayInput `pulumi:"clientCertificates"`
+	// The private key associated with the client certificate in pem format.
+	PrivateKeys GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayInput `pulumi:"privateKeys"`
+}
+
+func (GetMonitorConfigurationClientCertificateDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorConfigurationClientCertificateDetail)(nil)).Elem()
+}
+
+func (i GetMonitorConfigurationClientCertificateDetailArgs) ToGetMonitorConfigurationClientCertificateDetailOutput() GetMonitorConfigurationClientCertificateDetailOutput {
+	return i.ToGetMonitorConfigurationClientCertificateDetailOutputWithContext(context.Background())
+}
+
+func (i GetMonitorConfigurationClientCertificateDetailArgs) ToGetMonitorConfigurationClientCertificateDetailOutputWithContext(ctx context.Context) GetMonitorConfigurationClientCertificateDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationClientCertificateDetailOutput)
+}
+
+// GetMonitorConfigurationClientCertificateDetailArrayInput is an input type that accepts GetMonitorConfigurationClientCertificateDetailArray and GetMonitorConfigurationClientCertificateDetailArrayOutput values.
+// You can construct a concrete instance of `GetMonitorConfigurationClientCertificateDetailArrayInput` via:
+//
+//	GetMonitorConfigurationClientCertificateDetailArray{ GetMonitorConfigurationClientCertificateDetailArgs{...} }
+type GetMonitorConfigurationClientCertificateDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorConfigurationClientCertificateDetailArrayOutput() GetMonitorConfigurationClientCertificateDetailArrayOutput
+	ToGetMonitorConfigurationClientCertificateDetailArrayOutputWithContext(context.Context) GetMonitorConfigurationClientCertificateDetailArrayOutput
+}
+
+type GetMonitorConfigurationClientCertificateDetailArray []GetMonitorConfigurationClientCertificateDetailInput
+
+func (GetMonitorConfigurationClientCertificateDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorConfigurationClientCertificateDetail)(nil)).Elem()
+}
+
+func (i GetMonitorConfigurationClientCertificateDetailArray) ToGetMonitorConfigurationClientCertificateDetailArrayOutput() GetMonitorConfigurationClientCertificateDetailArrayOutput {
+	return i.ToGetMonitorConfigurationClientCertificateDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorConfigurationClientCertificateDetailArray) ToGetMonitorConfigurationClientCertificateDetailArrayOutputWithContext(ctx context.Context) GetMonitorConfigurationClientCertificateDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationClientCertificateDetailArrayOutput)
+}
+
+type GetMonitorConfigurationClientCertificateDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorConfigurationClientCertificateDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorConfigurationClientCertificateDetail)(nil)).Elem()
+}
+
+func (o GetMonitorConfigurationClientCertificateDetailOutput) ToGetMonitorConfigurationClientCertificateDetailOutput() GetMonitorConfigurationClientCertificateDetailOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationClientCertificateDetailOutput) ToGetMonitorConfigurationClientCertificateDetailOutputWithContext(ctx context.Context) GetMonitorConfigurationClientCertificateDetailOutput {
+	return o
+}
+
+// Client certificate in pem format.
+func (o GetMonitorConfigurationClientCertificateDetailOutput) ClientCertificates() GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationClientCertificateDetail) []GetMonitorConfigurationClientCertificateDetailClientCertificate {
+		return v.ClientCertificates
+	}).(GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput)
+}
+
+// The private key associated with the client certificate in pem format.
+func (o GetMonitorConfigurationClientCertificateDetailOutput) PrivateKeys() GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationClientCertificateDetail) []GetMonitorConfigurationClientCertificateDetailPrivateKey {
+		return v.PrivateKeys
+	}).(GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput)
+}
+
+type GetMonitorConfigurationClientCertificateDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorConfigurationClientCertificateDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorConfigurationClientCertificateDetail)(nil)).Elem()
+}
+
+func (o GetMonitorConfigurationClientCertificateDetailArrayOutput) ToGetMonitorConfigurationClientCertificateDetailArrayOutput() GetMonitorConfigurationClientCertificateDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationClientCertificateDetailArrayOutput) ToGetMonitorConfigurationClientCertificateDetailArrayOutputWithContext(ctx context.Context) GetMonitorConfigurationClientCertificateDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationClientCertificateDetailArrayOutput) Index(i pulumi.IntInput) GetMonitorConfigurationClientCertificateDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorConfigurationClientCertificateDetail {
+		return vs[0].([]GetMonitorConfigurationClientCertificateDetail)[vs[1].(int)]
+	}).(GetMonitorConfigurationClientCertificateDetailOutput)
+}
+
+type GetMonitorConfigurationClientCertificateDetailClientCertificate struct {
+	// Content of the private key file.
+	Content string `pulumi:"content"`
+	// Name of the private key file.
+	FileName string `pulumi:"fileName"`
+}
+
+// GetMonitorConfigurationClientCertificateDetailClientCertificateInput is an input type that accepts GetMonitorConfigurationClientCertificateDetailClientCertificateArgs and GetMonitorConfigurationClientCertificateDetailClientCertificateOutput values.
+// You can construct a concrete instance of `GetMonitorConfigurationClientCertificateDetailClientCertificateInput` via:
+//
+//	GetMonitorConfigurationClientCertificateDetailClientCertificateArgs{...}
+type GetMonitorConfigurationClientCertificateDetailClientCertificateInput interface {
+	pulumi.Input
+
+	ToGetMonitorConfigurationClientCertificateDetailClientCertificateOutput() GetMonitorConfigurationClientCertificateDetailClientCertificateOutput
+	ToGetMonitorConfigurationClientCertificateDetailClientCertificateOutputWithContext(context.Context) GetMonitorConfigurationClientCertificateDetailClientCertificateOutput
+}
+
+type GetMonitorConfigurationClientCertificateDetailClientCertificateArgs struct {
+	// Content of the private key file.
+	Content pulumi.StringInput `pulumi:"content"`
+	// Name of the private key file.
+	FileName pulumi.StringInput `pulumi:"fileName"`
+}
+
+func (GetMonitorConfigurationClientCertificateDetailClientCertificateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorConfigurationClientCertificateDetailClientCertificate)(nil)).Elem()
+}
+
+func (i GetMonitorConfigurationClientCertificateDetailClientCertificateArgs) ToGetMonitorConfigurationClientCertificateDetailClientCertificateOutput() GetMonitorConfigurationClientCertificateDetailClientCertificateOutput {
+	return i.ToGetMonitorConfigurationClientCertificateDetailClientCertificateOutputWithContext(context.Background())
+}
+
+func (i GetMonitorConfigurationClientCertificateDetailClientCertificateArgs) ToGetMonitorConfigurationClientCertificateDetailClientCertificateOutputWithContext(ctx context.Context) GetMonitorConfigurationClientCertificateDetailClientCertificateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationClientCertificateDetailClientCertificateOutput)
+}
+
+// GetMonitorConfigurationClientCertificateDetailClientCertificateArrayInput is an input type that accepts GetMonitorConfigurationClientCertificateDetailClientCertificateArray and GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput values.
+// You can construct a concrete instance of `GetMonitorConfigurationClientCertificateDetailClientCertificateArrayInput` via:
+//
+//	GetMonitorConfigurationClientCertificateDetailClientCertificateArray{ GetMonitorConfigurationClientCertificateDetailClientCertificateArgs{...} }
+type GetMonitorConfigurationClientCertificateDetailClientCertificateArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput() GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput
+	ToGetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutputWithContext(context.Context) GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput
+}
+
+type GetMonitorConfigurationClientCertificateDetailClientCertificateArray []GetMonitorConfigurationClientCertificateDetailClientCertificateInput
+
+func (GetMonitorConfigurationClientCertificateDetailClientCertificateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorConfigurationClientCertificateDetailClientCertificate)(nil)).Elem()
+}
+
+func (i GetMonitorConfigurationClientCertificateDetailClientCertificateArray) ToGetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput() GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput {
+	return i.ToGetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorConfigurationClientCertificateDetailClientCertificateArray) ToGetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutputWithContext(ctx context.Context) GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput)
+}
+
+type GetMonitorConfigurationClientCertificateDetailClientCertificateOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorConfigurationClientCertificateDetailClientCertificateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorConfigurationClientCertificateDetailClientCertificate)(nil)).Elem()
+}
+
+func (o GetMonitorConfigurationClientCertificateDetailClientCertificateOutput) ToGetMonitorConfigurationClientCertificateDetailClientCertificateOutput() GetMonitorConfigurationClientCertificateDetailClientCertificateOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationClientCertificateDetailClientCertificateOutput) ToGetMonitorConfigurationClientCertificateDetailClientCertificateOutputWithContext(ctx context.Context) GetMonitorConfigurationClientCertificateDetailClientCertificateOutput {
+	return o
+}
+
+// Content of the private key file.
+func (o GetMonitorConfigurationClientCertificateDetailClientCertificateOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationClientCertificateDetailClientCertificate) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// Name of the private key file.
+func (o GetMonitorConfigurationClientCertificateDetailClientCertificateOutput) FileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationClientCertificateDetailClientCertificate) string { return v.FileName }).(pulumi.StringOutput)
+}
+
+type GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorConfigurationClientCertificateDetailClientCertificate)(nil)).Elem()
+}
+
+func (o GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput) ToGetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput() GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput) ToGetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutputWithContext(ctx context.Context) GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput) Index(i pulumi.IntInput) GetMonitorConfigurationClientCertificateDetailClientCertificateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorConfigurationClientCertificateDetailClientCertificate {
+		return vs[0].([]GetMonitorConfigurationClientCertificateDetailClientCertificate)[vs[1].(int)]
+	}).(GetMonitorConfigurationClientCertificateDetailClientCertificateOutput)
+}
+
+type GetMonitorConfigurationClientCertificateDetailPrivateKey struct {
+	// Content of the private key file.
+	Content string `pulumi:"content"`
+	// Name of the private key file.
+	FileName string `pulumi:"fileName"`
+}
+
+// GetMonitorConfigurationClientCertificateDetailPrivateKeyInput is an input type that accepts GetMonitorConfigurationClientCertificateDetailPrivateKeyArgs and GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput values.
+// You can construct a concrete instance of `GetMonitorConfigurationClientCertificateDetailPrivateKeyInput` via:
+//
+//	GetMonitorConfigurationClientCertificateDetailPrivateKeyArgs{...}
+type GetMonitorConfigurationClientCertificateDetailPrivateKeyInput interface {
+	pulumi.Input
+
+	ToGetMonitorConfigurationClientCertificateDetailPrivateKeyOutput() GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput
+	ToGetMonitorConfigurationClientCertificateDetailPrivateKeyOutputWithContext(context.Context) GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput
+}
+
+type GetMonitorConfigurationClientCertificateDetailPrivateKeyArgs struct {
+	// Content of the private key file.
+	Content pulumi.StringInput `pulumi:"content"`
+	// Name of the private key file.
+	FileName pulumi.StringInput `pulumi:"fileName"`
+}
+
+func (GetMonitorConfigurationClientCertificateDetailPrivateKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorConfigurationClientCertificateDetailPrivateKey)(nil)).Elem()
+}
+
+func (i GetMonitorConfigurationClientCertificateDetailPrivateKeyArgs) ToGetMonitorConfigurationClientCertificateDetailPrivateKeyOutput() GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput {
+	return i.ToGetMonitorConfigurationClientCertificateDetailPrivateKeyOutputWithContext(context.Background())
+}
+
+func (i GetMonitorConfigurationClientCertificateDetailPrivateKeyArgs) ToGetMonitorConfigurationClientCertificateDetailPrivateKeyOutputWithContext(ctx context.Context) GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput)
+}
+
+// GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayInput is an input type that accepts GetMonitorConfigurationClientCertificateDetailPrivateKeyArray and GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput values.
+// You can construct a concrete instance of `GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayInput` via:
+//
+//	GetMonitorConfigurationClientCertificateDetailPrivateKeyArray{ GetMonitorConfigurationClientCertificateDetailPrivateKeyArgs{...} }
+type GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput() GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput
+	ToGetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutputWithContext(context.Context) GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput
+}
+
+type GetMonitorConfigurationClientCertificateDetailPrivateKeyArray []GetMonitorConfigurationClientCertificateDetailPrivateKeyInput
+
+func (GetMonitorConfigurationClientCertificateDetailPrivateKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorConfigurationClientCertificateDetailPrivateKey)(nil)).Elem()
+}
+
+func (i GetMonitorConfigurationClientCertificateDetailPrivateKeyArray) ToGetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput() GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput {
+	return i.ToGetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorConfigurationClientCertificateDetailPrivateKeyArray) ToGetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutputWithContext(ctx context.Context) GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput)
+}
+
+type GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorConfigurationClientCertificateDetailPrivateKey)(nil)).Elem()
+}
+
+func (o GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput) ToGetMonitorConfigurationClientCertificateDetailPrivateKeyOutput() GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput) ToGetMonitorConfigurationClientCertificateDetailPrivateKeyOutputWithContext(ctx context.Context) GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput {
+	return o
+}
+
+// Content of the private key file.
+func (o GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationClientCertificateDetailPrivateKey) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// Name of the private key file.
+func (o GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput) FileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationClientCertificateDetailPrivateKey) string { return v.FileName }).(pulumi.StringOutput)
+}
+
+type GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorConfigurationClientCertificateDetailPrivateKey)(nil)).Elem()
+}
+
+func (o GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput) ToGetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput() GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput) ToGetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutputWithContext(ctx context.Context) GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput) Index(i pulumi.IntInput) GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorConfigurationClientCertificateDetailPrivateKey {
+		return vs[0].([]GetMonitorConfigurationClientCertificateDetailPrivateKey)[vs[1].(int)]
+	}).(GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput)
+}
+
 type GetMonitorConfigurationDnsConfiguration struct {
-	// If isOverrideDns is true, then dns will be overridden.
+	// If isOverrideDns is true, then DNS settings will be overridden.
 	IsOverrideDns bool `pulumi:"isOverrideDns"`
-	// Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+	// Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
 	OverrideDnsIp string `pulumi:"overrideDnsIp"`
 }
 
@@ -4113,9 +4967,9 @@ type GetMonitorConfigurationDnsConfigurationInput interface {
 }
 
 type GetMonitorConfigurationDnsConfigurationArgs struct {
-	// If isOverrideDns is true, then dns will be overridden.
+	// If isOverrideDns is true, then DNS settings will be overridden.
 	IsOverrideDns pulumi.BoolInput `pulumi:"isOverrideDns"`
-	// Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+	// Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
 	OverrideDnsIp pulumi.StringInput `pulumi:"overrideDnsIp"`
 }
 
@@ -4170,12 +5024,12 @@ func (o GetMonitorConfigurationDnsConfigurationOutput) ToGetMonitorConfiguration
 	return o
 }
 
-// If isOverrideDns is true, then dns will be overridden.
+// If isOverrideDns is true, then DNS settings will be overridden.
 func (o GetMonitorConfigurationDnsConfigurationOutput) IsOverrideDns() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorConfigurationDnsConfiguration) bool { return v.IsOverrideDns }).(pulumi.BoolOutput)
 }
 
-// Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+// Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
 func (o GetMonitorConfigurationDnsConfigurationOutput) OverrideDnsIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorConfigurationDnsConfiguration) string { return v.OverrideDnsIp }).(pulumi.StringOutput)
 }
@@ -4342,13 +5196,13 @@ type GetMonitorConfigurationReqAuthenticationDetail struct {
 	AuthRequestPostBody string `pulumi:"authRequestPostBody"`
 	// Authentication token.
 	AuthToken string `pulumi:"authToken"`
-	// URL to get authetication token.
+	// URL to get authentication token.
 	AuthUrl string `pulumi:"authUrl"`
-	// Username for authentication.
+	// User name for authentication.
 	AuthUserName string `pulumi:"authUserName"`
 	// User password for authentication.
 	AuthUserPassword string `pulumi:"authUserPassword"`
-	// Request http oauth scheme.
+	// Request HTTP OAuth scheme.
 	OauthScheme string `pulumi:"oauthScheme"`
 }
 
@@ -4372,13 +5226,13 @@ type GetMonitorConfigurationReqAuthenticationDetailArgs struct {
 	AuthRequestPostBody pulumi.StringInput `pulumi:"authRequestPostBody"`
 	// Authentication token.
 	AuthToken pulumi.StringInput `pulumi:"authToken"`
-	// URL to get authetication token.
+	// URL to get authentication token.
 	AuthUrl pulumi.StringInput `pulumi:"authUrl"`
-	// Username for authentication.
+	// User name for authentication.
 	AuthUserName pulumi.StringInput `pulumi:"authUserName"`
 	// User password for authentication.
 	AuthUserPassword pulumi.StringInput `pulumi:"authUserPassword"`
-	// Request http oauth scheme.
+	// Request HTTP OAuth scheme.
 	OauthScheme pulumi.StringInput `pulumi:"oauthScheme"`
 }
 
@@ -4455,12 +5309,12 @@ func (o GetMonitorConfigurationReqAuthenticationDetailOutput) AuthToken() pulumi
 	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetail) string { return v.AuthToken }).(pulumi.StringOutput)
 }
 
-// URL to get authetication token.
+// URL to get authentication token.
 func (o GetMonitorConfigurationReqAuthenticationDetailOutput) AuthUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetail) string { return v.AuthUrl }).(pulumi.StringOutput)
 }
 
-// Username for authentication.
+// User name for authentication.
 func (o GetMonitorConfigurationReqAuthenticationDetailOutput) AuthUserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetail) string { return v.AuthUserName }).(pulumi.StringOutput)
 }
@@ -4470,7 +5324,7 @@ func (o GetMonitorConfigurationReqAuthenticationDetailOutput) AuthUserPassword()
 	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetail) string { return v.AuthUserPassword }).(pulumi.StringOutput)
 }
 
-// Request http oauth scheme.
+// Request HTTP OAuth scheme.
 func (o GetMonitorConfigurationReqAuthenticationDetailOutput) OauthScheme() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorConfigurationReqAuthenticationDetail) string { return v.OauthScheme }).(pulumi.StringOutput)
 }
@@ -4911,9 +5765,9 @@ func (o GetMonitorConfigurationVerifyTextArrayOutput) Index(i pulumi.IntInput) G
 }
 
 type GetMonitorMaintenanceWindowSchedule struct {
-	// End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	// End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeEnded string `pulumi:"timeEnded"`
-	// Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	// Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeStarted string `pulumi:"timeStarted"`
 }
 
@@ -4929,9 +5783,9 @@ type GetMonitorMaintenanceWindowScheduleInput interface {
 }
 
 type GetMonitorMaintenanceWindowScheduleArgs struct {
-	// End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	// End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
-	// Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	// Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
 }
 
@@ -4986,12 +5840,12 @@ func (o GetMonitorMaintenanceWindowScheduleOutput) ToGetMonitorMaintenanceWindow
 	return o
 }
 
-// End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+// End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 func (o GetMonitorMaintenanceWindowScheduleOutput) TimeEnded() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorMaintenanceWindowSchedule) string { return v.TimeEnded }).(pulumi.StringOutput)
 }
 
-// Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+// Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 func (o GetMonitorMaintenanceWindowScheduleOutput) TimeStarted() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorMaintenanceWindowSchedule) string { return v.TimeStarted }).(pulumi.StringOutput)
 }
@@ -5571,7 +6425,7 @@ type GetMonitorsMonitorCollectionItem struct {
 	ApmDomainId string `pulumi:"apmDomainId"`
 	// Monitor availability configuration details.
 	AvailabilityConfigurations []GetMonitorsMonitorCollectionItemAvailabilityConfiguration `pulumi:"availabilityConfigurations"`
-	// Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+	// Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
 	BatchIntervalInSeconds int `pulumi:"batchIntervalInSeconds"`
 	// Details of monitor configuration.
 	Configurations []GetMonitorsMonitorCollectionItemConfiguration `pulumi:"configurations"`
@@ -5583,17 +6437,17 @@ type GetMonitorsMonitorCollectionItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
 	Id string `pulumi:"id"`
-	// If isRunNow is enabled, then the monitor will run now.
+	// If isRunNow is enabled, then the monitor will run immediately.
 	IsRunNow bool `pulumi:"isRunNow"`
 	// If runOnce is enabled, then the monitor will run once.
 	IsRunOnce bool `pulumi:"isRunOnce"`
-	// Details used to schedule maintenance window.
+	// Details required to schedule maintenance window.
 	MaintenanceWindowSchedules []GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule `pulumi:"maintenanceWindowSchedules"`
 	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
 	MonitorType string `pulumi:"monitorType"`
 	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds int `pulumi:"repeatIntervalInSeconds"`
-	// Scheduling policy on Vantage points.
+	// Scheduling policy to decide the distribution of monitor executions on vantage points.
 	SchedulingPolicy string `pulumi:"schedulingPolicy"`
 	// A filter to return only monitors using scriptId.
 	ScriptId string `pulumi:"scriptId"`
@@ -5633,7 +6487,7 @@ type GetMonitorsMonitorCollectionItemArgs struct {
 	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
 	// Monitor availability configuration details.
 	AvailabilityConfigurations GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayInput `pulumi:"availabilityConfigurations"`
-	// Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+	// Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
 	BatchIntervalInSeconds pulumi.IntInput `pulumi:"batchIntervalInSeconds"`
 	// Details of monitor configuration.
 	Configurations GetMonitorsMonitorCollectionItemConfigurationArrayInput `pulumi:"configurations"`
@@ -5645,17 +6499,17 @@ type GetMonitorsMonitorCollectionItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
 	Id pulumi.StringInput `pulumi:"id"`
-	// If isRunNow is enabled, then the monitor will run now.
+	// If isRunNow is enabled, then the monitor will run immediately.
 	IsRunNow pulumi.BoolInput `pulumi:"isRunNow"`
 	// If runOnce is enabled, then the monitor will run once.
 	IsRunOnce pulumi.BoolInput `pulumi:"isRunOnce"`
-	// Details used to schedule maintenance window.
+	// Details required to schedule maintenance window.
 	MaintenanceWindowSchedules GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayInput `pulumi:"maintenanceWindowSchedules"`
 	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
 	MonitorType pulumi.StringInput `pulumi:"monitorType"`
 	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds pulumi.IntInput `pulumi:"repeatIntervalInSeconds"`
-	// Scheduling policy on Vantage points.
+	// Scheduling policy to decide the distribution of monitor executions on vantage points.
 	SchedulingPolicy pulumi.StringInput `pulumi:"schedulingPolicy"`
 	// A filter to return only monitors using scriptId.
 	ScriptId pulumi.StringInput `pulumi:"scriptId"`
@@ -5742,7 +6596,7 @@ func (o GetMonitorsMonitorCollectionItemOutput) AvailabilityConfigurations() Get
 	}).(GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput)
 }
 
-// Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+// Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
 func (o GetMonitorsMonitorCollectionItemOutput) BatchIntervalInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) int { return v.BatchIntervalInSeconds }).(pulumi.IntOutput)
 }
@@ -5774,7 +6628,7 @@ func (o GetMonitorsMonitorCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// If isRunNow is enabled, then the monitor will run now.
+// If isRunNow is enabled, then the monitor will run immediately.
 func (o GetMonitorsMonitorCollectionItemOutput) IsRunNow() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) bool { return v.IsRunNow }).(pulumi.BoolOutput)
 }
@@ -5784,7 +6638,7 @@ func (o GetMonitorsMonitorCollectionItemOutput) IsRunOnce() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) bool { return v.IsRunOnce }).(pulumi.BoolOutput)
 }
 
-// Details used to schedule maintenance window.
+// Details required to schedule maintenance window.
 func (o GetMonitorsMonitorCollectionItemOutput) MaintenanceWindowSchedules() GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) []GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule {
 		return v.MaintenanceWindowSchedules
@@ -5801,7 +6655,7 @@ func (o GetMonitorsMonitorCollectionItemOutput) RepeatIntervalInSeconds() pulumi
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) int { return v.RepeatIntervalInSeconds }).(pulumi.IntOutput)
 }
 
-// Scheduling policy on Vantage points.
+// Scheduling policy to decide the distribution of monitor executions on vantage points.
 func (o GetMonitorsMonitorCollectionItemOutput) SchedulingPolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.SchedulingPolicy }).(pulumi.StringOutput)
 }
@@ -5881,9 +6735,9 @@ func (o GetMonitorsMonitorCollectionItemArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetMonitorsMonitorCollectionItemAvailabilityConfiguration struct {
-	// Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+	// Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
 	MaxAllowedFailuresPerInterval int `pulumi:"maxAllowedFailuresPerInterval"`
-	// Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+	// Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
 	MinAllowedRunsPerInterval int `pulumi:"minAllowedRunsPerInterval"`
 }
 
@@ -5899,9 +6753,9 @@ type GetMonitorsMonitorCollectionItemAvailabilityConfigurationInput interface {
 }
 
 type GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs struct {
-	// Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+	// Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
 	MaxAllowedFailuresPerInterval pulumi.IntInput `pulumi:"maxAllowedFailuresPerInterval"`
-	// Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+	// Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
 	MinAllowedRunsPerInterval pulumi.IntInput `pulumi:"minAllowedRunsPerInterval"`
 }
 
@@ -5956,14 +6810,14 @@ func (o GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput) ToGetMo
 	return o
 }
 
-// Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+// Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
 func (o GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput) MaxAllowedFailuresPerInterval() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemAvailabilityConfiguration) int {
 		return v.MaxAllowedFailuresPerInterval
 	}).(pulumi.IntOutput)
 }
 
-// Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+// Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
 func (o GetMonitorsMonitorCollectionItemAvailabilityConfigurationOutput) MinAllowedRunsPerInterval() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemAvailabilityConfiguration) int {
 		return v.MinAllowedRunsPerInterval
@@ -5991,21 +6845,25 @@ func (o GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput) In
 }
 
 type GetMonitorsMonitorCollectionItemConfiguration struct {
+	// Details for client certificate.
+	ClientCertificateDetails []GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail `pulumi:"clientCertificateDetails"`
 	// Type of configuration.
 	ConfigType string `pulumi:"configType"`
-	// Dns settings.
+	// Information about the DNS settings.
 	DnsConfigurations []GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration `pulumi:"dnsConfigurations"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled bool `pulumi:"isCertificateValidationEnabled"`
+	// If disabled then auto snapshots are not collected.
+	IsDefaultSnapshotEnabled bool `pulumi:"isDefaultSnapshotEnabled"`
 	// If isFailureRetried is enabled, then a failed call will be retried.
 	IsFailureRetried bool `pulumi:"isFailureRetried"`
-	// If redirection enabled, then redirects will be allowed while accessing target URL.
+	// If redirection is enabled, then redirects will be allowed while accessing target URL.
 	IsRedirectionEnabled bool `pulumi:"isRedirectionEnabled"`
 	// Details of the network configuration.
 	NetworkConfigurations []GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration `pulumi:"networkConfigurations"`
 	// Details for request HTTP authentication.
 	ReqAuthenticationDetails []GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail `pulumi:"reqAuthenticationDetails"`
-	// Request http authentication scheme.
+	// Request HTTP authentication scheme.
 	ReqAuthenticationScheme string `pulumi:"reqAuthenticationScheme"`
 	// List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
 	RequestHeaders []GetMonitorsMonitorCollectionItemConfigurationRequestHeader `pulumi:"requestHeaders"`
@@ -6035,21 +6893,25 @@ type GetMonitorsMonitorCollectionItemConfigurationInput interface {
 }
 
 type GetMonitorsMonitorCollectionItemConfigurationArgs struct {
+	// Details for client certificate.
+	ClientCertificateDetails GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayInput `pulumi:"clientCertificateDetails"`
 	// Type of configuration.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
-	// Dns settings.
+	// Information about the DNS settings.
 	DnsConfigurations GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayInput `pulumi:"dnsConfigurations"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled pulumi.BoolInput `pulumi:"isCertificateValidationEnabled"`
+	// If disabled then auto snapshots are not collected.
+	IsDefaultSnapshotEnabled pulumi.BoolInput `pulumi:"isDefaultSnapshotEnabled"`
 	// If isFailureRetried is enabled, then a failed call will be retried.
 	IsFailureRetried pulumi.BoolInput `pulumi:"isFailureRetried"`
-	// If redirection enabled, then redirects will be allowed while accessing target URL.
+	// If redirection is enabled, then redirects will be allowed while accessing target URL.
 	IsRedirectionEnabled pulumi.BoolInput `pulumi:"isRedirectionEnabled"`
 	// Details of the network configuration.
 	NetworkConfigurations GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// Details for request HTTP authentication.
 	ReqAuthenticationDetails GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArrayInput `pulumi:"reqAuthenticationDetails"`
-	// Request http authentication scheme.
+	// Request HTTP authentication scheme.
 	ReqAuthenticationScheme pulumi.StringInput `pulumi:"reqAuthenticationScheme"`
 	// List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
 	RequestHeaders GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArrayInput `pulumi:"requestHeaders"`
@@ -6118,12 +6980,19 @@ func (o GetMonitorsMonitorCollectionItemConfigurationOutput) ToGetMonitorsMonito
 	return o
 }
 
+// Details for client certificate.
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) ClientCertificateDetails() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) []GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail {
+		return v.ClientCertificateDetails
+	}).(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput)
+}
+
 // Type of configuration.
 func (o GetMonitorsMonitorCollectionItemConfigurationOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.ConfigType }).(pulumi.StringOutput)
 }
 
-// Dns settings.
+// Information about the DNS settings.
 func (o GetMonitorsMonitorCollectionItemConfigurationOutput) DnsConfigurations() GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) []GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration {
 		return v.DnsConfigurations
@@ -6135,12 +7004,17 @@ func (o GetMonitorsMonitorCollectionItemConfigurationOutput) IsCertificateValida
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) bool { return v.IsCertificateValidationEnabled }).(pulumi.BoolOutput)
 }
 
+// If disabled then auto snapshots are not collected.
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) IsDefaultSnapshotEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) bool { return v.IsDefaultSnapshotEnabled }).(pulumi.BoolOutput)
+}
+
 // If isFailureRetried is enabled, then a failed call will be retried.
 func (o GetMonitorsMonitorCollectionItemConfigurationOutput) IsFailureRetried() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) bool { return v.IsFailureRetried }).(pulumi.BoolOutput)
 }
 
-// If redirection enabled, then redirects will be allowed while accessing target URL.
+// If redirection is enabled, then redirects will be allowed while accessing target URL.
 func (o GetMonitorsMonitorCollectionItemConfigurationOutput) IsRedirectionEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) bool { return v.IsRedirectionEnabled }).(pulumi.BoolOutput)
 }
@@ -6159,7 +7033,7 @@ func (o GetMonitorsMonitorCollectionItemConfigurationOutput) ReqAuthenticationDe
 	}).(GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArrayOutput)
 }
 
-// Request http authentication scheme.
+// Request HTTP authentication scheme.
 func (o GetMonitorsMonitorCollectionItemConfigurationOutput) ReqAuthenticationScheme() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.ReqAuthenticationScheme }).(pulumi.StringOutput)
 }
@@ -6225,10 +7099,340 @@ func (o GetMonitorsMonitorCollectionItemConfigurationArrayOutput) Index(i pulumi
 	}).(GetMonitorsMonitorCollectionItemConfigurationOutput)
 }
 
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail struct {
+	// Client certificate in pem format.
+	ClientCertificates []GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate `pulumi:"clientCertificates"`
+	// The private key associated with the client certificate in pem format.
+	PrivateKeys []GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey `pulumi:"privateKeys"`
+}
+
+// GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArgs and GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailInput` via:
+//
+//	GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArgs{...}
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput
+	ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArgs struct {
+	// Client certificate in pem format.
+	ClientCertificates GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayInput `pulumi:"clientCertificates"`
+	// The private key associated with the client certificate in pem format.
+	PrivateKeys GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayInput `pulumi:"privateKeys"`
+}
+
+func (GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArgs) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput {
+	return i.ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArgs) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput)
+}
+
+// GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArray and GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayInput` via:
+//
+//	GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArray{ GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArgs{...} }
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput
+	ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArray []GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailInput
+
+func (GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArray) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput {
+	return i.ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArray) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput {
+	return o
+}
+
+// Client certificate in pem format.
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput) ClientCertificates() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail) []GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate {
+		return v.ClientCertificates
+	}).(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput)
+}
+
+// The private key associated with the client certificate in pem format.
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput) PrivateKeys() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail) []GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey {
+		return v.PrivateKeys
+	}).(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail {
+		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail)[vs[1].(int)]
+	}).(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate struct {
+	// Content of the private key file.
+	Content string `pulumi:"content"`
+	// Name of the private key file.
+	FileName string `pulumi:"fileName"`
+}
+
+// GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArgs and GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateInput` via:
+//
+//	GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArgs{...}
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput
+	ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArgs struct {
+	// Content of the private key file.
+	Content pulumi.StringInput `pulumi:"content"`
+	// Name of the private key file.
+	FileName pulumi.StringInput `pulumi:"fileName"`
+}
+
+func (GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArgs) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput {
+	return i.ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArgs) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput)
+}
+
+// GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArray and GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayInput` via:
+//
+//	GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArray{ GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArgs{...} }
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput
+	ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArray []GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateInput
+
+func (GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArray) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput {
+	return i.ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArray) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput {
+	return o
+}
+
+// Content of the private key file.
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate) string {
+		return v.Content
+	}).(pulumi.StringOutput)
+}
+
+// Name of the private key file.
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput) FileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate) string {
+		return v.FileName
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate {
+		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate)[vs[1].(int)]
+	}).(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey struct {
+	// Content of the private key file.
+	Content string `pulumi:"content"`
+	// Name of the private key file.
+	FileName string `pulumi:"fileName"`
+}
+
+// GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArgs and GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyInput` via:
+//
+//	GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArgs{...}
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput
+	ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArgs struct {
+	// Content of the private key file.
+	Content pulumi.StringInput `pulumi:"content"`
+	// Name of the private key file.
+	FileName pulumi.StringInput `pulumi:"fileName"`
+}
+
+func (GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArgs) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput {
+	return i.ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArgs) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput)
+}
+
+// GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArray and GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayInput` via:
+//
+//	GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArray{ GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArgs{...} }
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput
+	ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArray []GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyInput
+
+func (GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArray) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput {
+	return i.ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArray) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput {
+	return o
+}
+
+// Content of the private key file.
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey) string {
+		return v.Content
+	}).(pulumi.StringOutput)
+}
+
+// Name of the private key file.
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput) FileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey) string {
+		return v.FileName
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput() GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput) ToGetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey {
+		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey)[vs[1].(int)]
+	}).(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput)
+}
+
 type GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration struct {
-	// If isOverrideDns is true, then dns will be overridden.
+	// If isOverrideDns is true, then DNS settings will be overridden.
 	IsOverrideDns bool `pulumi:"isOverrideDns"`
-	// Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+	// Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
 	OverrideDnsIp string `pulumi:"overrideDnsIp"`
 }
 
@@ -6244,9 +7448,9 @@ type GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationInput interfac
 }
 
 type GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs struct {
-	// If isOverrideDns is true, then dns will be overridden.
+	// If isOverrideDns is true, then DNS settings will be overridden.
 	IsOverrideDns pulumi.BoolInput `pulumi:"isOverrideDns"`
-	// Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+	// Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
 	OverrideDnsIp pulumi.StringInput `pulumi:"overrideDnsIp"`
 }
 
@@ -6301,12 +7505,12 @@ func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput) ToG
 	return o
 }
 
-// If isOverrideDns is true, then dns will be overridden.
+// If isOverrideDns is true, then DNS settings will be overridden.
 func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput) IsOverrideDns() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration) bool { return v.IsOverrideDns }).(pulumi.BoolOutput)
 }
 
-// Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+// Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
 func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput) OverrideDnsIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration) string { return v.OverrideDnsIp }).(pulumi.StringOutput)
 }
@@ -6475,13 +7679,13 @@ type GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail struct
 	AuthRequestPostBody string `pulumi:"authRequestPostBody"`
 	// Authentication token.
 	AuthToken string `pulumi:"authToken"`
-	// URL to get authetication token.
+	// URL to get authentication token.
 	AuthUrl string `pulumi:"authUrl"`
-	// Username for authentication.
+	// User name for authentication.
 	AuthUserName string `pulumi:"authUserName"`
 	// User password for authentication.
 	AuthUserPassword string `pulumi:"authUserPassword"`
-	// Request http oauth scheme.
+	// Request HTTP OAuth scheme.
 	OauthScheme string `pulumi:"oauthScheme"`
 }
 
@@ -6505,13 +7709,13 @@ type GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArgs st
 	AuthRequestPostBody pulumi.StringInput `pulumi:"authRequestPostBody"`
 	// Authentication token.
 	AuthToken pulumi.StringInput `pulumi:"authToken"`
-	// URL to get authetication token.
+	// URL to get authentication token.
 	AuthUrl pulumi.StringInput `pulumi:"authUrl"`
-	// Username for authentication.
+	// User name for authentication.
 	AuthUserName pulumi.StringInput `pulumi:"authUserName"`
 	// User password for authentication.
 	AuthUserPassword pulumi.StringInput `pulumi:"authUserPassword"`
-	// Request http oauth scheme.
+	// Request HTTP OAuth scheme.
 	OauthScheme pulumi.StringInput `pulumi:"oauthScheme"`
 }
 
@@ -6594,12 +7798,12 @@ func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutp
 	}).(pulumi.StringOutput)
 }
 
-// URL to get authetication token.
+// URL to get authentication token.
 func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput) AuthUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail) string { return v.AuthUrl }).(pulumi.StringOutput)
 }
 
-// Username for authentication.
+// User name for authentication.
 func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput) AuthUserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail) string {
 		return v.AuthUserName
@@ -6613,7 +7817,7 @@ func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutp
 	}).(pulumi.StringOutput)
 }
 
-// Request http oauth scheme.
+// Request HTTP OAuth scheme.
 func (o GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput) OauthScheme() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail) string {
 		return v.OauthScheme
@@ -7060,9 +8264,9 @@ func (o GetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayOutput) Inde
 }
 
 type GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule struct {
-	// End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	// End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeEnded string `pulumi:"timeEnded"`
-	// Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	// Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeStarted string `pulumi:"timeStarted"`
 }
 
@@ -7078,9 +8282,9 @@ type GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleInput interface {
 }
 
 type GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs struct {
-	// End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	// End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
-	// Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	// Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
 }
 
@@ -7135,12 +8339,12 @@ func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput) ToGetMo
 	return o
 }
 
-// End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+// End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput) TimeEnded() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule) string { return v.TimeEnded }).(pulumi.StringOutput)
 }
 
-// Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+// Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 func (o GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleOutput) TimeStarted() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule) string { return v.TimeStarted }).(pulumi.StringOutput)
 }
@@ -9393,7 +10597,7 @@ type GetVantagePointsPublicVantagePointCollectionItemGeo struct {
 	CountryCode string `pulumi:"countryCode"`
 	// The common English-language name for the country.
 	CountryName string `pulumi:"countryName"`
-	// Degrees north of the Equator.
+	// Degrees north of the equator.
 	Latitude float64 `pulumi:"latitude"`
 	// Degrees east of the prime meridian.
 	Longitude float64 `pulumi:"longitude"`
@@ -9419,7 +10623,7 @@ type GetVantagePointsPublicVantagePointCollectionItemGeoArgs struct {
 	CountryCode pulumi.StringInput `pulumi:"countryCode"`
 	// The common English-language name for the country.
 	CountryName pulumi.StringInput `pulumi:"countryName"`
-	// Degrees north of the Equator.
+	// Degrees north of the equator.
 	Latitude pulumi.Float64Input `pulumi:"latitude"`
 	// Degrees east of the prime meridian.
 	Longitude pulumi.Float64Input `pulumi:"longitude"`
@@ -9496,7 +10700,7 @@ func (o GetVantagePointsPublicVantagePointCollectionItemGeoOutput) CountryName()
 	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItemGeo) string { return v.CountryName }).(pulumi.StringOutput)
 }
 
-// Degrees north of the Equator.
+// Degrees north of the equator.
 func (o GetVantagePointsPublicVantagePointCollectionItemGeoOutput) Latitude() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItemGeo) float64 { return v.Latitude }).(pulumi.Float64Output)
 }
@@ -9531,6 +10735,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigAvailabilityConfigurationPtrInput)(nil)).Elem(), ConfigAvailabilityConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationInput)(nil)).Elem(), ConfigConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationPtrInput)(nil)).Elem(), ConfigConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationClientCertificateDetailsInput)(nil)).Elem(), ConfigConfigurationClientCertificateDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationClientCertificateDetailsPtrInput)(nil)).Elem(), ConfigConfigurationClientCertificateDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationClientCertificateDetailsClientCertificateInput)(nil)).Elem(), ConfigConfigurationClientCertificateDetailsClientCertificateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationClientCertificateDetailsClientCertificatePtrInput)(nil)).Elem(), ConfigConfigurationClientCertificateDetailsClientCertificateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationClientCertificateDetailsPrivateKeyInput)(nil)).Elem(), ConfigConfigurationClientCertificateDetailsPrivateKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationClientCertificateDetailsPrivateKeyPtrInput)(nil)).Elem(), ConfigConfigurationClientCertificateDetailsPrivateKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationDnsConfigurationInput)(nil)).Elem(), ConfigConfigurationDnsConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationDnsConfigurationPtrInput)(nil)).Elem(), ConfigConfigurationDnsConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationNetworkConfigurationInput)(nil)).Elem(), ConfigConfigurationNetworkConfigurationArgs{})
@@ -9581,6 +10791,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorAvailabilityConfigurationArrayInput)(nil)).Elem(), GetMonitorAvailabilityConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationInput)(nil)).Elem(), GetMonitorConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationArrayInput)(nil)).Elem(), GetMonitorConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationClientCertificateDetailInput)(nil)).Elem(), GetMonitorConfigurationClientCertificateDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationClientCertificateDetailArrayInput)(nil)).Elem(), GetMonitorConfigurationClientCertificateDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationClientCertificateDetailClientCertificateInput)(nil)).Elem(), GetMonitorConfigurationClientCertificateDetailClientCertificateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationClientCertificateDetailClientCertificateArrayInput)(nil)).Elem(), GetMonitorConfigurationClientCertificateDetailClientCertificateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationClientCertificateDetailPrivateKeyInput)(nil)).Elem(), GetMonitorConfigurationClientCertificateDetailPrivateKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayInput)(nil)).Elem(), GetMonitorConfigurationClientCertificateDetailPrivateKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationDnsConfigurationInput)(nil)).Elem(), GetMonitorConfigurationDnsConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationDnsConfigurationArrayInput)(nil)).Elem(), GetMonitorConfigurationDnsConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationNetworkConfigurationInput)(nil)).Elem(), GetMonitorConfigurationNetworkConfigurationArgs{})
@@ -9613,6 +10829,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemAvailabilityConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs{})
@@ -9671,6 +10893,12 @@ func init() {
 	pulumi.RegisterOutputType(ConfigAvailabilityConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(ConfigConfigurationClientCertificateDetailsOutput{})
+	pulumi.RegisterOutputType(ConfigConfigurationClientCertificateDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ConfigConfigurationClientCertificateDetailsClientCertificateOutput{})
+	pulumi.RegisterOutputType(ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput{})
+	pulumi.RegisterOutputType(ConfigConfigurationClientCertificateDetailsPrivateKeyOutput{})
+	pulumi.RegisterOutputType(ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationDnsConfigurationOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationDnsConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationNetworkConfigurationOutput{})
@@ -9721,6 +10949,12 @@ func init() {
 	pulumi.RegisterOutputType(GetMonitorAvailabilityConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorConfigurationClientCertificateDetailOutput{})
+	pulumi.RegisterOutputType(GetMonitorConfigurationClientCertificateDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorConfigurationClientCertificateDetailClientCertificateOutput{})
+	pulumi.RegisterOutputType(GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput{})
+	pulumi.RegisterOutputType(GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationDnsConfigurationOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationDnsConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationNetworkConfigurationOutput{})
@@ -9753,6 +10987,12 @@ func init() {
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemAvailabilityConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput{})

@@ -271,24 +271,24 @@ def get_private_endpoint(private_endpoint_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataFlow/getPrivateEndpoint:getPrivateEndpoint', __args__, opts=opts, typ=GetPrivateEndpointResult).value
 
     return AwaitableGetPrivateEndpointResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        dns_zones=__ret__.dns_zones,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        max_host_count=__ret__.max_host_count,
-        nsg_ids=__ret__.nsg_ids,
-        owner_principal_id=__ret__.owner_principal_id,
-        owner_user_name=__ret__.owner_user_name,
-        private_endpoint_id=__ret__.private_endpoint_id,
-        scan_details=__ret__.scan_details,
-        state=__ret__.state,
-        subnet_id=__ret__.subnet_id,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        dns_zones=pulumi.get(__ret__, 'dns_zones'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        max_host_count=pulumi.get(__ret__, 'max_host_count'),
+        nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
+        owner_principal_id=pulumi.get(__ret__, 'owner_principal_id'),
+        owner_user_name=pulumi.get(__ret__, 'owner_user_name'),
+        private_endpoint_id=pulumi.get(__ret__, 'private_endpoint_id'),
+        scan_details=pulumi.get(__ret__, 'scan_details'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_private_endpoint)

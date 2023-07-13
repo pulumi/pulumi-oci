@@ -21,6 +21,7 @@ class BootVolumeBackupArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 kms_key_id: Optional[pulumi.Input[str]] = None,
                  source_details: Optional[pulumi.Input['BootVolumeBackupSourceDetailsArgs']] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
@@ -30,6 +31,7 @@ class BootVolumeBackupArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
         :param pulumi.Input['BootVolumeBackupSourceDetailsArgs'] source_details: Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
         :param pulumi.Input[str] type: The type of backup to create. If omitted, defaults to incremental. Supported values are 'FULL' or 'INCREMENTAL'.
         """
@@ -43,6 +45,8 @@ class BootVolumeBackupArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
         if source_details is not None:
             pulumi.set(__self__, "source_details", source_details)
         if type is not None:
@@ -107,6 +111,18 @@ class BootVolumeBackupArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @kms_key_id.setter
+    def kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "kms_key_id", value)
 
     @property
     @pulumi.getter(name="sourceDetails")
@@ -439,6 +455,7 @@ class BootVolumeBackup(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 kms_key_id: Optional[pulumi.Input[str]] = None,
                  source_details: Optional[pulumi.Input[pulumi.InputType['BootVolumeBackupSourceDetailsArgs']]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -467,6 +484,7 @@ class BootVolumeBackup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            kms_key_id=oci_kms_key["test_key"]["id"],
             type=var["boot_volume_backup_type"])
         ```
 
@@ -485,6 +503,7 @@ class BootVolumeBackup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
         :param pulumi.Input[pulumi.InputType['BootVolumeBackupSourceDetailsArgs']] source_details: Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
         :param pulumi.Input[str] type: The type of backup to create. If omitted, defaults to incremental. Supported values are 'FULL' or 'INCREMENTAL'.
         """
@@ -519,6 +538,7 @@ class BootVolumeBackup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            kms_key_id=oci_kms_key["test_key"]["id"],
             type=var["boot_volume_backup_type"])
         ```
 
@@ -550,6 +570,7 @@ class BootVolumeBackup(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 kms_key_id: Optional[pulumi.Input[str]] = None,
                  source_details: Optional[pulumi.Input[pulumi.InputType['BootVolumeBackupSourceDetailsArgs']]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -566,11 +587,11 @@ class BootVolumeBackup(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["kms_key_id"] = kms_key_id
             __props__.__dict__["source_details"] = source_details
             __props__.__dict__["type"] = type
             __props__.__dict__["expiration_time"] = None
             __props__.__dict__["image_id"] = None
-            __props__.__dict__["kms_key_id"] = None
             __props__.__dict__["size_in_gbs"] = None
             __props__.__dict__["source_boot_volume_backup_id"] = None
             __props__.__dict__["source_type"] = None

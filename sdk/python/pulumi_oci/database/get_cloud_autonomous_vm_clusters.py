@@ -170,14 +170,14 @@ def get_cloud_autonomous_vm_clusters(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getCloudAutonomousVmClusters:getCloudAutonomousVmClusters', __args__, opts=opts, typ=GetCloudAutonomousVmClustersResult).value
 
     return AwaitableGetCloudAutonomousVmClustersResult(
-        availability_domain=__ret__.availability_domain,
-        cloud_autonomous_vm_clusters=__ret__.cloud_autonomous_vm_clusters,
-        cloud_exadata_infrastructure_id=__ret__.cloud_exadata_infrastructure_id,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        cloud_autonomous_vm_clusters=pulumi.get(__ret__, 'cloud_autonomous_vm_clusters'),
+        cloud_exadata_infrastructure_id=pulumi.get(__ret__, 'cloud_exadata_infrastructure_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_cloud_autonomous_vm_clusters)

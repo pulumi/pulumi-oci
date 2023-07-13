@@ -247,22 +247,22 @@ def get_external_database_connector(external_database_connector_id: Optional[str
     __ret__ = pulumi.runtime.invoke('oci:Database/getExternalDatabaseConnector:getExternalDatabaseConnector', __args__, opts=opts, typ=GetExternalDatabaseConnectorResult).value
 
     return AwaitableGetExternalDatabaseConnectorResult(
-        compartment_id=__ret__.compartment_id,
-        connection_credentials=__ret__.connection_credentials,
-        connection_status=__ret__.connection_status,
-        connection_strings=__ret__.connection_strings,
-        connector_agent_id=__ret__.connector_agent_id,
-        connector_type=__ret__.connector_type,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        external_database_connector_id=__ret__.external_database_connector_id,
-        external_database_id=__ret__.external_database_id,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        state=__ret__.state,
-        time_connection_status_last_updated=__ret__.time_connection_status_last_updated,
-        time_created=__ret__.time_created)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        connection_credentials=pulumi.get(__ret__, 'connection_credentials'),
+        connection_status=pulumi.get(__ret__, 'connection_status'),
+        connection_strings=pulumi.get(__ret__, 'connection_strings'),
+        connector_agent_id=pulumi.get(__ret__, 'connector_agent_id'),
+        connector_type=pulumi.get(__ret__, 'connector_type'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        external_database_connector_id=pulumi.get(__ret__, 'external_database_connector_id'),
+        external_database_id=pulumi.get(__ret__, 'external_database_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        state=pulumi.get(__ret__, 'state'),
+        time_connection_status_last_updated=pulumi.get(__ret__, 'time_connection_status_last_updated'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_external_database_connector)

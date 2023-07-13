@@ -170,14 +170,14 @@ def get_db_management_private_endpoints(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getDbManagementPrivateEndpoints:getDbManagementPrivateEndpoints', __args__, opts=opts, typ=GetDbManagementPrivateEndpointsResult).value
 
     return AwaitableGetDbManagementPrivateEndpointsResult(
-        compartment_id=__ret__.compartment_id,
-        db_management_private_endpoint_collections=__ret__.db_management_private_endpoint_collections,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_cluster=__ret__.is_cluster,
-        name=__ret__.name,
-        state=__ret__.state,
-        vcn_id=__ret__.vcn_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        db_management_private_endpoint_collections=pulumi.get(__ret__, 'db_management_private_endpoint_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_cluster=pulumi.get(__ret__, 'is_cluster'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_db_management_private_endpoints)

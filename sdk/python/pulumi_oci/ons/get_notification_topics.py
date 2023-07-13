@@ -141,12 +141,12 @@ def get_notification_topics(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Ons/getNotificationTopics:getNotificationTopics', __args__, opts=opts, typ=GetNotificationTopicsResult).value
 
     return AwaitableGetNotificationTopicsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        notification_topics=__ret__.notification_topics,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        notification_topics=pulumi.get(__ret__, 'notification_topics'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_notification_topics)

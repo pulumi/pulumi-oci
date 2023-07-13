@@ -132,12 +132,12 @@ def get_dedicated_vm_host_shapes(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getDedicatedVmHostShapes:getDedicatedVmHostShapes', __args__, opts=opts, typ=GetDedicatedVmHostShapesResult).value
 
     return AwaitableGetDedicatedVmHostShapesResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        dedicated_vm_host_shapes=__ret__.dedicated_vm_host_shapes,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        instance_shape_name=__ret__.instance_shape_name)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        dedicated_vm_host_shapes=pulumi.get(__ret__, 'dedicated_vm_host_shapes'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        instance_shape_name=pulumi.get(__ret__, 'instance_shape_name'))
 
 
 @_utilities.lift_output_func(get_dedicated_vm_host_shapes)

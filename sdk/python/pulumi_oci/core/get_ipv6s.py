@@ -145,12 +145,12 @@ def get_ipv6s(filters: Optional[Sequence[pulumi.InputType['GetIpv6sFilterArgs']]
     __ret__ = pulumi.runtime.invoke('oci:Core/getIpv6s:getIpv6s', __args__, opts=opts, typ=GetIpv6sResult).value
 
     return AwaitableGetIpv6sResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        ip_address=__ret__.ip_address,
-        ipv6s=__ret__.ipv6s,
-        subnet_id=__ret__.subnet_id,
-        vnic_id=__ret__.vnic_id)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        ip_address=pulumi.get(__ret__, 'ip_address'),
+        ipv6s=pulumi.get(__ret__, 'ipv6s'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        vnic_id=pulumi.get(__ret__, 'vnic_id'))
 
 
 @_utilities.lift_output_func(get_ipv6s)

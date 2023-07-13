@@ -94,6 +94,21 @@ public final class BootVolumeBackupArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+     * 
+     */
+    @Import(name="kmsKeyId")
+    private @Nullable Output<String> kmsKeyId;
+
+    /**
+     * @return The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+     * 
+     */
+    public Optional<Output<String>> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
+    }
+
+    /**
      * Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
      * 
      */
@@ -131,6 +146,7 @@ public final class BootVolumeBackupArgs extends com.pulumi.resources.ResourceArg
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.kmsKeyId = $.kmsKeyId;
         this.sourceDetails = $.sourceDetails;
         this.type = $.type;
     }
@@ -256,6 +272,27 @@ public final class BootVolumeBackupArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param kmsKeyId The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyId(@Nullable Output<String> kmsKeyId) {
+            $.kmsKeyId = kmsKeyId;
+            return this;
+        }
+
+        /**
+         * @param kmsKeyId The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyId(String kmsKeyId) {
+            return kmsKeyId(Output.of(kmsKeyId));
         }
 
         /**

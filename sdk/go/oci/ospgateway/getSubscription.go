@@ -62,9 +62,11 @@ type LookupSubscriptionArgs struct {
 
 // A collection of values returned by getSubscription.
 type LookupSubscriptionResult struct {
+	// Account type.
+	AccountType string `pulumi:"accountType"`
 	// Bill to customer Account id.
 	BillToCustAccountId string `pulumi:"billToCustAccountId"`
-	// Billing address details model.
+	// Address details model.
 	BillingAddresses []GetSubscriptionBillingAddress `pulumi:"billingAddresses"`
 	CompartmentId    string                          `pulumi:"compartmentId"`
 	// Currency code
@@ -97,6 +99,8 @@ type LookupSubscriptionResult struct {
 	Subscriptions          []GetSubscriptionSubscription `pulumi:"subscriptions"`
 	// Tax details.
 	TaxInfos []GetSubscriptionTaxInfo `pulumi:"taxInfos"`
+	// Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+	TimePersonalToCorporateConv string `pulumi:"timePersonalToCorporateConv"`
 	// Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
 	TimePlanUpgrade string `pulumi:"timePlanUpgrade"`
 	// Start date of the subscription.
@@ -149,12 +153,17 @@ func (o LookupSubscriptionResultOutput) ToLookupSubscriptionResultOutputWithCont
 	return o
 }
 
+// Account type.
+func (o LookupSubscriptionResultOutput) AccountType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.AccountType }).(pulumi.StringOutput)
+}
+
 // Bill to customer Account id.
 func (o LookupSubscriptionResultOutput) BillToCustAccountId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.BillToCustAccountId }).(pulumi.StringOutput)
 }
 
-// Billing address details model.
+// Address details model.
 func (o LookupSubscriptionResultOutput) BillingAddresses() GetSubscriptionBillingAddressArrayOutput {
 	return o.ApplyT(func(v LookupSubscriptionResult) []GetSubscriptionBillingAddress { return v.BillingAddresses }).(GetSubscriptionBillingAddressArrayOutput)
 }
@@ -242,6 +251,11 @@ func (o LookupSubscriptionResultOutput) Subscriptions() GetSubscriptionSubscript
 // Tax details.
 func (o LookupSubscriptionResultOutput) TaxInfos() GetSubscriptionTaxInfoArrayOutput {
 	return o.ApplyT(func(v LookupSubscriptionResult) []GetSubscriptionTaxInfo { return v.TaxInfos }).(GetSubscriptionTaxInfoArrayOutput)
+}
+
+// Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+func (o LookupSubscriptionResultOutput) TimePersonalToCorporateConv() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.TimePersonalToCorporateConv }).(pulumi.StringOutput)
 }
 
 // Date of upgrade/conversion when planType changed from FREE_TIER to PAYG

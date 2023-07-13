@@ -174,14 +174,14 @@ def get_model_version_sets(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataScience/getModelVersionSets:getModelVersionSets', __args__, opts=opts, typ=GetModelVersionSetsResult).value
 
     return AwaitableGetModelVersionSetsResult(
-        compartment_id=__ret__.compartment_id,
-        created_by=__ret__.created_by,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        model_version_sets=__ret__.model_version_sets,
-        name=__ret__.name,
-        project_id=__ret__.project_id,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        created_by=pulumi.get(__ret__, 'created_by'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        model_version_sets=pulumi.get(__ret__, 'model_version_sets'),
+        name=pulumi.get(__ret__, 'name'),
+        project_id=pulumi.get(__ret__, 'project_id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_model_version_sets)

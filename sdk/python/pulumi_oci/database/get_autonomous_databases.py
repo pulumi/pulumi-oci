@@ -254,19 +254,19 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[str] = N
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousDatabases:getAutonomousDatabases', __args__, opts=opts, typ=GetAutonomousDatabasesResult).value
 
     return AwaitableGetAutonomousDatabasesResult(
-        autonomous_container_database_id=__ret__.autonomous_container_database_id,
-        autonomous_databases=__ret__.autonomous_databases,
-        compartment_id=__ret__.compartment_id,
-        db_version=__ret__.db_version,
-        db_workload=__ret__.db_workload,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        infrastructure_type=__ret__.infrastructure_type,
-        is_data_guard_enabled=__ret__.is_data_guard_enabled,
-        is_free_tier=__ret__.is_free_tier,
-        is_refreshable_clone=__ret__.is_refreshable_clone,
-        state=__ret__.state)
+        autonomous_container_database_id=pulumi.get(__ret__, 'autonomous_container_database_id'),
+        autonomous_databases=pulumi.get(__ret__, 'autonomous_databases'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        db_version=pulumi.get(__ret__, 'db_version'),
+        db_workload=pulumi.get(__ret__, 'db_workload'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        infrastructure_type=pulumi.get(__ret__, 'infrastructure_type'),
+        is_data_guard_enabled=pulumi.get(__ret__, 'is_data_guard_enabled'),
+        is_free_tier=pulumi.get(__ret__, 'is_free_tier'),
+        is_refreshable_clone=pulumi.get(__ret__, 'is_refreshable_clone'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_autonomous_databases)

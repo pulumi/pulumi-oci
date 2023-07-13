@@ -209,18 +209,18 @@ def get_secretbundle(secret_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Secrets/getSecretbundle:getSecretbundle', __args__, opts=opts, typ=GetSecretbundleResult).value
 
     return AwaitableGetSecretbundleResult(
-        id=__ret__.id,
-        metadata=__ret__.metadata,
-        secret_bundle_contents=__ret__.secret_bundle_contents,
-        secret_id=__ret__.secret_id,
-        secret_version_name=__ret__.secret_version_name,
-        stage=__ret__.stage,
-        stages=__ret__.stages,
-        time_created=__ret__.time_created,
-        time_of_deletion=__ret__.time_of_deletion,
-        time_of_expiry=__ret__.time_of_expiry,
-        version_name=__ret__.version_name,
-        version_number=__ret__.version_number)
+        id=pulumi.get(__ret__, 'id'),
+        metadata=pulumi.get(__ret__, 'metadata'),
+        secret_bundle_contents=pulumi.get(__ret__, 'secret_bundle_contents'),
+        secret_id=pulumi.get(__ret__, 'secret_id'),
+        secret_version_name=pulumi.get(__ret__, 'secret_version_name'),
+        stage=pulumi.get(__ret__, 'stage'),
+        stages=pulumi.get(__ret__, 'stages'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
+        time_of_expiry=pulumi.get(__ret__, 'time_of_expiry'),
+        version_name=pulumi.get(__ret__, 'version_name'),
+        version_number=pulumi.get(__ret__, 'version_number'))
 
 
 @_utilities.lift_output_func(get_secretbundle)

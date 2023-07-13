@@ -142,13 +142,13 @@ def get_repository_diffs(base_version: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getRepositoryDiffs:getRepositoryDiffs', __args__, opts=opts, typ=GetRepositoryDiffsResult).value
 
     return AwaitableGetRepositoryDiffsResult(
-        base_version=__ret__.base_version,
-        diff_collections=__ret__.diff_collections,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_comparison_from_merge_base=__ret__.is_comparison_from_merge_base,
-        repository_id=__ret__.repository_id,
-        target_version=__ret__.target_version)
+        base_version=pulumi.get(__ret__, 'base_version'),
+        diff_collections=pulumi.get(__ret__, 'diff_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_comparison_from_merge_base=pulumi.get(__ret__, 'is_comparison_from_merge_base'),
+        repository_id=pulumi.get(__ret__, 'repository_id'),
+        target_version=pulumi.get(__ret__, 'target_version'))
 
 
 @_utilities.lift_output_func(get_repository_diffs)

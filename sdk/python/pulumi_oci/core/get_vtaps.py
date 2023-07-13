@@ -217,17 +217,17 @@ def get_vtaps(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getVtaps:getVtaps', __args__, opts=opts, typ=GetVtapsResult).value
 
     return AwaitableGetVtapsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_vtap_enabled=__ret__.is_vtap_enabled,
-        source=__ret__.source,
-        state=__ret__.state,
-        target_id=__ret__.target_id,
-        target_ip=__ret__.target_ip,
-        vcn_id=__ret__.vcn_id,
-        vtaps=__ret__.vtaps)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_vtap_enabled=pulumi.get(__ret__, 'is_vtap_enabled'),
+        source=pulumi.get(__ret__, 'source'),
+        state=pulumi.get(__ret__, 'state'),
+        target_id=pulumi.get(__ret__, 'target_id'),
+        target_ip=pulumi.get(__ret__, 'target_ip'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'),
+        vtaps=pulumi.get(__ret__, 'vtaps'))
 
 
 @_utilities.lift_output_func(get_vtaps)

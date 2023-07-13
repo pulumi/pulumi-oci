@@ -104,10 +104,10 @@ def get_top_utilized_product_licenses(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LicenseManager/getTopUtilizedProductLicenses:getTopUtilizedProductLicenses', __args__, opts=opts, typ=GetTopUtilizedProductLicensesResult).value
 
     return AwaitableGetTopUtilizedProductLicensesResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        is_compartment_id_in_subtree=__ret__.is_compartment_id_in_subtree,
-        items=__ret__.items)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        is_compartment_id_in_subtree=pulumi.get(__ret__, 'is_compartment_id_in_subtree'),
+        items=pulumi.get(__ret__, 'items'))
 
 
 @_utilities.lift_output_func(get_top_utilized_product_licenses)

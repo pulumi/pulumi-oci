@@ -271,24 +271,24 @@ def get_detect_anomaly_job(detect_anomaly_job_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:AiAnomalyDetection/getDetectAnomalyJob:getDetectAnomalyJob', __args__, opts=opts, typ=GetDetectAnomalyJobResult).value
 
     return AwaitableGetDetectAnomalyJobResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        detect_anomaly_job_id=__ret__.detect_anomaly_job_id,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        input_details=__ret__.input_details,
-        lifecycle_state_details=__ret__.lifecycle_state_details,
-        model_id=__ret__.model_id,
-        output_details=__ret__.output_details,
-        project_id=__ret__.project_id,
-        sensitivity=__ret__.sensitivity,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_accepted=__ret__.time_accepted,
-        time_finished=__ret__.time_finished,
-        time_started=__ret__.time_started)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        detect_anomaly_job_id=pulumi.get(__ret__, 'detect_anomaly_job_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        input_details=pulumi.get(__ret__, 'input_details'),
+        lifecycle_state_details=pulumi.get(__ret__, 'lifecycle_state_details'),
+        model_id=pulumi.get(__ret__, 'model_id'),
+        output_details=pulumi.get(__ret__, 'output_details'),
+        project_id=pulumi.get(__ret__, 'project_id'),
+        sensitivity=pulumi.get(__ret__, 'sensitivity'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_accepted=pulumi.get(__ret__, 'time_accepted'),
+        time_finished=pulumi.get(__ret__, 'time_finished'),
+        time_started=pulumi.get(__ret__, 'time_started'))
 
 
 @_utilities.lift_output_func(get_detect_anomaly_job)

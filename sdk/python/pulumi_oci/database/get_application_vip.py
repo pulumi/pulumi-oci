@@ -207,19 +207,19 @@ def get_application_vip(application_vip_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getApplicationVip:getApplicationVip', __args__, opts=opts, typ=GetApplicationVipResult).value
 
     return AwaitableGetApplicationVipResult(
-        application_vip_id=__ret__.application_vip_id,
-        cloud_vm_cluster_id=__ret__.cloud_vm_cluster_id,
-        compartment_id=__ret__.compartment_id,
-        db_node_id=__ret__.db_node_id,
-        defined_tags=__ret__.defined_tags,
-        freeform_tags=__ret__.freeform_tags,
-        hostname_label=__ret__.hostname_label,
-        id=__ret__.id,
-        ip_address=__ret__.ip_address,
-        lifecycle_details=__ret__.lifecycle_details,
-        state=__ret__.state,
-        subnet_id=__ret__.subnet_id,
-        time_assigned=__ret__.time_assigned)
+        application_vip_id=pulumi.get(__ret__, 'application_vip_id'),
+        cloud_vm_cluster_id=pulumi.get(__ret__, 'cloud_vm_cluster_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        db_node_id=pulumi.get(__ret__, 'db_node_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        hostname_label=pulumi.get(__ret__, 'hostname_label'),
+        id=pulumi.get(__ret__, 'id'),
+        ip_address=pulumi.get(__ret__, 'ip_address'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        time_assigned=pulumi.get(__ret__, 'time_assigned'))
 
 
 @_utilities.lift_output_func(get_application_vip)

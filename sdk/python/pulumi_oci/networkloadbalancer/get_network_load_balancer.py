@@ -268,24 +268,24 @@ def get_network_load_balancer(network_load_balancer_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:NetworkLoadBalancer/getNetworkLoadBalancer:getNetworkLoadBalancer', __args__, opts=opts, typ=GetNetworkLoadBalancerResult).value
 
     return AwaitableGetNetworkLoadBalancerResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        ip_addresses=__ret__.ip_addresses,
-        is_preserve_source_destination=__ret__.is_preserve_source_destination,
-        is_private=__ret__.is_private,
-        lifecycle_details=__ret__.lifecycle_details,
-        network_load_balancer_id=__ret__.network_load_balancer_id,
-        network_security_group_ids=__ret__.network_security_group_ids,
-        nlb_ip_version=__ret__.nlb_ip_version,
-        reserved_ips=__ret__.reserved_ips,
-        state=__ret__.state,
-        subnet_id=__ret__.subnet_id,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        ip_addresses=pulumi.get(__ret__, 'ip_addresses'),
+        is_preserve_source_destination=pulumi.get(__ret__, 'is_preserve_source_destination'),
+        is_private=pulumi.get(__ret__, 'is_private'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        network_load_balancer_id=pulumi.get(__ret__, 'network_load_balancer_id'),
+        network_security_group_ids=pulumi.get(__ret__, 'network_security_group_ids'),
+        nlb_ip_version=pulumi.get(__ret__, 'nlb_ip_version'),
+        reserved_ips=pulumi.get(__ret__, 'reserved_ips'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_network_load_balancer)

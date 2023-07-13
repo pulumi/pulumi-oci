@@ -223,20 +223,20 @@ def get_stream_packaging_config(stream_packaging_config_id: Optional[str] = None
     __ret__ = pulumi.runtime.invoke('oci:MediaServices/getStreamPackagingConfig:getStreamPackagingConfig', __args__, opts=opts, typ=GetStreamPackagingConfigResult).value
 
     return AwaitableGetStreamPackagingConfigResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        distribution_channel_id=__ret__.distribution_channel_id,
-        encryptions=__ret__.encryptions,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        segment_time_in_seconds=__ret__.segment_time_in_seconds,
-        state=__ret__.state,
-        stream_packaging_config_id=__ret__.stream_packaging_config_id,
-        stream_packaging_format=__ret__.stream_packaging_format,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        distribution_channel_id=pulumi.get(__ret__, 'distribution_channel_id'),
+        encryptions=pulumi.get(__ret__, 'encryptions'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        segment_time_in_seconds=pulumi.get(__ret__, 'segment_time_in_seconds'),
+        state=pulumi.get(__ret__, 'state'),
+        stream_packaging_config_id=pulumi.get(__ret__, 'stream_packaging_config_id'),
+        stream_packaging_format=pulumi.get(__ret__, 'stream_packaging_format'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_stream_packaging_config)

@@ -187,17 +187,17 @@ def get_key_store(key_store_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getKeyStore:getKeyStore', __args__, opts=opts, typ=GetKeyStoreResult).value
 
     return AwaitableGetKeyStoreResult(
-        associated_databases=__ret__.associated_databases,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        key_store_id=__ret__.key_store_id,
-        lifecycle_details=__ret__.lifecycle_details,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        type_details=__ret__.type_details)
+        associated_databases=pulumi.get(__ret__, 'associated_databases'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        key_store_id=pulumi.get(__ret__, 'key_store_id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        type_details=pulumi.get(__ret__, 'type_details'))
 
 
 @_utilities.lift_output_func(get_key_store)

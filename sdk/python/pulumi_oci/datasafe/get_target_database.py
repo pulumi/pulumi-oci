@@ -259,23 +259,23 @@ def get_target_database(target_database_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getTargetDatabase:getTargetDatabase', __args__, opts=opts, typ=GetTargetDatabaseResult).value
 
     return AwaitableGetTargetDatabaseResult(
-        associated_resource_ids=__ret__.associated_resource_ids,
-        compartment_id=__ret__.compartment_id,
-        connection_options=__ret__.connection_options,
-        credentials=__ret__.credentials,
-        database_details=__ret__.database_details,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        target_database_id=__ret__.target_database_id,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        tls_configs=__ret__.tls_configs)
+        associated_resource_ids=pulumi.get(__ret__, 'associated_resource_ids'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        connection_options=pulumi.get(__ret__, 'connection_options'),
+        credentials=pulumi.get(__ret__, 'credentials'),
+        database_details=pulumi.get(__ret__, 'database_details'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        target_database_id=pulumi.get(__ret__, 'target_database_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        tls_configs=pulumi.get(__ret__, 'tls_configs'))
 
 
 @_utilities.lift_output_func(get_target_database)

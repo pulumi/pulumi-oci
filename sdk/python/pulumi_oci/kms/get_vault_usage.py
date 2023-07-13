@@ -126,12 +126,12 @@ def get_vault_usage(vault_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Kms/getVaultUsage:getVaultUsage', __args__, opts=opts, typ=GetVaultUsageResult).value
 
     return AwaitableGetVaultUsageResult(
-        id=__ret__.id,
-        key_count=__ret__.key_count,
-        key_version_count=__ret__.key_version_count,
-        software_key_count=__ret__.software_key_count,
-        software_key_version_count=__ret__.software_key_version_count,
-        vault_id=__ret__.vault_id)
+        id=pulumi.get(__ret__, 'id'),
+        key_count=pulumi.get(__ret__, 'key_count'),
+        key_version_count=pulumi.get(__ret__, 'key_version_count'),
+        software_key_count=pulumi.get(__ret__, 'software_key_count'),
+        software_key_version_count=pulumi.get(__ret__, 'software_key_version_count'),
+        vault_id=pulumi.get(__ret__, 'vault_id'))
 
 
 @_utilities.lift_output_func(get_vault_usage)

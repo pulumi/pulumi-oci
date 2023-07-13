@@ -138,12 +138,12 @@ def get_connections(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseMigration/getConnections:getConnections', __args__, opts=opts, typ=GetConnectionsResult).value
 
     return AwaitableGetConnectionsResult(
-        compartment_id=__ret__.compartment_id,
-        connection_collections=__ret__.connection_collections,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        connection_collections=pulumi.get(__ret__, 'connection_collections'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_connections)

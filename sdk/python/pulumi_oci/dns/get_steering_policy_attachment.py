@@ -186,17 +186,17 @@ def get_steering_policy_attachment(steering_policy_attachment_id: Optional[str] 
     __ret__ = pulumi.runtime.invoke('oci:Dns/getSteeringPolicyAttachment:getSteeringPolicyAttachment', __args__, opts=opts, typ=GetSteeringPolicyAttachmentResult).value
 
     return AwaitableGetSteeringPolicyAttachmentResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        domain_name=__ret__.domain_name,
-        id=__ret__.id,
-        rtypes=__ret__.rtypes,
-        self=__ret__.self,
-        state=__ret__.state,
-        steering_policy_attachment_id=__ret__.steering_policy_attachment_id,
-        steering_policy_id=__ret__.steering_policy_id,
-        time_created=__ret__.time_created,
-        zone_id=__ret__.zone_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        domain_name=pulumi.get(__ret__, 'domain_name'),
+        id=pulumi.get(__ret__, 'id'),
+        rtypes=pulumi.get(__ret__, 'rtypes'),
+        self=pulumi.get(__ret__, 'self'),
+        state=pulumi.get(__ret__, 'state'),
+        steering_policy_attachment_id=pulumi.get(__ret__, 'steering_policy_attachment_id'),
+        steering_policy_id=pulumi.get(__ret__, 'steering_policy_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        zone_id=pulumi.get(__ret__, 'zone_id'))
 
 
 @_utilities.lift_output_func(get_steering_policy_attachment)

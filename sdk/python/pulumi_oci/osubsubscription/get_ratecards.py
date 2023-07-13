@@ -172,15 +172,15 @@ def get_ratecards(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OsubSubscription/getRatecards:getRatecards', __args__, opts=opts, typ=GetRatecardsResult).value
 
     return AwaitableGetRatecardsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        part_number=__ret__.part_number,
-        rate_cards=__ret__.rate_cards,
-        subscription_id=__ret__.subscription_id,
-        time_from=__ret__.time_from,
-        time_to=__ret__.time_to,
-        x_one_origin_region=__ret__.x_one_origin_region)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        part_number=pulumi.get(__ret__, 'part_number'),
+        rate_cards=pulumi.get(__ret__, 'rate_cards'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'),
+        time_from=pulumi.get(__ret__, 'time_from'),
+        time_to=pulumi.get(__ret__, 'time_to'),
+        x_one_origin_region=pulumi.get(__ret__, 'x_one_origin_region'))
 
 
 @_utilities.lift_output_func(get_ratecards)

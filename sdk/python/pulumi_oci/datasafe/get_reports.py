@@ -196,16 +196,16 @@ def get_reports(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getReports:getReports', __args__, opts=opts, typ=GetReportsResult).value
 
     return AwaitableGetReportsResult(
-        access_level=__ret__.access_level,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        report_collections=__ret__.report_collections,
-        report_definition_id=__ret__.report_definition_id,
-        state=__ret__.state,
-        type=__ret__.type)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        report_collections=pulumi.get(__ret__, 'report_collections'),
+        report_definition_id=pulumi.get(__ret__, 'report_definition_id'),
+        state=pulumi.get(__ret__, 'state'),
+        type=pulumi.get(__ret__, 'type'))
 
 
 @_utilities.lift_output_func(get_reports)

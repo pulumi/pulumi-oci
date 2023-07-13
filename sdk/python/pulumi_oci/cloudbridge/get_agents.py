@@ -170,14 +170,14 @@ def get_agents(agent_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudBridge/getAgents:getAgents', __args__, opts=opts, typ=GetAgentsResult).value
 
     return AwaitableGetAgentsResult(
-        agent_collections=__ret__.agent_collections,
-        agent_id=__ret__.agent_id,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        environment_id=__ret__.environment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        agent_collections=pulumi.get(__ret__, 'agent_collections'),
+        agent_id=pulumi.get(__ret__, 'agent_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        environment_id=pulumi.get(__ret__, 'environment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_agents)

@@ -120,11 +120,11 @@ def get_external_listener_services(external_listener_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalListenerServices:getExternalListenerServices', __args__, opts=opts, typ=GetExternalListenerServicesResult).value
 
     return AwaitableGetExternalListenerServicesResult(
-        external_listener_id=__ret__.external_listener_id,
-        external_listener_service_collections=__ret__.external_listener_service_collections,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        managed_database_id=__ret__.managed_database_id)
+        external_listener_id=pulumi.get(__ret__, 'external_listener_id'),
+        external_listener_service_collections=pulumi.get(__ret__, 'external_listener_service_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'))
 
 
 @_utilities.lift_output_func(get_external_listener_services)

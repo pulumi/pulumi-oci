@@ -66,6 +66,15 @@ namespace Pulumi.Oci.Database
     ///         },
     ///         DefinedTags = @var.Vm_cluster_network_defined_tags,
     ///         Dns = @var.Vm_cluster_network_dns,
+    ///         DrScans = new[]
+    ///         {
+    ///             new Oci.Database.Inputs.VmClusterNetworkDrScanArgs
+    ///             {
+    ///                 Hostname = @var.Vm_cluster_network_dr_scans_hostname,
+    ///                 Ips = @var.Vm_cluster_network_dr_scans_ips,
+    ///                 ScanListenerPortTcp = @var.Vm_cluster_network_dr_scans_scan_listener_port_tcp,
+    ///             },
+    ///         },
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -114,6 +123,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("dns")]
         public Output<ImmutableArray<string>> Dns { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The SCAN details for DR network
+        /// </summary>
+        [Output("drScans")]
+        public Output<ImmutableArray<Outputs.VmClusterNetworkDrScan>> DrScans { get; private set; } = null!;
 
         /// <summary>
         /// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -257,6 +272,18 @@ namespace Pulumi.Oci.Database
             set => _dns = value;
         }
 
+        [Input("drScans")]
+        private InputList<Inputs.VmClusterNetworkDrScanArgs>? _drScans;
+
+        /// <summary>
+        /// (Updatable) The SCAN details for DR network
+        /// </summary>
+        public InputList<Inputs.VmClusterNetworkDrScanArgs> DrScans
+        {
+            get => _drScans ?? (_drScans = new InputList<Inputs.VmClusterNetworkDrScanArgs>());
+            set => _drScans = value;
+        }
+
         /// <summary>
         /// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -359,6 +386,18 @@ namespace Pulumi.Oci.Database
         {
             get => _dns ?? (_dns = new InputList<string>());
             set => _dns = value;
+        }
+
+        [Input("drScans")]
+        private InputList<Inputs.VmClusterNetworkDrScanGetArgs>? _drScans;
+
+        /// <summary>
+        /// (Updatable) The SCAN details for DR network
+        /// </summary>
+        public InputList<Inputs.VmClusterNetworkDrScanGetArgs> DrScans
+        {
+            get => _drScans ?? (_drScans = new InputList<Inputs.VmClusterNetworkDrScanGetArgs>());
+            set => _drScans = value;
         }
 
         /// <summary>

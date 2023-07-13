@@ -151,13 +151,13 @@ def get_dedicated_vantage_points(apm_domain_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApmSynthetics/getDedicatedVantagePoints:getDedicatedVantagePoints', __args__, opts=opts, typ=GetDedicatedVantagePointsResult).value
 
     return AwaitableGetDedicatedVantagePointsResult(
-        apm_domain_id=__ret__.apm_domain_id,
-        dedicated_vantage_point_collections=__ret__.dedicated_vantage_point_collections,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        status=__ret__.status)
+        apm_domain_id=pulumi.get(__ret__, 'apm_domain_id'),
+        dedicated_vantage_point_collections=pulumi.get(__ret__, 'dedicated_vantage_point_collections'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        status=pulumi.get(__ret__, 'status'))
 
 
 @_utilities.lift_output_func(get_dedicated_vantage_points)

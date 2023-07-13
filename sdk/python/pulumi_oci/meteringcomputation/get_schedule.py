@@ -259,23 +259,23 @@ def get_schedule(schedule_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:MeteringComputation/getSchedule:getSchedule', __args__, opts=opts, typ=GetScheduleResult).value
 
     return AwaitableGetScheduleResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        name=__ret__.name,
-        output_file_format=__ret__.output_file_format,
-        query_properties=__ret__.query_properties,
-        result_locations=__ret__.result_locations,
-        saved_report_id=__ret__.saved_report_id,
-        schedule_id=__ret__.schedule_id,
-        schedule_recurrences=__ret__.schedule_recurrences,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_next_run=__ret__.time_next_run,
-        time_scheduled=__ret__.time_scheduled)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        output_file_format=pulumi.get(__ret__, 'output_file_format'),
+        query_properties=pulumi.get(__ret__, 'query_properties'),
+        result_locations=pulumi.get(__ret__, 'result_locations'),
+        saved_report_id=pulumi.get(__ret__, 'saved_report_id'),
+        schedule_id=pulumi.get(__ret__, 'schedule_id'),
+        schedule_recurrences=pulumi.get(__ret__, 'schedule_recurrences'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_next_run=pulumi.get(__ret__, 'time_next_run'),
+        time_scheduled=pulumi.get(__ret__, 'time_scheduled'))
 
 
 @_utilities.lift_output_func(get_schedule)

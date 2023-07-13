@@ -179,16 +179,16 @@ def get_trace_snapshot_data(apm_domain_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApmTraces/getTraceSnapshotData:getTraceSnapshotData', __args__, opts=opts, typ=GetTraceSnapshotDataResult).value
 
     return AwaitableGetTraceSnapshotDataResult(
-        apm_domain_id=__ret__.apm_domain_id,
-        id=__ret__.id,
-        is_summarized=__ret__.is_summarized,
-        key=__ret__.key,
-        snapshot_time=__ret__.snapshot_time,
-        thread_id=__ret__.thread_id,
-        time_ended=__ret__.time_ended,
-        time_started=__ret__.time_started,
-        trace_key=__ret__.trace_key,
-        trace_snapshot_details=__ret__.trace_snapshot_details)
+        apm_domain_id=pulumi.get(__ret__, 'apm_domain_id'),
+        id=pulumi.get(__ret__, 'id'),
+        is_summarized=pulumi.get(__ret__, 'is_summarized'),
+        key=pulumi.get(__ret__, 'key'),
+        snapshot_time=pulumi.get(__ret__, 'snapshot_time'),
+        thread_id=pulumi.get(__ret__, 'thread_id'),
+        time_ended=pulumi.get(__ret__, 'time_ended'),
+        time_started=pulumi.get(__ret__, 'time_started'),
+        trace_key=pulumi.get(__ret__, 'trace_key'),
+        trace_snapshot_details=pulumi.get(__ret__, 'trace_snapshot_details'))
 
 
 @_utilities.lift_output_func(get_trace_snapshot_data)

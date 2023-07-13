@@ -1314,6 +1314,8 @@ class MigrationDumpTransferDetailsSource(dict):
         suggest = None
         if key == "ociHome":
             suggest = "oci_home"
+        elif key == "walletLocation":
+            suggest = "wallet_location"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in MigrationDumpTransferDetailsSource. Access the value via the '{suggest}' property getter instead.")
@@ -1328,14 +1330,18 @@ class MigrationDumpTransferDetailsSource(dict):
 
     def __init__(__self__, *,
                  kind: str,
-                 oci_home: Optional[str] = None):
+                 oci_home: Optional[str] = None,
+                 wallet_location: Optional[str] = None):
         """
         :param str kind: (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
         :param str oci_home: (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
+        :param str wallet_location: (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
         """
         pulumi.set(__self__, "kind", kind)
         if oci_home is not None:
             pulumi.set(__self__, "oci_home", oci_home)
+        if wallet_location is not None:
+            pulumi.set(__self__, "wallet_location", wallet_location)
 
     @property
     @pulumi.getter
@@ -1353,6 +1359,14 @@ class MigrationDumpTransferDetailsSource(dict):
         """
         return pulumi.get(self, "oci_home")
 
+    @property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> Optional[str]:
+        """
+        (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+        """
+        return pulumi.get(self, "wallet_location")
+
 
 @pulumi.output_type
 class MigrationDumpTransferDetailsTarget(dict):
@@ -1361,6 +1375,8 @@ class MigrationDumpTransferDetailsTarget(dict):
         suggest = None
         if key == "ociHome":
             suggest = "oci_home"
+        elif key == "walletLocation":
+            suggest = "wallet_location"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in MigrationDumpTransferDetailsTarget. Access the value via the '{suggest}' property getter instead.")
@@ -1375,14 +1391,18 @@ class MigrationDumpTransferDetailsTarget(dict):
 
     def __init__(__self__, *,
                  kind: str,
-                 oci_home: Optional[str] = None):
+                 oci_home: Optional[str] = None,
+                 wallet_location: Optional[str] = None):
         """
         :param str kind: (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
         :param str oci_home: (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
+        :param str wallet_location: (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
         """
         pulumi.set(__self__, "kind", kind)
         if oci_home is not None:
             pulumi.set(__self__, "oci_home", oci_home)
+        if wallet_location is not None:
+            pulumi.set(__self__, "wallet_location", wallet_location)
 
     @property
     @pulumi.getter
@@ -1399,6 +1419,14 @@ class MigrationDumpTransferDetailsTarget(dict):
         (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
         """
         return pulumi.get(self, "oci_home")
+
+    @property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> Optional[str]:
+        """
+        (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+        """
+        return pulumi.get(self, "wallet_location")
 
 
 @pulumi.output_type
@@ -3488,13 +3516,16 @@ class GetMigrationDumpTransferDetailResult(dict):
 class GetMigrationDumpTransferDetailSourceResult(dict):
     def __init__(__self__, *,
                  kind: str,
-                 oci_home: str):
+                 oci_home: str,
+                 wallet_location: str):
         """
         :param str kind: Type of dump transfer to use during migration in source or target host. Default kind is CURL
         :param str oci_home: Path to the Oracle Cloud Infrastructure CLI installation in the node.
+        :param str wallet_location: Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
         """
         pulumi.set(__self__, "kind", kind)
         pulumi.set(__self__, "oci_home", oci_home)
+        pulumi.set(__self__, "wallet_location", wallet_location)
 
     @property
     @pulumi.getter
@@ -3511,19 +3542,30 @@ class GetMigrationDumpTransferDetailSourceResult(dict):
         Path to the Oracle Cloud Infrastructure CLI installation in the node.
         """
         return pulumi.get(self, "oci_home")
+
+    @property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> str:
+        """
+        Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+        """
+        return pulumi.get(self, "wallet_location")
 
 
 @pulumi.output_type
 class GetMigrationDumpTransferDetailTargetResult(dict):
     def __init__(__self__, *,
                  kind: str,
-                 oci_home: str):
+                 oci_home: str,
+                 wallet_location: str):
         """
         :param str kind: Type of dump transfer to use during migration in source or target host. Default kind is CURL
         :param str oci_home: Path to the Oracle Cloud Infrastructure CLI installation in the node.
+        :param str wallet_location: Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
         """
         pulumi.set(__self__, "kind", kind)
         pulumi.set(__self__, "oci_home", oci_home)
+        pulumi.set(__self__, "wallet_location", wallet_location)
 
     @property
     @pulumi.getter
@@ -3540,6 +3582,14 @@ class GetMigrationDumpTransferDetailTargetResult(dict):
         Path to the Oracle Cloud Infrastructure CLI installation in the node.
         """
         return pulumi.get(self, "oci_home")
+
+    @property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> str:
+        """
+        Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+        """
+        return pulumi.get(self, "wallet_location")
 
 
 @pulumi.output_type
@@ -4842,13 +4892,16 @@ class GetMigrationsMigrationCollectionItemDumpTransferDetailResult(dict):
 class GetMigrationsMigrationCollectionItemDumpTransferDetailSourceResult(dict):
     def __init__(__self__, *,
                  kind: str,
-                 oci_home: str):
+                 oci_home: str,
+                 wallet_location: str):
         """
         :param str kind: Type of dump transfer to use during migration in source or target host. Default kind is CURL
         :param str oci_home: Path to the Oracle Cloud Infrastructure CLI installation in the node.
+        :param str wallet_location: Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
         """
         pulumi.set(__self__, "kind", kind)
         pulumi.set(__self__, "oci_home", oci_home)
+        pulumi.set(__self__, "wallet_location", wallet_location)
 
     @property
     @pulumi.getter
@@ -4865,19 +4918,30 @@ class GetMigrationsMigrationCollectionItemDumpTransferDetailSourceResult(dict):
         Path to the Oracle Cloud Infrastructure CLI installation in the node.
         """
         return pulumi.get(self, "oci_home")
+
+    @property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> str:
+        """
+        Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+        """
+        return pulumi.get(self, "wallet_location")
 
 
 @pulumi.output_type
 class GetMigrationsMigrationCollectionItemDumpTransferDetailTargetResult(dict):
     def __init__(__self__, *,
                  kind: str,
-                 oci_home: str):
+                 oci_home: str,
+                 wallet_location: str):
         """
         :param str kind: Type of dump transfer to use during migration in source or target host. Default kind is CURL
         :param str oci_home: Path to the Oracle Cloud Infrastructure CLI installation in the node.
+        :param str wallet_location: Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
         """
         pulumi.set(__self__, "kind", kind)
         pulumi.set(__self__, "oci_home", oci_home)
+        pulumi.set(__self__, "wallet_location", wallet_location)
 
     @property
     @pulumi.getter
@@ -4894,6 +4958,14 @@ class GetMigrationsMigrationCollectionItemDumpTransferDetailTargetResult(dict):
         Path to the Oracle Cloud Infrastructure CLI installation in the node.
         """
         return pulumi.get(self, "oci_home")
+
+    @property
+    @pulumi.getter(name="walletLocation")
+    def wallet_location(self) -> str:
+        """
+        Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+        """
+        return pulumi.get(self, "wallet_location")
 
 
 @pulumi.output_type

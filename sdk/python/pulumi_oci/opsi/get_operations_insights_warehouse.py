@@ -271,24 +271,24 @@ def get_operations_insights_warehouse(operations_insights_warehouse_id: Optional
     __ret__ = pulumi.runtime.invoke('oci:Opsi/getOperationsInsightsWarehouse:getOperationsInsightsWarehouse', __args__, opts=opts, typ=GetOperationsInsightsWarehouseResult).value
 
     return AwaitableGetOperationsInsightsWarehouseResult(
-        compartment_id=__ret__.compartment_id,
-        cpu_allocated=__ret__.cpu_allocated,
-        cpu_used=__ret__.cpu_used,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        dynamic_group_id=__ret__.dynamic_group_id,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        operations_insights_tenancy_id=__ret__.operations_insights_tenancy_id,
-        operations_insights_warehouse_id=__ret__.operations_insights_warehouse_id,
-        state=__ret__.state,
-        storage_allocated_in_gbs=__ret__.storage_allocated_in_gbs,
-        storage_used_in_gbs=__ret__.storage_used_in_gbs,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_last_wallet_rotated=__ret__.time_last_wallet_rotated,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        cpu_allocated=pulumi.get(__ret__, 'cpu_allocated'),
+        cpu_used=pulumi.get(__ret__, 'cpu_used'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        dynamic_group_id=pulumi.get(__ret__, 'dynamic_group_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        operations_insights_tenancy_id=pulumi.get(__ret__, 'operations_insights_tenancy_id'),
+        operations_insights_warehouse_id=pulumi.get(__ret__, 'operations_insights_warehouse_id'),
+        state=pulumi.get(__ret__, 'state'),
+        storage_allocated_in_gbs=pulumi.get(__ret__, 'storage_allocated_in_gbs'),
+        storage_used_in_gbs=pulumi.get(__ret__, 'storage_used_in_gbs'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_last_wallet_rotated=pulumi.get(__ret__, 'time_last_wallet_rotated'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_operations_insights_warehouse)

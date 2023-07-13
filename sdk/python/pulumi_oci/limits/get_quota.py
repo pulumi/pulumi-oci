@@ -196,18 +196,18 @@ def get_quota(quota_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Limits/getQuota:getQuota', __args__, opts=opts, typ=GetQuotaResult).value
 
     return AwaitableGetQuotaResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_lock_override=__ret__.is_lock_override,
-        locks=__ret__.locks,
-        name=__ret__.name,
-        quota_id=__ret__.quota_id,
-        state=__ret__.state,
-        statements=__ret__.statements,
-        time_created=__ret__.time_created)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
+        locks=pulumi.get(__ret__, 'locks'),
+        name=pulumi.get(__ret__, 'name'),
+        quota_id=pulumi.get(__ret__, 'quota_id'),
+        state=pulumi.get(__ret__, 'state'),
+        statements=pulumi.get(__ret__, 'statements'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_quota)

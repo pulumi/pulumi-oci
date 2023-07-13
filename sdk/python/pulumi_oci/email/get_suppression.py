@@ -175,16 +175,16 @@ def get_suppression(suppression_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Email/getSuppression:getSuppression', __args__, opts=opts, typ=GetSuppressionResult).value
 
     return AwaitableGetSuppressionResult(
-        compartment_id=__ret__.compartment_id,
-        email_address=__ret__.email_address,
-        error_detail=__ret__.error_detail,
-        error_source=__ret__.error_source,
-        id=__ret__.id,
-        message_id=__ret__.message_id,
-        reason=__ret__.reason,
-        suppression_id=__ret__.suppression_id,
-        time_created=__ret__.time_created,
-        time_last_suppressed=__ret__.time_last_suppressed)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        email_address=pulumi.get(__ret__, 'email_address'),
+        error_detail=pulumi.get(__ret__, 'error_detail'),
+        error_source=pulumi.get(__ret__, 'error_source'),
+        id=pulumi.get(__ret__, 'id'),
+        message_id=pulumi.get(__ret__, 'message_id'),
+        reason=pulumi.get(__ret__, 'reason'),
+        suppression_id=pulumi.get(__ret__, 'suppression_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_last_suppressed=pulumi.get(__ret__, 'time_last_suppressed'))
 
 
 @_utilities.lift_output_func(get_suppression)

@@ -274,24 +274,24 @@ def get_user(user_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getUser:getUser', __args__, opts=opts, typ=GetUserResult).value
 
     return AwaitableGetUserResult(
-        capabilities=__ret__.capabilities,
-        compartment_id=__ret__.compartment_id,
-        db_user_name=__ret__.db_user_name,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        email=__ret__.email,
-        email_verified=__ret__.email_verified,
-        external_identifier=__ret__.external_identifier,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        identity_provider_id=__ret__.identity_provider_id,
-        inactive_state=__ret__.inactive_state,
-        last_successful_login_time=__ret__.last_successful_login_time,
-        name=__ret__.name,
-        previous_successful_login_time=__ret__.previous_successful_login_time,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        user_id=__ret__.user_id)
+        capabilities=pulumi.get(__ret__, 'capabilities'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        db_user_name=pulumi.get(__ret__, 'db_user_name'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        email=pulumi.get(__ret__, 'email'),
+        email_verified=pulumi.get(__ret__, 'email_verified'),
+        external_identifier=pulumi.get(__ret__, 'external_identifier'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        identity_provider_id=pulumi.get(__ret__, 'identity_provider_id'),
+        inactive_state=pulumi.get(__ret__, 'inactive_state'),
+        last_successful_login_time=pulumi.get(__ret__, 'last_successful_login_time'),
+        name=pulumi.get(__ret__, 'name'),
+        previous_successful_login_time=pulumi.get(__ret__, 'previous_successful_login_time'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        user_id=pulumi.get(__ret__, 'user_id'))
 
 
 @_utilities.lift_output_func(get_user)

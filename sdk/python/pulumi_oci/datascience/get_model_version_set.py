@@ -198,18 +198,18 @@ def get_model_version_set(model_version_set_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataScience/getModelVersionSet:getModelVersionSet', __args__, opts=opts, typ=GetModelVersionSetResult).value
 
     return AwaitableGetModelVersionSetResult(
-        compartment_id=__ret__.compartment_id,
-        created_by=__ret__.created_by,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        model_version_set_id=__ret__.model_version_set_id,
-        name=__ret__.name,
-        project_id=__ret__.project_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        created_by=pulumi.get(__ret__, 'created_by'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        model_version_set_id=pulumi.get(__ret__, 'model_version_set_id'),
+        name=pulumi.get(__ret__, 'name'),
+        project_id=pulumi.get(__ret__, 'project_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_model_version_set)

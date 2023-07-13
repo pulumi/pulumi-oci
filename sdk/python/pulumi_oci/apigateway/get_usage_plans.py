@@ -138,12 +138,12 @@ def get_usage_plans(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApiGateway/getUsagePlans:getUsagePlans', __args__, opts=opts, typ=GetUsagePlansResult).value
 
     return AwaitableGetUsagePlansResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        usage_plan_collections=__ret__.usage_plan_collections)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        usage_plan_collections=pulumi.get(__ret__, 'usage_plan_collections'))
 
 
 @_utilities.lift_output_func(get_usage_plans)

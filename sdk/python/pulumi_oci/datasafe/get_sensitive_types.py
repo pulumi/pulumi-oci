@@ -268,21 +268,21 @@ def get_sensitive_types(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getSensitiveTypes:getSensitiveTypes', __args__, opts=opts, typ=GetSensitiveTypesResult).value
 
     return AwaitableGetSensitiveTypesResult(
-        access_level=__ret__.access_level,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        default_masking_format_id=__ret__.default_masking_format_id,
-        display_name=__ret__.display_name,
-        entity_type=__ret__.entity_type,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        parent_category_id=__ret__.parent_category_id,
-        sensitive_type_collections=__ret__.sensitive_type_collections,
-        sensitive_type_id=__ret__.sensitive_type_id,
-        sensitive_type_source=__ret__.sensitive_type_source,
-        state=__ret__.state,
-        time_created_greater_than_or_equal_to=__ret__.time_created_greater_than_or_equal_to,
-        time_created_less_than=__ret__.time_created_less_than)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        default_masking_format_id=pulumi.get(__ret__, 'default_masking_format_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        entity_type=pulumi.get(__ret__, 'entity_type'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        parent_category_id=pulumi.get(__ret__, 'parent_category_id'),
+        sensitive_type_collections=pulumi.get(__ret__, 'sensitive_type_collections'),
+        sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'),
+        sensitive_type_source=pulumi.get(__ret__, 'sensitive_type_source'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
 
 
 @_utilities.lift_output_func(get_sensitive_types)

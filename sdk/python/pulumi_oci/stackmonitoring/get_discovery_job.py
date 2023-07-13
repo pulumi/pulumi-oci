@@ -244,22 +244,22 @@ def get_discovery_job(discovery_job_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:StackMonitoring/getDiscoveryJob:getDiscoveryJob', __args__, opts=opts, typ=GetDiscoveryJobResult).value
 
     return AwaitableGetDiscoveryJobResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        discovery_client=__ret__.discovery_client,
-        discovery_details=__ret__.discovery_details,
-        discovery_job_id=__ret__.discovery_job_id,
-        discovery_type=__ret__.discovery_type,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        should_propagate_tags_to_discovered_resources=__ret__.should_propagate_tags_to_discovered_resources,
-        state=__ret__.state,
-        status=__ret__.status,
-        status_message=__ret__.status_message,
-        system_tags=__ret__.system_tags,
-        tenant_id=__ret__.tenant_id,
-        time_updated=__ret__.time_updated,
-        user_id=__ret__.user_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        discovery_client=pulumi.get(__ret__, 'discovery_client'),
+        discovery_details=pulumi.get(__ret__, 'discovery_details'),
+        discovery_job_id=pulumi.get(__ret__, 'discovery_job_id'),
+        discovery_type=pulumi.get(__ret__, 'discovery_type'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        should_propagate_tags_to_discovered_resources=pulumi.get(__ret__, 'should_propagate_tags_to_discovered_resources'),
+        state=pulumi.get(__ret__, 'state'),
+        status=pulumi.get(__ret__, 'status'),
+        status_message=pulumi.get(__ret__, 'status_message'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        tenant_id=pulumi.get(__ret__, 'tenant_id'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        user_id=pulumi.get(__ret__, 'user_id'))
 
 
 @_utilities.lift_output_func(get_discovery_job)

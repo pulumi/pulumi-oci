@@ -166,15 +166,15 @@ def get_managed_preferred_credential(credential_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getManagedPreferredCredential:getManagedPreferredCredential', __args__, opts=opts, typ=GetManagedPreferredCredentialResult).value
 
     return AwaitableGetManagedPreferredCredentialResult(
-        credential_name=__ret__.credential_name,
-        id=__ret__.id,
-        is_accessible=__ret__.is_accessible,
-        managed_database_id=__ret__.managed_database_id,
-        password_secret_id=__ret__.password_secret_id,
-        role=__ret__.role,
-        status=__ret__.status,
-        type=__ret__.type,
-        user_name=__ret__.user_name)
+        credential_name=pulumi.get(__ret__, 'credential_name'),
+        id=pulumi.get(__ret__, 'id'),
+        is_accessible=pulumi.get(__ret__, 'is_accessible'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        password_secret_id=pulumi.get(__ret__, 'password_secret_id'),
+        role=pulumi.get(__ret__, 'role'),
+        status=pulumi.get(__ret__, 'status'),
+        type=pulumi.get(__ret__, 'type'),
+        user_name=pulumi.get(__ret__, 'user_name'))
 
 
 @_utilities.lift_output_func(get_managed_preferred_credential)

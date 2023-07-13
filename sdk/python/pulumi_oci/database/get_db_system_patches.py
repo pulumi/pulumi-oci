@@ -103,10 +103,10 @@ def get_db_system_patches(db_system_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getDbSystemPatches:getDbSystemPatches', __args__, opts=opts, typ=GetDbSystemPatchesResult).value
 
     return AwaitableGetDbSystemPatchesResult(
-        db_system_id=__ret__.db_system_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        patches=__ret__.patches)
+        db_system_id=pulumi.get(__ret__, 'db_system_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        patches=pulumi.get(__ret__, 'patches'))
 
 
 @_utilities.lift_output_func(get_db_system_patches)

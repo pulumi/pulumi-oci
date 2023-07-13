@@ -150,14 +150,14 @@ def get_tenancy(tenancy_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getTenancy:getTenancy', __args__, opts=opts, typ=GetTenancyResult).value
 
     return AwaitableGetTenancyResult(
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        freeform_tags=__ret__.freeform_tags,
-        home_region_key=__ret__.home_region_key,
-        id=__ret__.id,
-        name=__ret__.name,
-        tenancy_id=__ret__.tenancy_id,
-        upi_idcs_compatibility_layer_endpoint=__ret__.upi_idcs_compatibility_layer_endpoint)
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        home_region_key=pulumi.get(__ret__, 'home_region_key'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
+        upi_idcs_compatibility_layer_endpoint=pulumi.get(__ret__, 'upi_idcs_compatibility_layer_endpoint'))
 
 
 @_utilities.lift_output_func(get_tenancy)

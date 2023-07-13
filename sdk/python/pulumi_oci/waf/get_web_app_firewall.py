@@ -222,20 +222,20 @@ def get_web_app_firewall(web_app_firewall_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Waf/getWebAppFirewall:getWebAppFirewall', __args__, opts=opts, typ=GetWebAppFirewallResult).value
 
     return AwaitableGetWebAppFirewallResult(
-        backend_type=__ret__.backend_type,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        load_balancer_id=__ret__.load_balancer_id,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        web_app_firewall_id=__ret__.web_app_firewall_id,
-        web_app_firewall_policy_id=__ret__.web_app_firewall_policy_id)
+        backend_type=pulumi.get(__ret__, 'backend_type'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        web_app_firewall_id=pulumi.get(__ret__, 'web_app_firewall_id'),
+        web_app_firewall_policy_id=pulumi.get(__ret__, 'web_app_firewall_policy_id'))
 
 
 @_utilities.lift_output_func(get_web_app_firewall)

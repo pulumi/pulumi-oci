@@ -176,14 +176,14 @@ def get_managed_databases(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabases:getManagedDatabases', __args__, opts=opts, typ=GetManagedDatabasesResult).value
 
     return AwaitableGetManagedDatabasesResult(
-        compartment_id=__ret__.compartment_id,
-        deployment_type=__ret__.deployment_type,
-        external_exadata_infrastructure_id=__ret__.external_exadata_infrastructure_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        managed_database_collections=__ret__.managed_database_collections,
-        management_option=__ret__.management_option,
-        name=__ret__.name)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        deployment_type=pulumi.get(__ret__, 'deployment_type'),
+        external_exadata_infrastructure_id=pulumi.get(__ret__, 'external_exadata_infrastructure_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_database_collections=pulumi.get(__ret__, 'managed_database_collections'),
+        management_option=pulumi.get(__ret__, 'management_option'),
+        name=pulumi.get(__ret__, 'name'))
 
 
 @_utilities.lift_output_func(get_managed_databases)

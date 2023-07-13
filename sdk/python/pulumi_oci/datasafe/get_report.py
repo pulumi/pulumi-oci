@@ -210,19 +210,19 @@ def get_report(report_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getReport:getReport', __args__, opts=opts, typ=GetReportResult).value
 
     return AwaitableGetReportResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        mime_type=__ret__.mime_type,
-        report_definition_id=__ret__.report_definition_id,
-        report_id=__ret__.report_id,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_generated=__ret__.time_generated,
-        type=__ret__.type)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        mime_type=pulumi.get(__ret__, 'mime_type'),
+        report_definition_id=pulumi.get(__ret__, 'report_definition_id'),
+        report_id=pulumi.get(__ret__, 'report_id'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_generated=pulumi.get(__ret__, 'time_generated'),
+        type=pulumi.get(__ret__, 'type'))
 
 
 @_utilities.lift_output_func(get_report)

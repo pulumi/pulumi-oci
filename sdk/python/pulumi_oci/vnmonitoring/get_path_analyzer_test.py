@@ -235,21 +235,21 @@ def get_path_analyzer_test(path_analyzer_test_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:VnMonitoring/getPathAnalyzerTest:GetPathAnalyzerTest', __args__, opts=opts, typ=GetPathAnalyzerTestResult).value
 
     return AwaitableGetPathAnalyzerTestResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        destination_endpoints=__ret__.destination_endpoints,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        path_analyzer_test_id=__ret__.path_analyzer_test_id,
-        protocol=__ret__.protocol,
-        protocol_parameters=__ret__.protocol_parameters,
-        query_options=__ret__.query_options,
-        source_endpoints=__ret__.source_endpoints,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        destination_endpoints=pulumi.get(__ret__, 'destination_endpoints'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        path_analyzer_test_id=pulumi.get(__ret__, 'path_analyzer_test_id'),
+        protocol=pulumi.get(__ret__, 'protocol'),
+        protocol_parameters=pulumi.get(__ret__, 'protocol_parameters'),
+        query_options=pulumi.get(__ret__, 'query_options'),
+        source_endpoints=pulumi.get(__ret__, 'source_endpoints'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_path_analyzer_test)

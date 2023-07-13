@@ -223,20 +223,20 @@ def get_stream_cdn_config(stream_cdn_config_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:MediaServices/getStreamCdnConfig:getStreamCdnConfig', __args__, opts=opts, typ=GetStreamCdnConfigResult).value
 
     return AwaitableGetStreamCdnConfigResult(
-        compartment_id=__ret__.compartment_id,
-        configs=__ret__.configs,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        distribution_channel_id=__ret__.distribution_channel_id,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_enabled=__ret__.is_enabled,
-        lifecyle_details=__ret__.lifecyle_details,
-        state=__ret__.state,
-        stream_cdn_config_id=__ret__.stream_cdn_config_id,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        configs=pulumi.get(__ret__, 'configs'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        distribution_channel_id=pulumi.get(__ret__, 'distribution_channel_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_enabled=pulumi.get(__ret__, 'is_enabled'),
+        lifecyle_details=pulumi.get(__ret__, 'lifecyle_details'),
+        state=pulumi.get(__ret__, 'state'),
+        stream_cdn_config_id=pulumi.get(__ret__, 'stream_cdn_config_id'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_stream_cdn_config)

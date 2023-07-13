@@ -148,13 +148,13 @@ def get_fleet_java_migration_analysis_results(filters: Optional[Sequence[pulumi.
     __ret__ = pulumi.runtime.invoke('oci:Jms/getFleetJavaMigrationAnalysisResults:getFleetJavaMigrationAnalysisResults', __args__, opts=opts, typ=GetFleetJavaMigrationAnalysisResultsResult).value
 
     return AwaitableGetFleetJavaMigrationAnalysisResultsResult(
-        filters=__ret__.filters,
-        fleet_id=__ret__.fleet_id,
-        id=__ret__.id,
-        java_migration_analysis_result_collections=__ret__.java_migration_analysis_result_collections,
-        managed_instance_id=__ret__.managed_instance_id,
-        time_end=__ret__.time_end,
-        time_start=__ret__.time_start)
+        filters=pulumi.get(__ret__, 'filters'),
+        fleet_id=pulumi.get(__ret__, 'fleet_id'),
+        id=pulumi.get(__ret__, 'id'),
+        java_migration_analysis_result_collections=pulumi.get(__ret__, 'java_migration_analysis_result_collections'),
+        managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
+        time_end=pulumi.get(__ret__, 'time_end'),
+        time_start=pulumi.get(__ret__, 'time_start'))
 
 
 @_utilities.lift_output_func(get_fleet_java_migration_analysis_results)

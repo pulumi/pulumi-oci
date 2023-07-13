@@ -142,12 +142,12 @@ def get_connect_harnesses(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Streaming/getConnectHarnesses:getConnectHarnesses', __args__, opts=opts, typ=GetConnectHarnessesResult).value
 
     return AwaitableGetConnectHarnessesResult(
-        compartment_id=__ret__.compartment_id,
-        connect_harnesses=__ret__.connect_harnesses,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        connect_harnesses=pulumi.get(__ret__, 'connect_harnesses'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_connect_harnesses)

@@ -153,13 +153,13 @@ def get_private_endpoints(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ResourceManager/getPrivateEndpoints:getPrivateEndpoints', __args__, opts=opts, typ=GetPrivateEndpointsResult).value
 
     return AwaitableGetPrivateEndpointsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        private_endpoint_collections=__ret__.private_endpoint_collections,
-        private_endpoint_id=__ret__.private_endpoint_id,
-        vcn_id=__ret__.vcn_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        private_endpoint_collections=pulumi.get(__ret__, 'private_endpoint_collections'),
+        private_endpoint_id=pulumi.get(__ret__, 'private_endpoint_id'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_private_endpoints)

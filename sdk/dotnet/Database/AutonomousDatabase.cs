@@ -606,7 +606,7 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<string>> StandbyWhitelistedIps { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        /// The current state of the Autonomous Database.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -1255,7 +1255,7 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        /// The current state of the Autonomous Database.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -2030,7 +2030,7 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        /// The current state of the Autonomous Database.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

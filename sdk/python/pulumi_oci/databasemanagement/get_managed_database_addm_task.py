@@ -121,11 +121,11 @@ def get_managed_database_addm_task(managed_database_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseAddmTask:getManagedDatabaseAddmTask', __args__, opts=opts, typ=GetManagedDatabaseAddmTaskResult).value
 
     return AwaitableGetManagedDatabaseAddmTaskResult(
-        id=__ret__.id,
-        items=__ret__.items,
-        managed_database_id=__ret__.managed_database_id,
-        time_end=__ret__.time_end,
-        time_start=__ret__.time_start)
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        time_end=pulumi.get(__ret__, 'time_end'),
+        time_start=pulumi.get(__ret__, 'time_start'))
 
 
 @_utilities.lift_output_func(get_managed_database_addm_task)

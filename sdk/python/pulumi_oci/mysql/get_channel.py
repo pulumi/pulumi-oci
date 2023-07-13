@@ -222,20 +222,20 @@ def get_channel(channel_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Mysql/getChannel:getChannel', __args__, opts=opts, typ=GetChannelResult).value
 
     return AwaitableGetChannelResult(
-        channel_id=__ret__.channel_id,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_enabled=__ret__.is_enabled,
-        lifecycle_details=__ret__.lifecycle_details,
-        sources=__ret__.sources,
-        state=__ret__.state,
-        targets=__ret__.targets,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        channel_id=pulumi.get(__ret__, 'channel_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_enabled=pulumi.get(__ret__, 'is_enabled'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        sources=pulumi.get(__ret__, 'sources'),
+        state=pulumi.get(__ret__, 'state'),
+        targets=pulumi.get(__ret__, 'targets'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_channel)

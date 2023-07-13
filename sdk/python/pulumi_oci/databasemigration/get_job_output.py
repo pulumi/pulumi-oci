@@ -91,9 +91,9 @@ def get_job_output(job_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseMigration/getJobOutput:getJobOutput', __args__, opts=opts, typ=GetJobOutputResult).value
 
     return AwaitableGetJobOutputResult(
-        id=__ret__.id,
-        items=__ret__.items,
-        job_id=__ret__.job_id)
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        job_id=pulumi.get(__ret__, 'job_id'))
 
 
 @_utilities.lift_output_func(get_job_output)

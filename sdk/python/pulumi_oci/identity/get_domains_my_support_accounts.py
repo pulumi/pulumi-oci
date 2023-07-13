@@ -219,20 +219,20 @@ def get_domains_my_support_accounts(authorization: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getDomainsMySupportAccounts:getDomainsMySupportAccounts', __args__, opts=opts, typ=GetDomainsMySupportAccountsResult).value
 
     return AwaitableGetDomainsMySupportAccountsResult(
-        authorization=__ret__.authorization,
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        idcs_endpoint=__ret__.idcs_endpoint,
-        items_per_page=__ret__.items_per_page,
-        my_support_account_count=__ret__.my_support_account_count,
-        my_support_account_filter=__ret__.my_support_account_filter,
-        my_support_accounts=__ret__.my_support_accounts,
-        resource_type_schema_version=__ret__.resource_type_schema_version,
-        schemas=__ret__.schemas,
-        sort_by=__ret__.sort_by,
-        sort_order=__ret__.sort_order,
-        start_index=__ret__.start_index,
-        total_results=__ret__.total_results)
+        authorization=pulumi.get(__ret__, 'authorization'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        idcs_endpoint=pulumi.get(__ret__, 'idcs_endpoint'),
+        items_per_page=pulumi.get(__ret__, 'items_per_page'),
+        my_support_account_count=pulumi.get(__ret__, 'my_support_account_count'),
+        my_support_account_filter=pulumi.get(__ret__, 'my_support_account_filter'),
+        my_support_accounts=pulumi.get(__ret__, 'my_support_accounts'),
+        resource_type_schema_version=pulumi.get(__ret__, 'resource_type_schema_version'),
+        schemas=pulumi.get(__ret__, 'schemas'),
+        sort_by=pulumi.get(__ret__, 'sort_by'),
+        sort_order=pulumi.get(__ret__, 'sort_order'),
+        start_index=pulumi.get(__ret__, 'start_index'),
+        total_results=pulumi.get(__ret__, 'total_results'))
 
 
 @_utilities.lift_output_func(get_domains_my_support_accounts)

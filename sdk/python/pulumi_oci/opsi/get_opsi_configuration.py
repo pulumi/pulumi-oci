@@ -277,24 +277,24 @@ def get_opsi_configuration(config_item_custom_statuses: Optional[Sequence[str]] 
     __ret__ = pulumi.runtime.invoke('oci:Opsi/getOpsiConfiguration:getOpsiConfiguration', __args__, opts=opts, typ=GetOpsiConfigurationResult).value
 
     return AwaitableGetOpsiConfigurationResult(
-        compartment_id=__ret__.compartment_id,
-        config_item_custom_statuses=__ret__.config_item_custom_statuses,
-        config_item_fields=__ret__.config_item_fields,
-        config_items=__ret__.config_items,
-        config_items_applicable_contexts=__ret__.config_items_applicable_contexts,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        opsi_config_fields=__ret__.opsi_config_fields,
-        opsi_config_type=__ret__.opsi_config_type,
-        opsi_configuration_id=__ret__.opsi_configuration_id,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        config_item_custom_statuses=pulumi.get(__ret__, 'config_item_custom_statuses'),
+        config_item_fields=pulumi.get(__ret__, 'config_item_fields'),
+        config_items=pulumi.get(__ret__, 'config_items'),
+        config_items_applicable_contexts=pulumi.get(__ret__, 'config_items_applicable_contexts'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        opsi_config_fields=pulumi.get(__ret__, 'opsi_config_fields'),
+        opsi_config_type=pulumi.get(__ret__, 'opsi_config_type'),
+        opsi_configuration_id=pulumi.get(__ret__, 'opsi_configuration_id'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_opsi_configuration)

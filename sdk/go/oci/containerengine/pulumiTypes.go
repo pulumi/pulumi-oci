@@ -8192,6 +8192,281 @@ func (o GetClusterOptionClusterPodNetworkOptionArrayOutput) Index(i pulumi.IntIn
 	}).(GetClusterOptionClusterPodNetworkOptionOutput)
 }
 
+type GetClusterWorkloadMappingsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetClusterWorkloadMappingsFilterInput is an input type that accepts GetClusterWorkloadMappingsFilterArgs and GetClusterWorkloadMappingsFilterOutput values.
+// You can construct a concrete instance of `GetClusterWorkloadMappingsFilterInput` via:
+//
+//	GetClusterWorkloadMappingsFilterArgs{...}
+type GetClusterWorkloadMappingsFilterInput interface {
+	pulumi.Input
+
+	ToGetClusterWorkloadMappingsFilterOutput() GetClusterWorkloadMappingsFilterOutput
+	ToGetClusterWorkloadMappingsFilterOutputWithContext(context.Context) GetClusterWorkloadMappingsFilterOutput
+}
+
+type GetClusterWorkloadMappingsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetClusterWorkloadMappingsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterWorkloadMappingsFilter)(nil)).Elem()
+}
+
+func (i GetClusterWorkloadMappingsFilterArgs) ToGetClusterWorkloadMappingsFilterOutput() GetClusterWorkloadMappingsFilterOutput {
+	return i.ToGetClusterWorkloadMappingsFilterOutputWithContext(context.Background())
+}
+
+func (i GetClusterWorkloadMappingsFilterArgs) ToGetClusterWorkloadMappingsFilterOutputWithContext(ctx context.Context) GetClusterWorkloadMappingsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterWorkloadMappingsFilterOutput)
+}
+
+// GetClusterWorkloadMappingsFilterArrayInput is an input type that accepts GetClusterWorkloadMappingsFilterArray and GetClusterWorkloadMappingsFilterArrayOutput values.
+// You can construct a concrete instance of `GetClusterWorkloadMappingsFilterArrayInput` via:
+//
+//	GetClusterWorkloadMappingsFilterArray{ GetClusterWorkloadMappingsFilterArgs{...} }
+type GetClusterWorkloadMappingsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterWorkloadMappingsFilterArrayOutput() GetClusterWorkloadMappingsFilterArrayOutput
+	ToGetClusterWorkloadMappingsFilterArrayOutputWithContext(context.Context) GetClusterWorkloadMappingsFilterArrayOutput
+}
+
+type GetClusterWorkloadMappingsFilterArray []GetClusterWorkloadMappingsFilterInput
+
+func (GetClusterWorkloadMappingsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterWorkloadMappingsFilter)(nil)).Elem()
+}
+
+func (i GetClusterWorkloadMappingsFilterArray) ToGetClusterWorkloadMappingsFilterArrayOutput() GetClusterWorkloadMappingsFilterArrayOutput {
+	return i.ToGetClusterWorkloadMappingsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterWorkloadMappingsFilterArray) ToGetClusterWorkloadMappingsFilterArrayOutputWithContext(ctx context.Context) GetClusterWorkloadMappingsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterWorkloadMappingsFilterArrayOutput)
+}
+
+type GetClusterWorkloadMappingsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetClusterWorkloadMappingsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterWorkloadMappingsFilter)(nil)).Elem()
+}
+
+func (o GetClusterWorkloadMappingsFilterOutput) ToGetClusterWorkloadMappingsFilterOutput() GetClusterWorkloadMappingsFilterOutput {
+	return o
+}
+
+func (o GetClusterWorkloadMappingsFilterOutput) ToGetClusterWorkloadMappingsFilterOutputWithContext(ctx context.Context) GetClusterWorkloadMappingsFilterOutput {
+	return o
+}
+
+func (o GetClusterWorkloadMappingsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetClusterWorkloadMappingsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetClusterWorkloadMappingsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetClusterWorkloadMappingsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterWorkloadMappingsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterWorkloadMappingsFilter)(nil)).Elem()
+}
+
+func (o GetClusterWorkloadMappingsFilterArrayOutput) ToGetClusterWorkloadMappingsFilterArrayOutput() GetClusterWorkloadMappingsFilterArrayOutput {
+	return o
+}
+
+func (o GetClusterWorkloadMappingsFilterArrayOutput) ToGetClusterWorkloadMappingsFilterArrayOutputWithContext(ctx context.Context) GetClusterWorkloadMappingsFilterArrayOutput {
+	return o
+}
+
+func (o GetClusterWorkloadMappingsFilterArrayOutput) Index(i pulumi.IntInput) GetClusterWorkloadMappingsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterWorkloadMappingsFilter {
+		return vs[0].([]GetClusterWorkloadMappingsFilter)[vs[1].(int)]
+	}).(GetClusterWorkloadMappingsFilterOutput)
+}
+
+type GetClusterWorkloadMappingsWorkloadMapping struct {
+	// The OCID of the cluster.
+	ClusterId string `pulumi:"clusterId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The ocid of the workloadMapping.
+	Id string `pulumi:"id"`
+	// The OCID of the mapped customer compartment.
+	MappedCompartmentId string `pulumi:"mappedCompartmentId"`
+	// The OCID of the mapped customer tenancy.
+	MappedTenancyId string `pulumi:"mappedTenancyId"`
+	// The namespace of the workloadMapping.
+	Namespace string `pulumi:"namespace"`
+	// The state of the workloadMapping.
+	State string `pulumi:"state"`
+	// The time the cluster was created.
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetClusterWorkloadMappingsWorkloadMappingInput is an input type that accepts GetClusterWorkloadMappingsWorkloadMappingArgs and GetClusterWorkloadMappingsWorkloadMappingOutput values.
+// You can construct a concrete instance of `GetClusterWorkloadMappingsWorkloadMappingInput` via:
+//
+//	GetClusterWorkloadMappingsWorkloadMappingArgs{...}
+type GetClusterWorkloadMappingsWorkloadMappingInput interface {
+	pulumi.Input
+
+	ToGetClusterWorkloadMappingsWorkloadMappingOutput() GetClusterWorkloadMappingsWorkloadMappingOutput
+	ToGetClusterWorkloadMappingsWorkloadMappingOutputWithContext(context.Context) GetClusterWorkloadMappingsWorkloadMappingOutput
+}
+
+type GetClusterWorkloadMappingsWorkloadMappingArgs struct {
+	// The OCID of the cluster.
+	ClusterId pulumi.StringInput `pulumi:"clusterId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The ocid of the workloadMapping.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The OCID of the mapped customer compartment.
+	MappedCompartmentId pulumi.StringInput `pulumi:"mappedCompartmentId"`
+	// The OCID of the mapped customer tenancy.
+	MappedTenancyId pulumi.StringInput `pulumi:"mappedTenancyId"`
+	// The namespace of the workloadMapping.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The state of the workloadMapping.
+	State pulumi.StringInput `pulumi:"state"`
+	// The time the cluster was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetClusterWorkloadMappingsWorkloadMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterWorkloadMappingsWorkloadMapping)(nil)).Elem()
+}
+
+func (i GetClusterWorkloadMappingsWorkloadMappingArgs) ToGetClusterWorkloadMappingsWorkloadMappingOutput() GetClusterWorkloadMappingsWorkloadMappingOutput {
+	return i.ToGetClusterWorkloadMappingsWorkloadMappingOutputWithContext(context.Background())
+}
+
+func (i GetClusterWorkloadMappingsWorkloadMappingArgs) ToGetClusterWorkloadMappingsWorkloadMappingOutputWithContext(ctx context.Context) GetClusterWorkloadMappingsWorkloadMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterWorkloadMappingsWorkloadMappingOutput)
+}
+
+// GetClusterWorkloadMappingsWorkloadMappingArrayInput is an input type that accepts GetClusterWorkloadMappingsWorkloadMappingArray and GetClusterWorkloadMappingsWorkloadMappingArrayOutput values.
+// You can construct a concrete instance of `GetClusterWorkloadMappingsWorkloadMappingArrayInput` via:
+//
+//	GetClusterWorkloadMappingsWorkloadMappingArray{ GetClusterWorkloadMappingsWorkloadMappingArgs{...} }
+type GetClusterWorkloadMappingsWorkloadMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterWorkloadMappingsWorkloadMappingArrayOutput() GetClusterWorkloadMappingsWorkloadMappingArrayOutput
+	ToGetClusterWorkloadMappingsWorkloadMappingArrayOutputWithContext(context.Context) GetClusterWorkloadMappingsWorkloadMappingArrayOutput
+}
+
+type GetClusterWorkloadMappingsWorkloadMappingArray []GetClusterWorkloadMappingsWorkloadMappingInput
+
+func (GetClusterWorkloadMappingsWorkloadMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterWorkloadMappingsWorkloadMapping)(nil)).Elem()
+}
+
+func (i GetClusterWorkloadMappingsWorkloadMappingArray) ToGetClusterWorkloadMappingsWorkloadMappingArrayOutput() GetClusterWorkloadMappingsWorkloadMappingArrayOutput {
+	return i.ToGetClusterWorkloadMappingsWorkloadMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterWorkloadMappingsWorkloadMappingArray) ToGetClusterWorkloadMappingsWorkloadMappingArrayOutputWithContext(ctx context.Context) GetClusterWorkloadMappingsWorkloadMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterWorkloadMappingsWorkloadMappingArrayOutput)
+}
+
+type GetClusterWorkloadMappingsWorkloadMappingOutput struct{ *pulumi.OutputState }
+
+func (GetClusterWorkloadMappingsWorkloadMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterWorkloadMappingsWorkloadMapping)(nil)).Elem()
+}
+
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) ToGetClusterWorkloadMappingsWorkloadMappingOutput() GetClusterWorkloadMappingsWorkloadMappingOutput {
+	return o
+}
+
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) ToGetClusterWorkloadMappingsWorkloadMappingOutputWithContext(ctx context.Context) GetClusterWorkloadMappingsWorkloadMappingOutput {
+	return o
+}
+
+// The OCID of the cluster.
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) string { return v.ClusterId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The ocid of the workloadMapping.
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The OCID of the mapped customer compartment.
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) MappedCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) string { return v.MappedCompartmentId }).(pulumi.StringOutput)
+}
+
+// The OCID of the mapped customer tenancy.
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) MappedTenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) string { return v.MappedTenancyId }).(pulumi.StringOutput)
+}
+
+// The namespace of the workloadMapping.
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The state of the workloadMapping.
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time the cluster was created.
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetClusterWorkloadMappingsWorkloadMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterWorkloadMappingsWorkloadMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterWorkloadMappingsWorkloadMapping)(nil)).Elem()
+}
+
+func (o GetClusterWorkloadMappingsWorkloadMappingArrayOutput) ToGetClusterWorkloadMappingsWorkloadMappingArrayOutput() GetClusterWorkloadMappingsWorkloadMappingArrayOutput {
+	return o
+}
+
+func (o GetClusterWorkloadMappingsWorkloadMappingArrayOutput) ToGetClusterWorkloadMappingsWorkloadMappingArrayOutputWithContext(ctx context.Context) GetClusterWorkloadMappingsWorkloadMappingArrayOutput {
+	return o
+}
+
+func (o GetClusterWorkloadMappingsWorkloadMappingArrayOutput) Index(i pulumi.IntInput) GetClusterWorkloadMappingsWorkloadMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterWorkloadMappingsWorkloadMapping {
+		return vs[0].([]GetClusterWorkloadMappingsWorkloadMapping)[vs[1].(int)]
+	}).(GetClusterWorkloadMappingsWorkloadMappingOutput)
+}
+
 type GetClustersCluster struct {
 	// Available Kubernetes versions to which the clusters masters may be upgraded.
 	AvailableKubernetesUpgrades []string `pulumi:"availableKubernetesUpgrades"`
@@ -8225,7 +8500,7 @@ type GetClustersCluster struct {
 	Options []GetClustersClusterOption `pulumi:"options"`
 	// A cluster lifecycle state to filter on. Can have multiple parameters of this name.
 	State string `pulumi:"state"`
-	// Type of cluster
+	// Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
 	Type string `pulumi:"type"`
 	// The OCID of the virtual cloud network (VCN) in which the cluster exists.
 	VcnId string `pulumi:"vcnId"`
@@ -8275,7 +8550,7 @@ type GetClustersClusterArgs struct {
 	Options GetClustersClusterOptionArrayInput `pulumi:"options"`
 	// A cluster lifecycle state to filter on. Can have multiple parameters of this name.
 	State pulumi.StringInput `pulumi:"state"`
-	// Type of cluster
+	// Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
 	Type pulumi.StringInput `pulumi:"type"`
 	// The OCID of the virtual cloud network (VCN) in which the cluster exists.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
@@ -8414,7 +8689,7 @@ func (o GetClustersClusterOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClustersCluster) string { return v.State }).(pulumi.StringOutput)
 }
 
-// Type of cluster
+// Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
 func (o GetClustersClusterOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClustersCluster) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -16737,6 +17012,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonsFilterArrayInput)(nil)).Elem(), GetAddonsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionClusterPodNetworkOptionInput)(nil)).Elem(), GetClusterOptionClusterPodNetworkOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionClusterPodNetworkOptionArrayInput)(nil)).Elem(), GetClusterOptionClusterPodNetworkOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterWorkloadMappingsFilterInput)(nil)).Elem(), GetClusterWorkloadMappingsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterWorkloadMappingsFilterArrayInput)(nil)).Elem(), GetClusterWorkloadMappingsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterWorkloadMappingsWorkloadMappingInput)(nil)).Elem(), GetClusterWorkloadMappingsWorkloadMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterWorkloadMappingsWorkloadMappingArrayInput)(nil)).Elem(), GetClusterWorkloadMappingsWorkloadMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterInput)(nil)).Elem(), GetClustersClusterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterArrayInput)(nil)).Elem(), GetClustersClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterClusterPodNetworkOptionInput)(nil)).Elem(), GetClustersClusterClusterPodNetworkOptionArgs{})
@@ -16981,6 +17260,10 @@ func init() {
 	pulumi.RegisterOutputType(GetAddonsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterOptionClusterPodNetworkOptionOutput{})
 	pulumi.RegisterOutputType(GetClusterOptionClusterPodNetworkOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterWorkloadMappingsFilterOutput{})
+	pulumi.RegisterOutputType(GetClusterWorkloadMappingsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterWorkloadMappingsWorkloadMappingOutput{})
+	pulumi.RegisterOutputType(GetClusterWorkloadMappingsWorkloadMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetClustersClusterOutput{})
 	pulumi.RegisterOutputType(GetClustersClusterArrayOutput{})
 	pulumi.RegisterOutputType(GetClustersClusterClusterPodNetworkOptionOutput{})

@@ -107,10 +107,10 @@ def get_customer_secret_keys(filters: Optional[Sequence[pulumi.InputType['GetCus
     __ret__ = pulumi.runtime.invoke('oci:Identity/getCustomerSecretKeys:getCustomerSecretKeys', __args__, opts=opts, typ=GetCustomerSecretKeysResult).value
 
     return AwaitableGetCustomerSecretKeysResult(
-        customer_secret_keys=__ret__.customer_secret_keys,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        user_id=__ret__.user_id)
+        customer_secret_keys=pulumi.get(__ret__, 'customer_secret_keys'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        user_id=pulumi.get(__ret__, 'user_id'))
 
 
 @_utilities.lift_output_func(get_customer_secret_keys)

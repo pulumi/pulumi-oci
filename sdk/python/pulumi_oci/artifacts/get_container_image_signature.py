@@ -246,22 +246,22 @@ def get_container_image_signature(image_signature_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Artifacts/getContainerImageSignature:getContainerImageSignature', __args__, opts=opts, typ=GetContainerImageSignatureResult).value
 
     return AwaitableGetContainerImageSignatureResult(
-        compartment_id=__ret__.compartment_id,
-        created_by=__ret__.created_by,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        image_id=__ret__.image_id,
-        image_signature_id=__ret__.image_signature_id,
-        kms_key_id=__ret__.kms_key_id,
-        kms_key_version_id=__ret__.kms_key_version_id,
-        message=__ret__.message,
-        signature=__ret__.signature,
-        signing_algorithm=__ret__.signing_algorithm,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        created_by=pulumi.get(__ret__, 'created_by'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        image_id=pulumi.get(__ret__, 'image_id'),
+        image_signature_id=pulumi.get(__ret__, 'image_signature_id'),
+        kms_key_id=pulumi.get(__ret__, 'kms_key_id'),
+        kms_key_version_id=pulumi.get(__ret__, 'kms_key_version_id'),
+        message=pulumi.get(__ret__, 'message'),
+        signature=pulumi.get(__ret__, 'signature'),
+        signing_algorithm=pulumi.get(__ret__, 'signing_algorithm'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_container_image_signature)

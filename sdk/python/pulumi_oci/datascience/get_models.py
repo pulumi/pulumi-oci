@@ -197,16 +197,16 @@ def get_models(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataScience/getModels:getModels', __args__, opts=opts, typ=GetModelsResult).value
 
     return AwaitableGetModelsResult(
-        compartment_id=__ret__.compartment_id,
-        created_by=__ret__.created_by,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        model_version_set_name=__ret__.model_version_set_name,
-        models=__ret__.models,
-        project_id=__ret__.project_id,
-        state=__ret__.state,
-        version_label=__ret__.version_label)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        created_by=pulumi.get(__ret__, 'created_by'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        model_version_set_name=pulumi.get(__ret__, 'model_version_set_name'),
+        models=pulumi.get(__ret__, 'models'),
+        project_id=pulumi.get(__ret__, 'project_id'),
+        state=pulumi.get(__ret__, 'state'),
+        version_label=pulumi.get(__ret__, 'version_label'))
 
 
 @_utilities.lift_output_func(get_models)

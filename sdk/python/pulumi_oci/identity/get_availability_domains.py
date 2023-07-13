@@ -110,10 +110,10 @@ def get_availability_domains(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getAvailabilityDomains:getAvailabilityDomains', __args__, opts=opts, typ=GetAvailabilityDomainsResult).value
 
     return AwaitableGetAvailabilityDomainsResult(
-        availability_domains=__ret__.availability_domains,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        availability_domains=pulumi.get(__ret__, 'availability_domains'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_availability_domains)

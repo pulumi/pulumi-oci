@@ -130,11 +130,11 @@ def get_bucket_summaries(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ObjectStorage/getBucketSummaries:getBucketSummaries', __args__, opts=opts, typ=GetBucketSummariesResult).value
 
     return AwaitableGetBucketSummariesResult(
-        bucket_summaries=__ret__.bucket_summaries,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        namespace=__ret__.namespace)
+        bucket_summaries=pulumi.get(__ret__, 'bucket_summaries'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        namespace=pulumi.get(__ret__, 'namespace'))
 
 
 @_utilities.lift_output_func(get_bucket_summaries)

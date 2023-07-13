@@ -223,20 +223,20 @@ def get_steering_policy(steering_policy_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Dns/getSteeringPolicy:getSteeringPolicy', __args__, opts=opts, typ=GetSteeringPolicyResult).value
 
     return AwaitableGetSteeringPolicyResult(
-        answers=__ret__.answers,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        health_check_monitor_id=__ret__.health_check_monitor_id,
-        id=__ret__.id,
-        rules=__ret__.rules,
-        self=__ret__.self,
-        state=__ret__.state,
-        steering_policy_id=__ret__.steering_policy_id,
-        template=__ret__.template,
-        time_created=__ret__.time_created,
-        ttl=__ret__.ttl)
+        answers=pulumi.get(__ret__, 'answers'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        health_check_monitor_id=pulumi.get(__ret__, 'health_check_monitor_id'),
+        id=pulumi.get(__ret__, 'id'),
+        rules=pulumi.get(__ret__, 'rules'),
+        self=pulumi.get(__ret__, 'self'),
+        state=pulumi.get(__ret__, 'state'),
+        steering_policy_id=pulumi.get(__ret__, 'steering_policy_id'),
+        template=pulumi.get(__ret__, 'template'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        ttl=pulumi.get(__ret__, 'ttl'))
 
 
 @_utilities.lift_output_func(get_steering_policy)

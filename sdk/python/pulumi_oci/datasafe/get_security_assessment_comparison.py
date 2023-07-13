@@ -140,13 +140,13 @@ def get_security_assessment_comparison(comparison_security_assessment_id: Option
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getSecurityAssessmentComparison:getSecurityAssessmentComparison', __args__, opts=opts, typ=GetSecurityAssessmentComparisonResult).value
 
     return AwaitableGetSecurityAssessmentComparisonResult(
-        baseline_id=__ret__.baseline_id,
-        comparison_security_assessment_id=__ret__.comparison_security_assessment_id,
-        id=__ret__.id,
-        security_assessment_id=__ret__.security_assessment_id,
-        state=__ret__.state,
-        targets=__ret__.targets,
-        time_created=__ret__.time_created)
+        baseline_id=pulumi.get(__ret__, 'baseline_id'),
+        comparison_security_assessment_id=pulumi.get(__ret__, 'comparison_security_assessment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        security_assessment_id=pulumi.get(__ret__, 'security_assessment_id'),
+        state=pulumi.get(__ret__, 'state'),
+        targets=pulumi.get(__ret__, 'targets'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_security_assessment_comparison)

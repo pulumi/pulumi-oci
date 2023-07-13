@@ -173,15 +173,15 @@ def get_db_versions(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getDbVersions:getDbVersions', __args__, opts=opts, typ=GetDbVersionsResult).value
 
     return AwaitableGetDbVersionsResult(
-        compartment_id=__ret__.compartment_id,
-        db_system_id=__ret__.db_system_id,
-        db_system_shape=__ret__.db_system_shape,
-        db_versions=__ret__.db_versions,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_database_software_image_supported=__ret__.is_database_software_image_supported,
-        is_upgrade_supported=__ret__.is_upgrade_supported,
-        storage_management=__ret__.storage_management)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        db_system_id=pulumi.get(__ret__, 'db_system_id'),
+        db_system_shape=pulumi.get(__ret__, 'db_system_shape'),
+        db_versions=pulumi.get(__ret__, 'db_versions'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_database_software_image_supported=pulumi.get(__ret__, 'is_database_software_image_supported'),
+        is_upgrade_supported=pulumi.get(__ret__, 'is_upgrade_supported'),
+        storage_management=pulumi.get(__ret__, 'storage_management'))
 
 
 @_utilities.lift_output_func(get_db_versions)

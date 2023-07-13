@@ -203,17 +203,17 @@ def get_target_databases_columns(column_name_contains: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getTargetDatabasesColumns:getTargetDatabasesColumns', __args__, opts=opts, typ=GetTargetDatabasesColumnsResult).value
 
     return AwaitableGetTargetDatabasesColumnsResult(
-        column_name_contains=__ret__.column_name_contains,
-        column_names=__ret__.column_names,
-        columns=__ret__.columns,
-        datatypes=__ret__.datatypes,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        schema_name_contains=__ret__.schema_name_contains,
-        schema_names=__ret__.schema_names,
-        table_name_contains=__ret__.table_name_contains,
-        table_names=__ret__.table_names,
-        target_database_id=__ret__.target_database_id)
+        column_name_contains=pulumi.get(__ret__, 'column_name_contains'),
+        column_names=pulumi.get(__ret__, 'column_names'),
+        columns=pulumi.get(__ret__, 'columns'),
+        datatypes=pulumi.get(__ret__, 'datatypes'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        schema_name_contains=pulumi.get(__ret__, 'schema_name_contains'),
+        schema_names=pulumi.get(__ret__, 'schema_names'),
+        table_name_contains=pulumi.get(__ret__, 'table_name_contains'),
+        table_names=pulumi.get(__ret__, 'table_names'),
+        target_database_id=pulumi.get(__ret__, 'target_database_id'))
 
 
 @_utilities.lift_output_func(get_target_databases_columns)

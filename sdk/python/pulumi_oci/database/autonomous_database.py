@@ -182,7 +182,7 @@ class AutonomousDatabaseArgs:
                For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-        :param pulumi.Input[str] state: (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        :param pulumi.Input[str] state: The current state of the Autonomous Database.
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
                
                **Subnet Restrictions:**
@@ -1041,7 +1041,7 @@ class AutonomousDatabaseArgs:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        The current state of the Autonomous Database.
         """
         return pulumi.get(self, "state")
 
@@ -1405,7 +1405,7 @@ class _AutonomousDatabaseState:
                For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-        :param pulumi.Input[str] state: (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        :param pulumi.Input[str] state: The current state of the Autonomous Database.
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
                
                **Subnet Restrictions:**
@@ -2799,7 +2799,7 @@ class _AutonomousDatabaseState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        The current state of the Autonomous Database.
         """
         return pulumi.get(self, "state")
 
@@ -3320,7 +3320,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-        :param pulumi.Input[str] state: (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        :param pulumi.Input[str] state: The current state of the Autonomous Database.
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
                
                **Subnet Restrictions:**
@@ -3840,7 +3840,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-        :param pulumi.Input[str] state: (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        :param pulumi.Input[str] state: The current state of the Autonomous Database.
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
                
                **Subnet Restrictions:**
@@ -4767,7 +4767,7 @@ class AutonomousDatabase(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        The current state of the Autonomous Database.
         """
         return pulumi.get(self, "state")
 

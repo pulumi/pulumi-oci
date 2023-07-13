@@ -103,10 +103,10 @@ def get_database_maintenance_run_history(maintenance_run_history_id: Optional[st
     __ret__ = pulumi.runtime.invoke('oci:Database/getDatabaseMaintenanceRunHistory:getDatabaseMaintenanceRunHistory', __args__, opts=opts, typ=GetDatabaseMaintenanceRunHistoryResult).value
 
     return AwaitableGetDatabaseMaintenanceRunHistoryResult(
-        db_servers_history_details=__ret__.db_servers_history_details,
-        id=__ret__.id,
-        maintenance_run_details=__ret__.maintenance_run_details,
-        maintenance_run_history_id=__ret__.maintenance_run_history_id)
+        db_servers_history_details=pulumi.get(__ret__, 'db_servers_history_details'),
+        id=pulumi.get(__ret__, 'id'),
+        maintenance_run_details=pulumi.get(__ret__, 'maintenance_run_details'),
+        maintenance_run_history_id=pulumi.get(__ret__, 'maintenance_run_history_id'))
 
 
 @_utilities.lift_output_func(get_database_maintenance_run_history)

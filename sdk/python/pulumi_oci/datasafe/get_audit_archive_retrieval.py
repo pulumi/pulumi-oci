@@ -270,24 +270,24 @@ def get_audit_archive_retrieval(audit_archive_retrieval_id: Optional[str] = None
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getAuditArchiveRetrieval:getAuditArchiveRetrieval', __args__, opts=opts, typ=GetAuditArchiveRetrievalResult).value
 
     return AwaitableGetAuditArchiveRetrievalResult(
-        audit_archive_retrieval_id=__ret__.audit_archive_retrieval_id,
-        audit_event_count=__ret__.audit_event_count,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        end_date=__ret__.end_date,
-        error_info=__ret__.error_info,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        start_date=__ret__.start_date,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        target_id=__ret__.target_id,
-        time_completed=__ret__.time_completed,
-        time_of_expiry=__ret__.time_of_expiry,
-        time_requested=__ret__.time_requested)
+        audit_archive_retrieval_id=pulumi.get(__ret__, 'audit_archive_retrieval_id'),
+        audit_event_count=pulumi.get(__ret__, 'audit_event_count'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        end_date=pulumi.get(__ret__, 'end_date'),
+        error_info=pulumi.get(__ret__, 'error_info'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        start_date=pulumi.get(__ret__, 'start_date'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        target_id=pulumi.get(__ret__, 'target_id'),
+        time_completed=pulumi.get(__ret__, 'time_completed'),
+        time_of_expiry=pulumi.get(__ret__, 'time_of_expiry'),
+        time_requested=pulumi.get(__ret__, 'time_requested'))
 
 
 @_utilities.lift_output_func(get_audit_archive_retrieval)

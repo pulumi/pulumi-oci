@@ -155,14 +155,14 @@ def get_backend_set_health(backend_set_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LoadBalancer/getBackendSetHealth:getBackendSetHealth', __args__, opts=opts, typ=GetBackendSetHealthResult).value
 
     return AwaitableGetBackendSetHealthResult(
-        backend_set_name=__ret__.backend_set_name,
-        critical_state_backend_names=__ret__.critical_state_backend_names,
-        id=__ret__.id,
-        load_balancer_id=__ret__.load_balancer_id,
-        status=__ret__.status,
-        total_backend_count=__ret__.total_backend_count,
-        unknown_state_backend_names=__ret__.unknown_state_backend_names,
-        warning_state_backend_names=__ret__.warning_state_backend_names)
+        backend_set_name=pulumi.get(__ret__, 'backend_set_name'),
+        critical_state_backend_names=pulumi.get(__ret__, 'critical_state_backend_names'),
+        id=pulumi.get(__ret__, 'id'),
+        load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
+        status=pulumi.get(__ret__, 'status'),
+        total_backend_count=pulumi.get(__ret__, 'total_backend_count'),
+        unknown_state_backend_names=pulumi.get(__ret__, 'unknown_state_backend_names'),
+        warning_state_backend_names=pulumi.get(__ret__, 'warning_state_backend_names'))
 
 
 @_utilities.lift_output_func(get_backend_set_health)

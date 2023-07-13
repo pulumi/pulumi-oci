@@ -235,21 +235,21 @@ def get_mysql_configuration(configuration_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Mysql/getMysqlConfiguration:getMysqlConfiguration', __args__, opts=opts, typ=GetMysqlConfigurationResult).value
 
     return AwaitableGetMysqlConfigurationResult(
-        compartment_id=__ret__.compartment_id,
-        configuration_id=__ret__.configuration_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        init_variables=__ret__.init_variables,
-        parent_configuration_id=__ret__.parent_configuration_id,
-        shape_name=__ret__.shape_name,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        type=__ret__.type,
-        variables=__ret__.variables)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        configuration_id=pulumi.get(__ret__, 'configuration_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        init_variables=pulumi.get(__ret__, 'init_variables'),
+        parent_configuration_id=pulumi.get(__ret__, 'parent_configuration_id'),
+        shape_name=pulumi.get(__ret__, 'shape_name'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        type=pulumi.get(__ret__, 'type'),
+        variables=pulumi.get(__ret__, 'variables'))
 
 
 @_utilities.lift_output_func(get_mysql_configuration)

@@ -190,15 +190,15 @@ def get_guard_targets(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudGuard/getGuardTargets:getGuardTargets', __args__, opts=opts, typ=GetGuardTargetsResult).value
 
     return AwaitableGetGuardTargetsResult(
-        access_level=__ret__.access_level,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_non_security_zone_targets_only_query=__ret__.is_non_security_zone_targets_only_query,
-        state=__ret__.state,
-        target_collections=__ret__.target_collections)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_non_security_zone_targets_only_query=pulumi.get(__ret__, 'is_non_security_zone_targets_only_query'),
+        state=pulumi.get(__ret__, 'state'),
+        target_collections=pulumi.get(__ret__, 'target_collections'))
 
 
 @_utilities.lift_output_func(get_guard_targets)

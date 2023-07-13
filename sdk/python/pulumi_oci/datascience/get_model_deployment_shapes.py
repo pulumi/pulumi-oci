@@ -103,10 +103,10 @@ def get_model_deployment_shapes(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataScience/getModelDeploymentShapes:getModelDeploymentShapes', __args__, opts=opts, typ=GetModelDeploymentShapesResult).value
 
     return AwaitableGetModelDeploymentShapesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        model_deployment_shapes=__ret__.model_deployment_shapes)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        model_deployment_shapes=pulumi.get(__ret__, 'model_deployment_shapes'))
 
 
 @_utilities.lift_output_func(get_model_deployment_shapes)

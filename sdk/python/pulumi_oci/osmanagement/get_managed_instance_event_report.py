@@ -126,12 +126,12 @@ def get_managed_instance_event_report(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OsManagement/getManagedInstanceEventReport:getManagedInstanceEventReport', __args__, opts=opts, typ=GetManagedInstanceEventReportResult).value
 
     return AwaitableGetManagedInstanceEventReportResult(
-        compartment_id=__ret__.compartment_id,
-        counts=__ret__.counts,
-        id=__ret__.id,
-        latest_timestamp_greater_than_or_equal_to=__ret__.latest_timestamp_greater_than_or_equal_to,
-        latest_timestamp_less_than=__ret__.latest_timestamp_less_than,
-        managed_instance_id=__ret__.managed_instance_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        counts=pulumi.get(__ret__, 'counts'),
+        id=pulumi.get(__ret__, 'id'),
+        latest_timestamp_greater_than_or_equal_to=pulumi.get(__ret__, 'latest_timestamp_greater_than_or_equal_to'),
+        latest_timestamp_less_than=pulumi.get(__ret__, 'latest_timestamp_less_than'),
+        managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'))
 
 
 @_utilities.lift_output_func(get_managed_instance_event_report)

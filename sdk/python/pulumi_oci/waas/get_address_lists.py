@@ -171,15 +171,15 @@ def get_address_lists(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Waas/getAddressLists:getAddressLists', __args__, opts=opts, typ=GetAddressListsResult).value
 
     return AwaitableGetAddressListsResult(
-        address_lists=__ret__.address_lists,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        ids=__ret__.ids,
-        names=__ret__.names,
-        states=__ret__.states,
-        time_created_greater_than_or_equal_to=__ret__.time_created_greater_than_or_equal_to,
-        time_created_less_than=__ret__.time_created_less_than)
+        address_lists=pulumi.get(__ret__, 'address_lists'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        ids=pulumi.get(__ret__, 'ids'),
+        names=pulumi.get(__ret__, 'names'),
+        states=pulumi.get(__ret__, 'states'),
+        time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
 
 
 @_utilities.lift_output_func(get_address_lists)

@@ -267,21 +267,21 @@ def get_log_analytics_entities(cloud_resource_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities', __args__, opts=opts, typ=GetLogAnalyticsEntitiesResult).value
 
     return AwaitableGetLogAnalyticsEntitiesResult(
-        cloud_resource_id=__ret__.cloud_resource_id,
-        compartment_id=__ret__.compartment_id,
-        entity_type_names=__ret__.entity_type_names,
-        filters=__ret__.filters,
-        hostname=__ret__.hostname,
-        hostname_contains=__ret__.hostname_contains,
-        id=__ret__.id,
-        is_management_agent_id_null=__ret__.is_management_agent_id_null,
-        lifecycle_details_contains=__ret__.lifecycle_details_contains,
-        log_analytics_entity_collections=__ret__.log_analytics_entity_collections,
-        name=__ret__.name,
-        name_contains=__ret__.name_contains,
-        namespace=__ret__.namespace,
-        source_id=__ret__.source_id,
-        state=__ret__.state)
+        cloud_resource_id=pulumi.get(__ret__, 'cloud_resource_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        entity_type_names=pulumi.get(__ret__, 'entity_type_names'),
+        filters=pulumi.get(__ret__, 'filters'),
+        hostname=pulumi.get(__ret__, 'hostname'),
+        hostname_contains=pulumi.get(__ret__, 'hostname_contains'),
+        id=pulumi.get(__ret__, 'id'),
+        is_management_agent_id_null=pulumi.get(__ret__, 'is_management_agent_id_null'),
+        lifecycle_details_contains=pulumi.get(__ret__, 'lifecycle_details_contains'),
+        log_analytics_entity_collections=pulumi.get(__ret__, 'log_analytics_entity_collections'),
+        name=pulumi.get(__ret__, 'name'),
+        name_contains=pulumi.get(__ret__, 'name_contains'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        source_id=pulumi.get(__ret__, 'source_id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_log_analytics_entities)

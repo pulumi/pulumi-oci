@@ -162,15 +162,15 @@ def get_commitment(commitment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OneSubsription/getCommitment:getCommitment', __args__, opts=opts, typ=GetCommitmentResult).value
 
     return AwaitableGetCommitmentResult(
-        available_amount=__ret__.available_amount,
-        commitment_id=__ret__.commitment_id,
-        funded_allocation_value=__ret__.funded_allocation_value,
-        id=__ret__.id,
-        quantity=__ret__.quantity,
-        subscribed_service_id=__ret__.subscribed_service_id,
-        time_end=__ret__.time_end,
-        time_start=__ret__.time_start,
-        used_amount=__ret__.used_amount)
+        available_amount=pulumi.get(__ret__, 'available_amount'),
+        commitment_id=pulumi.get(__ret__, 'commitment_id'),
+        funded_allocation_value=pulumi.get(__ret__, 'funded_allocation_value'),
+        id=pulumi.get(__ret__, 'id'),
+        quantity=pulumi.get(__ret__, 'quantity'),
+        subscribed_service_id=pulumi.get(__ret__, 'subscribed_service_id'),
+        time_end=pulumi.get(__ret__, 'time_end'),
+        time_start=pulumi.get(__ret__, 'time_start'),
+        used_amount=pulumi.get(__ret__, 'used_amount'))
 
 
 @_utilities.lift_output_func(get_commitment)

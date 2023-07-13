@@ -155,14 +155,14 @@ def get_invoices(ar_customer_transaction_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OneSubsription/getInvoices:getInvoices', __args__, opts=opts, typ=GetInvoicesResult).value
 
     return AwaitableGetInvoicesResult(
-        ar_customer_transaction_id=__ret__.ar_customer_transaction_id,
-        compartment_id=__ret__.compartment_id,
-        fields=__ret__.fields,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        invoices=__ret__.invoices,
-        time_from=__ret__.time_from,
-        time_to=__ret__.time_to)
+        ar_customer_transaction_id=pulumi.get(__ret__, 'ar_customer_transaction_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        fields=pulumi.get(__ret__, 'fields'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        invoices=pulumi.get(__ret__, 'invoices'),
+        time_from=pulumi.get(__ret__, 'time_from'),
+        time_to=pulumi.get(__ret__, 'time_to'))
 
 
 @_utilities.lift_output_func(get_invoices)

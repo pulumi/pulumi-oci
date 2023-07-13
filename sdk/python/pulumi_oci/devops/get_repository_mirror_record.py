@@ -151,14 +151,14 @@ def get_repository_mirror_record(mirror_record_type: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getRepositoryMirrorRecord:getRepositoryMirrorRecord', __args__, opts=opts, typ=GetRepositoryMirrorRecordResult).value
 
     return AwaitableGetRepositoryMirrorRecordResult(
-        id=__ret__.id,
-        mirror_record_type=__ret__.mirror_record_type,
-        mirror_status=__ret__.mirror_status,
-        repository_id=__ret__.repository_id,
-        time_ended=__ret__.time_ended,
-        time_enqueued=__ret__.time_enqueued,
-        time_started=__ret__.time_started,
-        work_request_id=__ret__.work_request_id)
+        id=pulumi.get(__ret__, 'id'),
+        mirror_record_type=pulumi.get(__ret__, 'mirror_record_type'),
+        mirror_status=pulumi.get(__ret__, 'mirror_status'),
+        repository_id=pulumi.get(__ret__, 'repository_id'),
+        time_ended=pulumi.get(__ret__, 'time_ended'),
+        time_enqueued=pulumi.get(__ret__, 'time_enqueued'),
+        time_started=pulumi.get(__ret__, 'time_started'),
+        work_request_id=pulumi.get(__ret__, 'work_request_id'))
 
 
 @_utilities.lift_output_func(get_repository_mirror_record)

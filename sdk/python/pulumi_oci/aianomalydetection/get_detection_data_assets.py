@@ -154,13 +154,13 @@ def get_detection_data_assets(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:AiAnomalyDetection/getDetectionDataAssets:getDetectionDataAssets', __args__, opts=opts, typ=GetDetectionDataAssetsResult).value
 
     return AwaitableGetDetectionDataAssetsResult(
-        compartment_id=__ret__.compartment_id,
-        data_asset_collections=__ret__.data_asset_collections,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        project_id=__ret__.project_id,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        data_asset_collections=pulumi.get(__ret__, 'data_asset_collections'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        project_id=pulumi.get(__ret__, 'project_id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_detection_data_assets)

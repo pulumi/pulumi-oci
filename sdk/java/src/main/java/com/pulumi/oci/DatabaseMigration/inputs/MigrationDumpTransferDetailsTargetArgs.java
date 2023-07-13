@@ -45,11 +45,27 @@ public final class MigrationDumpTransferDetailsTargetArgs extends com.pulumi.res
         return Optional.ofNullable(this.ociHome);
     }
 
+    /**
+     * (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+     * 
+     */
+    @Import(name="walletLocation")
+    private @Nullable Output<String> walletLocation;
+
+    /**
+     * @return (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+     * 
+     */
+    public Optional<Output<String>> walletLocation() {
+        return Optional.ofNullable(this.walletLocation);
+    }
+
     private MigrationDumpTransferDetailsTargetArgs() {}
 
     private MigrationDumpTransferDetailsTargetArgs(MigrationDumpTransferDetailsTargetArgs $) {
         this.kind = $.kind;
         this.ociHome = $.ociHome;
+        this.walletLocation = $.walletLocation;
     }
 
     public static Builder builder() {
@@ -110,6 +126,27 @@ public final class MigrationDumpTransferDetailsTargetArgs extends com.pulumi.res
          */
         public Builder ociHome(String ociHome) {
             return ociHome(Output.of(ociHome));
+        }
+
+        /**
+         * @param walletLocation (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder walletLocation(@Nullable Output<String> walletLocation) {
+            $.walletLocation = walletLocation;
+            return this;
+        }
+
+        /**
+         * @param walletLocation (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder walletLocation(String walletLocation) {
+            return walletLocation(Output.of(walletLocation));
         }
 
         public MigrationDumpTransferDetailsTargetArgs build() {

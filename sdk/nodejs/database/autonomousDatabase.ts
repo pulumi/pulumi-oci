@@ -450,7 +450,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly standbyWhitelistedIps!: pulumi.Output<string[]>;
     /**
-     * (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+     * The current state of the Autonomous Database.
      */
     public readonly state!: pulumi.Output<string>;
     /**
@@ -1241,7 +1241,7 @@ export interface AutonomousDatabaseState {
      */
     standbyWhitelistedIps?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+     * The current state of the Autonomous Database.
      */
     state?: pulumi.Input<string>;
     /**
@@ -1636,7 +1636,7 @@ export interface AutonomousDatabaseArgs {
      */
     standbyWhitelistedIps?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+     * The current state of the Autonomous Database.
      */
     state?: pulumi.Input<string>;
     /**

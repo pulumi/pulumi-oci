@@ -103,10 +103,10 @@ def get_rule_sets(filters: Optional[Sequence[pulumi.InputType['GetRuleSetsFilter
     __ret__ = pulumi.runtime.invoke('oci:LoadBalancer/getRuleSets:getRuleSets', __args__, opts=opts, typ=GetRuleSetsResult).value
 
     return AwaitableGetRuleSetsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        load_balancer_id=__ret__.load_balancer_id,
-        rule_sets=__ret__.rule_sets)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
+        rule_sets=pulumi.get(__ret__, 'rule_sets'))
 
 
 @_utilities.lift_output_func(get_rule_sets)

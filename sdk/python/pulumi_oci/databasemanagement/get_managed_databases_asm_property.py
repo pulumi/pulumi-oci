@@ -104,10 +104,10 @@ def get_managed_databases_asm_property(managed_database_id: Optional[str] = None
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabasesAsmProperty:getManagedDatabasesAsmProperty', __args__, opts=opts, typ=GetManagedDatabasesAsmPropertyResult).value
 
     return AwaitableGetManagedDatabasesAsmPropertyResult(
-        id=__ret__.id,
-        items=__ret__.items,
-        managed_database_id=__ret__.managed_database_id,
-        name=__ret__.name)
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        name=pulumi.get(__ret__, 'name'))
 
 
 @_utilities.lift_output_func(get_managed_databases_asm_property)

@@ -148,13 +148,13 @@ def get_sessions(bastion_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Bastion/getSessions:getSessions', __args__, opts=opts, typ=GetSessionsResult).value
 
     return AwaitableGetSessionsResult(
-        bastion_id=__ret__.bastion_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        session_id=__ret__.session_id,
-        session_lifecycle_state=__ret__.session_lifecycle_state,
-        sessions=__ret__.sessions)
+        bastion_id=pulumi.get(__ret__, 'bastion_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        session_id=pulumi.get(__ret__, 'session_id'),
+        session_lifecycle_state=pulumi.get(__ret__, 'session_lifecycle_state'),
+        sessions=pulumi.get(__ret__, 'sessions'))
 
 
 @_utilities.lift_output_func(get_sessions)

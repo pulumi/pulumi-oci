@@ -116,11 +116,11 @@ def get_backends(backend_set_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:NetworkLoadBalancer/getBackends:getBackends', __args__, opts=opts, typ=GetBackendsResult).value
 
     return AwaitableGetBackendsResult(
-        backend_collections=__ret__.backend_collections,
-        backend_set_name=__ret__.backend_set_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        network_load_balancer_id=__ret__.network_load_balancer_id)
+        backend_collections=pulumi.get(__ret__, 'backend_collections'),
+        backend_set_name=pulumi.get(__ret__, 'backend_set_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        network_load_balancer_id=pulumi.get(__ret__, 'network_load_balancer_id'))
 
 
 @_utilities.lift_output_func(get_backends)

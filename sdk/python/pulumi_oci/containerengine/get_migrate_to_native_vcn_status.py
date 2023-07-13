@@ -82,10 +82,10 @@ def get_migrate_to_native_vcn_status(cluster_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ContainerEngine/getMigrateToNativeVcnStatus:getMigrateToNativeVcnStatus', __args__, opts=opts, typ=GetMigrateToNativeVcnStatusResult).value
 
     return AwaitableGetMigrateToNativeVcnStatusResult(
-        cluster_id=__ret__.cluster_id,
-        id=__ret__.id,
-        state=__ret__.state,
-        time_decommission_scheduled=__ret__.time_decommission_scheduled)
+        cluster_id=pulumi.get(__ret__, 'cluster_id'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_decommission_scheduled=pulumi.get(__ret__, 'time_decommission_scheduled'))
 
 
 @_utilities.lift_output_func(get_migrate_to_native_vcn_status)

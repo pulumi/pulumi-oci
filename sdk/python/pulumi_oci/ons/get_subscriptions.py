@@ -124,11 +124,11 @@ def get_subscriptions(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Ons/getSubscriptions:getSubscriptions', __args__, opts=opts, typ=GetSubscriptionsResult).value
 
     return AwaitableGetSubscriptionsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        subscriptions=__ret__.subscriptions,
-        topic_id=__ret__.topic_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        subscriptions=pulumi.get(__ret__, 'subscriptions'),
+        topic_id=pulumi.get(__ret__, 'topic_id'))
 
 
 @_utilities.lift_output_func(get_subscriptions)

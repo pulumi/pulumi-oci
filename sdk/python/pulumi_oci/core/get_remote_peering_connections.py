@@ -123,11 +123,11 @@ def get_remote_peering_connections(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getRemotePeeringConnections:getRemotePeeringConnections', __args__, opts=opts, typ=GetRemotePeeringConnectionsResult).value
 
     return AwaitableGetRemotePeeringConnectionsResult(
-        compartment_id=__ret__.compartment_id,
-        drg_id=__ret__.drg_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        remote_peering_connections=__ret__.remote_peering_connections)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        drg_id=pulumi.get(__ret__, 'drg_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        remote_peering_connections=pulumi.get(__ret__, 'remote_peering_connections'))
 
 
 @_utilities.lift_output_func(get_remote_peering_connections)

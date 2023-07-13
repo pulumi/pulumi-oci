@@ -140,12 +140,12 @@ def get_groups(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getGroups:getGroups', __args__, opts=opts, typ=GetGroupsResult).value
 
     return AwaitableGetGroupsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        groups=__ret__.groups,
-        id=__ret__.id,
-        name=__ret__.name,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        groups=pulumi.get(__ret__, 'groups'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_groups)

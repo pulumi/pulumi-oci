@@ -235,21 +235,21 @@ def get_external_exadata_storage_grid(external_exadata_storage_grid_id: Optional
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalExadataStorageGrid:getExternalExadataStorageGrid', __args__, opts=opts, typ=GetExternalExadataStorageGridResult).value
 
     return AwaitableGetExternalExadataStorageGridResult(
-        additional_details=__ret__.additional_details,
-        display_name=__ret__.display_name,
-        exadata_infrastructure_id=__ret__.exadata_infrastructure_id,
-        external_exadata_storage_grid_id=__ret__.external_exadata_storage_grid_id,
-        id=__ret__.id,
-        internal_id=__ret__.internal_id,
-        lifecycle_details=__ret__.lifecycle_details,
-        resource_type=__ret__.resource_type,
-        server_count=__ret__.server_count,
-        state=__ret__.state,
-        status=__ret__.status,
-        storage_servers=__ret__.storage_servers,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        version=__ret__.version)
+        additional_details=pulumi.get(__ret__, 'additional_details'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
+        external_exadata_storage_grid_id=pulumi.get(__ret__, 'external_exadata_storage_grid_id'),
+        id=pulumi.get(__ret__, 'id'),
+        internal_id=pulumi.get(__ret__, 'internal_id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        resource_type=pulumi.get(__ret__, 'resource_type'),
+        server_count=pulumi.get(__ret__, 'server_count'),
+        state=pulumi.get(__ret__, 'state'),
+        status=pulumi.get(__ret__, 'status'),
+        storage_servers=pulumi.get(__ret__, 'storage_servers'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_external_exadata_storage_grid)

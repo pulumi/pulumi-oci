@@ -162,15 +162,15 @@ def get_service_catalog(service_catalog_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ServiceCatalog/getServiceCatalog:getServiceCatalog', __args__, opts=opts, typ=GetServiceCatalogResult).value
 
     return AwaitableGetServiceCatalogResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        service_catalog_id=__ret__.service_catalog_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        service_catalog_id=pulumi.get(__ret__, 'service_catalog_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_service_catalog)

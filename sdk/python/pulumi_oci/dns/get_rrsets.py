@@ -177,15 +177,15 @@ def get_rrsets(domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Dns/getRrsets:getRrsets', __args__, opts=opts, typ=GetRrsetsResult).value
 
     return AwaitableGetRrsetsResult(
-        domain=__ret__.domain,
-        domain_contains=__ret__.domain_contains,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        rrsets=__ret__.rrsets,
-        rtype=__ret__.rtype,
-        scope=__ret__.scope,
-        view_id=__ret__.view_id,
-        zone_name_or_id=__ret__.zone_name_or_id)
+        domain=pulumi.get(__ret__, 'domain'),
+        domain_contains=pulumi.get(__ret__, 'domain_contains'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        rrsets=pulumi.get(__ret__, 'rrsets'),
+        rtype=pulumi.get(__ret__, 'rtype'),
+        scope=pulumi.get(__ret__, 'scope'),
+        view_id=pulumi.get(__ret__, 'view_id'),
+        zone_name_or_id=pulumi.get(__ret__, 'zone_name_or_id'))
 
 
 @_utilities.lift_output_func(get_rrsets)

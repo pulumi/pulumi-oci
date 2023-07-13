@@ -256,20 +256,20 @@ def get_listings(categories: Optional[Sequence[str]] = None,
     __ret__ = pulumi.runtime.invoke('oci:Marketplace/getListings:getListings', __args__, opts=opts, typ=GetListingsResult).value
 
     return AwaitableGetListingsResult(
-        categories=__ret__.categories,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        image_id=__ret__.image_id,
-        is_featured=__ret__.is_featured,
-        listing_id=__ret__.listing_id,
-        listing_types=__ret__.listing_types,
-        listings=__ret__.listings,
-        names=__ret__.names,
-        operating_systems=__ret__.operating_systems,
-        package_type=__ret__.package_type,
-        pricings=__ret__.pricings,
-        publisher_id=__ret__.publisher_id)
+        categories=pulumi.get(__ret__, 'categories'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        image_id=pulumi.get(__ret__, 'image_id'),
+        is_featured=pulumi.get(__ret__, 'is_featured'),
+        listing_id=pulumi.get(__ret__, 'listing_id'),
+        listing_types=pulumi.get(__ret__, 'listing_types'),
+        listings=pulumi.get(__ret__, 'listings'),
+        names=pulumi.get(__ret__, 'names'),
+        operating_systems=pulumi.get(__ret__, 'operating_systems'),
+        package_type=pulumi.get(__ret__, 'package_type'),
+        pricings=pulumi.get(__ret__, 'pricings'),
+        publisher_id=pulumi.get(__ret__, 'publisher_id'))
 
 
 @_utilities.lift_output_func(get_listings)

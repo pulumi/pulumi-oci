@@ -200,21 +200,21 @@ def get_artifact_by_path(artifact_path: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:GenericArtifactsContent/getArtifactByPath:getArtifactByPath', __args__, opts=opts, typ=GetArtifactByPathResult).value
 
     return AwaitableGetArtifactByPathResult(
-        artifact_id=__ret__.artifact_id,
-        artifact_path=__ret__.artifact_path,
-        compartment_id=__ret__.compartment_id,
-        content=__ret__.content,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        repository_id=__ret__.repository_id,
-        sha256=__ret__.sha256,
-        size_in_bytes=__ret__.size_in_bytes,
-        source=__ret__.source,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        version=__ret__.version)
+        artifact_id=pulumi.get(__ret__, 'artifact_id'),
+        artifact_path=pulumi.get(__ret__, 'artifact_path'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        content=pulumi.get(__ret__, 'content'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        repository_id=pulumi.get(__ret__, 'repository_id'),
+        sha256=pulumi.get(__ret__, 'sha256'),
+        size_in_bytes=pulumi.get(__ret__, 'size_in_bytes'),
+        source=pulumi.get(__ret__, 'source'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_artifact_by_path)

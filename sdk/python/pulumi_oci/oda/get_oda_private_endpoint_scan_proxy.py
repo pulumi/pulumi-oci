@@ -152,14 +152,14 @@ def get_oda_private_endpoint_scan_proxy(oda_private_endpoint_id: Optional[str] =
     __ret__ = pulumi.runtime.invoke('oci:Oda/getOdaPrivateEndpointScanProxy:getOdaPrivateEndpointScanProxy', __args__, opts=opts, typ=GetOdaPrivateEndpointScanProxyResult).value
 
     return AwaitableGetOdaPrivateEndpointScanProxyResult(
-        id=__ret__.id,
-        oda_private_endpoint_id=__ret__.oda_private_endpoint_id,
-        oda_private_endpoint_scan_proxy_id=__ret__.oda_private_endpoint_scan_proxy_id,
-        protocol=__ret__.protocol,
-        scan_listener_infos=__ret__.scan_listener_infos,
-        scan_listener_type=__ret__.scan_listener_type,
-        state=__ret__.state,
-        time_created=__ret__.time_created)
+        id=pulumi.get(__ret__, 'id'),
+        oda_private_endpoint_id=pulumi.get(__ret__, 'oda_private_endpoint_id'),
+        oda_private_endpoint_scan_proxy_id=pulumi.get(__ret__, 'oda_private_endpoint_scan_proxy_id'),
+        protocol=pulumi.get(__ret__, 'protocol'),
+        scan_listener_infos=pulumi.get(__ret__, 'scan_listener_infos'),
+        scan_listener_type=pulumi.get(__ret__, 'scan_listener_type'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_oda_private_endpoint_scan_proxy)

@@ -103,10 +103,10 @@ def get_instance_credentials(instance_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getInstanceCredentials:getInstanceCredentials', __args__, opts=opts, typ=GetInstanceCredentialsResult).value
 
     return AwaitableGetInstanceCredentialsResult(
-        id=__ret__.id,
-        instance_id=__ret__.instance_id,
-        password=__ret__.password,
-        username=__ret__.username)
+        id=pulumi.get(__ret__, 'id'),
+        instance_id=pulumi.get(__ret__, 'instance_id'),
+        password=pulumi.get(__ret__, 'password'),
+        username=pulumi.get(__ret__, 'username'))
 
 
 @_utilities.lift_output_func(get_instance_credentials)

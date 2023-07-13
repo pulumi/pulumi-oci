@@ -177,15 +177,15 @@ def get_unified_agent_configurations(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Logging/getUnifiedAgentConfigurations:getUnifiedAgentConfigurations', __args__, opts=opts, typ=GetUnifiedAgentConfigurationsResult).value
 
     return AwaitableGetUnifiedAgentConfigurationsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        group_id=__ret__.group_id,
-        id=__ret__.id,
-        is_compartment_id_in_subtree=__ret__.is_compartment_id_in_subtree,
-        log_id=__ret__.log_id,
-        state=__ret__.state,
-        unified_agent_configuration_collections=__ret__.unified_agent_configuration_collections)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        group_id=pulumi.get(__ret__, 'group_id'),
+        id=pulumi.get(__ret__, 'id'),
+        is_compartment_id_in_subtree=pulumi.get(__ret__, 'is_compartment_id_in_subtree'),
+        log_id=pulumi.get(__ret__, 'log_id'),
+        state=pulumi.get(__ret__, 'state'),
+        unified_agent_configuration_collections=pulumi.get(__ret__, 'unified_agent_configuration_collections'))
 
 
 @_utilities.lift_output_func(get_unified_agent_configurations)

@@ -211,19 +211,19 @@ def get_app_acceleration_policy(web_app_acceleration_policy_id: Optional[str] = 
     __ret__ = pulumi.runtime.invoke('oci:Waa/getAppAccelerationPolicy:getAppAccelerationPolicy', __args__, opts=opts, typ=GetAppAccelerationPolicyResult).value
 
     return AwaitableGetAppAccelerationPolicyResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        response_caching_policies=__ret__.response_caching_policies,
-        response_compression_policies=__ret__.response_compression_policies,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        web_app_acceleration_policy_id=__ret__.web_app_acceleration_policy_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        response_caching_policies=pulumi.get(__ret__, 'response_caching_policies'),
+        response_compression_policies=pulumi.get(__ret__, 'response_compression_policies'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        web_app_acceleration_policy_id=pulumi.get(__ret__, 'web_app_acceleration_policy_id'))
 
 
 @_utilities.lift_output_func(get_app_acceleration_policy)

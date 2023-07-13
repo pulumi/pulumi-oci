@@ -140,12 +140,12 @@ def get_network_sources(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Identity/getNetworkSources:getNetworkSources', __args__, opts=opts, typ=GetNetworkSourcesResult).value
 
     return AwaitableGetNetworkSourcesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        network_sources=__ret__.network_sources,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        network_sources=pulumi.get(__ret__, 'network_sources'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_network_sources)

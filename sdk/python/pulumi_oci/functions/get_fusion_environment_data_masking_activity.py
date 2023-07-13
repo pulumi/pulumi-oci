@@ -139,13 +139,13 @@ def get_fusion_environment_data_masking_activity(data_masking_activity_id: Optio
     __ret__ = pulumi.runtime.invoke('oci:Functions/getFusionEnvironmentDataMaskingActivity:getFusionEnvironmentDataMaskingActivity', __args__, opts=opts, typ=GetFusionEnvironmentDataMaskingActivityResult).value
 
     return AwaitableGetFusionEnvironmentDataMaskingActivityResult(
-        data_masking_activity_id=__ret__.data_masking_activity_id,
-        fusion_environment_id=__ret__.fusion_environment_id,
-        id=__ret__.id,
-        is_resume_data_masking=__ret__.is_resume_data_masking,
-        state=__ret__.state,
-        time_masking_finish=__ret__.time_masking_finish,
-        time_masking_start=__ret__.time_masking_start)
+        data_masking_activity_id=pulumi.get(__ret__, 'data_masking_activity_id'),
+        fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        is_resume_data_masking=pulumi.get(__ret__, 'is_resume_data_masking'),
+        state=pulumi.get(__ret__, 'state'),
+        time_masking_finish=pulumi.get(__ret__, 'time_masking_finish'),
+        time_masking_start=pulumi.get(__ret__, 'time_masking_start'))
 
 
 @_utilities.lift_output_func(get_fusion_environment_data_masking_activity)

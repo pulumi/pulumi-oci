@@ -119,11 +119,11 @@ def get_network_security_group_security_rules(direction: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getNetworkSecurityGroupSecurityRules:getNetworkSecurityGroupSecurityRules', __args__, opts=opts, typ=GetNetworkSecurityGroupSecurityRulesResult).value
 
     return AwaitableGetNetworkSecurityGroupSecurityRulesResult(
-        direction=__ret__.direction,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        network_security_group_id=__ret__.network_security_group_id,
-        security_rules=__ret__.security_rules)
+        direction=pulumi.get(__ret__, 'direction'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        network_security_group_id=pulumi.get(__ret__, 'network_security_group_id'),
+        security_rules=pulumi.get(__ret__, 'security_rules'))
 
 
 @_utilities.lift_output_func(get_network_security_group_security_rules)

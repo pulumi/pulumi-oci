@@ -259,23 +259,23 @@ def get_managed_database(managed_database_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabase:getManagedDatabase', __args__, opts=opts, typ=GetManagedDatabaseResult).value
 
     return AwaitableGetManagedDatabaseResult(
-        additional_details=__ret__.additional_details,
-        compartment_id=__ret__.compartment_id,
-        database_status=__ret__.database_status,
-        database_sub_type=__ret__.database_sub_type,
-        database_type=__ret__.database_type,
-        db_system_id=__ret__.db_system_id,
-        deployment_type=__ret__.deployment_type,
-        id=__ret__.id,
-        is_cluster=__ret__.is_cluster,
-        managed_database_groups=__ret__.managed_database_groups,
-        managed_database_id=__ret__.managed_database_id,
-        management_option=__ret__.management_option,
-        name=__ret__.name,
-        parent_container_id=__ret__.parent_container_id,
-        storage_system_id=__ret__.storage_system_id,
-        time_created=__ret__.time_created,
-        workload_type=__ret__.workload_type)
+        additional_details=pulumi.get(__ret__, 'additional_details'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        database_status=pulumi.get(__ret__, 'database_status'),
+        database_sub_type=pulumi.get(__ret__, 'database_sub_type'),
+        database_type=pulumi.get(__ret__, 'database_type'),
+        db_system_id=pulumi.get(__ret__, 'db_system_id'),
+        deployment_type=pulumi.get(__ret__, 'deployment_type'),
+        id=pulumi.get(__ret__, 'id'),
+        is_cluster=pulumi.get(__ret__, 'is_cluster'),
+        managed_database_groups=pulumi.get(__ret__, 'managed_database_groups'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        management_option=pulumi.get(__ret__, 'management_option'),
+        name=pulumi.get(__ret__, 'name'),
+        parent_container_id=pulumi.get(__ret__, 'parent_container_id'),
+        storage_system_id=pulumi.get(__ret__, 'storage_system_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        workload_type=pulumi.get(__ret__, 'workload_type'))
 
 
 @_utilities.lift_output_func(get_managed_database)

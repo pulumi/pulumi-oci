@@ -181,17 +181,17 @@ def get_stack(stack_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ResourceManager/getStack:getStack', __args__, opts=opts, typ=GetStackResult).value
 
     return AwaitableGetStackResult(
-        compartment_id=__ret__.compartment_id,
-        config_sources=__ret__.config_sources,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        stack_id=__ret__.stack_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        variables=__ret__.variables)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        config_sources=pulumi.get(__ret__, 'config_sources'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        stack_id=pulumi.get(__ret__, 'stack_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        variables=pulumi.get(__ret__, 'variables'))
 
 
 @_utilities.lift_output_func(get_stack)

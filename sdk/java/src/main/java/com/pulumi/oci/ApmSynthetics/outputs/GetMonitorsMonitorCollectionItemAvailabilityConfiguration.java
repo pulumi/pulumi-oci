@@ -10,26 +10,26 @@ import java.util.Objects;
 @CustomType
 public final class GetMonitorsMonitorCollectionItemAvailabilityConfiguration {
     /**
-     * @return Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+     * @return Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
      * 
      */
     private Integer maxAllowedFailuresPerInterval;
     /**
-     * @return Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+     * @return Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
      * 
      */
     private Integer minAllowedRunsPerInterval;
 
     private GetMonitorsMonitorCollectionItemAvailabilityConfiguration() {}
     /**
-     * @return Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+     * @return Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
      * 
      */
     public Integer maxAllowedFailuresPerInterval() {
         return this.maxAllowedFailuresPerInterval;
     }
     /**
-     * @return Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+     * @return Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
      * 
      */
     public Integer minAllowedRunsPerInterval() {

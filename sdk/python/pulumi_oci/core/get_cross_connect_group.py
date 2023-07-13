@@ -199,18 +199,18 @@ def get_cross_connect_group(cross_connect_group_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getCrossConnectGroup:getCrossConnectGroup', __args__, opts=opts, typ=GetCrossConnectGroupResult).value
 
     return AwaitableGetCrossConnectGroupResult(
-        compartment_id=__ret__.compartment_id,
-        cross_connect_group_id=__ret__.cross_connect_group_id,
-        customer_reference_name=__ret__.customer_reference_name,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        macsec_properties=__ret__.macsec_properties,
-        oci_logical_device_name=__ret__.oci_logical_device_name,
-        oci_physical_device_name=__ret__.oci_physical_device_name,
-        state=__ret__.state,
-        time_created=__ret__.time_created)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        cross_connect_group_id=pulumi.get(__ret__, 'cross_connect_group_id'),
+        customer_reference_name=pulumi.get(__ret__, 'customer_reference_name'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        macsec_properties=pulumi.get(__ret__, 'macsec_properties'),
+        oci_logical_device_name=pulumi.get(__ret__, 'oci_logical_device_name'),
+        oci_physical_device_name=pulumi.get(__ret__, 'oci_physical_device_name'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_cross_connect_group)

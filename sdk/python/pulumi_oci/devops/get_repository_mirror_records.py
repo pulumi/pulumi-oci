@@ -103,10 +103,10 @@ def get_repository_mirror_records(filters: Optional[Sequence[pulumi.InputType['G
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getRepositoryMirrorRecords:getRepositoryMirrorRecords', __args__, opts=opts, typ=GetRepositoryMirrorRecordsResult).value
 
     return AwaitableGetRepositoryMirrorRecordsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        repository_id=__ret__.repository_id,
-        repository_mirror_record_collections=__ret__.repository_mirror_record_collections)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        repository_id=pulumi.get(__ret__, 'repository_id'),
+        repository_mirror_record_collections=pulumi.get(__ret__, 'repository_mirror_record_collections'))
 
 
 @_utilities.lift_output_func(get_repository_mirror_records)

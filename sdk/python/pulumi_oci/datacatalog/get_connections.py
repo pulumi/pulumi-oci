@@ -289,22 +289,22 @@ def get_connections(catalog_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataCatalog/getConnections:getConnections', __args__, opts=opts, typ=GetConnectionsResult).value
 
     return AwaitableGetConnectionsResult(
-        catalog_id=__ret__.catalog_id,
-        connection_collections=__ret__.connection_collections,
-        created_by_id=__ret__.created_by_id,
-        data_asset_key=__ret__.data_asset_key,
-        display_name=__ret__.display_name,
-        display_name_contains=__ret__.display_name_contains,
-        external_key=__ret__.external_key,
-        fields=__ret__.fields,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_default=__ret__.is_default,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_status_updated=__ret__.time_status_updated,
-        time_updated=__ret__.time_updated,
-        updated_by_id=__ret__.updated_by_id)
+        catalog_id=pulumi.get(__ret__, 'catalog_id'),
+        connection_collections=pulumi.get(__ret__, 'connection_collections'),
+        created_by_id=pulumi.get(__ret__, 'created_by_id'),
+        data_asset_key=pulumi.get(__ret__, 'data_asset_key'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        display_name_contains=pulumi.get(__ret__, 'display_name_contains'),
+        external_key=pulumi.get(__ret__, 'external_key'),
+        fields=pulumi.get(__ret__, 'fields'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_default=pulumi.get(__ret__, 'is_default'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_status_updated=pulumi.get(__ret__, 'time_status_updated'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        updated_by_id=pulumi.get(__ret__, 'updated_by_id'))
 
 
 @_utilities.lift_output_func(get_connections)

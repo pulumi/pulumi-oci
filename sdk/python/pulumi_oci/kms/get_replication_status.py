@@ -104,10 +104,10 @@ def get_replication_status(management_endpoint: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Kms/getReplicationStatus:getReplicationStatus', __args__, opts=opts, typ=GetReplicationStatusResult).value
 
     return AwaitableGetReplicationStatusResult(
-        id=__ret__.id,
-        management_endpoint=__ret__.management_endpoint,
-        replica_details=__ret__.replica_details,
-        replication_id=__ret__.replication_id)
+        id=pulumi.get(__ret__, 'id'),
+        management_endpoint=pulumi.get(__ret__, 'management_endpoint'),
+        replica_details=pulumi.get(__ret__, 'replica_details'),
+        replication_id=pulumi.get(__ret__, 'replication_id'))
 
 
 @_utilities.lift_output_func(get_replication_status)

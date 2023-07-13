@@ -171,14 +171,14 @@ def get_certificates(certificate_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CertificatesManagement/getCertificates:getCertificates', __args__, opts=opts, typ=GetCertificatesResult).value
 
     return AwaitableGetCertificatesResult(
-        certificate_collections=__ret__.certificate_collections,
-        certificate_id=__ret__.certificate_id,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        issuer_certificate_authority_id=__ret__.issuer_certificate_authority_id,
-        name=__ret__.name,
-        state=__ret__.state)
+        certificate_collections=pulumi.get(__ret__, 'certificate_collections'),
+        certificate_id=pulumi.get(__ret__, 'certificate_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        issuer_certificate_authority_id=pulumi.get(__ret__, 'issuer_certificate_authority_id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_certificates)

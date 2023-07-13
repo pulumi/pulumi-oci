@@ -174,14 +174,14 @@ def get_jobs(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataScience/getJobs:getJobs', __args__, opts=opts, typ=GetJobsResult).value
 
     return AwaitableGetJobsResult(
-        compartment_id=__ret__.compartment_id,
-        created_by=__ret__.created_by,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        jobs=__ret__.jobs,
-        project_id=__ret__.project_id,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        created_by=pulumi.get(__ret__, 'created_by'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        jobs=pulumi.get(__ret__, 'jobs'),
+        project_id=pulumi.get(__ret__, 'project_id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_jobs)

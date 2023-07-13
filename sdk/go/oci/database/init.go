@@ -113,6 +113,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &KeyStore{}
 	case "oci:Database/maintenanceRun:MaintenanceRun":
 		r = &MaintenanceRun{}
+	case "oci:Database/oneoffPatch:OneoffPatch":
+		r = &OneoffPatch{}
 	case "oci:Database/pluggableDatabase:PluggableDatabase":
 		r = &PluggableDatabase{}
 	case "oci:Database/pluggableDatabaseManagementsManagement:PluggableDatabaseManagementsManagement":
@@ -370,6 +372,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Database/maintenanceRun",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/oneoffPatch",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

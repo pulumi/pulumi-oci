@@ -101,6 +101,7 @@ import javax.annotation.Nullable;
  *             .networkBondingModeDetails(ExadataInfrastructureNetworkBondingModeDetailsArgs.builder()
  *                 .backupNetworkBondingMode(var_.exadata_infrastructure_network_bonding_mode_details_backup_network_bonding_mode())
  *                 .clientNetworkBondingMode(var_.exadata_infrastructure_network_bonding_mode_details_client_network_bonding_mode())
+ *                 .drNetworkBondingMode(var_.exadata_infrastructure_network_bonding_mode_details_dr_network_bonding_mode())
  *                 .build())
  *             .storageCount(var_.exadata_infrastructure_storage_count())
  *             .build());
@@ -651,14 +652,14 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
         return this.netmask;
     }
     /**
-     * (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     * (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
      * 
      */
     @Export(name="networkBondingModeDetails", type=ExadataInfrastructureNetworkBondingModeDetails.class, parameters={})
     private Output<ExadataInfrastructureNetworkBondingModeDetails> networkBondingModeDetails;
 
     /**
-     * @return (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+     * @return (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
      * 
      */
     public Output<ExadataInfrastructureNetworkBondingModeDetails> networkBondingModeDetails() {
@@ -677,6 +678,20 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      */
     public Output<List<String>> ntpServers() {
         return this.ntpServers;
+    }
+    /**
+     * The serial number for the Exadata infrastructure.
+     * 
+     */
+    @Export(name="rackSerialNumber", type=String.class, parameters={})
+    private Output<String> rackSerialNumber;
+
+    /**
+     * @return The serial number for the Exadata infrastructure.
+     * 
+     */
+    public Output<String> rackSerialNumber() {
+        return this.rackSerialNumber;
     }
     /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.

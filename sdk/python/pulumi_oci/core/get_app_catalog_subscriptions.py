@@ -122,11 +122,11 @@ def get_app_catalog_subscriptions(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getAppCatalogSubscriptions:getAppCatalogSubscriptions', __args__, opts=opts, typ=GetAppCatalogSubscriptionsResult).value
 
     return AwaitableGetAppCatalogSubscriptionsResult(
-        app_catalog_subscriptions=__ret__.app_catalog_subscriptions,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        listing_id=__ret__.listing_id)
+        app_catalog_subscriptions=pulumi.get(__ret__, 'app_catalog_subscriptions'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        listing_id=pulumi.get(__ret__, 'listing_id'))
 
 
 @_utilities.lift_output_func(get_app_catalog_subscriptions)

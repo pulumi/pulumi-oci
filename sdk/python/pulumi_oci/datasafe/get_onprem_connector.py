@@ -210,19 +210,19 @@ def get_onprem_connector(on_prem_connector_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getOnpremConnector:getOnpremConnector', __args__, opts=opts, typ=GetOnpremConnectorResult).value
 
     return AwaitableGetOnpremConnectorResult(
-        available_version=__ret__.available_version,
-        compartment_id=__ret__.compartment_id,
-        created_version=__ret__.created_version,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        on_prem_connector_id=__ret__.on_prem_connector_id,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created)
+        available_version=pulumi.get(__ret__, 'available_version'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        created_version=pulumi.get(__ret__, 'created_version'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        on_prem_connector_id=pulumi.get(__ret__, 'on_prem_connector_id'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_onprem_connector)

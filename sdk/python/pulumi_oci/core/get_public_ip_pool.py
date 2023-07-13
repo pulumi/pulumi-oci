@@ -162,15 +162,15 @@ def get_public_ip_pool(public_ip_pool_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getPublicIpPool:getPublicIpPool', __args__, opts=opts, typ=GetPublicIpPoolResult).value
 
     return AwaitableGetPublicIpPoolResult(
-        cidr_blocks=__ret__.cidr_blocks,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        public_ip_pool_id=__ret__.public_ip_pool_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created)
+        cidr_blocks=pulumi.get(__ret__, 'cidr_blocks'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        public_ip_pool_id=pulumi.get(__ret__, 'public_ip_pool_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_public_ip_pool)

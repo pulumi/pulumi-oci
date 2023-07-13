@@ -253,23 +253,23 @@ def get_publication(publication_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Marketplace/getPublication:getPublication', __args__, opts=opts, typ=GetPublicationResult).value
 
     return AwaitableGetPublicationResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        freeform_tags=__ret__.freeform_tags,
-        icons=__ret__.icons,
-        id=__ret__.id,
-        is_agreement_acknowledged=__ret__.is_agreement_acknowledged,
-        listing_type=__ret__.listing_type,
-        long_description=__ret__.long_description,
-        name=__ret__.name,
-        package_details=__ret__.package_details,
-        package_type=__ret__.package_type,
-        publication_id=__ret__.publication_id,
-        short_description=__ret__.short_description,
-        state=__ret__.state,
-        support_contacts=__ret__.support_contacts,
-        supported_operating_systems=__ret__.supported_operating_systems,
-        time_created=__ret__.time_created)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        icons=pulumi.get(__ret__, 'icons'),
+        id=pulumi.get(__ret__, 'id'),
+        is_agreement_acknowledged=pulumi.get(__ret__, 'is_agreement_acknowledged'),
+        listing_type=pulumi.get(__ret__, 'listing_type'),
+        long_description=pulumi.get(__ret__, 'long_description'),
+        name=pulumi.get(__ret__, 'name'),
+        package_details=pulumi.get(__ret__, 'package_details'),
+        package_type=pulumi.get(__ret__, 'package_type'),
+        publication_id=pulumi.get(__ret__, 'publication_id'),
+        short_description=pulumi.get(__ret__, 'short_description'),
+        state=pulumi.get(__ret__, 'state'),
+        support_contacts=pulumi.get(__ret__, 'support_contacts'),
+        supported_operating_systems=pulumi.get(__ret__, 'supported_operating_systems'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_publication)

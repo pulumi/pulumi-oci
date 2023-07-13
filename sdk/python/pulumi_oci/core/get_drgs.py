@@ -106,10 +106,10 @@ def get_drgs(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getDrgs:getDrgs', __args__, opts=opts, typ=GetDrgsResult).value
 
     return AwaitableGetDrgsResult(
-        compartment_id=__ret__.compartment_id,
-        drgs=__ret__.drgs,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        drgs=pulumi.get(__ret__, 'drgs'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_drgs)

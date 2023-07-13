@@ -151,13 +151,13 @@ def get_stream_packaging_configs(display_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:MediaServices/getStreamPackagingConfigs:getStreamPackagingConfigs', __args__, opts=opts, typ=GetStreamPackagingConfigsResult).value
 
     return AwaitableGetStreamPackagingConfigsResult(
-        display_name=__ret__.display_name,
-        distribution_channel_id=__ret__.distribution_channel_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        stream_packaging_config_collections=__ret__.stream_packaging_config_collections,
-        stream_packaging_config_id=__ret__.stream_packaging_config_id)
+        display_name=pulumi.get(__ret__, 'display_name'),
+        distribution_channel_id=pulumi.get(__ret__, 'distribution_channel_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        stream_packaging_config_collections=pulumi.get(__ret__, 'stream_packaging_config_collections'),
+        stream_packaging_config_id=pulumi.get(__ret__, 'stream_packaging_config_id'))
 
 
 @_utilities.lift_output_func(get_stream_packaging_configs)

@@ -223,20 +223,20 @@ def get_compute_capacity_reservation(capacity_reservation_id: Optional[str] = No
     __ret__ = pulumi.runtime.invoke('oci:Core/getComputeCapacityReservation:getComputeCapacityReservation', __args__, opts=opts, typ=GetComputeCapacityReservationResult).value
 
     return AwaitableGetComputeCapacityReservationResult(
-        availability_domain=__ret__.availability_domain,
-        capacity_reservation_id=__ret__.capacity_reservation_id,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        instance_reservation_configs=__ret__.instance_reservation_configs,
-        is_default_reservation=__ret__.is_default_reservation,
-        reserved_instance_count=__ret__.reserved_instance_count,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        used_instance_count=__ret__.used_instance_count)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        capacity_reservation_id=pulumi.get(__ret__, 'capacity_reservation_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        instance_reservation_configs=pulumi.get(__ret__, 'instance_reservation_configs'),
+        is_default_reservation=pulumi.get(__ret__, 'is_default_reservation'),
+        reserved_instance_count=pulumi.get(__ret__, 'reserved_instance_count'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        used_instance_count=pulumi.get(__ret__, 'used_instance_count'))
 
 
 @_utilities.lift_output_func(get_compute_capacity_reservation)

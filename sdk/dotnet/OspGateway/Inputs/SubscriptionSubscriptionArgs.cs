@@ -13,6 +13,12 @@ namespace Pulumi.Oci.OspGateway.Inputs
     public sealed class SubscriptionSubscriptionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) Account type.
+        /// </summary>
+        [Input("accountType")]
+        public Input<string>? AccountType { get; set; }
+
+        /// <summary>
         /// (Updatable) Bill to customer Account id.
         /// </summary>
         [Input("billToCustAccountId")]
@@ -22,7 +28,7 @@ namespace Pulumi.Oci.OspGateway.Inputs
         private InputList<Inputs.SubscriptionSubscriptionBillingAddressArgs>? _billingAddresses;
 
         /// <summary>
-        /// (Updatable) Billing address details model.
+        /// (Updatable) Address details model.
         /// </summary>
         public InputList<Inputs.SubscriptionSubscriptionBillingAddressArgs> BillingAddresses
         {
@@ -113,6 +119,12 @@ namespace Pulumi.Oci.OspGateway.Inputs
         /// </summary>
         [Input("taxInfo")]
         public Input<Inputs.SubscriptionSubscriptionTaxInfoArgs>? TaxInfo { get; set; }
+
+        /// <summary>
+        /// (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+        /// </summary>
+        [Input("timePersonalToCorporateConv")]
+        public Input<string>? TimePersonalToCorporateConv { get; set; }
 
         /// <summary>
         /// (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG

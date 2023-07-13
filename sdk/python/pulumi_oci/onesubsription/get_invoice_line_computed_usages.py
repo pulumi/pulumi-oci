@@ -129,12 +129,12 @@ def get_invoice_line_computed_usages(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages', __args__, opts=opts, typ=GetInvoiceLineComputedUsagesResult).value
 
     return AwaitableGetInvoiceLineComputedUsagesResult(
-        compartment_id=__ret__.compartment_id,
-        fields=__ret__.fields,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        invoice_line_id=__ret__.invoice_line_id,
-        invoiceline_computed_usages=__ret__.invoiceline_computed_usages)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        fields=pulumi.get(__ret__, 'fields'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        invoice_line_id=pulumi.get(__ret__, 'invoice_line_id'),
+        invoiceline_computed_usages=pulumi.get(__ret__, 'invoiceline_computed_usages'))
 
 
 @_utilities.lift_output_func(get_invoice_line_computed_usages)

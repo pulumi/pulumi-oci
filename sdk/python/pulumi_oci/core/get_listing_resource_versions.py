@@ -86,10 +86,10 @@ def get_listing_resource_versions(filters: Optional[Sequence[pulumi.InputType['G
     __ret__ = pulumi.runtime.invoke('oci:Core/getListingResourceVersions:getListingResourceVersions', __args__, opts=opts, typ=GetListingResourceVersionsResult).value
 
     return AwaitableGetListingResourceVersionsResult(
-        app_catalog_listing_resource_versions=__ret__.app_catalog_listing_resource_versions,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        listing_id=__ret__.listing_id)
+        app_catalog_listing_resource_versions=pulumi.get(__ret__, 'app_catalog_listing_resource_versions'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        listing_id=pulumi.get(__ret__, 'listing_id'))
 
 
 @_utilities.lift_output_func(get_listing_resource_versions)

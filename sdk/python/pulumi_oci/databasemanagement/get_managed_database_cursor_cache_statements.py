@@ -130,12 +130,12 @@ def get_managed_database_cursor_cache_statements(filters: Optional[Sequence[pulu
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseCursorCacheStatements:getManagedDatabaseCursorCacheStatements', __args__, opts=opts, typ=GetManagedDatabaseCursorCacheStatementsResult).value
 
     return AwaitableGetManagedDatabaseCursorCacheStatementsResult(
-        cursor_cache_statement_collections=__ret__.cursor_cache_statement_collections,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        limit=__ret__.limit,
-        managed_database_id=__ret__.managed_database_id,
-        sql_text=__ret__.sql_text)
+        cursor_cache_statement_collections=pulumi.get(__ret__, 'cursor_cache_statement_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        limit=pulumi.get(__ret__, 'limit'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        sql_text=pulumi.get(__ret__, 'sql_text'))
 
 
 @_utilities.lift_output_func(get_managed_database_cursor_cache_statements)

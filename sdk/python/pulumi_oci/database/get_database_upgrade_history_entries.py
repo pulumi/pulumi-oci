@@ -132,12 +132,12 @@ def get_database_upgrade_history_entries(database_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getDatabaseUpgradeHistoryEntries:getDatabaseUpgradeHistoryEntries', __args__, opts=opts, typ=GetDatabaseUpgradeHistoryEntriesResult).value
 
     return AwaitableGetDatabaseUpgradeHistoryEntriesResult(
-        database_id=__ret__.database_id,
-        database_upgrade_history_entries=__ret__.database_upgrade_history_entries,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        upgrade_action=__ret__.upgrade_action)
+        database_id=pulumi.get(__ret__, 'database_id'),
+        database_upgrade_history_entries=pulumi.get(__ret__, 'database_upgrade_history_entries'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        upgrade_action=pulumi.get(__ret__, 'upgrade_action'))
 
 
 @_utilities.lift_output_func(get_database_upgrade_history_entries)

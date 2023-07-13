@@ -112,8 +112,8 @@ def get_ipsec_algorithm(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitabl
     __ret__ = pulumi.runtime.invoke('oci:Core/getIpsecAlgorithm:getIpsecAlgorithm', __args__, opts=opts, typ=GetIpsecAlgorithmResult).value
 
     return AwaitableGetIpsecAlgorithmResult(
-        allowed_phase_one_parameters=__ret__.allowed_phase_one_parameters,
-        allowed_phase_two_parameters=__ret__.allowed_phase_two_parameters,
-        default_phase_one_parameters=__ret__.default_phase_one_parameters,
-        default_phase_two_parameters=__ret__.default_phase_two_parameters,
-        id=__ret__.id)
+        allowed_phase_one_parameters=pulumi.get(__ret__, 'allowed_phase_one_parameters'),
+        allowed_phase_two_parameters=pulumi.get(__ret__, 'allowed_phase_two_parameters'),
+        default_phase_one_parameters=pulumi.get(__ret__, 'default_phase_one_parameters'),
+        default_phase_two_parameters=pulumi.get(__ret__, 'default_phase_two_parameters'),
+        id=pulumi.get(__ret__, 'id'))

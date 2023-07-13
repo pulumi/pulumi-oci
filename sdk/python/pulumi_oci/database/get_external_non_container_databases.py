@@ -138,12 +138,12 @@ def get_external_non_container_databases(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getExternalNonContainerDatabases:getExternalNonContainerDatabases', __args__, opts=opts, typ=GetExternalNonContainerDatabasesResult).value
 
     return AwaitableGetExternalNonContainerDatabasesResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        external_non_container_databases=__ret__.external_non_container_databases,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        external_non_container_databases=pulumi.get(__ret__, 'external_non_container_databases'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_external_non_container_databases)

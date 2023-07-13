@@ -119,11 +119,11 @@ def get_masking_policy_masking_schemas(filters: Optional[Sequence[pulumi.InputTy
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getMaskingPolicyMaskingSchemas:getMaskingPolicyMaskingSchemas', __args__, opts=opts, typ=GetMaskingPolicyMaskingSchemasResult).value
 
     return AwaitableGetMaskingPolicyMaskingSchemasResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        masking_policy_id=__ret__.masking_policy_id,
-        masking_schema_collections=__ret__.masking_schema_collections,
-        schema_names=__ret__.schema_names)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        masking_policy_id=pulumi.get(__ret__, 'masking_policy_id'),
+        masking_schema_collections=pulumi.get(__ret__, 'masking_schema_collections'),
+        schema_names=pulumi.get(__ret__, 'schema_names'))
 
 
 @_utilities.lift_output_func(get_masking_policy_masking_schemas)

@@ -104,10 +104,10 @@ def get_cross_connect_locations(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getCrossConnectLocations:getCrossConnectLocations', __args__, opts=opts, typ=GetCrossConnectLocationsResult).value
 
     return AwaitableGetCrossConnectLocationsResult(
-        compartment_id=__ret__.compartment_id,
-        cross_connect_locations=__ret__.cross_connect_locations,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        cross_connect_locations=pulumi.get(__ret__, 'cross_connect_locations'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_cross_connect_locations)

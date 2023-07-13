@@ -130,14 +130,14 @@ def get_target_database_role(authentication_type: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getTargetDatabaseRole:getTargetDatabaseRole', __args__, opts=opts, typ=GetTargetDatabaseRoleResult).value
 
     return AwaitableGetTargetDatabaseRoleResult(
-        authentication_type=__ret__.authentication_type,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_oracle_maintained=__ret__.is_oracle_maintained,
-        role_name_contains=__ret__.role_name_contains,
-        role_names=__ret__.role_names,
-        roles=__ret__.roles,
-        target_database_id=__ret__.target_database_id)
+        authentication_type=pulumi.get(__ret__, 'authentication_type'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_oracle_maintained=pulumi.get(__ret__, 'is_oracle_maintained'),
+        role_name_contains=pulumi.get(__ret__, 'role_name_contains'),
+        role_names=pulumi.get(__ret__, 'role_names'),
+        roles=pulumi.get(__ret__, 'roles'),
+        target_database_id=pulumi.get(__ret__, 'target_database_id'))
 
 
 @_utilities.lift_output_func(get_target_database_role)

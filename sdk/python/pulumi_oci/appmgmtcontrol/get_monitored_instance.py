@@ -186,17 +186,17 @@ def get_monitored_instance(monitored_instance_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:AppMgmtControl/getMonitoredInstance:getMonitoredInstance', __args__, opts=opts, typ=GetMonitoredInstanceResult).value
 
     return AwaitableGetMonitoredInstanceResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        id=__ret__.id,
-        instance_id=__ret__.instance_id,
-        lifecycle_details=__ret__.lifecycle_details,
-        management_agent_id=__ret__.management_agent_id,
-        monitored_instance_id=__ret__.monitored_instance_id,
-        monitoring_state=__ret__.monitoring_state,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        id=pulumi.get(__ret__, 'id'),
+        instance_id=pulumi.get(__ret__, 'instance_id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        management_agent_id=pulumi.get(__ret__, 'management_agent_id'),
+        monitored_instance_id=pulumi.get(__ret__, 'monitored_instance_id'),
+        monitoring_state=pulumi.get(__ret__, 'monitoring_state'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_monitored_instance)

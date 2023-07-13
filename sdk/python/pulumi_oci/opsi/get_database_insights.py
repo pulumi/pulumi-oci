@@ -249,19 +249,19 @@ def get_database_insights(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Opsi/getDatabaseInsights:getDatabaseInsights', __args__, opts=opts, typ=GetDatabaseInsightsResult).value
 
     return AwaitableGetDatabaseInsightsResult(
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        database_ids=__ret__.database_ids,
-        database_insights_collections=__ret__.database_insights_collections,
-        database_types=__ret__.database_types,
-        enterprise_manager_bridge_id=__ret__.enterprise_manager_bridge_id,
-        exadata_insight_id=__ret__.exadata_insight_id,
-        fields=__ret__.fields,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        opsi_private_endpoint_id=__ret__.opsi_private_endpoint_id,
-        states=__ret__.states,
-        statuses=__ret__.statuses)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        database_ids=pulumi.get(__ret__, 'database_ids'),
+        database_insights_collections=pulumi.get(__ret__, 'database_insights_collections'),
+        database_types=pulumi.get(__ret__, 'database_types'),
+        enterprise_manager_bridge_id=pulumi.get(__ret__, 'enterprise_manager_bridge_id'),
+        exadata_insight_id=pulumi.get(__ret__, 'exadata_insight_id'),
+        fields=pulumi.get(__ret__, 'fields'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        opsi_private_endpoint_id=pulumi.get(__ret__, 'opsi_private_endpoint_id'),
+        states=pulumi.get(__ret__, 'states'),
+        statuses=pulumi.get(__ret__, 'statuses'))
 
 
 @_utilities.lift_output_func(get_database_insights)

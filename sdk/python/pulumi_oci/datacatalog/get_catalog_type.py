@@ -239,21 +239,21 @@ def get_catalog_type(catalog_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataCatalog/getCatalogType:getCatalogType', __args__, opts=opts, typ=GetCatalogTypeResult).value
 
     return AwaitableGetCatalogTypeResult(
-        catalog_id=__ret__.catalog_id,
-        description=__ret__.description,
-        external_type_name=__ret__.external_type_name,
-        fields=__ret__.fields,
-        id=__ret__.id,
-        is_approved=__ret__.is_approved,
-        is_internal=__ret__.is_internal,
-        is_tag=__ret__.is_tag,
-        key=__ret__.key,
-        name=__ret__.name,
-        properties=__ret__.properties,
-        state=__ret__.state,
-        type_category=__ret__.type_category,
-        type_key=__ret__.type_key,
-        uri=__ret__.uri)
+        catalog_id=pulumi.get(__ret__, 'catalog_id'),
+        description=pulumi.get(__ret__, 'description'),
+        external_type_name=pulumi.get(__ret__, 'external_type_name'),
+        fields=pulumi.get(__ret__, 'fields'),
+        id=pulumi.get(__ret__, 'id'),
+        is_approved=pulumi.get(__ret__, 'is_approved'),
+        is_internal=pulumi.get(__ret__, 'is_internal'),
+        is_tag=pulumi.get(__ret__, 'is_tag'),
+        key=pulumi.get(__ret__, 'key'),
+        name=pulumi.get(__ret__, 'name'),
+        properties=pulumi.get(__ret__, 'properties'),
+        state=pulumi.get(__ret__, 'state'),
+        type_category=pulumi.get(__ret__, 'type_category'),
+        type_key=pulumi.get(__ret__, 'type_key'),
+        uri=pulumi.get(__ret__, 'uri'))
 
 
 @_utilities.lift_output_func(get_catalog_type)

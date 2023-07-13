@@ -158,14 +158,14 @@ def get_usagelimits(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:UsageProxy/getUsagelimits:getUsagelimits', __args__, opts=opts, typ=GetUsagelimitsResult).value
 
     return AwaitableGetUsagelimitsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        limit_type=__ret__.limit_type,
-        resource_type=__ret__.resource_type,
-        service_type=__ret__.service_type,
-        subscription_id=__ret__.subscription_id,
-        usage_limit_collections=__ret__.usage_limit_collections)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        limit_type=pulumi.get(__ret__, 'limit_type'),
+        resource_type=pulumi.get(__ret__, 'resource_type'),
+        service_type=pulumi.get(__ret__, 'service_type'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'),
+        usage_limit_collections=pulumi.get(__ret__, 'usage_limit_collections'))
 
 
 @_utilities.lift_output_func(get_usagelimits)

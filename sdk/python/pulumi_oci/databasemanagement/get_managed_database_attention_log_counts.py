@@ -197,17 +197,17 @@ def get_managed_database_attention_log_counts(filters: Optional[Sequence[pulumi.
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseAttentionLogCounts:getManagedDatabaseAttentionLogCounts', __args__, opts=opts, typ=GetManagedDatabaseAttentionLogCountsResult).value
 
     return AwaitableGetManagedDatabaseAttentionLogCountsResult(
-        attention_log_counts_collections=__ret__.attention_log_counts_collections,
-        filters=__ret__.filters,
-        group_by=__ret__.group_by,
-        id=__ret__.id,
-        is_regular_expression=__ret__.is_regular_expression,
-        log_search_text=__ret__.log_search_text,
-        managed_database_id=__ret__.managed_database_id,
-        time_greater_than_or_equal_to=__ret__.time_greater_than_or_equal_to,
-        time_less_than_or_equal_to=__ret__.time_less_than_or_equal_to,
-        type_filter=__ret__.type_filter,
-        urgency_filter=__ret__.urgency_filter)
+        attention_log_counts_collections=pulumi.get(__ret__, 'attention_log_counts_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        group_by=pulumi.get(__ret__, 'group_by'),
+        id=pulumi.get(__ret__, 'id'),
+        is_regular_expression=pulumi.get(__ret__, 'is_regular_expression'),
+        log_search_text=pulumi.get(__ret__, 'log_search_text'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        time_greater_than_or_equal_to=pulumi.get(__ret__, 'time_greater_than_or_equal_to'),
+        time_less_than_or_equal_to=pulumi.get(__ret__, 'time_less_than_or_equal_to'),
+        type_filter=pulumi.get(__ret__, 'type_filter'),
+        urgency_filter=pulumi.get(__ret__, 'urgency_filter'))
 
 
 @_utilities.lift_output_func(get_managed_database_attention_log_counts)

@@ -838,10 +838,12 @@ class Migration(pulumi.CustomResource):
                 source=oci.database_migration.MigrationDumpTransferDetailsSourceArgs(
                     kind=var["migration_dump_transfer_details_source_kind"],
                     oci_home=var["migration_dump_transfer_details_source_oci_home"],
+                    wallet_location=var["migration_dump_transfer_details_source_wallet_location"],
                 ),
                 target=oci.database_migration.MigrationDumpTransferDetailsTargetArgs(
                     kind=var["migration_dump_transfer_details_target_kind"],
                     oci_home=var["migration_dump_transfer_details_target_oci_home"],
+                    wallet_location=var["migration_dump_transfer_details_target_wallet_location"],
                 ),
             ),
             exclude_objects=[oci.database_migration.MigrationExcludeObjectArgs(
@@ -1005,10 +1007,12 @@ class Migration(pulumi.CustomResource):
                 source=oci.database_migration.MigrationDumpTransferDetailsSourceArgs(
                     kind=var["migration_dump_transfer_details_source_kind"],
                     oci_home=var["migration_dump_transfer_details_source_oci_home"],
+                    wallet_location=var["migration_dump_transfer_details_source_wallet_location"],
                 ),
                 target=oci.database_migration.MigrationDumpTransferDetailsTargetArgs(
                     kind=var["migration_dump_transfer_details_target_kind"],
                     oci_home=var["migration_dump_transfer_details_target_oci_home"],
+                    wallet_location=var["migration_dump_transfer_details_target_wallet_location"],
                 ),
             ),
             exclude_objects=[oci.database_migration.MigrationExcludeObjectArgs(

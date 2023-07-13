@@ -151,13 +151,13 @@ def get_pluggable_databases(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getPluggableDatabases:getPluggableDatabases', __args__, opts=opts, typ=GetPluggableDatabasesResult).value
 
     return AwaitableGetPluggableDatabasesResult(
-        compartment_id=__ret__.compartment_id,
-        database_id=__ret__.database_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        pdb_name=__ret__.pdb_name,
-        pluggable_databases=__ret__.pluggable_databases,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        database_id=pulumi.get(__ret__, 'database_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        pdb_name=pulumi.get(__ret__, 'pdb_name'),
+        pluggable_databases=pulumi.get(__ret__, 'pluggable_databases'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_pluggable_databases)

@@ -123,11 +123,11 @@ def get_certificate_authority_versions(certificate_authority_id: Optional[str] =
     __ret__ = pulumi.runtime.invoke('oci:CertificatesManagement/getCertificateAuthorityVersions:getCertificateAuthorityVersions', __args__, opts=opts, typ=GetCertificateAuthorityVersionsResult).value
 
     return AwaitableGetCertificateAuthorityVersionsResult(
-        certificate_authority_id=__ret__.certificate_authority_id,
-        certificate_authority_version_collections=__ret__.certificate_authority_version_collections,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        version_number=__ret__.version_number)
+        certificate_authority_id=pulumi.get(__ret__, 'certificate_authority_id'),
+        certificate_authority_version_collections=pulumi.get(__ret__, 'certificate_authority_version_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        version_number=pulumi.get(__ret__, 'version_number'))
 
 
 @_utilities.lift_output_func(get_certificate_authority_versions)

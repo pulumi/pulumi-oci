@@ -164,14 +164,14 @@ def get_fleet_crypto_analysis_results(aggregation_mode: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Jms/getFleetCryptoAnalysisResults:getFleetCryptoAnalysisResults', __args__, opts=opts, typ=GetFleetCryptoAnalysisResultsResult).value
 
     return AwaitableGetFleetCryptoAnalysisResultsResult(
-        aggregation_mode=__ret__.aggregation_mode,
-        crypto_analysis_result_collections=__ret__.crypto_analysis_result_collections,
-        filters=__ret__.filters,
-        fleet_id=__ret__.fleet_id,
-        id=__ret__.id,
-        managed_instance_id=__ret__.managed_instance_id,
-        time_end=__ret__.time_end,
-        time_start=__ret__.time_start)
+        aggregation_mode=pulumi.get(__ret__, 'aggregation_mode'),
+        crypto_analysis_result_collections=pulumi.get(__ret__, 'crypto_analysis_result_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        fleet_id=pulumi.get(__ret__, 'fleet_id'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
+        time_end=pulumi.get(__ret__, 'time_end'),
+        time_start=pulumi.get(__ret__, 'time_start'))
 
 
 @_utilities.lift_output_func(get_fleet_crypto_analysis_results)

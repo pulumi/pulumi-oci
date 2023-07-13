@@ -123,11 +123,11 @@ def get_java_families(display_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Jms/getJavaFamilies:getJavaFamilies', __args__, opts=opts, typ=GetJavaFamiliesResult).value
 
     return AwaitableGetJavaFamiliesResult(
-        display_name=__ret__.display_name,
-        family_version=__ret__.family_version,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        java_family_collections=__ret__.java_family_collections)
+        display_name=pulumi.get(__ret__, 'display_name'),
+        family_version=pulumi.get(__ret__, 'family_version'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        java_family_collections=pulumi.get(__ret__, 'java_family_collections'))
 
 
 @_utilities.lift_output_func(get_java_families)

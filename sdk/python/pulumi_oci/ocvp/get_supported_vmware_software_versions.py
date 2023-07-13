@@ -104,10 +104,10 @@ def get_supported_vmware_software_versions(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions', __args__, opts=opts, typ=GetSupportedVmwareSoftwareVersionsResult).value
 
     return AwaitableGetSupportedVmwareSoftwareVersionsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        items=__ret__.items)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'))
 
 
 @_utilities.lift_output_func(get_supported_vmware_software_versions)

@@ -107,10 +107,10 @@ def get_iam_work_request_logs(filters: Optional[Sequence[pulumi.InputType['GetIa
     __ret__ = pulumi.runtime.invoke('oci:Identity/getIamWorkRequestLogs:getIamWorkRequestLogs', __args__, opts=opts, typ=GetIamWorkRequestLogsResult).value
 
     return AwaitableGetIamWorkRequestLogsResult(
-        filters=__ret__.filters,
-        iam_work_request_id=__ret__.iam_work_request_id,
-        iam_work_request_logs=__ret__.iam_work_request_logs,
-        id=__ret__.id)
+        filters=pulumi.get(__ret__, 'filters'),
+        iam_work_request_id=pulumi.get(__ret__, 'iam_work_request_id'),
+        iam_work_request_logs=pulumi.get(__ret__, 'iam_work_request_logs'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_iam_work_request_logs)

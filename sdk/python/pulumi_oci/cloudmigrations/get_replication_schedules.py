@@ -151,13 +151,13 @@ def get_replication_schedules(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudMigrations/getReplicationSchedules:getReplicationSchedules', __args__, opts=opts, typ=GetReplicationSchedulesResult).value
 
     return AwaitableGetReplicationSchedulesResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        replication_schedule_collections=__ret__.replication_schedule_collections,
-        replication_schedule_id=__ret__.replication_schedule_id,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        replication_schedule_collections=pulumi.get(__ret__, 'replication_schedule_collections'),
+        replication_schedule_id=pulumi.get(__ret__, 'replication_schedule_id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_replication_schedules)

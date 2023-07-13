@@ -138,12 +138,12 @@ def get_application_vips(cloud_vm_cluster_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getApplicationVips:getApplicationVips', __args__, opts=opts, typ=GetApplicationVipsResult).value
 
     return AwaitableGetApplicationVipsResult(
-        application_vips=__ret__.application_vips,
-        cloud_vm_cluster_id=__ret__.cloud_vm_cluster_id,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        application_vips=pulumi.get(__ret__, 'application_vips'),
+        cloud_vm_cluster_id=pulumi.get(__ret__, 'cloud_vm_cluster_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_application_vips)

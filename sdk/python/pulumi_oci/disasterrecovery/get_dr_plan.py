@@ -247,22 +247,22 @@ def get_dr_plan(dr_plan_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DisasterRecovery/getDrPlan:getDrPlan', __args__, opts=opts, typ=GetDrPlanResult).value
 
     return AwaitableGetDrPlanResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        dr_plan_id=__ret__.dr_plan_id,
-        dr_protection_group_id=__ret__.dr_protection_group_id,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        life_cycle_details=__ret__.life_cycle_details,
-        peer_dr_protection_group_id=__ret__.peer_dr_protection_group_id,
-        peer_region=__ret__.peer_region,
-        plan_groups=__ret__.plan_groups,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        type=__ret__.type)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        dr_plan_id=pulumi.get(__ret__, 'dr_plan_id'),
+        dr_protection_group_id=pulumi.get(__ret__, 'dr_protection_group_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        life_cycle_details=pulumi.get(__ret__, 'life_cycle_details'),
+        peer_dr_protection_group_id=pulumi.get(__ret__, 'peer_dr_protection_group_id'),
+        peer_region=pulumi.get(__ret__, 'peer_region'),
+        plan_groups=pulumi.get(__ret__, 'plan_groups'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        type=pulumi.get(__ret__, 'type'))
 
 
 @_utilities.lift_output_func(get_dr_plan)

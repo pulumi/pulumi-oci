@@ -138,12 +138,12 @@ def get_http_monitors(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:HealthChecks/getHttpMonitors:getHttpMonitors', __args__, opts=opts, typ=GetHttpMonitorsResult).value
 
     return AwaitableGetHttpMonitorsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        home_region=__ret__.home_region,
-        http_monitors=__ret__.http_monitors,
-        id=__ret__.id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        home_region=pulumi.get(__ret__, 'home_region'),
+        http_monitors=pulumi.get(__ret__, 'http_monitors'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_http_monitors)

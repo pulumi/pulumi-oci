@@ -156,15 +156,15 @@ def get_private_application_package(private_application_package_id: Optional[str
     __ret__ = pulumi.runtime.invoke('oci:ServiceCatalog/getPrivateApplicationPackage:getPrivateApplicationPackage', __args__, opts=opts, typ=GetPrivateApplicationPackageResult).value
 
     return AwaitableGetPrivateApplicationPackageResult(
-        content_url=__ret__.content_url,
-        display_name=__ret__.display_name,
-        id=__ret__.id,
-        mime_type=__ret__.mime_type,
-        package_type=__ret__.package_type,
-        private_application_id=__ret__.private_application_id,
-        private_application_package_id=__ret__.private_application_package_id,
-        time_created=__ret__.time_created,
-        version=__ret__.version)
+        content_url=pulumi.get(__ret__, 'content_url'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        id=pulumi.get(__ret__, 'id'),
+        mime_type=pulumi.get(__ret__, 'mime_type'),
+        package_type=pulumi.get(__ret__, 'package_type'),
+        private_application_id=pulumi.get(__ret__, 'private_application_id'),
+        private_application_package_id=pulumi.get(__ret__, 'private_application_package_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_private_application_package)

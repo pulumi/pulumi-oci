@@ -103,10 +103,10 @@ def get_instance_measured_boot_report(instance_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getInstanceMeasuredBootReport:getInstanceMeasuredBootReport', __args__, opts=opts, typ=GetInstanceMeasuredBootReportResult).value
 
     return AwaitableGetInstanceMeasuredBootReportResult(
-        id=__ret__.id,
-        instance_id=__ret__.instance_id,
-        is_policy_verification_successful=__ret__.is_policy_verification_successful,
-        measurements=__ret__.measurements)
+        id=pulumi.get(__ret__, 'id'),
+        instance_id=pulumi.get(__ret__, 'instance_id'),
+        is_policy_verification_successful=pulumi.get(__ret__, 'is_policy_verification_successful'),
+        measurements=pulumi.get(__ret__, 'measurements'))
 
 
 @_utilities.lift_output_func(get_instance_measured_boot_report)

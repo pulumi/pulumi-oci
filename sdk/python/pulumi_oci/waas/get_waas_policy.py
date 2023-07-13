@@ -235,21 +235,21 @@ def get_waas_policy(waas_policy_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Waas/getWaasPolicy:getWaasPolicy', __args__, opts=opts, typ=GetWaasPolicyResult).value
 
     return AwaitableGetWaasPolicyResult(
-        additional_domains=__ret__.additional_domains,
-        cname=__ret__.cname,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        domain=__ret__.domain,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        origin_groups=__ret__.origin_groups,
-        origins=__ret__.origins,
-        policy_configs=__ret__.policy_configs,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        waas_policy_id=__ret__.waas_policy_id,
-        waf_configs=__ret__.waf_configs)
+        additional_domains=pulumi.get(__ret__, 'additional_domains'),
+        cname=pulumi.get(__ret__, 'cname'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        domain=pulumi.get(__ret__, 'domain'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        origin_groups=pulumi.get(__ret__, 'origin_groups'),
+        origins=pulumi.get(__ret__, 'origins'),
+        policy_configs=pulumi.get(__ret__, 'policy_configs'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        waas_policy_id=pulumi.get(__ret__, 'waas_policy_id'),
+        waf_configs=pulumi.get(__ret__, 'waf_configs'))
 
 
 @_utilities.lift_output_func(get_waas_policy)

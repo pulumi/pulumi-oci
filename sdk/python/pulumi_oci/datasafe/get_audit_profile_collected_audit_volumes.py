@@ -149,13 +149,13 @@ def get_audit_profile_collected_audit_volumes(audit_profile_id: Optional[str] = 
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getAuditProfileCollectedAuditVolumes:getAuditProfileCollectedAuditVolumes', __args__, opts=opts, typ=GetAuditProfileCollectedAuditVolumesResult).value
 
     return AwaitableGetAuditProfileCollectedAuditVolumesResult(
-        audit_profile_id=__ret__.audit_profile_id,
-        collected_audit_volume_collections=__ret__.collected_audit_volume_collections,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        month_in_consideration_greater_than=__ret__.month_in_consideration_greater_than,
-        month_in_consideration_less_than=__ret__.month_in_consideration_less_than,
-        work_request_id=__ret__.work_request_id)
+        audit_profile_id=pulumi.get(__ret__, 'audit_profile_id'),
+        collected_audit_volume_collections=pulumi.get(__ret__, 'collected_audit_volume_collections'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        month_in_consideration_greater_than=pulumi.get(__ret__, 'month_in_consideration_greater_than'),
+        month_in_consideration_less_than=pulumi.get(__ret__, 'month_in_consideration_less_than'),
+        work_request_id=pulumi.get(__ret__, 'work_request_id'))
 
 
 @_utilities.lift_output_func(get_audit_profile_collected_audit_volumes)

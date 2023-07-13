@@ -156,13 +156,13 @@ def get_drg_route_tables(display_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getDrgRouteTables:getDrgRouteTables', __args__, opts=opts, typ=GetDrgRouteTablesResult).value
 
     return AwaitableGetDrgRouteTablesResult(
-        display_name=__ret__.display_name,
-        drg_id=__ret__.drg_id,
-        drg_route_tables=__ret__.drg_route_tables,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        import_drg_route_distribution_id=__ret__.import_drg_route_distribution_id,
-        state=__ret__.state)
+        display_name=pulumi.get(__ret__, 'display_name'),
+        drg_id=pulumi.get(__ret__, 'drg_id'),
+        drg_route_tables=pulumi.get(__ret__, 'drg_route_tables'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        import_drg_route_distribution_id=pulumi.get(__ret__, 'import_drg_route_distribution_id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_drg_route_tables)

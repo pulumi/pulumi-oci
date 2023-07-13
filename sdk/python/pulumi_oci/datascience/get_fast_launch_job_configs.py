@@ -103,10 +103,10 @@ def get_fast_launch_job_configs(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataScience/getFastLaunchJobConfigs:getFastLaunchJobConfigs', __args__, opts=opts, typ=GetFastLaunchJobConfigsResult).value
 
     return AwaitableGetFastLaunchJobConfigsResult(
-        compartment_id=__ret__.compartment_id,
-        fast_launch_job_configs=__ret__.fast_launch_job_configs,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        fast_launch_job_configs=pulumi.get(__ret__, 'fast_launch_job_configs'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_fast_launch_job_configs)

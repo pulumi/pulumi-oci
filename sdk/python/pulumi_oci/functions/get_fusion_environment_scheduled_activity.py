@@ -239,21 +239,21 @@ def get_fusion_environment_scheduled_activity(fusion_environment_id: Optional[st
     __ret__ = pulumi.runtime.invoke('oci:Functions/getFusionEnvironmentScheduledActivity:getFusionEnvironmentScheduledActivity', __args__, opts=opts, typ=GetFusionEnvironmentScheduledActivityResult).value
 
     return AwaitableGetFusionEnvironmentScheduledActivityResult(
-        actions=__ret__.actions,
-        delay_in_hours=__ret__.delay_in_hours,
-        display_name=__ret__.display_name,
-        fusion_environment_id=__ret__.fusion_environment_id,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        run_cycle=__ret__.run_cycle,
-        scheduled_activity_id=__ret__.scheduled_activity_id,
-        service_availability=__ret__.service_availability,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_expected_finish=__ret__.time_expected_finish,
-        time_finished=__ret__.time_finished,
-        time_scheduled_start=__ret__.time_scheduled_start,
-        time_updated=__ret__.time_updated)
+        actions=pulumi.get(__ret__, 'actions'),
+        delay_in_hours=pulumi.get(__ret__, 'delay_in_hours'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        run_cycle=pulumi.get(__ret__, 'run_cycle'),
+        scheduled_activity_id=pulumi.get(__ret__, 'scheduled_activity_id'),
+        service_availability=pulumi.get(__ret__, 'service_availability'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_expected_finish=pulumi.get(__ret__, 'time_expected_finish'),
+        time_finished=pulumi.get(__ret__, 'time_finished'),
+        time_scheduled_start=pulumi.get(__ret__, 'time_scheduled_start'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_fusion_environment_scheduled_activity)

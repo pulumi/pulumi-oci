@@ -106,10 +106,10 @@ def get_secretbundle_versions(filters: Optional[Sequence[pulumi.InputType['GetSe
     __ret__ = pulumi.runtime.invoke('oci:Secrets/getSecretbundleVersions:getSecretbundleVersions', __args__, opts=opts, typ=GetSecretbundleVersionsResult).value
 
     return AwaitableGetSecretbundleVersionsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        secret_bundle_versions=__ret__.secret_bundle_versions,
-        secret_id=__ret__.secret_id)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        secret_bundle_versions=pulumi.get(__ret__, 'secret_bundle_versions'),
+        secret_id=pulumi.get(__ret__, 'secret_id'))
 
 
 @_utilities.lift_output_func(get_secretbundle_versions)

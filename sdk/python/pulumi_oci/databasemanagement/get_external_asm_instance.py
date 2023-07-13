@@ -222,20 +222,20 @@ def get_external_asm_instance(external_asm_instance_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalAsmInstance:getExternalAsmInstance', __args__, opts=opts, typ=GetExternalAsmInstanceResult).value
 
     return AwaitableGetExternalAsmInstanceResult(
-        adr_home_directory=__ret__.adr_home_directory,
-        compartment_id=__ret__.compartment_id,
-        component_name=__ret__.component_name,
-        display_name=__ret__.display_name,
-        external_asm_id=__ret__.external_asm_id,
-        external_asm_instance_id=__ret__.external_asm_instance_id,
-        external_db_node_id=__ret__.external_db_node_id,
-        external_db_system_id=__ret__.external_db_system_id,
-        host_name=__ret__.host_name,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        adr_home_directory=pulumi.get(__ret__, 'adr_home_directory'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        component_name=pulumi.get(__ret__, 'component_name'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        external_asm_id=pulumi.get(__ret__, 'external_asm_id'),
+        external_asm_instance_id=pulumi.get(__ret__, 'external_asm_instance_id'),
+        external_db_node_id=pulumi.get(__ret__, 'external_db_node_id'),
+        external_db_system_id=pulumi.get(__ret__, 'external_db_system_id'),
+        host_name=pulumi.get(__ret__, 'host_name'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_external_asm_instance)

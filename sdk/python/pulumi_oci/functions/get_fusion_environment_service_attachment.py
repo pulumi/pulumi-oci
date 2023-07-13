@@ -223,20 +223,20 @@ def get_fusion_environment_service_attachment(fusion_environment_id: Optional[st
     __ret__ = pulumi.runtime.invoke('oci:Functions/getFusionEnvironmentServiceAttachment:getFusionEnvironmentServiceAttachment', __args__, opts=opts, typ=GetFusionEnvironmentServiceAttachmentResult).value
 
     return AwaitableGetFusionEnvironmentServiceAttachmentResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        fusion_environment_id=__ret__.fusion_environment_id,
-        id=__ret__.id,
-        is_sku_based=__ret__.is_sku_based,
-        service_attachment_id=__ret__.service_attachment_id,
-        service_instance_id=__ret__.service_instance_id,
-        service_instance_type=__ret__.service_instance_type,
-        service_url=__ret__.service_url,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        is_sku_based=pulumi.get(__ret__, 'is_sku_based'),
+        service_attachment_id=pulumi.get(__ret__, 'service_attachment_id'),
+        service_instance_id=pulumi.get(__ret__, 'service_instance_id'),
+        service_instance_type=pulumi.get(__ret__, 'service_instance_type'),
+        service_url=pulumi.get(__ret__, 'service_url'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_fusion_environment_service_attachment)

@@ -104,10 +104,10 @@ def get_repository_author(ref_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getRepositoryAuthor:getRepositoryAuthor', __args__, opts=opts, typ=GetRepositoryAuthorResult).value
 
     return AwaitableGetRepositoryAuthorResult(
-        id=__ret__.id,
-        items=__ret__.items,
-        ref_name=__ret__.ref_name,
-        repository_id=__ret__.repository_id)
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        ref_name=pulumi.get(__ret__, 'ref_name'),
+        repository_id=pulumi.get(__ret__, 'repository_id'))
 
 
 @_utilities.lift_output_func(get_repository_author)

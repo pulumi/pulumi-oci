@@ -942,6 +942,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "ContainerEngine/clusterWorkloadMapping",
+  "fqn": "pulumi_oci.containerengine",
+  "classes": {
+   "oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping": "ClusterWorkloadMapping"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "ContainerEngine/containerInstance",
   "fqn": "pulumi_oci.containerengine",
   "classes": {
@@ -2330,6 +2338,14 @@ _utilities.register(
   "fqn": "pulumi_oci.database",
   "classes": {
    "oci:Database/maintenanceRun:MaintenanceRun": "MaintenanceRun"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Database/oneoffPatch",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/oneoffPatch:OneoffPatch": "OneoffPatch"
   }
  },
  {
@@ -4290,6 +4306,14 @@ _utilities.register(
   "fqn": "pulumi_oci.osmanagement",
   "classes": {
    "oci:OsManagement/softwareSource:SoftwareSource": "SoftwareSource"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OspGateway/addressActionVerification",
+  "fqn": "pulumi_oci.ospgateway",
+  "classes": {
+   "oci:OspGateway/addressActionVerification:AddressActionVerification": "AddressActionVerification"
   }
  },
  {

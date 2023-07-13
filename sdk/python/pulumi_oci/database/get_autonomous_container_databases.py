@@ -234,18 +234,18 @@ def get_autonomous_container_databases(autonomous_exadata_infrastructure_id: Opt
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousContainerDatabases:getAutonomousContainerDatabases', __args__, opts=opts, typ=GetAutonomousContainerDatabasesResult).value
 
     return AwaitableGetAutonomousContainerDatabasesResult(
-        autonomous_container_databases=__ret__.autonomous_container_databases,
-        autonomous_exadata_infrastructure_id=__ret__.autonomous_exadata_infrastructure_id,
-        autonomous_vm_cluster_id=__ret__.autonomous_vm_cluster_id,
-        availability_domain=__ret__.availability_domain,
-        cloud_autonomous_vm_cluster_id=__ret__.cloud_autonomous_vm_cluster_id,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        infrastructure_type=__ret__.infrastructure_type,
-        service_level_agreement_type=__ret__.service_level_agreement_type,
-        state=__ret__.state)
+        autonomous_container_databases=pulumi.get(__ret__, 'autonomous_container_databases'),
+        autonomous_exadata_infrastructure_id=pulumi.get(__ret__, 'autonomous_exadata_infrastructure_id'),
+        autonomous_vm_cluster_id=pulumi.get(__ret__, 'autonomous_vm_cluster_id'),
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        cloud_autonomous_vm_cluster_id=pulumi.get(__ret__, 'cloud_autonomous_vm_cluster_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        infrastructure_type=pulumi.get(__ret__, 'infrastructure_type'),
+        service_level_agreement_type=pulumi.get(__ret__, 'service_level_agreement_type'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_autonomous_container_databases)

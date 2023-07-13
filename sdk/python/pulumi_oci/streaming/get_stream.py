@@ -210,19 +210,19 @@ def get_stream(stream_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Streaming/getStream:getStream', __args__, opts=opts, typ=GetStreamResult).value
 
     return AwaitableGetStreamResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_state_details=__ret__.lifecycle_state_details,
-        messages_endpoint=__ret__.messages_endpoint,
-        name=__ret__.name,
-        partitions=__ret__.partitions,
-        retention_in_hours=__ret__.retention_in_hours,
-        state=__ret__.state,
-        stream_id=__ret__.stream_id,
-        stream_pool_id=__ret__.stream_pool_id,
-        time_created=__ret__.time_created)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_state_details=pulumi.get(__ret__, 'lifecycle_state_details'),
+        messages_endpoint=pulumi.get(__ret__, 'messages_endpoint'),
+        name=pulumi.get(__ret__, 'name'),
+        partitions=pulumi.get(__ret__, 'partitions'),
+        retention_in_hours=pulumi.get(__ret__, 'retention_in_hours'),
+        state=pulumi.get(__ret__, 'state'),
+        stream_id=pulumi.get(__ret__, 'stream_id'),
+        stream_pool_id=pulumi.get(__ret__, 'stream_pool_id'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_stream)

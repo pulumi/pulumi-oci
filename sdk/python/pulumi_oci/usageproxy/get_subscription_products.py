@@ -142,13 +142,13 @@ def get_subscription_products(filters: Optional[Sequence[pulumi.InputType['GetSu
     __ret__ = pulumi.runtime.invoke('oci:UsageProxy/getSubscriptionProducts:getSubscriptionProducts', __args__, opts=opts, typ=GetSubscriptionProductsResult).value
 
     return AwaitableGetSubscriptionProductsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        product_collections=__ret__.product_collections,
-        producttype=__ret__.producttype,
-        subscription_id=__ret__.subscription_id,
-        tenancy_id=__ret__.tenancy_id,
-        usage_period_key=__ret__.usage_period_key)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        product_collections=pulumi.get(__ret__, 'product_collections'),
+        producttype=pulumi.get(__ret__, 'producttype'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'),
+        tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
+        usage_period_key=pulumi.get(__ret__, 'usage_period_key'))
 
 
 @_utilities.lift_output_func(get_subscription_products)

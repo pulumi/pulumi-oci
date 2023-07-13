@@ -247,22 +247,22 @@ def get_application(application_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Functions/getApplication:getApplication', __args__, opts=opts, typ=GetApplicationResult).value
 
     return AwaitableGetApplicationResult(
-        application_id=__ret__.application_id,
-        compartment_id=__ret__.compartment_id,
-        config=__ret__.config,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        image_policy_configs=__ret__.image_policy_configs,
-        network_security_group_ids=__ret__.network_security_group_ids,
-        shape=__ret__.shape,
-        state=__ret__.state,
-        subnet_ids=__ret__.subnet_ids,
-        syslog_url=__ret__.syslog_url,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        trace_configs=__ret__.trace_configs)
+        application_id=pulumi.get(__ret__, 'application_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        config=pulumi.get(__ret__, 'config'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        image_policy_configs=pulumi.get(__ret__, 'image_policy_configs'),
+        network_security_group_ids=pulumi.get(__ret__, 'network_security_group_ids'),
+        shape=pulumi.get(__ret__, 'shape'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_ids=pulumi.get(__ret__, 'subnet_ids'),
+        syslog_url=pulumi.get(__ret__, 'syslog_url'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        trace_configs=pulumi.get(__ret__, 'trace_configs'))
 
 
 @_utilities.lift_output_func(get_application)

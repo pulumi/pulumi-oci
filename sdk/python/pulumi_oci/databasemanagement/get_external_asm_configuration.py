@@ -91,9 +91,9 @@ def get_external_asm_configuration(external_asm_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalAsmConfiguration:getExternalAsmConfiguration', __args__, opts=opts, typ=GetExternalAsmConfigurationResult).value
 
     return AwaitableGetExternalAsmConfigurationResult(
-        external_asm_id=__ret__.external_asm_id,
-        id=__ret__.id,
-        init_parameters=__ret__.init_parameters)
+        external_asm_id=pulumi.get(__ret__, 'external_asm_id'),
+        id=pulumi.get(__ret__, 'id'),
+        init_parameters=pulumi.get(__ret__, 'init_parameters'))
 
 
 @_utilities.lift_output_func(get_external_asm_configuration)

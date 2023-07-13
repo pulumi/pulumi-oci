@@ -148,13 +148,13 @@ def get_bastions(bastion_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Bastion/getBastions:getBastions', __args__, opts=opts, typ=GetBastionsResult).value
 
     return AwaitableGetBastionsResult(
-        bastion_id=__ret__.bastion_id,
-        bastion_lifecycle_state=__ret__.bastion_lifecycle_state,
-        bastions=__ret__.bastions,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name)
+        bastion_id=pulumi.get(__ret__, 'bastion_id'),
+        bastion_lifecycle_state=pulumi.get(__ret__, 'bastion_lifecycle_state'),
+        bastions=pulumi.get(__ret__, 'bastions'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'))
 
 
 @_utilities.lift_output_func(get_bastions)

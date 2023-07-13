@@ -104,10 +104,10 @@ def get_repository_object_content(file_path: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getRepositoryObjectContent:getRepositoryObjectContent', __args__, opts=opts, typ=GetRepositoryObjectContentResult).value
 
     return AwaitableGetRepositoryObjectContentResult(
-        file_path=__ret__.file_path,
-        id=__ret__.id,
-        repository_id=__ret__.repository_id,
-        sha=__ret__.sha)
+        file_path=pulumi.get(__ret__, 'file_path'),
+        id=pulumi.get(__ret__, 'id'),
+        repository_id=pulumi.get(__ret__, 'repository_id'),
+        sha=pulumi.get(__ret__, 'sha'))
 
 
 @_utilities.lift_output_func(get_repository_object_content)

@@ -180,15 +180,15 @@ def get_access_requests(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OperatorAccessControl/getAccessRequests:getAccessRequests', __args__, opts=opts, typ=GetAccessRequestsResult).value
 
     return AwaitableGetAccessRequestsResult(
-        access_request_collections=__ret__.access_request_collections,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        resource_name=__ret__.resource_name,
-        resource_type=__ret__.resource_type,
-        state=__ret__.state,
-        time_end=__ret__.time_end,
-        time_start=__ret__.time_start)
+        access_request_collections=pulumi.get(__ret__, 'access_request_collections'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        resource_name=pulumi.get(__ret__, 'resource_name'),
+        resource_type=pulumi.get(__ret__, 'resource_type'),
+        state=pulumi.get(__ret__, 'state'),
+        time_end=pulumi.get(__ret__, 'time_end'),
+        time_start=pulumi.get(__ret__, 'time_start'))
 
 
 @_utilities.lift_output_func(get_access_requests)

@@ -220,20 +220,20 @@ def get_fusion_environment_family(fusion_environment_family_id: Optional[str] = 
     __ret__ = pulumi.runtime.invoke('oci:Functions/getFusionEnvironmentFamily:getFusionEnvironmentFamily', __args__, opts=opts, typ=GetFusionEnvironmentFamilyResult).value
 
     return AwaitableGetFusionEnvironmentFamilyResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        family_maintenance_policies=__ret__.family_maintenance_policies,
-        freeform_tags=__ret__.freeform_tags,
-        fusion_environment_family_id=__ret__.fusion_environment_family_id,
-        id=__ret__.id,
-        is_subscription_update_needed=__ret__.is_subscription_update_needed,
-        lifecycle_details=__ret__.lifecycle_details,
-        state=__ret__.state,
-        subscription_ids=__ret__.subscription_ids,
-        system_name=__ret__.system_name,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        family_maintenance_policies=pulumi.get(__ret__, 'family_maintenance_policies'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        fusion_environment_family_id=pulumi.get(__ret__, 'fusion_environment_family_id'),
+        id=pulumi.get(__ret__, 'id'),
+        is_subscription_update_needed=pulumi.get(__ret__, 'is_subscription_update_needed'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        state=pulumi.get(__ret__, 'state'),
+        subscription_ids=pulumi.get(__ret__, 'subscription_ids'),
+        system_name=pulumi.get(__ret__, 'system_name'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_fusion_environment_family)

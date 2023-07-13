@@ -122,11 +122,11 @@ def get_virtual_circuit_public_prefixes(filters: Optional[Sequence[pulumi.InputT
     __ret__ = pulumi.runtime.invoke('oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes', __args__, opts=opts, typ=GetVirtualCircuitPublicPrefixesResult).value
 
     return AwaitableGetVirtualCircuitPublicPrefixesResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        verification_state=__ret__.verification_state,
-        virtual_circuit_id=__ret__.virtual_circuit_id,
-        virtual_circuit_public_prefixes=__ret__.virtual_circuit_public_prefixes)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        verification_state=pulumi.get(__ret__, 'verification_state'),
+        virtual_circuit_id=pulumi.get(__ret__, 'virtual_circuit_id'),
+        virtual_circuit_public_prefixes=pulumi.get(__ret__, 'virtual_circuit_public_prefixes'))
 
 
 @_utilities.lift_output_func(get_virtual_circuit_public_prefixes)

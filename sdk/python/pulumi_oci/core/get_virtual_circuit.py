@@ -34,10 +34,6 @@ class GetVirtualCircuitResult:
         pulumi.set(__self__, "bgp_ipv6session_state", bgp_ipv6session_state)
         if bgp_management and not isinstance(bgp_management, str):
             raise TypeError("Expected argument 'bgp_management' to be a str")
-        if bgp_management is not None:
-            warnings.warn("""The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.""", DeprecationWarning)
-            pulumi.log.warn("""bgp_management is deprecated: The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.""")
-
         pulumi.set(__self__, "bgp_management", bgp_management)
         if bgp_session_state and not isinstance(bgp_session_state, str):
             raise TypeError("Expected argument 'bgp_session_state' to be a str")
@@ -53,10 +49,6 @@ class GetVirtualCircuitResult:
         pulumi.set(__self__, "customer_asn", customer_asn)
         if customer_bgp_asn and not isinstance(customer_bgp_asn, int):
             raise TypeError("Expected argument 'customer_bgp_asn' to be a int")
-        if customer_bgp_asn is not None:
-            warnings.warn("""The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.""", DeprecationWarning)
-            pulumi.log.warn("""customer_bgp_asn is deprecated: The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.""")
-
         pulumi.set(__self__, "customer_bgp_asn", customer_bgp_asn)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
@@ -149,6 +141,9 @@ class GetVirtualCircuitResult:
         """
         Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
         """
+        warnings.warn("""The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.""", DeprecationWarning)
+        pulumi.log.warn("""bgp_management is deprecated: The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.""")
+
         return pulumi.get(self, "bgp_management")
 
     @property
@@ -189,6 +184,9 @@ class GetVirtualCircuitResult:
         """
         Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
         """
+        warnings.warn("""The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.""", DeprecationWarning)
+        pulumi.log.warn("""customer_bgp_asn is deprecated: The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.""")
+
         return pulumi.get(self, "customer_bgp_asn")
 
     @property
@@ -411,35 +409,35 @@ def get_virtual_circuit(virtual_circuit_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getVirtualCircuit:getVirtualCircuit', __args__, opts=opts, typ=GetVirtualCircuitResult).value
 
     return AwaitableGetVirtualCircuitResult(
-        bandwidth_shape_name=__ret__.bandwidth_shape_name,
-        bgp_admin_state=__ret__.bgp_admin_state,
-        bgp_ipv6session_state=__ret__.bgp_ipv6session_state,
-        bgp_management=__ret__.bgp_management,
-        bgp_session_state=__ret__.bgp_session_state,
-        compartment_id=__ret__.compartment_id,
-        cross_connect_mappings=__ret__.cross_connect_mappings,
-        customer_asn=__ret__.customer_asn,
-        customer_bgp_asn=__ret__.customer_bgp_asn,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        gateway_id=__ret__.gateway_id,
-        id=__ret__.id,
-        ip_mtu=__ret__.ip_mtu,
-        is_bfd_enabled=__ret__.is_bfd_enabled,
-        oracle_bgp_asn=__ret__.oracle_bgp_asn,
-        provider_service_id=__ret__.provider_service_id,
-        provider_service_key_name=__ret__.provider_service_key_name,
-        provider_state=__ret__.provider_state,
-        public_prefixes=__ret__.public_prefixes,
-        reference_comment=__ret__.reference_comment,
-        region=__ret__.region,
-        routing_policies=__ret__.routing_policies,
-        service_type=__ret__.service_type,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        type=__ret__.type,
-        virtual_circuit_id=__ret__.virtual_circuit_id)
+        bandwidth_shape_name=pulumi.get(__ret__, 'bandwidth_shape_name'),
+        bgp_admin_state=pulumi.get(__ret__, 'bgp_admin_state'),
+        bgp_ipv6session_state=pulumi.get(__ret__, 'bgp_ipv6session_state'),
+        bgp_management=pulumi.get(__ret__, 'bgp_management'),
+        bgp_session_state=pulumi.get(__ret__, 'bgp_session_state'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        cross_connect_mappings=pulumi.get(__ret__, 'cross_connect_mappings'),
+        customer_asn=pulumi.get(__ret__, 'customer_asn'),
+        customer_bgp_asn=pulumi.get(__ret__, 'customer_bgp_asn'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        gateway_id=pulumi.get(__ret__, 'gateway_id'),
+        id=pulumi.get(__ret__, 'id'),
+        ip_mtu=pulumi.get(__ret__, 'ip_mtu'),
+        is_bfd_enabled=pulumi.get(__ret__, 'is_bfd_enabled'),
+        oracle_bgp_asn=pulumi.get(__ret__, 'oracle_bgp_asn'),
+        provider_service_id=pulumi.get(__ret__, 'provider_service_id'),
+        provider_service_key_name=pulumi.get(__ret__, 'provider_service_key_name'),
+        provider_state=pulumi.get(__ret__, 'provider_state'),
+        public_prefixes=pulumi.get(__ret__, 'public_prefixes'),
+        reference_comment=pulumi.get(__ret__, 'reference_comment'),
+        region=pulumi.get(__ret__, 'region'),
+        routing_policies=pulumi.get(__ret__, 'routing_policies'),
+        service_type=pulumi.get(__ret__, 'service_type'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        type=pulumi.get(__ret__, 'type'),
+        virtual_circuit_id=pulumi.get(__ret__, 'virtual_circuit_id'))
 
 
 @_utilities.lift_output_func(get_virtual_circuit)

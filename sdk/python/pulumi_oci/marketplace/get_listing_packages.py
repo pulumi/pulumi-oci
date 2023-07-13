@@ -161,13 +161,13 @@ def get_listing_packages(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Marketplace/getListingPackages:getListingPackages', __args__, opts=opts, typ=GetListingPackagesResult).value
 
     return AwaitableGetListingPackagesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        listing_id=__ret__.listing_id,
-        listing_packages=__ret__.listing_packages,
-        package_type=__ret__.package_type,
-        package_version=__ret__.package_version)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        listing_id=pulumi.get(__ret__, 'listing_id'),
+        listing_packages=pulumi.get(__ret__, 'listing_packages'),
+        package_type=pulumi.get(__ret__, 'package_type'),
+        package_version=pulumi.get(__ret__, 'package_version'))
 
 
 @_utilities.lift_output_func(get_listing_packages)

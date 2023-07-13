@@ -148,13 +148,13 @@ def get_target_databases_schemas(filters: Optional[Sequence[pulumi.InputType['Ge
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getTargetDatabasesSchemas:getTargetDatabasesSchemas', __args__, opts=opts, typ=GetTargetDatabasesSchemasResult).value
 
     return AwaitableGetTargetDatabasesSchemasResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_oracle_maintained=__ret__.is_oracle_maintained,
-        schema_name_contains=__ret__.schema_name_contains,
-        schema_names=__ret__.schema_names,
-        schemas=__ret__.schemas,
-        target_database_id=__ret__.target_database_id)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_oracle_maintained=pulumi.get(__ret__, 'is_oracle_maintained'),
+        schema_name_contains=pulumi.get(__ret__, 'schema_name_contains'),
+        schema_names=pulumi.get(__ret__, 'schema_names'),
+        schemas=pulumi.get(__ret__, 'schemas'),
+        target_database_id=pulumi.get(__ret__, 'target_database_id'))
 
 
 @_utilities.lift_output_func(get_target_databases_schemas)

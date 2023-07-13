@@ -122,11 +122,11 @@ def get_tags(filters: Optional[Sequence[pulumi.InputType['GetTagsFilterArgs']]] 
     __ret__ = pulumi.runtime.invoke('oci:Identity/getTags:getTags', __args__, opts=opts, typ=GetTagsResult).value
 
     return AwaitableGetTagsResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        tag_namespace_id=__ret__.tag_namespace_id,
-        tags=__ret__.tags)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        tag_namespace_id=pulumi.get(__ret__, 'tag_namespace_id'),
+        tags=pulumi.get(__ret__, 'tags'))
 
 
 @_utilities.lift_output_func(get_tags)

@@ -171,14 +171,14 @@ def get_result(apm_domain_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApmSynthetics/getResult:getResult', __args__, opts=opts, typ=GetResultResult).value
 
     return AwaitableGetResultResult(
-        apm_domain_id=__ret__.apm_domain_id,
-        execution_time=__ret__.execution_time,
-        id=__ret__.id,
-        monitor_id=__ret__.monitor_id,
-        result_content_type=__ret__.result_content_type,
-        result_data_sets=__ret__.result_data_sets,
-        result_type=__ret__.result_type,
-        vantage_point=__ret__.vantage_point)
+        apm_domain_id=pulumi.get(__ret__, 'apm_domain_id'),
+        execution_time=pulumi.get(__ret__, 'execution_time'),
+        id=pulumi.get(__ret__, 'id'),
+        monitor_id=pulumi.get(__ret__, 'monitor_id'),
+        result_content_type=pulumi.get(__ret__, 'result_content_type'),
+        result_data_sets=pulumi.get(__ret__, 'result_data_sets'),
+        result_type=pulumi.get(__ret__, 'result_type'),
+        vantage_point=pulumi.get(__ret__, 'vantage_point'))
 
 
 @_utilities.lift_output_func(get_result)

@@ -122,11 +122,11 @@ def get_compute_global_image_capability_schemas(compartment_id: Optional[str] = 
     __ret__ = pulumi.runtime.invoke('oci:Core/getComputeGlobalImageCapabilitySchemas:getComputeGlobalImageCapabilitySchemas', __args__, opts=opts, typ=GetComputeGlobalImageCapabilitySchemasResult).value
 
     return AwaitableGetComputeGlobalImageCapabilitySchemasResult(
-        compartment_id=__ret__.compartment_id,
-        compute_global_image_capability_schemas=__ret__.compute_global_image_capability_schemas,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compute_global_image_capability_schemas=pulumi.get(__ret__, 'compute_global_image_capability_schemas'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_compute_global_image_capability_schemas)

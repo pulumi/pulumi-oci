@@ -158,13 +158,13 @@ def get_audit_trail_analytic(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getAuditTrailAnalytic:getAuditTrailAnalytic', __args__, opts=opts, typ=GetAuditTrailAnalyticResult).value
 
     return AwaitableGetAuditTrailAnalyticResult(
-        access_level=__ret__.access_level,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        group_bies=__ret__.group_bies,
-        id=__ret__.id,
-        items=__ret__.items,
-        target_id=__ret__.target_id)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        group_bies=pulumi.get(__ret__, 'group_bies'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        target_id=pulumi.get(__ret__, 'target_id'))
 
 
 @_utilities.lift_output_func(get_audit_trail_analytic)

@@ -158,13 +158,13 @@ def get_awr_hubs(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Opsi/getAwrHubs:getAwrHubs', __args__, opts=opts, typ=GetAwrHubsResult).value
 
     return AwaitableGetAwrHubsResult(
-        awr_hub_summary_collections=__ret__.awr_hub_summary_collections,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        operations_insights_warehouse_id=__ret__.operations_insights_warehouse_id,
-        states=__ret__.states)
+        awr_hub_summary_collections=pulumi.get(__ret__, 'awr_hub_summary_collections'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        operations_insights_warehouse_id=pulumi.get(__ret__, 'operations_insights_warehouse_id'),
+        states=pulumi.get(__ret__, 'states'))
 
 
 @_utilities.lift_output_func(get_awr_hubs)

@@ -135,12 +135,12 @@ def get_workspaces(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataIntegration/getWorkspaces:getWorkspaces', __args__, opts=opts, typ=GetWorkspacesResult).value
 
     return AwaitableGetWorkspacesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        state=__ret__.state,
-        workspaces=__ret__.workspaces)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        workspaces=pulumi.get(__ret__, 'workspaces'))
 
 
 @_utilities.lift_output_func(get_workspaces)

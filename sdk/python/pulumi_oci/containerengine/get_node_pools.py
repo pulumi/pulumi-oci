@@ -154,13 +154,13 @@ def get_node_pools(cluster_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ContainerEngine/getNodePools:getNodePools', __args__, opts=opts, typ=GetNodePoolsResult).value
 
     return AwaitableGetNodePoolsResult(
-        cluster_id=__ret__.cluster_id,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        node_pools=__ret__.node_pools,
-        states=__ret__.states)
+        cluster_id=pulumi.get(__ret__, 'cluster_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        node_pools=pulumi.get(__ret__, 'node_pools'),
+        states=pulumi.get(__ret__, 'states'))
 
 
 @_utilities.lift_output_func(get_node_pools)

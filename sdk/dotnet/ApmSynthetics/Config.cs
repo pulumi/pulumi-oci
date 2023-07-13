@@ -46,6 +46,19 @@ namespace Pulumi.Oci.ApmSynthetics
     ///         BatchIntervalInSeconds = @var.Monitor_batch_interval_in_seconds,
     ///         Configuration = new Oci.ApmSynthetics.Inputs.ConfigConfigurationArgs
     ///         {
+    ///             ClientCertificateDetails = new Oci.ApmSynthetics.Inputs.ConfigConfigurationClientCertificateDetailsArgs
+    ///             {
+    ///                 ClientCertificate = new Oci.ApmSynthetics.Inputs.ConfigConfigurationClientCertificateDetailsClientCertificateArgs
+    ///                 {
+    ///                     Content = @var.Monitor_configuration_client_certificate_details_client_certificate_content,
+    ///                     FileName = @var.Monitor_configuration_client_certificate_details_client_certificate_file_name,
+    ///                 },
+    ///                 PrivateKey = new Oci.ApmSynthetics.Inputs.ConfigConfigurationClientCertificateDetailsPrivateKeyArgs
+    ///                 {
+    ///                     Content = @var.Monitor_configuration_client_certificate_details_private_key_content,
+    ///                     FileName = @var.Monitor_configuration_client_certificate_details_private_key_file_name,
+    ///                 },
+    ///             },
     ///             ConfigType = @var.Monitor_configuration_config_type,
     ///             DnsConfiguration = new Oci.ApmSynthetics.Inputs.ConfigConfigurationDnsConfigurationArgs
     ///             {
@@ -53,6 +66,7 @@ namespace Pulumi.Oci.ApmSynthetics
     ///                 OverrideDnsIp = @var.Monitor_configuration_dns_configuration_override_dns_ip,
     ///             },
     ///             IsCertificateValidationEnabled = @var.Monitor_configuration_is_certificate_validation_enabled,
+    ///             IsDefaultSnapshotEnabled = @var.Monitor_configuration_is_default_snapshot_enabled,
     ///             IsFailureRetried = @var.Monitor_configuration_is_failure_retried,
     ///             IsRedirectionEnabled = @var.Monitor_configuration_is_redirection_enabled,
     ///             NetworkConfiguration = new Oci.ApmSynthetics.Inputs.ConfigConfigurationNetworkConfigurationArgs
@@ -197,7 +211,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) If isRunNow is enabled, then the monitor will run now.
+        /// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         /// </summary>
         [Output("isRunNow")]
         public Output<bool> IsRunNow { get; private set; } = null!;
@@ -209,7 +223,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Output<bool> IsRunOnce { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Details used to schedule maintenance window.
+        /// (Updatable) Details required to schedule maintenance window.
         /// </summary>
         [Output("maintenanceWindowSchedule")]
         public Output<Outputs.ConfigMaintenanceWindowSchedule> MaintenanceWindowSchedule { get; private set; } = null!;
@@ -227,7 +241,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Output<int> RepeatIntervalInSeconds { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Scheduling policy on Vantage points.
+        /// (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
         /// </summary>
         [Output("schedulingPolicy")]
         public Output<string> SchedulingPolicy { get; private set; } = null!;
@@ -397,7 +411,7 @@ namespace Pulumi.Oci.ApmSynthetics
         }
 
         /// <summary>
-        /// (Updatable) If isRunNow is enabled, then the monitor will run now.
+        /// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         /// </summary>
         [Input("isRunNow")]
         public Input<bool>? IsRunNow { get; set; }
@@ -409,7 +423,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<bool>? IsRunOnce { get; set; }
 
         /// <summary>
-        /// (Updatable) Details used to schedule maintenance window.
+        /// (Updatable) Details required to schedule maintenance window.
         /// </summary>
         [Input("maintenanceWindowSchedule")]
         public Input<Inputs.ConfigMaintenanceWindowScheduleArgs>? MaintenanceWindowSchedule { get; set; }
@@ -427,7 +441,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<int> RepeatIntervalInSeconds { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Scheduling policy on Vantage points.
+        /// (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
         /// </summary>
         [Input("schedulingPolicy")]
         public Input<string>? SchedulingPolicy { get; set; }
@@ -553,7 +567,7 @@ namespace Pulumi.Oci.ApmSynthetics
         }
 
         /// <summary>
-        /// (Updatable) If isRunNow is enabled, then the monitor will run now.
+        /// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         /// </summary>
         [Input("isRunNow")]
         public Input<bool>? IsRunNow { get; set; }
@@ -565,7 +579,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<bool>? IsRunOnce { get; set; }
 
         /// <summary>
-        /// (Updatable) Details used to schedule maintenance window.
+        /// (Updatable) Details required to schedule maintenance window.
         /// </summary>
         [Input("maintenanceWindowSchedule")]
         public Input<Inputs.ConfigMaintenanceWindowScheduleGetArgs>? MaintenanceWindowSchedule { get; set; }
@@ -583,7 +597,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<int>? RepeatIntervalInSeconds { get; set; }
 
         /// <summary>
-        /// (Updatable) Scheduling policy on Vantage points.
+        /// (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
         /// </summary>
         [Input("schedulingPolicy")]
         public Input<string>? SchedulingPolicy { get; set; }

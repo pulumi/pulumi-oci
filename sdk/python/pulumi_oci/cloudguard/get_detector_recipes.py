@@ -191,15 +191,15 @@ def get_detector_recipes(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudGuard/getDetectorRecipes:getDetectorRecipes', __args__, opts=opts, typ=GetDetectorRecipesResult).value
 
     return AwaitableGetDetectorRecipesResult(
-        access_level=__ret__.access_level,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        detector_recipe_collections=__ret__.detector_recipe_collections,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        resource_metadata_only=__ret__.resource_metadata_only,
-        state=__ret__.state)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        detector_recipe_collections=pulumi.get(__ret__, 'detector_recipe_collections'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        resource_metadata_only=pulumi.get(__ret__, 'resource_metadata_only'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_detector_recipes)

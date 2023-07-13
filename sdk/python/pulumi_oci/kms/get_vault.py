@@ -276,24 +276,24 @@ def get_vault(vault_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Kms/getVault:getVault', __args__, opts=opts, typ=GetVaultResult).value
 
     return AwaitableGetVaultResult(
-        compartment_id=__ret__.compartment_id,
-        crypto_endpoint=__ret__.crypto_endpoint,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_primary=__ret__.is_primary,
-        management_endpoint=__ret__.management_endpoint,
-        replica_details=__ret__.replica_details,
-        restore_from_files=__ret__.restore_from_files,
-        restore_from_object_stores=__ret__.restore_from_object_stores,
-        restore_trigger=__ret__.restore_trigger,
-        restored_from_vault_id=__ret__.restored_from_vault_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_of_deletion=__ret__.time_of_deletion,
-        vault_id=__ret__.vault_id,
-        vault_type=__ret__.vault_type)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        crypto_endpoint=pulumi.get(__ret__, 'crypto_endpoint'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_primary=pulumi.get(__ret__, 'is_primary'),
+        management_endpoint=pulumi.get(__ret__, 'management_endpoint'),
+        replica_details=pulumi.get(__ret__, 'replica_details'),
+        restore_from_files=pulumi.get(__ret__, 'restore_from_files'),
+        restore_from_object_stores=pulumi.get(__ret__, 'restore_from_object_stores'),
+        restore_trigger=pulumi.get(__ret__, 'restore_trigger'),
+        restored_from_vault_id=pulumi.get(__ret__, 'restored_from_vault_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
+        vault_id=pulumi.get(__ret__, 'vault_id'),
+        vault_type=pulumi.get(__ret__, 'vault_type'))
 
 
 @_utilities.lift_output_func(get_vault)

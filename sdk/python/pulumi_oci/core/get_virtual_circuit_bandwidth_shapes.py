@@ -106,10 +106,10 @@ def get_virtual_circuit_bandwidth_shapes(filters: Optional[Sequence[pulumi.Input
     __ret__ = pulumi.runtime.invoke('oci:Core/getVirtualCircuitBandwidthShapes:getVirtualCircuitBandwidthShapes', __args__, opts=opts, typ=GetVirtualCircuitBandwidthShapesResult).value
 
     return AwaitableGetVirtualCircuitBandwidthShapesResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        provider_service_id=__ret__.provider_service_id,
-        virtual_circuit_bandwidth_shapes=__ret__.virtual_circuit_bandwidth_shapes)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        provider_service_id=pulumi.get(__ret__, 'provider_service_id'),
+        virtual_circuit_bandwidth_shapes=pulumi.get(__ret__, 'virtual_circuit_bandwidth_shapes'))
 
 
 @_utilities.lift_output_func(get_virtual_circuit_bandwidth_shapes)

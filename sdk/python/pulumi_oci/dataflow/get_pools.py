@@ -167,14 +167,14 @@ def get_pools(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataFlow/getPools:getPools', __args__, opts=opts, typ=GetPoolsResult).value
 
     return AwaitableGetPoolsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        display_name_starts_with=__ret__.display_name_starts_with,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        owner_principal_id=__ret__.owner_principal_id,
-        pool_collections=__ret__.pool_collections,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        display_name_starts_with=pulumi.get(__ret__, 'display_name_starts_with'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        owner_principal_id=pulumi.get(__ret__, 'owner_principal_id'),
+        pool_collections=pulumi.get(__ret__, 'pool_collections'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_pools)

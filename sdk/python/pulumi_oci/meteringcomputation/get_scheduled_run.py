@@ -138,13 +138,13 @@ def get_scheduled_run(scheduled_run_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:MeteringComputation/getScheduledRun:getScheduledRun', __args__, opts=opts, typ=GetScheduledRunResult).value
 
     return AwaitableGetScheduledRunResult(
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        schedule_id=__ret__.schedule_id,
-        scheduled_run_id=__ret__.scheduled_run_id,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_finished=__ret__.time_finished)
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        schedule_id=pulumi.get(__ret__, 'schedule_id'),
+        scheduled_run_id=pulumi.get(__ret__, 'scheduled_run_id'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_finished=pulumi.get(__ret__, 'time_finished'))
 
 
 @_utilities.lift_output_func(get_scheduled_run)

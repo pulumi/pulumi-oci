@@ -115,11 +115,11 @@ def get_operations_insights_warehouse_resource_usage_summary(operations_insights
     __ret__ = pulumi.runtime.invoke('oci:Opsi/getOperationsInsightsWarehouseResourceUsageSummary:getOperationsInsightsWarehouseResourceUsageSummary', __args__, opts=opts, typ=GetOperationsInsightsWarehouseResourceUsageSummaryResult).value
 
     return AwaitableGetOperationsInsightsWarehouseResourceUsageSummaryResult(
-        cpu_used=__ret__.cpu_used,
-        id=__ret__.id,
-        operations_insights_warehouse_id=__ret__.operations_insights_warehouse_id,
-        state=__ret__.state,
-        storage_used_in_gbs=__ret__.storage_used_in_gbs)
+        cpu_used=pulumi.get(__ret__, 'cpu_used'),
+        id=pulumi.get(__ret__, 'id'),
+        operations_insights_warehouse_id=pulumi.get(__ret__, 'operations_insights_warehouse_id'),
+        state=pulumi.get(__ret__, 'state'),
+        storage_used_in_gbs=pulumi.get(__ret__, 'storage_used_in_gbs'))
 
 
 @_utilities.lift_output_func(get_operations_insights_warehouse_resource_usage_summary)

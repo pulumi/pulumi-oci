@@ -10,6 +10,7 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
+    'AddressActionVerificationAddressArgs',
     'SubscriptionBillingAddressArgs',
     'SubscriptionPaymentGatewayArgs',
     'SubscriptionPaymentGatewayMerchantDefinedDataArgs',
@@ -27,31 +28,65 @@ __all__ = [
 ]
 
 @pulumi.input_type
-class SubscriptionBillingAddressArgs:
+class AddressActionVerificationAddressArgs:
     def __init__(__self__, *,
                  address_key: Optional[pulumi.Input[str]] = None,
                  city: Optional[pulumi.Input[str]] = None,
                  company_name: Optional[pulumi.Input[str]] = None,
+                 contributor_class: Optional[pulumi.Input[str]] = None,
                  country: Optional[pulumi.Input[str]] = None,
+                 county: Optional[pulumi.Input[str]] = None,
+                 department_name: Optional[pulumi.Input[str]] = None,
                  email_address: Optional[pulumi.Input[str]] = None,
                  first_name: Optional[pulumi.Input[str]] = None,
+                 internal_number: Optional[pulumi.Input[str]] = None,
+                 job_title: Optional[pulumi.Input[str]] = None,
                  last_name: Optional[pulumi.Input[str]] = None,
                  line1: Optional[pulumi.Input[str]] = None,
                  line2: Optional[pulumi.Input[str]] = None,
+                 line3: Optional[pulumi.Input[str]] = None,
+                 line4: Optional[pulumi.Input[str]] = None,
+                 middle_name: Optional[pulumi.Input[str]] = None,
+                 municipal_inscription: Optional[pulumi.Input[str]] = None,
+                 phone_country_code: Optional[pulumi.Input[str]] = None,
+                 phone_number: Optional[pulumi.Input[str]] = None,
                  postal_code: Optional[pulumi.Input[str]] = None,
-                 state: Optional[pulumi.Input[str]] = None):
+                 province: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
+                 state_inscription: Optional[pulumi.Input[str]] = None,
+                 street_name: Optional[pulumi.Input[str]] = None,
+                 street_number: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] address_key: (Updatable) Address identifier.
-        :param pulumi.Input[str] city: (Updatable) Name of the city.
-        :param pulumi.Input[str] company_name: (Updatable) Name of the customer company.
-        :param pulumi.Input[str] country: (Updatable) Country of the address.
-        :param pulumi.Input[str] email_address: (Updatable) The email address of the paypal user.
-        :param pulumi.Input[str] first_name: (Updatable) First name of the paypal user.
-        :param pulumi.Input[str] last_name: (Updatable) Last name of the paypal user.
-        :param pulumi.Input[str] line1: (Updatable) Address line 1.
-        :param pulumi.Input[str] line2: (Updatable) Address line 2.
-        :param pulumi.Input[str] postal_code: (Updatable) Post code of the address.
-        :param pulumi.Input[str] state: (Updatable) State of the address.
+        :param pulumi.Input[str] address_key: Address identifier.
+        :param pulumi.Input[str] city: Name of the city.
+        :param pulumi.Input[str] company_name: Name of the customer company.
+        :param pulumi.Input[str] contributor_class: Contributor class of the customer company.
+        :param pulumi.Input[str] country: Country of the address.
+        :param pulumi.Input[str] county: County of the address.
+        :param pulumi.Input[str] department_name: Department name of the customer company.
+        :param pulumi.Input[str] email_address: Contact person email address.
+        :param pulumi.Input[str] first_name: First name of the contact person.
+        :param pulumi.Input[str] internal_number: Internal number of the customer company.
+        :param pulumi.Input[str] job_title: Job title of the contact person.
+        :param pulumi.Input[str] last_name: Last name of the contact person.
+        :param pulumi.Input[str] line1: Address line 1.
+        :param pulumi.Input[str] line2: Address line 2.
+        :param pulumi.Input[str] line3: Address line 3.
+        :param pulumi.Input[str] line4: Address line 4.
+        :param pulumi.Input[str] middle_name: Middle name of the contact person.
+        :param pulumi.Input[str] municipal_inscription: Municipal Inscription.
+        :param pulumi.Input[str] phone_country_code: Phone country code of the contact person.
+        :param pulumi.Input[str] phone_number: Phone number of the contact person.
+        :param pulumi.Input[str] postal_code: Post code of the address.
+        :param pulumi.Input[str] province: Province of the address.
+        :param pulumi.Input[str] state: State of the address.
+        :param pulumi.Input[str] state_inscription: State Inscription.
+        :param pulumi.Input[str] street_name: Street name of the address.
+        :param pulumi.Input[str] street_number: Street number of the address.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if address_key is not None:
             pulumi.set(__self__, "address_key", address_key)
@@ -59,22 +94,479 @@ class SubscriptionBillingAddressArgs:
             pulumi.set(__self__, "city", city)
         if company_name is not None:
             pulumi.set(__self__, "company_name", company_name)
+        if contributor_class is not None:
+            pulumi.set(__self__, "contributor_class", contributor_class)
         if country is not None:
             pulumi.set(__self__, "country", country)
+        if county is not None:
+            pulumi.set(__self__, "county", county)
+        if department_name is not None:
+            pulumi.set(__self__, "department_name", department_name)
         if email_address is not None:
             pulumi.set(__self__, "email_address", email_address)
         if first_name is not None:
             pulumi.set(__self__, "first_name", first_name)
+        if internal_number is not None:
+            pulumi.set(__self__, "internal_number", internal_number)
+        if job_title is not None:
+            pulumi.set(__self__, "job_title", job_title)
         if last_name is not None:
             pulumi.set(__self__, "last_name", last_name)
         if line1 is not None:
             pulumi.set(__self__, "line1", line1)
         if line2 is not None:
             pulumi.set(__self__, "line2", line2)
+        if line3 is not None:
+            pulumi.set(__self__, "line3", line3)
+        if line4 is not None:
+            pulumi.set(__self__, "line4", line4)
+        if middle_name is not None:
+            pulumi.set(__self__, "middle_name", middle_name)
+        if municipal_inscription is not None:
+            pulumi.set(__self__, "municipal_inscription", municipal_inscription)
+        if phone_country_code is not None:
+            pulumi.set(__self__, "phone_country_code", phone_country_code)
+        if phone_number is not None:
+            pulumi.set(__self__, "phone_number", phone_number)
         if postal_code is not None:
             pulumi.set(__self__, "postal_code", postal_code)
+        if province is not None:
+            pulumi.set(__self__, "province", province)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if state_inscription is not None:
+            pulumi.set(__self__, "state_inscription", state_inscription)
+        if street_name is not None:
+            pulumi.set(__self__, "street_name", street_name)
+        if street_number is not None:
+            pulumi.set(__self__, "street_number", street_number)
+
+    @property
+    @pulumi.getter(name="addressKey")
+    def address_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        Address identifier.
+        """
+        return pulumi.get(self, "address_key")
+
+    @address_key.setter
+    def address_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "address_key", value)
+
+    @property
+    @pulumi.getter
+    def city(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the city.
+        """
+        return pulumi.get(self, "city")
+
+    @city.setter
+    def city(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "city", value)
+
+    @property
+    @pulumi.getter(name="companyName")
+    def company_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the customer company.
+        """
+        return pulumi.get(self, "company_name")
+
+    @company_name.setter
+    def company_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "company_name", value)
+
+    @property
+    @pulumi.getter(name="contributorClass")
+    def contributor_class(self) -> Optional[pulumi.Input[str]]:
+        """
+        Contributor class of the customer company.
+        """
+        return pulumi.get(self, "contributor_class")
+
+    @contributor_class.setter
+    def contributor_class(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "contributor_class", value)
+
+    @property
+    @pulumi.getter
+    def country(self) -> Optional[pulumi.Input[str]]:
+        """
+        Country of the address.
+        """
+        return pulumi.get(self, "country")
+
+    @country.setter
+    def country(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "country", value)
+
+    @property
+    @pulumi.getter
+    def county(self) -> Optional[pulumi.Input[str]]:
+        """
+        County of the address.
+        """
+        return pulumi.get(self, "county")
+
+    @county.setter
+    def county(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "county", value)
+
+    @property
+    @pulumi.getter(name="departmentName")
+    def department_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Department name of the customer company.
+        """
+        return pulumi.get(self, "department_name")
+
+    @department_name.setter
+    def department_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "department_name", value)
+
+    @property
+    @pulumi.getter(name="emailAddress")
+    def email_address(self) -> Optional[pulumi.Input[str]]:
+        """
+        Contact person email address.
+        """
+        return pulumi.get(self, "email_address")
+
+    @email_address.setter
+    def email_address(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "email_address", value)
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        First name of the contact person.
+        """
+        return pulumi.get(self, "first_name")
+
+    @first_name.setter
+    def first_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "first_name", value)
+
+    @property
+    @pulumi.getter(name="internalNumber")
+    def internal_number(self) -> Optional[pulumi.Input[str]]:
+        """
+        Internal number of the customer company.
+        """
+        return pulumi.get(self, "internal_number")
+
+    @internal_number.setter
+    def internal_number(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "internal_number", value)
+
+    @property
+    @pulumi.getter(name="jobTitle")
+    def job_title(self) -> Optional[pulumi.Input[str]]:
+        """
+        Job title of the contact person.
+        """
+        return pulumi.get(self, "job_title")
+
+    @job_title.setter
+    def job_title(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "job_title", value)
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Last name of the contact person.
+        """
+        return pulumi.get(self, "last_name")
+
+    @last_name.setter
+    def last_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_name", value)
+
+    @property
+    @pulumi.getter
+    def line1(self) -> Optional[pulumi.Input[str]]:
+        """
+        Address line 1.
+        """
+        return pulumi.get(self, "line1")
+
+    @line1.setter
+    def line1(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "line1", value)
+
+    @property
+    @pulumi.getter
+    def line2(self) -> Optional[pulumi.Input[str]]:
+        """
+        Address line 2.
+        """
+        return pulumi.get(self, "line2")
+
+    @line2.setter
+    def line2(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "line2", value)
+
+    @property
+    @pulumi.getter
+    def line3(self) -> Optional[pulumi.Input[str]]:
+        """
+        Address line 3.
+        """
+        return pulumi.get(self, "line3")
+
+    @line3.setter
+    def line3(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "line3", value)
+
+    @property
+    @pulumi.getter
+    def line4(self) -> Optional[pulumi.Input[str]]:
+        """
+        Address line 4.
+        """
+        return pulumi.get(self, "line4")
+
+    @line4.setter
+    def line4(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "line4", value)
+
+    @property
+    @pulumi.getter(name="middleName")
+    def middle_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Middle name of the contact person.
+        """
+        return pulumi.get(self, "middle_name")
+
+    @middle_name.setter
+    def middle_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "middle_name", value)
+
+    @property
+    @pulumi.getter(name="municipalInscription")
+    def municipal_inscription(self) -> Optional[pulumi.Input[str]]:
+        """
+        Municipal Inscription.
+        """
+        return pulumi.get(self, "municipal_inscription")
+
+    @municipal_inscription.setter
+    def municipal_inscription(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "municipal_inscription", value)
+
+    @property
+    @pulumi.getter(name="phoneCountryCode")
+    def phone_country_code(self) -> Optional[pulumi.Input[str]]:
+        """
+        Phone country code of the contact person.
+        """
+        return pulumi.get(self, "phone_country_code")
+
+    @phone_country_code.setter
+    def phone_country_code(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "phone_country_code", value)
+
+    @property
+    @pulumi.getter(name="phoneNumber")
+    def phone_number(self) -> Optional[pulumi.Input[str]]:
+        """
+        Phone number of the contact person.
+        """
+        return pulumi.get(self, "phone_number")
+
+    @phone_number.setter
+    def phone_number(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "phone_number", value)
+
+    @property
+    @pulumi.getter(name="postalCode")
+    def postal_code(self) -> Optional[pulumi.Input[str]]:
+        """
+        Post code of the address.
+        """
+        return pulumi.get(self, "postal_code")
+
+    @postal_code.setter
+    def postal_code(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "postal_code", value)
+
+    @property
+    @pulumi.getter
+    def province(self) -> Optional[pulumi.Input[str]]:
+        """
+        Province of the address.
+        """
+        return pulumi.get(self, "province")
+
+    @province.setter
+    def province(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "province", value)
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        State of the address.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="stateInscription")
+    def state_inscription(self) -> Optional[pulumi.Input[str]]:
+        """
+        State Inscription.
+        """
+        return pulumi.get(self, "state_inscription")
+
+    @state_inscription.setter
+    def state_inscription(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state_inscription", value)
+
+    @property
+    @pulumi.getter(name="streetName")
+    def street_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Street name of the address.
+        """
+        return pulumi.get(self, "street_name")
+
+    @street_name.setter
+    def street_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "street_name", value)
+
+    @property
+    @pulumi.getter(name="streetNumber")
+    def street_number(self) -> Optional[pulumi.Input[str]]:
+        """
+        Street number of the address.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "street_number")
+
+    @street_number.setter
+    def street_number(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "street_number", value)
+
+
+@pulumi.input_type
+class SubscriptionBillingAddressArgs:
+    def __init__(__self__, *,
+                 address_key: Optional[pulumi.Input[str]] = None,
+                 city: Optional[pulumi.Input[str]] = None,
+                 company_name: Optional[pulumi.Input[str]] = None,
+                 contributor_class: Optional[pulumi.Input[str]] = None,
+                 country: Optional[pulumi.Input[str]] = None,
+                 county: Optional[pulumi.Input[str]] = None,
+                 department_name: Optional[pulumi.Input[str]] = None,
+                 email_address: Optional[pulumi.Input[str]] = None,
+                 first_name: Optional[pulumi.Input[str]] = None,
+                 internal_number: Optional[pulumi.Input[str]] = None,
+                 job_title: Optional[pulumi.Input[str]] = None,
+                 last_name: Optional[pulumi.Input[str]] = None,
+                 line1: Optional[pulumi.Input[str]] = None,
+                 line2: Optional[pulumi.Input[str]] = None,
+                 line3: Optional[pulumi.Input[str]] = None,
+                 line4: Optional[pulumi.Input[str]] = None,
+                 middle_name: Optional[pulumi.Input[str]] = None,
+                 municipal_inscription: Optional[pulumi.Input[str]] = None,
+                 phone_country_code: Optional[pulumi.Input[str]] = None,
+                 phone_number: Optional[pulumi.Input[str]] = None,
+                 postal_code: Optional[pulumi.Input[str]] = None,
+                 province: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
+                 state_inscription: Optional[pulumi.Input[str]] = None,
+                 street_name: Optional[pulumi.Input[str]] = None,
+                 street_number: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] address_key: (Updatable) Address identifier.
+        :param pulumi.Input[str] city: (Updatable) Name of the city.
+        :param pulumi.Input[str] company_name: (Updatable) Name of the customer company.
+        :param pulumi.Input[str] contributor_class: (Updatable) Contributor class of the customer company.
+        :param pulumi.Input[str] country: (Updatable) Country of the address.
+        :param pulumi.Input[str] county: (Updatable) County of the address.
+        :param pulumi.Input[str] department_name: (Updatable) Department name of the customer company.
+        :param pulumi.Input[str] email_address: (Updatable) The email address of the paypal user.
+        :param pulumi.Input[str] first_name: (Updatable) First name of the paypal user.
+        :param pulumi.Input[str] internal_number: (Updatable) Internal number of the customer company.
+        :param pulumi.Input[str] job_title: (Updatable) Job title of the contact person.
+        :param pulumi.Input[str] last_name: (Updatable) Last name of the paypal user.
+        :param pulumi.Input[str] line1: (Updatable) Address line 1.
+        :param pulumi.Input[str] line2: (Updatable) Address line 2.
+        :param pulumi.Input[str] line3: (Updatable) Address line 3.
+        :param pulumi.Input[str] line4: (Updatable) Address line 4.
+        :param pulumi.Input[str] middle_name: (Updatable) Middle name of the contact person.
+        :param pulumi.Input[str] municipal_inscription: (Updatable) Municipal Inscription.
+        :param pulumi.Input[str] phone_country_code: (Updatable) Phone country code of the contact person.
+        :param pulumi.Input[str] phone_number: (Updatable) Phone number of the contact person.
+        :param pulumi.Input[str] postal_code: (Updatable) Post code of the address.
+        :param pulumi.Input[str] province: (Updatable) Province of the address.
+        :param pulumi.Input[str] state: (Updatable) State of the address.
+        :param pulumi.Input[str] state_inscription: (Updatable) State Inscription.
+        :param pulumi.Input[str] street_name: (Updatable) Street name of the address.
+        :param pulumi.Input[str] street_number: (Updatable) Street number of the address.
+        """
+        if address_key is not None:
+            pulumi.set(__self__, "address_key", address_key)
+        if city is not None:
+            pulumi.set(__self__, "city", city)
+        if company_name is not None:
+            pulumi.set(__self__, "company_name", company_name)
+        if contributor_class is not None:
+            pulumi.set(__self__, "contributor_class", contributor_class)
+        if country is not None:
+            pulumi.set(__self__, "country", country)
+        if county is not None:
+            pulumi.set(__self__, "county", county)
+        if department_name is not None:
+            pulumi.set(__self__, "department_name", department_name)
+        if email_address is not None:
+            pulumi.set(__self__, "email_address", email_address)
+        if first_name is not None:
+            pulumi.set(__self__, "first_name", first_name)
+        if internal_number is not None:
+            pulumi.set(__self__, "internal_number", internal_number)
+        if job_title is not None:
+            pulumi.set(__self__, "job_title", job_title)
+        if last_name is not None:
+            pulumi.set(__self__, "last_name", last_name)
+        if line1 is not None:
+            pulumi.set(__self__, "line1", line1)
+        if line2 is not None:
+            pulumi.set(__self__, "line2", line2)
+        if line3 is not None:
+            pulumi.set(__self__, "line3", line3)
+        if line4 is not None:
+            pulumi.set(__self__, "line4", line4)
+        if middle_name is not None:
+            pulumi.set(__self__, "middle_name", middle_name)
+        if municipal_inscription is not None:
+            pulumi.set(__self__, "municipal_inscription", municipal_inscription)
+        if phone_country_code is not None:
+            pulumi.set(__self__, "phone_country_code", phone_country_code)
+        if phone_number is not None:
+            pulumi.set(__self__, "phone_number", phone_number)
+        if postal_code is not None:
+            pulumi.set(__self__, "postal_code", postal_code)
+        if province is not None:
+            pulumi.set(__self__, "province", province)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if state_inscription is not None:
+            pulumi.set(__self__, "state_inscription", state_inscription)
+        if street_name is not None:
+            pulumi.set(__self__, "street_name", street_name)
+        if street_number is not None:
+            pulumi.set(__self__, "street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
@@ -113,6 +605,18 @@ class SubscriptionBillingAddressArgs:
         pulumi.set(self, "company_name", value)
 
     @property
+    @pulumi.getter(name="contributorClass")
+    def contributor_class(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Contributor class of the customer company.
+        """
+        return pulumi.get(self, "contributor_class")
+
+    @contributor_class.setter
+    def contributor_class(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "contributor_class", value)
+
+    @property
     @pulumi.getter
     def country(self) -> Optional[pulumi.Input[str]]:
         """
@@ -123,6 +627,30 @@ class SubscriptionBillingAddressArgs:
     @country.setter
     def country(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "country", value)
+
+    @property
+    @pulumi.getter
+    def county(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) County of the address.
+        """
+        return pulumi.get(self, "county")
+
+    @county.setter
+    def county(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "county", value)
+
+    @property
+    @pulumi.getter(name="departmentName")
+    def department_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Department name of the customer company.
+        """
+        return pulumi.get(self, "department_name")
+
+    @department_name.setter
+    def department_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "department_name", value)
 
     @property
     @pulumi.getter(name="emailAddress")
@@ -147,6 +675,30 @@ class SubscriptionBillingAddressArgs:
     @first_name.setter
     def first_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "first_name", value)
+
+    @property
+    @pulumi.getter(name="internalNumber")
+    def internal_number(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Internal number of the customer company.
+        """
+        return pulumi.get(self, "internal_number")
+
+    @internal_number.setter
+    def internal_number(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "internal_number", value)
+
+    @property
+    @pulumi.getter(name="jobTitle")
+    def job_title(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Job title of the contact person.
+        """
+        return pulumi.get(self, "job_title")
+
+    @job_title.setter
+    def job_title(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "job_title", value)
 
     @property
     @pulumi.getter(name="lastName")
@@ -185,6 +737,78 @@ class SubscriptionBillingAddressArgs:
         pulumi.set(self, "line2", value)
 
     @property
+    @pulumi.getter
+    def line3(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Address line 3.
+        """
+        return pulumi.get(self, "line3")
+
+    @line3.setter
+    def line3(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "line3", value)
+
+    @property
+    @pulumi.getter
+    def line4(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Address line 4.
+        """
+        return pulumi.get(self, "line4")
+
+    @line4.setter
+    def line4(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "line4", value)
+
+    @property
+    @pulumi.getter(name="middleName")
+    def middle_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Middle name of the contact person.
+        """
+        return pulumi.get(self, "middle_name")
+
+    @middle_name.setter
+    def middle_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "middle_name", value)
+
+    @property
+    @pulumi.getter(name="municipalInscription")
+    def municipal_inscription(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Municipal Inscription.
+        """
+        return pulumi.get(self, "municipal_inscription")
+
+    @municipal_inscription.setter
+    def municipal_inscription(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "municipal_inscription", value)
+
+    @property
+    @pulumi.getter(name="phoneCountryCode")
+    def phone_country_code(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Phone country code of the contact person.
+        """
+        return pulumi.get(self, "phone_country_code")
+
+    @phone_country_code.setter
+    def phone_country_code(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "phone_country_code", value)
+
+    @property
+    @pulumi.getter(name="phoneNumber")
+    def phone_number(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Phone number of the contact person.
+        """
+        return pulumi.get(self, "phone_number")
+
+    @phone_number.setter
+    def phone_number(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "phone_number", value)
+
+    @property
     @pulumi.getter(name="postalCode")
     def postal_code(self) -> Optional[pulumi.Input[str]]:
         """
@@ -198,6 +822,18 @@ class SubscriptionBillingAddressArgs:
 
     @property
     @pulumi.getter
+    def province(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Province of the address.
+        """
+        return pulumi.get(self, "province")
+
+    @province.setter
+    def province(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "province", value)
+
+    @property
+    @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) State of the address.
@@ -207,6 +843,42 @@ class SubscriptionBillingAddressArgs:
     @state.setter
     def state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="stateInscription")
+    def state_inscription(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) State Inscription.
+        """
+        return pulumi.get(self, "state_inscription")
+
+    @state_inscription.setter
+    def state_inscription(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state_inscription", value)
+
+    @property
+    @pulumi.getter(name="streetName")
+    def street_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Street name of the address.
+        """
+        return pulumi.get(self, "street_name")
+
+    @street_name.setter
+    def street_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "street_name", value)
+
+    @property
+    @pulumi.getter(name="streetNumber")
+    def street_number(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Street number of the address.
+        """
+        return pulumi.get(self, "street_number")
+
+    @street_number.setter
+    def street_number(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "street_number", value)
 
 
 @pulumi.input_type
@@ -458,6 +1130,7 @@ class SubscriptionPaymentOptionArgs:
 class SubscriptionSubscriptionArgs:
     def __init__(__self__, *,
                  subscription_plan_number: pulumi.Input[str],
+                 account_type: Optional[pulumi.Input[str]] = None,
                  bill_to_cust_account_id: Optional[pulumi.Input[str]] = None,
                  billing_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionSubscriptionBillingAddressArgs']]]] = None,
                  currency_code: Optional[pulumi.Input[str]] = None,
@@ -472,14 +1145,16 @@ class SubscriptionSubscriptionArgs:
                  ship_to_cust_acct_role_id: Optional[pulumi.Input[str]] = None,
                  ship_to_cust_acct_site_id: Optional[pulumi.Input[str]] = None,
                  tax_info: Optional[pulumi.Input['SubscriptionSubscriptionTaxInfoArgs']] = None,
+                 time_personal_to_corporate_conv: Optional[pulumi.Input[str]] = None,
                  time_plan_upgrade: Optional[pulumi.Input[str]] = None,
                  time_start: Optional[pulumi.Input[str]] = None,
                  upgrade_state: Optional[pulumi.Input[str]] = None,
                  upgrade_state_details: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] subscription_plan_number: (Updatable) Subscription plan number.
+        :param pulumi.Input[str] account_type: (Updatable) Account type.
         :param pulumi.Input[str] bill_to_cust_account_id: (Updatable) Bill to customer Account id.
-        :param pulumi.Input[Sequence[pulumi.Input['SubscriptionSubscriptionBillingAddressArgs']]] billing_addresses: (Updatable) Billing address details model.
+        :param pulumi.Input[Sequence[pulumi.Input['SubscriptionSubscriptionBillingAddressArgs']]] billing_addresses: (Updatable) Address details model.
         :param pulumi.Input[str] currency_code: (Updatable) Currency code
         :param pulumi.Input[str] gsi_org_code: (Updatable) GSI Subscription external code.
         :param pulumi.Input[str] id: (Updatable) Subscription id identifier (OCID).
@@ -492,12 +1167,15 @@ class SubscriptionSubscriptionArgs:
         :param pulumi.Input[str] ship_to_cust_acct_role_id: (Updatable) Ship to customer account role.
         :param pulumi.Input[str] ship_to_cust_acct_site_id: (Updatable) Ship to customer account site address id.
         :param pulumi.Input['SubscriptionSubscriptionTaxInfoArgs'] tax_info: (Updatable) Tax details.
+        :param pulumi.Input[str] time_personal_to_corporate_conv: (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
         :param pulumi.Input[str] time_plan_upgrade: (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
         :param pulumi.Input[str] time_start: (Updatable) Start date of the subscription.
         :param pulumi.Input[str] upgrade_state: (Updatable) Status of the upgrade.
         :param pulumi.Input[str] upgrade_state_details: (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
         """
         pulumi.set(__self__, "subscription_plan_number", subscription_plan_number)
+        if account_type is not None:
+            pulumi.set(__self__, "account_type", account_type)
         if bill_to_cust_account_id is not None:
             pulumi.set(__self__, "bill_to_cust_account_id", bill_to_cust_account_id)
         if billing_addresses is not None:
@@ -526,6 +1204,8 @@ class SubscriptionSubscriptionArgs:
             pulumi.set(__self__, "ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
         if tax_info is not None:
             pulumi.set(__self__, "tax_info", tax_info)
+        if time_personal_to_corporate_conv is not None:
+            pulumi.set(__self__, "time_personal_to_corporate_conv", time_personal_to_corporate_conv)
         if time_plan_upgrade is not None:
             pulumi.set(__self__, "time_plan_upgrade", time_plan_upgrade)
         if time_start is not None:
@@ -548,6 +1228,18 @@ class SubscriptionSubscriptionArgs:
         pulumi.set(self, "subscription_plan_number", value)
 
     @property
+    @pulumi.getter(name="accountType")
+    def account_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Account type.
+        """
+        return pulumi.get(self, "account_type")
+
+    @account_type.setter
+    def account_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "account_type", value)
+
+    @property
     @pulumi.getter(name="billToCustAccountId")
     def bill_to_cust_account_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -563,7 +1255,7 @@ class SubscriptionSubscriptionArgs:
     @pulumi.getter(name="billingAddresses")
     def billing_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionSubscriptionBillingAddressArgs']]]]:
         """
-        (Updatable) Billing address details model.
+        (Updatable) Address details model.
         """
         return pulumi.get(self, "billing_addresses")
 
@@ -716,6 +1408,18 @@ class SubscriptionSubscriptionArgs:
         pulumi.set(self, "tax_info", value)
 
     @property
+    @pulumi.getter(name="timePersonalToCorporateConv")
+    def time_personal_to_corporate_conv(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+        """
+        return pulumi.get(self, "time_personal_to_corporate_conv")
+
+    @time_personal_to_corporate_conv.setter
+    def time_personal_to_corporate_conv(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_personal_to_corporate_conv", value)
+
+    @property
     @pulumi.getter(name="timePlanUpgrade")
     def time_plan_upgrade(self) -> Optional[pulumi.Input[str]]:
         """
@@ -770,26 +1474,56 @@ class SubscriptionSubscriptionBillingAddressArgs:
                  address_key: Optional[pulumi.Input[str]] = None,
                  city: Optional[pulumi.Input[str]] = None,
                  company_name: Optional[pulumi.Input[str]] = None,
+                 contributor_class: Optional[pulumi.Input[str]] = None,
                  country: Optional[pulumi.Input[str]] = None,
+                 county: Optional[pulumi.Input[str]] = None,
+                 department_name: Optional[pulumi.Input[str]] = None,
                  email_address: Optional[pulumi.Input[str]] = None,
                  first_name: Optional[pulumi.Input[str]] = None,
+                 internal_number: Optional[pulumi.Input[str]] = None,
+                 job_title: Optional[pulumi.Input[str]] = None,
                  last_name: Optional[pulumi.Input[str]] = None,
                  line1: Optional[pulumi.Input[str]] = None,
                  line2: Optional[pulumi.Input[str]] = None,
+                 line3: Optional[pulumi.Input[str]] = None,
+                 line4: Optional[pulumi.Input[str]] = None,
+                 middle_name: Optional[pulumi.Input[str]] = None,
+                 municipal_inscription: Optional[pulumi.Input[str]] = None,
+                 phone_country_code: Optional[pulumi.Input[str]] = None,
+                 phone_number: Optional[pulumi.Input[str]] = None,
                  postal_code: Optional[pulumi.Input[str]] = None,
-                 state: Optional[pulumi.Input[str]] = None):
+                 province: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
+                 state_inscription: Optional[pulumi.Input[str]] = None,
+                 street_name: Optional[pulumi.Input[str]] = None,
+                 street_number: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] address_key: (Updatable) Address identifier.
         :param pulumi.Input[str] city: (Updatable) Name of the city.
         :param pulumi.Input[str] company_name: (Updatable) Name of the customer company.
+        :param pulumi.Input[str] contributor_class: (Updatable) Contributor class of the customer company.
         :param pulumi.Input[str] country: (Updatable) Country of the address.
+        :param pulumi.Input[str] county: (Updatable) County of the address.
+        :param pulumi.Input[str] department_name: (Updatable) Department name of the customer company.
         :param pulumi.Input[str] email_address: (Updatable) The email address of the paypal user.
         :param pulumi.Input[str] first_name: (Updatable) First name of the paypal user.
+        :param pulumi.Input[str] internal_number: (Updatable) Internal number of the customer company.
+        :param pulumi.Input[str] job_title: (Updatable) Job title of the contact person.
         :param pulumi.Input[str] last_name: (Updatable) Last name of the paypal user.
         :param pulumi.Input[str] line1: (Updatable) Address line 1.
         :param pulumi.Input[str] line2: (Updatable) Address line 2.
+        :param pulumi.Input[str] line3: (Updatable) Address line 3.
+        :param pulumi.Input[str] line4: (Updatable) Address line 4.
+        :param pulumi.Input[str] middle_name: (Updatable) Middle name of the contact person.
+        :param pulumi.Input[str] municipal_inscription: (Updatable) Municipal Inscription.
+        :param pulumi.Input[str] phone_country_code: (Updatable) Phone country code of the contact person.
+        :param pulumi.Input[str] phone_number: (Updatable) Phone number of the contact person.
         :param pulumi.Input[str] postal_code: (Updatable) Post code of the address.
+        :param pulumi.Input[str] province: (Updatable) Province of the address.
         :param pulumi.Input[str] state: (Updatable) State of the address.
+        :param pulumi.Input[str] state_inscription: (Updatable) State Inscription.
+        :param pulumi.Input[str] street_name: (Updatable) Street name of the address.
+        :param pulumi.Input[str] street_number: (Updatable) Street number of the address.
         """
         if address_key is not None:
             pulumi.set(__self__, "address_key", address_key)
@@ -797,22 +1531,52 @@ class SubscriptionSubscriptionBillingAddressArgs:
             pulumi.set(__self__, "city", city)
         if company_name is not None:
             pulumi.set(__self__, "company_name", company_name)
+        if contributor_class is not None:
+            pulumi.set(__self__, "contributor_class", contributor_class)
         if country is not None:
             pulumi.set(__self__, "country", country)
+        if county is not None:
+            pulumi.set(__self__, "county", county)
+        if department_name is not None:
+            pulumi.set(__self__, "department_name", department_name)
         if email_address is not None:
             pulumi.set(__self__, "email_address", email_address)
         if first_name is not None:
             pulumi.set(__self__, "first_name", first_name)
+        if internal_number is not None:
+            pulumi.set(__self__, "internal_number", internal_number)
+        if job_title is not None:
+            pulumi.set(__self__, "job_title", job_title)
         if last_name is not None:
             pulumi.set(__self__, "last_name", last_name)
         if line1 is not None:
             pulumi.set(__self__, "line1", line1)
         if line2 is not None:
             pulumi.set(__self__, "line2", line2)
+        if line3 is not None:
+            pulumi.set(__self__, "line3", line3)
+        if line4 is not None:
+            pulumi.set(__self__, "line4", line4)
+        if middle_name is not None:
+            pulumi.set(__self__, "middle_name", middle_name)
+        if municipal_inscription is not None:
+            pulumi.set(__self__, "municipal_inscription", municipal_inscription)
+        if phone_country_code is not None:
+            pulumi.set(__self__, "phone_country_code", phone_country_code)
+        if phone_number is not None:
+            pulumi.set(__self__, "phone_number", phone_number)
         if postal_code is not None:
             pulumi.set(__self__, "postal_code", postal_code)
+        if province is not None:
+            pulumi.set(__self__, "province", province)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if state_inscription is not None:
+            pulumi.set(__self__, "state_inscription", state_inscription)
+        if street_name is not None:
+            pulumi.set(__self__, "street_name", street_name)
+        if street_number is not None:
+            pulumi.set(__self__, "street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
@@ -851,6 +1615,18 @@ class SubscriptionSubscriptionBillingAddressArgs:
         pulumi.set(self, "company_name", value)
 
     @property
+    @pulumi.getter(name="contributorClass")
+    def contributor_class(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Contributor class of the customer company.
+        """
+        return pulumi.get(self, "contributor_class")
+
+    @contributor_class.setter
+    def contributor_class(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "contributor_class", value)
+
+    @property
     @pulumi.getter
     def country(self) -> Optional[pulumi.Input[str]]:
         """
@@ -861,6 +1637,30 @@ class SubscriptionSubscriptionBillingAddressArgs:
     @country.setter
     def country(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "country", value)
+
+    @property
+    @pulumi.getter
+    def county(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) County of the address.
+        """
+        return pulumi.get(self, "county")
+
+    @county.setter
+    def county(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "county", value)
+
+    @property
+    @pulumi.getter(name="departmentName")
+    def department_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Department name of the customer company.
+        """
+        return pulumi.get(self, "department_name")
+
+    @department_name.setter
+    def department_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "department_name", value)
 
     @property
     @pulumi.getter(name="emailAddress")
@@ -885,6 +1685,30 @@ class SubscriptionSubscriptionBillingAddressArgs:
     @first_name.setter
     def first_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "first_name", value)
+
+    @property
+    @pulumi.getter(name="internalNumber")
+    def internal_number(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Internal number of the customer company.
+        """
+        return pulumi.get(self, "internal_number")
+
+    @internal_number.setter
+    def internal_number(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "internal_number", value)
+
+    @property
+    @pulumi.getter(name="jobTitle")
+    def job_title(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Job title of the contact person.
+        """
+        return pulumi.get(self, "job_title")
+
+    @job_title.setter
+    def job_title(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "job_title", value)
 
     @property
     @pulumi.getter(name="lastName")
@@ -923,6 +1747,78 @@ class SubscriptionSubscriptionBillingAddressArgs:
         pulumi.set(self, "line2", value)
 
     @property
+    @pulumi.getter
+    def line3(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Address line 3.
+        """
+        return pulumi.get(self, "line3")
+
+    @line3.setter
+    def line3(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "line3", value)
+
+    @property
+    @pulumi.getter
+    def line4(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Address line 4.
+        """
+        return pulumi.get(self, "line4")
+
+    @line4.setter
+    def line4(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "line4", value)
+
+    @property
+    @pulumi.getter(name="middleName")
+    def middle_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Middle name of the contact person.
+        """
+        return pulumi.get(self, "middle_name")
+
+    @middle_name.setter
+    def middle_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "middle_name", value)
+
+    @property
+    @pulumi.getter(name="municipalInscription")
+    def municipal_inscription(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Municipal Inscription.
+        """
+        return pulumi.get(self, "municipal_inscription")
+
+    @municipal_inscription.setter
+    def municipal_inscription(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "municipal_inscription", value)
+
+    @property
+    @pulumi.getter(name="phoneCountryCode")
+    def phone_country_code(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Phone country code of the contact person.
+        """
+        return pulumi.get(self, "phone_country_code")
+
+    @phone_country_code.setter
+    def phone_country_code(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "phone_country_code", value)
+
+    @property
+    @pulumi.getter(name="phoneNumber")
+    def phone_number(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Phone number of the contact person.
+        """
+        return pulumi.get(self, "phone_number")
+
+    @phone_number.setter
+    def phone_number(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "phone_number", value)
+
+    @property
     @pulumi.getter(name="postalCode")
     def postal_code(self) -> Optional[pulumi.Input[str]]:
         """
@@ -936,6 +1832,18 @@ class SubscriptionSubscriptionBillingAddressArgs:
 
     @property
     @pulumi.getter
+    def province(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Province of the address.
+        """
+        return pulumi.get(self, "province")
+
+    @province.setter
+    def province(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "province", value)
+
+    @property
+    @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) State of the address.
@@ -945,6 +1853,42 @@ class SubscriptionSubscriptionBillingAddressArgs:
     @state.setter
     def state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="stateInscription")
+    def state_inscription(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) State Inscription.
+        """
+        return pulumi.get(self, "state_inscription")
+
+    @state_inscription.setter
+    def state_inscription(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state_inscription", value)
+
+    @property
+    @pulumi.getter(name="streetName")
+    def street_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Street name of the address.
+        """
+        return pulumi.get(self, "street_name")
+
+    @street_name.setter
+    def street_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "street_name", value)
+
+    @property
+    @pulumi.getter(name="streetNumber")
+    def street_number(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Street number of the address.
+        """
+        return pulumi.get(self, "street_number")
+
+    @street_number.setter
+    def street_number(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "street_number", value)
 
 
 @pulumi.input_type

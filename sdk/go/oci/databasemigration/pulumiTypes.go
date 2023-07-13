@@ -3380,6 +3380,8 @@ type MigrationDumpTransferDetailsSource struct {
 	Kind string `pulumi:"kind"`
 	// (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
 	OciHome *string `pulumi:"ociHome"`
+	// (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation *string `pulumi:"walletLocation"`
 }
 
 // MigrationDumpTransferDetailsSourceInput is an input type that accepts MigrationDumpTransferDetailsSourceArgs and MigrationDumpTransferDetailsSourceOutput values.
@@ -3398,6 +3400,8 @@ type MigrationDumpTransferDetailsSourceArgs struct {
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
 	OciHome pulumi.StringPtrInput `pulumi:"ociHome"`
+	// (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation pulumi.StringPtrInput `pulumi:"walletLocation"`
 }
 
 func (MigrationDumpTransferDetailsSourceArgs) ElementType() reflect.Type {
@@ -3487,6 +3491,11 @@ func (o MigrationDumpTransferDetailsSourceOutput) OciHome() pulumi.StringPtrOutp
 	return o.ApplyT(func(v MigrationDumpTransferDetailsSource) *string { return v.OciHome }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+func (o MigrationDumpTransferDetailsSourceOutput) WalletLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDumpTransferDetailsSource) *string { return v.WalletLocation }).(pulumi.StringPtrOutput)
+}
+
 type MigrationDumpTransferDetailsSourcePtrOutput struct{ *pulumi.OutputState }
 
 func (MigrationDumpTransferDetailsSourcePtrOutput) ElementType() reflect.Type {
@@ -3531,11 +3540,23 @@ func (o MigrationDumpTransferDetailsSourcePtrOutput) OciHome() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+func (o MigrationDumpTransferDetailsSourcePtrOutput) WalletLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDumpTransferDetailsSource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.WalletLocation
+	}).(pulumi.StringPtrOutput)
+}
+
 type MigrationDumpTransferDetailsTarget struct {
 	// (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
 	Kind string `pulumi:"kind"`
 	// (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
 	OciHome *string `pulumi:"ociHome"`
+	// (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation *string `pulumi:"walletLocation"`
 }
 
 // MigrationDumpTransferDetailsTargetInput is an input type that accepts MigrationDumpTransferDetailsTargetArgs and MigrationDumpTransferDetailsTargetOutput values.
@@ -3554,6 +3575,8 @@ type MigrationDumpTransferDetailsTargetArgs struct {
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
 	OciHome pulumi.StringPtrInput `pulumi:"ociHome"`
+	// (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation pulumi.StringPtrInput `pulumi:"walletLocation"`
 }
 
 func (MigrationDumpTransferDetailsTargetArgs) ElementType() reflect.Type {
@@ -3643,6 +3666,11 @@ func (o MigrationDumpTransferDetailsTargetOutput) OciHome() pulumi.StringPtrOutp
 	return o.ApplyT(func(v MigrationDumpTransferDetailsTarget) *string { return v.OciHome }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+func (o MigrationDumpTransferDetailsTargetOutput) WalletLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDumpTransferDetailsTarget) *string { return v.WalletLocation }).(pulumi.StringPtrOutput)
+}
+
 type MigrationDumpTransferDetailsTargetPtrOutput struct{ *pulumi.OutputState }
 
 func (MigrationDumpTransferDetailsTargetPtrOutput) ElementType() reflect.Type {
@@ -3684,6 +3712,16 @@ func (o MigrationDumpTransferDetailsTargetPtrOutput) OciHome() pulumi.StringPtrO
 			return nil
 		}
 		return v.OciHome
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+func (o MigrationDumpTransferDetailsTargetPtrOutput) WalletLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDumpTransferDetailsTarget) *string {
+		if v == nil {
+			return nil
+		}
+		return v.WalletLocation
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -9652,6 +9690,8 @@ type GetMigrationDumpTransferDetailSource struct {
 	Kind string `pulumi:"kind"`
 	// Path to the Oracle Cloud Infrastructure CLI installation in the node.
 	OciHome string `pulumi:"ociHome"`
+	// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation string `pulumi:"walletLocation"`
 }
 
 // GetMigrationDumpTransferDetailSourceInput is an input type that accepts GetMigrationDumpTransferDetailSourceArgs and GetMigrationDumpTransferDetailSourceOutput values.
@@ -9670,6 +9710,8 @@ type GetMigrationDumpTransferDetailSourceArgs struct {
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// Path to the Oracle Cloud Infrastructure CLI installation in the node.
 	OciHome pulumi.StringInput `pulumi:"ociHome"`
+	// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation pulumi.StringInput `pulumi:"walletLocation"`
 }
 
 func (GetMigrationDumpTransferDetailSourceArgs) ElementType() reflect.Type {
@@ -9733,6 +9775,11 @@ func (o GetMigrationDumpTransferDetailSourceOutput) OciHome() pulumi.StringOutpu
 	return o.ApplyT(func(v GetMigrationDumpTransferDetailSource) string { return v.OciHome }).(pulumi.StringOutput)
 }
 
+// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+func (o GetMigrationDumpTransferDetailSourceOutput) WalletLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDumpTransferDetailSource) string { return v.WalletLocation }).(pulumi.StringOutput)
+}
+
 type GetMigrationDumpTransferDetailSourceArrayOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationDumpTransferDetailSourceArrayOutput) ElementType() reflect.Type {
@@ -9758,6 +9805,8 @@ type GetMigrationDumpTransferDetailTarget struct {
 	Kind string `pulumi:"kind"`
 	// Path to the Oracle Cloud Infrastructure CLI installation in the node.
 	OciHome string `pulumi:"ociHome"`
+	// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation string `pulumi:"walletLocation"`
 }
 
 // GetMigrationDumpTransferDetailTargetInput is an input type that accepts GetMigrationDumpTransferDetailTargetArgs and GetMigrationDumpTransferDetailTargetOutput values.
@@ -9776,6 +9825,8 @@ type GetMigrationDumpTransferDetailTargetArgs struct {
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// Path to the Oracle Cloud Infrastructure CLI installation in the node.
 	OciHome pulumi.StringInput `pulumi:"ociHome"`
+	// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation pulumi.StringInput `pulumi:"walletLocation"`
 }
 
 func (GetMigrationDumpTransferDetailTargetArgs) ElementType() reflect.Type {
@@ -9837,6 +9888,11 @@ func (o GetMigrationDumpTransferDetailTargetOutput) Kind() pulumi.StringOutput {
 // Path to the Oracle Cloud Infrastructure CLI installation in the node.
 func (o GetMigrationDumpTransferDetailTargetOutput) OciHome() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationDumpTransferDetailTarget) string { return v.OciHome }).(pulumi.StringOutput)
+}
+
+// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+func (o GetMigrationDumpTransferDetailTargetOutput) WalletLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDumpTransferDetailTarget) string { return v.WalletLocation }).(pulumi.StringOutput)
 }
 
 type GetMigrationDumpTransferDetailTargetArrayOutput struct{ *pulumi.OutputState }
@@ -13379,6 +13435,8 @@ type GetMigrationsMigrationCollectionItemDumpTransferDetailSource struct {
 	Kind string `pulumi:"kind"`
 	// Path to the Oracle Cloud Infrastructure CLI installation in the node.
 	OciHome string `pulumi:"ociHome"`
+	// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation string `pulumi:"walletLocation"`
 }
 
 // GetMigrationsMigrationCollectionItemDumpTransferDetailSourceInput is an input type that accepts GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArgs and GetMigrationsMigrationCollectionItemDumpTransferDetailSourceOutput values.
@@ -13397,6 +13455,8 @@ type GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArgs struct {
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// Path to the Oracle Cloud Infrastructure CLI installation in the node.
 	OciHome pulumi.StringInput `pulumi:"ociHome"`
+	// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation pulumi.StringInput `pulumi:"walletLocation"`
 }
 
 func (GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArgs) ElementType() reflect.Type {
@@ -13460,6 +13520,11 @@ func (o GetMigrationsMigrationCollectionItemDumpTransferDetailSourceOutput) OciH
 	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemDumpTransferDetailSource) string { return v.OciHome }).(pulumi.StringOutput)
 }
 
+// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+func (o GetMigrationsMigrationCollectionItemDumpTransferDetailSourceOutput) WalletLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemDumpTransferDetailSource) string { return v.WalletLocation }).(pulumi.StringOutput)
+}
+
 type GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArrayOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArrayOutput) ElementType() reflect.Type {
@@ -13485,6 +13550,8 @@ type GetMigrationsMigrationCollectionItemDumpTransferDetailTarget struct {
 	Kind string `pulumi:"kind"`
 	// Path to the Oracle Cloud Infrastructure CLI installation in the node.
 	OciHome string `pulumi:"ociHome"`
+	// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation string `pulumi:"walletLocation"`
 }
 
 // GetMigrationsMigrationCollectionItemDumpTransferDetailTargetInput is an input type that accepts GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArgs and GetMigrationsMigrationCollectionItemDumpTransferDetailTargetOutput values.
@@ -13503,6 +13570,8 @@ type GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArgs struct {
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// Path to the Oracle Cloud Infrastructure CLI installation in the node.
 	OciHome pulumi.StringInput `pulumi:"ociHome"`
+	// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation pulumi.StringInput `pulumi:"walletLocation"`
 }
 
 func (GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArgs) ElementType() reflect.Type {
@@ -13564,6 +13633,11 @@ func (o GetMigrationsMigrationCollectionItemDumpTransferDetailTargetOutput) Kind
 // Path to the Oracle Cloud Infrastructure CLI installation in the node.
 func (o GetMigrationsMigrationCollectionItemDumpTransferDetailTargetOutput) OciHome() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemDumpTransferDetailTarget) string { return v.OciHome }).(pulumi.StringOutput)
+}
+
+// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+func (o GetMigrationsMigrationCollectionItemDumpTransferDetailTargetOutput) WalletLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemDumpTransferDetailTarget) string { return v.WalletLocation }).(pulumi.StringOutput)
 }
 
 type GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArrayOutput struct{ *pulumi.OutputState }

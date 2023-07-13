@@ -102,8 +102,8 @@ def get_autonomous_database_regional_wallet_management(opts: Optional[pulumi.Inv
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousDatabaseRegionalWalletManagement:getAutonomousDatabaseRegionalWalletManagement', __args__, opts=opts, typ=GetAutonomousDatabaseRegionalWalletManagementResult).value
 
     return AwaitableGetAutonomousDatabaseRegionalWalletManagementResult(
-        grace_period=__ret__.grace_period,
-        id=__ret__.id,
-        should_rotate=__ret__.should_rotate,
-        state=__ret__.state,
-        time_rotated=__ret__.time_rotated)
+        grace_period=pulumi.get(__ret__, 'grace_period'),
+        id=pulumi.get(__ret__, 'id'),
+        should_rotate=pulumi.get(__ret__, 'should_rotate'),
+        state=pulumi.get(__ret__, 'state'),
+        time_rotated=pulumi.get(__ret__, 'time_rotated'))

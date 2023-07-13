@@ -209,17 +209,17 @@ def get_deployments(assignable_connection_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:GoldenGate/getDeployments:getDeployments', __args__, opts=opts, typ=GetDeploymentsResult).value
 
     return AwaitableGetDeploymentsResult(
-        assignable_connection_id=__ret__.assignable_connection_id,
-        assigned_connection_id=__ret__.assigned_connection_id,
-        compartment_id=__ret__.compartment_id,
-        deployment_collections=__ret__.deployment_collections,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        fqdn=__ret__.fqdn,
-        id=__ret__.id,
-        lifecycle_sub_state=__ret__.lifecycle_sub_state,
-        state=__ret__.state,
-        supported_connection_type=__ret__.supported_connection_type)
+        assignable_connection_id=pulumi.get(__ret__, 'assignable_connection_id'),
+        assigned_connection_id=pulumi.get(__ret__, 'assigned_connection_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        deployment_collections=pulumi.get(__ret__, 'deployment_collections'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        fqdn=pulumi.get(__ret__, 'fqdn'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_sub_state=pulumi.get(__ret__, 'lifecycle_sub_state'),
+        state=pulumi.get(__ret__, 'state'),
+        supported_connection_type=pulumi.get(__ret__, 'supported_connection_type'))
 
 
 @_utilities.lift_output_func(get_deployments)

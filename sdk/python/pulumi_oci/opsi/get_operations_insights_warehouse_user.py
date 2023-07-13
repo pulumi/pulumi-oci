@@ -246,22 +246,22 @@ def get_operations_insights_warehouse_user(operations_insights_warehouse_user_id
     __ret__ = pulumi.runtime.invoke('oci:Opsi/getOperationsInsightsWarehouseUser:getOperationsInsightsWarehouseUser', __args__, opts=opts, typ=GetOperationsInsightsWarehouseUserResult).value
 
     return AwaitableGetOperationsInsightsWarehouseUserResult(
-        compartment_id=__ret__.compartment_id,
-        connection_password=__ret__.connection_password,
-        defined_tags=__ret__.defined_tags,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_awr_data_access=__ret__.is_awr_data_access,
-        is_em_data_access=__ret__.is_em_data_access,
-        is_opsi_data_access=__ret__.is_opsi_data_access,
-        lifecycle_details=__ret__.lifecycle_details,
-        name=__ret__.name,
-        operations_insights_warehouse_id=__ret__.operations_insights_warehouse_id,
-        operations_insights_warehouse_user_id=__ret__.operations_insights_warehouse_user_id,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        connection_password=pulumi.get(__ret__, 'connection_password'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_awr_data_access=pulumi.get(__ret__, 'is_awr_data_access'),
+        is_em_data_access=pulumi.get(__ret__, 'is_em_data_access'),
+        is_opsi_data_access=pulumi.get(__ret__, 'is_opsi_data_access'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        name=pulumi.get(__ret__, 'name'),
+        operations_insights_warehouse_id=pulumi.get(__ret__, 'operations_insights_warehouse_id'),
+        operations_insights_warehouse_user_id=pulumi.get(__ret__, 'operations_insights_warehouse_user_id'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_operations_insights_warehouse_user)

@@ -164,14 +164,14 @@ def get_limit_values(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Limits/getLimitValues:getLimitValues', __args__, opts=opts, typ=GetLimitValuesResult).value
 
     return AwaitableGetLimitValuesResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        limit_values=__ret__.limit_values,
-        name=__ret__.name,
-        scope_type=__ret__.scope_type,
-        service_name=__ret__.service_name)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        limit_values=pulumi.get(__ret__, 'limit_values'),
+        name=pulumi.get(__ret__, 'name'),
+        scope_type=pulumi.get(__ret__, 'scope_type'),
+        service_name=pulumi.get(__ret__, 'service_name'))
 
 
 @_utilities.lift_output_func(get_limit_values)

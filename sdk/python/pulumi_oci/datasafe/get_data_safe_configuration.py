@@ -175,16 +175,16 @@ def get_data_safe_configuration(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getDataSafeConfiguration:getDataSafeConfiguration', __args__, opts=opts, typ=GetDataSafeConfigurationResult).value
 
     return AwaitableGetDataSafeConfigurationResult(
-        compartment_id=__ret__.compartment_id,
-        data_safe_nat_gateway_ip_address=__ret__.data_safe_nat_gateway_ip_address,
-        defined_tags=__ret__.defined_tags,
-        freeform_tags=__ret__.freeform_tags,
-        global_settings=__ret__.global_settings,
-        id=__ret__.id,
-        is_enabled=__ret__.is_enabled,
-        state=__ret__.state,
-        time_enabled=__ret__.time_enabled,
-        url=__ret__.url)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        data_safe_nat_gateway_ip_address=pulumi.get(__ret__, 'data_safe_nat_gateway_ip_address'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        global_settings=pulumi.get(__ret__, 'global_settings'),
+        id=pulumi.get(__ret__, 'id'),
+        is_enabled=pulumi.get(__ret__, 'is_enabled'),
+        state=pulumi.get(__ret__, 'state'),
+        time_enabled=pulumi.get(__ret__, 'time_enabled'),
+        url=pulumi.get(__ret__, 'url'))
 
 
 @_utilities.lift_output_func(get_data_safe_configuration)

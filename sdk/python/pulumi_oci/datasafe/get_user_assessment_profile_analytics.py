@@ -182,15 +182,15 @@ def get_user_assessment_profile_analytics(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getUserAssessmentProfileAnalytics:getUserAssessmentProfileAnalytics', __args__, opts=opts, typ=GetUserAssessmentProfileAnalyticsResult).value
 
     return AwaitableGetUserAssessmentProfileAnalyticsResult(
-        access_level=__ret__.access_level,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        profile_aggregations=__ret__.profile_aggregations,
-        profile_name=__ret__.profile_name,
-        target_id=__ret__.target_id,
-        user_assessment_id=__ret__.user_assessment_id)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        profile_aggregations=pulumi.get(__ret__, 'profile_aggregations'),
+        profile_name=pulumi.get(__ret__, 'profile_name'),
+        target_id=pulumi.get(__ret__, 'target_id'),
+        user_assessment_id=pulumi.get(__ret__, 'user_assessment_id'))
 
 
 @_utilities.lift_output_func(get_user_assessment_profile_analytics)

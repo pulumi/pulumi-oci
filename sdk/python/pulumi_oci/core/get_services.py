@@ -90,9 +90,9 @@ def get_services(filters: Optional[Sequence[pulumi.InputType['GetServicesFilterA
     __ret__ = pulumi.runtime.invoke('oci:Core/getServices:getServices', __args__, opts=opts, typ=GetServicesResult).value
 
     return AwaitableGetServicesResult(
-        filters=__ret__.filters,
-        id=__ret__.id,
-        services=__ret__.services)
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        services=pulumi.get(__ret__, 'services'))
 
 
 @_utilities.lift_output_func(get_services)

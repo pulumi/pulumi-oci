@@ -114,11 +114,11 @@ def get_configuration(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LicenseManager/getConfiguration:getConfiguration', __args__, opts=opts, typ=GetConfigurationResult).value
 
     return AwaitableGetConfigurationResult(
-        compartment_id=__ret__.compartment_id,
-        email_ids=__ret__.email_ids,
-        id=__ret__.id,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        email_ids=pulumi.get(__ret__, 'email_ids'),
+        id=pulumi.get(__ret__, 'id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_configuration)

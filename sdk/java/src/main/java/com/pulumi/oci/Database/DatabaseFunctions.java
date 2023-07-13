@@ -195,6 +195,10 @@ import com.pulumi.oci.Database.inputs.GetManagedPreferredCredentialArgs;
 import com.pulumi.oci.Database.inputs.GetManagedPreferredCredentialPlainArgs;
 import com.pulumi.oci.Database.inputs.GetManagedPreferredCredentialsArgs;
 import com.pulumi.oci.Database.inputs.GetManagedPreferredCredentialsPlainArgs;
+import com.pulumi.oci.Database.inputs.GetOneoffPatchArgs;
+import com.pulumi.oci.Database.inputs.GetOneoffPatchPlainArgs;
+import com.pulumi.oci.Database.inputs.GetOneoffPatchesArgs;
+import com.pulumi.oci.Database.inputs.GetOneoffPatchesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetPluggableDatabaseArgs;
 import com.pulumi.oci.Database.inputs.GetPluggableDatabasePlainArgs;
 import com.pulumi.oci.Database.inputs.GetPluggableDatabasesArgs;
@@ -322,6 +326,8 @@ import com.pulumi.oci.Database.outputs.GetMaintenanceRunResult;
 import com.pulumi.oci.Database.outputs.GetMaintenanceRunsResult;
 import com.pulumi.oci.Database.outputs.GetManagedPreferredCredentialResult;
 import com.pulumi.oci.Database.outputs.GetManagedPreferredCredentialsResult;
+import com.pulumi.oci.Database.outputs.GetOneoffPatchResult;
+import com.pulumi.oci.Database.outputs.GetOneoffPatchesResult;
 import com.pulumi.oci.Database.outputs.GetPluggableDatabaseResult;
 import com.pulumi.oci.Database.outputs.GetPluggableDatabasesResult;
 import com.pulumi.oci.Database.outputs.GetVmClusterNetworkDownloadConfigFileResult;
@@ -16038,6 +16044,326 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetManagedPreferredCredentialsResult> getManagedPreferredCredentialsPlain(GetManagedPreferredCredentialsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getManagedPreferredCredentials:getManagedPreferredCredentials", TypeShape.of(GetManagedPreferredCredentialsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oneoff Patch resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified one-off patch.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetOneoffPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOneoffPatch = DatabaseFunctions.getOneoffPatch(GetOneoffPatchArgs.builder()
+     *             .oneoffPatchId(oci_database_oneoff_patch.test_oneoff_patch().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOneoffPatchResult> getOneoffPatch(GetOneoffPatchArgs args) {
+        return getOneoffPatch(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oneoff Patch resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified one-off patch.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetOneoffPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOneoffPatch = DatabaseFunctions.getOneoffPatch(GetOneoffPatchArgs.builder()
+     *             .oneoffPatchId(oci_database_oneoff_patch.test_oneoff_patch().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOneoffPatchResult> getOneoffPatchPlain(GetOneoffPatchPlainArgs args) {
+        return getOneoffPatchPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oneoff Patch resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified one-off patch.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetOneoffPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOneoffPatch = DatabaseFunctions.getOneoffPatch(GetOneoffPatchArgs.builder()
+     *             .oneoffPatchId(oci_database_oneoff_patch.test_oneoff_patch().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOneoffPatchResult> getOneoffPatch(GetOneoffPatchArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getOneoffPatch:getOneoffPatch", TypeShape.of(GetOneoffPatchResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oneoff Patch resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified one-off patch.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetOneoffPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOneoffPatch = DatabaseFunctions.getOneoffPatch(GetOneoffPatchArgs.builder()
+     *             .oneoffPatchId(oci_database_oneoff_patch.test_oneoff_patch().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOneoffPatchResult> getOneoffPatchPlain(GetOneoffPatchPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getOneoffPatch:getOneoffPatch", TypeShape.of(GetOneoffPatchResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oneoff Patches in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists one-off patches in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetOneoffPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOneoffPatches = DatabaseFunctions.getOneoffPatches(GetOneoffPatchesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.oneoff_patch_display_name())
+     *             .state(var_.oneoff_patch_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOneoffPatchesResult> getOneoffPatches(GetOneoffPatchesArgs args) {
+        return getOneoffPatches(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oneoff Patches in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists one-off patches in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetOneoffPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOneoffPatches = DatabaseFunctions.getOneoffPatches(GetOneoffPatchesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.oneoff_patch_display_name())
+     *             .state(var_.oneoff_patch_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOneoffPatchesResult> getOneoffPatchesPlain(GetOneoffPatchesPlainArgs args) {
+        return getOneoffPatchesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oneoff Patches in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists one-off patches in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetOneoffPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOneoffPatches = DatabaseFunctions.getOneoffPatches(GetOneoffPatchesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.oneoff_patch_display_name())
+     *             .state(var_.oneoff_patch_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetOneoffPatchesResult> getOneoffPatches(GetOneoffPatchesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getOneoffPatches:getOneoffPatches", TypeShape.of(GetOneoffPatchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oneoff Patches in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists one-off patches in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetOneoffPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOneoffPatches = DatabaseFunctions.getOneoffPatches(GetOneoffPatchesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.oneoff_patch_display_name())
+     *             .state(var_.oneoff_patch_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetOneoffPatchesResult> getOneoffPatchesPlain(GetOneoffPatchesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getOneoffPatches:getOneoffPatches", TypeShape.of(GetOneoffPatchesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Pluggable Database resource in Oracle Cloud Infrastructure Database service.

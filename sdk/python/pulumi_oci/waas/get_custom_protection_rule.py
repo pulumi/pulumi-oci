@@ -186,17 +186,17 @@ def get_custom_protection_rule(custom_protection_rule_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Waas/getCustomProtectionRule:getCustomProtectionRule', __args__, opts=opts, typ=GetCustomProtectionRuleResult).value
 
     return AwaitableGetCustomProtectionRuleResult(
-        compartment_id=__ret__.compartment_id,
-        custom_protection_rule_id=__ret__.custom_protection_rule_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        mod_security_rule_ids=__ret__.mod_security_rule_ids,
-        state=__ret__.state,
-        template=__ret__.template,
-        time_created=__ret__.time_created)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        custom_protection_rule_id=pulumi.get(__ret__, 'custom_protection_rule_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        mod_security_rule_ids=pulumi.get(__ret__, 'mod_security_rule_ids'),
+        state=pulumi.get(__ret__, 'state'),
+        template=pulumi.get(__ret__, 'template'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_custom_protection_rule)

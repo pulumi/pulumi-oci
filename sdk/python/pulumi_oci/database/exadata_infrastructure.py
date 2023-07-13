@@ -70,7 +70,7 @@ class ExadataInfrastructureArgs:
         :param pulumi.Input[bool] is_multi_rack_deployment: (Updatable) Indicates if deployment is Multi-Rack or not.
         :param pulumi.Input['ExadataInfrastructureMaintenanceWindowArgs'] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[str] multi_rack_configuration_file: (Updatable) The base64 encoded Multi-Rack configuration json file.
-        :param pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs'] network_bonding_mode_details: (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        :param pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs'] network_bonding_mode_details: (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
         :param pulumi.Input[int] storage_count: The number of storage servers for the Exadata infrastructure.
         """
         pulumi.set(__self__, "admin_network_cidr", admin_network_cidr)
@@ -406,7 +406,7 @@ class ExadataInfrastructureArgs:
     @pulumi.getter(name="networkBondingModeDetails")
     def network_bonding_mode_details(self) -> Optional[pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs']]:
         """
-        (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
         """
         return pulumi.get(self, "network_bonding_mode_details")
 
@@ -470,6 +470,7 @@ class _ExadataInfrastructureState:
                  netmask: Optional[pulumi.Input[str]] = None,
                  network_bonding_mode_details: Optional[pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs']] = None,
                  ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 rack_serial_number: Optional[pulumi.Input[str]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  storage_count: Optional[pulumi.Input[int]] = None,
@@ -518,8 +519,9 @@ class _ExadataInfrastructureState:
         :param pulumi.Input[str] monthly_db_server_version: The monthly software version of the database servers (dom0) in the Exadata infrastructure.
         :param pulumi.Input[str] multi_rack_configuration_file: (Updatable) The base64 encoded Multi-Rack configuration json file.
         :param pulumi.Input[str] netmask: (Updatable) The netmask for the control plane network.
-        :param pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs'] network_bonding_mode_details: (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        :param pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs'] network_bonding_mode_details: (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
+        :param pulumi.Input[str] rack_serial_number: The serial number for the Exadata infrastructure.
         :param pulumi.Input[str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         :param pulumi.Input[str] state: The current lifecycle state of the Exadata infrastructure.
         :param pulumi.Input[int] storage_count: The number of storage servers for the Exadata infrastructure.
@@ -607,6 +609,8 @@ class _ExadataInfrastructureState:
             pulumi.set(__self__, "network_bonding_mode_details", network_bonding_mode_details)
         if ntp_servers is not None:
             pulumi.set(__self__, "ntp_servers", ntp_servers)
+        if rack_serial_number is not None:
+            pulumi.set(__self__, "rack_serial_number", rack_serial_number)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if state is not None:
@@ -1080,7 +1084,7 @@ class _ExadataInfrastructureState:
     @pulumi.getter(name="networkBondingModeDetails")
     def network_bonding_mode_details(self) -> Optional[pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs']]:
         """
-        (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
         """
         return pulumi.get(self, "network_bonding_mode_details")
 
@@ -1099,6 +1103,18 @@ class _ExadataInfrastructureState:
     @ntp_servers.setter
     def ntp_servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "ntp_servers", value)
+
+    @property
+    @pulumi.getter(name="rackSerialNumber")
+    def rack_serial_number(self) -> Optional[pulumi.Input[str]]:
+        """
+        The serial number for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "rack_serial_number")
+
+    @rack_serial_number.setter
+    def rack_serial_number(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "rack_serial_number", value)
 
     @property
     @pulumi.getter
@@ -1266,6 +1282,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             network_bonding_mode_details=oci.database.ExadataInfrastructureNetworkBondingModeDetailsArgs(
                 backup_network_bonding_mode=var["exadata_infrastructure_network_bonding_mode_details_backup_network_bonding_mode"],
                 client_network_bonding_mode=var["exadata_infrastructure_network_bonding_mode_details_client_network_bonding_mode"],
+                dr_network_bonding_mode=var["exadata_infrastructure_network_bonding_mode_details_dr_network_bonding_mode"],
             ),
             storage_count=var["exadata_infrastructure_storage_count"])
         ```
@@ -1303,7 +1320,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['ExadataInfrastructureMaintenanceWindowArgs']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[str] multi_rack_configuration_file: (Updatable) The base64 encoded Multi-Rack configuration json file.
         :param pulumi.Input[str] netmask: (Updatable) The netmask for the control plane network.
-        :param pulumi.Input[pulumi.InputType['ExadataInfrastructureNetworkBondingModeDetailsArgs']] network_bonding_mode_details: (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        :param pulumi.Input[pulumi.InputType['ExadataInfrastructureNetworkBondingModeDetailsArgs']] network_bonding_mode_details: (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         :param pulumi.Input[str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         :param pulumi.Input[int] storage_count: The number of storage servers for the Exadata infrastructure.
@@ -1376,6 +1393,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             network_bonding_mode_details=oci.database.ExadataInfrastructureNetworkBondingModeDetailsArgs(
                 backup_network_bonding_mode=var["exadata_infrastructure_network_bonding_mode_details_backup_network_bonding_mode"],
                 client_network_bonding_mode=var["exadata_infrastructure_network_bonding_mode_details_client_network_bonding_mode"],
+                dr_network_bonding_mode=var["exadata_infrastructure_network_bonding_mode_details_dr_network_bonding_mode"],
             ),
             storage_count=var["exadata_infrastructure_storage_count"])
         ```
@@ -1505,6 +1523,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             __props__.__dict__["max_memory_in_gbs"] = None
             __props__.__dict__["memory_size_in_gbs"] = None
             __props__.__dict__["monthly_db_server_version"] = None
+            __props__.__dict__["rack_serial_number"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["storage_server_version"] = None
             __props__.__dict__["time_created"] = None
@@ -1558,6 +1577,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             netmask: Optional[pulumi.Input[str]] = None,
             network_bonding_mode_details: Optional[pulumi.Input[pulumi.InputType['ExadataInfrastructureNetworkBondingModeDetailsArgs']]] = None,
             ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            rack_serial_number: Optional[pulumi.Input[str]] = None,
             shape: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             storage_count: Optional[pulumi.Input[int]] = None,
@@ -1611,8 +1631,9 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[str] monthly_db_server_version: The monthly software version of the database servers (dom0) in the Exadata infrastructure.
         :param pulumi.Input[str] multi_rack_configuration_file: (Updatable) The base64 encoded Multi-Rack configuration json file.
         :param pulumi.Input[str] netmask: (Updatable) The netmask for the control plane network.
-        :param pulumi.Input[pulumi.InputType['ExadataInfrastructureNetworkBondingModeDetailsArgs']] network_bonding_mode_details: (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        :param pulumi.Input[pulumi.InputType['ExadataInfrastructureNetworkBondingModeDetailsArgs']] network_bonding_mode_details: (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
+        :param pulumi.Input[str] rack_serial_number: The serial number for the Exadata infrastructure.
         :param pulumi.Input[str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         :param pulumi.Input[str] state: The current lifecycle state of the Exadata infrastructure.
         :param pulumi.Input[int] storage_count: The number of storage servers for the Exadata infrastructure.
@@ -1664,6 +1685,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["netmask"] = netmask
         __props__.__dict__["network_bonding_mode_details"] = network_bonding_mode_details
         __props__.__dict__["ntp_servers"] = ntp_servers
+        __props__.__dict__["rack_serial_number"] = rack_serial_number
         __props__.__dict__["shape"] = shape
         __props__.__dict__["state"] = state
         __props__.__dict__["storage_count"] = storage_count
@@ -1980,7 +2002,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
     @pulumi.getter(name="networkBondingModeDetails")
     def network_bonding_mode_details(self) -> pulumi.Output['outputs.ExadataInfrastructureNetworkBondingModeDetails']:
         """
-        (Updatable) Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+        (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
         """
         return pulumi.get(self, "network_bonding_mode_details")
 
@@ -1991,6 +2013,14 @@ class ExadataInfrastructure(pulumi.CustomResource):
         (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         """
         return pulumi.get(self, "ntp_servers")
+
+    @property
+    @pulumi.getter(name="rackSerialNumber")
+    def rack_serial_number(self) -> pulumi.Output[str]:
+        """
+        The serial number for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "rack_serial_number")
 
     @property
     @pulumi.getter

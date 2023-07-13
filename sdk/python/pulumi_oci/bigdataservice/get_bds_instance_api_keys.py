@@ -142,13 +142,13 @@ def get_bds_instance_api_keys(bds_instance_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:BigDataService/getBdsInstanceApiKeys:getBdsInstanceApiKeys', __args__, opts=opts, typ=GetBdsInstanceApiKeysResult).value
 
     return AwaitableGetBdsInstanceApiKeysResult(
-        bds_api_keys=__ret__.bds_api_keys,
-        bds_instance_id=__ret__.bds_instance_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        user_id=__ret__.user_id)
+        bds_api_keys=pulumi.get(__ret__, 'bds_api_keys'),
+        bds_instance_id=pulumi.get(__ret__, 'bds_instance_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        user_id=pulumi.get(__ret__, 'user_id'))
 
 
 @_utilities.lift_output_func(get_bds_instance_api_keys)

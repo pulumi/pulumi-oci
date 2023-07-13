@@ -131,12 +131,12 @@ def get_managed_database_optimizer_statistics_advisor_executions(end_time_less_t
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutions:getManagedDatabaseOptimizerStatisticsAdvisorExecutions', __args__, opts=opts, typ=GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult).value
 
     return AwaitableGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult(
-        end_time_less_than_or_equal_to=__ret__.end_time_less_than_or_equal_to,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        managed_database_id=__ret__.managed_database_id,
-        optimizer_statistics_advisor_executions_collections=__ret__.optimizer_statistics_advisor_executions_collections,
-        start_time_greater_than_or_equal_to=__ret__.start_time_greater_than_or_equal_to)
+        end_time_less_than_or_equal_to=pulumi.get(__ret__, 'end_time_less_than_or_equal_to'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        optimizer_statistics_advisor_executions_collections=pulumi.get(__ret__, 'optimizer_statistics_advisor_executions_collections'),
+        start_time_greater_than_or_equal_to=pulumi.get(__ret__, 'start_time_greater_than_or_equal_to'))
 
 
 @_utilities.lift_output_func(get_managed_database_optimizer_statistics_advisor_executions)

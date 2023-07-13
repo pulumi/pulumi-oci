@@ -132,12 +132,12 @@ def get_supported_host_shapes(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes', __args__, opts=opts, typ=GetSupportedHostShapesResult).value
 
     return AwaitableGetSupportedHostShapesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        items=__ret__.items,
-        name=__ret__.name,
-        sddc_type=__ret__.sddc_type)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        name=pulumi.get(__ret__, 'name'),
+        sddc_type=pulumi.get(__ret__, 'sddc_type'))
 
 
 @_utilities.lift_output_func(get_supported_host_shapes)

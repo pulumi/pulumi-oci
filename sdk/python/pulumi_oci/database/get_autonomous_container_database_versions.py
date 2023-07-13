@@ -116,11 +116,11 @@ def get_autonomous_container_database_versions(compartment_id: Optional[str] = N
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousContainerDatabaseVersions:getAutonomousContainerDatabaseVersions', __args__, opts=opts, typ=GetAutonomousContainerDatabaseVersionsResult).value
 
     return AwaitableGetAutonomousContainerDatabaseVersionsResult(
-        autonomous_container_database_versions=__ret__.autonomous_container_database_versions,
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        service_component=__ret__.service_component)
+        autonomous_container_database_versions=pulumi.get(__ret__, 'autonomous_container_database_versions'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        service_component=pulumi.get(__ret__, 'service_component'))
 
 
 @_utilities.lift_output_func(get_autonomous_container_database_versions)

@@ -157,13 +157,13 @@ def get_exports(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:FileStorage/getExports:getExports', __args__, opts=opts, typ=GetExportsResult).value
 
     return AwaitableGetExportsResult(
-        compartment_id=__ret__.compartment_id,
-        export_set_id=__ret__.export_set_id,
-        exports=__ret__.exports,
-        file_system_id=__ret__.file_system_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        export_set_id=pulumi.get(__ret__, 'export_set_id'),
+        exports=pulumi.get(__ret__, 'exports'),
+        file_system_id=pulumi.get(__ret__, 'file_system_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_exports)

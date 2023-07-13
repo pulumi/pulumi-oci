@@ -155,13 +155,13 @@ def get_internet_gateways(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getInternetGateways:getInternetGateways', __args__, opts=opts, typ=GetInternetGatewaysResult).value
 
     return AwaitableGetInternetGatewaysResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        gateways=__ret__.gateways,
-        id=__ret__.id,
-        state=__ret__.state,
-        vcn_id=__ret__.vcn_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        gateways=pulumi.get(__ret__, 'gateways'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_internet_gateways)

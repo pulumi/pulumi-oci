@@ -183,15 +183,15 @@ def get_channels(channel_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Mysql/getChannels:getChannels', __args__, opts=opts, typ=GetChannelsResult).value
 
     return AwaitableGetChannelsResult(
-        channel_id=__ret__.channel_id,
-        channels=__ret__.channels,
-        compartment_id=__ret__.compartment_id,
-        db_system_id=__ret__.db_system_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        is_enabled=__ret__.is_enabled,
-        state=__ret__.state)
+        channel_id=pulumi.get(__ret__, 'channel_id'),
+        channels=pulumi.get(__ret__, 'channels'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        db_system_id=pulumi.get(__ret__, 'db_system_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        is_enabled=pulumi.get(__ret__, 'is_enabled'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_channels)

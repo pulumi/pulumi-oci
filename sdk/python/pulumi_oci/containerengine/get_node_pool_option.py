@@ -140,13 +140,13 @@ def get_node_pool_option(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ContainerEngine/getNodePoolOption:getNodePoolOption', __args__, opts=opts, typ=GetNodePoolOptionResult).value
 
     return AwaitableGetNodePoolOptionResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        images=__ret__.images,
-        kubernetes_versions=__ret__.kubernetes_versions,
-        node_pool_option_id=__ret__.node_pool_option_id,
-        shapes=__ret__.shapes,
-        sources=__ret__.sources)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        images=pulumi.get(__ret__, 'images'),
+        kubernetes_versions=pulumi.get(__ret__, 'kubernetes_versions'),
+        node_pool_option_id=pulumi.get(__ret__, 'node_pool_option_id'),
+        shapes=pulumi.get(__ret__, 'shapes'),
+        sources=pulumi.get(__ret__, 'sources'))
 
 
 @_utilities.lift_output_func(get_node_pool_option)

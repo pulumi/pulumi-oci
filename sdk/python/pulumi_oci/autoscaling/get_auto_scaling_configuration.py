@@ -211,19 +211,19 @@ def get_auto_scaling_configuration(auto_scaling_configuration_id: Optional[str] 
     __ret__ = pulumi.runtime.invoke('oci:Autoscaling/getAutoScalingConfiguration:getAutoScalingConfiguration', __args__, opts=opts, typ=GetAutoScalingConfigurationResult).value
 
     return AwaitableGetAutoScalingConfigurationResult(
-        auto_scaling_configuration_id=__ret__.auto_scaling_configuration_id,
-        auto_scaling_resources=__ret__.auto_scaling_resources,
-        compartment_id=__ret__.compartment_id,
-        cool_down_in_seconds=__ret__.cool_down_in_seconds,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_enabled=__ret__.is_enabled,
-        max_resource_count=__ret__.max_resource_count,
-        min_resource_count=__ret__.min_resource_count,
-        policies=__ret__.policies,
-        time_created=__ret__.time_created)
+        auto_scaling_configuration_id=pulumi.get(__ret__, 'auto_scaling_configuration_id'),
+        auto_scaling_resources=pulumi.get(__ret__, 'auto_scaling_resources'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        cool_down_in_seconds=pulumi.get(__ret__, 'cool_down_in_seconds'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_enabled=pulumi.get(__ret__, 'is_enabled'),
+        max_resource_count=pulumi.get(__ret__, 'max_resource_count'),
+        min_resource_count=pulumi.get(__ret__, 'min_resource_count'),
+        policies=pulumi.get(__ret__, 'policies'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_auto_scaling_configuration)

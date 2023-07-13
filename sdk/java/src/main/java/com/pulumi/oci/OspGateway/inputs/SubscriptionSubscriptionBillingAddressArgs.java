@@ -61,6 +61,21 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
     }
 
     /**
+     * (Updatable) Contributor class of the customer company.
+     * 
+     */
+    @Import(name="contributorClass")
+    private @Nullable Output<String> contributorClass;
+
+    /**
+     * @return (Updatable) Contributor class of the customer company.
+     * 
+     */
+    public Optional<Output<String>> contributorClass() {
+        return Optional.ofNullable(this.contributorClass);
+    }
+
+    /**
      * (Updatable) Country of the address.
      * 
      */
@@ -73,6 +88,36 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
      */
     public Optional<Output<String>> country() {
         return Optional.ofNullable(this.country);
+    }
+
+    /**
+     * (Updatable) County of the address.
+     * 
+     */
+    @Import(name="county")
+    private @Nullable Output<String> county;
+
+    /**
+     * @return (Updatable) County of the address.
+     * 
+     */
+    public Optional<Output<String>> county() {
+        return Optional.ofNullable(this.county);
+    }
+
+    /**
+     * (Updatable) Department name of the customer company.
+     * 
+     */
+    @Import(name="departmentName")
+    private @Nullable Output<String> departmentName;
+
+    /**
+     * @return (Updatable) Department name of the customer company.
+     * 
+     */
+    public Optional<Output<String>> departmentName() {
+        return Optional.ofNullable(this.departmentName);
     }
 
     /**
@@ -103,6 +148,36 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
      */
     public Optional<Output<String>> firstName() {
         return Optional.ofNullable(this.firstName);
+    }
+
+    /**
+     * (Updatable) Internal number of the customer company.
+     * 
+     */
+    @Import(name="internalNumber")
+    private @Nullable Output<String> internalNumber;
+
+    /**
+     * @return (Updatable) Internal number of the customer company.
+     * 
+     */
+    public Optional<Output<String>> internalNumber() {
+        return Optional.ofNullable(this.internalNumber);
+    }
+
+    /**
+     * (Updatable) Job title of the contact person.
+     * 
+     */
+    @Import(name="jobTitle")
+    private @Nullable Output<String> jobTitle;
+
+    /**
+     * @return (Updatable) Job title of the contact person.
+     * 
+     */
+    public Optional<Output<String>> jobTitle() {
+        return Optional.ofNullable(this.jobTitle);
     }
 
     /**
@@ -151,6 +226,96 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
     }
 
     /**
+     * (Updatable) Address line 3.
+     * 
+     */
+    @Import(name="line3")
+    private @Nullable Output<String> line3;
+
+    /**
+     * @return (Updatable) Address line 3.
+     * 
+     */
+    public Optional<Output<String>> line3() {
+        return Optional.ofNullable(this.line3);
+    }
+
+    /**
+     * (Updatable) Address line 4.
+     * 
+     */
+    @Import(name="line4")
+    private @Nullable Output<String> line4;
+
+    /**
+     * @return (Updatable) Address line 4.
+     * 
+     */
+    public Optional<Output<String>> line4() {
+        return Optional.ofNullable(this.line4);
+    }
+
+    /**
+     * (Updatable) Middle name of the contact person.
+     * 
+     */
+    @Import(name="middleName")
+    private @Nullable Output<String> middleName;
+
+    /**
+     * @return (Updatable) Middle name of the contact person.
+     * 
+     */
+    public Optional<Output<String>> middleName() {
+        return Optional.ofNullable(this.middleName);
+    }
+
+    /**
+     * (Updatable) Municipal Inscription.
+     * 
+     */
+    @Import(name="municipalInscription")
+    private @Nullable Output<String> municipalInscription;
+
+    /**
+     * @return (Updatable) Municipal Inscription.
+     * 
+     */
+    public Optional<Output<String>> municipalInscription() {
+        return Optional.ofNullable(this.municipalInscription);
+    }
+
+    /**
+     * (Updatable) Phone country code of the contact person.
+     * 
+     */
+    @Import(name="phoneCountryCode")
+    private @Nullable Output<String> phoneCountryCode;
+
+    /**
+     * @return (Updatable) Phone country code of the contact person.
+     * 
+     */
+    public Optional<Output<String>> phoneCountryCode() {
+        return Optional.ofNullable(this.phoneCountryCode);
+    }
+
+    /**
+     * (Updatable) Phone number of the contact person.
+     * 
+     */
+    @Import(name="phoneNumber")
+    private @Nullable Output<String> phoneNumber;
+
+    /**
+     * @return (Updatable) Phone number of the contact person.
+     * 
+     */
+    public Optional<Output<String>> phoneNumber() {
+        return Optional.ofNullable(this.phoneNumber);
+    }
+
+    /**
      * (Updatable) Post code of the address.
      * 
      */
@@ -163,6 +328,21 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
      */
     public Optional<Output<String>> postalCode() {
         return Optional.ofNullable(this.postalCode);
+    }
+
+    /**
+     * (Updatable) Province of the address.
+     * 
+     */
+    @Import(name="province")
+    private @Nullable Output<String> province;
+
+    /**
+     * @return (Updatable) Province of the address.
+     * 
+     */
+    public Optional<Output<String>> province() {
+        return Optional.ofNullable(this.province);
     }
 
     /**
@@ -180,20 +360,80 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * (Updatable) State Inscription.
+     * 
+     */
+    @Import(name="stateInscription")
+    private @Nullable Output<String> stateInscription;
+
+    /**
+     * @return (Updatable) State Inscription.
+     * 
+     */
+    public Optional<Output<String>> stateInscription() {
+        return Optional.ofNullable(this.stateInscription);
+    }
+
+    /**
+     * (Updatable) Street name of the address.
+     * 
+     */
+    @Import(name="streetName")
+    private @Nullable Output<String> streetName;
+
+    /**
+     * @return (Updatable) Street name of the address.
+     * 
+     */
+    public Optional<Output<String>> streetName() {
+        return Optional.ofNullable(this.streetName);
+    }
+
+    /**
+     * (Updatable) Street number of the address.
+     * 
+     */
+    @Import(name="streetNumber")
+    private @Nullable Output<String> streetNumber;
+
+    /**
+     * @return (Updatable) Street number of the address.
+     * 
+     */
+    public Optional<Output<String>> streetNumber() {
+        return Optional.ofNullable(this.streetNumber);
+    }
+
     private SubscriptionSubscriptionBillingAddressArgs() {}
 
     private SubscriptionSubscriptionBillingAddressArgs(SubscriptionSubscriptionBillingAddressArgs $) {
         this.addressKey = $.addressKey;
         this.city = $.city;
         this.companyName = $.companyName;
+        this.contributorClass = $.contributorClass;
         this.country = $.country;
+        this.county = $.county;
+        this.departmentName = $.departmentName;
         this.emailAddress = $.emailAddress;
         this.firstName = $.firstName;
+        this.internalNumber = $.internalNumber;
+        this.jobTitle = $.jobTitle;
         this.lastName = $.lastName;
         this.line1 = $.line1;
         this.line2 = $.line2;
+        this.line3 = $.line3;
+        this.line4 = $.line4;
+        this.middleName = $.middleName;
+        this.municipalInscription = $.municipalInscription;
+        this.phoneCountryCode = $.phoneCountryCode;
+        this.phoneNumber = $.phoneNumber;
         this.postalCode = $.postalCode;
+        this.province = $.province;
         this.state = $.state;
+        this.stateInscription = $.stateInscription;
+        this.streetName = $.streetName;
+        this.streetNumber = $.streetNumber;
     }
 
     public static Builder builder() {
@@ -278,6 +518,27 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
         }
 
         /**
+         * @param contributorClass (Updatable) Contributor class of the customer company.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder contributorClass(@Nullable Output<String> contributorClass) {
+            $.contributorClass = contributorClass;
+            return this;
+        }
+
+        /**
+         * @param contributorClass (Updatable) Contributor class of the customer company.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder contributorClass(String contributorClass) {
+            return contributorClass(Output.of(contributorClass));
+        }
+
+        /**
          * @param country (Updatable) Country of the address.
          * 
          * @return builder
@@ -296,6 +557,48 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
          */
         public Builder country(String country) {
             return country(Output.of(country));
+        }
+
+        /**
+         * @param county (Updatable) County of the address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder county(@Nullable Output<String> county) {
+            $.county = county;
+            return this;
+        }
+
+        /**
+         * @param county (Updatable) County of the address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder county(String county) {
+            return county(Output.of(county));
+        }
+
+        /**
+         * @param departmentName (Updatable) Department name of the customer company.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder departmentName(@Nullable Output<String> departmentName) {
+            $.departmentName = departmentName;
+            return this;
+        }
+
+        /**
+         * @param departmentName (Updatable) Department name of the customer company.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder departmentName(String departmentName) {
+            return departmentName(Output.of(departmentName));
         }
 
         /**
@@ -338,6 +641,48 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
          */
         public Builder firstName(String firstName) {
             return firstName(Output.of(firstName));
+        }
+
+        /**
+         * @param internalNumber (Updatable) Internal number of the customer company.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder internalNumber(@Nullable Output<String> internalNumber) {
+            $.internalNumber = internalNumber;
+            return this;
+        }
+
+        /**
+         * @param internalNumber (Updatable) Internal number of the customer company.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder internalNumber(String internalNumber) {
+            return internalNumber(Output.of(internalNumber));
+        }
+
+        /**
+         * @param jobTitle (Updatable) Job title of the contact person.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobTitle(@Nullable Output<String> jobTitle) {
+            $.jobTitle = jobTitle;
+            return this;
+        }
+
+        /**
+         * @param jobTitle (Updatable) Job title of the contact person.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobTitle(String jobTitle) {
+            return jobTitle(Output.of(jobTitle));
         }
 
         /**
@@ -404,6 +749,132 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
         }
 
         /**
+         * @param line3 (Updatable) Address line 3.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder line3(@Nullable Output<String> line3) {
+            $.line3 = line3;
+            return this;
+        }
+
+        /**
+         * @param line3 (Updatable) Address line 3.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder line3(String line3) {
+            return line3(Output.of(line3));
+        }
+
+        /**
+         * @param line4 (Updatable) Address line 4.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder line4(@Nullable Output<String> line4) {
+            $.line4 = line4;
+            return this;
+        }
+
+        /**
+         * @param line4 (Updatable) Address line 4.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder line4(String line4) {
+            return line4(Output.of(line4));
+        }
+
+        /**
+         * @param middleName (Updatable) Middle name of the contact person.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder middleName(@Nullable Output<String> middleName) {
+            $.middleName = middleName;
+            return this;
+        }
+
+        /**
+         * @param middleName (Updatable) Middle name of the contact person.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder middleName(String middleName) {
+            return middleName(Output.of(middleName));
+        }
+
+        /**
+         * @param municipalInscription (Updatable) Municipal Inscription.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder municipalInscription(@Nullable Output<String> municipalInscription) {
+            $.municipalInscription = municipalInscription;
+            return this;
+        }
+
+        /**
+         * @param municipalInscription (Updatable) Municipal Inscription.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder municipalInscription(String municipalInscription) {
+            return municipalInscription(Output.of(municipalInscription));
+        }
+
+        /**
+         * @param phoneCountryCode (Updatable) Phone country code of the contact person.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder phoneCountryCode(@Nullable Output<String> phoneCountryCode) {
+            $.phoneCountryCode = phoneCountryCode;
+            return this;
+        }
+
+        /**
+         * @param phoneCountryCode (Updatable) Phone country code of the contact person.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder phoneCountryCode(String phoneCountryCode) {
+            return phoneCountryCode(Output.of(phoneCountryCode));
+        }
+
+        /**
+         * @param phoneNumber (Updatable) Phone number of the contact person.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder phoneNumber(@Nullable Output<String> phoneNumber) {
+            $.phoneNumber = phoneNumber;
+            return this;
+        }
+
+        /**
+         * @param phoneNumber (Updatable) Phone number of the contact person.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder phoneNumber(String phoneNumber) {
+            return phoneNumber(Output.of(phoneNumber));
+        }
+
+        /**
          * @param postalCode (Updatable) Post code of the address.
          * 
          * @return builder
@@ -425,6 +896,27 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
         }
 
         /**
+         * @param province (Updatable) Province of the address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder province(@Nullable Output<String> province) {
+            $.province = province;
+            return this;
+        }
+
+        /**
+         * @param province (Updatable) Province of the address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder province(String province) {
+            return province(Output.of(province));
+        }
+
+        /**
          * @param state (Updatable) State of the address.
          * 
          * @return builder
@@ -443,6 +935,69 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param stateInscription (Updatable) State Inscription.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stateInscription(@Nullable Output<String> stateInscription) {
+            $.stateInscription = stateInscription;
+            return this;
+        }
+
+        /**
+         * @param stateInscription (Updatable) State Inscription.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stateInscription(String stateInscription) {
+            return stateInscription(Output.of(stateInscription));
+        }
+
+        /**
+         * @param streetName (Updatable) Street name of the address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder streetName(@Nullable Output<String> streetName) {
+            $.streetName = streetName;
+            return this;
+        }
+
+        /**
+         * @param streetName (Updatable) Street name of the address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder streetName(String streetName) {
+            return streetName(Output.of(streetName));
+        }
+
+        /**
+         * @param streetNumber (Updatable) Street number of the address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder streetNumber(@Nullable Output<String> streetNumber) {
+            $.streetNumber = streetNumber;
+            return this;
+        }
+
+        /**
+         * @param streetNumber (Updatable) Street number of the address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder streetNumber(String streetNumber) {
+            return streetNumber(Output.of(streetNumber));
         }
 
         public SubscriptionSubscriptionBillingAddressArgs build() {

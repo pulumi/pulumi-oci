@@ -223,20 +223,20 @@ def get_unified_agent_configuration(unified_agent_configuration_id: Optional[str
     __ret__ = pulumi.runtime.invoke('oci:Logging/getUnifiedAgentConfiguration:getUnifiedAgentConfiguration', __args__, opts=opts, typ=GetUnifiedAgentConfigurationResult).value
 
     return AwaitableGetUnifiedAgentConfigurationResult(
-        compartment_id=__ret__.compartment_id,
-        configuration_state=__ret__.configuration_state,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        group_associations=__ret__.group_associations,
-        id=__ret__.id,
-        is_enabled=__ret__.is_enabled,
-        service_configurations=__ret__.service_configurations,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_last_modified=__ret__.time_last_modified,
-        unified_agent_configuration_id=__ret__.unified_agent_configuration_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        configuration_state=pulumi.get(__ret__, 'configuration_state'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        group_associations=pulumi.get(__ret__, 'group_associations'),
+        id=pulumi.get(__ret__, 'id'),
+        is_enabled=pulumi.get(__ret__, 'is_enabled'),
+        service_configurations=pulumi.get(__ret__, 'service_configurations'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_last_modified=pulumi.get(__ret__, 'time_last_modified'),
+        unified_agent_configuration_id=pulumi.get(__ret__, 'unified_agent_configuration_id'))
 
 
 @_utilities.lift_output_func(get_unified_agent_configuration)

@@ -405,6 +405,9 @@ class GetBudgetsBudgetResult(dict):
         """
         This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
         """
+        warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""", DeprecationWarning)
+        pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.""")
+
         return pulumi.get(self, "target_compartment_id")
 
     @property

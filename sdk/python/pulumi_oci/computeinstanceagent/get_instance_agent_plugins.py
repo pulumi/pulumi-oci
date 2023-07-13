@@ -146,13 +146,13 @@ def get_instance_agent_plugins(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ComputeInstanceAgent/getInstanceAgentPlugins:getInstanceAgentPlugins', __args__, opts=opts, typ=GetInstanceAgentPluginsResult).value
 
     return AwaitableGetInstanceAgentPluginsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        instance_agent_plugins=__ret__.instance_agent_plugins,
-        instanceagent_id=__ret__.instanceagent_id,
-        name=__ret__.name,
-        status=__ret__.status)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        instance_agent_plugins=pulumi.get(__ret__, 'instance_agent_plugins'),
+        instanceagent_id=pulumi.get(__ret__, 'instanceagent_id'),
+        name=pulumi.get(__ret__, 'name'),
+        status=pulumi.get(__ret__, 'status'))
 
 
 @_utilities.lift_output_func(get_instance_agent_plugins)

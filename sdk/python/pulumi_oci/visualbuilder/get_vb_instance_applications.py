@@ -104,10 +104,10 @@ def get_vb_instance_applications(idcs_open_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications', __args__, opts=opts, typ=GetVbInstanceApplicationsResult).value
 
     return AwaitableGetVbInstanceApplicationsResult(
-        application_summary_collections=__ret__.application_summary_collections,
-        id=__ret__.id,
-        idcs_open_id=__ret__.idcs_open_id,
-        vb_instance_id=__ret__.vb_instance_id)
+        application_summary_collections=pulumi.get(__ret__, 'application_summary_collections'),
+        id=pulumi.get(__ret__, 'id'),
+        idcs_open_id=pulumi.get(__ret__, 'idcs_open_id'),
+        vb_instance_id=pulumi.get(__ret__, 'vb_instance_id'))
 
 
 @_utilities.lift_output_func(get_vb_instance_applications)

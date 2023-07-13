@@ -107,10 +107,10 @@ def get_iam_work_request_errors(filters: Optional[Sequence[pulumi.InputType['Get
     __ret__ = pulumi.runtime.invoke('oci:Identity/getIamWorkRequestErrors:getIamWorkRequestErrors', __args__, opts=opts, typ=GetIamWorkRequestErrorsResult).value
 
     return AwaitableGetIamWorkRequestErrorsResult(
-        filters=__ret__.filters,
-        iam_work_request_errors=__ret__.iam_work_request_errors,
-        iam_work_request_id=__ret__.iam_work_request_id,
-        id=__ret__.id)
+        filters=pulumi.get(__ret__, 'filters'),
+        iam_work_request_errors=pulumi.get(__ret__, 'iam_work_request_errors'),
+        iam_work_request_id=pulumi.get(__ret__, 'iam_work_request_id'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_iam_work_request_errors)

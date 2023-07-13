@@ -116,11 +116,11 @@ def get_replication_policies(bucket: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ObjectStorage/getReplicationPolicies:getReplicationPolicies', __args__, opts=opts, typ=GetReplicationPoliciesResult).value
 
     return AwaitableGetReplicationPoliciesResult(
-        bucket=__ret__.bucket,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        namespace=__ret__.namespace,
-        replication_policies=__ret__.replication_policies)
+        bucket=pulumi.get(__ret__, 'bucket'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        replication_policies=pulumi.get(__ret__, 'replication_policies'))
 
 
 @_utilities.lift_output_func(get_replication_policies)

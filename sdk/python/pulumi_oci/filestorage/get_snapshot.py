@@ -237,21 +237,21 @@ def get_snapshot(snapshot_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:FileStorage/getSnapshot:getSnapshot', __args__, opts=opts, typ=GetSnapshotResult).value
 
     return AwaitableGetSnapshotResult(
-        defined_tags=__ret__.defined_tags,
-        expiration_time=__ret__.expiration_time,
-        file_system_id=__ret__.file_system_id,
-        filesystem_snapshot_policy_id=__ret__.filesystem_snapshot_policy_id,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_clone_source=__ret__.is_clone_source,
-        lifecycle_details=__ret__.lifecycle_details,
-        name=__ret__.name,
-        provenance_id=__ret__.provenance_id,
-        snapshot_id=__ret__.snapshot_id,
-        snapshot_time=__ret__.snapshot_time,
-        snapshot_type=__ret__.snapshot_type,
-        state=__ret__.state,
-        time_created=__ret__.time_created)
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        expiration_time=pulumi.get(__ret__, 'expiration_time'),
+        file_system_id=pulumi.get(__ret__, 'file_system_id'),
+        filesystem_snapshot_policy_id=pulumi.get(__ret__, 'filesystem_snapshot_policy_id'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_clone_source=pulumi.get(__ret__, 'is_clone_source'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        name=pulumi.get(__ret__, 'name'),
+        provenance_id=pulumi.get(__ret__, 'provenance_id'),
+        snapshot_id=pulumi.get(__ret__, 'snapshot_id'),
+        snapshot_time=pulumi.get(__ret__, 'snapshot_time'),
+        snapshot_type=pulumi.get(__ret__, 'snapshot_type'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_snapshot)

@@ -154,13 +154,13 @@ def get_db_servers(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getDbServers:getDbServers', __args__, opts=opts, typ=GetDbServersResult).value
 
     return AwaitableGetDbServersResult(
-        compartment_id=__ret__.compartment_id,
-        db_servers=__ret__.db_servers,
-        display_name=__ret__.display_name,
-        exadata_infrastructure_id=__ret__.exadata_infrastructure_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        db_servers=pulumi.get(__ret__, 'db_servers'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_db_servers)

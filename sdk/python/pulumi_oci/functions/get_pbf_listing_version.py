@@ -223,20 +223,20 @@ def get_pbf_listing_version(pbf_listing_version_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Functions/getPbfListingVersion:getPbfListingVersion', __args__, opts=opts, typ=GetPbfListingVersionResult).value
 
     return AwaitableGetPbfListingVersionResult(
-        change_summary=__ret__.change_summary,
-        configs=__ret__.configs,
-        defined_tags=__ret__.defined_tags,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        name=__ret__.name,
-        pbf_listing_id=__ret__.pbf_listing_id,
-        pbf_listing_version_id=__ret__.pbf_listing_version_id,
-        requirements=__ret__.requirements,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        triggers=__ret__.triggers)
+        change_summary=pulumi.get(__ret__, 'change_summary'),
+        configs=pulumi.get(__ret__, 'configs'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        pbf_listing_id=pulumi.get(__ret__, 'pbf_listing_id'),
+        pbf_listing_version_id=pulumi.get(__ret__, 'pbf_listing_version_id'),
+        requirements=pulumi.get(__ret__, 'requirements'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        triggers=pulumi.get(__ret__, 'triggers'))
 
 
 @_utilities.lift_output_func(get_pbf_listing_version)

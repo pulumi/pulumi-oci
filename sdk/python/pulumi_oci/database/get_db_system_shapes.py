@@ -116,11 +116,11 @@ def get_db_system_shapes(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getDbSystemShapes:getDbSystemShapes', __args__, opts=opts, typ=GetDbSystemShapesResult).value
 
     return AwaitableGetDbSystemShapesResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        db_system_shapes=__ret__.db_system_shapes,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        db_system_shapes=pulumi.get(__ret__, 'db_system_shapes'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_db_system_shapes)

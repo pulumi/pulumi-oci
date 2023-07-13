@@ -132,12 +132,12 @@ def get_exadata_iorm_config(db_system_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getExadataIormConfig:getExadataIormConfig', __args__, opts=opts, typ=GetExadataIormConfigResult).value
 
     return AwaitableGetExadataIormConfigResult(
-        db_plans=__ret__.db_plans,
-        db_system_id=__ret__.db_system_id,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        objective=__ret__.objective,
-        state=__ret__.state)
+        db_plans=pulumi.get(__ret__, 'db_plans'),
+        db_system_id=pulumi.get(__ret__, 'db_system_id'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        objective=pulumi.get(__ret__, 'objective'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_exadata_iorm_config)

@@ -155,13 +155,13 @@ def get_subnets(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getSubnets:getSubnets', __args__, opts=opts, typ=GetSubnetsResult).value
 
     return AwaitableGetSubnetsResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state,
-        subnets=__ret__.subnets,
-        vcn_id=__ret__.vcn_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        subnets=pulumi.get(__ret__, 'subnets'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_subnets)

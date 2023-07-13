@@ -106,10 +106,10 @@ def get_data_guard_associations(database_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getDataGuardAssociations:getDataGuardAssociations', __args__, opts=opts, typ=GetDataGuardAssociationsResult).value
 
     return AwaitableGetDataGuardAssociationsResult(
-        data_guard_associations=__ret__.data_guard_associations,
-        database_id=__ret__.database_id,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        data_guard_associations=pulumi.get(__ret__, 'data_guard_associations'),
+        database_id=pulumi.get(__ret__, 'database_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_data_guard_associations)

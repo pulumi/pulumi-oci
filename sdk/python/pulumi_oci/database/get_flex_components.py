@@ -119,11 +119,11 @@ def get_flex_components(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getFlexComponents:getFlexComponents', __args__, opts=opts, typ=GetFlexComponentsResult).value
 
     return AwaitableGetFlexComponentsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        flex_component_collections=__ret__.flex_component_collections,
-        id=__ret__.id,
-        name=__ret__.name)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        flex_component_collections=pulumi.get(__ret__, 'flex_component_collections'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'))
 
 
 @_utilities.lift_output_func(get_flex_components)

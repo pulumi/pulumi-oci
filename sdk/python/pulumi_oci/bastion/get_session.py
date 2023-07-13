@@ -247,22 +247,22 @@ def get_session(session_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Bastion/getSession:getSession', __args__, opts=opts, typ=GetSessionResult).value
 
     return AwaitableGetSessionResult(
-        bastion_id=__ret__.bastion_id,
-        bastion_name=__ret__.bastion_name,
-        bastion_public_host_key_info=__ret__.bastion_public_host_key_info,
-        bastion_user_name=__ret__.bastion_user_name,
-        display_name=__ret__.display_name,
-        id=__ret__.id,
-        key_details=__ret__.key_details,
-        key_type=__ret__.key_type,
-        lifecycle_details=__ret__.lifecycle_details,
-        session_id=__ret__.session_id,
-        session_ttl_in_seconds=__ret__.session_ttl_in_seconds,
-        ssh_metadata=__ret__.ssh_metadata,
-        state=__ret__.state,
-        target_resource_details=__ret__.target_resource_details,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        bastion_id=pulumi.get(__ret__, 'bastion_id'),
+        bastion_name=pulumi.get(__ret__, 'bastion_name'),
+        bastion_public_host_key_info=pulumi.get(__ret__, 'bastion_public_host_key_info'),
+        bastion_user_name=pulumi.get(__ret__, 'bastion_user_name'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        id=pulumi.get(__ret__, 'id'),
+        key_details=pulumi.get(__ret__, 'key_details'),
+        key_type=pulumi.get(__ret__, 'key_type'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        session_id=pulumi.get(__ret__, 'session_id'),
+        session_ttl_in_seconds=pulumi.get(__ret__, 'session_ttl_in_seconds'),
+        ssh_metadata=pulumi.get(__ret__, 'ssh_metadata'),
+        state=pulumi.get(__ret__, 'state'),
+        target_resource_details=pulumi.get(__ret__, 'target_resource_details'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_session)

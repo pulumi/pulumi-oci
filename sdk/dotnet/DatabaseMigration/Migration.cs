@@ -99,11 +99,13 @@ namespace Pulumi.Oci.DatabaseMigration
     ///             {
     ///                 Kind = @var.Migration_dump_transfer_details_source_kind,
     ///                 OciHome = @var.Migration_dump_transfer_details_source_oci_home,
+    ///                 WalletLocation = @var.Migration_dump_transfer_details_source_wallet_location,
     ///             },
     ///             Target = new Oci.DatabaseMigration.Inputs.MigrationDumpTransferDetailsTargetArgs
     ///             {
     ///                 Kind = @var.Migration_dump_transfer_details_target_kind,
     ///                 OciHome = @var.Migration_dump_transfer_details_target_oci_home,
+    ///                 WalletLocation = @var.Migration_dump_transfer_details_target_wallet_location,
     ///             },
     ///         },
     ///         ExcludeObjects = new[]

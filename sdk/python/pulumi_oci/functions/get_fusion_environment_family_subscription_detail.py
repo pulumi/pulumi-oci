@@ -91,9 +91,9 @@ def get_fusion_environment_family_subscription_detail(fusion_environment_family_
     __ret__ = pulumi.runtime.invoke('oci:Functions/getFusionEnvironmentFamilySubscriptionDetail:getFusionEnvironmentFamilySubscriptionDetail', __args__, opts=opts, typ=GetFusionEnvironmentFamilySubscriptionDetailResult).value
 
     return AwaitableGetFusionEnvironmentFamilySubscriptionDetailResult(
-        fusion_environment_family_id=__ret__.fusion_environment_family_id,
-        id=__ret__.id,
-        subscriptions=__ret__.subscriptions)
+        fusion_environment_family_id=pulumi.get(__ret__, 'fusion_environment_family_id'),
+        id=pulumi.get(__ret__, 'id'),
+        subscriptions=pulumi.get(__ret__, 'subscriptions'))
 
 
 @_utilities.lift_output_func(get_fusion_environment_family_subscription_detail)

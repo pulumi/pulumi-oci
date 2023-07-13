@@ -128,12 +128,12 @@ def get_user_assessment_comparison(comparison_user_assessment_id: Optional[str] 
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getUserAssessmentComparison:getUserAssessmentComparison', __args__, opts=opts, typ=GetUserAssessmentComparisonResult).value
 
     return AwaitableGetUserAssessmentComparisonResult(
-        comparison_user_assessment_id=__ret__.comparison_user_assessment_id,
-        id=__ret__.id,
-        state=__ret__.state,
-        summaries=__ret__.summaries,
-        time_created=__ret__.time_created,
-        user_assessment_id=__ret__.user_assessment_id)
+        comparison_user_assessment_id=pulumi.get(__ret__, 'comparison_user_assessment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'),
+        summaries=pulumi.get(__ret__, 'summaries'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        user_assessment_id=pulumi.get(__ret__, 'user_assessment_id'))
 
 
 @_utilities.lift_output_func(get_user_assessment_comparison)

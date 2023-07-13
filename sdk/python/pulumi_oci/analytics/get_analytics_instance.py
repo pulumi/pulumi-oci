@@ -268,24 +268,24 @@ def get_analytics_instance(analytics_instance_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Analytics/getAnalyticsInstance:getAnalyticsInstance', __args__, opts=opts, typ=GetAnalyticsInstanceResult).value
 
     return AwaitableGetAnalyticsInstanceResult(
-        analytics_instance_id=__ret__.analytics_instance_id,
-        capacities=__ret__.capacities,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        email_notification=__ret__.email_notification,
-        feature_set=__ret__.feature_set,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        idcs_access_token=__ret__.idcs_access_token,
-        kms_key_id=__ret__.kms_key_id,
-        license_type=__ret__.license_type,
-        name=__ret__.name,
-        network_endpoint_details=__ret__.network_endpoint_details,
-        service_url=__ret__.service_url,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        analytics_instance_id=pulumi.get(__ret__, 'analytics_instance_id'),
+        capacities=pulumi.get(__ret__, 'capacities'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        email_notification=pulumi.get(__ret__, 'email_notification'),
+        feature_set=pulumi.get(__ret__, 'feature_set'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        idcs_access_token=pulumi.get(__ret__, 'idcs_access_token'),
+        kms_key_id=pulumi.get(__ret__, 'kms_key_id'),
+        license_type=pulumi.get(__ret__, 'license_type'),
+        name=pulumi.get(__ret__, 'name'),
+        network_endpoint_details=pulumi.get(__ret__, 'network_endpoint_details'),
+        service_url=pulumi.get(__ret__, 'service_url'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_analytics_instance)

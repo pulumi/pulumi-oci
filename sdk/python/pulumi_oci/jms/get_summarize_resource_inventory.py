@@ -164,15 +164,15 @@ def get_summarize_resource_inventory(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Jms/getSummarizeResourceInventory:getSummarizeResourceInventory', __args__, opts=opts, typ=GetSummarizeResourceInventoryResult).value
 
     return AwaitableGetSummarizeResourceInventoryResult(
-        active_fleet_count=__ret__.active_fleet_count,
-        application_count=__ret__.application_count,
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        installation_count=__ret__.installation_count,
-        jre_count=__ret__.jre_count,
-        managed_instance_count=__ret__.managed_instance_count,
-        time_end=__ret__.time_end,
-        time_start=__ret__.time_start)
+        active_fleet_count=pulumi.get(__ret__, 'active_fleet_count'),
+        application_count=pulumi.get(__ret__, 'application_count'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        installation_count=pulumi.get(__ret__, 'installation_count'),
+        jre_count=pulumi.get(__ret__, 'jre_count'),
+        managed_instance_count=pulumi.get(__ret__, 'managed_instance_count'),
+        time_end=pulumi.get(__ret__, 'time_end'),
+        time_start=pulumi.get(__ret__, 'time_start'))
 
 
 @_utilities.lift_output_func(get_summarize_resource_inventory)

@@ -138,12 +138,12 @@ def get_capture_filters(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getCaptureFilters:getCaptureFilters', __args__, opts=opts, typ=GetCaptureFiltersResult).value
 
     return AwaitableGetCaptureFiltersResult(
-        capture_filters=__ret__.capture_filters,
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        state=__ret__.state)
+        capture_filters=pulumi.get(__ret__, 'capture_filters'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_capture_filters)

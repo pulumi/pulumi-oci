@@ -80,6 +80,12 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// The DR SCAN TCPIP port. Default is 1521.
+        /// </summary>
+        [Input("drScanListenerPortTcp")]
+        public int? DrScanListenerPortTcp { get; set; }
+
+        /// <summary>
         /// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("exadataInfrastructureId", required: true)]
@@ -190,6 +196,12 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// The DR SCAN TCPIP port. Default is 1521.
+        /// </summary>
+        [Input("drScanListenerPortTcp")]
+        public Input<int>? DrScanListenerPortTcp { get; set; }
+
+        /// <summary>
         /// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("exadataInfrastructureId", required: true)]
@@ -270,6 +282,11 @@ namespace Pulumi.Oci.Database
         /// The list of DNS server IP addresses. Maximum of 3 allowed.
         /// </summary>
         public readonly ImmutableArray<string> Dns;
+        public readonly int? DrScanListenerPortTcp;
+        /// <summary>
+        /// The SCAN details for DR network
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetVmClusterRecommendedNetworkDrScanResult> DrScans;
         public readonly string ExadataInfrastructureId;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -313,6 +330,10 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<string> dns,
 
+            int? drScanListenerPortTcp,
+
+            ImmutableArray<Outputs.GetVmClusterRecommendedNetworkDrScanResult> drScans,
+
             string exadataInfrastructureId,
 
             ImmutableDictionary<string, object> freeformTags,
@@ -336,6 +357,8 @@ namespace Pulumi.Oci.Database
             DefinedTags = definedTags;
             DisplayName = displayName;
             Dns = dns;
+            DrScanListenerPortTcp = drScanListenerPortTcp;
+            DrScans = drScans;
             ExadataInfrastructureId = exadataInfrastructureId;
             FreeformTags = freeformTags;
             Id = id;

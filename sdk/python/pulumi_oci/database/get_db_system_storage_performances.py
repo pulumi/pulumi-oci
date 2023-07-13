@@ -121,11 +121,11 @@ def get_db_system_storage_performances(filters: Optional[Sequence[pulumi.InputTy
     __ret__ = pulumi.runtime.invoke('oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances', __args__, opts=opts, typ=GetDbSystemStoragePerformancesResult).value
 
     return AwaitableGetDbSystemStoragePerformancesResult(
-        db_system_storage_performances=__ret__.db_system_storage_performances,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        shape_type=__ret__.shape_type,
-        storage_management=__ret__.storage_management)
+        db_system_storage_performances=pulumi.get(__ret__, 'db_system_storage_performances'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        shape_type=pulumi.get(__ret__, 'shape_type'),
+        storage_management=pulumi.get(__ret__, 'storage_management'))
 
 
 @_utilities.lift_output_func(get_db_system_storage_performances)

@@ -31,10 +31,10 @@ namespace Pulumi.Oci.Database.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The SCAN TCPIP port. Default is 1521.
+        /// (Updatable) **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
         /// </summary>
-        [Input("port", required: true)]
-        public Input<int> Port { get; set; } = null!;
+        [Input("port")]
+        public Input<int>? Port { get; set; }
 
         /// <summary>
         /// (Updatable) The SCAN TCPIP port. Default is 1521.

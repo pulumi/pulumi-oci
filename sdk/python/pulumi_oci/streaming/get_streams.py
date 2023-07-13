@@ -161,13 +161,13 @@ def get_streams(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Streaming/getStreams:getStreams', __args__, opts=opts, typ=GetStreamsResult).value
 
     return AwaitableGetStreamsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        state=__ret__.state,
-        stream_pool_id=__ret__.stream_pool_id,
-        streams=__ret__.streams)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        stream_pool_id=pulumi.get(__ret__, 'stream_pool_id'),
+        streams=pulumi.get(__ret__, 'streams'))
 
 
 @_utilities.lift_output_func(get_streams)

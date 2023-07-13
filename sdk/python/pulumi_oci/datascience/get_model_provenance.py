@@ -147,14 +147,14 @@ def get_model_provenance(model_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataScience/getModelProvenance:getModelProvenance', __args__, opts=opts, typ=GetModelProvenanceResult).value
 
     return AwaitableGetModelProvenanceResult(
-        git_branch=__ret__.git_branch,
-        git_commit=__ret__.git_commit,
-        id=__ret__.id,
-        model_id=__ret__.model_id,
-        repository_url=__ret__.repository_url,
-        script_dir=__ret__.script_dir,
-        training_id=__ret__.training_id,
-        training_script=__ret__.training_script)
+        git_branch=pulumi.get(__ret__, 'git_branch'),
+        git_commit=pulumi.get(__ret__, 'git_commit'),
+        id=pulumi.get(__ret__, 'id'),
+        model_id=pulumi.get(__ret__, 'model_id'),
+        repository_url=pulumi.get(__ret__, 'repository_url'),
+        script_dir=pulumi.get(__ret__, 'script_dir'),
+        training_id=pulumi.get(__ret__, 'training_id'),
+        training_script=pulumi.get(__ret__, 'training_script'))
 
 
 @_utilities.lift_output_func(get_model_provenance)

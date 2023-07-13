@@ -151,13 +151,13 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getNamespaceScheduledTasks:getNamespaceScheduledTasks', __args__, opts=opts, typ=GetNamespaceScheduledTasksResult).value
 
     return AwaitableGetNamespaceScheduledTasksResult(
-        compartment_id=__ret__.compartment_id,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        namespace=__ret__.namespace,
-        scheduled_task_collections=__ret__.scheduled_task_collections,
-        task_type=__ret__.task_type)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        scheduled_task_collections=pulumi.get(__ret__, 'scheduled_task_collections'),
+        task_type=pulumi.get(__ret__, 'task_type'))
 
 
 @_utilities.lift_output_func(get_namespace_scheduled_tasks)

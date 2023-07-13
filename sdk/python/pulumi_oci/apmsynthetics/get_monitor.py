@@ -116,7 +116,7 @@ class GetMonitorResult:
     @pulumi.getter(name="batchIntervalInSeconds")
     def batch_interval_in_seconds(self) -> int:
         """
-        Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+        Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
         """
         return pulumi.get(self, "batch_interval_in_seconds")
 
@@ -164,7 +164,7 @@ class GetMonitorResult:
     @pulumi.getter(name="isRunNow")
     def is_run_now(self) -> bool:
         """
-        If isRunNow is enabled, then the monitor will run now.
+        If isRunNow is enabled, then the monitor will run immediately.
         """
         return pulumi.get(self, "is_run_now")
 
@@ -180,7 +180,7 @@ class GetMonitorResult:
     @pulumi.getter(name="maintenanceWindowSchedules")
     def maintenance_window_schedules(self) -> Sequence['outputs.GetMonitorMaintenanceWindowScheduleResult']:
         """
-        Details used to schedule maintenance window.
+        Details required to schedule maintenance window.
         """
         return pulumi.get(self, "maintenance_window_schedules")
 
@@ -193,7 +193,7 @@ class GetMonitorResult:
     @pulumi.getter(name="monitorType")
     def monitor_type(self) -> str:
         """
-        Type of the monitor.
+        Type of monitor.
         """
         return pulumi.get(self, "monitor_type")
 
@@ -209,7 +209,7 @@ class GetMonitorResult:
     @pulumi.getter(name="schedulingPolicy")
     def scheduling_policy(self) -> str:
         """
-        Scheduling policy on Vantage points.
+        Scheduling policy to decide the distribution of monitor executions on vantage points.
         """
         return pulumi.get(self, "scheduling_policy")
 
@@ -356,31 +356,31 @@ def get_monitor(apm_domain_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApmSynthetics/getMonitor:getMonitor', __args__, opts=opts, typ=GetMonitorResult).value
 
     return AwaitableGetMonitorResult(
-        apm_domain_id=__ret__.apm_domain_id,
-        availability_configurations=__ret__.availability_configurations,
-        batch_interval_in_seconds=__ret__.batch_interval_in_seconds,
-        configurations=__ret__.configurations,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_run_now=__ret__.is_run_now,
-        is_run_once=__ret__.is_run_once,
-        maintenance_window_schedules=__ret__.maintenance_window_schedules,
-        monitor_id=__ret__.monitor_id,
-        monitor_type=__ret__.monitor_type,
-        repeat_interval_in_seconds=__ret__.repeat_interval_in_seconds,
-        scheduling_policy=__ret__.scheduling_policy,
-        script_id=__ret__.script_id,
-        script_name=__ret__.script_name,
-        script_parameters=__ret__.script_parameters,
-        status=__ret__.status,
-        target=__ret__.target,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        timeout_in_seconds=__ret__.timeout_in_seconds,
-        vantage_point_count=__ret__.vantage_point_count,
-        vantage_points=__ret__.vantage_points)
+        apm_domain_id=pulumi.get(__ret__, 'apm_domain_id'),
+        availability_configurations=pulumi.get(__ret__, 'availability_configurations'),
+        batch_interval_in_seconds=pulumi.get(__ret__, 'batch_interval_in_seconds'),
+        configurations=pulumi.get(__ret__, 'configurations'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_run_now=pulumi.get(__ret__, 'is_run_now'),
+        is_run_once=pulumi.get(__ret__, 'is_run_once'),
+        maintenance_window_schedules=pulumi.get(__ret__, 'maintenance_window_schedules'),
+        monitor_id=pulumi.get(__ret__, 'monitor_id'),
+        monitor_type=pulumi.get(__ret__, 'monitor_type'),
+        repeat_interval_in_seconds=pulumi.get(__ret__, 'repeat_interval_in_seconds'),
+        scheduling_policy=pulumi.get(__ret__, 'scheduling_policy'),
+        script_id=pulumi.get(__ret__, 'script_id'),
+        script_name=pulumi.get(__ret__, 'script_name'),
+        script_parameters=pulumi.get(__ret__, 'script_parameters'),
+        status=pulumi.get(__ret__, 'status'),
+        target=pulumi.get(__ret__, 'target'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        timeout_in_seconds=pulumi.get(__ret__, 'timeout_in_seconds'),
+        vantage_point_count=pulumi.get(__ret__, 'vantage_point_count'),
+        vantage_points=pulumi.get(__ret__, 'vantage_points'))
 
 
 @_utilities.lift_output_func(get_monitor)

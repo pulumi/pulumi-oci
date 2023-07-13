@@ -140,6 +140,7 @@ __all__ = [
     'VmClusterAddVirtualNetworkDataCollectionOptionArgs',
     'VmClusterAddVirtualNetworkDbServerArgs',
     'VmClusterDataCollectionOptionsArgs',
+    'VmClusterNetworkDrScanArgs',
     'VmClusterNetworkScanArgs',
     'VmClusterNetworkVmNetworkArgs',
     'VmClusterNetworkVmNetworkNodeArgs',
@@ -197,6 +198,7 @@ __all__ = [
     'GetKeyStoresFilterArgs',
     'GetMaintenanceRunsFilterArgs',
     'GetManagedPreferredCredentialsFilterArgs',
+    'GetOneoffPatchesFilterArgs',
     'GetPluggableDatabasesFilterArgs',
     'GetVmClusterNetworksFilterArgs',
     'GetVmClusterPatchHistoryEntriesFilterArgs',
@@ -1542,7 +1544,7 @@ class AutonomousDatabaseLocalStandbyDbArgs:
         """
         :param pulumi.Input[int] lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] state: (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        :param pulumi.Input[str] state: The current state of the Autonomous Database.
         :param pulumi.Input[str] time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param pulumi.Input[str] time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
@@ -1585,7 +1587,7 @@ class AutonomousDatabaseLocalStandbyDbArgs:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        The current state of the Autonomous Database.
         """
         return pulumi.get(self, "state")
 
@@ -1799,7 +1801,7 @@ class AutonomousDatabaseStandbyDbArgs:
         """
         :param pulumi.Input[int] lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] state: (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        :param pulumi.Input[str] state: The current state of the Autonomous Database.
         :param pulumi.Input[str] time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param pulumi.Input[str] time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
@@ -1842,7 +1844,7 @@ class AutonomousDatabaseStandbyDbArgs:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        The current state of the Autonomous Database.
         """
         return pulumi.get(self, "state")
 
@@ -8078,15 +8080,19 @@ class ExadataInfrastructureMaintenanceWindowMonthArgs:
 class ExadataInfrastructureNetworkBondingModeDetailsArgs:
     def __init__(__self__, *,
                  backup_network_bonding_mode: Optional[pulumi.Input[str]] = None,
-                 client_network_bonding_mode: Optional[pulumi.Input[str]] = None):
+                 client_network_bonding_mode: Optional[pulumi.Input[str]] = None,
+                 dr_network_bonding_mode: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] backup_network_bonding_mode: (Updatable) The network bonding mode for the Exadata infrastructure.
         :param pulumi.Input[str] client_network_bonding_mode: (Updatable) The network bonding mode for the Exadata infrastructure.
+        :param pulumi.Input[str] dr_network_bonding_mode: (Updatable) The network bonding mode for the Exadata infrastructure.
         """
         if backup_network_bonding_mode is not None:
             pulumi.set(__self__, "backup_network_bonding_mode", backup_network_bonding_mode)
         if client_network_bonding_mode is not None:
             pulumi.set(__self__, "client_network_bonding_mode", client_network_bonding_mode)
+        if dr_network_bonding_mode is not None:
+            pulumi.set(__self__, "dr_network_bonding_mode", dr_network_bonding_mode)
 
     @property
     @pulumi.getter(name="backupNetworkBondingMode")
@@ -8111,6 +8117,18 @@ class ExadataInfrastructureNetworkBondingModeDetailsArgs:
     @client_network_bonding_mode.setter
     def client_network_bonding_mode(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "client_network_bonding_mode", value)
+
+    @property
+    @pulumi.getter(name="drNetworkBondingMode")
+    def dr_network_bonding_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The network bonding mode for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "dr_network_bonding_mode")
+
+    @dr_network_bonding_mode.setter
+    def dr_network_bonding_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dr_network_bonding_mode", value)
 
 
 @pulumi.input_type
@@ -9598,23 +9616,76 @@ class VmClusterDataCollectionOptionsArgs:
 
 
 @pulumi.input_type
+class VmClusterNetworkDrScanArgs:
+    def __init__(__self__, *,
+                 hostname: pulumi.Input[str],
+                 ips: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 scan_listener_port_tcp: pulumi.Input[int]):
+        """
+        :param pulumi.Input[str] hostname: (Updatable) The node host name.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ips: (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
+        :param pulumi.Input[int] scan_listener_port_tcp: (Updatable) The SCAN TCPIP port. Default is 1521.
+        """
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "ips", ips)
+        pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The node host name.
+        """
+        return pulumi.get(self, "hostname")
+
+    @hostname.setter
+    def hostname(self, value: pulumi.Input[str]):
+        pulumi.set(self, "hostname", value)
+
+    @property
+    @pulumi.getter
+    def ips(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        """
+        (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
+        """
+        return pulumi.get(self, "ips")
+
+    @ips.setter
+    def ips(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "ips", value)
+
+    @property
+    @pulumi.getter(name="scanListenerPortTcp")
+    def scan_listener_port_tcp(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The SCAN TCPIP port. Default is 1521.
+        """
+        return pulumi.get(self, "scan_listener_port_tcp")
+
+    @scan_listener_port_tcp.setter
+    def scan_listener_port_tcp(self, value: pulumi.Input[int]):
+        pulumi.set(self, "scan_listener_port_tcp", value)
+
+
+@pulumi.input_type
 class VmClusterNetworkScanArgs:
     def __init__(__self__, *,
                  hostname: pulumi.Input[str],
                  ips: pulumi.Input[Sequence[pulumi.Input[str]]],
-                 port: pulumi.Input[int],
+                 port: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[str] hostname: (Updatable) The node host name.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ips: (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
-        :param pulumi.Input[int] port: (Updatable) The SCAN TCPIP port. Default is 1521.
+        :param pulumi.Input[int] port: (Updatable) **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
         :param pulumi.Input[int] scan_listener_port_tcp: (Updatable) The SCAN TCPIP port. Default is 1521.
         :param pulumi.Input[int] scan_listener_port_tcp_ssl: (Updatable) The SCAN TCPIP SSL port. Default is 2484.
         """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "ips", ips)
-        pulumi.set(__self__, "port", port)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
         if scan_listener_port_tcp is not None:
             pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
         if scan_listener_port_tcp_ssl is not None:
@@ -9646,14 +9717,14 @@ class VmClusterNetworkScanArgs:
 
     @property
     @pulumi.getter
-    def port(self) -> pulumi.Input[int]:
+    def port(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The SCAN TCPIP port. Default is 1521.
+        (Updatable) **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: pulumi.Input[int]):
+    def port(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "port", value)
 
     @property
@@ -12037,6 +12108,45 @@ class GetMaintenanceRunsFilterArgs:
 
 @pulumi.input_type
 class GetManagedPreferredCredentialsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetOneoffPatchesFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

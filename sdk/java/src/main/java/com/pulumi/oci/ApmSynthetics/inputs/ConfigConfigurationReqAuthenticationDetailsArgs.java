@@ -78,14 +78,14 @@ public final class ConfigConfigurationReqAuthenticationDetailsArgs extends com.p
     }
 
     /**
-     * (Updatable) URL to get authetication token.
+     * (Updatable) URL to get authentication token.
      * 
      */
     @Import(name="authUrl")
     private @Nullable Output<String> authUrl;
 
     /**
-     * @return (Updatable) URL to get authetication token.
+     * @return (Updatable) URL to get authentication token.
      * 
      */
     public Optional<Output<String>> authUrl() {
@@ -93,14 +93,14 @@ public final class ConfigConfigurationReqAuthenticationDetailsArgs extends com.p
     }
 
     /**
-     * (Updatable) Username for authentication.
+     * (Updatable) User name for authentication.
      * 
      */
     @Import(name="authUserName")
     private @Nullable Output<String> authUserName;
 
     /**
-     * @return (Updatable) Username for authentication.
+     * @return (Updatable) User name for authentication.
      * 
      */
     public Optional<Output<String>> authUserName() {
@@ -123,14 +123,14 @@ public final class ConfigConfigurationReqAuthenticationDetailsArgs extends com.p
     }
 
     /**
-     * (Updatable) Request http oauth scheme.
+     * (Updatable) Request HTTP OAuth scheme.
      * 
      */
     @Import(name="oauthScheme")
     private @Nullable Output<String> oauthScheme;
 
     /**
-     * @return (Updatable) Request http oauth scheme.
+     * @return (Updatable) Request HTTP OAuth scheme.
      * 
      */
     public Optional<Output<String>> oauthScheme() {
@@ -263,7 +263,7 @@ public final class ConfigConfigurationReqAuthenticationDetailsArgs extends com.p
         }
 
         /**
-         * @param authUrl (Updatable) URL to get authetication token.
+         * @param authUrl (Updatable) URL to get authentication token.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class ConfigConfigurationReqAuthenticationDetailsArgs extends com.p
         }
 
         /**
-         * @param authUrl (Updatable) URL to get authetication token.
+         * @param authUrl (Updatable) URL to get authentication token.
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class ConfigConfigurationReqAuthenticationDetailsArgs extends com.p
         }
 
         /**
-         * @param authUserName (Updatable) Username for authentication.
+         * @param authUserName (Updatable) User name for authentication.
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class ConfigConfigurationReqAuthenticationDetailsArgs extends com.p
         }
 
         /**
-         * @param authUserName (Updatable) Username for authentication.
+         * @param authUserName (Updatable) User name for authentication.
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class ConfigConfigurationReqAuthenticationDetailsArgs extends com.p
         }
 
         /**
-         * @param oauthScheme (Updatable) Request http oauth scheme.
+         * @param oauthScheme (Updatable) Request HTTP OAuth scheme.
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class ConfigConfigurationReqAuthenticationDetailsArgs extends com.p
         }
 
         /**
-         * @param oauthScheme (Updatable) Request http oauth scheme.
+         * @param oauthScheme (Updatable) Request HTTP OAuth scheme.
          * 
          * @return builder
          * 

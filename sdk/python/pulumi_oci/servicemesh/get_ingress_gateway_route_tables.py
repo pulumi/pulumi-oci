@@ -158,13 +158,13 @@ def get_ingress_gateway_route_tables(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ServiceMesh/getIngressGatewayRouteTables:getIngressGatewayRouteTables', __args__, opts=opts, typ=GetIngressGatewayRouteTablesResult).value
 
     return AwaitableGetIngressGatewayRouteTablesResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        ingress_gateway_id=__ret__.ingress_gateway_id,
-        ingress_gateway_route_table_collections=__ret__.ingress_gateway_route_table_collections,
-        name=__ret__.name,
-        state=__ret__.state)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        ingress_gateway_id=pulumi.get(__ret__, 'ingress_gateway_id'),
+        ingress_gateway_route_table_collections=pulumi.get(__ret__, 'ingress_gateway_route_table_collections'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_ingress_gateway_route_tables)

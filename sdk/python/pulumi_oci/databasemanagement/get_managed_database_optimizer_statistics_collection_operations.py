@@ -172,15 +172,15 @@ def get_managed_database_optimizer_statistics_collection_operations(end_time_les
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperations:getManagedDatabaseOptimizerStatisticsCollectionOperations', __args__, opts=opts, typ=GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult).value
 
     return AwaitableGetManagedDatabaseOptimizerStatisticsCollectionOperationsResult(
-        end_time_less_than_or_equal_to=__ret__.end_time_less_than_or_equal_to,
-        filter_by=__ret__.filter_by,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        limit=__ret__.limit,
-        managed_database_id=__ret__.managed_database_id,
-        optimizer_statistics_collection_operations_collections=__ret__.optimizer_statistics_collection_operations_collections,
-        start_time_greater_than_or_equal_to=__ret__.start_time_greater_than_or_equal_to,
-        task_type=__ret__.task_type)
+        end_time_less_than_or_equal_to=pulumi.get(__ret__, 'end_time_less_than_or_equal_to'),
+        filter_by=pulumi.get(__ret__, 'filter_by'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        limit=pulumi.get(__ret__, 'limit'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        optimizer_statistics_collection_operations_collections=pulumi.get(__ret__, 'optimizer_statistics_collection_operations_collections'),
+        start_time_greater_than_or_equal_to=pulumi.get(__ret__, 'start_time_greater_than_or_equal_to'),
+        task_type=pulumi.get(__ret__, 'task_type'))
 
 
 @_utilities.lift_output_func(get_managed_database_optimizer_statistics_collection_operations)

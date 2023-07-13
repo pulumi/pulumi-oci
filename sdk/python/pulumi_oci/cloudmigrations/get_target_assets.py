@@ -151,13 +151,13 @@ def get_target_assets(display_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudMigrations/getTargetAssets:getTargetAssets', __args__, opts=opts, typ=GetTargetAssetsResult).value
 
     return AwaitableGetTargetAssetsResult(
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        migration_plan_id=__ret__.migration_plan_id,
-        state=__ret__.state,
-        target_asset_collections=__ret__.target_asset_collections,
-        target_asset_id=__ret__.target_asset_id)
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        migration_plan_id=pulumi.get(__ret__, 'migration_plan_id'),
+        state=pulumi.get(__ret__, 'state'),
+        target_asset_collections=pulumi.get(__ret__, 'target_asset_collections'),
+        target_asset_id=pulumi.get(__ret__, 'target_asset_id'))
 
 
 @_utilities.lift_output_func(get_target_assets)

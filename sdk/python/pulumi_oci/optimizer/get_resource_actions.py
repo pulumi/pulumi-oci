@@ -250,19 +250,19 @@ def get_resource_actions(child_tenancy_ids: Optional[Sequence[str]] = None,
     __ret__ = pulumi.runtime.invoke('oci:Optimizer/getResourceActions:getResourceActions', __args__, opts=opts, typ=GetResourceActionsResult).value
 
     return AwaitableGetResourceActionsResult(
-        child_tenancy_ids=__ret__.child_tenancy_ids,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        include_organization=__ret__.include_organization,
-        name=__ret__.name,
-        recommendation_id=__ret__.recommendation_id,
-        recommendation_name=__ret__.recommendation_name,
-        resource_action_collections=__ret__.resource_action_collections,
-        resource_type=__ret__.resource_type,
-        state=__ret__.state,
-        status=__ret__.status)
+        child_tenancy_ids=pulumi.get(__ret__, 'child_tenancy_ids'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        include_organization=pulumi.get(__ret__, 'include_organization'),
+        name=pulumi.get(__ret__, 'name'),
+        recommendation_id=pulumi.get(__ret__, 'recommendation_id'),
+        recommendation_name=pulumi.get(__ret__, 'recommendation_name'),
+        resource_action_collections=pulumi.get(__ret__, 'resource_action_collections'),
+        resource_type=pulumi.get(__ret__, 'resource_type'),
+        state=pulumi.get(__ret__, 'state'),
+        status=pulumi.get(__ret__, 'status'))
 
 
 @_utilities.lift_output_func(get_resource_actions)

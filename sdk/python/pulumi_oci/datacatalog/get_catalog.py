@@ -222,20 +222,20 @@ def get_catalog(catalog_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataCatalog/getCatalog:getCatalog', __args__, opts=opts, typ=GetCatalogResult).value
 
     return AwaitableGetCatalogResult(
-        attached_catalog_private_endpoints=__ret__.attached_catalog_private_endpoints,
-        catalog_id=__ret__.catalog_id,
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        lifecycle_details=__ret__.lifecycle_details,
-        number_of_objects=__ret__.number_of_objects,
-        service_api_url=__ret__.service_api_url,
-        service_console_url=__ret__.service_console_url,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        attached_catalog_private_endpoints=pulumi.get(__ret__, 'attached_catalog_private_endpoints'),
+        catalog_id=pulumi.get(__ret__, 'catalog_id'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        number_of_objects=pulumi.get(__ret__, 'number_of_objects'),
+        service_api_url=pulumi.get(__ret__, 'service_api_url'),
+        service_console_url=pulumi.get(__ret__, 'service_console_url'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_catalog)

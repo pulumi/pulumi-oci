@@ -91,9 +91,9 @@ def get_instance_maintenance_reboot(instance_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot', __args__, opts=opts, typ=GetInstanceMaintenanceRebootResult).value
 
     return AwaitableGetInstanceMaintenanceRebootResult(
-        id=__ret__.id,
-        instance_id=__ret__.instance_id,
-        time_maintenance_reboot_due_max=__ret__.time_maintenance_reboot_due_max)
+        id=pulumi.get(__ret__, 'id'),
+        instance_id=pulumi.get(__ret__, 'instance_id'),
+        time_maintenance_reboot_due_max=pulumi.get(__ret__, 'time_maintenance_reboot_due_max'))
 
 
 @_utilities.lift_output_func(get_instance_maintenance_reboot)

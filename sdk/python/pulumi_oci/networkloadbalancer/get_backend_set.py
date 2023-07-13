@@ -151,15 +151,15 @@ def get_backend_set(backend_set_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:NetworkLoadBalancer/getBackendSet:getBackendSet', __args__, opts=opts, typ=GetBackendSetResult).value
 
     return AwaitableGetBackendSetResult(
-        backend_set_name=__ret__.backend_set_name,
-        backends=__ret__.backends,
-        health_checkers=__ret__.health_checkers,
-        id=__ret__.id,
-        ip_version=__ret__.ip_version,
-        is_preserve_source=__ret__.is_preserve_source,
-        name=__ret__.name,
-        network_load_balancer_id=__ret__.network_load_balancer_id,
-        policy=__ret__.policy)
+        backend_set_name=pulumi.get(__ret__, 'backend_set_name'),
+        backends=pulumi.get(__ret__, 'backends'),
+        health_checkers=pulumi.get(__ret__, 'health_checkers'),
+        id=pulumi.get(__ret__, 'id'),
+        ip_version=pulumi.get(__ret__, 'ip_version'),
+        is_preserve_source=pulumi.get(__ret__, 'is_preserve_source'),
+        name=pulumi.get(__ret__, 'name'),
+        network_load_balancer_id=pulumi.get(__ret__, 'network_load_balancer_id'),
+        policy=pulumi.get(__ret__, 'policy'))
 
 
 @_utilities.lift_output_func(get_backend_set)

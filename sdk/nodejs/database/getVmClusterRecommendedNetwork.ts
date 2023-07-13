@@ -20,6 +20,7 @@ export function getVmClusterRecommendedNetwork(args: GetVmClusterRecommendedNetw
         "definedTags": args.definedTags,
         "displayName": args.displayName,
         "dns": args.dns,
+        "drScanListenerPortTcp": args.drScanListenerPortTcp,
         "exadataInfrastructureId": args.exadataInfrastructureId,
         "freeformTags": args.freeformTags,
         "networks": args.networks,
@@ -53,6 +54,10 @@ export interface GetVmClusterRecommendedNetworkArgs {
      * The list of DNS server IP addresses. Maximum of 3 allowed.
      */
     dns?: string[];
+    /**
+     * The DR SCAN TCPIP port. Default is 1521.
+     */
+    drScanListenerPortTcp?: number;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -100,6 +105,11 @@ export interface GetVmClusterRecommendedNetworkResult {
      * The list of DNS server IP addresses. Maximum of 3 allowed.
      */
     readonly dns: string[];
+    readonly drScanListenerPortTcp?: number;
+    /**
+     * The SCAN details for DR network
+     */
+    readonly drScans: outputs.Database.GetVmClusterRecommendedNetworkDrScan[];
     readonly exadataInfrastructureId: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -164,6 +174,10 @@ export interface GetVmClusterRecommendedNetworkOutputArgs {
      * The list of DNS server IP addresses. Maximum of 3 allowed.
      */
     dns?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The DR SCAN TCPIP port. Default is 1521.
+     */
+    drScanListenerPortTcp?: pulumi.Input<number>;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

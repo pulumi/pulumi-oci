@@ -158,13 +158,13 @@ def get_virtual_deployments(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ServiceMesh/getVirtualDeployments:getVirtualDeployments', __args__, opts=opts, typ=GetVirtualDeploymentsResult).value
 
     return AwaitableGetVirtualDeploymentsResult(
-        compartment_id=__ret__.compartment_id,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        name=__ret__.name,
-        state=__ret__.state,
-        virtual_deployment_collections=__ret__.virtual_deployment_collections,
-        virtual_service_id=__ret__.virtual_service_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        state=pulumi.get(__ret__, 'state'),
+        virtual_deployment_collections=pulumi.get(__ret__, 'virtual_deployment_collections'),
+        virtual_service_id=pulumi.get(__ret__, 'virtual_service_id'))
 
 
 @_utilities.lift_output_func(get_virtual_deployments)

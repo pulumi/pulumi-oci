@@ -133,12 +133,12 @@ def get_log_analytics_categories_list(category_display_text: Optional[str] = Non
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList', __args__, opts=opts, typ=GetLogAnalyticsCategoriesListResult).value
 
     return AwaitableGetLogAnalyticsCategoriesListResult(
-        category_display_text=__ret__.category_display_text,
-        category_type=__ret__.category_type,
-        id=__ret__.id,
-        items=__ret__.items,
-        name=__ret__.name,
-        namespace=__ret__.namespace)
+        category_display_text=pulumi.get(__ret__, 'category_display_text'),
+        category_type=pulumi.get(__ret__, 'category_type'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        name=pulumi.get(__ret__, 'name'),
+        namespace=pulumi.get(__ret__, 'namespace'))
 
 
 @_utilities.lift_output_func(get_log_analytics_categories_list)

@@ -135,12 +135,12 @@ def get_dedicated_vm_host_instances(availability_domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getDedicatedVmHostInstances:getDedicatedVmHostInstances', __args__, opts=opts, typ=GetDedicatedVmHostInstancesResult).value
 
     return AwaitableGetDedicatedVmHostInstancesResult(
-        availability_domain=__ret__.availability_domain,
-        compartment_id=__ret__.compartment_id,
-        dedicated_vm_host_id=__ret__.dedicated_vm_host_id,
-        dedicated_vm_host_instances=__ret__.dedicated_vm_host_instances,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        dedicated_vm_host_id=pulumi.get(__ret__, 'dedicated_vm_host_id'),
+        dedicated_vm_host_instances=pulumi.get(__ret__, 'dedicated_vm_host_instances'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_dedicated_vm_host_instances)

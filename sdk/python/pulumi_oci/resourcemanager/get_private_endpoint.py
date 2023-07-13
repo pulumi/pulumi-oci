@@ -234,21 +234,21 @@ def get_private_endpoint(private_endpoint_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ResourceManager/getPrivateEndpoint:getPrivateEndpoint', __args__, opts=opts, typ=GetPrivateEndpointResult).value
 
     return AwaitableGetPrivateEndpointResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        dns_zones=__ret__.dns_zones,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        is_used_with_configuration_source_provider=__ret__.is_used_with_configuration_source_provider,
-        nsg_id_lists=__ret__.nsg_id_lists,
-        private_endpoint_id=__ret__.private_endpoint_id,
-        source_ips=__ret__.source_ips,
-        state=__ret__.state,
-        subnet_id=__ret__.subnet_id,
-        time_created=__ret__.time_created,
-        vcn_id=__ret__.vcn_id)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        dns_zones=pulumi.get(__ret__, 'dns_zones'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        is_used_with_configuration_source_provider=pulumi.get(__ret__, 'is_used_with_configuration_source_provider'),
+        nsg_id_lists=pulumi.get(__ret__, 'nsg_id_lists'),
+        private_endpoint_id=pulumi.get(__ret__, 'private_endpoint_id'),
+        source_ips=pulumi.get(__ret__, 'source_ips'),
+        state=pulumi.get(__ret__, 'state'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        vcn_id=pulumi.get(__ret__, 'vcn_id'))
 
 
 @_utilities.lift_output_func(get_private_endpoint)

@@ -132,12 +132,12 @@ def get_management_agent_available_histories(filters: Optional[Sequence[pulumi.I
     __ret__ = pulumi.runtime.invoke('oci:ManagementAgent/getManagementAgentAvailableHistories:getManagementAgentAvailableHistories', __args__, opts=opts, typ=GetManagementAgentAvailableHistoriesResult).value
 
     return AwaitableGetManagementAgentAvailableHistoriesResult(
-        availability_histories=__ret__.availability_histories,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        management_agent_id=__ret__.management_agent_id,
-        time_availability_status_ended_greater_than=__ret__.time_availability_status_ended_greater_than,
-        time_availability_status_started_less_than=__ret__.time_availability_status_started_less_than)
+        availability_histories=pulumi.get(__ret__, 'availability_histories'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        management_agent_id=pulumi.get(__ret__, 'management_agent_id'),
+        time_availability_status_ended_greater_than=pulumi.get(__ret__, 'time_availability_status_ended_greater_than'),
+        time_availability_status_started_less_than=pulumi.get(__ret__, 'time_availability_status_started_less_than'))
 
 
 @_utilities.lift_output_func(get_management_agent_available_histories)

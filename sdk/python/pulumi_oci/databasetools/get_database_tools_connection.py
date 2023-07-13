@@ -283,25 +283,25 @@ def get_database_tools_connection(database_tools_connection_id: Optional[str] = 
     __ret__ = pulumi.runtime.invoke('oci:DatabaseTools/getDatabaseToolsConnection:getDatabaseToolsConnection', __args__, opts=opts, typ=GetDatabaseToolsConnectionResult).value
 
     return AwaitableGetDatabaseToolsConnectionResult(
-        advanced_properties=__ret__.advanced_properties,
-        compartment_id=__ret__.compartment_id,
-        connection_string=__ret__.connection_string,
-        database_tools_connection_id=__ret__.database_tools_connection_id,
-        defined_tags=__ret__.defined_tags,
-        display_name=__ret__.display_name,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        key_stores=__ret__.key_stores,
-        lifecycle_details=__ret__.lifecycle_details,
-        private_endpoint_id=__ret__.private_endpoint_id,
-        related_resources=__ret__.related_resources,
-        state=__ret__.state,
-        system_tags=__ret__.system_tags,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        type=__ret__.type,
-        user_name=__ret__.user_name,
-        user_passwords=__ret__.user_passwords)
+        advanced_properties=pulumi.get(__ret__, 'advanced_properties'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        connection_string=pulumi.get(__ret__, 'connection_string'),
+        database_tools_connection_id=pulumi.get(__ret__, 'database_tools_connection_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        key_stores=pulumi.get(__ret__, 'key_stores'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        private_endpoint_id=pulumi.get(__ret__, 'private_endpoint_id'),
+        related_resources=pulumi.get(__ret__, 'related_resources'),
+        state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        type=pulumi.get(__ret__, 'type'),
+        user_name=pulumi.get(__ret__, 'user_name'),
+        user_passwords=pulumi.get(__ret__, 'user_passwords'))
 
 
 @_utilities.lift_output_func(get_database_tools_connection)

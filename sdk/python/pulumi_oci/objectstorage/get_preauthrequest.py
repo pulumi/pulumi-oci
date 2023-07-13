@@ -48,10 +48,6 @@ class GetPreauthrequestResult:
         pulumi.set(__self__, "namespace", namespace)
         if object and not isinstance(object, str):
             raise TypeError("Expected argument 'object' to be a str")
-        if object is not None:
-            warnings.warn("""The 'object' field has been deprecated. Please use 'object_name' instead.""", DeprecationWarning)
-            pulumi.log.warn("""object is deprecated: The 'object' field has been deprecated. Please use 'object_name' instead.""")
-
         pulumi.set(__self__, "object", object)
         if object_name and not isinstance(object_name, str):
             raise TypeError("Expected argument 'object_name' to be a str")
@@ -133,6 +129,9 @@ class GetPreauthrequestResult:
         """
         Deprecated. Instead use `object_name`.The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
         """
+        warnings.warn("""The 'object' field has been deprecated. Please use 'object_name' instead.""", DeprecationWarning)
+        pulumi.log.warn("""object is deprecated: The 'object' field has been deprecated. Please use 'object_name' instead.""")
+
         return pulumi.get(self, "object")
 
     @property
@@ -219,19 +218,19 @@ def get_preauthrequest(bucket: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ObjectStorage/getPreauthrequest:getPreauthrequest', __args__, opts=opts, typ=GetPreauthrequestResult).value
 
     return AwaitableGetPreauthrequestResult(
-        access_type=__ret__.access_type,
-        access_uri=__ret__.access_uri,
-        bucket=__ret__.bucket,
-        bucket_listing_action=__ret__.bucket_listing_action,
-        full_path=__ret__.full_path,
-        id=__ret__.id,
-        name=__ret__.name,
-        namespace=__ret__.namespace,
-        object=__ret__.object,
-        object_name=__ret__.object_name,
-        par_id=__ret__.par_id,
-        time_created=__ret__.time_created,
-        time_expires=__ret__.time_expires)
+        access_type=pulumi.get(__ret__, 'access_type'),
+        access_uri=pulumi.get(__ret__, 'access_uri'),
+        bucket=pulumi.get(__ret__, 'bucket'),
+        bucket_listing_action=pulumi.get(__ret__, 'bucket_listing_action'),
+        full_path=pulumi.get(__ret__, 'full_path'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        namespace=pulumi.get(__ret__, 'namespace'),
+        object=pulumi.get(__ret__, 'object'),
+        object_name=pulumi.get(__ret__, 'object_name'),
+        par_id=pulumi.get(__ret__, 'par_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_expires=pulumi.get(__ret__, 'time_expires'))
 
 
 @_utilities.lift_output_func(get_preauthrequest)

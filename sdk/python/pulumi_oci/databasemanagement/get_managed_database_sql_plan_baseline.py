@@ -274,24 +274,24 @@ def get_managed_database_sql_plan_baseline(managed_database_id: Optional[str] = 
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseSqlPlanBaseline:getManagedDatabaseSqlPlanBaseline', __args__, opts=opts, typ=GetManagedDatabaseSqlPlanBaselineResult).value
 
     return AwaitableGetManagedDatabaseSqlPlanBaselineResult(
-        accepted=__ret__.accepted,
-        action=__ret__.action,
-        adaptive=__ret__.adaptive,
-        auto_purge=__ret__.auto_purge,
-        enabled=__ret__.enabled,
-        execution_plan=__ret__.execution_plan,
-        fixed=__ret__.fixed,
-        id=__ret__.id,
-        managed_database_id=__ret__.managed_database_id,
-        module=__ret__.module,
-        origin=__ret__.origin,
-        plan_name=__ret__.plan_name,
-        reproduced=__ret__.reproduced,
-        sql_handle=__ret__.sql_handle,
-        sql_text=__ret__.sql_text,
-        time_created=__ret__.time_created,
-        time_last_executed=__ret__.time_last_executed,
-        time_last_modified=__ret__.time_last_modified)
+        accepted=pulumi.get(__ret__, 'accepted'),
+        action=pulumi.get(__ret__, 'action'),
+        adaptive=pulumi.get(__ret__, 'adaptive'),
+        auto_purge=pulumi.get(__ret__, 'auto_purge'),
+        enabled=pulumi.get(__ret__, 'enabled'),
+        execution_plan=pulumi.get(__ret__, 'execution_plan'),
+        fixed=pulumi.get(__ret__, 'fixed'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        module=pulumi.get(__ret__, 'module'),
+        origin=pulumi.get(__ret__, 'origin'),
+        plan_name=pulumi.get(__ret__, 'plan_name'),
+        reproduced=pulumi.get(__ret__, 'reproduced'),
+        sql_handle=pulumi.get(__ret__, 'sql_handle'),
+        sql_text=pulumi.get(__ret__, 'sql_text'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_last_executed=pulumi.get(__ret__, 'time_last_executed'),
+        time_last_modified=pulumi.get(__ret__, 'time_last_modified'))
 
 
 @_utilities.lift_output_func(get_managed_database_sql_plan_baseline)

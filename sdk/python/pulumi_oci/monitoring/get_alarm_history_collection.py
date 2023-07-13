@@ -150,13 +150,13 @@ def get_alarm_history_collection(alarm_historytype: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Monitoring/getAlarmHistoryCollection:getAlarmHistoryCollection', __args__, opts=opts, typ=GetAlarmHistoryCollectionResult).value
 
     return AwaitableGetAlarmHistoryCollectionResult(
-        alarm_historytype=__ret__.alarm_historytype,
-        alarm_id=__ret__.alarm_id,
-        entries=__ret__.entries,
-        id=__ret__.id,
-        is_enabled=__ret__.is_enabled,
-        timestamp_greater_than_or_equal_to=__ret__.timestamp_greater_than_or_equal_to,
-        timestamp_less_than=__ret__.timestamp_less_than)
+        alarm_historytype=pulumi.get(__ret__, 'alarm_historytype'),
+        alarm_id=pulumi.get(__ret__, 'alarm_id'),
+        entries=pulumi.get(__ret__, 'entries'),
+        id=pulumi.get(__ret__, 'id'),
+        is_enabled=pulumi.get(__ret__, 'is_enabled'),
+        timestamp_greater_than_or_equal_to=pulumi.get(__ret__, 'timestamp_greater_than_or_equal_to'),
+        timestamp_less_than=pulumi.get(__ret__, 'timestamp_less_than'))
 
 
 @_utilities.lift_output_func(get_alarm_history_collection)

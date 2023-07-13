@@ -133,12 +133,12 @@ def get_managed_database_sql_tuning_advisor_tasks_sql_execution_plan(attribute: 
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan:getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan', __args__, opts=opts, typ=GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult).value
 
     return AwaitableGetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult(
-        attribute=__ret__.attribute,
-        id=__ret__.id,
-        managed_database_id=__ret__.managed_database_id,
-        plans=__ret__.plans,
-        sql_object_id=__ret__.sql_object_id,
-        sql_tuning_advisor_task_id=__ret__.sql_tuning_advisor_task_id)
+        attribute=pulumi.get(__ret__, 'attribute'),
+        id=pulumi.get(__ret__, 'id'),
+        managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
+        plans=pulumi.get(__ret__, 'plans'),
+        sql_object_id=pulumi.get(__ret__, 'sql_object_id'),
+        sql_tuning_advisor_task_id=pulumi.get(__ret__, 'sql_tuning_advisor_task_id'))
 
 
 @_utilities.lift_output_func(get_managed_database_sql_tuning_advisor_tasks_sql_execution_plan)

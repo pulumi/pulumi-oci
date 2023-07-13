@@ -186,17 +186,17 @@ def get_log_saved_search(log_saved_search_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Logging/getLogSavedSearch:getLogSavedSearch', __args__, opts=opts, typ=GetLogSavedSearchResult).value
 
     return AwaitableGetLogSavedSearchResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        log_saved_search_id=__ret__.log_saved_search_id,
-        name=__ret__.name,
-        query=__ret__.query,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_last_modified=__ret__.time_last_modified)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        log_saved_search_id=pulumi.get(__ret__, 'log_saved_search_id'),
+        name=pulumi.get(__ret__, 'name'),
+        query=pulumi.get(__ret__, 'query'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_last_modified=pulumi.get(__ret__, 'time_last_modified'))
 
 
 @_utilities.lift_output_func(get_log_saved_search)

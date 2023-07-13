@@ -253,23 +253,23 @@ def get_external_exadata_storage_connector(external_exadata_storage_connector_id
     __ret__ = pulumi.runtime.invoke('oci:DatabaseManagement/getExternalExadataStorageConnector:getExternalExadataStorageConnector', __args__, opts=opts, typ=GetExternalExadataStorageConnectorResult).value
 
     return AwaitableGetExternalExadataStorageConnectorResult(
-        additional_details=__ret__.additional_details,
-        agent_id=__ret__.agent_id,
-        connection_uri=__ret__.connection_uri,
-        connector_name=__ret__.connector_name,
-        credential_infos=__ret__.credential_infos,
-        display_name=__ret__.display_name,
-        exadata_infrastructure_id=__ret__.exadata_infrastructure_id,
-        external_exadata_storage_connector_id=__ret__.external_exadata_storage_connector_id,
-        id=__ret__.id,
-        internal_id=__ret__.internal_id,
-        lifecycle_details=__ret__.lifecycle_details,
-        state=__ret__.state,
-        status=__ret__.status,
-        storage_server_id=__ret__.storage_server_id,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        version=__ret__.version)
+        additional_details=pulumi.get(__ret__, 'additional_details'),
+        agent_id=pulumi.get(__ret__, 'agent_id'),
+        connection_uri=pulumi.get(__ret__, 'connection_uri'),
+        connector_name=pulumi.get(__ret__, 'connector_name'),
+        credential_infos=pulumi.get(__ret__, 'credential_infos'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
+        external_exadata_storage_connector_id=pulumi.get(__ret__, 'external_exadata_storage_connector_id'),
+        id=pulumi.get(__ret__, 'id'),
+        internal_id=pulumi.get(__ret__, 'internal_id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        state=pulumi.get(__ret__, 'state'),
+        status=pulumi.get(__ret__, 'status'),
+        storage_server_id=pulumi.get(__ret__, 'storage_server_id'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_external_exadata_storage_connector)

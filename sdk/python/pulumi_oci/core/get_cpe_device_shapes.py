@@ -101,9 +101,9 @@ def get_cpe_device_shapes(filters: Optional[Sequence[pulumi.InputType['GetCpeDev
     __ret__ = pulumi.runtime.invoke('oci:Core/getCpeDeviceShapes:getCpeDeviceShapes', __args__, opts=opts, typ=GetCpeDeviceShapesResult).value
 
     return AwaitableGetCpeDeviceShapesResult(
-        cpe_device_shapes=__ret__.cpe_device_shapes,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        cpe_device_shapes=pulumi.get(__ret__, 'cpe_device_shapes'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_cpe_device_shapes)

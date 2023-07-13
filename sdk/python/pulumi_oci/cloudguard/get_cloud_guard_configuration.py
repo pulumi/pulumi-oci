@@ -111,11 +111,11 @@ def get_cloud_guard_configuration(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudGuard/getCloudGuardConfiguration:getCloudGuardConfiguration', __args__, opts=opts, typ=GetCloudGuardConfigurationResult).value
 
     return AwaitableGetCloudGuardConfigurationResult(
-        compartment_id=__ret__.compartment_id,
-        id=__ret__.id,
-        reporting_region=__ret__.reporting_region,
-        self_manage_resources=__ret__.self_manage_resources,
-        status=__ret__.status)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        reporting_region=pulumi.get(__ret__, 'reporting_region'),
+        self_manage_resources=pulumi.get(__ret__, 'self_manage_resources'),
+        status=pulumi.get(__ret__, 'status'))
 
 
 @_utilities.lift_output_func(get_cloud_guard_configuration)

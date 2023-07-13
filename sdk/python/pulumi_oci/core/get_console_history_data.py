@@ -118,11 +118,11 @@ def get_console_history_data(console_history_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getConsoleHistoryData:getConsoleHistoryData', __args__, opts=opts, typ=GetConsoleHistoryDataResult).value
 
     return AwaitableGetConsoleHistoryDataResult(
-        console_history_id=__ret__.console_history_id,
-        data=__ret__.data,
-        id=__ret__.id,
-        length=__ret__.length,
-        offset=__ret__.offset)
+        console_history_id=pulumi.get(__ret__, 'console_history_id'),
+        data=pulumi.get(__ret__, 'data'),
+        id=pulumi.get(__ret__, 'id'),
+        length=pulumi.get(__ret__, 'length'),
+        offset=pulumi.get(__ret__, 'offset'))
 
 
 @_utilities.lift_output_func(get_console_history_data)

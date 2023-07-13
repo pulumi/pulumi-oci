@@ -157,15 +157,15 @@ def get_computed_usages(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:OneSubsription/getComputedUsages:getComputedUsages', __args__, opts=opts, typ=GetComputedUsagesResult).value
 
     return AwaitableGetComputedUsagesResult(
-        compartment_id=__ret__.compartment_id,
-        computed_product=__ret__.computed_product,
-        computed_usages=__ret__.computed_usages,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        parent_product=__ret__.parent_product,
-        subscription_id=__ret__.subscription_id,
-        time_from=__ret__.time_from,
-        time_to=__ret__.time_to)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        computed_product=pulumi.get(__ret__, 'computed_product'),
+        computed_usages=pulumi.get(__ret__, 'computed_usages'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        parent_product=pulumi.get(__ret__, 'parent_product'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'),
+        time_from=pulumi.get(__ret__, 'time_from'),
+        time_to=pulumi.get(__ret__, 'time_to'))
 
 
 @_utilities.lift_output_func(get_computed_usages)

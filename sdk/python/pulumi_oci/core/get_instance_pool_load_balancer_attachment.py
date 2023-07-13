@@ -154,14 +154,14 @@ def get_instance_pool_load_balancer_attachment(instance_pool_id: Optional[str] =
     __ret__ = pulumi.runtime.invoke('oci:Core/getInstancePoolLoadBalancerAttachment:getInstancePoolLoadBalancerAttachment', __args__, opts=opts, typ=GetInstancePoolLoadBalancerAttachmentResult).value
 
     return AwaitableGetInstancePoolLoadBalancerAttachmentResult(
-        backend_set_name=__ret__.backend_set_name,
-        id=__ret__.id,
-        instance_pool_id=__ret__.instance_pool_id,
-        instance_pool_load_balancer_attachment_id=__ret__.instance_pool_load_balancer_attachment_id,
-        load_balancer_id=__ret__.load_balancer_id,
-        port=__ret__.port,
-        state=__ret__.state,
-        vnic_selection=__ret__.vnic_selection)
+        backend_set_name=pulumi.get(__ret__, 'backend_set_name'),
+        id=pulumi.get(__ret__, 'id'),
+        instance_pool_id=pulumi.get(__ret__, 'instance_pool_id'),
+        instance_pool_load_balancer_attachment_id=pulumi.get(__ret__, 'instance_pool_load_balancer_attachment_id'),
+        load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
+        port=pulumi.get(__ret__, 'port'),
+        state=pulumi.get(__ret__, 'state'),
+        vnic_selection=pulumi.get(__ret__, 'vnic_selection'))
 
 
 @_utilities.lift_output_func(get_instance_pool_load_balancer_attachment)

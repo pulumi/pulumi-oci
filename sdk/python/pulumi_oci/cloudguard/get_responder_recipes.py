@@ -190,15 +190,15 @@ def get_responder_recipes(access_level: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudGuard/getResponderRecipes:getResponderRecipes', __args__, opts=opts, typ=GetResponderRecipesResult).value
 
     return AwaitableGetResponderRecipesResult(
-        access_level=__ret__.access_level,
-        compartment_id=__ret__.compartment_id,
-        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        id=__ret__.id,
-        resource_metadata_only=__ret__.resource_metadata_only,
-        responder_recipe_collections=__ret__.responder_recipe_collections,
-        state=__ret__.state)
+        access_level=pulumi.get(__ret__, 'access_level'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'),
+        resource_metadata_only=pulumi.get(__ret__, 'resource_metadata_only'),
+        responder_recipe_collections=pulumi.get(__ret__, 'responder_recipe_collections'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_responder_recipes)

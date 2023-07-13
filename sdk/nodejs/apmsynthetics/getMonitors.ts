@@ -105,7 +105,7 @@ export interface GetMonitorsResult {
      */
     readonly monitorCollections: outputs.ApmSynthetics.GetMonitorsMonitorCollection[];
     /**
-     * Type of the monitor.
+     * Type of monitor.
      */
     readonly monitorType?: string;
     /**

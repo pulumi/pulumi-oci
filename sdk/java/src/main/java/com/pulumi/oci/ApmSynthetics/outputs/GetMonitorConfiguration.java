@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorConfigurationClientCertificateDetail;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorConfigurationDnsConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorConfigurationNetworkConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorConfigurationReqAuthenticationDetail;
@@ -18,12 +19,17 @@ import java.util.Objects;
 @CustomType
 public final class GetMonitorConfiguration {
     /**
+     * @return Details for client certificate.
+     * 
+     */
+    private List<GetMonitorConfigurationClientCertificateDetail> clientCertificateDetails;
+    /**
      * @return Type of configuration.
      * 
      */
     private String configType;
     /**
-     * @return Dns settings.
+     * @return Information about the DNS settings.
      * 
      */
     private List<GetMonitorConfigurationDnsConfiguration> dnsConfigurations;
@@ -33,12 +39,17 @@ public final class GetMonitorConfiguration {
      */
     private Boolean isCertificateValidationEnabled;
     /**
+     * @return If disabled then auto snapshots are not collected.
+     * 
+     */
+    private Boolean isDefaultSnapshotEnabled;
+    /**
      * @return If isFailureRetried is enabled, then a failed call will be retried.
      * 
      */
     private Boolean isFailureRetried;
     /**
-     * @return If redirection enabled, then redirects will be allowed while accessing target URL.
+     * @return If redirection is enabled, then redirects will be allowed while accessing target URL.
      * 
      */
     private Boolean isRedirectionEnabled;
@@ -53,7 +64,7 @@ public final class GetMonitorConfiguration {
      */
     private List<GetMonitorConfigurationReqAuthenticationDetail> reqAuthenticationDetails;
     /**
-     * @return Request http authentication scheme.
+     * @return Request HTTP authentication scheme.
      * 
      */
     private String reqAuthenticationScheme;
@@ -95,6 +106,13 @@ public final class GetMonitorConfiguration {
 
     private GetMonitorConfiguration() {}
     /**
+     * @return Details for client certificate.
+     * 
+     */
+    public List<GetMonitorConfigurationClientCertificateDetail> clientCertificateDetails() {
+        return this.clientCertificateDetails;
+    }
+    /**
      * @return Type of configuration.
      * 
      */
@@ -102,7 +120,7 @@ public final class GetMonitorConfiguration {
         return this.configType;
     }
     /**
-     * @return Dns settings.
+     * @return Information about the DNS settings.
      * 
      */
     public List<GetMonitorConfigurationDnsConfiguration> dnsConfigurations() {
@@ -116,6 +134,13 @@ public final class GetMonitorConfiguration {
         return this.isCertificateValidationEnabled;
     }
     /**
+     * @return If disabled then auto snapshots are not collected.
+     * 
+     */
+    public Boolean isDefaultSnapshotEnabled() {
+        return this.isDefaultSnapshotEnabled;
+    }
+    /**
      * @return If isFailureRetried is enabled, then a failed call will be retried.
      * 
      */
@@ -123,7 +148,7 @@ public final class GetMonitorConfiguration {
         return this.isFailureRetried;
     }
     /**
-     * @return If redirection enabled, then redirects will be allowed while accessing target URL.
+     * @return If redirection is enabled, then redirects will be allowed while accessing target URL.
      * 
      */
     public Boolean isRedirectionEnabled() {
@@ -144,7 +169,7 @@ public final class GetMonitorConfiguration {
         return this.reqAuthenticationDetails;
     }
     /**
-     * @return Request http authentication scheme.
+     * @return Request HTTP authentication scheme.
      * 
      */
     public String reqAuthenticationScheme() {
@@ -209,9 +234,11 @@ public final class GetMonitorConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetMonitorConfigurationClientCertificateDetail> clientCertificateDetails;
         private String configType;
         private List<GetMonitorConfigurationDnsConfiguration> dnsConfigurations;
         private Boolean isCertificateValidationEnabled;
+        private Boolean isDefaultSnapshotEnabled;
         private Boolean isFailureRetried;
         private Boolean isRedirectionEnabled;
         private List<GetMonitorConfigurationNetworkConfiguration> networkConfigurations;
@@ -227,9 +254,11 @@ public final class GetMonitorConfiguration {
         public Builder() {}
         public Builder(GetMonitorConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.clientCertificateDetails = defaults.clientCertificateDetails;
     	      this.configType = defaults.configType;
     	      this.dnsConfigurations = defaults.dnsConfigurations;
     	      this.isCertificateValidationEnabled = defaults.isCertificateValidationEnabled;
+    	      this.isDefaultSnapshotEnabled = defaults.isDefaultSnapshotEnabled;
     	      this.isFailureRetried = defaults.isFailureRetried;
     	      this.isRedirectionEnabled = defaults.isRedirectionEnabled;
     	      this.networkConfigurations = defaults.networkConfigurations;
@@ -244,6 +273,14 @@ public final class GetMonitorConfiguration {
     	      this.verifyTexts = defaults.verifyTexts;
         }
 
+        @CustomType.Setter
+        public Builder clientCertificateDetails(List<GetMonitorConfigurationClientCertificateDetail> clientCertificateDetails) {
+            this.clientCertificateDetails = Objects.requireNonNull(clientCertificateDetails);
+            return this;
+        }
+        public Builder clientCertificateDetails(GetMonitorConfigurationClientCertificateDetail... clientCertificateDetails) {
+            return clientCertificateDetails(List.of(clientCertificateDetails));
+        }
         @CustomType.Setter
         public Builder configType(String configType) {
             this.configType = Objects.requireNonNull(configType);
@@ -260,6 +297,11 @@ public final class GetMonitorConfiguration {
         @CustomType.Setter
         public Builder isCertificateValidationEnabled(Boolean isCertificateValidationEnabled) {
             this.isCertificateValidationEnabled = Objects.requireNonNull(isCertificateValidationEnabled);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isDefaultSnapshotEnabled(Boolean isDefaultSnapshotEnabled) {
+            this.isDefaultSnapshotEnabled = Objects.requireNonNull(isDefaultSnapshotEnabled);
             return this;
         }
         @CustomType.Setter
@@ -342,9 +384,11 @@ public final class GetMonitorConfiguration {
         }
         public GetMonitorConfiguration build() {
             final var o = new GetMonitorConfiguration();
+            o.clientCertificateDetails = clientCertificateDetails;
             o.configType = configType;
             o.dnsConfigurations = dnsConfigurations;
             o.isCertificateValidationEnabled = isCertificateValidationEnabled;
+            o.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
             o.isFailureRetried = isFailureRetried;
             o.isRedirectionEnabled = isRedirectionEnabled;
             o.networkConfigurations = networkConfigurations;

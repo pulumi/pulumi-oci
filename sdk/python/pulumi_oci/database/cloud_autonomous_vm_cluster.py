@@ -1629,7 +1629,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="dbServers")
-    def db_servers(self) -> pulumi.Output[Optional[Sequence[str]]]:
+    def db_servers(self) -> pulumi.Output[Sequence[str]]:
         """
         The list of database servers.
         """

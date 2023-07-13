@@ -214,19 +214,19 @@ def get_library_masking_format(library_masking_format_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getLibraryMaskingFormat:getLibraryMaskingFormat', __args__, opts=opts, typ=GetLibraryMaskingFormatResult).value
 
     return AwaitableGetLibraryMaskingFormatResult(
-        compartment_id=__ret__.compartment_id,
-        defined_tags=__ret__.defined_tags,
-        description=__ret__.description,
-        display_name=__ret__.display_name,
-        format_entries=__ret__.format_entries,
-        freeform_tags=__ret__.freeform_tags,
-        id=__ret__.id,
-        library_masking_format_id=__ret__.library_masking_format_id,
-        sensitive_type_ids=__ret__.sensitive_type_ids,
-        source=__ret__.source,
-        state=__ret__.state,
-        time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        format_entries=pulumi.get(__ret__, 'format_entries'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        id=pulumi.get(__ret__, 'id'),
+        library_masking_format_id=pulumi.get(__ret__, 'library_masking_format_id'),
+        sensitive_type_ids=pulumi.get(__ret__, 'sensitive_type_ids'),
+        source=pulumi.get(__ret__, 'source'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 
 
 @_utilities.lift_output_func(get_library_masking_format)

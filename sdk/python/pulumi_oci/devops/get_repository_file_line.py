@@ -130,12 +130,12 @@ def get_repository_file_line(file_path: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getRepositoryFileLine:getRepositoryFileLine', __args__, opts=opts, typ=GetRepositoryFileLineResult).value
 
     return AwaitableGetRepositoryFileLineResult(
-        file_path=__ret__.file_path,
-        id=__ret__.id,
-        lines=__ret__.lines,
-        repository_id=__ret__.repository_id,
-        revision=__ret__.revision,
-        start_line_number=__ret__.start_line_number)
+        file_path=pulumi.get(__ret__, 'file_path'),
+        id=pulumi.get(__ret__, 'id'),
+        lines=pulumi.get(__ret__, 'lines'),
+        repository_id=pulumi.get(__ret__, 'repository_id'),
+        revision=pulumi.get(__ret__, 'revision'),
+        start_line_number=pulumi.get(__ret__, 'start_line_number'))
 
 
 @_utilities.lift_output_func(get_repository_file_line)

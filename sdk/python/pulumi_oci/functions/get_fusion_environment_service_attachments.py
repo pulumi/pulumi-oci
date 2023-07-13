@@ -151,13 +151,13 @@ def get_fusion_environment_service_attachments(display_name: Optional[str] = Non
     __ret__ = pulumi.runtime.invoke('oci:Functions/getFusionEnvironmentServiceAttachments:getFusionEnvironmentServiceAttachments', __args__, opts=opts, typ=GetFusionEnvironmentServiceAttachmentsResult).value
 
     return AwaitableGetFusionEnvironmentServiceAttachmentsResult(
-        display_name=__ret__.display_name,
-        filters=__ret__.filters,
-        fusion_environment_id=__ret__.fusion_environment_id,
-        id=__ret__.id,
-        service_attachment_collections=__ret__.service_attachment_collections,
-        service_instance_type=__ret__.service_instance_type,
-        state=__ret__.state)
+        display_name=pulumi.get(__ret__, 'display_name'),
+        filters=pulumi.get(__ret__, 'filters'),
+        fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
+        id=pulumi.get(__ret__, 'id'),
+        service_attachment_collections=pulumi.get(__ret__, 'service_attachment_collections'),
+        service_instance_type=pulumi.get(__ret__, 'service_instance_type'),
+        state=pulumi.get(__ret__, 'state'))
 
 
 @_utilities.lift_output_func(get_fusion_environment_service_attachments)

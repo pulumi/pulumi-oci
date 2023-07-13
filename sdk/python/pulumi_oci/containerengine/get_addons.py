@@ -103,10 +103,10 @@ def get_addons(cluster_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ContainerEngine/getAddons:getAddons', __args__, opts=opts, typ=GetAddonsResult).value
 
     return AwaitableGetAddonsResult(
-        addons=__ret__.addons,
-        cluster_id=__ret__.cluster_id,
-        filters=__ret__.filters,
-        id=__ret__.id)
+        addons=pulumi.get(__ret__, 'addons'),
+        cluster_id=pulumi.get(__ret__, 'cluster_id'),
+        filters=pulumi.get(__ret__, 'filters'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_addons)

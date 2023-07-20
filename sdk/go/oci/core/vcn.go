@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -178,6 +179,7 @@ func NewVcn(ctx *pulumi.Context,
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Vcn
 	err := ctx.RegisterResource("oci:Core/vcn:Vcn", name, args, &resource, opts...)
 	if err != nil {

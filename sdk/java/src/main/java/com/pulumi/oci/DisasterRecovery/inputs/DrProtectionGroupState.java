@@ -38,14 +38,14 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * @return (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -164,14 +164,14 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Import(name="peerId")
     private @Nullable Output<String> peerId;
 
     /**
-     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<Output<String>> peerId() {
@@ -329,7 +329,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+         * @param compartmentId (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -340,7 +340,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+         * @param compartmentId (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -513,7 +513,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param peerId The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+         * @param peerId The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -524,7 +524,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param peerId The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+         * @param peerId The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 

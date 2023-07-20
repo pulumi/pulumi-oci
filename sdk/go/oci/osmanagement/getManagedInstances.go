@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetManagedInstances(ctx *pulumi.Context, args *GetManagedInstancesArgs, opts ...pulumi.InvokeOption) (*GetManagedInstancesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedInstancesResult
 	err := ctx.Invoke("oci:OsManagement/getManagedInstances:getManagedInstances", args, &rv, opts...)
 	if err != nil {

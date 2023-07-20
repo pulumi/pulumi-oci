@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(ctx *pulumi.Context, args *GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult
 	err := ctx.Invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript:getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript", args, &rv, opts...)
 	if err != nil {

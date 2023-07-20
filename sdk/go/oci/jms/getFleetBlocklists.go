@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetFleetBlocklists(ctx *pulumi.Context, args *GetFleetBlocklistsArgs, opts ...pulumi.InvokeOption) (*GetFleetBlocklistsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFleetBlocklistsResult
 	err := ctx.Invoke("oci:Jms/getFleetBlocklists:getFleetBlocklists", args, &rv, opts...)
 	if err != nil {

@@ -13,18 +13,18 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Whether the plugin should be enabled or disabled. Accepted values are `ENABLED` and `DISABLED`
+        /// Whether the plugin should be enabled or disabled.
         /// 
         /// To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         /// </summary>
-        [Input("desiredState", required: true)]
-        public Input<string> DesiredState { get; set; } = null!;
+        [Input("desiredState")]
+        public Input<string>? DesiredState { get; set; }
 
         /// <summary>
         /// The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         /// </summary>
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         public InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigGetArgs()
         {

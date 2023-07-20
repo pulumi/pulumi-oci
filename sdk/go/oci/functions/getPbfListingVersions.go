@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -48,6 +49,7 @@ import (
 //
 // ```
 func GetPbfListingVersions(ctx *pulumi.Context, args *GetPbfListingVersionsArgs, opts ...pulumi.InvokeOption) (*GetPbfListingVersionsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPbfListingVersionsResult
 	err := ctx.Invoke("oci:Functions/getPbfListingVersions:getPbfListingVersions", args, &rv, opts...)
 	if err != nil {

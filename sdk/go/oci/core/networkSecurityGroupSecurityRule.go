@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -147,6 +148,7 @@ func NewNetworkSecurityGroupSecurityRule(ctx *pulumi.Context,
 	if args.Protocol == nil {
 		return nil, errors.New("invalid value for required argument 'Protocol'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource NetworkSecurityGroupSecurityRule
 	err := ctx.RegisterResource("oci:Core/networkSecurityGroupSecurityRule:NetworkSecurityGroupSecurityRule", name, args, &resource, opts...)
 	if err != nil {

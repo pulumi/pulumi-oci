@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetServiceEnvironments(ctx *pulumi.Context, args *GetServiceEnvironmentsArgs, opts ...pulumi.InvokeOption) (*GetServiceEnvironmentsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetServiceEnvironmentsResult
 	err := ctx.Invoke("oci:ServiceManagerProxy/getServiceEnvironments:getServiceEnvironments", args, &rv, opts...)
 	if err != nil {

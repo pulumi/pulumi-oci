@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func GetWaasPolicies(ctx *pulumi.Context, args *GetWaasPoliciesArgs, opts ...pulumi.InvokeOption) (*GetWaasPoliciesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetWaasPoliciesResult
 	err := ctx.Invoke("oci:Waas/getWaasPolicies:getWaasPolicies", args, &rv, opts...)
 	if err != nil {

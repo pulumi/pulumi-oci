@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -120,6 +121,7 @@ func NewStreamCdnConfig(ctx *pulumi.Context,
 	if args.DistributionChannelId == nil {
 		return nil, errors.New("invalid value for required argument 'DistributionChannelId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource StreamCdnConfig
 	err := ctx.RegisterResource("oci:MediaServices/streamCdnConfig:StreamCdnConfig", name, args, &resource, opts...)
 	if err != nil {

@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -80,6 +81,7 @@ func NewAuditProfile(ctx *pulumi.Context,
 	if args.AuditProfileId == nil {
 		return nil, errors.New("invalid value for required argument 'AuditProfileId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AuditProfile
 	err := ctx.RegisterResource("oci:DataSafe/auditProfile:AuditProfile", name, args, &resource, opts...)
 	if err != nil {

@@ -31,6 +31,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// The total number of OCPUs available to the instance.
         /// </summary>
         public readonly double? Ocpus;
+        /// <summary>
+        /// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        /// </summary>
+        public readonly int? Vcpus;
 
         [OutputConstructor]
         private InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(
@@ -40,12 +44,15 @@ namespace Pulumi.Oci.Core.Outputs
 
             int? nvmes,
 
-            double? ocpus)
+            double? ocpus,
+
+            int? vcpus)
         {
             BaselineOcpuUtilization = baselineOcpuUtilization;
             MemoryInGbs = memoryInGbs;
             Nvmes = nvmes;
             Ocpus = ocpus;
+            Vcpus = vcpus;
         }
     }
 }

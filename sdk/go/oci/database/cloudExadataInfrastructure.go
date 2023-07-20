@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -173,6 +174,7 @@ func NewCloudExadataInfrastructure(ctx *pulumi.Context,
 	if args.Shape == nil {
 		return nil, errors.New("invalid value for required argument 'Shape'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CloudExadataInfrastructure
 	err := ctx.RegisterResource("oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure", name, args, &resource, opts...)
 	if err != nil {

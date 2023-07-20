@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetReplicationStatus(ctx *pulumi.Context, args *GetReplicationStatusArgs, opts ...pulumi.InvokeOption) (*GetReplicationStatusResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetReplicationStatusResult
 	err := ctx.Invoke("oci:Kms/getReplicationStatus:getReplicationStatus", args, &rv, opts...)
 	if err != nil {

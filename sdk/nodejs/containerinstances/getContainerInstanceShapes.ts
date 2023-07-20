@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.
  *
- * Get a list of shapes for creating Container Instances and their details.
+ * Lists the shapes that can be used to create container instances.
  *
  * ## Example Usage
  *
@@ -42,7 +42,7 @@ export interface GetContainerInstanceShapesArgs {
      */
     availabilityDomain?: string;
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: string;
     filters?: inputs.ContainerInstances.GetContainerInstanceShapesFilter[];
@@ -67,7 +67,7 @@ export interface GetContainerInstanceShapesResult {
 /**
  * This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.
  *
- * Get a list of shapes for creating Container Instances and their details.
+ * Lists the shapes that can be used to create container instances.
  *
  * ## Example Usage
  *
@@ -94,7 +94,7 @@ export interface GetContainerInstanceShapesOutputArgs {
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.ContainerInstances.GetContainerInstanceShapesFilterArgs>[]>;

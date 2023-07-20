@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupApiValidation(ctx *pulumi.Context, args *LookupApiValidationArgs, opts ...pulumi.InvokeOption) (*LookupApiValidationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupApiValidationResult
 	err := ctx.Invoke("oci:ApiGateway/getApiValidation:getApiValidation", args, &rv, opts...)
 	if err != nil {

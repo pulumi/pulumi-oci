@@ -38,6 +38,12 @@ namespace Pulumi.Oci.Core.Inputs
         [Input("ocpus")]
         public Input<double>? Ocpus { get; set; }
 
+        /// <summary>
+        /// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        /// </summary>
+        [Input("vcpus")]
+        public Input<int>? Vcpus { get; set; }
+
         public InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigGetArgs()
         {
         }

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         private InputList<string>? _destinationNsgIdLists;
 
         /// <summary>
-        /// (Updatable) A list of destination region's network security group (NSG) Ids which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1.iad.abcd1, ocid1.networksecuritygroup.oc1.iad.wxyz2 ]`
+        /// (Updatable) A list of network security group (NSG) IDs in the destination region which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt;, ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt; ]`
         /// </summary>
         public InputList<string> DestinationNsgIdLists
         {
@@ -25,13 +25,25 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1.iad.exampleocid2`
+        /// (Updatable) The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+        /// </summary>
+        [Input("destinationPrimaryPrivateIpAddress")]
+        public Input<string>? DestinationPrimaryPrivateIpAddress { get; set; }
+
+        /// <summary>
+        /// (Updatable) The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+        /// </summary>
+        [Input("destinationPrimaryPrivateIpHostnameLabel")]
+        public Input<string>? DestinationPrimaryPrivateIpHostnameLabel { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Input("destinationSubnetId")]
         public Input<string>? DestinationSubnetId { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1.phx.exampleocid1`
+        /// (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Input("sourceVnicId")]
         public Input<string>? SourceVnicId { get; set; }

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetComputeGlobalImageCapabilitySchema(ctx *pulumi.Context, args *GetComputeGlobalImageCapabilitySchemaArgs, opts ...pulumi.InvokeOption) (*GetComputeGlobalImageCapabilitySchemaResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetComputeGlobalImageCapabilitySchemaResult
 	err := ctx.Invoke("oci:Core/getComputeGlobalImageCapabilitySchema:getComputeGlobalImageCapabilitySchema", args, &rv, opts...)
 	if err != nil {

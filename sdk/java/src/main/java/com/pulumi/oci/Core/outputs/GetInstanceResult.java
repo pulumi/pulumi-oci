@@ -49,7 +49,7 @@ public final class GetInstanceResult {
      */
     private String capacityReservationId;
     /**
-     * @return The OCID of the compartment that contains the instance.
+     * @return The OCID of the compartment containing images to search
      * 
      */
     private String compartmentId;
@@ -108,6 +108,11 @@ public final class GetInstanceResult {
      */
     @Deprecated /* The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used. */
     private String image;
+    /**
+     * @return The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
+     * 
+     */
+    private String instanceConfigurationId;
     private String instanceId;
     /**
      * @return Optional mutable instance options
@@ -254,7 +259,7 @@ public final class GetInstanceResult {
         return this.capacityReservationId;
     }
     /**
-     * @return The OCID of the compartment that contains the instance.
+     * @return The OCID of the compartment containing images to search
      * 
      */
     public String compartmentId() {
@@ -336,6 +341,13 @@ public final class GetInstanceResult {
     @Deprecated /* The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used. */
     public String image() {
         return this.image;
+    }
+    /**
+     * @return The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
+     * 
+     */
+    public String instanceConfigurationId() {
+        return this.instanceConfigurationId;
     }
     public String instanceId() {
         return this.instanceId;
@@ -516,6 +528,7 @@ public final class GetInstanceResult {
         private String hostnameLabel;
         private String id;
         private String image;
+        private String instanceConfigurationId;
         private String instanceId;
         private List<GetInstanceInstanceOption> instanceOptions;
         private String ipxeScript;
@@ -560,6 +573,7 @@ public final class GetInstanceResult {
     	      this.hostnameLabel = defaults.hostnameLabel;
     	      this.id = defaults.id;
     	      this.image = defaults.image;
+    	      this.instanceConfigurationId = defaults.instanceConfigurationId;
     	      this.instanceId = defaults.instanceId;
     	      this.instanceOptions = defaults.instanceOptions;
     	      this.ipxeScript = defaults.ipxeScript;
@@ -682,6 +696,11 @@ public final class GetInstanceResult {
         @CustomType.Setter
         public Builder image(String image) {
             this.image = Objects.requireNonNull(image);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder instanceConfigurationId(String instanceConfigurationId) {
+            this.instanceConfigurationId = Objects.requireNonNull(instanceConfigurationId);
             return this;
         }
         @CustomType.Setter
@@ -837,6 +856,7 @@ public final class GetInstanceResult {
             o.hostnameLabel = hostnameLabel;
             o.id = id;
             o.image = image;
+            o.instanceConfigurationId = instanceConfigurationId;
             o.instanceId = instanceId;
             o.instanceOptions = instanceOptions;
             o.ipxeScript = ipxeScript;

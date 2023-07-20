@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetFleetPerformanceTuningAnalysisResult(ctx *pulumi.Context, args *GetFleetPerformanceTuningAnalysisResultArgs, opts ...pulumi.InvokeOption) (*GetFleetPerformanceTuningAnalysisResultResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFleetPerformanceTuningAnalysisResultResult
 	err := ctx.Invoke("oci:Jms/getFleetPerformanceTuningAnalysisResult:getFleetPerformanceTuningAnalysisResult", args, &rv, opts...)
 	if err != nil {

@@ -11,12 +11,12 @@ import java.util.Objects;
 @CustomType
 public final class GetDrPlanExecutionExecutionOption {
     /**
-     * @return A flag indicating whether a precheck was executed before the plan.  Example: `false`
+     * @return A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
      * 
      */
     private Boolean arePrechecksEnabled;
     /**
-     * @return A flag indicating whether warnigs was ignored during the switchover.  Example: `true`
+     * @return A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
      * 
      */
     private Boolean areWarningsIgnored;
@@ -28,14 +28,14 @@ public final class GetDrPlanExecutionExecutionOption {
 
     private GetDrPlanExecutionExecutionOption() {}
     /**
-     * @return A flag indicating whether a precheck was executed before the plan.  Example: `false`
+     * @return A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
      * 
      */
     public Boolean arePrechecksEnabled() {
         return this.arePrechecksEnabled;
     }
     /**
-     * @return A flag indicating whether warnigs was ignored during the switchover.  Example: `true`
+     * @return A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
      * 
      */
     public Boolean areWarningsIgnored() {

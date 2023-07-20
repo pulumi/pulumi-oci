@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetMigrationPlanAvailableShapes(ctx *pulumi.Context, args *GetMigrationPlanAvailableShapesArgs, opts ...pulumi.InvokeOption) (*GetMigrationPlanAvailableShapesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMigrationPlanAvailableShapesResult
 	err := ctx.Invoke("oci:CloudMigrations/getMigrationPlanAvailableShapes:getMigrationPlanAvailableShapes", args, &rv, opts...)
 	if err != nil {

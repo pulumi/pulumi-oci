@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupProductLicense(ctx *pulumi.Context, args *LookupProductLicenseArgs, opts ...pulumi.InvokeOption) (*LookupProductLicenseResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupProductLicenseResult
 	err := ctx.Invoke("oci:LicenseManager/getProductLicense:getProductLicense", args, &rv, opts...)
 	if err != nil {

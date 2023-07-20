@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsBlockVolumeArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsArgs;
+import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsSecondaryVnicArgs;
 import java.lang.String;
 import java.util.List;
@@ -69,6 +70,21 @@ public final class InstanceConfigurationInstanceDetailsArgs extends com.pulumi.r
     }
 
     /**
+     * Multiple Compute Instance Configuration instance details.
+     * 
+     */
+    @Import(name="options")
+    private @Nullable Output<List<InstanceConfigurationInstanceDetailsOptionArgs>> options;
+
+    /**
+     * @return Multiple Compute Instance Configuration instance details.
+     * 
+     */
+    public Optional<Output<List<InstanceConfigurationInstanceDetailsOptionArgs>>> options() {
+        return Optional.ofNullable(this.options);
+    }
+
+    /**
      * Secondary VNIC parameters.
      * 
      */
@@ -89,6 +105,7 @@ public final class InstanceConfigurationInstanceDetailsArgs extends com.pulumi.r
         this.blockVolumes = $.blockVolumes;
         this.instanceType = $.instanceType;
         this.launchDetails = $.launchDetails;
+        this.options = $.options;
         this.secondaryVnics = $.secondaryVnics;
     }
 
@@ -185,6 +202,37 @@ public final class InstanceConfigurationInstanceDetailsArgs extends com.pulumi.r
          */
         public Builder launchDetails(InstanceConfigurationInstanceDetailsLaunchDetailsArgs launchDetails) {
             return launchDetails(Output.of(launchDetails));
+        }
+
+        /**
+         * @param options Multiple Compute Instance Configuration instance details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder options(@Nullable Output<List<InstanceConfigurationInstanceDetailsOptionArgs>> options) {
+            $.options = options;
+            return this;
+        }
+
+        /**
+         * @param options Multiple Compute Instance Configuration instance details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder options(List<InstanceConfigurationInstanceDetailsOptionArgs> options) {
+            return options(Output.of(options));
+        }
+
+        /**
+         * @param options Multiple Compute Instance Configuration instance details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder options(InstanceConfigurationInstanceDetailsOptionArgs... options) {
+            return options(List.of(options));
         }
 
         /**

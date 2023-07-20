@@ -111,6 +111,11 @@ public final class GetInstancesInstance {
     @Deprecated /* The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used. */
     private String image;
     /**
+     * @return The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
+     * 
+     */
+    private String instanceConfigurationId;
+    /**
      * @return Optional mutable instance options
      * 
      */
@@ -333,6 +338,13 @@ public final class GetInstancesInstance {
         return this.image;
     }
     /**
+     * @return The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
+     * 
+     */
+    public String instanceConfigurationId() {
+        return this.instanceConfigurationId;
+    }
+    /**
      * @return Optional mutable instance options
      * 
      */
@@ -500,6 +512,7 @@ public final class GetInstancesInstance {
         private String hostnameLabel;
         private String id;
         private String image;
+        private String instanceConfigurationId;
         private List<GetInstancesInstanceInstanceOption> instanceOptions;
         private String ipxeScript;
         private Boolean isCrossNumaNode;
@@ -543,6 +556,7 @@ public final class GetInstancesInstance {
     	      this.hostnameLabel = defaults.hostnameLabel;
     	      this.id = defaults.id;
     	      this.image = defaults.image;
+    	      this.instanceConfigurationId = defaults.instanceConfigurationId;
     	      this.instanceOptions = defaults.instanceOptions;
     	      this.ipxeScript = defaults.ipxeScript;
     	      this.isCrossNumaNode = defaults.isCrossNumaNode;
@@ -664,6 +678,11 @@ public final class GetInstancesInstance {
         @CustomType.Setter
         public Builder image(String image) {
             this.image = Objects.requireNonNull(image);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder instanceConfigurationId(String instanceConfigurationId) {
+            this.instanceConfigurationId = Objects.requireNonNull(instanceConfigurationId);
             return this;
         }
         @CustomType.Setter
@@ -814,6 +833,7 @@ public final class GetInstancesInstance {
             o.hostnameLabel = hostnameLabel;
             o.id = id;
             o.image = image;
+            o.instanceConfigurationId = instanceConfigurationId;
             o.instanceOptions = instanceOptions;
             o.ipxeScript = ipxeScript;
             o.isCrossNumaNode = isCrossNumaNode;

@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -133,6 +134,7 @@ func NewTargetDatabase(ctx *pulumi.Context,
 	if args.DatabaseDetails == nil {
 		return nil, errors.New("invalid value for required argument 'DatabaseDetails'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource TargetDatabase
 	err := ctx.RegisterResource("oci:DataSafe/targetDatabase:TargetDatabase", name, args, &resource, opts...)
 	if err != nil {

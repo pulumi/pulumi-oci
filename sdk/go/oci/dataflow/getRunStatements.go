@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetRunStatements(ctx *pulumi.Context, args *GetRunStatementsArgs, opts ...pulumi.InvokeOption) (*GetRunStatementsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRunStatementsResult
 	err := ctx.Invoke("oci:DataFlow/getRunStatements:getRunStatements", args, &rv, opts...)
 	if err != nil {

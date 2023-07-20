@@ -32,7 +32,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+        /// The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -48,7 +48,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult> Members;
         /// <summary>
-        /// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        /// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string PeerId;
         /// <summary>
@@ -56,7 +56,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string PeerRegion;
         /// <summary>
-        /// The role of the DR Protection Group.
+        /// The DR Protection Group Role.
         /// </summary>
         public readonly string Role;
         /// <summary>

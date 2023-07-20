@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -81,6 +82,7 @@ func NewDataSafeConfiguration(ctx *pulumi.Context,
 	if args.IsEnabled == nil {
 		return nil, errors.New("invalid value for required argument 'IsEnabled'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DataSafeConfiguration
 	err := ctx.RegisterResource("oci:DataSafe/dataSafeConfiguration:DataSafeConfiguration", name, args, &resource, opts...)
 	if err != nil {

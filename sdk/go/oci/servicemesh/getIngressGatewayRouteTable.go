@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupIngressGatewayRouteTable(ctx *pulumi.Context, args *LookupIngressGatewayRouteTableArgs, opts ...pulumi.InvokeOption) (*LookupIngressGatewayRouteTableResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupIngressGatewayRouteTableResult
 	err := ctx.Invoke("oci:ServiceMesh/getIngressGatewayRouteTable:getIngressGatewayRouteTable", args, &rv, opts...)
 	if err != nil {

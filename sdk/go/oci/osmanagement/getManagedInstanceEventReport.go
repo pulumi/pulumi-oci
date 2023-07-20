@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetManagedInstanceEventReport(ctx *pulumi.Context, args *GetManagedInstanceEventReportArgs, opts ...pulumi.InvokeOption) (*GetManagedInstanceEventReportResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedInstanceEventReportResult
 	err := ctx.Invoke("oci:OsManagement/getManagedInstanceEventReport:getManagedInstanceEventReport", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupResponderRecipe(ctx *pulumi.Context, args *LookupResponderRecipeArgs, opts ...pulumi.InvokeOption) (*LookupResponderRecipeResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupResponderRecipeResult
 	err := ctx.Invoke("oci:CloudGuard/getResponderRecipe:getResponderRecipe", args, &rv, opts...)
 	if err != nil {

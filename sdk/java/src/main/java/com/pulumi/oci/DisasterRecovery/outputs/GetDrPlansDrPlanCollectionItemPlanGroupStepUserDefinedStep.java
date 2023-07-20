@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
     /**
-     * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+     * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String functionId;
@@ -37,7 +37,7 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
      */
     private String runAsUser;
     /**
-     * @return The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+     * @return The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String runOnInstanceId;
@@ -59,7 +59,7 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
 
     private GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep() {}
     /**
-     * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+     * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String functionId() {
@@ -94,7 +94,7 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
         return this.runAsUser;
     }
     /**
-     * @return The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+     * @return The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String runOnInstanceId() {

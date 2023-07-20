@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -46,6 +47,7 @@ import (
 //
 // ```
 func GetNamespaceIngestTimeRules(ctx *pulumi.Context, args *GetNamespaceIngestTimeRulesArgs, opts ...pulumi.InvokeOption) (*GetNamespaceIngestTimeRulesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNamespaceIngestTimeRulesResult
 	err := ctx.Invoke("oci:LogAnalytics/getNamespaceIngestTimeRules:getNamespaceIngestTimeRules", args, &rv, opts...)
 	if err != nil {

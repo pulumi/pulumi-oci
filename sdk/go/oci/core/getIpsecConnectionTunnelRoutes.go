@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetIpsecConnectionTunnelRoutes(ctx *pulumi.Context, args *GetIpsecConnectionTunnelRoutesArgs, opts ...pulumi.InvokeOption) (*GetIpsecConnectionTunnelRoutesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetIpsecConnectionTunnelRoutesResult
 	err := ctx.Invoke("oci:Core/getIpsecConnectionTunnelRoutes:getIpsecConnectionTunnelRoutes", args, &rv, opts...)
 	if err != nil {

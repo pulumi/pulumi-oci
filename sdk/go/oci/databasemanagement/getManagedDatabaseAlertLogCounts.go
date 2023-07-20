@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -47,6 +48,7 @@ import (
 //
 // ```
 func GetManagedDatabaseAlertLogCounts(ctx *pulumi.Context, args *GetManagedDatabaseAlertLogCountsArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseAlertLogCountsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabaseAlertLogCountsResult
 	err := ctx.Invoke("oci:DatabaseManagement/getManagedDatabaseAlertLogCounts:getManagedDatabaseAlertLogCounts", args, &rv, opts...)
 	if err != nil {

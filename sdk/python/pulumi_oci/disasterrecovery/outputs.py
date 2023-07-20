@@ -90,8 +90,8 @@ class DrPlanExecutionExecutionOptions(dict):
                  are_warnings_ignored: Optional[bool] = None):
         """
         :param str plan_execution_type: The type of the plan execution.
-        :param bool are_prechecks_enabled: A flag indicating whether a precheck should be executed before the plan.  Example: `false`
-        :param bool are_warnings_ignored: A flag indicating whether warnigs should be ignored during the switchover.  Example: `true`
+        :param bool are_prechecks_enabled: A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
+        :param bool are_warnings_ignored: A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `true`
         """
         pulumi.set(__self__, "plan_execution_type", plan_execution_type)
         if are_prechecks_enabled is not None:
@@ -111,7 +111,7 @@ class DrPlanExecutionExecutionOptions(dict):
     @pulumi.getter(name="arePrechecksEnabled")
     def are_prechecks_enabled(self) -> Optional[bool]:
         """
-        A flag indicating whether a precheck should be executed before the plan.  Example: `false`
+        A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
         """
         return pulumi.get(self, "are_prechecks_enabled")
 
@@ -119,7 +119,7 @@ class DrPlanExecutionExecutionOptions(dict):
     @pulumi.getter(name="areWarningsIgnored")
     def are_warnings_ignored(self) -> Optional[bool]:
         """
-        A flag indicating whether warnigs should be ignored during the switchover.  Example: `true`
+        A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `true`
         """
         return pulumi.get(self, "are_warnings_ignored")
 
@@ -168,7 +168,7 @@ class DrPlanExecutionGroupExecution(dict):
         """
         :param str display_name: (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
         :param int execution_duration_in_sec: The total duration in seconds taken to complete step execution.  Example: `35`
-        :param str group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+        :param str group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
         :param str status: The status of the step execution.
         :param str status_details: Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
         :param Sequence['DrPlanExecutionGroupExecutionStepExecutionArgs'] step_executions: A list of details of each step executed in this group.
@@ -215,7 +215,7 @@ class DrPlanExecutionGroupExecution(dict):
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[str]:
         """
-        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "group_id")
 
@@ -315,11 +315,11 @@ class DrPlanExecutionGroupExecutionStepExecution(dict):
         """
         :param str display_name: (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
         :param int execution_duration_in_sec: The total duration in seconds taken to complete step execution.  Example: `35`
-        :param str group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+        :param str group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
         :param Sequence['DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs'] log_locations: Information about an Object Storage log location for a DR Protection Group.
         :param str status: The status of the step execution.
         :param str status_details: Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
-        :param str step_id: The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+        :param str step_id: The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
         :param str time_ended: The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param str time_started: The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param str type: The plan group type.
@@ -365,7 +365,7 @@ class DrPlanExecutionGroupExecutionStepExecution(dict):
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[str]:
         """
-        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "group_id")
 
@@ -397,7 +397,7 @@ class DrPlanExecutionGroupExecutionStepExecution(dict):
     @pulumi.getter(name="stepId")
     def step_id(self) -> Optional[str]:
         """
-        The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+        The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "step_id")
 
@@ -538,7 +538,7 @@ class DrPlanPlanGroup(dict):
                  type: Optional[str] = None):
         """
         :param str display_name: (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
-        :param str id: The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+        :param str id: The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
         :param Sequence['DrPlanPlanGroupStepArgs'] steps: The list of steps in this plan group.
         :param str type: The type of DR Plan to be created. 
                
@@ -567,7 +567,7 @@ class DrPlanPlanGroup(dict):
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+        The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "id")
 
@@ -634,10 +634,10 @@ class DrPlanPlanGroupStep(dict):
         """
         :param str display_name: (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
         :param str error_mode: The error mode for this step.
-        :param str group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
-        :param str id: The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+        :param str group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+        :param str id: The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
         :param bool is_enabled: A flag indicating whether this step should be enabled for execution.  Example: `true`
-        :param str member_id: The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+        :param str member_id: The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
         :param int timeout: The timeout in seconds for executing this step.  Example: `600`
         :param str type: The type of DR Plan to be created. 
                
@@ -685,7 +685,7 @@ class DrPlanPlanGroupStep(dict):
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[str]:
         """
-        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "group_id")
 
@@ -693,7 +693,7 @@ class DrPlanPlanGroupStep(dict):
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+        The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "id")
 
@@ -709,7 +709,7 @@ class DrPlanPlanGroupStep(dict):
     @pulumi.getter(name="memberId")
     def member_id(self) -> Optional[str]:
         """
-        The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+        The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "member_id")
 
@@ -788,12 +788,12 @@ class DrPlanPlanGroupStepUserDefinedStep(dict):
                  script_command: Optional[str] = None,
                  step_type: Optional[str] = None):
         """
-        :param str function_id: The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+        :param str function_id: The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
         :param str function_region: The region in which the function is deployed.  Example: `us-ashburn-1`
         :param Sequence['DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs'] object_storage_script_locations: Information about an Object Storage script location for a user-defined step in a DR Plan.
         :param str request_body: The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
         :param str run_as_user: The userid on the instance to be used for executing the script or command.  Example: `opc`
-        :param str run_on_instance_id: The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+        :param str run_on_instance_id: The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
         :param str run_on_instance_region: The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
         :param str script_command: The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
         :param str step_type: The type of the step.
@@ -821,7 +821,7 @@ class DrPlanPlanGroupStepUserDefinedStep(dict):
     @pulumi.getter(name="functionId")
     def function_id(self) -> Optional[str]:
         """
-        The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+        The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "function_id")
 
@@ -861,7 +861,7 @@ class DrPlanPlanGroupStepUserDefinedStep(dict):
     @pulumi.getter(name="runOnInstanceId")
     def run_on_instance_id(self) -> Optional[str]:
         """
-        The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+        The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "run_on_instance_id")
 
@@ -960,7 +960,7 @@ class DrProtectionGroupAssociation(dict):
                  peer_region: Optional[str] = None):
         """
         :param str role: The role of this DR Protection Group.
-        :param str peer_id: The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        :param str peer_id: The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
         :param str peer_region: The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
         """
         pulumi.set(__self__, "role", role)
@@ -981,7 +981,7 @@ class DrProtectionGroupAssociation(dict):
     @pulumi.getter(name="peerId")
     def peer_id(self) -> Optional[str]:
         """
-        The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "peer_id")
 
@@ -1044,14 +1044,20 @@ class DrProtectionGroupMember(dict):
             suggest = "member_id"
         elif key == "memberType":
             suggest = "member_type"
+        elif key == "destinationCapacityReservationId":
+            suggest = "destination_capacity_reservation_id"
         elif key == "destinationCompartmentId":
             suggest = "destination_compartment_id"
         elif key == "destinationDedicatedVmHostId":
             suggest = "destination_dedicated_vm_host_id"
         elif key == "isMovable":
             suggest = "is_movable"
+        elif key == "isRetainFaultDomain":
+            suggest = "is_retain_fault_domain"
         elif key == "passwordVaultSecretId":
             suggest = "password_vault_secret_id"
+        elif key == "vnicMapping":
+            suggest = "vnic_mapping"
         elif key == "vnicMappings":
             suggest = "vnic_mappings"
 
@@ -1069,30 +1075,42 @@ class DrProtectionGroupMember(dict):
     def __init__(__self__, *,
                  member_id: str,
                  member_type: str,
+                 destination_capacity_reservation_id: Optional[str] = None,
                  destination_compartment_id: Optional[str] = None,
                  destination_dedicated_vm_host_id: Optional[str] = None,
                  is_movable: Optional[bool] = None,
+                 is_retain_fault_domain: Optional[bool] = None,
                  password_vault_secret_id: Optional[str] = None,
+                 vnic_mapping: Optional[Sequence['outputs.DrProtectionGroupMemberVnicMapping']] = None,
                  vnic_mappings: Optional[Sequence['outputs.DrProtectionGroupMemberVnicMapping']] = None):
         """
-        :param str member_id: (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+        :param str member_id: (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
         :param str member_type: (Updatable) The type of the member.
-        :param str destination_compartment_id: (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid1`
-        :param str destination_dedicated_vm_host_id: (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid2`
+        :param str destination_capacity_reservation_id: (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+        :param str destination_compartment_id: (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        :param str destination_dedicated_vm_host_id: (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;`
         :param bool is_movable: (Updatable) A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
-        :param str password_vault_secret_id: (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+        :param bool is_retain_fault_domain: (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+        :param str password_vault_secret_id: (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;`
+        :param Sequence['DrProtectionGroupMemberVnicMappingArgs'] vnic_mapping: (Updatable) A list of Compute Instance VNIC mappings.
         :param Sequence['DrProtectionGroupMemberVnicMappingArgs'] vnic_mappings: (Updatable) A list of Compute Instance VNIC mappings.
         """
         pulumi.set(__self__, "member_id", member_id)
         pulumi.set(__self__, "member_type", member_type)
+        if destination_capacity_reservation_id is not None:
+            pulumi.set(__self__, "destination_capacity_reservation_id", destination_capacity_reservation_id)
         if destination_compartment_id is not None:
             pulumi.set(__self__, "destination_compartment_id", destination_compartment_id)
         if destination_dedicated_vm_host_id is not None:
             pulumi.set(__self__, "destination_dedicated_vm_host_id", destination_dedicated_vm_host_id)
         if is_movable is not None:
             pulumi.set(__self__, "is_movable", is_movable)
+        if is_retain_fault_domain is not None:
+            pulumi.set(__self__, "is_retain_fault_domain", is_retain_fault_domain)
         if password_vault_secret_id is not None:
             pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
+        if vnic_mapping is not None:
+            pulumi.set(__self__, "vnic_mapping", vnic_mapping)
         if vnic_mappings is not None:
             pulumi.set(__self__, "vnic_mappings", vnic_mappings)
 
@@ -1100,7 +1118,7 @@ class DrProtectionGroupMember(dict):
     @pulumi.getter(name="memberId")
     def member_id(self) -> str:
         """
-        (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+        (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "member_id")
 
@@ -1113,10 +1131,18 @@ class DrProtectionGroupMember(dict):
         return pulumi.get(self, "member_type")
 
     @property
+    @pulumi.getter(name="destinationCapacityReservationId")
+    def destination_capacity_reservation_id(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+        """
+        return pulumi.get(self, "destination_capacity_reservation_id")
+
+    @property
     @pulumi.getter(name="destinationCompartmentId")
     def destination_compartment_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid1`
+        (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "destination_compartment_id")
 
@@ -1124,7 +1150,7 @@ class DrProtectionGroupMember(dict):
     @pulumi.getter(name="destinationDedicatedVmHostId")
     def destination_dedicated_vm_host_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid2`
+        (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "destination_dedicated_vm_host_id")
 
@@ -1137,12 +1163,28 @@ class DrProtectionGroupMember(dict):
         return pulumi.get(self, "is_movable")
 
     @property
+    @pulumi.getter(name="isRetainFaultDomain")
+    def is_retain_fault_domain(self) -> Optional[bool]:
+        """
+        (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+        """
+        return pulumi.get(self, "is_retain_fault_domain")
+
+    @property
     @pulumi.getter(name="passwordVaultSecretId")
     def password_vault_secret_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+        (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "password_vault_secret_id")
+
+    @property
+    @pulumi.getter(name="vnicMapping")
+    def vnic_mapping(self) -> Optional[Sequence['outputs.DrProtectionGroupMemberVnicMapping']]:
+        """
+        (Updatable) A list of Compute Instance VNIC mappings.
+        """
+        return pulumi.get(self, "vnic_mapping")
 
     @property
     @pulumi.getter(name="vnicMappings")
@@ -1160,6 +1202,10 @@ class DrProtectionGroupMemberVnicMapping(dict):
         suggest = None
         if key == "destinationNsgIdLists":
             suggest = "destination_nsg_id_lists"
+        elif key == "destinationPrimaryPrivateIpAddress":
+            suggest = "destination_primary_private_ip_address"
+        elif key == "destinationPrimaryPrivateIpHostnameLabel":
+            suggest = "destination_primary_private_ip_hostname_label"
         elif key == "destinationSubnetId":
             suggest = "destination_subnet_id"
         elif key == "sourceVnicId":
@@ -1178,15 +1224,23 @@ class DrProtectionGroupMemberVnicMapping(dict):
 
     def __init__(__self__, *,
                  destination_nsg_id_lists: Optional[Sequence[str]] = None,
+                 destination_primary_private_ip_address: Optional[str] = None,
+                 destination_primary_private_ip_hostname_label: Optional[str] = None,
                  destination_subnet_id: Optional[str] = None,
                  source_vnic_id: Optional[str] = None):
         """
-        :param Sequence[str] destination_nsg_id_lists: (Updatable) A list of destination region's network security group (NSG) Ids which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1.iad.abcd1, ocid1.networksecuritygroup.oc1.iad.wxyz2 ]`
-        :param str destination_subnet_id: (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1.iad.exampleocid2`
-        :param str source_vnic_id: (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1.phx.exampleocid1`
+        :param Sequence[str] destination_nsg_id_lists: (Updatable) A list of network security group (NSG) IDs in the destination region which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
+        :param str destination_primary_private_ip_address: (Updatable) The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+        :param str destination_primary_private_ip_hostname_label: (Updatable) The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+        :param str destination_subnet_id: (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
+        :param str source_vnic_id: (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
         """
         if destination_nsg_id_lists is not None:
             pulumi.set(__self__, "destination_nsg_id_lists", destination_nsg_id_lists)
+        if destination_primary_private_ip_address is not None:
+            pulumi.set(__self__, "destination_primary_private_ip_address", destination_primary_private_ip_address)
+        if destination_primary_private_ip_hostname_label is not None:
+            pulumi.set(__self__, "destination_primary_private_ip_hostname_label", destination_primary_private_ip_hostname_label)
         if destination_subnet_id is not None:
             pulumi.set(__self__, "destination_subnet_id", destination_subnet_id)
         if source_vnic_id is not None:
@@ -1196,15 +1250,31 @@ class DrProtectionGroupMemberVnicMapping(dict):
     @pulumi.getter(name="destinationNsgIdLists")
     def destination_nsg_id_lists(self) -> Optional[Sequence[str]]:
         """
-        (Updatable) A list of destination region's network security group (NSG) Ids which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1.iad.abcd1, ocid1.networksecuritygroup.oc1.iad.wxyz2 ]`
+        (Updatable) A list of network security group (NSG) IDs in the destination region which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
         """
         return pulumi.get(self, "destination_nsg_id_lists")
+
+    @property
+    @pulumi.getter(name="destinationPrimaryPrivateIpAddress")
+    def destination_primary_private_ip_address(self) -> Optional[str]:
+        """
+        (Updatable) The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+        """
+        return pulumi.get(self, "destination_primary_private_ip_address")
+
+    @property
+    @pulumi.getter(name="destinationPrimaryPrivateIpHostnameLabel")
+    def destination_primary_private_ip_hostname_label(self) -> Optional[str]:
+        """
+        (Updatable) The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+        """
+        return pulumi.get(self, "destination_primary_private_ip_hostname_label")
 
     @property
     @pulumi.getter(name="destinationSubnetId")
     def destination_subnet_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1.iad.exampleocid2`
+        (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "destination_subnet_id")
 
@@ -1212,7 +1282,7 @@ class DrProtectionGroupMemberVnicMapping(dict):
     @pulumi.getter(name="sourceVnicId")
     def source_vnic_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1.phx.exampleocid1`
+        (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "source_vnic_id")
 
@@ -1224,8 +1294,8 @@ class GetDrPlanExecutionExecutionOptionResult(dict):
                  are_warnings_ignored: bool,
                  plan_execution_type: str):
         """
-        :param bool are_prechecks_enabled: A flag indicating whether a precheck was executed before the plan.  Example: `false`
-        :param bool are_warnings_ignored: A flag indicating whether warnigs was ignored during the switchover.  Example: `true`
+        :param bool are_prechecks_enabled: A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
+        :param bool are_warnings_ignored: A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
         :param str plan_execution_type: The type of the DR Plan executed.
         """
         pulumi.set(__self__, "are_prechecks_enabled", are_prechecks_enabled)
@@ -1236,7 +1306,7 @@ class GetDrPlanExecutionExecutionOptionResult(dict):
     @pulumi.getter(name="arePrechecksEnabled")
     def are_prechecks_enabled(self) -> bool:
         """
-        A flag indicating whether a precheck was executed before the plan.  Example: `false`
+        A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
         """
         return pulumi.get(self, "are_prechecks_enabled")
 
@@ -1244,7 +1314,7 @@ class GetDrPlanExecutionExecutionOptionResult(dict):
     @pulumi.getter(name="areWarningsIgnored")
     def are_warnings_ignored(self) -> bool:
         """
-        A flag indicating whether warnigs was ignored during the switchover.  Example: `true`
+        A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
         """
         return pulumi.get(self, "are_warnings_ignored")
 
@@ -1272,7 +1342,7 @@ class GetDrPlanExecutionGroupExecutionResult(dict):
         """
         :param str display_name: The display name of the step.  Example: `DATABASE_SWITCHOVER`
         :param int execution_duration_in_sec: The total duration in seconds taken to complete step execution.  Example: `35`
-        :param str group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+        :param str group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
         :param str status: The status of the step execution.
         :param str status_details: Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
         :param Sequence['GetDrPlanExecutionGroupExecutionStepExecutionArgs'] step_executions: A list of details of each step executed in this group.
@@ -1310,7 +1380,7 @@ class GetDrPlanExecutionGroupExecutionResult(dict):
     @pulumi.getter(name="groupId")
     def group_id(self) -> str:
         """
-        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "group_id")
 
@@ -1379,11 +1449,11 @@ class GetDrPlanExecutionGroupExecutionStepExecutionResult(dict):
         """
         :param str display_name: The display name of the step.  Example: `DATABASE_SWITCHOVER`
         :param int execution_duration_in_sec: The total duration in seconds taken to complete step execution.  Example: `35`
-        :param str group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+        :param str group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
         :param Sequence['GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArgs'] log_locations: Information about an Object Storage log location for a DR Protection Group.
         :param str status: The status of the step execution.
         :param str status_details: Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
-        :param str step_id: The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+        :param str step_id: The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
         :param str time_ended: The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param str time_started: The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param str type: The plan group type.
@@ -1419,7 +1489,7 @@ class GetDrPlanExecutionGroupExecutionStepExecutionResult(dict):
     @pulumi.getter(name="groupId")
     def group_id(self) -> str:
         """
-        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "group_id")
 
@@ -1451,7 +1521,7 @@ class GetDrPlanExecutionGroupExecutionStepExecutionResult(dict):
     @pulumi.getter(name="stepId")
     def step_id(self) -> str:
         """
-        The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+        The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "step_id")
 
@@ -1597,7 +1667,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
                  time_started: str,
                  time_updated: str):
         """
-        :param str compartment_id: The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..exampleocid1`
+        :param str compartment_id: The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
         :param str dr_protection_group_id: The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
@@ -1605,13 +1675,13 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
         :param Sequence['GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArgs'] execution_options: The options for a plan execution.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param Sequence['GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArgs'] group_executions: A list of groups executed in this DR Plan Execution.
-        :param str id: The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid2`
+        :param str id: The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;`
         :param str life_cycle_details: A message describing the DR Plan Execution's current state in more detail.  Example: `The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress`
         :param Sequence['GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArgs'] log_locations: Information about an Object Storage log location for a DR Protection Group.
-        :param str peer_dr_protection_group_id: The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+        :param str peer_dr_protection_group_id: The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
         :param str peer_region: The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
         :param str plan_execution_type: The type of the DR Plan executed.
-        :param str plan_id: The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+        :param str plan_id: The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
         :param str state: A filter to return only DR Plan Executions that match the given lifecycleState.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -1645,7 +1715,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..exampleocid1`
+        The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1709,7 +1779,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid2`
+        The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "id")
 
@@ -1733,7 +1803,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
     @pulumi.getter(name="peerDrProtectionGroupId")
     def peer_dr_protection_group_id(self) -> str:
         """
-        The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+        The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "peer_dr_protection_group_id")
 
@@ -1757,7 +1827,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
     @pulumi.getter(name="planId")
     def plan_id(self) -> str:
         """
-        The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+        The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "plan_id")
 
@@ -1817,8 +1887,8 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionResult(dict
                  are_warnings_ignored: bool,
                  plan_execution_type: str):
         """
-        :param bool are_prechecks_enabled: A flag indicating whether a precheck was executed before the plan.  Example: `false`
-        :param bool are_warnings_ignored: A flag indicating whether warnigs was ignored during the switchover.  Example: `true`
+        :param bool are_prechecks_enabled: A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
+        :param bool are_warnings_ignored: A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
         :param str plan_execution_type: The type of the DR Plan executed.
         """
         pulumi.set(__self__, "are_prechecks_enabled", are_prechecks_enabled)
@@ -1829,7 +1899,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionResult(dict
     @pulumi.getter(name="arePrechecksEnabled")
     def are_prechecks_enabled(self) -> bool:
         """
-        A flag indicating whether a precheck was executed before the plan.  Example: `false`
+        A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
         """
         return pulumi.get(self, "are_prechecks_enabled")
 
@@ -1837,7 +1907,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionResult(dict
     @pulumi.getter(name="areWarningsIgnored")
     def are_warnings_ignored(self) -> bool:
         """
-        A flag indicating whether warnigs was ignored during the switchover.  Example: `true`
+        A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
         """
         return pulumi.get(self, "are_warnings_ignored")
 
@@ -1865,7 +1935,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionResult(dict)
         """
         :param str display_name: A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
         :param int execution_duration_in_sec: The total duration in seconds taken to complete step execution.  Example: `35`
-        :param str group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+        :param str group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
         :param str status: The status of the step execution.
         :param str status_details: Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
         :param Sequence['GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArgs'] step_executions: A list of details of each step executed in this group.
@@ -1903,7 +1973,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionResult(dict)
     @pulumi.getter(name="groupId")
     def group_id(self) -> str:
         """
-        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "group_id")
 
@@ -1972,11 +2042,11 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutio
         """
         :param str display_name: A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
         :param int execution_duration_in_sec: The total duration in seconds taken to complete step execution.  Example: `35`
-        :param str group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+        :param str group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
         :param Sequence['GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArgs'] log_locations: Information about an Object Storage log location for a DR Protection Group.
         :param str status: The status of the step execution.
         :param str status_details: Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
-        :param str step_id: The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+        :param str step_id: The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
         :param str time_ended: The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param str time_started: The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param str type: The plan group type.
@@ -2012,7 +2082,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutio
     @pulumi.getter(name="groupId")
     def group_id(self) -> str:
         """
-        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "group_id")
 
@@ -2044,7 +2114,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutio
     @pulumi.getter(name="stepId")
     def step_id(self) -> str:
         """
-        The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+        The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "step_id")
 
@@ -2189,7 +2259,7 @@ class GetDrPlanPlanGroupResult(dict):
                  type: str):
         """
         :param str display_name: The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
-        :param str id: The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+        :param str id: The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
         :param Sequence['GetDrPlanPlanGroupStepArgs'] steps: The list of steps in this plan group.
         :param str type: The type of this DR Plan.
         """
@@ -2210,7 +2280,7 @@ class GetDrPlanPlanGroupResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+        The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "id")
 
@@ -2246,10 +2316,10 @@ class GetDrPlanPlanGroupStepResult(dict):
         """
         :param str display_name: The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
         :param str error_mode: The error mode for this step.
-        :param str group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
-        :param str id: The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+        :param str group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+        :param str id: The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
         :param bool is_enabled: A flag indicating whether this step should be enabled for execution.  Example: `true`
-        :param str member_id: The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+        :param str member_id: The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
         :param int timeout: The timeout in seconds for executing this step.  Example: `600`
         :param str type: The type of this DR Plan.
         :param Sequence['GetDrPlanPlanGroupStepUserDefinedStepArgs'] user_defined_steps: The details for a user-defined step in a DR Plan.
@@ -2284,7 +2354,7 @@ class GetDrPlanPlanGroupStepResult(dict):
     @pulumi.getter(name="groupId")
     def group_id(self) -> str:
         """
-        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "group_id")
 
@@ -2292,7 +2362,7 @@ class GetDrPlanPlanGroupStepResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+        The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "id")
 
@@ -2308,7 +2378,7 @@ class GetDrPlanPlanGroupStepResult(dict):
     @pulumi.getter(name="memberId")
     def member_id(self) -> str:
         """
-        The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+        The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "member_id")
 
@@ -2350,12 +2420,12 @@ class GetDrPlanPlanGroupStepUserDefinedStepResult(dict):
                  script_command: str,
                  step_type: str):
         """
-        :param str function_id: The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+        :param str function_id: The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
         :param str function_region: The region in which the function is deployed.  Example: `us-ashburn-1`
         :param Sequence['GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs'] object_storage_script_locations: Information about an Object Storage script location for a user-defined step in a DR Plan.
         :param str request_body: The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
         :param str run_as_user: The userid on the instance to be used for executing the script or command.  Example: `opc`
-        :param str run_on_instance_id: The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+        :param str run_on_instance_id: The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
         :param str run_on_instance_region: The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
         :param str script_command: The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
         :param str step_type: The type of the step.
@@ -2374,7 +2444,7 @@ class GetDrPlanPlanGroupStepUserDefinedStepResult(dict):
     @pulumi.getter(name="functionId")
     def function_id(self) -> str:
         """
-        The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+        The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "function_id")
 
@@ -2414,7 +2484,7 @@ class GetDrPlanPlanGroupStepUserDefinedStepResult(dict):
     @pulumi.getter(name="runOnInstanceId")
     def run_on_instance_id(self) -> str:
         """
-        The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+        The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "run_on_instance_id")
 
@@ -2514,14 +2584,14 @@ class GetDrPlansDrPlanCollectionItemResult(dict):
                  time_updated: str,
                  type: str):
         """
-        :param str compartment_id: The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+        :param str compartment_id: The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
         :param str dr_protection_group_id: The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-        :param str id: The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+        :param str id: The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
         :param str life_cycle_details: A message describing the DR Plan's current state in more detail.
-        :param str peer_dr_protection_group_id: The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+        :param str peer_dr_protection_group_id: The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
         :param str peer_region: The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
         :param Sequence['GetDrPlansDrPlanCollectionItemPlanGroupArgs'] plan_groups: The list of groups in this DR Plan.
         :param str state: A filter to return only DR Plans that match the given lifecycleState.
@@ -2550,7 +2620,7 @@ class GetDrPlansDrPlanCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+        The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "compartment_id")
 
@@ -2590,7 +2660,7 @@ class GetDrPlansDrPlanCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+        The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "id")
 
@@ -2606,7 +2676,7 @@ class GetDrPlansDrPlanCollectionItemResult(dict):
     @pulumi.getter(name="peerDrProtectionGroupId")
     def peer_dr_protection_group_id(self) -> str:
         """
-        The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+        The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "peer_dr_protection_group_id")
 
@@ -2676,7 +2746,7 @@ class GetDrPlansDrPlanCollectionItemPlanGroupResult(dict):
                  type: str):
         """
         :param str display_name: A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
-        :param str id: The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+        :param str id: The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
         :param Sequence['GetDrPlansDrPlanCollectionItemPlanGroupStepArgs'] steps: The list of steps in this plan group.
         :param str type: The type of this DR Plan.
         """
@@ -2697,7 +2767,7 @@ class GetDrPlansDrPlanCollectionItemPlanGroupResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+        The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "id")
 
@@ -2733,10 +2803,10 @@ class GetDrPlansDrPlanCollectionItemPlanGroupStepResult(dict):
         """
         :param str display_name: A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
         :param str error_mode: The error mode for this step.
-        :param str group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
-        :param str id: The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+        :param str group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+        :param str id: The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
         :param bool is_enabled: A flag indicating whether this step should be enabled for execution.  Example: `true`
-        :param str member_id: The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+        :param str member_id: The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
         :param int timeout: The timeout in seconds for executing this step.  Example: `600`
         :param str type: The type of this DR Plan.
         :param Sequence['GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArgs'] user_defined_steps: The details for a user-defined step in a DR Plan.
@@ -2771,7 +2841,7 @@ class GetDrPlansDrPlanCollectionItemPlanGroupStepResult(dict):
     @pulumi.getter(name="groupId")
     def group_id(self) -> str:
         """
-        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "group_id")
 
@@ -2779,7 +2849,7 @@ class GetDrPlansDrPlanCollectionItemPlanGroupStepResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+        The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "id")
 
@@ -2795,7 +2865,7 @@ class GetDrPlansDrPlanCollectionItemPlanGroupStepResult(dict):
     @pulumi.getter(name="memberId")
     def member_id(self) -> str:
         """
-        The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+        The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "member_id")
 
@@ -2837,12 +2907,12 @@ class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepResult(dict):
                  script_command: str,
                  step_type: str):
         """
-        :param str function_id: The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+        :param str function_id: The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
         :param str function_region: The region in which the function is deployed.  Example: `us-ashburn-1`
         :param Sequence['GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs'] object_storage_script_locations: Information about an Object Storage script location for a user-defined step in a DR Plan.
         :param str request_body: The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
         :param str run_as_user: The userid on the instance to be used for executing the script or command.  Example: `opc`
-        :param str run_on_instance_id: The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+        :param str run_on_instance_id: The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
         :param str run_on_instance_region: The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
         :param str script_command: The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
         :param str step_type: The type of the step.
@@ -2861,7 +2931,7 @@ class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepResult(dict):
     @pulumi.getter(name="functionId")
     def function_id(self) -> str:
         """
-        The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+        The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "function_id")
 
@@ -2901,7 +2971,7 @@ class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepResult(dict):
     @pulumi.getter(name="runOnInstanceId")
     def run_on_instance_id(self) -> str:
         """
-        The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+        The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "run_on_instance_id")
 
@@ -3004,7 +3074,7 @@ class GetDrProtectionGroupAssociationResult(dict):
                  peer_region: str,
                  role: str):
         """
-        :param str peer_id: The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        :param str peer_id: The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
         :param str peer_region: The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
         :param str role: The role of the DR Protection Group.
         """
@@ -3016,7 +3086,7 @@ class GetDrProtectionGroupAssociationResult(dict):
     @pulumi.getter(name="peerId")
     def peer_id(self) -> str:
         """
-        The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "peer_id")
 
@@ -3080,35 +3150,52 @@ class GetDrProtectionGroupLogLocationResult(dict):
 @pulumi.output_type
 class GetDrProtectionGroupMemberResult(dict):
     def __init__(__self__, *,
+                 destination_capacity_reservation_id: str,
                  destination_compartment_id: str,
                  destination_dedicated_vm_host_id: str,
                  is_movable: bool,
+                 is_retain_fault_domain: bool,
                  member_id: str,
                  member_type: str,
                  password_vault_secret_id: str,
+                 vnic_mapping: Sequence['outputs.GetDrProtectionGroupMemberVnicMappingResult'],
                  vnic_mappings: Sequence['outputs.GetDrProtectionGroupMemberVnicMappingResult']):
         """
-        :param str destination_compartment_id: The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid`
-        :param str destination_dedicated_vm_host_id: The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid`
+        :param str destination_capacity_reservation_id: The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+        :param str destination_compartment_id: The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        :param str destination_dedicated_vm_host_id: The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1..&lt;unique_id&gt;`
         :param bool is_movable: A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
-        :param str member_id: The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+        :param bool is_retain_fault_domain: A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+        :param str member_id: The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
         :param str member_type: The type of the member.
         :param str password_vault_secret_id: The ID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+        :param Sequence['GetDrProtectionGroupMemberVnicMappingArgs'] vnic_mapping: A list of compute instance VNIC mappings.
         :param Sequence['GetDrProtectionGroupMemberVnicMappingArgs'] vnic_mappings: A list of compute instance VNIC mappings.
         """
+        pulumi.set(__self__, "destination_capacity_reservation_id", destination_capacity_reservation_id)
         pulumi.set(__self__, "destination_compartment_id", destination_compartment_id)
         pulumi.set(__self__, "destination_dedicated_vm_host_id", destination_dedicated_vm_host_id)
         pulumi.set(__self__, "is_movable", is_movable)
+        pulumi.set(__self__, "is_retain_fault_domain", is_retain_fault_domain)
         pulumi.set(__self__, "member_id", member_id)
         pulumi.set(__self__, "member_type", member_type)
         pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
+        pulumi.set(__self__, "vnic_mapping", vnic_mapping)
         pulumi.set(__self__, "vnic_mappings", vnic_mappings)
+
+    @property
+    @pulumi.getter(name="destinationCapacityReservationId")
+    def destination_capacity_reservation_id(self) -> str:
+        """
+        The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+        """
+        return pulumi.get(self, "destination_capacity_reservation_id")
 
     @property
     @pulumi.getter(name="destinationCompartmentId")
     def destination_compartment_id(self) -> str:
         """
-        The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid`
+        The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "destination_compartment_id")
 
@@ -3116,7 +3203,7 @@ class GetDrProtectionGroupMemberResult(dict):
     @pulumi.getter(name="destinationDedicatedVmHostId")
     def destination_dedicated_vm_host_id(self) -> str:
         """
-        The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid`
+        The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "destination_dedicated_vm_host_id")
 
@@ -3129,10 +3216,18 @@ class GetDrProtectionGroupMemberResult(dict):
         return pulumi.get(self, "is_movable")
 
     @property
+    @pulumi.getter(name="isRetainFaultDomain")
+    def is_retain_fault_domain(self) -> bool:
+        """
+        A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+        """
+        return pulumi.get(self, "is_retain_fault_domain")
+
+    @property
     @pulumi.getter(name="memberId")
     def member_id(self) -> str:
         """
-        The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+        The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "member_id")
 
@@ -3153,6 +3248,14 @@ class GetDrProtectionGroupMemberResult(dict):
         return pulumi.get(self, "password_vault_secret_id")
 
     @property
+    @pulumi.getter(name="vnicMapping")
+    def vnic_mapping(self) -> Sequence['outputs.GetDrProtectionGroupMemberVnicMappingResult']:
+        """
+        A list of compute instance VNIC mappings.
+        """
+        return pulumi.get(self, "vnic_mapping")
+
+    @property
     @pulumi.getter(name="vnicMappings")
     def vnic_mappings(self) -> Sequence['outputs.GetDrProtectionGroupMemberVnicMappingResult']:
         """
@@ -3165,14 +3268,20 @@ class GetDrProtectionGroupMemberResult(dict):
 class GetDrProtectionGroupMemberVnicMappingResult(dict):
     def __init__(__self__, *,
                  destination_nsg_id_lists: Sequence[str],
+                 destination_primary_private_ip_address: str,
+                 destination_primary_private_ip_hostname_label: str,
                  destination_subnet_id: str,
                  source_vnic_id: str):
         """
-        :param Sequence[str] destination_nsg_id_lists: A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1.iad.exampleocid1, ocid1.networksecuritygroup.oc1.iad.exampleocid2 ]`
-        :param str destination_subnet_id: The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1.iad.exampleocid`
-        :param str source_vnic_id: The OCID of the VNIC.  Example: `ocid1.vnic.oc1.phx.exampleocid`
+        :param Sequence[str] destination_nsg_id_lists: A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
+        :param str destination_primary_private_ip_address: The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+        :param str destination_primary_private_ip_hostname_label: The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+        :param str destination_subnet_id: The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
+        :param str source_vnic_id: The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
         """
         pulumi.set(__self__, "destination_nsg_id_lists", destination_nsg_id_lists)
+        pulumi.set(__self__, "destination_primary_private_ip_address", destination_primary_private_ip_address)
+        pulumi.set(__self__, "destination_primary_private_ip_hostname_label", destination_primary_private_ip_hostname_label)
         pulumi.set(__self__, "destination_subnet_id", destination_subnet_id)
         pulumi.set(__self__, "source_vnic_id", source_vnic_id)
 
@@ -3180,15 +3289,31 @@ class GetDrProtectionGroupMemberVnicMappingResult(dict):
     @pulumi.getter(name="destinationNsgIdLists")
     def destination_nsg_id_lists(self) -> Sequence[str]:
         """
-        A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1.iad.exampleocid1, ocid1.networksecuritygroup.oc1.iad.exampleocid2 ]`
+        A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
         """
         return pulumi.get(self, "destination_nsg_id_lists")
+
+    @property
+    @pulumi.getter(name="destinationPrimaryPrivateIpAddress")
+    def destination_primary_private_ip_address(self) -> str:
+        """
+        The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+        """
+        return pulumi.get(self, "destination_primary_private_ip_address")
+
+    @property
+    @pulumi.getter(name="destinationPrimaryPrivateIpHostnameLabel")
+    def destination_primary_private_ip_hostname_label(self) -> str:
+        """
+        The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+        """
+        return pulumi.get(self, "destination_primary_private_ip_hostname_label")
 
     @property
     @pulumi.getter(name="destinationSubnetId")
     def destination_subnet_id(self) -> str:
         """
-        The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1.iad.exampleocid`
+        The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "destination_subnet_id")
 
@@ -3196,7 +3321,7 @@ class GetDrProtectionGroupMemberVnicMappingResult(dict):
     @pulumi.getter(name="sourceVnicId")
     def source_vnic_id(self) -> str:
         """
-        The OCID of the VNIC.  Example: `ocid1.vnic.oc1.phx.exampleocid`
+        The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "source_vnic_id")
 
@@ -3238,13 +3363,13 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemResult(dict):
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-        :param str id: The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+        :param str id: The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
         :param str life_cycle_details: A message describing the DR Protection Group's current state in more detail.
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArgs'] log_locations: Information about an Object Storage log location for a DR Protection Group.
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs'] members: A list of DR Protection Group members.
-        :param str peer_id: The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        :param str peer_id: The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
         :param str peer_region: The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
-        :param str role: The role of the DR Protection Group.
+        :param str role: The DR Protection Group Role.
         :param str state: A filter to return only DR Protection Groups that match the given lifecycleState.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -3314,7 +3439,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+        The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "id")
 
@@ -3346,7 +3471,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemResult(dict):
     @pulumi.getter(name="peerId")
     def peer_id(self) -> str:
         """
-        The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "peer_id")
 
@@ -3362,7 +3487,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemResult(dict):
     @pulumi.getter
     def role(self) -> str:
         """
-        The role of the DR Protection Group.
+        The DR Protection Group Role.
         """
         return pulumi.get(self, "role")
 
@@ -3406,9 +3531,9 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationResult(dict
                  peer_region: str,
                  role: str):
         """
-        :param str peer_id: The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        :param str peer_id: The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
         :param str peer_region: The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
-        :param str role: The role of the DR Protection Group.
+        :param str role: The DR Protection Group Role.
         """
         pulumi.set(__self__, "peer_id", peer_id)
         pulumi.set(__self__, "peer_region", peer_region)
@@ -3418,7 +3543,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationResult(dict
     @pulumi.getter(name="peerId")
     def peer_id(self) -> str:
         """
-        The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "peer_id")
 
@@ -3434,7 +3559,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationResult(dict
     @pulumi.getter
     def role(self) -> str:
         """
-        The role of the DR Protection Group.
+        The DR Protection Group Role.
         """
         return pulumi.get(self, "role")
 
@@ -3482,35 +3607,52 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationResult(dict
 @pulumi.output_type
 class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
     def __init__(__self__, *,
+                 destination_capacity_reservation_id: str,
                  destination_compartment_id: str,
                  destination_dedicated_vm_host_id: str,
                  is_movable: bool,
+                 is_retain_fault_domain: bool,
                  member_id: str,
                  member_type: str,
                  password_vault_secret_id: str,
+                 vnic_mapping: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResult'],
                  vnic_mappings: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResult']):
         """
-        :param str destination_compartment_id: The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid`
-        :param str destination_dedicated_vm_host_id: The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid`
+        :param str destination_capacity_reservation_id: The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+        :param str destination_compartment_id: The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        :param str destination_dedicated_vm_host_id: The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1..&lt;unique_id&gt;`
         :param bool is_movable: A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
-        :param str member_id: The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+        :param bool is_retain_fault_domain: A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+        :param str member_id: The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
         :param str member_type: The type of the member.
         :param str password_vault_secret_id: The ID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+        :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArgs'] vnic_mapping: A list of compute instance VNIC mappings.
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArgs'] vnic_mappings: A list of compute instance VNIC mappings.
         """
+        pulumi.set(__self__, "destination_capacity_reservation_id", destination_capacity_reservation_id)
         pulumi.set(__self__, "destination_compartment_id", destination_compartment_id)
         pulumi.set(__self__, "destination_dedicated_vm_host_id", destination_dedicated_vm_host_id)
         pulumi.set(__self__, "is_movable", is_movable)
+        pulumi.set(__self__, "is_retain_fault_domain", is_retain_fault_domain)
         pulumi.set(__self__, "member_id", member_id)
         pulumi.set(__self__, "member_type", member_type)
         pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
+        pulumi.set(__self__, "vnic_mapping", vnic_mapping)
         pulumi.set(__self__, "vnic_mappings", vnic_mappings)
+
+    @property
+    @pulumi.getter(name="destinationCapacityReservationId")
+    def destination_capacity_reservation_id(self) -> str:
+        """
+        The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+        """
+        return pulumi.get(self, "destination_capacity_reservation_id")
 
     @property
     @pulumi.getter(name="destinationCompartmentId")
     def destination_compartment_id(self) -> str:
         """
-        The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid`
+        The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "destination_compartment_id")
 
@@ -3518,7 +3660,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
     @pulumi.getter(name="destinationDedicatedVmHostId")
     def destination_dedicated_vm_host_id(self) -> str:
         """
-        The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid`
+        The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "destination_dedicated_vm_host_id")
 
@@ -3531,10 +3673,18 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         return pulumi.get(self, "is_movable")
 
     @property
+    @pulumi.getter(name="isRetainFaultDomain")
+    def is_retain_fault_domain(self) -> bool:
+        """
+        A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+        """
+        return pulumi.get(self, "is_retain_fault_domain")
+
+    @property
     @pulumi.getter(name="memberId")
     def member_id(self) -> str:
         """
-        The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+        The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
         """
         return pulumi.get(self, "member_id")
 
@@ -3555,6 +3705,14 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         return pulumi.get(self, "password_vault_secret_id")
 
     @property
+    @pulumi.getter(name="vnicMapping")
+    def vnic_mapping(self) -> Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResult']:
+        """
+        A list of compute instance VNIC mappings.
+        """
+        return pulumi.get(self, "vnic_mapping")
+
+    @property
     @pulumi.getter(name="vnicMappings")
     def vnic_mappings(self) -> Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResult']:
         """
@@ -3567,14 +3725,20 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
 class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResult(dict):
     def __init__(__self__, *,
                  destination_nsg_id_lists: Sequence[str],
+                 destination_primary_private_ip_address: str,
+                 destination_primary_private_ip_hostname_label: str,
                  destination_subnet_id: str,
                  source_vnic_id: str):
         """
-        :param Sequence[str] destination_nsg_id_lists: A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1.iad.exampleocid1, ocid1.networksecuritygroup.oc1.iad.exampleocid2 ]`
-        :param str destination_subnet_id: The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1.iad.exampleocid`
-        :param str source_vnic_id: The OCID of the VNIC.  Example: `ocid1.vnic.oc1.phx.exampleocid`
+        :param Sequence[str] destination_nsg_id_lists: A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
+        :param str destination_primary_private_ip_address: The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+        :param str destination_primary_private_ip_hostname_label: The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+        :param str destination_subnet_id: The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
+        :param str source_vnic_id: The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
         """
         pulumi.set(__self__, "destination_nsg_id_lists", destination_nsg_id_lists)
+        pulumi.set(__self__, "destination_primary_private_ip_address", destination_primary_private_ip_address)
+        pulumi.set(__self__, "destination_primary_private_ip_hostname_label", destination_primary_private_ip_hostname_label)
         pulumi.set(__self__, "destination_subnet_id", destination_subnet_id)
         pulumi.set(__self__, "source_vnic_id", source_vnic_id)
 
@@ -3582,15 +3746,31 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResul
     @pulumi.getter(name="destinationNsgIdLists")
     def destination_nsg_id_lists(self) -> Sequence[str]:
         """
-        A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1.iad.exampleocid1, ocid1.networksecuritygroup.oc1.iad.exampleocid2 ]`
+        A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
         """
         return pulumi.get(self, "destination_nsg_id_lists")
+
+    @property
+    @pulumi.getter(name="destinationPrimaryPrivateIpAddress")
+    def destination_primary_private_ip_address(self) -> str:
+        """
+        The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+        """
+        return pulumi.get(self, "destination_primary_private_ip_address")
+
+    @property
+    @pulumi.getter(name="destinationPrimaryPrivateIpHostnameLabel")
+    def destination_primary_private_ip_hostname_label(self) -> str:
+        """
+        The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+        """
+        return pulumi.get(self, "destination_primary_private_ip_hostname_label")
 
     @property
     @pulumi.getter(name="destinationSubnetId")
     def destination_subnet_id(self) -> str:
         """
-        The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1.iad.exampleocid`
+        The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "destination_subnet_id")
 
@@ -3598,7 +3778,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResul
     @pulumi.getter(name="sourceVnicId")
     def source_vnic_id(self) -> str:
         """
-        The OCID of the VNIC.  Example: `ocid1.vnic.oc1.phx.exampleocid`
+        The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
         """
         return pulumi.get(self, "source_vnic_id")
 

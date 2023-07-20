@@ -77,6 +77,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Image;
         /// <summary>
+        /// The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
+        /// </summary>
+        public readonly string InstanceConfigurationId;
+        /// <summary>
         /// Optional mutable instance options
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstancesInstanceInstanceOptionResult> InstanceOptions;
@@ -188,6 +192,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string image,
 
+            string instanceConfigurationId,
+
             ImmutableArray<Outputs.GetInstancesInstanceInstanceOptionResult> instanceOptions,
 
             string ipxeScript,
@@ -250,6 +256,7 @@ namespace Pulumi.Oci.Core.Outputs
             HostnameLabel = hostnameLabel;
             Id = id;
             Image = image;
+            InstanceConfigurationId = instanceConfigurationId;
             InstanceOptions = instanceOptions;
             IpxeScript = ipxeScript;
             IsCrossNumaNode = isCrossNumaNode;

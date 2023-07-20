@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -48,6 +49,7 @@ import (
 //
 // ```
 func GetAlarmHistoryCollection(ctx *pulumi.Context, args *GetAlarmHistoryCollectionArgs, opts ...pulumi.InvokeOption) (*GetAlarmHistoryCollectionResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAlarmHistoryCollectionResult
 	err := ctx.Invoke("oci:Monitoring/getAlarmHistoryCollection:getAlarmHistoryCollection", args, &rv, opts...)
 	if err != nil {

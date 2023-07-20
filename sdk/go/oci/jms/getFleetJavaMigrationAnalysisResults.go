@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetFleetJavaMigrationAnalysisResults(ctx *pulumi.Context, args *GetFleetJavaMigrationAnalysisResultsArgs, opts ...pulumi.InvokeOption) (*GetFleetJavaMigrationAnalysisResultsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFleetJavaMigrationAnalysisResultsResult
 	err := ctx.Invoke("oci:Jms/getFleetJavaMigrationAnalysisResults:getFleetJavaMigrationAnalysisResults", args, &rv, opts...)
 	if err != nil {

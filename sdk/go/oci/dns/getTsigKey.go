@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupTsigKey(ctx *pulumi.Context, args *LookupTsigKeyArgs, opts ...pulumi.InvokeOption) (*LookupTsigKeyResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupTsigKeyResult
 	err := ctx.Invoke("oci:Dns/getTsigKey:getTsigKey", args, &rv, opts...)
 	if err != nil {

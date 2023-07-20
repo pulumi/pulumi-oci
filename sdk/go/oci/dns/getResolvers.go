@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -49,6 +50,7 @@ import (
 //
 // ```
 func GetResolvers(ctx *pulumi.Context, args *GetResolversArgs, opts ...pulumi.InvokeOption) (*GetResolversResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetResolversResult
 	err := ctx.Invoke("oci:Dns/getResolvers:getResolvers", args, &rv, opts...)
 	if err != nil {

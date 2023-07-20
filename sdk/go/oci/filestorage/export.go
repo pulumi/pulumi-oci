@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -38,12 +39,15 @@ import (
 //					&filestorage.ExportExportOptionArgs{
 //						Source:                      pulumi.Any(_var.Export_export_options_source),
 //						Access:                      pulumi.Any(_var.Export_export_options_access),
+//						AllowedAuths:                pulumi.Any(_var.Export_export_options_allowed_auth),
 //						AnonymousGid:                pulumi.Any(_var.Export_export_options_anonymous_gid),
 //						AnonymousUid:                pulumi.Any(_var.Export_export_options_anonymous_uid),
 //						IdentitySquash:              pulumi.Any(_var.Export_export_options_identity_squash),
+//						IsAnonymousAccessAllowed:    pulumi.Any(_var.Export_export_options_is_anonymous_access_allowed),
 //						RequirePrivilegedSourcePort: pulumi.Any(_var.Export_export_options_require_privileged_source_port),
 //					},
 //				},
+//				IsIdmapGroupsForSysAuth: pulumi.Any(_var.Export_is_idmap_groups_for_sys_auth),
 //			})
 //			if err != nil {
 //				return err
@@ -79,6 +83,8 @@ type Export struct {
 	ExportSetId pulumi.StringOutput `pulumi:"exportSetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
 	FileSystemId pulumi.StringOutput `pulumi:"fileSystemId"`
+	// (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+	IsIdmapGroupsForSysAuth pulumi.BoolOutput `pulumi:"isIdmapGroupsForSysAuth"`
 	// Path used to access the associated file system.
 	//
 	// Avoid entering confidential information.
@@ -110,6 +116,7 @@ func NewExport(ctx *pulumi.Context,
 	if args.Path == nil {
 		return nil, errors.New("invalid value for required argument 'Path'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Export
 	err := ctx.RegisterResource("oci:FileStorage/export:Export", name, args, &resource, opts...)
 	if err != nil {
@@ -145,6 +152,8 @@ type exportState struct {
 	ExportSetId *string `pulumi:"exportSetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
 	FileSystemId *string `pulumi:"fileSystemId"`
+	// (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+	IsIdmapGroupsForSysAuth *bool `pulumi:"isIdmapGroupsForSysAuth"`
 	// Path used to access the associated file system.
 	//
 	// Avoid entering confidential information.
@@ -174,6 +183,8 @@ type ExportState struct {
 	ExportSetId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
 	FileSystemId pulumi.StringPtrInput
+	// (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+	IsIdmapGroupsForSysAuth pulumi.BoolPtrInput
 	// Path used to access the associated file system.
 	//
 	// Avoid entering confidential information.
@@ -207,6 +218,8 @@ type exportArgs struct {
 	ExportSetId string `pulumi:"exportSetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
 	FileSystemId string `pulumi:"fileSystemId"`
+	// (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+	IsIdmapGroupsForSysAuth *bool `pulumi:"isIdmapGroupsForSysAuth"`
 	// Path used to access the associated file system.
 	//
 	// Avoid entering confidential information.
@@ -233,6 +246,8 @@ type ExportArgs struct {
 	ExportSetId pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
 	FileSystemId pulumi.StringInput
+	// (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+	IsIdmapGroupsForSysAuth pulumi.BoolPtrInput
 	// Path used to access the associated file system.
 	//
 	// Avoid entering confidential information.
@@ -351,6 +366,11 @@ func (o ExportOutput) ExportSetId() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
 func (o ExportOutput) FileSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Export) pulumi.StringOutput { return v.FileSystemId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+func (o ExportOutput) IsIdmapGroupsForSysAuth() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Export) pulumi.BoolOutput { return v.IsIdmapGroupsForSysAuth }).(pulumi.BoolOutput)
 }
 
 // Path used to access the associated file system.

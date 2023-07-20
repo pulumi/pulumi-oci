@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetApplicationVips(ctx *pulumi.Context, args *GetApplicationVipsArgs, opts ...pulumi.InvokeOption) (*GetApplicationVipsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetApplicationVipsResult
 	err := ctx.Invoke("oci:Database/getApplicationVips:getApplicationVips", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func GetAddressLists(ctx *pulumi.Context, args *GetAddressListsArgs, opts ...pulumi.InvokeOption) (*GetAddressListsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAddressListsResult
 	err := ctx.Invoke("oci:Waas/getAddressLists:getAddressLists", args, &rv, opts...)
 	if err != nil {

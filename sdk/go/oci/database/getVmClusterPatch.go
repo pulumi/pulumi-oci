@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetVmClusterPatch(ctx *pulumi.Context, args *GetVmClusterPatchArgs, opts ...pulumi.InvokeOption) (*GetVmClusterPatchResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVmClusterPatchResult
 	err := ctx.Invoke("oci:Database/getVmClusterPatch:getVmClusterPatch", args, &rv, opts...)
 	if err != nil {

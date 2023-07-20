@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetClusterNetworks(ctx *pulumi.Context, args *GetClusterNetworksArgs, opts ...pulumi.InvokeOption) (*GetClusterNetworksResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetClusterNetworksResult
 	err := ctx.Invoke("oci:Core/getClusterNetworks:getClusterNetworks", args, &rv, opts...)
 	if err != nil {

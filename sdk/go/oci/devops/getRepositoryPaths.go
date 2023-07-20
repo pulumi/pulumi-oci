@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetRepositoryPaths(ctx *pulumi.Context, args *GetRepositoryPathsArgs, opts ...pulumi.InvokeOption) (*GetRepositoryPathsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRepositoryPathsResult
 	err := ctx.Invoke("oci:DevOps/getRepositoryPaths:getRepositoryPaths", args, &rv, opts...)
 	if err != nil {

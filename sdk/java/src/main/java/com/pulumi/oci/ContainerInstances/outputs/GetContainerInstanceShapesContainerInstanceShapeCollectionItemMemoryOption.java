@@ -10,62 +10,62 @@ import java.util.Objects;
 @CustomType
 public final class GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption {
     /**
-     * @return The default amount of memory per OCPU available for this shape, in gigabytes.
+     * @return The default amount of memory per OCPU available for this shape (GB).
      * 
      */
     private Double defaultPerOcpuInGbs;
     /**
-     * @return The maximum amount of memory, in gigabytes.
+     * @return The maximum amount of memory (GB).
      * 
      */
     private Double maxInGbs;
     /**
-     * @return The maximum amount of memory per OCPU available for this shape, in gigabytes.
+     * @return The maximum amount of memory per OCPU available for this shape (GB).
      * 
      */
     private Double maxPerOcpuInGbs;
     /**
-     * @return The minimum amount of memory, in gigabytes.
+     * @return The minimum amount of memory (GB).
      * 
      */
     private Double minInGbs;
     /**
-     * @return The minimum amount of memory per OCPU available for this shape, in gigabytes.
+     * @return The minimum amount of memory per OCPU available for this shape (GB).
      * 
      */
     private Double minPerOcpuInGbs;
 
     private GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption() {}
     /**
-     * @return The default amount of memory per OCPU available for this shape, in gigabytes.
+     * @return The default amount of memory per OCPU available for this shape (GB).
      * 
      */
     public Double defaultPerOcpuInGbs() {
         return this.defaultPerOcpuInGbs;
     }
     /**
-     * @return The maximum amount of memory, in gigabytes.
+     * @return The maximum amount of memory (GB).
      * 
      */
     public Double maxInGbs() {
         return this.maxInGbs;
     }
     /**
-     * @return The maximum amount of memory per OCPU available for this shape, in gigabytes.
+     * @return The maximum amount of memory per OCPU available for this shape (GB).
      * 
      */
     public Double maxPerOcpuInGbs() {
         return this.maxPerOcpuInGbs;
     }
     /**
-     * @return The minimum amount of memory, in gigabytes.
+     * @return The minimum amount of memory (GB).
      * 
      */
     public Double minInGbs() {
         return this.minInGbs;
     }
     /**
-     * @return The minimum amount of memory per OCPU available for this shape, in gigabytes.
+     * @return The minimum amount of memory per OCPU available for this shape (GB).
      * 
      */
     public Double minPerOcpuInGbs() {

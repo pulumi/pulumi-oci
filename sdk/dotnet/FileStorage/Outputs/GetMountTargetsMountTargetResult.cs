@@ -42,7 +42,19 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The method used to map a Unix UID to secondary groups. If NONE, the mount target will not use the Unix UID for ID mapping.
+        /// </summary>
+        public readonly string IdmapType;
         public readonly string IpAddress;
+        /// <summary>
+        /// Allows administrator to configure a mount target to interact with the administrator's Kerberos infrastructure.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMountTargetsMountTargetKerberoResult> Kerberos;
+        /// <summary>
+        /// Mount target details about the LDAP ID mapping configuration.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMountTargetsMountTargetLdapIdmapResult> LdapIdmaps;
         /// <summary>
         /// Additional information about the current 'lifecycleState'.
         /// </summary>
@@ -86,7 +98,13 @@ namespace Pulumi.Oci.FileStorage.Outputs
 
             string id,
 
+            string idmapType,
+
             string ipAddress,
+
+            ImmutableArray<Outputs.GetMountTargetsMountTargetKerberoResult> kerberos,
+
+            ImmutableArray<Outputs.GetMountTargetsMountTargetLdapIdmapResult> ldapIdmaps,
 
             string lifecycleDetails,
 
@@ -108,7 +126,10 @@ namespace Pulumi.Oci.FileStorage.Outputs
             FreeformTags = freeformTags;
             HostnameLabel = hostnameLabel;
             Id = id;
+            IdmapType = idmapType;
             IpAddress = ipAddress;
+            Kerberos = kerberos;
+            LdapIdmaps = ldapIdmaps;
             LifecycleDetails = lifecycleDetails;
             NsgIds = nsgIds;
             PrivateIpIds = privateIpIds;

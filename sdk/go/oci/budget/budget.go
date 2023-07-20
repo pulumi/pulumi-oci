@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -131,6 +132,7 @@ func NewBudget(ctx *pulumi.Context,
 	if args.ResetPeriod == nil {
 		return nil, errors.New("invalid value for required argument 'ResetPeriod'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Budget
 	err := ctx.RegisterResource("oci:Budget/budget:Budget", name, args, &resource, opts...)
 	if err != nil {

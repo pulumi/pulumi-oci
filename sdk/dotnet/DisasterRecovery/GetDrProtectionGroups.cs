@@ -33,6 +33,7 @@ namespace Pulumi.Oci.DisasterRecovery
         ///         CompartmentId = @var.Compartment_id,
         ///         DisplayName = @var.Dr_protection_group_display_name,
         ///         DrProtectionGroupId = oci_disaster_recovery_dr_protection_group.Test_dr_protection_group.Id,
+        ///         Role = @var.Dr_protection_group_role,
         ///         State = @var.Dr_protection_group_state,
         ///     });
         /// 
@@ -66,6 +67,7 @@ namespace Pulumi.Oci.DisasterRecovery
         ///         CompartmentId = @var.Compartment_id,
         ///         DisplayName = @var.Dr_protection_group_display_name,
         ///         DrProtectionGroupId = oci_disaster_recovery_dr_protection_group.Test_dr_protection_group.Id,
+        ///         Role = @var.Dr_protection_group_role,
         ///         State = @var.Dr_protection_group_state,
         ///     });
         /// 
@@ -108,6 +110,12 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
+        /// The DR Protection Group Role.
+        /// </summary>
+        [Input("role")]
+        public string? Role { get; set; }
+
+        /// <summary>
         /// A filter to return only DR Protection Groups that match the given lifecycleState.
         /// </summary>
         [Input("state")]
@@ -148,6 +156,12 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
+        /// The DR Protection Group Role.
+        /// </summary>
+        [Input("role")]
+        public Input<string>? Role { get; set; }
+
+        /// <summary>
         /// A filter to return only DR Protection Groups that match the given lifecycleState.
         /// </summary>
         [Input("state")]
@@ -164,7 +178,7 @@ namespace Pulumi.Oci.DisasterRecovery
     public sealed class GetDrProtectionGroupsResult
     {
         /// <summary>
-        /// The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+        /// The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -181,6 +195,10 @@ namespace Pulumi.Oci.DisasterRecovery
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The role of the DR Protection Group.
+        /// </summary>
+        public readonly string? Role;
         /// <summary>
         /// The current state of the DR Protection Group.
         /// </summary>
@@ -200,6 +218,8 @@ namespace Pulumi.Oci.DisasterRecovery
 
             string id,
 
+            string? role,
+
             string? state)
         {
             CompartmentId = compartmentId;
@@ -208,6 +228,7 @@ namespace Pulumi.Oci.DisasterRecovery
             DrProtectionGroupId = drProtectionGroupId;
             Filters = filters;
             Id = id;
+            Role = role;
             State = state;
         }
     }

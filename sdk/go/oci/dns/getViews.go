@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -49,6 +50,7 @@ import (
 //
 // ```
 func GetViews(ctx *pulumi.Context, args *GetViewsArgs, opts ...pulumi.InvokeOption) (*GetViewsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetViewsResult
 	err := ctx.Invoke("oci:Dns/getViews:getViews", args, &rv, opts...)
 	if err != nil {

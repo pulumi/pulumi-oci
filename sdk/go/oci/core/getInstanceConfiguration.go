@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupInstanceConfiguration(ctx *pulumi.Context, args *LookupInstanceConfigurationArgs, opts ...pulumi.InvokeOption) (*LookupInstanceConfigurationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupInstanceConfigurationResult
 	err := ctx.Invoke("oci:Core/getInstanceConfiguration:getInstanceConfiguration", args, &rv, opts...)
 	if err != nil {
@@ -56,7 +58,7 @@ type LookupInstanceConfigurationArgs struct {
 
 // A collection of values returned by getInstanceConfiguration.
 type LookupInstanceConfigurationResult struct {
-	// The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+	// The OCID of the compartment containing images to search
 	CompartmentId string `pulumi:"compartmentId"`
 	// Parameters that were not specified when the instance configuration was created, but that are required to launch an instance from the instance configuration. See the [LaunchInstanceConfiguration](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstanceConfiguration) operation.
 	DeferredFields []string `pulumi:"deferredFields"`
@@ -114,7 +116,7 @@ func (o LookupInstanceConfigurationResultOutput) ToLookupInstanceConfigurationRe
 	return o
 }
 
-// The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+// The OCID of the compartment containing images to search
 func (o LookupInstanceConfigurationResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceConfigurationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

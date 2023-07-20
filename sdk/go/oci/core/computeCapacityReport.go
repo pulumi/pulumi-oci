@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -96,6 +97,7 @@ func NewComputeCapacityReport(ctx *pulumi.Context,
 	if args.ShapeAvailabilities == nil {
 		return nil, errors.New("invalid value for required argument 'ShapeAvailabilities'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ComputeCapacityReport
 	err := ctx.RegisterResource("oci:Core/computeCapacityReport:ComputeCapacityReport", name, args, &resource, opts...)
 	if err != nil {

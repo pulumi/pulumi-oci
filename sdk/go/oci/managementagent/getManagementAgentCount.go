@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetManagementAgentCount(ctx *pulumi.Context, args *GetManagementAgentCountArgs, opts ...pulumi.InvokeOption) (*GetManagementAgentCountResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagementAgentCountResult
 	err := ctx.Invoke("oci:ManagementAgent/getManagementAgentCount:getManagementAgentCount", args, &rv, opts...)
 	if err != nil {

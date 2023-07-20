@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func LookupScript(ctx *pulumi.Context, args *LookupScriptArgs, opts ...pulumi.InvokeOption) (*LookupScriptResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupScriptResult
 	err := ctx.Invoke("oci:ApmSynthetics/getScript:getScript", args, &rv, opts...)
 	if err != nil {

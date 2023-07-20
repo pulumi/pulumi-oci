@@ -100,7 +100,7 @@ class GetContainerInstanceResult:
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
         """
-        Availability Domain where the ContainerInstance is running.
+        The availability domain to place the container instance.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -108,7 +108,7 @@ class GetContainerInstanceResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier
+        The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -116,7 +116,7 @@ class GetContainerInstanceResult:
     @pulumi.getter(name="containerCount")
     def container_count(self) -> int:
         """
-        The number of containers on this Instance
+        The number of containers on the container instance.
         """
         return pulumi.get(self, "container_count")
 
@@ -137,7 +137,7 @@ class GetContainerInstanceResult:
     @pulumi.getter
     def containers(self) -> Sequence['outputs.GetContainerInstanceContainerResult']:
         """
-        The Containers on this Instance
+        The containers on the container instance.
         """
         return pulumi.get(self, "containers")
 
@@ -145,7 +145,7 @@ class GetContainerInstanceResult:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         """
         return pulumi.get(self, "defined_tags")
 
@@ -153,7 +153,7 @@ class GetContainerInstanceResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Display name for the ContainerInstance. Can be renamed.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -169,7 +169,7 @@ class GetContainerInstanceResult:
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> str:
         """
-        Fault Domain where the ContainerInstance is running.
+        The fault domain to place the container instance.
         """
         return pulumi.get(self, "fault_domain")
 
@@ -185,7 +185,7 @@ class GetContainerInstanceResult:
     @pulumi.getter(name="gracefulShutdownTimeoutInSeconds")
     def graceful_shutdown_timeout_in_seconds(self) -> str:
         """
-        Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+        The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
         """
         return pulumi.get(self, "graceful_shutdown_timeout_in_seconds")
 
@@ -193,7 +193,7 @@ class GetContainerInstanceResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        Unique identifier that is immutable on creation
+        An OCID that cannot be changed.
         """
         return pulumi.get(self, "id")
 
@@ -201,7 +201,7 @@ class GetContainerInstanceResult:
     @pulumi.getter(name="imagePullSecrets")
     def image_pull_secrets(self) -> Sequence['outputs.GetContainerInstanceImagePullSecretResult']:
         """
-        The image pull secrets for accessing private registry to pull images for containers
+        The image pulls secrets so you can access private registry to pull container images.
         """
         return pulumi.get(self, "image_pull_secrets")
 
@@ -209,7 +209,7 @@ class GetContainerInstanceResult:
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -217,7 +217,7 @@ class GetContainerInstanceResult:
     @pulumi.getter
     def shape(self) -> str:
         """
-        The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+        The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
         """
         return pulumi.get(self, "shape")
 
@@ -225,7 +225,7 @@ class GetContainerInstanceResult:
     @pulumi.getter(name="shapeConfigs")
     def shape_configs(self) -> Sequence['outputs.GetContainerInstanceShapeConfigResult']:
         """
-        The shape configuration for a Container Instance. The shape configuration determines the resources allocated to the Instance and it's containers.
+        The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
         """
         return pulumi.get(self, "shape_configs")
 
@@ -233,7 +233,7 @@ class GetContainerInstanceResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the ContainerInstance.
+        The current state of the container instance.
         """
         return pulumi.get(self, "state")
 
@@ -241,7 +241,7 @@ class GetContainerInstanceResult:
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, Any]:
         """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         """
         return pulumi.get(self, "system_tags")
 
@@ -249,7 +249,7 @@ class GetContainerInstanceResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+        The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
@@ -257,7 +257,7 @@ class GetContainerInstanceResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+        The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
@@ -265,7 +265,7 @@ class GetContainerInstanceResult:
     @pulumi.getter
     def vnics(self) -> Sequence['outputs.GetContainerInstanceVnicResult']:
         """
-        The virtual networks available to containers running on this Container Instance.
+        The virtual networks available to the containers in the container instance.
         """
         return pulumi.get(self, "vnics")
 
@@ -273,7 +273,7 @@ class GetContainerInstanceResult:
     @pulumi.getter(name="volumeCount")
     def volume_count(self) -> int:
         """
-        The number of volumes that attached to this Instance
+        The number of volumes that are attached to the container instance.
         """
         return pulumi.get(self, "volume_count")
 
@@ -281,7 +281,7 @@ class GetContainerInstanceResult:
     @pulumi.getter
     def volumes(self) -> Sequence['outputs.GetContainerInstanceVolumeResult']:
         """
-        A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance.
+        A volume is a directory with data that is accessible across multiple containers in a container instance.
         """
         return pulumi.get(self, "volumes")
 
@@ -323,7 +323,7 @@ def get_container_instance(container_instance_id: Optional[str] = None,
     """
     This data source provides details about a specific Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
 
-    Gets a ContainerInstance by identifier
+    Gets information about the specified container instance.
 
     ## Example Usage
 
@@ -335,7 +335,7 @@ def get_container_instance(container_instance_id: Optional[str] = None,
     ```
 
 
-    :param str container_instance_id: The system-generated unique identifier for the ContainerInstance.
+    :param str container_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
     """
     __args__ = dict()
     __args__['containerInstanceId'] = container_instance_id
@@ -375,7 +375,7 @@ def get_container_instance_output(container_instance_id: Optional[pulumi.Input[s
     """
     This data source provides details about a specific Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
 
-    Gets a ContainerInstance by identifier
+    Gets information about the specified container instance.
 
     ## Example Usage
 
@@ -387,6 +387,6 @@ def get_container_instance_output(container_instance_id: Optional[pulumi.Input[s
     ```
 
 
-    :param str container_instance_id: The system-generated unique identifier for the ContainerInstance.
+    :param str container_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
     """
     ...

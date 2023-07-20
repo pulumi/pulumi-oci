@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -98,6 +99,7 @@ func NewGeneratedKey(ctx *pulumi.Context,
 	if args.KeyShape == nil {
 		return nil, errors.New("invalid value for required argument 'KeyShape'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource GeneratedKey
 	err := ctx.RegisterResource("oci:Kms/generatedKey:GeneratedKey", name, args, &resource, opts...)
 	if err != nil {

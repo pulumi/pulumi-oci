@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -80,6 +81,7 @@ func NewConfiguration(ctx *pulumi.Context,
 	if args.EmailIds == nil {
 		return nil, errors.New("invalid value for required argument 'EmailIds'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Configuration
 	err := ctx.RegisterResource("oci:LicenseManager/configuration:Configuration", name, args, &resource, opts...)
 	if err != nil {

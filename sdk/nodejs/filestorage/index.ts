@@ -55,6 +55,16 @@ export const getMountTargets: typeof import("./getMountTargets").getMountTargets
 export const getMountTargetsOutput: typeof import("./getMountTargets").getMountTargetsOutput = null as any;
 utilities.lazyLoad(exports, ["getMountTargets","getMountTargetsOutput"], () => require("./getMountTargets"));
 
+export { GetOutboundConnectorArgs, GetOutboundConnectorResult, GetOutboundConnectorOutputArgs } from "./getOutboundConnector";
+export const getOutboundConnector: typeof import("./getOutboundConnector").getOutboundConnector = null as any;
+export const getOutboundConnectorOutput: typeof import("./getOutboundConnector").getOutboundConnectorOutput = null as any;
+utilities.lazyLoad(exports, ["getOutboundConnector","getOutboundConnectorOutput"], () => require("./getOutboundConnector"));
+
+export { GetOutboundConnectorsArgs, GetOutboundConnectorsResult, GetOutboundConnectorsOutputArgs } from "./getOutboundConnectors";
+export const getOutboundConnectors: typeof import("./getOutboundConnectors").getOutboundConnectors = null as any;
+export const getOutboundConnectorsOutput: typeof import("./getOutboundConnectors").getOutboundConnectorsOutput = null as any;
+utilities.lazyLoad(exports, ["getOutboundConnectors","getOutboundConnectorsOutput"], () => require("./getOutboundConnectors"));
+
 export { GetReplicationArgs, GetReplicationResult, GetReplicationOutputArgs } from "./getReplication";
 export const getReplication: typeof import("./getReplication").getReplication = null as any;
 export const getReplicationOutput: typeof import("./getReplication").getReplicationOutput = null as any;
@@ -90,6 +100,11 @@ export type MountTarget = import("./mountTarget").MountTarget;
 export const MountTarget: typeof import("./mountTarget").MountTarget = null as any;
 utilities.lazyLoad(exports, ["MountTarget"], () => require("./mountTarget"));
 
+export { OutboundConnectorArgs, OutboundConnectorState } from "./outboundConnector";
+export type OutboundConnector = import("./outboundConnector").OutboundConnector;
+export const OutboundConnector: typeof import("./outboundConnector").OutboundConnector = null as any;
+utilities.lazyLoad(exports, ["OutboundConnector"], () => require("./outboundConnector"));
+
 export { ReplicationArgs, ReplicationState } from "./replication";
 export type Replication = import("./replication").Replication;
 export const Replication: typeof import("./replication").Replication = null as any;
@@ -115,6 +130,8 @@ const _module = {
                 return new FilesystemSnapshotPolicy(name, <any>undefined, { urn })
             case "oci:FileStorage/mountTarget:MountTarget":
                 return new MountTarget(name, <any>undefined, { urn })
+            case "oci:FileStorage/outboundConnector:OutboundConnector":
+                return new OutboundConnector(name, <any>undefined, { urn })
             case "oci:FileStorage/replication:Replication":
                 return new Replication(name, <any>undefined, { urn })
             case "oci:FileStorage/snapshot:Snapshot":
@@ -129,5 +146,6 @@ pulumi.runtime.registerResourceModule("oci", "FileStorage/exportSet", _module)
 pulumi.runtime.registerResourceModule("oci", "FileStorage/fileSystem", _module)
 pulumi.runtime.registerResourceModule("oci", "FileStorage/filesystemSnapshotPolicy", _module)
 pulumi.runtime.registerResourceModule("oci", "FileStorage/mountTarget", _module)
+pulumi.runtime.registerResourceModule("oci", "FileStorage/outboundConnector", _module)
 pulumi.runtime.registerResourceModule("oci", "FileStorage/replication", _module)
 pulumi.runtime.registerResourceModule("oci", "FileStorage/snapshot", _module)

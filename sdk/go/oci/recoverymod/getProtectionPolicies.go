@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetProtectionPolicies(ctx *pulumi.Context, args *GetProtectionPoliciesArgs, opts ...pulumi.InvokeOption) (*GetProtectionPoliciesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProtectionPoliciesResult
 	err := ctx.Invoke("oci:RecoveryMod/getProtectionPolicies:getProtectionPolicies", args, &rv, opts...)
 	if err != nil {

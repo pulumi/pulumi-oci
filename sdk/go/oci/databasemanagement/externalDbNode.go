@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -72,6 +73,7 @@ func NewExternalDbNode(ctx *pulumi.Context,
 	if args.ExternalDbNodeId == nil {
 		return nil, errors.New("invalid value for required argument 'ExternalDbNodeId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ExternalDbNode
 	err := ctx.RegisterResource("oci:DatabaseManagement/externalDbNode:ExternalDbNode", name, args, &resource, opts...)
 	if err != nil {

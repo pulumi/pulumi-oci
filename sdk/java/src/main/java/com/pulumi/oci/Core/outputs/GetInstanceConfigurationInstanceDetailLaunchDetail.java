@@ -43,7 +43,7 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetail {
      */
     private String capacityReservationId;
     /**
-     * @return The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+     * @return The OCID of the compartment containing images to search
      * 
      */
     private String compartmentId;
@@ -169,7 +169,7 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetail {
         return this.capacityReservationId;
     }
     /**
-     * @return The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+     * @return The OCID of the compartment containing images to search
      * 
      */
     public String compartmentId() {

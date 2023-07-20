@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupOperationsInsightsPrivateEndpoint(ctx *pulumi.Context, args *LookupOperationsInsightsPrivateEndpointArgs, opts ...pulumi.InvokeOption) (*LookupOperationsInsightsPrivateEndpointResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupOperationsInsightsPrivateEndpointResult
 	err := ctx.Invoke("oci:Opsi/getOperationsInsightsPrivateEndpoint:getOperationsInsightsPrivateEndpoint", args, &rv, opts...)
 	if err != nil {

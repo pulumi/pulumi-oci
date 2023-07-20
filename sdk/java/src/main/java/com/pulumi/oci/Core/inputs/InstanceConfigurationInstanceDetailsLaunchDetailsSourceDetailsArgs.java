@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -80,14 +81,29 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
     }
 
     /**
-     * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * These are the criteria for selecting an image. This is required if imageId is not specified.
+     * 
+     */
+    @Import(name="instanceSourceImageFilterDetails")
+    private @Nullable Output<InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs> instanceSourceImageFilterDetails;
+
+    /**
+     * @return These are the criteria for selecting an image. This is required if imageId is not specified.
+     * 
+     */
+    public Optional<Output<InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs>> instanceSourceImageFilterDetails() {
+        return Optional.ofNullable(this.instanceSourceImageFilterDetails);
+    }
+
+    /**
+     * The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     @Import(name="kmsKeyId")
     private @Nullable Output<String> kmsKeyId;
 
     /**
-     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     public Optional<Output<String>> kmsKeyId() {
@@ -116,6 +132,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
         this.bootVolumeSizeInGbs = $.bootVolumeSizeInGbs;
         this.bootVolumeVpusPerGb = $.bootVolumeVpusPerGb;
         this.imageId = $.imageId;
+        this.instanceSourceImageFilterDetails = $.instanceSourceImageFilterDetails;
         this.kmsKeyId = $.kmsKeyId;
         this.sourceType = $.sourceType;
     }
@@ -227,7 +244,28 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
         }
 
         /**
-         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         * @param instanceSourceImageFilterDetails These are the criteria for selecting an image. This is required if imageId is not specified.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceSourceImageFilterDetails(@Nullable Output<InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs> instanceSourceImageFilterDetails) {
+            $.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
+            return this;
+        }
+
+        /**
+         * @param instanceSourceImageFilterDetails These are the criteria for selecting an image. This is required if imageId is not specified.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceSourceImageFilterDetails(InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs instanceSourceImageFilterDetails) {
+            return instanceSourceImageFilterDetails(Output.of(instanceSourceImageFilterDetails));
+        }
+
+        /**
+         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the volume.
          * 
          * @return builder
          * 
@@ -238,7 +276,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
         }
 
         /**
-         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the volume.
          * 
          * @return builder
          * 

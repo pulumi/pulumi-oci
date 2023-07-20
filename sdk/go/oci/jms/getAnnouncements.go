@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetAnnouncements(ctx *pulumi.Context, args *GetAnnouncementsArgs, opts ...pulumi.InvokeOption) (*GetAnnouncementsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAnnouncementsResult
 	err := ctx.Invoke("oci:Jms/getAnnouncements:getAnnouncements", args, &rv, opts...)
 	if err != nil {

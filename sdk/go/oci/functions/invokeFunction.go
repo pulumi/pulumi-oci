@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -81,6 +82,7 @@ func NewInvokeFunction(ctx *pulumi.Context,
 	if args.FunctionId == nil {
 		return nil, errors.New("invalid value for required argument 'FunctionId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource InvokeFunction
 	err := ctx.RegisterResource("oci:Functions/invokeFunction:InvokeFunction", name, args, &resource, opts...)
 	if err != nil {

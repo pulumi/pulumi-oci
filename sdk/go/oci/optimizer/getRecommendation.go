@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupRecommendation(ctx *pulumi.Context, args *LookupRecommendationArgs, opts ...pulumi.InvokeOption) (*LookupRecommendationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupRecommendationResult
 	err := ctx.Invoke("oci:Optimizer/getRecommendation:getRecommendation", args, &rv, opts...)
 	if err != nil {

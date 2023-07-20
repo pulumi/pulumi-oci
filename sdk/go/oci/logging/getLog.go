@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func LookupLog(ctx *pulumi.Context, args *LookupLogArgs, opts ...pulumi.InvokeOption) (*LookupLogResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupLogResult
 	err := ctx.Invoke("oci:Logging/getLog:getLog", args, &rv, opts...)
 	if err != nil {

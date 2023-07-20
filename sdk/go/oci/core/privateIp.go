@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -108,6 +109,7 @@ func NewPrivateIp(ctx *pulumi.Context,
 		args = &PrivateIpArgs{}
 	}
 
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource PrivateIp
 	err := ctx.RegisterResource("oci:Core/privateIp:PrivateIp", name, args, &resource, opts...)
 	if err != nil {

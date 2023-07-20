@@ -25,14 +25,14 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
     public static final ContainerInstanceArgs Empty = new ContainerInstanceArgs();
 
     /**
-     * Availability Domain where the ContainerInstance should be created.
+     * The availability domain where the container instance runs.
      * 
      */
     @Import(name="availabilityDomain", required=true)
     private Output<String> availabilityDomain;
 
     /**
-     * @return Availability Domain where the ContainerInstance should be created.
+     * @return The availability domain where the container instance runs.
      * 
      */
     public Output<String> availabilityDomain() {
@@ -40,14 +40,14 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The compartment OCID.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) The compartment OCID.
      * 
      */
     public Output<String> compartmentId() {
@@ -70,14 +70,14 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The Containers to create on this Instance.
+     * The containers to create on this container instance.
      * 
      */
     @Import(name="containers", required=true)
     private Output<List<ContainerInstanceContainerArgs>> containers;
 
     /**
-     * @return The Containers to create on this Instance.
+     * @return The containers to create on this container instance.
      * 
      */
     public Output<List<ContainerInstanceContainerArgs>> containers() {
@@ -85,14 +85,14 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,Object>> definedTags;
 
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
@@ -115,14 +115,14 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Allow customers to define DNS settings for containers. If this is not provided, the containers will use the default DNS settings of the subnet.
+     * Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
      * 
      */
     @Import(name="dnsConfig")
     private @Nullable Output<ContainerInstanceDnsConfigArgs> dnsConfig;
 
     /**
-     * @return Allow customers to define DNS settings for containers. If this is not provided, the containers will use the default DNS settings of the subnet.
+     * @return Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
      * 
      */
     public Optional<Output<ContainerInstanceDnsConfigArgs>> dnsConfig() {
@@ -130,14 +130,14 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Fault Domain where the ContainerInstance should run.
+     * The fault domain where the container instance runs.
      * 
      */
     @Import(name="faultDomain")
     private @Nullable Output<String> faultDomain;
 
     /**
-     * @return Fault Domain where the ContainerInstance should run.
+     * @return The fault domain where the container instance runs.
      * 
      */
     public Optional<Output<String>> faultDomain() {
@@ -160,14 +160,14 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+     * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      * 
      */
     @Import(name="gracefulShutdownTimeoutInSeconds")
     private @Nullable Output<String> gracefulShutdownTimeoutInSeconds;
 
     /**
-     * @return Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+     * @return The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      * 
      */
     public Optional<Output<String>> gracefulShutdownTimeoutInSeconds() {
@@ -175,14 +175,14 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The image pull secrets for accessing private registry to pull images for containers
+     * The image pulls secrets so you can access private registry to pull container images.
      * 
      */
     @Import(name="imagePullSecrets")
     private @Nullable Output<List<ContainerInstanceImagePullSecretArgs>> imagePullSecrets;
 
     /**
-     * @return The image pull secrets for accessing private registry to pull images for containers
+     * @return The image pulls secrets so you can access private registry to pull container images.
      * 
      */
     public Optional<Output<List<ContainerInstanceImagePullSecretArgs>>> imagePullSecrets() {
@@ -190,14 +190,14 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+     * The shape of the container instance. The shape determines the resources available to the container instance.
      * 
      */
     @Import(name="shape", required=true)
     private Output<String> shape;
 
     /**
-     * @return The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+     * @return The shape of the container instance. The shape determines the resources available to the container instance.
      * 
      */
     public Output<String> shape() {
@@ -205,14 +205,14 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The size and amount of resources available to the Container Instance.
+     * The size and amount of resources available to the container instance.
      * 
      */
     @Import(name="shapeConfig", required=true)
     private Output<ContainerInstanceShapeConfigArgs> shapeConfig;
 
     /**
-     * @return The size and amount of resources available to the Container Instance.
+     * @return The size and amount of resources available to the container instance.
      * 
      */
     public Output<ContainerInstanceShapeConfigArgs> shapeConfig() {
@@ -241,14 +241,14 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The networks to make available to containers on this Instance.
+     * The networks available to containers on this container instance.
      * 
      */
     @Import(name="vnics", required=true)
     private Output<List<ContainerInstanceVnicArgs>> vnics;
 
     /**
-     * @return The networks to make available to containers on this Instance.
+     * @return The networks available to containers on this container instance.
      * 
      */
     public Output<List<ContainerInstanceVnicArgs>> vnics() {
@@ -256,14 +256,18 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+     * A volume is a directory with data that is accessible across multiple containers in a container instance.
+     * 
+     * You can attach up to 32 volumes to single container instance.
      * 
      */
     @Import(name="volumes")
     private @Nullable Output<List<ContainerInstanceVolumeArgs>> volumes;
 
     /**
-     * @return A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+     * @return A volume is a directory with data that is accessible across multiple containers in a container instance.
+     * 
+     * You can attach up to 32 volumes to single container instance.
      * 
      */
     public Optional<Output<List<ContainerInstanceVolumeArgs>>> volumes() {
@@ -310,7 +314,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param availabilityDomain Availability Domain where the ContainerInstance should be created.
+         * @param availabilityDomain The availability domain where the container instance runs.
          * 
          * @return builder
          * 
@@ -321,7 +325,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param availabilityDomain Availability Domain where the ContainerInstance should be created.
+         * @param availabilityDomain The availability domain where the container instance runs.
          * 
          * @return builder
          * 
@@ -331,7 +335,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) The compartment OCID.
          * 
          * @return builder
          * 
@@ -342,7 +346,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) The compartment OCID.
          * 
          * @return builder
          * 
@@ -373,7 +377,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param containers The Containers to create on this Instance.
+         * @param containers The containers to create on this container instance.
          * 
          * @return builder
          * 
@@ -384,7 +388,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param containers The Containers to create on this Instance.
+         * @param containers The containers to create on this container instance.
          * 
          * @return builder
          * 
@@ -394,7 +398,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param containers The Containers to create on this Instance.
+         * @param containers The containers to create on this container instance.
          * 
          * @return builder
          * 
@@ -404,7 +408,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
          * 
          * @return builder
          * 
@@ -415,7 +419,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
          * 
          * @return builder
          * 
@@ -446,7 +450,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param dnsConfig Allow customers to define DNS settings for containers. If this is not provided, the containers will use the default DNS settings of the subnet.
+         * @param dnsConfig Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
          * 
          * @return builder
          * 
@@ -457,7 +461,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param dnsConfig Allow customers to define DNS settings for containers. If this is not provided, the containers will use the default DNS settings of the subnet.
+         * @param dnsConfig Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
          * 
          * @return builder
          * 
@@ -467,7 +471,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param faultDomain Fault Domain where the ContainerInstance should run.
+         * @param faultDomain The fault domain where the container instance runs.
          * 
          * @return builder
          * 
@@ -478,7 +482,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param faultDomain Fault Domain where the ContainerInstance should run.
+         * @param faultDomain The fault domain where the container instance runs.
          * 
          * @return builder
          * 
@@ -509,7 +513,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param gracefulShutdownTimeoutInSeconds Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+         * @param gracefulShutdownTimeoutInSeconds The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
          * 
          * @return builder
          * 
@@ -520,7 +524,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param gracefulShutdownTimeoutInSeconds Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+         * @param gracefulShutdownTimeoutInSeconds The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
          * 
          * @return builder
          * 
@@ -530,7 +534,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param imagePullSecrets The image pull secrets for accessing private registry to pull images for containers
+         * @param imagePullSecrets The image pulls secrets so you can access private registry to pull container images.
          * 
          * @return builder
          * 
@@ -541,7 +545,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param imagePullSecrets The image pull secrets for accessing private registry to pull images for containers
+         * @param imagePullSecrets The image pulls secrets so you can access private registry to pull container images.
          * 
          * @return builder
          * 
@@ -551,7 +555,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param imagePullSecrets The image pull secrets for accessing private registry to pull images for containers
+         * @param imagePullSecrets The image pulls secrets so you can access private registry to pull container images.
          * 
          * @return builder
          * 
@@ -561,7 +565,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param shape The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+         * @param shape The shape of the container instance. The shape determines the resources available to the container instance.
          * 
          * @return builder
          * 
@@ -572,7 +576,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param shape The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+         * @param shape The shape of the container instance. The shape determines the resources available to the container instance.
          * 
          * @return builder
          * 
@@ -582,7 +586,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param shapeConfig The size and amount of resources available to the Container Instance.
+         * @param shapeConfig The size and amount of resources available to the container instance.
          * 
          * @return builder
          * 
@@ -593,7 +597,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param shapeConfig The size and amount of resources available to the Container Instance.
+         * @param shapeConfig The size and amount of resources available to the container instance.
          * 
          * @return builder
          * 
@@ -630,7 +634,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param vnics The networks to make available to containers on this Instance.
+         * @param vnics The networks available to containers on this container instance.
          * 
          * @return builder
          * 
@@ -641,7 +645,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param vnics The networks to make available to containers on this Instance.
+         * @param vnics The networks available to containers on this container instance.
          * 
          * @return builder
          * 
@@ -651,7 +655,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param vnics The networks to make available to containers on this Instance.
+         * @param vnics The networks available to containers on this container instance.
          * 
          * @return builder
          * 
@@ -661,7 +665,9 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param volumes A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+         * @param volumes A volume is a directory with data that is accessible across multiple containers in a container instance.
+         * 
+         * You can attach up to 32 volumes to single container instance.
          * 
          * @return builder
          * 
@@ -672,7 +678,9 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param volumes A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+         * @param volumes A volume is a directory with data that is accessible across multiple containers in a container instance.
+         * 
+         * You can attach up to 32 volumes to single container instance.
          * 
          * @return builder
          * 
@@ -682,7 +690,9 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param volumes A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+         * @param volumes A volume is a directory with data that is accessible across multiple containers in a container instance.
+         * 
+         * You can attach up to 32 volumes to single container instance.
          * 
          * @return builder
          * 

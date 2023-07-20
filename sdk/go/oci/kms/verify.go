@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -107,6 +108,7 @@ func NewVerify(ctx *pulumi.Context,
 	if args.SigningAlgorithm == nil {
 		return nil, errors.New("invalid value for required argument 'SigningAlgorithm'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Verify
 	err := ctx.RegisterResource("oci:Kms/verify:Verify", name, args, &resource, opts...)
 	if err != nil {

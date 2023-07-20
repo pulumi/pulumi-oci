@@ -14,36 +14,32 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
     public sealed class ContainerInstanceContainer
     {
         /// <summary>
-        /// A list of additional capabilities for the container.
-        /// </summary>
-        public readonly ImmutableArray<string> AdditionalCapabilities;
-        /// <summary>
-        /// A list of string arguments for a container's entrypoint process.
+        /// A list of string arguments for a container's ENTRYPOINT process.
         /// 
-        /// Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+        /// Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those containers, this argument list specifies the main command in the container process.
         /// 
-        /// All arguments together must be 64KB or smaller.
+        /// The total size of all arguments combined must be 64 KB or smaller.
         /// </summary>
         public readonly ImmutableArray<string> Arguments;
         /// <summary>
-        /// Availability Domain where the ContainerInstance should be created.
+        /// The availability domain where the container instance runs.
         /// </summary>
         public readonly string? AvailabilityDomain;
         /// <summary>
-        /// The list of strings which will be concatenated to a single command for checking container's status.
+        /// The list of strings that will be simplified to a single command for checking the status of the container.
         /// </summary>
         public readonly ImmutableArray<string> Commands;
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) The compartment OCID.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
-        /// The ID of the Container on this Instance.
+        /// The OCID of the container.
         /// </summary>
         public readonly string? ContainerId;
         public readonly string? ContainerInstanceId;
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         /// </summary>
         public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
@@ -51,14 +47,14 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// A map of additional environment variables to set in the environment of the container's entrypoint process. These variables are in addition to any variables already defined in the container's image.
+        /// A map of additional environment variables to set in the environment of the container's ENTRYPOINT process. These variables are in addition to any variables already defined in the container's image.
         /// 
-        /// All environment variables together, name and values, must be 64KB or smaller.
+        /// The total size of all environment variables combined, name and values, must be 64 KB or smaller.
         /// </summary>
         public readonly ImmutableDictionary<string, object>? EnvironmentVariables;
         public readonly int? ExitCode;
         /// <summary>
-        /// Fault Domain where the ContainerInstance should run.
+        /// The fault domain where the container instance runs.
         /// </summary>
         public readonly string? FaultDomain;
         /// <summary>
@@ -70,19 +66,25 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.ContainerInstanceContainerHealthCheck> HealthChecks;
         /// <summary>
-        /// The container image information. Currently only support public docker registry. Can be either image name, e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g `docker.io/library/containerImage:latest`. If no registry is provided, will default the registry to public docker hub `docker.io/library`. The registry used for container image must be reachable over the Container Instance's VNIC.
+        /// A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
+        /// 
+        /// If no registry is provided, will default the registry to public docker hub `docker.io/library`.
+        /// 
+        /// The registry used for container image must be reachable over the Container Instance's VNIC.
         /// </summary>
         public readonly string ImageUrl;
         /// <summary>
-        /// Determines if the Container will have access to the Container Instance Resource Principal.  This method utilizes resource principal version 2.2. Please refer to  https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal  for detailed explanation of how to leverage the exposed resource principal elements.
+        /// Determines if the container will have access to the container instance resource principal.
+        /// 
+        /// This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
         /// </summary>
         public readonly bool? IsResourcePrincipalDisabled;
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         /// </summary>
         public readonly string? LifecycleDetails;
         /// <summary>
-        /// The size and amount of resources available to the Container.
+        /// The size and amount of resources available to the container.
         /// </summary>
         public readonly Outputs.ContainerInstanceContainerResourceConfig? ResourceConfig;
         /// <summary>
@@ -94,16 +96,16 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly string? State;
         /// <summary>
-        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         /// </summary>
         public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
-        /// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+        /// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         public readonly string? TimeCreated;
         public readonly string? TimeTerminated;
         /// <summary>
-        /// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+        /// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         public readonly string? TimeUpdated;
         /// <summary>
@@ -111,14 +113,12 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.ContainerInstanceContainerVolumeMount> VolumeMounts;
         /// <summary>
-        /// The working directory within the Container's filesystem for the Container process. If none is set, the Container will run in the working directory set by the container image.
+        /// The working directory within the container's filesystem for the container process. If not specified, the default working directory from the image is used.
         /// </summary>
         public readonly string? WorkingDirectory;
 
         [OutputConstructor]
         private ContainerInstanceContainer(
-            ImmutableArray<string> additionalCapabilities,
-
             ImmutableArray<string> arguments,
 
             string? availabilityDomain,
@@ -167,7 +167,6 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             string? workingDirectory)
         {
-            AdditionalCapabilities = additionalCapabilities;
             Arguments = arguments;
             AvailabilityDomain = availabilityDomain;
             Commands = commands;

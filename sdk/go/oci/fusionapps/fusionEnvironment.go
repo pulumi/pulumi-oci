@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -168,6 +169,7 @@ func NewFusionEnvironment(ctx *pulumi.Context,
 	if args.FusionEnvironmentType == nil {
 		return nil, errors.New("invalid value for required argument 'FusionEnvironmentType'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource FusionEnvironment
 	err := ctx.RegisterResource("oci:FusionApps/fusionEnvironment:FusionEnvironment", name, args, &resource, opts...)
 	if err != nil {

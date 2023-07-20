@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -48,6 +49,7 @@ import (
 //
 // ```
 func GetCpeDeviceShape(ctx *pulumi.Context, args *GetCpeDeviceShapeArgs, opts ...pulumi.InvokeOption) (*GetCpeDeviceShapeResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCpeDeviceShapeResult
 	err := ctx.Invoke("oci:Core/getCpeDeviceShape:getCpeDeviceShape", args, &rv, opts...)
 	if err != nil {

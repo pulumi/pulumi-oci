@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetOceInstance(ctx *pulumi.Context, args *GetOceInstanceArgs, opts ...pulumi.InvokeOption) (*GetOceInstanceResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOceInstanceResult
 	err := ctx.Invoke("oci:Oce/getOceInstance:getOceInstance", args, &rv, opts...)
 	if err != nil {

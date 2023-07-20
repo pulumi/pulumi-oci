@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -48,6 +49,7 @@ import (
 //
 // ```
 func GetDbSystems(ctx *pulumi.Context, args *GetDbSystemsArgs, opts ...pulumi.InvokeOption) (*GetDbSystemsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDbSystemsResult
 	err := ctx.Invoke("oci:Database/getDbSystems:getDbSystems", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetMaskingPolicyMaskingObjects(ctx *pulumi.Context, args *GetMaskingPolicyMaskingObjectsArgs, opts ...pulumi.InvokeOption) (*GetMaskingPolicyMaskingObjectsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMaskingPolicyMaskingObjectsResult
 	err := ctx.Invoke("oci:DataSafe/getMaskingPolicyMaskingObjects:getMaskingPolicyMaskingObjects", args, &rv, opts...)
 	if err != nil {

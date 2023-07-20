@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetManagementAgentInstallKeys(ctx *pulumi.Context, args *GetManagementAgentInstallKeysArgs, opts ...pulumi.InvokeOption) (*GetManagementAgentInstallKeysResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagementAgentInstallKeysResult
 	err := ctx.Invoke("oci:ManagementAgent/getManagementAgentInstallKeys:getManagementAgentInstallKeys", args, &rv, opts...)
 	if err != nil {

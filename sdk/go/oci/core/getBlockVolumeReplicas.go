@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetBlockVolumeReplicas(ctx *pulumi.Context, args *GetBlockVolumeReplicasArgs, opts ...pulumi.InvokeOption) (*GetBlockVolumeReplicasResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBlockVolumeReplicasResult
 	err := ctx.Invoke("oci:Core/getBlockVolumeReplicas:getBlockVolumeReplicas", args, &rv, opts...)
 	if err != nil {

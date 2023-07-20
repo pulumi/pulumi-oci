@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -117,6 +118,7 @@ func NewDedicatedVmHost(ctx *pulumi.Context,
 	if args.DedicatedVmHostShape == nil {
 		return nil, errors.New("invalid value for required argument 'DedicatedVmHostShape'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DedicatedVmHost
 	err := ctx.RegisterResource("oci:Core/dedicatedVmHost:DedicatedVmHost", name, args, &resource, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetInstanceMaintenanceReboot(ctx *pulumi.Context, args *GetInstanceMaintenanceRebootArgs, opts ...pulumi.InvokeOption) (*GetInstanceMaintenanceRebootResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetInstanceMaintenanceRebootResult
 	err := ctx.Invoke("oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot", args, &rv, opts...)
 	if err != nil {

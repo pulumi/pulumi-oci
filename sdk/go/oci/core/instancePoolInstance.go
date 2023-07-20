@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -102,6 +103,7 @@ func NewInstancePoolInstance(ctx *pulumi.Context,
 	if args.InstancePoolId == nil {
 		return nil, errors.New("invalid value for required argument 'InstancePoolId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource InstancePoolInstance
 	err := ctx.RegisterResource("oci:Core/instancePoolInstance:InstancePoolInstance", name, args, &resource, opts...)
 	if err != nil {

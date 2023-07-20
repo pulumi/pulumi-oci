@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetCatalogType(ctx *pulumi.Context, args *GetCatalogTypeArgs, opts ...pulumi.InvokeOption) (*GetCatalogTypeResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCatalogTypeResult
 	err := ctx.Invoke("oci:DataCatalog/getCatalogType:getCatalogType", args, &rv, opts...)
 	if err != nil {

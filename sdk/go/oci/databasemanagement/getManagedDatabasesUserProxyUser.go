@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetManagedDatabasesUserProxyUser(ctx *pulumi.Context, args *GetManagedDatabasesUserProxyUserArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabasesUserProxyUserResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabasesUserProxyUserResult
 	err := ctx.Invoke("oci:DatabaseManagement/getManagedDatabasesUserProxyUser:getManagedDatabasesUserProxyUser", args, &rv, opts...)
 	if err != nil {

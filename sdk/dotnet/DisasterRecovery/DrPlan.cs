@@ -54,7 +54,7 @@ namespace Pulumi.Oci.DisasterRecovery
     public partial class DrPlan : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+        /// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -72,7 +72,7 @@ namespace Pulumi.Oci.DisasterRecovery
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        /// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Output("drProtectionGroupId")]
         public Output<string> DrProtectionGroupId { get; private set; } = null!;
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.DisasterRecovery
         public Output<string> LifeCycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+        /// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Output("peerDrProtectionGroupId")]
         public Output<string> PeerDrProtectionGroupId { get; private set; } = null!;
@@ -206,7 +206,7 @@ namespace Pulumi.Oci.DisasterRecovery
         public Input<string> DisplayName { get; set; } = null!;
 
         /// <summary>
-        /// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        /// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Input("drProtectionGroupId", required: true)]
         public Input<string> DrProtectionGroupId { get; set; } = null!;
@@ -242,7 +242,7 @@ namespace Pulumi.Oci.DisasterRecovery
     public sealed class DrPlanState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+        /// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -266,7 +266,7 @@ namespace Pulumi.Oci.DisasterRecovery
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        /// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Input("drProtectionGroupId")]
         public Input<string>? DrProtectionGroupId { get; set; }
@@ -290,7 +290,7 @@ namespace Pulumi.Oci.DisasterRecovery
         public Input<string>? LifeCycleDetails { get; set; }
 
         /// <summary>
-        /// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+        /// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Input("peerDrProtectionGroupId")]
         public Input<string>? PeerDrProtectionGroupId { get; set; }

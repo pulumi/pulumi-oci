@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func GetCustomProtectionRules(ctx *pulumi.Context, args *GetCustomProtectionRulesArgs, opts ...pulumi.InvokeOption) (*GetCustomProtectionRulesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCustomProtectionRulesResult
 	err := ctx.Invoke("oci:Waas/getCustomProtectionRules:getCustomProtectionRules", args, &rv, opts...)
 	if err != nil {

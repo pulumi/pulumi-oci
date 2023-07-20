@@ -44,7 +44,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
      */
     private @Nullable String capacityReservationId;
     /**
-     * @return The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+     * @return (Updatable) The OCID of the compartment containing images to search
      * 
      */
     private @Nullable String compartmentId;
@@ -226,7 +226,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
         return Optional.ofNullable(this.capacityReservationId);
     }
     /**
-     * @return The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+     * @return (Updatable) The OCID of the compartment containing images to search
      * 
      */
     public Optional<String> compartmentId() {

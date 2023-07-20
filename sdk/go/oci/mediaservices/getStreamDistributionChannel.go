@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupStreamDistributionChannel(ctx *pulumi.Context, args *LookupStreamDistributionChannelArgs, opts ...pulumi.InvokeOption) (*LookupStreamDistributionChannelResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupStreamDistributionChannelResult
 	err := ctx.Invoke("oci:MediaServices/getStreamDistributionChannel:getStreamDistributionChannel", args, &rv, opts...)
 	if err != nil {

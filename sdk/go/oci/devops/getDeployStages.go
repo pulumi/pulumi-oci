@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetDeployStages(ctx *pulumi.Context, args *GetDeployStagesArgs, opts ...pulumi.InvokeOption) (*GetDeployStagesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDeployStagesResult
 	err := ctx.Invoke("oci:DevOps/getDeployStages:getDeployStages", args, &rv, opts...)
 	if err != nil {

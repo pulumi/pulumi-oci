@@ -7,6 +7,8 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs extends com.pulumi.resources.ResourceArgs {
@@ -17,15 +19,15 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleI
      * The action to run when the preemptible instance is interrupted for eviction.
      * 
      */
-    @Import(name="preemptionAction", required=true)
-    private Output<InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs> preemptionAction;
+    @Import(name="preemptionAction")
+    private @Nullable Output<InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs> preemptionAction;
 
     /**
      * @return The action to run when the preemptible instance is interrupted for eviction.
      * 
      */
-    public Output<InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs> preemptionAction() {
-        return this.preemptionAction;
+    public Optional<Output<InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs>> preemptionAction() {
+        return Optional.ofNullable(this.preemptionAction);
     }
 
     private InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs() {}
@@ -58,7 +60,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleI
          * @return builder
          * 
          */
-        public Builder preemptionAction(Output<InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs> preemptionAction) {
+        public Builder preemptionAction(@Nullable Output<InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs> preemptionAction) {
             $.preemptionAction = preemptionAction;
             return this;
         }
@@ -74,7 +76,6 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleI
         }
 
         public InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs build() {
-            $.preemptionAction = Objects.requireNonNull($.preemptionAction, "expected parameter 'preemptionAction' to be non-null");
             return $;
         }
     }

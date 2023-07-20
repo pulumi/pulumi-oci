@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -46,6 +47,7 @@ import (
 //
 // ```
 func GetJobExecutionsStatuses(ctx *pulumi.Context, args *GetJobExecutionsStatusesArgs, opts ...pulumi.InvokeOption) (*GetJobExecutionsStatusesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetJobExecutionsStatusesResult
 	err := ctx.Invoke("oci:DatabaseManagement/getJobExecutionsStatuses:getJobExecutionsStatuses", args, &rv, opts...)
 	if err != nil {

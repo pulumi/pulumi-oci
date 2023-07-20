@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetUsagelimits(ctx *pulumi.Context, args *GetUsagelimitsArgs, opts ...pulumi.InvokeOption) (*GetUsagelimitsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetUsagelimitsResult
 	err := ctx.Invoke("oci:UsageProxy/getUsagelimits:getUsagelimits", args, &rv, opts...)
 	if err != nil {

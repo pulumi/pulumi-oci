@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -49,6 +50,7 @@ import (
 //
 // ```
 func GetResourceActions(ctx *pulumi.Context, args *GetResourceActionsArgs, opts ...pulumi.InvokeOption) (*GetResourceActionsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetResourceActionsResult
 	err := ctx.Invoke("oci:Optimizer/getResourceActions:getResourceActions", args, &rv, opts...)
 	if err != nil {

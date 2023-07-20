@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -79,6 +80,7 @@ func NewDomainReplicationToRegion(ctx *pulumi.Context,
 	if args.DomainId == nil {
 		return nil, errors.New("invalid value for required argument 'DomainId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DomainReplicationToRegion
 	err := ctx.RegisterResource("oci:Identity/domainReplicationToRegion:DomainReplicationToRegion", name, args, &resource, opts...)
 	if err != nil {

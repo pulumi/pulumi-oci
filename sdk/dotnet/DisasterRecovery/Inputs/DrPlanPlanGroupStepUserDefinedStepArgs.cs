@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
     public sealed class DrPlanPlanGroupStepUserDefinedStepArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+        /// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Input("functionId")]
         public Input<string>? FunctionId { get; set; }
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? RunAsUser { get; set; }
 
         /// <summary>
-        /// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+        /// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Input("runOnInstanceId")]
         public Input<string>? RunOnInstanceId { get; set; }

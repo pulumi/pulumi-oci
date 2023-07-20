@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -113,6 +114,7 @@ func NewSession(ctx *pulumi.Context,
 	if args.TargetResourceDetails == nil {
 		return nil, errors.New("invalid value for required argument 'TargetResourceDetails'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Session
 	err := ctx.RegisterResource("oci:Bastion/session:Session", name, args, &resource, opts...)
 	if err != nil {

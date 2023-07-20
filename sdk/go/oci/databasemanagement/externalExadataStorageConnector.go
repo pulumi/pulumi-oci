@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -120,6 +121,7 @@ func NewExternalExadataStorageConnector(ctx *pulumi.Context,
 	if args.StorageServerId == nil {
 		return nil, errors.New("invalid value for required argument 'StorageServerId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ExternalExadataStorageConnector
 	err := ctx.RegisterResource("oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector", name, args, &resource, opts...)
 	if err != nil {

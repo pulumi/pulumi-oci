@@ -7,13 +7,16 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+var _ = internal.GetEnvOrDefault
+
 type DrPlanExecutionExecutionOptions struct {
-	// A flag indicating whether a precheck should be executed before the plan.  Example: `false`
+	// A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
 	ArePrechecksEnabled *bool `pulumi:"arePrechecksEnabled"`
-	// A flag indicating whether warnigs should be ignored during the switchover.  Example: `true`
+	// A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `true`
 	AreWarningsIgnored *bool `pulumi:"areWarningsIgnored"`
 	// The type of the plan execution.
 	PlanExecutionType string `pulumi:"planExecutionType"`
@@ -31,9 +34,9 @@ type DrPlanExecutionExecutionOptionsInput interface {
 }
 
 type DrPlanExecutionExecutionOptionsArgs struct {
-	// A flag indicating whether a precheck should be executed before the plan.  Example: `false`
+	// A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
 	ArePrechecksEnabled pulumi.BoolPtrInput `pulumi:"arePrechecksEnabled"`
-	// A flag indicating whether warnigs should be ignored during the switchover.  Example: `true`
+	// A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `true`
 	AreWarningsIgnored pulumi.BoolPtrInput `pulumi:"areWarningsIgnored"`
 	// The type of the plan execution.
 	PlanExecutionType pulumi.StringInput `pulumi:"planExecutionType"`
@@ -116,12 +119,12 @@ func (o DrPlanExecutionExecutionOptionsOutput) ToDrPlanExecutionExecutionOptions
 	}).(DrPlanExecutionExecutionOptionsPtrOutput)
 }
 
-// A flag indicating whether a precheck should be executed before the plan.  Example: `false`
+// A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
 func (o DrPlanExecutionExecutionOptionsOutput) ArePrechecksEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionExecutionOptions) *bool { return v.ArePrechecksEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// A flag indicating whether warnigs should be ignored during the switchover.  Example: `true`
+// A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `true`
 func (o DrPlanExecutionExecutionOptionsOutput) AreWarningsIgnored() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionExecutionOptions) *bool { return v.AreWarningsIgnored }).(pulumi.BoolPtrOutput)
 }
@@ -155,7 +158,7 @@ func (o DrPlanExecutionExecutionOptionsPtrOutput) Elem() DrPlanExecutionExecutio
 	}).(DrPlanExecutionExecutionOptionsOutput)
 }
 
-// A flag indicating whether a precheck should be executed before the plan.  Example: `false`
+// A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
 func (o DrPlanExecutionExecutionOptionsPtrOutput) ArePrechecksEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DrPlanExecutionExecutionOptions) *bool {
 		if v == nil {
@@ -165,7 +168,7 @@ func (o DrPlanExecutionExecutionOptionsPtrOutput) ArePrechecksEnabled() pulumi.B
 	}).(pulumi.BoolPtrOutput)
 }
 
-// A flag indicating whether warnigs should be ignored during the switchover.  Example: `true`
+// A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `true`
 func (o DrPlanExecutionExecutionOptionsPtrOutput) AreWarningsIgnored() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DrPlanExecutionExecutionOptions) *bool {
 		if v == nil {
@@ -190,7 +193,7 @@ type DrPlanExecutionGroupExecution struct {
 	DisplayName *string `pulumi:"displayName"`
 	// The total duration in seconds taken to complete step execution.  Example: `35`
 	ExecutionDurationInSec *int `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 	GroupId *string `pulumi:"groupId"`
 	// The status of the step execution.
 	Status *string `pulumi:"status"`
@@ -222,7 +225,7 @@ type DrPlanExecutionGroupExecutionArgs struct {
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The total duration in seconds taken to complete step execution.  Example: `35`
 	ExecutionDurationInSec pulumi.IntPtrInput `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
 	// The status of the step execution.
 	Status pulumi.StringPtrInput `pulumi:"status"`
@@ -299,7 +302,7 @@ func (o DrPlanExecutionGroupExecutionOutput) ExecutionDurationInSec() pulumi.Int
 	return o.ApplyT(func(v DrPlanExecutionGroupExecution) *int { return v.ExecutionDurationInSec }).(pulumi.IntPtrOutput)
 }
 
-// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 func (o DrPlanExecutionGroupExecutionOutput) GroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecution) *string { return v.GroupId }).(pulumi.StringPtrOutput)
 }
@@ -361,7 +364,7 @@ type DrPlanExecutionGroupExecutionStepExecution struct {
 	DisplayName *string `pulumi:"displayName"`
 	// The total duration in seconds taken to complete step execution.  Example: `35`
 	ExecutionDurationInSec *int `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 	GroupId *string `pulumi:"groupId"`
 	// Information about an Object Storage log location for a DR Protection Group.
 	LogLocations []DrPlanExecutionGroupExecutionStepExecutionLogLocation `pulumi:"logLocations"`
@@ -369,7 +372,7 @@ type DrPlanExecutionGroupExecutionStepExecution struct {
 	Status *string `pulumi:"status"`
 	// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
 	StatusDetails *string `pulumi:"statusDetails"`
-	// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	StepId *string `pulumi:"stepId"`
 	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded *string `pulumi:"timeEnded"`
@@ -395,7 +398,7 @@ type DrPlanExecutionGroupExecutionStepExecutionArgs struct {
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The total duration in seconds taken to complete step execution.  Example: `35`
 	ExecutionDurationInSec pulumi.IntPtrInput `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
 	// Information about an Object Storage log location for a DR Protection Group.
 	LogLocations DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayInput `pulumi:"logLocations"`
@@ -403,7 +406,7 @@ type DrPlanExecutionGroupExecutionStepExecutionArgs struct {
 	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
 	StatusDetails pulumi.StringPtrInput `pulumi:"statusDetails"`
-	// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	StepId pulumi.StringPtrInput `pulumi:"stepId"`
 	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded pulumi.StringPtrInput `pulumi:"timeEnded"`
@@ -474,7 +477,7 @@ func (o DrPlanExecutionGroupExecutionStepExecutionOutput) ExecutionDurationInSec
 	return o.ApplyT(func(v DrPlanExecutionGroupExecutionStepExecution) *int { return v.ExecutionDurationInSec }).(pulumi.IntPtrOutput)
 }
 
-// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 func (o DrPlanExecutionGroupExecutionStepExecutionOutput) GroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecutionStepExecution) *string { return v.GroupId }).(pulumi.StringPtrOutput)
 }
@@ -496,7 +499,7 @@ func (o DrPlanExecutionGroupExecutionStepExecutionOutput) StatusDetails() pulumi
 	return o.ApplyT(func(v DrPlanExecutionGroupExecutionStepExecution) *string { return v.StatusDetails }).(pulumi.StringPtrOutput)
 }
 
-// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
 func (o DrPlanExecutionGroupExecutionStepExecutionOutput) StepId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecutionStepExecution) *string { return v.StepId }).(pulumi.StringPtrOutput)
 }
@@ -769,7 +772,7 @@ func (o DrPlanExecutionLogLocationArrayOutput) Index(i pulumi.IntInput) DrPlanEx
 type DrPlanPlanGroup struct {
 	// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
 	DisplayName *string `pulumi:"displayName"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	Id *string `pulumi:"id"`
 	// The list of steps in this plan group.
 	Steps []DrPlanPlanGroupStep `pulumi:"steps"`
@@ -794,7 +797,7 @@ type DrPlanPlanGroupInput interface {
 type DrPlanPlanGroupArgs struct {
 	// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The list of steps in this plan group.
 	Steps DrPlanPlanGroupStepArrayInput `pulumi:"steps"`
@@ -861,7 +864,7 @@ func (o DrPlanPlanGroupOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroup) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 func (o DrPlanPlanGroupOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroup) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -904,13 +907,13 @@ type DrPlanPlanGroupStep struct {
 	DisplayName *string `pulumi:"displayName"`
 	// The error mode for this step.
 	ErrorMode *string `pulumi:"errorMode"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 	GroupId *string `pulumi:"groupId"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	Id *string `pulumi:"id"`
 	// A flag indicating whether this step should be enabled for execution.  Example: `true`
 	IsEnabled *bool `pulumi:"isEnabled"`
-	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
 	MemberId *string `pulumi:"memberId"`
 	// The timeout in seconds for executing this step.  Example: `600`
 	Timeout *int `pulumi:"timeout"`
@@ -939,13 +942,13 @@ type DrPlanPlanGroupStepArgs struct {
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The error mode for this step.
 	ErrorMode pulumi.StringPtrInput `pulumi:"errorMode"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A flag indicating whether this step should be enabled for execution.  Example: `true`
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
-	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
 	MemberId pulumi.StringPtrInput `pulumi:"memberId"`
 	// The timeout in seconds for executing this step.  Example: `600`
 	Timeout pulumi.IntPtrInput `pulumi:"timeout"`
@@ -1019,12 +1022,12 @@ func (o DrPlanPlanGroupStepOutput) ErrorMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStep) *string { return v.ErrorMode }).(pulumi.StringPtrOutput)
 }
 
-// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 func (o DrPlanPlanGroupStepOutput) GroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStep) *string { return v.GroupId }).(pulumi.StringPtrOutput)
 }
 
-// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 func (o DrPlanPlanGroupStepOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStep) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -1034,7 +1037,7 @@ func (o DrPlanPlanGroupStepOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStep) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
 func (o DrPlanPlanGroupStepOutput) MemberId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStep) *string { return v.MemberId }).(pulumi.StringPtrOutput)
 }
@@ -1078,7 +1081,7 @@ func (o DrPlanPlanGroupStepArrayOutput) Index(i pulumi.IntInput) DrPlanPlanGroup
 }
 
 type DrPlanPlanGroupStepUserDefinedStep struct {
-	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
 	FunctionId *string `pulumi:"functionId"`
 	// The region in which the function is deployed.  Example: `us-ashburn-1`
 	FunctionRegion *string `pulumi:"functionRegion"`
@@ -1088,7 +1091,7 @@ type DrPlanPlanGroupStepUserDefinedStep struct {
 	RequestBody *string `pulumi:"requestBody"`
 	// The userid on the instance to be used for executing the script or command.  Example: `opc`
 	RunAsUser *string `pulumi:"runAsUser"`
-	// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+	// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 	RunOnInstanceId *string `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
 	RunOnInstanceRegion *string `pulumi:"runOnInstanceRegion"`
@@ -1110,7 +1113,7 @@ type DrPlanPlanGroupStepUserDefinedStepInput interface {
 }
 
 type DrPlanPlanGroupStepUserDefinedStepArgs struct {
-	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
 	FunctionId pulumi.StringPtrInput `pulumi:"functionId"`
 	// The region in which the function is deployed.  Example: `us-ashburn-1`
 	FunctionRegion pulumi.StringPtrInput `pulumi:"functionRegion"`
@@ -1120,7 +1123,7 @@ type DrPlanPlanGroupStepUserDefinedStepArgs struct {
 	RequestBody pulumi.StringPtrInput `pulumi:"requestBody"`
 	// The userid on the instance to be used for executing the script or command.  Example: `opc`
 	RunAsUser pulumi.StringPtrInput `pulumi:"runAsUser"`
-	// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+	// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 	RunOnInstanceId pulumi.StringPtrInput `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
 	RunOnInstanceRegion pulumi.StringPtrInput `pulumi:"runOnInstanceRegion"`
@@ -1181,7 +1184,7 @@ func (o DrPlanPlanGroupStepUserDefinedStepOutput) ToDrPlanPlanGroupStepUserDefin
 	return o
 }
 
-// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
 func (o DrPlanPlanGroupStepUserDefinedStepOutput) FunctionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStep) *string { return v.FunctionId }).(pulumi.StringPtrOutput)
 }
@@ -1208,7 +1211,7 @@ func (o DrPlanPlanGroupStepUserDefinedStepOutput) RunAsUser() pulumi.StringPtrOu
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStep) *string { return v.RunAsUser }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 func (o DrPlanPlanGroupStepUserDefinedStepOutput) RunOnInstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStep) *string { return v.RunOnInstanceId }).(pulumi.StringPtrOutput)
 }
@@ -1364,7 +1367,7 @@ func (o DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput
 }
 
 type DrProtectionGroupAssociation struct {
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	PeerId *string `pulumi:"peerId"`
 	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
 	PeerRegion *string `pulumi:"peerRegion"`
@@ -1384,7 +1387,7 @@ type DrProtectionGroupAssociationInput interface {
 }
 
 type DrProtectionGroupAssociationArgs struct {
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	PeerId pulumi.StringPtrInput `pulumi:"peerId"`
 	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringPtrInput `pulumi:"peerRegion"`
@@ -1469,7 +1472,7 @@ func (o DrProtectionGroupAssociationOutput) ToDrProtectionGroupAssociationPtrOut
 	}).(DrProtectionGroupAssociationPtrOutput)
 }
 
-// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 func (o DrProtectionGroupAssociationOutput) PeerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupAssociation) *string { return v.PeerId }).(pulumi.StringPtrOutput)
 }
@@ -1508,7 +1511,7 @@ func (o DrProtectionGroupAssociationPtrOutput) Elem() DrProtectionGroupAssociati
 	}).(DrProtectionGroupAssociationOutput)
 }
 
-// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 func (o DrProtectionGroupAssociationPtrOutput) PeerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DrProtectionGroupAssociation) *string {
 		if v == nil {
@@ -1714,18 +1717,24 @@ func (o DrProtectionGroupLogLocationPtrOutput) Object() pulumi.StringPtrOutput {
 }
 
 type DrProtectionGroupMember struct {
-	// (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+	DestinationCapacityReservationId *string `pulumi:"destinationCapacityReservationId"`
+	// (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	DestinationCompartmentId *string `pulumi:"destinationCompartmentId"`
-	// (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid2`
+	// (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;`
 	DestinationDedicatedVmHostId *string `pulumi:"destinationDedicatedVmHostId"`
 	// (Updatable) A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
 	IsMovable *bool `pulumi:"isMovable"`
-	// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+	// (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+	IsRetainFaultDomain *bool `pulumi:"isRetainFaultDomain"`
+	// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 	MemberId string `pulumi:"memberId"`
 	// (Updatable) The type of the member.
 	MemberType string `pulumi:"memberType"`
-	// (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+	// (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;`
 	PasswordVaultSecretId *string `pulumi:"passwordVaultSecretId"`
+	// (Updatable) A list of Compute Instance VNIC mappings.
+	VnicMapping []DrProtectionGroupMemberVnicMapping `pulumi:"vnicMapping"`
 	// (Updatable) A list of Compute Instance VNIC mappings.
 	VnicMappings []DrProtectionGroupMemberVnicMapping `pulumi:"vnicMappings"`
 }
@@ -1742,18 +1751,24 @@ type DrProtectionGroupMemberInput interface {
 }
 
 type DrProtectionGroupMemberArgs struct {
-	// (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+	DestinationCapacityReservationId pulumi.StringPtrInput `pulumi:"destinationCapacityReservationId"`
+	// (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	DestinationCompartmentId pulumi.StringPtrInput `pulumi:"destinationCompartmentId"`
-	// (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid2`
+	// (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;`
 	DestinationDedicatedVmHostId pulumi.StringPtrInput `pulumi:"destinationDedicatedVmHostId"`
 	// (Updatable) A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
 	IsMovable pulumi.BoolPtrInput `pulumi:"isMovable"`
-	// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+	// (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+	IsRetainFaultDomain pulumi.BoolPtrInput `pulumi:"isRetainFaultDomain"`
+	// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 	MemberId pulumi.StringInput `pulumi:"memberId"`
 	// (Updatable) The type of the member.
 	MemberType pulumi.StringInput `pulumi:"memberType"`
-	// (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+	// (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;`
 	PasswordVaultSecretId pulumi.StringPtrInput `pulumi:"passwordVaultSecretId"`
+	// (Updatable) A list of Compute Instance VNIC mappings.
+	VnicMapping DrProtectionGroupMemberVnicMappingArrayInput `pulumi:"vnicMapping"`
 	// (Updatable) A list of Compute Instance VNIC mappings.
 	VnicMappings DrProtectionGroupMemberVnicMappingArrayInput `pulumi:"vnicMappings"`
 }
@@ -1809,12 +1824,17 @@ func (o DrProtectionGroupMemberOutput) ToDrProtectionGroupMemberOutputWithContex
 	return o
 }
 
-// (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid1`
+// (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+func (o DrProtectionGroupMemberOutput) DestinationCapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.DestinationCapacityReservationId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 func (o DrProtectionGroupMemberOutput) DestinationCompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.DestinationCompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid2`
+// (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;`
 func (o DrProtectionGroupMemberOutput) DestinationDedicatedVmHostId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.DestinationDedicatedVmHostId }).(pulumi.StringPtrOutput)
 }
@@ -1824,7 +1844,12 @@ func (o DrProtectionGroupMemberOutput) IsMovable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *bool { return v.IsMovable }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+// (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+func (o DrProtectionGroupMemberOutput) IsRetainFaultDomain() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *bool { return v.IsRetainFaultDomain }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 func (o DrProtectionGroupMemberOutput) MemberId() pulumi.StringOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) string { return v.MemberId }).(pulumi.StringOutput)
 }
@@ -1834,9 +1859,14 @@ func (o DrProtectionGroupMemberOutput) MemberType() pulumi.StringOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) string { return v.MemberType }).(pulumi.StringOutput)
 }
 
-// (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+// (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;`
 func (o DrProtectionGroupMemberOutput) PasswordVaultSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.PasswordVaultSecretId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A list of Compute Instance VNIC mappings.
+func (o DrProtectionGroupMemberOutput) VnicMapping() DrProtectionGroupMemberVnicMappingArrayOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) []DrProtectionGroupMemberVnicMapping { return v.VnicMapping }).(DrProtectionGroupMemberVnicMappingArrayOutput)
 }
 
 // (Updatable) A list of Compute Instance VNIC mappings.
@@ -1865,11 +1895,15 @@ func (o DrProtectionGroupMemberArrayOutput) Index(i pulumi.IntInput) DrProtectio
 }
 
 type DrProtectionGroupMemberVnicMapping struct {
-	// (Updatable) A list of destination region's network security group (NSG) Ids which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1.iad.abcd1, ocid1.networksecuritygroup.oc1.iad.wxyz2 ]`
+	// (Updatable) A list of network security group (NSG) IDs in the destination region which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
 	DestinationNsgIdLists []string `pulumi:"destinationNsgIdLists"`
-	// (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1.iad.exampleocid2`
+	// (Updatable) The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+	DestinationPrimaryPrivateIpAddress *string `pulumi:"destinationPrimaryPrivateIpAddress"`
+	// (Updatable) The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+	DestinationPrimaryPrivateIpHostnameLabel *string `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
 	DestinationSubnetId *string `pulumi:"destinationSubnetId"`
-	// (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1.phx.exampleocid1`
+	// (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
 	SourceVnicId *string `pulumi:"sourceVnicId"`
 }
 
@@ -1885,11 +1919,15 @@ type DrProtectionGroupMemberVnicMappingInput interface {
 }
 
 type DrProtectionGroupMemberVnicMappingArgs struct {
-	// (Updatable) A list of destination region's network security group (NSG) Ids which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1.iad.abcd1, ocid1.networksecuritygroup.oc1.iad.wxyz2 ]`
+	// (Updatable) A list of network security group (NSG) IDs in the destination region which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
 	DestinationNsgIdLists pulumi.StringArrayInput `pulumi:"destinationNsgIdLists"`
-	// (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1.iad.exampleocid2`
+	// (Updatable) The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+	DestinationPrimaryPrivateIpAddress pulumi.StringPtrInput `pulumi:"destinationPrimaryPrivateIpAddress"`
+	// (Updatable) The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+	DestinationPrimaryPrivateIpHostnameLabel pulumi.StringPtrInput `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
 	DestinationSubnetId pulumi.StringPtrInput `pulumi:"destinationSubnetId"`
-	// (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1.phx.exampleocid1`
+	// (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
 	SourceVnicId pulumi.StringPtrInput `pulumi:"sourceVnicId"`
 }
 
@@ -1944,17 +1982,27 @@ func (o DrProtectionGroupMemberVnicMappingOutput) ToDrProtectionGroupMemberVnicM
 	return o
 }
 
-// (Updatable) A list of destination region's network security group (NSG) Ids which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1.iad.abcd1, ocid1.networksecuritygroup.oc1.iad.wxyz2 ]`
+// (Updatable) A list of network security group (NSG) IDs in the destination region which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
 func (o DrProtectionGroupMemberVnicMappingOutput) DestinationNsgIdLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberVnicMapping) []string { return v.DestinationNsgIdLists }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1.iad.exampleocid2`
+// (Updatable) The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+func (o DrProtectionGroupMemberVnicMappingOutput) DestinationPrimaryPrivateIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberVnicMapping) *string { return v.DestinationPrimaryPrivateIpAddress }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+func (o DrProtectionGroupMemberVnicMappingOutput) DestinationPrimaryPrivateIpHostnameLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberVnicMapping) *string { return v.DestinationPrimaryPrivateIpHostnameLabel }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
 func (o DrProtectionGroupMemberVnicMappingOutput) DestinationSubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberVnicMapping) *string { return v.DestinationSubnetId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1.phx.exampleocid1`
+// (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
 func (o DrProtectionGroupMemberVnicMappingOutput) SourceVnicId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberVnicMapping) *string { return v.SourceVnicId }).(pulumi.StringPtrOutput)
 }
@@ -1980,9 +2028,9 @@ func (o DrProtectionGroupMemberVnicMappingArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetDrPlanExecutionExecutionOption struct {
-	// A flag indicating whether a precheck was executed before the plan.  Example: `false`
+	// A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
 	ArePrechecksEnabled bool `pulumi:"arePrechecksEnabled"`
-	// A flag indicating whether warnigs was ignored during the switchover.  Example: `true`
+	// A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
 	AreWarningsIgnored bool `pulumi:"areWarningsIgnored"`
 	// The type of the DR Plan executed.
 	PlanExecutionType string `pulumi:"planExecutionType"`
@@ -2000,9 +2048,9 @@ type GetDrPlanExecutionExecutionOptionInput interface {
 }
 
 type GetDrPlanExecutionExecutionOptionArgs struct {
-	// A flag indicating whether a precheck was executed before the plan.  Example: `false`
+	// A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
 	ArePrechecksEnabled pulumi.BoolInput `pulumi:"arePrechecksEnabled"`
-	// A flag indicating whether warnigs was ignored during the switchover.  Example: `true`
+	// A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
 	AreWarningsIgnored pulumi.BoolInput `pulumi:"areWarningsIgnored"`
 	// The type of the DR Plan executed.
 	PlanExecutionType pulumi.StringInput `pulumi:"planExecutionType"`
@@ -2059,12 +2107,12 @@ func (o GetDrPlanExecutionExecutionOptionOutput) ToGetDrPlanExecutionExecutionOp
 	return o
 }
 
-// A flag indicating whether a precheck was executed before the plan.  Example: `false`
+// A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
 func (o GetDrPlanExecutionExecutionOptionOutput) ArePrechecksEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionExecutionOption) bool { return v.ArePrechecksEnabled }).(pulumi.BoolOutput)
 }
 
-// A flag indicating whether warnigs was ignored during the switchover.  Example: `true`
+// A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
 func (o GetDrPlanExecutionExecutionOptionOutput) AreWarningsIgnored() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionExecutionOption) bool { return v.AreWarningsIgnored }).(pulumi.BoolOutput)
 }
@@ -2099,7 +2147,7 @@ type GetDrPlanExecutionGroupExecution struct {
 	DisplayName string `pulumi:"displayName"`
 	// The total duration in seconds taken to complete step execution.  Example: `35`
 	ExecutionDurationInSec int `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 	GroupId string `pulumi:"groupId"`
 	// The status of the step execution.
 	Status string `pulumi:"status"`
@@ -2131,7 +2179,7 @@ type GetDrPlanExecutionGroupExecutionArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The total duration in seconds taken to complete step execution.  Example: `35`
 	ExecutionDurationInSec pulumi.IntInput `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 	GroupId pulumi.StringInput `pulumi:"groupId"`
 	// The status of the step execution.
 	Status pulumi.StringInput `pulumi:"status"`
@@ -2208,7 +2256,7 @@ func (o GetDrPlanExecutionGroupExecutionOutput) ExecutionDurationInSec() pulumi.
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) int { return v.ExecutionDurationInSec }).(pulumi.IntOutput)
 }
 
-// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 func (o GetDrPlanExecutionGroupExecutionOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) string { return v.GroupId }).(pulumi.StringOutput)
 }
@@ -2270,7 +2318,7 @@ type GetDrPlanExecutionGroupExecutionStepExecution struct {
 	DisplayName string `pulumi:"displayName"`
 	// The total duration in seconds taken to complete step execution.  Example: `35`
 	ExecutionDurationInSec int `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 	GroupId string `pulumi:"groupId"`
 	// Information about an Object Storage log location for a DR Protection Group.
 	LogLocations []GetDrPlanExecutionGroupExecutionStepExecutionLogLocation `pulumi:"logLocations"`
@@ -2278,7 +2326,7 @@ type GetDrPlanExecutionGroupExecutionStepExecution struct {
 	Status string `pulumi:"status"`
 	// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
 	StatusDetails string `pulumi:"statusDetails"`
-	// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	StepId string `pulumi:"stepId"`
 	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded string `pulumi:"timeEnded"`
@@ -2304,7 +2352,7 @@ type GetDrPlanExecutionGroupExecutionStepExecutionArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The total duration in seconds taken to complete step execution.  Example: `35`
 	ExecutionDurationInSec pulumi.IntInput `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 	GroupId pulumi.StringInput `pulumi:"groupId"`
 	// Information about an Object Storage log location for a DR Protection Group.
 	LogLocations GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayInput `pulumi:"logLocations"`
@@ -2312,7 +2360,7 @@ type GetDrPlanExecutionGroupExecutionStepExecutionArgs struct {
 	Status pulumi.StringInput `pulumi:"status"`
 	// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
 	StatusDetails pulumi.StringInput `pulumi:"statusDetails"`
-	// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	StepId pulumi.StringInput `pulumi:"stepId"`
 	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
@@ -2383,7 +2431,7 @@ func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) ExecutionDurationIn
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) int { return v.ExecutionDurationInSec }).(pulumi.IntOutput)
 }
 
-// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.GroupId }).(pulumi.StringOutput)
 }
@@ -2405,7 +2453,7 @@ func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) StatusDetails() pul
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.StatusDetails }).(pulumi.StringOutput)
 }
 
-// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
 func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) StepId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.StepId }).(pulumi.StringOutput)
 }
@@ -2772,7 +2820,7 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionArrayOutput) Index(i pulumi.
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItem struct {
-	// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -2788,19 +2836,19 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A list of groups executed in this DR Plan Execution.
 	GroupExecutions []GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution `pulumi:"groupExecutions"`
-	// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid2`
+	// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;`
 	Id string `pulumi:"id"`
 	// A message describing the DR Plan Execution's current state in more detail.  Example: `The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress`
 	LifeCycleDetails string `pulumi:"lifeCycleDetails"`
 	// Information about an Object Storage log location for a DR Protection Group.
 	LogLocations []GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation `pulumi:"logLocations"`
-	// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+	// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 	PeerDrProtectionGroupId string `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
 	PeerRegion string `pulumi:"peerRegion"`
 	// The type of the DR Plan executed.
 	PlanExecutionType string `pulumi:"planExecutionType"`
-	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 	PlanId string `pulumi:"planId"`
 	// A filter to return only DR Plan Executions that match the given lifecycleState.
 	State string `pulumi:"state"`
@@ -2828,7 +2876,7 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemInput interface {
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemArgs struct {
-	// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
@@ -2844,19 +2892,19 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A list of groups executed in this DR Plan Execution.
 	GroupExecutions GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayInput `pulumi:"groupExecutions"`
-	// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid2`
+	// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;`
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the DR Plan Execution's current state in more detail.  Example: `The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress`
 	LifeCycleDetails pulumi.StringInput `pulumi:"lifeCycleDetails"`
 	// Information about an Object Storage log location for a DR Protection Group.
 	LogLocations GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayInput `pulumi:"logLocations"`
-	// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+	// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 	PeerDrProtectionGroupId pulumi.StringInput `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringInput `pulumi:"peerRegion"`
 	// The type of the DR Plan executed.
 	PlanExecutionType pulumi.StringInput `pulumi:"planExecutionType"`
-	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 	PlanId pulumi.StringInput `pulumi:"planId"`
 	// A filter to return only DR Plan Executions that match the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
@@ -2923,7 +2971,7 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) ToGetDrPlanExecu
 	return o
 }
 
-// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..exampleocid1`
+// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -2967,7 +3015,7 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) GroupExecutions(
 	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutput)
 }
 
-// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid2`
+// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -2984,7 +3032,7 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) LogLocations() G
 	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutput)
 }
 
-// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) PeerDrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.PeerDrProtectionGroupId }).(pulumi.StringOutput)
 }
@@ -2999,7 +3047,7 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) PlanExecutionTyp
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.PlanExecutionType }).(pulumi.StringOutput)
 }
 
-// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) PlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.PlanId }).(pulumi.StringOutput)
 }
@@ -3055,9 +3103,9 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayOutput) Index(i pul
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption struct {
-	// A flag indicating whether a precheck was executed before the plan.  Example: `false`
+	// A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
 	ArePrechecksEnabled bool `pulumi:"arePrechecksEnabled"`
-	// A flag indicating whether warnigs was ignored during the switchover.  Example: `true`
+	// A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
 	AreWarningsIgnored bool `pulumi:"areWarningsIgnored"`
 	// The type of the DR Plan executed.
 	PlanExecutionType string `pulumi:"planExecutionType"`
@@ -3075,9 +3123,9 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionInput interf
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArgs struct {
-	// A flag indicating whether a precheck was executed before the plan.  Example: `false`
+	// A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
 	ArePrechecksEnabled pulumi.BoolInput `pulumi:"arePrechecksEnabled"`
-	// A flag indicating whether warnigs was ignored during the switchover.  Example: `true`
+	// A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
 	AreWarningsIgnored pulumi.BoolInput `pulumi:"areWarningsIgnored"`
 	// The type of the DR Plan executed.
 	PlanExecutionType pulumi.StringInput `pulumi:"planExecutionType"`
@@ -3134,14 +3182,14 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput) T
 	return o
 }
 
-// A flag indicating whether a precheck was executed before the plan.  Example: `false`
+// A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput) ArePrechecksEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption) bool {
 		return v.ArePrechecksEnabled
 	}).(pulumi.BoolOutput)
 }
 
-// A flag indicating whether warnigs was ignored during the switchover.  Example: `true`
+// A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput) AreWarningsIgnored() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption) bool {
 		return v.AreWarningsIgnored
@@ -3180,7 +3228,7 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution struct {
 	DisplayName string `pulumi:"displayName"`
 	// The total duration in seconds taken to complete step execution.  Example: `35`
 	ExecutionDurationInSec int `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 	GroupId string `pulumi:"groupId"`
 	// The status of the step execution.
 	Status string `pulumi:"status"`
@@ -3212,7 +3260,7 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The total duration in seconds taken to complete step execution.  Example: `35`
 	ExecutionDurationInSec pulumi.IntInput `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 	GroupId pulumi.StringInput `pulumi:"groupId"`
 	// The status of the step execution.
 	Status pulumi.StringInput `pulumi:"status"`
@@ -3291,7 +3339,7 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) Ex
 	}).(pulumi.IntOutput)
 }
 
-// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) string { return v.GroupId }).(pulumi.StringOutput)
 }
@@ -3353,7 +3401,7 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution
 	DisplayName string `pulumi:"displayName"`
 	// The total duration in seconds taken to complete step execution.  Example: `35`
 	ExecutionDurationInSec int `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 	GroupId string `pulumi:"groupId"`
 	// Information about an Object Storage log location for a DR Protection Group.
 	LogLocations []GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation `pulumi:"logLocations"`
@@ -3361,7 +3409,7 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution
 	Status string `pulumi:"status"`
 	// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
 	StatusDetails string `pulumi:"statusDetails"`
-	// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	StepId string `pulumi:"stepId"`
 	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded string `pulumi:"timeEnded"`
@@ -3387,7 +3435,7 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The total duration in seconds taken to complete step execution.  Example: `35`
 	ExecutionDurationInSec pulumi.IntInput `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 	GroupId pulumi.StringInput `pulumi:"groupId"`
 	// Information about an Object Storage log location for a DR Protection Group.
 	LogLocations GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayInput `pulumi:"logLocations"`
@@ -3395,7 +3443,7 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution
 	Status pulumi.StringInput `pulumi:"status"`
 	// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
 	StatusDetails pulumi.StringInput `pulumi:"statusDetails"`
-	// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	StepId pulumi.StringInput `pulumi:"stepId"`
 	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
@@ -3470,7 +3518,7 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 	}).(pulumi.IntOutput)
 }
 
-// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) string {
 		return v.GroupId
@@ -3498,7 +3546,7 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 	}).(pulumi.StringOutput)
 }
 
-// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) StepId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) string {
 		return v.StepId
@@ -3891,7 +3939,7 @@ func (o GetDrPlanExecutionsFilterArrayOutput) Index(i pulumi.IntInput) GetDrPlan
 type GetDrPlanPlanGroup struct {
 	// The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
 	DisplayName string `pulumi:"displayName"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	Id string `pulumi:"id"`
 	// The list of steps in this plan group.
 	Steps []GetDrPlanPlanGroupStep `pulumi:"steps"`
@@ -3913,7 +3961,7 @@ type GetDrPlanPlanGroupInput interface {
 type GetDrPlanPlanGroupArgs struct {
 	// The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	Id pulumi.StringInput `pulumi:"id"`
 	// The list of steps in this plan group.
 	Steps GetDrPlanPlanGroupStepArrayInput `pulumi:"steps"`
@@ -3977,7 +4025,7 @@ func (o GetDrPlanPlanGroupOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroup) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 func (o GetDrPlanPlanGroupOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroup) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -4017,13 +4065,13 @@ type GetDrPlanPlanGroupStep struct {
 	DisplayName string `pulumi:"displayName"`
 	// The error mode for this step.
 	ErrorMode string `pulumi:"errorMode"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 	GroupId string `pulumi:"groupId"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	Id string `pulumi:"id"`
 	// A flag indicating whether this step should be enabled for execution.  Example: `true`
 	IsEnabled bool `pulumi:"isEnabled"`
-	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
 	MemberId string `pulumi:"memberId"`
 	// The timeout in seconds for executing this step.  Example: `600`
 	Timeout int `pulumi:"timeout"`
@@ -4049,13 +4097,13 @@ type GetDrPlanPlanGroupStepArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The error mode for this step.
 	ErrorMode pulumi.StringInput `pulumi:"errorMode"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 	GroupId pulumi.StringInput `pulumi:"groupId"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	Id pulumi.StringInput `pulumi:"id"`
 	// A flag indicating whether this step should be enabled for execution.  Example: `true`
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
-	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
 	MemberId pulumi.StringInput `pulumi:"memberId"`
 	// The timeout in seconds for executing this step.  Example: `600`
 	Timeout pulumi.IntInput `pulumi:"timeout"`
@@ -4126,12 +4174,12 @@ func (o GetDrPlanPlanGroupStepOutput) ErrorMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStep) string { return v.ErrorMode }).(pulumi.StringOutput)
 }
 
-// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 func (o GetDrPlanPlanGroupStepOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStep) string { return v.GroupId }).(pulumi.StringOutput)
 }
 
-// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 func (o GetDrPlanPlanGroupStepOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStep) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -4141,7 +4189,7 @@ func (o GetDrPlanPlanGroupStepOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStep) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
-// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
 func (o GetDrPlanPlanGroupStepOutput) MemberId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStep) string { return v.MemberId }).(pulumi.StringOutput)
 }
@@ -4182,7 +4230,7 @@ func (o GetDrPlanPlanGroupStepArrayOutput) Index(i pulumi.IntInput) GetDrPlanPla
 }
 
 type GetDrPlanPlanGroupStepUserDefinedStep struct {
-	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
 	FunctionId string `pulumi:"functionId"`
 	// The region in which the function is deployed.  Example: `us-ashburn-1`
 	FunctionRegion string `pulumi:"functionRegion"`
@@ -4192,7 +4240,7 @@ type GetDrPlanPlanGroupStepUserDefinedStep struct {
 	RequestBody string `pulumi:"requestBody"`
 	// The userid on the instance to be used for executing the script or command.  Example: `opc`
 	RunAsUser string `pulumi:"runAsUser"`
-	// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+	// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 	RunOnInstanceId string `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
 	RunOnInstanceRegion string `pulumi:"runOnInstanceRegion"`
@@ -4214,7 +4262,7 @@ type GetDrPlanPlanGroupStepUserDefinedStepInput interface {
 }
 
 type GetDrPlanPlanGroupStepUserDefinedStepArgs struct {
-	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
 	FunctionId pulumi.StringInput `pulumi:"functionId"`
 	// The region in which the function is deployed.  Example: `us-ashburn-1`
 	FunctionRegion pulumi.StringInput `pulumi:"functionRegion"`
@@ -4224,7 +4272,7 @@ type GetDrPlanPlanGroupStepUserDefinedStepArgs struct {
 	RequestBody pulumi.StringInput `pulumi:"requestBody"`
 	// The userid on the instance to be used for executing the script or command.  Example: `opc`
 	RunAsUser pulumi.StringInput `pulumi:"runAsUser"`
-	// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+	// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 	RunOnInstanceId pulumi.StringInput `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
 	RunOnInstanceRegion pulumi.StringInput `pulumi:"runOnInstanceRegion"`
@@ -4285,7 +4333,7 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) ToGetDrPlanPlanGroupStepUse
 	return o
 }
 
-// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
 func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) FunctionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.FunctionId }).(pulumi.StringOutput)
 }
@@ -4312,7 +4360,7 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) RunAsUser() pulumi.StringOu
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.RunAsUser }).(pulumi.StringOutput)
 }
 
-// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) RunOnInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.RunOnInstanceId }).(pulumi.StringOutput)
 }
@@ -4562,7 +4610,7 @@ func (o GetDrPlansDrPlanCollectionArrayOutput) Index(i pulumi.IntInput) GetDrPla
 }
 
 type GetDrPlansDrPlanCollectionItem struct {
-	// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -4572,11 +4620,11 @@ type GetDrPlansDrPlanCollectionItem struct {
 	DrProtectionGroupId string `pulumi:"drProtectionGroupId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	Id string `pulumi:"id"`
 	// A message describing the DR Plan's current state in more detail.
 	LifeCycleDetails string `pulumi:"lifeCycleDetails"`
-	// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+	// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 	PeerDrProtectionGroupId string `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
 	PeerRegion string `pulumi:"peerRegion"`
@@ -4606,7 +4654,7 @@ type GetDrPlansDrPlanCollectionItemInput interface {
 }
 
 type GetDrPlansDrPlanCollectionItemArgs struct {
-	// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
@@ -4616,11 +4664,11 @@ type GetDrPlansDrPlanCollectionItemArgs struct {
 	DrProtectionGroupId pulumi.StringInput `pulumi:"drProtectionGroupId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the DR Plan's current state in more detail.
 	LifeCycleDetails pulumi.StringInput `pulumi:"lifeCycleDetails"`
-	// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+	// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 	PeerDrProtectionGroupId pulumi.StringInput `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
 	PeerRegion pulumi.StringInput `pulumi:"peerRegion"`
@@ -4689,7 +4737,7 @@ func (o GetDrPlansDrPlanCollectionItemOutput) ToGetDrPlansDrPlanCollectionItemOu
 	return o
 }
 
-// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..exampleocid1`
+// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 func (o GetDrPlansDrPlanCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -4714,7 +4762,7 @@ func (o GetDrPlansDrPlanCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 func (o GetDrPlansDrPlanCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -4724,7 +4772,7 @@ func (o GetDrPlansDrPlanCollectionItemOutput) LifeCycleDetails() pulumi.StringOu
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.LifeCycleDetails }).(pulumi.StringOutput)
 }
 
-// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 func (o GetDrPlansDrPlanCollectionItemOutput) PeerDrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.PeerDrProtectionGroupId }).(pulumi.StringOutput)
 }
@@ -4787,7 +4835,7 @@ func (o GetDrPlansDrPlanCollectionItemArrayOutput) Index(i pulumi.IntInput) GetD
 type GetDrPlansDrPlanCollectionItemPlanGroup struct {
 	// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
 	DisplayName string `pulumi:"displayName"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	Id string `pulumi:"id"`
 	// The list of steps in this plan group.
 	Steps []GetDrPlansDrPlanCollectionItemPlanGroupStep `pulumi:"steps"`
@@ -4809,7 +4857,7 @@ type GetDrPlansDrPlanCollectionItemPlanGroupInput interface {
 type GetDrPlansDrPlanCollectionItemPlanGroupArgs struct {
 	// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	Id pulumi.StringInput `pulumi:"id"`
 	// The list of steps in this plan group.
 	Steps GetDrPlansDrPlanCollectionItemPlanGroupStepArrayInput `pulumi:"steps"`
@@ -4873,7 +4921,7 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) DisplayName() pulumi.Stri
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroup) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroup) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -4915,13 +4963,13 @@ type GetDrPlansDrPlanCollectionItemPlanGroupStep struct {
 	DisplayName string `pulumi:"displayName"`
 	// The error mode for this step.
 	ErrorMode string `pulumi:"errorMode"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 	GroupId string `pulumi:"groupId"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	Id string `pulumi:"id"`
 	// A flag indicating whether this step should be enabled for execution.  Example: `true`
 	IsEnabled bool `pulumi:"isEnabled"`
-	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
 	MemberId string `pulumi:"memberId"`
 	// The timeout in seconds for executing this step.  Example: `600`
 	Timeout int `pulumi:"timeout"`
@@ -4947,13 +4995,13 @@ type GetDrPlansDrPlanCollectionItemPlanGroupStepArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The error mode for this step.
 	ErrorMode pulumi.StringInput `pulumi:"errorMode"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 	GroupId pulumi.StringInput `pulumi:"groupId"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 	Id pulumi.StringInput `pulumi:"id"`
 	// A flag indicating whether this step should be enabled for execution.  Example: `true`
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
-	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
 	MemberId pulumi.StringInput `pulumi:"memberId"`
 	// The timeout in seconds for executing this step.  Example: `600`
 	Timeout pulumi.IntInput `pulumi:"timeout"`
@@ -5024,12 +5072,12 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) ErrorMode() pulumi.St
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) string { return v.ErrorMode }).(pulumi.StringOutput)
 }
 
-// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) string { return v.GroupId }).(pulumi.StringOutput)
 }
 
-// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -5039,7 +5087,7 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) IsEnabled() pulumi.Bo
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
-// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) MemberId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) string { return v.MemberId }).(pulumi.StringOutput)
 }
@@ -5082,7 +5130,7 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutput) Index(i pulumi.I
 }
 
 type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep struct {
-	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
 	FunctionId string `pulumi:"functionId"`
 	// The region in which the function is deployed.  Example: `us-ashburn-1`
 	FunctionRegion string `pulumi:"functionRegion"`
@@ -5092,7 +5140,7 @@ type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep struct {
 	RequestBody string `pulumi:"requestBody"`
 	// The userid on the instance to be used for executing the script or command.  Example: `opc`
 	RunAsUser string `pulumi:"runAsUser"`
-	// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+	// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 	RunOnInstanceId string `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
 	RunOnInstanceRegion string `pulumi:"runOnInstanceRegion"`
@@ -5114,7 +5162,7 @@ type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepInput interface {
 }
 
 type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArgs struct {
-	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
 	FunctionId pulumi.StringInput `pulumi:"functionId"`
 	// The region in which the function is deployed.  Example: `us-ashburn-1`
 	FunctionRegion pulumi.StringInput `pulumi:"functionRegion"`
@@ -5124,7 +5172,7 @@ type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArgs struct {
 	RequestBody pulumi.StringInput `pulumi:"requestBody"`
 	// The userid on the instance to be used for executing the script or command.  Example: `opc`
 	RunAsUser pulumi.StringInput `pulumi:"runAsUser"`
-	// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+	// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 	RunOnInstanceId pulumi.StringInput `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
 	RunOnInstanceRegion pulumi.StringInput `pulumi:"runOnInstanceRegion"`
@@ -5185,7 +5233,7 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) ToGetD
 	return o
 }
 
-// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) FunctionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.FunctionId }).(pulumi.StringOutput)
 }
@@ -5212,7 +5260,7 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) RunAsU
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.RunAsUser }).(pulumi.StringOutput)
 }
 
-// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) RunOnInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.RunOnInstanceId }).(pulumi.StringOutput)
 }
@@ -5482,7 +5530,7 @@ func (o GetDrPlansFilterArrayOutput) Index(i pulumi.IntInput) GetDrPlansFilterOu
 }
 
 type GetDrProtectionGroupAssociation struct {
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	PeerId string `pulumi:"peerId"`
 	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
 	PeerRegion string `pulumi:"peerRegion"`
@@ -5502,7 +5550,7 @@ type GetDrProtectionGroupAssociationInput interface {
 }
 
 type GetDrProtectionGroupAssociationArgs struct {
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	PeerId pulumi.StringInput `pulumi:"peerId"`
 	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringInput `pulumi:"peerRegion"`
@@ -5561,7 +5609,7 @@ func (o GetDrProtectionGroupAssociationOutput) ToGetDrProtectionGroupAssociation
 	return o
 }
 
-// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 func (o GetDrProtectionGroupAssociationOutput) PeerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupAssociation) string { return v.PeerId }).(pulumi.StringOutput)
 }
@@ -5712,18 +5760,24 @@ func (o GetDrProtectionGroupLogLocationArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetDrProtectionGroupMember struct {
-	// The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid`
+	// The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+	DestinationCapacityReservationId string `pulumi:"destinationCapacityReservationId"`
+	// The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	DestinationCompartmentId string `pulumi:"destinationCompartmentId"`
-	// The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid`
+	// The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1..&lt;unique_id&gt;`
 	DestinationDedicatedVmHostId string `pulumi:"destinationDedicatedVmHostId"`
 	// A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
 	IsMovable bool `pulumi:"isMovable"`
-	// The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+	// A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+	IsRetainFaultDomain bool `pulumi:"isRetainFaultDomain"`
+	// The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 	MemberId string `pulumi:"memberId"`
 	// The type of the member.
 	MemberType string `pulumi:"memberType"`
 	// The ID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
 	PasswordVaultSecretId string `pulumi:"passwordVaultSecretId"`
+	// A list of compute instance VNIC mappings.
+	VnicMapping []GetDrProtectionGroupMemberVnicMapping `pulumi:"vnicMapping"`
 	// A list of compute instance VNIC mappings.
 	VnicMappings []GetDrProtectionGroupMemberVnicMapping `pulumi:"vnicMappings"`
 }
@@ -5740,18 +5794,24 @@ type GetDrProtectionGroupMemberInput interface {
 }
 
 type GetDrProtectionGroupMemberArgs struct {
-	// The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid`
+	// The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+	DestinationCapacityReservationId pulumi.StringInput `pulumi:"destinationCapacityReservationId"`
+	// The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	DestinationCompartmentId pulumi.StringInput `pulumi:"destinationCompartmentId"`
-	// The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid`
+	// The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1..&lt;unique_id&gt;`
 	DestinationDedicatedVmHostId pulumi.StringInput `pulumi:"destinationDedicatedVmHostId"`
 	// A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
 	IsMovable pulumi.BoolInput `pulumi:"isMovable"`
-	// The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+	// A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+	IsRetainFaultDomain pulumi.BoolInput `pulumi:"isRetainFaultDomain"`
+	// The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 	MemberId pulumi.StringInput `pulumi:"memberId"`
 	// The type of the member.
 	MemberType pulumi.StringInput `pulumi:"memberType"`
 	// The ID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
 	PasswordVaultSecretId pulumi.StringInput `pulumi:"passwordVaultSecretId"`
+	// A list of compute instance VNIC mappings.
+	VnicMapping GetDrProtectionGroupMemberVnicMappingArrayInput `pulumi:"vnicMapping"`
 	// A list of compute instance VNIC mappings.
 	VnicMappings GetDrProtectionGroupMemberVnicMappingArrayInput `pulumi:"vnicMappings"`
 }
@@ -5807,12 +5867,17 @@ func (o GetDrProtectionGroupMemberOutput) ToGetDrProtectionGroupMemberOutputWith
 	return o
 }
 
-// The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid`
+// The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+func (o GetDrProtectionGroupMemberOutput) DestinationCapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationCapacityReservationId }).(pulumi.StringOutput)
+}
+
+// The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 func (o GetDrProtectionGroupMemberOutput) DestinationCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationCompartmentId }).(pulumi.StringOutput)
 }
 
-// The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid`
+// The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1..&lt;unique_id&gt;`
 func (o GetDrProtectionGroupMemberOutput) DestinationDedicatedVmHostId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationDedicatedVmHostId }).(pulumi.StringOutput)
 }
@@ -5822,7 +5887,12 @@ func (o GetDrProtectionGroupMemberOutput) IsMovable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) bool { return v.IsMovable }).(pulumi.BoolOutput)
 }
 
-// The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+// A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+func (o GetDrProtectionGroupMemberOutput) IsRetainFaultDomain() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) bool { return v.IsRetainFaultDomain }).(pulumi.BoolOutput)
+}
+
+// The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 func (o GetDrProtectionGroupMemberOutput) MemberId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.MemberId }).(pulumi.StringOutput)
 }
@@ -5835,6 +5905,11 @@ func (o GetDrProtectionGroupMemberOutput) MemberType() pulumi.StringOutput {
 // The ID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
 func (o GetDrProtectionGroupMemberOutput) PasswordVaultSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.PasswordVaultSecretId }).(pulumi.StringOutput)
+}
+
+// A list of compute instance VNIC mappings.
+func (o GetDrProtectionGroupMemberOutput) VnicMapping() GetDrProtectionGroupMemberVnicMappingArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberVnicMapping { return v.VnicMapping }).(GetDrProtectionGroupMemberVnicMappingArrayOutput)
 }
 
 // A list of compute instance VNIC mappings.
@@ -5863,11 +5938,15 @@ func (o GetDrProtectionGroupMemberArrayOutput) Index(i pulumi.IntInput) GetDrPro
 }
 
 type GetDrProtectionGroupMemberVnicMapping struct {
-	// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1.iad.exampleocid1, ocid1.networksecuritygroup.oc1.iad.exampleocid2 ]`
+	// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
 	DestinationNsgIdLists []string `pulumi:"destinationNsgIdLists"`
-	// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1.iad.exampleocid`
+	// The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+	DestinationPrimaryPrivateIpAddress string `pulumi:"destinationPrimaryPrivateIpAddress"`
+	// The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+	DestinationPrimaryPrivateIpHostnameLabel string `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
 	DestinationSubnetId string `pulumi:"destinationSubnetId"`
-	// The OCID of the VNIC.  Example: `ocid1.vnic.oc1.phx.exampleocid`
+	// The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
 	SourceVnicId string `pulumi:"sourceVnicId"`
 }
 
@@ -5883,11 +5962,15 @@ type GetDrProtectionGroupMemberVnicMappingInput interface {
 }
 
 type GetDrProtectionGroupMemberVnicMappingArgs struct {
-	// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1.iad.exampleocid1, ocid1.networksecuritygroup.oc1.iad.exampleocid2 ]`
+	// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
 	DestinationNsgIdLists pulumi.StringArrayInput `pulumi:"destinationNsgIdLists"`
-	// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1.iad.exampleocid`
+	// The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+	DestinationPrimaryPrivateIpAddress pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpAddress"`
+	// The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+	DestinationPrimaryPrivateIpHostnameLabel pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
 	DestinationSubnetId pulumi.StringInput `pulumi:"destinationSubnetId"`
-	// The OCID of the VNIC.  Example: `ocid1.vnic.oc1.phx.exampleocid`
+	// The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
 	SourceVnicId pulumi.StringInput `pulumi:"sourceVnicId"`
 }
 
@@ -5942,17 +6025,29 @@ func (o GetDrProtectionGroupMemberVnicMappingOutput) ToGetDrProtectionGroupMembe
 	return o
 }
 
-// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1.iad.exampleocid1, ocid1.networksecuritygroup.oc1.iad.exampleocid2 ]`
+// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
 func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationNsgIdLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) []string { return v.DestinationNsgIdLists }).(pulumi.StringArrayOutput)
 }
 
-// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1.iad.exampleocid`
+// The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationPrimaryPrivateIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) string { return v.DestinationPrimaryPrivateIpAddress }).(pulumi.StringOutput)
+}
+
+// The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationPrimaryPrivateIpHostnameLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) string {
+		return v.DestinationPrimaryPrivateIpHostnameLabel
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
 func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationSubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) string { return v.DestinationSubnetId }).(pulumi.StringOutput)
 }
 
-// The OCID of the VNIC.  Example: `ocid1.vnic.oc1.phx.exampleocid`
+// The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
 func (o GetDrProtectionGroupMemberVnicMappingOutput) SourceVnicId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) string { return v.SourceVnicId }).(pulumi.StringOutput)
 }
@@ -6084,7 +6179,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+	// The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 	Id string `pulumi:"id"`
 	// A message describing the DR Protection Group's current state in more detail.
 	LifeCycleDetails string `pulumi:"lifeCycleDetails"`
@@ -6092,11 +6187,11 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItem struct {
 	LogLocations []GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation `pulumi:"logLocations"`
 	// A list of DR Protection Group members.
 	Members []GetDrProtectionGroupsDrProtectionGroupCollectionItemMember `pulumi:"members"`
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	PeerId string `pulumi:"peerId"`
 	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
 	PeerRegion string `pulumi:"peerRegion"`
-	// The role of the DR Protection Group.
+	// The DR Protection Group Role.
 	Role string `pulumi:"role"`
 	// A filter to return only DR Protection Groups that match the given lifecycleState.
 	State string `pulumi:"state"`
@@ -6130,7 +6225,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+	// The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the DR Protection Group's current state in more detail.
 	LifeCycleDetails pulumi.StringInput `pulumi:"lifeCycleDetails"`
@@ -6138,11 +6233,11 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemArgs struct {
 	LogLocations GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayInput `pulumi:"logLocations"`
 	// A list of DR Protection Group members.
 	Members GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayInput `pulumi:"members"`
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	PeerId pulumi.StringInput `pulumi:"peerId"`
 	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringInput `pulumi:"peerRegion"`
-	// The role of the DR Protection Group.
+	// The DR Protection Group Role.
 	Role pulumi.StringInput `pulumi:"role"`
 	// A filter to return only DR Protection Groups that match the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
@@ -6239,7 +6334,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) FreeformTags
 	}).(pulumi.MapOutput)
 }
 
-// The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+// The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -6263,7 +6358,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) Members() Ge
 	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayOutput)
 }
 
-// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) PeerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.PeerId }).(pulumi.StringOutput)
 }
@@ -6273,7 +6368,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) PeerRegion()
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.PeerRegion }).(pulumi.StringOutput)
 }
 
-// The role of the DR Protection Group.
+// The DR Protection Group Role.
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.Role }).(pulumi.StringOutput)
 }
@@ -6321,11 +6416,11 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemArrayOutput) Index(i
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation struct {
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	PeerId string `pulumi:"peerId"`
 	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
 	PeerRegion string `pulumi:"peerRegion"`
-	// The role of the DR Protection Group.
+	// The DR Protection Group Role.
 	Role string `pulumi:"role"`
 }
 
@@ -6341,11 +6436,11 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationInput interf
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArgs struct {
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	PeerId pulumi.StringInput `pulumi:"peerId"`
 	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringInput `pulumi:"peerRegion"`
-	// The role of the DR Protection Group.
+	// The DR Protection Group Role.
 	Role pulumi.StringInput `pulumi:"role"`
 }
 
@@ -6400,7 +6495,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) T
 	return o
 }
 
-// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) PeerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation) string { return v.PeerId }).(pulumi.StringOutput)
 }
@@ -6410,7 +6505,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) P
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation) string { return v.PeerRegion }).(pulumi.StringOutput)
 }
 
-// The role of the DR Protection Group.
+// The DR Protection Group Role.
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation) string { return v.Role }).(pulumi.StringOutput)
 }
@@ -6551,18 +6646,24 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutp
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMember struct {
-	// The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid`
+	// The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+	DestinationCapacityReservationId string `pulumi:"destinationCapacityReservationId"`
+	// The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	DestinationCompartmentId string `pulumi:"destinationCompartmentId"`
-	// The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid`
+	// The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1..&lt;unique_id&gt;`
 	DestinationDedicatedVmHostId string `pulumi:"destinationDedicatedVmHostId"`
 	// A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
 	IsMovable bool `pulumi:"isMovable"`
-	// The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+	// A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+	IsRetainFaultDomain bool `pulumi:"isRetainFaultDomain"`
+	// The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 	MemberId string `pulumi:"memberId"`
 	// The type of the member.
 	MemberType string `pulumi:"memberType"`
 	// The ID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
 	PasswordVaultSecretId string `pulumi:"passwordVaultSecretId"`
+	// A list of compute instance VNIC mappings.
+	VnicMapping []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping `pulumi:"vnicMapping"`
 	// A list of compute instance VNIC mappings.
 	VnicMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping `pulumi:"vnicMappings"`
 }
@@ -6579,18 +6680,24 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberInput interface {
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs struct {
-	// The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid`
+	// The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+	DestinationCapacityReservationId pulumi.StringInput `pulumi:"destinationCapacityReservationId"`
+	// The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	DestinationCompartmentId pulumi.StringInput `pulumi:"destinationCompartmentId"`
-	// The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid`
+	// The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1..&lt;unique_id&gt;`
 	DestinationDedicatedVmHostId pulumi.StringInput `pulumi:"destinationDedicatedVmHostId"`
 	// A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
 	IsMovable pulumi.BoolInput `pulumi:"isMovable"`
-	// The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+	// A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+	IsRetainFaultDomain pulumi.BoolInput `pulumi:"isRetainFaultDomain"`
+	// The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 	MemberId pulumi.StringInput `pulumi:"memberId"`
 	// The type of the member.
 	MemberType pulumi.StringInput `pulumi:"memberType"`
 	// The ID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
 	PasswordVaultSecretId pulumi.StringInput `pulumi:"passwordVaultSecretId"`
+	// A list of compute instance VNIC mappings.
+	VnicMapping GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayInput `pulumi:"vnicMapping"`
 	// A list of compute instance VNIC mappings.
 	VnicMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayInput `pulumi:"vnicMappings"`
 }
@@ -6646,14 +6753,21 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) ToGetD
 	return o
 }
 
-// The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid`
+// The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationCapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
+		return v.DestinationCapacityReservationId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
 		return v.DestinationCompartmentId
 	}).(pulumi.StringOutput)
 }
 
-// The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid`
+// The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1..&lt;unique_id&gt;`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationDedicatedVmHostId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
 		return v.DestinationDedicatedVmHostId
@@ -6665,7 +6779,12 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) IsMova
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) bool { return v.IsMovable }).(pulumi.BoolOutput)
 }
 
-// The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+// A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) IsRetainFaultDomain() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) bool { return v.IsRetainFaultDomain }).(pulumi.BoolOutput)
+}
+
+// The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) MemberId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.MemberId }).(pulumi.StringOutput)
 }
@@ -6680,6 +6799,13 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Passwo
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
 		return v.PasswordVaultSecretId
 	}).(pulumi.StringOutput)
+}
+
+// A list of compute instance VNIC mappings.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) VnicMapping() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping {
+		return v.VnicMapping
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayOutput)
 }
 
 // A list of compute instance VNIC mappings.
@@ -6710,11 +6836,15 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayOutput) I
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping struct {
-	// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1.iad.exampleocid1, ocid1.networksecuritygroup.oc1.iad.exampleocid2 ]`
+	// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
 	DestinationNsgIdLists []string `pulumi:"destinationNsgIdLists"`
-	// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1.iad.exampleocid`
+	// The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+	DestinationPrimaryPrivateIpAddress string `pulumi:"destinationPrimaryPrivateIpAddress"`
+	// The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+	DestinationPrimaryPrivateIpHostnameLabel string `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
 	DestinationSubnetId string `pulumi:"destinationSubnetId"`
-	// The OCID of the VNIC.  Example: `ocid1.vnic.oc1.phx.exampleocid`
+	// The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
 	SourceVnicId string `pulumi:"sourceVnicId"`
 }
 
@@ -6730,11 +6860,15 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingInput 
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArgs struct {
-	// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1.iad.exampleocid1, ocid1.networksecuritygroup.oc1.iad.exampleocid2 ]`
+	// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
 	DestinationNsgIdLists pulumi.StringArrayInput `pulumi:"destinationNsgIdLists"`
-	// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1.iad.exampleocid`
+	// The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+	DestinationPrimaryPrivateIpAddress pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpAddress"`
+	// The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+	DestinationPrimaryPrivateIpHostnameLabel pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
 	DestinationSubnetId pulumi.StringInput `pulumi:"destinationSubnetId"`
-	// The OCID of the VNIC.  Example: `ocid1.vnic.oc1.phx.exampleocid`
+	// The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
 	SourceVnicId pulumi.StringInput `pulumi:"sourceVnicId"`
 }
 
@@ -6789,21 +6923,35 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOut
 	return o
 }
 
-// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1.iad.exampleocid1, ocid1.networksecuritygroup.oc1.iad.exampleocid2 ]`
+// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) DestinationNsgIdLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) []string {
 		return v.DestinationNsgIdLists
 	}).(pulumi.StringArrayOutput)
 }
 
-// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1.iad.exampleocid`
+// The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) DestinationPrimaryPrivateIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) string {
+		return v.DestinationPrimaryPrivateIpAddress
+	}).(pulumi.StringOutput)
+}
+
+// The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) DestinationPrimaryPrivateIpHostnameLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) string {
+		return v.DestinationPrimaryPrivateIpHostnameLabel
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) DestinationSubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) string {
 		return v.DestinationSubnetId
 	}).(pulumi.StringOutput)
 }
 
-// The OCID of the VNIC.  Example: `ocid1.vnic.oc1.phx.exampleocid`
+// The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) SourceVnicId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) string {
 		return v.SourceVnicId

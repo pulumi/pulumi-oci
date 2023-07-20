@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -76,6 +77,7 @@ func NewExternalContainerDatabasesStackMonitoring(ctx *pulumi.Context,
 	if args.ExternalDatabaseConnectorId == nil {
 		return nil, errors.New("invalid value for required argument 'ExternalDatabaseConnectorId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ExternalContainerDatabasesStackMonitoring
 	err := ctx.RegisterResource("oci:Database/externalContainerDatabasesStackMonitoring:ExternalContainerDatabasesStackMonitoring", name, args, &resource, opts...)
 	if err != nil {

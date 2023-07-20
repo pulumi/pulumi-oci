@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -125,6 +126,7 @@ func NewMigrationAsset(ctx *pulumi.Context,
 	if args.SnapShotBucketName == nil {
 		return nil, errors.New("invalid value for required argument 'SnapShotBucketName'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource MigrationAsset
 	err := ctx.RegisterResource("oci:CloudMigrations/migrationAsset:MigrationAsset", name, args, &resource, opts...)
 	if err != nil {

@@ -30,6 +30,10 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+        /// </summary>
+        public readonly bool IsIdmapGroupsForSysAuth;
+        /// <summary>
         /// Path used to access the associated file system.
         /// </summary>
         public readonly string Path;
@@ -52,6 +56,8 @@ namespace Pulumi.Oci.FileStorage.Outputs
 
             string id,
 
+            bool isIdmapGroupsForSysAuth,
+
             string path,
 
             string state,
@@ -62,6 +68,7 @@ namespace Pulumi.Oci.FileStorage.Outputs
             ExportSetId = exportSetId;
             FileSystemId = fileSystemId;
             Id = id;
+            IsIdmapGroupsForSysAuth = isIdmapGroupsForSysAuth;
             Path = path;
             State = state;
             TimeCreated = timeCreated;

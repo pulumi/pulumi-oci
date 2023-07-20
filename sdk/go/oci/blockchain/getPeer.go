@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func LookupPeer(ctx *pulumi.Context, args *LookupPeerArgs, opts ...pulumi.InvokeOption) (*LookupPeerResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupPeerResult
 	err := ctx.Invoke("oci:Blockchain/getPeer:getPeer", args, &rv, opts...)
 	if err != nil {

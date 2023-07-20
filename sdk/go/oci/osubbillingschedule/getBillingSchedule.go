@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetBillingSchedule(ctx *pulumi.Context, args *GetBillingScheduleArgs, opts ...pulumi.InvokeOption) (*GetBillingScheduleResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBillingScheduleResult
 	err := ctx.Invoke("oci:OsubBillingSchedule/getBillingSchedule:getBillingSchedule", args, &rv, opts...)
 	if err != nil {

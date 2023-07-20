@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetNamespaceStorageEncryptionKeyInfo(ctx *pulumi.Context, args *GetNamespaceStorageEncryptionKeyInfoArgs, opts ...pulumi.InvokeOption) (*GetNamespaceStorageEncryptionKeyInfoResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNamespaceStorageEncryptionKeyInfoResult
 	err := ctx.Invoke("oci:LogAnalytics/getNamespaceStorageEncryptionKeyInfo:getNamespaceStorageEncryptionKeyInfo", args, &rv, opts...)
 	if err != nil {

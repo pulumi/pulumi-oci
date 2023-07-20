@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -46,6 +47,7 @@ import (
 //
 // ```
 func GetDiscoveryAnalytic(ctx *pulumi.Context, args *GetDiscoveryAnalyticArgs, opts ...pulumi.InvokeOption) (*GetDiscoveryAnalyticResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDiscoveryAnalyticResult
 	err := ctx.Invoke("oci:DataSafe/getDiscoveryAnalytic:getDiscoveryAnalytic", args, &rv, opts...)
 	if err != nil {

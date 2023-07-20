@@ -17,14 +17,14 @@ public final class ContainerInstanceShapeConfigArgs extends com.pulumi.resources
     public static final ContainerInstanceShapeConfigArgs Empty = new ContainerInstanceShapeConfigArgs();
 
     /**
-     * The total amount of memory available to the instance, in gigabytes.
+     * The total amount of memory available to the container instance (GB).
      * 
      */
     @Import(name="memoryInGbs")
     private @Nullable Output<Double> memoryInGbs;
 
     /**
-     * @return The total amount of memory available to the instance, in gigabytes.
+     * @return The total amount of memory available to the container instance (GB).
      * 
      */
     public Optional<Output<Double>> memoryInGbs() {
@@ -32,14 +32,14 @@ public final class ContainerInstanceShapeConfigArgs extends com.pulumi.resources
     }
 
     /**
-     * The networking bandwidth available to the instance, in gigabits per second.
+     * The networking bandwidth available to the container instance, in gigabits per second.
      * 
      */
     @Import(name="networkingBandwidthInGbps")
     private @Nullable Output<Double> networkingBandwidthInGbps;
 
     /**
-     * @return The networking bandwidth available to the instance, in gigabits per second.
+     * @return The networking bandwidth available to the container instance, in gigabits per second.
      * 
      */
     public Optional<Output<Double>> networkingBandwidthInGbps() {
@@ -47,14 +47,14 @@ public final class ContainerInstanceShapeConfigArgs extends com.pulumi.resources
     }
 
     /**
-     * The total number of OCPUs available to the instance.
+     * The total number of OCPUs available to the container instance.
      * 
      */
     @Import(name="ocpus", required=true)
     private Output<Double> ocpus;
 
     /**
-     * @return The total number of OCPUs available to the instance.
+     * @return The total number of OCPUs available to the container instance.
      * 
      */
     public Output<Double> ocpus() {
@@ -62,14 +62,14 @@ public final class ContainerInstanceShapeConfigArgs extends com.pulumi.resources
     }
 
     /**
-     * A short description of the instance&#39;s processor (CPU).
+     * A short description of the container instance&#39;s processor (CPU).
      * 
      */
     @Import(name="processorDescription")
     private @Nullable Output<String> processorDescription;
 
     /**
-     * @return A short description of the instance&#39;s processor (CPU).
+     * @return A short description of the container instance&#39;s processor (CPU).
      * 
      */
     public Optional<Output<String>> processorDescription() {
@@ -104,7 +104,7 @@ public final class ContainerInstanceShapeConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param memoryInGbs The total amount of memory available to the instance, in gigabytes.
+         * @param memoryInGbs The total amount of memory available to the container instance (GB).
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class ContainerInstanceShapeConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param memoryInGbs The total amount of memory available to the instance, in gigabytes.
+         * @param memoryInGbs The total amount of memory available to the container instance (GB).
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class ContainerInstanceShapeConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param networkingBandwidthInGbps The networking bandwidth available to the instance, in gigabits per second.
+         * @param networkingBandwidthInGbps The networking bandwidth available to the container instance, in gigabits per second.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class ContainerInstanceShapeConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param networkingBandwidthInGbps The networking bandwidth available to the instance, in gigabits per second.
+         * @param networkingBandwidthInGbps The networking bandwidth available to the container instance, in gigabits per second.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class ContainerInstanceShapeConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param ocpus The total number of OCPUs available to the instance.
+         * @param ocpus The total number of OCPUs available to the container instance.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class ContainerInstanceShapeConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param ocpus The total number of OCPUs available to the instance.
+         * @param ocpus The total number of OCPUs available to the container instance.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class ContainerInstanceShapeConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param processorDescription A short description of the instance&#39;s processor (CPU).
+         * @param processorDescription A short description of the container instance&#39;s processor (CPU).
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class ContainerInstanceShapeConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param processorDescription A short description of the instance&#39;s processor (CPU).
+         * @param processorDescription A short description of the container instance&#39;s processor (CPU).
          * 
          * @return builder
          * 

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetProtocols(ctx *pulumi.Context, args *GetProtocolsArgs, opts ...pulumi.InvokeOption) (*GetProtocolsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProtocolsResult
 	err := ctx.Invoke("oci:LoadBalancer/getProtocols:getProtocols", args, &rv, opts...)
 	if err != nil {

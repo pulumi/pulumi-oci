@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -14,6 +15,7 @@ import (
 //
 // This is a collection API which returns a list of aggregated computed usage details (there can be multiple Parent Products under a given SubID each of which is represented under Subscription Service Line # in SPM).
 func GetAggregatedComputedUsages(ctx *pulumi.Context, args *GetAggregatedComputedUsagesArgs, opts ...pulumi.InvokeOption) (*GetAggregatedComputedUsagesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAggregatedComputedUsagesResult
 	err := ctx.Invoke("oci:OneSubsription/getAggregatedComputedUsages:getAggregatedComputedUsages", args, &rv, opts...)
 	if err != nil {

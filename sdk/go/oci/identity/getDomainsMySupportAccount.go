@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func LookupDomainsMySupportAccount(ctx *pulumi.Context, args *LookupDomainsMySupportAccountArgs, opts ...pulumi.InvokeOption) (*LookupDomainsMySupportAccountResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDomainsMySupportAccountResult
 	err := ctx.Invoke("oci:Identity/getDomainsMySupportAccount:getDomainsMySupportAccount", args, &rv, opts...)
 	if err != nil {

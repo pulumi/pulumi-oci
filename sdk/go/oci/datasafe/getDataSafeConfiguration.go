@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupDataSafeConfiguration(ctx *pulumi.Context, args *LookupDataSafeConfigurationArgs, opts ...pulumi.InvokeOption) (*LookupDataSafeConfigurationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDataSafeConfigurationResult
 	err := ctx.Invoke("oci:DataSafe/getDataSafeConfiguration:getDataSafeConfiguration", args, &rv, opts...)
 	if err != nil {

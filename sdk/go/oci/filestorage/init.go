@@ -7,7 +7,7 @@ import (
 	"fmt"
 
 	"github.com/blang/semver"
-	"github.com/pulumi/pulumi-oci/sdk/go/oci"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -31,6 +31,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &FilesystemSnapshotPolicy{}
 	case "oci:FileStorage/mountTarget:MountTarget":
 		r = &MountTarget{}
+	case "oci:FileStorage/outboundConnector:OutboundConnector":
+		r = &OutboundConnector{}
 	case "oci:FileStorage/replication:Replication":
 		r = &Replication{}
 	case "oci:FileStorage/snapshot:Snapshot":
@@ -44,7 +46,7 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 }
 
 func init() {
-	version, err := oci.PkgVersion()
+	version, err := internal.PkgVersion()
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
@@ -71,6 +73,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"FileStorage/mountTarget",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"FileStorage/outboundConnector",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

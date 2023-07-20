@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetFusionEnvironmentDataMaskingActivity(ctx *pulumi.Context, args *GetFusionEnvironmentDataMaskingActivityArgs, opts ...pulumi.InvokeOption) (*GetFusionEnvironmentDataMaskingActivityResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFusionEnvironmentDataMaskingActivityResult
 	err := ctx.Invoke("oci:Functions/getFusionEnvironmentDataMaskingActivity:getFusionEnvironmentDataMaskingActivity", args, &rv, opts...)
 	if err != nil {

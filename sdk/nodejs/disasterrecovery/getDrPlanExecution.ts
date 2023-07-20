@@ -45,7 +45,7 @@ export interface GetDrPlanExecutionArgs {
  */
 export interface GetDrPlanExecutionResult {
     /**
-     * The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
      */
     readonly compartmentId: string;
     /**
@@ -58,7 +58,7 @@ export interface GetDrPlanExecutionResult {
     readonly displayName: string;
     readonly drPlanExecutionId: string;
     /**
-     * The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
      */
     readonly drProtectionGroupId: string;
     /**
@@ -78,7 +78,7 @@ export interface GetDrPlanExecutionResult {
      */
     readonly groupExecutions: outputs.DisasterRecovery.GetDrPlanExecutionGroupExecution[];
     /**
-     * The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid2`
+     * The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;`
      */
     readonly id: string;
     /**
@@ -90,7 +90,7 @@ export interface GetDrPlanExecutionResult {
      */
     readonly logLocations: outputs.DisasterRecovery.GetDrPlanExecutionLogLocation[];
     /**
-     * The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+     * The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
      */
     readonly peerDrProtectionGroupId: string;
     /**
@@ -102,7 +102,7 @@ export interface GetDrPlanExecutionResult {
      */
     readonly planExecutionType: string;
     /**
-     * The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+     * The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
      */
     readonly planId: string;
     /**

@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -195,6 +196,7 @@ func NewAlarm(ctx *pulumi.Context,
 	if args.Severity == nil {
 		return nil, errors.New("invalid value for required argument 'Severity'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Alarm
 	err := ctx.RegisterResource("oci:Monitoring/alarm:Alarm", name, args, &resource, opts...)
 	if err != nil {

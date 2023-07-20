@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetContainerImage(ctx *pulumi.Context, args *GetContainerImageArgs, opts ...pulumi.InvokeOption) (*GetContainerImageResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetContainerImageResult
 	err := ctx.Invoke("oci:Artifacts/getContainerImage:getContainerImage", args, &rv, opts...)
 	if err != nil {

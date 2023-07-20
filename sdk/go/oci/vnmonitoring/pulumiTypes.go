@@ -7,8 +7,11 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
+
+var _ = internal.GetEnvOrDefault
 
 type GetPathAnalyzerTestDestinationEndpoint struct {
 	// The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetProblemEntities(ctx *pulumi.Context, args *GetProblemEntitiesArgs, opts ...pulumi.InvokeOption) (*GetProblemEntitiesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProblemEntitiesResult
 	err := ctx.Invoke("oci:CloudGuard/getProblemEntities:getProblemEntities", args, &rv, opts...)
 	if err != nil {

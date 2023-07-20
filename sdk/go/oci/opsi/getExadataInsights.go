@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -47,6 +48,7 @@ import (
 //
 // ```
 func GetExadataInsights(ctx *pulumi.Context, args *GetExadataInsightsArgs, opts ...pulumi.InvokeOption) (*GetExadataInsightsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExadataInsightsResult
 	err := ctx.Invoke("oci:Opsi/getExadataInsights:getExadataInsights", args, &rv, opts...)
 	if err != nil {

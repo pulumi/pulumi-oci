@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetProtectionCapabilityGroupTags(ctx *pulumi.Context, args *GetProtectionCapabilityGroupTagsArgs, opts ...pulumi.InvokeOption) (*GetProtectionCapabilityGroupTagsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProtectionCapabilityGroupTagsResult
 	err := ctx.Invoke("oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags", args, &rv, opts...)
 	if err != nil {

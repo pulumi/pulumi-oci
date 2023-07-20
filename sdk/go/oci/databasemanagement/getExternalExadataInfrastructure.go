@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func LookupExternalExadataInfrastructure(ctx *pulumi.Context, args *LookupExternalExadataInfrastructureArgs, opts ...pulumi.InvokeOption) (*LookupExternalExadataInfrastructureResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupExternalExadataInfrastructureResult
 	err := ctx.Invoke("oci:DatabaseManagement/getExternalExadataInfrastructure:getExternalExadataInfrastructure", args, &rv, opts...)
 	if err != nil {

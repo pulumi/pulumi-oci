@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -49,6 +50,7 @@ import (
 //
 // ```
 func GetIpv6s(ctx *pulumi.Context, args *GetIpv6sArgs, opts ...pulumi.InvokeOption) (*GetIpv6sResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetIpv6sResult
 	err := ctx.Invoke("oci:Core/getIpv6s:getIpv6s", args, &rv, opts...)
 	if err != nil {

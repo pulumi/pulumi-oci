@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -190,6 +191,7 @@ func NewAutonomousVmCluster(ctx *pulumi.Context,
 	if args.VmClusterNetworkId == nil {
 		return nil, errors.New("invalid value for required argument 'VmClusterNetworkId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AutonomousVmCluster
 	err := ctx.RegisterResource("oci:Database/autonomousVmCluster:AutonomousVmCluster", name, args, &resource, opts...)
 	if err != nil {

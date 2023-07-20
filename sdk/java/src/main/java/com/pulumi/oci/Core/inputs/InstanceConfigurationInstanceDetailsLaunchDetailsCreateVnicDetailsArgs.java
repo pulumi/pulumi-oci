@@ -20,14 +20,14 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDe
     public static final InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs Empty = new InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs();
 
     /**
-     * Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+     * Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
      * 
      */
     @Import(name="assignPrivateDnsRecord")
     private @Nullable Output<Boolean> assignPrivateDnsRecord;
 
     /**
-     * @return Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+     * @return Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
      * 
      */
     public Optional<Output<Boolean>> assignPrivateDnsRecord() {
@@ -203,7 +203,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDe
         }
 
         /**
-         * @param assignPrivateDnsRecord Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+         * @param assignPrivateDnsRecord Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDe
         }
 
         /**
-         * @param assignPrivateDnsRecord Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+         * @param assignPrivateDnsRecord Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          * 
          * @return builder
          * 

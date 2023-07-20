@@ -4,6 +4,8 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.FileStorage.outputs.GetMountTargetsMountTargetKerbero;
+import com.pulumi.oci.FileStorage.outputs.GetMountTargetsMountTargetLdapIdmap;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -48,7 +50,22 @@ public final class GetMountTargetsMountTarget {
      * 
      */
     private String id;
+    /**
+     * @return The method used to map a Unix UID to secondary groups. If NONE, the mount target will not use the Unix UID for ID mapping.
+     * 
+     */
+    private String idmapType;
     private String ipAddress;
+    /**
+     * @return Allows administrator to configure a mount target to interact with the administrator&#39;s Kerberos infrastructure.
+     * 
+     */
+    private List<GetMountTargetsMountTargetKerbero> kerberos;
+    /**
+     * @return Mount target details about the LDAP ID mapping configuration.
+     * 
+     */
+    private List<GetMountTargetsMountTargetLdapIdmap> ldapIdmaps;
     /**
      * @return Additional information about the current &#39;lifecycleState&#39;.
      * 
@@ -133,8 +150,29 @@ public final class GetMountTargetsMountTarget {
     public String id() {
         return this.id;
     }
+    /**
+     * @return The method used to map a Unix UID to secondary groups. If NONE, the mount target will not use the Unix UID for ID mapping.
+     * 
+     */
+    public String idmapType() {
+        return this.idmapType;
+    }
     public String ipAddress() {
         return this.ipAddress;
+    }
+    /**
+     * @return Allows administrator to configure a mount target to interact with the administrator&#39;s Kerberos infrastructure.
+     * 
+     */
+    public List<GetMountTargetsMountTargetKerbero> kerberos() {
+        return this.kerberos;
+    }
+    /**
+     * @return Mount target details about the LDAP ID mapping configuration.
+     * 
+     */
+    public List<GetMountTargetsMountTargetLdapIdmap> ldapIdmaps() {
+        return this.ldapIdmaps;
     }
     /**
      * @return Additional information about the current &#39;lifecycleState&#39;.
@@ -196,7 +234,10 @@ public final class GetMountTargetsMountTarget {
         private Map<String,Object> freeformTags;
         private String hostnameLabel;
         private String id;
+        private String idmapType;
         private String ipAddress;
+        private List<GetMountTargetsMountTargetKerbero> kerberos;
+        private List<GetMountTargetsMountTargetLdapIdmap> ldapIdmaps;
         private String lifecycleDetails;
         private List<String> nsgIds;
         private List<String> privateIpIds;
@@ -214,7 +255,10 @@ public final class GetMountTargetsMountTarget {
     	      this.freeformTags = defaults.freeformTags;
     	      this.hostnameLabel = defaults.hostnameLabel;
     	      this.id = defaults.id;
+    	      this.idmapType = defaults.idmapType;
     	      this.ipAddress = defaults.ipAddress;
+    	      this.kerberos = defaults.kerberos;
+    	      this.ldapIdmaps = defaults.ldapIdmaps;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateIpIds = defaults.privateIpIds;
@@ -264,9 +308,30 @@ public final class GetMountTargetsMountTarget {
             return this;
         }
         @CustomType.Setter
+        public Builder idmapType(String idmapType) {
+            this.idmapType = Objects.requireNonNull(idmapType);
+            return this;
+        }
+        @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = Objects.requireNonNull(ipAddress);
             return this;
+        }
+        @CustomType.Setter
+        public Builder kerberos(List<GetMountTargetsMountTargetKerbero> kerberos) {
+            this.kerberos = Objects.requireNonNull(kerberos);
+            return this;
+        }
+        public Builder kerberos(GetMountTargetsMountTargetKerbero... kerberos) {
+            return kerberos(List.of(kerberos));
+        }
+        @CustomType.Setter
+        public Builder ldapIdmaps(List<GetMountTargetsMountTargetLdapIdmap> ldapIdmaps) {
+            this.ldapIdmaps = Objects.requireNonNull(ldapIdmaps);
+            return this;
+        }
+        public Builder ldapIdmaps(GetMountTargetsMountTargetLdapIdmap... ldapIdmaps) {
+            return ldapIdmaps(List.of(ldapIdmaps));
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
@@ -314,7 +379,10 @@ public final class GetMountTargetsMountTarget {
             o.freeformTags = freeformTags;
             o.hostnameLabel = hostnameLabel;
             o.id = id;
+            o.idmapType = idmapType;
             o.ipAddress = ipAddress;
+            o.kerberos = kerberos;
+            o.ldapIdmaps = ldapIdmaps;
             o.lifecycleDetails = lifecycleDetails;
             o.nsgIds = nsgIds;
             o.privateIpIds = privateIpIds;

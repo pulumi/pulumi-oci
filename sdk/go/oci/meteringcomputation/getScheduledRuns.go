@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetScheduledRuns(ctx *pulumi.Context, args *GetScheduledRunsArgs, opts ...pulumi.InvokeOption) (*GetScheduledRunsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetScheduledRunsResult
 	err := ctx.Invoke("oci:MeteringComputation/getScheduledRuns:getScheduledRuns", args, &rv, opts...)
 	if err != nil {

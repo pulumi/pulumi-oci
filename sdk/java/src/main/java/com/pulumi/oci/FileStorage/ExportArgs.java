@@ -6,6 +6,7 @@ package com.pulumi.oci.FileStorage;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.FileStorage.inputs.ExportExportOptionArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -77,6 +78,21 @@ public final class ExportArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request&#39;s RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+     * 
+     */
+    @Import(name="isIdmapGroupsForSysAuth")
+    private @Nullable Output<Boolean> isIdmapGroupsForSysAuth;
+
+    /**
+     * @return (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request&#39;s RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+     * 
+     */
+    public Optional<Output<Boolean>> isIdmapGroupsForSysAuth() {
+        return Optional.ofNullable(this.isIdmapGroupsForSysAuth);
+    }
+
+    /**
      * Path used to access the associated file system.
      * 
      * Avoid entering confidential information.
@@ -111,6 +127,7 @@ public final class ExportArgs extends com.pulumi.resources.ResourceArgs {
         this.exportOptions = $.exportOptions;
         this.exportSetId = $.exportSetId;
         this.fileSystemId = $.fileSystemId;
+        this.isIdmapGroupsForSysAuth = $.isIdmapGroupsForSysAuth;
         this.path = $.path;
     }
 
@@ -224,6 +241,27 @@ public final class ExportArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder fileSystemId(String fileSystemId) {
             return fileSystemId(Output.of(fileSystemId));
+        }
+
+        /**
+         * @param isIdmapGroupsForSysAuth (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request&#39;s RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isIdmapGroupsForSysAuth(@Nullable Output<Boolean> isIdmapGroupsForSysAuth) {
+            $.isIdmapGroupsForSysAuth = isIdmapGroupsForSysAuth;
+            return this;
+        }
+
+        /**
+         * @param isIdmapGroupsForSysAuth (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request&#39;s RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isIdmapGroupsForSysAuth(Boolean isIdmapGroupsForSysAuth) {
+            return isIdmapGroupsForSysAuth(Output.of(isIdmapGroupsForSysAuth));
         }
 
         /**

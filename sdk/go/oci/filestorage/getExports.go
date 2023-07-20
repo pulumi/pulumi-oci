@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -46,6 +47,7 @@ import (
 //
 // ```
 func GetExports(ctx *pulumi.Context, args *GetExportsArgs, opts ...pulumi.InvokeOption) (*GetExportsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExportsResult
 	err := ctx.Invoke("oci:FileStorage/getExports:getExports", args, &rv, opts...)
 	if err != nil {

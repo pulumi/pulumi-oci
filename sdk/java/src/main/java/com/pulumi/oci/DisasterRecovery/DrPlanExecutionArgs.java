@@ -79,7 +79,7 @@ public final class DrPlanExecutionArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+     * The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -89,7 +89,7 @@ public final class DrPlanExecutionArgs extends com.pulumi.resources.ResourceArgs
     private Output<String> planId;
 
     /**
-     * @return The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+     * @return The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -212,7 +212,7 @@ public final class DrPlanExecutionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param planId The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+         * @param planId The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -226,7 +226,7 @@ public final class DrPlanExecutionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param planId The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+         * @param planId The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -212,7 +212,7 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string? CapacityReservationId;
         /// <summary>
-        /// The OCID of the compartment that contains the instance.
+        /// The OCID of the compartment containing images to search
         /// </summary>
         public readonly string CompartmentId;
         public readonly string? ComputeClusterId;

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetPreauthrequests(ctx *pulumi.Context, args *GetPreauthrequestsArgs, opts ...pulumi.InvokeOption) (*GetPreauthrequestsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPreauthrequestsResult
 	err := ctx.Invoke("oci:ObjectStorage/getPreauthrequests:getPreauthrequests", args, &rv, opts...)
 	if err != nil {

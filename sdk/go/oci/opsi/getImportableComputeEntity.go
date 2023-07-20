@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -46,6 +47,7 @@ import (
 //
 // ```
 func GetImportableComputeEntity(ctx *pulumi.Context, args *GetImportableComputeEntityArgs, opts ...pulumi.InvokeOption) (*GetImportableComputeEntityResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetImportableComputeEntityResult
 	err := ctx.Invoke("oci:Opsi/getImportableComputeEntity:getImportableComputeEntity", args, &rv, opts...)
 	if err != nil {

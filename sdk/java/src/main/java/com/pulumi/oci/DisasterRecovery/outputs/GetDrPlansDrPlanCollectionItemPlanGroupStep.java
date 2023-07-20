@@ -24,12 +24,12 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStep {
      */
     private String errorMode;
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String groupId;
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String id;
@@ -39,7 +39,7 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStep {
      */
     private Boolean isEnabled;
     /**
-     * @return The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+     * @return The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String memberId;
@@ -75,14 +75,14 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStep {
         return this.errorMode;
     }
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String groupId() {
         return this.groupId;
     }
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String id() {
@@ -96,7 +96,7 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStep {
         return this.isEnabled;
     }
     /**
-     * @return The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+     * @return The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String memberId() {

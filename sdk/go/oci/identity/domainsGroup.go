@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -261,6 +262,7 @@ func NewDomainsGroup(ctx *pulumi.Context,
 	if args.Schemas == nil {
 		return nil, errors.New("invalid value for required argument 'Schemas'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DomainsGroup
 	err := ctx.RegisterResource("oci:Identity/domainsGroup:DomainsGroup", name, args, &resource, opts...)
 	if err != nil {

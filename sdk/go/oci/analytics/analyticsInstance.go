@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -150,6 +151,7 @@ func NewAnalyticsInstance(ctx *pulumi.Context,
 		"idcsAccessToken",
 	})
 	opts = append(opts, secrets)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AnalyticsInstance
 	err := ctx.RegisterResource("oci:Analytics/analyticsInstance:AnalyticsInstance", name, args, &resource, opts...)
 	if err != nil {

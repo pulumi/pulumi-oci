@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -119,6 +120,7 @@ func NewCustomProtectionRule(ctx *pulumi.Context,
 	if args.Template == nil {
 		return nil, errors.New("invalid value for required argument 'Template'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CustomProtectionRule
 	err := ctx.RegisterResource("oci:Waas/customProtectionRule:CustomProtectionRule", name, args, &resource, opts...)
 	if err != nil {

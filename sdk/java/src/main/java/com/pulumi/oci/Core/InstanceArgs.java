@@ -95,14 +95,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The OCID of the compartment.
+     * (Updatable) The OCID of the compartment containing images to search
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment.
+     * @return (Updatable) The OCID of the compartment containing images to search
      * 
      */
     public Output<String> compartmentId() {
@@ -285,6 +285,21 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     @Deprecated /* The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used. */
     public Optional<Output<String>> image() {
         return Optional.ofNullable(this.image);
+    }
+
+    /**
+     * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+     * 
+     */
+    @Import(name="instanceConfigurationId")
+    private @Nullable Output<String> instanceConfigurationId;
+
+    /**
+     * @return The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+     * 
+     */
+    public Optional<Output<String>> instanceConfigurationId() {
+        return Optional.ofNullable(this.instanceConfigurationId);
     }
 
     /**
@@ -545,8 +560,8 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
      * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
      * 
      */
-    @Import(name="shape", required=true)
-    private Output<String> shape;
+    @Import(name="shape")
+    private @Nullable Output<String> shape;
 
     /**
      * @return (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
@@ -554,8 +569,8 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
      * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
      * 
      */
-    public Output<String> shape() {
-        return this.shape;
+    public Optional<Output<String>> shape() {
+        return Optional.ofNullable(this.shape);
     }
 
     /**
@@ -666,6 +681,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.hostnameLabel = $.hostnameLabel;
         this.image = $.image;
+        this.instanceConfigurationId = $.instanceConfigurationId;
         this.instanceOptions = $.instanceOptions;
         this.ipxeScript = $.ipxeScript;
         this.isPvEncryptionInTransitEnabled = $.isPvEncryptionInTransitEnabled;
@@ -794,7 +810,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment.
+         * @param compartmentId (Updatable) The OCID of the compartment containing images to search
          * 
          * @return builder
          * 
@@ -805,7 +821,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment.
+         * @param compartmentId (Updatable) The OCID of the compartment containing images to search
          * 
          * @return builder
          * 
@@ -1050,6 +1066,27 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         @Deprecated /* The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used. */
         public Builder image(String image) {
             return image(Output.of(image));
+        }
+
+        /**
+         * @param instanceConfigurationId The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceConfigurationId(@Nullable Output<String> instanceConfigurationId) {
+            $.instanceConfigurationId = instanceConfigurationId;
+            return this;
+        }
+
+        /**
+         * @param instanceConfigurationId The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceConfigurationId(String instanceConfigurationId) {
+            return instanceConfigurationId(Output.of(instanceConfigurationId));
         }
 
         /**
@@ -1360,7 +1397,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder shape(Output<String> shape) {
+        public Builder shape(@Nullable Output<String> shape) {
             $.shape = shape;
             return this;
         }
@@ -1495,7 +1532,6 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         public InstanceArgs build() {
             $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.shape = Objects.requireNonNull($.shape, "expected parameter 'shape' to be non-null");
             return $;
         }
     }

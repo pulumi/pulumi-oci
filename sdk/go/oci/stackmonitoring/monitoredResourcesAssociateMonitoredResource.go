@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -103,6 +104,7 @@ func NewMonitoredResourcesAssociateMonitoredResource(ctx *pulumi.Context,
 	if args.SourceResourceId == nil {
 		return nil, errors.New("invalid value for required argument 'SourceResourceId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource MonitoredResourcesAssociateMonitoredResource
 	err := ctx.RegisterResource("oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource", name, args, &resource, opts...)
 	if err != nil {

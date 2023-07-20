@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -38,6 +39,7 @@ func NewDefaultDhcpOptions(ctx *pulumi.Context,
 	if args.Options == nil {
 		return nil, errors.New("invalid value for required argument 'Options'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DefaultDhcpOptions
 	err := ctx.RegisterResource("oci:Core/defaultDhcpOptions:DefaultDhcpOptions", name, args, &resource, opts...)
 	if err != nil {

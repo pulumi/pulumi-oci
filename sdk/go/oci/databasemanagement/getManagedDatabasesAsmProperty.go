@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetManagedDatabasesAsmProperty(ctx *pulumi.Context, args *GetManagedDatabasesAsmPropertyArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabasesAsmPropertyResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabasesAsmPropertyResult
 	err := ctx.Invoke("oci:DatabaseManagement/getManagedDatabasesAsmProperty:getManagedDatabasesAsmProperty", args, &rv, opts...)
 	if err != nil {

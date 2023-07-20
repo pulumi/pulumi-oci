@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetTriggers(ctx *pulumi.Context, args *GetTriggersArgs, opts ...pulumi.InvokeOption) (*GetTriggersResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTriggersResult
 	err := ctx.Invoke("oci:DevOps/getTriggers:getTriggers", args, &rv, opts...)
 	if err != nil {

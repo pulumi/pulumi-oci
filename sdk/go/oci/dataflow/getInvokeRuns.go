@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -47,6 +48,7 @@ import (
 //
 // ```
 func GetInvokeRuns(ctx *pulumi.Context, args *GetInvokeRunsArgs, opts ...pulumi.InvokeOption) (*GetInvokeRunsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetInvokeRunsResult
 	err := ctx.Invoke("oci:DataFlow/getInvokeRuns:getInvokeRuns", args, &rv, opts...)
 	if err != nil {

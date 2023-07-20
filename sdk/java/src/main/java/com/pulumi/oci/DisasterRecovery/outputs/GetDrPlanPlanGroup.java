@@ -17,7 +17,7 @@ public final class GetDrPlanPlanGroup {
      */
     private String displayName;
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String id;
@@ -41,7 +41,7 @@ public final class GetDrPlanPlanGroup {
         return this.displayName;
     }
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String id() {

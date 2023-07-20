@@ -14,62 +14,62 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ContainerInstanceContainerVolumeMount {
     /**
-     * @return Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+     * @return Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
      * 
      */
     private @Nullable Boolean isReadOnly;
     /**
-     * @return mountPath describes the volume access path.
+     * @return The volume access path.
      * 
      */
     private String mountPath;
     /**
-     * @return If there is more than 1 partitions in the volume, this is the number of partition which be referenced. Here is a example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
+     * @return If there is more than one partition in the volume, reference this number of partitions. Here is an example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
      * 
      */
     private @Nullable Integer partition;
     /**
-     * @return specifies a sub-path inside the referenced volume instead of its root
+     * @return A subpath inside the referenced volume.
      * 
      */
     private @Nullable String subPath;
     /**
-     * @return The name of the volume.
+     * @return The name of the volume. Avoid entering confidential information.
      * 
      */
     private String volumeName;
 
     private ContainerInstanceContainerVolumeMount() {}
     /**
-     * @return Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+     * @return Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
      * 
      */
     public Optional<Boolean> isReadOnly() {
         return Optional.ofNullable(this.isReadOnly);
     }
     /**
-     * @return mountPath describes the volume access path.
+     * @return The volume access path.
      * 
      */
     public String mountPath() {
         return this.mountPath;
     }
     /**
-     * @return If there is more than 1 partitions in the volume, this is the number of partition which be referenced. Here is a example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
+     * @return If there is more than one partition in the volume, reference this number of partitions. Here is an example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
      * 
      */
     public Optional<Integer> partition() {
         return Optional.ofNullable(this.partition);
     }
     /**
-     * @return specifies a sub-path inside the referenced volume instead of its root
+     * @return A subpath inside the referenced volume.
      * 
      */
     public Optional<String> subPath() {
         return Optional.ofNullable(this.subPath);
     }
     /**
-     * @return The name of the volume.
+     * @return The name of the volume. Avoid entering confidential information.
      * 
      */
     public String volumeName() {

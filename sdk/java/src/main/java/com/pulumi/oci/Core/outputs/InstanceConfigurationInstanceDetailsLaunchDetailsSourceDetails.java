@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetails;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -34,7 +35,12 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
      */
     private @Nullable String imageId;
     /**
-     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * @return These are the criteria for selecting an image. This is required if imageId is not specified.
+     * 
+     */
+    private @Nullable InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetails instanceSourceImageFilterDetails;
+    /**
+     * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     private @Nullable String kmsKeyId;
@@ -76,7 +82,14 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
         return Optional.ofNullable(this.imageId);
     }
     /**
-     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * @return These are the criteria for selecting an image. This is required if imageId is not specified.
+     * 
+     */
+    public Optional<InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetails> instanceSourceImageFilterDetails() {
+        return Optional.ofNullable(this.instanceSourceImageFilterDetails);
+    }
+    /**
+     * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     public Optional<String> kmsKeyId() {
@@ -103,6 +116,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
         private @Nullable String bootVolumeSizeInGbs;
         private @Nullable String bootVolumeVpusPerGb;
         private @Nullable String imageId;
+        private @Nullable InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetails instanceSourceImageFilterDetails;
         private @Nullable String kmsKeyId;
         private String sourceType;
         public Builder() {}
@@ -112,6 +126,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
     	      this.bootVolumeSizeInGbs = defaults.bootVolumeSizeInGbs;
     	      this.bootVolumeVpusPerGb = defaults.bootVolumeVpusPerGb;
     	      this.imageId = defaults.imageId;
+    	      this.instanceSourceImageFilterDetails = defaults.instanceSourceImageFilterDetails;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.sourceType = defaults.sourceType;
         }
@@ -137,6 +152,11 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
             return this;
         }
         @CustomType.Setter
+        public Builder instanceSourceImageFilterDetails(@Nullable InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetails instanceSourceImageFilterDetails) {
+            this.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
+            return this;
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             return this;
@@ -152,6 +172,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
             o.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
             o.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
             o.imageId = imageId;
+            o.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
             o.kmsKeyId = kmsKeyId;
             o.sourceType = sourceType;
             return o;

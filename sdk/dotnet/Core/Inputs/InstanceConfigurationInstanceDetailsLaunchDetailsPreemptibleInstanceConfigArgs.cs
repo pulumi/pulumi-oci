@@ -15,8 +15,8 @@ namespace Pulumi.Oci.Core.Inputs
         /// <summary>
         /// The action to run when the preemptible instance is interrupted for eviction.
         /// </summary>
-        [Input("preemptionAction", required: true)]
-        public Input<Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs> PreemptionAction { get; set; } = null!;
+        [Input("preemptionAction")]
+        public Input<Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs>? PreemptionAction { get; set; }
 
         public InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs()
         {

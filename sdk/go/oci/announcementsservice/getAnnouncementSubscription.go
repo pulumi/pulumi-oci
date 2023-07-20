@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func LookupAnnouncementSubscription(ctx *pulumi.Context, args *LookupAnnouncementSubscriptionArgs, opts ...pulumi.InvokeOption) (*LookupAnnouncementSubscriptionResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAnnouncementSubscriptionResult
 	err := ctx.Invoke("oci:AnnouncementsService/getAnnouncementSubscription:getAnnouncementSubscription", args, &rv, opts...)
 	if err != nil {

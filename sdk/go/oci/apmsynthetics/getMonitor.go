@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetMonitor(ctx *pulumi.Context, args *GetMonitorArgs, opts ...pulumi.InvokeOption) (*GetMonitorResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMonitorResult
 	err := ctx.Invoke("oci:ApmSynthetics/getMonitor:getMonitor", args, &rv, opts...)
 	if err != nil {

@@ -19,7 +19,7 @@ public final class DrPlanPlanGroup {
      */
     private @Nullable String displayName;
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
      * 
      */
     private @Nullable String id;
@@ -46,7 +46,7 @@ public final class DrPlanPlanGroup {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<String> id() {

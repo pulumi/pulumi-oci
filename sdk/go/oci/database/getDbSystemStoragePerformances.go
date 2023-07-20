@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetDbSystemStoragePerformances(ctx *pulumi.Context, args *GetDbSystemStoragePerformancesArgs, opts ...pulumi.InvokeOption) (*GetDbSystemStoragePerformancesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDbSystemStoragePerformancesResult
 	err := ctx.Invoke("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", args, &rv, opts...)
 	if err != nil {

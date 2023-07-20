@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -84,6 +85,7 @@ func NewCertificateAuthority(ctx *pulumi.Context,
 	if args.KmsKeyId == nil {
 		return nil, errors.New("invalid value for required argument 'KmsKeyId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CertificateAuthority
 	err := ctx.RegisterResource("oci:CertificatesManagement/certificateAuthority:CertificateAuthority", name, args, &resource, opts...)
 	if err != nil {

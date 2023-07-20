@@ -11,38 +11,62 @@ import java.util.Objects;
 @CustomType
 public final class GetDrProtectionGroupMemberVnicMapping {
     /**
-     * @return A list of destination region&#39;s network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1.iad.exampleocid1, ocid1.networksecuritygroup.oc1.iad.exampleocid2 ]`
+     * @return A list of destination region&#39;s network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt;, ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt; ]`
      * 
      */
     private List<String> destinationNsgIdLists;
     /**
-     * @return The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1.iad.exampleocid`
+     * @return The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+     * 
+     */
+    private String destinationPrimaryPrivateIpAddress;
+    /**
+     * @return The hostname to assign for this primary private IP. The value is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+     * 
+     */
+    private String destinationPrimaryPrivateIpHostnameLabel;
+    /**
+     * @return The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String destinationSubnetId;
     /**
-     * @return The OCID of the VNIC.  Example: `ocid1.vnic.oc1.phx.exampleocid`
+     * @return The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String sourceVnicId;
 
     private GetDrProtectionGroupMemberVnicMapping() {}
     /**
-     * @return A list of destination region&#39;s network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1.iad.exampleocid1, ocid1.networksecuritygroup.oc1.iad.exampleocid2 ]`
+     * @return A list of destination region&#39;s network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt;, ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt; ]`
      * 
      */
     public List<String> destinationNsgIdLists() {
         return this.destinationNsgIdLists;
     }
     /**
-     * @return The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1.iad.exampleocid`
+     * @return The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+     * 
+     */
+    public String destinationPrimaryPrivateIpAddress() {
+        return this.destinationPrimaryPrivateIpAddress;
+    }
+    /**
+     * @return The hostname to assign for this primary private IP. The value is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+     * 
+     */
+    public String destinationPrimaryPrivateIpHostnameLabel() {
+        return this.destinationPrimaryPrivateIpHostnameLabel;
+    }
+    /**
+     * @return The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String destinationSubnetId() {
         return this.destinationSubnetId;
     }
     /**
-     * @return The OCID of the VNIC.  Example: `ocid1.vnic.oc1.phx.exampleocid`
+     * @return The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String sourceVnicId() {
@@ -59,12 +83,16 @@ public final class GetDrProtectionGroupMemberVnicMapping {
     @CustomType.Builder
     public static final class Builder {
         private List<String> destinationNsgIdLists;
+        private String destinationPrimaryPrivateIpAddress;
+        private String destinationPrimaryPrivateIpHostnameLabel;
         private String destinationSubnetId;
         private String sourceVnicId;
         public Builder() {}
         public Builder(GetDrProtectionGroupMemberVnicMapping defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.destinationNsgIdLists = defaults.destinationNsgIdLists;
+    	      this.destinationPrimaryPrivateIpAddress = defaults.destinationPrimaryPrivateIpAddress;
+    	      this.destinationPrimaryPrivateIpHostnameLabel = defaults.destinationPrimaryPrivateIpHostnameLabel;
     	      this.destinationSubnetId = defaults.destinationSubnetId;
     	      this.sourceVnicId = defaults.sourceVnicId;
         }
@@ -76,6 +104,16 @@ public final class GetDrProtectionGroupMemberVnicMapping {
         }
         public Builder destinationNsgIdLists(String... destinationNsgIdLists) {
             return destinationNsgIdLists(List.of(destinationNsgIdLists));
+        }
+        @CustomType.Setter
+        public Builder destinationPrimaryPrivateIpAddress(String destinationPrimaryPrivateIpAddress) {
+            this.destinationPrimaryPrivateIpAddress = Objects.requireNonNull(destinationPrimaryPrivateIpAddress);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder destinationPrimaryPrivateIpHostnameLabel(String destinationPrimaryPrivateIpHostnameLabel) {
+            this.destinationPrimaryPrivateIpHostnameLabel = Objects.requireNonNull(destinationPrimaryPrivateIpHostnameLabel);
+            return this;
         }
         @CustomType.Setter
         public Builder destinationSubnetId(String destinationSubnetId) {
@@ -90,6 +128,8 @@ public final class GetDrProtectionGroupMemberVnicMapping {
         public GetDrProtectionGroupMemberVnicMapping build() {
             final var o = new GetDrProtectionGroupMemberVnicMapping();
             o.destinationNsgIdLists = destinationNsgIdLists;
+            o.destinationPrimaryPrivateIpAddress = destinationPrimaryPrivateIpAddress;
+            o.destinationPrimaryPrivateIpHostnameLabel = destinationPrimaryPrivateIpHostnameLabel;
             o.destinationSubnetId = destinationSubnetId;
             o.sourceVnicId = sourceVnicId;
             return o;

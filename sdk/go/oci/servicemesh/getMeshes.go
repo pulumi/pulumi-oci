@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetMeshes(ctx *pulumi.Context, args *GetMeshesArgs, opts ...pulumi.InvokeOption) (*GetMeshesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMeshesResult
 	err := ctx.Invoke("oci:ServiceMesh/getMeshes:getMeshes", args, &rv, opts...)
 	if err != nil {

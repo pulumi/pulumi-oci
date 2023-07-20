@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -14,6 +15,7 @@ import (
 //
 // This is a collection API which returns a list of Computed Usages for given filters.
 func GetComputedUsages(ctx *pulumi.Context, args *GetComputedUsagesArgs, opts ...pulumi.InvokeOption) (*GetComputedUsagesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetComputedUsagesResult
 	err := ctx.Invoke("oci:OneSubsription/getComputedUsages:getComputedUsages", args, &rv, opts...)
 	if err != nil {

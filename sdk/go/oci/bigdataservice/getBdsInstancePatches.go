@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetBdsInstancePatches(ctx *pulumi.Context, args *GetBdsInstancePatchesArgs, opts ...pulumi.InvokeOption) (*GetBdsInstancePatchesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBdsInstancePatchesResult
 	err := ctx.Invoke("oci:BigDataService/getBdsInstancePatches:getBdsInstancePatches", args, &rv, opts...)
 	if err != nil {

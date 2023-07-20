@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -38,6 +39,7 @@ import (
 //
 // ```
 func GetNetworkLoadBalancersPolicies(ctx *pulumi.Context, args *GetNetworkLoadBalancersPoliciesArgs, opts ...pulumi.InvokeOption) (*GetNetworkLoadBalancersPoliciesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNetworkLoadBalancersPoliciesResult
 	err := ctx.Invoke("oci:NetworkLoadBalancer/getNetworkLoadBalancersPolicies:getNetworkLoadBalancersPolicies", args, &rv, opts...)
 	if err != nil {

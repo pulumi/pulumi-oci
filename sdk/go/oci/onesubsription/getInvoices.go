@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetInvoices(ctx *pulumi.Context, args *GetInvoicesArgs, opts ...pulumi.InvokeOption) (*GetInvoicesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetInvoicesResult
 	err := ctx.Invoke("oci:OneSubsription/getInvoices:getInvoices", args, &rv, opts...)
 	if err != nil {

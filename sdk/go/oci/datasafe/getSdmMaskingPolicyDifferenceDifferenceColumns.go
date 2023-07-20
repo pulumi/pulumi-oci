@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -46,6 +47,7 @@ import (
 //
 // ```
 func GetSdmMaskingPolicyDifferenceDifferenceColumns(ctx *pulumi.Context, args *GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs, opts ...pulumi.InvokeOption) (*GetSdmMaskingPolicyDifferenceDifferenceColumnsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSdmMaskingPolicyDifferenceDifferenceColumnsResult
 	err := ctx.Invoke("oci:DataSafe/getSdmMaskingPolicyDifferenceDifferenceColumns:getSdmMaskingPolicyDifferenceDifferenceColumns", args, &rv, opts...)
 	if err != nil {

@@ -4,6 +4,7 @@
 package core
 
 import (
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -35,6 +36,7 @@ import (
 //
 // ```
 func GetIpsecAlgorithm(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIpsecAlgorithmResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetIpsecAlgorithmResult
 	err := ctx.Invoke("oci:Core/getIpsecAlgorithm:getIpsecAlgorithm", nil, &rv, opts...)
 	if err != nil {

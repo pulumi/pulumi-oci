@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -49,6 +50,7 @@ import (
 //
 // ```
 func GetPingProbeResults(ctx *pulumi.Context, args *GetPingProbeResultsArgs, opts ...pulumi.InvokeOption) (*GetPingProbeResultsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPingProbeResultsResult
 	err := ctx.Invoke("oci:HealthChecks/getPingProbeResults:getPingProbeResults", args, &rv, opts...)
 	if err != nil {

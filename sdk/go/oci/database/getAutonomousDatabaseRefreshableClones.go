@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetAutonomousDatabaseRefreshableClones(ctx *pulumi.Context, args *GetAutonomousDatabaseRefreshableClonesArgs, opts ...pulumi.InvokeOption) (*GetAutonomousDatabaseRefreshableClonesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAutonomousDatabaseRefreshableClonesResult
 	err := ctx.Invoke("oci:Database/getAutonomousDatabaseRefreshableClones:getAutonomousDatabaseRefreshableClones", args, &rv, opts...)
 	if err != nil {

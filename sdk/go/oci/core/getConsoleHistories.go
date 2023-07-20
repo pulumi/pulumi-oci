@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetConsoleHistories(ctx *pulumi.Context, args *GetConsoleHistoriesArgs, opts ...pulumi.InvokeOption) (*GetConsoleHistoriesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetConsoleHistoriesResult
 	err := ctx.Invoke("oci:Core/getConsoleHistories:getConsoleHistories", args, &rv, opts...)
 	if err != nil {

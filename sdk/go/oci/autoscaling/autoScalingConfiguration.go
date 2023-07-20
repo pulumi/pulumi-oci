@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -147,6 +148,7 @@ func NewAutoScalingConfiguration(ctx *pulumi.Context,
 	if args.Policies == nil {
 		return nil, errors.New("invalid value for required argument 'Policies'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AutoScalingConfiguration
 	err := ctx.RegisterResource("oci:Autoscaling/autoScalingConfiguration:AutoScalingConfiguration", name, args, &resource, opts...)
 	if err != nil {

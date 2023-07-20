@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetTrace(ctx *pulumi.Context, args *GetTraceArgs, opts ...pulumi.InvokeOption) (*GetTraceResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTraceResult
 	err := ctx.Invoke("oci:ApmTraces/getTrace:getTrace", args, &rv, opts...)
 	if err != nil {

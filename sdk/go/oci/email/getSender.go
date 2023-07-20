@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupSender(ctx *pulumi.Context, args *LookupSenderArgs, opts ...pulumi.InvokeOption) (*LookupSenderResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSenderResult
 	err := ctx.Invoke("oci:Email/getSender:getSender", args, &rv, opts...)
 	if err != nil {

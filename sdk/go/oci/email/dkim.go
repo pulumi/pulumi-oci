@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -111,6 +112,7 @@ func NewDkim(ctx *pulumi.Context,
 	if args.EmailDomainId == nil {
 		return nil, errors.New("invalid value for required argument 'EmailDomainId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Dkim
 	err := ctx.RegisterResource("oci:Email/dkim:Dkim", name, args, &resource, opts...)
 	if err != nil {

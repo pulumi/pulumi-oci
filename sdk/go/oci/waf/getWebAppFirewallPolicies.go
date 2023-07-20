@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetWebAppFirewallPolicies(ctx *pulumi.Context, args *GetWebAppFirewallPoliciesArgs, opts ...pulumi.InvokeOption) (*GetWebAppFirewallPoliciesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetWebAppFirewallPoliciesResult
 	err := ctx.Invoke("oci:Waf/getWebAppFirewallPolicies:getWebAppFirewallPolicies", args, &rv, opts...)
 	if err != nil {

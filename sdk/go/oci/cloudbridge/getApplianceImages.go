@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetApplianceImages(ctx *pulumi.Context, args *GetApplianceImagesArgs, opts ...pulumi.InvokeOption) (*GetApplianceImagesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetApplianceImagesResult
 	err := ctx.Invoke("oci:CloudBridge/getApplianceImages:getApplianceImages", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func LookupDataAsset(ctx *pulumi.Context, args *LookupDataAssetArgs, opts ...pulumi.InvokeOption) (*LookupDataAssetResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDataAssetResult
 	err := ctx.Invoke("oci:DataCatalog/getDataAsset:getDataAsset", args, &rv, opts...)
 	if err != nil {

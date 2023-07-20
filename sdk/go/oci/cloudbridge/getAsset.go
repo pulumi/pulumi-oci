@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupAsset(ctx *pulumi.Context, args *LookupAssetArgs, opts ...pulumi.InvokeOption) (*LookupAssetResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAssetResult
 	err := ctx.Invoke("oci:CloudBridge/getAsset:getAsset", args, &rv, opts...)
 	if err != nil {

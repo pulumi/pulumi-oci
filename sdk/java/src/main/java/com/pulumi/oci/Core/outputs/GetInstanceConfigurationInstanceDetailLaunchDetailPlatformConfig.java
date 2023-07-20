@@ -12,12 +12,12 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig {
     /**
-     * @return Whether virtualization instructions are available.
+     * @return Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
      * 
      */
     private Boolean areVirtualInstructionsEnabled;
     /**
-     * @return Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+     * @return Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
      * 
      */
     private Boolean isAccessControlServiceEnabled;
@@ -42,7 +42,7 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformCon
      */
     private Boolean isSecureBootEnabled;
     /**
-     * @return Whether symmetric multi-threading is enabled on the instance.
+     * @return Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
      * 
      */
     private Boolean isSymmetricMultiThreadingEnabled;
@@ -57,7 +57,7 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformCon
      */
     private String numaNodesPerSocket;
     /**
-     * @return The percentage of cores enabled.
+     * @return The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
      * 
      */
     private Integer percentageOfCoresEnabled;
@@ -69,14 +69,14 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformCon
 
     private GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig() {}
     /**
-     * @return Whether virtualization instructions are available.
+     * @return Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
      * 
      */
     public Boolean areVirtualInstructionsEnabled() {
         return this.areVirtualInstructionsEnabled;
     }
     /**
-     * @return Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+     * @return Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
      * 
      */
     public Boolean isAccessControlServiceEnabled() {
@@ -111,7 +111,7 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformCon
         return this.isSecureBootEnabled;
     }
     /**
-     * @return Whether symmetric multi-threading is enabled on the instance.
+     * @return Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
      * 
      */
     public Boolean isSymmetricMultiThreadingEnabled() {
@@ -132,7 +132,7 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformCon
         return this.numaNodesPerSocket;
     }
     /**
-     * @return The percentage of cores enabled.
+     * @return The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
      * 
      */
     public Integer percentageOfCoresEnabled() {

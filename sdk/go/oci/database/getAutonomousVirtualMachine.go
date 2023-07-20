@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetAutonomousVirtualMachine(ctx *pulumi.Context, args *GetAutonomousVirtualMachineArgs, opts ...pulumi.InvokeOption) (*GetAutonomousVirtualMachineResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAutonomousVirtualMachineResult
 	err := ctx.Invoke("oci:Database/getAutonomousVirtualMachine:getAutonomousVirtualMachine", args, &rv, opts...)
 	if err != nil {

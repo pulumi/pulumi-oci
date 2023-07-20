@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -84,6 +85,7 @@ func NewDbHome(ctx *pulumi.Context,
 		args = &DbHomeArgs{}
 	}
 
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DbHome
 	err := ctx.RegisterResource("oci:Database/dbHome:DbHome", name, args, &resource, opts...)
 	if err != nil {

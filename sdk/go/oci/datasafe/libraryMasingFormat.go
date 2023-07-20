@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -71,6 +72,7 @@ func NewLibraryMasingFormat(ctx *pulumi.Context,
 	if args.FormatEntries == nil {
 		return nil, errors.New("invalid value for required argument 'FormatEntries'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource LibraryMasingFormat
 	err := ctx.RegisterResource("oci:DataSafe/libraryMasingFormat:LibraryMasingFormat", name, args, &resource, opts...)
 	if err != nil {

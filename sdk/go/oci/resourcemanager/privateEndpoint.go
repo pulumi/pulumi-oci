@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -116,6 +117,7 @@ func NewPrivateEndpoint(ctx *pulumi.Context,
 	if args.VcnId == nil {
 		return nil, errors.New("invalid value for required argument 'VcnId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource PrivateEndpoint
 	err := ctx.RegisterResource("oci:ResourceManager/privateEndpoint:PrivateEndpoint", name, args, &resource, opts...)
 	if err != nil {

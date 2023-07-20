@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetVirtualServices(ctx *pulumi.Context, args *GetVirtualServicesArgs, opts ...pulumi.InvokeOption) (*GetVirtualServicesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVirtualServicesResult
 	err := ctx.Invoke("oci:ServiceMesh/getVirtualServices:getVirtualServices", args, &rv, opts...)
 	if err != nil {

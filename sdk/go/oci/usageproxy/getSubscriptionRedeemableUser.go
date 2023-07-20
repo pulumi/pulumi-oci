@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func LookupSubscriptionRedeemableUser(ctx *pulumi.Context, args *LookupSubscriptionRedeemableUserArgs, opts ...pulumi.InvokeOption) (*LookupSubscriptionRedeemableUserResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSubscriptionRedeemableUserResult
 	err := ctx.Invoke("oci:UsageProxy/getSubscriptionRedeemableUser:getSubscriptionRedeemableUser", args, &rv, opts...)
 	if err != nil {

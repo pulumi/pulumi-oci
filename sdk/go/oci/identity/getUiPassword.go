@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func LookupUiPassword(ctx *pulumi.Context, args *LookupUiPasswordArgs, opts ...pulumi.InvokeOption) (*LookupUiPasswordResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupUiPasswordResult
 	err := ctx.Invoke("oci:Identity/getUiPassword:getUiPassword", args, &rv, opts...)
 	if err != nil {

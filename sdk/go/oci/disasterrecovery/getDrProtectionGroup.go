@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupDrProtectionGroup(ctx *pulumi.Context, args *LookupDrProtectionGroupArgs, opts ...pulumi.InvokeOption) (*LookupDrProtectionGroupResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDrProtectionGroupResult
 	err := ctx.Invoke("oci:DisasterRecovery/getDrProtectionGroup:getDrProtectionGroup", args, &rv, opts...)
 	if err != nil {
@@ -57,7 +59,7 @@ type LookupDrProtectionGroupArgs struct {
 // A collection of values returned by getDrProtectionGroup.
 type LookupDrProtectionGroupResult struct {
 	Associations []GetDrProtectionGroupAssociation `pulumi:"associations"`
-	// The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags         map[string]interface{} `pulumi:"definedTags"`
@@ -67,7 +69,7 @@ type LookupDrProtectionGroupResult struct {
 	DrProtectionGroupId string `pulumi:"drProtectionGroupId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+	// The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 	Id string `pulumi:"id"`
 	// A message describing the DR Protection Group's current state in more detail.
 	LifeCycleDetails string `pulumi:"lifeCycleDetails"`
@@ -75,7 +77,7 @@ type LookupDrProtectionGroupResult struct {
 	LogLocations []GetDrProtectionGroupLogLocation `pulumi:"logLocations"`
 	// A list of DR Protection Group members.
 	Members []GetDrProtectionGroupMember `pulumi:"members"`
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	PeerId string `pulumi:"peerId"`
 	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
 	PeerRegion string `pulumi:"peerRegion"`
@@ -133,7 +135,7 @@ func (o LookupDrProtectionGroupResultOutput) Associations() GetDrProtectionGroup
 	return o.ApplyT(func(v LookupDrProtectionGroupResult) []GetDrProtectionGroupAssociation { return v.Associations }).(GetDrProtectionGroupAssociationArrayOutput)
 }
 
-// The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+// The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 func (o LookupDrProtectionGroupResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrProtectionGroupResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -161,7 +163,7 @@ func (o LookupDrProtectionGroupResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDrProtectionGroupResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+// The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 func (o LookupDrProtectionGroupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrProtectionGroupResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -181,7 +183,7 @@ func (o LookupDrProtectionGroupResultOutput) Members() GetDrProtectionGroupMembe
 	return o.ApplyT(func(v LookupDrProtectionGroupResult) []GetDrProtectionGroupMember { return v.Members }).(GetDrProtectionGroupMemberArrayOutput)
 }
 
-// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 func (o LookupDrProtectionGroupResultOutput) PeerId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrProtectionGroupResult) string { return v.PeerId }).(pulumi.StringOutput)
 }

@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -197,6 +198,7 @@ func NewApplication(ctx *pulumi.Context,
 	if args.SparkVersion == nil {
 		return nil, errors.New("invalid value for required argument 'SparkVersion'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Application
 	err := ctx.RegisterResource("oci:DataFlow/application:Application", name, args, &resource, opts...)
 	if err != nil {

@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DrProtectionGroupAssociation {
     /**
-     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private @Nullable String peerId;
@@ -29,7 +29,7 @@ public final class DrProtectionGroupAssociation {
 
     private DrProtectionGroupAssociation() {}
     /**
-     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<String> peerId() {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetCnvDnsResolverAssociation(ctx *pulumi.Context, args *GetCnvDnsResolverAssociationArgs, opts ...pulumi.InvokeOption) (*GetCnvDnsResolverAssociationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCnvDnsResolverAssociationResult
 	err := ctx.Invoke("oci:Core/getCnvDnsResolverAssociation:getCnvDnsResolverAssociation", args, &rv, opts...)
 	if err != nil {

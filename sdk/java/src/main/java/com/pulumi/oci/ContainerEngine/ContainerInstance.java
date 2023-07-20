@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
  * 
- * Creates a new ContainerInstance.
+ * Creates a container instance and deploys the containers on it.
  * 
  * ## Example Usage
  * ```java
@@ -62,7 +62,6 @@ import javax.annotation.Nullable;
  *             .compartmentId(var_.compartment_id())
  *             .containers(ContainerInstanceContainerArgs.builder()
  *                 .imageUrl(var_.container_instance_containers_image_url())
- *                 .additionalCapabilities(var_.container_instance_containers_additional_capabilities())
  *                 .arguments(var_.container_instance_containers_arguments())
  *                 .commands(var_.container_instance_containers_command())
  *                 .definedTags(var_.container_instance_containers_defined_tags())
@@ -162,42 +161,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:ContainerEngine/containerInstance:ContainerInstance")
 public class ContainerInstance extends com.pulumi.resources.CustomResource {
     /**
-     * Availability Domain where the ContainerInstance should be created.
+     * The availability domain where the container instance runs.
      * 
      */
     @Export(name="availabilityDomain", type=String.class, parameters={})
     private Output<String> availabilityDomain;
 
     /**
-     * @return Availability Domain where the ContainerInstance should be created.
+     * @return The availability domain where the container instance runs.
      * 
      */
     public Output<String> availabilityDomain() {
         return this.availabilityDomain;
     }
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The compartment OCID.
      * 
      */
     @Export(name="compartmentId", type=String.class, parameters={})
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) The compartment OCID.
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * The number of containers on this Instance
+     * The number of containers on the container instance.
      * 
      */
     @Export(name="containerCount", type=Integer.class, parameters={})
     private Output<Integer> containerCount;
 
     /**
-     * @return The number of containers on this Instance
+     * @return The number of containers on the container instance.
      * 
      */
     public Output<Integer> containerCount() {
@@ -218,28 +217,28 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
         return this.containerRestartPolicy;
     }
     /**
-     * The Containers to create on this Instance.
+     * The containers to create on this container instance.
      * 
      */
     @Export(name="containers", type=List.class, parameters={ContainerInstanceContainer.class})
     private Output<List<ContainerInstanceContainer>> containers;
 
     /**
-     * @return The Containers to create on this Instance.
+     * @return The containers to create on this container instance.
      * 
      */
     public Output<List<ContainerInstanceContainer>> containers() {
         return this.containers;
     }
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> definedTags;
 
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     public Output<Map<String,Object>> definedTags() {
@@ -260,28 +259,28 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * Allow customers to define DNS settings for containers. If this is not provided, the containers will use the default DNS settings of the subnet.
+     * Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
      * 
      */
     @Export(name="dnsConfig", type=ContainerInstanceDnsConfig.class, parameters={})
     private Output<ContainerInstanceDnsConfig> dnsConfig;
 
     /**
-     * @return Allow customers to define DNS settings for containers. If this is not provided, the containers will use the default DNS settings of the subnet.
+     * @return Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
      * 
      */
     public Output<ContainerInstanceDnsConfig> dnsConfig() {
         return this.dnsConfig;
     }
     /**
-     * Fault Domain where the ContainerInstance should run.
+     * The fault domain where the container instance runs.
      * 
      */
     @Export(name="faultDomain", type=String.class, parameters={})
     private Output<String> faultDomain;
 
     /**
-     * @return Fault Domain where the ContainerInstance should run.
+     * @return The fault domain where the container instance runs.
      * 
      */
     public Output<String> faultDomain() {
@@ -302,70 +301,70 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+     * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      * 
      */
     @Export(name="gracefulShutdownTimeoutInSeconds", type=String.class, parameters={})
     private Output<String> gracefulShutdownTimeoutInSeconds;
 
     /**
-     * @return Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+     * @return The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      * 
      */
     public Output<String> gracefulShutdownTimeoutInSeconds() {
         return this.gracefulShutdownTimeoutInSeconds;
     }
     /**
-     * The image pull secrets for accessing private registry to pull images for containers
+     * The image pulls secrets so you can access private registry to pull container images.
      * 
      */
     @Export(name="imagePullSecrets", type=List.class, parameters={ContainerInstanceImagePullSecret.class})
     private Output<List<ContainerInstanceImagePullSecret>> imagePullSecrets;
 
     /**
-     * @return The image pull secrets for accessing private registry to pull images for containers
+     * @return The image pulls secrets so you can access private registry to pull container images.
      * 
      */
     public Output<List<ContainerInstanceImagePullSecret>> imagePullSecrets() {
         return this.imagePullSecrets;
     }
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      * 
      */
     @Export(name="lifecycleDetails", type=String.class, parameters={})
     private Output<String> lifecycleDetails;
 
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      * 
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
     /**
-     * The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+     * The shape of the container instance. The shape determines the resources available to the container instance.
      * 
      */
     @Export(name="shape", type=String.class, parameters={})
     private Output<String> shape;
 
     /**
-     * @return The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+     * @return The shape of the container instance. The shape determines the resources available to the container instance.
      * 
      */
     public Output<String> shape() {
         return this.shape;
     }
     /**
-     * The size and amount of resources available to the Container Instance.
+     * The size and amount of resources available to the container instance.
      * 
      */
     @Export(name="shapeConfig", type=ContainerInstanceShapeConfig.class, parameters={})
     private Output<ContainerInstanceShapeConfig> shapeConfig;
 
     /**
-     * @return The size and amount of resources available to the Container Instance.
+     * @return The size and amount of resources available to the container instance.
      * 
      */
     public Output<ContainerInstanceShapeConfig> shapeConfig() {
@@ -392,84 +391,88 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
         return this.state;
     }
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
     @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> systemTags;
 
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
     public Output<Map<String,Object>> systemTags() {
         return this.systemTags;
     }
     /**
-     * The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+     * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     @Export(name="timeCreated", type=String.class, parameters={})
     private Output<String> timeCreated;
 
     /**
-     * @return The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+     * @return The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+     * The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     @Export(name="timeUpdated", type=String.class, parameters={})
     private Output<String> timeUpdated;
 
     /**
-     * @return The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+     * @return The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * The networks to make available to containers on this Instance.
+     * The networks available to containers on this container instance.
      * 
      */
     @Export(name="vnics", type=List.class, parameters={ContainerInstanceVnic.class})
     private Output<List<ContainerInstanceVnic>> vnics;
 
     /**
-     * @return The networks to make available to containers on this Instance.
+     * @return The networks available to containers on this container instance.
      * 
      */
     public Output<List<ContainerInstanceVnic>> vnics() {
         return this.vnics;
     }
     /**
-     * The number of volumes that attached to this Instance
+     * The number of volumes that are attached to the container instance.
      * 
      */
     @Export(name="volumeCount", type=Integer.class, parameters={})
     private Output<Integer> volumeCount;
 
     /**
-     * @return The number of volumes that attached to this Instance
+     * @return The number of volumes that are attached to the container instance.
      * 
      */
     public Output<Integer> volumeCount() {
         return this.volumeCount;
     }
     /**
-     * A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+     * A volume is a directory with data that is accessible across multiple containers in a container instance.
+     * 
+     * You can attach up to 32 volumes to single container instance.
      * 
      */
     @Export(name="volumes", type=List.class, parameters={ContainerInstanceVolume.class})
     private Output<List<ContainerInstanceVolume>> volumes;
 
     /**
-     * @return A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+     * @return A volume is a directory with data that is accessible across multiple containers in a container instance.
+     * 
+     * You can attach up to 32 volumes to single container instance.
      * 
      */
     public Output<List<ContainerInstanceVolume>> volumes() {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -15,6 +16,7 @@ import (
 // Lists all versions for the specified certificate authority (CA).
 // Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
 func GetCertificateAuthorityVersion(ctx *pulumi.Context, args *GetCertificateAuthorityVersionArgs, opts ...pulumi.InvokeOption) (*GetCertificateAuthorityVersionResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCertificateAuthorityVersionResult
 	err := ctx.Invoke("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", args, &rv, opts...)
 	if err != nil {

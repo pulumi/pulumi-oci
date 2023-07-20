@@ -7,8 +7,11 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
+
+var _ = internal.GetEnvOrDefault
 
 type VulnerabilityAuditApplicationDependency struct {
 	// List of Application Dependencies on which this Application Dependency depends, each identified by its nodeId.

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetReplicationSources(ctx *pulumi.Context, args *GetReplicationSourcesArgs, opts ...pulumi.InvokeOption) (*GetReplicationSourcesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetReplicationSourcesResult
 	err := ctx.Invoke("oci:ObjectStorage/getReplicationSources:getReplicationSources", args, &rv, opts...)
 	if err != nil {

@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -70,6 +71,7 @@ func NewRepositoryMirror(ctx *pulumi.Context,
 	if args.RepositoryId == nil {
 		return nil, errors.New("invalid value for required argument 'RepositoryId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource RepositoryMirror
 	err := ctx.RegisterResource("oci:DevOps/repositoryMirror:RepositoryMirror", name, args, &resource, opts...)
 	if err != nil {

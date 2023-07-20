@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupSddc(ctx *pulumi.Context, args *LookupSddcArgs, opts ...pulumi.InvokeOption) (*LookupSddcResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSddcResult
 	err := ctx.Invoke("oci:Ocvp/getSddc:getSddc", args, &rv, opts...)
 	if err != nil {

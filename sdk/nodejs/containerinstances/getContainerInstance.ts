@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
  *
- * Gets a ContainerInstance by identifier
+ * Gets information about the specified container instance.
  *
  * ## Example Usage
  *
@@ -35,7 +35,7 @@ export function getContainerInstance(args: GetContainerInstanceArgs, opts?: pulu
  */
 export interface GetContainerInstanceArgs {
     /**
-     * The system-generated unique identifier for the ContainerInstance.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
      */
     containerInstanceId: string;
 }
@@ -45,15 +45,15 @@ export interface GetContainerInstanceArgs {
  */
 export interface GetContainerInstanceResult {
     /**
-     * Availability Domain where the ContainerInstance is running.
+     * The availability domain to place the container instance.
      */
     readonly availabilityDomain: string;
     /**
-     * Compartment Identifier
+     * The OCID of the compartment.
      */
     readonly compartmentId: string;
     /**
-     * The number of containers on this Instance
+     * The number of containers on the container instance.
      */
     readonly containerCount: number;
     readonly containerInstanceId: string;
@@ -62,15 +62,15 @@ export interface GetContainerInstanceResult {
      */
     readonly containerRestartPolicy: string;
     /**
-     * The Containers on this Instance
+     * The containers on the container instance.
      */
     readonly containers: outputs.ContainerInstances.GetContainerInstanceContainer[];
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * Display name for the ContainerInstance. Can be renamed.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     readonly displayName: string;
     /**
@@ -78,7 +78,7 @@ export interface GetContainerInstanceResult {
      */
     readonly dnsConfigs: outputs.ContainerInstances.GetContainerInstanceDnsConfig[];
     /**
-     * Fault Domain where the ContainerInstance is running.
+     * The fault domain to place the container instance.
      */
     readonly faultDomain: string;
     /**
@@ -86,62 +86,62 @@ export interface GetContainerInstanceResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+     * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      */
     readonly gracefulShutdownTimeoutInSeconds: string;
     /**
-     * Unique identifier that is immutable on creation
+     * An OCID that cannot be changed.
      */
     readonly id: string;
     /**
-     * The image pull secrets for accessing private registry to pull images for containers
+     * The image pulls secrets so you can access private registry to pull container images.
      */
     readonly imagePullSecrets: outputs.ContainerInstances.GetContainerInstanceImagePullSecret[];
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      */
     readonly lifecycleDetails: string;
     /**
-     * The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+     * The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
      */
     readonly shape: string;
     /**
-     * The shape configuration for a Container Instance. The shape configuration determines the resources allocated to the Instance and it's containers.
+     * The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
      */
     readonly shapeConfigs: outputs.ContainerInstances.GetContainerInstanceShapeConfig[];
     /**
-     * The current state of the ContainerInstance.
+     * The current state of the container instance.
      */
     readonly state: string;
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+     * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
     readonly timeCreated: string;
     /**
-     * The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+     * The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
     readonly timeUpdated: string;
     /**
-     * The virtual networks available to containers running on this Container Instance.
+     * The virtual networks available to the containers in the container instance.
      */
     readonly vnics: outputs.ContainerInstances.GetContainerInstanceVnic[];
     /**
-     * The number of volumes that attached to this Instance
+     * The number of volumes that are attached to the container instance.
      */
     readonly volumeCount: number;
     /**
-     * A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance.
+     * A volume is a directory with data that is accessible across multiple containers in a container instance.
      */
     readonly volumes: outputs.ContainerInstances.GetContainerInstanceVolume[];
 }
 /**
  * This data source provides details about a specific Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
  *
- * Gets a ContainerInstance by identifier
+ * Gets information about the specified container instance.
  *
  * ## Example Usage
  *
@@ -163,7 +163,7 @@ export function getContainerInstanceOutput(args: GetContainerInstanceOutputArgs,
  */
 export interface GetContainerInstanceOutputArgs {
     /**
-     * The system-generated unique identifier for the ContainerInstance.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
      */
     containerInstanceId: pulumi.Input<string>;
 }

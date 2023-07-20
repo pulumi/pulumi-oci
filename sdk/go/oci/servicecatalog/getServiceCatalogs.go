@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetServiceCatalogs(ctx *pulumi.Context, args *GetServiceCatalogsArgs, opts ...pulumi.InvokeOption) (*GetServiceCatalogsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetServiceCatalogsResult
 	err := ctx.Invoke("oci:ServiceCatalog/getServiceCatalogs:getServiceCatalogs", args, &rv, opts...)
 	if err != nil {

@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -72,6 +73,7 @@ func NewDrgAttachmentsList(ctx *pulumi.Context,
 	if args.DrgId == nil {
 		return nil, errors.New("invalid value for required argument 'DrgId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DrgAttachmentsList
 	err := ctx.RegisterResource("oci:Core/drgAttachmentsList:DrgAttachmentsList", name, args, &resource, opts...)
 	if err != nil {

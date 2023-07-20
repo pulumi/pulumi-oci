@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -46,6 +47,7 @@ import (
 //
 // ```
 func GetShapes(ctx *pulumi.Context, args *GetShapesArgs, opts ...pulumi.InvokeOption) (*GetShapesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetShapesResult
 	err := ctx.Invoke("oci:Mysql/getShapes:getShapes", args, &rv, opts...)
 	if err != nil {

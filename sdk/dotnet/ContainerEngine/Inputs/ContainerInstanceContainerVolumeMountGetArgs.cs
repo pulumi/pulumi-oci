@@ -13,31 +13,31 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
     public sealed class ContainerInstanceContainerVolumeMountGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+        /// Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
         /// </summary>
         [Input("isReadOnly")]
         public Input<bool>? IsReadOnly { get; set; }
 
         /// <summary>
-        /// mountPath describes the volume access path.
+        /// The volume access path.
         /// </summary>
         [Input("mountPath", required: true)]
         public Input<string> MountPath { get; set; } = null!;
 
         /// <summary>
-        /// If there is more than 1 partitions in the volume, this is the number of partition which be referenced. Here is a example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
+        /// If there is more than one partition in the volume, reference this number of partitions. Here is an example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
         /// </summary>
         [Input("partition")]
         public Input<int>? Partition { get; set; }
 
         /// <summary>
-        /// specifies a sub-path inside the referenced volume instead of its root
+        /// A subpath inside the referenced volume.
         /// </summary>
         [Input("subPath")]
         public Input<string>? SubPath { get; set; }
 
         /// <summary>
-        /// The name of the volume.
+        /// The name of the volume. Avoid entering confidential information.
         /// </summary>
         [Input("volumeName", required: true)]
         public Input<string> VolumeName { get; set; } = null!;

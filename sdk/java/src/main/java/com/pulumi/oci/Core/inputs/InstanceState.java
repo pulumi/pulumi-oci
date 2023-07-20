@@ -110,14 +110,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The OCID of the compartment.
+     * (Updatable) The OCID of the compartment containing images to search
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment.
+     * @return (Updatable) The OCID of the compartment containing images to search
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -300,6 +300,21 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     @Deprecated /* The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used. */
     public Optional<Output<String>> image() {
         return Optional.ofNullable(this.image);
+    }
+
+    /**
+     * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+     * 
+     */
+    @Import(name="instanceConfigurationId")
+    private @Nullable Output<String> instanceConfigurationId;
+
+    /**
+     * @return The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+     * 
+     */
+    public Optional<Output<String>> instanceConfigurationId() {
+        return Optional.ofNullable(this.instanceConfigurationId);
     }
 
     /**
@@ -810,6 +825,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.hostnameLabel = $.hostnameLabel;
         this.image = $.image;
+        this.instanceConfigurationId = $.instanceConfigurationId;
         this.instanceOptions = $.instanceOptions;
         this.ipxeScript = $.ipxeScript;
         this.isCrossNumaNode = $.isCrossNumaNode;
@@ -967,7 +983,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment.
+         * @param compartmentId (Updatable) The OCID of the compartment containing images to search
          * 
          * @return builder
          * 
@@ -978,7 +994,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment.
+         * @param compartmentId (Updatable) The OCID of the compartment containing images to search
          * 
          * @return builder
          * 
@@ -1223,6 +1239,27 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         @Deprecated /* The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used. */
         public Builder image(String image) {
             return image(Output.of(image));
+        }
+
+        /**
+         * @param instanceConfigurationId The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceConfigurationId(@Nullable Output<String> instanceConfigurationId) {
+            $.instanceConfigurationId = instanceConfigurationId;
+            return this;
+        }
+
+        /**
+         * @param instanceConfigurationId The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceConfigurationId(String instanceConfigurationId) {
+            return instanceConfigurationId(Output.of(instanceConfigurationId));
         }
 
         /**

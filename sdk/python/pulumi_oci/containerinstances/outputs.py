@@ -51,7 +51,6 @@ __all__ = [
 @pulumi.output_type
 class GetContainerInstanceContainerResult(dict):
     def __init__(__self__, *,
-                 additional_capabilities: Sequence[str],
                  arguments: Sequence[str],
                  availability_domain: str,
                  commands: Sequence[str],
@@ -77,21 +76,20 @@ class GetContainerInstanceContainerResult(dict):
                  volume_mounts: Sequence['outputs.GetContainerInstanceContainerVolumeMountResult'],
                  working_directory: str):
         """
-        :param str availability_domain: Availability Domain where the ContainerInstance is running.
-        :param str compartment_id: Compartment Identifier
-        :param str container_id: The ID of the Container on this Instance.
-        :param str container_instance_id: The system-generated unique identifier for the ContainerInstance.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: Display name for the ContainerInstance. Can be renamed.
-        :param str fault_domain: Fault Domain where the ContainerInstance is running.
+        :param str availability_domain: The availability domain to place the container instance.
+        :param str compartment_id: The OCID of the compartment.
+        :param str container_id: The OCID of the container.
+        :param str container_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str fault_domain: The fault domain to place the container instance.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str state: The current state of the ContainerInstance.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the the ContainerInstance was created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+        :param str lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
+        :param str state: The current state of the container instance.
+        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
+        :param str time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param str time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
-        pulumi.set(__self__, "additional_capabilities", additional_capabilities)
         pulumi.set(__self__, "arguments", arguments)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "commands", commands)
@@ -118,11 +116,6 @@ class GetContainerInstanceContainerResult(dict):
         pulumi.set(__self__, "working_directory", working_directory)
 
     @property
-    @pulumi.getter(name="additionalCapabilities")
-    def additional_capabilities(self) -> Sequence[str]:
-        return pulumi.get(self, "additional_capabilities")
-
-    @property
     @pulumi.getter
     def arguments(self) -> Sequence[str]:
         return pulumi.get(self, "arguments")
@@ -131,7 +124,7 @@ class GetContainerInstanceContainerResult(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
         """
-        Availability Domain where the ContainerInstance is running.
+        The availability domain to place the container instance.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -144,7 +137,7 @@ class GetContainerInstanceContainerResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier
+        The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -152,7 +145,7 @@ class GetContainerInstanceContainerResult(dict):
     @pulumi.getter(name="containerId")
     def container_id(self) -> str:
         """
-        The ID of the Container on this Instance.
+        The OCID of the container.
         """
         return pulumi.get(self, "container_id")
 
@@ -160,7 +153,7 @@ class GetContainerInstanceContainerResult(dict):
     @pulumi.getter(name="containerInstanceId")
     def container_instance_id(self) -> str:
         """
-        The system-generated unique identifier for the ContainerInstance.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
         """
         return pulumi.get(self, "container_instance_id")
 
@@ -168,7 +161,7 @@ class GetContainerInstanceContainerResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         """
         return pulumi.get(self, "defined_tags")
 
@@ -176,7 +169,7 @@ class GetContainerInstanceContainerResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Display name for the ContainerInstance. Can be renamed.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -194,7 +187,7 @@ class GetContainerInstanceContainerResult(dict):
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> str:
         """
-        Fault Domain where the ContainerInstance is running.
+        The fault domain to place the container instance.
         """
         return pulumi.get(self, "fault_domain")
 
@@ -225,7 +218,7 @@ class GetContainerInstanceContainerResult(dict):
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -238,7 +231,7 @@ class GetContainerInstanceContainerResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the ContainerInstance.
+        The current state of the container instance.
         """
         return pulumi.get(self, "state")
 
@@ -246,7 +239,7 @@ class GetContainerInstanceContainerResult(dict):
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, Any]:
         """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         """
         return pulumi.get(self, "system_tags")
 
@@ -254,7 +247,7 @@ class GetContainerInstanceContainerResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+        The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
@@ -267,7 +260,7 @@ class GetContainerInstanceContainerResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+        The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
@@ -300,7 +293,7 @@ class GetContainerInstanceContainerHealthCheckResult(dict):
                  success_threshold: int,
                  timeout_in_seconds: int):
         """
-        :param str name: The name of the volume. This has be unique cross single ContainerInstance.
+        :param str name: The name of the volume. This must be unique within a single container instance.
         :param str path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
         """
         pulumi.set(__self__, "commands", commands)
@@ -357,7 +350,7 @@ class GetContainerInstanceContainerHealthCheckResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        The name of the volume. This has be unique cross single ContainerInstance.
+        The name of the volume. This must be unique within a single container instance.
         """
         return pulumi.get(self, "name")
 
@@ -401,7 +394,7 @@ class GetContainerInstanceContainerHealthCheckHeaderResult(dict):
                  name: str,
                  value: str):
         """
-        :param str name: The name of the volume. This has be unique cross single ContainerInstance.
+        :param str name: The name of the volume. This must be unique within a single container instance.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
@@ -410,7 +403,7 @@ class GetContainerInstanceContainerHealthCheckHeaderResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        The name of the volume. This has be unique cross single ContainerInstance.
+        The name of the volume. This must be unique within a single container instance.
         """
         return pulumi.get(self, "name")
 
@@ -486,9 +479,9 @@ class GetContainerInstanceDnsConfigResult(dict):
                  options: Sequence[str],
                  searches: Sequence[str]):
         """
-        :param Sequence[str] nameservers: Name server IP address
+        :param Sequence[str] nameservers: IP address of the name server..
         :param Sequence[str] options: Options allows certain internal resolver variables to be modified.
-        :param Sequence[str] searches: Search list for host-name lookup.
+        :param Sequence[str] searches: Search list for hostname lookup.
         """
         pulumi.set(__self__, "nameservers", nameservers)
         pulumi.set(__self__, "options", options)
@@ -498,7 +491,7 @@ class GetContainerInstanceDnsConfigResult(dict):
     @pulumi.getter
     def nameservers(self) -> Sequence[str]:
         """
-        Name server IP address
+        IP address of the name server..
         """
         return pulumi.get(self, "nameservers")
 
@@ -514,7 +507,7 @@ class GetContainerInstanceDnsConfigResult(dict):
     @pulumi.getter
     def searches(self) -> Sequence[str]:
         """
-        Search list for host-name lookup.
+        Search list for hostname lookup.
         """
         return pulumi.get(self, "searches")
 
@@ -581,10 +574,10 @@ class GetContainerInstanceShapeConfigResult(dict):
                  ocpus: float,
                  processor_description: str):
         """
-        :param float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
-        :param float networking_bandwidth_in_gbps: The networking bandwidth available to the instance, in gigabits per second.
-        :param float ocpus: The total number of OCPUs available to the instance.
-        :param str processor_description: A short description of the instance's processor (CPU).
+        :param float memory_in_gbs: The total amount of memory available to the container instance, in gigabytes.
+        :param float networking_bandwidth_in_gbps: The networking bandwidth available to the container instance, in gigabits per second.
+        :param float ocpus: The total number of OCPUs available to the container instance.
+        :param str processor_description: A short description of the container instance's processor (CPU).
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
@@ -595,7 +588,7 @@ class GetContainerInstanceShapeConfigResult(dict):
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> float:
         """
-        The total amount of memory available to the instance, in gigabytes.
+        The total amount of memory available to the container instance, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -603,7 +596,7 @@ class GetContainerInstanceShapeConfigResult(dict):
     @pulumi.getter(name="networkingBandwidthInGbps")
     def networking_bandwidth_in_gbps(self) -> float:
         """
-        The networking bandwidth available to the instance, in gigabits per second.
+        The networking bandwidth available to the container instance, in gigabits per second.
         """
         return pulumi.get(self, "networking_bandwidth_in_gbps")
 
@@ -611,7 +604,7 @@ class GetContainerInstanceShapeConfigResult(dict):
     @pulumi.getter
     def ocpus(self) -> float:
         """
-        The total number of OCPUs available to the instance.
+        The total number of OCPUs available to the container instance.
         """
         return pulumi.get(self, "ocpus")
 
@@ -619,7 +612,7 @@ class GetContainerInstanceShapeConfigResult(dict):
     @pulumi.getter(name="processorDescription")
     def processor_description(self) -> str:
         """
-        A short description of the instance's processor (CPU).
+        A short description of the container instance's processor (CPU).
         """
         return pulumi.get(self, "processor_description")
 
@@ -822,7 +815,7 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult']):
         """
-        :param Sequence['GetContainerInstanceShapesContainerInstanceShapeCollectionItemArgs'] items: List of shapes.
+        :param Sequence['GetContainerInstanceShapesContainerInstanceShapeCollectionItemArgs'] items: A list of shapes.
         """
         pulumi.set(__self__, "items", items)
 
@@ -830,7 +823,7 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionResult(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult']:
         """
-        List of shapes.
+        A list of shapes.
         """
         return pulumi.get(self, "items")
 
@@ -844,11 +837,11 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult(dict)
                  ocpu_options: Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionResult'],
                  processor_description: str):
         """
-        :param Sequence['GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionArgs'] memory_options: For a flexible shape, the amount of memory available for instances that use this shape.
+        :param Sequence['GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionArgs'] memory_options: For a flexible shape, the amount of memory available for container instances that use this shape.
         :param str name: The name identifying the shape.
-        :param Sequence['GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionArgs'] networking_bandwidth_options: For a flexible shape, the amount of networking bandwidth available for instances that use this shape.
-        :param Sequence['GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArgs'] ocpu_options: For a flexible shape, the number of OCPUs available for instances that use this shape.
-        :param str processor_description: A short description of the Instance's processor (CPU).
+        :param Sequence['GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionArgs'] networking_bandwidth_options: For a flexible shape, the amount of networking bandwidth available for container instances that use this shape.
+        :param Sequence['GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArgs'] ocpu_options: For a flexible shape, the number of OCPUs available for container instances that use this shape.
+        :param str processor_description: A short description of the container instance's processor (CPU).
         """
         pulumi.set(__self__, "memory_options", memory_options)
         pulumi.set(__self__, "name", name)
@@ -860,7 +853,7 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult(dict)
     @pulumi.getter(name="memoryOptions")
     def memory_options(self) -> Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionResult']:
         """
-        For a flexible shape, the amount of memory available for instances that use this shape.
+        For a flexible shape, the amount of memory available for container instances that use this shape.
         """
         return pulumi.get(self, "memory_options")
 
@@ -876,7 +869,7 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult(dict)
     @pulumi.getter(name="networkingBandwidthOptions")
     def networking_bandwidth_options(self) -> Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionResult']:
         """
-        For a flexible shape, the amount of networking bandwidth available for instances that use this shape.
+        For a flexible shape, the amount of networking bandwidth available for container instances that use this shape.
         """
         return pulumi.get(self, "networking_bandwidth_options")
 
@@ -884,7 +877,7 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult(dict)
     @pulumi.getter(name="ocpuOptions")
     def ocpu_options(self) -> Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionResult']:
         """
-        For a flexible shape, the number of OCPUs available for instances that use this shape.
+        For a flexible shape, the number of OCPUs available for container instances that use this shape.
         """
         return pulumi.get(self, "ocpu_options")
 
@@ -892,7 +885,7 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult(dict)
     @pulumi.getter(name="processorDescription")
     def processor_description(self) -> str:
         """
-        A short description of the Instance's processor (CPU).
+        A short description of the container instance's processor (CPU).
         """
         return pulumi.get(self, "processor_description")
 
@@ -906,11 +899,11 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption
                  min_in_gbs: float,
                  min_per_ocpu_in_gbs: float):
         """
-        :param float default_per_ocpu_in_gbs: The default amount of memory per OCPU available for this shape, in gigabytes.
-        :param float max_in_gbs: The maximum amount of memory, in gigabytes.
-        :param float max_per_ocpu_in_gbs: The maximum amount of memory per OCPU available for this shape, in gigabytes.
-        :param float min_in_gbs: The minimum amount of memory, in gigabytes.
-        :param float min_per_ocpu_in_gbs: The minimum amount of memory per OCPU available for this shape, in gigabytes.
+        :param float default_per_ocpu_in_gbs: The default amount of memory per OCPU available for this shape (GB).
+        :param float max_in_gbs: The maximum amount of memory (GB).
+        :param float max_per_ocpu_in_gbs: The maximum amount of memory per OCPU available for this shape (GB).
+        :param float min_in_gbs: The minimum amount of memory (GB).
+        :param float min_per_ocpu_in_gbs: The minimum amount of memory per OCPU available for this shape (GB).
         """
         pulumi.set(__self__, "default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
         pulumi.set(__self__, "max_in_gbs", max_in_gbs)
@@ -922,7 +915,7 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption
     @pulumi.getter(name="defaultPerOcpuInGbs")
     def default_per_ocpu_in_gbs(self) -> float:
         """
-        The default amount of memory per OCPU available for this shape, in gigabytes.
+        The default amount of memory per OCPU available for this shape (GB).
         """
         return pulumi.get(self, "default_per_ocpu_in_gbs")
 
@@ -930,7 +923,7 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption
     @pulumi.getter(name="maxInGbs")
     def max_in_gbs(self) -> float:
         """
-        The maximum amount of memory, in gigabytes.
+        The maximum amount of memory (GB).
         """
         return pulumi.get(self, "max_in_gbs")
 
@@ -938,7 +931,7 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption
     @pulumi.getter(name="maxPerOcpuInGbs")
     def max_per_ocpu_in_gbs(self) -> float:
         """
-        The maximum amount of memory per OCPU available for this shape, in gigabytes.
+        The maximum amount of memory per OCPU available for this shape (GB).
         """
         return pulumi.get(self, "max_per_ocpu_in_gbs")
 
@@ -946,7 +939,7 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption
     @pulumi.getter(name="minInGbs")
     def min_in_gbs(self) -> float:
         """
-        The minimum amount of memory, in gigabytes.
+        The minimum amount of memory (GB).
         """
         return pulumi.get(self, "min_in_gbs")
 
@@ -954,7 +947,7 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption
     @pulumi.getter(name="minPerOcpuInGbs")
     def min_per_ocpu_in_gbs(self) -> float:
         """
-        The minimum amount of memory per OCPU available for this shape, in gigabytes.
+        The minimum amount of memory per OCPU available for this shape (GB).
         """
         return pulumi.get(self, "min_per_ocpu_in_gbs")
 
@@ -1075,10 +1068,10 @@ class GetContainerInstanceVnicResult(dict):
                  subnet_id: str,
                  vnic_id: str):
         """
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: Display name for the ContainerInstance. Can be renamed.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str vnic_id: The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+        :param str vnic_id: The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
         """
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
@@ -1095,7 +1088,7 @@ class GetContainerInstanceVnicResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         """
         return pulumi.get(self, "defined_tags")
 
@@ -1103,7 +1096,7 @@ class GetContainerInstanceVnicResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Display name for the ContainerInstance. Can be renamed.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -1149,7 +1142,7 @@ class GetContainerInstanceVnicResult(dict):
     @pulumi.getter(name="vnicId")
     def vnic_id(self) -> str:
         """
-        The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+        The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
         """
         return pulumi.get(self, "vnic_id")
 
@@ -1162,9 +1155,9 @@ class GetContainerInstanceVolumeResult(dict):
                  name: str,
                  volume_type: str):
         """
-        :param str backing_store: Volume type that we are using for empty dir where it could be either File Storage or Memory
+        :param str backing_store: The volume type of the empty directory, can be either File Storage or Memory.
         :param Sequence['GetContainerInstanceVolumeConfigArgs'] configs: Contains string key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
-        :param str name: The name of the volume. This has be unique cross single ContainerInstance.
+        :param str name: The name of the volume. This must be unique within a single container instance.
         :param str volume_type: The type of volume.
         """
         pulumi.set(__self__, "backing_store", backing_store)
@@ -1176,7 +1169,7 @@ class GetContainerInstanceVolumeResult(dict):
     @pulumi.getter(name="backingStore")
     def backing_store(self) -> str:
         """
-        Volume type that we are using for empty dir where it could be either File Storage or Memory
+        The volume type of the empty directory, can be either File Storage or Memory.
         """
         return pulumi.get(self, "backing_store")
 
@@ -1192,7 +1185,7 @@ class GetContainerInstanceVolumeResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        The name of the volume. This has be unique cross single ContainerInstance.
+        The name of the volume. This must be unique within a single container instance.
         """
         return pulumi.get(self, "name")
 
@@ -1285,28 +1278,28 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
                  volumes: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeResult']):
         """
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param int container_count: The number of containers on this Instance
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param int container_count: The number of containers on the container instance.
         :param str container_restart_policy: The container restart policy is applied for all containers in container instance.
-        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemContainerArgs'] containers: The Containers on this Instance
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemContainerArgs'] containers: The containers on the container instance.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param Sequence['GetContainerInstancesContainerInstanceCollectionItemDnsConfigArgs'] dns_configs: DNS settings for containers.
-        :param str fault_domain: Fault Domain where the ContainerInstance is running.
+        :param str fault_domain: The fault domain to place the container instance.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str graceful_shutdown_timeout_in_seconds: Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
-        :param str id: Unique identifier that is immutable on creation
-        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArgs'] image_pull_secrets: The image pull secrets for accessing private registry to pull images for containers
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str shape: The shape of the Container Instance. The shape determines the resources available to the Container Instance.
-        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemShapeConfigArgs'] shape_configs: The shape configuration for a Container Instance. The shape configuration determines the resources allocated to the Instance and it's containers.
-        :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the the ContainerInstance was created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the ContainerInstance was updated. An RFC3339 formatted datetime string
-        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemVnicArgs'] vnics: The virtual networks available to containers running on this Container Instance.
-        :param int volume_count: The number of volumes that attached to this Instance
-        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemVolumeArgs'] volumes: A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance.
+        :param str graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
+        :param str id: An OCID that cannot be changed.
+        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArgs'] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
+        :param str lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
+        :param str shape: The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
+        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemShapeConfigArgs'] shape_configs: The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
+        :param str state: A filter to only return resources that match the given lifecycle state.
+        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
+        :param str time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param str time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemVnicArgs'] vnics: The virtual networks available to the containers in the container instance.
+        :param int volume_count: The number of volumes that are attached to the container instance.
+        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemVolumeArgs'] volumes: A volume is a directory with data that is accessible across multiple containers in a container instance.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -1344,7 +1337,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The ID of the compartment in which to list resources.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1352,7 +1345,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
     @pulumi.getter(name="containerCount")
     def container_count(self) -> int:
         """
-        The number of containers on this Instance
+        The number of containers on the container instance.
         """
         return pulumi.get(self, "container_count")
 
@@ -1368,7 +1361,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
     @pulumi.getter
     def containers(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResult']:
         """
-        The Containers on this Instance
+        The containers on the container instance.
         """
         return pulumi.get(self, "containers")
 
@@ -1376,7 +1369,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         """
         return pulumi.get(self, "defined_tags")
 
@@ -1400,7 +1393,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> str:
         """
-        Fault Domain where the ContainerInstance is running.
+        The fault domain to place the container instance.
         """
         return pulumi.get(self, "fault_domain")
 
@@ -1416,7 +1409,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
     @pulumi.getter(name="gracefulShutdownTimeoutInSeconds")
     def graceful_shutdown_timeout_in_seconds(self) -> str:
         """
-        Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+        The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
         """
         return pulumi.get(self, "graceful_shutdown_timeout_in_seconds")
 
@@ -1424,7 +1417,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        Unique identifier that is immutable on creation
+        An OCID that cannot be changed.
         """
         return pulumi.get(self, "id")
 
@@ -1432,7 +1425,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
     @pulumi.getter(name="imagePullSecrets")
     def image_pull_secrets(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemImagePullSecretResult']:
         """
-        The image pull secrets for accessing private registry to pull images for containers
+        The image pulls secrets so you can access private registry to pull container images.
         """
         return pulumi.get(self, "image_pull_secrets")
 
@@ -1440,7 +1433,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -1448,7 +1441,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
     @pulumi.getter
     def shape(self) -> str:
         """
-        The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+        The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
         """
         return pulumi.get(self, "shape")
 
@@ -1456,7 +1449,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
     @pulumi.getter(name="shapeConfigs")
     def shape_configs(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult']:
         """
-        The shape configuration for a Container Instance. The shape configuration determines the resources allocated to the Instance and it's containers.
+        The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
         """
         return pulumi.get(self, "shape_configs")
 
@@ -1464,7 +1457,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources whose lifecycleState matches the given lifecycleState.
+        A filter to only return resources that match the given lifecycle state.
         """
         return pulumi.get(self, "state")
 
@@ -1472,7 +1465,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, Any]:
         """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         """
         return pulumi.get(self, "system_tags")
 
@@ -1480,7 +1473,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+        The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
@@ -1488,7 +1481,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+        The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
@@ -1496,7 +1489,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
     @pulumi.getter
     def vnics(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVnicResult']:
         """
-        The virtual networks available to containers running on this Container Instance.
+        The virtual networks available to the containers in the container instance.
         """
         return pulumi.get(self, "vnics")
 
@@ -1504,7 +1497,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
     @pulumi.getter(name="volumeCount")
     def volume_count(self) -> int:
         """
-        The number of volumes that attached to this Instance
+        The number of volumes that are attached to the container instance.
         """
         return pulumi.get(self, "volume_count")
 
@@ -1512,7 +1505,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
     @pulumi.getter
     def volumes(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeResult']:
         """
-        A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance.
+        A volume is a directory with data that is accessible across multiple containers in a container instance.
         """
         return pulumi.get(self, "volumes")
 
@@ -1520,7 +1513,6 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
 @pulumi.output_type
 class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
     def __init__(__self__, *,
-                 additional_capabilities: Sequence[str],
                  arguments: Sequence[str],
                  availability_domain: str,
                  commands: Sequence[str],
@@ -1547,19 +1539,18 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
                  working_directory: str):
         """
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param str container_id: The ID of the Container on this Instance.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param str container_id: The OCID of the container.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param str fault_domain: Fault Domain where the ContainerInstance is running.
+        :param str fault_domain: The fault domain to place the container instance.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the the ContainerInstance was created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+        :param str lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
+        :param str state: A filter to only return resources that match the given lifecycle state.
+        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
+        :param str time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param str time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
-        pulumi.set(__self__, "additional_capabilities", additional_capabilities)
         pulumi.set(__self__, "arguments", arguments)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "commands", commands)
@@ -1586,11 +1577,6 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
         pulumi.set(__self__, "working_directory", working_directory)
 
     @property
-    @pulumi.getter(name="additionalCapabilities")
-    def additional_capabilities(self) -> Sequence[str]:
-        return pulumi.get(self, "additional_capabilities")
-
-    @property
     @pulumi.getter
     def arguments(self) -> Sequence[str]:
         return pulumi.get(self, "arguments")
@@ -1612,7 +1598,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The ID of the compartment in which to list resources.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1620,7 +1606,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
     @pulumi.getter(name="containerId")
     def container_id(self) -> str:
         """
-        The ID of the Container on this Instance.
+        The OCID of the container.
         """
         return pulumi.get(self, "container_id")
 
@@ -1633,7 +1619,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         """
         return pulumi.get(self, "defined_tags")
 
@@ -1659,7 +1645,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> str:
         """
-        Fault Domain where the ContainerInstance is running.
+        The fault domain to place the container instance.
         """
         return pulumi.get(self, "fault_domain")
 
@@ -1690,7 +1676,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -1703,7 +1689,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources whose lifecycleState matches the given lifecycleState.
+        A filter to only return resources that match the given lifecycle state.
         """
         return pulumi.get(self, "state")
 
@@ -1711,7 +1697,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, Any]:
         """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         """
         return pulumi.get(self, "system_tags")
 
@@ -1719,7 +1705,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+        The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
@@ -1732,7 +1718,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+        The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
@@ -1765,7 +1751,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckRe
                  success_threshold: int,
                  timeout_in_seconds: int):
         """
-        :param str name: The name of the volume. This has be unique cross single ContainerInstance.
+        :param str name: The name of the volume. This must be unique within a single container instance.
         :param str path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
         """
         pulumi.set(__self__, "commands", commands)
@@ -1822,7 +1808,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckRe
     @pulumi.getter
     def name(self) -> str:
         """
-        The name of the volume. This has be unique cross single ContainerInstance.
+        The name of the volume. This must be unique within a single container instance.
         """
         return pulumi.get(self, "name")
 
@@ -1866,7 +1852,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHe
                  name: str,
                  value: str):
         """
-        :param str name: The name of the volume. This has be unique cross single ContainerInstance.
+        :param str name: The name of the volume. This must be unique within a single container instance.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
@@ -1875,7 +1861,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHe
     @pulumi.getter
     def name(self) -> str:
         """
-        The name of the volume. This has be unique cross single ContainerInstance.
+        The name of the volume. This must be unique within a single container instance.
         """
         return pulumi.get(self, "name")
 
@@ -1951,9 +1937,9 @@ class GetContainerInstancesContainerInstanceCollectionItemDnsConfigResult(dict):
                  options: Sequence[str],
                  searches: Sequence[str]):
         """
-        :param Sequence[str] nameservers: Name server IP address
+        :param Sequence[str] nameservers: IP address of the name server..
         :param Sequence[str] options: Options allows certain internal resolver variables to be modified.
-        :param Sequence[str] searches: Search list for host-name lookup.
+        :param Sequence[str] searches: Search list for hostname lookup.
         """
         pulumi.set(__self__, "nameservers", nameservers)
         pulumi.set(__self__, "options", options)
@@ -1963,7 +1949,7 @@ class GetContainerInstancesContainerInstanceCollectionItemDnsConfigResult(dict):
     @pulumi.getter
     def nameservers(self) -> Sequence[str]:
         """
-        Name server IP address
+        IP address of the name server..
         """
         return pulumi.get(self, "nameservers")
 
@@ -1979,7 +1965,7 @@ class GetContainerInstancesContainerInstanceCollectionItemDnsConfigResult(dict):
     @pulumi.getter
     def searches(self) -> Sequence[str]:
         """
-        Search list for host-name lookup.
+        Search list for hostname lookup.
         """
         return pulumi.get(self, "searches")
 
@@ -2046,10 +2032,10 @@ class GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult(dict
                  ocpus: float,
                  processor_description: str):
         """
-        :param float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
-        :param float networking_bandwidth_in_gbps: The networking bandwidth available to the instance, in gigabits per second.
-        :param float ocpus: The total number of OCPUs available to the instance.
-        :param str processor_description: A short description of the instance's processor (CPU).
+        :param float memory_in_gbs: The total amount of memory available to the container instance, in gigabytes.
+        :param float networking_bandwidth_in_gbps: The networking bandwidth available to the container instance, in gigabits per second.
+        :param float ocpus: The total number of OCPUs available to the container instance.
+        :param str processor_description: A short description of the container instance's processor (CPU).
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
@@ -2060,7 +2046,7 @@ class GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult(dict
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> float:
         """
-        The total amount of memory available to the instance, in gigabytes.
+        The total amount of memory available to the container instance, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -2068,7 +2054,7 @@ class GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult(dict
     @pulumi.getter(name="networkingBandwidthInGbps")
     def networking_bandwidth_in_gbps(self) -> float:
         """
-        The networking bandwidth available to the instance, in gigabits per second.
+        The networking bandwidth available to the container instance, in gigabits per second.
         """
         return pulumi.get(self, "networking_bandwidth_in_gbps")
 
@@ -2076,7 +2062,7 @@ class GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult(dict
     @pulumi.getter
     def ocpus(self) -> float:
         """
-        The total number of OCPUs available to the instance.
+        The total number of OCPUs available to the container instance.
         """
         return pulumi.get(self, "ocpus")
 
@@ -2084,7 +2070,7 @@ class GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult(dict
     @pulumi.getter(name="processorDescription")
     def processor_description(self) -> str:
         """
-        A short description of the instance's processor (CPU).
+        A short description of the container instance's processor (CPU).
         """
         return pulumi.get(self, "processor_description")
 
@@ -2103,10 +2089,10 @@ class GetContainerInstancesContainerInstanceCollectionItemVnicResult(dict):
                  subnet_id: str,
                  vnic_id: str):
         """
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str vnic_id: The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+        :param str vnic_id: The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
         """
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
@@ -2123,7 +2109,7 @@ class GetContainerInstancesContainerInstanceCollectionItemVnicResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         """
         return pulumi.get(self, "defined_tags")
 
@@ -2177,7 +2163,7 @@ class GetContainerInstancesContainerInstanceCollectionItemVnicResult(dict):
     @pulumi.getter(name="vnicId")
     def vnic_id(self) -> str:
         """
-        The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+        The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
         """
         return pulumi.get(self, "vnic_id")
 
@@ -2190,9 +2176,9 @@ class GetContainerInstancesContainerInstanceCollectionItemVolumeResult(dict):
                  name: str,
                  volume_type: str):
         """
-        :param str backing_store: Volume type that we are using for empty dir where it could be either File Storage or Memory
+        :param str backing_store: The volume type of the empty directory, can be either File Storage or Memory.
         :param Sequence['GetContainerInstancesContainerInstanceCollectionItemVolumeConfigArgs'] configs: Contains string key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
-        :param str name: The name of the volume. This has be unique cross single ContainerInstance.
+        :param str name: The name of the volume. This must be unique within a single container instance.
         :param str volume_type: The type of volume.
         """
         pulumi.set(__self__, "backing_store", backing_store)
@@ -2204,7 +2190,7 @@ class GetContainerInstancesContainerInstanceCollectionItemVolumeResult(dict):
     @pulumi.getter(name="backingStore")
     def backing_store(self) -> str:
         """
-        Volume type that we are using for empty dir where it could be either File Storage or Memory
+        The volume type of the empty directory, can be either File Storage or Memory.
         """
         return pulumi.get(self, "backing_store")
 
@@ -2220,7 +2206,7 @@ class GetContainerInstancesContainerInstanceCollectionItemVolumeResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        The name of the volume. This has be unique cross single ContainerInstance.
+        The name of the volume. This must be unique within a single container instance.
         """
         return pulumi.get(self, "name")
 
@@ -2280,7 +2266,7 @@ class GetContainerInstancesFilterResult(dict):
                  values: Sequence[str],
                  regex: Optional[bool] = None):
         """
-        :param str name: The name of the volume. This has be unique cross single ContainerInstance.
+        :param str name: The name of the volume. This must be unique within a single container instance.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -2291,7 +2277,7 @@ class GetContainerInstancesFilterResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        The name of the volume. This has be unique cross single ContainerInstance.
+        The name of the volume. This must be unique within a single container instance.
         """
         return pulumi.get(self, "name")
 

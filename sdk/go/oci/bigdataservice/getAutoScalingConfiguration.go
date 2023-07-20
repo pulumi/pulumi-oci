@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func LookupAutoScalingConfiguration(ctx *pulumi.Context, args *LookupAutoScalingConfigurationArgs, opts ...pulumi.InvokeOption) (*LookupAutoScalingConfigurationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAutoScalingConfigurationResult
 	err := ctx.Invoke("oci:BigDataService/getAutoScalingConfiguration:getAutoScalingConfiguration", args, &rv, opts...)
 	if err != nil {

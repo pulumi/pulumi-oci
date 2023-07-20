@@ -7,8 +7,11 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
+
+var _ = internal.GetEnvOrDefault
 
 type DatabaseInsightConnectionCredentialDetails struct {
 	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.

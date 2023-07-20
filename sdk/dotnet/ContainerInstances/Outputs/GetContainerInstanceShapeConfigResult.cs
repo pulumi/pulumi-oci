@@ -14,19 +14,19 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
     public sealed class GetContainerInstanceShapeConfigResult
     {
         /// <summary>
-        /// The total amount of memory available to the instance, in gigabytes.
+        /// The total amount of memory available to the container instance, in gigabytes.
         /// </summary>
         public readonly double MemoryInGbs;
         /// <summary>
-        /// The networking bandwidth available to the instance, in gigabits per second.
+        /// The networking bandwidth available to the container instance, in gigabits per second.
         /// </summary>
         public readonly double NetworkingBandwidthInGbps;
         /// <summary>
-        /// The total number of OCPUs available to the instance.
+        /// The total number of OCPUs available to the container instance.
         /// </summary>
         public readonly double Ocpus;
         /// <summary>
-        /// A short description of the instance's processor (CPU).
+        /// A short description of the container instance's processor (CPU).
         /// </summary>
         public readonly string ProcessorDescription;
 

@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -102,6 +103,7 @@ func NewInstanceConsoleConnection(ctx *pulumi.Context,
 	if args.PublicKey == nil {
 		return nil, errors.New("invalid value for required argument 'PublicKey'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource InstanceConsoleConnection
 	err := ctx.RegisterResource("oci:Core/instanceConsoleConnection:InstanceConsoleConnection", name, args, &resource, opts...)
 	if err != nil {

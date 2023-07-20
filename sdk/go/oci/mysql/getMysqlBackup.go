@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupMysqlBackup(ctx *pulumi.Context, args *LookupMysqlBackupArgs, opts ...pulumi.InvokeOption) (*LookupMysqlBackupResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupMysqlBackupResult
 	err := ctx.Invoke("oci:Mysql/getMysqlBackup:getMysqlBackup", args, &rv, opts...)
 	if err != nil {

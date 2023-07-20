@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ContainerInstanceVnic {
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     private @Nullable Map<String,Object> definedTags;
@@ -31,7 +31,7 @@ public final class ContainerInstanceVnic {
      */
     private @Nullable Map<String,Object> freeformTags;
     /**
-     * @return The hostname for the VNIC&#39;s primary private IP.
+     * @return The hostname for the VNIC&#39;s primary private IP. Used for DNS.
      * 
      */
     private @Nullable String hostnameLabel;
@@ -61,14 +61,14 @@ public final class ContainerInstanceVnic {
      */
     private String subnetId;
     /**
-     * @return The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+     * @return The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
      * 
      */
     private @Nullable String vnicId;
 
     private ContainerInstanceVnic() {}
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     public Map<String,Object> definedTags() {
@@ -89,7 +89,7 @@ public final class ContainerInstanceVnic {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
-     * @return The hostname for the VNIC&#39;s primary private IP.
+     * @return The hostname for the VNIC&#39;s primary private IP. Used for DNS.
      * 
      */
     public Optional<String> hostnameLabel() {
@@ -131,7 +131,7 @@ public final class ContainerInstanceVnic {
         return this.subnetId;
     }
     /**
-     * @return The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+     * @return The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
      * 
      */
     public Optional<String> vnicId() {

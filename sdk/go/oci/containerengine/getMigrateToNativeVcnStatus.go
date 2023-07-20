@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetMigrateToNativeVcnStatus(ctx *pulumi.Context, args *GetMigrateToNativeVcnStatusArgs, opts ...pulumi.InvokeOption) (*GetMigrateToNativeVcnStatusResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMigrateToNativeVcnStatusResult
 	err := ctx.Invoke("oci:ContainerEngine/getMigrateToNativeVcnStatus:getMigrateToNativeVcnStatus", args, &rv, opts...)
 	if err != nil {

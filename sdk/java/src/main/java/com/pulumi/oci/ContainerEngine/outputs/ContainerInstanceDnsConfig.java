@@ -12,12 +12,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ContainerInstanceDnsConfig {
     /**
-     * @return IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use nameservers from subnet dhcpDnsOptions.
+     * @return IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
      * 
      */
     private @Nullable List<String> nameservers;
     /**
-     * @return Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: [&#34;ndots:n&#34;, &#34;edns0&#34;]
+     * @return Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: [&#34;ndots:n&#34;, &#34;edns0&#34;].
      * 
      */
     private @Nullable List<String> options;
@@ -29,14 +29,14 @@ public final class ContainerInstanceDnsConfig {
 
     private ContainerInstanceDnsConfig() {}
     /**
-     * @return IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use nameservers from subnet dhcpDnsOptions.
+     * @return IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
      * 
      */
     public List<String> nameservers() {
         return this.nameservers == null ? List.of() : this.nameservers;
     }
     /**
-     * @return Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: [&#34;ndots:n&#34;, &#34;edns0&#34;]
+     * @return Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: [&#34;ndots:n&#34;, &#34;edns0&#34;].
      * 
      */
     public List<String> options() {

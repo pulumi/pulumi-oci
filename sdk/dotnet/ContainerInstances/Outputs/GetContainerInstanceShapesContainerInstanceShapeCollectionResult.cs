@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
     public sealed class GetContainerInstanceShapesContainerInstanceShapeCollectionResult
     {
         /// <summary>
-        /// List of shapes.
+        /// A list of shapes.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult> Items;
 

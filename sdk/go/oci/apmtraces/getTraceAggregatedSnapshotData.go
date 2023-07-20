@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetTraceAggregatedSnapshotData(ctx *pulumi.Context, args *GetTraceAggregatedSnapshotDataArgs, opts ...pulumi.InvokeOption) (*GetTraceAggregatedSnapshotDataResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTraceAggregatedSnapshotDataResult
 	err := ctx.Invoke("oci:ApmTraces/getTraceAggregatedSnapshotData:getTraceAggregatedSnapshotData", args, &rv, opts...)
 	if err != nil {

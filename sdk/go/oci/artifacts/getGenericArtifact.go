@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupGenericArtifact(ctx *pulumi.Context, args *LookupGenericArtifactArgs, opts ...pulumi.InvokeOption) (*LookupGenericArtifactResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupGenericArtifactResult
 	err := ctx.Invoke("oci:Artifacts/getGenericArtifact:getGenericArtifact", args, &rv, opts...)
 	if err != nil {

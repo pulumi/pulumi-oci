@@ -16,7 +16,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         private InputList<string>? _nameservers;
 
         /// <summary>
-        /// IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use nameservers from subnet dhcpDnsOptions.
+        /// IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
         /// </summary>
         public InputList<string> Nameservers
         {
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         private InputList<string>? _options;
 
         /// <summary>
-        /// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"]
+        /// Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
         /// </summary>
         public InputList<string> Options
         {

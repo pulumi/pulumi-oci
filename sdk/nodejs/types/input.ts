@@ -9434,36 +9434,32 @@ export namespace ContainerEngine {
 
     export interface ContainerInstanceContainer {
         /**
-         * A list of additional capabilities for the container.
-         */
-        additionalCapabilities?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * A list of string arguments for a container's entrypoint process.
+         * A list of string arguments for a container's ENTRYPOINT process.
          *
-         * Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+         * Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those containers, this argument list specifies the main command in the container process.
          *
-         * All arguments together must be 64KB or smaller.
+         * The total size of all arguments combined must be 64 KB or smaller.
          */
         arguments?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * Availability Domain where the ContainerInstance should be created.
+         * The availability domain where the container instance runs.
          */
         availabilityDomain?: pulumi.Input<string>;
         /**
-         * The list of strings which will be concatenated to a single command for checking container's status.
+         * The list of strings that will be simplified to a single command for checking the status of the container.
          */
         commands?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) Compartment Identifier
+         * (Updatable) The compartment OCID.
          */
         compartmentId?: pulumi.Input<string>;
         /**
-         * The ID of the Container on this Instance.
+         * The OCID of the container.
          */
         containerId?: pulumi.Input<string>;
         containerInstanceId?: pulumi.Input<string>;
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
          */
         definedTags?: pulumi.Input<{[key: string]: any}>;
         /**
@@ -9471,14 +9467,14 @@ export namespace ContainerEngine {
          */
         displayName?: pulumi.Input<string>;
         /**
-         * A map of additional environment variables to set in the environment of the container's entrypoint process. These variables are in addition to any variables already defined in the container's image.
+         * A map of additional environment variables to set in the environment of the container's ENTRYPOINT process. These variables are in addition to any variables already defined in the container's image.
          *
-         * All environment variables together, name and values, must be 64KB or smaller.
+         * The total size of all environment variables combined, name and values, must be 64 KB or smaller.
          */
         environmentVariables?: pulumi.Input<{[key: string]: any}>;
         exitCode?: pulumi.Input<number>;
         /**
-         * Fault Domain where the ContainerInstance should run.
+         * The fault domain where the container instance runs.
          */
         faultDomain?: pulumi.Input<string>;
         /**
@@ -9490,19 +9486,25 @@ export namespace ContainerEngine {
          */
         healthChecks?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceContainerHealthCheck>[]>;
         /**
-         * The container image information. Currently only support public docker registry. Can be either image name, e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g `docker.io/library/containerImage:latest`. If no registry is provided, will default the registry to public docker hub `docker.io/library`. The registry used for container image must be reachable over the Container Instance's VNIC.
+         * A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
+         *
+         * If no registry is provided, will default the registry to public docker hub `docker.io/library`.
+         *
+         * The registry used for container image must be reachable over the Container Instance's VNIC.
          */
         imageUrl: pulumi.Input<string>;
         /**
-         * Determines if the Container will have access to the Container Instance Resource Principal.  This method utilizes resource principal version 2.2. Please refer to  https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal  for detailed explanation of how to leverage the exposed resource principal elements.
+         * Determines if the container will have access to the container instance resource principal.
+         *
+         * This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
          */
         isResourcePrincipalDisabled?: pulumi.Input<boolean>;
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * A message that describes the current state of the container in more detail. Can be used to provide actionable information.
          */
         lifecycleDetails?: pulumi.Input<string>;
         /**
-         * The size and amount of resources available to the Container.
+         * The size and amount of resources available to the container.
          */
         resourceConfig?: pulumi.Input<inputs.ContainerEngine.ContainerInstanceContainerResourceConfig>;
         /**
@@ -9514,16 +9516,16 @@ export namespace ContainerEngine {
          */
         state?: pulumi.Input<string>;
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
          */
         systemTags?: pulumi.Input<{[key: string]: any}>;
         /**
-         * The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+         * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          */
         timeCreated?: pulumi.Input<string>;
         timeTerminated?: pulumi.Input<string>;
         /**
-         * The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+         * The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          */
         timeUpdated?: pulumi.Input<string>;
         /**
@@ -9531,14 +9533,14 @@ export namespace ContainerEngine {
          */
         volumeMounts?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceContainerVolumeMount>[]>;
         /**
-         * The working directory within the Container's filesystem for the Container process. If none is set, the Container will run in the working directory set by the container image.
+         * The working directory within the container's filesystem for the container process. If not specified, the default working directory from the image is used.
          */
         workingDirectory?: pulumi.Input<string>;
     }
 
     export interface ContainerInstanceContainerHealthCheck {
         /**
-         * The list of strings which will be concatenated to a single command for checking container's status.
+         * The list of strings that will be simplified to a single command for checking the status of the container.
          */
         commands?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -9550,7 +9552,7 @@ export namespace ContainerEngine {
          */
         failureThreshold?: pulumi.Input<number>;
         /**
-         * Container health check Http's headers.
+         * Container health check HTTP headers.
          */
         headers?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceContainerHealthCheckHeader>[]>;
         /**
@@ -9566,7 +9568,7 @@ export namespace ContainerEngine {
          */
         intervalInSeconds?: pulumi.Input<number>;
         /**
-         * The name of the volume. This has be unique cross single ContainerInstance.
+         * The name of the volume. This must be unique within a single container instance.
          */
         name?: pulumi.Input<string>;
         /**
@@ -9574,7 +9576,7 @@ export namespace ContainerEngine {
          */
         path?: pulumi.Input<string>;
         /**
-         * Container health check Http's port.
+         * Container health check HTTP port.
          */
         port?: pulumi.Input<number>;
         status?: pulumi.Input<string>;
@@ -9591,56 +9593,64 @@ export namespace ContainerEngine {
 
     export interface ContainerInstanceContainerHealthCheckHeader {
         /**
-         * The name of the volume. This has be unique cross single ContainerInstance.
+         * The name of the volume. This must be unique within a single container instance.
          */
         name?: pulumi.Input<string>;
         /**
-         * Container Http header value.
+         * Container HTTP header value.
          */
         value?: pulumi.Input<string>;
     }
 
     export interface ContainerInstanceContainerResourceConfig {
         /**
-         * The maximum amount of memory which may be consumed by the Container's process.  If no value is provided, then the process may use all available memory on the Instance.
+         * The maximum amount of memory that can be consumed by the container's process.
+         *
+         * If you do not set a value, then the process may use all available memory on the instance.
          */
         memoryLimitInGbs?: pulumi.Input<number>;
         /**
-         * The maximum amount of CPU utilization which may be consumed by the Container's process.  If no value is provided, then the process may consume all CPU resources on the Instance.  CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on  an E3 ContainerInstance with 1 OCPU is 2.0.  A Container with that vcpusLimit could consume up to 100% of the CPU resources available on the Instance.  Values may be fractional. A value of "1.5" means that the Container  may consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity
+         * The maximum amount of CPUs that can be consumed by the container's process.
+         *
+         * If you do not set a value, then the process can use all available CPU resources on the instance.
+         *
+         * CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
+         *
+         * A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
          */
         vcpusLimit?: pulumi.Input<number>;
     }
 
     export interface ContainerInstanceContainerVolumeMount {
         /**
-         * Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+         * Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
          */
         isReadOnly?: pulumi.Input<boolean>;
         /**
-         * mountPath describes the volume access path.
+         * The volume access path.
          */
         mountPath: pulumi.Input<string>;
         /**
-         * If there is more than 1 partitions in the volume, this is the number of partition which be referenced. Here is a example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
+         * If there is more than one partition in the volume, reference this number of partitions. Here is an example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
          */
         partition?: pulumi.Input<number>;
         /**
-         * specifies a sub-path inside the referenced volume instead of its root
+         * A subpath inside the referenced volume.
          */
         subPath?: pulumi.Input<string>;
         /**
-         * The name of the volume.
+         * The name of the volume. Avoid entering confidential information.
          */
         volumeName: pulumi.Input<string>;
     }
 
     export interface ContainerInstanceDnsConfig {
         /**
-         * IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use nameservers from subnet dhcpDnsOptions.
+         * IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
          */
         nameservers?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"]
+         * Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
          */
         options?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -9674,26 +9684,26 @@ export namespace ContainerEngine {
 
     export interface ContainerInstanceShapeConfig {
         /**
-         * The total amount of memory available to the instance, in gigabytes.
+         * The total amount of memory available to the container instance (GB).
          */
         memoryInGbs?: pulumi.Input<number>;
         /**
-         * The networking bandwidth available to the instance, in gigabits per second.
+         * The networking bandwidth available to the container instance, in gigabits per second.
          */
         networkingBandwidthInGbps?: pulumi.Input<number>;
         /**
-         * The total number of OCPUs available to the instance.
+         * The total number of OCPUs available to the container instance.
          */
         ocpus: pulumi.Input<number>;
         /**
-         * A short description of the instance's processor (CPU).
+         * A short description of the container instance's processor (CPU).
          */
         processorDescription?: pulumi.Input<string>;
     }
 
     export interface ContainerInstanceVnic {
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
          */
         definedTags?: pulumi.Input<{[key: string]: any}>;
         /**
@@ -9705,7 +9715,7 @@ export namespace ContainerEngine {
          */
         freeformTags?: pulumi.Input<{[key: string]: any}>;
         /**
-         * The hostname for the VNIC's primary private IP.
+         * The hostname for the VNIC's primary private IP. Used for DNS.
          */
         hostnameLabel?: pulumi.Input<string>;
         /**
@@ -9729,14 +9739,14 @@ export namespace ContainerEngine {
          */
         subnetId: pulumi.Input<string>;
         /**
-         * The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+         * The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
          */
         vnicId?: pulumi.Input<string>;
     }
 
     export interface ContainerInstanceVolume {
         /**
-         * Volume type that we are using for empty dir where it could be either File Storage or Memory
+         * The volume type of the empty directory, can be either File Storage or Memory.
          */
         backingStore?: pulumi.Input<string>;
         /**
@@ -9744,7 +9754,7 @@ export namespace ContainerEngine {
          */
         configs?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceVolumeConfig>[]>;
         /**
-         * The name of the volume. This has be unique cross single ContainerInstance.
+         * The name of the volume. This must be unique within a single container instance.
          */
         name: pulumi.Input<string>;
         /**
@@ -10260,7 +10270,7 @@ export namespace ContainerInstances {
 
     export interface GetContainerInstancesFilter {
         /**
-         * The name of the volume. This has be unique cross single ContainerInstance.
+         * The name of the volume. This must be unique within a single container instance.
          */
         name: string;
         regex?: boolean;
@@ -10269,7 +10279,7 @@ export namespace ContainerInstances {
 
     export interface GetContainerInstancesFilterArgs {
         /**
-         * The name of the volume. This has be unique cross single ContainerInstance.
+         * The name of the volume. This must be unique within a single container instance.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -12276,6 +12286,10 @@ export namespace Core {
          */
         launchDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetails>;
         /**
+         * Multiple Compute Instance Configuration instance details.
+         */
+        options?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOption>[]>;
+        /**
          * Secondary VNIC parameters.
          */
         secondaryVnics?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsSecondaryVnic>[]>;
@@ -12345,7 +12359,7 @@ export namespace Core {
          */
         blockVolumeReplicas?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas>;
         /**
-         * The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+         * (Updatable) The OCID of the compartment containing images to search
          */
         compartmentId?: pulumi.Input<string>;
         /**
@@ -12365,7 +12379,7 @@ export namespace Core {
          */
         isAutoTuneEnabled?: pulumi.Input<boolean>;
         /**
-         * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         * The OCID of the Vault service key to assign as the master encryption key for the volume.
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
@@ -12432,7 +12446,7 @@ export namespace Core {
          */
         capacityReservationId?: pulumi.Input<string>;
         /**
-         * The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+         * (Updatable) The OCID of the compartment containing images to search
          */
         compartmentId?: pulumi.Input<string>;
         /**
@@ -12601,15 +12615,15 @@ export namespace Core {
 
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig {
         /**
-         * Whether the plugin should be enabled or disabled. Accepted values are `ENABLED` and `DISABLED`
+         * Whether the plugin should be enabled or disabled.
          *
          * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
          */
-        desiredState: pulumi.Input<string>;
+        desiredState?: pulumi.Input<string>;
         /**
          * The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
          */
-        name: pulumi.Input<string>;
+        name?: pulumi.Input<string>;
     }
 
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfig {
@@ -12625,7 +12639,7 @@ export namespace Core {
 
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails {
         /**
-         * Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+         * Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         assignPrivateDnsRecord?: pulumi.Input<boolean>;
         /**
@@ -12755,7 +12769,7 @@ export namespace Core {
         /**
          * The action to run when the preemptible instance is interrupted for eviction.
          */
-        preemptionAction: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction>;
+        preemptionAction?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction>;
     }
 
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction {
@@ -12788,6 +12802,10 @@ export namespace Core {
          * The total number of OCPUs available to the instance.
          */
         ocpus?: pulumi.Input<number>;
+        /**
+         * The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+         */
+        vcpus?: pulumi.Input<number>;
     }
 
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails {
@@ -12810,13 +12828,676 @@ export namespace Core {
          */
         imageId?: pulumi.Input<string>;
         /**
-         * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         * These are the criteria for selecting an image. This is required if imageId is not specified.
+         */
+        instanceSourceImageFilterDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetails>;
+        /**
+         * The OCID of the Vault service key to assign as the master encryption key for the volume.
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
          * The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
          */
         sourceType: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetails {
+        /**
+         * (Updatable) The OCID of the compartment containing images to search
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        definedTagsFilter?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * The image's operating system.  Example: `Oracle Linux`
+         */
+        operatingSystem?: pulumi.Input<string>;
+        /**
+         * The image's operating system version.  Example: `7.2`
+         */
+        operatingSystemVersion?: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOption {
+        /**
+         * Block volume parameters.
+         */
+        blockVolumes?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionBlockVolume>[]>;
+        /**
+         * Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+         *
+         * See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
+         */
+        launchDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionLaunchDetails>;
+        /**
+         * Secondary VNIC parameters.
+         */
+        secondaryVnics?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionSecondaryVnic>[]>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionBlockVolume {
+        /**
+         * Volume attachmentDetails. Please see [AttachVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AttachVolumeDetails/)
+         */
+        attachDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetails>;
+        /**
+         * Creates a new block volume. Please see [CreateVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVolumeDetails/)
+         */
+        createDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails>;
+        /**
+         * The OCID of the volume.
+         */
+        volumeId?: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetails {
+        /**
+         * The device name.
+         */
+        device?: pulumi.Input<string>;
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         */
+        isPvEncryptionInTransitEnabled?: pulumi.Input<boolean>;
+        /**
+         * Whether the attachment should be created in read-only mode.
+         */
+        isReadOnly?: pulumi.Input<boolean>;
+        /**
+         * Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
+         */
+        isShareable?: pulumi.Input<boolean>;
+        /**
+         * The type of action to run when the instance is interrupted for eviction.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * Whether to use CHAP authentication for the volume attachment. Defaults to false.
+         */
+        useChap?: pulumi.Input<boolean>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails {
+        /**
+         * The list of autotune policies enabled for this volume.
+         */
+        autotunePolicies?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicy>[]>;
+        /**
+         * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+         */
+        availabilityDomain?: pulumi.Input<string>;
+        /**
+         * If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
+         */
+        backupPolicyId?: pulumi.Input<string>;
+        /**
+         * The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
+         */
+        blockVolumeReplicas?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicas>;
+        /**
+         * (Updatable) The OCID of the compartment containing images to search
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+         */
+        isAutoTuneEnabled?: pulumi.Input<boolean>;
+        /**
+         * The OCID of the Vault service key to assign as the master encryption key for the volume.
+         */
+        kmsKeyId?: pulumi.Input<string>;
+        /**
+         * The size of the volume in GBs.
+         */
+        sizeInGbs?: pulumi.Input<string>;
+        sourceDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetails>;
+        /**
+         * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         *
+         * Allowed values:
+         */
+        vpusPerGb?: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicy {
+        /**
+         * This specifies the type of autotunes supported by OCI.
+         */
+        autotuneType: pulumi.Input<string>;
+        /**
+         * This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+         */
+        maxVpusPerGb?: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicas {
+        /**
+         * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+         */
+        availabilityDomain: pulumi.Input<string>;
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetails {
+        /**
+         * The OCID of the volume backup.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * The type of action to run when the instance is interrupted for eviction.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionLaunchDetails {
+        /**
+         * Configuration options for the Oracle Cloud Agent software running on the instance.
+         */
+        agentConfig?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfig>;
+        /**
+         * Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
+         */
+        availabilityConfig?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfig>;
+        /**
+         * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+         */
+        availabilityDomain?: pulumi.Input<string>;
+        /**
+         * The OCID of the compute capacity reservation this instance is launched under.
+         */
+        capacityReservationId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the compartment containing images to search
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
+         */
+        createVnicDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails>;
+        /**
+         * The OCID of the dedicated virtual machine host to place the instance on.
+         *
+         * Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
+         */
+        dedicatedVmHostId?: pulumi.Input<string>;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+         *
+         * They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+         *
+         * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+         */
+        extendedMetadata?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+         *
+         * If you do not specify the fault domain, the system selects one for you.
+         *
+         * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+         *
+         * Example: `FAULT-DOMAIN-1`
+         */
+        faultDomain?: pulumi.Input<string>;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
+         */
+        instanceOptions?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptions>;
+        /**
+         * This is an advanced option.
+         *
+         * When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+         *
+         * If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
+         *
+         * The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+         *
+         * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         *
+         * For more information about iPXE, see http://ipxe.org.
+         */
+        ipxeScript?: pulumi.Input<string>;
+        /**
+         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         */
+        isPvEncryptionInTransitEnabled?: pulumi.Input<boolean>;
+        /**
+         * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+         */
+        launchMode?: pulumi.Input<string>;
+        /**
+         * Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+         */
+        launchOptions?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions>;
+        /**
+         * Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+         *
+         * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
+         * * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
+         * * Get information about the instance, including the custom metadata that you provide when you launch the instance.
+         *
+         * **Providing Cloud-Init Metadata**
+         *
+         * You can use the following metadata key names to provide information to Cloud-Init:
+         *
+         * **"sshAuthorizedKeys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorizedKeys` file, as shown in the example below.
+         *
+         * **"userData"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+         *
+         * **Metadata Example**
+         *
+         * "metadata" : { "quakeBotLevel" : "Severe", "sshAuthorizedKeys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "userData" : "<your_public_SSH_key>==" } **Getting Metadata on the Instance**
+         *
+         * To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+         *
+         * curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+         *
+         * You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+         *
+         * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+         */
+        metadata?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * The platform configuration requested for the instance.
+         *
+         * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
+         *
+         * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+         */
+        platformConfig?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig>;
+        /**
+         * Configuration options for preemptible instances.
+         */
+        preemptibleInstanceConfig?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfig>;
+        /**
+         * The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+         */
+        preferredMaintenanceAction?: pulumi.Input<string>;
+        /**
+         * The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+         *
+         * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+         */
+        shape?: pulumi.Input<string>;
+        /**
+         * The shape configuration requested for the instance.
+         *
+         * If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+         *
+         * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+         */
+        shapeConfig?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfig>;
+        sourceDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetails>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfig {
+        /**
+         * Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+         *
+         * To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+         */
+        areAllPluginsDisabled?: pulumi.Input<boolean>;
+        /**
+         * Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
+         *
+         * These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
+         *
+         * The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+         * * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
+         * * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
+         */
+        isManagementDisabled?: pulumi.Input<boolean>;
+        /**
+         * Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
+         *
+         * These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
+         *
+         * The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+         * * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
+         * * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
+         */
+        isMonitoringDisabled?: pulumi.Input<boolean>;
+        /**
+         * The configuration of plugins associated with this instance.
+         */
+        pluginsConfigs?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfig>[]>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfig {
+        /**
+         * Whether the plugin should be enabled or disabled.
+         *
+         * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
+         */
+        desiredState?: pulumi.Input<string>;
+        /**
+         * The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+         */
+        name?: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfig {
+        /**
+         * Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+         */
+        isLiveMigrationPreferred?: pulumi.Input<boolean>;
+        /**
+         * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+         */
+        recoveryAction?: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails {
+        /**
+         * Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         */
+        assignPrivateDnsRecord?: pulumi.Input<boolean>;
+        /**
+         * Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         */
+        assignPublicIp?: pulumi.Input<boolean>;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         */
+        hostnameLabel?: pulumi.Input<string>;
+        /**
+         * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         */
+        privateIp?: pulumi.Input<string>;
+        /**
+         * Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         */
+        skipSourceDestCheck?: pulumi.Input<boolean>;
+        /**
+         * The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         */
+        subnetId?: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptions {
+        /**
+         * Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
+         */
+        areLegacyImdsEndpointsDisabled?: pulumi.Input<boolean>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions {
+        /**
+         * Emulation type for the boot volume.
+         */
+        bootVolumeType?: pulumi.Input<string>;
+        /**
+         * Firmware used to boot VM. Select the option that matches your operating system.
+         */
+        firmware?: pulumi.Input<string>;
+        /**
+         * Whether to enable consistent volume naming feature. Defaults to false.
+         */
+        isConsistentVolumeNamingEnabled?: pulumi.Input<boolean>;
+        /**
+         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         */
+        isPvEncryptionInTransitEnabled?: pulumi.Input<boolean>;
+        /**
+         * Emulation type for the physical network interface card (NIC).
+         */
+        networkType?: pulumi.Input<string>;
+        /**
+         * Emulation type for volume.
+         */
+        remoteDataVolumeType?: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig {
+        /**
+         * Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
+         */
+        areVirtualInstructionsEnabled?: pulumi.Input<boolean>;
+        /**
+         * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
+         */
+        isAccessControlServiceEnabled?: pulumi.Input<boolean>;
+        /**
+         * Whether the input-output memory management unit is enabled.
+         */
+        isInputOutputMemoryManagementUnitEnabled?: pulumi.Input<boolean>;
+        /**
+         * Whether the Measured Boot feature is enabled on the instance.
+         */
+        isMeasuredBootEnabled?: pulumi.Input<boolean>;
+        /**
+         * Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+         */
+        isMemoryEncryptionEnabled?: pulumi.Input<boolean>;
+        /**
+         * Whether Secure Boot is enabled on the instance.
+         */
+        isSecureBootEnabled?: pulumi.Input<boolean>;
+        /**
+         * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+         *
+         * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
+         */
+        isSymmetricMultiThreadingEnabled?: pulumi.Input<boolean>;
+        /**
+         * Whether the Trusted Platform Module (TPM) is enabled on the instance.
+         */
+        isTrustedPlatformModuleEnabled?: pulumi.Input<boolean>;
+        /**
+         * The number of NUMA nodes per socket (NPS).
+         */
+        numaNodesPerSocket?: pulumi.Input<string>;
+        /**
+         * The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+         *
+         * If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
+         */
+        percentageOfCoresEnabled?: pulumi.Input<number>;
+        /**
+         * The type of action to run when the instance is interrupted for eviction.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfig {
+        /**
+         * The action to run when the preemptible instance is interrupted for eviction.
+         */
+        preemptionAction?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionAction>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionAction {
+        /**
+         * Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+         */
+        preserveBootVolume?: pulumi.Input<boolean>;
+        /**
+         * The type of action to run when the instance is interrupted for eviction.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfig {
+        /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+         *
+         * The following values are supported:
+         */
+        baselineOcpuUtilization?: pulumi.Input<string>;
+        /**
+         * The total amount of memory available to the instance, in gigabytes.
+         */
+        memoryInGbs?: pulumi.Input<number>;
+        /**
+         * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         */
+        nvmes?: pulumi.Input<number>;
+        /**
+         * The total number of OCPUs available to the instance.
+         */
+        ocpus?: pulumi.Input<number>;
+        /**
+         * The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+         */
+        vcpus?: pulumi.Input<number>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetails {
+        /**
+         * The OCID of the boot volume used to boot the instance.
+         */
+        bootVolumeId?: pulumi.Input<string>;
+        /**
+         * The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
+         */
+        bootVolumeSizeInGbs?: pulumi.Input<string>;
+        /**
+         * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         *
+         * Allowed values:
+         */
+        bootVolumeVpusPerGb?: pulumi.Input<string>;
+        /**
+         * The OCID of the image used to boot the instance.
+         */
+        imageId?: pulumi.Input<string>;
+        /**
+         * These are the criteria for selecting an image. This is required if imageId is not specified.
+         */
+        instanceSourceImageFilterDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetails>;
+        /**
+         * The OCID of the Vault service key to assign as the master encryption key for the volume.
+         */
+        kmsKeyId?: pulumi.Input<string>;
+        /**
+         * The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+         */
+        sourceType: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetails {
+        /**
+         * (Updatable) The OCID of the compartment containing images to search
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        definedTagsFilter?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * The image's operating system.  Example: `Oracle Linux`
+         */
+        operatingSystem?: pulumi.Input<string>;
+        /**
+         * The image's operating system version.  Example: `7.2`
+         */
+        operatingSystemVersion?: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionSecondaryVnic {
+        /**
+         * Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
+         */
+        createVnicDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails>;
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+         */
+        nicIndex?: pulumi.Input<number>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails {
+        /**
+         * Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         */
+        assignPrivateDnsRecord?: pulumi.Input<boolean>;
+        /**
+         * Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         */
+        assignPublicIp?: pulumi.Input<boolean>;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         */
+        hostnameLabel?: pulumi.Input<string>;
+        /**
+         * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         */
+        privateIp?: pulumi.Input<string>;
+        /**
+         * Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         */
+        skipSourceDestCheck?: pulumi.Input<boolean>;
+        /**
+         * The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         */
+        subnetId?: pulumi.Input<string>;
     }
 
     export interface InstanceConfigurationInstanceDetailsSecondaryVnic {
@@ -12836,7 +13517,7 @@ export namespace Core {
 
     export interface InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails {
         /**
-         * Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+         * Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         assignPrivateDnsRecord?: pulumi.Input<boolean>;
         /**
@@ -13196,6 +13877,10 @@ export namespace Core {
          * A short description of the instance's processor (CPU).
          */
         processorDescription?: pulumi.Input<string>;
+        /**
+         * (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+         */
+        vcpus?: pulumi.Input<number>;
     }
 
     export interface InstanceSourceDetails {
@@ -13210,17 +13895,40 @@ export namespace Core {
          */
         bootVolumeVpusPerGb?: pulumi.Input<string>;
         /**
+         * These are the criteria for selecting an image. This is required if imageId is not specified.
+         */
+        instanceSourceImageFilterDetails?: pulumi.Input<inputs.Core.InstanceSourceDetailsInstanceSourceImageFilterDetails>;
+        /**
          * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
          * The OCID of an image or a boot volume to use, depending on the value of `sourceType`.
          */
-        sourceId: pulumi.Input<string>;
+        sourceId?: pulumi.Input<string>;
         /**
          * The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
          */
         sourceType: pulumi.Input<string>;
+    }
+
+    export interface InstanceSourceDetailsInstanceSourceImageFilterDetails {
+        /**
+         * (Updatable) The OCID of the compartment containing images to search
+         */
+        compartmentId: pulumi.Input<string>;
+        /**
+         * Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        definedTagsFilter?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * The image's operating system.  Example: `Oracle Linux`
+         */
+        operatingSystem?: pulumi.Input<string>;
+        /**
+         * The image's operating system version.  Example: `7.2`
+         */
+        operatingSystemVersion?: pulumi.Input<string>;
     }
 
     export interface IpsecConnectionTunnelManagementBgpSessionInfo {
@@ -24843,11 +25551,11 @@ export namespace DevOps {
 export namespace DisasterRecovery {
     export interface DrPlanExecutionExecutionOptions {
         /**
-         * A flag indicating whether a precheck should be executed before the plan.  Example: `false`
+         * A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
          */
         arePrechecksEnabled?: pulumi.Input<boolean>;
         /**
-         * A flag indicating whether warnigs should be ignored during the switchover.  Example: `true`
+         * A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `true`
          */
         areWarningsIgnored?: pulumi.Input<boolean>;
         /**
@@ -24866,7 +25574,7 @@ export namespace DisasterRecovery {
          */
         executionDurationInSec?: pulumi.Input<number>;
         /**
-         * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+         * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
          */
         groupId?: pulumi.Input<string>;
         /**
@@ -24905,7 +25613,7 @@ export namespace DisasterRecovery {
          */
         executionDurationInSec?: pulumi.Input<number>;
         /**
-         * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+         * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
          */
         groupId?: pulumi.Input<string>;
         /**
@@ -24921,7 +25629,7 @@ export namespace DisasterRecovery {
          */
         statusDetails?: pulumi.Input<string>;
         /**
-         * The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+         * The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
          */
         stepId?: pulumi.Input<string>;
         /**
@@ -24974,7 +25682,7 @@ export namespace DisasterRecovery {
          */
         displayName?: pulumi.Input<string>;
         /**
-         * The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+         * The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
          */
         id?: pulumi.Input<string>;
         /**
@@ -25001,11 +25709,11 @@ export namespace DisasterRecovery {
          */
         errorMode?: pulumi.Input<string>;
         /**
-         * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+         * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
          */
         groupId?: pulumi.Input<string>;
         /**
-         * The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+         * The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
          */
         id?: pulumi.Input<string>;
         /**
@@ -25013,7 +25721,7 @@ export namespace DisasterRecovery {
          */
         isEnabled?: pulumi.Input<boolean>;
         /**
-         * The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
+         * The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
          */
         memberId?: pulumi.Input<string>;
         /**
@@ -25036,7 +25744,7 @@ export namespace DisasterRecovery {
 
     export interface DrPlanPlanGroupStepUserDefinedStep {
         /**
-         * The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+         * The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
          */
         functionId?: pulumi.Input<string>;
         /**
@@ -25056,7 +25764,7 @@ export namespace DisasterRecovery {
          */
         runAsUser?: pulumi.Input<string>;
         /**
-         * The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+         * The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
          */
         runOnInstanceId?: pulumi.Input<string>;
         /**
@@ -25090,7 +25798,7 @@ export namespace DisasterRecovery {
 
     export interface DrProtectionGroupAssociation {
         /**
-         * The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+         * The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
          */
         peerId?: pulumi.Input<string>;
         /**
@@ -25120,11 +25828,15 @@ export namespace DisasterRecovery {
 
     export interface DrProtectionGroupMember {
         /**
-         * (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid1`
+         * (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+         */
+        destinationCapacityReservationId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
          */
         destinationCompartmentId?: pulumi.Input<string>;
         /**
-         * (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid2`
+         * (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;`
          */
         destinationDedicatedVmHostId?: pulumi.Input<string>;
         /**
@@ -25132,7 +25844,11 @@ export namespace DisasterRecovery {
          */
         isMovable?: pulumi.Input<boolean>;
         /**
-         * (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+         * (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+         */
+        isRetainFaultDomain?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
          */
         memberId: pulumi.Input<string>;
         /**
@@ -25140,9 +25856,13 @@ export namespace DisasterRecovery {
          */
         memberType: pulumi.Input<string>;
         /**
-         * (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+         * (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;`
          */
         passwordVaultSecretId?: pulumi.Input<string>;
+        /**
+         * (Updatable) A list of Compute Instance VNIC mappings.
+         */
+        vnicMapping?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberVnicMapping>[]>;
         /**
          * (Updatable) A list of Compute Instance VNIC mappings.
          */
@@ -25151,15 +25871,23 @@ export namespace DisasterRecovery {
 
     export interface DrProtectionGroupMemberVnicMapping {
         /**
-         * (Updatable) A list of destination region's network security group (NSG) Ids which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1.iad.abcd1, ocid1.networksecuritygroup.oc1.iad.wxyz2 ]`
+         * (Updatable) A list of network security group (NSG) IDs in the destination region which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
          */
         destinationNsgIdLists?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1.iad.exampleocid2`
+         * (Updatable) The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+         */
+        destinationPrimaryPrivateIpAddress?: pulumi.Input<string>;
+        /**
+         * (Updatable) The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+         */
+        destinationPrimaryPrivateIpHostnameLabel?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
          */
         destinationSubnetId?: pulumi.Input<string>;
         /**
-         * (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1.phx.exampleocid1`
+         * (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
          */
         sourceVnicId?: pulumi.Input<string>;
     }
@@ -25814,6 +26542,10 @@ export namespace FileStorage {
          */
         access?: pulumi.Input<string>;
         /**
+         * (Updatable) Array of allowed NFS authentication types.
+         */
+        allowedAuths?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
          * (Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
          */
         anonymousGid?: pulumi.Input<string>;
@@ -25825,6 +26557,10 @@ export namespace FileStorage {
          * (Updatable) Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
          */
         identitySquash?: pulumi.Input<string>;
+        /**
+         * (Updatable) Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+         */
+        isAnonymousAccessAllowed?: pulumi.Input<boolean>;
         /**
          * (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
          */
@@ -25951,6 +26687,18 @@ export namespace FileStorage {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetOutboundConnectorsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOutboundConnectorsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetReplicationTargetsFilter {
         name: string;
         regex?: boolean;
@@ -25993,6 +26741,74 @@ export namespace FileStorage {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface MountTargetKerberos {
+        /**
+         * (Updatable) Version of the keytab Secret in the Vault to use as a backup.
+         */
+        backupKeyTabSecretVersion?: pulumi.Input<number>;
+        /**
+         * (Updatable) Version of the keytab Secret in the Vault to use.
+         */
+        currentKeyTabSecretVersion?: pulumi.Input<number>;
+        /**
+         * (Updatable) Specifies whether to enable or disable Kerberos.
+         */
+        isKerberosEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The Kerberos realm that the mount target will join.
+         */
+        kerberosRealm: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab Secret in the Vault.
+         */
+        keyTabSecretId?: pulumi.Input<string>;
+    }
+
+    export interface MountTargetLdapIdmap {
+        /**
+         * (Updatable) The maximum amount of time the mount target is allowed to use a cached entry.
+         */
+        cacheLifetimeSeconds?: pulumi.Input<number>;
+        /**
+         * (Updatable) The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
+         */
+        cacheRefreshIntervalSeconds?: pulumi.Input<number>;
+        /**
+         * (Updatable) All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
+         */
+        groupSearchBase?: pulumi.Input<string>;
+        /**
+         * (Updatable) The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
+         */
+        negativeCacheLifetimeSeconds?: pulumi.Input<number>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
+         */
+        outboundConnector1id?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
+         */
+        outboundConnector2id?: pulumi.Input<string>;
+        /**
+         * (Updatable) Schema type of the LDAP account.
+         */
+        schemaType?: pulumi.Input<string>;
+        /**
+         * (Updatable) All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
+         */
+        userSearchBase?: pulumi.Input<string>;
+    }
+
+    export interface OutboundConnectorEndpoint {
+        /**
+         * Name of the DNS server.
+         */
+        hostname: pulumi.Input<string>;
+        /**
+         * Port of the DNS server.
+         */
+        port: pulumi.Input<string>;
+    }
 }
 
 export namespace Functions {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetManagementAgentGetAutoUpgradableConfig(ctx *pulumi.Context, args *GetManagementAgentGetAutoUpgradableConfigArgs, opts ...pulumi.InvokeOption) (*GetManagementAgentGetAutoUpgradableConfigResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagementAgentGetAutoUpgradableConfigResult
 	err := ctx.Invoke("oci:ManagementAgent/getManagementAgentGetAutoUpgradableConfig:getManagementAgentGetAutoUpgradableConfig", args, &rv, opts...)
 	if err != nil {

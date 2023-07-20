@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -14,6 +15,7 @@ import (
 //
 // Retrieves the configuration information for the specified backend set.
 func LookupBackendSet(ctx *pulumi.Context, args *LookupBackendSetArgs, opts ...pulumi.InvokeOption) (*LookupBackendSetResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBackendSetResult
 	err := ctx.Invoke("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetIamWorkRequestErrors(ctx *pulumi.Context, args *GetIamWorkRequestErrorsArgs, opts ...pulumi.InvokeOption) (*GetIamWorkRequestErrorsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetIamWorkRequestErrorsResult
 	err := ctx.Invoke("oci:Identity/getIamWorkRequestErrors:getIamWorkRequestErrors", args, &rv, opts...)
 	if err != nil {

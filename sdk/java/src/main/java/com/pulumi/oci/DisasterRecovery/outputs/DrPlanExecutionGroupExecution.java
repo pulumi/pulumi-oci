@@ -25,7 +25,7 @@ public final class DrPlanExecutionGroupExecution {
      */
     private @Nullable Integer executionDurationInSec;
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
      * 
      */
     private @Nullable String groupId;
@@ -76,7 +76,7 @@ public final class DrPlanExecutionGroupExecution {
         return Optional.ofNullable(this.executionDurationInSec);
     }
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<String> groupId() {

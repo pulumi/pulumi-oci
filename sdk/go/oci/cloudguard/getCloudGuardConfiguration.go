@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupCloudGuardConfiguration(ctx *pulumi.Context, args *LookupCloudGuardConfigurationArgs, opts ...pulumi.InvokeOption) (*LookupCloudGuardConfigurationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupCloudGuardConfigurationResult
 	err := ctx.Invoke("oci:CloudGuard/getCloudGuardConfiguration:getCloudGuardConfiguration", args, &rv, opts...)
 	if err != nil {

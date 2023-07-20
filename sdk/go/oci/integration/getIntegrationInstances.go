@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetIntegrationInstances(ctx *pulumi.Context, args *GetIntegrationInstancesArgs, opts ...pulumi.InvokeOption) (*GetIntegrationInstancesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetIntegrationInstancesResult
 	err := ctx.Invoke("oci:Integration/getIntegrationInstances:getIntegrationInstances", args, &rv, opts...)
 	if err != nil {

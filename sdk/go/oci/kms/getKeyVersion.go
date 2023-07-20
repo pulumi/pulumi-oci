@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -47,6 +48,7 @@ import (
 //
 // ```
 func LookupKeyVersion(ctx *pulumi.Context, args *LookupKeyVersionArgs, opts ...pulumi.InvokeOption) (*LookupKeyVersionResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupKeyVersionResult
 	err := ctx.Invoke("oci:Kms/getKeyVersion:getKeyVersion", args, &rv, opts...)
 	if err != nil {

@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -156,6 +157,7 @@ func NewConnection(ctx *pulumi.Context,
 	if args.VaultDetails == nil {
 		return nil, errors.New("invalid value for required argument 'VaultDetails'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Connection
 	err := ctx.RegisterResource("oci:DatabaseMigration/connection:Connection", name, args, &resource, opts...)
 	if err != nil {

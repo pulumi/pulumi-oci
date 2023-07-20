@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetCaptureFilters(ctx *pulumi.Context, args *GetCaptureFiltersArgs, opts ...pulumi.InvokeOption) (*GetCaptureFiltersResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCaptureFiltersResult
 	err := ctx.Invoke("oci:Core/getCaptureFilters:getCaptureFilters", args, &rv, opts...)
 	if err != nil {

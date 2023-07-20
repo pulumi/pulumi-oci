@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetDecryptedData(ctx *pulumi.Context, args *GetDecryptedDataArgs, opts ...pulumi.InvokeOption) (*GetDecryptedDataResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDecryptedDataResult
 	err := ctx.Invoke("oci:Kms/getDecryptedData:getDecryptedData", args, &rv, opts...)
 	if err != nil {

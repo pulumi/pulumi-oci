@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetExternalAsmDiskGroups(ctx *pulumi.Context, args *GetExternalAsmDiskGroupsArgs, opts ...pulumi.InvokeOption) (*GetExternalAsmDiskGroupsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalAsmDiskGroupsResult
 	err := ctx.Invoke("oci:DatabaseManagement/getExternalAsmDiskGroups:getExternalAsmDiskGroups", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupNotificationTopic(ctx *pulumi.Context, args *LookupNotificationTopicArgs, opts ...pulumi.InvokeOption) (*LookupNotificationTopicResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupNotificationTopicResult
 	err := ctx.Invoke("oci:Ons/getNotificationTopic:getNotificationTopic", args, &rv, opts...)
 	if err != nil {

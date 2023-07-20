@@ -20,14 +20,14 @@ public final class ContainerInstanceVnicArgs extends com.pulumi.resources.Resour
     public static final ContainerInstanceVnicArgs Empty = new ContainerInstanceVnicArgs();
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,Object>> definedTags;
 
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
@@ -65,14 +65,14 @@ public final class ContainerInstanceVnicArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * The hostname for the VNIC&#39;s primary private IP.
+     * The hostname for the VNIC&#39;s primary private IP. Used for DNS.
      * 
      */
     @Import(name="hostnameLabel")
     private @Nullable Output<String> hostnameLabel;
 
     /**
-     * @return The hostname for the VNIC&#39;s primary private IP.
+     * @return The hostname for the VNIC&#39;s primary private IP. Used for DNS.
      * 
      */
     public Optional<Output<String>> hostnameLabel() {
@@ -155,14 +155,14 @@ public final class ContainerInstanceVnicArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+     * The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
      * 
      */
     @Import(name="vnicId")
     private @Nullable Output<String> vnicId;
 
     /**
-     * @return The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+     * @return The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
      * 
      */
     public Optional<Output<String>> vnicId() {
@@ -203,7 +203,7 @@ public final class ContainerInstanceVnicArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class ContainerInstanceVnicArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
          * 
          * @return builder
          * 
@@ -266,7 +266,7 @@ public final class ContainerInstanceVnicArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param hostnameLabel The hostname for the VNIC&#39;s primary private IP.
+         * @param hostnameLabel The hostname for the VNIC&#39;s primary private IP. Used for DNS.
          * 
          * @return builder
          * 
@@ -277,7 +277,7 @@ public final class ContainerInstanceVnicArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param hostnameLabel The hostname for the VNIC&#39;s primary private IP.
+         * @param hostnameLabel The hostname for the VNIC&#39;s primary private IP. Used for DNS.
          * 
          * @return builder
          * 
@@ -402,7 +402,7 @@ public final class ContainerInstanceVnicArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param vnicId The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+         * @param vnicId The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
          * 
          * @return builder
          * 
@@ -413,7 +413,7 @@ public final class ContainerInstanceVnicArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param vnicId The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+         * @param vnicId The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
          * 
          * @return builder
          * 

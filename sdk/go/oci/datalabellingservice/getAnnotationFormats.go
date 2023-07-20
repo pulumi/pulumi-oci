@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetAnnotationFormats(ctx *pulumi.Context, args *GetAnnotationFormatsArgs, opts ...pulumi.InvokeOption) (*GetAnnotationFormatsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAnnotationFormatsResult
 	err := ctx.Invoke("oci:DataLabellingService/getAnnotationFormats:getAnnotationFormats", args, &rv, opts...)
 	if err != nil {

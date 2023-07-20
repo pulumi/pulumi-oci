@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -554,6 +555,7 @@ func NewDomainsUser(ctx *pulumi.Context,
 		"password",
 	})
 	opts = append(opts, secrets)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DomainsUser
 	err := ctx.RegisterResource("oci:Identity/domainsUser:DomainsUser", name, args, &resource, opts...)
 	if err != nil {

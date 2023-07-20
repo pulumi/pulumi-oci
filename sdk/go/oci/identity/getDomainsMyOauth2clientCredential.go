@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func LookupDomainsMyOauth2clientCredential(ctx *pulumi.Context, args *LookupDomainsMyOauth2clientCredentialArgs, opts ...pulumi.InvokeOption) (*LookupDomainsMyOauth2clientCredentialResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDomainsMyOauth2clientCredentialResult
 	err := ctx.Invoke("oci:Identity/getDomainsMyOauth2clientCredential:getDomainsMyOauth2clientCredential", args, &rv, opts...)
 	if err != nil {

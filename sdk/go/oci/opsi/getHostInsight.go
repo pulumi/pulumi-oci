@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupHostInsight(ctx *pulumi.Context, args *LookupHostInsightArgs, opts ...pulumi.InvokeOption) (*LookupHostInsightResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupHostInsightResult
 	err := ctx.Invoke("oci:Opsi/getHostInsight:getHostInsight", args, &rv, opts...)
 	if err != nil {

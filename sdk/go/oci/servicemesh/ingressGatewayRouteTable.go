@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -128,6 +129,7 @@ func NewIngressGatewayRouteTable(ctx *pulumi.Context,
 	if args.RouteRules == nil {
 		return nil, errors.New("invalid value for required argument 'RouteRules'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource IngressGatewayRouteTable
 	err := ctx.RegisterResource("oci:ServiceMesh/ingressGatewayRouteTable:IngressGatewayRouteTable", name, args, &resource, opts...)
 	if err != nil {

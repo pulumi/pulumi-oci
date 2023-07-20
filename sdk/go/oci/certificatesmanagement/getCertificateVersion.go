@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetCertificateVersion(ctx *pulumi.Context, args *GetCertificateVersionArgs, opts ...pulumi.InvokeOption) (*GetCertificateVersionResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCertificateVersionResult
 	err := ctx.Invoke("oci:CertificatesManagement/getCertificateVersion:getCertificateVersion", args, &rv, opts...)
 	if err != nil {

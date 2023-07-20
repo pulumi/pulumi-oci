@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetMediaWorkflowJobFact(ctx *pulumi.Context, args *GetMediaWorkflowJobFactArgs, opts ...pulumi.InvokeOption) (*GetMediaWorkflowJobFactResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMediaWorkflowJobFactResult
 	err := ctx.Invoke("oci:MediaServices/getMediaWorkflowJobFact:getMediaWorkflowJobFact", args, &rv, opts...)
 	if err != nil {

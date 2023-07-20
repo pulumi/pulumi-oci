@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+        /// Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         /// </summary>
         [Input("assignPrivateDnsRecord")]
         public Input<bool>? AssignPrivateDnsRecord { get; set; }

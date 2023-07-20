@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func LookupDatabaseRegistration(ctx *pulumi.Context, args *LookupDatabaseRegistrationArgs, opts ...pulumi.InvokeOption) (*LookupDatabaseRegistrationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDatabaseRegistrationResult
 	err := ctx.Invoke("oci:GoldenGate/getDatabaseRegistration:getDatabaseRegistration", args, &rv, opts...)
 	if err != nil {

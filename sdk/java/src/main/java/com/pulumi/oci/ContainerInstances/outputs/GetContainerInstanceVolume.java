@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetContainerInstanceVolume {
     /**
-     * @return Volume type that we are using for empty dir where it could be either File Storage or Memory
+     * @return The volume type of the empty directory, can be either File Storage or Memory.
      * 
      */
     private String backingStore;
@@ -22,7 +22,7 @@ public final class GetContainerInstanceVolume {
      */
     private List<GetContainerInstanceVolumeConfig> configs;
     /**
-     * @return The name of the volume. This has be unique cross single ContainerInstance.
+     * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
     private String name;
@@ -34,7 +34,7 @@ public final class GetContainerInstanceVolume {
 
     private GetContainerInstanceVolume() {}
     /**
-     * @return Volume type that we are using for empty dir where it could be either File Storage or Memory
+     * @return The volume type of the empty directory, can be either File Storage or Memory.
      * 
      */
     public String backingStore() {
@@ -48,7 +48,7 @@ public final class GetContainerInstanceVolume {
         return this.configs;
     }
     /**
-     * @return The name of the volume. This has be unique cross single ContainerInstance.
+     * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
     public String name() {

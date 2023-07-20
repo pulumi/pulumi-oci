@@ -153,6 +153,7 @@ import * as utilities from "../utilities";
  *                 memoryInGbs: _var.instance_configuration_instance_details_launch_details_shape_config_memory_in_gbs,
  *                 nvmes: _var.instance_configuration_instance_details_launch_details_shape_config_nvmes,
  *                 ocpus: _var.instance_configuration_instance_details_launch_details_shape_config_ocpus,
+ *                 vcpus: _var.instance_configuration_instance_details_launch_details_shape_config_vcpus,
  *             },
  *             sourceDetails: {
  *                 sourceType: _var.instance_configuration_instance_details_launch_details_source_details_source_type,
@@ -161,8 +162,170 @@ import * as utilities from "../utilities";
  *                 bootVolumeVpusPerGb: _var.instance_configuration_instance_details_launch_details_source_details_boot_volume_vpus_per_gb,
  *                 imageId: oci_core_image.test_image.id,
  *                 kmsKeyId: oci_kms_key.test_key.id,
+ *                 instanceSourceImageFilterDetails: {
+ *                     compartmentId: _var.compartment_id,
+ *                     definedTagsFilter: _var.instance_configuration_instance_details_launch_details_source_details_instance_source_image_filter_details_defined_tags_filter,
+ *                     operatingSystem: _var.instance_configuration_instance_details_launch_details_source_details_instance_source_image_filter_details_operating_system,
+ *                     operatingSystemVersion: _var.instance_configuration_instance_details_launch_details_source_details_instance_source_image_filter_details_operating_system_version,
+ *                 },
  *             },
  *         },
+ *         options: [{
+ *             blockVolumes: [{
+ *                 attachDetails: {
+ *                     type: _var.instance_configuration_instance_details_options_block_volumes_attach_details_type,
+ *                     device: _var.instance_configuration_instance_details_options_block_volumes_attach_details_device,
+ *                     displayName: _var.instance_configuration_instance_details_options_block_volumes_attach_details_display_name,
+ *                     isPvEncryptionInTransitEnabled: _var.instance_configuration_instance_details_options_block_volumes_attach_details_is_pv_encryption_in_transit_enabled,
+ *                     isReadOnly: _var.instance_configuration_instance_details_options_block_volumes_attach_details_is_read_only,
+ *                     isShareable: _var.instance_configuration_instance_details_options_block_volumes_attach_details_is_shareable,
+ *                     useChap: _var.instance_configuration_instance_details_options_block_volumes_attach_details_use_chap,
+ *                 },
+ *                 createDetails: {
+ *                     autotunePolicies: [{
+ *                         autotuneType: _var.instance_configuration_instance_details_options_block_volumes_create_details_autotune_policies_autotune_type,
+ *                         maxVpusPerGb: _var.instance_configuration_instance_details_options_block_volumes_create_details_autotune_policies_max_vpus_per_gb,
+ *                     }],
+ *                     availabilityDomain: _var.instance_configuration_instance_details_options_block_volumes_create_details_availability_domain,
+ *                     backupPolicyId: data.oci_core_volume_backup_policies.test_volume_backup_policies.volume_backup_policies[0].id,
+ *                     compartmentId: _var.compartment_id,
+ *                     definedTags: {
+ *                         "Operations.CostCenter": "42",
+ *                     },
+ *                     displayName: _var.instance_configuration_instance_details_options_block_volumes_create_details_display_name,
+ *                     freeformTags: {
+ *                         Department: "Finance",
+ *                     },
+ *                     kmsKeyId: oci_kms_key.test_key.id,
+ *                     sizeInGbs: _var.instance_configuration_instance_details_options_block_volumes_create_details_size_in_gbs,
+ *                     sourceDetails: {
+ *                         type: _var.instance_configuration_instance_details_options_block_volumes_create_details_source_details_type,
+ *                         id: _var.instance_configuration_instance_details_options_block_volumes_create_details_source_details_id,
+ *                     },
+ *                     vpusPerGb: _var.instance_configuration_instance_details_options_block_volumes_create_details_vpus_per_gb,
+ *                 },
+ *                 volumeId: oci_core_volume.test_volume.id,
+ *             }],
+ *             launchDetails: {
+ *                 agentConfig: {
+ *                     areAllPluginsDisabled: _var.instance_configuration_instance_details_options_launch_details_agent_config_are_all_plugins_disabled,
+ *                     isManagementDisabled: _var.instance_configuration_instance_details_options_launch_details_agent_config_is_management_disabled,
+ *                     isMonitoringDisabled: _var.instance_configuration_instance_details_options_launch_details_agent_config_is_monitoring_disabled,
+ *                     pluginsConfigs: [{
+ *                         desiredState: _var.instance_configuration_instance_details_options_launch_details_agent_config_plugins_config_desired_state,
+ *                         name: _var.instance_configuration_instance_details_options_launch_details_agent_config_plugins_config_name,
+ *                     }],
+ *                 },
+ *                 availabilityConfig: {
+ *                     recoveryAction: _var.instance_configuration_instance_details_options_launch_details_availability_config_recovery_action,
+ *                 },
+ *                 availabilityDomain: _var.instance_configuration_instance_details_options_launch_details_availability_domain,
+ *                 capacityReservationId: oci_core_capacity_reservation.test_capacity_reservation.id,
+ *                 compartmentId: _var.compartment_id,
+ *                 createVnicDetails: {
+ *                     assignPrivateDnsRecord: _var.instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_private_dns_record,
+ *                     assignPublicIp: _var.instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_public_ip,
+ *                     definedTags: {
+ *                         "Operations.CostCenter": "42",
+ *                     },
+ *                     displayName: _var.instance_configuration_instance_details_options_launch_details_create_vnic_details_display_name,
+ *                     freeformTags: {
+ *                         Department: "Finance",
+ *                     },
+ *                     hostnameLabel: _var.instance_configuration_instance_details_options_launch_details_create_vnic_details_hostname_label,
+ *                     nsgIds: _var.instance_configuration_instance_details_options_launch_details_create_vnic_details_nsg_ids,
+ *                     privateIp: _var.instance_configuration_instance_details_options_launch_details_create_vnic_details_private_ip,
+ *                     skipSourceDestCheck: _var.instance_configuration_instance_details_options_launch_details_create_vnic_details_skip_source_dest_check,
+ *                     subnetId: oci_core_subnet.test_subnet.id,
+ *                 },
+ *                 dedicatedVmHostId: oci_core_dedicated_vm_host.test_dedicated_vm_host.id,
+ *                 definedTags: {
+ *                     "Operations.CostCenter": "42",
+ *                 },
+ *                 displayName: _var.instance_configuration_instance_details_options_launch_details_display_name,
+ *                 extendedMetadata: _var.instance_configuration_instance_details_options_launch_details_extended_metadata,
+ *                 faultDomain: _var.instance_configuration_instance_details_options_launch_details_fault_domain,
+ *                 freeformTags: {
+ *                     Department: "Finance",
+ *                 },
+ *                 instanceOptions: {
+ *                     areLegacyImdsEndpointsDisabled: _var.instance_configuration_instance_details_options_launch_details_instance_options_are_legacy_imds_endpoints_disabled,
+ *                 },
+ *                 ipxeScript: _var.instance_configuration_instance_details_options_launch_details_ipxe_script,
+ *                 isPvEncryptionInTransitEnabled: _var.instance_configuration_instance_details_options_launch_details_is_pv_encryption_in_transit_enabled,
+ *                 launchMode: _var.instance_configuration_instance_details_options_launch_details_launch_mode,
+ *                 launchOptions: {
+ *                     bootVolumeType: _var.instance_configuration_instance_details_options_launch_details_launch_options_boot_volume_type,
+ *                     firmware: _var.instance_configuration_instance_details_options_launch_details_launch_options_firmware,
+ *                     isConsistentVolumeNamingEnabled: _var.instance_configuration_instance_details_options_launch_details_launch_options_is_consistent_volume_naming_enabled,
+ *                     isPvEncryptionInTransitEnabled: _var.instance_configuration_instance_details_options_launch_details_launch_options_is_pv_encryption_in_transit_enabled,
+ *                     networkType: _var.instance_configuration_instance_details_options_launch_details_launch_options_network_type,
+ *                     remoteDataVolumeType: _var.instance_configuration_instance_details_options_launch_details_launch_options_remote_data_volume_type,
+ *                 },
+ *                 metadata: _var.instance_configuration_instance_details_options_launch_details_metadata,
+ *                 platformConfig: {
+ *                     type: _var.instance_configuration_instance_details_options_launch_details_platform_config_type,
+ *                     areVirtualInstructionsEnabled: _var.instance_configuration_instance_details_options_launch_details_platform_config_are_virtual_instructions_enabled,
+ *                     isAccessControlServiceEnabled: _var.instance_configuration_instance_details_options_launch_details_platform_config_is_access_control_service_enabled,
+ *                     isInputOutputMemoryManagementUnitEnabled: _var.instance_configuration_instance_details_options_launch_details_platform_config_is_input_output_memory_management_unit_enabled,
+ *                     isMeasuredBootEnabled: _var.instance_configuration_instance_details_options_launch_details_platform_config_is_measured_boot_enabled,
+ *                     isMemoryEncryptionEnabled: _var.instance_configuration_instance_details_options_launch_details_platform_config_is_memory_encryption_enabled,
+ *                     isSecureBootEnabled: _var.instance_configuration_instance_details_options_launch_details_platform_config_is_secure_boot_enabled,
+ *                     isSymmetricMultiThreadingEnabled: _var.instance_configuration_instance_details_options_launch_details_platform_config_is_symmetric_multi_threading_enabled,
+ *                     isTrustedPlatformModuleEnabled: _var.instance_configuration_instance_details_options_launch_details_platform_config_is_trusted_platform_module_enabled,
+ *                     numaNodesPerSocket: _var.instance_configuration_instance_details_options_launch_details_platform_config_numa_nodes_per_socket,
+ *                     percentageOfCoresEnabled: _var.instance_configuration_instance_details_options_launch_details_platform_config_percentage_of_cores_enabled,
+ *                 },
+ *                 preemptibleInstanceConfig: {
+ *                     preemptionAction: {
+ *                         type: _var.instance_configuration_instance_details_options_launch_details_preemptible_instance_config_preemption_action_type,
+ *                         preserveBootVolume: _var.instance_configuration_instance_details_options_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume,
+ *                     },
+ *                 },
+ *                 preferredMaintenanceAction: _var.instance_configuration_instance_details_options_launch_details_preferred_maintenance_action,
+ *                 shape: _var.instance_configuration_instance_details_options_launch_details_shape,
+ *                 shapeConfig: {
+ *                     baselineOcpuUtilization: _var.instance_configuration_instance_details_options_launch_details_shape_config_baseline_ocpu_utilization,
+ *                     memoryInGbs: _var.instance_configuration_instance_details_options_launch_details_shape_config_memory_in_gbs,
+ *                     nvmes: _var.instance_configuration_instance_details_options_launch_details_shape_config_nvmes,
+ *                     ocpus: _var.instance_configuration_instance_details_options_launch_details_shape_config_ocpus,
+ *                     vcpus: _var.instance_configuration_instance_details_options_launch_details_shape_config_vcpus,
+ *                 },
+ *                 sourceDetails: {
+ *                     sourceType: _var.instance_configuration_instance_details_options_launch_details_source_details_source_type,
+ *                     bootVolumeId: oci_core_boot_volume.test_boot_volume.id,
+ *                     bootVolumeSizeInGbs: _var.instance_configuration_instance_details_options_launch_details_source_details_boot_volume_size_in_gbs,
+ *                     bootVolumeVpusPerGb: _var.instance_configuration_instance_details_options_launch_details_source_details_boot_volume_vpus_per_gb,
+ *                     imageId: oci_core_image.test_image.id,
+ *                     instanceSourceImageFilterDetails: {
+ *                         compartmentId: _var.compartment_id,
+ *                         definedTagsFilter: _var.instance_configuration_instance_details_options_launch_details_source_details_instance_source_image_filter_details_defined_tags_filter,
+ *                         operatingSystem: _var.instance_configuration_instance_details_options_launch_details_source_details_instance_source_image_filter_details_operating_system,
+ *                         operatingSystemVersion: _var.instance_configuration_instance_details_options_launch_details_source_details_instance_source_image_filter_details_operating_system_version,
+ *                     },
+ *                 },
+ *             },
+ *             secondaryVnics: [{
+ *                 createVnicDetails: {
+ *                     assignPrivateDnsRecord: _var.instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_private_dns_record,
+ *                     assignPublicIp: _var.instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_public_ip,
+ *                     definedTags: {
+ *                         "Operations.CostCenter": "42",
+ *                     },
+ *                     displayName: _var.instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_display_name,
+ *                     freeformTags: {
+ *                         Department: "Finance",
+ *                     },
+ *                     hostnameLabel: _var.instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_hostname_label,
+ *                     nsgIds: _var.instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_nsg_ids,
+ *                     privateIp: _var.instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_private_ip,
+ *                     skipSourceDestCheck: _var.instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_skip_source_dest_check,
+ *                     subnetId: oci_core_subnet.test_subnet.id,
+ *                 },
+ *                 displayName: _var.instance_configuration_instance_details_options_secondary_vnics_display_name,
+ *                 nicIndex: _var.instance_configuration_instance_details_options_secondary_vnics_nic_index,
+ *             }],
+ *         }],
  *         secondaryVnics: [{
  *             createVnicDetails: {
  *                 assignPrivateDnsRecord: _var.instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_private_dns_record,
@@ -226,7 +389,7 @@ export class InstanceConfiguration extends pulumi.CustomResource {
     }
 
     /**
-     * The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+     * (Updatable) The OCID of the compartment containing images to search
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -314,7 +477,7 @@ export class InstanceConfiguration extends pulumi.CustomResource {
  */
 export interface InstanceConfigurationState {
     /**
-     * The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+     * (Updatable) The OCID of the compartment containing images to search
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -361,7 +524,7 @@ export interface InstanceConfigurationState {
  */
 export interface InstanceConfigurationArgs {
     /**
-     * The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+     * (Updatable) The OCID of the compartment containing images to search
      */
     compartmentId: pulumi.Input<string>;
     /**

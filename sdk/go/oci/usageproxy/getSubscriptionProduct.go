@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetSubscriptionProduct(ctx *pulumi.Context, args *GetSubscriptionProductArgs, opts ...pulumi.InvokeOption) (*GetSubscriptionProductResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSubscriptionProductResult
 	err := ctx.Invoke("oci:UsageProxy/getSubscriptionProduct:getSubscriptionProduct", args, &rv, opts...)
 	if err != nil {

@@ -81,6 +81,21 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigA
         return Optional.ofNullable(this.ocpus);
     }
 
+    /**
+     * The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+     * 
+     */
+    @Import(name="vcpus")
+    private @Nullable Output<Integer> vcpus;
+
+    /**
+     * @return The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+     * 
+     */
+    public Optional<Output<Integer>> vcpus() {
+        return Optional.ofNullable(this.vcpus);
+    }
+
     private InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs() {}
 
     private InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs(InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs $) {
@@ -88,6 +103,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigA
         this.memoryInGbs = $.memoryInGbs;
         this.nvmes = $.nvmes;
         this.ocpus = $.ocpus;
+        this.vcpus = $.vcpus;
     }
 
     public static Builder builder() {
@@ -194,6 +210,27 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigA
          */
         public Builder ocpus(Double ocpus) {
             return ocpus(Output.of(ocpus));
+        }
+
+        /**
+         * @param vcpus The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vcpus(@Nullable Output<Integer> vcpus) {
+            $.vcpus = vcpus;
+            return this;
+        }
+
+        /**
+         * @param vcpus The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vcpus(Integer vcpus) {
+            return vcpus(Output.of(vcpus));
         }
 
         public InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs build() {

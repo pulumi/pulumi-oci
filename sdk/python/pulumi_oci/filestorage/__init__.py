@@ -15,6 +15,8 @@ from .get_file_systems import *
 from .get_filesystem_snapshot_policies import *
 from .get_filesystem_snapshot_policy import *
 from .get_mount_targets import *
+from .get_outbound_connector import *
+from .get_outbound_connectors import *
 from .get_replication import *
 from .get_replication_target import *
 from .get_replication_targets import *
@@ -22,6 +24,7 @@ from .get_replications import *
 from .get_snapshot import *
 from .get_snapshots import *
 from .mount_target import *
+from .outbound_connector import *
 from .replication import *
 from .snapshot import *
 from ._inputs import *

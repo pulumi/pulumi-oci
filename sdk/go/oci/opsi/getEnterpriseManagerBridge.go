@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupEnterpriseManagerBridge(ctx *pulumi.Context, args *LookupEnterpriseManagerBridgeArgs, opts ...pulumi.InvokeOption) (*LookupEnterpriseManagerBridgeResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupEnterpriseManagerBridgeResult
 	err := ctx.Invoke("oci:Opsi/getEnterpriseManagerBridge:getEnterpriseManagerBridge", args, &rv, opts...)
 	if err != nil {

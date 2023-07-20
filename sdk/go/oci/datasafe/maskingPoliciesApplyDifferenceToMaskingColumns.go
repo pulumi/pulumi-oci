@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -31,6 +32,7 @@ func NewMaskingPoliciesApplyDifferenceToMaskingColumns(ctx *pulumi.Context,
 	if args.SdmMaskingPolicyDifferenceId == nil {
 		return nil, errors.New("invalid value for required argument 'SdmMaskingPolicyDifferenceId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource MaskingPoliciesApplyDifferenceToMaskingColumns
 	err := ctx.RegisterResource("oci:DataSafe/maskingPoliciesApplyDifferenceToMaskingColumns:MaskingPoliciesApplyDifferenceToMaskingColumns", name, args, &resource, opts...)
 	if err != nil {

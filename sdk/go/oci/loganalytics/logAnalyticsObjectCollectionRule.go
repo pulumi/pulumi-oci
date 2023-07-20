@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -159,6 +160,7 @@ func NewLogAnalyticsObjectCollectionRule(ctx *pulumi.Context,
 	if args.OsNamespace == nil {
 		return nil, errors.New("invalid value for required argument 'OsNamespace'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource LogAnalyticsObjectCollectionRule
 	err := ctx.RegisterResource("oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule", name, args, &resource, opts...)
 	if err != nil {

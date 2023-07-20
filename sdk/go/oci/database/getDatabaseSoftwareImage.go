@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupDatabaseSoftwareImage(ctx *pulumi.Context, args *LookupDatabaseSoftwareImageArgs, opts ...pulumi.InvokeOption) (*LookupDatabaseSoftwareImageResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDatabaseSoftwareImageResult
 	err := ctx.Invoke("oci:Database/getDatabaseSoftwareImage:getDatabaseSoftwareImage", args, &rv, opts...)
 	if err != nil {

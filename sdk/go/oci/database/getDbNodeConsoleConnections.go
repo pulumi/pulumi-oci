@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetDbNodeConsoleConnections(ctx *pulumi.Context, args *GetDbNodeConsoleConnectionsArgs, opts ...pulumi.InvokeOption) (*GetDbNodeConsoleConnectionsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDbNodeConsoleConnectionsResult
 	err := ctx.Invoke("oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections", args, &rv, opts...)
 	if err != nil {

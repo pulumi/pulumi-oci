@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -46,6 +47,7 @@ import (
 //
 // ```
 func GetRatecards(ctx *pulumi.Context, args *GetRatecardsArgs, opts ...pulumi.InvokeOption) (*GetRatecardsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRatecardsResult
 	err := ctx.Invoke("oci:OsubSubscription/getRatecards:getRatecards", args, &rv, opts...)
 	if err != nil {

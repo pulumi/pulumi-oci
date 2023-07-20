@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -81,6 +82,7 @@ func NewCatalogAssociation(ctx *pulumi.Context,
 	if args.ServiceCatalogId == nil {
 		return nil, errors.New("invalid value for required argument 'ServiceCatalogId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CatalogAssociation
 	err := ctx.RegisterResource("oci:ServiceCatalog/catalogAssociation:CatalogAssociation", name, args, &resource, opts...)
 	if err != nil {

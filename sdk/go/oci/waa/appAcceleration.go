@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -112,6 +113,7 @@ func NewAppAcceleration(ctx *pulumi.Context,
 	if args.WebAppAccelerationPolicyId == nil {
 		return nil, errors.New("invalid value for required argument 'WebAppAccelerationPolicyId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AppAcceleration
 	err := ctx.RegisterResource("oci:Waa/appAcceleration:AppAcceleration", name, args, &resource, opts...)
 	if err != nil {

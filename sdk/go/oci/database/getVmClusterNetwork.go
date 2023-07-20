@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func LookupVmClusterNetwork(ctx *pulumi.Context, args *LookupVmClusterNetworkArgs, opts ...pulumi.InvokeOption) (*LookupVmClusterNetworkResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupVmClusterNetworkResult
 	err := ctx.Invoke("oci:Database/getVmClusterNetwork:getVmClusterNetwork", args, &rv, opts...)
 	if err != nil {

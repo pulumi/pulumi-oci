@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupDrPlanExecution(ctx *pulumi.Context, args *LookupDrPlanExecutionArgs, opts ...pulumi.InvokeOption) (*LookupDrPlanExecutionResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDrPlanExecutionResult
 	err := ctx.Invoke("oci:DisasterRecovery/getDrPlanExecution:getDrPlanExecution", args, &rv, opts...)
 	if err != nil {
@@ -56,14 +58,14 @@ type LookupDrPlanExecutionArgs struct {
 
 // A collection of values returned by getDrPlanExecution.
 type LookupDrPlanExecutionResult struct {
-	// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The display name of the step.  Example: `DATABASE_SWITCHOVER`
 	DisplayName       string `pulumi:"displayName"`
 	DrPlanExecutionId string `pulumi:"drPlanExecutionId"`
-	// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	DrProtectionGroupId string `pulumi:"drProtectionGroupId"`
 	// The total duration in seconds taken to complete step execution.  Example: `35`
 	ExecutionDurationInSec int `pulumi:"executionDurationInSec"`
@@ -73,19 +75,19 @@ type LookupDrPlanExecutionResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A list of groups executed in this DR Plan Execution.
 	GroupExecutions []GetDrPlanExecutionGroupExecution `pulumi:"groupExecutions"`
-	// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid2`
+	// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;`
 	Id string `pulumi:"id"`
 	// A message describing the DR Plan Execution's current state in more detail.  Example: `The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress`
 	LifeCycleDetails string `pulumi:"lifeCycleDetails"`
 	// Information about an Object Storage log location for a DR Protection Group.
 	LogLocations []GetDrPlanExecutionLogLocation `pulumi:"logLocations"`
-	// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+	// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 	PeerDrProtectionGroupId string `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
 	PeerRegion string `pulumi:"peerRegion"`
 	// The type of the DR Plan executed.
 	PlanExecutionType string `pulumi:"planExecutionType"`
-	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 	PlanId string `pulumi:"planId"`
 	// The current state of the DR Plan Execution.
 	State string `pulumi:"state"`
@@ -139,7 +141,7 @@ func (o LookupDrPlanExecutionResultOutput) ToLookupDrPlanExecutionResultOutputWi
 	return o
 }
 
-// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..exampleocid1`
+// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 func (o LookupDrPlanExecutionResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -158,7 +160,7 @@ func (o LookupDrPlanExecutionResultOutput) DrPlanExecutionId() pulumi.StringOutp
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.DrPlanExecutionId }).(pulumi.StringOutput)
 }
 
-// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 func (o LookupDrPlanExecutionResultOutput) DrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.DrProtectionGroupId }).(pulumi.StringOutput)
 }
@@ -183,7 +185,7 @@ func (o LookupDrPlanExecutionResultOutput) GroupExecutions() GetDrPlanExecutionG
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) []GetDrPlanExecutionGroupExecution { return v.GroupExecutions }).(GetDrPlanExecutionGroupExecutionArrayOutput)
 }
 
-// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid2`
+// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;`
 func (o LookupDrPlanExecutionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -198,7 +200,7 @@ func (o LookupDrPlanExecutionResultOutput) LogLocations() GetDrPlanExecutionLogL
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) []GetDrPlanExecutionLogLocation { return v.LogLocations }).(GetDrPlanExecutionLogLocationArrayOutput)
 }
 
-// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 func (o LookupDrPlanExecutionResultOutput) PeerDrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.PeerDrProtectionGroupId }).(pulumi.StringOutput)
 }
@@ -213,7 +215,7 @@ func (o LookupDrPlanExecutionResultOutput) PlanExecutionType() pulumi.StringOutp
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.PlanExecutionType }).(pulumi.StringOutput)
 }
 
-// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 func (o LookupDrPlanExecutionResultOutput) PlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.PlanId }).(pulumi.StringOutput)
 }

@@ -28,6 +28,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly Outputs.InstanceConfigurationInstanceDetailsLaunchDetails? LaunchDetails;
         /// <summary>
+        /// Multiple Compute Instance Configuration instance details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.InstanceConfigurationInstanceDetailsOption> Options;
+        /// <summary>
         /// Secondary VNIC parameters.
         /// </summary>
         public readonly ImmutableArray<Outputs.InstanceConfigurationInstanceDetailsSecondaryVnic> SecondaryVnics;
@@ -40,11 +44,14 @@ namespace Pulumi.Oci.Core.Outputs
 
             Outputs.InstanceConfigurationInstanceDetailsLaunchDetails? launchDetails,
 
+            ImmutableArray<Outputs.InstanceConfigurationInstanceDetailsOption> options,
+
             ImmutableArray<Outputs.InstanceConfigurationInstanceDetailsSecondaryVnic> secondaryVnics)
         {
             BlockVolumes = blockVolumes;
             InstanceType = instanceType;
             LaunchDetails = launchDetails;
+            Options = options;
             SecondaryVnics = secondaryVnics;
         }
     }

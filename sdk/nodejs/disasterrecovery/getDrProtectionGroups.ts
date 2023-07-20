@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.dr_protection_group_display_name,
  *     drProtectionGroupId: oci_disaster_recovery_dr_protection_group.test_dr_protection_group.id,
+ *     role: _var.dr_protection_group_role,
  *     state: _var.dr_protection_group_state,
  * });
  * ```
@@ -33,6 +34,7 @@ export function getDrProtectionGroups(args: GetDrProtectionGroupsArgs, opts?: pu
         "displayName": args.displayName,
         "drProtectionGroupId": args.drProtectionGroupId,
         "filters": args.filters,
+        "role": args.role,
         "state": args.state,
     }, opts);
 }
@@ -55,6 +57,10 @@ export interface GetDrProtectionGroupsArgs {
     drProtectionGroupId?: string;
     filters?: inputs.DisasterRecovery.GetDrProtectionGroupsFilter[];
     /**
+     * The DR Protection Group Role.
+     */
+    role?: string;
+    /**
      * A filter to return only DR Protection Groups that match the given lifecycleState.
      */
     state?: string;
@@ -65,7 +71,7 @@ export interface GetDrProtectionGroupsArgs {
  */
 export interface GetDrProtectionGroupsResult {
     /**
-     * The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
      */
     readonly compartmentId: string;
     /**
@@ -82,6 +88,10 @@ export interface GetDrProtectionGroupsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * The role of the DR Protection Group.
+     */
+    readonly role?: string;
     /**
      * The current state of the DR Protection Group.
      */
@@ -102,6 +112,7 @@ export interface GetDrProtectionGroupsResult {
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.dr_protection_group_display_name,
  *     drProtectionGroupId: oci_disaster_recovery_dr_protection_group.test_dr_protection_group.id,
+ *     role: _var.dr_protection_group_role,
  *     state: _var.dr_protection_group_state,
  * });
  * ```
@@ -127,6 +138,10 @@ export interface GetDrProtectionGroupsOutputArgs {
      */
     drProtectionGroupId?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.GetDrProtectionGroupsFilterArgs>[]>;
+    /**
+     * The DR Protection Group Role.
+     */
+    role?: pulumi.Input<string>;
     /**
      * A filter to return only DR Protection Groups that match the given lifecycleState.
      */

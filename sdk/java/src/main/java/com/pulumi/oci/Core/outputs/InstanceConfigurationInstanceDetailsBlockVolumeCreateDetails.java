@@ -39,7 +39,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
      */
     private @Nullable InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas blockVolumeReplicas;
     /**
-     * @return The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+     * @return (Updatable) The OCID of the compartment containing images to search
      * 
      */
     private @Nullable String compartmentId;
@@ -64,7 +64,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
      */
     private @Nullable Boolean isAutoTuneEnabled;
     /**
-     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     private @Nullable String kmsKeyId;
@@ -112,7 +112,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
         return Optional.ofNullable(this.blockVolumeReplicas);
     }
     /**
-     * @return The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+     * @return (Updatable) The OCID of the compartment containing images to search
      * 
      */
     public Optional<String> compartmentId() {
@@ -147,7 +147,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
         return Optional.ofNullable(this.isAutoTuneEnabled);
     }
     /**
-     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     public Optional<String> kmsKeyId() {

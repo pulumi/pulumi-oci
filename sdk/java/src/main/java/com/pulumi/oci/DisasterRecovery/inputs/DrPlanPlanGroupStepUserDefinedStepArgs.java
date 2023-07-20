@@ -18,14 +18,14 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
     public static final DrPlanPlanGroupStepUserDefinedStepArgs Empty = new DrPlanPlanGroupStepUserDefinedStepArgs();
 
     /**
-     * The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+     * The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Import(name="functionId")
     private @Nullable Output<String> functionId;
 
     /**
-     * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+     * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<Output<String>> functionId() {
@@ -93,14 +93,14 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
     }
 
     /**
-     * The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+     * The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Import(name="runOnInstanceId")
     private @Nullable Output<String> runOnInstanceId;
 
     /**
-     * @return The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+     * @return The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<Output<String>> runOnInstanceId() {
@@ -185,7 +185,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
         }
 
         /**
-         * @param functionId The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+         * @param functionId The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
         }
 
         /**
-         * @param functionId The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+         * @param functionId The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -300,7 +300,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
         }
 
         /**
-         * @param runOnInstanceId The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+         * @param runOnInstanceId The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -311,7 +311,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
         }
 
         /**
-         * @param runOnInstanceId The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+         * @param runOnInstanceId The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 

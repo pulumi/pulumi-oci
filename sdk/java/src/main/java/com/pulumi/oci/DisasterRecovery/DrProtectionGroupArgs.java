@@ -38,14 +38,14 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * @return (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Output<String> compartmentId() {
@@ -201,7 +201,7 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+         * @param compartmentId (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -212,7 +212,7 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+         * @param compartmentId (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 

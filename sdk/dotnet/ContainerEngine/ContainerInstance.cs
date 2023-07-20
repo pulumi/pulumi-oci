@@ -12,7 +12,7 @@ namespace Pulumi.Oci.ContainerEngine
     /// <summary>
     /// This resource provides the Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
     /// 
-    /// Creates a new ContainerInstance.
+    /// Creates a container instance and deploys the containers on it.
     /// 
     /// ## Example Usage
     /// 
@@ -33,7 +33,6 @@ namespace Pulumi.Oci.ContainerEngine
     ///             new Oci.ContainerEngine.Inputs.ContainerInstanceContainerArgs
     ///             {
     ///                 ImageUrl = @var.Container_instance_containers_image_url,
-    ///                 AdditionalCapabilities = @var.Container_instance_containers_additional_capabilities,
     ///                 Arguments = @var.Container_instance_containers_arguments,
     ///                 Commands = @var.Container_instance_containers_command,
     ///                 DefinedTags = @var.Container_instance_containers_defined_tags,
@@ -170,19 +169,19 @@ namespace Pulumi.Oci.ContainerEngine
     public partial class ContainerInstance : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Availability Domain where the ContainerInstance should be created.
+        /// The availability domain where the container instance runs.
         /// </summary>
         [Output("availabilityDomain")]
         public Output<string> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) The compartment OCID.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// The number of containers on this Instance
+        /// The number of containers on the container instance.
         /// </summary>
         [Output("containerCount")]
         public Output<int> ContainerCount { get; private set; } = null!;
@@ -194,13 +193,13 @@ namespace Pulumi.Oci.ContainerEngine
         public Output<string> ContainerRestartPolicy { get; private set; } = null!;
 
         /// <summary>
-        /// The Containers to create on this Instance.
+        /// The containers to create on this container instance.
         /// </summary>
         [Output("containers")]
         public Output<ImmutableArray<Outputs.ContainerInstanceContainer>> Containers { get; private set; } = null!;
 
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
@@ -212,13 +211,13 @@ namespace Pulumi.Oci.ContainerEngine
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// Allow customers to define DNS settings for containers. If this is not provided, the containers will use the default DNS settings of the subnet.
+        /// Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
         /// </summary>
         [Output("dnsConfig")]
         public Output<Outputs.ContainerInstanceDnsConfig> DnsConfig { get; private set; } = null!;
 
         /// <summary>
-        /// Fault Domain where the ContainerInstance should run.
+        /// The fault domain where the container instance runs.
         /// </summary>
         [Output("faultDomain")]
         public Output<string> FaultDomain { get; private set; } = null!;
@@ -230,31 +229,31 @@ namespace Pulumi.Oci.ContainerEngine
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+        /// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
         /// </summary>
         [Output("gracefulShutdownTimeoutInSeconds")]
         public Output<string> GracefulShutdownTimeoutInSeconds { get; private set; } = null!;
 
         /// <summary>
-        /// The image pull secrets for accessing private registry to pull images for containers
+        /// The image pulls secrets so you can access private registry to pull container images.
         /// </summary>
         [Output("imagePullSecrets")]
         public Output<ImmutableArray<Outputs.ContainerInstanceImagePullSecret>> ImagePullSecrets { get; private set; } = null!;
 
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+        /// The shape of the container instance. The shape determines the resources available to the container instance.
         /// </summary>
         [Output("shape")]
         public Output<string> Shape { get; private set; } = null!;
 
         /// <summary>
-        /// The size and amount of resources available to the Container Instance.
+        /// The size and amount of resources available to the container instance.
         /// </summary>
         [Output("shapeConfig")]
         public Output<Outputs.ContainerInstanceShapeConfig> ShapeConfig { get; private set; } = null!;
@@ -270,37 +269,39 @@ namespace Pulumi.Oci.ContainerEngine
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+        /// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+        /// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// The networks to make available to containers on this Instance.
+        /// The networks available to containers on this container instance.
         /// </summary>
         [Output("vnics")]
         public Output<ImmutableArray<Outputs.ContainerInstanceVnic>> Vnics { get; private set; } = null!;
 
         /// <summary>
-        /// The number of volumes that attached to this Instance
+        /// The number of volumes that are attached to the container instance.
         /// </summary>
         [Output("volumeCount")]
         public Output<int> VolumeCount { get; private set; } = null!;
 
         /// <summary>
-        /// A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+        /// A volume is a directory with data that is accessible across multiple containers in a container instance.
+        /// 
+        /// You can attach up to 32 volumes to single container instance.
         /// </summary>
         [Output("volumes")]
         public Output<ImmutableArray<Outputs.ContainerInstanceVolume>> Volumes { get; private set; } = null!;
@@ -352,13 +353,13 @@ namespace Pulumi.Oci.ContainerEngine
     public sealed class ContainerInstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Availability Domain where the ContainerInstance should be created.
+        /// The availability domain where the container instance runs.
         /// </summary>
         [Input("availabilityDomain", required: true)]
         public Input<string> AvailabilityDomain { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) The compartment OCID.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -373,7 +374,7 @@ namespace Pulumi.Oci.ContainerEngine
         private InputList<Inputs.ContainerInstanceContainerArgs>? _containers;
 
         /// <summary>
-        /// The Containers to create on this Instance.
+        /// The containers to create on this container instance.
         /// </summary>
         public InputList<Inputs.ContainerInstanceContainerArgs> Containers
         {
@@ -385,7 +386,7 @@ namespace Pulumi.Oci.ContainerEngine
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -400,13 +401,13 @@ namespace Pulumi.Oci.ContainerEngine
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// Allow customers to define DNS settings for containers. If this is not provided, the containers will use the default DNS settings of the subnet.
+        /// Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
         /// </summary>
         [Input("dnsConfig")]
         public Input<Inputs.ContainerInstanceDnsConfigArgs>? DnsConfig { get; set; }
 
         /// <summary>
-        /// Fault Domain where the ContainerInstance should run.
+        /// The fault domain where the container instance runs.
         /// </summary>
         [Input("faultDomain")]
         public Input<string>? FaultDomain { get; set; }
@@ -424,7 +425,7 @@ namespace Pulumi.Oci.ContainerEngine
         }
 
         /// <summary>
-        /// Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+        /// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
         /// </summary>
         [Input("gracefulShutdownTimeoutInSeconds")]
         public Input<string>? GracefulShutdownTimeoutInSeconds { get; set; }
@@ -433,7 +434,7 @@ namespace Pulumi.Oci.ContainerEngine
         private InputList<Inputs.ContainerInstanceImagePullSecretArgs>? _imagePullSecrets;
 
         /// <summary>
-        /// The image pull secrets for accessing private registry to pull images for containers
+        /// The image pulls secrets so you can access private registry to pull container images.
         /// </summary>
         public InputList<Inputs.ContainerInstanceImagePullSecretArgs> ImagePullSecrets
         {
@@ -442,13 +443,13 @@ namespace Pulumi.Oci.ContainerEngine
         }
 
         /// <summary>
-        /// The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+        /// The shape of the container instance. The shape determines the resources available to the container instance.
         /// </summary>
         [Input("shape", required: true)]
         public Input<string> Shape { get; set; } = null!;
 
         /// <summary>
-        /// The size and amount of resources available to the Container Instance.
+        /// The size and amount of resources available to the container instance.
         /// </summary>
         [Input("shapeConfig", required: true)]
         public Input<Inputs.ContainerInstanceShapeConfigArgs> ShapeConfig { get; set; } = null!;
@@ -467,7 +468,7 @@ namespace Pulumi.Oci.ContainerEngine
         private InputList<Inputs.ContainerInstanceVnicArgs>? _vnics;
 
         /// <summary>
-        /// The networks to make available to containers on this Instance.
+        /// The networks available to containers on this container instance.
         /// </summary>
         public InputList<Inputs.ContainerInstanceVnicArgs> Vnics
         {
@@ -479,7 +480,9 @@ namespace Pulumi.Oci.ContainerEngine
         private InputList<Inputs.ContainerInstanceVolumeArgs>? _volumes;
 
         /// <summary>
-        /// A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+        /// A volume is a directory with data that is accessible across multiple containers in a container instance.
+        /// 
+        /// You can attach up to 32 volumes to single container instance.
         /// </summary>
         public InputList<Inputs.ContainerInstanceVolumeArgs> Volumes
         {
@@ -496,19 +499,19 @@ namespace Pulumi.Oci.ContainerEngine
     public sealed class ContainerInstanceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Availability Domain where the ContainerInstance should be created.
+        /// The availability domain where the container instance runs.
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) The compartment OCID.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The number of containers on this Instance
+        /// The number of containers on the container instance.
         /// </summary>
         [Input("containerCount")]
         public Input<int>? ContainerCount { get; set; }
@@ -523,7 +526,7 @@ namespace Pulumi.Oci.ContainerEngine
         private InputList<Inputs.ContainerInstanceContainerGetArgs>? _containers;
 
         /// <summary>
-        /// The Containers to create on this Instance.
+        /// The containers to create on this container instance.
         /// </summary>
         public InputList<Inputs.ContainerInstanceContainerGetArgs> Containers
         {
@@ -535,7 +538,7 @@ namespace Pulumi.Oci.ContainerEngine
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -550,13 +553,13 @@ namespace Pulumi.Oci.ContainerEngine
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// Allow customers to define DNS settings for containers. If this is not provided, the containers will use the default DNS settings of the subnet.
+        /// Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
         /// </summary>
         [Input("dnsConfig")]
         public Input<Inputs.ContainerInstanceDnsConfigGetArgs>? DnsConfig { get; set; }
 
         /// <summary>
-        /// Fault Domain where the ContainerInstance should run.
+        /// The fault domain where the container instance runs.
         /// </summary>
         [Input("faultDomain")]
         public Input<string>? FaultDomain { get; set; }
@@ -574,7 +577,7 @@ namespace Pulumi.Oci.ContainerEngine
         }
 
         /// <summary>
-        /// Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+        /// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
         /// </summary>
         [Input("gracefulShutdownTimeoutInSeconds")]
         public Input<string>? GracefulShutdownTimeoutInSeconds { get; set; }
@@ -583,7 +586,7 @@ namespace Pulumi.Oci.ContainerEngine
         private InputList<Inputs.ContainerInstanceImagePullSecretGetArgs>? _imagePullSecrets;
 
         /// <summary>
-        /// The image pull secrets for accessing private registry to pull images for containers
+        /// The image pulls secrets so you can access private registry to pull container images.
         /// </summary>
         public InputList<Inputs.ContainerInstanceImagePullSecretGetArgs> ImagePullSecrets
         {
@@ -592,19 +595,19 @@ namespace Pulumi.Oci.ContainerEngine
         }
 
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+        /// The shape of the container instance. The shape determines the resources available to the container instance.
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }
 
         /// <summary>
-        /// The size and amount of resources available to the Container Instance.
+        /// The size and amount of resources available to the container instance.
         /// </summary>
         [Input("shapeConfig")]
         public Input<Inputs.ContainerInstanceShapeConfigGetArgs>? ShapeConfig { get; set; }
@@ -623,7 +626,7 @@ namespace Pulumi.Oci.ContainerEngine
         private InputMap<object>? _systemTags;
 
         /// <summary>
-        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         /// </summary>
         public InputMap<object> SystemTags
         {
@@ -632,13 +635,13 @@ namespace Pulumi.Oci.ContainerEngine
         }
 
         /// <summary>
-        /// The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+        /// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+        /// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
@@ -647,7 +650,7 @@ namespace Pulumi.Oci.ContainerEngine
         private InputList<Inputs.ContainerInstanceVnicGetArgs>? _vnics;
 
         /// <summary>
-        /// The networks to make available to containers on this Instance.
+        /// The networks available to containers on this container instance.
         /// </summary>
         public InputList<Inputs.ContainerInstanceVnicGetArgs> Vnics
         {
@@ -656,7 +659,7 @@ namespace Pulumi.Oci.ContainerEngine
         }
 
         /// <summary>
-        /// The number of volumes that attached to this Instance
+        /// The number of volumes that are attached to the container instance.
         /// </summary>
         [Input("volumeCount")]
         public Input<int>? VolumeCount { get; set; }
@@ -665,7 +668,9 @@ namespace Pulumi.Oci.ContainerEngine
         private InputList<Inputs.ContainerInstanceVolumeGetArgs>? _volumes;
 
         /// <summary>
-        /// A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+        /// A volume is a directory with data that is accessible across multiple containers in a container instance.
+        /// 
+        /// You can attach up to 32 volumes to single container instance.
         /// </summary>
         public InputList<Inputs.ContainerInstanceVolumeGetArgs> Volumes
         {

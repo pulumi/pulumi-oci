@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func GetChannels(ctx *pulumi.Context, args *GetChannelsArgs, opts ...pulumi.InvokeOption) (*GetChannelsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetChannelsResult
 	err := ctx.Invoke("oci:Mysql/getChannels:getChannels", args, &rv, opts...)
 	if err != nil {

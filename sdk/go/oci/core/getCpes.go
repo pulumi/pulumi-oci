@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetCpes(ctx *pulumi.Context, args *GetCpesArgs, opts ...pulumi.InvokeOption) (*GetCpesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCpesResult
 	err := ctx.Invoke("oci:Core/getCpes:getCpes", args, &rv, opts...)
 	if err != nil {

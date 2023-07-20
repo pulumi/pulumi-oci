@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetLogSetsCount(ctx *pulumi.Context, args *GetLogSetsCountArgs, opts ...pulumi.InvokeOption) (*GetLogSetsCountResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLogSetsCountResult
 	err := ctx.Invoke("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", args, &rv, opts...)
 	if err != nil {

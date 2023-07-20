@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetFastConnectProviderServiceKey(ctx *pulumi.Context, args *GetFastConnectProviderServiceKeyArgs, opts ...pulumi.InvokeOption) (*GetFastConnectProviderServiceKeyResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFastConnectProviderServiceKeyResult
 	err := ctx.Invoke("oci:Core/getFastConnectProviderServiceKey:getFastConnectProviderServiceKey", args, &rv, opts...)
 	if err != nil {

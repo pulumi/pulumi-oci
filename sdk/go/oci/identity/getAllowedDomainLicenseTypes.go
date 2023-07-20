@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func GetAllowedDomainLicenseTypes(ctx *pulumi.Context, args *GetAllowedDomainLicenseTypesArgs, opts ...pulumi.InvokeOption) (*GetAllowedDomainLicenseTypesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAllowedDomainLicenseTypesResult
 	err := ctx.Invoke("oci:Identity/getAllowedDomainLicenseTypes:getAllowedDomainLicenseTypes", args, &rv, opts...)
 	if err != nil {

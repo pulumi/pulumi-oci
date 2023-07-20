@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -39,6 +40,7 @@ import (
 //
 // ```
 func GetPeerRegionForRemotePeerings(ctx *pulumi.Context, args *GetPeerRegionForRemotePeeringsArgs, opts ...pulumi.InvokeOption) (*GetPeerRegionForRemotePeeringsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPeerRegionForRemotePeeringsResult
 	err := ctx.Invoke("oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings", args, &rv, opts...)
 	if err != nil {

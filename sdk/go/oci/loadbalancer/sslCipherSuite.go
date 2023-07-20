@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -88,6 +89,7 @@ func NewSslCipherSuite(ctx *pulumi.Context,
 	if args.LoadBalancerId == nil {
 		return nil, errors.New("invalid value for required argument 'LoadBalancerId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource SslCipherSuite
 	err := ctx.RegisterResource("oci:LoadBalancer/sslCipherSuite:SslCipherSuite", name, args, &resource, opts...)
 	if err != nil {

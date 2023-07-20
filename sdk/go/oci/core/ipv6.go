@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -97,6 +98,7 @@ func NewIpv6(ctx *pulumi.Context,
 	if args.VnicId == nil {
 		return nil, errors.New("invalid value for required argument 'VnicId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Ipv6
 	err := ctx.RegisterResource("oci:Core/ipv6:Ipv6", name, args, &resource, opts...)
 	if err != nil {

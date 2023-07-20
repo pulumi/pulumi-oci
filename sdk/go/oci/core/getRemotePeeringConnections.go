@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetRemotePeeringConnections(ctx *pulumi.Context, args *GetRemotePeeringConnectionsArgs, opts ...pulumi.InvokeOption) (*GetRemotePeeringConnectionsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRemotePeeringConnectionsResult
 	err := ctx.Invoke("oci:Core/getRemotePeeringConnections:getRemotePeeringConnections", args, &rv, opts...)
 	if err != nil {

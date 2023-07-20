@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -56,6 +57,7 @@ import (
 //
 // ```
 func GetAuditTrailAnalytic(ctx *pulumi.Context, args *GetAuditTrailAnalyticArgs, opts ...pulumi.InvokeOption) (*GetAuditTrailAnalyticResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAuditTrailAnalyticResult
 	err := ctx.Invoke("oci:DataSafe/getAuditTrailAnalytic:getAuditTrailAnalytic", args, &rv, opts...)
 	if err != nil {

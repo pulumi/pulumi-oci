@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetOneoffPatches(ctx *pulumi.Context, args *GetOneoffPatchesArgs, opts ...pulumi.InvokeOption) (*GetOneoffPatchesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOneoffPatchesResult
 	err := ctx.Invoke("oci:Database/getOneoffPatches:getOneoffPatches", args, &rv, opts...)
 	if err != nil {

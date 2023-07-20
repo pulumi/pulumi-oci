@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetVolumeGroups(ctx *pulumi.Context, args *GetVolumeGroupsArgs, opts ...pulumi.InvokeOption) (*GetVolumeGroupsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVolumeGroupsResult
 	err := ctx.Invoke("oci:Core/getVolumeGroups:getVolumeGroups", args, &rv, opts...)
 	if err != nil {

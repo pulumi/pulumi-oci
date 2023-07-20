@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetAwrHubAwrSnapshot(ctx *pulumi.Context, args *GetAwrHubAwrSnapshotArgs, opts ...pulumi.InvokeOption) (*GetAwrHubAwrSnapshotResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAwrHubAwrSnapshotResult
 	err := ctx.Invoke("oci:Opsi/getAwrHubAwrSnapshot:getAwrHubAwrSnapshot", args, &rv, opts...)
 	if err != nil {

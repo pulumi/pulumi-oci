@@ -83,14 +83,14 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
     }
 
     /**
-     * The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+     * (Updatable) The OCID of the compartment containing images to search
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+     * @return (Updatable) The OCID of the compartment containing images to search
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -158,14 +158,14 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
     }
 
     /**
-     * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     @Import(name="kmsKeyId")
     private @Nullable Output<String> kmsKeyId;
 
     /**
-     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     public Optional<Output<String>> kmsKeyId() {
@@ -344,7 +344,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
         }
 
         /**
-         * @param compartmentId The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+         * @param compartmentId (Updatable) The OCID of the compartment containing images to search
          * 
          * @return builder
          * 
@@ -355,7 +355,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
         }
 
         /**
-         * @param compartmentId The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+         * @param compartmentId (Updatable) The OCID of the compartment containing images to search
          * 
          * @return builder
          * 
@@ -449,7 +449,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
         }
 
         /**
-         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the volume.
          * 
          * @return builder
          * 
@@ -460,7 +460,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
         }
 
         /**
-         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the volume.
          * 
          * @return builder
          * 

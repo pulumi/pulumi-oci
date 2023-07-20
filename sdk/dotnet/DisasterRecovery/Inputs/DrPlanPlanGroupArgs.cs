@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+        /// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }

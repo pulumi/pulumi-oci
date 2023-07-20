@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -134,6 +135,7 @@ func NewKey(ctx *pulumi.Context,
 	if args.ManagementEndpoint == nil {
 		return nil, errors.New("invalid value for required argument 'ManagementEndpoint'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Key
 	err := ctx.RegisterResource("oci:Kms/key:Key", name, args, &resource, opts...)
 	if err != nil {

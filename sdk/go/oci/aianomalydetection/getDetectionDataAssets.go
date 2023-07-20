@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetDetectionDataAssets(ctx *pulumi.Context, args *GetDetectionDataAssetsArgs, opts ...pulumi.InvokeOption) (*GetDetectionDataAssetsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDetectionDataAssetsResult
 	err := ctx.Invoke("oci:AiAnomalyDetection/getDetectionDataAssets:getDetectionDataAssets", args, &rv, opts...)
 	if err != nil {

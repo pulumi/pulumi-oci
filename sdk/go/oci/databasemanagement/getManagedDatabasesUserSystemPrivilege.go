@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetManagedDatabasesUserSystemPrivilege(ctx *pulumi.Context, args *GetManagedDatabasesUserSystemPrivilegeArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabasesUserSystemPrivilegeResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabasesUserSystemPrivilegeResult
 	err := ctx.Invoke("oci:DatabaseManagement/getManagedDatabasesUserSystemPrivilege:getManagedDatabasesUserSystemPrivilege", args, &rv, opts...)
 	if err != nil {

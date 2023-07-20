@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupVbInstance(ctx *pulumi.Context, args *LookupVbInstanceArgs, opts ...pulumi.InvokeOption) (*LookupVbInstanceResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupVbInstanceResult
 	err := ctx.Invoke("oci:VisualBuilder/getVbInstance:getVbInstance", args, &rv, opts...)
 	if err != nil {

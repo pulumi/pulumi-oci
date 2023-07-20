@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetExternalNonContainerDatabases(ctx *pulumi.Context, args *GetExternalNonContainerDatabasesArgs, opts ...pulumi.InvokeOption) (*GetExternalNonContainerDatabasesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalNonContainerDatabasesResult
 	err := ctx.Invoke("oci:Database/getExternalNonContainerDatabases:getExternalNonContainerDatabases", args, &rv, opts...)
 	if err != nil {

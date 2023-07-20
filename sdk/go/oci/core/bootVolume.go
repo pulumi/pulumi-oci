@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -150,6 +151,7 @@ func NewBootVolume(ctx *pulumi.Context,
 	if args.SourceDetails == nil {
 		return nil, errors.New("invalid value for required argument 'SourceDetails'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource BootVolume
 	err := ctx.RegisterResource("oci:Core/bootVolume:BootVolume", name, args, &resource, opts...)
 	if err != nil {

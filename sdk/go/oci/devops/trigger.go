@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -131,6 +132,7 @@ func NewTrigger(ctx *pulumi.Context,
 	if args.TriggerSource == nil {
 		return nil, errors.New("invalid value for required argument 'TriggerSource'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Trigger
 	err := ctx.RegisterResource("oci:DevOps/trigger:Trigger", name, args, &resource, opts...)
 	if err != nil {

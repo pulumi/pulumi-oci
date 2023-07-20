@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -68,6 +69,7 @@ import (
 //
 // ```
 func GetUserAssessmentUserAnalytics(ctx *pulumi.Context, args *GetUserAssessmentUserAnalyticsArgs, opts ...pulumi.InvokeOption) (*GetUserAssessmentUserAnalyticsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetUserAssessmentUserAnalyticsResult
 	err := ctx.Invoke("oci:DataSafe/getUserAssessmentUserAnalytics:getUserAssessmentUserAnalytics", args, &rv, opts...)
 	if err != nil {

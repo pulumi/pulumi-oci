@@ -24,37 +24,22 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     public static final ContainerInstanceContainerArgs Empty = new ContainerInstanceContainerArgs();
 
     /**
-     * A list of additional capabilities for the container.
+     * A list of string arguments for a container&#39;s ENTRYPOINT process.
      * 
-     */
-    @Import(name="additionalCapabilities")
-    private @Nullable Output<List<String>> additionalCapabilities;
-
-    /**
-     * @return A list of additional capabilities for the container.
+     * Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those containers, this argument list specifies the main command in the container process.
      * 
-     */
-    public Optional<Output<List<String>>> additionalCapabilities() {
-        return Optional.ofNullable(this.additionalCapabilities);
-    }
-
-    /**
-     * A list of string arguments for a container&#39;s entrypoint process.
-     * 
-     * Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
-     * 
-     * All arguments together must be 64KB or smaller.
+     * The total size of all arguments combined must be 64 KB or smaller.
      * 
      */
     @Import(name="arguments")
     private @Nullable Output<List<String>> arguments;
 
     /**
-     * @return A list of string arguments for a container&#39;s entrypoint process.
+     * @return A list of string arguments for a container&#39;s ENTRYPOINT process.
      * 
-     * Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+     * Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those containers, this argument list specifies the main command in the container process.
      * 
-     * All arguments together must be 64KB or smaller.
+     * The total size of all arguments combined must be 64 KB or smaller.
      * 
      */
     public Optional<Output<List<String>>> arguments() {
@@ -62,14 +47,14 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     }
 
     /**
-     * Availability Domain where the ContainerInstance should be created.
+     * The availability domain where the container instance runs.
      * 
      */
     @Import(name="availabilityDomain")
     private @Nullable Output<String> availabilityDomain;
 
     /**
-     * @return Availability Domain where the ContainerInstance should be created.
+     * @return The availability domain where the container instance runs.
      * 
      */
     public Optional<Output<String>> availabilityDomain() {
@@ -77,14 +62,14 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     }
 
     /**
-     * The list of strings which will be concatenated to a single command for checking container&#39;s status.
+     * The list of strings that will be simplified to a single command for checking the status of the container.
      * 
      */
     @Import(name="commands")
     private @Nullable Output<List<String>> commands;
 
     /**
-     * @return The list of strings which will be concatenated to a single command for checking container&#39;s status.
+     * @return The list of strings that will be simplified to a single command for checking the status of the container.
      * 
      */
     public Optional<Output<List<String>>> commands() {
@@ -92,14 +77,14 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The compartment OCID.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) The compartment OCID.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -107,14 +92,14 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     }
 
     /**
-     * The ID of the Container on this Instance.
+     * The OCID of the container.
      * 
      */
     @Import(name="containerId")
     private @Nullable Output<String> containerId;
 
     /**
-     * @return The ID of the Container on this Instance.
+     * @return The OCID of the container.
      * 
      */
     public Optional<Output<String>> containerId() {
@@ -129,14 +114,14 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,Object>> definedTags;
 
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
@@ -159,18 +144,18 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     }
 
     /**
-     * A map of additional environment variables to set in the environment of the container&#39;s entrypoint process. These variables are in addition to any variables already defined in the container&#39;s image.
+     * A map of additional environment variables to set in the environment of the container&#39;s ENTRYPOINT process. These variables are in addition to any variables already defined in the container&#39;s image.
      * 
-     * All environment variables together, name and values, must be 64KB or smaller.
+     * The total size of all environment variables combined, name and values, must be 64 KB or smaller.
      * 
      */
     @Import(name="environmentVariables")
     private @Nullable Output<Map<String,Object>> environmentVariables;
 
     /**
-     * @return A map of additional environment variables to set in the environment of the container&#39;s entrypoint process. These variables are in addition to any variables already defined in the container&#39;s image.
+     * @return A map of additional environment variables to set in the environment of the container&#39;s ENTRYPOINT process. These variables are in addition to any variables already defined in the container&#39;s image.
      * 
-     * All environment variables together, name and values, must be 64KB or smaller.
+     * The total size of all environment variables combined, name and values, must be 64 KB or smaller.
      * 
      */
     public Optional<Output<Map<String,Object>>> environmentVariables() {
@@ -185,14 +170,14 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     }
 
     /**
-     * Fault Domain where the ContainerInstance should run.
+     * The fault domain where the container instance runs.
      * 
      */
     @Import(name="faultDomain")
     private @Nullable Output<String> faultDomain;
 
     /**
-     * @return Fault Domain where the ContainerInstance should run.
+     * @return The fault domain where the container instance runs.
      * 
      */
     public Optional<Output<String>> faultDomain() {
@@ -230,14 +215,22 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     }
 
     /**
-     * The container image information. Currently only support public docker registry. Can be either image name, e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g `docker.io/library/containerImage:latest`. If no registry is provided, will default the registry to public docker hub `docker.io/library`. The registry used for container image must be reachable over the Container Instance&#39;s VNIC.
+     * A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
+     * 
+     * If no registry is provided, will default the registry to public docker hub `docker.io/library`.
+     * 
+     * The registry used for container image must be reachable over the Container Instance&#39;s VNIC.
      * 
      */
     @Import(name="imageUrl", required=true)
     private Output<String> imageUrl;
 
     /**
-     * @return The container image information. Currently only support public docker registry. Can be either image name, e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g `docker.io/library/containerImage:latest`. If no registry is provided, will default the registry to public docker hub `docker.io/library`. The registry used for container image must be reachable over the Container Instance&#39;s VNIC.
+     * @return A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
+     * 
+     * If no registry is provided, will default the registry to public docker hub `docker.io/library`.
+     * 
+     * The registry used for container image must be reachable over the Container Instance&#39;s VNIC.
      * 
      */
     public Output<String> imageUrl() {
@@ -245,14 +238,18 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     }
 
     /**
-     * Determines if the Container will have access to the Container Instance Resource Principal.  This method utilizes resource principal version 2.2. Please refer to  https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal  for detailed explanation of how to leverage the exposed resource principal elements.
+     * Determines if the container will have access to the container instance resource principal.
+     * 
+     * This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
      * 
      */
     @Import(name="isResourcePrincipalDisabled")
     private @Nullable Output<Boolean> isResourcePrincipalDisabled;
 
     /**
-     * @return Determines if the Container will have access to the Container Instance Resource Principal.  This method utilizes resource principal version 2.2. Please refer to  https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal  for detailed explanation of how to leverage the exposed resource principal elements.
+     * @return Determines if the container will have access to the container instance resource principal.
+     * 
+     * This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
      * 
      */
     public Optional<Output<Boolean>> isResourcePrincipalDisabled() {
@@ -260,14 +257,14 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      * 
      */
     @Import(name="lifecycleDetails")
     private @Nullable Output<String> lifecycleDetails;
 
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      * 
      */
     public Optional<Output<String>> lifecycleDetails() {
@@ -275,14 +272,14 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     }
 
     /**
-     * The size and amount of resources available to the Container.
+     * The size and amount of resources available to the container.
      * 
      */
     @Import(name="resourceConfig")
     private @Nullable Output<ContainerInstanceContainerResourceConfigArgs> resourceConfig;
 
     /**
-     * @return The size and amount of resources available to the Container.
+     * @return The size and amount of resources available to the container.
      * 
      */
     public Optional<Output<ContainerInstanceContainerResourceConfigArgs>> resourceConfig() {
@@ -311,14 +308,14 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
     @Import(name="systemTags")
     private @Nullable Output<Map<String,Object>> systemTags;
 
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
     public Optional<Output<Map<String,Object>>> systemTags() {
@@ -326,14 +323,14 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     }
 
     /**
-     * The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+     * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+     * @return The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -348,14 +345,14 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     }
 
     /**
-     * The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+     * The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+     * @return The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -378,14 +375,14 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     }
 
     /**
-     * The working directory within the Container&#39;s filesystem for the Container process. If none is set, the Container will run in the working directory set by the container image.
+     * The working directory within the container&#39;s filesystem for the container process. If not specified, the default working directory from the image is used.
      * 
      */
     @Import(name="workingDirectory")
     private @Nullable Output<String> workingDirectory;
 
     /**
-     * @return The working directory within the Container&#39;s filesystem for the Container process. If none is set, the Container will run in the working directory set by the container image.
+     * @return The working directory within the container&#39;s filesystem for the container process. If not specified, the default working directory from the image is used.
      * 
      */
     public Optional<Output<String>> workingDirectory() {
@@ -395,7 +392,6 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     private ContainerInstanceContainerArgs() {}
 
     private ContainerInstanceContainerArgs(ContainerInstanceContainerArgs $) {
-        this.additionalCapabilities = $.additionalCapabilities;
         this.arguments = $.arguments;
         this.availabilityDomain = $.availabilityDomain;
         this.commands = $.commands;
@@ -441,42 +437,11 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param additionalCapabilities A list of additional capabilities for the container.
+         * @param arguments A list of string arguments for a container&#39;s ENTRYPOINT process.
          * 
-         * @return builder
+         * Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those containers, this argument list specifies the main command in the container process.
          * 
-         */
-        public Builder additionalCapabilities(@Nullable Output<List<String>> additionalCapabilities) {
-            $.additionalCapabilities = additionalCapabilities;
-            return this;
-        }
-
-        /**
-         * @param additionalCapabilities A list of additional capabilities for the container.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder additionalCapabilities(List<String> additionalCapabilities) {
-            return additionalCapabilities(Output.of(additionalCapabilities));
-        }
-
-        /**
-         * @param additionalCapabilities A list of additional capabilities for the container.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder additionalCapabilities(String... additionalCapabilities) {
-            return additionalCapabilities(List.of(additionalCapabilities));
-        }
-
-        /**
-         * @param arguments A list of string arguments for a container&#39;s entrypoint process.
-         * 
-         * Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
-         * 
-         * All arguments together must be 64KB or smaller.
+         * The total size of all arguments combined must be 64 KB or smaller.
          * 
          * @return builder
          * 
@@ -487,11 +452,11 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param arguments A list of string arguments for a container&#39;s entrypoint process.
+         * @param arguments A list of string arguments for a container&#39;s ENTRYPOINT process.
          * 
-         * Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+         * Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those containers, this argument list specifies the main command in the container process.
          * 
-         * All arguments together must be 64KB or smaller.
+         * The total size of all arguments combined must be 64 KB or smaller.
          * 
          * @return builder
          * 
@@ -501,11 +466,11 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param arguments A list of string arguments for a container&#39;s entrypoint process.
+         * @param arguments A list of string arguments for a container&#39;s ENTRYPOINT process.
          * 
-         * Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+         * Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those containers, this argument list specifies the main command in the container process.
          * 
-         * All arguments together must be 64KB or smaller.
+         * The total size of all arguments combined must be 64 KB or smaller.
          * 
          * @return builder
          * 
@@ -515,7 +480,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param availabilityDomain Availability Domain where the ContainerInstance should be created.
+         * @param availabilityDomain The availability domain where the container instance runs.
          * 
          * @return builder
          * 
@@ -526,7 +491,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param availabilityDomain Availability Domain where the ContainerInstance should be created.
+         * @param availabilityDomain The availability domain where the container instance runs.
          * 
          * @return builder
          * 
@@ -536,7 +501,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param commands The list of strings which will be concatenated to a single command for checking container&#39;s status.
+         * @param commands The list of strings that will be simplified to a single command for checking the status of the container.
          * 
          * @return builder
          * 
@@ -547,7 +512,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param commands The list of strings which will be concatenated to a single command for checking container&#39;s status.
+         * @param commands The list of strings that will be simplified to a single command for checking the status of the container.
          * 
          * @return builder
          * 
@@ -557,7 +522,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param commands The list of strings which will be concatenated to a single command for checking container&#39;s status.
+         * @param commands The list of strings that will be simplified to a single command for checking the status of the container.
          * 
          * @return builder
          * 
@@ -567,7 +532,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) The compartment OCID.
          * 
          * @return builder
          * 
@@ -578,7 +543,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) The compartment OCID.
          * 
          * @return builder
          * 
@@ -588,7 +553,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param containerId The ID of the Container on this Instance.
+         * @param containerId The OCID of the container.
          * 
          * @return builder
          * 
@@ -599,7 +564,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param containerId The ID of the Container on this Instance.
+         * @param containerId The OCID of the container.
          * 
          * @return builder
          * 
@@ -618,7 +583,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
          * 
          * @return builder
          * 
@@ -629,7 +594,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
          * 
          * @return builder
          * 
@@ -660,9 +625,9 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param environmentVariables A map of additional environment variables to set in the environment of the container&#39;s entrypoint process. These variables are in addition to any variables already defined in the container&#39;s image.
+         * @param environmentVariables A map of additional environment variables to set in the environment of the container&#39;s ENTRYPOINT process. These variables are in addition to any variables already defined in the container&#39;s image.
          * 
-         * All environment variables together, name and values, must be 64KB or smaller.
+         * The total size of all environment variables combined, name and values, must be 64 KB or smaller.
          * 
          * @return builder
          * 
@@ -673,9 +638,9 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param environmentVariables A map of additional environment variables to set in the environment of the container&#39;s entrypoint process. These variables are in addition to any variables already defined in the container&#39;s image.
+         * @param environmentVariables A map of additional environment variables to set in the environment of the container&#39;s ENTRYPOINT process. These variables are in addition to any variables already defined in the container&#39;s image.
          * 
-         * All environment variables together, name and values, must be 64KB or smaller.
+         * The total size of all environment variables combined, name and values, must be 64 KB or smaller.
          * 
          * @return builder
          * 
@@ -694,7 +659,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param faultDomain Fault Domain where the ContainerInstance should run.
+         * @param faultDomain The fault domain where the container instance runs.
          * 
          * @return builder
          * 
@@ -705,7 +670,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param faultDomain Fault Domain where the ContainerInstance should run.
+         * @param faultDomain The fault domain where the container instance runs.
          * 
          * @return builder
          * 
@@ -767,7 +732,11 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param imageUrl The container image information. Currently only support public docker registry. Can be either image name, e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g `docker.io/library/containerImage:latest`. If no registry is provided, will default the registry to public docker hub `docker.io/library`. The registry used for container image must be reachable over the Container Instance&#39;s VNIC.
+         * @param imageUrl A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
+         * 
+         * If no registry is provided, will default the registry to public docker hub `docker.io/library`.
+         * 
+         * The registry used for container image must be reachable over the Container Instance&#39;s VNIC.
          * 
          * @return builder
          * 
@@ -778,7 +747,11 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param imageUrl The container image information. Currently only support public docker registry. Can be either image name, e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g `docker.io/library/containerImage:latest`. If no registry is provided, will default the registry to public docker hub `docker.io/library`. The registry used for container image must be reachable over the Container Instance&#39;s VNIC.
+         * @param imageUrl A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
+         * 
+         * If no registry is provided, will default the registry to public docker hub `docker.io/library`.
+         * 
+         * The registry used for container image must be reachable over the Container Instance&#39;s VNIC.
          * 
          * @return builder
          * 
@@ -788,7 +761,9 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param isResourcePrincipalDisabled Determines if the Container will have access to the Container Instance Resource Principal.  This method utilizes resource principal version 2.2. Please refer to  https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal  for detailed explanation of how to leverage the exposed resource principal elements.
+         * @param isResourcePrincipalDisabled Determines if the container will have access to the container instance resource principal.
+         * 
+         * This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
          * 
          * @return builder
          * 
@@ -799,7 +774,9 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param isResourcePrincipalDisabled Determines if the Container will have access to the Container Instance Resource Principal.  This method utilizes resource principal version 2.2. Please refer to  https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal  for detailed explanation of how to leverage the exposed resource principal elements.
+         * @param isResourcePrincipalDisabled Determines if the container will have access to the container instance resource principal.
+         * 
+         * This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
          * 
          * @return builder
          * 
@@ -809,7 +786,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param lifecycleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param lifecycleDetails A message that describes the current state of the container in more detail. Can be used to provide actionable information.
          * 
          * @return builder
          * 
@@ -820,7 +797,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param lifecycleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param lifecycleDetails A message that describes the current state of the container in more detail. Can be used to provide actionable information.
          * 
          * @return builder
          * 
@@ -830,7 +807,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param resourceConfig The size and amount of resources available to the Container.
+         * @param resourceConfig The size and amount of resources available to the container.
          * 
          * @return builder
          * 
@@ -841,7 +818,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param resourceConfig The size and amount of resources available to the Container.
+         * @param resourceConfig The size and amount of resources available to the container.
          * 
          * @return builder
          * 
@@ -878,7 +855,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
          * 
          * @return builder
          * 
@@ -889,7 +866,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
          * 
          * @return builder
          * 
@@ -899,7 +876,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param timeCreated The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+         * @param timeCreated The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          * 
          * @return builder
          * 
@@ -910,7 +887,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param timeCreated The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+         * @param timeCreated The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          * 
          * @return builder
          * 
@@ -929,7 +906,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param timeUpdated The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          * 
          * @return builder
          * 
@@ -940,7 +917,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param timeUpdated The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          * 
          * @return builder
          * 
@@ -981,7 +958,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param workingDirectory The working directory within the Container&#39;s filesystem for the Container process. If none is set, the Container will run in the working directory set by the container image.
+         * @param workingDirectory The working directory within the container&#39;s filesystem for the container process. If not specified, the default working directory from the image is used.
          * 
          * @return builder
          * 
@@ -992,7 +969,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param workingDirectory The working directory within the Container&#39;s filesystem for the Container process. If none is set, the Container will run in the working directory set by the container image.
+         * @param workingDirectory The working directory within the container&#39;s filesystem for the container process. If not specified, the default working directory from the image is used.
          * 
          * @return builder
          * 

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -36,6 +37,7 @@ import (
 //
 // ```
 func GetStackTfState(ctx *pulumi.Context, args *GetStackTfStateArgs, opts ...pulumi.InvokeOption) (*GetStackTfStateResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetStackTfStateResult
 	err := ctx.Invoke("oci:ResourceManager/getStackTfState:getStackTfState", args, &rv, opts...)
 	if err != nil {

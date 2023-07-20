@@ -23,7 +23,7 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutio
      */
     private Integer executionDurationInSec;
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String groupId;
@@ -43,7 +43,7 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutio
      */
     private String statusDetails;
     /**
-     * @return The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+     * @return The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String stepId;
@@ -79,7 +79,7 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutio
         return this.executionDurationInSec;
     }
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String groupId() {
@@ -107,7 +107,7 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutio
         return this.statusDetails;
     }
     /**
-     * @return The unique id of this step. Must not be modified by user.  Example: `sgid1.step..examplestepsgid`
+     * @return The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String stepId() {

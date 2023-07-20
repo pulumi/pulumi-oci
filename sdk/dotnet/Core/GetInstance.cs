@@ -135,7 +135,7 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string CapacityReservationId;
         /// <summary>
-        /// The OCID of the compartment that contains the instance.
+        /// The OCID of the compartment containing images to search
         /// </summary>
         public readonly string CompartmentId;
         public readonly string ComputeClusterId;
@@ -176,6 +176,10 @@ namespace Pulumi.Oci.Core
         /// Deprecated. Use `sourceDetails` instead.
         /// </summary>
         public readonly string Image;
+        /// <summary>
+        /// The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
+        /// </summary>
+        public readonly string InstanceConfigurationId;
         public readonly string InstanceId;
         /// <summary>
         /// Optional mutable instance options
@@ -295,6 +299,8 @@ namespace Pulumi.Oci.Core
 
             string image,
 
+            string instanceConfigurationId,
+
             string instanceId,
 
             ImmutableArray<Outputs.GetInstanceInstanceOptionResult> instanceOptions,
@@ -359,6 +365,7 @@ namespace Pulumi.Oci.Core
             HostnameLabel = hostnameLabel;
             Id = id;
             Image = image;
+            InstanceConfigurationId = instanceConfigurationId;
             InstanceId = instanceId;
             InstanceOptions = instanceOptions;
             IpxeScript = ipxeScript;

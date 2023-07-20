@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetRepositoryMirrorRecords(ctx *pulumi.Context, args *GetRepositoryMirrorRecordsArgs, opts ...pulumi.InvokeOption) (*GetRepositoryMirrorRecordsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRepositoryMirrorRecordsResult
 	err := ctx.Invoke("oci:DevOps/getRepositoryMirrorRecords:getRepositoryMirrorRecords", args, &rv, opts...)
 	if err != nil {

@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -110,6 +111,7 @@ func NewFusionEnvironmentFamily(ctx *pulumi.Context,
 	if args.SubscriptionIds == nil {
 		return nil, errors.New("invalid value for required argument 'SubscriptionIds'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource FusionEnvironmentFamily
 	err := ctx.RegisterResource("oci:FusionApps/fusionEnvironmentFamily:FusionEnvironmentFamily", name, args, &resource, opts...)
 	if err != nil {

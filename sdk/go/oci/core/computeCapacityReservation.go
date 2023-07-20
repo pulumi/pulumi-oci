@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -128,6 +129,7 @@ func NewComputeCapacityReservation(ctx *pulumi.Context,
 	if args.InstanceReservationConfigs == nil {
 		return nil, errors.New("invalid value for required argument 'InstanceReservationConfigs'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ComputeCapacityReservation
 	err := ctx.RegisterResource("oci:Core/computeCapacityReservation:ComputeCapacityReservation", name, args, &resource, opts...)
 	if err != nil {

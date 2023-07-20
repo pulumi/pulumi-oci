@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -87,6 +88,7 @@ func NewCloudVmClusterIormConfig(ctx *pulumi.Context,
 	if args.DbPlans == nil {
 		return nil, errors.New("invalid value for required argument 'DbPlans'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CloudVmClusterIormConfig
 	err := ctx.RegisterResource("oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig", name, args, &resource, opts...)
 	if err != nil {

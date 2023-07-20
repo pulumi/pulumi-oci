@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetQueryQuickPicks(ctx *pulumi.Context, args *GetQueryQuickPicksArgs, opts ...pulumi.InvokeOption) (*GetQueryQuickPicksResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetQueryQuickPicksResult
 	err := ctx.Invoke("oci:ApmTraces/getQueryQuickPicks:getQueryQuickPicks", args, &rv, opts...)
 	if err != nil {

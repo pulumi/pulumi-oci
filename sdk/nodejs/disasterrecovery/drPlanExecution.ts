@@ -71,7 +71,7 @@ export class DrPlanExecution extends pulumi.CustomResource {
     }
 
     /**
-     * The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
      */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -83,7 +83,7 @@ export class DrPlanExecution extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
      */
     public /*out*/ readonly drProtectionGroupId!: pulumi.Output<string>;
     /**
@@ -111,7 +111,7 @@ export class DrPlanExecution extends pulumi.CustomResource {
      */
     public /*out*/ readonly logLocations!: pulumi.Output<outputs.DisasterRecovery.DrPlanExecutionLogLocation[]>;
     /**
-     * The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+     * The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
      */
     public /*out*/ readonly peerDrProtectionGroupId!: pulumi.Output<string>;
     /**
@@ -123,7 +123,7 @@ export class DrPlanExecution extends pulumi.CustomResource {
      */
     public /*out*/ readonly planExecutionType!: pulumi.Output<string>;
     /**
-     * The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2` 
+     * The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;` 
      *
      *
      * ** IMPORTANT **
@@ -227,7 +227,7 @@ export class DrPlanExecution extends pulumi.CustomResource {
  */
 export interface DrPlanExecutionState {
     /**
-     * The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -239,7 +239,7 @@ export interface DrPlanExecutionState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
      */
     drProtectionGroupId?: pulumi.Input<string>;
     /**
@@ -267,7 +267,7 @@ export interface DrPlanExecutionState {
      */
     logLocations?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrPlanExecutionLogLocation>[]>;
     /**
-     * The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+     * The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
      */
     peerDrProtectionGroupId?: pulumi.Input<string>;
     /**
@@ -279,7 +279,7 @@ export interface DrPlanExecutionState {
      */
     planExecutionType?: pulumi.Input<string>;
     /**
-     * The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2` 
+     * The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;` 
      *
      *
      * ** IMPORTANT **
@@ -333,7 +333,7 @@ export interface DrPlanExecutionArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2` 
+     * The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;` 
      *
      *
      * ** IMPORTANT **

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupQuota(ctx *pulumi.Context, args *LookupQuotaArgs, opts ...pulumi.InvokeOption) (*LookupQuotaResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupQuotaResult
 	err := ctx.Invoke("oci:Limits/getQuota:getQuota", args, &rv, opts...)
 	if err != nil {

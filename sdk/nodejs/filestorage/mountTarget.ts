@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -58,7 +60,25 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     hostnameLabel: _var.mount_target_hostname_label,
+ *     idmapType: _var.mount_target_idmap_type,
  *     ipAddress: _var.mount_target_ip_address,
+ *     kerberos: {
+ *         kerberosRealm: _var.mount_target_kerberos_kerberos_realm,
+ *         backupKeyTabSecretVersion: _var.mount_target_kerberos_backup_key_tab_secret_version,
+ *         currentKeyTabSecretVersion: _var.mount_target_kerberos_current_key_tab_secret_version,
+ *         isKerberosEnabled: _var.mount_target_kerberos_is_kerberos_enabled,
+ *         keyTabSecretId: oci_vault_secret.test_secret.id,
+ *     },
+ *     ldapIdmap: {
+ *         cacheLifetimeSeconds: _var.mount_target_ldap_idmap_cache_lifetime_seconds,
+ *         cacheRefreshIntervalSeconds: _var.mount_target_ldap_idmap_cache_refresh_interval_seconds,
+ *         groupSearchBase: _var.mount_target_ldap_idmap_group_search_base,
+ *         negativeCacheLifetimeSeconds: _var.mount_target_ldap_idmap_negative_cache_lifetime_seconds,
+ *         outboundConnector1id: oci_file_storage_outbound_connector1.test_outbound_connector1.id,
+ *         outboundConnector2id: oci_file_storage_outbound_connector2.test_outbound_connector2.id,
+ *         schemaType: _var.mount_target_ldap_idmap_schema_type,
+ *         userSearchBase: _var.mount_target_ldap_idmap_user_search_base,
+ *     },
  *     nsgIds: _var.mount_target_nsg_ids,
  * });
  * ```
@@ -134,6 +154,10 @@ export class MountTarget extends pulumi.CustomResource {
      */
     public readonly hostnameLabel!: pulumi.Output<string>;
     /**
+     * (Updatable) The method used to map a Unix UID to secondary groups, if any.
+     */
+    public readonly idmapType!: pulumi.Output<string>;
+    /**
      * A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
      *
      * Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
@@ -141,6 +165,14 @@ export class MountTarget extends pulumi.CustomResource {
      * Example: `10.0.3.3`
      */
     public readonly ipAddress!: pulumi.Output<string>;
+    /**
+     * (Updatable) Kerberos details needed to create configuration.
+     */
+    public readonly kerberos!: pulumi.Output<outputs.FileStorage.MountTargetKerberos | undefined>;
+    /**
+     * (Updatable) Mount target details about the LDAP ID mapping configuration.
+     */
+    public readonly ldapIdmap!: pulumi.Output<outputs.FileStorage.MountTargetLdapIdmap | undefined>;
     /**
      * Additional information about the current 'lifecycleState'.
      */
@@ -190,7 +222,10 @@ export class MountTarget extends pulumi.CustomResource {
             resourceInputs["exportSetId"] = state ? state.exportSetId : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["hostnameLabel"] = state ? state.hostnameLabel : undefined;
+            resourceInputs["idmapType"] = state ? state.idmapType : undefined;
             resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
+            resourceInputs["kerberos"] = state ? state.kerberos : undefined;
+            resourceInputs["ldapIdmap"] = state ? state.ldapIdmap : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["privateIpIds"] = state ? state.privateIpIds : undefined;
@@ -214,7 +249,10 @@ export class MountTarget extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["hostnameLabel"] = args ? args.hostnameLabel : undefined;
+            resourceInputs["idmapType"] = args ? args.idmapType : undefined;
             resourceInputs["ipAddress"] = args ? args.ipAddress : undefined;
+            resourceInputs["kerberos"] = args ? args.kerberos : undefined;
+            resourceInputs["ldapIdmap"] = args ? args.ldapIdmap : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["exportSetId"] = undefined /*out*/;
@@ -267,6 +305,10 @@ export interface MountTargetState {
      */
     hostnameLabel?: pulumi.Input<string>;
     /**
+     * (Updatable) The method used to map a Unix UID to secondary groups, if any.
+     */
+    idmapType?: pulumi.Input<string>;
+    /**
      * A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
      *
      * Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
@@ -274,6 +316,14 @@ export interface MountTargetState {
      * Example: `10.0.3.3`
      */
     ipAddress?: pulumi.Input<string>;
+    /**
+     * (Updatable) Kerberos details needed to create configuration.
+     */
+    kerberos?: pulumi.Input<inputs.FileStorage.MountTargetKerberos>;
+    /**
+     * (Updatable) Mount target details about the LDAP ID mapping configuration.
+     */
+    ldapIdmap?: pulumi.Input<inputs.FileStorage.MountTargetLdapIdmap>;
     /**
      * Additional information about the current 'lifecycleState'.
      */
@@ -339,6 +389,10 @@ export interface MountTargetArgs {
      */
     hostnameLabel?: pulumi.Input<string>;
     /**
+     * (Updatable) The method used to map a Unix UID to secondary groups, if any.
+     */
+    idmapType?: pulumi.Input<string>;
+    /**
      * A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
      *
      * Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
@@ -346,6 +400,14 @@ export interface MountTargetArgs {
      * Example: `10.0.3.3`
      */
     ipAddress?: pulumi.Input<string>;
+    /**
+     * (Updatable) Kerberos details needed to create configuration.
+     */
+    kerberos?: pulumi.Input<inputs.FileStorage.MountTargetKerberos>;
+    /**
+     * (Updatable) Mount target details about the LDAP ID mapping configuration.
+     */
+    ldapIdmap?: pulumi.Input<inputs.FileStorage.MountTargetLdapIdmap>;
     /**
      * (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      */

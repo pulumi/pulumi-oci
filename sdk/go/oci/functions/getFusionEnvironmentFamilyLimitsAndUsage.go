@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetFusionEnvironmentFamilyLimitsAndUsage(ctx *pulumi.Context, args *GetFusionEnvironmentFamilyLimitsAndUsageArgs, opts ...pulumi.InvokeOption) (*GetFusionEnvironmentFamilyLimitsAndUsageResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFusionEnvironmentFamilyLimitsAndUsageResult
 	err := ctx.Invoke("oci:Functions/getFusionEnvironmentFamilyLimitsAndUsage:getFusionEnvironmentFamilyLimitsAndUsage", args, &rv, opts...)
 	if err != nil {

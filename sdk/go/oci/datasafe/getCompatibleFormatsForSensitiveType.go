@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func GetCompatibleFormatsForSensitiveType(ctx *pulumi.Context, args *GetCompatibleFormatsForSensitiveTypeArgs, opts ...pulumi.InvokeOption) (*GetCompatibleFormatsForSensitiveTypeResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCompatibleFormatsForSensitiveTypeResult
 	err := ctx.Invoke("oci:DataSafe/getCompatibleFormatsForSensitiveType:getCompatibleFormatsForSensitiveType", args, &rv, opts...)
 	if err != nil {

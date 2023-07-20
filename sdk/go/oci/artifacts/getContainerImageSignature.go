@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupContainerImageSignature(ctx *pulumi.Context, args *LookupContainerImageSignatureArgs, opts ...pulumi.InvokeOption) (*LookupContainerImageSignatureResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupContainerImageSignatureResult
 	err := ctx.Invoke("oci:Artifacts/getContainerImageSignature:getContainerImageSignature", args, &rv, opts...)
 	if err != nil {

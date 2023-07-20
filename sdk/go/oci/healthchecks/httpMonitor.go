@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -135,6 +136,7 @@ func NewHttpMonitor(ctx *pulumi.Context,
 	if args.Targets == nil {
 		return nil, errors.New("invalid value for required argument 'Targets'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource HttpMonitor
 	err := ctx.RegisterResource("oci:HealthChecks/httpMonitor:HttpMonitor", name, args, &resource, opts...)
 	if err != nil {

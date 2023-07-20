@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Container Instances in Oracle Cloud Infrastructure Container Instances service.
  *
- * Returns a list of ContainerInstances.
+ * Returns a list of container instances.
  *
  * ## Example Usage
  *
@@ -46,7 +46,7 @@ export interface GetContainerInstancesArgs {
      */
     availabilityDomain?: string;
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: string;
     /**
@@ -55,7 +55,7 @@ export interface GetContainerInstancesArgs {
     displayName?: string;
     filters?: inputs.ContainerInstances.GetContainerInstancesFilter[];
     /**
-     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+     * A filter to only return resources that match the given lifecycle state.
      */
     state?: string;
 }
@@ -65,11 +65,11 @@ export interface GetContainerInstancesArgs {
  */
 export interface GetContainerInstancesResult {
     /**
-     * Availability Domain where the ContainerInstance is running.
+     * The availability domain to place the container instance.
      */
     readonly availabilityDomain?: string;
     /**
-     * Compartment Identifier
+     * The OCID of the compartment.
      */
     readonly compartmentId: string;
     /**
@@ -77,7 +77,7 @@ export interface GetContainerInstancesResult {
      */
     readonly containerInstanceCollections: outputs.ContainerInstances.GetContainerInstancesContainerInstanceCollection[];
     /**
-     * Display name for the ContainerInstance. Can be renamed.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     readonly displayName?: string;
     readonly filters?: outputs.ContainerInstances.GetContainerInstancesFilter[];
@@ -86,14 +86,14 @@ export interface GetContainerInstancesResult {
      */
     readonly id: string;
     /**
-     * The current state of the ContainerInstance.
+     * The current state of the container instance.
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Container Instances in Oracle Cloud Infrastructure Container Instances service.
  *
- * Returns a list of ContainerInstances.
+ * Returns a list of container instances.
  *
  * ## Example Usage
  *
@@ -122,7 +122,7 @@ export interface GetContainerInstancesOutputArgs {
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -131,7 +131,7 @@ export interface GetContainerInstancesOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.ContainerInstances.GetContainerInstancesFilterArgs>[]>;
     /**
-     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+     * A filter to only return resources that match the given lifecycle state.
      */
     state?: pulumi.Input<string>;
 }

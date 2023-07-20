@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetSupportedSkus(ctx *pulumi.Context, args *GetSupportedSkusArgs, opts ...pulumi.InvokeOption) (*GetSupportedSkusResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSupportedSkusResult
 	err := ctx.Invoke("oci:Ocvp/getSupportedSkus:getSupportedSkus", args, &rv, opts...)
 	if err != nil {

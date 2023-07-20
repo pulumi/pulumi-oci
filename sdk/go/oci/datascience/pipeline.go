@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -157,6 +158,7 @@ func NewPipeline(ctx *pulumi.Context,
 	if args.StepDetails == nil {
 		return nil, errors.New("invalid value for required argument 'StepDetails'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Pipeline
 	err := ctx.RegisterResource("oci:DataScience/pipeline:Pipeline", name, args, &resource, opts...)
 	if err != nil {

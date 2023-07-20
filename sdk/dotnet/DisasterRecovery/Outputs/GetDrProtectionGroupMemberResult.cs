@@ -14,11 +14,15 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class GetDrProtectionGroupMemberResult
     {
         /// <summary>
-        /// The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid`
+        /// The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&amp;lt;unique_id&amp;gt;`
+        /// </summary>
+        public readonly string DestinationCapacityReservationId;
+        /// <summary>
+        /// The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string DestinationCompartmentId;
         /// <summary>
-        /// The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid`
+        /// The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string DestinationDedicatedVmHostId;
         /// <summary>
@@ -26,7 +30,11 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly bool IsMovable;
         /// <summary>
-        /// The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+        /// A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+        /// </summary>
+        public readonly bool IsRetainFaultDomain;
+        /// <summary>
+        /// The OCID of the member.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string MemberId;
         /// <summary>
@@ -40,15 +48,23 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// A list of compute instance VNIC mappings.
         /// </summary>
+        public readonly ImmutableArray<Outputs.GetDrProtectionGroupMemberVnicMappingResult> VnicMapping;
+        /// <summary>
+        /// A list of compute instance VNIC mappings.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetDrProtectionGroupMemberVnicMappingResult> VnicMappings;
 
         [OutputConstructor]
         private GetDrProtectionGroupMemberResult(
+            string destinationCapacityReservationId,
+
             string destinationCompartmentId,
 
             string destinationDedicatedVmHostId,
 
             bool isMovable,
+
+            bool isRetainFaultDomain,
 
             string memberId,
 
@@ -56,14 +72,19 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string passwordVaultSecretId,
 
+            ImmutableArray<Outputs.GetDrProtectionGroupMemberVnicMappingResult> vnicMapping,
+
             ImmutableArray<Outputs.GetDrProtectionGroupMemberVnicMappingResult> vnicMappings)
         {
+            DestinationCapacityReservationId = destinationCapacityReservationId;
             DestinationCompartmentId = destinationCompartmentId;
             DestinationDedicatedVmHostId = destinationDedicatedVmHostId;
             IsMovable = isMovable;
+            IsRetainFaultDomain = isRetainFaultDomain;
             MemberId = memberId;
             MemberType = memberType;
             PasswordVaultSecretId = passwordVaultSecretId;
+            VnicMapping = vnicMapping;
             VnicMappings = vnicMappings;
         }
     }

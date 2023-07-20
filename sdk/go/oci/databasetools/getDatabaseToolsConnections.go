@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetDatabaseToolsConnections(ctx *pulumi.Context, args *GetDatabaseToolsConnectionsArgs, opts ...pulumi.InvokeOption) (*GetDatabaseToolsConnectionsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDatabaseToolsConnectionsResult
 	err := ctx.Invoke("oci:DatabaseTools/getDatabaseToolsConnections:getDatabaseToolsConnections", args, &rv, opts...)
 	if err != nil {

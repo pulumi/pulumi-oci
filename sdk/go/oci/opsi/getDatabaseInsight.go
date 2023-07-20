@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupDatabaseInsight(ctx *pulumi.Context, args *LookupDatabaseInsightArgs, opts ...pulumi.InvokeOption) (*LookupDatabaseInsightResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDatabaseInsightResult
 	err := ctx.Invoke("oci:Opsi/getDatabaseInsight:getDatabaseInsight", args, &rv, opts...)
 	if err != nil {

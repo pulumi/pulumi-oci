@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -16,6 +17,9 @@ import (
 // or by file system snapshot policy and file system.
 //
 // If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
+//
+// Users can only sort by time created when listing snapshots by file system snapshot policy ID and compartment ID
+// (sort by name is NOT supported for listing snapshots by policy and compartment).
 //
 // ## Example Usage
 //
@@ -47,6 +51,7 @@ import (
 //
 // ```
 func GetSnapshots(ctx *pulumi.Context, args *GetSnapshotsArgs, opts ...pulumi.InvokeOption) (*GetSnapshotsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSnapshotsResult
 	err := ctx.Invoke("oci:FileStorage/getSnapshots:getSnapshots", args, &rv, opts...)
 	if err != nil {

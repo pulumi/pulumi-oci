@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ContainerInstances
         /// <summary>
         /// This data source provides the list of Container Instances in Oracle Cloud Infrastructure Container Instances service.
         /// 
-        /// Returns a list of ContainerInstances.
+        /// Returns a list of container instances.
         /// 
         /// 
         /// {{% examples %}}
@@ -48,7 +48,7 @@ namespace Pulumi.Oci.ContainerInstances
         /// <summary>
         /// This data source provides the list of Container Instances in Oracle Cloud Infrastructure Container Instances service.
         /// 
-        /// Returns a list of ContainerInstances.
+        /// Returns a list of container instances.
         /// 
         /// 
         /// {{% examples %}}
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.ContainerInstances
         public string? AvailabilityDomain { get; set; }
 
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
@@ -110,7 +110,7 @@ namespace Pulumi.Oci.ContainerInstances
         }
 
         /// <summary>
-        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
+        /// A filter to only return resources that match the given lifecycle state.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -130,7 +130,7 @@ namespace Pulumi.Oci.ContainerInstances
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -150,7 +150,7 @@ namespace Pulumi.Oci.ContainerInstances
         }
 
         /// <summary>
-        /// A filter to return only resources whose lifecycleState matches the given lifecycleState.
+        /// A filter to only return resources that match the given lifecycle state.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -166,11 +166,11 @@ namespace Pulumi.Oci.ContainerInstances
     public sealed class GetContainerInstancesResult
     {
         /// <summary>
-        /// Availability Domain where the ContainerInstance is running.
+        /// The availability domain to place the container instance.
         /// </summary>
         public readonly string? AvailabilityDomain;
         /// <summary>
-        /// Compartment Identifier
+        /// The OCID of the compartment.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -178,7 +178,7 @@ namespace Pulumi.Oci.ContainerInstances
         /// </summary>
         public readonly ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionResult> ContainerInstanceCollections;
         /// <summary>
-        /// Display name for the ContainerInstance. Can be renamed.
+        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetContainerInstancesFilterResult> Filters;
@@ -187,7 +187,7 @@ namespace Pulumi.Oci.ContainerInstances
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The current state of the ContainerInstance.
+        /// The current state of the container instance.
         /// </summary>
         public readonly string? State;
 

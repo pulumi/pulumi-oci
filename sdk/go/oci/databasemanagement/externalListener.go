@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -92,6 +93,7 @@ func NewExternalListener(ctx *pulumi.Context,
 	if args.ExternalListenerId == nil {
 		return nil, errors.New("invalid value for required argument 'ExternalListenerId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ExternalListener
 	err := ctx.RegisterResource("oci:DatabaseManagement/externalListener:ExternalListener", name, args, &resource, opts...)
 	if err != nil {

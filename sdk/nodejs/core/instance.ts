@@ -53,111 +53,6 @@ import * as utilities from "../utilities";
  * use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
  * operation.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testInstance = new oci.core.Instance("testInstance", {
- *     availabilityDomain: _var.instance_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     shape: _var.instance_shape,
- *     agentConfig: {
- *         areAllPluginsDisabled: _var.instance_agent_config_are_all_plugins_disabled,
- *         isManagementDisabled: _var.instance_agent_config_is_management_disabled,
- *         isMonitoringDisabled: _var.instance_agent_config_is_monitoring_disabled,
- *         pluginsConfigs: [{
- *             desiredState: _var.instance_agent_config_plugins_config_desired_state,
- *             name: _var.instance_agent_config_plugins_config_name,
- *         }],
- *     },
- *     availabilityConfig: {
- *         isLiveMigrationPreferred: _var.instance_availability_config_is_live_migration_preferred,
- *         recoveryAction: _var.instance_availability_config_recovery_action,
- *     },
- *     computeClusterId: oci_core_compute_cluster.test_compute_cluster.id,
- *     createVnicDetails: {
- *         assignPrivateDnsRecord: _var.instance_create_vnic_details_assign_private_dns_record,
- *         assignPublicIp: _var.instance_create_vnic_details_assign_public_ip,
- *         definedTags: {
- *             "Operations.CostCenter": "42",
- *         },
- *         displayName: _var.instance_create_vnic_details_display_name,
- *         freeformTags: {
- *             Department: "Finance",
- *         },
- *         hostnameLabel: _var.instance_create_vnic_details_hostname_label,
- *         nsgIds: _var.instance_create_vnic_details_nsg_ids,
- *         privateIp: _var.instance_create_vnic_details_private_ip,
- *         skipSourceDestCheck: _var.instance_create_vnic_details_skip_source_dest_check,
- *         subnetId: oci_core_subnet.test_subnet.id,
- *         vlanId: oci_core_vlan.test_vlan.id,
- *     },
- *     dedicatedVmHostId: oci_core_dedicated_vm_host.test_dedicated_vm_host.id,
- *     definedTags: {
- *         "Operations.CostCenter": "42",
- *     },
- *     displayName: _var.instance_display_name,
- *     extendedMetadata: {
- *         some_string: "stringA",
- *         nested_object: "{\"some_string\": \"stringB\", \"object\": {\"some_string\": \"stringC\"}}",
- *     },
- *     faultDomain: _var.instance_fault_domain,
- *     freeformTags: {
- *         Department: "Finance",
- *     },
- *     hostnameLabel: _var.instance_hostname_label,
- *     instanceOptions: {
- *         areLegacyImdsEndpointsDisabled: _var.instance_instance_options_are_legacy_imds_endpoints_disabled,
- *     },
- *     ipxeScript: _var.instance_ipxe_script,
- *     isPvEncryptionInTransitEnabled: _var.instance_is_pv_encryption_in_transit_enabled,
- *     launchOptions: {
- *         bootVolumeType: _var.instance_launch_options_boot_volume_type,
- *         firmware: _var.instance_launch_options_firmware,
- *         isConsistentVolumeNamingEnabled: _var.instance_launch_options_is_consistent_volume_naming_enabled,
- *         isPvEncryptionInTransitEnabled: _var.instance_launch_options_is_pv_encryption_in_transit_enabled,
- *         networkType: _var.instance_launch_options_network_type,
- *         remoteDataVolumeType: _var.instance_launch_options_remote_data_volume_type,
- *     },
- *     metadata: _var.instance_metadata,
- *     platformConfig: {
- *         type: _var.instance_platform_config_type,
- *         areVirtualInstructionsEnabled: _var.instance_platform_config_are_virtual_instructions_enabled,
- *         isAccessControlServiceEnabled: _var.instance_platform_config_is_access_control_service_enabled,
- *         isInputOutputMemoryManagementUnitEnabled: _var.instance_platform_config_is_input_output_memory_management_unit_enabled,
- *         isMeasuredBootEnabled: _var.instance_platform_config_is_measured_boot_enabled,
- *         isMemoryEncryptionEnabled: _var.instance_platform_config_is_memory_encryption_enabled,
- *         isSecureBootEnabled: _var.instance_platform_config_is_secure_boot_enabled,
- *         isSymmetricMultiThreadingEnabled: _var.instance_platform_config_is_symmetric_multi_threading_enabled,
- *         isTrustedPlatformModuleEnabled: _var.instance_platform_config_is_trusted_platform_module_enabled,
- *         numaNodesPerSocket: _var.instance_platform_config_numa_nodes_per_socket,
- *         percentageOfCoresEnabled: _var.instance_platform_config_percentage_of_cores_enabled,
- *     },
- *     preemptibleInstanceConfig: {
- *         preemptionAction: {
- *             type: _var.instance_preemptible_instance_config_preemption_action_type,
- *             preserveBootVolume: _var.instance_preemptible_instance_config_preemption_action_preserve_boot_volume,
- *         },
- *     },
- *     shapeConfig: {
- *         baselineOcpuUtilization: _var.instance_shape_config_baseline_ocpu_utilization,
- *         memoryInGbs: _var.instance_shape_config_memory_in_gbs,
- *         nvmes: _var.instance_shape_config_nvmes,
- *         ocpus: _var.instance_shape_config_ocpus,
- *     },
- *     sourceDetails: {
- *         sourceId: oci_core_image.test_image.id,
- *         sourceType: "image",
- *         bootVolumeSizeInGbs: _var.instance_source_details_boot_volume_size_in_gbs,
- *         bootVolumeVpusPerGb: _var.instance_source_details_boot_volume_vpus_per_gb,
- *         kmsKeyId: oci_kms_key.test_key.id,
- *     },
- *     preserveBootVolume: false,
- * });
- * ```
- *
  * ## Import
  *
  * Instances can be imported using the `id`, e.g.
@@ -216,7 +111,7 @@ export class Instance extends pulumi.CustomResource {
      */
     public readonly capacityReservationId!: pulumi.Output<string>;
     /**
-     * (Updatable) The OCID of the compartment.
+     * (Updatable) The OCID of the compartment containing images to search
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -242,7 +137,7 @@ export class Instance extends pulumi.CustomResource {
     /**
      * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      */
-    public readonly extendedMetadata!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly extendedMetadata!: pulumi.Output<{[key: string]: any}>;
     /**
      * (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
      *
@@ -269,6 +164,10 @@ export class Instance extends pulumi.CustomResource {
      * @deprecated The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
      */
     public readonly image!: pulumi.Output<string>;
+    /**
+     * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+     */
+    public readonly instanceConfigurationId!: pulumi.Output<string>;
     /**
      * (Updatable) Optional mutable instance options
      */
@@ -337,7 +236,7 @@ export class Instance extends pulumi.CustomResource {
      *
      * **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
      */
-    public readonly metadata!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly metadata!: pulumi.Output<{[key: string]: any}>;
     /**
      * The platform configuration requested for the instance.
      *
@@ -449,6 +348,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["hostnameLabel"] = state ? state.hostnameLabel : undefined;
             resourceInputs["image"] = state ? state.image : undefined;
+            resourceInputs["instanceConfigurationId"] = state ? state.instanceConfigurationId : undefined;
             resourceInputs["instanceOptions"] = state ? state.instanceOptions : undefined;
             resourceInputs["ipxeScript"] = state ? state.ipxeScript : undefined;
             resourceInputs["isCrossNumaNode"] = state ? state.isCrossNumaNode : undefined;
@@ -479,9 +379,6 @@ export class Instance extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.shape === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'shape'");
-            }
             resourceInputs["agentConfig"] = args ? args.agentConfig : undefined;
             resourceInputs["async"] = args ? args.async : undefined;
             resourceInputs["availabilityConfig"] = args ? args.availabilityConfig : undefined;
@@ -498,6 +395,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["hostnameLabel"] = args ? args.hostnameLabel : undefined;
             resourceInputs["image"] = args ? args.image : undefined;
+            resourceInputs["instanceConfigurationId"] = args ? args.instanceConfigurationId : undefined;
             resourceInputs["instanceOptions"] = args ? args.instanceOptions : undefined;
             resourceInputs["ipxeScript"] = args ? args.ipxeScript : undefined;
             resourceInputs["isPvEncryptionInTransitEnabled"] = args ? args.isPvEncryptionInTransitEnabled : undefined;
@@ -553,7 +451,7 @@ export interface InstanceState {
      */
     capacityReservationId?: pulumi.Input<string>;
     /**
-     * (Updatable) The OCID of the compartment.
+     * (Updatable) The OCID of the compartment containing images to search
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -606,6 +504,10 @@ export interface InstanceState {
      * @deprecated The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
      */
     image?: pulumi.Input<string>;
+    /**
+     * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+     */
+    instanceConfigurationId?: pulumi.Input<string>;
     /**
      * (Updatable) Optional mutable instance options
      */
@@ -779,7 +681,7 @@ export interface InstanceArgs {
      */
     capacityReservationId?: pulumi.Input<string>;
     /**
-     * (Updatable) The OCID of the compartment.
+     * (Updatable) The OCID of the compartment containing images to search
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -832,6 +734,10 @@ export interface InstanceArgs {
      * @deprecated The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
      */
     image?: pulumi.Input<string>;
+    /**
+     * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+     */
+    instanceConfigurationId?: pulumi.Input<string>;
     /**
      * (Updatable) Optional mutable instance options
      */
@@ -918,7 +824,7 @@ export interface InstanceArgs {
      *
      * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
      */
-    shape: pulumi.Input<string>;
+    shape?: pulumi.Input<string>;
     /**
      * (Updatable) The shape configuration requested for the instance.
      *

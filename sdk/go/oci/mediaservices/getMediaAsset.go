@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupMediaAsset(ctx *pulumi.Context, args *LookupMediaAssetArgs, opts ...pulumi.InvokeOption) (*LookupMediaAssetResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupMediaAssetResult
 	err := ctx.Invoke("oci:MediaServices/getMediaAsset:getMediaAsset", args, &rv, opts...)
 	if err != nil {

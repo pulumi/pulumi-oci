@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetDedicatedVmHostInstances(ctx *pulumi.Context, args *GetDedicatedVmHostInstancesArgs, opts ...pulumi.InvokeOption) (*GetDedicatedVmHostInstancesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDedicatedVmHostInstancesResult
 	err := ctx.Invoke("oci:Core/getDedicatedVmHostInstances:getDedicatedVmHostInstances", args, &rv, opts...)
 	if err != nil {

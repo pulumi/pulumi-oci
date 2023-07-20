@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetAccessRequestHistory(ctx *pulumi.Context, args *GetAccessRequestHistoryArgs, opts ...pulumi.InvokeOption) (*GetAccessRequestHistoryResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAccessRequestHistoryResult
 	err := ctx.Invoke("oci:OperatorAccessControl/getAccessRequestHistory:getAccessRequestHistory", args, &rv, opts...)
 	if err != nil {

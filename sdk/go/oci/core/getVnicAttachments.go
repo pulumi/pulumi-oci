@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func GetVnicAttachments(ctx *pulumi.Context, args *GetVnicAttachmentsArgs, opts ...pulumi.InvokeOption) (*GetVnicAttachmentsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVnicAttachmentsResult
 	err := ctx.Invoke("oci:Core/getVnicAttachments:getVnicAttachments", args, &rv, opts...)
 	if err != nil {

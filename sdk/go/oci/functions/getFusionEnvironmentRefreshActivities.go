@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetFusionEnvironmentRefreshActivities(ctx *pulumi.Context, args *GetFusionEnvironmentRefreshActivitiesArgs, opts ...pulumi.InvokeOption) (*GetFusionEnvironmentRefreshActivitiesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFusionEnvironmentRefreshActivitiesResult
 	err := ctx.Invoke("oci:Functions/getFusionEnvironmentRefreshActivities:getFusionEnvironmentRefreshActivities", args, &rv, opts...)
 	if err != nil {

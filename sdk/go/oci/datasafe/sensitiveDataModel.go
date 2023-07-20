@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -123,6 +124,7 @@ func NewSensitiveDataModel(ctx *pulumi.Context,
 	if args.TargetId == nil {
 		return nil, errors.New("invalid value for required argument 'TargetId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource SensitiveDataModel
 	err := ctx.RegisterResource("oci:DataSafe/sensitiveDataModel:SensitiveDataModel", name, args, &resource, opts...)
 	if err != nil {

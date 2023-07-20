@@ -7,8 +7,9238 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
+
+var _ = internal.GetEnvOrDefault
+
+type GetSecurityListsSecurityListEgressSecurityRuleIcmpOption struct {
+	// The ICMP code (optional).
+	Code int `pulumi:"code"`
+	// The ICMP type.
+	Type int `pulumi:"type"`
+}
+
+// GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionInput is an input type that accepts GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArgs and GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionInput` via:
+//
+//	GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArgs{...}
+type GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput() GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput
+	ToGetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutputWithContext(context.Context) GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArgs struct {
+	// The ICMP code (optional).
+	Code pulumi.IntInput `pulumi:"code"`
+	// The ICMP type.
+	Type pulumi.IntInput `pulumi:"type"`
+}
+
+func (GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleIcmpOption)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArgs) ToGetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput() GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput {
+	return i.ToGetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArgs) ToGetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput)
+}
+
+// GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayInput is an input type that accepts GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArray and GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayInput` via:
+//
+//	GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArray{ GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArgs{...} }
+type GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput() GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput
+	ToGetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutputWithContext(context.Context) GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArray []GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionInput
+
+func (GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListEgressSecurityRuleIcmpOption)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArray) ToGetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput() GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput {
+	return i.ToGetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArray) ToGetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput)
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleIcmpOption)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput) ToGetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput() GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput) ToGetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput {
+	return o
+}
+
+// The ICMP code (optional).
+func (o GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput) Code() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListEgressSecurityRuleIcmpOption) int { return v.Code }).(pulumi.IntOutput)
+}
+
+// The ICMP type.
+func (o GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput) Type() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListEgressSecurityRuleIcmpOption) int { return v.Type }).(pulumi.IntOutput)
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListEgressSecurityRuleIcmpOption)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput) ToGetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput() GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput) ToGetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityListsSecurityListEgressSecurityRuleIcmpOption {
+		return vs[0].([]GetSecurityListsSecurityListEgressSecurityRuleIcmpOption)[vs[1].(int)]
+	}).(GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput)
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleTcpOption struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max int `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min              int                                                                      `pulumi:"min"`
+	SourcePortRanges []GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange `pulumi:"sourcePortRanges"`
+}
+
+// GetSecurityListsSecurityListEgressSecurityRuleTcpOptionInput is an input type that accepts GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArgs and GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListEgressSecurityRuleTcpOptionInput` via:
+//
+//	GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArgs{...}
+type GetSecurityListsSecurityListEgressSecurityRuleTcpOptionInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput() GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput
+	ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutputWithContext(context.Context) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArgs struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max pulumi.IntInput `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min              pulumi.IntInput                                                                  `pulumi:"min"`
+	SourcePortRanges GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayInput `pulumi:"sourcePortRanges"`
+}
+
+func (GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleTcpOption)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArgs) ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput() GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput {
+	return i.ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArgs) ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput)
+}
+
+// GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayInput is an input type that accepts GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArray and GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayInput` via:
+//
+//	GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArray{ GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArgs{...} }
+type GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput() GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput
+	ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutputWithContext(context.Context) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArray []GetSecurityListsSecurityListEgressSecurityRuleTcpOptionInput
+
+func (GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListEgressSecurityRuleTcpOption)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArray) ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput() GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput {
+	return i.ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArray) ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput)
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleTcpOption)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput) ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput() GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput) ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput {
+	return o
+}
+
+// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput) Max() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListEgressSecurityRuleTcpOption) int { return v.Max }).(pulumi.IntOutput)
+}
+
+// The minimum port number. Must not be greater than the maximum port number.
+func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListEgressSecurityRuleTcpOption) int { return v.Min }).(pulumi.IntOutput)
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput) SourcePortRanges() GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListEgressSecurityRuleTcpOption) []GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange {
+		return v.SourcePortRanges
+	}).(GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput)
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListEgressSecurityRuleTcpOption)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput) ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput() GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput) ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityListsSecurityListEgressSecurityRuleTcpOption {
+		return vs[0].([]GetSecurityListsSecurityListEgressSecurityRuleTcpOption)[vs[1].(int)]
+	}).(GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput)
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max int `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min int `pulumi:"min"`
+}
+
+// GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeInput is an input type that accepts GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArgs and GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeInput` via:
+//
+//	GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArgs{...}
+type GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput() GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput
+	ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutputWithContext(context.Context) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArgs struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max pulumi.IntInput `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min pulumi.IntInput `pulumi:"min"`
+}
+
+func (GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArgs) ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput() GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput {
+	return i.ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArgs) ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput)
+}
+
+// GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayInput is an input type that accepts GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArray and GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayInput` via:
+//
+//	GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArray{ GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArgs{...} }
+type GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput() GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput
+	ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutputWithContext(context.Context) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArray []GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeInput
+
+func (GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArray) ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput() GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput {
+	return i.ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArray) ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput)
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput) ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput() GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput) ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput {
+	return o
+}
+
+// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput) Max() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange) int { return v.Max }).(pulumi.IntOutput)
+}
+
+// The minimum port number. Must not be greater than the maximum port number.
+func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange) int { return v.Min }).(pulumi.IntOutput)
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput) ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput() GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput) ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange {
+		return vs[0].([]GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange)[vs[1].(int)]
+	}).(GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput)
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleUdpOption struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max int `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min              int                                                                      `pulumi:"min"`
+	SourcePortRanges []GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange `pulumi:"sourcePortRanges"`
+}
+
+// GetSecurityListsSecurityListEgressSecurityRuleUdpOptionInput is an input type that accepts GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArgs and GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListEgressSecurityRuleUdpOptionInput` via:
+//
+//	GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArgs{...}
+type GetSecurityListsSecurityListEgressSecurityRuleUdpOptionInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput() GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput
+	ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutputWithContext(context.Context) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArgs struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max pulumi.IntInput `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min              pulumi.IntInput                                                                  `pulumi:"min"`
+	SourcePortRanges GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayInput `pulumi:"sourcePortRanges"`
+}
+
+func (GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleUdpOption)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArgs) ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput() GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput {
+	return i.ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArgs) ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput)
+}
+
+// GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayInput is an input type that accepts GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArray and GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayInput` via:
+//
+//	GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArray{ GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArgs{...} }
+type GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput() GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput
+	ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutputWithContext(context.Context) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArray []GetSecurityListsSecurityListEgressSecurityRuleUdpOptionInput
+
+func (GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListEgressSecurityRuleUdpOption)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArray) ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput() GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput {
+	return i.ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArray) ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput)
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleUdpOption)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput) ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput() GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput) ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput {
+	return o
+}
+
+// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput) Max() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListEgressSecurityRuleUdpOption) int { return v.Max }).(pulumi.IntOutput)
+}
+
+// The minimum port number. Must not be greater than the maximum port number.
+func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListEgressSecurityRuleUdpOption) int { return v.Min }).(pulumi.IntOutput)
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput) SourcePortRanges() GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListEgressSecurityRuleUdpOption) []GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange {
+		return v.SourcePortRanges
+	}).(GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput)
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListEgressSecurityRuleUdpOption)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput) ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput() GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput) ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityListsSecurityListEgressSecurityRuleUdpOption {
+		return vs[0].([]GetSecurityListsSecurityListEgressSecurityRuleUdpOption)[vs[1].(int)]
+	}).(GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput)
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max int `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min int `pulumi:"min"`
+}
+
+// GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeInput is an input type that accepts GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArgs and GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeInput` via:
+//
+//	GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArgs{...}
+type GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput() GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput
+	ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutputWithContext(context.Context) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArgs struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max pulumi.IntInput `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min pulumi.IntInput `pulumi:"min"`
+}
+
+func (GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArgs) ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput() GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput {
+	return i.ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArgs) ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput)
+}
+
+// GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayInput is an input type that accepts GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArray and GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayInput` via:
+//
+//	GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArray{ GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArgs{...} }
+type GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput() GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput
+	ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutputWithContext(context.Context) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArray []GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeInput
+
+func (GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArray) ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput() GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput {
+	return i.ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArray) ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput)
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput) ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput() GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput) ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput {
+	return o
+}
+
+// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput) Max() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange) int { return v.Max }).(pulumi.IntOutput)
+}
+
+// The minimum port number. Must not be greater than the maximum port number.
+func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange) int { return v.Min }).(pulumi.IntOutput)
+}
+
+type GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput) ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput() GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput) ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange {
+		return vs[0].([]GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange)[vs[1].(int)]
+	}).(GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput)
+}
+
+type GetSecurityListsSecurityListIngressSecurityRule struct {
+	// An optional description of your choice for the rule.
+	Description string `pulumi:"description"`
+	// Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+	// * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+	// * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+	IcmpOptions []GetSecurityListsSecurityListIngressSecurityRuleIcmpOption `pulumi:"icmpOptions"`
+	// The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
+	Protocol string `pulumi:"protocol"`
+	// Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
+	Source string `pulumi:"source"`
+	// Type of source for the rule. The default is `CIDR_BLOCK`.
+	SourceType string `pulumi:"sourceType"`
+	// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
+	Stateless bool `pulumi:"stateless"`
+	// Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+	// * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
+	TcpOptions []GetSecurityListsSecurityListIngressSecurityRuleTcpOption `pulumi:"tcpOptions"`
+	// Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+	// * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
+	UdpOptions []GetSecurityListsSecurityListIngressSecurityRuleUdpOption `pulumi:"udpOptions"`
+}
+
+// GetSecurityListsSecurityListIngressSecurityRuleInput is an input type that accepts GetSecurityListsSecurityListIngressSecurityRuleArgs and GetSecurityListsSecurityListIngressSecurityRuleOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListIngressSecurityRuleInput` via:
+//
+//	GetSecurityListsSecurityListIngressSecurityRuleArgs{...}
+type GetSecurityListsSecurityListIngressSecurityRuleInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListIngressSecurityRuleOutput() GetSecurityListsSecurityListIngressSecurityRuleOutput
+	ToGetSecurityListsSecurityListIngressSecurityRuleOutputWithContext(context.Context) GetSecurityListsSecurityListIngressSecurityRuleOutput
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleArgs struct {
+	// An optional description of your choice for the rule.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+	// * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+	// * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+	IcmpOptions GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayInput `pulumi:"icmpOptions"`
+	// The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
+	Source pulumi.StringInput `pulumi:"source"`
+	// Type of source for the rule. The default is `CIDR_BLOCK`.
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
+	Stateless pulumi.BoolInput `pulumi:"stateless"`
+	// Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+	// * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
+	TcpOptions GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayInput `pulumi:"tcpOptions"`
+	// Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+	// * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
+	UdpOptions GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayInput `pulumi:"udpOptions"`
+}
+
+func (GetSecurityListsSecurityListIngressSecurityRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRule)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleArgs) ToGetSecurityListsSecurityListIngressSecurityRuleOutput() GetSecurityListsSecurityListIngressSecurityRuleOutput {
+	return i.ToGetSecurityListsSecurityListIngressSecurityRuleOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleArgs) ToGetSecurityListsSecurityListIngressSecurityRuleOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleOutput)
+}
+
+// GetSecurityListsSecurityListIngressSecurityRuleArrayInput is an input type that accepts GetSecurityListsSecurityListIngressSecurityRuleArray and GetSecurityListsSecurityListIngressSecurityRuleArrayOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListIngressSecurityRuleArrayInput` via:
+//
+//	GetSecurityListsSecurityListIngressSecurityRuleArray{ GetSecurityListsSecurityListIngressSecurityRuleArgs{...} }
+type GetSecurityListsSecurityListIngressSecurityRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListIngressSecurityRuleArrayOutput() GetSecurityListsSecurityListIngressSecurityRuleArrayOutput
+	ToGetSecurityListsSecurityListIngressSecurityRuleArrayOutputWithContext(context.Context) GetSecurityListsSecurityListIngressSecurityRuleArrayOutput
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleArray []GetSecurityListsSecurityListIngressSecurityRuleInput
+
+func (GetSecurityListsSecurityListIngressSecurityRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListIngressSecurityRule)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleArray) ToGetSecurityListsSecurityListIngressSecurityRuleArrayOutput() GetSecurityListsSecurityListIngressSecurityRuleArrayOutput {
+	return i.ToGetSecurityListsSecurityListIngressSecurityRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleArray) ToGetSecurityListsSecurityListIngressSecurityRuleArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleArrayOutput)
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListIngressSecurityRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRule)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleOutput) ToGetSecurityListsSecurityListIngressSecurityRuleOutput() GetSecurityListsSecurityListIngressSecurityRuleOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleOutput) ToGetSecurityListsSecurityListIngressSecurityRuleOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleOutput {
+	return o
+}
+
+// An optional description of your choice for the rule.
+func (o GetSecurityListsSecurityListIngressSecurityRuleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRule) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+// * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+// * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+func (o GetSecurityListsSecurityListIngressSecurityRuleOutput) IcmpOptions() GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRule) []GetSecurityListsSecurityListIngressSecurityRuleIcmpOption {
+		return v.IcmpOptions
+	}).(GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput)
+}
+
+// The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
+func (o GetSecurityListsSecurityListIngressSecurityRuleOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRule) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+// Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
+func (o GetSecurityListsSecurityListIngressSecurityRuleOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRule) string { return v.Source }).(pulumi.StringOutput)
+}
+
+// Type of source for the rule. The default is `CIDR_BLOCK`.
+func (o GetSecurityListsSecurityListIngressSecurityRuleOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRule) string { return v.SourceType }).(pulumi.StringOutput)
+}
+
+// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
+func (o GetSecurityListsSecurityListIngressSecurityRuleOutput) Stateless() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRule) bool { return v.Stateless }).(pulumi.BoolOutput)
+}
+
+// Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+// * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
+func (o GetSecurityListsSecurityListIngressSecurityRuleOutput) TcpOptions() GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRule) []GetSecurityListsSecurityListIngressSecurityRuleTcpOption {
+		return v.TcpOptions
+	}).(GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput)
+}
+
+// Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+// * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
+func (o GetSecurityListsSecurityListIngressSecurityRuleOutput) UdpOptions() GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRule) []GetSecurityListsSecurityListIngressSecurityRuleUdpOption {
+		return v.UdpOptions
+	}).(GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput)
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListIngressSecurityRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListIngressSecurityRule)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleArrayOutput) ToGetSecurityListsSecurityListIngressSecurityRuleArrayOutput() GetSecurityListsSecurityListIngressSecurityRuleArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleArrayOutput) ToGetSecurityListsSecurityListIngressSecurityRuleArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListIngressSecurityRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityListsSecurityListIngressSecurityRule {
+		return vs[0].([]GetSecurityListsSecurityListIngressSecurityRule)[vs[1].(int)]
+	}).(GetSecurityListsSecurityListIngressSecurityRuleOutput)
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleIcmpOption struct {
+	// The ICMP code (optional).
+	Code int `pulumi:"code"`
+	// The ICMP type.
+	Type int `pulumi:"type"`
+}
+
+// GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionInput is an input type that accepts GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArgs and GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionInput` via:
+//
+//	GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArgs{...}
+type GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput() GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput
+	ToGetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutputWithContext(context.Context) GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArgs struct {
+	// The ICMP code (optional).
+	Code pulumi.IntInput `pulumi:"code"`
+	// The ICMP type.
+	Type pulumi.IntInput `pulumi:"type"`
+}
+
+func (GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleIcmpOption)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArgs) ToGetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput() GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput {
+	return i.ToGetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArgs) ToGetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput)
+}
+
+// GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayInput is an input type that accepts GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArray and GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayInput` via:
+//
+//	GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArray{ GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArgs{...} }
+type GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput() GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput
+	ToGetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutputWithContext(context.Context) GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArray []GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionInput
+
+func (GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListIngressSecurityRuleIcmpOption)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArray) ToGetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput() GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput {
+	return i.ToGetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArray) ToGetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput)
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleIcmpOption)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput) ToGetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput() GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput) ToGetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput {
+	return o
+}
+
+// The ICMP code (optional).
+func (o GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput) Code() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRuleIcmpOption) int { return v.Code }).(pulumi.IntOutput)
+}
+
+// The ICMP type.
+func (o GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput) Type() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRuleIcmpOption) int { return v.Type }).(pulumi.IntOutput)
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListIngressSecurityRuleIcmpOption)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput) ToGetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput() GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput) ToGetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityListsSecurityListIngressSecurityRuleIcmpOption {
+		return vs[0].([]GetSecurityListsSecurityListIngressSecurityRuleIcmpOption)[vs[1].(int)]
+	}).(GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput)
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleTcpOption struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max int `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min              int                                                                       `pulumi:"min"`
+	SourcePortRanges []GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange `pulumi:"sourcePortRanges"`
+}
+
+// GetSecurityListsSecurityListIngressSecurityRuleTcpOptionInput is an input type that accepts GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArgs and GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListIngressSecurityRuleTcpOptionInput` via:
+//
+//	GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArgs{...}
+type GetSecurityListsSecurityListIngressSecurityRuleTcpOptionInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput() GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput
+	ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutputWithContext(context.Context) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArgs struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max pulumi.IntInput `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min              pulumi.IntInput                                                                   `pulumi:"min"`
+	SourcePortRanges GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayInput `pulumi:"sourcePortRanges"`
+}
+
+func (GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleTcpOption)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArgs) ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput() GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput {
+	return i.ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArgs) ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput)
+}
+
+// GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayInput is an input type that accepts GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArray and GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayInput` via:
+//
+//	GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArray{ GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArgs{...} }
+type GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput() GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput
+	ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutputWithContext(context.Context) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArray []GetSecurityListsSecurityListIngressSecurityRuleTcpOptionInput
+
+func (GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListIngressSecurityRuleTcpOption)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArray) ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput() GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput {
+	return i.ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArray) ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput)
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleTcpOption)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput) ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput() GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput) ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput {
+	return o
+}
+
+// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput) Max() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRuleTcpOption) int { return v.Max }).(pulumi.IntOutput)
+}
+
+// The minimum port number. Must not be greater than the maximum port number.
+func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRuleTcpOption) int { return v.Min }).(pulumi.IntOutput)
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput) SourcePortRanges() GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRuleTcpOption) []GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange {
+		return v.SourcePortRanges
+	}).(GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput)
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListIngressSecurityRuleTcpOption)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput) ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput() GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput) ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityListsSecurityListIngressSecurityRuleTcpOption {
+		return vs[0].([]GetSecurityListsSecurityListIngressSecurityRuleTcpOption)[vs[1].(int)]
+	}).(GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput)
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max int `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min int `pulumi:"min"`
+}
+
+// GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeInput is an input type that accepts GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArgs and GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeInput` via:
+//
+//	GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArgs{...}
+type GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput() GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput
+	ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutputWithContext(context.Context) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArgs struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max pulumi.IntInput `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min pulumi.IntInput `pulumi:"min"`
+}
+
+func (GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArgs) ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput() GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput {
+	return i.ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArgs) ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput)
+}
+
+// GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayInput is an input type that accepts GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArray and GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayInput` via:
+//
+//	GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArray{ GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArgs{...} }
+type GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput() GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput
+	ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutputWithContext(context.Context) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArray []GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeInput
+
+func (GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArray) ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput() GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput {
+	return i.ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArray) ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput)
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput) ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput() GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput) ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput {
+	return o
+}
+
+// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput) Max() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange) int { return v.Max }).(pulumi.IntOutput)
+}
+
+// The minimum port number. Must not be greater than the maximum port number.
+func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange) int { return v.Min }).(pulumi.IntOutput)
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput) ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput() GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput) ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange {
+		return vs[0].([]GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange)[vs[1].(int)]
+	}).(GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput)
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleUdpOption struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max int `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min              int                                                                       `pulumi:"min"`
+	SourcePortRanges []GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange `pulumi:"sourcePortRanges"`
+}
+
+// GetSecurityListsSecurityListIngressSecurityRuleUdpOptionInput is an input type that accepts GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArgs and GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListIngressSecurityRuleUdpOptionInput` via:
+//
+//	GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArgs{...}
+type GetSecurityListsSecurityListIngressSecurityRuleUdpOptionInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput() GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput
+	ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutputWithContext(context.Context) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArgs struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max pulumi.IntInput `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min              pulumi.IntInput                                                                   `pulumi:"min"`
+	SourcePortRanges GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayInput `pulumi:"sourcePortRanges"`
+}
+
+func (GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleUdpOption)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArgs) ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput() GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput {
+	return i.ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArgs) ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput)
+}
+
+// GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayInput is an input type that accepts GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArray and GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayInput` via:
+//
+//	GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArray{ GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArgs{...} }
+type GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput() GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput
+	ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutputWithContext(context.Context) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArray []GetSecurityListsSecurityListIngressSecurityRuleUdpOptionInput
+
+func (GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListIngressSecurityRuleUdpOption)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArray) ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput() GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput {
+	return i.ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArray) ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput)
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleUdpOption)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput) ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput() GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput) ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput {
+	return o
+}
+
+// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput) Max() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRuleUdpOption) int { return v.Max }).(pulumi.IntOutput)
+}
+
+// The minimum port number. Must not be greater than the maximum port number.
+func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRuleUdpOption) int { return v.Min }).(pulumi.IntOutput)
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput) SourcePortRanges() GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRuleUdpOption) []GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange {
+		return v.SourcePortRanges
+	}).(GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput)
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListIngressSecurityRuleUdpOption)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput) ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput() GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput) ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityListsSecurityListIngressSecurityRuleUdpOption {
+		return vs[0].([]GetSecurityListsSecurityListIngressSecurityRuleUdpOption)[vs[1].(int)]
+	}).(GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput)
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max int `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min int `pulumi:"min"`
+}
+
+// GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeInput is an input type that accepts GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArgs and GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeInput` via:
+//
+//	GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArgs{...}
+type GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput() GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput
+	ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutputWithContext(context.Context) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArgs struct {
+	// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	Max pulumi.IntInput `pulumi:"max"`
+	// The minimum port number. Must not be greater than the maximum port number.
+	Min pulumi.IntInput `pulumi:"min"`
+}
+
+func (GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArgs) ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput() GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput {
+	return i.ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArgs) ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput)
+}
+
+// GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayInput is an input type that accepts GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArray and GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput values.
+// You can construct a concrete instance of `GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayInput` via:
+//
+//	GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArray{ GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArgs{...} }
+type GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput() GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput
+	ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutputWithContext(context.Context) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArray []GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeInput
+
+func (GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArray) ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput() GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput {
+	return i.ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArray) ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput)
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput) ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput() GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput) ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput {
+	return o
+}
+
+// The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput) Max() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange) int { return v.Max }).(pulumi.IntOutput)
+}
+
+// The minimum port number. Must not be greater than the maximum port number.
+func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange) int { return v.Min }).(pulumi.IntOutput)
+}
+
+type GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange)(nil)).Elem()
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput) ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput() GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput) ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput {
+	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange {
+		return vs[0].([]GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange)[vs[1].(int)]
+	}).(GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput)
+}
+
+type GetServiceGatewaysFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetServiceGatewaysFilterInput is an input type that accepts GetServiceGatewaysFilterArgs and GetServiceGatewaysFilterOutput values.
+// You can construct a concrete instance of `GetServiceGatewaysFilterInput` via:
+//
+//	GetServiceGatewaysFilterArgs{...}
+type GetServiceGatewaysFilterInput interface {
+	pulumi.Input
+
+	ToGetServiceGatewaysFilterOutput() GetServiceGatewaysFilterOutput
+	ToGetServiceGatewaysFilterOutputWithContext(context.Context) GetServiceGatewaysFilterOutput
+}
+
+type GetServiceGatewaysFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetServiceGatewaysFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceGatewaysFilter)(nil)).Elem()
+}
+
+func (i GetServiceGatewaysFilterArgs) ToGetServiceGatewaysFilterOutput() GetServiceGatewaysFilterOutput {
+	return i.ToGetServiceGatewaysFilterOutputWithContext(context.Background())
+}
+
+func (i GetServiceGatewaysFilterArgs) ToGetServiceGatewaysFilterOutputWithContext(ctx context.Context) GetServiceGatewaysFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceGatewaysFilterOutput)
+}
+
+// GetServiceGatewaysFilterArrayInput is an input type that accepts GetServiceGatewaysFilterArray and GetServiceGatewaysFilterArrayOutput values.
+// You can construct a concrete instance of `GetServiceGatewaysFilterArrayInput` via:
+//
+//	GetServiceGatewaysFilterArray{ GetServiceGatewaysFilterArgs{...} }
+type GetServiceGatewaysFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetServiceGatewaysFilterArrayOutput() GetServiceGatewaysFilterArrayOutput
+	ToGetServiceGatewaysFilterArrayOutputWithContext(context.Context) GetServiceGatewaysFilterArrayOutput
+}
+
+type GetServiceGatewaysFilterArray []GetServiceGatewaysFilterInput
+
+func (GetServiceGatewaysFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceGatewaysFilter)(nil)).Elem()
+}
+
+func (i GetServiceGatewaysFilterArray) ToGetServiceGatewaysFilterArrayOutput() GetServiceGatewaysFilterArrayOutput {
+	return i.ToGetServiceGatewaysFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetServiceGatewaysFilterArray) ToGetServiceGatewaysFilterArrayOutputWithContext(ctx context.Context) GetServiceGatewaysFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceGatewaysFilterArrayOutput)
+}
+
+type GetServiceGatewaysFilterOutput struct{ *pulumi.OutputState }
+
+func (GetServiceGatewaysFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceGatewaysFilter)(nil)).Elem()
+}
+
+func (o GetServiceGatewaysFilterOutput) ToGetServiceGatewaysFilterOutput() GetServiceGatewaysFilterOutput {
+	return o
+}
+
+func (o GetServiceGatewaysFilterOutput) ToGetServiceGatewaysFilterOutputWithContext(ctx context.Context) GetServiceGatewaysFilterOutput {
+	return o
+}
+
+func (o GetServiceGatewaysFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceGatewaysFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetServiceGatewaysFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetServiceGatewaysFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetServiceGatewaysFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetServiceGatewaysFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetServiceGatewaysFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServiceGatewaysFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceGatewaysFilter)(nil)).Elem()
+}
+
+func (o GetServiceGatewaysFilterArrayOutput) ToGetServiceGatewaysFilterArrayOutput() GetServiceGatewaysFilterArrayOutput {
+	return o
+}
+
+func (o GetServiceGatewaysFilterArrayOutput) ToGetServiceGatewaysFilterArrayOutputWithContext(ctx context.Context) GetServiceGatewaysFilterArrayOutput {
+	return o
+}
+
+func (o GetServiceGatewaysFilterArrayOutput) Index(i pulumi.IntInput) GetServiceGatewaysFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceGatewaysFilter {
+		return vs[0].([]GetServiceGatewaysFilter)[vs[1].(int)]
+	}).(GetServiceGatewaysFilterOutput)
+}
+
+type GetServiceGatewaysServiceGateway struct {
+	// Whether the service gateway blocks all traffic through it. The default is `false`. When this is `true`, traffic is not routed to any services, regardless of route rules.  Example: `true`
+	BlockTraffic bool `pulumi:"blockTraffic"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service gateway.
+	Id string `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway is using. For information about why you would associate a route table with a service gateway, see [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
+	RouteTableId string `pulumi:"routeTableId"`
+	// List of the [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) objects enabled for this service gateway. The list can be empty. You can enable a particular `Service` by using [AttachServiceId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/AttachServiceId) or [UpdateServiceGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/UpdateServiceGateway).
+	Services []GetServiceGatewaysServiceGatewayService `pulumi:"services"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// The date and time the service gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	VcnId string `pulumi:"vcnId"`
+}
+
+// GetServiceGatewaysServiceGatewayInput is an input type that accepts GetServiceGatewaysServiceGatewayArgs and GetServiceGatewaysServiceGatewayOutput values.
+// You can construct a concrete instance of `GetServiceGatewaysServiceGatewayInput` via:
+//
+//	GetServiceGatewaysServiceGatewayArgs{...}
+type GetServiceGatewaysServiceGatewayInput interface {
+	pulumi.Input
+
+	ToGetServiceGatewaysServiceGatewayOutput() GetServiceGatewaysServiceGatewayOutput
+	ToGetServiceGatewaysServiceGatewayOutputWithContext(context.Context) GetServiceGatewaysServiceGatewayOutput
+}
+
+type GetServiceGatewaysServiceGatewayArgs struct {
+	// Whether the service gateway blocks all traffic through it. The default is `false`. When this is `true`, traffic is not routed to any services, regardless of route rules.  Example: `true`
+	BlockTraffic pulumi.BoolInput `pulumi:"blockTraffic"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service gateway.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway is using. For information about why you would associate a route table with a service gateway, see [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
+	RouteTableId pulumi.StringInput `pulumi:"routeTableId"`
+	// List of the [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) objects enabled for this service gateway. The list can be empty. You can enable a particular `Service` by using [AttachServiceId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/AttachServiceId) or [UpdateServiceGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/UpdateServiceGateway).
+	Services GetServiceGatewaysServiceGatewayServiceArrayInput `pulumi:"services"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the service gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	VcnId pulumi.StringInput `pulumi:"vcnId"`
+}
+
+func (GetServiceGatewaysServiceGatewayArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceGatewaysServiceGateway)(nil)).Elem()
+}
+
+func (i GetServiceGatewaysServiceGatewayArgs) ToGetServiceGatewaysServiceGatewayOutput() GetServiceGatewaysServiceGatewayOutput {
+	return i.ToGetServiceGatewaysServiceGatewayOutputWithContext(context.Background())
+}
+
+func (i GetServiceGatewaysServiceGatewayArgs) ToGetServiceGatewaysServiceGatewayOutputWithContext(ctx context.Context) GetServiceGatewaysServiceGatewayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceGatewaysServiceGatewayOutput)
+}
+
+// GetServiceGatewaysServiceGatewayArrayInput is an input type that accepts GetServiceGatewaysServiceGatewayArray and GetServiceGatewaysServiceGatewayArrayOutput values.
+// You can construct a concrete instance of `GetServiceGatewaysServiceGatewayArrayInput` via:
+//
+//	GetServiceGatewaysServiceGatewayArray{ GetServiceGatewaysServiceGatewayArgs{...} }
+type GetServiceGatewaysServiceGatewayArrayInput interface {
+	pulumi.Input
+
+	ToGetServiceGatewaysServiceGatewayArrayOutput() GetServiceGatewaysServiceGatewayArrayOutput
+	ToGetServiceGatewaysServiceGatewayArrayOutputWithContext(context.Context) GetServiceGatewaysServiceGatewayArrayOutput
+}
+
+type GetServiceGatewaysServiceGatewayArray []GetServiceGatewaysServiceGatewayInput
+
+func (GetServiceGatewaysServiceGatewayArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceGatewaysServiceGateway)(nil)).Elem()
+}
+
+func (i GetServiceGatewaysServiceGatewayArray) ToGetServiceGatewaysServiceGatewayArrayOutput() GetServiceGatewaysServiceGatewayArrayOutput {
+	return i.ToGetServiceGatewaysServiceGatewayArrayOutputWithContext(context.Background())
+}
+
+func (i GetServiceGatewaysServiceGatewayArray) ToGetServiceGatewaysServiceGatewayArrayOutputWithContext(ctx context.Context) GetServiceGatewaysServiceGatewayArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceGatewaysServiceGatewayArrayOutput)
+}
+
+type GetServiceGatewaysServiceGatewayOutput struct{ *pulumi.OutputState }
+
+func (GetServiceGatewaysServiceGatewayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceGatewaysServiceGateway)(nil)).Elem()
+}
+
+func (o GetServiceGatewaysServiceGatewayOutput) ToGetServiceGatewaysServiceGatewayOutput() GetServiceGatewaysServiceGatewayOutput {
+	return o
+}
+
+func (o GetServiceGatewaysServiceGatewayOutput) ToGetServiceGatewaysServiceGatewayOutputWithContext(ctx context.Context) GetServiceGatewaysServiceGatewayOutput {
+	return o
+}
+
+// Whether the service gateway blocks all traffic through it. The default is `false`. When this is `true`, traffic is not routed to any services, regardless of route rules.  Example: `true`
+func (o GetServiceGatewaysServiceGatewayOutput) BlockTraffic() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetServiceGatewaysServiceGateway) bool { return v.BlockTraffic }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetServiceGatewaysServiceGatewayOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceGatewaysServiceGateway) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetServiceGatewaysServiceGatewayOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetServiceGatewaysServiceGateway) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetServiceGatewaysServiceGatewayOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceGatewaysServiceGateway) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetServiceGatewaysServiceGatewayOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetServiceGatewaysServiceGateway) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service gateway.
+func (o GetServiceGatewaysServiceGatewayOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceGatewaysServiceGateway) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway is using. For information about why you would associate a route table with a service gateway, see [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
+func (o GetServiceGatewaysServiceGatewayOutput) RouteTableId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceGatewaysServiceGateway) string { return v.RouteTableId }).(pulumi.StringOutput)
+}
+
+// List of the [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) objects enabled for this service gateway. The list can be empty. You can enable a particular `Service` by using [AttachServiceId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/AttachServiceId) or [UpdateServiceGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/UpdateServiceGateway).
+func (o GetServiceGatewaysServiceGatewayOutput) Services() GetServiceGatewaysServiceGatewayServiceArrayOutput {
+	return o.ApplyT(func(v GetServiceGatewaysServiceGateway) []GetServiceGatewaysServiceGatewayService { return v.Services }).(GetServiceGatewaysServiceGatewayServiceArrayOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetServiceGatewaysServiceGatewayOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceGatewaysServiceGateway) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the service gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetServiceGatewaysServiceGatewayOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceGatewaysServiceGateway) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+func (o GetServiceGatewaysServiceGatewayOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceGatewaysServiceGateway) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+type GetServiceGatewaysServiceGatewayArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServiceGatewaysServiceGatewayArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceGatewaysServiceGateway)(nil)).Elem()
+}
+
+func (o GetServiceGatewaysServiceGatewayArrayOutput) ToGetServiceGatewaysServiceGatewayArrayOutput() GetServiceGatewaysServiceGatewayArrayOutput {
+	return o
+}
+
+func (o GetServiceGatewaysServiceGatewayArrayOutput) ToGetServiceGatewaysServiceGatewayArrayOutputWithContext(ctx context.Context) GetServiceGatewaysServiceGatewayArrayOutput {
+	return o
+}
+
+func (o GetServiceGatewaysServiceGatewayArrayOutput) Index(i pulumi.IntInput) GetServiceGatewaysServiceGatewayOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceGatewaysServiceGateway {
+		return vs[0].([]GetServiceGatewaysServiceGateway)[vs[1].(int)]
+	}).(GetServiceGatewaysServiceGatewayOutput)
+}
+
+type GetServiceGatewaysServiceGatewayService struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service.
+	ServiceId string `pulumi:"serviceId"`
+	// The name of the service.
+	ServiceName string `pulumi:"serviceName"`
+}
+
+// GetServiceGatewaysServiceGatewayServiceInput is an input type that accepts GetServiceGatewaysServiceGatewayServiceArgs and GetServiceGatewaysServiceGatewayServiceOutput values.
+// You can construct a concrete instance of `GetServiceGatewaysServiceGatewayServiceInput` via:
+//
+//	GetServiceGatewaysServiceGatewayServiceArgs{...}
+type GetServiceGatewaysServiceGatewayServiceInput interface {
+	pulumi.Input
+
+	ToGetServiceGatewaysServiceGatewayServiceOutput() GetServiceGatewaysServiceGatewayServiceOutput
+	ToGetServiceGatewaysServiceGatewayServiceOutputWithContext(context.Context) GetServiceGatewaysServiceGatewayServiceOutput
+}
+
+type GetServiceGatewaysServiceGatewayServiceArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service.
+	ServiceId pulumi.StringInput `pulumi:"serviceId"`
+	// The name of the service.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+}
+
+func (GetServiceGatewaysServiceGatewayServiceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceGatewaysServiceGatewayService)(nil)).Elem()
+}
+
+func (i GetServiceGatewaysServiceGatewayServiceArgs) ToGetServiceGatewaysServiceGatewayServiceOutput() GetServiceGatewaysServiceGatewayServiceOutput {
+	return i.ToGetServiceGatewaysServiceGatewayServiceOutputWithContext(context.Background())
+}
+
+func (i GetServiceGatewaysServiceGatewayServiceArgs) ToGetServiceGatewaysServiceGatewayServiceOutputWithContext(ctx context.Context) GetServiceGatewaysServiceGatewayServiceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceGatewaysServiceGatewayServiceOutput)
+}
+
+// GetServiceGatewaysServiceGatewayServiceArrayInput is an input type that accepts GetServiceGatewaysServiceGatewayServiceArray and GetServiceGatewaysServiceGatewayServiceArrayOutput values.
+// You can construct a concrete instance of `GetServiceGatewaysServiceGatewayServiceArrayInput` via:
+//
+//	GetServiceGatewaysServiceGatewayServiceArray{ GetServiceGatewaysServiceGatewayServiceArgs{...} }
+type GetServiceGatewaysServiceGatewayServiceArrayInput interface {
+	pulumi.Input
+
+	ToGetServiceGatewaysServiceGatewayServiceArrayOutput() GetServiceGatewaysServiceGatewayServiceArrayOutput
+	ToGetServiceGatewaysServiceGatewayServiceArrayOutputWithContext(context.Context) GetServiceGatewaysServiceGatewayServiceArrayOutput
+}
+
+type GetServiceGatewaysServiceGatewayServiceArray []GetServiceGatewaysServiceGatewayServiceInput
+
+func (GetServiceGatewaysServiceGatewayServiceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceGatewaysServiceGatewayService)(nil)).Elem()
+}
+
+func (i GetServiceGatewaysServiceGatewayServiceArray) ToGetServiceGatewaysServiceGatewayServiceArrayOutput() GetServiceGatewaysServiceGatewayServiceArrayOutput {
+	return i.ToGetServiceGatewaysServiceGatewayServiceArrayOutputWithContext(context.Background())
+}
+
+func (i GetServiceGatewaysServiceGatewayServiceArray) ToGetServiceGatewaysServiceGatewayServiceArrayOutputWithContext(ctx context.Context) GetServiceGatewaysServiceGatewayServiceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceGatewaysServiceGatewayServiceArrayOutput)
+}
+
+type GetServiceGatewaysServiceGatewayServiceOutput struct{ *pulumi.OutputState }
+
+func (GetServiceGatewaysServiceGatewayServiceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceGatewaysServiceGatewayService)(nil)).Elem()
+}
+
+func (o GetServiceGatewaysServiceGatewayServiceOutput) ToGetServiceGatewaysServiceGatewayServiceOutput() GetServiceGatewaysServiceGatewayServiceOutput {
+	return o
+}
+
+func (o GetServiceGatewaysServiceGatewayServiceOutput) ToGetServiceGatewaysServiceGatewayServiceOutputWithContext(ctx context.Context) GetServiceGatewaysServiceGatewayServiceOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service.
+func (o GetServiceGatewaysServiceGatewayServiceOutput) ServiceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceGatewaysServiceGatewayService) string { return v.ServiceId }).(pulumi.StringOutput)
+}
+
+// The name of the service.
+func (o GetServiceGatewaysServiceGatewayServiceOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceGatewaysServiceGatewayService) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+type GetServiceGatewaysServiceGatewayServiceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServiceGatewaysServiceGatewayServiceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceGatewaysServiceGatewayService)(nil)).Elem()
+}
+
+func (o GetServiceGatewaysServiceGatewayServiceArrayOutput) ToGetServiceGatewaysServiceGatewayServiceArrayOutput() GetServiceGatewaysServiceGatewayServiceArrayOutput {
+	return o
+}
+
+func (o GetServiceGatewaysServiceGatewayServiceArrayOutput) ToGetServiceGatewaysServiceGatewayServiceArrayOutputWithContext(ctx context.Context) GetServiceGatewaysServiceGatewayServiceArrayOutput {
+	return o
+}
+
+func (o GetServiceGatewaysServiceGatewayServiceArrayOutput) Index(i pulumi.IntInput) GetServiceGatewaysServiceGatewayServiceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceGatewaysServiceGatewayService {
+		return vs[0].([]GetServiceGatewaysServiceGatewayService)[vs[1].(int)]
+	}).(GetServiceGatewaysServiceGatewayServiceOutput)
+}
+
+type GetServicesFilter struct {
+	// Name of the `Service` object. This name can change and is not guaranteed to be unique.  Example: `OCI PHX Object Storage`
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetServicesFilterInput is an input type that accepts GetServicesFilterArgs and GetServicesFilterOutput values.
+// You can construct a concrete instance of `GetServicesFilterInput` via:
+//
+//	GetServicesFilterArgs{...}
+type GetServicesFilterInput interface {
+	pulumi.Input
+
+	ToGetServicesFilterOutput() GetServicesFilterOutput
+	ToGetServicesFilterOutputWithContext(context.Context) GetServicesFilterOutput
+}
+
+type GetServicesFilterArgs struct {
+	// Name of the `Service` object. This name can change and is not guaranteed to be unique.  Example: `OCI PHX Object Storage`
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetServicesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServicesFilter)(nil)).Elem()
+}
+
+func (i GetServicesFilterArgs) ToGetServicesFilterOutput() GetServicesFilterOutput {
+	return i.ToGetServicesFilterOutputWithContext(context.Background())
+}
+
+func (i GetServicesFilterArgs) ToGetServicesFilterOutputWithContext(ctx context.Context) GetServicesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServicesFilterOutput)
+}
+
+// GetServicesFilterArrayInput is an input type that accepts GetServicesFilterArray and GetServicesFilterArrayOutput values.
+// You can construct a concrete instance of `GetServicesFilterArrayInput` via:
+//
+//	GetServicesFilterArray{ GetServicesFilterArgs{...} }
+type GetServicesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetServicesFilterArrayOutput() GetServicesFilterArrayOutput
+	ToGetServicesFilterArrayOutputWithContext(context.Context) GetServicesFilterArrayOutput
+}
+
+type GetServicesFilterArray []GetServicesFilterInput
+
+func (GetServicesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServicesFilter)(nil)).Elem()
+}
+
+func (i GetServicesFilterArray) ToGetServicesFilterArrayOutput() GetServicesFilterArrayOutput {
+	return i.ToGetServicesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetServicesFilterArray) ToGetServicesFilterArrayOutputWithContext(ctx context.Context) GetServicesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServicesFilterArrayOutput)
+}
+
+type GetServicesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetServicesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServicesFilter)(nil)).Elem()
+}
+
+func (o GetServicesFilterOutput) ToGetServicesFilterOutput() GetServicesFilterOutput {
+	return o
+}
+
+func (o GetServicesFilterOutput) ToGetServicesFilterOutputWithContext(ctx context.Context) GetServicesFilterOutput {
+	return o
+}
+
+// Name of the `Service` object. This name can change and is not guaranteed to be unique.  Example: `OCI PHX Object Storage`
+func (o GetServicesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServicesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetServicesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetServicesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetServicesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetServicesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetServicesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServicesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServicesFilter)(nil)).Elem()
+}
+
+func (o GetServicesFilterArrayOutput) ToGetServicesFilterArrayOutput() GetServicesFilterArrayOutput {
+	return o
+}
+
+func (o GetServicesFilterArrayOutput) ToGetServicesFilterArrayOutputWithContext(ctx context.Context) GetServicesFilterArrayOutput {
+	return o
+}
+
+func (o GetServicesFilterArrayOutput) Index(i pulumi.IntInput) GetServicesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServicesFilter {
+		return vs[0].([]GetServicesFilter)[vs[1].(int)]
+	}).(GetServicesFilterOutput)
+}
+
+type GetServicesService struct {
+	// A string that represents the regional public IP address ranges for the Oracle service or services covered by this `Service` object. Also known as the `Service` object's *service CIDR label*.
+	CidrBlock string `pulumi:"cidrBlock"`
+	// Description of the Oracle service or services covered by this `Service` object.  Example: `OCI PHX Object Storage`
+	Description string `pulumi:"description"`
+	// The `Service` object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	Id string `pulumi:"id"`
+	// Name of the `Service` object. This name can change and is not guaranteed to be unique.  Example: `OCI PHX Object Storage`
+	Name string `pulumi:"name"`
+}
+
+// GetServicesServiceInput is an input type that accepts GetServicesServiceArgs and GetServicesServiceOutput values.
+// You can construct a concrete instance of `GetServicesServiceInput` via:
+//
+//	GetServicesServiceArgs{...}
+type GetServicesServiceInput interface {
+	pulumi.Input
+
+	ToGetServicesServiceOutput() GetServicesServiceOutput
+	ToGetServicesServiceOutputWithContext(context.Context) GetServicesServiceOutput
+}
+
+type GetServicesServiceArgs struct {
+	// A string that represents the regional public IP address ranges for the Oracle service or services covered by this `Service` object. Also known as the `Service` object's *service CIDR label*.
+	CidrBlock pulumi.StringInput `pulumi:"cidrBlock"`
+	// Description of the Oracle service or services covered by this `Service` object.  Example: `OCI PHX Object Storage`
+	Description pulumi.StringInput `pulumi:"description"`
+	// The `Service` object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	Id pulumi.StringInput `pulumi:"id"`
+	// Name of the `Service` object. This name can change and is not guaranteed to be unique.  Example: `OCI PHX Object Storage`
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetServicesServiceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServicesService)(nil)).Elem()
+}
+
+func (i GetServicesServiceArgs) ToGetServicesServiceOutput() GetServicesServiceOutput {
+	return i.ToGetServicesServiceOutputWithContext(context.Background())
+}
+
+func (i GetServicesServiceArgs) ToGetServicesServiceOutputWithContext(ctx context.Context) GetServicesServiceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServicesServiceOutput)
+}
+
+// GetServicesServiceArrayInput is an input type that accepts GetServicesServiceArray and GetServicesServiceArrayOutput values.
+// You can construct a concrete instance of `GetServicesServiceArrayInput` via:
+//
+//	GetServicesServiceArray{ GetServicesServiceArgs{...} }
+type GetServicesServiceArrayInput interface {
+	pulumi.Input
+
+	ToGetServicesServiceArrayOutput() GetServicesServiceArrayOutput
+	ToGetServicesServiceArrayOutputWithContext(context.Context) GetServicesServiceArrayOutput
+}
+
+type GetServicesServiceArray []GetServicesServiceInput
+
+func (GetServicesServiceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServicesService)(nil)).Elem()
+}
+
+func (i GetServicesServiceArray) ToGetServicesServiceArrayOutput() GetServicesServiceArrayOutput {
+	return i.ToGetServicesServiceArrayOutputWithContext(context.Background())
+}
+
+func (i GetServicesServiceArray) ToGetServicesServiceArrayOutputWithContext(ctx context.Context) GetServicesServiceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServicesServiceArrayOutput)
+}
+
+type GetServicesServiceOutput struct{ *pulumi.OutputState }
+
+func (GetServicesServiceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServicesService)(nil)).Elem()
+}
+
+func (o GetServicesServiceOutput) ToGetServicesServiceOutput() GetServicesServiceOutput {
+	return o
+}
+
+func (o GetServicesServiceOutput) ToGetServicesServiceOutputWithContext(ctx context.Context) GetServicesServiceOutput {
+	return o
+}
+
+// A string that represents the regional public IP address ranges for the Oracle service or services covered by this `Service` object. Also known as the `Service` object's *service CIDR label*.
+func (o GetServicesServiceOutput) CidrBlock() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServicesService) string { return v.CidrBlock }).(pulumi.StringOutput)
+}
+
+// Description of the Oracle service or services covered by this `Service` object.  Example: `OCI PHX Object Storage`
+func (o GetServicesServiceOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServicesService) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The `Service` object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetServicesServiceOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServicesService) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Name of the `Service` object. This name can change and is not guaranteed to be unique.  Example: `OCI PHX Object Storage`
+func (o GetServicesServiceOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServicesService) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetServicesServiceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServicesServiceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServicesService)(nil)).Elem()
+}
+
+func (o GetServicesServiceArrayOutput) ToGetServicesServiceArrayOutput() GetServicesServiceArrayOutput {
+	return o
+}
+
+func (o GetServicesServiceArrayOutput) ToGetServicesServiceArrayOutputWithContext(ctx context.Context) GetServicesServiceArrayOutput {
+	return o
+}
+
+func (o GetServicesServiceArrayOutput) Index(i pulumi.IntInput) GetServicesServiceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServicesService {
+		return vs[0].([]GetServicesService)[vs[1].(int)]
+	}).(GetServicesServiceOutput)
+}
+
+type GetShapeFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetShapeFilterInput is an input type that accepts GetShapeFilterArgs and GetShapeFilterOutput values.
+// You can construct a concrete instance of `GetShapeFilterInput` via:
+//
+//	GetShapeFilterArgs{...}
+type GetShapeFilterInput interface {
+	pulumi.Input
+
+	ToGetShapeFilterOutput() GetShapeFilterOutput
+	ToGetShapeFilterOutputWithContext(context.Context) GetShapeFilterOutput
+}
+
+type GetShapeFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetShapeFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeFilter)(nil)).Elem()
+}
+
+func (i GetShapeFilterArgs) ToGetShapeFilterOutput() GetShapeFilterOutput {
+	return i.ToGetShapeFilterOutputWithContext(context.Background())
+}
+
+func (i GetShapeFilterArgs) ToGetShapeFilterOutputWithContext(ctx context.Context) GetShapeFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeFilterOutput)
+}
+
+// GetShapeFilterArrayInput is an input type that accepts GetShapeFilterArray and GetShapeFilterArrayOutput values.
+// You can construct a concrete instance of `GetShapeFilterArrayInput` via:
+//
+//	GetShapeFilterArray{ GetShapeFilterArgs{...} }
+type GetShapeFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetShapeFilterArrayOutput() GetShapeFilterArrayOutput
+	ToGetShapeFilterArrayOutputWithContext(context.Context) GetShapeFilterArrayOutput
+}
+
+type GetShapeFilterArray []GetShapeFilterInput
+
+func (GetShapeFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeFilter)(nil)).Elem()
+}
+
+func (i GetShapeFilterArray) ToGetShapeFilterArrayOutput() GetShapeFilterArrayOutput {
+	return i.ToGetShapeFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapeFilterArray) ToGetShapeFilterArrayOutputWithContext(ctx context.Context) GetShapeFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeFilterArrayOutput)
+}
+
+type GetShapeFilterOutput struct{ *pulumi.OutputState }
+
+func (GetShapeFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeFilter)(nil)).Elem()
+}
+
+func (o GetShapeFilterOutput) ToGetShapeFilterOutput() GetShapeFilterOutput {
+	return o
+}
+
+func (o GetShapeFilterOutput) ToGetShapeFilterOutputWithContext(ctx context.Context) GetShapeFilterOutput {
+	return o
+}
+
+func (o GetShapeFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetShapeFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetShapeFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetShapeFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetShapeFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetShapeFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetShapeFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapeFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeFilter)(nil)).Elem()
+}
+
+func (o GetShapeFilterArrayOutput) ToGetShapeFilterArrayOutput() GetShapeFilterArrayOutput {
+	return o
+}
+
+func (o GetShapeFilterArrayOutput) ToGetShapeFilterArrayOutputWithContext(ctx context.Context) GetShapeFilterArrayOutput {
+	return o
+}
+
+func (o GetShapeFilterArrayOutput) Index(i pulumi.IntInput) GetShapeFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeFilter {
+		return vs[0].([]GetShapeFilter)[vs[1].(int)]
+	}).(GetShapeFilterOutput)
+}
+
+type GetShapeShape struct {
+	BaselineOcpuUtilizations      []string                                 `pulumi:"baselineOcpuUtilizations"`
+	BillingType                   string                                   `pulumi:"billingType"`
+	GpuDescription                string                                   `pulumi:"gpuDescription"`
+	Gpus                          int                                      `pulumi:"gpus"`
+	IsBilledForStoppedInstance    bool                                     `pulumi:"isBilledForStoppedInstance"`
+	IsFlexible                    bool                                     `pulumi:"isFlexible"`
+	IsLiveMigrationSupported      bool                                     `pulumi:"isLiveMigrationSupported"`
+	IsSubcore                     bool                                     `pulumi:"isSubcore"`
+	LocalDiskDescription          string                                   `pulumi:"localDiskDescription"`
+	LocalDisks                    int                                      `pulumi:"localDisks"`
+	LocalDisksTotalSizeInGbs      float64                                  `pulumi:"localDisksTotalSizeInGbs"`
+	MaxVnicAttachmentOptions      []GetShapeShapeMaxVnicAttachmentOption   `pulumi:"maxVnicAttachmentOptions"`
+	MaxVnicAttachments            int                                      `pulumi:"maxVnicAttachments"`
+	MemoryInGbs                   float64                                  `pulumi:"memoryInGbs"`
+	MemoryOptions                 []GetShapeShapeMemoryOption              `pulumi:"memoryOptions"`
+	MinTotalBaselineOcpusRequired float64                                  `pulumi:"minTotalBaselineOcpusRequired"`
+	Name                          string                                   `pulumi:"name"`
+	NetworkPorts                  int                                      `pulumi:"networkPorts"`
+	NetworkingBandwidthInGbps     float64                                  `pulumi:"networkingBandwidthInGbps"`
+	NetworkingBandwidthOptions    []GetShapeShapeNetworkingBandwidthOption `pulumi:"networkingBandwidthOptions"`
+	OcpuOptions                   []GetShapeShapeOcpuOption                `pulumi:"ocpuOptions"`
+	Ocpus                         float64                                  `pulumi:"ocpus"`
+	PlatformConfigOptions         []GetShapeShapePlatformConfigOption      `pulumi:"platformConfigOptions"`
+	ProcessorDescription          string                                   `pulumi:"processorDescription"`
+	QuotaNames                    []string                                 `pulumi:"quotaNames"`
+	RdmaBandwidthInGbps           int                                      `pulumi:"rdmaBandwidthInGbps"`
+	RdmaPorts                     int                                      `pulumi:"rdmaPorts"`
+	RecommendedAlternatives       []GetShapeShapeRecommendedAlternative    `pulumi:"recommendedAlternatives"`
+	ResizeCompatibleShapes        []string                                 `pulumi:"resizeCompatibleShapes"`
+}
+
+// GetShapeShapeInput is an input type that accepts GetShapeShapeArgs and GetShapeShapeOutput values.
+// You can construct a concrete instance of `GetShapeShapeInput` via:
+//
+//	GetShapeShapeArgs{...}
+type GetShapeShapeInput interface {
+	pulumi.Input
+
+	ToGetShapeShapeOutput() GetShapeShapeOutput
+	ToGetShapeShapeOutputWithContext(context.Context) GetShapeShapeOutput
+}
+
+type GetShapeShapeArgs struct {
+	BaselineOcpuUtilizations      pulumi.StringArrayInput                          `pulumi:"baselineOcpuUtilizations"`
+	BillingType                   pulumi.StringInput                               `pulumi:"billingType"`
+	GpuDescription                pulumi.StringInput                               `pulumi:"gpuDescription"`
+	Gpus                          pulumi.IntInput                                  `pulumi:"gpus"`
+	IsBilledForStoppedInstance    pulumi.BoolInput                                 `pulumi:"isBilledForStoppedInstance"`
+	IsFlexible                    pulumi.BoolInput                                 `pulumi:"isFlexible"`
+	IsLiveMigrationSupported      pulumi.BoolInput                                 `pulumi:"isLiveMigrationSupported"`
+	IsSubcore                     pulumi.BoolInput                                 `pulumi:"isSubcore"`
+	LocalDiskDescription          pulumi.StringInput                               `pulumi:"localDiskDescription"`
+	LocalDisks                    pulumi.IntInput                                  `pulumi:"localDisks"`
+	LocalDisksTotalSizeInGbs      pulumi.Float64Input                              `pulumi:"localDisksTotalSizeInGbs"`
+	MaxVnicAttachmentOptions      GetShapeShapeMaxVnicAttachmentOptionArrayInput   `pulumi:"maxVnicAttachmentOptions"`
+	MaxVnicAttachments            pulumi.IntInput                                  `pulumi:"maxVnicAttachments"`
+	MemoryInGbs                   pulumi.Float64Input                              `pulumi:"memoryInGbs"`
+	MemoryOptions                 GetShapeShapeMemoryOptionArrayInput              `pulumi:"memoryOptions"`
+	MinTotalBaselineOcpusRequired pulumi.Float64Input                              `pulumi:"minTotalBaselineOcpusRequired"`
+	Name                          pulumi.StringInput                               `pulumi:"name"`
+	NetworkPorts                  pulumi.IntInput                                  `pulumi:"networkPorts"`
+	NetworkingBandwidthInGbps     pulumi.Float64Input                              `pulumi:"networkingBandwidthInGbps"`
+	NetworkingBandwidthOptions    GetShapeShapeNetworkingBandwidthOptionArrayInput `pulumi:"networkingBandwidthOptions"`
+	OcpuOptions                   GetShapeShapeOcpuOptionArrayInput                `pulumi:"ocpuOptions"`
+	Ocpus                         pulumi.Float64Input                              `pulumi:"ocpus"`
+	PlatformConfigOptions         GetShapeShapePlatformConfigOptionArrayInput      `pulumi:"platformConfigOptions"`
+	ProcessorDescription          pulumi.StringInput                               `pulumi:"processorDescription"`
+	QuotaNames                    pulumi.StringArrayInput                          `pulumi:"quotaNames"`
+	RdmaBandwidthInGbps           pulumi.IntInput                                  `pulumi:"rdmaBandwidthInGbps"`
+	RdmaPorts                     pulumi.IntInput                                  `pulumi:"rdmaPorts"`
+	RecommendedAlternatives       GetShapeShapeRecommendedAlternativeArrayInput    `pulumi:"recommendedAlternatives"`
+	ResizeCompatibleShapes        pulumi.StringArrayInput                          `pulumi:"resizeCompatibleShapes"`
+}
+
+func (GetShapeShapeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShape)(nil)).Elem()
+}
+
+func (i GetShapeShapeArgs) ToGetShapeShapeOutput() GetShapeShapeOutput {
+	return i.ToGetShapeShapeOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapeArgs) ToGetShapeShapeOutputWithContext(ctx context.Context) GetShapeShapeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeOutput)
+}
+
+// GetShapeShapeArrayInput is an input type that accepts GetShapeShapeArray and GetShapeShapeArrayOutput values.
+// You can construct a concrete instance of `GetShapeShapeArrayInput` via:
+//
+//	GetShapeShapeArray{ GetShapeShapeArgs{...} }
+type GetShapeShapeArrayInput interface {
+	pulumi.Input
+
+	ToGetShapeShapeArrayOutput() GetShapeShapeArrayOutput
+	ToGetShapeShapeArrayOutputWithContext(context.Context) GetShapeShapeArrayOutput
+}
+
+type GetShapeShapeArray []GetShapeShapeInput
+
+func (GetShapeShapeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShape)(nil)).Elem()
+}
+
+func (i GetShapeShapeArray) ToGetShapeShapeArrayOutput() GetShapeShapeArrayOutput {
+	return i.ToGetShapeShapeArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapeArray) ToGetShapeShapeArrayOutputWithContext(ctx context.Context) GetShapeShapeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeArrayOutput)
+}
+
+type GetShapeShapeOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShape)(nil)).Elem()
+}
+
+func (o GetShapeShapeOutput) ToGetShapeShapeOutput() GetShapeShapeOutput {
+	return o
+}
+
+func (o GetShapeShapeOutput) ToGetShapeShapeOutputWithContext(ctx context.Context) GetShapeShapeOutput {
+	return o
+}
+
+func (o GetShapeShapeOutput) BaselineOcpuUtilizations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetShapeShape) []string { return v.BaselineOcpuUtilizations }).(pulumi.StringArrayOutput)
+}
+
+func (o GetShapeShapeOutput) BillingType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetShapeShape) string { return v.BillingType }).(pulumi.StringOutput)
+}
+
+func (o GetShapeShapeOutput) GpuDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetShapeShape) string { return v.GpuDescription }).(pulumi.StringOutput)
+}
+
+func (o GetShapeShapeOutput) Gpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapeShape) int { return v.Gpus }).(pulumi.IntOutput)
+}
+
+func (o GetShapeShapeOutput) IsBilledForStoppedInstance() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapeShape) bool { return v.IsBilledForStoppedInstance }).(pulumi.BoolOutput)
+}
+
+func (o GetShapeShapeOutput) IsFlexible() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapeShape) bool { return v.IsFlexible }).(pulumi.BoolOutput)
+}
+
+func (o GetShapeShapeOutput) IsLiveMigrationSupported() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapeShape) bool { return v.IsLiveMigrationSupported }).(pulumi.BoolOutput)
+}
+
+func (o GetShapeShapeOutput) IsSubcore() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapeShape) bool { return v.IsSubcore }).(pulumi.BoolOutput)
+}
+
+func (o GetShapeShapeOutput) LocalDiskDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetShapeShape) string { return v.LocalDiskDescription }).(pulumi.StringOutput)
+}
+
+func (o GetShapeShapeOutput) LocalDisks() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapeShape) int { return v.LocalDisks }).(pulumi.IntOutput)
+}
+
+func (o GetShapeShapeOutput) LocalDisksTotalSizeInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapeShape) float64 { return v.LocalDisksTotalSizeInGbs }).(pulumi.Float64Output)
+}
+
+func (o GetShapeShapeOutput) MaxVnicAttachmentOptions() GetShapeShapeMaxVnicAttachmentOptionArrayOutput {
+	return o.ApplyT(func(v GetShapeShape) []GetShapeShapeMaxVnicAttachmentOption { return v.MaxVnicAttachmentOptions }).(GetShapeShapeMaxVnicAttachmentOptionArrayOutput)
+}
+
+func (o GetShapeShapeOutput) MaxVnicAttachments() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapeShape) int { return v.MaxVnicAttachments }).(pulumi.IntOutput)
+}
+
+func (o GetShapeShapeOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapeShape) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+}
+
+func (o GetShapeShapeOutput) MemoryOptions() GetShapeShapeMemoryOptionArrayOutput {
+	return o.ApplyT(func(v GetShapeShape) []GetShapeShapeMemoryOption { return v.MemoryOptions }).(GetShapeShapeMemoryOptionArrayOutput)
+}
+
+func (o GetShapeShapeOutput) MinTotalBaselineOcpusRequired() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapeShape) float64 { return v.MinTotalBaselineOcpusRequired }).(pulumi.Float64Output)
+}
+
+func (o GetShapeShapeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetShapeShape) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetShapeShapeOutput) NetworkPorts() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapeShape) int { return v.NetworkPorts }).(pulumi.IntOutput)
+}
+
+func (o GetShapeShapeOutput) NetworkingBandwidthInGbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapeShape) float64 { return v.NetworkingBandwidthInGbps }).(pulumi.Float64Output)
+}
+
+func (o GetShapeShapeOutput) NetworkingBandwidthOptions() GetShapeShapeNetworkingBandwidthOptionArrayOutput {
+	return o.ApplyT(func(v GetShapeShape) []GetShapeShapeNetworkingBandwidthOption { return v.NetworkingBandwidthOptions }).(GetShapeShapeNetworkingBandwidthOptionArrayOutput)
+}
+
+func (o GetShapeShapeOutput) OcpuOptions() GetShapeShapeOcpuOptionArrayOutput {
+	return o.ApplyT(func(v GetShapeShape) []GetShapeShapeOcpuOption { return v.OcpuOptions }).(GetShapeShapeOcpuOptionArrayOutput)
+}
+
+func (o GetShapeShapeOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapeShape) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+func (o GetShapeShapeOutput) PlatformConfigOptions() GetShapeShapePlatformConfigOptionArrayOutput {
+	return o.ApplyT(func(v GetShapeShape) []GetShapeShapePlatformConfigOption { return v.PlatformConfigOptions }).(GetShapeShapePlatformConfigOptionArrayOutput)
+}
+
+func (o GetShapeShapeOutput) ProcessorDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetShapeShape) string { return v.ProcessorDescription }).(pulumi.StringOutput)
+}
+
+func (o GetShapeShapeOutput) QuotaNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetShapeShape) []string { return v.QuotaNames }).(pulumi.StringArrayOutput)
+}
+
+func (o GetShapeShapeOutput) RdmaBandwidthInGbps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapeShape) int { return v.RdmaBandwidthInGbps }).(pulumi.IntOutput)
+}
+
+func (o GetShapeShapeOutput) RdmaPorts() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapeShape) int { return v.RdmaPorts }).(pulumi.IntOutput)
+}
+
+func (o GetShapeShapeOutput) RecommendedAlternatives() GetShapeShapeRecommendedAlternativeArrayOutput {
+	return o.ApplyT(func(v GetShapeShape) []GetShapeShapeRecommendedAlternative { return v.RecommendedAlternatives }).(GetShapeShapeRecommendedAlternativeArrayOutput)
+}
+
+func (o GetShapeShapeOutput) ResizeCompatibleShapes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetShapeShape) []string { return v.ResizeCompatibleShapes }).(pulumi.StringArrayOutput)
+}
+
+type GetShapeShapeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShape)(nil)).Elem()
+}
+
+func (o GetShapeShapeArrayOutput) ToGetShapeShapeArrayOutput() GetShapeShapeArrayOutput {
+	return o
+}
+
+func (o GetShapeShapeArrayOutput) ToGetShapeShapeArrayOutputWithContext(ctx context.Context) GetShapeShapeArrayOutput {
+	return o
+}
+
+func (o GetShapeShapeArrayOutput) Index(i pulumi.IntInput) GetShapeShapeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShape {
+		return vs[0].([]GetShapeShape)[vs[1].(int)]
+	}).(GetShapeShapeOutput)
+}
+
+type GetShapeShapeMaxVnicAttachmentOption struct {
+	DefaultPerOcpu float64 `pulumi:"defaultPerOcpu"`
+	Max            float64 `pulumi:"max"`
+	Min            int     `pulumi:"min"`
+}
+
+// GetShapeShapeMaxVnicAttachmentOptionInput is an input type that accepts GetShapeShapeMaxVnicAttachmentOptionArgs and GetShapeShapeMaxVnicAttachmentOptionOutput values.
+// You can construct a concrete instance of `GetShapeShapeMaxVnicAttachmentOptionInput` via:
+//
+//	GetShapeShapeMaxVnicAttachmentOptionArgs{...}
+type GetShapeShapeMaxVnicAttachmentOptionInput interface {
+	pulumi.Input
+
+	ToGetShapeShapeMaxVnicAttachmentOptionOutput() GetShapeShapeMaxVnicAttachmentOptionOutput
+	ToGetShapeShapeMaxVnicAttachmentOptionOutputWithContext(context.Context) GetShapeShapeMaxVnicAttachmentOptionOutput
+}
+
+type GetShapeShapeMaxVnicAttachmentOptionArgs struct {
+	DefaultPerOcpu pulumi.Float64Input `pulumi:"defaultPerOcpu"`
+	Max            pulumi.Float64Input `pulumi:"max"`
+	Min            pulumi.IntInput     `pulumi:"min"`
+}
+
+func (GetShapeShapeMaxVnicAttachmentOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapeMaxVnicAttachmentOption)(nil)).Elem()
+}
+
+func (i GetShapeShapeMaxVnicAttachmentOptionArgs) ToGetShapeShapeMaxVnicAttachmentOptionOutput() GetShapeShapeMaxVnicAttachmentOptionOutput {
+	return i.ToGetShapeShapeMaxVnicAttachmentOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapeMaxVnicAttachmentOptionArgs) ToGetShapeShapeMaxVnicAttachmentOptionOutputWithContext(ctx context.Context) GetShapeShapeMaxVnicAttachmentOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeMaxVnicAttachmentOptionOutput)
+}
+
+// GetShapeShapeMaxVnicAttachmentOptionArrayInput is an input type that accepts GetShapeShapeMaxVnicAttachmentOptionArray and GetShapeShapeMaxVnicAttachmentOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapeShapeMaxVnicAttachmentOptionArrayInput` via:
+//
+//	GetShapeShapeMaxVnicAttachmentOptionArray{ GetShapeShapeMaxVnicAttachmentOptionArgs{...} }
+type GetShapeShapeMaxVnicAttachmentOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapeShapeMaxVnicAttachmentOptionArrayOutput() GetShapeShapeMaxVnicAttachmentOptionArrayOutput
+	ToGetShapeShapeMaxVnicAttachmentOptionArrayOutputWithContext(context.Context) GetShapeShapeMaxVnicAttachmentOptionArrayOutput
+}
+
+type GetShapeShapeMaxVnicAttachmentOptionArray []GetShapeShapeMaxVnicAttachmentOptionInput
+
+func (GetShapeShapeMaxVnicAttachmentOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapeMaxVnicAttachmentOption)(nil)).Elem()
+}
+
+func (i GetShapeShapeMaxVnicAttachmentOptionArray) ToGetShapeShapeMaxVnicAttachmentOptionArrayOutput() GetShapeShapeMaxVnicAttachmentOptionArrayOutput {
+	return i.ToGetShapeShapeMaxVnicAttachmentOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapeMaxVnicAttachmentOptionArray) ToGetShapeShapeMaxVnicAttachmentOptionArrayOutputWithContext(ctx context.Context) GetShapeShapeMaxVnicAttachmentOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeMaxVnicAttachmentOptionArrayOutput)
+}
+
+type GetShapeShapeMaxVnicAttachmentOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapeMaxVnicAttachmentOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapeMaxVnicAttachmentOption)(nil)).Elem()
+}
+
+func (o GetShapeShapeMaxVnicAttachmentOptionOutput) ToGetShapeShapeMaxVnicAttachmentOptionOutput() GetShapeShapeMaxVnicAttachmentOptionOutput {
+	return o
+}
+
+func (o GetShapeShapeMaxVnicAttachmentOptionOutput) ToGetShapeShapeMaxVnicAttachmentOptionOutputWithContext(ctx context.Context) GetShapeShapeMaxVnicAttachmentOptionOutput {
+	return o
+}
+
+func (o GetShapeShapeMaxVnicAttachmentOptionOutput) DefaultPerOcpu() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapeShapeMaxVnicAttachmentOption) float64 { return v.DefaultPerOcpu }).(pulumi.Float64Output)
+}
+
+func (o GetShapeShapeMaxVnicAttachmentOptionOutput) Max() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapeShapeMaxVnicAttachmentOption) float64 { return v.Max }).(pulumi.Float64Output)
+}
+
+func (o GetShapeShapeMaxVnicAttachmentOptionOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapeShapeMaxVnicAttachmentOption) int { return v.Min }).(pulumi.IntOutput)
+}
+
+type GetShapeShapeMaxVnicAttachmentOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapeMaxVnicAttachmentOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapeMaxVnicAttachmentOption)(nil)).Elem()
+}
+
+func (o GetShapeShapeMaxVnicAttachmentOptionArrayOutput) ToGetShapeShapeMaxVnicAttachmentOptionArrayOutput() GetShapeShapeMaxVnicAttachmentOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapeMaxVnicAttachmentOptionArrayOutput) ToGetShapeShapeMaxVnicAttachmentOptionArrayOutputWithContext(ctx context.Context) GetShapeShapeMaxVnicAttachmentOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapeMaxVnicAttachmentOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapeMaxVnicAttachmentOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShapeMaxVnicAttachmentOption {
+		return vs[0].([]GetShapeShapeMaxVnicAttachmentOption)[vs[1].(int)]
+	}).(GetShapeShapeMaxVnicAttachmentOptionOutput)
+}
+
+type GetShapeShapeMemoryOption struct {
+	DefaultPerOcpuInGbs float64 `pulumi:"defaultPerOcpuInGbs"`
+	MaxInGbs            float64 `pulumi:"maxInGbs"`
+	MaxPerNumaNodeInGbs float64 `pulumi:"maxPerNumaNodeInGbs"`
+	MaxPerOcpuInGbs     float64 `pulumi:"maxPerOcpuInGbs"`
+	MinInGbs            float64 `pulumi:"minInGbs"`
+	MinPerOcpuInGbs     float64 `pulumi:"minPerOcpuInGbs"`
+}
+
+// GetShapeShapeMemoryOptionInput is an input type that accepts GetShapeShapeMemoryOptionArgs and GetShapeShapeMemoryOptionOutput values.
+// You can construct a concrete instance of `GetShapeShapeMemoryOptionInput` via:
+//
+//	GetShapeShapeMemoryOptionArgs{...}
+type GetShapeShapeMemoryOptionInput interface {
+	pulumi.Input
+
+	ToGetShapeShapeMemoryOptionOutput() GetShapeShapeMemoryOptionOutput
+	ToGetShapeShapeMemoryOptionOutputWithContext(context.Context) GetShapeShapeMemoryOptionOutput
+}
+
+type GetShapeShapeMemoryOptionArgs struct {
+	DefaultPerOcpuInGbs pulumi.Float64Input `pulumi:"defaultPerOcpuInGbs"`
+	MaxInGbs            pulumi.Float64Input `pulumi:"maxInGbs"`
+	MaxPerNumaNodeInGbs pulumi.Float64Input `pulumi:"maxPerNumaNodeInGbs"`
+	MaxPerOcpuInGbs     pulumi.Float64Input `pulumi:"maxPerOcpuInGbs"`
+	MinInGbs            pulumi.Float64Input `pulumi:"minInGbs"`
+	MinPerOcpuInGbs     pulumi.Float64Input `pulumi:"minPerOcpuInGbs"`
+}
+
+func (GetShapeShapeMemoryOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapeMemoryOption)(nil)).Elem()
+}
+
+func (i GetShapeShapeMemoryOptionArgs) ToGetShapeShapeMemoryOptionOutput() GetShapeShapeMemoryOptionOutput {
+	return i.ToGetShapeShapeMemoryOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapeMemoryOptionArgs) ToGetShapeShapeMemoryOptionOutputWithContext(ctx context.Context) GetShapeShapeMemoryOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeMemoryOptionOutput)
+}
+
+// GetShapeShapeMemoryOptionArrayInput is an input type that accepts GetShapeShapeMemoryOptionArray and GetShapeShapeMemoryOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapeShapeMemoryOptionArrayInput` via:
+//
+//	GetShapeShapeMemoryOptionArray{ GetShapeShapeMemoryOptionArgs{...} }
+type GetShapeShapeMemoryOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapeShapeMemoryOptionArrayOutput() GetShapeShapeMemoryOptionArrayOutput
+	ToGetShapeShapeMemoryOptionArrayOutputWithContext(context.Context) GetShapeShapeMemoryOptionArrayOutput
+}
+
+type GetShapeShapeMemoryOptionArray []GetShapeShapeMemoryOptionInput
+
+func (GetShapeShapeMemoryOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapeMemoryOption)(nil)).Elem()
+}
+
+func (i GetShapeShapeMemoryOptionArray) ToGetShapeShapeMemoryOptionArrayOutput() GetShapeShapeMemoryOptionArrayOutput {
+	return i.ToGetShapeShapeMemoryOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapeMemoryOptionArray) ToGetShapeShapeMemoryOptionArrayOutputWithContext(ctx context.Context) GetShapeShapeMemoryOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeMemoryOptionArrayOutput)
+}
+
+type GetShapeShapeMemoryOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapeMemoryOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapeMemoryOption)(nil)).Elem()
+}
+
+func (o GetShapeShapeMemoryOptionOutput) ToGetShapeShapeMemoryOptionOutput() GetShapeShapeMemoryOptionOutput {
+	return o
+}
+
+func (o GetShapeShapeMemoryOptionOutput) ToGetShapeShapeMemoryOptionOutputWithContext(ctx context.Context) GetShapeShapeMemoryOptionOutput {
+	return o
+}
+
+func (o GetShapeShapeMemoryOptionOutput) DefaultPerOcpuInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapeShapeMemoryOption) float64 { return v.DefaultPerOcpuInGbs }).(pulumi.Float64Output)
+}
+
+func (o GetShapeShapeMemoryOptionOutput) MaxInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapeShapeMemoryOption) float64 { return v.MaxInGbs }).(pulumi.Float64Output)
+}
+
+func (o GetShapeShapeMemoryOptionOutput) MaxPerNumaNodeInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapeShapeMemoryOption) float64 { return v.MaxPerNumaNodeInGbs }).(pulumi.Float64Output)
+}
+
+func (o GetShapeShapeMemoryOptionOutput) MaxPerOcpuInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapeShapeMemoryOption) float64 { return v.MaxPerOcpuInGbs }).(pulumi.Float64Output)
+}
+
+func (o GetShapeShapeMemoryOptionOutput) MinInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapeShapeMemoryOption) float64 { return v.MinInGbs }).(pulumi.Float64Output)
+}
+
+func (o GetShapeShapeMemoryOptionOutput) MinPerOcpuInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapeShapeMemoryOption) float64 { return v.MinPerOcpuInGbs }).(pulumi.Float64Output)
+}
+
+type GetShapeShapeMemoryOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapeMemoryOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapeMemoryOption)(nil)).Elem()
+}
+
+func (o GetShapeShapeMemoryOptionArrayOutput) ToGetShapeShapeMemoryOptionArrayOutput() GetShapeShapeMemoryOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapeMemoryOptionArrayOutput) ToGetShapeShapeMemoryOptionArrayOutputWithContext(ctx context.Context) GetShapeShapeMemoryOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapeMemoryOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapeMemoryOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShapeMemoryOption {
+		return vs[0].([]GetShapeShapeMemoryOption)[vs[1].(int)]
+	}).(GetShapeShapeMemoryOptionOutput)
+}
+
+type GetShapeShapeNetworkingBandwidthOption struct {
+	DefaultPerOcpuInGbps float64 `pulumi:"defaultPerOcpuInGbps"`
+	MaxInGbps            float64 `pulumi:"maxInGbps"`
+	MinInGbps            float64 `pulumi:"minInGbps"`
+}
+
+// GetShapeShapeNetworkingBandwidthOptionInput is an input type that accepts GetShapeShapeNetworkingBandwidthOptionArgs and GetShapeShapeNetworkingBandwidthOptionOutput values.
+// You can construct a concrete instance of `GetShapeShapeNetworkingBandwidthOptionInput` via:
+//
+//	GetShapeShapeNetworkingBandwidthOptionArgs{...}
+type GetShapeShapeNetworkingBandwidthOptionInput interface {
+	pulumi.Input
+
+	ToGetShapeShapeNetworkingBandwidthOptionOutput() GetShapeShapeNetworkingBandwidthOptionOutput
+	ToGetShapeShapeNetworkingBandwidthOptionOutputWithContext(context.Context) GetShapeShapeNetworkingBandwidthOptionOutput
+}
+
+type GetShapeShapeNetworkingBandwidthOptionArgs struct {
+	DefaultPerOcpuInGbps pulumi.Float64Input `pulumi:"defaultPerOcpuInGbps"`
+	MaxInGbps            pulumi.Float64Input `pulumi:"maxInGbps"`
+	MinInGbps            pulumi.Float64Input `pulumi:"minInGbps"`
+}
+
+func (GetShapeShapeNetworkingBandwidthOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapeNetworkingBandwidthOption)(nil)).Elem()
+}
+
+func (i GetShapeShapeNetworkingBandwidthOptionArgs) ToGetShapeShapeNetworkingBandwidthOptionOutput() GetShapeShapeNetworkingBandwidthOptionOutput {
+	return i.ToGetShapeShapeNetworkingBandwidthOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapeNetworkingBandwidthOptionArgs) ToGetShapeShapeNetworkingBandwidthOptionOutputWithContext(ctx context.Context) GetShapeShapeNetworkingBandwidthOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeNetworkingBandwidthOptionOutput)
+}
+
+// GetShapeShapeNetworkingBandwidthOptionArrayInput is an input type that accepts GetShapeShapeNetworkingBandwidthOptionArray and GetShapeShapeNetworkingBandwidthOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapeShapeNetworkingBandwidthOptionArrayInput` via:
+//
+//	GetShapeShapeNetworkingBandwidthOptionArray{ GetShapeShapeNetworkingBandwidthOptionArgs{...} }
+type GetShapeShapeNetworkingBandwidthOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapeShapeNetworkingBandwidthOptionArrayOutput() GetShapeShapeNetworkingBandwidthOptionArrayOutput
+	ToGetShapeShapeNetworkingBandwidthOptionArrayOutputWithContext(context.Context) GetShapeShapeNetworkingBandwidthOptionArrayOutput
+}
+
+type GetShapeShapeNetworkingBandwidthOptionArray []GetShapeShapeNetworkingBandwidthOptionInput
+
+func (GetShapeShapeNetworkingBandwidthOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapeNetworkingBandwidthOption)(nil)).Elem()
+}
+
+func (i GetShapeShapeNetworkingBandwidthOptionArray) ToGetShapeShapeNetworkingBandwidthOptionArrayOutput() GetShapeShapeNetworkingBandwidthOptionArrayOutput {
+	return i.ToGetShapeShapeNetworkingBandwidthOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapeNetworkingBandwidthOptionArray) ToGetShapeShapeNetworkingBandwidthOptionArrayOutputWithContext(ctx context.Context) GetShapeShapeNetworkingBandwidthOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeNetworkingBandwidthOptionArrayOutput)
+}
+
+type GetShapeShapeNetworkingBandwidthOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapeNetworkingBandwidthOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapeNetworkingBandwidthOption)(nil)).Elem()
+}
+
+func (o GetShapeShapeNetworkingBandwidthOptionOutput) ToGetShapeShapeNetworkingBandwidthOptionOutput() GetShapeShapeNetworkingBandwidthOptionOutput {
+	return o
+}
+
+func (o GetShapeShapeNetworkingBandwidthOptionOutput) ToGetShapeShapeNetworkingBandwidthOptionOutputWithContext(ctx context.Context) GetShapeShapeNetworkingBandwidthOptionOutput {
+	return o
+}
+
+func (o GetShapeShapeNetworkingBandwidthOptionOutput) DefaultPerOcpuInGbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapeShapeNetworkingBandwidthOption) float64 { return v.DefaultPerOcpuInGbps }).(pulumi.Float64Output)
+}
+
+func (o GetShapeShapeNetworkingBandwidthOptionOutput) MaxInGbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapeShapeNetworkingBandwidthOption) float64 { return v.MaxInGbps }).(pulumi.Float64Output)
+}
+
+func (o GetShapeShapeNetworkingBandwidthOptionOutput) MinInGbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapeShapeNetworkingBandwidthOption) float64 { return v.MinInGbps }).(pulumi.Float64Output)
+}
+
+type GetShapeShapeNetworkingBandwidthOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapeNetworkingBandwidthOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapeNetworkingBandwidthOption)(nil)).Elem()
+}
+
+func (o GetShapeShapeNetworkingBandwidthOptionArrayOutput) ToGetShapeShapeNetworkingBandwidthOptionArrayOutput() GetShapeShapeNetworkingBandwidthOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapeNetworkingBandwidthOptionArrayOutput) ToGetShapeShapeNetworkingBandwidthOptionArrayOutputWithContext(ctx context.Context) GetShapeShapeNetworkingBandwidthOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapeNetworkingBandwidthOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapeNetworkingBandwidthOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShapeNetworkingBandwidthOption {
+		return vs[0].([]GetShapeShapeNetworkingBandwidthOption)[vs[1].(int)]
+	}).(GetShapeShapeNetworkingBandwidthOptionOutput)
+}
+
+type GetShapeShapeOcpuOption struct {
+	Max            float64 `pulumi:"max"`
+	MaxPerNumaNode float64 `pulumi:"maxPerNumaNode"`
+	Min            float64 `pulumi:"min"`
+}
+
+// GetShapeShapeOcpuOptionInput is an input type that accepts GetShapeShapeOcpuOptionArgs and GetShapeShapeOcpuOptionOutput values.
+// You can construct a concrete instance of `GetShapeShapeOcpuOptionInput` via:
+//
+//	GetShapeShapeOcpuOptionArgs{...}
+type GetShapeShapeOcpuOptionInput interface {
+	pulumi.Input
+
+	ToGetShapeShapeOcpuOptionOutput() GetShapeShapeOcpuOptionOutput
+	ToGetShapeShapeOcpuOptionOutputWithContext(context.Context) GetShapeShapeOcpuOptionOutput
+}
+
+type GetShapeShapeOcpuOptionArgs struct {
+	Max            pulumi.Float64Input `pulumi:"max"`
+	MaxPerNumaNode pulumi.Float64Input `pulumi:"maxPerNumaNode"`
+	Min            pulumi.Float64Input `pulumi:"min"`
+}
+
+func (GetShapeShapeOcpuOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapeOcpuOption)(nil)).Elem()
+}
+
+func (i GetShapeShapeOcpuOptionArgs) ToGetShapeShapeOcpuOptionOutput() GetShapeShapeOcpuOptionOutput {
+	return i.ToGetShapeShapeOcpuOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapeOcpuOptionArgs) ToGetShapeShapeOcpuOptionOutputWithContext(ctx context.Context) GetShapeShapeOcpuOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeOcpuOptionOutput)
+}
+
+// GetShapeShapeOcpuOptionArrayInput is an input type that accepts GetShapeShapeOcpuOptionArray and GetShapeShapeOcpuOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapeShapeOcpuOptionArrayInput` via:
+//
+//	GetShapeShapeOcpuOptionArray{ GetShapeShapeOcpuOptionArgs{...} }
+type GetShapeShapeOcpuOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapeShapeOcpuOptionArrayOutput() GetShapeShapeOcpuOptionArrayOutput
+	ToGetShapeShapeOcpuOptionArrayOutputWithContext(context.Context) GetShapeShapeOcpuOptionArrayOutput
+}
+
+type GetShapeShapeOcpuOptionArray []GetShapeShapeOcpuOptionInput
+
+func (GetShapeShapeOcpuOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapeOcpuOption)(nil)).Elem()
+}
+
+func (i GetShapeShapeOcpuOptionArray) ToGetShapeShapeOcpuOptionArrayOutput() GetShapeShapeOcpuOptionArrayOutput {
+	return i.ToGetShapeShapeOcpuOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapeOcpuOptionArray) ToGetShapeShapeOcpuOptionArrayOutputWithContext(ctx context.Context) GetShapeShapeOcpuOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeOcpuOptionArrayOutput)
+}
+
+type GetShapeShapeOcpuOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapeOcpuOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapeOcpuOption)(nil)).Elem()
+}
+
+func (o GetShapeShapeOcpuOptionOutput) ToGetShapeShapeOcpuOptionOutput() GetShapeShapeOcpuOptionOutput {
+	return o
+}
+
+func (o GetShapeShapeOcpuOptionOutput) ToGetShapeShapeOcpuOptionOutputWithContext(ctx context.Context) GetShapeShapeOcpuOptionOutput {
+	return o
+}
+
+func (o GetShapeShapeOcpuOptionOutput) Max() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapeShapeOcpuOption) float64 { return v.Max }).(pulumi.Float64Output)
+}
+
+func (o GetShapeShapeOcpuOptionOutput) MaxPerNumaNode() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapeShapeOcpuOption) float64 { return v.MaxPerNumaNode }).(pulumi.Float64Output)
+}
+
+func (o GetShapeShapeOcpuOptionOutput) Min() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapeShapeOcpuOption) float64 { return v.Min }).(pulumi.Float64Output)
+}
+
+type GetShapeShapeOcpuOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapeOcpuOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapeOcpuOption)(nil)).Elem()
+}
+
+func (o GetShapeShapeOcpuOptionArrayOutput) ToGetShapeShapeOcpuOptionArrayOutput() GetShapeShapeOcpuOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapeOcpuOptionArrayOutput) ToGetShapeShapeOcpuOptionArrayOutputWithContext(ctx context.Context) GetShapeShapeOcpuOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapeOcpuOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapeOcpuOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShapeOcpuOption {
+		return vs[0].([]GetShapeShapeOcpuOption)[vs[1].(int)]
+	}).(GetShapeShapeOcpuOptionOutput)
+}
+
+type GetShapeShapePlatformConfigOption struct {
+	AccessControlServiceOptions            []GetShapeShapePlatformConfigOptionAccessControlServiceOption            `pulumi:"accessControlServiceOptions"`
+	InputOutputMemoryManagementUnitOptions []GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption `pulumi:"inputOutputMemoryManagementUnitOptions"`
+	MeasuredBootOptions                    []GetShapeShapePlatformConfigOptionMeasuredBootOption                    `pulumi:"measuredBootOptions"`
+	MemoryEncryptionOptions                []GetShapeShapePlatformConfigOptionMemoryEncryptionOption                `pulumi:"memoryEncryptionOptions"`
+	NumaNodesPerSocketPlatformOptions      []GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption      `pulumi:"numaNodesPerSocketPlatformOptions"`
+	PercentageOfCoresEnabledOptions        []GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption        `pulumi:"percentageOfCoresEnabledOptions"`
+	SecureBootOptions                      []GetShapeShapePlatformConfigOptionSecureBootOption                      `pulumi:"secureBootOptions"`
+	SymmetricMultiThreadingOptions         []GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption         `pulumi:"symmetricMultiThreadingOptions"`
+	TrustedPlatformModuleOptions           []GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption           `pulumi:"trustedPlatformModuleOptions"`
+	Type                                   string                                                                   `pulumi:"type"`
+	VirtualInstructionsOptions             []GetShapeShapePlatformConfigOptionVirtualInstructionsOption             `pulumi:"virtualInstructionsOptions"`
+}
+
+// GetShapeShapePlatformConfigOptionInput is an input type that accepts GetShapeShapePlatformConfigOptionArgs and GetShapeShapePlatformConfigOptionOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionInput` via:
+//
+//	GetShapeShapePlatformConfigOptionArgs{...}
+type GetShapeShapePlatformConfigOptionInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionOutput() GetShapeShapePlatformConfigOptionOutput
+	ToGetShapeShapePlatformConfigOptionOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionOutput
+}
+
+type GetShapeShapePlatformConfigOptionArgs struct {
+	AccessControlServiceOptions            GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayInput            `pulumi:"accessControlServiceOptions"`
+	InputOutputMemoryManagementUnitOptions GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayInput `pulumi:"inputOutputMemoryManagementUnitOptions"`
+	MeasuredBootOptions                    GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayInput                    `pulumi:"measuredBootOptions"`
+	MemoryEncryptionOptions                GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayInput                `pulumi:"memoryEncryptionOptions"`
+	NumaNodesPerSocketPlatformOptions      GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayInput      `pulumi:"numaNodesPerSocketPlatformOptions"`
+	PercentageOfCoresEnabledOptions        GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayInput        `pulumi:"percentageOfCoresEnabledOptions"`
+	SecureBootOptions                      GetShapeShapePlatformConfigOptionSecureBootOptionArrayInput                      `pulumi:"secureBootOptions"`
+	SymmetricMultiThreadingOptions         GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayInput         `pulumi:"symmetricMultiThreadingOptions"`
+	TrustedPlatformModuleOptions           GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayInput           `pulumi:"trustedPlatformModuleOptions"`
+	Type                                   pulumi.StringInput                                                               `pulumi:"type"`
+	VirtualInstructionsOptions             GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayInput             `pulumi:"virtualInstructionsOptions"`
+}
+
+func (GetShapeShapePlatformConfigOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionArgs) ToGetShapeShapePlatformConfigOptionOutput() GetShapeShapePlatformConfigOptionOutput {
+	return i.ToGetShapeShapePlatformConfigOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionArgs) ToGetShapeShapePlatformConfigOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionOutput)
+}
+
+// GetShapeShapePlatformConfigOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionArray and GetShapeShapePlatformConfigOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionArrayInput` via:
+//
+//	GetShapeShapePlatformConfigOptionArray{ GetShapeShapePlatformConfigOptionArgs{...} }
+type GetShapeShapePlatformConfigOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionArrayOutput() GetShapeShapePlatformConfigOptionArrayOutput
+	ToGetShapeShapePlatformConfigOptionArrayOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionArrayOutput
+}
+
+type GetShapeShapePlatformConfigOptionArray []GetShapeShapePlatformConfigOptionInput
+
+func (GetShapeShapePlatformConfigOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionArray) ToGetShapeShapePlatformConfigOptionArrayOutput() GetShapeShapePlatformConfigOptionArrayOutput {
+	return i.ToGetShapeShapePlatformConfigOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionArray) ToGetShapeShapePlatformConfigOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionArrayOutput)
+}
+
+type GetShapeShapePlatformConfigOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionOutput) ToGetShapeShapePlatformConfigOptionOutput() GetShapeShapePlatformConfigOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionOutput) ToGetShapeShapePlatformConfigOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionOutput) AccessControlServiceOptions() GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOption) []GetShapeShapePlatformConfigOptionAccessControlServiceOption {
+		return v.AccessControlServiceOptions
+	}).(GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionOutput) InputOutputMemoryManagementUnitOptions() GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOption) []GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption {
+		return v.InputOutputMemoryManagementUnitOptions
+	}).(GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionOutput) MeasuredBootOptions() GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOption) []GetShapeShapePlatformConfigOptionMeasuredBootOption {
+		return v.MeasuredBootOptions
+	}).(GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionOutput) MemoryEncryptionOptions() GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOption) []GetShapeShapePlatformConfigOptionMemoryEncryptionOption {
+		return v.MemoryEncryptionOptions
+	}).(GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionOutput) NumaNodesPerSocketPlatformOptions() GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOption) []GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption {
+		return v.NumaNodesPerSocketPlatformOptions
+	}).(GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionOutput) PercentageOfCoresEnabledOptions() GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOption) []GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption {
+		return v.PercentageOfCoresEnabledOptions
+	}).(GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionOutput) SecureBootOptions() GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOption) []GetShapeShapePlatformConfigOptionSecureBootOption {
+		return v.SecureBootOptions
+	}).(GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionOutput) SymmetricMultiThreadingOptions() GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOption) []GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption {
+		return v.SymmetricMultiThreadingOptions
+	}).(GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionOutput) TrustedPlatformModuleOptions() GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOption) []GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption {
+		return v.TrustedPlatformModuleOptions
+	}).(GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOption) string { return v.Type }).(pulumi.StringOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionOutput) VirtualInstructionsOptions() GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOption) []GetShapeShapePlatformConfigOptionVirtualInstructionsOption {
+		return v.VirtualInstructionsOptions
+	}).(GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput)
+}
+
+type GetShapeShapePlatformConfigOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionArrayOutput) ToGetShapeShapePlatformConfigOptionArrayOutput() GetShapeShapePlatformConfigOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionArrayOutput) ToGetShapeShapePlatformConfigOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShapePlatformConfigOption {
+		return vs[0].([]GetShapeShapePlatformConfigOption)[vs[1].(int)]
+	}).(GetShapeShapePlatformConfigOptionOutput)
+}
+
+type GetShapeShapePlatformConfigOptionAccessControlServiceOption struct {
+	AllowedValues    []bool `pulumi:"allowedValues"`
+	IsDefaultEnabled bool   `pulumi:"isDefaultEnabled"`
+}
+
+// GetShapeShapePlatformConfigOptionAccessControlServiceOptionInput is an input type that accepts GetShapeShapePlatformConfigOptionAccessControlServiceOptionArgs and GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionAccessControlServiceOptionInput` via:
+//
+//	GetShapeShapePlatformConfigOptionAccessControlServiceOptionArgs{...}
+type GetShapeShapePlatformConfigOptionAccessControlServiceOptionInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput() GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput
+	ToGetShapeShapePlatformConfigOptionAccessControlServiceOptionOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput
+}
+
+type GetShapeShapePlatformConfigOptionAccessControlServiceOptionArgs struct {
+	AllowedValues    pulumi.BoolArrayInput `pulumi:"allowedValues"`
+	IsDefaultEnabled pulumi.BoolInput      `pulumi:"isDefaultEnabled"`
+}
+
+func (GetShapeShapePlatformConfigOptionAccessControlServiceOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOptionAccessControlServiceOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionAccessControlServiceOptionArgs) ToGetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput() GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput {
+	return i.ToGetShapeShapePlatformConfigOptionAccessControlServiceOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionAccessControlServiceOptionArgs) ToGetShapeShapePlatformConfigOptionAccessControlServiceOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput)
+}
+
+// GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionAccessControlServiceOptionArray and GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayInput` via:
+//
+//	GetShapeShapePlatformConfigOptionAccessControlServiceOptionArray{ GetShapeShapePlatformConfigOptionAccessControlServiceOptionArgs{...} }
+type GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput() GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput
+	ToGetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput
+}
+
+type GetShapeShapePlatformConfigOptionAccessControlServiceOptionArray []GetShapeShapePlatformConfigOptionAccessControlServiceOptionInput
+
+func (GetShapeShapePlatformConfigOptionAccessControlServiceOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOptionAccessControlServiceOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionAccessControlServiceOptionArray) ToGetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput() GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput {
+	return i.ToGetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionAccessControlServiceOptionArray) ToGetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput)
+}
+
+type GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOptionAccessControlServiceOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput) ToGetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput() GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput) ToGetShapeShapePlatformConfigOptionAccessControlServiceOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionAccessControlServiceOption) []bool { return v.AllowedValues }).(pulumi.BoolArrayOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput) IsDefaultEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionAccessControlServiceOption) bool { return v.IsDefaultEnabled }).(pulumi.BoolOutput)
+}
+
+type GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOptionAccessControlServiceOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput) ToGetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput() GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput) ToGetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShapePlatformConfigOptionAccessControlServiceOption {
+		return vs[0].([]GetShapeShapePlatformConfigOptionAccessControlServiceOption)[vs[1].(int)]
+	}).(GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput)
+}
+
+type GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption struct {
+	AllowedValues    []bool `pulumi:"allowedValues"`
+	IsDefaultEnabled bool   `pulumi:"isDefaultEnabled"`
+}
+
+// GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionInput is an input type that accepts GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArgs and GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionInput` via:
+//
+//	GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArgs{...}
+type GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput() GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput
+	ToGetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput
+}
+
+type GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArgs struct {
+	AllowedValues    pulumi.BoolArrayInput `pulumi:"allowedValues"`
+	IsDefaultEnabled pulumi.BoolInput      `pulumi:"isDefaultEnabled"`
+}
+
+func (GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArgs) ToGetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput() GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput {
+	return i.ToGetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArgs) ToGetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput)
+}
+
+// GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArray and GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayInput` via:
+//
+//	GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArray{ GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArgs{...} }
+type GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput() GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput
+	ToGetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput
+}
+
+type GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArray []GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionInput
+
+func (GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArray) ToGetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput() GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput {
+	return i.ToGetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArray) ToGetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput)
+}
+
+type GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput) ToGetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput() GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput) ToGetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption) []bool {
+		return v.AllowedValues
+	}).(pulumi.BoolArrayOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput) IsDefaultEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption) bool {
+		return v.IsDefaultEnabled
+	}).(pulumi.BoolOutput)
+}
+
+type GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput) ToGetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput() GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput) ToGetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption {
+		return vs[0].([]GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption)[vs[1].(int)]
+	}).(GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput)
+}
+
+type GetShapeShapePlatformConfigOptionMeasuredBootOption struct {
+	AllowedValues    []bool `pulumi:"allowedValues"`
+	IsDefaultEnabled bool   `pulumi:"isDefaultEnabled"`
+}
+
+// GetShapeShapePlatformConfigOptionMeasuredBootOptionInput is an input type that accepts GetShapeShapePlatformConfigOptionMeasuredBootOptionArgs and GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionMeasuredBootOptionInput` via:
+//
+//	GetShapeShapePlatformConfigOptionMeasuredBootOptionArgs{...}
+type GetShapeShapePlatformConfigOptionMeasuredBootOptionInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionMeasuredBootOptionOutput() GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput
+	ToGetShapeShapePlatformConfigOptionMeasuredBootOptionOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput
+}
+
+type GetShapeShapePlatformConfigOptionMeasuredBootOptionArgs struct {
+	AllowedValues    pulumi.BoolArrayInput `pulumi:"allowedValues"`
+	IsDefaultEnabled pulumi.BoolInput      `pulumi:"isDefaultEnabled"`
+}
+
+func (GetShapeShapePlatformConfigOptionMeasuredBootOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOptionMeasuredBootOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionMeasuredBootOptionArgs) ToGetShapeShapePlatformConfigOptionMeasuredBootOptionOutput() GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput {
+	return i.ToGetShapeShapePlatformConfigOptionMeasuredBootOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionMeasuredBootOptionArgs) ToGetShapeShapePlatformConfigOptionMeasuredBootOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput)
+}
+
+// GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionMeasuredBootOptionArray and GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayInput` via:
+//
+//	GetShapeShapePlatformConfigOptionMeasuredBootOptionArray{ GetShapeShapePlatformConfigOptionMeasuredBootOptionArgs{...} }
+type GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput() GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput
+	ToGetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput
+}
+
+type GetShapeShapePlatformConfigOptionMeasuredBootOptionArray []GetShapeShapePlatformConfigOptionMeasuredBootOptionInput
+
+func (GetShapeShapePlatformConfigOptionMeasuredBootOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOptionMeasuredBootOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionMeasuredBootOptionArray) ToGetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput() GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput {
+	return i.ToGetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionMeasuredBootOptionArray) ToGetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput)
+}
+
+type GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOptionMeasuredBootOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput) ToGetShapeShapePlatformConfigOptionMeasuredBootOptionOutput() GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput) ToGetShapeShapePlatformConfigOptionMeasuredBootOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionMeasuredBootOption) []bool { return v.AllowedValues }).(pulumi.BoolArrayOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput) IsDefaultEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionMeasuredBootOption) bool { return v.IsDefaultEnabled }).(pulumi.BoolOutput)
+}
+
+type GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOptionMeasuredBootOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput) ToGetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput() GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput) ToGetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShapePlatformConfigOptionMeasuredBootOption {
+		return vs[0].([]GetShapeShapePlatformConfigOptionMeasuredBootOption)[vs[1].(int)]
+	}).(GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput)
+}
+
+type GetShapeShapePlatformConfigOptionMemoryEncryptionOption struct {
+	AllowedValues    []bool `pulumi:"allowedValues"`
+	IsDefaultEnabled bool   `pulumi:"isDefaultEnabled"`
+}
+
+// GetShapeShapePlatformConfigOptionMemoryEncryptionOptionInput is an input type that accepts GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArgs and GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionMemoryEncryptionOptionInput` via:
+//
+//	GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArgs{...}
+type GetShapeShapePlatformConfigOptionMemoryEncryptionOptionInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput() GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput
+	ToGetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput
+}
+
+type GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArgs struct {
+	AllowedValues    pulumi.BoolArrayInput `pulumi:"allowedValues"`
+	IsDefaultEnabled pulumi.BoolInput      `pulumi:"isDefaultEnabled"`
+}
+
+func (GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOptionMemoryEncryptionOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArgs) ToGetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput() GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput {
+	return i.ToGetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArgs) ToGetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput)
+}
+
+// GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArray and GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayInput` via:
+//
+//	GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArray{ GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArgs{...} }
+type GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput() GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput
+	ToGetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput
+}
+
+type GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArray []GetShapeShapePlatformConfigOptionMemoryEncryptionOptionInput
+
+func (GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOptionMemoryEncryptionOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArray) ToGetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput() GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput {
+	return i.ToGetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArray) ToGetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput)
+}
+
+type GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOptionMemoryEncryptionOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput) ToGetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput() GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput) ToGetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionMemoryEncryptionOption) []bool { return v.AllowedValues }).(pulumi.BoolArrayOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput) IsDefaultEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionMemoryEncryptionOption) bool { return v.IsDefaultEnabled }).(pulumi.BoolOutput)
+}
+
+type GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOptionMemoryEncryptionOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput) ToGetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput() GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput) ToGetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShapePlatformConfigOptionMemoryEncryptionOption {
+		return vs[0].([]GetShapeShapePlatformConfigOptionMemoryEncryptionOption)[vs[1].(int)]
+	}).(GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput)
+}
+
+type GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption struct {
+	AllowedValues []string `pulumi:"allowedValues"`
+	DefaultValue  string   `pulumi:"defaultValue"`
+}
+
+// GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionInput is an input type that accepts GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs and GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionInput` via:
+//
+//	GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs{...}
+type GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput() GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput
+	ToGetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput
+}
+
+type GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs struct {
+	AllowedValues pulumi.StringArrayInput `pulumi:"allowedValues"`
+	DefaultValue  pulumi.StringInput      `pulumi:"defaultValue"`
+}
+
+func (GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs) ToGetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput() GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput {
+	return i.ToGetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs) ToGetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput)
+}
+
+// GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArray and GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayInput` via:
+//
+//	GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArray{ GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs{...} }
+type GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput() GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput
+	ToGetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput
+}
+
+type GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArray []GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionInput
+
+func (GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArray) ToGetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput() GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput {
+	return i.ToGetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArray) ToGetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput)
+}
+
+type GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput) ToGetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput() GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput) ToGetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput) AllowedValues() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption) []string {
+		return v.AllowedValues
+	}).(pulumi.StringArrayOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption) string {
+		return v.DefaultValue
+	}).(pulumi.StringOutput)
+}
+
+type GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput) ToGetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput() GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput) ToGetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption {
+		return vs[0].([]GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption)[vs[1].(int)]
+	}).(GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput)
+}
+
+type GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption struct {
+	DefaultValue int `pulumi:"defaultValue"`
+	Max          int `pulumi:"max"`
+	Min          int `pulumi:"min"`
+}
+
+// GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionInput is an input type that accepts GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs and GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionInput` via:
+//
+//	GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs{...}
+type GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput() GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput
+	ToGetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput
+}
+
+type GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs struct {
+	DefaultValue pulumi.IntInput `pulumi:"defaultValue"`
+	Max          pulumi.IntInput `pulumi:"max"`
+	Min          pulumi.IntInput `pulumi:"min"`
+}
+
+func (GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs) ToGetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput() GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput {
+	return i.ToGetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs) ToGetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput)
+}
+
+// GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArray and GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayInput` via:
+//
+//	GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArray{ GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs{...} }
+type GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput() GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput
+	ToGetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput
+}
+
+type GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArray []GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionInput
+
+func (GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArray) ToGetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput() GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput {
+	return i.ToGetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArray) ToGetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput)
+}
+
+type GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) ToGetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput() GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) ToGetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) DefaultValue() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption) int { return v.DefaultValue }).(pulumi.IntOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) Max() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption) int { return v.Max }).(pulumi.IntOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption) int { return v.Min }).(pulumi.IntOutput)
+}
+
+type GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput) ToGetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput() GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput) ToGetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption {
+		return vs[0].([]GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption)[vs[1].(int)]
+	}).(GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput)
+}
+
+type GetShapeShapePlatformConfigOptionSecureBootOption struct {
+	AllowedValues    []bool `pulumi:"allowedValues"`
+	IsDefaultEnabled bool   `pulumi:"isDefaultEnabled"`
+}
+
+// GetShapeShapePlatformConfigOptionSecureBootOptionInput is an input type that accepts GetShapeShapePlatformConfigOptionSecureBootOptionArgs and GetShapeShapePlatformConfigOptionSecureBootOptionOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionSecureBootOptionInput` via:
+//
+//	GetShapeShapePlatformConfigOptionSecureBootOptionArgs{...}
+type GetShapeShapePlatformConfigOptionSecureBootOptionInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionSecureBootOptionOutput() GetShapeShapePlatformConfigOptionSecureBootOptionOutput
+	ToGetShapeShapePlatformConfigOptionSecureBootOptionOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionSecureBootOptionOutput
+}
+
+type GetShapeShapePlatformConfigOptionSecureBootOptionArgs struct {
+	AllowedValues    pulumi.BoolArrayInput `pulumi:"allowedValues"`
+	IsDefaultEnabled pulumi.BoolInput      `pulumi:"isDefaultEnabled"`
+}
+
+func (GetShapeShapePlatformConfigOptionSecureBootOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOptionSecureBootOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionSecureBootOptionArgs) ToGetShapeShapePlatformConfigOptionSecureBootOptionOutput() GetShapeShapePlatformConfigOptionSecureBootOptionOutput {
+	return i.ToGetShapeShapePlatformConfigOptionSecureBootOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionSecureBootOptionArgs) ToGetShapeShapePlatformConfigOptionSecureBootOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionSecureBootOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionSecureBootOptionOutput)
+}
+
+// GetShapeShapePlatformConfigOptionSecureBootOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionSecureBootOptionArray and GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionSecureBootOptionArrayInput` via:
+//
+//	GetShapeShapePlatformConfigOptionSecureBootOptionArray{ GetShapeShapePlatformConfigOptionSecureBootOptionArgs{...} }
+type GetShapeShapePlatformConfigOptionSecureBootOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput() GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput
+	ToGetShapeShapePlatformConfigOptionSecureBootOptionArrayOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput
+}
+
+type GetShapeShapePlatformConfigOptionSecureBootOptionArray []GetShapeShapePlatformConfigOptionSecureBootOptionInput
+
+func (GetShapeShapePlatformConfigOptionSecureBootOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOptionSecureBootOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionSecureBootOptionArray) ToGetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput() GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput {
+	return i.ToGetShapeShapePlatformConfigOptionSecureBootOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionSecureBootOptionArray) ToGetShapeShapePlatformConfigOptionSecureBootOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput)
+}
+
+type GetShapeShapePlatformConfigOptionSecureBootOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionSecureBootOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOptionSecureBootOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionSecureBootOptionOutput) ToGetShapeShapePlatformConfigOptionSecureBootOptionOutput() GetShapeShapePlatformConfigOptionSecureBootOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionSecureBootOptionOutput) ToGetShapeShapePlatformConfigOptionSecureBootOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionSecureBootOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionSecureBootOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionSecureBootOption) []bool { return v.AllowedValues }).(pulumi.BoolArrayOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionSecureBootOptionOutput) IsDefaultEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionSecureBootOption) bool { return v.IsDefaultEnabled }).(pulumi.BoolOutput)
+}
+
+type GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOptionSecureBootOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput) ToGetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput() GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput) ToGetShapeShapePlatformConfigOptionSecureBootOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionSecureBootOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShapePlatformConfigOptionSecureBootOption {
+		return vs[0].([]GetShapeShapePlatformConfigOptionSecureBootOption)[vs[1].(int)]
+	}).(GetShapeShapePlatformConfigOptionSecureBootOptionOutput)
+}
+
+type GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption struct {
+	AllowedValues    []bool `pulumi:"allowedValues"`
+	IsDefaultEnabled bool   `pulumi:"isDefaultEnabled"`
+}
+
+// GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionInput is an input type that accepts GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs and GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionInput` via:
+//
+//	GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs{...}
+type GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput() GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput
+	ToGetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput
+}
+
+type GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs struct {
+	AllowedValues    pulumi.BoolArrayInput `pulumi:"allowedValues"`
+	IsDefaultEnabled pulumi.BoolInput      `pulumi:"isDefaultEnabled"`
+}
+
+func (GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs) ToGetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput() GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput {
+	return i.ToGetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs) ToGetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput)
+}
+
+// GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArray and GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayInput` via:
+//
+//	GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArray{ GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs{...} }
+type GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput() GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput
+	ToGetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput
+}
+
+type GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArray []GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionInput
+
+func (GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArray) ToGetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput() GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput {
+	return i.ToGetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArray) ToGetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput)
+}
+
+type GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput) ToGetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput() GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput) ToGetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption) []bool { return v.AllowedValues }).(pulumi.BoolArrayOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput) IsDefaultEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption) bool { return v.IsDefaultEnabled }).(pulumi.BoolOutput)
+}
+
+type GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput) ToGetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput() GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput) ToGetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption {
+		return vs[0].([]GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption)[vs[1].(int)]
+	}).(GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput)
+}
+
+type GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption struct {
+	AllowedValues    []bool `pulumi:"allowedValues"`
+	IsDefaultEnabled bool   `pulumi:"isDefaultEnabled"`
+}
+
+// GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionInput is an input type that accepts GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArgs and GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionInput` via:
+//
+//	GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArgs{...}
+type GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput() GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput
+	ToGetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput
+}
+
+type GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArgs struct {
+	AllowedValues    pulumi.BoolArrayInput `pulumi:"allowedValues"`
+	IsDefaultEnabled pulumi.BoolInput      `pulumi:"isDefaultEnabled"`
+}
+
+func (GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArgs) ToGetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput() GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput {
+	return i.ToGetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArgs) ToGetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput)
+}
+
+// GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArray and GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayInput` via:
+//
+//	GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArray{ GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArgs{...} }
+type GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput() GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput
+	ToGetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput
+}
+
+type GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArray []GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionInput
+
+func (GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArray) ToGetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput() GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput {
+	return i.ToGetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArray) ToGetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput)
+}
+
+type GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput) ToGetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput() GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput) ToGetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption) []bool { return v.AllowedValues }).(pulumi.BoolArrayOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput) IsDefaultEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption) bool { return v.IsDefaultEnabled }).(pulumi.BoolOutput)
+}
+
+type GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput) ToGetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput() GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput) ToGetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption {
+		return vs[0].([]GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption)[vs[1].(int)]
+	}).(GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput)
+}
+
+type GetShapeShapePlatformConfigOptionVirtualInstructionsOption struct {
+	AllowedValues    []bool `pulumi:"allowedValues"`
+	IsDefaultEnabled bool   `pulumi:"isDefaultEnabled"`
+}
+
+// GetShapeShapePlatformConfigOptionVirtualInstructionsOptionInput is an input type that accepts GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArgs and GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionVirtualInstructionsOptionInput` via:
+//
+//	GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArgs{...}
+type GetShapeShapePlatformConfigOptionVirtualInstructionsOptionInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput() GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput
+	ToGetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput
+}
+
+type GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArgs struct {
+	AllowedValues    pulumi.BoolArrayInput `pulumi:"allowedValues"`
+	IsDefaultEnabled pulumi.BoolInput      `pulumi:"isDefaultEnabled"`
+}
+
+func (GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOptionVirtualInstructionsOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArgs) ToGetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput() GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput {
+	return i.ToGetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArgs) ToGetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput)
+}
+
+// GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArray and GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayInput` via:
+//
+//	GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArray{ GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArgs{...} }
+type GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput() GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput
+	ToGetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutputWithContext(context.Context) GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput
+}
+
+type GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArray []GetShapeShapePlatformConfigOptionVirtualInstructionsOptionInput
+
+func (GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOptionVirtualInstructionsOption)(nil)).Elem()
+}
+
+func (i GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArray) ToGetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput() GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput {
+	return i.ToGetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArray) ToGetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput)
+}
+
+type GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapePlatformConfigOptionVirtualInstructionsOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput) ToGetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput() GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput) ToGetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionVirtualInstructionsOption) []bool { return v.AllowedValues }).(pulumi.BoolArrayOutput)
+}
+
+func (o GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput) IsDefaultEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapeShapePlatformConfigOptionVirtualInstructionsOption) bool { return v.IsDefaultEnabled }).(pulumi.BoolOutput)
+}
+
+type GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapePlatformConfigOptionVirtualInstructionsOption)(nil)).Elem()
+}
+
+func (o GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput) ToGetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput() GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput) ToGetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput {
+	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShapePlatformConfigOptionVirtualInstructionsOption {
+		return vs[0].([]GetShapeShapePlatformConfigOptionVirtualInstructionsOption)[vs[1].(int)]
+	}).(GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput)
+}
+
+type GetShapeShapeRecommendedAlternative struct {
+	ShapeName string `pulumi:"shapeName"`
+}
+
+// GetShapeShapeRecommendedAlternativeInput is an input type that accepts GetShapeShapeRecommendedAlternativeArgs and GetShapeShapeRecommendedAlternativeOutput values.
+// You can construct a concrete instance of `GetShapeShapeRecommendedAlternativeInput` via:
+//
+//	GetShapeShapeRecommendedAlternativeArgs{...}
+type GetShapeShapeRecommendedAlternativeInput interface {
+	pulumi.Input
+
+	ToGetShapeShapeRecommendedAlternativeOutput() GetShapeShapeRecommendedAlternativeOutput
+	ToGetShapeShapeRecommendedAlternativeOutputWithContext(context.Context) GetShapeShapeRecommendedAlternativeOutput
+}
+
+type GetShapeShapeRecommendedAlternativeArgs struct {
+	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+}
+
+func (GetShapeShapeRecommendedAlternativeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapeRecommendedAlternative)(nil)).Elem()
+}
+
+func (i GetShapeShapeRecommendedAlternativeArgs) ToGetShapeShapeRecommendedAlternativeOutput() GetShapeShapeRecommendedAlternativeOutput {
+	return i.ToGetShapeShapeRecommendedAlternativeOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapeRecommendedAlternativeArgs) ToGetShapeShapeRecommendedAlternativeOutputWithContext(ctx context.Context) GetShapeShapeRecommendedAlternativeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeRecommendedAlternativeOutput)
+}
+
+// GetShapeShapeRecommendedAlternativeArrayInput is an input type that accepts GetShapeShapeRecommendedAlternativeArray and GetShapeShapeRecommendedAlternativeArrayOutput values.
+// You can construct a concrete instance of `GetShapeShapeRecommendedAlternativeArrayInput` via:
+//
+//	GetShapeShapeRecommendedAlternativeArray{ GetShapeShapeRecommendedAlternativeArgs{...} }
+type GetShapeShapeRecommendedAlternativeArrayInput interface {
+	pulumi.Input
+
+	ToGetShapeShapeRecommendedAlternativeArrayOutput() GetShapeShapeRecommendedAlternativeArrayOutput
+	ToGetShapeShapeRecommendedAlternativeArrayOutputWithContext(context.Context) GetShapeShapeRecommendedAlternativeArrayOutput
+}
+
+type GetShapeShapeRecommendedAlternativeArray []GetShapeShapeRecommendedAlternativeInput
+
+func (GetShapeShapeRecommendedAlternativeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapeRecommendedAlternative)(nil)).Elem()
+}
+
+func (i GetShapeShapeRecommendedAlternativeArray) ToGetShapeShapeRecommendedAlternativeArrayOutput() GetShapeShapeRecommendedAlternativeArrayOutput {
+	return i.ToGetShapeShapeRecommendedAlternativeArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapeShapeRecommendedAlternativeArray) ToGetShapeShapeRecommendedAlternativeArrayOutputWithContext(ctx context.Context) GetShapeShapeRecommendedAlternativeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeRecommendedAlternativeArrayOutput)
+}
+
+type GetShapeShapeRecommendedAlternativeOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapeRecommendedAlternativeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapeShapeRecommendedAlternative)(nil)).Elem()
+}
+
+func (o GetShapeShapeRecommendedAlternativeOutput) ToGetShapeShapeRecommendedAlternativeOutput() GetShapeShapeRecommendedAlternativeOutput {
+	return o
+}
+
+func (o GetShapeShapeRecommendedAlternativeOutput) ToGetShapeShapeRecommendedAlternativeOutputWithContext(ctx context.Context) GetShapeShapeRecommendedAlternativeOutput {
+	return o
+}
+
+func (o GetShapeShapeRecommendedAlternativeOutput) ShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetShapeShapeRecommendedAlternative) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+type GetShapeShapeRecommendedAlternativeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapeShapeRecommendedAlternativeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapeShapeRecommendedAlternative)(nil)).Elem()
+}
+
+func (o GetShapeShapeRecommendedAlternativeArrayOutput) ToGetShapeShapeRecommendedAlternativeArrayOutput() GetShapeShapeRecommendedAlternativeArrayOutput {
+	return o
+}
+
+func (o GetShapeShapeRecommendedAlternativeArrayOutput) ToGetShapeShapeRecommendedAlternativeArrayOutputWithContext(ctx context.Context) GetShapeShapeRecommendedAlternativeArrayOutput {
+	return o
+}
+
+func (o GetShapeShapeRecommendedAlternativeArrayOutput) Index(i pulumi.IntInput) GetShapeShapeRecommendedAlternativeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShapeRecommendedAlternative {
+		return vs[0].([]GetShapeShapeRecommendedAlternative)[vs[1].(int)]
+	}).(GetShapeShapeRecommendedAlternativeOutput)
+}
+
+type GetShapesFilter struct {
+	// The name of the shape. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetShapesFilterInput is an input type that accepts GetShapesFilterArgs and GetShapesFilterOutput values.
+// You can construct a concrete instance of `GetShapesFilterInput` via:
+//
+//	GetShapesFilterArgs{...}
+type GetShapesFilterInput interface {
+	pulumi.Input
+
+	ToGetShapesFilterOutput() GetShapesFilterOutput
+	ToGetShapesFilterOutputWithContext(context.Context) GetShapesFilterOutput
+}
+
+type GetShapesFilterArgs struct {
+	// The name of the shape. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetShapesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesFilter)(nil)).Elem()
+}
+
+func (i GetShapesFilterArgs) ToGetShapesFilterOutput() GetShapesFilterOutput {
+	return i.ToGetShapesFilterOutputWithContext(context.Background())
+}
+
+func (i GetShapesFilterArgs) ToGetShapesFilterOutputWithContext(ctx context.Context) GetShapesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesFilterOutput)
+}
+
+// GetShapesFilterArrayInput is an input type that accepts GetShapesFilterArray and GetShapesFilterArrayOutput values.
+// You can construct a concrete instance of `GetShapesFilterArrayInput` via:
+//
+//	GetShapesFilterArray{ GetShapesFilterArgs{...} }
+type GetShapesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesFilterArrayOutput() GetShapesFilterArrayOutput
+	ToGetShapesFilterArrayOutputWithContext(context.Context) GetShapesFilterArrayOutput
+}
+
+type GetShapesFilterArray []GetShapesFilterInput
+
+func (GetShapesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesFilter)(nil)).Elem()
+}
+
+func (i GetShapesFilterArray) ToGetShapesFilterArrayOutput() GetShapesFilterArrayOutput {
+	return i.ToGetShapesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesFilterArray) ToGetShapesFilterArrayOutputWithContext(ctx context.Context) GetShapesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesFilterArrayOutput)
+}
+
+type GetShapesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetShapesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesFilter)(nil)).Elem()
+}
+
+func (o GetShapesFilterOutput) ToGetShapesFilterOutput() GetShapesFilterOutput {
+	return o
+}
+
+func (o GetShapesFilterOutput) ToGetShapesFilterOutputWithContext(ctx context.Context) GetShapesFilterOutput {
+	return o
+}
+
+// The name of the shape. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+func (o GetShapesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetShapesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetShapesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetShapesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetShapesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetShapesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetShapesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesFilter)(nil)).Elem()
+}
+
+func (o GetShapesFilterArrayOutput) ToGetShapesFilterArrayOutput() GetShapesFilterArrayOutput {
+	return o
+}
+
+func (o GetShapesFilterArrayOutput) ToGetShapesFilterArrayOutputWithContext(ctx context.Context) GetShapesFilterArrayOutput {
+	return o
+}
+
+func (o GetShapesFilterArrayOutput) Index(i pulumi.IntInput) GetShapesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesFilter {
+		return vs[0].([]GetShapesFilter)[vs[1].(int)]
+	}).(GetShapesFilterOutput)
+}
+
+type GetShapesShape struct {
+	// For a subcore burstable VM, the supported baseline OCPU utilization for instances that use this shape.
+	BaselineOcpuUtilizations []string `pulumi:"baselineOcpuUtilizations"`
+	// How instances that use this shape are charged.
+	BillingType string `pulumi:"billingType"`
+	// A short description of the graphics processing unit (GPU) available for this shape.
+	GpuDescription string `pulumi:"gpuDescription"`
+	// The number of GPUs available for this shape.
+	Gpus int `pulumi:"gpus"`
+	// Whether billing continues when the instances that use this shape are in the stopped state.
+	IsBilledForStoppedInstance bool `pulumi:"isBilledForStoppedInstance"`
+	// Whether the shape supports creating flexible instances. A [flexible shape](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible) is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
+	IsFlexible bool `pulumi:"isFlexible"`
+	// Whether live migration is supported for this shape.
+	IsLiveMigrationSupported bool `pulumi:"isLiveMigrationSupported"`
+	// Whether the shape supports creating subcore or burstable instances. A [burstable instance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/burstable-instances.htm) is a virtual machine (VM) instance that provides a baseline level of CPU performance with the ability to burst to a higher level to support occasional spikes in usage.
+	IsSubcore bool `pulumi:"isSubcore"`
+	// A short description of the local disks available for this shape.
+	LocalDiskDescription string `pulumi:"localDiskDescription"`
+	// The number of local disks available for this shape.
+	LocalDisks int `pulumi:"localDisks"`
+	// The aggregate size of the local disks available for this shape, in gigabytes.
+	LocalDisksTotalSizeInGbs float64 `pulumi:"localDisksTotalSizeInGbs"`
+	// For a flexible shape, the number of VNIC attachments that are available for instances that use this shape.
+	MaxVnicAttachmentOptions []GetShapesShapeMaxVnicAttachmentOption `pulumi:"maxVnicAttachmentOptions"`
+	// The maximum number of VNIC attachments available for this shape.
+	MaxVnicAttachments int `pulumi:"maxVnicAttachments"`
+	// The default amount of memory available for this shape, in gigabytes.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// For a flexible shape, the amount of memory available for instances that use this shape.
+	MemoryOptions []GetShapesShapeMemoryOption `pulumi:"memoryOptions"`
+	// For a subcore burstable VM, the minimum total baseline OCPUs required. The total baseline OCPUs is equal to baselineOcpuUtilization chosen multiplied by the number of OCPUs chosen.
+	MinTotalBaselineOcpusRequired float64 `pulumi:"minTotalBaselineOcpusRequired"`
+	// The name of the shape. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+	Name string `pulumi:"name"`
+	// The number of physical network interface card (NIC) ports available for this shape.
+	NetworkPorts int `pulumi:"networkPorts"`
+	// The networking bandwidth available for this shape, in gigabits per second.
+	NetworkingBandwidthInGbps float64 `pulumi:"networkingBandwidthInGbps"`
+	// For a flexible shape, the amount of networking bandwidth available for instances that use this shape.
+	NetworkingBandwidthOptions []GetShapesShapeNetworkingBandwidthOption `pulumi:"networkingBandwidthOptions"`
+	// For a flexible shape, the number of OCPUs available for instances that use this shape.
+	OcpuOptions []GetShapesShapeOcpuOption `pulumi:"ocpuOptions"`
+	// The default number of OCPUs available for this shape.
+	Ocpus float64 `pulumi:"ocpus"`
+	// The list of supported platform configuration options for this shape.
+	PlatformConfigOptions []GetShapesShapePlatformConfigOption `pulumi:"platformConfigOptions"`
+	// A short description of the shape's processor (CPU).
+	ProcessorDescription string `pulumi:"processorDescription"`
+	// The list of of compartment quotas for the shape.
+	QuotaNames []string `pulumi:"quotaNames"`
+	// The networking bandwidth available for the remote direct memory access (RDMA) network for this shape, in gigabits per second.
+	RdmaBandwidthInGbps int `pulumi:"rdmaBandwidthInGbps"`
+	// The number of networking ports available for the remote direct memory access (RDMA) network between nodes in a high performance computing (HPC) cluster network. If the shape does not support cluster networks, this value is `0`.
+	RdmaPorts int `pulumi:"rdmaPorts"`
+	// The list of shapes and shape details (if applicable) that Oracle recommends that you use as an alternative to the current shape.
+	RecommendedAlternatives []GetShapesShapeRecommendedAlternative `pulumi:"recommendedAlternatives"`
+	// The list of compatible shapes that this shape can be changed to. For more information, see [Changing the Shape of an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+	ResizeCompatibleShapes []string `pulumi:"resizeCompatibleShapes"`
+}
+
+// GetShapesShapeInput is an input type that accepts GetShapesShapeArgs and GetShapesShapeOutput values.
+// You can construct a concrete instance of `GetShapesShapeInput` via:
+//
+//	GetShapesShapeArgs{...}
+type GetShapesShapeInput interface {
+	pulumi.Input
+
+	ToGetShapesShapeOutput() GetShapesShapeOutput
+	ToGetShapesShapeOutputWithContext(context.Context) GetShapesShapeOutput
+}
+
+type GetShapesShapeArgs struct {
+	// For a subcore burstable VM, the supported baseline OCPU utilization for instances that use this shape.
+	BaselineOcpuUtilizations pulumi.StringArrayInput `pulumi:"baselineOcpuUtilizations"`
+	// How instances that use this shape are charged.
+	BillingType pulumi.StringInput `pulumi:"billingType"`
+	// A short description of the graphics processing unit (GPU) available for this shape.
+	GpuDescription pulumi.StringInput `pulumi:"gpuDescription"`
+	// The number of GPUs available for this shape.
+	Gpus pulumi.IntInput `pulumi:"gpus"`
+	// Whether billing continues when the instances that use this shape are in the stopped state.
+	IsBilledForStoppedInstance pulumi.BoolInput `pulumi:"isBilledForStoppedInstance"`
+	// Whether the shape supports creating flexible instances. A [flexible shape](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible) is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
+	IsFlexible pulumi.BoolInput `pulumi:"isFlexible"`
+	// Whether live migration is supported for this shape.
+	IsLiveMigrationSupported pulumi.BoolInput `pulumi:"isLiveMigrationSupported"`
+	// Whether the shape supports creating subcore or burstable instances. A [burstable instance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/burstable-instances.htm) is a virtual machine (VM) instance that provides a baseline level of CPU performance with the ability to burst to a higher level to support occasional spikes in usage.
+	IsSubcore pulumi.BoolInput `pulumi:"isSubcore"`
+	// A short description of the local disks available for this shape.
+	LocalDiskDescription pulumi.StringInput `pulumi:"localDiskDescription"`
+	// The number of local disks available for this shape.
+	LocalDisks pulumi.IntInput `pulumi:"localDisks"`
+	// The aggregate size of the local disks available for this shape, in gigabytes.
+	LocalDisksTotalSizeInGbs pulumi.Float64Input `pulumi:"localDisksTotalSizeInGbs"`
+	// For a flexible shape, the number of VNIC attachments that are available for instances that use this shape.
+	MaxVnicAttachmentOptions GetShapesShapeMaxVnicAttachmentOptionArrayInput `pulumi:"maxVnicAttachmentOptions"`
+	// The maximum number of VNIC attachments available for this shape.
+	MaxVnicAttachments pulumi.IntInput `pulumi:"maxVnicAttachments"`
+	// The default amount of memory available for this shape, in gigabytes.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// For a flexible shape, the amount of memory available for instances that use this shape.
+	MemoryOptions GetShapesShapeMemoryOptionArrayInput `pulumi:"memoryOptions"`
+	// For a subcore burstable VM, the minimum total baseline OCPUs required. The total baseline OCPUs is equal to baselineOcpuUtilization chosen multiplied by the number of OCPUs chosen.
+	MinTotalBaselineOcpusRequired pulumi.Float64Input `pulumi:"minTotalBaselineOcpusRequired"`
+	// The name of the shape. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+	Name pulumi.StringInput `pulumi:"name"`
+	// The number of physical network interface card (NIC) ports available for this shape.
+	NetworkPorts pulumi.IntInput `pulumi:"networkPorts"`
+	// The networking bandwidth available for this shape, in gigabits per second.
+	NetworkingBandwidthInGbps pulumi.Float64Input `pulumi:"networkingBandwidthInGbps"`
+	// For a flexible shape, the amount of networking bandwidth available for instances that use this shape.
+	NetworkingBandwidthOptions GetShapesShapeNetworkingBandwidthOptionArrayInput `pulumi:"networkingBandwidthOptions"`
+	// For a flexible shape, the number of OCPUs available for instances that use this shape.
+	OcpuOptions GetShapesShapeOcpuOptionArrayInput `pulumi:"ocpuOptions"`
+	// The default number of OCPUs available for this shape.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	// The list of supported platform configuration options for this shape.
+	PlatformConfigOptions GetShapesShapePlatformConfigOptionArrayInput `pulumi:"platformConfigOptions"`
+	// A short description of the shape's processor (CPU).
+	ProcessorDescription pulumi.StringInput `pulumi:"processorDescription"`
+	// The list of of compartment quotas for the shape.
+	QuotaNames pulumi.StringArrayInput `pulumi:"quotaNames"`
+	// The networking bandwidth available for the remote direct memory access (RDMA) network for this shape, in gigabits per second.
+	RdmaBandwidthInGbps pulumi.IntInput `pulumi:"rdmaBandwidthInGbps"`
+	// The number of networking ports available for the remote direct memory access (RDMA) network between nodes in a high performance computing (HPC) cluster network. If the shape does not support cluster networks, this value is `0`.
+	RdmaPorts pulumi.IntInput `pulumi:"rdmaPorts"`
+	// The list of shapes and shape details (if applicable) that Oracle recommends that you use as an alternative to the current shape.
+	RecommendedAlternatives GetShapesShapeRecommendedAlternativeArrayInput `pulumi:"recommendedAlternatives"`
+	// The list of compatible shapes that this shape can be changed to. For more information, see [Changing the Shape of an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+	ResizeCompatibleShapes pulumi.StringArrayInput `pulumi:"resizeCompatibleShapes"`
+}
+
+func (GetShapesShapeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShape)(nil)).Elem()
+}
+
+func (i GetShapesShapeArgs) ToGetShapesShapeOutput() GetShapesShapeOutput {
+	return i.ToGetShapesShapeOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapeArgs) ToGetShapesShapeOutputWithContext(ctx context.Context) GetShapesShapeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeOutput)
+}
+
+// GetShapesShapeArrayInput is an input type that accepts GetShapesShapeArray and GetShapesShapeArrayOutput values.
+// You can construct a concrete instance of `GetShapesShapeArrayInput` via:
+//
+//	GetShapesShapeArray{ GetShapesShapeArgs{...} }
+type GetShapesShapeArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesShapeArrayOutput() GetShapesShapeArrayOutput
+	ToGetShapesShapeArrayOutputWithContext(context.Context) GetShapesShapeArrayOutput
+}
+
+type GetShapesShapeArray []GetShapesShapeInput
+
+func (GetShapesShapeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShape)(nil)).Elem()
+}
+
+func (i GetShapesShapeArray) ToGetShapesShapeArrayOutput() GetShapesShapeArrayOutput {
+	return i.ToGetShapesShapeArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapeArray) ToGetShapesShapeArrayOutputWithContext(ctx context.Context) GetShapesShapeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeArrayOutput)
+}
+
+type GetShapesShapeOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShape)(nil)).Elem()
+}
+
+func (o GetShapesShapeOutput) ToGetShapesShapeOutput() GetShapesShapeOutput {
+	return o
+}
+
+func (o GetShapesShapeOutput) ToGetShapesShapeOutputWithContext(ctx context.Context) GetShapesShapeOutput {
+	return o
+}
+
+// For a subcore burstable VM, the supported baseline OCPU utilization for instances that use this shape.
+func (o GetShapesShapeOutput) BaselineOcpuUtilizations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetShapesShape) []string { return v.BaselineOcpuUtilizations }).(pulumi.StringArrayOutput)
+}
+
+// How instances that use this shape are charged.
+func (o GetShapesShapeOutput) BillingType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetShapesShape) string { return v.BillingType }).(pulumi.StringOutput)
+}
+
+// A short description of the graphics processing unit (GPU) available for this shape.
+func (o GetShapesShapeOutput) GpuDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetShapesShape) string { return v.GpuDescription }).(pulumi.StringOutput)
+}
+
+// The number of GPUs available for this shape.
+func (o GetShapesShapeOutput) Gpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShape) int { return v.Gpus }).(pulumi.IntOutput)
+}
+
+// Whether billing continues when the instances that use this shape are in the stopped state.
+func (o GetShapesShapeOutput) IsBilledForStoppedInstance() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapesShape) bool { return v.IsBilledForStoppedInstance }).(pulumi.BoolOutput)
+}
+
+// Whether the shape supports creating flexible instances. A [flexible shape](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible) is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
+func (o GetShapesShapeOutput) IsFlexible() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapesShape) bool { return v.IsFlexible }).(pulumi.BoolOutput)
+}
+
+// Whether live migration is supported for this shape.
+func (o GetShapesShapeOutput) IsLiveMigrationSupported() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapesShape) bool { return v.IsLiveMigrationSupported }).(pulumi.BoolOutput)
+}
+
+// Whether the shape supports creating subcore or burstable instances. A [burstable instance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/burstable-instances.htm) is a virtual machine (VM) instance that provides a baseline level of CPU performance with the ability to burst to a higher level to support occasional spikes in usage.
+func (o GetShapesShapeOutput) IsSubcore() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapesShape) bool { return v.IsSubcore }).(pulumi.BoolOutput)
+}
+
+// A short description of the local disks available for this shape.
+func (o GetShapesShapeOutput) LocalDiskDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetShapesShape) string { return v.LocalDiskDescription }).(pulumi.StringOutput)
+}
+
+// The number of local disks available for this shape.
+func (o GetShapesShapeOutput) LocalDisks() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShape) int { return v.LocalDisks }).(pulumi.IntOutput)
+}
+
+// The aggregate size of the local disks available for this shape, in gigabytes.
+func (o GetShapesShapeOutput) LocalDisksTotalSizeInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapesShape) float64 { return v.LocalDisksTotalSizeInGbs }).(pulumi.Float64Output)
+}
+
+// For a flexible shape, the number of VNIC attachments that are available for instances that use this shape.
+func (o GetShapesShapeOutput) MaxVnicAttachmentOptions() GetShapesShapeMaxVnicAttachmentOptionArrayOutput {
+	return o.ApplyT(func(v GetShapesShape) []GetShapesShapeMaxVnicAttachmentOption { return v.MaxVnicAttachmentOptions }).(GetShapesShapeMaxVnicAttachmentOptionArrayOutput)
+}
+
+// The maximum number of VNIC attachments available for this shape.
+func (o GetShapesShapeOutput) MaxVnicAttachments() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShape) int { return v.MaxVnicAttachments }).(pulumi.IntOutput)
+}
+
+// The default amount of memory available for this shape, in gigabytes.
+func (o GetShapesShapeOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapesShape) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+}
+
+// For a flexible shape, the amount of memory available for instances that use this shape.
+func (o GetShapesShapeOutput) MemoryOptions() GetShapesShapeMemoryOptionArrayOutput {
+	return o.ApplyT(func(v GetShapesShape) []GetShapesShapeMemoryOption { return v.MemoryOptions }).(GetShapesShapeMemoryOptionArrayOutput)
+}
+
+// For a subcore burstable VM, the minimum total baseline OCPUs required. The total baseline OCPUs is equal to baselineOcpuUtilization chosen multiplied by the number of OCPUs chosen.
+func (o GetShapesShapeOutput) MinTotalBaselineOcpusRequired() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapesShape) float64 { return v.MinTotalBaselineOcpusRequired }).(pulumi.Float64Output)
+}
+
+// The name of the shape. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+func (o GetShapesShapeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetShapesShape) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The number of physical network interface card (NIC) ports available for this shape.
+func (o GetShapesShapeOutput) NetworkPorts() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShape) int { return v.NetworkPorts }).(pulumi.IntOutput)
+}
+
+// The networking bandwidth available for this shape, in gigabits per second.
+func (o GetShapesShapeOutput) NetworkingBandwidthInGbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapesShape) float64 { return v.NetworkingBandwidthInGbps }).(pulumi.Float64Output)
+}
+
+// For a flexible shape, the amount of networking bandwidth available for instances that use this shape.
+func (o GetShapesShapeOutput) NetworkingBandwidthOptions() GetShapesShapeNetworkingBandwidthOptionArrayOutput {
+	return o.ApplyT(func(v GetShapesShape) []GetShapesShapeNetworkingBandwidthOption { return v.NetworkingBandwidthOptions }).(GetShapesShapeNetworkingBandwidthOptionArrayOutput)
+}
+
+// For a flexible shape, the number of OCPUs available for instances that use this shape.
+func (o GetShapesShapeOutput) OcpuOptions() GetShapesShapeOcpuOptionArrayOutput {
+	return o.ApplyT(func(v GetShapesShape) []GetShapesShapeOcpuOption { return v.OcpuOptions }).(GetShapesShapeOcpuOptionArrayOutput)
+}
+
+// The default number of OCPUs available for this shape.
+func (o GetShapesShapeOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapesShape) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+// The list of supported platform configuration options for this shape.
+func (o GetShapesShapeOutput) PlatformConfigOptions() GetShapesShapePlatformConfigOptionArrayOutput {
+	return o.ApplyT(func(v GetShapesShape) []GetShapesShapePlatformConfigOption { return v.PlatformConfigOptions }).(GetShapesShapePlatformConfigOptionArrayOutput)
+}
+
+// A short description of the shape's processor (CPU).
+func (o GetShapesShapeOutput) ProcessorDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetShapesShape) string { return v.ProcessorDescription }).(pulumi.StringOutput)
+}
+
+// The list of of compartment quotas for the shape.
+func (o GetShapesShapeOutput) QuotaNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetShapesShape) []string { return v.QuotaNames }).(pulumi.StringArrayOutput)
+}
+
+// The networking bandwidth available for the remote direct memory access (RDMA) network for this shape, in gigabits per second.
+func (o GetShapesShapeOutput) RdmaBandwidthInGbps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShape) int { return v.RdmaBandwidthInGbps }).(pulumi.IntOutput)
+}
+
+// The number of networking ports available for the remote direct memory access (RDMA) network between nodes in a high performance computing (HPC) cluster network. If the shape does not support cluster networks, this value is `0`.
+func (o GetShapesShapeOutput) RdmaPorts() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShape) int { return v.RdmaPorts }).(pulumi.IntOutput)
+}
+
+// The list of shapes and shape details (if applicable) that Oracle recommends that you use as an alternative to the current shape.
+func (o GetShapesShapeOutput) RecommendedAlternatives() GetShapesShapeRecommendedAlternativeArrayOutput {
+	return o.ApplyT(func(v GetShapesShape) []GetShapesShapeRecommendedAlternative { return v.RecommendedAlternatives }).(GetShapesShapeRecommendedAlternativeArrayOutput)
+}
+
+// The list of compatible shapes that this shape can be changed to. For more information, see [Changing the Shape of an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+func (o GetShapesShapeOutput) ResizeCompatibleShapes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetShapesShape) []string { return v.ResizeCompatibleShapes }).(pulumi.StringArrayOutput)
+}
+
+type GetShapesShapeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShape)(nil)).Elem()
+}
+
+func (o GetShapesShapeArrayOutput) ToGetShapesShapeArrayOutput() GetShapesShapeArrayOutput {
+	return o
+}
+
+func (o GetShapesShapeArrayOutput) ToGetShapesShapeArrayOutputWithContext(ctx context.Context) GetShapesShapeArrayOutput {
+	return o
+}
+
+func (o GetShapesShapeArrayOutput) Index(i pulumi.IntInput) GetShapesShapeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShape {
+		return vs[0].([]GetShapesShape)[vs[1].(int)]
+	}).(GetShapesShapeOutput)
+}
+
+type GetShapesShapeMaxVnicAttachmentOption struct {
+	// The default number of VNIC attachments allowed per OCPU.
+	DefaultPerOcpu float64 `pulumi:"defaultPerOcpu"`
+	// The maximum allowed percentage of cores enabled.
+	Max float64 `pulumi:"max"`
+	// The minimum allowed percentage of cores enabled.
+	Min int `pulumi:"min"`
+}
+
+// GetShapesShapeMaxVnicAttachmentOptionInput is an input type that accepts GetShapesShapeMaxVnicAttachmentOptionArgs and GetShapesShapeMaxVnicAttachmentOptionOutput values.
+// You can construct a concrete instance of `GetShapesShapeMaxVnicAttachmentOptionInput` via:
+//
+//	GetShapesShapeMaxVnicAttachmentOptionArgs{...}
+type GetShapesShapeMaxVnicAttachmentOptionInput interface {
+	pulumi.Input
+
+	ToGetShapesShapeMaxVnicAttachmentOptionOutput() GetShapesShapeMaxVnicAttachmentOptionOutput
+	ToGetShapesShapeMaxVnicAttachmentOptionOutputWithContext(context.Context) GetShapesShapeMaxVnicAttachmentOptionOutput
+}
+
+type GetShapesShapeMaxVnicAttachmentOptionArgs struct {
+	// The default number of VNIC attachments allowed per OCPU.
+	DefaultPerOcpu pulumi.Float64Input `pulumi:"defaultPerOcpu"`
+	// The maximum allowed percentage of cores enabled.
+	Max pulumi.Float64Input `pulumi:"max"`
+	// The minimum allowed percentage of cores enabled.
+	Min pulumi.IntInput `pulumi:"min"`
+}
+
+func (GetShapesShapeMaxVnicAttachmentOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapeMaxVnicAttachmentOption)(nil)).Elem()
+}
+
+func (i GetShapesShapeMaxVnicAttachmentOptionArgs) ToGetShapesShapeMaxVnicAttachmentOptionOutput() GetShapesShapeMaxVnicAttachmentOptionOutput {
+	return i.ToGetShapesShapeMaxVnicAttachmentOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapeMaxVnicAttachmentOptionArgs) ToGetShapesShapeMaxVnicAttachmentOptionOutputWithContext(ctx context.Context) GetShapesShapeMaxVnicAttachmentOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeMaxVnicAttachmentOptionOutput)
+}
+
+// GetShapesShapeMaxVnicAttachmentOptionArrayInput is an input type that accepts GetShapesShapeMaxVnicAttachmentOptionArray and GetShapesShapeMaxVnicAttachmentOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapesShapeMaxVnicAttachmentOptionArrayInput` via:
+//
+//	GetShapesShapeMaxVnicAttachmentOptionArray{ GetShapesShapeMaxVnicAttachmentOptionArgs{...} }
+type GetShapesShapeMaxVnicAttachmentOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesShapeMaxVnicAttachmentOptionArrayOutput() GetShapesShapeMaxVnicAttachmentOptionArrayOutput
+	ToGetShapesShapeMaxVnicAttachmentOptionArrayOutputWithContext(context.Context) GetShapesShapeMaxVnicAttachmentOptionArrayOutput
+}
+
+type GetShapesShapeMaxVnicAttachmentOptionArray []GetShapesShapeMaxVnicAttachmentOptionInput
+
+func (GetShapesShapeMaxVnicAttachmentOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapeMaxVnicAttachmentOption)(nil)).Elem()
+}
+
+func (i GetShapesShapeMaxVnicAttachmentOptionArray) ToGetShapesShapeMaxVnicAttachmentOptionArrayOutput() GetShapesShapeMaxVnicAttachmentOptionArrayOutput {
+	return i.ToGetShapesShapeMaxVnicAttachmentOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapeMaxVnicAttachmentOptionArray) ToGetShapesShapeMaxVnicAttachmentOptionArrayOutputWithContext(ctx context.Context) GetShapesShapeMaxVnicAttachmentOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeMaxVnicAttachmentOptionArrayOutput)
+}
+
+type GetShapesShapeMaxVnicAttachmentOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapeMaxVnicAttachmentOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapeMaxVnicAttachmentOption)(nil)).Elem()
+}
+
+func (o GetShapesShapeMaxVnicAttachmentOptionOutput) ToGetShapesShapeMaxVnicAttachmentOptionOutput() GetShapesShapeMaxVnicAttachmentOptionOutput {
+	return o
+}
+
+func (o GetShapesShapeMaxVnicAttachmentOptionOutput) ToGetShapesShapeMaxVnicAttachmentOptionOutputWithContext(ctx context.Context) GetShapesShapeMaxVnicAttachmentOptionOutput {
+	return o
+}
+
+// The default number of VNIC attachments allowed per OCPU.
+func (o GetShapesShapeMaxVnicAttachmentOptionOutput) DefaultPerOcpu() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapesShapeMaxVnicAttachmentOption) float64 { return v.DefaultPerOcpu }).(pulumi.Float64Output)
+}
+
+// The maximum allowed percentage of cores enabled.
+func (o GetShapesShapeMaxVnicAttachmentOptionOutput) Max() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapesShapeMaxVnicAttachmentOption) float64 { return v.Max }).(pulumi.Float64Output)
+}
+
+// The minimum allowed percentage of cores enabled.
+func (o GetShapesShapeMaxVnicAttachmentOptionOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShapeMaxVnicAttachmentOption) int { return v.Min }).(pulumi.IntOutput)
+}
+
+type GetShapesShapeMaxVnicAttachmentOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapeMaxVnicAttachmentOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapeMaxVnicAttachmentOption)(nil)).Elem()
+}
+
+func (o GetShapesShapeMaxVnicAttachmentOptionArrayOutput) ToGetShapesShapeMaxVnicAttachmentOptionArrayOutput() GetShapesShapeMaxVnicAttachmentOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapeMaxVnicAttachmentOptionArrayOutput) ToGetShapesShapeMaxVnicAttachmentOptionArrayOutputWithContext(ctx context.Context) GetShapesShapeMaxVnicAttachmentOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapeMaxVnicAttachmentOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapeMaxVnicAttachmentOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapeMaxVnicAttachmentOption {
+		return vs[0].([]GetShapesShapeMaxVnicAttachmentOption)[vs[1].(int)]
+	}).(GetShapesShapeMaxVnicAttachmentOptionOutput)
+}
+
+type GetShapesShapeMemoryOption struct {
+	// The default amount of memory per OCPU available for this shape, in gigabytes.
+	DefaultPerOcpuInGbs float64 `pulumi:"defaultPerOcpuInGbs"`
+	// The maximum amount of memory, in gigabytes.
+	MaxInGbs float64 `pulumi:"maxInGbs"`
+	// The maximum amount of memory per NUMA node, in gigabytes.
+	MaxPerNumaNodeInGbs float64 `pulumi:"maxPerNumaNodeInGbs"`
+	// The maximum amount of memory per OCPU available for this shape, in gigabytes.
+	MaxPerOcpuInGbs float64 `pulumi:"maxPerOcpuInGbs"`
+	// The minimum amount of memory, in gigabytes.
+	MinInGbs float64 `pulumi:"minInGbs"`
+	// The minimum amount of memory per OCPU available for this shape, in gigabytes.
+	MinPerOcpuInGbs float64 `pulumi:"minPerOcpuInGbs"`
+}
+
+// GetShapesShapeMemoryOptionInput is an input type that accepts GetShapesShapeMemoryOptionArgs and GetShapesShapeMemoryOptionOutput values.
+// You can construct a concrete instance of `GetShapesShapeMemoryOptionInput` via:
+//
+//	GetShapesShapeMemoryOptionArgs{...}
+type GetShapesShapeMemoryOptionInput interface {
+	pulumi.Input
+
+	ToGetShapesShapeMemoryOptionOutput() GetShapesShapeMemoryOptionOutput
+	ToGetShapesShapeMemoryOptionOutputWithContext(context.Context) GetShapesShapeMemoryOptionOutput
+}
+
+type GetShapesShapeMemoryOptionArgs struct {
+	// The default amount of memory per OCPU available for this shape, in gigabytes.
+	DefaultPerOcpuInGbs pulumi.Float64Input `pulumi:"defaultPerOcpuInGbs"`
+	// The maximum amount of memory, in gigabytes.
+	MaxInGbs pulumi.Float64Input `pulumi:"maxInGbs"`
+	// The maximum amount of memory per NUMA node, in gigabytes.
+	MaxPerNumaNodeInGbs pulumi.Float64Input `pulumi:"maxPerNumaNodeInGbs"`
+	// The maximum amount of memory per OCPU available for this shape, in gigabytes.
+	MaxPerOcpuInGbs pulumi.Float64Input `pulumi:"maxPerOcpuInGbs"`
+	// The minimum amount of memory, in gigabytes.
+	MinInGbs pulumi.Float64Input `pulumi:"minInGbs"`
+	// The minimum amount of memory per OCPU available for this shape, in gigabytes.
+	MinPerOcpuInGbs pulumi.Float64Input `pulumi:"minPerOcpuInGbs"`
+}
+
+func (GetShapesShapeMemoryOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapeMemoryOption)(nil)).Elem()
+}
+
+func (i GetShapesShapeMemoryOptionArgs) ToGetShapesShapeMemoryOptionOutput() GetShapesShapeMemoryOptionOutput {
+	return i.ToGetShapesShapeMemoryOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapeMemoryOptionArgs) ToGetShapesShapeMemoryOptionOutputWithContext(ctx context.Context) GetShapesShapeMemoryOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeMemoryOptionOutput)
+}
+
+// GetShapesShapeMemoryOptionArrayInput is an input type that accepts GetShapesShapeMemoryOptionArray and GetShapesShapeMemoryOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapesShapeMemoryOptionArrayInput` via:
+//
+//	GetShapesShapeMemoryOptionArray{ GetShapesShapeMemoryOptionArgs{...} }
+type GetShapesShapeMemoryOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesShapeMemoryOptionArrayOutput() GetShapesShapeMemoryOptionArrayOutput
+	ToGetShapesShapeMemoryOptionArrayOutputWithContext(context.Context) GetShapesShapeMemoryOptionArrayOutput
+}
+
+type GetShapesShapeMemoryOptionArray []GetShapesShapeMemoryOptionInput
+
+func (GetShapesShapeMemoryOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapeMemoryOption)(nil)).Elem()
+}
+
+func (i GetShapesShapeMemoryOptionArray) ToGetShapesShapeMemoryOptionArrayOutput() GetShapesShapeMemoryOptionArrayOutput {
+	return i.ToGetShapesShapeMemoryOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapeMemoryOptionArray) ToGetShapesShapeMemoryOptionArrayOutputWithContext(ctx context.Context) GetShapesShapeMemoryOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeMemoryOptionArrayOutput)
+}
+
+type GetShapesShapeMemoryOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapeMemoryOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapeMemoryOption)(nil)).Elem()
+}
+
+func (o GetShapesShapeMemoryOptionOutput) ToGetShapesShapeMemoryOptionOutput() GetShapesShapeMemoryOptionOutput {
+	return o
+}
+
+func (o GetShapesShapeMemoryOptionOutput) ToGetShapesShapeMemoryOptionOutputWithContext(ctx context.Context) GetShapesShapeMemoryOptionOutput {
+	return o
+}
+
+// The default amount of memory per OCPU available for this shape, in gigabytes.
+func (o GetShapesShapeMemoryOptionOutput) DefaultPerOcpuInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapesShapeMemoryOption) float64 { return v.DefaultPerOcpuInGbs }).(pulumi.Float64Output)
+}
+
+// The maximum amount of memory, in gigabytes.
+func (o GetShapesShapeMemoryOptionOutput) MaxInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapesShapeMemoryOption) float64 { return v.MaxInGbs }).(pulumi.Float64Output)
+}
+
+// The maximum amount of memory per NUMA node, in gigabytes.
+func (o GetShapesShapeMemoryOptionOutput) MaxPerNumaNodeInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapesShapeMemoryOption) float64 { return v.MaxPerNumaNodeInGbs }).(pulumi.Float64Output)
+}
+
+// The maximum amount of memory per OCPU available for this shape, in gigabytes.
+func (o GetShapesShapeMemoryOptionOutput) MaxPerOcpuInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapesShapeMemoryOption) float64 { return v.MaxPerOcpuInGbs }).(pulumi.Float64Output)
+}
+
+// The minimum amount of memory, in gigabytes.
+func (o GetShapesShapeMemoryOptionOutput) MinInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapesShapeMemoryOption) float64 { return v.MinInGbs }).(pulumi.Float64Output)
+}
+
+// The minimum amount of memory per OCPU available for this shape, in gigabytes.
+func (o GetShapesShapeMemoryOptionOutput) MinPerOcpuInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapesShapeMemoryOption) float64 { return v.MinPerOcpuInGbs }).(pulumi.Float64Output)
+}
+
+type GetShapesShapeMemoryOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapeMemoryOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapeMemoryOption)(nil)).Elem()
+}
+
+func (o GetShapesShapeMemoryOptionArrayOutput) ToGetShapesShapeMemoryOptionArrayOutput() GetShapesShapeMemoryOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapeMemoryOptionArrayOutput) ToGetShapesShapeMemoryOptionArrayOutputWithContext(ctx context.Context) GetShapesShapeMemoryOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapeMemoryOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapeMemoryOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapeMemoryOption {
+		return vs[0].([]GetShapesShapeMemoryOption)[vs[1].(int)]
+	}).(GetShapesShapeMemoryOptionOutput)
+}
+
+type GetShapesShapeNetworkingBandwidthOption struct {
+	// The default amount of networking bandwidth per OCPU, in gigabits per second.
+	DefaultPerOcpuInGbps float64 `pulumi:"defaultPerOcpuInGbps"`
+	// The maximum amount of networking bandwidth, in gigabits per second.
+	MaxInGbps float64 `pulumi:"maxInGbps"`
+	// The minimum amount of networking bandwidth, in gigabits per second.
+	MinInGbps float64 `pulumi:"minInGbps"`
+}
+
+// GetShapesShapeNetworkingBandwidthOptionInput is an input type that accepts GetShapesShapeNetworkingBandwidthOptionArgs and GetShapesShapeNetworkingBandwidthOptionOutput values.
+// You can construct a concrete instance of `GetShapesShapeNetworkingBandwidthOptionInput` via:
+//
+//	GetShapesShapeNetworkingBandwidthOptionArgs{...}
+type GetShapesShapeNetworkingBandwidthOptionInput interface {
+	pulumi.Input
+
+	ToGetShapesShapeNetworkingBandwidthOptionOutput() GetShapesShapeNetworkingBandwidthOptionOutput
+	ToGetShapesShapeNetworkingBandwidthOptionOutputWithContext(context.Context) GetShapesShapeNetworkingBandwidthOptionOutput
+}
+
+type GetShapesShapeNetworkingBandwidthOptionArgs struct {
+	// The default amount of networking bandwidth per OCPU, in gigabits per second.
+	DefaultPerOcpuInGbps pulumi.Float64Input `pulumi:"defaultPerOcpuInGbps"`
+	// The maximum amount of networking bandwidth, in gigabits per second.
+	MaxInGbps pulumi.Float64Input `pulumi:"maxInGbps"`
+	// The minimum amount of networking bandwidth, in gigabits per second.
+	MinInGbps pulumi.Float64Input `pulumi:"minInGbps"`
+}
+
+func (GetShapesShapeNetworkingBandwidthOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapeNetworkingBandwidthOption)(nil)).Elem()
+}
+
+func (i GetShapesShapeNetworkingBandwidthOptionArgs) ToGetShapesShapeNetworkingBandwidthOptionOutput() GetShapesShapeNetworkingBandwidthOptionOutput {
+	return i.ToGetShapesShapeNetworkingBandwidthOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapeNetworkingBandwidthOptionArgs) ToGetShapesShapeNetworkingBandwidthOptionOutputWithContext(ctx context.Context) GetShapesShapeNetworkingBandwidthOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeNetworkingBandwidthOptionOutput)
+}
+
+// GetShapesShapeNetworkingBandwidthOptionArrayInput is an input type that accepts GetShapesShapeNetworkingBandwidthOptionArray and GetShapesShapeNetworkingBandwidthOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapesShapeNetworkingBandwidthOptionArrayInput` via:
+//
+//	GetShapesShapeNetworkingBandwidthOptionArray{ GetShapesShapeNetworkingBandwidthOptionArgs{...} }
+type GetShapesShapeNetworkingBandwidthOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesShapeNetworkingBandwidthOptionArrayOutput() GetShapesShapeNetworkingBandwidthOptionArrayOutput
+	ToGetShapesShapeNetworkingBandwidthOptionArrayOutputWithContext(context.Context) GetShapesShapeNetworkingBandwidthOptionArrayOutput
+}
+
+type GetShapesShapeNetworkingBandwidthOptionArray []GetShapesShapeNetworkingBandwidthOptionInput
+
+func (GetShapesShapeNetworkingBandwidthOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapeNetworkingBandwidthOption)(nil)).Elem()
+}
+
+func (i GetShapesShapeNetworkingBandwidthOptionArray) ToGetShapesShapeNetworkingBandwidthOptionArrayOutput() GetShapesShapeNetworkingBandwidthOptionArrayOutput {
+	return i.ToGetShapesShapeNetworkingBandwidthOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapeNetworkingBandwidthOptionArray) ToGetShapesShapeNetworkingBandwidthOptionArrayOutputWithContext(ctx context.Context) GetShapesShapeNetworkingBandwidthOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeNetworkingBandwidthOptionArrayOutput)
+}
+
+type GetShapesShapeNetworkingBandwidthOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapeNetworkingBandwidthOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapeNetworkingBandwidthOption)(nil)).Elem()
+}
+
+func (o GetShapesShapeNetworkingBandwidthOptionOutput) ToGetShapesShapeNetworkingBandwidthOptionOutput() GetShapesShapeNetworkingBandwidthOptionOutput {
+	return o
+}
+
+func (o GetShapesShapeNetworkingBandwidthOptionOutput) ToGetShapesShapeNetworkingBandwidthOptionOutputWithContext(ctx context.Context) GetShapesShapeNetworkingBandwidthOptionOutput {
+	return o
+}
+
+// The default amount of networking bandwidth per OCPU, in gigabits per second.
+func (o GetShapesShapeNetworkingBandwidthOptionOutput) DefaultPerOcpuInGbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapesShapeNetworkingBandwidthOption) float64 { return v.DefaultPerOcpuInGbps }).(pulumi.Float64Output)
+}
+
+// The maximum amount of networking bandwidth, in gigabits per second.
+func (o GetShapesShapeNetworkingBandwidthOptionOutput) MaxInGbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapesShapeNetworkingBandwidthOption) float64 { return v.MaxInGbps }).(pulumi.Float64Output)
+}
+
+// The minimum amount of networking bandwidth, in gigabits per second.
+func (o GetShapesShapeNetworkingBandwidthOptionOutput) MinInGbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapesShapeNetworkingBandwidthOption) float64 { return v.MinInGbps }).(pulumi.Float64Output)
+}
+
+type GetShapesShapeNetworkingBandwidthOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapeNetworkingBandwidthOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapeNetworkingBandwidthOption)(nil)).Elem()
+}
+
+func (o GetShapesShapeNetworkingBandwidthOptionArrayOutput) ToGetShapesShapeNetworkingBandwidthOptionArrayOutput() GetShapesShapeNetworkingBandwidthOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapeNetworkingBandwidthOptionArrayOutput) ToGetShapesShapeNetworkingBandwidthOptionArrayOutputWithContext(ctx context.Context) GetShapesShapeNetworkingBandwidthOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapeNetworkingBandwidthOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapeNetworkingBandwidthOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapeNetworkingBandwidthOption {
+		return vs[0].([]GetShapesShapeNetworkingBandwidthOption)[vs[1].(int)]
+	}).(GetShapesShapeNetworkingBandwidthOptionOutput)
+}
+
+type GetShapesShapeOcpuOption struct {
+	// The maximum allowed percentage of cores enabled.
+	Max float64 `pulumi:"max"`
+	// The maximum number of cores available per NUMA node.
+	MaxPerNumaNode float64 `pulumi:"maxPerNumaNode"`
+	// The minimum allowed percentage of cores enabled.
+	Min float64 `pulumi:"min"`
+}
+
+// GetShapesShapeOcpuOptionInput is an input type that accepts GetShapesShapeOcpuOptionArgs and GetShapesShapeOcpuOptionOutput values.
+// You can construct a concrete instance of `GetShapesShapeOcpuOptionInput` via:
+//
+//	GetShapesShapeOcpuOptionArgs{...}
+type GetShapesShapeOcpuOptionInput interface {
+	pulumi.Input
+
+	ToGetShapesShapeOcpuOptionOutput() GetShapesShapeOcpuOptionOutput
+	ToGetShapesShapeOcpuOptionOutputWithContext(context.Context) GetShapesShapeOcpuOptionOutput
+}
+
+type GetShapesShapeOcpuOptionArgs struct {
+	// The maximum allowed percentage of cores enabled.
+	Max pulumi.Float64Input `pulumi:"max"`
+	// The maximum number of cores available per NUMA node.
+	MaxPerNumaNode pulumi.Float64Input `pulumi:"maxPerNumaNode"`
+	// The minimum allowed percentage of cores enabled.
+	Min pulumi.Float64Input `pulumi:"min"`
+}
+
+func (GetShapesShapeOcpuOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapeOcpuOption)(nil)).Elem()
+}
+
+func (i GetShapesShapeOcpuOptionArgs) ToGetShapesShapeOcpuOptionOutput() GetShapesShapeOcpuOptionOutput {
+	return i.ToGetShapesShapeOcpuOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapeOcpuOptionArgs) ToGetShapesShapeOcpuOptionOutputWithContext(ctx context.Context) GetShapesShapeOcpuOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeOcpuOptionOutput)
+}
+
+// GetShapesShapeOcpuOptionArrayInput is an input type that accepts GetShapesShapeOcpuOptionArray and GetShapesShapeOcpuOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapesShapeOcpuOptionArrayInput` via:
+//
+//	GetShapesShapeOcpuOptionArray{ GetShapesShapeOcpuOptionArgs{...} }
+type GetShapesShapeOcpuOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesShapeOcpuOptionArrayOutput() GetShapesShapeOcpuOptionArrayOutput
+	ToGetShapesShapeOcpuOptionArrayOutputWithContext(context.Context) GetShapesShapeOcpuOptionArrayOutput
+}
+
+type GetShapesShapeOcpuOptionArray []GetShapesShapeOcpuOptionInput
+
+func (GetShapesShapeOcpuOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapeOcpuOption)(nil)).Elem()
+}
+
+func (i GetShapesShapeOcpuOptionArray) ToGetShapesShapeOcpuOptionArrayOutput() GetShapesShapeOcpuOptionArrayOutput {
+	return i.ToGetShapesShapeOcpuOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapeOcpuOptionArray) ToGetShapesShapeOcpuOptionArrayOutputWithContext(ctx context.Context) GetShapesShapeOcpuOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeOcpuOptionArrayOutput)
+}
+
+type GetShapesShapeOcpuOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapeOcpuOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapeOcpuOption)(nil)).Elem()
+}
+
+func (o GetShapesShapeOcpuOptionOutput) ToGetShapesShapeOcpuOptionOutput() GetShapesShapeOcpuOptionOutput {
+	return o
+}
+
+func (o GetShapesShapeOcpuOptionOutput) ToGetShapesShapeOcpuOptionOutputWithContext(ctx context.Context) GetShapesShapeOcpuOptionOutput {
+	return o
+}
+
+// The maximum allowed percentage of cores enabled.
+func (o GetShapesShapeOcpuOptionOutput) Max() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapesShapeOcpuOption) float64 { return v.Max }).(pulumi.Float64Output)
+}
+
+// The maximum number of cores available per NUMA node.
+func (o GetShapesShapeOcpuOptionOutput) MaxPerNumaNode() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapesShapeOcpuOption) float64 { return v.MaxPerNumaNode }).(pulumi.Float64Output)
+}
+
+// The minimum allowed percentage of cores enabled.
+func (o GetShapesShapeOcpuOptionOutput) Min() pulumi.Float64Output {
+	return o.ApplyT(func(v GetShapesShapeOcpuOption) float64 { return v.Min }).(pulumi.Float64Output)
+}
+
+type GetShapesShapeOcpuOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapeOcpuOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapeOcpuOption)(nil)).Elem()
+}
+
+func (o GetShapesShapeOcpuOptionArrayOutput) ToGetShapesShapeOcpuOptionArrayOutput() GetShapesShapeOcpuOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapeOcpuOptionArrayOutput) ToGetShapesShapeOcpuOptionArrayOutputWithContext(ctx context.Context) GetShapesShapeOcpuOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapeOcpuOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapeOcpuOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapeOcpuOption {
+		return vs[0].([]GetShapesShapeOcpuOption)[vs[1].(int)]
+	}).(GetShapesShapeOcpuOptionOutput)
+}
+
+type GetShapesShapePlatformConfigOption struct {
+	// Configuration options for the Access Control Service.
+	AccessControlServiceOptions []GetShapesShapePlatformConfigOptionAccessControlServiceOption `pulumi:"accessControlServiceOptions"`
+	// Configuration options for the input-output memory management unit.
+	InputOutputMemoryManagementUnitOptions []GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption `pulumi:"inputOutputMemoryManagementUnitOptions"`
+	// Configuration options for the Measured Boot feature.
+	MeasuredBootOptions []GetShapesShapePlatformConfigOptionMeasuredBootOption `pulumi:"measuredBootOptions"`
+	// Configuration options for memory encryption.
+	MemoryEncryptionOptions []GetShapesShapePlatformConfigOptionMemoryEncryptionOption `pulumi:"memoryEncryptionOptions"`
+	// Configuration options for NUMA nodes per socket.
+	NumaNodesPerSocketPlatformOptions []GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption `pulumi:"numaNodesPerSocketPlatformOptions"`
+	// Configuration options for the percentage of cores enabled.
+	PercentageOfCoresEnabledOptions []GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption `pulumi:"percentageOfCoresEnabledOptions"`
+	// Configuration options for Secure Boot.
+	SecureBootOptions []GetShapesShapePlatformConfigOptionSecureBootOption `pulumi:"secureBootOptions"`
+	// Configuration options for symmetric multi-threading.
+	SymmetricMultiThreadingOptions []GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption `pulumi:"symmetricMultiThreadingOptions"`
+	// Configuration options for the Trusted Platform Module (TPM).
+	TrustedPlatformModuleOptions []GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption `pulumi:"trustedPlatformModuleOptions"`
+	// The type of platform being configured. (Supported types=[INTEL_VM, AMD_MILAN_BM, AMD_ROME_BM, AMD_ROME_BM_GPU, INTEL_ICELAKE_BM, INTEL_SKYLAKE_BM])
+	Type string `pulumi:"type"`
+	// Configuration options for the virtualization instructions.
+	VirtualInstructionsOptions []GetShapesShapePlatformConfigOptionVirtualInstructionsOption `pulumi:"virtualInstructionsOptions"`
+}
+
+// GetShapesShapePlatformConfigOptionInput is an input type that accepts GetShapesShapePlatformConfigOptionArgs and GetShapesShapePlatformConfigOptionOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionInput` via:
+//
+//	GetShapesShapePlatformConfigOptionArgs{...}
+type GetShapesShapePlatformConfigOptionInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionOutput() GetShapesShapePlatformConfigOptionOutput
+	ToGetShapesShapePlatformConfigOptionOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionOutput
+}
+
+type GetShapesShapePlatformConfigOptionArgs struct {
+	// Configuration options for the Access Control Service.
+	AccessControlServiceOptions GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayInput `pulumi:"accessControlServiceOptions"`
+	// Configuration options for the input-output memory management unit.
+	InputOutputMemoryManagementUnitOptions GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayInput `pulumi:"inputOutputMemoryManagementUnitOptions"`
+	// Configuration options for the Measured Boot feature.
+	MeasuredBootOptions GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayInput `pulumi:"measuredBootOptions"`
+	// Configuration options for memory encryption.
+	MemoryEncryptionOptions GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayInput `pulumi:"memoryEncryptionOptions"`
+	// Configuration options for NUMA nodes per socket.
+	NumaNodesPerSocketPlatformOptions GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayInput `pulumi:"numaNodesPerSocketPlatformOptions"`
+	// Configuration options for the percentage of cores enabled.
+	PercentageOfCoresEnabledOptions GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayInput `pulumi:"percentageOfCoresEnabledOptions"`
+	// Configuration options for Secure Boot.
+	SecureBootOptions GetShapesShapePlatformConfigOptionSecureBootOptionArrayInput `pulumi:"secureBootOptions"`
+	// Configuration options for symmetric multi-threading.
+	SymmetricMultiThreadingOptions GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayInput `pulumi:"symmetricMultiThreadingOptions"`
+	// Configuration options for the Trusted Platform Module (TPM).
+	TrustedPlatformModuleOptions GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayInput `pulumi:"trustedPlatformModuleOptions"`
+	// The type of platform being configured. (Supported types=[INTEL_VM, AMD_MILAN_BM, AMD_ROME_BM, AMD_ROME_BM_GPU, INTEL_ICELAKE_BM, INTEL_SKYLAKE_BM])
+	Type pulumi.StringInput `pulumi:"type"`
+	// Configuration options for the virtualization instructions.
+	VirtualInstructionsOptions GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayInput `pulumi:"virtualInstructionsOptions"`
+}
+
+func (GetShapesShapePlatformConfigOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionArgs) ToGetShapesShapePlatformConfigOptionOutput() GetShapesShapePlatformConfigOptionOutput {
+	return i.ToGetShapesShapePlatformConfigOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionArgs) ToGetShapesShapePlatformConfigOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionOutput)
+}
+
+// GetShapesShapePlatformConfigOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionArray and GetShapesShapePlatformConfigOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionArrayInput` via:
+//
+//	GetShapesShapePlatformConfigOptionArray{ GetShapesShapePlatformConfigOptionArgs{...} }
+type GetShapesShapePlatformConfigOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionArrayOutput() GetShapesShapePlatformConfigOptionArrayOutput
+	ToGetShapesShapePlatformConfigOptionArrayOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionArrayOutput
+}
+
+type GetShapesShapePlatformConfigOptionArray []GetShapesShapePlatformConfigOptionInput
+
+func (GetShapesShapePlatformConfigOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionArray) ToGetShapesShapePlatformConfigOptionArrayOutput() GetShapesShapePlatformConfigOptionArrayOutput {
+	return i.ToGetShapesShapePlatformConfigOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionArray) ToGetShapesShapePlatformConfigOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionArrayOutput)
+}
+
+type GetShapesShapePlatformConfigOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionOutput) ToGetShapesShapePlatformConfigOptionOutput() GetShapesShapePlatformConfigOptionOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionOutput) ToGetShapesShapePlatformConfigOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionOutput {
+	return o
+}
+
+// Configuration options for the Access Control Service.
+func (o GetShapesShapePlatformConfigOptionOutput) AccessControlServiceOptions() GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOption) []GetShapesShapePlatformConfigOptionAccessControlServiceOption {
+		return v.AccessControlServiceOptions
+	}).(GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput)
+}
+
+// Configuration options for the input-output memory management unit.
+func (o GetShapesShapePlatformConfigOptionOutput) InputOutputMemoryManagementUnitOptions() GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOption) []GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption {
+		return v.InputOutputMemoryManagementUnitOptions
+	}).(GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput)
+}
+
+// Configuration options for the Measured Boot feature.
+func (o GetShapesShapePlatformConfigOptionOutput) MeasuredBootOptions() GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOption) []GetShapesShapePlatformConfigOptionMeasuredBootOption {
+		return v.MeasuredBootOptions
+	}).(GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput)
+}
+
+// Configuration options for memory encryption.
+func (o GetShapesShapePlatformConfigOptionOutput) MemoryEncryptionOptions() GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOption) []GetShapesShapePlatformConfigOptionMemoryEncryptionOption {
+		return v.MemoryEncryptionOptions
+	}).(GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput)
+}
+
+// Configuration options for NUMA nodes per socket.
+func (o GetShapesShapePlatformConfigOptionOutput) NumaNodesPerSocketPlatformOptions() GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOption) []GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption {
+		return v.NumaNodesPerSocketPlatformOptions
+	}).(GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput)
+}
+
+// Configuration options for the percentage of cores enabled.
+func (o GetShapesShapePlatformConfigOptionOutput) PercentageOfCoresEnabledOptions() GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOption) []GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption {
+		return v.PercentageOfCoresEnabledOptions
+	}).(GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput)
+}
+
+// Configuration options for Secure Boot.
+func (o GetShapesShapePlatformConfigOptionOutput) SecureBootOptions() GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOption) []GetShapesShapePlatformConfigOptionSecureBootOption {
+		return v.SecureBootOptions
+	}).(GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput)
+}
+
+// Configuration options for symmetric multi-threading.
+func (o GetShapesShapePlatformConfigOptionOutput) SymmetricMultiThreadingOptions() GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOption) []GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption {
+		return v.SymmetricMultiThreadingOptions
+	}).(GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput)
+}
+
+// Configuration options for the Trusted Platform Module (TPM).
+func (o GetShapesShapePlatformConfigOptionOutput) TrustedPlatformModuleOptions() GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOption) []GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption {
+		return v.TrustedPlatformModuleOptions
+	}).(GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput)
+}
+
+// The type of platform being configured. (Supported types=[INTEL_VM, AMD_MILAN_BM, AMD_ROME_BM, AMD_ROME_BM_GPU, INTEL_ICELAKE_BM, INTEL_SKYLAKE_BM])
+func (o GetShapesShapePlatformConfigOptionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOption) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Configuration options for the virtualization instructions.
+func (o GetShapesShapePlatformConfigOptionOutput) VirtualInstructionsOptions() GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOption) []GetShapesShapePlatformConfigOptionVirtualInstructionsOption {
+		return v.VirtualInstructionsOptions
+	}).(GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput)
+}
+
+type GetShapesShapePlatformConfigOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionArrayOutput) ToGetShapesShapePlatformConfigOptionArrayOutput() GetShapesShapePlatformConfigOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionArrayOutput) ToGetShapesShapePlatformConfigOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapePlatformConfigOption {
+		return vs[0].([]GetShapesShapePlatformConfigOption)[vs[1].(int)]
+	}).(GetShapesShapePlatformConfigOptionOutput)
+}
+
+type GetShapesShapePlatformConfigOptionAccessControlServiceOption struct {
+	// Whether virtualization instructions can be enabled.
+	AllowedValues []bool `pulumi:"allowedValues"`
+	// Whether virtualization instructions are enabled by default.
+	IsDefaultEnabled bool `pulumi:"isDefaultEnabled"`
+}
+
+// GetShapesShapePlatformConfigOptionAccessControlServiceOptionInput is an input type that accepts GetShapesShapePlatformConfigOptionAccessControlServiceOptionArgs and GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionAccessControlServiceOptionInput` via:
+//
+//	GetShapesShapePlatformConfigOptionAccessControlServiceOptionArgs{...}
+type GetShapesShapePlatformConfigOptionAccessControlServiceOptionInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput() GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput
+	ToGetShapesShapePlatformConfigOptionAccessControlServiceOptionOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput
+}
+
+type GetShapesShapePlatformConfigOptionAccessControlServiceOptionArgs struct {
+	// Whether virtualization instructions can be enabled.
+	AllowedValues pulumi.BoolArrayInput `pulumi:"allowedValues"`
+	// Whether virtualization instructions are enabled by default.
+	IsDefaultEnabled pulumi.BoolInput `pulumi:"isDefaultEnabled"`
+}
+
+func (GetShapesShapePlatformConfigOptionAccessControlServiceOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOptionAccessControlServiceOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionAccessControlServiceOptionArgs) ToGetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput() GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput {
+	return i.ToGetShapesShapePlatformConfigOptionAccessControlServiceOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionAccessControlServiceOptionArgs) ToGetShapesShapePlatformConfigOptionAccessControlServiceOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput)
+}
+
+// GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionAccessControlServiceOptionArray and GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayInput` via:
+//
+//	GetShapesShapePlatformConfigOptionAccessControlServiceOptionArray{ GetShapesShapePlatformConfigOptionAccessControlServiceOptionArgs{...} }
+type GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput() GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput
+	ToGetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput
+}
+
+type GetShapesShapePlatformConfigOptionAccessControlServiceOptionArray []GetShapesShapePlatformConfigOptionAccessControlServiceOptionInput
+
+func (GetShapesShapePlatformConfigOptionAccessControlServiceOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOptionAccessControlServiceOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionAccessControlServiceOptionArray) ToGetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput() GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput {
+	return i.ToGetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionAccessControlServiceOptionArray) ToGetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput)
+}
+
+type GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOptionAccessControlServiceOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput) ToGetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput() GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput) ToGetShapesShapePlatformConfigOptionAccessControlServiceOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput {
+	return o
+}
+
+// Whether virtualization instructions can be enabled.
+func (o GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionAccessControlServiceOption) []bool { return v.AllowedValues }).(pulumi.BoolArrayOutput)
+}
+
+// Whether virtualization instructions are enabled by default.
+func (o GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput) IsDefaultEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionAccessControlServiceOption) bool { return v.IsDefaultEnabled }).(pulumi.BoolOutput)
+}
+
+type GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOptionAccessControlServiceOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput) ToGetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput() GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput) ToGetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapePlatformConfigOptionAccessControlServiceOption {
+		return vs[0].([]GetShapesShapePlatformConfigOptionAccessControlServiceOption)[vs[1].(int)]
+	}).(GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput)
+}
+
+type GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption struct {
+	// Whether virtualization instructions can be enabled.
+	AllowedValues []bool `pulumi:"allowedValues"`
+	// Whether virtualization instructions are enabled by default.
+	IsDefaultEnabled bool `pulumi:"isDefaultEnabled"`
+}
+
+// GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionInput is an input type that accepts GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArgs and GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionInput` via:
+//
+//	GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArgs{...}
+type GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput() GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput
+	ToGetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput
+}
+
+type GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArgs struct {
+	// Whether virtualization instructions can be enabled.
+	AllowedValues pulumi.BoolArrayInput `pulumi:"allowedValues"`
+	// Whether virtualization instructions are enabled by default.
+	IsDefaultEnabled pulumi.BoolInput `pulumi:"isDefaultEnabled"`
+}
+
+func (GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArgs) ToGetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput() GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput {
+	return i.ToGetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArgs) ToGetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput)
+}
+
+// GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArray and GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayInput` via:
+//
+//	GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArray{ GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArgs{...} }
+type GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput() GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput
+	ToGetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput
+}
+
+type GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArray []GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionInput
+
+func (GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArray) ToGetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput() GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput {
+	return i.ToGetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArray) ToGetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput)
+}
+
+type GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput) ToGetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput() GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput) ToGetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput {
+	return o
+}
+
+// Whether virtualization instructions can be enabled.
+func (o GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption) []bool {
+		return v.AllowedValues
+	}).(pulumi.BoolArrayOutput)
+}
+
+// Whether virtualization instructions are enabled by default.
+func (o GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput) IsDefaultEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption) bool {
+		return v.IsDefaultEnabled
+	}).(pulumi.BoolOutput)
+}
+
+type GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput) ToGetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput() GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput) ToGetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption {
+		return vs[0].([]GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption)[vs[1].(int)]
+	}).(GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput)
+}
+
+type GetShapesShapePlatformConfigOptionMeasuredBootOption struct {
+	// Whether virtualization instructions can be enabled.
+	AllowedValues []bool `pulumi:"allowedValues"`
+	// Whether virtualization instructions are enabled by default.
+	IsDefaultEnabled bool `pulumi:"isDefaultEnabled"`
+}
+
+// GetShapesShapePlatformConfigOptionMeasuredBootOptionInput is an input type that accepts GetShapesShapePlatformConfigOptionMeasuredBootOptionArgs and GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionMeasuredBootOptionInput` via:
+//
+//	GetShapesShapePlatformConfigOptionMeasuredBootOptionArgs{...}
+type GetShapesShapePlatformConfigOptionMeasuredBootOptionInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionMeasuredBootOptionOutput() GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput
+	ToGetShapesShapePlatformConfigOptionMeasuredBootOptionOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput
+}
+
+type GetShapesShapePlatformConfigOptionMeasuredBootOptionArgs struct {
+	// Whether virtualization instructions can be enabled.
+	AllowedValues pulumi.BoolArrayInput `pulumi:"allowedValues"`
+	// Whether virtualization instructions are enabled by default.
+	IsDefaultEnabled pulumi.BoolInput `pulumi:"isDefaultEnabled"`
+}
+
+func (GetShapesShapePlatformConfigOptionMeasuredBootOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOptionMeasuredBootOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionMeasuredBootOptionArgs) ToGetShapesShapePlatformConfigOptionMeasuredBootOptionOutput() GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput {
+	return i.ToGetShapesShapePlatformConfigOptionMeasuredBootOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionMeasuredBootOptionArgs) ToGetShapesShapePlatformConfigOptionMeasuredBootOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput)
+}
+
+// GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionMeasuredBootOptionArray and GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayInput` via:
+//
+//	GetShapesShapePlatformConfigOptionMeasuredBootOptionArray{ GetShapesShapePlatformConfigOptionMeasuredBootOptionArgs{...} }
+type GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput() GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput
+	ToGetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput
+}
+
+type GetShapesShapePlatformConfigOptionMeasuredBootOptionArray []GetShapesShapePlatformConfigOptionMeasuredBootOptionInput
+
+func (GetShapesShapePlatformConfigOptionMeasuredBootOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOptionMeasuredBootOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionMeasuredBootOptionArray) ToGetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput() GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput {
+	return i.ToGetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionMeasuredBootOptionArray) ToGetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput)
+}
+
+type GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOptionMeasuredBootOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput) ToGetShapesShapePlatformConfigOptionMeasuredBootOptionOutput() GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput) ToGetShapesShapePlatformConfigOptionMeasuredBootOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput {
+	return o
+}
+
+// Whether virtualization instructions can be enabled.
+func (o GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionMeasuredBootOption) []bool { return v.AllowedValues }).(pulumi.BoolArrayOutput)
+}
+
+// Whether virtualization instructions are enabled by default.
+func (o GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput) IsDefaultEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionMeasuredBootOption) bool { return v.IsDefaultEnabled }).(pulumi.BoolOutput)
+}
+
+type GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOptionMeasuredBootOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput) ToGetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput() GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput) ToGetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapePlatformConfigOptionMeasuredBootOption {
+		return vs[0].([]GetShapesShapePlatformConfigOptionMeasuredBootOption)[vs[1].(int)]
+	}).(GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput)
+}
+
+type GetShapesShapePlatformConfigOptionMemoryEncryptionOption struct {
+	// Whether virtualization instructions can be enabled.
+	AllowedValues []bool `pulumi:"allowedValues"`
+	// Whether virtualization instructions are enabled by default.
+	IsDefaultEnabled bool `pulumi:"isDefaultEnabled"`
+}
+
+// GetShapesShapePlatformConfigOptionMemoryEncryptionOptionInput is an input type that accepts GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArgs and GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionMemoryEncryptionOptionInput` via:
+//
+//	GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArgs{...}
+type GetShapesShapePlatformConfigOptionMemoryEncryptionOptionInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput() GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput
+	ToGetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput
+}
+
+type GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArgs struct {
+	// Whether virtualization instructions can be enabled.
+	AllowedValues pulumi.BoolArrayInput `pulumi:"allowedValues"`
+	// Whether virtualization instructions are enabled by default.
+	IsDefaultEnabled pulumi.BoolInput `pulumi:"isDefaultEnabled"`
+}
+
+func (GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOptionMemoryEncryptionOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArgs) ToGetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput() GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput {
+	return i.ToGetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArgs) ToGetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput)
+}
+
+// GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArray and GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayInput` via:
+//
+//	GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArray{ GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArgs{...} }
+type GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput() GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput
+	ToGetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput
+}
+
+type GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArray []GetShapesShapePlatformConfigOptionMemoryEncryptionOptionInput
+
+func (GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOptionMemoryEncryptionOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArray) ToGetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput() GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput {
+	return i.ToGetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArray) ToGetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput)
+}
+
+type GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOptionMemoryEncryptionOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput) ToGetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput() GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput) ToGetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput {
+	return o
+}
+
+// Whether virtualization instructions can be enabled.
+func (o GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionMemoryEncryptionOption) []bool { return v.AllowedValues }).(pulumi.BoolArrayOutput)
+}
+
+// Whether virtualization instructions are enabled by default.
+func (o GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput) IsDefaultEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionMemoryEncryptionOption) bool { return v.IsDefaultEnabled }).(pulumi.BoolOutput)
+}
+
+type GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOptionMemoryEncryptionOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput) ToGetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput() GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput) ToGetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapePlatformConfigOptionMemoryEncryptionOption {
+		return vs[0].([]GetShapesShapePlatformConfigOptionMemoryEncryptionOption)[vs[1].(int)]
+	}).(GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput)
+}
+
+type GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption struct {
+	// Whether virtualization instructions can be enabled.
+	AllowedValues []string `pulumi:"allowedValues"`
+	// The default percentage of cores enabled.
+	DefaultValue string `pulumi:"defaultValue"`
+}
+
+// GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionInput is an input type that accepts GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs and GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionInput` via:
+//
+//	GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs{...}
+type GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput() GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput
+	ToGetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput
+}
+
+type GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs struct {
+	// Whether virtualization instructions can be enabled.
+	AllowedValues pulumi.StringArrayInput `pulumi:"allowedValues"`
+	// The default percentage of cores enabled.
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+}
+
+func (GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs) ToGetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput() GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput {
+	return i.ToGetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs) ToGetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput)
+}
+
+// GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArray and GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayInput` via:
+//
+//	GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArray{ GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs{...} }
+type GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput() GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput
+	ToGetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput
+}
+
+type GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArray []GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionInput
+
+func (GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArray) ToGetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput() GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput {
+	return i.ToGetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArray) ToGetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput)
+}
+
+type GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput) ToGetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput() GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput) ToGetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput {
+	return o
+}
+
+// Whether virtualization instructions can be enabled.
+func (o GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput) AllowedValues() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption) []string {
+		return v.AllowedValues
+	}).(pulumi.StringArrayOutput)
+}
+
+// The default percentage of cores enabled.
+func (o GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption) string {
+		return v.DefaultValue
+	}).(pulumi.StringOutput)
+}
+
+type GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput) ToGetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput() GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput) ToGetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption {
+		return vs[0].([]GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption)[vs[1].(int)]
+	}).(GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput)
+}
+
+type GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption struct {
+	// The default percentage of cores enabled.
+	DefaultValue int `pulumi:"defaultValue"`
+	// The maximum allowed percentage of cores enabled.
+	Max int `pulumi:"max"`
+	// The minimum allowed percentage of cores enabled.
+	Min int `pulumi:"min"`
+}
+
+// GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionInput is an input type that accepts GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs and GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionInput` via:
+//
+//	GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs{...}
+type GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput() GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput
+	ToGetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput
+}
+
+type GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs struct {
+	// The default percentage of cores enabled.
+	DefaultValue pulumi.IntInput `pulumi:"defaultValue"`
+	// The maximum allowed percentage of cores enabled.
+	Max pulumi.IntInput `pulumi:"max"`
+	// The minimum allowed percentage of cores enabled.
+	Min pulumi.IntInput `pulumi:"min"`
+}
+
+func (GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs) ToGetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput() GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput {
+	return i.ToGetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs) ToGetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput)
+}
+
+// GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArray and GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayInput` via:
+//
+//	GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArray{ GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs{...} }
+type GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput() GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput
+	ToGetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput
+}
+
+type GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArray []GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionInput
+
+func (GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArray) ToGetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput() GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput {
+	return i.ToGetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArray) ToGetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput)
+}
+
+type GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) ToGetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput() GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) ToGetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput {
+	return o
+}
+
+// The default percentage of cores enabled.
+func (o GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) DefaultValue() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption) int { return v.DefaultValue }).(pulumi.IntOutput)
+}
+
+// The maximum allowed percentage of cores enabled.
+func (o GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) Max() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption) int { return v.Max }).(pulumi.IntOutput)
+}
+
+// The minimum allowed percentage of cores enabled.
+func (o GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption) int { return v.Min }).(pulumi.IntOutput)
+}
+
+type GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput) ToGetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput() GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput) ToGetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption {
+		return vs[0].([]GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption)[vs[1].(int)]
+	}).(GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput)
+}
+
+type GetShapesShapePlatformConfigOptionSecureBootOption struct {
+	// Whether virtualization instructions can be enabled.
+	AllowedValues []bool `pulumi:"allowedValues"`
+	// Whether virtualization instructions are enabled by default.
+	IsDefaultEnabled bool `pulumi:"isDefaultEnabled"`
+}
+
+// GetShapesShapePlatformConfigOptionSecureBootOptionInput is an input type that accepts GetShapesShapePlatformConfigOptionSecureBootOptionArgs and GetShapesShapePlatformConfigOptionSecureBootOptionOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionSecureBootOptionInput` via:
+//
+//	GetShapesShapePlatformConfigOptionSecureBootOptionArgs{...}
+type GetShapesShapePlatformConfigOptionSecureBootOptionInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionSecureBootOptionOutput() GetShapesShapePlatformConfigOptionSecureBootOptionOutput
+	ToGetShapesShapePlatformConfigOptionSecureBootOptionOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionSecureBootOptionOutput
+}
+
+type GetShapesShapePlatformConfigOptionSecureBootOptionArgs struct {
+	// Whether virtualization instructions can be enabled.
+	AllowedValues pulumi.BoolArrayInput `pulumi:"allowedValues"`
+	// Whether virtualization instructions are enabled by default.
+	IsDefaultEnabled pulumi.BoolInput `pulumi:"isDefaultEnabled"`
+}
+
+func (GetShapesShapePlatformConfigOptionSecureBootOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOptionSecureBootOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionSecureBootOptionArgs) ToGetShapesShapePlatformConfigOptionSecureBootOptionOutput() GetShapesShapePlatformConfigOptionSecureBootOptionOutput {
+	return i.ToGetShapesShapePlatformConfigOptionSecureBootOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionSecureBootOptionArgs) ToGetShapesShapePlatformConfigOptionSecureBootOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionSecureBootOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionSecureBootOptionOutput)
+}
+
+// GetShapesShapePlatformConfigOptionSecureBootOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionSecureBootOptionArray and GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionSecureBootOptionArrayInput` via:
+//
+//	GetShapesShapePlatformConfigOptionSecureBootOptionArray{ GetShapesShapePlatformConfigOptionSecureBootOptionArgs{...} }
+type GetShapesShapePlatformConfigOptionSecureBootOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput() GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput
+	ToGetShapesShapePlatformConfigOptionSecureBootOptionArrayOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput
+}
+
+type GetShapesShapePlatformConfigOptionSecureBootOptionArray []GetShapesShapePlatformConfigOptionSecureBootOptionInput
+
+func (GetShapesShapePlatformConfigOptionSecureBootOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOptionSecureBootOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionSecureBootOptionArray) ToGetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput() GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput {
+	return i.ToGetShapesShapePlatformConfigOptionSecureBootOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionSecureBootOptionArray) ToGetShapesShapePlatformConfigOptionSecureBootOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput)
+}
+
+type GetShapesShapePlatformConfigOptionSecureBootOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionSecureBootOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOptionSecureBootOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionSecureBootOptionOutput) ToGetShapesShapePlatformConfigOptionSecureBootOptionOutput() GetShapesShapePlatformConfigOptionSecureBootOptionOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionSecureBootOptionOutput) ToGetShapesShapePlatformConfigOptionSecureBootOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionSecureBootOptionOutput {
+	return o
+}
+
+// Whether virtualization instructions can be enabled.
+func (o GetShapesShapePlatformConfigOptionSecureBootOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionSecureBootOption) []bool { return v.AllowedValues }).(pulumi.BoolArrayOutput)
+}
+
+// Whether virtualization instructions are enabled by default.
+func (o GetShapesShapePlatformConfigOptionSecureBootOptionOutput) IsDefaultEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionSecureBootOption) bool { return v.IsDefaultEnabled }).(pulumi.BoolOutput)
+}
+
+type GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOptionSecureBootOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput) ToGetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput() GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput) ToGetShapesShapePlatformConfigOptionSecureBootOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionSecureBootOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapePlatformConfigOptionSecureBootOption {
+		return vs[0].([]GetShapesShapePlatformConfigOptionSecureBootOption)[vs[1].(int)]
+	}).(GetShapesShapePlatformConfigOptionSecureBootOptionOutput)
+}
+
+type GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption struct {
+	// Whether virtualization instructions can be enabled.
+	AllowedValues []bool `pulumi:"allowedValues"`
+	// Whether virtualization instructions are enabled by default.
+	IsDefaultEnabled bool `pulumi:"isDefaultEnabled"`
+}
+
+// GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionInput is an input type that accepts GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs and GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionInput` via:
+//
+//	GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs{...}
+type GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput() GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput
+	ToGetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput
+}
+
+type GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs struct {
+	// Whether virtualization instructions can be enabled.
+	AllowedValues pulumi.BoolArrayInput `pulumi:"allowedValues"`
+	// Whether virtualization instructions are enabled by default.
+	IsDefaultEnabled pulumi.BoolInput `pulumi:"isDefaultEnabled"`
+}
+
+func (GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs) ToGetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput() GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput {
+	return i.ToGetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs) ToGetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput)
+}
+
+// GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArray and GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayInput` via:
+//
+//	GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArray{ GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs{...} }
+type GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput() GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput
+	ToGetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput
+}
+
+type GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArray []GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionInput
+
+func (GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArray) ToGetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput() GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput {
+	return i.ToGetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArray) ToGetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput)
+}
+
+type GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput) ToGetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput() GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput) ToGetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput {
+	return o
+}
+
+// Whether virtualization instructions can be enabled.
+func (o GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption) []bool { return v.AllowedValues }).(pulumi.BoolArrayOutput)
+}
+
+// Whether virtualization instructions are enabled by default.
+func (o GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput) IsDefaultEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption) bool {
+		return v.IsDefaultEnabled
+	}).(pulumi.BoolOutput)
+}
+
+type GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput) ToGetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput() GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput) ToGetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption {
+		return vs[0].([]GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption)[vs[1].(int)]
+	}).(GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput)
+}
+
+type GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption struct {
+	// Whether virtualization instructions can be enabled.
+	AllowedValues []bool `pulumi:"allowedValues"`
+	// Whether virtualization instructions are enabled by default.
+	IsDefaultEnabled bool `pulumi:"isDefaultEnabled"`
+}
+
+// GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionInput is an input type that accepts GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArgs and GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionInput` via:
+//
+//	GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArgs{...}
+type GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput() GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput
+	ToGetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput
+}
+
+type GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArgs struct {
+	// Whether virtualization instructions can be enabled.
+	AllowedValues pulumi.BoolArrayInput `pulumi:"allowedValues"`
+	// Whether virtualization instructions are enabled by default.
+	IsDefaultEnabled pulumi.BoolInput `pulumi:"isDefaultEnabled"`
+}
+
+func (GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArgs) ToGetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput() GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput {
+	return i.ToGetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArgs) ToGetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput)
+}
+
+// GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArray and GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayInput` via:
+//
+//	GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArray{ GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArgs{...} }
+type GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput() GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput
+	ToGetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput
+}
+
+type GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArray []GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionInput
+
+func (GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArray) ToGetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput() GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput {
+	return i.ToGetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArray) ToGetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput)
+}
+
+type GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput) ToGetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput() GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput) ToGetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput {
+	return o
+}
+
+// Whether virtualization instructions can be enabled.
+func (o GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption) []bool { return v.AllowedValues }).(pulumi.BoolArrayOutput)
+}
+
+// Whether virtualization instructions are enabled by default.
+func (o GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput) IsDefaultEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption) bool { return v.IsDefaultEnabled }).(pulumi.BoolOutput)
+}
+
+type GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput) ToGetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput() GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput) ToGetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption {
+		return vs[0].([]GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption)[vs[1].(int)]
+	}).(GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput)
+}
+
+type GetShapesShapePlatformConfigOptionVirtualInstructionsOption struct {
+	// Whether virtualization instructions can be enabled.
+	AllowedValues []bool `pulumi:"allowedValues"`
+	// Whether virtualization instructions are enabled by default.
+	IsDefaultEnabled bool `pulumi:"isDefaultEnabled"`
+}
+
+// GetShapesShapePlatformConfigOptionVirtualInstructionsOptionInput is an input type that accepts GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArgs and GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionVirtualInstructionsOptionInput` via:
+//
+//	GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArgs{...}
+type GetShapesShapePlatformConfigOptionVirtualInstructionsOptionInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput() GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput
+	ToGetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput
+}
+
+type GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArgs struct {
+	// Whether virtualization instructions can be enabled.
+	AllowedValues pulumi.BoolArrayInput `pulumi:"allowedValues"`
+	// Whether virtualization instructions are enabled by default.
+	IsDefaultEnabled pulumi.BoolInput `pulumi:"isDefaultEnabled"`
+}
+
+func (GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOptionVirtualInstructionsOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArgs) ToGetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput() GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput {
+	return i.ToGetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArgs) ToGetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput)
+}
+
+// GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArray and GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayInput` via:
+//
+//	GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArray{ GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArgs{...} }
+type GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput() GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput
+	ToGetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutputWithContext(context.Context) GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput
+}
+
+type GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArray []GetShapesShapePlatformConfigOptionVirtualInstructionsOptionInput
+
+func (GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOptionVirtualInstructionsOption)(nil)).Elem()
+}
+
+func (i GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArray) ToGetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput() GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput {
+	return i.ToGetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArray) ToGetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput)
+}
+
+type GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapePlatformConfigOptionVirtualInstructionsOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput) ToGetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput() GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput) ToGetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput {
+	return o
+}
+
+// Whether virtualization instructions can be enabled.
+func (o GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionVirtualInstructionsOption) []bool { return v.AllowedValues }).(pulumi.BoolArrayOutput)
+}
+
+// Whether virtualization instructions are enabled by default.
+func (o GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput) IsDefaultEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapesShapePlatformConfigOptionVirtualInstructionsOption) bool { return v.IsDefaultEnabled }).(pulumi.BoolOutput)
+}
+
+type GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapePlatformConfigOptionVirtualInstructionsOption)(nil)).Elem()
+}
+
+func (o GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput) ToGetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput() GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput) ToGetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapePlatformConfigOptionVirtualInstructionsOption {
+		return vs[0].([]GetShapesShapePlatformConfigOptionVirtualInstructionsOption)[vs[1].(int)]
+	}).(GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput)
+}
+
+type GetShapesShapeRecommendedAlternative struct {
+	// The name of the shape.
+	ShapeName string `pulumi:"shapeName"`
+}
+
+// GetShapesShapeRecommendedAlternativeInput is an input type that accepts GetShapesShapeRecommendedAlternativeArgs and GetShapesShapeRecommendedAlternativeOutput values.
+// You can construct a concrete instance of `GetShapesShapeRecommendedAlternativeInput` via:
+//
+//	GetShapesShapeRecommendedAlternativeArgs{...}
+type GetShapesShapeRecommendedAlternativeInput interface {
+	pulumi.Input
+
+	ToGetShapesShapeRecommendedAlternativeOutput() GetShapesShapeRecommendedAlternativeOutput
+	ToGetShapesShapeRecommendedAlternativeOutputWithContext(context.Context) GetShapesShapeRecommendedAlternativeOutput
+}
+
+type GetShapesShapeRecommendedAlternativeArgs struct {
+	// The name of the shape.
+	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+}
+
+func (GetShapesShapeRecommendedAlternativeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapeRecommendedAlternative)(nil)).Elem()
+}
+
+func (i GetShapesShapeRecommendedAlternativeArgs) ToGetShapesShapeRecommendedAlternativeOutput() GetShapesShapeRecommendedAlternativeOutput {
+	return i.ToGetShapesShapeRecommendedAlternativeOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapeRecommendedAlternativeArgs) ToGetShapesShapeRecommendedAlternativeOutputWithContext(ctx context.Context) GetShapesShapeRecommendedAlternativeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeRecommendedAlternativeOutput)
+}
+
+// GetShapesShapeRecommendedAlternativeArrayInput is an input type that accepts GetShapesShapeRecommendedAlternativeArray and GetShapesShapeRecommendedAlternativeArrayOutput values.
+// You can construct a concrete instance of `GetShapesShapeRecommendedAlternativeArrayInput` via:
+//
+//	GetShapesShapeRecommendedAlternativeArray{ GetShapesShapeRecommendedAlternativeArgs{...} }
+type GetShapesShapeRecommendedAlternativeArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesShapeRecommendedAlternativeArrayOutput() GetShapesShapeRecommendedAlternativeArrayOutput
+	ToGetShapesShapeRecommendedAlternativeArrayOutputWithContext(context.Context) GetShapesShapeRecommendedAlternativeArrayOutput
+}
+
+type GetShapesShapeRecommendedAlternativeArray []GetShapesShapeRecommendedAlternativeInput
+
+func (GetShapesShapeRecommendedAlternativeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapeRecommendedAlternative)(nil)).Elem()
+}
+
+func (i GetShapesShapeRecommendedAlternativeArray) ToGetShapesShapeRecommendedAlternativeArrayOutput() GetShapesShapeRecommendedAlternativeArrayOutput {
+	return i.ToGetShapesShapeRecommendedAlternativeArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapeRecommendedAlternativeArray) ToGetShapesShapeRecommendedAlternativeArrayOutputWithContext(ctx context.Context) GetShapesShapeRecommendedAlternativeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeRecommendedAlternativeArrayOutput)
+}
+
+type GetShapesShapeRecommendedAlternativeOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapeRecommendedAlternativeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapeRecommendedAlternative)(nil)).Elem()
+}
+
+func (o GetShapesShapeRecommendedAlternativeOutput) ToGetShapesShapeRecommendedAlternativeOutput() GetShapesShapeRecommendedAlternativeOutput {
+	return o
+}
+
+func (o GetShapesShapeRecommendedAlternativeOutput) ToGetShapesShapeRecommendedAlternativeOutputWithContext(ctx context.Context) GetShapesShapeRecommendedAlternativeOutput {
+	return o
+}
+
+// The name of the shape.
+func (o GetShapesShapeRecommendedAlternativeOutput) ShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetShapesShapeRecommendedAlternative) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+type GetShapesShapeRecommendedAlternativeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapeRecommendedAlternativeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapeRecommendedAlternative)(nil)).Elem()
+}
+
+func (o GetShapesShapeRecommendedAlternativeArrayOutput) ToGetShapesShapeRecommendedAlternativeArrayOutput() GetShapesShapeRecommendedAlternativeArrayOutput {
+	return o
+}
+
+func (o GetShapesShapeRecommendedAlternativeArrayOutput) ToGetShapesShapeRecommendedAlternativeArrayOutputWithContext(ctx context.Context) GetShapesShapeRecommendedAlternativeArrayOutput {
+	return o
+}
+
+func (o GetShapesShapeRecommendedAlternativeArrayOutput) Index(i pulumi.IntInput) GetShapesShapeRecommendedAlternativeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapeRecommendedAlternative {
+		return vs[0].([]GetShapesShapeRecommendedAlternative)[vs[1].(int)]
+	}).(GetShapesShapeRecommendedAlternativeOutput)
+}
+
+type GetSubnetsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSubnetsFilterInput is an input type that accepts GetSubnetsFilterArgs and GetSubnetsFilterOutput values.
+// You can construct a concrete instance of `GetSubnetsFilterInput` via:
+//
+//	GetSubnetsFilterArgs{...}
+type GetSubnetsFilterInput interface {
+	pulumi.Input
+
+	ToGetSubnetsFilterOutput() GetSubnetsFilterOutput
+	ToGetSubnetsFilterOutputWithContext(context.Context) GetSubnetsFilterOutput
+}
+
+type GetSubnetsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSubnetsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubnetsFilter)(nil)).Elem()
+}
+
+func (i GetSubnetsFilterArgs) ToGetSubnetsFilterOutput() GetSubnetsFilterOutput {
+	return i.ToGetSubnetsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSubnetsFilterArgs) ToGetSubnetsFilterOutputWithContext(ctx context.Context) GetSubnetsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubnetsFilterOutput)
+}
+
+// GetSubnetsFilterArrayInput is an input type that accepts GetSubnetsFilterArray and GetSubnetsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSubnetsFilterArrayInput` via:
+//
+//	GetSubnetsFilterArray{ GetSubnetsFilterArgs{...} }
+type GetSubnetsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSubnetsFilterArrayOutput() GetSubnetsFilterArrayOutput
+	ToGetSubnetsFilterArrayOutputWithContext(context.Context) GetSubnetsFilterArrayOutput
+}
+
+type GetSubnetsFilterArray []GetSubnetsFilterInput
+
+func (GetSubnetsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubnetsFilter)(nil)).Elem()
+}
+
+func (i GetSubnetsFilterArray) ToGetSubnetsFilterArrayOutput() GetSubnetsFilterArrayOutput {
+	return i.ToGetSubnetsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubnetsFilterArray) ToGetSubnetsFilterArrayOutputWithContext(ctx context.Context) GetSubnetsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubnetsFilterArrayOutput)
+}
+
+type GetSubnetsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSubnetsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubnetsFilter)(nil)).Elem()
+}
+
+func (o GetSubnetsFilterOutput) ToGetSubnetsFilterOutput() GetSubnetsFilterOutput {
+	return o
+}
+
+func (o GetSubnetsFilterOutput) ToGetSubnetsFilterOutputWithContext(ctx context.Context) GetSubnetsFilterOutput {
+	return o
+}
+
+func (o GetSubnetsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSubnetsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubnetsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSubnetsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubnetsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSubnetsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubnetsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubnetsFilter)(nil)).Elem()
+}
+
+func (o GetSubnetsFilterArrayOutput) ToGetSubnetsFilterArrayOutput() GetSubnetsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubnetsFilterArrayOutput) ToGetSubnetsFilterArrayOutputWithContext(ctx context.Context) GetSubnetsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubnetsFilterArrayOutput) Index(i pulumi.IntInput) GetSubnetsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubnetsFilter {
+		return vs[0].([]GetSubnetsFilter)[vs[1].(int)]
+	}).(GetSubnetsFilterOutput)
+}
+
+type GetSubnetsSubnet struct {
+	// The subnet's availability domain. This attribute will be null if this is a regional subnet instead of an AD-specific subnet. Oracle recommends creating regional subnets.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The subnet's CIDR block.  Example: `10.0.1.0/24`
+	CidrBlock string `pulumi:"cidrBlock"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options that the subnet uses.
+	DhcpOptionsId string `pulumi:"dhcpOptionsId"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
+	DnsLabel string `pulumi:"dnsLabel"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The subnet's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id string `pulumi:"id"`
+	// For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
+	Ipv6cidrBlock string `pulumi:"ipv6cidrBlock"`
+	// The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet.
+	Ipv6cidrBlocks []string `pulumi:"ipv6cidrBlocks"`
+	// For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
+	Ipv6virtualRouterIp string `pulumi:"ipv6virtualRouterIp"`
+	// Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
+	ProhibitInternetIngress bool `pulumi:"prohibitInternetIngress"`
+	// Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).  Example: `true`
+	ProhibitPublicIpOnVnic bool `pulumi:"prohibitPublicIpOnVnic"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the subnet uses.
+	RouteTableId string `pulumi:"routeTableId"`
+	// The OCIDs of the security list or lists that the subnet uses. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
+	SecurityListIds []string `pulumi:"securityListIds"`
+	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// The subnet's domain name, which consists of the subnet's DNS label, the VCN's DNS label, and the `oraclevcn.com` domain.
+	SubnetDomainName string `pulumi:"subnetDomainName"`
+	// The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	VcnId string `pulumi:"vcnId"`
+	// The IP address of the virtual router.  Example: `10.0.14.1`
+	VirtualRouterIp string `pulumi:"virtualRouterIp"`
+	// The MAC address of the virtual router.  Example: `00:00:00:00:00:01`
+	VirtualRouterMac string `pulumi:"virtualRouterMac"`
+}
+
+// GetSubnetsSubnetInput is an input type that accepts GetSubnetsSubnetArgs and GetSubnetsSubnetOutput values.
+// You can construct a concrete instance of `GetSubnetsSubnetInput` via:
+//
+//	GetSubnetsSubnetArgs{...}
+type GetSubnetsSubnetInput interface {
+	pulumi.Input
+
+	ToGetSubnetsSubnetOutput() GetSubnetsSubnetOutput
+	ToGetSubnetsSubnetOutputWithContext(context.Context) GetSubnetsSubnetOutput
+}
+
+type GetSubnetsSubnetArgs struct {
+	// The subnet's availability domain. This attribute will be null if this is a regional subnet instead of an AD-specific subnet. Oracle recommends creating regional subnets.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The subnet's CIDR block.  Example: `10.0.1.0/24`
+	CidrBlock pulumi.StringInput `pulumi:"cidrBlock"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options that the subnet uses.
+	DhcpOptionsId pulumi.StringInput `pulumi:"dhcpOptionsId"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
+	DnsLabel pulumi.StringInput `pulumi:"dnsLabel"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The subnet's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id pulumi.StringInput `pulumi:"id"`
+	// For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
+	Ipv6cidrBlock pulumi.StringInput `pulumi:"ipv6cidrBlock"`
+	// The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet.
+	Ipv6cidrBlocks pulumi.StringArrayInput `pulumi:"ipv6cidrBlocks"`
+	// For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
+	Ipv6virtualRouterIp pulumi.StringInput `pulumi:"ipv6virtualRouterIp"`
+	// Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
+	ProhibitInternetIngress pulumi.BoolInput `pulumi:"prohibitInternetIngress"`
+	// Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).  Example: `true`
+	ProhibitPublicIpOnVnic pulumi.BoolInput `pulumi:"prohibitPublicIpOnVnic"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the subnet uses.
+	RouteTableId pulumi.StringInput `pulumi:"routeTableId"`
+	// The OCIDs of the security list or lists that the subnet uses. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
+	SecurityListIds pulumi.StringArrayInput `pulumi:"securityListIds"`
+	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// The subnet's domain name, which consists of the subnet's DNS label, the VCN's DNS label, and the `oraclevcn.com` domain.
+	SubnetDomainName pulumi.StringInput `pulumi:"subnetDomainName"`
+	// The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	VcnId pulumi.StringInput `pulumi:"vcnId"`
+	// The IP address of the virtual router.  Example: `10.0.14.1`
+	VirtualRouterIp pulumi.StringInput `pulumi:"virtualRouterIp"`
+	// The MAC address of the virtual router.  Example: `00:00:00:00:00:01`
+	VirtualRouterMac pulumi.StringInput `pulumi:"virtualRouterMac"`
+}
+
+func (GetSubnetsSubnetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubnetsSubnet)(nil)).Elem()
+}
+
+func (i GetSubnetsSubnetArgs) ToGetSubnetsSubnetOutput() GetSubnetsSubnetOutput {
+	return i.ToGetSubnetsSubnetOutputWithContext(context.Background())
+}
+
+func (i GetSubnetsSubnetArgs) ToGetSubnetsSubnetOutputWithContext(ctx context.Context) GetSubnetsSubnetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubnetsSubnetOutput)
+}
+
+// GetSubnetsSubnetArrayInput is an input type that accepts GetSubnetsSubnetArray and GetSubnetsSubnetArrayOutput values.
+// You can construct a concrete instance of `GetSubnetsSubnetArrayInput` via:
+//
+//	GetSubnetsSubnetArray{ GetSubnetsSubnetArgs{...} }
+type GetSubnetsSubnetArrayInput interface {
+	pulumi.Input
+
+	ToGetSubnetsSubnetArrayOutput() GetSubnetsSubnetArrayOutput
+	ToGetSubnetsSubnetArrayOutputWithContext(context.Context) GetSubnetsSubnetArrayOutput
+}
+
+type GetSubnetsSubnetArray []GetSubnetsSubnetInput
+
+func (GetSubnetsSubnetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubnetsSubnet)(nil)).Elem()
+}
+
+func (i GetSubnetsSubnetArray) ToGetSubnetsSubnetArrayOutput() GetSubnetsSubnetArrayOutput {
+	return i.ToGetSubnetsSubnetArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubnetsSubnetArray) ToGetSubnetsSubnetArrayOutputWithContext(ctx context.Context) GetSubnetsSubnetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubnetsSubnetArrayOutput)
+}
+
+type GetSubnetsSubnetOutput struct{ *pulumi.OutputState }
+
+func (GetSubnetsSubnetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubnetsSubnet)(nil)).Elem()
+}
+
+func (o GetSubnetsSubnetOutput) ToGetSubnetsSubnetOutput() GetSubnetsSubnetOutput {
+	return o
+}
+
+func (o GetSubnetsSubnetOutput) ToGetSubnetsSubnetOutputWithContext(ctx context.Context) GetSubnetsSubnetOutput {
+	return o
+}
+
+// The subnet's availability domain. This attribute will be null if this is a regional subnet instead of an AD-specific subnet. Oracle recommends creating regional subnets.  Example: `Uocm:PHX-AD-1`
+func (o GetSubnetsSubnetOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The subnet's CIDR block.  Example: `10.0.1.0/24`
+func (o GetSubnetsSubnetOutput) CidrBlock() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) string { return v.CidrBlock }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetSubnetsSubnetOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetSubnetsSubnetOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options that the subnet uses.
+func (o GetSubnetsSubnetOutput) DhcpOptionsId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) string { return v.DhcpOptionsId }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetSubnetsSubnetOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
+func (o GetSubnetsSubnetOutput) DnsLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) string { return v.DnsLabel }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetSubnetsSubnetOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The subnet's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+func (o GetSubnetsSubnetOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
+func (o GetSubnetsSubnetOutput) Ipv6cidrBlock() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) string { return v.Ipv6cidrBlock }).(pulumi.StringOutput)
+}
+
+// The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet.
+func (o GetSubnetsSubnetOutput) Ipv6cidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) []string { return v.Ipv6cidrBlocks }).(pulumi.StringArrayOutput)
+}
+
+// For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
+func (o GetSubnetsSubnetOutput) Ipv6virtualRouterIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) string { return v.Ipv6virtualRouterIp }).(pulumi.StringOutput)
+}
+
+// Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
+func (o GetSubnetsSubnetOutput) ProhibitInternetIngress() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) bool { return v.ProhibitInternetIngress }).(pulumi.BoolOutput)
+}
+
+// Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).  Example: `true`
+func (o GetSubnetsSubnetOutput) ProhibitPublicIpOnVnic() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) bool { return v.ProhibitPublicIpOnVnic }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the subnet uses.
+func (o GetSubnetsSubnetOutput) RouteTableId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) string { return v.RouteTableId }).(pulumi.StringOutput)
+}
+
+// The OCIDs of the security list or lists that the subnet uses. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
+func (o GetSubnetsSubnetOutput) SecurityListIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) []string { return v.SecurityListIds }).(pulumi.StringArrayOutput)
+}
+
+// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetSubnetsSubnetOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The subnet's domain name, which consists of the subnet's DNS label, the VCN's DNS label, and the `oraclevcn.com` domain.
+func (o GetSubnetsSubnetOutput) SubnetDomainName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) string { return v.SubnetDomainName }).(pulumi.StringOutput)
+}
+
+// The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetSubnetsSubnetOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+func (o GetSubnetsSubnetOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+// The IP address of the virtual router.  Example: `10.0.14.1`
+func (o GetSubnetsSubnetOutput) VirtualRouterIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) string { return v.VirtualRouterIp }).(pulumi.StringOutput)
+}
+
+// The MAC address of the virtual router.  Example: `00:00:00:00:00:01`
+func (o GetSubnetsSubnetOutput) VirtualRouterMac() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) string { return v.VirtualRouterMac }).(pulumi.StringOutput)
+}
+
+type GetSubnetsSubnetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubnetsSubnetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubnetsSubnet)(nil)).Elem()
+}
+
+func (o GetSubnetsSubnetArrayOutput) ToGetSubnetsSubnetArrayOutput() GetSubnetsSubnetArrayOutput {
+	return o
+}
+
+func (o GetSubnetsSubnetArrayOutput) ToGetSubnetsSubnetArrayOutputWithContext(ctx context.Context) GetSubnetsSubnetArrayOutput {
+	return o
+}
+
+func (o GetSubnetsSubnetArrayOutput) Index(i pulumi.IntInput) GetSubnetsSubnetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubnetsSubnet {
+		return vs[0].([]GetSubnetsSubnet)[vs[1].(int)]
+	}).(GetSubnetsSubnetOutput)
+}
+
+type GetTunnelSecurityAssociationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetTunnelSecurityAssociationsFilterInput is an input type that accepts GetTunnelSecurityAssociationsFilterArgs and GetTunnelSecurityAssociationsFilterOutput values.
+// You can construct a concrete instance of `GetTunnelSecurityAssociationsFilterInput` via:
+//
+//	GetTunnelSecurityAssociationsFilterArgs{...}
+type GetTunnelSecurityAssociationsFilterInput interface {
+	pulumi.Input
+
+	ToGetTunnelSecurityAssociationsFilterOutput() GetTunnelSecurityAssociationsFilterOutput
+	ToGetTunnelSecurityAssociationsFilterOutputWithContext(context.Context) GetTunnelSecurityAssociationsFilterOutput
+}
+
+type GetTunnelSecurityAssociationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetTunnelSecurityAssociationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTunnelSecurityAssociationsFilter)(nil)).Elem()
+}
+
+func (i GetTunnelSecurityAssociationsFilterArgs) ToGetTunnelSecurityAssociationsFilterOutput() GetTunnelSecurityAssociationsFilterOutput {
+	return i.ToGetTunnelSecurityAssociationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetTunnelSecurityAssociationsFilterArgs) ToGetTunnelSecurityAssociationsFilterOutputWithContext(ctx context.Context) GetTunnelSecurityAssociationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTunnelSecurityAssociationsFilterOutput)
+}
+
+// GetTunnelSecurityAssociationsFilterArrayInput is an input type that accepts GetTunnelSecurityAssociationsFilterArray and GetTunnelSecurityAssociationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetTunnelSecurityAssociationsFilterArrayInput` via:
+//
+//	GetTunnelSecurityAssociationsFilterArray{ GetTunnelSecurityAssociationsFilterArgs{...} }
+type GetTunnelSecurityAssociationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTunnelSecurityAssociationsFilterArrayOutput() GetTunnelSecurityAssociationsFilterArrayOutput
+	ToGetTunnelSecurityAssociationsFilterArrayOutputWithContext(context.Context) GetTunnelSecurityAssociationsFilterArrayOutput
+}
+
+type GetTunnelSecurityAssociationsFilterArray []GetTunnelSecurityAssociationsFilterInput
+
+func (GetTunnelSecurityAssociationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTunnelSecurityAssociationsFilter)(nil)).Elem()
+}
+
+func (i GetTunnelSecurityAssociationsFilterArray) ToGetTunnelSecurityAssociationsFilterArrayOutput() GetTunnelSecurityAssociationsFilterArrayOutput {
+	return i.ToGetTunnelSecurityAssociationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTunnelSecurityAssociationsFilterArray) ToGetTunnelSecurityAssociationsFilterArrayOutputWithContext(ctx context.Context) GetTunnelSecurityAssociationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTunnelSecurityAssociationsFilterArrayOutput)
+}
+
+type GetTunnelSecurityAssociationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTunnelSecurityAssociationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTunnelSecurityAssociationsFilter)(nil)).Elem()
+}
+
+func (o GetTunnelSecurityAssociationsFilterOutput) ToGetTunnelSecurityAssociationsFilterOutput() GetTunnelSecurityAssociationsFilterOutput {
+	return o
+}
+
+func (o GetTunnelSecurityAssociationsFilterOutput) ToGetTunnelSecurityAssociationsFilterOutputWithContext(ctx context.Context) GetTunnelSecurityAssociationsFilterOutput {
+	return o
+}
+
+func (o GetTunnelSecurityAssociationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTunnelSecurityAssociationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTunnelSecurityAssociationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTunnelSecurityAssociationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetTunnelSecurityAssociationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTunnelSecurityAssociationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetTunnelSecurityAssociationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTunnelSecurityAssociationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTunnelSecurityAssociationsFilter)(nil)).Elem()
+}
+
+func (o GetTunnelSecurityAssociationsFilterArrayOutput) ToGetTunnelSecurityAssociationsFilterArrayOutput() GetTunnelSecurityAssociationsFilterArrayOutput {
+	return o
+}
+
+func (o GetTunnelSecurityAssociationsFilterArrayOutput) ToGetTunnelSecurityAssociationsFilterArrayOutputWithContext(ctx context.Context) GetTunnelSecurityAssociationsFilterArrayOutput {
+	return o
+}
+
+func (o GetTunnelSecurityAssociationsFilterArrayOutput) Index(i pulumi.IntInput) GetTunnelSecurityAssociationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTunnelSecurityAssociationsFilter {
+		return vs[0].([]GetTunnelSecurityAssociationsFilter)[vs[1].(int)]
+	}).(GetTunnelSecurityAssociationsFilterOutput)
+}
+
+type GetTunnelSecurityAssociationsTunnelSecurityAssociation struct {
+	// The IP address and mask of the partner subnet used in policy based VPNs or static routes.
+	CpeSubnet string `pulumi:"cpeSubnet"`
+	// The IP address and mask of the local subnet used in policy based VPNs or static routes.
+	OracleSubnet string `pulumi:"oracleSubnet"`
+	// Time in the current state, in seconds.
+	Time string `pulumi:"time"`
+	// Current state if the IPSec tunnel status is not `UP`, including phase one and phase two details and a possible reason the tunnel is not `UP`.
+	TunnelSaErrorInfo string `pulumi:"tunnelSaErrorInfo"`
+	// The IPSec tunnel's phase one status.
+	TunnelSaStatus string `pulumi:"tunnelSaStatus"`
+}
+
+// GetTunnelSecurityAssociationsTunnelSecurityAssociationInput is an input type that accepts GetTunnelSecurityAssociationsTunnelSecurityAssociationArgs and GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput values.
+// You can construct a concrete instance of `GetTunnelSecurityAssociationsTunnelSecurityAssociationInput` via:
+//
+//	GetTunnelSecurityAssociationsTunnelSecurityAssociationArgs{...}
+type GetTunnelSecurityAssociationsTunnelSecurityAssociationInput interface {
+	pulumi.Input
+
+	ToGetTunnelSecurityAssociationsTunnelSecurityAssociationOutput() GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput
+	ToGetTunnelSecurityAssociationsTunnelSecurityAssociationOutputWithContext(context.Context) GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput
+}
+
+type GetTunnelSecurityAssociationsTunnelSecurityAssociationArgs struct {
+	// The IP address and mask of the partner subnet used in policy based VPNs or static routes.
+	CpeSubnet pulumi.StringInput `pulumi:"cpeSubnet"`
+	// The IP address and mask of the local subnet used in policy based VPNs or static routes.
+	OracleSubnet pulumi.StringInput `pulumi:"oracleSubnet"`
+	// Time in the current state, in seconds.
+	Time pulumi.StringInput `pulumi:"time"`
+	// Current state if the IPSec tunnel status is not `UP`, including phase one and phase two details and a possible reason the tunnel is not `UP`.
+	TunnelSaErrorInfo pulumi.StringInput `pulumi:"tunnelSaErrorInfo"`
+	// The IPSec tunnel's phase one status.
+	TunnelSaStatus pulumi.StringInput `pulumi:"tunnelSaStatus"`
+}
+
+func (GetTunnelSecurityAssociationsTunnelSecurityAssociationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTunnelSecurityAssociationsTunnelSecurityAssociation)(nil)).Elem()
+}
+
+func (i GetTunnelSecurityAssociationsTunnelSecurityAssociationArgs) ToGetTunnelSecurityAssociationsTunnelSecurityAssociationOutput() GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput {
+	return i.ToGetTunnelSecurityAssociationsTunnelSecurityAssociationOutputWithContext(context.Background())
+}
+
+func (i GetTunnelSecurityAssociationsTunnelSecurityAssociationArgs) ToGetTunnelSecurityAssociationsTunnelSecurityAssociationOutputWithContext(ctx context.Context) GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput)
+}
+
+// GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayInput is an input type that accepts GetTunnelSecurityAssociationsTunnelSecurityAssociationArray and GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput values.
+// You can construct a concrete instance of `GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayInput` via:
+//
+//	GetTunnelSecurityAssociationsTunnelSecurityAssociationArray{ GetTunnelSecurityAssociationsTunnelSecurityAssociationArgs{...} }
+type GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayInput interface {
+	pulumi.Input
+
+	ToGetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput() GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput
+	ToGetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutputWithContext(context.Context) GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput
+}
+
+type GetTunnelSecurityAssociationsTunnelSecurityAssociationArray []GetTunnelSecurityAssociationsTunnelSecurityAssociationInput
+
+func (GetTunnelSecurityAssociationsTunnelSecurityAssociationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTunnelSecurityAssociationsTunnelSecurityAssociation)(nil)).Elem()
+}
+
+func (i GetTunnelSecurityAssociationsTunnelSecurityAssociationArray) ToGetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput() GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput {
+	return i.ToGetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutputWithContext(context.Background())
+}
+
+func (i GetTunnelSecurityAssociationsTunnelSecurityAssociationArray) ToGetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutputWithContext(ctx context.Context) GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput)
+}
+
+type GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput struct{ *pulumi.OutputState }
+
+func (GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTunnelSecurityAssociationsTunnelSecurityAssociation)(nil)).Elem()
+}
+
+func (o GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput) ToGetTunnelSecurityAssociationsTunnelSecurityAssociationOutput() GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput {
+	return o
+}
+
+func (o GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput) ToGetTunnelSecurityAssociationsTunnelSecurityAssociationOutputWithContext(ctx context.Context) GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput {
+	return o
+}
+
+// The IP address and mask of the partner subnet used in policy based VPNs or static routes.
+func (o GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput) CpeSubnet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTunnelSecurityAssociationsTunnelSecurityAssociation) string { return v.CpeSubnet }).(pulumi.StringOutput)
+}
+
+// The IP address and mask of the local subnet used in policy based VPNs or static routes.
+func (o GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput) OracleSubnet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTunnelSecurityAssociationsTunnelSecurityAssociation) string { return v.OracleSubnet }).(pulumi.StringOutput)
+}
+
+// Time in the current state, in seconds.
+func (o GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput) Time() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTunnelSecurityAssociationsTunnelSecurityAssociation) string { return v.Time }).(pulumi.StringOutput)
+}
+
+// Current state if the IPSec tunnel status is not `UP`, including phase one and phase two details and a possible reason the tunnel is not `UP`.
+func (o GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput) TunnelSaErrorInfo() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTunnelSecurityAssociationsTunnelSecurityAssociation) string { return v.TunnelSaErrorInfo }).(pulumi.StringOutput)
+}
+
+// The IPSec tunnel's phase one status.
+func (o GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput) TunnelSaStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTunnelSecurityAssociationsTunnelSecurityAssociation) string { return v.TunnelSaStatus }).(pulumi.StringOutput)
+}
+
+type GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTunnelSecurityAssociationsTunnelSecurityAssociation)(nil)).Elem()
+}
+
+func (o GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput) ToGetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput() GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput {
+	return o
+}
+
+func (o GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput) ToGetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutputWithContext(ctx context.Context) GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput {
+	return o
+}
+
+func (o GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput) Index(i pulumi.IntInput) GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTunnelSecurityAssociationsTunnelSecurityAssociation {
+		return vs[0].([]GetTunnelSecurityAssociationsTunnelSecurityAssociation)[vs[1].(int)]
+	}).(GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput)
+}
+
+type GetVcnByoipv6cidrDetail struct {
+	Byoipv6rangeId string `pulumi:"byoipv6rangeId"`
+	Ipv6cidrBlock  string `pulumi:"ipv6cidrBlock"`
+}
+
+// GetVcnByoipv6cidrDetailInput is an input type that accepts GetVcnByoipv6cidrDetailArgs and GetVcnByoipv6cidrDetailOutput values.
+// You can construct a concrete instance of `GetVcnByoipv6cidrDetailInput` via:
+//
+//	GetVcnByoipv6cidrDetailArgs{...}
+type GetVcnByoipv6cidrDetailInput interface {
+	pulumi.Input
+
+	ToGetVcnByoipv6cidrDetailOutput() GetVcnByoipv6cidrDetailOutput
+	ToGetVcnByoipv6cidrDetailOutputWithContext(context.Context) GetVcnByoipv6cidrDetailOutput
+}
+
+type GetVcnByoipv6cidrDetailArgs struct {
+	Byoipv6rangeId pulumi.StringInput `pulumi:"byoipv6rangeId"`
+	Ipv6cidrBlock  pulumi.StringInput `pulumi:"ipv6cidrBlock"`
+}
+
+func (GetVcnByoipv6cidrDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVcnByoipv6cidrDetail)(nil)).Elem()
+}
+
+func (i GetVcnByoipv6cidrDetailArgs) ToGetVcnByoipv6cidrDetailOutput() GetVcnByoipv6cidrDetailOutput {
+	return i.ToGetVcnByoipv6cidrDetailOutputWithContext(context.Background())
+}
+
+func (i GetVcnByoipv6cidrDetailArgs) ToGetVcnByoipv6cidrDetailOutputWithContext(ctx context.Context) GetVcnByoipv6cidrDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVcnByoipv6cidrDetailOutput)
+}
+
+// GetVcnByoipv6cidrDetailArrayInput is an input type that accepts GetVcnByoipv6cidrDetailArray and GetVcnByoipv6cidrDetailArrayOutput values.
+// You can construct a concrete instance of `GetVcnByoipv6cidrDetailArrayInput` via:
+//
+//	GetVcnByoipv6cidrDetailArray{ GetVcnByoipv6cidrDetailArgs{...} }
+type GetVcnByoipv6cidrDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetVcnByoipv6cidrDetailArrayOutput() GetVcnByoipv6cidrDetailArrayOutput
+	ToGetVcnByoipv6cidrDetailArrayOutputWithContext(context.Context) GetVcnByoipv6cidrDetailArrayOutput
+}
+
+type GetVcnByoipv6cidrDetailArray []GetVcnByoipv6cidrDetailInput
+
+func (GetVcnByoipv6cidrDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVcnByoipv6cidrDetail)(nil)).Elem()
+}
+
+func (i GetVcnByoipv6cidrDetailArray) ToGetVcnByoipv6cidrDetailArrayOutput() GetVcnByoipv6cidrDetailArrayOutput {
+	return i.ToGetVcnByoipv6cidrDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetVcnByoipv6cidrDetailArray) ToGetVcnByoipv6cidrDetailArrayOutputWithContext(ctx context.Context) GetVcnByoipv6cidrDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVcnByoipv6cidrDetailArrayOutput)
+}
+
+type GetVcnByoipv6cidrDetailOutput struct{ *pulumi.OutputState }
+
+func (GetVcnByoipv6cidrDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVcnByoipv6cidrDetail)(nil)).Elem()
+}
+
+func (o GetVcnByoipv6cidrDetailOutput) ToGetVcnByoipv6cidrDetailOutput() GetVcnByoipv6cidrDetailOutput {
+	return o
+}
+
+func (o GetVcnByoipv6cidrDetailOutput) ToGetVcnByoipv6cidrDetailOutputWithContext(ctx context.Context) GetVcnByoipv6cidrDetailOutput {
+	return o
+}
+
+func (o GetVcnByoipv6cidrDetailOutput) Byoipv6rangeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVcnByoipv6cidrDetail) string { return v.Byoipv6rangeId }).(pulumi.StringOutput)
+}
+
+func (o GetVcnByoipv6cidrDetailOutput) Ipv6cidrBlock() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVcnByoipv6cidrDetail) string { return v.Ipv6cidrBlock }).(pulumi.StringOutput)
+}
+
+type GetVcnByoipv6cidrDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVcnByoipv6cidrDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVcnByoipv6cidrDetail)(nil)).Elem()
+}
+
+func (o GetVcnByoipv6cidrDetailArrayOutput) ToGetVcnByoipv6cidrDetailArrayOutput() GetVcnByoipv6cidrDetailArrayOutput {
+	return o
+}
+
+func (o GetVcnByoipv6cidrDetailArrayOutput) ToGetVcnByoipv6cidrDetailArrayOutputWithContext(ctx context.Context) GetVcnByoipv6cidrDetailArrayOutput {
+	return o
+}
+
+func (o GetVcnByoipv6cidrDetailArrayOutput) Index(i pulumi.IntInput) GetVcnByoipv6cidrDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVcnByoipv6cidrDetail {
+		return vs[0].([]GetVcnByoipv6cidrDetail)[vs[1].(int)]
+	}).(GetVcnByoipv6cidrDetailOutput)
+}
+
+type GetVcnsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetVcnsFilterInput is an input type that accepts GetVcnsFilterArgs and GetVcnsFilterOutput values.
+// You can construct a concrete instance of `GetVcnsFilterInput` via:
+//
+//	GetVcnsFilterArgs{...}
+type GetVcnsFilterInput interface {
+	pulumi.Input
+
+	ToGetVcnsFilterOutput() GetVcnsFilterOutput
+	ToGetVcnsFilterOutputWithContext(context.Context) GetVcnsFilterOutput
+}
+
+type GetVcnsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetVcnsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVcnsFilter)(nil)).Elem()
+}
+
+func (i GetVcnsFilterArgs) ToGetVcnsFilterOutput() GetVcnsFilterOutput {
+	return i.ToGetVcnsFilterOutputWithContext(context.Background())
+}
+
+func (i GetVcnsFilterArgs) ToGetVcnsFilterOutputWithContext(ctx context.Context) GetVcnsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVcnsFilterOutput)
+}
+
+// GetVcnsFilterArrayInput is an input type that accepts GetVcnsFilterArray and GetVcnsFilterArrayOutput values.
+// You can construct a concrete instance of `GetVcnsFilterArrayInput` via:
+//
+//	GetVcnsFilterArray{ GetVcnsFilterArgs{...} }
+type GetVcnsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetVcnsFilterArrayOutput() GetVcnsFilterArrayOutput
+	ToGetVcnsFilterArrayOutputWithContext(context.Context) GetVcnsFilterArrayOutput
+}
+
+type GetVcnsFilterArray []GetVcnsFilterInput
+
+func (GetVcnsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVcnsFilter)(nil)).Elem()
+}
+
+func (i GetVcnsFilterArray) ToGetVcnsFilterArrayOutput() GetVcnsFilterArrayOutput {
+	return i.ToGetVcnsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetVcnsFilterArray) ToGetVcnsFilterArrayOutputWithContext(ctx context.Context) GetVcnsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVcnsFilterArrayOutput)
+}
+
+type GetVcnsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetVcnsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVcnsFilter)(nil)).Elem()
+}
+
+func (o GetVcnsFilterOutput) ToGetVcnsFilterOutput() GetVcnsFilterOutput {
+	return o
+}
+
+func (o GetVcnsFilterOutput) ToGetVcnsFilterOutputWithContext(ctx context.Context) GetVcnsFilterOutput {
+	return o
+}
+
+func (o GetVcnsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVcnsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetVcnsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVcnsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetVcnsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVcnsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetVcnsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVcnsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVcnsFilter)(nil)).Elem()
+}
+
+func (o GetVcnsFilterArrayOutput) ToGetVcnsFilterArrayOutput() GetVcnsFilterArrayOutput {
+	return o
+}
+
+func (o GetVcnsFilterArrayOutput) ToGetVcnsFilterArrayOutputWithContext(ctx context.Context) GetVcnsFilterArrayOutput {
+	return o
+}
+
+func (o GetVcnsFilterArrayOutput) Index(i pulumi.IntInput) GetVcnsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVcnsFilter {
+		return vs[0].([]GetVcnsFilter)[vs[1].(int)]
+	}).(GetVcnsFilterOutput)
+}
+
+type GetVcnsVirtualNetwork struct {
+	// The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+	Byoipv6cidrBlocks  []string                                 `pulumi:"byoipv6cidrBlocks"`
+	Byoipv6cidrDetails []GetVcnsVirtualNetworkByoipv6cidrDetail `pulumi:"byoipv6cidrDetails"`
+	// Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
+	CidrBlock string `pulumi:"cidrBlock"`
+	// The list of IPv4 CIDR blocks the VCN will use.
+	CidrBlocks []string `pulumi:"cidrBlocks"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
+	DefaultDhcpOptionsId string `pulumi:"defaultDhcpOptionsId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default route table.
+	DefaultRouteTableId string `pulumi:"defaultRouteTableId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default security list.
+	DefaultSecurityListId string `pulumi:"defaultSecurityListId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter. The value cannot be changed.
+	DnsLabel string `pulumi:"dnsLabel"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The VCN's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id string `pulumi:"id"`
+	// For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+	Ipv6cidrBlocks []string `pulumi:"ipv6cidrBlocks"`
+	// For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP address space.
+	Ipv6privateCidrBlocks        []string `pulumi:"ipv6privateCidrBlocks"`
+	IsIpv6enabled                bool     `pulumi:"isIpv6enabled"`
+	IsOracleGuaAllocationEnabled bool     `pulumi:"isOracleGuaAllocationEnabled"`
+	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The VCN's domain name, which consists of the VCN's DNS label, and the `oraclevcn.com` domain.
+	VcnDomainName string `pulumi:"vcnDomainName"`
+}
+
+// GetVcnsVirtualNetworkInput is an input type that accepts GetVcnsVirtualNetworkArgs and GetVcnsVirtualNetworkOutput values.
+// You can construct a concrete instance of `GetVcnsVirtualNetworkInput` via:
+//
+//	GetVcnsVirtualNetworkArgs{...}
+type GetVcnsVirtualNetworkInput interface {
+	pulumi.Input
+
+	ToGetVcnsVirtualNetworkOutput() GetVcnsVirtualNetworkOutput
+	ToGetVcnsVirtualNetworkOutputWithContext(context.Context) GetVcnsVirtualNetworkOutput
+}
+
+type GetVcnsVirtualNetworkArgs struct {
+	// The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+	Byoipv6cidrBlocks  pulumi.StringArrayInput                          `pulumi:"byoipv6cidrBlocks"`
+	Byoipv6cidrDetails GetVcnsVirtualNetworkByoipv6cidrDetailArrayInput `pulumi:"byoipv6cidrDetails"`
+	// Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
+	CidrBlock pulumi.StringInput `pulumi:"cidrBlock"`
+	// The list of IPv4 CIDR blocks the VCN will use.
+	CidrBlocks pulumi.StringArrayInput `pulumi:"cidrBlocks"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
+	DefaultDhcpOptionsId pulumi.StringInput `pulumi:"defaultDhcpOptionsId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default route table.
+	DefaultRouteTableId pulumi.StringInput `pulumi:"defaultRouteTableId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default security list.
+	DefaultSecurityListId pulumi.StringInput `pulumi:"defaultSecurityListId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter. The value cannot be changed.
+	DnsLabel pulumi.StringInput `pulumi:"dnsLabel"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The VCN's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id pulumi.StringInput `pulumi:"id"`
+	// For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+	Ipv6cidrBlocks pulumi.StringArrayInput `pulumi:"ipv6cidrBlocks"`
+	// For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP address space.
+	Ipv6privateCidrBlocks        pulumi.StringArrayInput `pulumi:"ipv6privateCidrBlocks"`
+	IsIpv6enabled                pulumi.BoolInput        `pulumi:"isIpv6enabled"`
+	IsOracleGuaAllocationEnabled pulumi.BoolInput        `pulumi:"isOracleGuaAllocationEnabled"`
+	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The VCN's domain name, which consists of the VCN's DNS label, and the `oraclevcn.com` domain.
+	VcnDomainName pulumi.StringInput `pulumi:"vcnDomainName"`
+}
+
+func (GetVcnsVirtualNetworkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVcnsVirtualNetwork)(nil)).Elem()
+}
+
+func (i GetVcnsVirtualNetworkArgs) ToGetVcnsVirtualNetworkOutput() GetVcnsVirtualNetworkOutput {
+	return i.ToGetVcnsVirtualNetworkOutputWithContext(context.Background())
+}
+
+func (i GetVcnsVirtualNetworkArgs) ToGetVcnsVirtualNetworkOutputWithContext(ctx context.Context) GetVcnsVirtualNetworkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVcnsVirtualNetworkOutput)
+}
+
+// GetVcnsVirtualNetworkArrayInput is an input type that accepts GetVcnsVirtualNetworkArray and GetVcnsVirtualNetworkArrayOutput values.
+// You can construct a concrete instance of `GetVcnsVirtualNetworkArrayInput` via:
+//
+//	GetVcnsVirtualNetworkArray{ GetVcnsVirtualNetworkArgs{...} }
+type GetVcnsVirtualNetworkArrayInput interface {
+	pulumi.Input
+
+	ToGetVcnsVirtualNetworkArrayOutput() GetVcnsVirtualNetworkArrayOutput
+	ToGetVcnsVirtualNetworkArrayOutputWithContext(context.Context) GetVcnsVirtualNetworkArrayOutput
+}
+
+type GetVcnsVirtualNetworkArray []GetVcnsVirtualNetworkInput
+
+func (GetVcnsVirtualNetworkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVcnsVirtualNetwork)(nil)).Elem()
+}
+
+func (i GetVcnsVirtualNetworkArray) ToGetVcnsVirtualNetworkArrayOutput() GetVcnsVirtualNetworkArrayOutput {
+	return i.ToGetVcnsVirtualNetworkArrayOutputWithContext(context.Background())
+}
+
+func (i GetVcnsVirtualNetworkArray) ToGetVcnsVirtualNetworkArrayOutputWithContext(ctx context.Context) GetVcnsVirtualNetworkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVcnsVirtualNetworkArrayOutput)
+}
+
+type GetVcnsVirtualNetworkOutput struct{ *pulumi.OutputState }
+
+func (GetVcnsVirtualNetworkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVcnsVirtualNetwork)(nil)).Elem()
+}
+
+func (o GetVcnsVirtualNetworkOutput) ToGetVcnsVirtualNetworkOutput() GetVcnsVirtualNetworkOutput {
+	return o
+}
+
+func (o GetVcnsVirtualNetworkOutput) ToGetVcnsVirtualNetworkOutputWithContext(ctx context.Context) GetVcnsVirtualNetworkOutput {
+	return o
+}
+
+// The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+func (o GetVcnsVirtualNetworkOutput) Byoipv6cidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetwork) []string { return v.Byoipv6cidrBlocks }).(pulumi.StringArrayOutput)
+}
+
+func (o GetVcnsVirtualNetworkOutput) Byoipv6cidrDetails() GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetwork) []GetVcnsVirtualNetworkByoipv6cidrDetail { return v.Byoipv6cidrDetails }).(GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput)
+}
+
+// Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
+func (o GetVcnsVirtualNetworkOutput) CidrBlock() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetwork) string { return v.CidrBlock }).(pulumi.StringOutput)
+}
+
+// The list of IPv4 CIDR blocks the VCN will use.
+func (o GetVcnsVirtualNetworkOutput) CidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetwork) []string { return v.CidrBlocks }).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetVcnsVirtualNetworkOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetwork) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
+func (o GetVcnsVirtualNetworkOutput) DefaultDhcpOptionsId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetwork) string { return v.DefaultDhcpOptionsId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default route table.
+func (o GetVcnsVirtualNetworkOutput) DefaultRouteTableId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetwork) string { return v.DefaultRouteTableId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default security list.
+func (o GetVcnsVirtualNetworkOutput) DefaultSecurityListId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetwork) string { return v.DefaultSecurityListId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetVcnsVirtualNetworkOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetwork) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetVcnsVirtualNetworkOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetwork) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter. The value cannot be changed.
+func (o GetVcnsVirtualNetworkOutput) DnsLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetwork) string { return v.DnsLabel }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetVcnsVirtualNetworkOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetwork) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The VCN's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+func (o GetVcnsVirtualNetworkOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetwork) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
+func (o GetVcnsVirtualNetworkOutput) Ipv6cidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetwork) []string { return v.Ipv6cidrBlocks }).(pulumi.StringArrayOutput)
+}
+
+// For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP address space.
+func (o GetVcnsVirtualNetworkOutput) Ipv6privateCidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetwork) []string { return v.Ipv6privateCidrBlocks }).(pulumi.StringArrayOutput)
+}
+
+func (o GetVcnsVirtualNetworkOutput) IsIpv6enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetwork) bool { return v.IsIpv6enabled }).(pulumi.BoolOutput)
+}
+
+func (o GetVcnsVirtualNetworkOutput) IsOracleGuaAllocationEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetwork) bool { return v.IsOracleGuaAllocationEnabled }).(pulumi.BoolOutput)
+}
+
+// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetVcnsVirtualNetworkOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetwork) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetVcnsVirtualNetworkOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetwork) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The VCN's domain name, which consists of the VCN's DNS label, and the `oraclevcn.com` domain.
+func (o GetVcnsVirtualNetworkOutput) VcnDomainName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetwork) string { return v.VcnDomainName }).(pulumi.StringOutput)
+}
+
+type GetVcnsVirtualNetworkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVcnsVirtualNetworkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVcnsVirtualNetwork)(nil)).Elem()
+}
+
+func (o GetVcnsVirtualNetworkArrayOutput) ToGetVcnsVirtualNetworkArrayOutput() GetVcnsVirtualNetworkArrayOutput {
+	return o
+}
+
+func (o GetVcnsVirtualNetworkArrayOutput) ToGetVcnsVirtualNetworkArrayOutputWithContext(ctx context.Context) GetVcnsVirtualNetworkArrayOutput {
+	return o
+}
+
+func (o GetVcnsVirtualNetworkArrayOutput) Index(i pulumi.IntInput) GetVcnsVirtualNetworkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVcnsVirtualNetwork {
+		return vs[0].([]GetVcnsVirtualNetwork)[vs[1].(int)]
+	}).(GetVcnsVirtualNetworkOutput)
+}
+
+type GetVcnsVirtualNetworkByoipv6cidrDetail struct {
+	Byoipv6rangeId string `pulumi:"byoipv6rangeId"`
+	Ipv6cidrBlock  string `pulumi:"ipv6cidrBlock"`
+}
+
+// GetVcnsVirtualNetworkByoipv6cidrDetailInput is an input type that accepts GetVcnsVirtualNetworkByoipv6cidrDetailArgs and GetVcnsVirtualNetworkByoipv6cidrDetailOutput values.
+// You can construct a concrete instance of `GetVcnsVirtualNetworkByoipv6cidrDetailInput` via:
+//
+//	GetVcnsVirtualNetworkByoipv6cidrDetailArgs{...}
+type GetVcnsVirtualNetworkByoipv6cidrDetailInput interface {
+	pulumi.Input
+
+	ToGetVcnsVirtualNetworkByoipv6cidrDetailOutput() GetVcnsVirtualNetworkByoipv6cidrDetailOutput
+	ToGetVcnsVirtualNetworkByoipv6cidrDetailOutputWithContext(context.Context) GetVcnsVirtualNetworkByoipv6cidrDetailOutput
+}
+
+type GetVcnsVirtualNetworkByoipv6cidrDetailArgs struct {
+	Byoipv6rangeId pulumi.StringInput `pulumi:"byoipv6rangeId"`
+	Ipv6cidrBlock  pulumi.StringInput `pulumi:"ipv6cidrBlock"`
+}
+
+func (GetVcnsVirtualNetworkByoipv6cidrDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVcnsVirtualNetworkByoipv6cidrDetail)(nil)).Elem()
+}
+
+func (i GetVcnsVirtualNetworkByoipv6cidrDetailArgs) ToGetVcnsVirtualNetworkByoipv6cidrDetailOutput() GetVcnsVirtualNetworkByoipv6cidrDetailOutput {
+	return i.ToGetVcnsVirtualNetworkByoipv6cidrDetailOutputWithContext(context.Background())
+}
+
+func (i GetVcnsVirtualNetworkByoipv6cidrDetailArgs) ToGetVcnsVirtualNetworkByoipv6cidrDetailOutputWithContext(ctx context.Context) GetVcnsVirtualNetworkByoipv6cidrDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVcnsVirtualNetworkByoipv6cidrDetailOutput)
+}
+
+// GetVcnsVirtualNetworkByoipv6cidrDetailArrayInput is an input type that accepts GetVcnsVirtualNetworkByoipv6cidrDetailArray and GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput values.
+// You can construct a concrete instance of `GetVcnsVirtualNetworkByoipv6cidrDetailArrayInput` via:
+//
+//	GetVcnsVirtualNetworkByoipv6cidrDetailArray{ GetVcnsVirtualNetworkByoipv6cidrDetailArgs{...} }
+type GetVcnsVirtualNetworkByoipv6cidrDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput() GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput
+	ToGetVcnsVirtualNetworkByoipv6cidrDetailArrayOutputWithContext(context.Context) GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput
+}
+
+type GetVcnsVirtualNetworkByoipv6cidrDetailArray []GetVcnsVirtualNetworkByoipv6cidrDetailInput
+
+func (GetVcnsVirtualNetworkByoipv6cidrDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVcnsVirtualNetworkByoipv6cidrDetail)(nil)).Elem()
+}
+
+func (i GetVcnsVirtualNetworkByoipv6cidrDetailArray) ToGetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput() GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput {
+	return i.ToGetVcnsVirtualNetworkByoipv6cidrDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetVcnsVirtualNetworkByoipv6cidrDetailArray) ToGetVcnsVirtualNetworkByoipv6cidrDetailArrayOutputWithContext(ctx context.Context) GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput)
+}
+
+type GetVcnsVirtualNetworkByoipv6cidrDetailOutput struct{ *pulumi.OutputState }
+
+func (GetVcnsVirtualNetworkByoipv6cidrDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVcnsVirtualNetworkByoipv6cidrDetail)(nil)).Elem()
+}
+
+func (o GetVcnsVirtualNetworkByoipv6cidrDetailOutput) ToGetVcnsVirtualNetworkByoipv6cidrDetailOutput() GetVcnsVirtualNetworkByoipv6cidrDetailOutput {
+	return o
+}
+
+func (o GetVcnsVirtualNetworkByoipv6cidrDetailOutput) ToGetVcnsVirtualNetworkByoipv6cidrDetailOutputWithContext(ctx context.Context) GetVcnsVirtualNetworkByoipv6cidrDetailOutput {
+	return o
+}
+
+func (o GetVcnsVirtualNetworkByoipv6cidrDetailOutput) Byoipv6rangeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetworkByoipv6cidrDetail) string { return v.Byoipv6rangeId }).(pulumi.StringOutput)
+}
+
+func (o GetVcnsVirtualNetworkByoipv6cidrDetailOutput) Ipv6cidrBlock() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVcnsVirtualNetworkByoipv6cidrDetail) string { return v.Ipv6cidrBlock }).(pulumi.StringOutput)
+}
+
+type GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVcnsVirtualNetworkByoipv6cidrDetail)(nil)).Elem()
+}
+
+func (o GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput) ToGetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput() GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput {
+	return o
+}
+
+func (o GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput) ToGetVcnsVirtualNetworkByoipv6cidrDetailArrayOutputWithContext(ctx context.Context) GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput {
+	return o
+}
+
+func (o GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput) Index(i pulumi.IntInput) GetVcnsVirtualNetworkByoipv6cidrDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVcnsVirtualNetworkByoipv6cidrDetail {
+		return vs[0].([]GetVcnsVirtualNetworkByoipv6cidrDetail)[vs[1].(int)]
+	}).(GetVcnsVirtualNetworkByoipv6cidrDetailOutput)
+}
+
+type GetVirtualCircuitBandwidthShapesFilter struct {
+	// The name of the bandwidth shape.  Example: `10 Gbps`
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetVirtualCircuitBandwidthShapesFilterInput is an input type that accepts GetVirtualCircuitBandwidthShapesFilterArgs and GetVirtualCircuitBandwidthShapesFilterOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitBandwidthShapesFilterInput` via:
+//
+//	GetVirtualCircuitBandwidthShapesFilterArgs{...}
+type GetVirtualCircuitBandwidthShapesFilterInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitBandwidthShapesFilterOutput() GetVirtualCircuitBandwidthShapesFilterOutput
+	ToGetVirtualCircuitBandwidthShapesFilterOutputWithContext(context.Context) GetVirtualCircuitBandwidthShapesFilterOutput
+}
+
+type GetVirtualCircuitBandwidthShapesFilterArgs struct {
+	// The name of the bandwidth shape.  Example: `10 Gbps`
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetVirtualCircuitBandwidthShapesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitBandwidthShapesFilter)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitBandwidthShapesFilterArgs) ToGetVirtualCircuitBandwidthShapesFilterOutput() GetVirtualCircuitBandwidthShapesFilterOutput {
+	return i.ToGetVirtualCircuitBandwidthShapesFilterOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitBandwidthShapesFilterArgs) ToGetVirtualCircuitBandwidthShapesFilterOutputWithContext(ctx context.Context) GetVirtualCircuitBandwidthShapesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitBandwidthShapesFilterOutput)
+}
+
+// GetVirtualCircuitBandwidthShapesFilterArrayInput is an input type that accepts GetVirtualCircuitBandwidthShapesFilterArray and GetVirtualCircuitBandwidthShapesFilterArrayOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitBandwidthShapesFilterArrayInput` via:
+//
+//	GetVirtualCircuitBandwidthShapesFilterArray{ GetVirtualCircuitBandwidthShapesFilterArgs{...} }
+type GetVirtualCircuitBandwidthShapesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitBandwidthShapesFilterArrayOutput() GetVirtualCircuitBandwidthShapesFilterArrayOutput
+	ToGetVirtualCircuitBandwidthShapesFilterArrayOutputWithContext(context.Context) GetVirtualCircuitBandwidthShapesFilterArrayOutput
+}
+
+type GetVirtualCircuitBandwidthShapesFilterArray []GetVirtualCircuitBandwidthShapesFilterInput
+
+func (GetVirtualCircuitBandwidthShapesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitBandwidthShapesFilter)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitBandwidthShapesFilterArray) ToGetVirtualCircuitBandwidthShapesFilterArrayOutput() GetVirtualCircuitBandwidthShapesFilterArrayOutput {
+	return i.ToGetVirtualCircuitBandwidthShapesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitBandwidthShapesFilterArray) ToGetVirtualCircuitBandwidthShapesFilterArrayOutputWithContext(ctx context.Context) GetVirtualCircuitBandwidthShapesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitBandwidthShapesFilterArrayOutput)
+}
+
+type GetVirtualCircuitBandwidthShapesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitBandwidthShapesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitBandwidthShapesFilter)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitBandwidthShapesFilterOutput) ToGetVirtualCircuitBandwidthShapesFilterOutput() GetVirtualCircuitBandwidthShapesFilterOutput {
+	return o
+}
+
+func (o GetVirtualCircuitBandwidthShapesFilterOutput) ToGetVirtualCircuitBandwidthShapesFilterOutputWithContext(ctx context.Context) GetVirtualCircuitBandwidthShapesFilterOutput {
+	return o
+}
+
+// The name of the bandwidth shape.  Example: `10 Gbps`
+func (o GetVirtualCircuitBandwidthShapesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitBandwidthShapesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetVirtualCircuitBandwidthShapesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVirtualCircuitBandwidthShapesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetVirtualCircuitBandwidthShapesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVirtualCircuitBandwidthShapesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetVirtualCircuitBandwidthShapesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitBandwidthShapesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitBandwidthShapesFilter)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitBandwidthShapesFilterArrayOutput) ToGetVirtualCircuitBandwidthShapesFilterArrayOutput() GetVirtualCircuitBandwidthShapesFilterArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitBandwidthShapesFilterArrayOutput) ToGetVirtualCircuitBandwidthShapesFilterArrayOutputWithContext(ctx context.Context) GetVirtualCircuitBandwidthShapesFilterArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitBandwidthShapesFilterArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitBandwidthShapesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualCircuitBandwidthShapesFilter {
+		return vs[0].([]GetVirtualCircuitBandwidthShapesFilter)[vs[1].(int)]
+	}).(GetVirtualCircuitBandwidthShapesFilterOutput)
+}
+
+type GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape struct {
+	// The bandwidth in Mbps.  Example: `10000`
+	BandwidthInMbps int `pulumi:"bandwidthInMbps"`
+	// The name of the bandwidth shape.  Example: `10 Gbps`
+	Name string `pulumi:"name"`
+}
+
+// GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeInput is an input type that accepts GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArgs and GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeInput` via:
+//
+//	GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArgs{...}
+type GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput() GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput
+	ToGetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutputWithContext(context.Context) GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput
+}
+
+type GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArgs struct {
+	// The bandwidth in Mbps.  Example: `10000`
+	BandwidthInMbps pulumi.IntInput `pulumi:"bandwidthInMbps"`
+	// The name of the bandwidth shape.  Example: `10 Gbps`
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArgs) ToGetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput() GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput {
+	return i.ToGetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArgs) ToGetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutputWithContext(ctx context.Context) GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput)
+}
+
+// GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayInput is an input type that accepts GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArray and GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayInput` via:
+//
+//	GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArray{ GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArgs{...} }
+type GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput() GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput
+	ToGetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutputWithContext(context.Context) GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput
+}
+
+type GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArray []GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeInput
+
+func (GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArray) ToGetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput() GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput {
+	return i.ToGetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArray) ToGetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutputWithContext(ctx context.Context) GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput)
+}
+
+type GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput) ToGetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput() GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput {
+	return o
+}
+
+func (o GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput) ToGetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutputWithContext(ctx context.Context) GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput {
+	return o
+}
+
+// The bandwidth in Mbps.  Example: `10000`
+func (o GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput) BandwidthInMbps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape) int { return v.BandwidthInMbps }).(pulumi.IntOutput)
+}
+
+// The name of the bandwidth shape.  Example: `10 Gbps`
+func (o GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput) ToGetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput() GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput) ToGetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutputWithContext(ctx context.Context) GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape {
+		return vs[0].([]GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape)[vs[1].(int)]
+	}).(GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput)
+}
+
+type GetVirtualCircuitCrossConnectMapping struct {
+	// The key for BGP MD5 authentication. Only applicable if your system requires MD5 authentication. If empty or not set (null), that means you don't use BGP MD5 authentication.
+	BgpMd5authKey string `pulumi:"bgpMd5authKey"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).
+	CrossConnectOrCrossConnectGroupId string `pulumi:"crossConnectOrCrossConnectGroupId"`
+	// The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider's edge router. Must use a subnet mask from /28 to /31.
+	CustomerBgpPeeringIp string `pulumi:"customerBgpPeeringIp"`
+	// The BGP IPv6 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv6 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv6 address of the provider's edge router. Only subnet masks from /64 up to /127 are allowed.
+	CustomerBgpPeeringIpv6 string `pulumi:"customerBgpPeeringIpv6"`
+	// The IPv4 address for Oracle's end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+	OracleBgpPeeringIp string `pulumi:"oracleBgpPeeringIp"`
+	// The IPv6 address for Oracle's end of the BGP session. Only subnet masks from /64 up to /127 are allowed. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+	OracleBgpPeeringIpv6 string `pulumi:"oracleBgpPeeringIpv6"`
+	// The number of the specific VLAN (on the cross-connect or cross-connect group) that is assigned to this virtual circuit. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).  Example: `200`
+	Vlan int `pulumi:"vlan"`
+}
+
+// GetVirtualCircuitCrossConnectMappingInput is an input type that accepts GetVirtualCircuitCrossConnectMappingArgs and GetVirtualCircuitCrossConnectMappingOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitCrossConnectMappingInput` via:
+//
+//	GetVirtualCircuitCrossConnectMappingArgs{...}
+type GetVirtualCircuitCrossConnectMappingInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitCrossConnectMappingOutput() GetVirtualCircuitCrossConnectMappingOutput
+	ToGetVirtualCircuitCrossConnectMappingOutputWithContext(context.Context) GetVirtualCircuitCrossConnectMappingOutput
+}
+
+type GetVirtualCircuitCrossConnectMappingArgs struct {
+	// The key for BGP MD5 authentication. Only applicable if your system requires MD5 authentication. If empty or not set (null), that means you don't use BGP MD5 authentication.
+	BgpMd5authKey pulumi.StringInput `pulumi:"bgpMd5authKey"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).
+	CrossConnectOrCrossConnectGroupId pulumi.StringInput `pulumi:"crossConnectOrCrossConnectGroupId"`
+	// The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider's edge router. Must use a subnet mask from /28 to /31.
+	CustomerBgpPeeringIp pulumi.StringInput `pulumi:"customerBgpPeeringIp"`
+	// The BGP IPv6 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv6 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv6 address of the provider's edge router. Only subnet masks from /64 up to /127 are allowed.
+	CustomerBgpPeeringIpv6 pulumi.StringInput `pulumi:"customerBgpPeeringIpv6"`
+	// The IPv4 address for Oracle's end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+	OracleBgpPeeringIp pulumi.StringInput `pulumi:"oracleBgpPeeringIp"`
+	// The IPv6 address for Oracle's end of the BGP session. Only subnet masks from /64 up to /127 are allowed. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+	OracleBgpPeeringIpv6 pulumi.StringInput `pulumi:"oracleBgpPeeringIpv6"`
+	// The number of the specific VLAN (on the cross-connect or cross-connect group) that is assigned to this virtual circuit. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).  Example: `200`
+	Vlan pulumi.IntInput `pulumi:"vlan"`
+}
+
+func (GetVirtualCircuitCrossConnectMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitCrossConnectMapping)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitCrossConnectMappingArgs) ToGetVirtualCircuitCrossConnectMappingOutput() GetVirtualCircuitCrossConnectMappingOutput {
+	return i.ToGetVirtualCircuitCrossConnectMappingOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitCrossConnectMappingArgs) ToGetVirtualCircuitCrossConnectMappingOutputWithContext(ctx context.Context) GetVirtualCircuitCrossConnectMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitCrossConnectMappingOutput)
+}
+
+// GetVirtualCircuitCrossConnectMappingArrayInput is an input type that accepts GetVirtualCircuitCrossConnectMappingArray and GetVirtualCircuitCrossConnectMappingArrayOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitCrossConnectMappingArrayInput` via:
+//
+//	GetVirtualCircuitCrossConnectMappingArray{ GetVirtualCircuitCrossConnectMappingArgs{...} }
+type GetVirtualCircuitCrossConnectMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitCrossConnectMappingArrayOutput() GetVirtualCircuitCrossConnectMappingArrayOutput
+	ToGetVirtualCircuitCrossConnectMappingArrayOutputWithContext(context.Context) GetVirtualCircuitCrossConnectMappingArrayOutput
+}
+
+type GetVirtualCircuitCrossConnectMappingArray []GetVirtualCircuitCrossConnectMappingInput
+
+func (GetVirtualCircuitCrossConnectMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitCrossConnectMapping)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitCrossConnectMappingArray) ToGetVirtualCircuitCrossConnectMappingArrayOutput() GetVirtualCircuitCrossConnectMappingArrayOutput {
+	return i.ToGetVirtualCircuitCrossConnectMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitCrossConnectMappingArray) ToGetVirtualCircuitCrossConnectMappingArrayOutputWithContext(ctx context.Context) GetVirtualCircuitCrossConnectMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitCrossConnectMappingArrayOutput)
+}
+
+type GetVirtualCircuitCrossConnectMappingOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitCrossConnectMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitCrossConnectMapping)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitCrossConnectMappingOutput) ToGetVirtualCircuitCrossConnectMappingOutput() GetVirtualCircuitCrossConnectMappingOutput {
+	return o
+}
+
+func (o GetVirtualCircuitCrossConnectMappingOutput) ToGetVirtualCircuitCrossConnectMappingOutputWithContext(ctx context.Context) GetVirtualCircuitCrossConnectMappingOutput {
+	return o
+}
+
+// The key for BGP MD5 authentication. Only applicable if your system requires MD5 authentication. If empty or not set (null), that means you don't use BGP MD5 authentication.
+func (o GetVirtualCircuitCrossConnectMappingOutput) BgpMd5authKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitCrossConnectMapping) string { return v.BgpMd5authKey }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).
+func (o GetVirtualCircuitCrossConnectMappingOutput) CrossConnectOrCrossConnectGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitCrossConnectMapping) string { return v.CrossConnectOrCrossConnectGroupId }).(pulumi.StringOutput)
+}
+
+// The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider's edge router. Must use a subnet mask from /28 to /31.
+func (o GetVirtualCircuitCrossConnectMappingOutput) CustomerBgpPeeringIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitCrossConnectMapping) string { return v.CustomerBgpPeeringIp }).(pulumi.StringOutput)
+}
+
+// The BGP IPv6 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv6 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv6 address of the provider's edge router. Only subnet masks from /64 up to /127 are allowed.
+func (o GetVirtualCircuitCrossConnectMappingOutput) CustomerBgpPeeringIpv6() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitCrossConnectMapping) string { return v.CustomerBgpPeeringIpv6 }).(pulumi.StringOutput)
+}
+
+// The IPv4 address for Oracle's end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+func (o GetVirtualCircuitCrossConnectMappingOutput) OracleBgpPeeringIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitCrossConnectMapping) string { return v.OracleBgpPeeringIp }).(pulumi.StringOutput)
+}
+
+// The IPv6 address for Oracle's end of the BGP session. Only subnet masks from /64 up to /127 are allowed. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+func (o GetVirtualCircuitCrossConnectMappingOutput) OracleBgpPeeringIpv6() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitCrossConnectMapping) string { return v.OracleBgpPeeringIpv6 }).(pulumi.StringOutput)
+}
+
+// The number of the specific VLAN (on the cross-connect or cross-connect group) that is assigned to this virtual circuit. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).  Example: `200`
+func (o GetVirtualCircuitCrossConnectMappingOutput) Vlan() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVirtualCircuitCrossConnectMapping) int { return v.Vlan }).(pulumi.IntOutput)
+}
+
+type GetVirtualCircuitCrossConnectMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitCrossConnectMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitCrossConnectMapping)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitCrossConnectMappingArrayOutput) ToGetVirtualCircuitCrossConnectMappingArrayOutput() GetVirtualCircuitCrossConnectMappingArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitCrossConnectMappingArrayOutput) ToGetVirtualCircuitCrossConnectMappingArrayOutputWithContext(ctx context.Context) GetVirtualCircuitCrossConnectMappingArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitCrossConnectMappingArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitCrossConnectMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualCircuitCrossConnectMapping {
+		return vs[0].([]GetVirtualCircuitCrossConnectMapping)[vs[1].(int)]
+	}).(GetVirtualCircuitCrossConnectMappingOutput)
+}
+
+type GetVirtualCircuitPublicPrefix struct {
+	CidrBlock string `pulumi:"cidrBlock"`
+}
+
+// GetVirtualCircuitPublicPrefixInput is an input type that accepts GetVirtualCircuitPublicPrefixArgs and GetVirtualCircuitPublicPrefixOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitPublicPrefixInput` via:
+//
+//	GetVirtualCircuitPublicPrefixArgs{...}
+type GetVirtualCircuitPublicPrefixInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitPublicPrefixOutput() GetVirtualCircuitPublicPrefixOutput
+	ToGetVirtualCircuitPublicPrefixOutputWithContext(context.Context) GetVirtualCircuitPublicPrefixOutput
+}
+
+type GetVirtualCircuitPublicPrefixArgs struct {
+	CidrBlock pulumi.StringInput `pulumi:"cidrBlock"`
+}
+
+func (GetVirtualCircuitPublicPrefixArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitPublicPrefix)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitPublicPrefixArgs) ToGetVirtualCircuitPublicPrefixOutput() GetVirtualCircuitPublicPrefixOutput {
+	return i.ToGetVirtualCircuitPublicPrefixOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitPublicPrefixArgs) ToGetVirtualCircuitPublicPrefixOutputWithContext(ctx context.Context) GetVirtualCircuitPublicPrefixOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitPublicPrefixOutput)
+}
+
+// GetVirtualCircuitPublicPrefixArrayInput is an input type that accepts GetVirtualCircuitPublicPrefixArray and GetVirtualCircuitPublicPrefixArrayOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitPublicPrefixArrayInput` via:
+//
+//	GetVirtualCircuitPublicPrefixArray{ GetVirtualCircuitPublicPrefixArgs{...} }
+type GetVirtualCircuitPublicPrefixArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitPublicPrefixArrayOutput() GetVirtualCircuitPublicPrefixArrayOutput
+	ToGetVirtualCircuitPublicPrefixArrayOutputWithContext(context.Context) GetVirtualCircuitPublicPrefixArrayOutput
+}
+
+type GetVirtualCircuitPublicPrefixArray []GetVirtualCircuitPublicPrefixInput
+
+func (GetVirtualCircuitPublicPrefixArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitPublicPrefix)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitPublicPrefixArray) ToGetVirtualCircuitPublicPrefixArrayOutput() GetVirtualCircuitPublicPrefixArrayOutput {
+	return i.ToGetVirtualCircuitPublicPrefixArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitPublicPrefixArray) ToGetVirtualCircuitPublicPrefixArrayOutputWithContext(ctx context.Context) GetVirtualCircuitPublicPrefixArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitPublicPrefixArrayOutput)
+}
+
+type GetVirtualCircuitPublicPrefixOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitPublicPrefixOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitPublicPrefix)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitPublicPrefixOutput) ToGetVirtualCircuitPublicPrefixOutput() GetVirtualCircuitPublicPrefixOutput {
+	return o
+}
+
+func (o GetVirtualCircuitPublicPrefixOutput) ToGetVirtualCircuitPublicPrefixOutputWithContext(ctx context.Context) GetVirtualCircuitPublicPrefixOutput {
+	return o
+}
+
+func (o GetVirtualCircuitPublicPrefixOutput) CidrBlock() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitPublicPrefix) string { return v.CidrBlock }).(pulumi.StringOutput)
+}
+
+type GetVirtualCircuitPublicPrefixArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitPublicPrefixArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitPublicPrefix)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitPublicPrefixArrayOutput) ToGetVirtualCircuitPublicPrefixArrayOutput() GetVirtualCircuitPublicPrefixArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitPublicPrefixArrayOutput) ToGetVirtualCircuitPublicPrefixArrayOutputWithContext(ctx context.Context) GetVirtualCircuitPublicPrefixArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitPublicPrefixArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitPublicPrefixOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualCircuitPublicPrefix {
+		return vs[0].([]GetVirtualCircuitPublicPrefix)[vs[1].(int)]
+	}).(GetVirtualCircuitPublicPrefixOutput)
+}
+
+type GetVirtualCircuitPublicPrefixesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetVirtualCircuitPublicPrefixesFilterInput is an input type that accepts GetVirtualCircuitPublicPrefixesFilterArgs and GetVirtualCircuitPublicPrefixesFilterOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitPublicPrefixesFilterInput` via:
+//
+//	GetVirtualCircuitPublicPrefixesFilterArgs{...}
+type GetVirtualCircuitPublicPrefixesFilterInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitPublicPrefixesFilterOutput() GetVirtualCircuitPublicPrefixesFilterOutput
+	ToGetVirtualCircuitPublicPrefixesFilterOutputWithContext(context.Context) GetVirtualCircuitPublicPrefixesFilterOutput
+}
+
+type GetVirtualCircuitPublicPrefixesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetVirtualCircuitPublicPrefixesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitPublicPrefixesFilter)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitPublicPrefixesFilterArgs) ToGetVirtualCircuitPublicPrefixesFilterOutput() GetVirtualCircuitPublicPrefixesFilterOutput {
+	return i.ToGetVirtualCircuitPublicPrefixesFilterOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitPublicPrefixesFilterArgs) ToGetVirtualCircuitPublicPrefixesFilterOutputWithContext(ctx context.Context) GetVirtualCircuitPublicPrefixesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitPublicPrefixesFilterOutput)
+}
+
+// GetVirtualCircuitPublicPrefixesFilterArrayInput is an input type that accepts GetVirtualCircuitPublicPrefixesFilterArray and GetVirtualCircuitPublicPrefixesFilterArrayOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitPublicPrefixesFilterArrayInput` via:
+//
+//	GetVirtualCircuitPublicPrefixesFilterArray{ GetVirtualCircuitPublicPrefixesFilterArgs{...} }
+type GetVirtualCircuitPublicPrefixesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitPublicPrefixesFilterArrayOutput() GetVirtualCircuitPublicPrefixesFilterArrayOutput
+	ToGetVirtualCircuitPublicPrefixesFilterArrayOutputWithContext(context.Context) GetVirtualCircuitPublicPrefixesFilterArrayOutput
+}
+
+type GetVirtualCircuitPublicPrefixesFilterArray []GetVirtualCircuitPublicPrefixesFilterInput
+
+func (GetVirtualCircuitPublicPrefixesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitPublicPrefixesFilter)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitPublicPrefixesFilterArray) ToGetVirtualCircuitPublicPrefixesFilterArrayOutput() GetVirtualCircuitPublicPrefixesFilterArrayOutput {
+	return i.ToGetVirtualCircuitPublicPrefixesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitPublicPrefixesFilterArray) ToGetVirtualCircuitPublicPrefixesFilterArrayOutputWithContext(ctx context.Context) GetVirtualCircuitPublicPrefixesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitPublicPrefixesFilterArrayOutput)
+}
+
+type GetVirtualCircuitPublicPrefixesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitPublicPrefixesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitPublicPrefixesFilter)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitPublicPrefixesFilterOutput) ToGetVirtualCircuitPublicPrefixesFilterOutput() GetVirtualCircuitPublicPrefixesFilterOutput {
+	return o
+}
+
+func (o GetVirtualCircuitPublicPrefixesFilterOutput) ToGetVirtualCircuitPublicPrefixesFilterOutputWithContext(ctx context.Context) GetVirtualCircuitPublicPrefixesFilterOutput {
+	return o
+}
+
+func (o GetVirtualCircuitPublicPrefixesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitPublicPrefixesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetVirtualCircuitPublicPrefixesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVirtualCircuitPublicPrefixesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetVirtualCircuitPublicPrefixesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVirtualCircuitPublicPrefixesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetVirtualCircuitPublicPrefixesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitPublicPrefixesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitPublicPrefixesFilter)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitPublicPrefixesFilterArrayOutput) ToGetVirtualCircuitPublicPrefixesFilterArrayOutput() GetVirtualCircuitPublicPrefixesFilterArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitPublicPrefixesFilterArrayOutput) ToGetVirtualCircuitPublicPrefixesFilterArrayOutputWithContext(ctx context.Context) GetVirtualCircuitPublicPrefixesFilterArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitPublicPrefixesFilterArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitPublicPrefixesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualCircuitPublicPrefixesFilter {
+		return vs[0].([]GetVirtualCircuitPublicPrefixesFilter)[vs[1].(int)]
+	}).(GetVirtualCircuitPublicPrefixesFilterOutput)
+}
+
+type GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix struct {
+	// Publix IP prefix (CIDR) that the customer specified.
+	CidrBlock string `pulumi:"cidrBlock"`
+	// A filter to only return resources that match the given verification state.
+	//
+	// The state value is case-insensitive.
+	VerificationState string `pulumi:"verificationState"`
+}
+
+// GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixInput is an input type that accepts GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArgs and GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixInput` via:
+//
+//	GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArgs{...}
+type GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput() GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput
+	ToGetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutputWithContext(context.Context) GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput
+}
+
+type GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArgs struct {
+	// Publix IP prefix (CIDR) that the customer specified.
+	CidrBlock pulumi.StringInput `pulumi:"cidrBlock"`
+	// A filter to only return resources that match the given verification state.
+	//
+	// The state value is case-insensitive.
+	VerificationState pulumi.StringInput `pulumi:"verificationState"`
+}
+
+func (GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArgs) ToGetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput() GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput {
+	return i.ToGetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArgs) ToGetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutputWithContext(ctx context.Context) GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput)
+}
+
+// GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayInput is an input type that accepts GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArray and GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayInput` via:
+//
+//	GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArray{ GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArgs{...} }
+type GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput() GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput
+	ToGetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutputWithContext(context.Context) GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput
+}
+
+type GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArray []GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixInput
+
+func (GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArray) ToGetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput() GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput {
+	return i.ToGetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArray) ToGetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutputWithContext(ctx context.Context) GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput)
+}
+
+type GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput) ToGetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput() GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput {
+	return o
+}
+
+func (o GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput) ToGetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutputWithContext(ctx context.Context) GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput {
+	return o
+}
+
+// Publix IP prefix (CIDR) that the customer specified.
+func (o GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput) CidrBlock() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix) string { return v.CidrBlock }).(pulumi.StringOutput)
+}
+
+// A filter to only return resources that match the given verification state.
+//
+// The state value is case-insensitive.
+func (o GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput) VerificationState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix) string { return v.VerificationState }).(pulumi.StringOutput)
+}
+
+type GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput) ToGetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput() GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput) ToGetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutputWithContext(ctx context.Context) GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix {
+		return vs[0].([]GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix)[vs[1].(int)]
+	}).(GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput)
+}
+
+type GetVirtualCircuitsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetVirtualCircuitsFilterInput is an input type that accepts GetVirtualCircuitsFilterArgs and GetVirtualCircuitsFilterOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitsFilterInput` via:
+//
+//	GetVirtualCircuitsFilterArgs{...}
+type GetVirtualCircuitsFilterInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitsFilterOutput() GetVirtualCircuitsFilterOutput
+	ToGetVirtualCircuitsFilterOutputWithContext(context.Context) GetVirtualCircuitsFilterOutput
+}
+
+type GetVirtualCircuitsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetVirtualCircuitsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitsFilter)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitsFilterArgs) ToGetVirtualCircuitsFilterOutput() GetVirtualCircuitsFilterOutput {
+	return i.ToGetVirtualCircuitsFilterOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitsFilterArgs) ToGetVirtualCircuitsFilterOutputWithContext(ctx context.Context) GetVirtualCircuitsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitsFilterOutput)
+}
+
+// GetVirtualCircuitsFilterArrayInput is an input type that accepts GetVirtualCircuitsFilterArray and GetVirtualCircuitsFilterArrayOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitsFilterArrayInput` via:
+//
+//	GetVirtualCircuitsFilterArray{ GetVirtualCircuitsFilterArgs{...} }
+type GetVirtualCircuitsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitsFilterArrayOutput() GetVirtualCircuitsFilterArrayOutput
+	ToGetVirtualCircuitsFilterArrayOutputWithContext(context.Context) GetVirtualCircuitsFilterArrayOutput
+}
+
+type GetVirtualCircuitsFilterArray []GetVirtualCircuitsFilterInput
+
+func (GetVirtualCircuitsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitsFilter)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitsFilterArray) ToGetVirtualCircuitsFilterArrayOutput() GetVirtualCircuitsFilterArrayOutput {
+	return i.ToGetVirtualCircuitsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitsFilterArray) ToGetVirtualCircuitsFilterArrayOutputWithContext(ctx context.Context) GetVirtualCircuitsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitsFilterArrayOutput)
+}
+
+type GetVirtualCircuitsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitsFilter)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitsFilterOutput) ToGetVirtualCircuitsFilterOutput() GetVirtualCircuitsFilterOutput {
+	return o
+}
+
+func (o GetVirtualCircuitsFilterOutput) ToGetVirtualCircuitsFilterOutputWithContext(ctx context.Context) GetVirtualCircuitsFilterOutput {
+	return o
+}
+
+func (o GetVirtualCircuitsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetVirtualCircuitsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetVirtualCircuitsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetVirtualCircuitsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitsFilter)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitsFilterArrayOutput) ToGetVirtualCircuitsFilterArrayOutput() GetVirtualCircuitsFilterArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitsFilterArrayOutput) ToGetVirtualCircuitsFilterArrayOutputWithContext(ctx context.Context) GetVirtualCircuitsFilterArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitsFilterArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualCircuitsFilter {
+		return vs[0].([]GetVirtualCircuitsFilter)[vs[1].(int)]
+	}).(GetVirtualCircuitsFilterOutput)
+}
+
+type GetVirtualCircuitsVirtualCircuit struct {
+	// The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
+	BandwidthShapeName string `pulumi:"bandwidthShapeName"`
+	// Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
+	BgpAdminState string `pulumi:"bgpAdminState"`
+	// The state of the Ipv6 BGP session associated with the virtual circuit.
+	BgpIpv6sessionState string `pulumi:"bgpIpv6sessionState"`
+	// Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
+	//
+	// Deprecated: The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.
+	BgpManagement string `pulumi:"bgpManagement"`
+	// The state of the Ipv4 BGP session associated with the virtual circuit.
+	BgpSessionState string `pulumi:"bgpSessionState"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// An array of mappings, each containing properties for a cross-connect or cross-connect group that is associated with this virtual circuit.
+	CrossConnectMappings []GetVirtualCircuitsVirtualCircuitCrossConnectMapping `pulumi:"crossConnectMappings"`
+	// The BGP ASN of the network at the other end of the BGP session from Oracle. If the session is between the customer's edge router and Oracle, the value is the customer's ASN. If the BGP session is between the provider's edge router and Oracle, the value is the provider's ASN. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
+	CustomerAsn string `pulumi:"customerAsn"`
+	// Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
+	//
+	// Deprecated: The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.
+	CustomerBgpAsn int `pulumi:"customerBgpAsn"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer's [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses. Applicable only to private virtual circuits.
+	GatewayId string `pulumi:"gatewayId"`
+	// The virtual circuit's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id string `pulumi:"id"`
+	// The layer 3 IP MTU to use on this virtual circuit.
+	IpMtu string `pulumi:"ipMtu"`
+	// Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
+	IsBfdEnabled bool `pulumi:"isBfdEnabled"`
+	// The Oracle BGP ASN.
+	OracleBgpAsn int `pulumi:"oracleBgpAsn"`
+	// The OCID of the service offered by the provider (if the customer is connecting via a provider).
+	ProviderServiceId string `pulumi:"providerServiceId"`
+	// The service key name offered by the provider (if the customer is connecting via a provider).
+	ProviderServiceKeyName string `pulumi:"providerServiceKeyName"`
+	// The provider's state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
+	ProviderState string `pulumi:"providerState"`
+	// For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection. All prefix sizes are allowed.
+	PublicPrefixes []GetVirtualCircuitsVirtualCircuitPublicPrefix `pulumi:"publicPrefixes"`
+	// Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
+	ReferenceComment string `pulumi:"referenceComment"`
+	// The Oracle Cloud Infrastructure region where this virtual circuit is located.
+	Region string `pulumi:"region"`
+	// The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
+	RoutingPolicies []string `pulumi:"routingPolicies"`
+	// Provider service type.
+	ServiceType string `pulumi:"serviceType"`
+	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+	State string `pulumi:"state"`
+	// The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+	Type             string `pulumi:"type"`
+	VirtualCircuitId string `pulumi:"virtualCircuitId"`
+}
+
+// GetVirtualCircuitsVirtualCircuitInput is an input type that accepts GetVirtualCircuitsVirtualCircuitArgs and GetVirtualCircuitsVirtualCircuitOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitsVirtualCircuitInput` via:
+//
+//	GetVirtualCircuitsVirtualCircuitArgs{...}
+type GetVirtualCircuitsVirtualCircuitInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitsVirtualCircuitOutput() GetVirtualCircuitsVirtualCircuitOutput
+	ToGetVirtualCircuitsVirtualCircuitOutputWithContext(context.Context) GetVirtualCircuitsVirtualCircuitOutput
+}
+
+type GetVirtualCircuitsVirtualCircuitArgs struct {
+	// The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
+	BandwidthShapeName pulumi.StringInput `pulumi:"bandwidthShapeName"`
+	// Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
+	BgpAdminState pulumi.StringInput `pulumi:"bgpAdminState"`
+	// The state of the Ipv6 BGP session associated with the virtual circuit.
+	BgpIpv6sessionState pulumi.StringInput `pulumi:"bgpIpv6sessionState"`
+	// Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
+	//
+	// Deprecated: The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.
+	BgpManagement pulumi.StringInput `pulumi:"bgpManagement"`
+	// The state of the Ipv4 BGP session associated with the virtual circuit.
+	BgpSessionState pulumi.StringInput `pulumi:"bgpSessionState"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// An array of mappings, each containing properties for a cross-connect or cross-connect group that is associated with this virtual circuit.
+	CrossConnectMappings GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayInput `pulumi:"crossConnectMappings"`
+	// The BGP ASN of the network at the other end of the BGP session from Oracle. If the session is between the customer's edge router and Oracle, the value is the customer's ASN. If the BGP session is between the provider's edge router and Oracle, the value is the provider's ASN. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
+	CustomerAsn pulumi.StringInput `pulumi:"customerAsn"`
+	// Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
+	//
+	// Deprecated: The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.
+	CustomerBgpAsn pulumi.IntInput `pulumi:"customerBgpAsn"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer's [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses. Applicable only to private virtual circuits.
+	GatewayId pulumi.StringInput `pulumi:"gatewayId"`
+	// The virtual circuit's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+	Id pulumi.StringInput `pulumi:"id"`
+	// The layer 3 IP MTU to use on this virtual circuit.
+	IpMtu pulumi.StringInput `pulumi:"ipMtu"`
+	// Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
+	IsBfdEnabled pulumi.BoolInput `pulumi:"isBfdEnabled"`
+	// The Oracle BGP ASN.
+	OracleBgpAsn pulumi.IntInput `pulumi:"oracleBgpAsn"`
+	// The OCID of the service offered by the provider (if the customer is connecting via a provider).
+	ProviderServiceId pulumi.StringInput `pulumi:"providerServiceId"`
+	// The service key name offered by the provider (if the customer is connecting via a provider).
+	ProviderServiceKeyName pulumi.StringInput `pulumi:"providerServiceKeyName"`
+	// The provider's state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
+	ProviderState pulumi.StringInput `pulumi:"providerState"`
+	// For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection. All prefix sizes are allowed.
+	PublicPrefixes GetVirtualCircuitsVirtualCircuitPublicPrefixArrayInput `pulumi:"publicPrefixes"`
+	// Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
+	ReferenceComment pulumi.StringInput `pulumi:"referenceComment"`
+	// The Oracle Cloud Infrastructure region where this virtual circuit is located.
+	Region pulumi.StringInput `pulumi:"region"`
+	// The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
+	RoutingPolicies pulumi.StringArrayInput `pulumi:"routingPolicies"`
+	// Provider service type.
+	ServiceType pulumi.StringInput `pulumi:"serviceType"`
+	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+	Type             pulumi.StringInput `pulumi:"type"`
+	VirtualCircuitId pulumi.StringInput `pulumi:"virtualCircuitId"`
+}
+
+func (GetVirtualCircuitsVirtualCircuitArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitsVirtualCircuit)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitsVirtualCircuitArgs) ToGetVirtualCircuitsVirtualCircuitOutput() GetVirtualCircuitsVirtualCircuitOutput {
+	return i.ToGetVirtualCircuitsVirtualCircuitOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitsVirtualCircuitArgs) ToGetVirtualCircuitsVirtualCircuitOutputWithContext(ctx context.Context) GetVirtualCircuitsVirtualCircuitOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitsVirtualCircuitOutput)
+}
+
+// GetVirtualCircuitsVirtualCircuitArrayInput is an input type that accepts GetVirtualCircuitsVirtualCircuitArray and GetVirtualCircuitsVirtualCircuitArrayOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitsVirtualCircuitArrayInput` via:
+//
+//	GetVirtualCircuitsVirtualCircuitArray{ GetVirtualCircuitsVirtualCircuitArgs{...} }
+type GetVirtualCircuitsVirtualCircuitArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitsVirtualCircuitArrayOutput() GetVirtualCircuitsVirtualCircuitArrayOutput
+	ToGetVirtualCircuitsVirtualCircuitArrayOutputWithContext(context.Context) GetVirtualCircuitsVirtualCircuitArrayOutput
+}
+
+type GetVirtualCircuitsVirtualCircuitArray []GetVirtualCircuitsVirtualCircuitInput
+
+func (GetVirtualCircuitsVirtualCircuitArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitsVirtualCircuit)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitsVirtualCircuitArray) ToGetVirtualCircuitsVirtualCircuitArrayOutput() GetVirtualCircuitsVirtualCircuitArrayOutput {
+	return i.ToGetVirtualCircuitsVirtualCircuitArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitsVirtualCircuitArray) ToGetVirtualCircuitsVirtualCircuitArrayOutputWithContext(ctx context.Context) GetVirtualCircuitsVirtualCircuitArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitsVirtualCircuitArrayOutput)
+}
+
+type GetVirtualCircuitsVirtualCircuitOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitsVirtualCircuitOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitsVirtualCircuit)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitsVirtualCircuitOutput) ToGetVirtualCircuitsVirtualCircuitOutput() GetVirtualCircuitsVirtualCircuitOutput {
+	return o
+}
+
+func (o GetVirtualCircuitsVirtualCircuitOutput) ToGetVirtualCircuitsVirtualCircuitOutputWithContext(ctx context.Context) GetVirtualCircuitsVirtualCircuitOutput {
+	return o
+}
+
+// The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
+func (o GetVirtualCircuitsVirtualCircuitOutput) BandwidthShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.BandwidthShapeName }).(pulumi.StringOutput)
+}
+
+// Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
+func (o GetVirtualCircuitsVirtualCircuitOutput) BgpAdminState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.BgpAdminState }).(pulumi.StringOutput)
+}
+
+// The state of the Ipv6 BGP session associated with the virtual circuit.
+func (o GetVirtualCircuitsVirtualCircuitOutput) BgpIpv6sessionState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.BgpIpv6sessionState }).(pulumi.StringOutput)
+}
+
+// Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
+//
+// Deprecated: The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.
+func (o GetVirtualCircuitsVirtualCircuitOutput) BgpManagement() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.BgpManagement }).(pulumi.StringOutput)
+}
+
+// The state of the Ipv4 BGP session associated with the virtual circuit.
+func (o GetVirtualCircuitsVirtualCircuitOutput) BgpSessionState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.BgpSessionState }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetVirtualCircuitsVirtualCircuitOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// An array of mappings, each containing properties for a cross-connect or cross-connect group that is associated with this virtual circuit.
+func (o GetVirtualCircuitsVirtualCircuitOutput) CrossConnectMappings() GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) []GetVirtualCircuitsVirtualCircuitCrossConnectMapping {
+		return v.CrossConnectMappings
+	}).(GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput)
+}
+
+// The BGP ASN of the network at the other end of the BGP session from Oracle. If the session is between the customer's edge router and Oracle, the value is the customer's ASN. If the BGP session is between the provider's edge router and Oracle, the value is the provider's ASN. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
+func (o GetVirtualCircuitsVirtualCircuitOutput) CustomerAsn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.CustomerAsn }).(pulumi.StringOutput)
+}
+
+// Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
+//
+// Deprecated: The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.
+func (o GetVirtualCircuitsVirtualCircuitOutput) CustomerBgpAsn() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) int { return v.CustomerBgpAsn }).(pulumi.IntOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetVirtualCircuitsVirtualCircuitOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetVirtualCircuitsVirtualCircuitOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetVirtualCircuitsVirtualCircuitOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer's [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses. Applicable only to private virtual circuits.
+func (o GetVirtualCircuitsVirtualCircuitOutput) GatewayId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.GatewayId }).(pulumi.StringOutput)
+}
+
+// The virtual circuit's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+func (o GetVirtualCircuitsVirtualCircuitOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The layer 3 IP MTU to use on this virtual circuit.
+func (o GetVirtualCircuitsVirtualCircuitOutput) IpMtu() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.IpMtu }).(pulumi.StringOutput)
+}
+
+// Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
+func (o GetVirtualCircuitsVirtualCircuitOutput) IsBfdEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) bool { return v.IsBfdEnabled }).(pulumi.BoolOutput)
+}
+
+// The Oracle BGP ASN.
+func (o GetVirtualCircuitsVirtualCircuitOutput) OracleBgpAsn() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) int { return v.OracleBgpAsn }).(pulumi.IntOutput)
+}
+
+// The OCID of the service offered by the provider (if the customer is connecting via a provider).
+func (o GetVirtualCircuitsVirtualCircuitOutput) ProviderServiceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.ProviderServiceId }).(pulumi.StringOutput)
+}
+
+// The service key name offered by the provider (if the customer is connecting via a provider).
+func (o GetVirtualCircuitsVirtualCircuitOutput) ProviderServiceKeyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.ProviderServiceKeyName }).(pulumi.StringOutput)
+}
+
+// The provider's state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
+func (o GetVirtualCircuitsVirtualCircuitOutput) ProviderState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.ProviderState }).(pulumi.StringOutput)
+}
+
+// For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection. All prefix sizes are allowed.
+func (o GetVirtualCircuitsVirtualCircuitOutput) PublicPrefixes() GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) []GetVirtualCircuitsVirtualCircuitPublicPrefix {
+		return v.PublicPrefixes
+	}).(GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput)
+}
+
+// Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
+func (o GetVirtualCircuitsVirtualCircuitOutput) ReferenceComment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.ReferenceComment }).(pulumi.StringOutput)
+}
+
+// The Oracle Cloud Infrastructure region where this virtual circuit is located.
+func (o GetVirtualCircuitsVirtualCircuitOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
+func (o GetVirtualCircuitsVirtualCircuitOutput) RoutingPolicies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) []string { return v.RoutingPolicies }).(pulumi.StringArrayOutput)
+}
+
+// Provider service type.
+func (o GetVirtualCircuitsVirtualCircuitOutput) ServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.ServiceType }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+func (o GetVirtualCircuitsVirtualCircuitOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetVirtualCircuitsVirtualCircuitOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+func (o GetVirtualCircuitsVirtualCircuitOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.Type }).(pulumi.StringOutput)
+}
+
+func (o GetVirtualCircuitsVirtualCircuitOutput) VirtualCircuitId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.VirtualCircuitId }).(pulumi.StringOutput)
+}
+
+type GetVirtualCircuitsVirtualCircuitArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitsVirtualCircuitArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitsVirtualCircuit)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitsVirtualCircuitArrayOutput) ToGetVirtualCircuitsVirtualCircuitArrayOutput() GetVirtualCircuitsVirtualCircuitArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitsVirtualCircuitArrayOutput) ToGetVirtualCircuitsVirtualCircuitArrayOutputWithContext(ctx context.Context) GetVirtualCircuitsVirtualCircuitArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitsVirtualCircuitArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitsVirtualCircuitOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualCircuitsVirtualCircuit {
+		return vs[0].([]GetVirtualCircuitsVirtualCircuit)[vs[1].(int)]
+	}).(GetVirtualCircuitsVirtualCircuitOutput)
+}
+
+type GetVirtualCircuitsVirtualCircuitCrossConnectMapping struct {
+	// The key for BGP MD5 authentication. Only applicable if your system requires MD5 authentication. If empty or not set (null), that means you don't use BGP MD5 authentication.
+	BgpMd5authKey string `pulumi:"bgpMd5authKey"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).
+	CrossConnectOrCrossConnectGroupId string `pulumi:"crossConnectOrCrossConnectGroupId"`
+	// The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider's edge router. Must use a subnet mask from /28 to /31.
+	CustomerBgpPeeringIp string `pulumi:"customerBgpPeeringIp"`
+	// The BGP IPv6 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv6 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv6 address of the provider's edge router. Only subnet masks from /64 up to /127 are allowed.
+	CustomerBgpPeeringIpv6 string `pulumi:"customerBgpPeeringIpv6"`
+	// The IPv4 address for Oracle's end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+	OracleBgpPeeringIp string `pulumi:"oracleBgpPeeringIp"`
+	// The IPv6 address for Oracle's end of the BGP session. Only subnet masks from /64 up to /127 are allowed. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+	OracleBgpPeeringIpv6 string `pulumi:"oracleBgpPeeringIpv6"`
+	// The number of the specific VLAN (on the cross-connect or cross-connect group) that is assigned to this virtual circuit. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).  Example: `200`
+	Vlan int `pulumi:"vlan"`
+}
+
+// GetVirtualCircuitsVirtualCircuitCrossConnectMappingInput is an input type that accepts GetVirtualCircuitsVirtualCircuitCrossConnectMappingArgs and GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitsVirtualCircuitCrossConnectMappingInput` via:
+//
+//	GetVirtualCircuitsVirtualCircuitCrossConnectMappingArgs{...}
+type GetVirtualCircuitsVirtualCircuitCrossConnectMappingInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput() GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput
+	ToGetVirtualCircuitsVirtualCircuitCrossConnectMappingOutputWithContext(context.Context) GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput
+}
+
+type GetVirtualCircuitsVirtualCircuitCrossConnectMappingArgs struct {
+	// The key for BGP MD5 authentication. Only applicable if your system requires MD5 authentication. If empty or not set (null), that means you don't use BGP MD5 authentication.
+	BgpMd5authKey pulumi.StringInput `pulumi:"bgpMd5authKey"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).
+	CrossConnectOrCrossConnectGroupId pulumi.StringInput `pulumi:"crossConnectOrCrossConnectGroupId"`
+	// The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider's edge router. Must use a subnet mask from /28 to /31.
+	CustomerBgpPeeringIp pulumi.StringInput `pulumi:"customerBgpPeeringIp"`
+	// The BGP IPv6 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv6 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv6 address of the provider's edge router. Only subnet masks from /64 up to /127 are allowed.
+	CustomerBgpPeeringIpv6 pulumi.StringInput `pulumi:"customerBgpPeeringIpv6"`
+	// The IPv4 address for Oracle's end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+	OracleBgpPeeringIp pulumi.StringInput `pulumi:"oracleBgpPeeringIp"`
+	// The IPv6 address for Oracle's end of the BGP session. Only subnet masks from /64 up to /127 are allowed. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+	OracleBgpPeeringIpv6 pulumi.StringInput `pulumi:"oracleBgpPeeringIpv6"`
+	// The number of the specific VLAN (on the cross-connect or cross-connect group) that is assigned to this virtual circuit. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).  Example: `200`
+	Vlan pulumi.IntInput `pulumi:"vlan"`
+}
+
+func (GetVirtualCircuitsVirtualCircuitCrossConnectMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitsVirtualCircuitCrossConnectMapping)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitsVirtualCircuitCrossConnectMappingArgs) ToGetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput() GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput {
+	return i.ToGetVirtualCircuitsVirtualCircuitCrossConnectMappingOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitsVirtualCircuitCrossConnectMappingArgs) ToGetVirtualCircuitsVirtualCircuitCrossConnectMappingOutputWithContext(ctx context.Context) GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput)
+}
+
+// GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayInput is an input type that accepts GetVirtualCircuitsVirtualCircuitCrossConnectMappingArray and GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayInput` via:
+//
+//	GetVirtualCircuitsVirtualCircuitCrossConnectMappingArray{ GetVirtualCircuitsVirtualCircuitCrossConnectMappingArgs{...} }
+type GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput() GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput
+	ToGetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutputWithContext(context.Context) GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput
+}
+
+type GetVirtualCircuitsVirtualCircuitCrossConnectMappingArray []GetVirtualCircuitsVirtualCircuitCrossConnectMappingInput
+
+func (GetVirtualCircuitsVirtualCircuitCrossConnectMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitsVirtualCircuitCrossConnectMapping)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitsVirtualCircuitCrossConnectMappingArray) ToGetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput() GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput {
+	return i.ToGetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitsVirtualCircuitCrossConnectMappingArray) ToGetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutputWithContext(ctx context.Context) GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput)
+}
+
+type GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitsVirtualCircuitCrossConnectMapping)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput) ToGetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput() GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput {
+	return o
+}
+
+func (o GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput) ToGetVirtualCircuitsVirtualCircuitCrossConnectMappingOutputWithContext(ctx context.Context) GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput {
+	return o
+}
+
+// The key for BGP MD5 authentication. Only applicable if your system requires MD5 authentication. If empty or not set (null), that means you don't use BGP MD5 authentication.
+func (o GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput) BgpMd5authKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuitCrossConnectMapping) string { return v.BgpMd5authKey }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).
+func (o GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput) CrossConnectOrCrossConnectGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuitCrossConnectMapping) string {
+		return v.CrossConnectOrCrossConnectGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider's edge router. Must use a subnet mask from /28 to /31.
+func (o GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput) CustomerBgpPeeringIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuitCrossConnectMapping) string { return v.CustomerBgpPeeringIp }).(pulumi.StringOutput)
+}
+
+// The BGP IPv6 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv6 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv6 address of the provider's edge router. Only subnet masks from /64 up to /127 are allowed.
+func (o GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput) CustomerBgpPeeringIpv6() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuitCrossConnectMapping) string { return v.CustomerBgpPeeringIpv6 }).(pulumi.StringOutput)
+}
+
+// The IPv4 address for Oracle's end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+func (o GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput) OracleBgpPeeringIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuitCrossConnectMapping) string { return v.OracleBgpPeeringIp }).(pulumi.StringOutput)
+}
+
+// The IPv6 address for Oracle's end of the BGP session. Only subnet masks from /64 up to /127 are allowed. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+func (o GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput) OracleBgpPeeringIpv6() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuitCrossConnectMapping) string { return v.OracleBgpPeeringIpv6 }).(pulumi.StringOutput)
+}
+
+// The number of the specific VLAN (on the cross-connect or cross-connect group) that is assigned to this virtual circuit. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).  Example: `200`
+func (o GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput) Vlan() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuitCrossConnectMapping) int { return v.Vlan }).(pulumi.IntOutput)
+}
+
+type GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitsVirtualCircuitCrossConnectMapping)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput) ToGetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput() GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput) ToGetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutputWithContext(ctx context.Context) GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualCircuitsVirtualCircuitCrossConnectMapping {
+		return vs[0].([]GetVirtualCircuitsVirtualCircuitCrossConnectMapping)[vs[1].(int)]
+	}).(GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput)
+}
+
+type GetVirtualCircuitsVirtualCircuitPublicPrefix struct {
+	CidrBlock string `pulumi:"cidrBlock"`
+}
+
+// GetVirtualCircuitsVirtualCircuitPublicPrefixInput is an input type that accepts GetVirtualCircuitsVirtualCircuitPublicPrefixArgs and GetVirtualCircuitsVirtualCircuitPublicPrefixOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitsVirtualCircuitPublicPrefixInput` via:
+//
+//	GetVirtualCircuitsVirtualCircuitPublicPrefixArgs{...}
+type GetVirtualCircuitsVirtualCircuitPublicPrefixInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitsVirtualCircuitPublicPrefixOutput() GetVirtualCircuitsVirtualCircuitPublicPrefixOutput
+	ToGetVirtualCircuitsVirtualCircuitPublicPrefixOutputWithContext(context.Context) GetVirtualCircuitsVirtualCircuitPublicPrefixOutput
+}
+
+type GetVirtualCircuitsVirtualCircuitPublicPrefixArgs struct {
+	CidrBlock pulumi.StringInput `pulumi:"cidrBlock"`
+}
+
+func (GetVirtualCircuitsVirtualCircuitPublicPrefixArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitsVirtualCircuitPublicPrefix)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitsVirtualCircuitPublicPrefixArgs) ToGetVirtualCircuitsVirtualCircuitPublicPrefixOutput() GetVirtualCircuitsVirtualCircuitPublicPrefixOutput {
+	return i.ToGetVirtualCircuitsVirtualCircuitPublicPrefixOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitsVirtualCircuitPublicPrefixArgs) ToGetVirtualCircuitsVirtualCircuitPublicPrefixOutputWithContext(ctx context.Context) GetVirtualCircuitsVirtualCircuitPublicPrefixOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitsVirtualCircuitPublicPrefixOutput)
+}
+
+// GetVirtualCircuitsVirtualCircuitPublicPrefixArrayInput is an input type that accepts GetVirtualCircuitsVirtualCircuitPublicPrefixArray and GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitsVirtualCircuitPublicPrefixArrayInput` via:
+//
+//	GetVirtualCircuitsVirtualCircuitPublicPrefixArray{ GetVirtualCircuitsVirtualCircuitPublicPrefixArgs{...} }
+type GetVirtualCircuitsVirtualCircuitPublicPrefixArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput() GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput
+	ToGetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutputWithContext(context.Context) GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput
+}
+
+type GetVirtualCircuitsVirtualCircuitPublicPrefixArray []GetVirtualCircuitsVirtualCircuitPublicPrefixInput
+
+func (GetVirtualCircuitsVirtualCircuitPublicPrefixArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitsVirtualCircuitPublicPrefix)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitsVirtualCircuitPublicPrefixArray) ToGetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput() GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput {
+	return i.ToGetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitsVirtualCircuitPublicPrefixArray) ToGetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutputWithContext(ctx context.Context) GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput)
+}
+
+type GetVirtualCircuitsVirtualCircuitPublicPrefixOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitsVirtualCircuitPublicPrefixOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitsVirtualCircuitPublicPrefix)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitsVirtualCircuitPublicPrefixOutput) ToGetVirtualCircuitsVirtualCircuitPublicPrefixOutput() GetVirtualCircuitsVirtualCircuitPublicPrefixOutput {
+	return o
+}
+
+func (o GetVirtualCircuitsVirtualCircuitPublicPrefixOutput) ToGetVirtualCircuitsVirtualCircuitPublicPrefixOutputWithContext(ctx context.Context) GetVirtualCircuitsVirtualCircuitPublicPrefixOutput {
+	return o
+}
+
+func (o GetVirtualCircuitsVirtualCircuitPublicPrefixOutput) CidrBlock() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuitPublicPrefix) string { return v.CidrBlock }).(pulumi.StringOutput)
+}
+
+type GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitsVirtualCircuitPublicPrefix)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput) ToGetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput() GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput) ToGetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutputWithContext(ctx context.Context) GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitsVirtualCircuitPublicPrefixOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualCircuitsVirtualCircuitPublicPrefix {
+		return vs[0].([]GetVirtualCircuitsVirtualCircuitPublicPrefix)[vs[1].(int)]
+	}).(GetVirtualCircuitsVirtualCircuitPublicPrefixOutput)
+}
+
+type GetVirtualNetworksFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetVirtualNetworksFilterInput is an input type that accepts GetVirtualNetworksFilterArgs and GetVirtualNetworksFilterOutput values.
+// You can construct a concrete instance of `GetVirtualNetworksFilterInput` via:
+//
+//	GetVirtualNetworksFilterArgs{...}
+type GetVirtualNetworksFilterInput interface {
+	pulumi.Input
+
+	ToGetVirtualNetworksFilterOutput() GetVirtualNetworksFilterOutput
+	ToGetVirtualNetworksFilterOutputWithContext(context.Context) GetVirtualNetworksFilterOutput
+}
+
+type GetVirtualNetworksFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetVirtualNetworksFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNetworksFilter)(nil)).Elem()
+}
+
+func (i GetVirtualNetworksFilterArgs) ToGetVirtualNetworksFilterOutput() GetVirtualNetworksFilterOutput {
+	return i.ToGetVirtualNetworksFilterOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNetworksFilterArgs) ToGetVirtualNetworksFilterOutputWithContext(ctx context.Context) GetVirtualNetworksFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNetworksFilterOutput)
+}
+
+// GetVirtualNetworksFilterArrayInput is an input type that accepts GetVirtualNetworksFilterArray and GetVirtualNetworksFilterArrayOutput values.
+// You can construct a concrete instance of `GetVirtualNetworksFilterArrayInput` via:
+//
+//	GetVirtualNetworksFilterArray{ GetVirtualNetworksFilterArgs{...} }
+type GetVirtualNetworksFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualNetworksFilterArrayOutput() GetVirtualNetworksFilterArrayOutput
+	ToGetVirtualNetworksFilterArrayOutputWithContext(context.Context) GetVirtualNetworksFilterArrayOutput
+}
+
+type GetVirtualNetworksFilterArray []GetVirtualNetworksFilterInput
+
+func (GetVirtualNetworksFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNetworksFilter)(nil)).Elem()
+}
+
+func (i GetVirtualNetworksFilterArray) ToGetVirtualNetworksFilterArrayOutput() GetVirtualNetworksFilterArrayOutput {
+	return i.ToGetVirtualNetworksFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNetworksFilterArray) ToGetVirtualNetworksFilterArrayOutputWithContext(ctx context.Context) GetVirtualNetworksFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNetworksFilterArrayOutput)
+}
+
+type GetVirtualNetworksFilterOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNetworksFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNetworksFilter)(nil)).Elem()
+}
+
+func (o GetVirtualNetworksFilterOutput) ToGetVirtualNetworksFilterOutput() GetVirtualNetworksFilterOutput {
+	return o
+}
+
+func (o GetVirtualNetworksFilterOutput) ToGetVirtualNetworksFilterOutputWithContext(ctx context.Context) GetVirtualNetworksFilterOutput {
+	return o
+}
+
+func (o GetVirtualNetworksFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNetworksFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetVirtualNetworksFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVirtualNetworksFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetVirtualNetworksFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVirtualNetworksFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetVirtualNetworksFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNetworksFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNetworksFilter)(nil)).Elem()
+}
+
+func (o GetVirtualNetworksFilterArrayOutput) ToGetVirtualNetworksFilterArrayOutput() GetVirtualNetworksFilterArrayOutput {
+	return o
+}
+
+func (o GetVirtualNetworksFilterArrayOutput) ToGetVirtualNetworksFilterArrayOutputWithContext(ctx context.Context) GetVirtualNetworksFilterArrayOutput {
+	return o
+}
+
+func (o GetVirtualNetworksFilterArrayOutput) Index(i pulumi.IntInput) GetVirtualNetworksFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNetworksFilter {
+		return vs[0].([]GetVirtualNetworksFilter)[vs[1].(int)]
+	}).(GetVirtualNetworksFilterOutput)
+}
+
+type GetVirtualNetworksVirtualNetwork struct {
+	Byoipv6cidrBlocks            []string                                            `pulumi:"byoipv6cidrBlocks"`
+	Byoipv6cidrDetails           []GetVirtualNetworksVirtualNetworkByoipv6cidrDetail `pulumi:"byoipv6cidrDetails"`
+	CidrBlock                    string                                              `pulumi:"cidrBlock"`
+	CidrBlocks                   []string                                            `pulumi:"cidrBlocks"`
+	CompartmentId                string                                              `pulumi:"compartmentId"`
+	DefaultDhcpOptionsId         string                                              `pulumi:"defaultDhcpOptionsId"`
+	DefaultRouteTableId          string                                              `pulumi:"defaultRouteTableId"`
+	DefaultSecurityListId        string                                              `pulumi:"defaultSecurityListId"`
+	DefinedTags                  map[string]interface{}                              `pulumi:"definedTags"`
+	DisplayName                  string                                              `pulumi:"displayName"`
+	DnsLabel                     string                                              `pulumi:"dnsLabel"`
+	FreeformTags                 map[string]interface{}                              `pulumi:"freeformTags"`
+	Id                           string                                              `pulumi:"id"`
+	Ipv6cidrBlocks               []string                                            `pulumi:"ipv6cidrBlocks"`
+	Ipv6privateCidrBlocks        []string                                            `pulumi:"ipv6privateCidrBlocks"`
+	IsIpv6enabled                bool                                                `pulumi:"isIpv6enabled"`
+	IsOracleGuaAllocationEnabled bool                                                `pulumi:"isOracleGuaAllocationEnabled"`
+	State                        string                                              `pulumi:"state"`
+	TimeCreated                  string                                              `pulumi:"timeCreated"`
+	VcnDomainName                string                                              `pulumi:"vcnDomainName"`
+}
+
+// GetVirtualNetworksVirtualNetworkInput is an input type that accepts GetVirtualNetworksVirtualNetworkArgs and GetVirtualNetworksVirtualNetworkOutput values.
+// You can construct a concrete instance of `GetVirtualNetworksVirtualNetworkInput` via:
+//
+//	GetVirtualNetworksVirtualNetworkArgs{...}
+type GetVirtualNetworksVirtualNetworkInput interface {
+	pulumi.Input
+
+	ToGetVirtualNetworksVirtualNetworkOutput() GetVirtualNetworksVirtualNetworkOutput
+	ToGetVirtualNetworksVirtualNetworkOutputWithContext(context.Context) GetVirtualNetworksVirtualNetworkOutput
+}
+
+type GetVirtualNetworksVirtualNetworkArgs struct {
+	Byoipv6cidrBlocks            pulumi.StringArrayInput                                     `pulumi:"byoipv6cidrBlocks"`
+	Byoipv6cidrDetails           GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayInput `pulumi:"byoipv6cidrDetails"`
+	CidrBlock                    pulumi.StringInput                                          `pulumi:"cidrBlock"`
+	CidrBlocks                   pulumi.StringArrayInput                                     `pulumi:"cidrBlocks"`
+	CompartmentId                pulumi.StringInput                                          `pulumi:"compartmentId"`
+	DefaultDhcpOptionsId         pulumi.StringInput                                          `pulumi:"defaultDhcpOptionsId"`
+	DefaultRouteTableId          pulumi.StringInput                                          `pulumi:"defaultRouteTableId"`
+	DefaultSecurityListId        pulumi.StringInput                                          `pulumi:"defaultSecurityListId"`
+	DefinedTags                  pulumi.MapInput                                             `pulumi:"definedTags"`
+	DisplayName                  pulumi.StringInput                                          `pulumi:"displayName"`
+	DnsLabel                     pulumi.StringInput                                          `pulumi:"dnsLabel"`
+	FreeformTags                 pulumi.MapInput                                             `pulumi:"freeformTags"`
+	Id                           pulumi.StringInput                                          `pulumi:"id"`
+	Ipv6cidrBlocks               pulumi.StringArrayInput                                     `pulumi:"ipv6cidrBlocks"`
+	Ipv6privateCidrBlocks        pulumi.StringArrayInput                                     `pulumi:"ipv6privateCidrBlocks"`
+	IsIpv6enabled                pulumi.BoolInput                                            `pulumi:"isIpv6enabled"`
+	IsOracleGuaAllocationEnabled pulumi.BoolInput                                            `pulumi:"isOracleGuaAllocationEnabled"`
+	State                        pulumi.StringInput                                          `pulumi:"state"`
+	TimeCreated                  pulumi.StringInput                                          `pulumi:"timeCreated"`
+	VcnDomainName                pulumi.StringInput                                          `pulumi:"vcnDomainName"`
+}
+
+func (GetVirtualNetworksVirtualNetworkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNetworksVirtualNetwork)(nil)).Elem()
+}
+
+func (i GetVirtualNetworksVirtualNetworkArgs) ToGetVirtualNetworksVirtualNetworkOutput() GetVirtualNetworksVirtualNetworkOutput {
+	return i.ToGetVirtualNetworksVirtualNetworkOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNetworksVirtualNetworkArgs) ToGetVirtualNetworksVirtualNetworkOutputWithContext(ctx context.Context) GetVirtualNetworksVirtualNetworkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNetworksVirtualNetworkOutput)
+}
+
+// GetVirtualNetworksVirtualNetworkArrayInput is an input type that accepts GetVirtualNetworksVirtualNetworkArray and GetVirtualNetworksVirtualNetworkArrayOutput values.
+// You can construct a concrete instance of `GetVirtualNetworksVirtualNetworkArrayInput` via:
+//
+//	GetVirtualNetworksVirtualNetworkArray{ GetVirtualNetworksVirtualNetworkArgs{...} }
+type GetVirtualNetworksVirtualNetworkArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualNetworksVirtualNetworkArrayOutput() GetVirtualNetworksVirtualNetworkArrayOutput
+	ToGetVirtualNetworksVirtualNetworkArrayOutputWithContext(context.Context) GetVirtualNetworksVirtualNetworkArrayOutput
+}
+
+type GetVirtualNetworksVirtualNetworkArray []GetVirtualNetworksVirtualNetworkInput
+
+func (GetVirtualNetworksVirtualNetworkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNetworksVirtualNetwork)(nil)).Elem()
+}
+
+func (i GetVirtualNetworksVirtualNetworkArray) ToGetVirtualNetworksVirtualNetworkArrayOutput() GetVirtualNetworksVirtualNetworkArrayOutput {
+	return i.ToGetVirtualNetworksVirtualNetworkArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNetworksVirtualNetworkArray) ToGetVirtualNetworksVirtualNetworkArrayOutputWithContext(ctx context.Context) GetVirtualNetworksVirtualNetworkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNetworksVirtualNetworkArrayOutput)
+}
+
+type GetVirtualNetworksVirtualNetworkOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNetworksVirtualNetworkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNetworksVirtualNetwork)(nil)).Elem()
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) ToGetVirtualNetworksVirtualNetworkOutput() GetVirtualNetworksVirtualNetworkOutput {
+	return o
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) ToGetVirtualNetworksVirtualNetworkOutputWithContext(ctx context.Context) GetVirtualNetworksVirtualNetworkOutput {
+	return o
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) Byoipv6cidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetwork) []string { return v.Byoipv6cidrBlocks }).(pulumi.StringArrayOutput)
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) Byoipv6cidrDetails() GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetwork) []GetVirtualNetworksVirtualNetworkByoipv6cidrDetail {
+		return v.Byoipv6cidrDetails
+	}).(GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput)
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) CidrBlock() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetwork) string { return v.CidrBlock }).(pulumi.StringOutput)
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) CidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetwork) []string { return v.CidrBlocks }).(pulumi.StringArrayOutput)
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetwork) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) DefaultDhcpOptionsId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetwork) string { return v.DefaultDhcpOptionsId }).(pulumi.StringOutput)
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) DefaultRouteTableId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetwork) string { return v.DefaultRouteTableId }).(pulumi.StringOutput)
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) DefaultSecurityListId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetwork) string { return v.DefaultSecurityListId }).(pulumi.StringOutput)
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetwork) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetwork) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) DnsLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetwork) string { return v.DnsLabel }).(pulumi.StringOutput)
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetwork) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetwork) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) Ipv6cidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetwork) []string { return v.Ipv6cidrBlocks }).(pulumi.StringArrayOutput)
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) Ipv6privateCidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetwork) []string { return v.Ipv6privateCidrBlocks }).(pulumi.StringArrayOutput)
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) IsIpv6enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetwork) bool { return v.IsIpv6enabled }).(pulumi.BoolOutput)
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) IsOracleGuaAllocationEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetwork) bool { return v.IsOracleGuaAllocationEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetwork) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetwork) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) VcnDomainName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNetworksVirtualNetwork) string { return v.VcnDomainName }).(pulumi.StringOutput)
+}
+
+type GetVirtualNetworksVirtualNetworkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNetworksVirtualNetworkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNetworksVirtualNetwork)(nil)).Elem()
+}
+
+func (o GetVirtualNetworksVirtualNetworkArrayOutput) ToGetVirtualNetworksVirtualNetworkArrayOutput() GetVirtualNetworksVirtualNetworkArrayOutput {
+	return o
+}
+
+func (o GetVirtualNetworksVirtualNetworkArrayOutput) ToGetVirtualNetworksVirtualNetworkArrayOutputWithContext(ctx context.Context) GetVirtualNetworksVirtualNetworkArrayOutput {
+	return o
+}
+
+func (o GetVirtualNetworksVirtualNetworkArrayOutput) Index(i pulumi.IntInput) GetVirtualNetworksVirtualNetworkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNetworksVirtualNetwork {
+		return vs[0].([]GetVirtualNetworksVirtualNetwork)[vs[1].(int)]
+	}).(GetVirtualNetworksVirtualNetworkOutput)
+}
 
 type GetVirtualNetworksVirtualNetworkByoipv6cidrDetail struct {
 	Byoipv6rangeId string `pulumi:"byoipv6rangeId"`
@@ -5616,6 +14846,150 @@ func (o GetVtapsVtapArrayOutput) Index(i pulumi.IntInput) GetVtapsVtapOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionInput)(nil)).Elem(), GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayInput)(nil)).Elem(), GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleTcpOptionInput)(nil)).Elem(), GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayInput)(nil)).Elem(), GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeInput)(nil)).Elem(), GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayInput)(nil)).Elem(), GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleUdpOptionInput)(nil)).Elem(), GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayInput)(nil)).Elem(), GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeInput)(nil)).Elem(), GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayInput)(nil)).Elem(), GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleInput)(nil)).Elem(), GetSecurityListsSecurityListIngressSecurityRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleArrayInput)(nil)).Elem(), GetSecurityListsSecurityListIngressSecurityRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionInput)(nil)).Elem(), GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayInput)(nil)).Elem(), GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleTcpOptionInput)(nil)).Elem(), GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayInput)(nil)).Elem(), GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeInput)(nil)).Elem(), GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayInput)(nil)).Elem(), GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleUdpOptionInput)(nil)).Elem(), GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayInput)(nil)).Elem(), GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeInput)(nil)).Elem(), GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayInput)(nil)).Elem(), GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceGatewaysFilterInput)(nil)).Elem(), GetServiceGatewaysFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceGatewaysFilterArrayInput)(nil)).Elem(), GetServiceGatewaysFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceGatewaysServiceGatewayInput)(nil)).Elem(), GetServiceGatewaysServiceGatewayArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceGatewaysServiceGatewayArrayInput)(nil)).Elem(), GetServiceGatewaysServiceGatewayArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceGatewaysServiceGatewayServiceInput)(nil)).Elem(), GetServiceGatewaysServiceGatewayServiceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceGatewaysServiceGatewayServiceArrayInput)(nil)).Elem(), GetServiceGatewaysServiceGatewayServiceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServicesFilterInput)(nil)).Elem(), GetServicesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServicesFilterArrayInput)(nil)).Elem(), GetServicesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServicesServiceInput)(nil)).Elem(), GetServicesServiceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServicesServiceArrayInput)(nil)).Elem(), GetServicesServiceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeFilterInput)(nil)).Elem(), GetShapeFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeFilterArrayInput)(nil)).Elem(), GetShapeFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapeInput)(nil)).Elem(), GetShapeShapeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapeArrayInput)(nil)).Elem(), GetShapeShapeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapeMaxVnicAttachmentOptionInput)(nil)).Elem(), GetShapeShapeMaxVnicAttachmentOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapeMaxVnicAttachmentOptionArrayInput)(nil)).Elem(), GetShapeShapeMaxVnicAttachmentOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapeMemoryOptionInput)(nil)).Elem(), GetShapeShapeMemoryOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapeMemoryOptionArrayInput)(nil)).Elem(), GetShapeShapeMemoryOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapeNetworkingBandwidthOptionInput)(nil)).Elem(), GetShapeShapeNetworkingBandwidthOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapeNetworkingBandwidthOptionArrayInput)(nil)).Elem(), GetShapeShapeNetworkingBandwidthOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapeOcpuOptionInput)(nil)).Elem(), GetShapeShapeOcpuOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapeOcpuOptionArrayInput)(nil)).Elem(), GetShapeShapeOcpuOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionArrayInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionAccessControlServiceOptionInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionAccessControlServiceOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionAccessControlServiceOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionMeasuredBootOptionInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionMeasuredBootOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionMeasuredBootOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionMemoryEncryptionOptionInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionSecureBootOptionInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionSecureBootOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionSecureBootOptionArrayInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionSecureBootOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionVirtualInstructionsOptionInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayInput)(nil)).Elem(), GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapeRecommendedAlternativeInput)(nil)).Elem(), GetShapeShapeRecommendedAlternativeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapeShapeRecommendedAlternativeArrayInput)(nil)).Elem(), GetShapeShapeRecommendedAlternativeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesFilterInput)(nil)).Elem(), GetShapesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesFilterArrayInput)(nil)).Elem(), GetShapesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeInput)(nil)).Elem(), GetShapesShapeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeArrayInput)(nil)).Elem(), GetShapesShapeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeMaxVnicAttachmentOptionInput)(nil)).Elem(), GetShapesShapeMaxVnicAttachmentOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeMaxVnicAttachmentOptionArrayInput)(nil)).Elem(), GetShapesShapeMaxVnicAttachmentOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeMemoryOptionInput)(nil)).Elem(), GetShapesShapeMemoryOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeMemoryOptionArrayInput)(nil)).Elem(), GetShapesShapeMemoryOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeNetworkingBandwidthOptionInput)(nil)).Elem(), GetShapesShapeNetworkingBandwidthOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeNetworkingBandwidthOptionArrayInput)(nil)).Elem(), GetShapesShapeNetworkingBandwidthOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeOcpuOptionInput)(nil)).Elem(), GetShapesShapeOcpuOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeOcpuOptionArrayInput)(nil)).Elem(), GetShapesShapeOcpuOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionArrayInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionAccessControlServiceOptionInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionAccessControlServiceOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionAccessControlServiceOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionMeasuredBootOptionInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionMeasuredBootOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionMeasuredBootOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionMemoryEncryptionOptionInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionSecureBootOptionInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionSecureBootOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionSecureBootOptionArrayInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionSecureBootOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionVirtualInstructionsOptionInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayInput)(nil)).Elem(), GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeRecommendedAlternativeInput)(nil)).Elem(), GetShapesShapeRecommendedAlternativeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeRecommendedAlternativeArrayInput)(nil)).Elem(), GetShapesShapeRecommendedAlternativeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubnetsFilterInput)(nil)).Elem(), GetSubnetsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubnetsFilterArrayInput)(nil)).Elem(), GetSubnetsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubnetsSubnetInput)(nil)).Elem(), GetSubnetsSubnetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubnetsSubnetArrayInput)(nil)).Elem(), GetSubnetsSubnetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTunnelSecurityAssociationsFilterInput)(nil)).Elem(), GetTunnelSecurityAssociationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTunnelSecurityAssociationsFilterArrayInput)(nil)).Elem(), GetTunnelSecurityAssociationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTunnelSecurityAssociationsTunnelSecurityAssociationInput)(nil)).Elem(), GetTunnelSecurityAssociationsTunnelSecurityAssociationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayInput)(nil)).Elem(), GetTunnelSecurityAssociationsTunnelSecurityAssociationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVcnByoipv6cidrDetailInput)(nil)).Elem(), GetVcnByoipv6cidrDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVcnByoipv6cidrDetailArrayInput)(nil)).Elem(), GetVcnByoipv6cidrDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVcnsFilterInput)(nil)).Elem(), GetVcnsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVcnsFilterArrayInput)(nil)).Elem(), GetVcnsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVcnsVirtualNetworkInput)(nil)).Elem(), GetVcnsVirtualNetworkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVcnsVirtualNetworkArrayInput)(nil)).Elem(), GetVcnsVirtualNetworkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVcnsVirtualNetworkByoipv6cidrDetailInput)(nil)).Elem(), GetVcnsVirtualNetworkByoipv6cidrDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVcnsVirtualNetworkByoipv6cidrDetailArrayInput)(nil)).Elem(), GetVcnsVirtualNetworkByoipv6cidrDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitBandwidthShapesFilterInput)(nil)).Elem(), GetVirtualCircuitBandwidthShapesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitBandwidthShapesFilterArrayInput)(nil)).Elem(), GetVirtualCircuitBandwidthShapesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeInput)(nil)).Elem(), GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayInput)(nil)).Elem(), GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitCrossConnectMappingInput)(nil)).Elem(), GetVirtualCircuitCrossConnectMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitCrossConnectMappingArrayInput)(nil)).Elem(), GetVirtualCircuitCrossConnectMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitPublicPrefixInput)(nil)).Elem(), GetVirtualCircuitPublicPrefixArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitPublicPrefixArrayInput)(nil)).Elem(), GetVirtualCircuitPublicPrefixArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitPublicPrefixesFilterInput)(nil)).Elem(), GetVirtualCircuitPublicPrefixesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitPublicPrefixesFilterArrayInput)(nil)).Elem(), GetVirtualCircuitPublicPrefixesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixInput)(nil)).Elem(), GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayInput)(nil)).Elem(), GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitsFilterInput)(nil)).Elem(), GetVirtualCircuitsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitsFilterArrayInput)(nil)).Elem(), GetVirtualCircuitsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitsVirtualCircuitInput)(nil)).Elem(), GetVirtualCircuitsVirtualCircuitArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitsVirtualCircuitArrayInput)(nil)).Elem(), GetVirtualCircuitsVirtualCircuitArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitsVirtualCircuitCrossConnectMappingInput)(nil)).Elem(), GetVirtualCircuitsVirtualCircuitCrossConnectMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayInput)(nil)).Elem(), GetVirtualCircuitsVirtualCircuitCrossConnectMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitsVirtualCircuitPublicPrefixInput)(nil)).Elem(), GetVirtualCircuitsVirtualCircuitPublicPrefixArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitsVirtualCircuitPublicPrefixArrayInput)(nil)).Elem(), GetVirtualCircuitsVirtualCircuitPublicPrefixArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNetworksFilterInput)(nil)).Elem(), GetVirtualNetworksFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNetworksFilterArrayInput)(nil)).Elem(), GetVirtualNetworksFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNetworksVirtualNetworkInput)(nil)).Elem(), GetVirtualNetworksVirtualNetworkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNetworksVirtualNetworkArrayInput)(nil)).Elem(), GetVirtualNetworksVirtualNetworkArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNetworksVirtualNetworkByoipv6cidrDetailInput)(nil)).Elem(), GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayInput)(nil)).Elem(), GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVlansFilterInput)(nil)).Elem(), GetVlansFilterArgs{})
@@ -5692,6 +15066,150 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsFilterArrayInput)(nil)).Elem(), GetVtapsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapInput)(nil)).Elem(), GetVtapsVtapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapArrayInput)(nil)).Elem(), GetVtapsVtapArray{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListIngressSecurityRuleOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListIngressSecurityRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput{})
+	pulumi.RegisterOutputType(GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput{})
+	pulumi.RegisterOutputType(GetServiceGatewaysFilterOutput{})
+	pulumi.RegisterOutputType(GetServiceGatewaysFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetServiceGatewaysServiceGatewayOutput{})
+	pulumi.RegisterOutputType(GetServiceGatewaysServiceGatewayArrayOutput{})
+	pulumi.RegisterOutputType(GetServiceGatewaysServiceGatewayServiceOutput{})
+	pulumi.RegisterOutputType(GetServiceGatewaysServiceGatewayServiceArrayOutput{})
+	pulumi.RegisterOutputType(GetServicesFilterOutput{})
+	pulumi.RegisterOutputType(GetServicesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetServicesServiceOutput{})
+	pulumi.RegisterOutputType(GetServicesServiceArrayOutput{})
+	pulumi.RegisterOutputType(GetShapeFilterOutput{})
+	pulumi.RegisterOutputType(GetShapeFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetShapeShapeOutput{})
+	pulumi.RegisterOutputType(GetShapeShapeArrayOutput{})
+	pulumi.RegisterOutputType(GetShapeShapeMaxVnicAttachmentOptionOutput{})
+	pulumi.RegisterOutputType(GetShapeShapeMaxVnicAttachmentOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapeShapeMemoryOptionOutput{})
+	pulumi.RegisterOutputType(GetShapeShapeMemoryOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapeShapeNetworkingBandwidthOptionOutput{})
+	pulumi.RegisterOutputType(GetShapeShapeNetworkingBandwidthOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapeShapeOcpuOptionOutput{})
+	pulumi.RegisterOutputType(GetShapeShapeOcpuOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionSecureBootOptionOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput{})
+	pulumi.RegisterOutputType(GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapeShapeRecommendedAlternativeOutput{})
+	pulumi.RegisterOutputType(GetShapeShapeRecommendedAlternativeArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesFilterOutput{})
+	pulumi.RegisterOutputType(GetShapesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesShapeOutput{})
+	pulumi.RegisterOutputType(GetShapesShapeArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesShapeMaxVnicAttachmentOptionOutput{})
+	pulumi.RegisterOutputType(GetShapesShapeMaxVnicAttachmentOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesShapeMemoryOptionOutput{})
+	pulumi.RegisterOutputType(GetShapesShapeMemoryOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesShapeNetworkingBandwidthOptionOutput{})
+	pulumi.RegisterOutputType(GetShapesShapeNetworkingBandwidthOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesShapeOcpuOptionOutput{})
+	pulumi.RegisterOutputType(GetShapesShapeOcpuOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionSecureBootOptionOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput{})
+	pulumi.RegisterOutputType(GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesShapeRecommendedAlternativeOutput{})
+	pulumi.RegisterOutputType(GetShapesShapeRecommendedAlternativeArrayOutput{})
+	pulumi.RegisterOutputType(GetSubnetsFilterOutput{})
+	pulumi.RegisterOutputType(GetSubnetsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSubnetsSubnetOutput{})
+	pulumi.RegisterOutputType(GetSubnetsSubnetArrayOutput{})
+	pulumi.RegisterOutputType(GetTunnelSecurityAssociationsFilterOutput{})
+	pulumi.RegisterOutputType(GetTunnelSecurityAssociationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput{})
+	pulumi.RegisterOutputType(GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput{})
+	pulumi.RegisterOutputType(GetVcnByoipv6cidrDetailOutput{})
+	pulumi.RegisterOutputType(GetVcnByoipv6cidrDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetVcnsFilterOutput{})
+	pulumi.RegisterOutputType(GetVcnsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetVcnsVirtualNetworkOutput{})
+	pulumi.RegisterOutputType(GetVcnsVirtualNetworkArrayOutput{})
+	pulumi.RegisterOutputType(GetVcnsVirtualNetworkByoipv6cidrDetailOutput{})
+	pulumi.RegisterOutputType(GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitBandwidthShapesFilterOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitBandwidthShapesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitCrossConnectMappingOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitCrossConnectMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitPublicPrefixOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitPublicPrefixArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitPublicPrefixesFilterOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitPublicPrefixesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitsFilterOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitsVirtualCircuitOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitsVirtualCircuitArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitsVirtualCircuitPublicPrefixOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualNetworksFilterOutput{})
+	pulumi.RegisterOutputType(GetVirtualNetworksFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualNetworksVirtualNetworkOutput{})
+	pulumi.RegisterOutputType(GetVirtualNetworksVirtualNetworkArrayOutput{})
 	pulumi.RegisterOutputType(GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput{})
 	pulumi.RegisterOutputType(GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetVlansFilterOutput{})

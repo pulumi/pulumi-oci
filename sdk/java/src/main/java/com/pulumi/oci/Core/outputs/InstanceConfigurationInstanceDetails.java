@@ -6,6 +6,7 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsBlockVolume;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsLaunchDetails;
+import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsOption;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsSecondaryVnic;
 import java.lang.String;
 import java.util.List;
@@ -32,6 +33,11 @@ public final class InstanceConfigurationInstanceDetails {
      * 
      */
     private @Nullable InstanceConfigurationInstanceDetailsLaunchDetails launchDetails;
+    /**
+     * @return Multiple Compute Instance Configuration instance details.
+     * 
+     */
+    private @Nullable List<InstanceConfigurationInstanceDetailsOption> options;
     /**
      * @return Secondary VNIC parameters.
      * 
@@ -63,6 +69,13 @@ public final class InstanceConfigurationInstanceDetails {
         return Optional.ofNullable(this.launchDetails);
     }
     /**
+     * @return Multiple Compute Instance Configuration instance details.
+     * 
+     */
+    public List<InstanceConfigurationInstanceDetailsOption> options() {
+        return this.options == null ? List.of() : this.options;
+    }
+    /**
      * @return Secondary VNIC parameters.
      * 
      */
@@ -82,6 +95,7 @@ public final class InstanceConfigurationInstanceDetails {
         private @Nullable List<InstanceConfigurationInstanceDetailsBlockVolume> blockVolumes;
         private String instanceType;
         private @Nullable InstanceConfigurationInstanceDetailsLaunchDetails launchDetails;
+        private @Nullable List<InstanceConfigurationInstanceDetailsOption> options;
         private @Nullable List<InstanceConfigurationInstanceDetailsSecondaryVnic> secondaryVnics;
         public Builder() {}
         public Builder(InstanceConfigurationInstanceDetails defaults) {
@@ -89,6 +103,7 @@ public final class InstanceConfigurationInstanceDetails {
     	      this.blockVolumes = defaults.blockVolumes;
     	      this.instanceType = defaults.instanceType;
     	      this.launchDetails = defaults.launchDetails;
+    	      this.options = defaults.options;
     	      this.secondaryVnics = defaults.secondaryVnics;
         }
 
@@ -111,6 +126,14 @@ public final class InstanceConfigurationInstanceDetails {
             return this;
         }
         @CustomType.Setter
+        public Builder options(@Nullable List<InstanceConfigurationInstanceDetailsOption> options) {
+            this.options = options;
+            return this;
+        }
+        public Builder options(InstanceConfigurationInstanceDetailsOption... options) {
+            return options(List.of(options));
+        }
+        @CustomType.Setter
         public Builder secondaryVnics(@Nullable List<InstanceConfigurationInstanceDetailsSecondaryVnic> secondaryVnics) {
             this.secondaryVnics = secondaryVnics;
             return this;
@@ -123,6 +146,7 @@ public final class InstanceConfigurationInstanceDetails {
             o.blockVolumes = blockVolumes;
             o.instanceType = instanceType;
             o.launchDetails = launchDetails;
+            o.options = options;
             o.secondaryVnics = secondaryVnics;
             return o;
         }

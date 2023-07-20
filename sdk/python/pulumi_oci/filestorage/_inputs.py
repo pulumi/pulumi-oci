@@ -13,11 +13,15 @@ __all__ = [
     'ExportExportOptionArgs',
     'FileSystemSourceDetailArgs',
     'FilesystemSnapshotPolicyScheduleArgs',
+    'MountTargetKerberosArgs',
+    'MountTargetLdapIdmapArgs',
+    'OutboundConnectorEndpointArgs',
     'GetExportSetsFilterArgs',
     'GetExportsFilterArgs',
     'GetFileSystemsFilterArgs',
     'GetFilesystemSnapshotPoliciesFilterArgs',
     'GetMountTargetsFilterArgs',
+    'GetOutboundConnectorsFilterArgs',
     'GetReplicationTargetsFilterArgs',
     'GetReplicationsFilterArgs',
     'GetSnapshotsFilterArgs',
@@ -28,29 +32,37 @@ class ExportExportOptionArgs:
     def __init__(__self__, *,
                  source: pulumi.Input[str],
                  access: Optional[pulumi.Input[str]] = None,
+                 allowed_auths: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  anonymous_gid: Optional[pulumi.Input[str]] = None,
                  anonymous_uid: Optional[pulumi.Input[str]] = None,
                  identity_squash: Optional[pulumi.Input[str]] = None,
+                 is_anonymous_access_allowed: Optional[pulumi.Input[bool]] = None,
                  require_privileged_source_port: Optional[pulumi.Input[bool]] = None):
         """
         :param pulumi.Input[str] source: (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
                
                **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
         :param pulumi.Input[str] access: (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_auths: (Updatable) Array of allowed NFS authentication types.
         :param pulumi.Input[str] anonymous_gid: (Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
         :param pulumi.Input[str] anonymous_uid: (Updatable) UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
         :param pulumi.Input[str] identity_squash: (Updatable) Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
+        :param pulumi.Input[bool] is_anonymous_access_allowed: (Updatable) Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
         :param pulumi.Input[bool] require_privileged_source_port: (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
         """
         pulumi.set(__self__, "source", source)
         if access is not None:
             pulumi.set(__self__, "access", access)
+        if allowed_auths is not None:
+            pulumi.set(__self__, "allowed_auths", allowed_auths)
         if anonymous_gid is not None:
             pulumi.set(__self__, "anonymous_gid", anonymous_gid)
         if anonymous_uid is not None:
             pulumi.set(__self__, "anonymous_uid", anonymous_uid)
         if identity_squash is not None:
             pulumi.set(__self__, "identity_squash", identity_squash)
+        if is_anonymous_access_allowed is not None:
+            pulumi.set(__self__, "is_anonymous_access_allowed", is_anonymous_access_allowed)
         if require_privileged_source_port is not None:
             pulumi.set(__self__, "require_privileged_source_port", require_privileged_source_port)
 
@@ -79,6 +91,18 @@ class ExportExportOptionArgs:
     @access.setter
     def access(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "access", value)
+
+    @property
+    @pulumi.getter(name="allowedAuths")
+    def allowed_auths(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) Array of allowed NFS authentication types.
+        """
+        return pulumi.get(self, "allowed_auths")
+
+    @allowed_auths.setter
+    def allowed_auths(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "allowed_auths", value)
 
     @property
     @pulumi.getter(name="anonymousGid")
@@ -115,6 +139,18 @@ class ExportExportOptionArgs:
     @identity_squash.setter
     def identity_squash(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "identity_squash", value)
+
+    @property
+    @pulumi.getter(name="isAnonymousAccessAllowed")
+    def is_anonymous_access_allowed(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+        """
+        return pulumi.get(self, "is_anonymous_access_allowed")
+
+    @is_anonymous_access_allowed.setter
+    def is_anonymous_access_allowed(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_anonymous_access_allowed", value)
 
     @property
     @pulumi.getter(name="requirePrivilegedSourcePort")
@@ -326,6 +362,264 @@ class FilesystemSnapshotPolicyScheduleArgs:
 
 
 @pulumi.input_type
+class MountTargetKerberosArgs:
+    def __init__(__self__, *,
+                 kerberos_realm: pulumi.Input[str],
+                 backup_key_tab_secret_version: Optional[pulumi.Input[int]] = None,
+                 current_key_tab_secret_version: Optional[pulumi.Input[int]] = None,
+                 is_kerberos_enabled: Optional[pulumi.Input[bool]] = None,
+                 key_tab_secret_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] kerberos_realm: (Updatable) The Kerberos realm that the mount target will join.
+        :param pulumi.Input[int] backup_key_tab_secret_version: (Updatable) Version of the keytab Secret in the Vault to use as a backup.
+        :param pulumi.Input[int] current_key_tab_secret_version: (Updatable) Version of the keytab Secret in the Vault to use.
+        :param pulumi.Input[bool] is_kerberos_enabled: (Updatable) Specifies whether to enable or disable Kerberos.
+        :param pulumi.Input[str] key_tab_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab Secret in the Vault.
+        """
+        pulumi.set(__self__, "kerberos_realm", kerberos_realm)
+        if backup_key_tab_secret_version is not None:
+            pulumi.set(__self__, "backup_key_tab_secret_version", backup_key_tab_secret_version)
+        if current_key_tab_secret_version is not None:
+            pulumi.set(__self__, "current_key_tab_secret_version", current_key_tab_secret_version)
+        if is_kerberos_enabled is not None:
+            pulumi.set(__self__, "is_kerberos_enabled", is_kerberos_enabled)
+        if key_tab_secret_id is not None:
+            pulumi.set(__self__, "key_tab_secret_id", key_tab_secret_id)
+
+    @property
+    @pulumi.getter(name="kerberosRealm")
+    def kerberos_realm(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The Kerberos realm that the mount target will join.
+        """
+        return pulumi.get(self, "kerberos_realm")
+
+    @kerberos_realm.setter
+    def kerberos_realm(self, value: pulumi.Input[str]):
+        pulumi.set(self, "kerberos_realm", value)
+
+    @property
+    @pulumi.getter(name="backupKeyTabSecretVersion")
+    def backup_key_tab_secret_version(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Version of the keytab Secret in the Vault to use as a backup.
+        """
+        return pulumi.get(self, "backup_key_tab_secret_version")
+
+    @backup_key_tab_secret_version.setter
+    def backup_key_tab_secret_version(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "backup_key_tab_secret_version", value)
+
+    @property
+    @pulumi.getter(name="currentKeyTabSecretVersion")
+    def current_key_tab_secret_version(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Version of the keytab Secret in the Vault to use.
+        """
+        return pulumi.get(self, "current_key_tab_secret_version")
+
+    @current_key_tab_secret_version.setter
+    def current_key_tab_secret_version(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "current_key_tab_secret_version", value)
+
+    @property
+    @pulumi.getter(name="isKerberosEnabled")
+    def is_kerberos_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Specifies whether to enable or disable Kerberos.
+        """
+        return pulumi.get(self, "is_kerberos_enabled")
+
+    @is_kerberos_enabled.setter
+    def is_kerberos_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_kerberos_enabled", value)
+
+    @property
+    @pulumi.getter(name="keyTabSecretId")
+    def key_tab_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab Secret in the Vault.
+        """
+        return pulumi.get(self, "key_tab_secret_id")
+
+    @key_tab_secret_id.setter
+    def key_tab_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key_tab_secret_id", value)
+
+
+@pulumi.input_type
+class MountTargetLdapIdmapArgs:
+    def __init__(__self__, *,
+                 cache_lifetime_seconds: Optional[pulumi.Input[int]] = None,
+                 cache_refresh_interval_seconds: Optional[pulumi.Input[int]] = None,
+                 group_search_base: Optional[pulumi.Input[str]] = None,
+                 negative_cache_lifetime_seconds: Optional[pulumi.Input[int]] = None,
+                 outbound_connector1id: Optional[pulumi.Input[str]] = None,
+                 outbound_connector2id: Optional[pulumi.Input[str]] = None,
+                 schema_type: Optional[pulumi.Input[str]] = None,
+                 user_search_base: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[int] cache_lifetime_seconds: (Updatable) The maximum amount of time the mount target is allowed to use a cached entry.
+        :param pulumi.Input[int] cache_refresh_interval_seconds: (Updatable) The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
+        :param pulumi.Input[str] group_search_base: (Updatable) All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
+        :param pulumi.Input[int] negative_cache_lifetime_seconds: (Updatable) The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
+        :param pulumi.Input[str] outbound_connector1id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
+        :param pulumi.Input[str] outbound_connector2id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
+        :param pulumi.Input[str] schema_type: (Updatable) Schema type of the LDAP account.
+        :param pulumi.Input[str] user_search_base: (Updatable) All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
+        """
+        if cache_lifetime_seconds is not None:
+            pulumi.set(__self__, "cache_lifetime_seconds", cache_lifetime_seconds)
+        if cache_refresh_interval_seconds is not None:
+            pulumi.set(__self__, "cache_refresh_interval_seconds", cache_refresh_interval_seconds)
+        if group_search_base is not None:
+            pulumi.set(__self__, "group_search_base", group_search_base)
+        if negative_cache_lifetime_seconds is not None:
+            pulumi.set(__self__, "negative_cache_lifetime_seconds", negative_cache_lifetime_seconds)
+        if outbound_connector1id is not None:
+            pulumi.set(__self__, "outbound_connector1id", outbound_connector1id)
+        if outbound_connector2id is not None:
+            pulumi.set(__self__, "outbound_connector2id", outbound_connector2id)
+        if schema_type is not None:
+            pulumi.set(__self__, "schema_type", schema_type)
+        if user_search_base is not None:
+            pulumi.set(__self__, "user_search_base", user_search_base)
+
+    @property
+    @pulumi.getter(name="cacheLifetimeSeconds")
+    def cache_lifetime_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The maximum amount of time the mount target is allowed to use a cached entry.
+        """
+        return pulumi.get(self, "cache_lifetime_seconds")
+
+    @cache_lifetime_seconds.setter
+    def cache_lifetime_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "cache_lifetime_seconds", value)
+
+    @property
+    @pulumi.getter(name="cacheRefreshIntervalSeconds")
+    def cache_refresh_interval_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
+        """
+        return pulumi.get(self, "cache_refresh_interval_seconds")
+
+    @cache_refresh_interval_seconds.setter
+    def cache_refresh_interval_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "cache_refresh_interval_seconds", value)
+
+    @property
+    @pulumi.getter(name="groupSearchBase")
+    def group_search_base(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
+        """
+        return pulumi.get(self, "group_search_base")
+
+    @group_search_base.setter
+    def group_search_base(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "group_search_base", value)
+
+    @property
+    @pulumi.getter(name="negativeCacheLifetimeSeconds")
+    def negative_cache_lifetime_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
+        """
+        return pulumi.get(self, "negative_cache_lifetime_seconds")
+
+    @negative_cache_lifetime_seconds.setter
+    def negative_cache_lifetime_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "negative_cache_lifetime_seconds", value)
+
+    @property
+    @pulumi.getter(name="outboundConnector1id")
+    def outbound_connector1id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
+        """
+        return pulumi.get(self, "outbound_connector1id")
+
+    @outbound_connector1id.setter
+    def outbound_connector1id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "outbound_connector1id", value)
+
+    @property
+    @pulumi.getter(name="outboundConnector2id")
+    def outbound_connector2id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
+        """
+        return pulumi.get(self, "outbound_connector2id")
+
+    @outbound_connector2id.setter
+    def outbound_connector2id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "outbound_connector2id", value)
+
+    @property
+    @pulumi.getter(name="schemaType")
+    def schema_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Schema type of the LDAP account.
+        """
+        return pulumi.get(self, "schema_type")
+
+    @schema_type.setter
+    def schema_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "schema_type", value)
+
+    @property
+    @pulumi.getter(name="userSearchBase")
+    def user_search_base(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
+        """
+        return pulumi.get(self, "user_search_base")
+
+    @user_search_base.setter
+    def user_search_base(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_search_base", value)
+
+
+@pulumi.input_type
+class OutboundConnectorEndpointArgs:
+    def __init__(__self__, *,
+                 hostname: pulumi.Input[str],
+                 port: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] hostname: Name of the DNS server.
+        :param pulumi.Input[str] port: Port of the DNS server.
+        """
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> pulumi.Input[str]:
+        """
+        Name of the DNS server.
+        """
+        return pulumi.get(self, "hostname")
+
+    @hostname.setter
+    def hostname(self, value: pulumi.Input[str]):
+        pulumi.set(self, "hostname", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> pulumi.Input[str]:
+        """
+        Port of the DNS server.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: pulumi.Input[str]):
+        pulumi.set(self, "port", value)
+
+
+@pulumi.input_type
 class GetExportSetsFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -483,6 +777,45 @@ class GetFilesystemSnapshotPoliciesFilterArgs:
 
 @pulumi.input_type
 class GetMountTargetsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetOutboundConnectorsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

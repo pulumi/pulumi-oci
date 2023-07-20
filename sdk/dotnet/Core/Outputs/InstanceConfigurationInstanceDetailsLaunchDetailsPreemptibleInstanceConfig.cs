@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The action to run when the preemptible instance is interrupted for eviction.
         /// </summary>
-        public readonly Outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction PreemptionAction;
+        public readonly Outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction? PreemptionAction;
 
         [OutputConstructor]
-        private InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig(Outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction preemptionAction)
+        private InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig(Outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction? preemptionAction)
         {
             PreemptionAction = preemptionAction;
         }

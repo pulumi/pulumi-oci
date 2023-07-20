@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -47,6 +48,7 @@ import (
 //
 // ```
 func GetStreams(ctx *pulumi.Context, args *GetStreamsArgs, opts ...pulumi.InvokeOption) (*GetStreamsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetStreamsResult
 	err := ctx.Invoke("oci:Streaming/getStreams:getStreams", args, &rv, opts...)
 	if err != nil {

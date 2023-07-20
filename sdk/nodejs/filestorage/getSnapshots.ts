@@ -14,6 +14,9 @@ import * as utilities from "../utilities";
  *
  * If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
  *
+ * Users can only sort by time created when listing snapshots by file system snapshot policy ID and compartment ID
+ * (sort by name is NOT supported for listing snapshots by policy and compartment).
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -104,6 +107,9 @@ export interface GetSnapshotsResult {
  * or by file system snapshot policy and file system.
  *
  * If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
+ *
+ * Users can only sort by time created when listing snapshots by file system snapshot policy ID and compartment ID
+ * (sort by name is NOT supported for listing snapshots by policy and compartment).
  *
  * ## Example Usage
  *

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetLogAnalyticsLogGroupsSummary(ctx *pulumi.Context, args *GetLogAnalyticsLogGroupsSummaryArgs, opts ...pulumi.InvokeOption) (*GetLogAnalyticsLogGroupsSummaryResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLogAnalyticsLogGroupsSummaryResult
 	err := ctx.Invoke("oci:LogAnalytics/getLogAnalyticsLogGroupsSummary:getLogAnalyticsLogGroupsSummary", args, &rv, opts...)
 	if err != nil {

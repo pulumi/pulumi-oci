@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupDiscoverySchedule(ctx *pulumi.Context, args *LookupDiscoveryScheduleArgs, opts ...pulumi.InvokeOption) (*LookupDiscoveryScheduleResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDiscoveryScheduleResult
 	err := ctx.Invoke("oci:CloudBridge/getDiscoverySchedule:getDiscoverySchedule", args, &rv, opts...)
 	if err != nil {

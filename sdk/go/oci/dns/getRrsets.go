@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -48,6 +49,7 @@ import (
 //
 // ```
 func GetRrsets(ctx *pulumi.Context, args *GetRrsetsArgs, opts ...pulumi.InvokeOption) (*GetRrsetsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRrsetsResult
 	err := ctx.Invoke("oci:Dns/getRrsets:getRrsets", args, &rv, opts...)
 	if err != nil {

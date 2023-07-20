@@ -16,7 +16,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         private InputList<string>? _commands;
 
         /// <summary>
-        /// The list of strings which will be concatenated to a single command for checking container's status.
+        /// The list of strings that will be simplified to a single command for checking the status of the container.
         /// </summary>
         public InputList<string> Commands
         {
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         private InputList<Inputs.ContainerInstanceContainerHealthCheckHeaderArgs>? _headers;
 
         /// <summary>
-        /// Container health check Http's headers.
+        /// Container health check HTTP headers.
         /// </summary>
         public InputList<Inputs.ContainerInstanceContainerHealthCheckHeaderArgs> Headers
         {
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public Input<int>? IntervalInSeconds { get; set; }
 
         /// <summary>
-        /// The name of the volume. This has be unique cross single ContainerInstance.
+        /// The name of the volume. This must be unique within a single container instance.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public Input<string>? Path { get; set; }
 
         /// <summary>
-        /// Container health check Http's port.
+        /// Container health check HTTP port.
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -46,6 +47,7 @@ import (
 //
 // ```
 func LookupDhcpOptions(ctx *pulumi.Context, args *LookupDhcpOptionsArgs, opts ...pulumi.InvokeOption) (*LookupDhcpOptionsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDhcpOptionsResult
 	err := ctx.Invoke("oci:Core/getDhcpOptions:getDhcpOptions", args, &rv, opts...)
 	if err != nil {

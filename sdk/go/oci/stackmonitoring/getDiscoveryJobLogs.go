@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetDiscoveryJobLogs(ctx *pulumi.Context, args *GetDiscoveryJobLogsArgs, opts ...pulumi.InvokeOption) (*GetDiscoveryJobLogsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDiscoveryJobLogsResult
 	err := ctx.Invoke("oci:StackMonitoring/getDiscoveryJobLogs:getDiscoveryJobLogs", args, &rv, opts...)
 	if err != nil {

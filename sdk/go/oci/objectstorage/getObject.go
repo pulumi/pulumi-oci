@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -49,6 +50,7 @@ import (
 //
 // ```
 func GetObject(ctx *pulumi.Context, args *GetObjectArgs, opts ...pulumi.InvokeOption) (*GetObjectResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetObjectResult
 	err := ctx.Invoke("oci:ObjectStorage/getObject:getObject", args, &rv, opts...)
 	if err != nil {

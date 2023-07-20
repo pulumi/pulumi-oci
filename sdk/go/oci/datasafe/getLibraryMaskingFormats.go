@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -48,6 +49,7 @@ import (
 //
 // ```
 func GetLibraryMaskingFormats(ctx *pulumi.Context, args *GetLibraryMaskingFormatsArgs, opts ...pulumi.InvokeOption) (*GetLibraryMaskingFormatsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLibraryMaskingFormatsResult
 	err := ctx.Invoke("oci:DataSafe/getLibraryMaskingFormats:getLibraryMaskingFormats", args, &rv, opts...)
 	if err != nil {

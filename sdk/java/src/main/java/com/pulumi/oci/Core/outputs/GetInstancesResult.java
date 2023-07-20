@@ -25,7 +25,7 @@ public final class GetInstancesResult {
      */
     private @Nullable String capacityReservationId;
     /**
-     * @return The OCID of the compartment that contains the instance.
+     * @return The OCID of the compartment containing images to search
      * 
      */
     private String compartmentId;
@@ -68,7 +68,7 @@ public final class GetInstancesResult {
         return Optional.ofNullable(this.capacityReservationId);
     }
     /**
-     * @return The OCID of the compartment that contains the instance.
+     * @return The OCID of the compartment containing images to search
      * 
      */
     public String compartmentId() {

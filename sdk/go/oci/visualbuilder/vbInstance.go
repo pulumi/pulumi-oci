@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -146,6 +147,7 @@ func NewVbInstance(ctx *pulumi.Context,
 		"idcsOpenId",
 	})
 	opts = append(opts, secrets)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource VbInstance
 	err := ctx.RegisterResource("oci:VisualBuilder/vbInstance:VbInstance", name, args, &resource, opts...)
 	if err != nil {

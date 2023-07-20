@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -46,6 +47,7 @@ import (
 //
 // ```
 func GetResourceAvailability(ctx *pulumi.Context, args *GetResourceAvailabilityArgs, opts ...pulumi.InvokeOption) (*GetResourceAvailabilityResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetResourceAvailabilityResult
 	err := ctx.Invoke("oci:Limits/getResourceAvailability:getResourceAvailability", args, &rv, opts...)
 	if err != nil {

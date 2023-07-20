@@ -68,12 +68,23 @@ import javax.annotation.Nullable;
  *             .members(DrProtectionGroupMemberArgs.builder()
  *                 .memberId(oci_disaster_recovery_member.test_member().id())
  *                 .memberType(var_.dr_protection_group_members_member_type())
+ *                 .destinationCapacityReservationId(oci_disaster_recovery_destination_capacity_reservation.test_destination_capacity_reservation().id())
  *                 .destinationCompartmentId(oci_identity_compartment.test_compartment().id())
  *                 .destinationDedicatedVmHostId(oci_core_dedicated_vm_host.test_dedicated_vm_host().id())
  *                 .isMovable(var_.dr_protection_group_members_is_movable())
+ *                 .isRetainFaultDomain(var_.dr_protection_group_members_is_retain_fault_domain())
  *                 .passwordVaultSecretId(oci_vault_secret.test_secret().id())
  *                 .vnicMappings(DrProtectionGroupMemberVnicMappingArgs.builder()
  *                     .destinationNsgIdLists(var_.dr_protection_group_members_vnic_mapping_destination_nsg_id_list())
+ *                     .destinationPrimaryPrivateIpAddress(var_.dr_protection_group_members_vnic_mapping_destination_primary_private_ip_address())
+ *                     .destinationPrimaryPrivateIpHostnameLabel(var_.dr_protection_group_members_vnic_mapping_destination_primary_private_ip_hostname_label())
+ *                     .destinationSubnetId(oci_core_subnet.test_subnet().id())
+ *                     .sourceVnicId(oci_core_vnic.test_vnic().id())
+ *                     .build())
+ *                 .vnicMappings(DrProtectionGroupMemberVnicMappingArgs.builder()
+ *                     .destinationNsgIdLists(var_.dr_protection_group_members_vnic_mappings_destination_nsg_id_list())
+ *                     .destinationPrimaryPrivateIpAddress(var_.dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address())
+ *                     .destinationPrimaryPrivateIpHostnameLabel(var_.dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label())
  *                     .destinationSubnetId(oci_core_subnet.test_subnet().id())
  *                     .sourceVnicId(oci_core_vnic.test_vnic().id())
  *                     .build())
@@ -110,14 +121,14 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
         return this.association;
     }
     /**
-     * (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Export(name="compartmentId", type=String.class, parameters={})
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * @return (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Output<String> compartmentId() {
@@ -228,14 +239,14 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
         return this.members;
     }
     /**
-     * The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Export(name="peerId", type=String.class, parameters={})
     private Output<String> peerId;
 
     /**
-     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Output<String> peerId() {

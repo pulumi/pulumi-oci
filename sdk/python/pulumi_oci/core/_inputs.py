@@ -82,6 +82,29 @@ __all__ = [
     'InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs',
     'InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs',
     'InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs',
+    'InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs',
+    'InstanceConfigurationInstanceDetailsOptionArgs',
+    'InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs',
+    'InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs',
+    'InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs',
+    'InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicyArgs',
+    'InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicasArgs',
+    'InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetailsArgs',
+    'InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs',
+    'InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs',
+    'InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs',
+    'InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigArgs',
+    'InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs',
+    'InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs',
+    'InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs',
+    'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs',
+    'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs',
+    'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs',
+    'InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs',
+    'InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs',
+    'InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs',
+    'InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs',
+    'InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs',
     'InstanceConfigurationInstanceDetailsSecondaryVnicArgs',
     'InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs',
     'InstanceCreateVnicDetailsArgs',
@@ -96,6 +119,7 @@ __all__ = [
     'InstancePreemptibleInstanceConfigPreemptionActionArgs',
     'InstanceShapeConfigArgs',
     'InstanceSourceDetailsArgs',
+    'InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs',
     'IpsecConnectionTunnelManagementBgpSessionInfoArgs',
     'IpsecConnectionTunnelManagementDpdConfigArgs',
     'IpsecConnectionTunnelManagementEncryptionDomainConfigArgs',
@@ -3493,6 +3517,7 @@ class InstanceConfigurationInstanceDetailsArgs:
                  instance_type: pulumi.Input[str],
                  block_volumes: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeArgs']]]] = None,
                  launch_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsArgs']] = None,
+                 options: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionArgs']]]] = None,
                  secondary_vnics: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicArgs']]]] = None):
         """
         :param pulumi.Input[str] instance_type: The type of instance details. Supported instanceType is compute
@@ -3500,6 +3525,7 @@ class InstanceConfigurationInstanceDetailsArgs:
         :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsArgs'] launch_details: Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
                
                See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
+        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionArgs']]] options: Multiple Compute Instance Configuration instance details.
         :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicArgs']]] secondary_vnics: Secondary VNIC parameters.
         """
         pulumi.set(__self__, "instance_type", instance_type)
@@ -3507,6 +3533,8 @@ class InstanceConfigurationInstanceDetailsArgs:
             pulumi.set(__self__, "block_volumes", block_volumes)
         if launch_details is not None:
             pulumi.set(__self__, "launch_details", launch_details)
+        if options is not None:
+            pulumi.set(__self__, "options", options)
         if secondary_vnics is not None:
             pulumi.set(__self__, "secondary_vnics", secondary_vnics)
 
@@ -3547,6 +3575,18 @@ class InstanceConfigurationInstanceDetailsArgs:
     @launch_details.setter
     def launch_details(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsArgs']]):
         pulumi.set(self, "launch_details", value)
+
+    @property
+    @pulumi.getter
+    def options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionArgs']]]]:
+        """
+        Multiple Compute Instance Configuration instance details.
+        """
+        return pulumi.get(self, "options")
+
+    @options.setter
+    def options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionArgs']]]]):
+        pulumi.set(self, "options", value)
 
     @property
     @pulumi.getter(name="secondaryVnics")
@@ -3755,12 +3795,12 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
         :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
         :param pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs'] block_volume_replicas: The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-        :param pulumi.Input[str] kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        :param pulumi.Input[str] kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param pulumi.Input[str] size_in_gbs: The size of the volume in GBs.
         :param pulumi.Input[str] vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
                
@@ -3845,7 +3885,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+        (Updatable) The OCID of the compartment containing images to search
         """
         return pulumi.get(self, "compartment_id")
 
@@ -3905,7 +3945,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        The OCID of the Vault service key to assign as the master encryption key for the volume.
         """
         return pulumi.get(self, "kms_key_id")
 
@@ -4095,7 +4135,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
         :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs'] availability_config: Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
         :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] capacity_reservation_id: The OCID of the compute capacity reservation this instance is launched under.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
         :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs'] create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param pulumi.Input[str] dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
                
@@ -4272,7 +4312,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+        (Updatable) The OCID of the compartment containing images to search
         """
         return pulumi.get(self, "compartment_id")
 
@@ -4664,41 +4704,43 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs:
 @pulumi.input_type
 class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs:
     def __init__(__self__, *,
-                 desired_state: pulumi.Input[str],
-                 name: pulumi.Input[str]):
+                 desired_state: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] desired_state: Whether the plugin should be enabled or disabled. Accepted values are `ENABLED` and `DISABLED`
+        :param pulumi.Input[str] desired_state: Whether the plugin should be enabled or disabled.
                
                To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         :param pulumi.Input[str] name: The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
-        pulumi.set(__self__, "desired_state", desired_state)
-        pulumi.set(__self__, "name", name)
+        if desired_state is not None:
+            pulumi.set(__self__, "desired_state", desired_state)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="desiredState")
-    def desired_state(self) -> pulumi.Input[str]:
+    def desired_state(self) -> Optional[pulumi.Input[str]]:
         """
-        Whether the plugin should be enabled or disabled. Accepted values are `ENABLED` and `DISABLED`
+        Whether the plugin should be enabled or disabled.
 
         To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         """
         return pulumi.get(self, "desired_state")
 
     @desired_state.setter
-    def desired_state(self, value: pulumi.Input[str]):
+    def desired_state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "desired_state", value)
 
     @property
     @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
+    def name(self) -> Optional[pulumi.Input[str]]:
         """
         The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[str]):
+    def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
 
@@ -4755,7 +4797,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
                  skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[bool] assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+        :param pulumi.Input[bool] assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[bool] assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -4791,7 +4833,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
     @pulumi.getter(name="assignPrivateDnsRecord")
     def assign_private_dns_record(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+        Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "assign_private_dns_record")
 
@@ -5227,22 +5269,23 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
 @pulumi.input_type
 class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs:
     def __init__(__self__, *,
-                 preemption_action: pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs']):
+                 preemption_action: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs']] = None):
         """
         :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs'] preemption_action: The action to run when the preemptible instance is interrupted for eviction.
         """
-        pulumi.set(__self__, "preemption_action", preemption_action)
+        if preemption_action is not None:
+            pulumi.set(__self__, "preemption_action", preemption_action)
 
     @property
     @pulumi.getter(name="preemptionAction")
-    def preemption_action(self) -> pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs']:
+    def preemption_action(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs']]:
         """
         The action to run when the preemptible instance is interrupted for eviction.
         """
         return pulumi.get(self, "preemption_action")
 
     @preemption_action.setter
-    def preemption_action(self, value: pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs']):
+    def preemption_action(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs']]):
         pulumi.set(self, "preemption_action", value)
 
 
@@ -5290,7 +5333,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs:
                  baseline_ocpu_utilization: Optional[pulumi.Input[str]] = None,
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  nvmes: Optional[pulumi.Input[int]] = None,
-                 ocpus: Optional[pulumi.Input[float]] = None):
+                 ocpus: Optional[pulumi.Input[float]] = None,
+                 vcpus: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[str] baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
                
@@ -5298,6 +5342,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs:
         :param pulumi.Input[float] memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[float] ocpus: The total number of OCPUs available to the instance.
+        :param pulumi.Input[int] vcpus: The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
         """
         if baseline_ocpu_utilization is not None:
             pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
@@ -5307,6 +5352,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs:
             pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+        if vcpus is not None:
+            pulumi.set(__self__, "vcpus", vcpus)
 
     @property
     @pulumi.getter(name="baselineOcpuUtilization")
@@ -5358,6 +5405,18 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs:
     def ocpus(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "ocpus", value)
 
+    @property
+    @pulumi.getter
+    def vcpus(self) -> Optional[pulumi.Input[int]]:
+        """
+        The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        """
+        return pulumi.get(self, "vcpus")
+
+    @vcpus.setter
+    def vcpus(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "vcpus", value)
+
 
 @pulumi.input_type
 class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs:
@@ -5367,6 +5426,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs:
                  boot_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
                  boot_volume_vpus_per_gb: Optional[pulumi.Input[str]] = None,
                  image_id: Optional[pulumi.Input[str]] = None,
+                 instance_source_image_filter_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs']] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] source_type: The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
@@ -5376,7 +5436,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs:
                
                Allowed values:
         :param pulumi.Input[str] image_id: The OCID of the image used to boot the instance.
-        :param pulumi.Input[str] kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs'] instance_source_image_filter_details: These are the criteria for selecting an image. This is required if imageId is not specified.
+        :param pulumi.Input[str] kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         """
         pulumi.set(__self__, "source_type", source_type)
         if boot_volume_id is not None:
@@ -5387,6 +5448,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs:
             pulumi.set(__self__, "boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
         if image_id is not None:
             pulumi.set(__self__, "image_id", image_id)
+        if instance_source_image_filter_details is not None:
+            pulumi.set(__self__, "instance_source_image_filter_details", instance_source_image_filter_details)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
 
@@ -5453,16 +5516,2390 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs:
         pulumi.set(self, "image_id", value)
 
     @property
+    @pulumi.getter(name="instanceSourceImageFilterDetails")
+    def instance_source_image_filter_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs']]:
+        """
+        These are the criteria for selecting an image. This is required if imageId is not specified.
+        """
+        return pulumi.get(self, "instance_source_image_filter_details")
+
+    @instance_source_image_filter_details.setter
+    def instance_source_image_filter_details(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs']]):
+        pulumi.set(self, "instance_source_image_filter_details", value)
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        The OCID of the Vault service key to assign as the master encryption key for the volume.
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
     def kms_key_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "kms_key_id", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs:
+    def __init__(__self__, *,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 defined_tags_filter: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 operating_system: Optional[pulumi.Input[str]] = None,
+                 operating_system_version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
+        :param pulumi.Input[Mapping[str, Any]] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[str] operating_system: The image's operating system.  Example: `Oracle Linux`
+        :param pulumi.Input[str] operating_system_version: The image's operating system version.  Example: `7.2`
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags_filter is not None:
+            pulumi.set(__self__, "defined_tags_filter", defined_tags_filter)
+        if operating_system is not None:
+            pulumi.set(__self__, "operating_system", operating_system)
+        if operating_system_version is not None:
+            pulumi.set(__self__, "operating_system_version", operating_system_version)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the compartment containing images to search
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="definedTagsFilter")
+    def defined_tags_filter(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags_filter")
+
+    @defined_tags_filter.setter
+    def defined_tags_filter(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags_filter", value)
+
+    @property
+    @pulumi.getter(name="operatingSystem")
+    def operating_system(self) -> Optional[pulumi.Input[str]]:
+        """
+        The image's operating system.  Example: `Oracle Linux`
+        """
+        return pulumi.get(self, "operating_system")
+
+    @operating_system.setter
+    def operating_system(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "operating_system", value)
+
+    @property
+    @pulumi.getter(name="operatingSystemVersion")
+    def operating_system_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The image's operating system version.  Example: `7.2`
+        """
+        return pulumi.get(self, "operating_system_version")
+
+    @operating_system_version.setter
+    def operating_system_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "operating_system_version", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionArgs:
+    def __init__(__self__, *,
+                 block_volumes: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs']]]] = None,
+                 launch_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs']] = None,
+                 secondary_vnics: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs']]] block_volumes: Block volume parameters.
+        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs'] launch_details: Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+               
+               See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
+        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs']]] secondary_vnics: Secondary VNIC parameters.
+        """
+        if block_volumes is not None:
+            pulumi.set(__self__, "block_volumes", block_volumes)
+        if launch_details is not None:
+            pulumi.set(__self__, "launch_details", launch_details)
+        if secondary_vnics is not None:
+            pulumi.set(__self__, "secondary_vnics", secondary_vnics)
+
+    @property
+    @pulumi.getter(name="blockVolumes")
+    def block_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs']]]]:
+        """
+        Block volume parameters.
+        """
+        return pulumi.get(self, "block_volumes")
+
+    @block_volumes.setter
+    def block_volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs']]]]):
+        pulumi.set(self, "block_volumes", value)
+
+    @property
+    @pulumi.getter(name="launchDetails")
+    def launch_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs']]:
+        """
+        Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+
+        See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
+        """
+        return pulumi.get(self, "launch_details")
+
+    @launch_details.setter
+    def launch_details(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs']]):
+        pulumi.set(self, "launch_details", value)
+
+    @property
+    @pulumi.getter(name="secondaryVnics")
+    def secondary_vnics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs']]]]:
+        """
+        Secondary VNIC parameters.
+        """
+        return pulumi.get(self, "secondary_vnics")
+
+    @secondary_vnics.setter
+    def secondary_vnics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs']]]]):
+        pulumi.set(self, "secondary_vnics", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs:
+    def __init__(__self__, *,
+                 attach_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs']] = None,
+                 create_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs']] = None,
+                 volume_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs'] attach_details: Volume attachmentDetails. Please see [AttachVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AttachVolumeDetails/)
+        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs'] create_details: Creates a new block volume. Please see [CreateVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVolumeDetails/)
+        :param pulumi.Input[str] volume_id: The OCID of the volume.
+        """
+        if attach_details is not None:
+            pulumi.set(__self__, "attach_details", attach_details)
+        if create_details is not None:
+            pulumi.set(__self__, "create_details", create_details)
+        if volume_id is not None:
+            pulumi.set(__self__, "volume_id", volume_id)
+
+    @property
+    @pulumi.getter(name="attachDetails")
+    def attach_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs']]:
+        """
+        Volume attachmentDetails. Please see [AttachVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AttachVolumeDetails/)
+        """
+        return pulumi.get(self, "attach_details")
+
+    @attach_details.setter
+    def attach_details(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs']]):
+        pulumi.set(self, "attach_details", value)
+
+    @property
+    @pulumi.getter(name="createDetails")
+    def create_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs']]:
+        """
+        Creates a new block volume. Please see [CreateVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVolumeDetails/)
+        """
+        return pulumi.get(self, "create_details")
+
+    @create_details.setter
+    def create_details(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs']]):
+        pulumi.set(self, "create_details", value)
+
+    @property
+    @pulumi.getter(name="volumeId")
+    def volume_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the volume.
+        """
+        return pulumi.get(self, "volume_id")
+
+    @volume_id.setter
+    def volume_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "volume_id", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 device: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_read_only: Optional[pulumi.Input[bool]] = None,
+                 is_shareable: Optional[pulumi.Input[bool]] = None,
+                 use_chap: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
+        :param pulumi.Input[str] device: The device name.
+        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        :param pulumi.Input[bool] is_read_only: Whether the attachment should be created in read-only mode.
+        :param pulumi.Input[bool] is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
+        :param pulumi.Input[bool] use_chap: Whether to use CHAP authentication for the volume attachment. Defaults to false.
+        """
+        pulumi.set(__self__, "type", type)
+        if device is not None:
+            pulumi.set(__self__, "device", device)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if is_pv_encryption_in_transit_enabled is not None:
+            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+        if is_read_only is not None:
+            pulumi.set(__self__, "is_read_only", is_read_only)
+        if is_shareable is not None:
+            pulumi.set(__self__, "is_shareable", is_shareable)
+        if use_chap is not None:
+            pulumi.set(__self__, "use_chap", use_chap)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def device(self) -> Optional[pulumi.Input[str]]:
+        """
+        The device name.
+        """
+        return pulumi.get(self, "device")
+
+    @device.setter
+    def device(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "device", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="isPvEncryptionInTransitEnabled")
+    def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        """
+        return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
+
+    @is_pv_encryption_in_transit_enabled.setter
+    def is_pv_encryption_in_transit_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_pv_encryption_in_transit_enabled", value)
+
+    @property
+    @pulumi.getter(name="isReadOnly")
+    def is_read_only(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the attachment should be created in read-only mode.
+        """
+        return pulumi.get(self, "is_read_only")
+
+    @is_read_only.setter
+    def is_read_only(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_read_only", value)
+
+    @property
+    @pulumi.getter(name="isShareable")
+    def is_shareable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
+        """
+        return pulumi.get(self, "is_shareable")
+
+    @is_shareable.setter
+    def is_shareable(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_shareable", value)
+
+    @property
+    @pulumi.getter(name="useChap")
+    def use_chap(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to use CHAP authentication for the volume attachment. Defaults to false.
+        """
+        return pulumi.get(self, "use_chap")
+
+    @use_chap.setter
+    def use_chap(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "use_chap", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
+    def __init__(__self__, *,
+                 autotune_policies: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicyArgs']]]] = None,
+                 availability_domain: Optional[pulumi.Input[str]] = None,
+                 backup_policy_id: Optional[pulumi.Input[str]] = None,
+                 block_volume_replicas: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicasArgs']] = None,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_auto_tune_enabled: Optional[pulumi.Input[bool]] = None,
+                 kms_key_id: Optional[pulumi.Input[str]] = None,
+                 size_in_gbs: Optional[pulumi.Input[str]] = None,
+                 source_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetailsArgs']] = None,
+                 vpus_per_gb: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicyArgs']]] autotune_policies: The list of autotune policies enabled for this volume.
+        :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
+        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicasArgs'] block_volume_replicas: The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[bool] is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        :param pulumi.Input[str] kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
+        :param pulumi.Input[str] size_in_gbs: The size of the volume in GBs.
+        :param pulumi.Input[str] vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+               
+               Allowed values:
+        """
+        if autotune_policies is not None:
+            pulumi.set(__self__, "autotune_policies", autotune_policies)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if backup_policy_id is not None:
+            pulumi.set(__self__, "backup_policy_id", backup_policy_id)
+        if block_volume_replicas is not None:
+            pulumi.set(__self__, "block_volume_replicas", block_volume_replicas)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_auto_tune_enabled is not None:
+            pulumi.set(__self__, "is_auto_tune_enabled", is_auto_tune_enabled)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if size_in_gbs is not None:
+            pulumi.set(__self__, "size_in_gbs", size_in_gbs)
+        if source_details is not None:
+            pulumi.set(__self__, "source_details", source_details)
+        if vpus_per_gb is not None:
+            pulumi.set(__self__, "vpus_per_gb", vpus_per_gb)
+
+    @property
+    @pulumi.getter(name="autotunePolicies")
+    def autotune_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicyArgs']]]]:
+        """
+        The list of autotune policies enabled for this volume.
+        """
+        return pulumi.get(self, "autotune_policies")
+
+    @autotune_policies.setter
+    def autotune_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicyArgs']]]]):
+        pulumi.set(self, "autotune_policies", value)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "availability_domain", value)
+
+    @property
+    @pulumi.getter(name="backupPolicyId")
+    def backup_policy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
+        """
+        return pulumi.get(self, "backup_policy_id")
+
+    @backup_policy_id.setter
+    def backup_policy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "backup_policy_id", value)
+
+    @property
+    @pulumi.getter(name="blockVolumeReplicas")
+    def block_volume_replicas(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicasArgs']]:
+        """
+        The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
+        """
+        return pulumi.get(self, "block_volume_replicas")
+
+    @block_volume_replicas.setter
+    def block_volume_replicas(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicasArgs']]):
+        pulumi.set(self, "block_volume_replicas", value)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the compartment containing images to search
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="isAutoTuneEnabled")
+    def is_auto_tune_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        """
+        return pulumi.get(self, "is_auto_tune_enabled")
+
+    @is_auto_tune_enabled.setter
+    def is_auto_tune_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_auto_tune_enabled", value)
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the Vault service key to assign as the master encryption key for the volume.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @kms_key_id.setter
+    def kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "kms_key_id", value)
+
+    @property
+    @pulumi.getter(name="sizeInGbs")
+    def size_in_gbs(self) -> Optional[pulumi.Input[str]]:
+        """
+        The size of the volume in GBs.
+        """
+        return pulumi.get(self, "size_in_gbs")
+
+    @size_in_gbs.setter
+    def size_in_gbs(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "size_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="sourceDetails")
+    def source_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetailsArgs']]:
+        return pulumi.get(self, "source_details")
+
+    @source_details.setter
+    def source_details(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetailsArgs']]):
+        pulumi.set(self, "source_details", value)
+
+    @property
+    @pulumi.getter(name="vpusPerGb")
+    def vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
+        """
+        The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+
+        Allowed values:
+        """
+        return pulumi.get(self, "vpus_per_gb")
+
+    @vpus_per_gb.setter
+    def vpus_per_gb(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vpus_per_gb", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicyArgs:
+    def __init__(__self__, *,
+                 autotune_type: pulumi.Input[str],
+                 max_vpus_per_gb: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] autotune_type: This specifies the type of autotunes supported by OCI.
+        :param pulumi.Input[str] max_vpus_per_gb: This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+        """
+        pulumi.set(__self__, "autotune_type", autotune_type)
+        if max_vpus_per_gb is not None:
+            pulumi.set(__self__, "max_vpus_per_gb", max_vpus_per_gb)
+
+    @property
+    @pulumi.getter(name="autotuneType")
+    def autotune_type(self) -> pulumi.Input[str]:
+        """
+        This specifies the type of autotunes supported by OCI.
+        """
+        return pulumi.get(self, "autotune_type")
+
+    @autotune_type.setter
+    def autotune_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "autotune_type", value)
+
+    @property
+    @pulumi.getter(name="maxVpusPerGb")
+    def max_vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
+        """
+        This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+        """
+        return pulumi.get(self, "max_vpus_per_gb")
+
+    @max_vpus_per_gb.setter
+    def max_vpus_per_gb(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "max_vpus_per_gb", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicasArgs:
+    def __init__(__self__, *,
+                 availability_domain: pulumi.Input[str],
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> pulumi.Input[str]:
+        """
+        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: pulumi.Input[str]):
+        pulumi.set(self, "availability_domain", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetailsArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
+        :param pulumi.Input[str] id: The OCID of the volume backup.
+        """
+        pulumi.set(__self__, "type", type)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the volume backup.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
+    def __init__(__self__, *,
+                 agent_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs']] = None,
+                 availability_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigArgs']] = None,
+                 availability_domain: Optional[pulumi.Input[str]] = None,
+                 capacity_reservation_id: Optional[pulumi.Input[str]] = None,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 create_vnic_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs']] = None,
+                 dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 extended_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 fault_domain: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 instance_options: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs']] = None,
+                 ipxe_script: Optional[pulumi.Input[str]] = None,
+                 is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
+                 launch_mode: Optional[pulumi.Input[str]] = None,
+                 launch_options: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs']] = None,
+                 metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 platform_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs']] = None,
+                 preemptible_instance_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs']] = None,
+                 preferred_maintenance_action: Optional[pulumi.Input[str]] = None,
+                 shape: Optional[pulumi.Input[str]] = None,
+                 shape_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs']] = None,
+                 source_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs']] = None):
+        """
+        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs'] agent_config: Configuration options for the Oracle Cloud Agent software running on the instance.
+        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigArgs'] availability_config: Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
+        :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        :param pulumi.Input[str] capacity_reservation_id: The OCID of the compute capacity reservation this instance is launched under.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
+        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs'] create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
+        :param pulumi.Input[str] dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
+               
+               Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[Mapping[str, Any]] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+               
+               They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+               
+               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+        :param pulumi.Input[str] fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+               
+               If you do not specify the fault domain, the system selects one for you.
+               
+               To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+               
+               Example: `FAULT-DOMAIN-1`
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs'] instance_options: Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
+        :param pulumi.Input[str] ipxe_script: This is an advanced option.
+               
+               When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+               
+               If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
+               
+               The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+               
+               For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+               
+               For more information about iPXE, see http://ipxe.org.
+        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+        :param pulumi.Input[Mapping[str, Any]] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+               
+               A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
+               * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
+               * Get information about the instance, including the custom metadata that you provide when you launch the instance.
+               
+               **Providing Cloud-Init Metadata**
+               
+               You can use the following metadata key names to provide information to Cloud-Init:
+               
+               **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+               
+               **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+               
+               **Metadata Example**
+               
+               "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" } **Getting Metadata on the Instance**
+               
+               To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+               
+               curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+               
+               You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+               
+               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs'] platform_config: The platform configuration requested for the instance.
+               
+               If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
+               
+               Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs'] preemptible_instance_config: Configuration options for preemptible instances.
+        :param pulumi.Input[str] preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+        :param pulumi.Input[str] shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+               
+               You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs'] shape_config: The shape configuration requested for the instance.
+               
+               If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+               
+               Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+        """
+        if agent_config is not None:
+            pulumi.set(__self__, "agent_config", agent_config)
+        if availability_config is not None:
+            pulumi.set(__self__, "availability_config", availability_config)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if capacity_reservation_id is not None:
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if create_vnic_details is not None:
+            pulumi.set(__self__, "create_vnic_details", create_vnic_details)
+        if dedicated_vm_host_id is not None:
+            pulumi.set(__self__, "dedicated_vm_host_id", dedicated_vm_host_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if extended_metadata is not None:
+            pulumi.set(__self__, "extended_metadata", extended_metadata)
+        if fault_domain is not None:
+            pulumi.set(__self__, "fault_domain", fault_domain)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if instance_options is not None:
+            pulumi.set(__self__, "instance_options", instance_options)
+        if ipxe_script is not None:
+            pulumi.set(__self__, "ipxe_script", ipxe_script)
+        if is_pv_encryption_in_transit_enabled is not None:
+            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+        if launch_mode is not None:
+            pulumi.set(__self__, "launch_mode", launch_mode)
+        if launch_options is not None:
+            pulumi.set(__self__, "launch_options", launch_options)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if platform_config is not None:
+            pulumi.set(__self__, "platform_config", platform_config)
+        if preemptible_instance_config is not None:
+            pulumi.set(__self__, "preemptible_instance_config", preemptible_instance_config)
+        if preferred_maintenance_action is not None:
+            pulumi.set(__self__, "preferred_maintenance_action", preferred_maintenance_action)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
+        if shape_config is not None:
+            pulumi.set(__self__, "shape_config", shape_config)
+        if source_details is not None:
+            pulumi.set(__self__, "source_details", source_details)
+
+    @property
+    @pulumi.getter(name="agentConfig")
+    def agent_config(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs']]:
+        """
+        Configuration options for the Oracle Cloud Agent software running on the instance.
+        """
+        return pulumi.get(self, "agent_config")
+
+    @agent_config.setter
+    def agent_config(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs']]):
+        pulumi.set(self, "agent_config", value)
+
+    @property
+    @pulumi.getter(name="availabilityConfig")
+    def availability_config(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigArgs']]:
+        """
+        Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
+        """
+        return pulumi.get(self, "availability_config")
+
+    @availability_config.setter
+    def availability_config(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigArgs']]):
+        pulumi.set(self, "availability_config", value)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "availability_domain", value)
+
+    @property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the compute capacity reservation this instance is launched under.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @capacity_reservation_id.setter
+    def capacity_reservation_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "capacity_reservation_id", value)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the compartment containing images to search
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="createVnicDetails")
+    def create_vnic_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs']]:
+        """
+        Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
+        """
+        return pulumi.get(self, "create_vnic_details")
+
+    @create_vnic_details.setter
+    def create_vnic_details(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs']]):
+        pulumi.set(self, "create_vnic_details", value)
+
+    @property
+    @pulumi.getter(name="dedicatedVmHostId")
+    def dedicated_vm_host_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the dedicated virtual machine host to place the instance on.
+
+        Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
+        """
+        return pulumi.get(self, "dedicated_vm_host_id")
+
+    @dedicated_vm_host_id.setter
+    def dedicated_vm_host_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dedicated_vm_host_id", value)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="extendedMetadata")
+    def extended_metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+
+        They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+
+        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+        """
+        return pulumi.get(self, "extended_metadata")
+
+    @extended_metadata.setter
+    def extended_metadata(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "extended_metadata", value)
+
+    @property
+    @pulumi.getter(name="faultDomain")
+    def fault_domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+
+        If you do not specify the fault domain, the system selects one for you.
+
+        To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+
+        Example: `FAULT-DOMAIN-1`
+        """
+        return pulumi.get(self, "fault_domain")
+
+    @fault_domain.setter
+    def fault_domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "fault_domain", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="instanceOptions")
+    def instance_options(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs']]:
+        """
+        Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
+        """
+        return pulumi.get(self, "instance_options")
+
+    @instance_options.setter
+    def instance_options(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs']]):
+        pulumi.set(self, "instance_options", value)
+
+    @property
+    @pulumi.getter(name="ipxeScript")
+    def ipxe_script(self) -> Optional[pulumi.Input[str]]:
+        """
+        This is an advanced option.
+
+        When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+
+        If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
+
+        The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+
+        For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+
+        For more information about iPXE, see http://ipxe.org.
+        """
+        return pulumi.get(self, "ipxe_script")
+
+    @ipxe_script.setter
+    def ipxe_script(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipxe_script", value)
+
+    @property
+    @pulumi.getter(name="isPvEncryptionInTransitEnabled")
+    def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        """
+        return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
+
+    @is_pv_encryption_in_transit_enabled.setter
+    def is_pv_encryption_in_transit_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_pv_encryption_in_transit_enabled", value)
+
+    @property
+    @pulumi.getter(name="launchMode")
+    def launch_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        """
+        return pulumi.get(self, "launch_mode")
+
+    @launch_mode.setter
+    def launch_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "launch_mode", value)
+
+    @property
+    @pulumi.getter(name="launchOptions")
+    def launch_options(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs']]:
+        """
+        Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+        """
+        return pulumi.get(self, "launch_options")
+
+    @launch_options.setter
+    def launch_options(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs']]):
+        pulumi.set(self, "launch_options", value)
+
+    @property
+    @pulumi.getter
+    def metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+
+        A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
+        * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
+        * Get information about the instance, including the custom metadata that you provide when you launch the instance.
+
+        **Providing Cloud-Init Metadata**
+
+        You can use the following metadata key names to provide information to Cloud-Init:
+
+        **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+
+        **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+
+        **Metadata Example**
+
+        "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" } **Getting Metadata on the Instance**
+
+        To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+
+        curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+
+        You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+
+        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "metadata", value)
+
+    @property
+    @pulumi.getter(name="platformConfig")
+    def platform_config(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs']]:
+        """
+        The platform configuration requested for the instance.
+
+        If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
+
+        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+        """
+        return pulumi.get(self, "platform_config")
+
+    @platform_config.setter
+    def platform_config(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs']]):
+        pulumi.set(self, "platform_config", value)
+
+    @property
+    @pulumi.getter(name="preemptibleInstanceConfig")
+    def preemptible_instance_config(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs']]:
+        """
+        Configuration options for preemptible instances.
+        """
+        return pulumi.get(self, "preemptible_instance_config")
+
+    @preemptible_instance_config.setter
+    def preemptible_instance_config(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs']]):
+        pulumi.set(self, "preemptible_instance_config", value)
+
+    @property
+    @pulumi.getter(name="preferredMaintenanceAction")
+    def preferred_maintenance_action(self) -> Optional[pulumi.Input[str]]:
+        """
+        The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+        """
+        return pulumi.get(self, "preferred_maintenance_action")
+
+    @preferred_maintenance_action.setter
+    def preferred_maintenance_action(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "preferred_maintenance_action", value)
+
+    @property
+    @pulumi.getter
+    def shape(self) -> Optional[pulumi.Input[str]]:
+        """
+        The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+
+        You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+        """
+        return pulumi.get(self, "shape")
+
+    @shape.setter
+    def shape(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "shape", value)
+
+    @property
+    @pulumi.getter(name="shapeConfig")
+    def shape_config(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs']]:
+        """
+        The shape configuration requested for the instance.
+
+        If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+
+        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+        """
+        return pulumi.get(self, "shape_config")
+
+    @shape_config.setter
+    def shape_config(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs']]):
+        pulumi.set(self, "shape_config", value)
+
+    @property
+    @pulumi.getter(name="sourceDetails")
+    def source_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs']]:
+        return pulumi.get(self, "source_details")
+
+    @source_details.setter
+    def source_details(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs']]):
+        pulumi.set(self, "source_details", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs:
+    def __init__(__self__, *,
+                 are_all_plugins_disabled: Optional[pulumi.Input[bool]] = None,
+                 is_management_disabled: Optional[pulumi.Input[bool]] = None,
+                 is_monitoring_disabled: Optional[pulumi.Input[bool]] = None,
+                 plugins_configs: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs']]]] = None):
+        """
+        :param pulumi.Input[bool] are_all_plugins_disabled: Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+               
+               To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+        :param pulumi.Input[bool] is_management_disabled: Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
+               
+               These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
+               
+               The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+               * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
+               * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
+        :param pulumi.Input[bool] is_monitoring_disabled: Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
+               
+               These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
+               
+               The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+               * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
+               * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
+        :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs']]] plugins_configs: The configuration of plugins associated with this instance.
+        """
+        if are_all_plugins_disabled is not None:
+            pulumi.set(__self__, "are_all_plugins_disabled", are_all_plugins_disabled)
+        if is_management_disabled is not None:
+            pulumi.set(__self__, "is_management_disabled", is_management_disabled)
+        if is_monitoring_disabled is not None:
+            pulumi.set(__self__, "is_monitoring_disabled", is_monitoring_disabled)
+        if plugins_configs is not None:
+            pulumi.set(__self__, "plugins_configs", plugins_configs)
+
+    @property
+    @pulumi.getter(name="areAllPluginsDisabled")
+    def are_all_plugins_disabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+
+        To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+        """
+        return pulumi.get(self, "are_all_plugins_disabled")
+
+    @are_all_plugins_disabled.setter
+    def are_all_plugins_disabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "are_all_plugins_disabled", value)
+
+    @property
+    @pulumi.getter(name="isManagementDisabled")
+    def is_management_disabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
+
+        These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
+
+        The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+        * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
+        * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
+        """
+        return pulumi.get(self, "is_management_disabled")
+
+    @is_management_disabled.setter
+    def is_management_disabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_management_disabled", value)
+
+    @property
+    @pulumi.getter(name="isMonitoringDisabled")
+    def is_monitoring_disabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
+
+        These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
+
+        The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+        * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
+        * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
+        """
+        return pulumi.get(self, "is_monitoring_disabled")
+
+    @is_monitoring_disabled.setter
+    def is_monitoring_disabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_monitoring_disabled", value)
+
+    @property
+    @pulumi.getter(name="pluginsConfigs")
+    def plugins_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs']]]]:
+        """
+        The configuration of plugins associated with this instance.
+        """
+        return pulumi.get(self, "plugins_configs")
+
+    @plugins_configs.setter
+    def plugins_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs']]]]):
+        pulumi.set(self, "plugins_configs", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs:
+    def __init__(__self__, *,
+                 desired_state: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] desired_state: Whether the plugin should be enabled or disabled.
+               
+               To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
+        :param pulumi.Input[str] name: The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+        """
+        if desired_state is not None:
+            pulumi.set(__self__, "desired_state", desired_state)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="desiredState")
+    def desired_state(self) -> Optional[pulumi.Input[str]]:
+        """
+        Whether the plugin should be enabled or disabled.
+
+        To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
+        """
+        return pulumi.get(self, "desired_state")
+
+    @desired_state.setter
+    def desired_state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "desired_state", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigArgs:
+    def __init__(__self__, *,
+                 is_live_migration_preferred: Optional[pulumi.Input[bool]] = None,
+                 recovery_action: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+        :param pulumi.Input[str] recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        """
+        if is_live_migration_preferred is not None:
+            pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
+        if recovery_action is not None:
+            pulumi.set(__self__, "recovery_action", recovery_action)
+
+    @property
+    @pulumi.getter(name="isLiveMigrationPreferred")
+    def is_live_migration_preferred(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+        """
+        return pulumi.get(self, "is_live_migration_preferred")
+
+    @is_live_migration_preferred.setter
+    def is_live_migration_preferred(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_live_migration_preferred", value)
+
+    @property
+    @pulumi.getter(name="recoveryAction")
+    def recovery_action(self) -> Optional[pulumi.Input[str]]:
+        """
+        The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        """
+        return pulumi.get(self, "recovery_action")
+
+    @recovery_action.setter
+    def recovery_action(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "recovery_action", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs:
+    def __init__(__self__, *,
+                 assign_private_dns_record: Optional[pulumi.Input[bool]] = None,
+                 assign_public_ip: Optional[pulumi.Input[bool]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 hostname_label: Optional[pulumi.Input[str]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 private_ip: Optional[pulumi.Input[str]] = None,
+                 skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
+                 subnet_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param pulumi.Input[bool] assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+        :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param pulumi.Input[bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param pulumi.Input[str] subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        if assign_private_dns_record is not None:
+            pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
+        if assign_public_ip is not None:
+            pulumi.set(__self__, "assign_public_ip", assign_public_ip)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if hostname_label is not None:
+            pulumi.set(__self__, "hostname_label", hostname_label)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if private_ip is not None:
+            pulumi.set(__self__, "private_ip", private_ip)
+        if skip_source_dest_check is not None:
+            pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="assignPrivateDnsRecord")
+    def assign_private_dns_record(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "assign_private_dns_record")
+
+    @assign_private_dns_record.setter
+    def assign_private_dns_record(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "assign_private_dns_record", value)
+
+    @property
+    @pulumi.getter(name="assignPublicIp")
+    def assign_public_ip(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "assign_public_ip")
+
+    @assign_public_ip.setter
+    def assign_public_ip(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "assign_public_ip", value)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="hostnameLabel")
+    def hostname_label(self) -> Optional[pulumi.Input[str]]:
+        """
+        The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "hostname_label")
+
+    @hostname_label.setter
+    def hostname_label(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "hostname_label", value)
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "nsg_ids", value)
+
+    @property
+    @pulumi.getter(name="privateIp")
+    def private_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "private_ip")
+
+    @private_ip.setter
+    def private_ip(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_ip", value)
+
+    @property
+    @pulumi.getter(name="skipSourceDestCheck")
+    def skip_source_dest_check(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "skip_source_dest_check")
+
+    @skip_source_dest_check.setter
+    def skip_source_dest_check(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "skip_source_dest_check", value)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subnet_id", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs:
+    def __init__(__self__, *,
+                 are_legacy_imds_endpoints_disabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] are_legacy_imds_endpoints_disabled: Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
+        """
+        if are_legacy_imds_endpoints_disabled is not None:
+            pulumi.set(__self__, "are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
+
+    @property
+    @pulumi.getter(name="areLegacyImdsEndpointsDisabled")
+    def are_legacy_imds_endpoints_disabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
+        """
+        return pulumi.get(self, "are_legacy_imds_endpoints_disabled")
+
+    @are_legacy_imds_endpoints_disabled.setter
+    def are_legacy_imds_endpoints_disabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "are_legacy_imds_endpoints_disabled", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs:
+    def __init__(__self__, *,
+                 boot_volume_type: Optional[pulumi.Input[str]] = None,
+                 firmware: Optional[pulumi.Input[str]] = None,
+                 is_consistent_volume_naming_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
+                 network_type: Optional[pulumi.Input[str]] = None,
+                 remote_data_volume_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] boot_volume_type: Emulation type for the boot volume.
+        :param pulumi.Input[str] firmware: Firmware used to boot VM. Select the option that matches your operating system.
+        :param pulumi.Input[bool] is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
+        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        :param pulumi.Input[str] network_type: Emulation type for the physical network interface card (NIC).
+        :param pulumi.Input[str] remote_data_volume_type: Emulation type for volume.
+        """
+        if boot_volume_type is not None:
+            pulumi.set(__self__, "boot_volume_type", boot_volume_type)
+        if firmware is not None:
+            pulumi.set(__self__, "firmware", firmware)
+        if is_consistent_volume_naming_enabled is not None:
+            pulumi.set(__self__, "is_consistent_volume_naming_enabled", is_consistent_volume_naming_enabled)
+        if is_pv_encryption_in_transit_enabled is not None:
+            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
+        if remote_data_volume_type is not None:
+            pulumi.set(__self__, "remote_data_volume_type", remote_data_volume_type)
+
+    @property
+    @pulumi.getter(name="bootVolumeType")
+    def boot_volume_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Emulation type for the boot volume.
+        """
+        return pulumi.get(self, "boot_volume_type")
+
+    @boot_volume_type.setter
+    def boot_volume_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "boot_volume_type", value)
+
+    @property
+    @pulumi.getter
+    def firmware(self) -> Optional[pulumi.Input[str]]:
+        """
+        Firmware used to boot VM. Select the option that matches your operating system.
+        """
+        return pulumi.get(self, "firmware")
+
+    @firmware.setter
+    def firmware(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "firmware", value)
+
+    @property
+    @pulumi.getter(name="isConsistentVolumeNamingEnabled")
+    def is_consistent_volume_naming_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to enable consistent volume naming feature. Defaults to false.
+        """
+        return pulumi.get(self, "is_consistent_volume_naming_enabled")
+
+    @is_consistent_volume_naming_enabled.setter
+    def is_consistent_volume_naming_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_consistent_volume_naming_enabled", value)
+
+    @property
+    @pulumi.getter(name="isPvEncryptionInTransitEnabled")
+    def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        """
+        return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
+
+    @is_pv_encryption_in_transit_enabled.setter
+    def is_pv_encryption_in_transit_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_pv_encryption_in_transit_enabled", value)
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Emulation type for the physical network interface card (NIC).
+        """
+        return pulumi.get(self, "network_type")
+
+    @network_type.setter
+    def network_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "network_type", value)
+
+    @property
+    @pulumi.getter(name="remoteDataVolumeType")
+    def remote_data_volume_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Emulation type for volume.
+        """
+        return pulumi.get(self, "remote_data_volume_type")
+
+    @remote_data_volume_type.setter
+    def remote_data_volume_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "remote_data_volume_type", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 are_virtual_instructions_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_access_control_service_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_input_output_memory_management_unit_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_measured_boot_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_memory_encryption_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_secure_boot_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_symmetric_multi_threading_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_trusted_platform_module_enabled: Optional[pulumi.Input[bool]] = None,
+                 numa_nodes_per_socket: Optional[pulumi.Input[str]] = None,
+                 percentage_of_cores_enabled: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
+        :param pulumi.Input[bool] are_virtual_instructions_enabled: Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
+        :param pulumi.Input[bool] is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
+        :param pulumi.Input[bool] is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
+        :param pulumi.Input[bool] is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
+        :param pulumi.Input[bool] is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+        :param pulumi.Input[bool] is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
+        :param pulumi.Input[bool] is_symmetric_multi_threading_enabled: Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+               
+               Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
+        :param pulumi.Input[bool] is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
+        :param pulumi.Input[str] numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
+        :param pulumi.Input[int] percentage_of_cores_enabled: The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+               
+               If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
+        """
+        pulumi.set(__self__, "type", type)
+        if are_virtual_instructions_enabled is not None:
+            pulumi.set(__self__, "are_virtual_instructions_enabled", are_virtual_instructions_enabled)
+        if is_access_control_service_enabled is not None:
+            pulumi.set(__self__, "is_access_control_service_enabled", is_access_control_service_enabled)
+        if is_input_output_memory_management_unit_enabled is not None:
+            pulumi.set(__self__, "is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
+        if is_measured_boot_enabled is not None:
+            pulumi.set(__self__, "is_measured_boot_enabled", is_measured_boot_enabled)
+        if is_memory_encryption_enabled is not None:
+            pulumi.set(__self__, "is_memory_encryption_enabled", is_memory_encryption_enabled)
+        if is_secure_boot_enabled is not None:
+            pulumi.set(__self__, "is_secure_boot_enabled", is_secure_boot_enabled)
+        if is_symmetric_multi_threading_enabled is not None:
+            pulumi.set(__self__, "is_symmetric_multi_threading_enabled", is_symmetric_multi_threading_enabled)
+        if is_trusted_platform_module_enabled is not None:
+            pulumi.set(__self__, "is_trusted_platform_module_enabled", is_trusted_platform_module_enabled)
+        if numa_nodes_per_socket is not None:
+            pulumi.set(__self__, "numa_nodes_per_socket", numa_nodes_per_socket)
+        if percentage_of_cores_enabled is not None:
+            pulumi.set(__self__, "percentage_of_cores_enabled", percentage_of_cores_enabled)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="areVirtualInstructionsEnabled")
+    def are_virtual_instructions_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
+        """
+        return pulumi.get(self, "are_virtual_instructions_enabled")
+
+    @are_virtual_instructions_enabled.setter
+    def are_virtual_instructions_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "are_virtual_instructions_enabled", value)
+
+    @property
+    @pulumi.getter(name="isAccessControlServiceEnabled")
+    def is_access_control_service_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
+        """
+        return pulumi.get(self, "is_access_control_service_enabled")
+
+    @is_access_control_service_enabled.setter
+    def is_access_control_service_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_access_control_service_enabled", value)
+
+    @property
+    @pulumi.getter(name="isInputOutputMemoryManagementUnitEnabled")
+    def is_input_output_memory_management_unit_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the input-output memory management unit is enabled.
+        """
+        return pulumi.get(self, "is_input_output_memory_management_unit_enabled")
+
+    @is_input_output_memory_management_unit_enabled.setter
+    def is_input_output_memory_management_unit_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_input_output_memory_management_unit_enabled", value)
+
+    @property
+    @pulumi.getter(name="isMeasuredBootEnabled")
+    def is_measured_boot_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the Measured Boot feature is enabled on the instance.
+        """
+        return pulumi.get(self, "is_measured_boot_enabled")
+
+    @is_measured_boot_enabled.setter
+    def is_measured_boot_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_measured_boot_enabled", value)
+
+    @property
+    @pulumi.getter(name="isMemoryEncryptionEnabled")
+    def is_memory_encryption_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+        """
+        return pulumi.get(self, "is_memory_encryption_enabled")
+
+    @is_memory_encryption_enabled.setter
+    def is_memory_encryption_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_memory_encryption_enabled", value)
+
+    @property
+    @pulumi.getter(name="isSecureBootEnabled")
+    def is_secure_boot_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether Secure Boot is enabled on the instance.
+        """
+        return pulumi.get(self, "is_secure_boot_enabled")
+
+    @is_secure_boot_enabled.setter
+    def is_secure_boot_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_secure_boot_enabled", value)
+
+    @property
+    @pulumi.getter(name="isSymmetricMultiThreadingEnabled")
+    def is_symmetric_multi_threading_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+
+        Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
+        """
+        return pulumi.get(self, "is_symmetric_multi_threading_enabled")
+
+    @is_symmetric_multi_threading_enabled.setter
+    def is_symmetric_multi_threading_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_symmetric_multi_threading_enabled", value)
+
+    @property
+    @pulumi.getter(name="isTrustedPlatformModuleEnabled")
+    def is_trusted_platform_module_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the Trusted Platform Module (TPM) is enabled on the instance.
+        """
+        return pulumi.get(self, "is_trusted_platform_module_enabled")
+
+    @is_trusted_platform_module_enabled.setter
+    def is_trusted_platform_module_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_trusted_platform_module_enabled", value)
+
+    @property
+    @pulumi.getter(name="numaNodesPerSocket")
+    def numa_nodes_per_socket(self) -> Optional[pulumi.Input[str]]:
+        """
+        The number of NUMA nodes per socket (NPS).
+        """
+        return pulumi.get(self, "numa_nodes_per_socket")
+
+    @numa_nodes_per_socket.setter
+    def numa_nodes_per_socket(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "numa_nodes_per_socket", value)
+
+    @property
+    @pulumi.getter(name="percentageOfCoresEnabled")
+    def percentage_of_cores_enabled(self) -> Optional[pulumi.Input[int]]:
+        """
+        The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+
+        If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
+        """
+        return pulumi.get(self, "percentage_of_cores_enabled")
+
+    @percentage_of_cores_enabled.setter
+    def percentage_of_cores_enabled(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "percentage_of_cores_enabled", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs:
+    def __init__(__self__, *,
+                 preemption_action: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs']] = None):
+        """
+        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs'] preemption_action: The action to run when the preemptible instance is interrupted for eviction.
+        """
+        if preemption_action is not None:
+            pulumi.set(__self__, "preemption_action", preemption_action)
+
+    @property
+    @pulumi.getter(name="preemptionAction")
+    def preemption_action(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs']]:
+        """
+        The action to run when the preemptible instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "preemption_action")
+
+    @preemption_action.setter
+    def preemption_action(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs']]):
+        pulumi.set(self, "preemption_action", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 preserve_boot_volume: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
+        :param pulumi.Input[bool] preserve_boot_volume: Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        """
+        pulumi.set(__self__, "type", type)
+        if preserve_boot_volume is not None:
+            pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="preserveBootVolume")
+    def preserve_boot_volume(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        """
+        return pulumi.get(self, "preserve_boot_volume")
+
+    @preserve_boot_volume.setter
+    def preserve_boot_volume(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "preserve_boot_volume", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs:
+    def __init__(__self__, *,
+                 baseline_ocpu_utilization: Optional[pulumi.Input[str]] = None,
+                 memory_in_gbs: Optional[pulumi.Input[float]] = None,
+                 nvmes: Optional[pulumi.Input[int]] = None,
+                 ocpus: Optional[pulumi.Input[float]] = None,
+                 vcpus: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+               
+               The following values are supported:
+        :param pulumi.Input[float] memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
+        :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        :param pulumi.Input[float] ocpus: The total number of OCPUs available to the instance.
+        :param pulumi.Input[int] vcpus: The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        """
+        if baseline_ocpu_utilization is not None:
+            pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+        if vcpus is not None:
+            pulumi.set(__self__, "vcpus", vcpus)
+
+    @property
+    @pulumi.getter(name="baselineOcpuUtilization")
+    def baseline_ocpu_utilization(self) -> Optional[pulumi.Input[str]]:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+
+        The following values are supported:
+        """
+        return pulumi.get(self, "baseline_ocpu_utilization")
+
+    @baseline_ocpu_utilization.setter
+    def baseline_ocpu_utilization(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "baseline_ocpu_utilization", value)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
+        """
+        The total amount of memory available to the instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @nvmes.setter
+    def nvmes(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "nvmes", value)
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[pulumi.Input[float]]:
+        """
+        The total number of OCPUs available to the instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "ocpus", value)
+
+    @property
+    @pulumi.getter
+    def vcpus(self) -> Optional[pulumi.Input[int]]:
+        """
+        The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        """
+        return pulumi.get(self, "vcpus")
+
+    @vcpus.setter
+    def vcpus(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "vcpus", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs:
+    def __init__(__self__, *,
+                 source_type: pulumi.Input[str],
+                 boot_volume_id: Optional[pulumi.Input[str]] = None,
+                 boot_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
+                 boot_volume_vpus_per_gb: Optional[pulumi.Input[str]] = None,
+                 image_id: Optional[pulumi.Input[str]] = None,
+                 instance_source_image_filter_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs']] = None,
+                 kms_key_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] source_type: The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+        :param pulumi.Input[str] boot_volume_id: The OCID of the boot volume used to boot the instance.
+        :param pulumi.Input[str] boot_volume_size_in_gbs: The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
+        :param pulumi.Input[str] boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+               
+               Allowed values:
+        :param pulumi.Input[str] image_id: The OCID of the image used to boot the instance.
+        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs'] instance_source_image_filter_details: These are the criteria for selecting an image. This is required if imageId is not specified.
+        :param pulumi.Input[str] kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
+        """
+        pulumi.set(__self__, "source_type", source_type)
+        if boot_volume_id is not None:
+            pulumi.set(__self__, "boot_volume_id", boot_volume_id)
+        if boot_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
+        if boot_volume_vpus_per_gb is not None:
+            pulumi.set(__self__, "boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
+        if image_id is not None:
+            pulumi.set(__self__, "image_id", image_id)
+        if instance_source_image_filter_details is not None:
+            pulumi.set(__self__, "instance_source_image_filter_details", instance_source_image_filter_details)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> pulumi.Input[str]:
+        """
+        The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+        """
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "source_type", value)
+
+    @property
+    @pulumi.getter(name="bootVolumeId")
+    def boot_volume_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the boot volume used to boot the instance.
+        """
+        return pulumi.get(self, "boot_volume_id")
+
+    @boot_volume_id.setter
+    def boot_volume_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "boot_volume_id", value)
+
+    @property
+    @pulumi.getter(name="bootVolumeSizeInGbs")
+    def boot_volume_size_in_gbs(self) -> Optional[pulumi.Input[str]]:
+        """
+        The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
+        """
+        return pulumi.get(self, "boot_volume_size_in_gbs")
+
+    @boot_volume_size_in_gbs.setter
+    def boot_volume_size_in_gbs(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "boot_volume_size_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="bootVolumeVpusPerGb")
+    def boot_volume_vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
+        """
+        The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+
+        Allowed values:
+        """
+        return pulumi.get(self, "boot_volume_vpus_per_gb")
+
+    @boot_volume_vpus_per_gb.setter
+    def boot_volume_vpus_per_gb(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "boot_volume_vpus_per_gb", value)
+
+    @property
+    @pulumi.getter(name="imageId")
+    def image_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the image used to boot the instance.
+        """
+        return pulumi.get(self, "image_id")
+
+    @image_id.setter
+    def image_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "image_id", value)
+
+    @property
+    @pulumi.getter(name="instanceSourceImageFilterDetails")
+    def instance_source_image_filter_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs']]:
+        """
+        These are the criteria for selecting an image. This is required if imageId is not specified.
+        """
+        return pulumi.get(self, "instance_source_image_filter_details")
+
+    @instance_source_image_filter_details.setter
+    def instance_source_image_filter_details(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs']]):
+        pulumi.set(self, "instance_source_image_filter_details", value)
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the Vault service key to assign as the master encryption key for the volume.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @kms_key_id.setter
+    def kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "kms_key_id", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs:
+    def __init__(__self__, *,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 defined_tags_filter: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 operating_system: Optional[pulumi.Input[str]] = None,
+                 operating_system_version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
+        :param pulumi.Input[Mapping[str, Any]] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[str] operating_system: The image's operating system.  Example: `Oracle Linux`
+        :param pulumi.Input[str] operating_system_version: The image's operating system version.  Example: `7.2`
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags_filter is not None:
+            pulumi.set(__self__, "defined_tags_filter", defined_tags_filter)
+        if operating_system is not None:
+            pulumi.set(__self__, "operating_system", operating_system)
+        if operating_system_version is not None:
+            pulumi.set(__self__, "operating_system_version", operating_system_version)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the compartment containing images to search
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="definedTagsFilter")
+    def defined_tags_filter(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags_filter")
+
+    @defined_tags_filter.setter
+    def defined_tags_filter(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags_filter", value)
+
+    @property
+    @pulumi.getter(name="operatingSystem")
+    def operating_system(self) -> Optional[pulumi.Input[str]]:
+        """
+        The image's operating system.  Example: `Oracle Linux`
+        """
+        return pulumi.get(self, "operating_system")
+
+    @operating_system.setter
+    def operating_system(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "operating_system", value)
+
+    @property
+    @pulumi.getter(name="operatingSystemVersion")
+    def operating_system_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The image's operating system version.  Example: `7.2`
+        """
+        return pulumi.get(self, "operating_system_version")
+
+    @operating_system_version.setter
+    def operating_system_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "operating_system_version", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs:
+    def __init__(__self__, *,
+                 create_vnic_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs']] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 nic_index: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs'] create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
+        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[int] nic_index: Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+        """
+        if create_vnic_details is not None:
+            pulumi.set(__self__, "create_vnic_details", create_vnic_details)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if nic_index is not None:
+            pulumi.set(__self__, "nic_index", nic_index)
+
+    @property
+    @pulumi.getter(name="createVnicDetails")
+    def create_vnic_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs']]:
+        """
+        Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
+        """
+        return pulumi.get(self, "create_vnic_details")
+
+    @create_vnic_details.setter
+    def create_vnic_details(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs']]):
+        pulumi.set(self, "create_vnic_details", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="nicIndex")
+    def nic_index(self) -> Optional[pulumi.Input[int]]:
+        """
+        Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+        """
+        return pulumi.get(self, "nic_index")
+
+    @nic_index.setter
+    def nic_index(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "nic_index", value)
+
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs:
+    def __init__(__self__, *,
+                 assign_private_dns_record: Optional[pulumi.Input[bool]] = None,
+                 assign_public_ip: Optional[pulumi.Input[bool]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 hostname_label: Optional[pulumi.Input[str]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 private_ip: Optional[pulumi.Input[str]] = None,
+                 skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
+                 subnet_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param pulumi.Input[bool] assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+        :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param pulumi.Input[bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param pulumi.Input[str] subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        if assign_private_dns_record is not None:
+            pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
+        if assign_public_ip is not None:
+            pulumi.set(__self__, "assign_public_ip", assign_public_ip)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if hostname_label is not None:
+            pulumi.set(__self__, "hostname_label", hostname_label)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if private_ip is not None:
+            pulumi.set(__self__, "private_ip", private_ip)
+        if skip_source_dest_check is not None:
+            pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="assignPrivateDnsRecord")
+    def assign_private_dns_record(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "assign_private_dns_record")
+
+    @assign_private_dns_record.setter
+    def assign_private_dns_record(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "assign_private_dns_record", value)
+
+    @property
+    @pulumi.getter(name="assignPublicIp")
+    def assign_public_ip(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "assign_public_ip")
+
+    @assign_public_ip.setter
+    def assign_public_ip(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "assign_public_ip", value)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="hostnameLabel")
+    def hostname_label(self) -> Optional[pulumi.Input[str]]:
+        """
+        The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "hostname_label")
+
+    @hostname_label.setter
+    def hostname_label(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "hostname_label", value)
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "nsg_ids", value)
+
+    @property
+    @pulumi.getter(name="privateIp")
+    def private_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "private_ip")
+
+    @private_ip.setter
+    def private_ip(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_ip", value)
+
+    @property
+    @pulumi.getter(name="skipSourceDestCheck")
+    def skip_source_dest_check(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "skip_source_dest_check")
+
+    @skip_source_dest_check.setter
+    def skip_source_dest_check(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "skip_source_dest_check", value)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subnet_id", value)
 
 
 @pulumi.input_type
@@ -5534,7 +7971,7 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
                  skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[bool] assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+        :param pulumi.Input[bool] assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[bool] assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -5570,7 +8007,7 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
     @pulumi.getter(name="assignPrivateDnsRecord")
     def assign_private_dns_record(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+        Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "assign_private_dns_record")
 
@@ -6637,7 +9074,8 @@ class InstanceShapeConfigArgs:
                  networking_bandwidth_in_gbps: Optional[pulumi.Input[float]] = None,
                  nvmes: Optional[pulumi.Input[int]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None,
-                 processor_description: Optional[pulumi.Input[str]] = None):
+                 processor_description: Optional[pulumi.Input[str]] = None,
+                 vcpus: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[str] baseline_ocpu_utilization: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
                
@@ -6653,6 +9091,7 @@ class InstanceShapeConfigArgs:
         :param pulumi.Input[int] nvmes: (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs available to the instance.
         :param pulumi.Input[str] processor_description: A short description of the instance's processor (CPU).
+        :param pulumi.Input[int] vcpus: (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
         """
         if baseline_ocpu_utilization is not None:
             pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
@@ -6678,6 +9117,8 @@ class InstanceShapeConfigArgs:
             pulumi.set(__self__, "ocpus", ocpus)
         if processor_description is not None:
             pulumi.set(__self__, "processor_description", processor_description)
+        if vcpus is not None:
+            pulumi.set(__self__, "vcpus", vcpus)
 
     @property
     @pulumi.getter(name="baselineOcpuUtilization")
@@ -6825,44 +9266,49 @@ class InstanceShapeConfigArgs:
     def processor_description(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "processor_description", value)
 
+    @property
+    @pulumi.getter
+    def vcpus(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+        """
+        return pulumi.get(self, "vcpus")
+
+    @vcpus.setter
+    def vcpus(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "vcpus", value)
+
 
 @pulumi.input_type
 class InstanceSourceDetailsArgs:
     def __init__(__self__, *,
-                 source_id: pulumi.Input[str],
                  source_type: pulumi.Input[str],
                  boot_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
                  boot_volume_vpus_per_gb: Optional[pulumi.Input[str]] = None,
-                 kms_key_id: Optional[pulumi.Input[str]] = None):
+                 instance_source_image_filter_details: Optional[pulumi.Input['InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs']] = None,
+                 kms_key_id: Optional[pulumi.Input[str]] = None,
+                 source_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] source_id: The OCID of an image or a boot volume to use, depending on the value of `source_type`.
         :param pulumi.Input[str] source_type: The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         :param pulumi.Input[str] boot_volume_size_in_gbs: (Updatable) The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
         :param pulumi.Input[str] boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
                
                Allowed values:
+        :param pulumi.Input['InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs'] instance_source_image_filter_details: These are the criteria for selecting an image. This is required if imageId is not specified.
         :param pulumi.Input[str] kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        :param pulumi.Input[str] source_id: The OCID of an image or a boot volume to use, depending on the value of `source_type`.
         """
-        pulumi.set(__self__, "source_id", source_id)
         pulumi.set(__self__, "source_type", source_type)
         if boot_volume_size_in_gbs is not None:
             pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
         if boot_volume_vpus_per_gb is not None:
             pulumi.set(__self__, "boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
+        if instance_source_image_filter_details is not None:
+            pulumi.set(__self__, "instance_source_image_filter_details", instance_source_image_filter_details)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
-
-    @property
-    @pulumi.getter(name="sourceId")
-    def source_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of an image or a boot volume to use, depending on the value of `source_type`.
-        """
-        return pulumi.get(self, "source_id")
-
-    @source_id.setter
-    def source_id(self, value: pulumi.Input[str]):
-        pulumi.set(self, "source_id", value)
+        if source_id is not None:
+            pulumi.set(__self__, "source_id", source_id)
 
     @property
     @pulumi.getter(name="sourceType")
@@ -6903,6 +9349,18 @@ class InstanceSourceDetailsArgs:
         pulumi.set(self, "boot_volume_vpus_per_gb", value)
 
     @property
+    @pulumi.getter(name="instanceSourceImageFilterDetails")
+    def instance_source_image_filter_details(self) -> Optional[pulumi.Input['InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs']]:
+        """
+        These are the criteria for selecting an image. This is required if imageId is not specified.
+        """
+        return pulumi.get(self, "instance_source_image_filter_details")
+
+    @instance_source_image_filter_details.setter
+    def instance_source_image_filter_details(self, value: Optional[pulumi.Input['InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs']]):
+        pulumi.set(self, "instance_source_image_filter_details", value)
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -6913,6 +9371,88 @@ class InstanceSourceDetailsArgs:
     @kms_key_id.setter
     def kms_key_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "kms_key_id", value)
+
+    @property
+    @pulumi.getter(name="sourceId")
+    def source_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+        """
+        return pulumi.get(self, "source_id")
+
+    @source_id.setter
+    def source_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source_id", value)
+
+
+@pulumi.input_type
+class InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs:
+    def __init__(__self__, *,
+                 compartment_id: pulumi.Input[str],
+                 defined_tags_filter: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 operating_system: Optional[pulumi.Input[str]] = None,
+                 operating_system_version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
+        :param pulumi.Input[Mapping[str, Any]] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[str] operating_system: The image's operating system.  Example: `Oracle Linux`
+        :param pulumi.Input[str] operating_system_version: The image's operating system version.  Example: `7.2`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags_filter is not None:
+            pulumi.set(__self__, "defined_tags_filter", defined_tags_filter)
+        if operating_system is not None:
+            pulumi.set(__self__, "operating_system", operating_system)
+        if operating_system_version is not None:
+            pulumi.set(__self__, "operating_system_version", operating_system_version)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The OCID of the compartment containing images to search
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="definedTagsFilter")
+    def defined_tags_filter(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags_filter")
+
+    @defined_tags_filter.setter
+    def defined_tags_filter(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags_filter", value)
+
+    @property
+    @pulumi.getter(name="operatingSystem")
+    def operating_system(self) -> Optional[pulumi.Input[str]]:
+        """
+        The image's operating system.  Example: `Oracle Linux`
+        """
+        return pulumi.get(self, "operating_system")
+
+    @operating_system.setter
+    def operating_system(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "operating_system", value)
+
+    @property
+    @pulumi.getter(name="operatingSystemVersion")
+    def operating_system_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The image's operating system version.  Example: `7.2`
+        """
+        return pulumi.get(self, "operating_system_version")
+
+    @operating_system_version.setter
+    def operating_system_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "operating_system_version", value)
 
 
 @pulumi.input_type

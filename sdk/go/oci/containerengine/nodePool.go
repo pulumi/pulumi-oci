@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -194,6 +195,7 @@ func NewNodePool(ctx *pulumi.Context,
 	if args.NodeShape == nil {
 		return nil, errors.New("invalid value for required argument 'NodeShape'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource NodePool
 	err := ctx.RegisterResource("oci:ContainerEngine/nodePool:NodePool", name, args, &resource, opts...)
 	if err != nil {

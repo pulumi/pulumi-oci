@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -14,6 +15,7 @@ import (
 //
 // Generates a recommended Cloud@Customer VM cluster network configuration.
 func GetVmClusterRecommendedNetwork(ctx *pulumi.Context, args *GetVmClusterRecommendedNetworkArgs, opts ...pulumi.InvokeOption) (*GetVmClusterRecommendedNetworkResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVmClusterRecommendedNetworkResult
 	err := ctx.Invoke("oci:Database/getVmClusterRecommendedNetwork:getVmClusterRecommendedNetwork", args, &rv, opts...)
 	if err != nil {

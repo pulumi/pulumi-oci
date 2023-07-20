@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ import (
 //
 // ```
 func GetPublications(ctx *pulumi.Context, args *GetPublicationsArgs, opts ...pulumi.InvokeOption) (*GetPublicationsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPublicationsResult
 	err := ctx.Invoke("oci:Marketplace/getPublications:getPublications", args, &rv, opts...)
 	if err != nil {

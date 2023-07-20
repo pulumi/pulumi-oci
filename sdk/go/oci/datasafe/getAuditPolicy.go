@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupAuditPolicy(ctx *pulumi.Context, args *LookupAuditPolicyArgs, opts ...pulumi.InvokeOption) (*LookupAuditPolicyResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAuditPolicyResult
 	err := ctx.Invoke("oci:DataSafe/getAuditPolicy:getAuditPolicy", args, &rv, opts...)
 	if err != nil {

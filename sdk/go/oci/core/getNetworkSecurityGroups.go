@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func GetNetworkSecurityGroups(ctx *pulumi.Context, args *GetNetworkSecurityGroupsArgs, opts ...pulumi.InvokeOption) (*GetNetworkSecurityGroupsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNetworkSecurityGroupsResult
 	err := ctx.Invoke("oci:Core/getNetworkSecurityGroups:getNetworkSecurityGroups", args, &rv, opts...)
 	if err != nil {

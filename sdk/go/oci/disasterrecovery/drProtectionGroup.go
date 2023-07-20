@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -49,17 +50,30 @@ import (
 //				},
 //				Members: disasterrecovery.DrProtectionGroupMemberArray{
 //					&disasterrecovery.DrProtectionGroupMemberArgs{
-//						MemberId:                     pulumi.Any(oci_disaster_recovery_member.Test_member.Id),
-//						MemberType:                   pulumi.Any(_var.Dr_protection_group_members_member_type),
-//						DestinationCompartmentId:     pulumi.Any(oci_identity_compartment.Test_compartment.Id),
-//						DestinationDedicatedVmHostId: pulumi.Any(oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id),
-//						IsMovable:                    pulumi.Any(_var.Dr_protection_group_members_is_movable),
-//						PasswordVaultSecretId:        pulumi.Any(oci_vault_secret.Test_secret.Id),
+//						MemberId:                         pulumi.Any(oci_disaster_recovery_member.Test_member.Id),
+//						MemberType:                       pulumi.Any(_var.Dr_protection_group_members_member_type),
+//						DestinationCapacityReservationId: pulumi.Any(oci_disaster_recovery_destination_capacity_reservation.Test_destination_capacity_reservation.Id),
+//						DestinationCompartmentId:         pulumi.Any(oci_identity_compartment.Test_compartment.Id),
+//						DestinationDedicatedVmHostId:     pulumi.Any(oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id),
+//						IsMovable:                        pulumi.Any(_var.Dr_protection_group_members_is_movable),
+//						IsRetainFaultDomain:              pulumi.Any(_var.Dr_protection_group_members_is_retain_fault_domain),
+//						PasswordVaultSecretId:            pulumi.Any(oci_vault_secret.Test_secret.Id),
 //						VnicMappings: disasterrecovery.DrProtectionGroupMemberVnicMappingArray{
 //							&disasterrecovery.DrProtectionGroupMemberVnicMappingArgs{
-//								DestinationNsgIdLists: pulumi.Any(_var.Dr_protection_group_members_vnic_mapping_destination_nsg_id_list),
-//								DestinationSubnetId:   pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//								SourceVnicId:          pulumi.Any(oci_core_vnic.Test_vnic.Id),
+//								DestinationNsgIdLists:                    pulumi.Any(_var.Dr_protection_group_members_vnic_mapping_destination_nsg_id_list),
+//								DestinationPrimaryPrivateIpAddress:       pulumi.Any(_var.Dr_protection_group_members_vnic_mapping_destination_primary_private_ip_address),
+//								DestinationPrimaryPrivateIpHostnameLabel: pulumi.Any(_var.Dr_protection_group_members_vnic_mapping_destination_primary_private_ip_hostname_label),
+//								DestinationSubnetId:                      pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//								SourceVnicId:                             pulumi.Any(oci_core_vnic.Test_vnic.Id),
+//							},
+//						},
+//						VnicMappings: disasterrecovery.DrProtectionGroupMemberVnicMappingArray{
+//							&disasterrecovery.DrProtectionGroupMemberVnicMappingArgs{
+//								DestinationNsgIdLists:                    pulumi.Any(_var.Dr_protection_group_members_vnic_mappings_destination_nsg_id_list),
+//								DestinationPrimaryPrivateIpAddress:       pulumi.Any(_var.Dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address),
+//								DestinationPrimaryPrivateIpHostnameLabel: pulumi.Any(_var.Dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label),
+//								DestinationSubnetId:                      pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//								SourceVnicId:                             pulumi.Any(oci_core_vnic.Test_vnic.Id),
 //							},
 //						},
 //					},
@@ -88,7 +102,7 @@ type DrProtectionGroup struct {
 
 	// The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
 	Association DrProtectionGroupAssociationOutput `pulumi:"association"`
-	// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
@@ -107,7 +121,7 @@ type DrProtectionGroup struct {
 	LogLocation DrProtectionGroupLogLocationOutput `pulumi:"logLocation"`
 	// (Updatable) A list of DR Protection Group members.
 	Members DrProtectionGroupMemberArrayOutput `pulumi:"members"`
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	PeerId pulumi.StringOutput `pulumi:"peerId"`
 	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringOutput `pulumi:"peerRegion"`
@@ -139,6 +153,7 @@ func NewDrProtectionGroup(ctx *pulumi.Context,
 	if args.LogLocation == nil {
 		return nil, errors.New("invalid value for required argument 'LogLocation'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DrProtectionGroup
 	err := ctx.RegisterResource("oci:DisasterRecovery/drProtectionGroup:DrProtectionGroup", name, args, &resource, opts...)
 	if err != nil {
@@ -163,7 +178,7 @@ func GetDrProtectionGroup(ctx *pulumi.Context,
 type drProtectionGroupState struct {
 	// The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
 	Association *DrProtectionGroupAssociation `pulumi:"association"`
-	// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -182,7 +197,7 @@ type drProtectionGroupState struct {
 	LogLocation *DrProtectionGroupLogLocation `pulumi:"logLocation"`
 	// (Updatable) A list of DR Protection Group members.
 	Members []DrProtectionGroupMember `pulumi:"members"`
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	PeerId *string `pulumi:"peerId"`
 	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
 	PeerRegion *string `pulumi:"peerRegion"`
@@ -201,7 +216,7 @@ type drProtectionGroupState struct {
 type DrProtectionGroupState struct {
 	// The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
 	Association DrProtectionGroupAssociationPtrInput
-	// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
@@ -220,7 +235,7 @@ type DrProtectionGroupState struct {
 	LogLocation DrProtectionGroupLogLocationPtrInput
 	// (Updatable) A list of DR Protection Group members.
 	Members DrProtectionGroupMemberArrayInput
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 	PeerId pulumi.StringPtrInput
 	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringPtrInput
@@ -243,7 +258,7 @@ func (DrProtectionGroupState) ElementType() reflect.Type {
 type drProtectionGroupArgs struct {
 	// The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
 	Association *DrProtectionGroupAssociation `pulumi:"association"`
-	// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -266,7 +281,7 @@ type drProtectionGroupArgs struct {
 type DrProtectionGroupArgs struct {
 	// The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
 	Association DrProtectionGroupAssociationPtrInput
-	// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
@@ -377,7 +392,7 @@ func (o DrProtectionGroupOutput) Association() DrProtectionGroupAssociationOutpu
 	return o.ApplyT(func(v *DrProtectionGroup) DrProtectionGroupAssociationOutput { return v.Association }).(DrProtectionGroupAssociationOutput)
 }
 
-// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 func (o DrProtectionGroupOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -420,7 +435,7 @@ func (o DrProtectionGroupOutput) Members() DrProtectionGroupMemberArrayOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) DrProtectionGroupMemberArrayOutput { return v.Members }).(DrProtectionGroupMemberArrayOutput)
 }
 
-// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 func (o DrProtectionGroupOutput) PeerId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) pulumi.StringOutput { return v.PeerId }).(pulumi.StringOutput)
 }

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -70,6 +71,7 @@ func NewManagementDashboardsImport(ctx *pulumi.Context,
 		args = &ManagementDashboardsImportArgs{}
 	}
 
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ManagementDashboardsImport
 	err := ctx.RegisterResource("oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport", name, args, &resource, opts...)
 	if err != nil {

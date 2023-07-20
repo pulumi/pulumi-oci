@@ -33,14 +33,14 @@ public final class DrPlanPlanGroupArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+     * The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<Output<String>> id() {
@@ -132,7 +132,7 @@ public final class DrPlanPlanGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param id The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+         * @param id The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -143,7 +143,7 @@ public final class DrPlanPlanGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param id The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
+         * @param id The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 

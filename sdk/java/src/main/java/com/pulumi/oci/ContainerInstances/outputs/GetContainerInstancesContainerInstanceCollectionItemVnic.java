@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetContainerInstancesContainerInstanceCollectionItemVnic {
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     private Map<String,Object> definedTags;
@@ -35,14 +35,14 @@ public final class GetContainerInstancesContainerInstanceCollectionItemVnic {
     private Boolean skipSourceDestCheck;
     private String subnetId;
     /**
-     * @return The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+     * @return The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
      * 
      */
     private String vnicId;
 
     private GetContainerInstancesContainerInstanceCollectionItemVnic() {}
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     public Map<String,Object> definedTags() {
@@ -81,7 +81,7 @@ public final class GetContainerInstancesContainerInstanceCollectionItemVnic {
         return this.subnetId;
     }
     /**
-     * @return The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this network can communicate with the larger Virtual Client Network.
+     * @return The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
      * 
      */
     public String vnicId() {

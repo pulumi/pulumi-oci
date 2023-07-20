@@ -15,12 +15,17 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DrProtectionGroupMember {
     /**
-     * @return (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * @return (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&amp;lt;unique_id&amp;gt;`
+     * 
+     */
+    private @Nullable String destinationCapacityReservationId;
+    /**
+     * @return (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     private @Nullable String destinationCompartmentId;
     /**
-     * @return (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid2`
+     * @return (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private @Nullable String destinationDedicatedVmHostId;
@@ -30,7 +35,12 @@ public final class DrProtectionGroupMember {
      */
     private @Nullable Boolean isMovable;
     /**
-     * @return (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+     * @return (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+     * 
+     */
+    private @Nullable Boolean isRetainFaultDomain;
+    /**
+     * @return (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String memberId;
@@ -40,10 +50,15 @@ public final class DrProtectionGroupMember {
      */
     private String memberType;
     /**
-     * @return (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+     * @return (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private @Nullable String passwordVaultSecretId;
+    /**
+     * @return (Updatable) A list of Compute Instance VNIC mappings.
+     * 
+     */
+    private @Nullable List<DrProtectionGroupMemberVnicMapping> vnicMapping;
     /**
      * @return (Updatable) A list of Compute Instance VNIC mappings.
      * 
@@ -52,14 +67,21 @@ public final class DrProtectionGroupMember {
 
     private DrProtectionGroupMember() {}
     /**
-     * @return (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * @return (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&amp;lt;unique_id&amp;gt;`
+     * 
+     */
+    public Optional<String> destinationCapacityReservationId() {
+        return Optional.ofNullable(this.destinationCapacityReservationId);
+    }
+    /**
+     * @return (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<String> destinationCompartmentId() {
         return Optional.ofNullable(this.destinationCompartmentId);
     }
     /**
-     * @return (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid2`
+     * @return (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<String> destinationDedicatedVmHostId() {
@@ -73,7 +95,14 @@ public final class DrProtectionGroupMember {
         return Optional.ofNullable(this.isMovable);
     }
     /**
-     * @return (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+     * @return (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+     * 
+     */
+    public Optional<Boolean> isRetainFaultDomain() {
+        return Optional.ofNullable(this.isRetainFaultDomain);
+    }
+    /**
+     * @return (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String memberId() {
@@ -87,11 +116,18 @@ public final class DrProtectionGroupMember {
         return this.memberType;
     }
     /**
-     * @return (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+     * @return (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<String> passwordVaultSecretId() {
         return Optional.ofNullable(this.passwordVaultSecretId);
+    }
+    /**
+     * @return (Updatable) A list of Compute Instance VNIC mappings.
+     * 
+     */
+    public List<DrProtectionGroupMemberVnicMapping> vnicMapping() {
+        return this.vnicMapping == null ? List.of() : this.vnicMapping;
     }
     /**
      * @return (Updatable) A list of Compute Instance VNIC mappings.
@@ -110,25 +146,36 @@ public final class DrProtectionGroupMember {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String destinationCapacityReservationId;
         private @Nullable String destinationCompartmentId;
         private @Nullable String destinationDedicatedVmHostId;
         private @Nullable Boolean isMovable;
+        private @Nullable Boolean isRetainFaultDomain;
         private String memberId;
         private String memberType;
         private @Nullable String passwordVaultSecretId;
+        private @Nullable List<DrProtectionGroupMemberVnicMapping> vnicMapping;
         private @Nullable List<DrProtectionGroupMemberVnicMapping> vnicMappings;
         public Builder() {}
         public Builder(DrProtectionGroupMember defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.destinationCapacityReservationId = defaults.destinationCapacityReservationId;
     	      this.destinationCompartmentId = defaults.destinationCompartmentId;
     	      this.destinationDedicatedVmHostId = defaults.destinationDedicatedVmHostId;
     	      this.isMovable = defaults.isMovable;
+    	      this.isRetainFaultDomain = defaults.isRetainFaultDomain;
     	      this.memberId = defaults.memberId;
     	      this.memberType = defaults.memberType;
     	      this.passwordVaultSecretId = defaults.passwordVaultSecretId;
+    	      this.vnicMapping = defaults.vnicMapping;
     	      this.vnicMappings = defaults.vnicMappings;
         }
 
+        @CustomType.Setter
+        public Builder destinationCapacityReservationId(@Nullable String destinationCapacityReservationId) {
+            this.destinationCapacityReservationId = destinationCapacityReservationId;
+            return this;
+        }
         @CustomType.Setter
         public Builder destinationCompartmentId(@Nullable String destinationCompartmentId) {
             this.destinationCompartmentId = destinationCompartmentId;
@@ -142,6 +189,11 @@ public final class DrProtectionGroupMember {
         @CustomType.Setter
         public Builder isMovable(@Nullable Boolean isMovable) {
             this.isMovable = isMovable;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isRetainFaultDomain(@Nullable Boolean isRetainFaultDomain) {
+            this.isRetainFaultDomain = isRetainFaultDomain;
             return this;
         }
         @CustomType.Setter
@@ -160,6 +212,14 @@ public final class DrProtectionGroupMember {
             return this;
         }
         @CustomType.Setter
+        public Builder vnicMapping(@Nullable List<DrProtectionGroupMemberVnicMapping> vnicMapping) {
+            this.vnicMapping = vnicMapping;
+            return this;
+        }
+        public Builder vnicMapping(DrProtectionGroupMemberVnicMapping... vnicMapping) {
+            return vnicMapping(List.of(vnicMapping));
+        }
+        @CustomType.Setter
         public Builder vnicMappings(@Nullable List<DrProtectionGroupMemberVnicMapping> vnicMappings) {
             this.vnicMappings = vnicMappings;
             return this;
@@ -169,12 +229,15 @@ public final class DrProtectionGroupMember {
         }
         public DrProtectionGroupMember build() {
             final var o = new DrProtectionGroupMember();
+            o.destinationCapacityReservationId = destinationCapacityReservationId;
             o.destinationCompartmentId = destinationCompartmentId;
             o.destinationDedicatedVmHostId = destinationDedicatedVmHostId;
             o.isMovable = isMovable;
+            o.isRetainFaultDomain = isRetainFaultDomain;
             o.memberId = memberId;
             o.memberType = memberType;
             o.passwordVaultSecretId = passwordVaultSecretId;
+            o.vnicMapping = vnicMapping;
             o.vnicMappings = vnicMappings;
             return o;
         }

@@ -19,14 +19,14 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
     public static final ContainerInstanceContainerHealthCheckArgs Empty = new ContainerInstanceContainerHealthCheckArgs();
 
     /**
-     * The list of strings which will be concatenated to a single command for checking container&#39;s status.
+     * The list of strings that will be simplified to a single command for checking the status of the container.
      * 
      */
     @Import(name="commands")
     private @Nullable Output<List<String>> commands;
 
     /**
-     * @return The list of strings which will be concatenated to a single command for checking container&#39;s status.
+     * @return The list of strings that will be simplified to a single command for checking the status of the container.
      * 
      */
     public Optional<Output<List<String>>> commands() {
@@ -64,14 +64,14 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
     }
 
     /**
-     * Container health check Http&#39;s headers.
+     * Container health check HTTP headers.
      * 
      */
     @Import(name="headers")
     private @Nullable Output<List<ContainerInstanceContainerHealthCheckHeaderArgs>> headers;
 
     /**
-     * @return Container health check Http&#39;s headers.
+     * @return Container health check HTTP headers.
      * 
      */
     public Optional<Output<List<ContainerInstanceContainerHealthCheckHeaderArgs>>> headers() {
@@ -124,14 +124,14 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
     }
 
     /**
-     * The name of the volume. This has be unique cross single ContainerInstance.
+     * The name of the volume. This must be unique within a single container instance.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return The name of the volume. This has be unique cross single ContainerInstance.
+     * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
     public Optional<Output<String>> name() {
@@ -154,14 +154,14 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
     }
 
     /**
-     * Container health check Http&#39;s port.
+     * Container health check HTTP port.
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return Container health check Http&#39;s port.
+     * @return Container health check HTTP port.
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -250,7 +250,7 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
         }
 
         /**
-         * @param commands The list of strings which will be concatenated to a single command for checking container&#39;s status.
+         * @param commands The list of strings that will be simplified to a single command for checking the status of the container.
          * 
          * @return builder
          * 
@@ -261,7 +261,7 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
         }
 
         /**
-         * @param commands The list of strings which will be concatenated to a single command for checking container&#39;s status.
+         * @param commands The list of strings that will be simplified to a single command for checking the status of the container.
          * 
          * @return builder
          * 
@@ -271,7 +271,7 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
         }
 
         /**
-         * @param commands The list of strings which will be concatenated to a single command for checking container&#39;s status.
+         * @param commands The list of strings that will be simplified to a single command for checking the status of the container.
          * 
          * @return builder
          * 
@@ -323,7 +323,7 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
         }
 
         /**
-         * @param headers Container health check Http&#39;s headers.
+         * @param headers Container health check HTTP headers.
          * 
          * @return builder
          * 
@@ -334,7 +334,7 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
         }
 
         /**
-         * @param headers Container health check Http&#39;s headers.
+         * @param headers Container health check HTTP headers.
          * 
          * @return builder
          * 
@@ -344,7 +344,7 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
         }
 
         /**
-         * @param headers Container health check Http&#39;s headers.
+         * @param headers Container health check HTTP headers.
          * 
          * @return builder
          * 
@@ -417,7 +417,7 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
         }
 
         /**
-         * @param name The name of the volume. This has be unique cross single ContainerInstance.
+         * @param name The name of the volume. This must be unique within a single container instance.
          * 
          * @return builder
          * 
@@ -428,7 +428,7 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
         }
 
         /**
-         * @param name The name of the volume. This has be unique cross single ContainerInstance.
+         * @param name The name of the volume. This must be unique within a single container instance.
          * 
          * @return builder
          * 
@@ -459,7 +459,7 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
         }
 
         /**
-         * @param port Container health check Http&#39;s port.
+         * @param port Container health check HTTP port.
          * 
          * @return builder
          * 
@@ -470,7 +470,7 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
         }
 
         /**
-         * @param port Container health check Http&#39;s port.
+         * @param port Container health check HTTP port.
          * 
          * @return builder
          * 

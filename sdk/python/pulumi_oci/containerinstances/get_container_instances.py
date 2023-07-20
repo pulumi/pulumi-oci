@@ -50,7 +50,7 @@ class GetContainerInstancesResult:
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
         """
-        Availability Domain where the ContainerInstance is running.
+        The availability domain to place the container instance.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -58,7 +58,7 @@ class GetContainerInstancesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier
+        The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -74,7 +74,7 @@ class GetContainerInstancesResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        Display name for the ContainerInstance. Can be renamed.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -95,7 +95,7 @@ class GetContainerInstancesResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the ContainerInstance.
+        The current state of the container instance.
         """
         return pulumi.get(self, "state")
 
@@ -124,7 +124,7 @@ def get_container_instances(availability_domain: Optional[str] = None,
     """
     This data source provides the list of Container Instances in Oracle Cloud Infrastructure Container Instances service.
 
-    Returns a list of ContainerInstances.
+    Returns a list of container instances.
 
     ## Example Usage
 
@@ -140,9 +140,9 @@ def get_container_instances(availability_domain: Optional[str] = None,
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
+    :param str state: A filter to only return resources that match the given lifecycle state.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -173,7 +173,7 @@ def get_container_instances_output(availability_domain: Optional[pulumi.Input[Op
     """
     This data source provides the list of Container Instances in Oracle Cloud Infrastructure Container Instances service.
 
-    Returns a list of ContainerInstances.
+    Returns a list of container instances.
 
     ## Example Usage
 
@@ -189,8 +189,8 @@ def get_container_instances_output(availability_domain: Optional[pulumi.Input[Op
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
+    :param str state: A filter to only return resources that match the given lifecycle state.
     """
     ...

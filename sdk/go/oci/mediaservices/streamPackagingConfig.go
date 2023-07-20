@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -114,6 +115,7 @@ func NewStreamPackagingConfig(ctx *pulumi.Context,
 	if args.StreamPackagingFormat == nil {
 		return nil, errors.New("invalid value for required argument 'StreamPackagingFormat'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource StreamPackagingConfig
 	err := ctx.RegisterResource("oci:MediaServices/streamPackagingConfig:StreamPackagingConfig", name, args, &resource, opts...)
 	if err != nil {

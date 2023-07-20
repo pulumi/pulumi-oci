@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -106,6 +107,7 @@ func NewMaintenanceRun(ctx *pulumi.Context,
 	if args.MaintenanceRunId == nil {
 		return nil, errors.New("invalid value for required argument 'MaintenanceRunId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource MaintenanceRun
 	err := ctx.RegisterResource("oci:Database/maintenanceRun:MaintenanceRun", name, args, &resource, opts...)
 	if err != nil {

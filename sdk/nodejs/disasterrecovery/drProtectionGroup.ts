@@ -38,12 +38,23 @@ import * as utilities from "../utilities";
  *     members: [{
  *         memberId: oci_disaster_recovery_member.test_member.id,
  *         memberType: _var.dr_protection_group_members_member_type,
+ *         destinationCapacityReservationId: oci_disaster_recovery_destination_capacity_reservation.test_destination_capacity_reservation.id,
  *         destinationCompartmentId: oci_identity_compartment.test_compartment.id,
  *         destinationDedicatedVmHostId: oci_core_dedicated_vm_host.test_dedicated_vm_host.id,
  *         isMovable: _var.dr_protection_group_members_is_movable,
+ *         isRetainFaultDomain: _var.dr_protection_group_members_is_retain_fault_domain,
  *         passwordVaultSecretId: oci_vault_secret.test_secret.id,
  *         vnicMappings: [{
  *             destinationNsgIdLists: _var.dr_protection_group_members_vnic_mapping_destination_nsg_id_list,
+ *             destinationPrimaryPrivateIpAddress: _var.dr_protection_group_members_vnic_mapping_destination_primary_private_ip_address,
+ *             destinationPrimaryPrivateIpHostnameLabel: _var.dr_protection_group_members_vnic_mapping_destination_primary_private_ip_hostname_label,
+ *             destinationSubnetId: oci_core_subnet.test_subnet.id,
+ *             sourceVnicId: oci_core_vnic.test_vnic.id,
+ *         }],
+ *         vnicMappings: [{
+ *             destinationNsgIdLists: _var.dr_protection_group_members_vnic_mappings_destination_nsg_id_list,
+ *             destinationPrimaryPrivateIpAddress: _var.dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address,
+ *             destinationPrimaryPrivateIpHostnameLabel: _var.dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label,
  *             destinationSubnetId: oci_core_subnet.test_subnet.id,
  *             sourceVnicId: oci_core_vnic.test_vnic.id,
  *         }],
@@ -92,7 +103,7 @@ export class DrProtectionGroup extends pulumi.CustomResource {
      */
     public readonly association!: pulumi.Output<outputs.DisasterRecovery.DrProtectionGroupAssociation>;
     /**
-     * (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -128,7 +139,7 @@ export class DrProtectionGroup extends pulumi.CustomResource {
      */
     public readonly members!: pulumi.Output<outputs.DisasterRecovery.DrProtectionGroupMember[]>;
     /**
-     * The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
      */
     public /*out*/ readonly peerId!: pulumi.Output<string>;
     /**
@@ -227,7 +238,7 @@ export interface DrProtectionGroupState {
      */
     association?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupAssociation>;
     /**
-     * (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -263,7 +274,7 @@ export interface DrProtectionGroupState {
      */
     members?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMember>[]>;
     /**
-     * The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
      */
     peerId?: pulumi.Input<string>;
     /**
@@ -301,7 +312,7 @@ export interface DrProtectionGroupArgs {
      */
     association?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupAssociation>;
     /**
-     * (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
      */
     compartmentId: pulumi.Input<string>;
     /**

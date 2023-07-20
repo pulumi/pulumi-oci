@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -68,6 +69,7 @@ func NewPurgeCache(ctx *pulumi.Context,
 	if args.WaasPolicyId == nil {
 		return nil, errors.New("invalid value for required argument 'WaasPolicyId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource PurgeCache
 	err := ctx.RegisterResource("oci:Waas/purgeCache:PurgeCache", name, args, &resource, opts...)
 	if err != nil {

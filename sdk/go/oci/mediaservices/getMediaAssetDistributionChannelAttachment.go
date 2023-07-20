@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -14,6 +15,7 @@ import (
 //
 // Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
 func GetMediaAssetDistributionChannelAttachment(ctx *pulumi.Context, args *GetMediaAssetDistributionChannelAttachmentArgs, opts ...pulumi.InvokeOption) (*GetMediaAssetDistributionChannelAttachmentResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMediaAssetDistributionChannelAttachmentResult
 	err := ctx.Invoke("oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment", args, &rv, opts...)
 	if err != nil {

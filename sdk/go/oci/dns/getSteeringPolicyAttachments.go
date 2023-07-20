@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -49,6 +50,7 @@ import (
 //
 // ```
 func GetSteeringPolicyAttachments(ctx *pulumi.Context, args *GetSteeringPolicyAttachmentsArgs, opts ...pulumi.InvokeOption) (*GetSteeringPolicyAttachmentsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSteeringPolicyAttachmentsResult
 	err := ctx.Invoke("oci:Dns/getSteeringPolicyAttachments:getSteeringPolicyAttachments", args, &rv, opts...)
 	if err != nil {

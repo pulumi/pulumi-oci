@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetLogAnalyticsUnprocessedDataBucket(ctx *pulumi.Context, args *GetLogAnalyticsUnprocessedDataBucketArgs, opts ...pulumi.InvokeOption) (*GetLogAnalyticsUnprocessedDataBucketResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLogAnalyticsUnprocessedDataBucketResult
 	err := ctx.Invoke("oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket", args, &rv, opts...)
 	if err != nil {

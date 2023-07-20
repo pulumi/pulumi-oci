@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -50,6 +51,7 @@ import (
 //
 // ```
 func GetKeys(ctx *pulumi.Context, args *GetKeysArgs, opts ...pulumi.InvokeOption) (*GetKeysResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetKeysResult
 	err := ctx.Invoke("oci:Kms/getKeys:getKeys", args, &rv, opts...)
 	if err != nil {

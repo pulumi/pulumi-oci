@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetConnectHarnesses(ctx *pulumi.Context, args *GetConnectHarnessesArgs, opts ...pulumi.InvokeOption) (*GetConnectHarnessesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetConnectHarnessesResult
 	err := ctx.Invoke("oci:Streaming/getConnectHarnesses:getConnectHarnesses", args, &rv, opts...)
 	if err != nil {

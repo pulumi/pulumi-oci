@@ -106,7 +106,7 @@ namespace Pulumi.Oci.Core
     public sealed class GetInstanceConfigurationResult
     {
         /// <summary>
-        /// The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+        /// The OCID of the compartment containing images to search
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>

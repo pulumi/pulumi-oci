@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -46,6 +47,7 @@ import (
 //
 // ```
 func GetAssociations(ctx *pulumi.Context, args *GetAssociationsArgs, opts ...pulumi.InvokeOption) (*GetAssociationsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAssociationsResult
 	err := ctx.Invoke("oci:CertificatesManagement/getAssociations:getAssociations", args, &rv, opts...)
 	if err != nil {

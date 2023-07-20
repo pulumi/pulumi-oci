@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func GetFleets(ctx *pulumi.Context, args *GetFleetsArgs, opts ...pulumi.InvokeOption) (*GetFleetsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFleetsResult
 	err := ctx.Invoke("oci:Jms/getFleets:getFleets", args, &rv, opts...)
 	if err != nil {

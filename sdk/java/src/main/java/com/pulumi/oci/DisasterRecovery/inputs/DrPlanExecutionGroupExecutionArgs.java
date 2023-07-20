@@ -49,14 +49,14 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
     }
 
     /**
-     * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+     * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
      * 
      */
     public Optional<Output<String>> groupId() {
@@ -228,7 +228,7 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param groupId The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+         * @param groupId The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 
@@ -239,7 +239,7 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param groupId The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..examplegroupsgid`
+         * @param groupId The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
          * 
          * @return builder
          * 

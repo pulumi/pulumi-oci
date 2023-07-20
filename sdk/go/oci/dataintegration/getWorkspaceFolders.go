@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func GetWorkspaceFolders(ctx *pulumi.Context, args *GetWorkspaceFoldersArgs, opts ...pulumi.InvokeOption) (*GetWorkspaceFoldersResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetWorkspaceFoldersResult
 	err := ctx.Invoke("oci:DataIntegration/getWorkspaceFolders:getWorkspaceFolders", args, &rv, opts...)
 	if err != nil {

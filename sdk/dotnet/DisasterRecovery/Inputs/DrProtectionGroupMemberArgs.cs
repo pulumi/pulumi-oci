@@ -13,13 +13,19 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
     public sealed class DrProtectionGroupMemberArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid1`
+        /// (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&amp;lt;unique_id&amp;gt;`
+        /// </summary>
+        [Input("destinationCapacityReservationId")]
+        public Input<string>? DestinationCapacityReservationId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Input("destinationCompartmentId")]
         public Input<string>? DestinationCompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid2`
+        /// (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Input("destinationDedicatedVmHostId")]
         public Input<string>? DestinationDedicatedVmHostId { get; set; }
@@ -31,7 +37,13 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<bool>? IsMovable { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+        /// (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+        /// </summary>
+        [Input("isRetainFaultDomain")]
+        public Input<bool>? IsRetainFaultDomain { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         [Input("memberId", required: true)]
         public Input<string> MemberId { get; set; } = null!;
@@ -46,7 +58,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         private Input<string>? _passwordVaultSecretId;
 
         /// <summary>
-        /// (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+        /// (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public Input<string>? PasswordVaultSecretId
         {
@@ -56,6 +68,18 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
                 var emptySecret = Output.CreateSecret(0);
                 _passwordVaultSecretId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
             }
+        }
+
+        [Input("vnicMapping")]
+        private InputList<Inputs.DrProtectionGroupMemberVnicMappingArgs>? _vnicMapping;
+
+        /// <summary>
+        /// (Updatable) A list of Compute Instance VNIC mappings.
+        /// </summary>
+        public InputList<Inputs.DrProtectionGroupMemberVnicMappingArgs> VnicMapping
+        {
+            get => _vnicMapping ?? (_vnicMapping = new InputList<Inputs.DrProtectionGroupMemberVnicMappingArgs>());
+            set => _vnicMapping = value;
         }
 
         [Input("vnicMappings")]

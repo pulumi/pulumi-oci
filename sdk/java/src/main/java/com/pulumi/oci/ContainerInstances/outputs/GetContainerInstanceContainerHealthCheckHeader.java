@@ -10,7 +10,7 @@ import java.util.Objects;
 @CustomType
 public final class GetContainerInstanceContainerHealthCheckHeader {
     /**
-     * @return The name of the volume. This has be unique cross single ContainerInstance.
+     * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
     private String name;
@@ -18,7 +18,7 @@ public final class GetContainerInstanceContainerHealthCheckHeader {
 
     private GetContainerInstanceContainerHealthCheckHeader() {}
     /**
-     * @return The name of the volume. This has be unique cross single ContainerInstance.
+     * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
     public String name() {

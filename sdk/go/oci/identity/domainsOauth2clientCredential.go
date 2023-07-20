@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -284,6 +285,7 @@ func NewDomainsOauth2clientCredential(ctx *pulumi.Context,
 	if args.Scopes == nil {
 		return nil, errors.New("invalid value for required argument 'Scopes'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DomainsOauth2clientCredential
 	err := ctx.RegisterResource("oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential", name, args, &resource, opts...)
 	if err != nil {

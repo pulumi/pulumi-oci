@@ -27,6 +27,12 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? BootVolumeVpusPerGb { get; set; }
 
         /// <summary>
+        /// These are the criteria for selecting an image. This is required if imageId is not specified.
+        /// </summary>
+        [Input("instanceSourceImageFilterDetails")]
+        public Input<Inputs.InstanceSourceDetailsInstanceSourceImageFilterDetailsGetArgs>? InstanceSourceImageFilterDetails { get; set; }
+
+        /// <summary>
         /// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         /// </summary>
         [Input("kmsKeyId")]
@@ -35,8 +41,8 @@ namespace Pulumi.Oci.Core.Inputs
         /// <summary>
         /// The OCID of an image or a boot volume to use, depending on the value of `source_type`.
         /// </summary>
-        [Input("sourceId", required: true)]
-        public Input<string> SourceId { get; set; } = null!;
+        [Input("sourceId")]
+        public Input<string>? SourceId { get; set; }
 
         /// <summary>
         /// The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.

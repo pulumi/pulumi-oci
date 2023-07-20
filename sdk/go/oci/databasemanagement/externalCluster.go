@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -78,6 +79,7 @@ func NewExternalCluster(ctx *pulumi.Context,
 	if args.ExternalClusterId == nil {
 		return nil, errors.New("invalid value for required argument 'ExternalClusterId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ExternalCluster
 	err := ctx.RegisterResource("oci:DatabaseManagement/externalCluster:ExternalCluster", name, args, &resource, opts...)
 	if err != nil {

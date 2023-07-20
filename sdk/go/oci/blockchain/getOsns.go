@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetOsns(ctx *pulumi.Context, args *GetOsnsArgs, opts ...pulumi.InvokeOption) (*GetOsnsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOsnsResult
 	err := ctx.Invoke("oci:Blockchain/getOsns:getOsns", args, &rv, opts...)
 	if err != nil {

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ import (
 //
 // ```
 func GetModelVersionSets(ctx *pulumi.Context, args *GetModelVersionSetsArgs, opts ...pulumi.InvokeOption) (*GetModelVersionSetsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetModelVersionSetsResult
 	err := ctx.Invoke("oci:DataScience/getModelVersionSets:getModelVersionSets", args, &rv, opts...)
 	if err != nil {

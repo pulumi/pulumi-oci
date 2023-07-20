@@ -14,11 +14,15 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class DrProtectionGroupMember
     {
         /// <summary>
-        /// (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..exampleocid1`
+        /// (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&amp;lt;unique_id&amp;gt;`
+        /// </summary>
+        public readonly string? DestinationCapacityReservationId;
+        /// <summary>
+        /// (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string? DestinationCompartmentId;
         /// <summary>
-        /// (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid2`
+        /// (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string? DestinationDedicatedVmHostId;
         /// <summary>
@@ -26,7 +30,11 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly bool? IsMovable;
         /// <summary>
-        /// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.exampleocid1`
+        /// (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+        /// </summary>
+        public readonly bool? IsRetainFaultDomain;
+        /// <summary>
+        /// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string MemberId;
         /// <summary>
@@ -34,9 +42,13 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string MemberType;
         /// <summary>
-        /// (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+        /// (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string? PasswordVaultSecretId;
+        /// <summary>
+        /// (Updatable) A list of Compute Instance VNIC mappings.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.DrProtectionGroupMemberVnicMapping> VnicMapping;
         /// <summary>
         /// (Updatable) A list of Compute Instance VNIC mappings.
         /// </summary>
@@ -44,11 +56,15 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
         [OutputConstructor]
         private DrProtectionGroupMember(
+            string? destinationCapacityReservationId,
+
             string? destinationCompartmentId,
 
             string? destinationDedicatedVmHostId,
 
             bool? isMovable,
+
+            bool? isRetainFaultDomain,
 
             string memberId,
 
@@ -56,14 +72,19 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string? passwordVaultSecretId,
 
+            ImmutableArray<Outputs.DrProtectionGroupMemberVnicMapping> vnicMapping,
+
             ImmutableArray<Outputs.DrProtectionGroupMemberVnicMapping> vnicMappings)
         {
+            DestinationCapacityReservationId = destinationCapacityReservationId;
             DestinationCompartmentId = destinationCompartmentId;
             DestinationDedicatedVmHostId = destinationDedicatedVmHostId;
             IsMovable = isMovable;
+            IsRetainFaultDomain = isRetainFaultDomain;
             MemberId = memberId;
             MemberType = memberType;
             PasswordVaultSecretId = passwordVaultSecretId;
+            VnicMapping = vnicMapping;
             VnicMappings = vnicMappings;
         }
     }

@@ -107,7 +107,7 @@ namespace Pulumi.Oci.DisasterRecovery
     {
         public readonly ImmutableArray<Outputs.GetDrProtectionGroupAssociationResult> Associations;
         /// <summary>
-        /// The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
+        /// The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -125,7 +125,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+        /// The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -141,7 +141,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrProtectionGroupMemberResult> Members;
         /// <summary>
-        /// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        /// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
         /// </summary>
         public readonly string PeerId;
         /// <summary>

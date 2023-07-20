@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfigResult
     {
         /// <summary>
-        /// Whether the plugin should be enabled or disabled. Accepted values are `ENABLED` and `DISABLED`
+        /// Whether the plugin should be enabled or disabled.
         /// </summary>
         public readonly string DesiredState;
         /// <summary>

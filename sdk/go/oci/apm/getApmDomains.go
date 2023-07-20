@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -42,6 +43,7 @@ import (
 //
 // ```
 func GetApmDomains(ctx *pulumi.Context, args *GetApmDomainsArgs, opts ...pulumi.InvokeOption) (*GetApmDomainsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetApmDomainsResult
 	err := ctx.Invoke("oci:Apm/getApmDomains:getApmDomains", args, &rv, opts...)
 	if err != nil {

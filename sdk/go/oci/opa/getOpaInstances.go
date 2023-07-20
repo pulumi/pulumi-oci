@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ import (
 //
 // ```
 func GetOpaInstances(ctx *pulumi.Context, args *GetOpaInstancesArgs, opts ...pulumi.InvokeOption) (*GetOpaInstancesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOpaInstancesResult
 	err := ctx.Invoke("oci:Opa/getOpaInstances:getOpaInstances", args, &rv, opts...)
 	if err != nil {

@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetContainerInstanceDnsConfig {
     /**
-     * @return Name server IP address
+     * @return IP address of the name server..
      * 
      */
     private List<String> nameservers;
@@ -21,14 +21,14 @@ public final class GetContainerInstanceDnsConfig {
      */
     private List<String> options;
     /**
-     * @return Search list for host-name lookup.
+     * @return Search list for hostname lookup.
      * 
      */
     private List<String> searches;
 
     private GetContainerInstanceDnsConfig() {}
     /**
-     * @return Name server IP address
+     * @return IP address of the name server..
      * 
      */
     public List<String> nameservers() {
@@ -42,7 +42,7 @@ public final class GetContainerInstanceDnsConfig {
         return this.options;
     }
     /**
-     * @return Search list for host-name lookup.
+     * @return Search list for hostname lookup.
      * 
      */
     public List<String> searches() {

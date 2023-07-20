@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetLicenseMetric(ctx *pulumi.Context, args *GetLicenseMetricArgs, opts ...pulumi.InvokeOption) (*GetLicenseMetricResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLicenseMetricResult
 	err := ctx.Invoke("oci:LicenseManager/getLicenseMetric:getLicenseMetric", args, &rv, opts...)
 	if err != nil {

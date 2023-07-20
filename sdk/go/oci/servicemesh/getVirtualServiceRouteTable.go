@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupVirtualServiceRouteTable(ctx *pulumi.Context, args *LookupVirtualServiceRouteTableArgs, opts ...pulumi.InvokeOption) (*LookupVirtualServiceRouteTableResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupVirtualServiceRouteTableResult
 	err := ctx.Invoke("oci:ServiceMesh/getVirtualServiceRouteTable:getVirtualServiceRouteTable", args, &rv, opts...)
 	if err != nil {

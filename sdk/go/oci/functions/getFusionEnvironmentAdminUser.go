@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetFusionEnvironmentAdminUser(ctx *pulumi.Context, args *GetFusionEnvironmentAdminUserArgs, opts ...pulumi.InvokeOption) (*GetFusionEnvironmentAdminUserResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFusionEnvironmentAdminUserResult
 	err := ctx.Invoke("oci:Functions/getFusionEnvironmentAdminUser:getFusionEnvironmentAdminUser", args, &rv, opts...)
 	if err != nil {

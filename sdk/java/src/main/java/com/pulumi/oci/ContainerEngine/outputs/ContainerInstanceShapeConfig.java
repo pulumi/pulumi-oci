@@ -13,50 +13,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ContainerInstanceShapeConfig {
     /**
-     * @return The total amount of memory available to the instance, in gigabytes.
+     * @return The total amount of memory available to the container instance (GB).
      * 
      */
     private @Nullable Double memoryInGbs;
     /**
-     * @return The networking bandwidth available to the instance, in gigabits per second.
+     * @return The networking bandwidth available to the container instance, in gigabits per second.
      * 
      */
     private @Nullable Double networkingBandwidthInGbps;
     /**
-     * @return The total number of OCPUs available to the instance.
+     * @return The total number of OCPUs available to the container instance.
      * 
      */
     private Double ocpus;
     /**
-     * @return A short description of the instance&#39;s processor (CPU).
+     * @return A short description of the container instance&#39;s processor (CPU).
      * 
      */
     private @Nullable String processorDescription;
 
     private ContainerInstanceShapeConfig() {}
     /**
-     * @return The total amount of memory available to the instance, in gigabytes.
+     * @return The total amount of memory available to the container instance (GB).
      * 
      */
     public Optional<Double> memoryInGbs() {
         return Optional.ofNullable(this.memoryInGbs);
     }
     /**
-     * @return The networking bandwidth available to the instance, in gigabits per second.
+     * @return The networking bandwidth available to the container instance, in gigabits per second.
      * 
      */
     public Optional<Double> networkingBandwidthInGbps() {
         return Optional.ofNullable(this.networkingBandwidthInGbps);
     }
     /**
-     * @return The total number of OCPUs available to the instance.
+     * @return The total number of OCPUs available to the container instance.
      * 
      */
     public Double ocpus() {
         return this.ocpus;
     }
     /**
-     * @return A short description of the instance&#39;s processor (CPU).
+     * @return A short description of the container instance&#39;s processor (CPU).
      * 
      */
     public Optional<String> processorDescription() {

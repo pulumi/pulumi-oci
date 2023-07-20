@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetDetectionProject(ctx *pulumi.Context, args *GetDetectionProjectArgs, opts ...pulumi.InvokeOption) (*GetDetectionProjectResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDetectionProjectResult
 	err := ctx.Invoke("oci:AiAnomalyDetection/getDetectionProject:getDetectionProject", args, &rv, opts...)
 	if err != nil {

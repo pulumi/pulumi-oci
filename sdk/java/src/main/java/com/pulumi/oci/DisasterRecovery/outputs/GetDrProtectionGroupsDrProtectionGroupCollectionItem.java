@@ -39,7 +39,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItem {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+     * @return The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String id;
@@ -59,7 +59,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItem {
      */
     private List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMember> members;
     /**
-     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     private String peerId;
@@ -69,7 +69,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItem {
      */
     private String peerRegion;
     /**
-     * @return The role of the DR Protection Group.
+     * @return The DR Protection Group Role.
      * 
      */
     private String role;
@@ -130,7 +130,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+     * @return The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String id() {
@@ -158,7 +158,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItem {
         return this.members;
     }
     /**
-     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
     public String peerId() {
@@ -172,7 +172,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItem {
         return this.peerRegion;
     }
     /**
-     * @return The role of the DR Protection Group.
+     * @return The DR Protection Group Role.
      * 
      */
     public String role() {

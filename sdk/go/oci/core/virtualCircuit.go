@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -184,6 +185,7 @@ func NewVirtualCircuit(ctx *pulumi.Context,
 	if args.Type == nil {
 		return nil, errors.New("invalid value for required argument 'Type'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource VirtualCircuit
 	err := ctx.RegisterResource("oci:Core/virtualCircuit:VirtualCircuit", name, args, &resource, opts...)
 	if err != nil {

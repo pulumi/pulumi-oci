@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -114,6 +115,7 @@ func NewManagedInstanceManagement(ctx *pulumi.Context,
 	if args.ManagedInstanceId == nil {
 		return nil, errors.New("invalid value for required argument 'ManagedInstanceId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ManagedInstanceManagement
 	err := ctx.RegisterResource("oci:OsManagement/managedInstanceManagement:ManagedInstanceManagement", name, args, &resource, opts...)
 	if err != nil {

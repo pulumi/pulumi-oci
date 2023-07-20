@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -115,6 +116,7 @@ func NewUsage(ctx *pulumi.Context,
 	if args.TimeUsageStarted == nil {
 		return nil, errors.New("invalid value for required argument 'TimeUsageStarted'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Usage
 	err := ctx.RegisterResource("oci:MeteringComputation/usage:Usage", name, args, &resource, opts...)
 	if err != nil {

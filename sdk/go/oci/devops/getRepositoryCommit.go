@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,6 +42,7 @@ import (
 //
 // ```
 func GetRepositoryCommit(ctx *pulumi.Context, args *GetRepositoryCommitArgs, opts ...pulumi.InvokeOption) (*GetRepositoryCommitResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRepositoryCommitResult
 	err := ctx.Invoke("oci:DevOps/getRepositoryCommit:getRepositoryCommit", args, &rv, opts...)
 	if err != nil {

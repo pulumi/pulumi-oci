@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func GetExternalExadataStorageGrid(ctx *pulumi.Context, args *GetExternalExadataStorageGridArgs, opts ...pulumi.InvokeOption) (*GetExternalExadataStorageGridResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalExadataStorageGridResult
 	err := ctx.Invoke("oci:DatabaseManagement/getExternalExadataStorageGrid:getExternalExadataStorageGrid", args, &rv, opts...)
 	if err != nil {

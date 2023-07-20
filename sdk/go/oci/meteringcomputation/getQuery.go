@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,6 +41,7 @@ import (
 //
 // ```
 func LookupQuery(ctx *pulumi.Context, args *LookupQueryArgs, opts ...pulumi.InvokeOption) (*LookupQueryResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupQueryResult
 	err := ctx.Invoke("oci:MeteringComputation/getQuery:getQuery", args, &rv, opts...)
 	if err != nil {
